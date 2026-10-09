@@ -1,0 +1,1527 @@
+﻿{
+    "ClosedTitle":  "CafeManager - StartupForm.cs [Design] - Microsoft Visual Studio",
+    "ReopenedTitle":  "CafeManager - StartupForm.cs [Design] - Microsoft Visual Studio",
+    "Elements":  [
+                     {
+                         "Name":  "CafeManager - StartupForm.cs [Design] - Microsoft Visual Studio",
+                         "Type":  "ControlType.TitleBar",
+                         "Id":  "TitleBar"
+                     },
+                     {
+                         "Name":  "MenuBar",
+                         "Type":  "ControlType.MenuBar",
+                         "Id":  "MenuBar"
+                     },
+                     {
+                         "Name":  "File",
+                         "Type":  "ControlType.MenuItem",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Edit",
+                         "Type":  "ControlType.MenuItem",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "View",
+                         "Type":  "ControlType.MenuItem",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Git",
+                         "Type":  "ControlType.MenuItem",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Project",
+                         "Type":  "ControlType.MenuItem",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Build",
+                         "Type":  "ControlType.MenuItem",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Debug",
+                         "Type":  "ControlType.MenuItem",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Test",
+                         "Type":  "ControlType.MenuItem",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Tools",
+                         "Type":  "ControlType.MenuItem",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Extensions",
+                         "Type":  "ControlType.MenuItem",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Window",
+                         "Type":  "ControlType.MenuItem",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Help",
+                         "Type":  "ControlType.MenuItem",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Search",
+                         "Type":  "ControlType.MenuItem",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "CafeManager",
+                         "Type":  "ControlType.Text",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Connected User Information",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  "StatusImage"
+                     },
+                     {
+                         "Name":  "Minimize",
+                         "Type":  "ControlType.Button",
+                         "Id":  "Minimize"
+                     },
+                     {
+                         "Name":  "Restore",
+                         "Type":  "ControlType.Button",
+                         "Id":  "Restore"
+                     },
+                     {
+                         "Name":  "Close",
+                         "Type":  "ControlType.Button",
+                         "Id":  "Close"
+                     },
+                     {
+                         "Name":  "GitHub Copilot",
+                         "Type":  "ControlType.SplitButton",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Button",
+                         "Id":  "ActionButton"
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Button",
+                         "Id":  "DropDownButton"
+                     },
+                     {
+                         "Name":  "Feedback",
+                         "Type":  "ControlType.Button",
+                         "Id":  "Feedback"
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Pane",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Standard",
+                         "Type":  "ControlType.ToolBar",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Navigate Backward",
+                         "Type":  "ControlType.SplitButton",
+                         "Id":  "PART_FocusTarget"
+                     },
+                     {
+                         "Name":  "Navigate Forward",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "New Project/File",
+                         "Type":  "ControlType.SplitButton",
+                         "Id":  "PART_FocusTarget"
+                     },
+                     {
+                         "Name":  "Open Project/Folder/File",
+                         "Type":  "ControlType.SplitButton",
+                         "Id":  "PART_FocusTarget"
+                     },
+                     {
+                         "Name":  "Save StartupForm.cs",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Save All",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Undo",
+                         "Type":  "ControlType.SplitButton",
+                         "Id":  "PART_FocusTarget"
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Redo",
+                         "Type":  "ControlType.SplitButton",
+                         "Id":  "PART_FocusTarget"
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Solution Configurations",
+                         "Type":  "ControlType.ComboBox",
+                         "Id":  "PART_FocusTarget"
+                     },
+                     {
+                         "Name":  "Debug",
+                         "Type":  "ControlType.ListItem",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Solution Platforms",
+                         "Type":  "ControlType.ComboBox",
+                         "Id":  "PART_FocusTarget"
+                     },
+                     {
+                         "Name":  "Any CPU",
+                         "Type":  "ControlType.ListItem",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "CafeManager.WinForms",
+                         "Type":  "ControlType.SplitButton",
+                         "Id":  "PART_FocusTarget"
+                     },
+                     {
+                         "Name":  "Debug Target",
+                         "Type":  "ControlType.SplitButton",
+                         "Id":  "PART_FocusTarget"
+                     },
+                     {
+                         "Name":  "Start Without Debugging",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Hot Reload",
+                         "Type":  "ControlType.SplitButton",
+                         "Id":  "PART_FocusTarget"
+                     },
+                     {
+                         "Name":  "Start Window",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Standard Toolbar Options",
+                         "Type":  "ControlType.Button",
+                         "Id":  "Additional Toolbar Items"
+                     },
+                     {
+                         "Name":  "Layout",
+                         "Type":  "ControlType.ToolBar",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Align to Grid",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Align Lefts",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Align Centers",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Align Rights",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Align Tops",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Align Middles",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Align Bottoms",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Make Same Width",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Make Same Height",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Make Same Size",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Size to Grid",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Make Horizontal Spacing Equal",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Make Vertical Spacing Equal",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Bring to Front",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Send to Back",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Layout Toolbar Options",
+                         "Type":  "ControlType.Button",
+                         "Id":  "Additional Toolbar Items"
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Pane",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Pane",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Toolbox",
+                         "Type":  "ControlType.Pane",
+                         "Id":  "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+                     },
+                     {
+                         "Name":  "Toolbox",
+                         "Type":  "ControlType.TitleBar",
+                         "Id":  "PART_Header"
+                     },
+                     {
+                         "Name":  "Toolbox",
+                         "Type":  "ControlType.TitleBar",
+                         "Id":  "DragHeader"
+                     },
+                     {
+                         "Name":  "Toolbox",
+                         "Type":  "ControlType.Text",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Window Position (Alt+-)",
+                         "Type":  "ControlType.Button",
+                         "Id":  "HeaderDropDown"
+                     },
+                     {
+                         "Name":  "Auto Hide",
+                         "Type":  "ControlType.Button",
+                         "Id":  "AutoHideButton"
+                     },
+                     {
+                         "Name":  "Close (Shift+Esc)",
+                         "Type":  "ControlType.Button",
+                         "Id":  "HideButton"
+                     },
+                     {
+                         "Name":  "Search",
+                         "Type":  "ControlType.ComboBox",
+                         "Id":  "SearchControl"
+                     },
+                     {
+                         "Name":  "Search Toolbox",
+                         "Type":  "ControlType.Edit",
+                         "Id":  "PART_SearchBox"
+                     },
+                     {
+                         "Name":  "Search",
+                         "Type":  "ControlType.Button",
+                         "Id":  "PART_SearchButton"
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  "Image"
+                     },
+                     {
+                         "Name":  "Dropdown",
+                         "Type":  "ControlType.Button",
+                         "Id":  "PART_SearchDropdownButton"
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Pane",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Toolbox",
+                         "Type":  "ControlType.Pane",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Pane",
+                         "Id":  "1"
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Tab",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "StartupForm.cs [Design]",
+                         "Type":  "ControlType.TabItem",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "StartupForm.cs [Design]",
+                         "Type":  "ControlType.TitleBar",
+                         "Id":  "Content"
+                     },
+                     {
+                         "Name":  "Pin Tab",
+                         "Type":  "ControlType.Button",
+                         "Id":  "PinButton"
+                     },
+                     {
+                         "Name":  "Close (Ctrl+W)",
+                         "Type":  "ControlType.Button",
+                         "Id":  "HideButton"
+                     },
+                     {
+                         "Name":  "StartupForm.cs [Design]",
+                         "Type":  "ControlType.Pane",
+                         "Id":  "D:0:0:{2F011372-FC85-FB9E-7520-F9A6B468F4BA}|src\\CafeManager.WinForms\\CafeManager.WinForms.csproj|d:\\workspace\\nam_3\\hk1\\coffeemanager\\src\\cafemanager.winforms\\forms\\startupform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Pane",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "StartupForm.cs [Design]",
+                         "Type":  "ControlType.Pane",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "WinForms Window Surface",
+                         "Type":  "ControlType.Pane",
+                         "Id":  "460758"
+                     },
+                     {
+                         "Name":  "DesignerView",
+                         "Type":  "ControlType.Pane",
+                         "Id":  "199146"
+                     },
+                     {
+                         "Name":  "InputShield",
+                         "Type":  "ControlType.Pane",
+                         "Id":  "327838"
+                     },
+                     {
+                         "Name":  "DesignerWindowFrame",
+                         "Type":  "ControlType.Pane",
+                         "Id":  "460704"
+                     },
+                     {
+                         "Name":  "DesignerFrame",
+                         "Type":  "ControlType.Pane",
+                         "Id":  "460672"
+                     },
+                     {
+                         "Name":  "OverlayContainer",
+                         "Type":  "ControlType.Pane",
+                         "Id":  "1115438"
+                     },
+                     {
+                         "Name":  "AdornerWindow",
+                         "Type":  "ControlType.Pane",
+                         "Id":  "526204"
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Window",
+                         "Id":  "StartupForm"
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Pane",
+                         "Id":  "layout"
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Pane",
+                         "Id":  "header"
+                     },
+                     {
+                         "Name":  "CoffeeManager · Trạng thái bàn",
+                         "Type":  "ControlType.Text",
+                         "Id":  "titleLabel"
+                     },
+                     {
+                         "Name":  "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                         "Type":  "ControlType.Text",
+                         "Id":  "subtitleLabel"
+                     },
+                     {
+                         "Name":  "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                         "Type":  "ControlType.Pane",
+                         "Id":  "toolbar"
+                     },
+                     {
+                         "Name":  "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                         "Type":  "ControlType.Pane",
+                         "Id":  "filter"
+                     },
+                     {
+                         "Name":  "Mã khu vực · trống để xem tất cả",
+                         "Type":  "ControlType.Text",
+                         "Id":  "areaLabel"
+                     },
+                     {
+                         "Name":  "Mã khu vực · trống để xem tất cả",
+                         "Type":  "ControlType.Pane",
+                         "Id":  "inputPanel"
+                     },
+                     {
+                         "Name":  "Mã khu vực",
+                         "Type":  "ControlType.Edit",
+                         "Id":  "areaInput"
+                     },
+                     {
+                         "Name":  "Tải trạng thái bàn",
+                         "Type":  "ControlType.Button",
+                         "Id":  "loadButton"
+                     },
+                     {
+                         "Name":  "Hủy tải",
+                         "Type":  "ControlType.Button",
+                         "Id":  "cancelButton"
+                     },
+                     {
+                         "Name":  "Sẵn sàng · Chọn khu vực rồi tải trạng thái bàn.",
+                         "Type":  "ControlType.Text",
+                         "Id":  "statusLabel"
+                     },
+                     {
+                         "Name":  "Sẵn sàng · Chọn khu vực rồi tải trạng thái bàn.",
+                         "Type":  "ControlType.Pane",
+                         "Id":  "contentPanel"
+                     },
+                     {
+                         "Name":  "Nội dung danh sách bàn",
+                         "Type":  "ControlType.Pane",
+                         "Id":  "gridPanel"
+                     },
+                     {
+                         "Name":  "Sẵn sàng · Chọn khu vực rồi tải trạng thái bàn.",
+                         "Type":  "ControlType.DataGrid",
+                         "Id":  "tableGrid"
+                     },
+                     {
+                         "Name":  "Top Row",
+                         "Type":  "ControlType.Custom",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Mã bàn",
+                         "Type":  "ControlType.Header",
+                         "Id":  "426445162"
+                     },
+                     {
+                         "Name":  "Tên bàn",
+                         "Type":  "ControlType.Header",
+                         "Id":  "4262925079"
+                     },
+                     {
+                         "Name":  "Khu vực",
+                         "Type":  "ControlType.Header",
+                         "Id":  "4229791426"
+                     },
+                     {
+                         "Name":  "Trạng thái",
+                         "Type":  "ControlType.Header",
+                         "Id":  "4213488949"
+                     },
+                     {
+                         "Name":  "Hóa đơn mở",
+                         "Type":  "ControlType.Header",
+                         "Id":  "4216176033"
+                     },
+                     {
+                         "Name":  "Trạng thái danh sách bàn",
+                         "Type":  "ControlType.Text",
+                         "Id":  "emptyStateLabel"
+                     },
+                     {
+                         "Name":  "Danh sách bàn",
+                         "Type":  "ControlType.Text",
+                         "Id":  "contentHeading"
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Pane",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "ComponentTray",
+                         "Type":  "ControlType.Pane",
+                         "Id":  "329808"
+                     },
+                     {
+                         "Name":  "validation",
+                         "Type":  "ControlType.Pane",
+                         "Id":  "1509836"
+                     },
+                     {
+                         "Name":  "Scaling on your main display is set to 125%. Consider opening the WinForms Designer in DPI-Unaware Mode.      More info ",
+                         "Type":  "ControlType.Pane",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "More info",
+                         "Type":  "ControlType.Hyperlink",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Close",
+                         "Type":  "ControlType.Button",
+                         "Id":  "HideButton"
+                     },
+                     {
+                         "Name":  "StartupForm.Designer.cs",
+                         "Type":  "ControlType.TabItem",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "StartupForm.Designer.cs",
+                         "Type":  "ControlType.TitleBar",
+                         "Id":  "Content"
+                     },
+                     {
+                         "Name":  "Pin Tab",
+                         "Type":  "ControlType.Button",
+                         "Id":  "PinButton"
+                     },
+                     {
+                         "Name":  "Close (Ctrl+W)",
+                         "Type":  "ControlType.Button",
+                         "Id":  "HideButton"
+                     },
+                     {
+                         "Name":  "Output",
+                         "Type":  "ControlType.Pane",
+                         "Id":  "TabGroup|ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}|ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}|ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+                     },
+                     {
+                         "Name":  "Output",
+                         "Type":  "ControlType.TitleBar",
+                         "Id":  "PART_Header"
+                     },
+                     {
+                         "Name":  "TabGroup, Children = 26, VisibleChildren = 3, DockedWidth = 1024, DockedHeight = 187.2",
+                         "Type":  "ControlType.TitleBar",
+                         "Id":  "DragHeader"
+                     },
+                     {
+                         "Name":  "Output",
+                         "Type":  "ControlType.Text",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Window Position (Alt+-)",
+                         "Type":  "ControlType.Button",
+                         "Id":  "HeaderDropDown"
+                     },
+                     {
+                         "Name":  "Auto Hide",
+                         "Type":  "ControlType.Button",
+                         "Id":  "AutoHideButton"
+                     },
+                     {
+                         "Name":  "Close (Shift+Esc)",
+                         "Type":  "ControlType.Button",
+                         "Id":  "HideButton"
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Tab",
+                         "Id":  "TabGroup|ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}|ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}|ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+                     },
+                     {
+                         "Name":  "Error List",
+                         "Type":  "ControlType.TabItem",
+                         "Id":  "TAB_ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+                     },
+                     {
+                         "Name":  "Error List",
+                         "Type":  "ControlType.TitleBar",
+                         "Id":  "Content"
+                     },
+                     {
+                         "Name":  "Error List",
+                         "Type":  "ControlType.Text",
+                         "Id":  "Text"
+                     },
+                     {
+                         "Name":  "Developer PowerShell",
+                         "Type":  "ControlType.TabItem",
+                         "Id":  "TAB_ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+                     },
+                     {
+                         "Name":  "Developer PowerShell",
+                         "Type":  "ControlType.TitleBar",
+                         "Id":  "Content"
+                     },
+                     {
+                         "Name":  "Developer PowerShell",
+                         "Type":  "ControlType.Text",
+                         "Id":  "Text"
+                     },
+                     {
+                         "Name":  "Output",
+                         "Type":  "ControlType.TabItem",
+                         "Id":  "TAB_ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+                     },
+                     {
+                         "Name":  "Output",
+                         "Type":  "ControlType.TitleBar",
+                         "Id":  "Content"
+                     },
+                     {
+                         "Name":  "Output",
+                         "Type":  "ControlType.Text",
+                         "Id":  "Text"
+                     },
+                     {
+                         "Name":  "Output",
+                         "Type":  "ControlType.Pane",
+                         "Id":  "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+                     },
+                     {
+                         "Name":  "Output",
+                         "Type":  "ControlType.Pane",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Pane",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Output",
+                         "Type":  "ControlType.ToolBar",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Show output from:",
+                         "Type":  "ControlType.ComboBox",
+                         "Id":  "PART_FocusTarget"
+                     },
+                     {
+                         "Name":  "Go To Location",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Go To Previous Location",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Go To Next Location",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Clear All",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Toggle word wrap",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Show Timestamp",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Output Toolbar Options",
+                         "Type":  "ControlType.Button",
+                         "Id":  "Additional Toolbar Items"
+                     },
+                     {
+                         "Name":  "Solution Explorer",
+                         "Type":  "ControlType.Pane",
+                         "Id":  "TabGroup|ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}|ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}|ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+                     },
+                     {
+                         "Name":  "Solution Explorer",
+                         "Type":  "ControlType.TitleBar",
+                         "Id":  "PART_Header"
+                     },
+                     {
+                         "Name":  "TabGroup, Children = 16, VisibleChildren = 3, DockedWidth = 348.16, DockedHeight = 407.407341490546",
+                         "Type":  "ControlType.TitleBar",
+                         "Id":  "DragHeader"
+                     },
+                     {
+                         "Name":  "Solution Explorer",
+                         "Type":  "ControlType.Text",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Window Position (Alt+-)",
+                         "Type":  "ControlType.Button",
+                         "Id":  "HeaderDropDown"
+                     },
+                     {
+                         "Name":  "Auto Hide",
+                         "Type":  "ControlType.Button",
+                         "Id":  "AutoHideButton"
+                     },
+                     {
+                         "Name":  "Close (Shift+Esc)",
+                         "Type":  "ControlType.Button",
+                         "Id":  "HideButton"
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Tab",
+                         "Id":  "TabGroup|ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}|ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}|ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+                     },
+                     {
+                         "Name":  "GitHub Copilot Chat",
+                         "Type":  "ControlType.TabItem",
+                         "Id":  "TAB_ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+                     },
+                     {
+                         "Name":  "GitHub Copilot Chat",
+                         "Type":  "ControlType.TitleBar",
+                         "Id":  "Content"
+                     },
+                     {
+                         "Name":  "GitHub Copilot Chat",
+                         "Type":  "ControlType.Text",
+                         "Id":  "Text"
+                     },
+                     {
+                         "Name":  "Solution Explorer",
+                         "Type":  "ControlType.TabItem",
+                         "Id":  "TAB_ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+                     },
+                     {
+                         "Name":  "Solution Explorer",
+                         "Type":  "ControlType.TitleBar",
+                         "Id":  "Content"
+                     },
+                     {
+                         "Name":  "Solution Explorer",
+                         "Type":  "ControlType.Text",
+                         "Id":  "Text"
+                     },
+                     {
+                         "Name":  "Solution Explorer",
+                         "Type":  "ControlType.Pane",
+                         "Id":  "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Pane",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Explorer",
+                         "Type":  "ControlType.ToolBar",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Switch Between Solutions and Available Views",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Filter Solution Explorer To",
+                         "Type":  "ControlType.SplitButton",
+                         "Id":  "PART_FocusTarget"
+                     },
+                     {
+                         "Name":  "Sync with Active Document",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Collapse All",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Show All Files",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Nesting Menu Controller",
+                         "Type":  "ControlType.SplitButton",
+                         "Id":  "PART_FocusTarget"
+                     },
+                     {
+                         "Name":  "View Code",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Properties",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Preview Selected Items",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Explorer Toolbar Options",
+                         "Type":  "ControlType.Button",
+                         "Id":  "Additional Toolbar Items"
+                     },
+                     {
+                         "Name":  "Search",
+                         "Type":  "ControlType.ComboBox",
+                         "Id":  "SearchControl"
+                     },
+                     {
+                         "Name":  "Search Solution Explorer (Ctrl+;)",
+                         "Type":  "ControlType.Edit",
+                         "Id":  "PART_SearchBox"
+                     },
+                     {
+                         "Name":  "Search",
+                         "Type":  "ControlType.Button",
+                         "Id":  "PART_SearchButton"
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  "Image"
+                     },
+                     {
+                         "Name":  "Dropdown",
+                         "Type":  "ControlType.Button",
+                         "Id":  "PART_SearchDropdownButton"
+                     },
+                     {
+                         "Name":  "Solution Explorer",
+                         "Type":  "ControlType.Pane",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Solution Explorer",
+                         "Type":  "ControlType.Tree",
+                         "Id":  "SolutionExplorer"
+                     },
+                     {
+                         "Name":  "Solution \u0027CafeManager\u0027 ‎",
+                         "Type":  "ControlType.TreeItem",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "src",
+                         "Type":  "ControlType.TreeItem",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "CafeManager.Business",
+                         "Type":  "ControlType.TreeItem",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "CafeManager.DataAccess",
+                         "Type":  "ControlType.TreeItem",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "CafeManager.Models",
+                         "Type":  "ControlType.TreeItem",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "CafeManager.WinForms",
+                         "Type":  "ControlType.TreeItem",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Dependencies",
+                         "Type":  "ControlType.TreeItem",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Forms",
+                         "Type":  "ControlType.TreeItem",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "StartupForm.cs",
+                         "Type":  "ControlType.TreeItem",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "StartupForm",
+                         "Type":  "ControlType.TreeItem",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "StartupForm.Designer.cs",
+                         "Type":  "ControlType.TreeItem",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "StartupForm.resx",
+                         "Type":  "ControlType.TreeItem",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Program.cs",
+                         "Type":  "ControlType.TreeItem",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "tests",
+                         "Type":  "ControlType.TreeItem",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Git Changes",
+                         "Type":  "ControlType.TabItem",
+                         "Id":  "TAB_ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+                     },
+                     {
+                         "Name":  "Git Changes",
+                         "Type":  "ControlType.TitleBar",
+                         "Id":  "Content"
+                     },
+                     {
+                         "Name":  "Git Changes",
+                         "Type":  "ControlType.Text",
+                         "Id":  "Text"
+                     },
+                     {
+                         "Name":  "Properties",
+                         "Type":  "ControlType.Pane",
+                         "Id":  "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+                     },
+                     {
+                         "Name":  "Properties",
+                         "Type":  "ControlType.TitleBar",
+                         "Id":  "PART_Header"
+                     },
+                     {
+                         "Name":  "Properties",
+                         "Type":  "ControlType.TitleBar",
+                         "Id":  "DragHeader"
+                     },
+                     {
+                         "Name":  "Properties",
+                         "Type":  "ControlType.Text",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Window Position (Alt+-)",
+                         "Type":  "ControlType.Button",
+                         "Id":  "HeaderDropDown"
+                     },
+                     {
+                         "Name":  "Auto Hide",
+                         "Type":  "ControlType.Button",
+                         "Id":  "AutoHideButton"
+                     },
+                     {
+                         "Name":  "Close (Shift+Esc)",
+                         "Type":  "ControlType.Button",
+                         "Id":  "HideButton"
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Pane",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Properties",
+                         "Type":  "ControlType.ToolBar",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Sort Properties By Category",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Sort Properties Alphabetically",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Properties Toolbar Options",
+                         "Type":  "ControlType.Button",
+                         "Id":  "Additional Toolbar Items"
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Pane",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Properties",
+                         "Type":  "ControlType.Pane",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Property Browser",
+                         "Type":  "ControlType.Pane",
+                         "Id":  "264244"
+                     },
+                     {
+                         "Name":  "PropertyGrid",
+                         "Type":  "ControlType.Pane",
+                         "Id":  "264242"
+                     },
+                     {
+                         "Name":  "Properties Window",
+                         "Type":  "ControlType.Table",
+                         "Id":  "67678"
+                     },
+                     {
+                         "Name":  "Advanced",
+                         "Type":  "ControlType.TreeItem",
+                         "Id":  "34715491"
+                     },
+                     {
+                         "Name":  "Build Action",
+                         "Type":  "ControlType.TreeItem",
+                         "Id":  "44003968"
+                     },
+                     {
+                         "Name":  "Build Action",
+                         "Type":  "ControlType.Edit",
+                         "Id":  "131568"
+                     },
+                     {
+                         "Name":  "Copy to Output Directory",
+                         "Type":  "ControlType.TreeItem",
+                         "Id":  "60491400"
+                     },
+                     {
+                         "Name":  "Custom Tool",
+                         "Type":  "ControlType.TreeItem",
+                         "Id":  "7551690"
+                     },
+                     {
+                         "Name":  "Custom Tool Namespace",
+                         "Type":  "ControlType.TreeItem",
+                         "Id":  "856353"
+                     },
+                     {
+                         "Name":  "Misc",
+                         "Type":  "ControlType.TreeItem",
+                         "Id":  "20301904"
+                     },
+                     {
+                         "Name":  "File Name",
+                         "Type":  "ControlType.TreeItem",
+                         "Id":  "7707181"
+                     },
+                     {
+                         "Name":  "Full Path",
+                         "Type":  "ControlType.TreeItem",
+                         "Id":  "2255767"
+                     },
+                     {
+                         "Name":  "Description",
+                         "Type":  "ControlType.Pane",
+                         "Id":  "198668"
+                     },
+                     {
+                         "Name":  "Build Action",
+                         "Type":  "ControlType.Text",
+                         "Id":  "853894"
+                     },
+                     {
+                         "Name":  "How the file relates to the build and deployment processes.",
+                         "Type":  "ControlType.Text",
+                         "Id":  "133208"
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Pane",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Pane",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.StatusBar",
+                         "Id":  "SccStatusBar"
+                     },
+                     {
+                         "Name":  "0",
+                         "Type":  "ControlType.Button",
+                         "Id":  "UnpublishedCommitsSccCompartment"
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  "PART_SccCompartmentImage"
+                     },
+                     {
+                         "Name":  "0",
+                         "Type":  "ControlType.Text",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "99+",
+                         "Type":  "ControlType.Button",
+                         "Id":  "PendingChangesSccCompartment"
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  "PART_SccCompartmentImage"
+                     },
+                     {
+                         "Name":  "99+",
+                         "Type":  "ControlType.Text",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "main",
+                         "Type":  "ControlType.Button",
+                         "Id":  "CurrentBranchSccCompartment"
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  "PART_SccCompartmentImage"
+                     },
+                     {
+                         "Name":  "main",
+                         "Type":  "ControlType.Text",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "CoffeeManager",
+                         "Type":  "ControlType.Button",
+                         "Id":  "CurrentRepositorysSccCompartment"
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  "PART_SccCompartmentImage"
+                     },
+                     {
+                         "Name":  "CoffeeManager",
+                         "Type":  "ControlType.Text",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Notifications",
+                         "Type":  "ControlType.Button",
+                         "Id":  "Control_1"
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Background tasks (Ctrl+E, Ctrl+T)",
+                         "Type":  "ControlType.Button",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Image",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "Ready",
+                         "Type":  "ControlType.Text",
+                         "Id":  ""
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.StatusBar",
+                         "Id":  "StatusBarContainer"
+                     },
+                     {
+                         "Name":  "Ready",
+                         "Type":  "ControlType.Text",
+                         "Id":  "TextCompartment"
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Text",
+                         "Id":  "XYWidthHeightCompartment"
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Text",
+                         "Id":  "SelectionModeCompartment"
+                     },
+                     {
+                         "Name":  "",
+                         "Type":  "ControlType.Text",
+                         "Id":  "InsertionModeCompartment"
+                     }
+                 ],
+    "At":  "2026-10-09T18:35:44.8358088+07:00"
+}

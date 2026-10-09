@@ -1,0 +1,1248 @@
+﻿[
+    {
+        "State":  "unconfigured-1280x720",
+        "Dpi":  144,
+        "Bounds":  "40,40,1280,720",
+        "Controls":  [
+                         {
+                             "Name":  "",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "51,85,1258,664"
+                         },
+                         {
+                             "Name":  "",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,121,1186,134"
+                         },
+                         {
+                             "Name":  "CoffeeManager · Trạng thái bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "117,145,523,46"
+                         },
+                         {
+                             "Name":  "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "117,203,572,28"
+                         },
+                         {
+                             "Name":  "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,279,1186,148"
+                         },
+                         {
+                             "Name":  "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "111,303,330,100"
+                         },
+                         {
+                             "Name":  "Mã khu vực · trống để xem tất cả",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "111,303,297,28"
+                         },
+                         {
+                             "Name":  "Mã khu vực · trống để xem tất cả",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "111,343,330,60"
+                         },
+                         {
+                             "Name":  "Mã khu vực",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Edit",
+                             "Bounds":  "126,355,300,27"
+                         },
+                         {
+                             "Name":  "Tải trạng thái bàn",
+                             "Enabled":  false,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Button",
+                             "Bounds":  "459,343,285,60"
+                         },
+                         {
+                             "Name":  "Hủy tải",
+                             "Enabled":  false,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Button",
+                             "Bounds":  "762,343,165,60"
+                         },
+                         {
+                             "Name":  "Chưa thiết lập kết nối. Cần cấu hình tài khoản ứng dụng trước khi tải dữ liệu.",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "87,445,1186,64"
+                         },
+                         {
+                             "Name":  "Chưa thiết lập kết nối. Cần cấu hình tài khoản ứng dụng trước khi tải dữ liệu.",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,527,1186,186"
+                         },
+                         {
+                             "Name":  "Nội dung danh sách bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,605,1186,108"
+                         },
+                         {
+                             "Name":  "Trạng thái danh sách bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "111,605,818,132"
+                         },
+                         {
+                             "Name":  "Chưa thiết lập kết nối. Cần cấu hình tài khoản ứng dụng trước khi tải dữ liệu.",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.DataGrid",
+                             "Bounds":  "111,605,1138,84"
+                         },
+                         {
+                             "Name":  "Top Row",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Custom",
+                             "Bounds":  "111,605,1138,40"
+                         },
+                         {
+                             "Name":  "Mã bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Header",
+                             "Bounds":  "111,605,228,40"
+                         },
+                         {
+                             "Name":  "Tên bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Header",
+                             "Bounds":  "339,605,227,40"
+                         },
+                         {
+                             "Name":  "Khu vực",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Header",
+                             "Bounds":  "566,605,226,40"
+                         },
+                         {
+                             "Name":  "Trạng thái",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Header",
+                             "Bounds":  "792,605,229,40"
+                         },
+                         {
+                             "Name":  "Hóa đơn mở",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Header",
+                             "Bounds":  "1021,605,228,40"
+                         },
+                         {
+                             "Name":  "Danh sách bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "87,527,1186,78"
+                         }
+                     ]
+    },
+    {
+        "State":  "unconfigured-1366x768",
+        "Dpi":  144,
+        "Bounds":  "40,40,1366,768",
+        "Controls":  [
+                         {
+                             "Name":  "",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "51,85,1344,712"
+                         },
+                         {
+                             "Name":  "",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,121,1272,134"
+                         },
+                         {
+                             "Name":  "CoffeeManager · Trạng thái bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "117,145,523,46"
+                         },
+                         {
+                             "Name":  "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "117,203,572,28"
+                         },
+                         {
+                             "Name":  "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,279,1272,148"
+                         },
+                         {
+                             "Name":  "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "111,303,330,100"
+                         },
+                         {
+                             "Name":  "Mã khu vực · trống để xem tất cả",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "111,303,297,28"
+                         },
+                         {
+                             "Name":  "Mã khu vực · trống để xem tất cả",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "111,343,330,60"
+                         },
+                         {
+                             "Name":  "Mã khu vực",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Edit",
+                             "Bounds":  "126,355,300,27"
+                         },
+                         {
+                             "Name":  "Tải trạng thái bàn",
+                             "Enabled":  false,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Button",
+                             "Bounds":  "459,343,285,60"
+                         },
+                         {
+                             "Name":  "Hủy tải",
+                             "Enabled":  false,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Button",
+                             "Bounds":  "762,343,165,60"
+                         },
+                         {
+                             "Name":  "Chưa thiết lập kết nối. Cần cấu hình tài khoản ứng dụng trước khi tải dữ liệu.",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "87,445,1272,64"
+                         },
+                         {
+                             "Name":  "Chưa thiết lập kết nối. Cần cấu hình tài khoản ứng dụng trước khi tải dữ liệu.",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,527,1272,234"
+                         },
+                         {
+                             "Name":  "Nội dung danh sách bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,605,1272,156"
+                         },
+                         {
+                             "Name":  "Trạng thái danh sách bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "111,605,818,132"
+                         },
+                         {
+                             "Name":  "Chưa thiết lập kết nối. Cần cấu hình tài khoản ứng dụng trước khi tải dữ liệu.",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.DataGrid",
+                             "Bounds":  "111,605,1224,132"
+                         },
+                         {
+                             "Name":  "Top Row",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Custom",
+                             "Bounds":  "111,605,1224,40"
+                         },
+                         {
+                             "Name":  "Mã bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Header",
+                             "Bounds":  "111,605,244,40"
+                         },
+                         {
+                             "Name":  "Tên bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Header",
+                             "Bounds":  "355,605,245,40"
+                         },
+                         {
+                             "Name":  "Khu vực",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Header",
+                             "Bounds":  "600,605,243,40"
+                         },
+                         {
+                             "Name":  "Trạng thái",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Header",
+                             "Bounds":  "843,605,246,40"
+                         },
+                         {
+                             "Name":  "Hóa đơn mở",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Header",
+                             "Bounds":  "1089,605,246,40"
+                         },
+                         {
+                             "Name":  "Danh sách bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "87,527,1272,78"
+                         }
+                     ]
+    },
+    {
+        "State":  "unconfigured-1280x720-before-scroll",
+        "Dpi":  144,
+        "Bounds":  "40,40,1280,720",
+        "Controls":  [
+                         {
+                             "Name":  "",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "51,85,1258,664"
+                         },
+                         {
+                             "Name":  "",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,121,1186,134"
+                         },
+                         {
+                             "Name":  "CoffeeManager · Trạng thái bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "117,145,523,46"
+                         },
+                         {
+                             "Name":  "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "117,203,572,28"
+                         },
+                         {
+                             "Name":  "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,279,1186,148"
+                         },
+                         {
+                             "Name":  "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "111,303,330,100"
+                         },
+                         {
+                             "Name":  "Mã khu vực · trống để xem tất cả",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "111,303,297,28"
+                         },
+                         {
+                             "Name":  "Mã khu vực · trống để xem tất cả",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "111,343,330,60"
+                         },
+                         {
+                             "Name":  "Mã khu vực",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Edit",
+                             "Bounds":  "126,355,300,27"
+                         },
+                         {
+                             "Name":  "Tải trạng thái bàn",
+                             "Enabled":  false,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Button",
+                             "Bounds":  "459,343,285,60"
+                         },
+                         {
+                             "Name":  "Hủy tải",
+                             "Enabled":  false,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Button",
+                             "Bounds":  "762,343,165,60"
+                         },
+                         {
+                             "Name":  "Chưa thiết lập kết nối. Cần cấu hình tài khoản ứng dụng trước khi tải dữ liệu.",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "87,445,1186,64"
+                         },
+                         {
+                             "Name":  "Chưa thiết lập kết nối. Cần cấu hình tài khoản ứng dụng trước khi tải dữ liệu.",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,527,1186,186"
+                         },
+                         {
+                             "Name":  "Nội dung danh sách bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,605,1186,108"
+                         },
+                         {
+                             "Name":  "Trạng thái danh sách bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "111,605,818,132"
+                         },
+                         {
+                             "Name":  "Chưa thiết lập kết nối. Cần cấu hình tài khoản ứng dụng trước khi tải dữ liệu.",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.DataGrid",
+                             "Bounds":  "111,605,1138,84"
+                         },
+                         {
+                             "Name":  "Top Row",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Custom",
+                             "Bounds":  "111,605,1138,40"
+                         },
+                         {
+                             "Name":  "Mã bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Header",
+                             "Bounds":  "111,605,228,40"
+                         },
+                         {
+                             "Name":  "Tên bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Header",
+                             "Bounds":  "339,605,227,40"
+                         },
+                         {
+                             "Name":  "Khu vực",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Header",
+                             "Bounds":  "566,605,228,40"
+                         },
+                         {
+                             "Name":  "Trạng thái",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Header",
+                             "Bounds":  "794,605,227,40"
+                         },
+                         {
+                             "Name":  "Hóa đơn mở",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Header",
+                             "Bounds":  "1021,605,228,40"
+                         },
+                         {
+                             "Name":  "Danh sách bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "87,527,1186,78"
+                         }
+                     ]
+    },
+    {
+        "State":  "unconfigured-1280x720-after-scroll",
+        "Dpi":  144,
+        "Bounds":  "40,40,1280,720",
+        "Controls":  [
+                         {
+                             "Name":  "",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "51,85,1258,664"
+                         },
+                         {
+                             "Name":  "",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,121,1186,134"
+                         },
+                         {
+                             "Name":  "CoffeeManager · Trạng thái bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "117,145,523,46"
+                         },
+                         {
+                             "Name":  "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "117,203,572,28"
+                         },
+                         {
+                             "Name":  "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,279,1186,148"
+                         },
+                         {
+                             "Name":  "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "111,303,330,100"
+                         },
+                         {
+                             "Name":  "Mã khu vực · trống để xem tất cả",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "111,303,297,28"
+                         },
+                         {
+                             "Name":  "Mã khu vực · trống để xem tất cả",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "111,343,330,60"
+                         },
+                         {
+                             "Name":  "Mã khu vực",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Edit",
+                             "Bounds":  "126,355,300,27"
+                         },
+                         {
+                             "Name":  "Tải trạng thái bàn",
+                             "Enabled":  false,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Button",
+                             "Bounds":  "459,343,285,60"
+                         },
+                         {
+                             "Name":  "Hủy tải",
+                             "Enabled":  false,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Button",
+                             "Bounds":  "762,343,165,60"
+                         },
+                         {
+                             "Name":  "Chưa thiết lập kết nối. Cần cấu hình tài khoản ứng dụng trước khi tải dữ liệu.",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "87,445,1186,64"
+                         },
+                         {
+                             "Name":  "Chưa thiết lập kết nối. Cần cấu hình tài khoản ứng dụng trước khi tải dữ liệu.",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,527,1186,186"
+                         },
+                         {
+                             "Name":  "Nội dung danh sách bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,605,1186,108"
+                         },
+                         {
+                             "Name":  "Trạng thái danh sách bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "111,605,818,132"
+                         },
+                         {
+                             "Name":  "Chưa thiết lập kết nối. Cần cấu hình tài khoản ứng dụng trước khi tải dữ liệu.",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.DataGrid",
+                             "Bounds":  "111,605,1138,84"
+                         },
+                         {
+                             "Name":  "Top Row",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Custom",
+                             "Bounds":  "111,605,1138,40"
+                         },
+                         {
+                             "Name":  "Mã bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Header",
+                             "Bounds":  "111,605,228,40"
+                         },
+                         {
+                             "Name":  "Tên bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Header",
+                             "Bounds":  "339,605,227,40"
+                         },
+                         {
+                             "Name":  "Khu vực",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Header",
+                             "Bounds":  "566,605,228,40"
+                         },
+                         {
+                             "Name":  "Trạng thái",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Header",
+                             "Bounds":  "794,605,227,40"
+                         },
+                         {
+                             "Name":  "Hóa đơn mở",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Header",
+                             "Bounds":  "1021,605,228,40"
+                         },
+                         {
+                             "Name":  "Danh sách bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "87,527,1186,78"
+                         }
+                     ]
+    },
+    {
+        "State":  "connection-error-1280x720",
+        "Dpi":  144,
+        "Bounds":  "40,40,1280,720",
+        "Controls":  [
+                         {
+                             "Name":  "",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "51,85,1258,664"
+                         },
+                         {
+                             "Name":  "",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,121,1186,134"
+                         },
+                         {
+                             "Name":  "CoffeeManager · Trạng thái bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "117,145,523,46"
+                         },
+                         {
+                             "Name":  "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "117,203,572,28"
+                         },
+                         {
+                             "Name":  "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,279,1186,148"
+                         },
+                         {
+                             "Name":  "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "111,303,330,100"
+                         },
+                         {
+                             "Name":  "Mã khu vực · trống để xem tất cả",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "111,303,297,28"
+                         },
+                         {
+                             "Name":  "Mã khu vực · trống để xem tất cả",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "111,343,330,60"
+                         },
+                         {
+                             "Name":  "Mã khu vực",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Edit",
+                             "Bounds":  "126,355,300,27"
+                         },
+                         {
+                             "Name":  "Tải trạng thái bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Button",
+                             "Bounds":  "459,343,285,60"
+                         },
+                         {
+                             "Name":  "Hủy tải",
+                             "Enabled":  false,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Button",
+                             "Bounds":  "762,343,165,60"
+                         },
+                         {
+                             "Name":  "Sẵn sàng tải trạng thái bàn (mẫu nền G01, chưa đăng nhập).",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "87,445,1186,64"
+                         },
+                         {
+                             "Name":  "Sẵn sàng tải trạng thái bàn (mẫu nền G01, chưa đăng nhập).",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,527,1186,186"
+                         },
+                         {
+                             "Name":  "Nội dung danh sách bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,605,1186,108"
+                         },
+                         {
+                             "Name":  "Trạng thái danh sách bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "111,605,656,132"
+                         },
+                         {
+                             "Name":  "Sẵn sàng tải trạng thái bàn (mẫu nền G01, chưa đăng nhập).",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.DataGrid",
+                             "Bounds":  "111,605,1138,84"
+                         },
+                         {
+                             "Name":  "Top Row",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Custom",
+                             "Bounds":  "111,605,1138,40"
+                         },
+                         {
+                             "Name":  "Mã bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Header",
+                             "Bounds":  "111,605,228,40"
+                         },
+                         {
+                             "Name":  "Tên bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Header",
+                             "Bounds":  "339,605,227,40"
+                         },
+                         {
+                             "Name":  "Khu vực",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Header",
+                             "Bounds":  "566,605,226,40"
+                         },
+                         {
+                             "Name":  "Trạng thái",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Header",
+                             "Bounds":  "792,605,229,40"
+                         },
+                         {
+                             "Name":  "Hóa đơn mở",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Header",
+                             "Bounds":  "1021,605,228,40"
+                         },
+                         {
+                             "Name":  "Danh sách bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "87,527,1186,78"
+                         }
+                     ]
+    },
+    {
+        "State":  "connection-error-1366x768",
+        "Dpi":  144,
+        "Bounds":  "40,40,1366,768",
+        "Controls":  [
+                         {
+                             "Name":  "",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "51,85,1344,712"
+                         },
+                         {
+                             "Name":  "",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,121,1272,134"
+                         },
+                         {
+                             "Name":  "CoffeeManager · Trạng thái bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "117,145,523,46"
+                         },
+                         {
+                             "Name":  "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "117,203,572,28"
+                         },
+                         {
+                             "Name":  "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,279,1272,148"
+                         },
+                         {
+                             "Name":  "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "111,303,330,100"
+                         },
+                         {
+                             "Name":  "Mã khu vực · trống để xem tất cả",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "111,303,297,28"
+                         },
+                         {
+                             "Name":  "Mã khu vực · trống để xem tất cả",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "111,343,330,60"
+                         },
+                         {
+                             "Name":  "Mã khu vực",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Edit",
+                             "Bounds":  "126,355,300,27"
+                         },
+                         {
+                             "Name":  "Tải trạng thái bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Button",
+                             "Bounds":  "459,343,285,60"
+                         },
+                         {
+                             "Name":  "Hủy tải",
+                             "Enabled":  false,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Button",
+                             "Bounds":  "762,343,165,60"
+                         },
+                         {
+                             "Name":  "Sẵn sàng tải trạng thái bàn (mẫu nền G01, chưa đăng nhập).",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "87,445,1272,64"
+                         },
+                         {
+                             "Name":  "Sẵn sàng tải trạng thái bàn (mẫu nền G01, chưa đăng nhập).",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,527,1272,234"
+                         },
+                         {
+                             "Name":  "Nội dung danh sách bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,605,1272,156"
+                         },
+                         {
+                             "Name":  "Trạng thái danh sách bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "111,605,656,132"
+                         },
+                         {
+                             "Name":  "Sẵn sàng tải trạng thái bàn (mẫu nền G01, chưa đăng nhập).",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.DataGrid",
+                             "Bounds":  "111,605,1224,132"
+                         },
+                         {
+                             "Name":  "Top Row",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Custom",
+                             "Bounds":  "111,605,1224,40"
+                         },
+                         {
+                             "Name":  "Mã bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Header",
+                             "Bounds":  "111,605,244,40"
+                         },
+                         {
+                             "Name":  "Tên bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Header",
+                             "Bounds":  "355,605,245,40"
+                         },
+                         {
+                             "Name":  "Khu vực",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Header",
+                             "Bounds":  "600,605,243,40"
+                         },
+                         {
+                             "Name":  "Trạng thái",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Header",
+                             "Bounds":  "843,605,246,40"
+                         },
+                         {
+                             "Name":  "Hóa đơn mở",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Header",
+                             "Bounds":  "1089,605,246,40"
+                         },
+                         {
+                             "Name":  "Danh sách bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "87,527,1272,78"
+                         }
+                     ]
+    },
+    {
+        "State":  "loading",
+        "Dpi":  144,
+        "Bounds":  "40,40,1366,768",
+        "Controls":  [
+                         {
+                             "Name":  "",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "51,85,1344,712"
+                         },
+                         {
+                             "Name":  "",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,121,1272,134"
+                         },
+                         {
+                             "Name":  "CoffeeManager · Trạng thái bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "117,145,523,46"
+                         },
+                         {
+                             "Name":  "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "117,203,572,28"
+                         },
+                         {
+                             "Name":  "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,279,1272,148"
+                         },
+                         {
+                             "Name":  "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "111,303,330,100"
+                         },
+                         {
+                             "Name":  "Mã khu vực · trống để xem tất cả",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "111,303,297,28"
+                         },
+                         {
+                             "Name":  "Mã khu vực · trống để xem tất cả",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "111,343,330,60"
+                         },
+                         {
+                             "Name":  "Mã khu vực",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Edit",
+                             "Bounds":  "126,355,300,27"
+                         },
+                         {
+                             "Name":  "Tải trạng thái bàn",
+                             "Enabled":  false,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Button",
+                             "Bounds":  "459,343,285,60"
+                         },
+                         {
+                             "Name":  "Hủy tải",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Button",
+                             "Bounds":  "762,343,165,60"
+                         },
+                         {
+                             "Name":  "Đang tải…",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "87,445,1272,64"
+                         },
+                         {
+                             "Name":  "Đang tải…",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,527,1272,234"
+                         },
+                         {
+                             "Name":  "Nội dung danh sách bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,605,1272,156"
+                         },
+                         {
+                             "Name":  "Trạng thái danh sách bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "111,605,556,132"
+                         },
+                         {
+                             "Name":  "Danh sách bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "87,527,1272,78"
+                         }
+                     ]
+    },
+    {
+        "State":  "connection-failed",
+        "Dpi":  144,
+        "Bounds":  "40,40,1366,768",
+        "Controls":  [
+                         {
+                             "Name":  "",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "51,85,1344,712"
+                         },
+                         {
+                             "Name":  "",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,121,1272,134"
+                         },
+                         {
+                             "Name":  "CoffeeManager · Trạng thái bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "117,145,523,46"
+                         },
+                         {
+                             "Name":  "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "117,203,572,28"
+                         },
+                         {
+                             "Name":  "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,279,1272,148"
+                         },
+                         {
+                             "Name":  "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "111,303,330,100"
+                         },
+                         {
+                             "Name":  "Mã khu vực · trống để xem tất cả",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "111,303,297,28"
+                         },
+                         {
+                             "Name":  "Mã khu vực · trống để xem tất cả",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "111,343,330,60"
+                         },
+                         {
+                             "Name":  "Mã khu vực",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Edit",
+                             "Bounds":  "126,355,300,27"
+                         },
+                         {
+                             "Name":  "Tải trạng thái bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Button",
+                             "Bounds":  "459,343,285,60"
+                         },
+                         {
+                             "Name":  "Hủy tải",
+                             "Enabled":  false,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Button",
+                             "Bounds":  "762,343,165,60"
+                         },
+                         {
+                             "Name":  "Chưa cập nhật: Có lỗi dữ liệu chưa xác định; tra mã hỗ trợ trước khi tiếp tục. (mã 258).",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "87,445,1272,64"
+                         },
+                         {
+                             "Name":  "Chưa cập nhật: Có lỗi dữ liệu chưa xác định; tra mã hỗ trợ trước khi tiếp tục. (mã 258).",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,527,1272,234"
+                         },
+                         {
+                             "Name":  "Nội dung danh sách bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Pane",
+                             "Bounds":  "87,605,1272,156"
+                         },
+                         {
+                             "Name":  "Trạng thái danh sách bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "111,605,481,132"
+                         },
+                         {
+                             "Name":  "Danh sách bàn",
+                             "Enabled":  true,
+                             "Offscreen":  false,
+                             "Type":  "ControlType.Text",
+                             "Bounds":  "87,527,1272,78"
+                         }
+                     ]
+    }
+]

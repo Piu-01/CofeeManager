@@ -1,0 +1,311 @@
+﻿[
+    {
+        "Scale":  100,
+        "Dpi":  96,
+        "Requested":  [
+                          1280,
+                          720
+                      ],
+        "Actual":  [
+                       1280,
+                       720
+                   ],
+        "ResizeError":  null,
+        "VisibleCapture":  false,
+        "SizeMatched":  true
+    },
+    {
+        "Scale":  100,
+        "Dpi":  96,
+        "Requested":  [
+                          1366,
+                          768
+                      ],
+        "Actual":  [
+                       1366,
+                       768
+                   ],
+        "ResizeError":  null,
+        "VisibleCapture":  true,
+        "SizeMatched":  true
+    },
+    {
+        "Scale":  100,
+        "Dpi":  96,
+        "Requested":  [
+                          1280,
+                          720
+                      ],
+        "Actual":  [
+                       1280,
+                       720
+                   ],
+        "ResizeError":  null,
+        "VisibleCapture":  true,
+        "SizeMatched":  true
+    },
+    {
+        "Scale":  100,
+        "Keyboard":  [
+                         {
+                             "Name":  "Tải trạng thái bàn",
+                             "Sent":  2,
+                             "ProcessId":  19984,
+                             "Type":  "ControlType.Button",
+                             "Key":  "{TAB}",
+                             "ExpectedPID":  19984
+                         },
+                         {
+                             "Name":  "Mã bàn Row 1, Not sorted.",
+                             "Sent":  2,
+                             "ProcessId":  19984,
+                             "Type":  "ControlType.DataItem",
+                             "Key":  "{TAB}",
+                             "ExpectedPID":  19984
+                         },
+                         {
+                             "ProcessId":  19984,
+                             "ExpectedPID":  19984,
+                             "Key":  "DOWN x3",
+                             "Name":  "Mã bàn Row 4, Not sorted.",
+                             "Type":  "ControlType.DataItem"
+                         },
+                         {
+                             "Name":  "Hóa đơn mở Row 3, Not sorted.",
+                             "Sent":  4,
+                             "ProcessId":  19984,
+                             "Type":  "ControlType.DataItem",
+                             "Key":  "+{TAB}",
+                             "ExpectedPID":  19984
+                         },
+                         {
+                             "ProcessId":  19984,
+                             "ExpectedPID":  19984,
+                             "Key":  "DOWN x3",
+                             "Name":  "Hóa đơn mở Row 4, Not sorted.",
+                             "Type":  "ControlType.DataItem"
+                         },
+                         {
+                             "Name":  "Trạng thái Row 4, Not sorted.",
+                             "Sent":  4,
+                             "ProcessId":  19984,
+                             "Type":  "ControlType.DataItem",
+                             "Key":  "+{TAB}",
+                             "ExpectedPID":  19984
+                         },
+                         {
+                             "ProcessId":  19984,
+                             "ExpectedPID":  19984,
+                             "Key":  "DOWN x3",
+                             "Name":  "Trạng thái Row 4, Not sorted.",
+                             "Type":  "ControlType.DataItem"
+                         }
+                     ]
+    },
+    {
+        "Scale":  125,
+        "Dpi":  120,
+        "Requested":  [
+                          1280,
+                          720
+                      ],
+        "Actual":  [
+                       1280,
+                       720
+                   ],
+        "ResizeError":  null,
+        "VisibleCapture":  true,
+        "SizeMatched":  true
+    },
+    {
+        "Scale":  125,
+        "Dpi":  120,
+        "Requested":  [
+                          1366,
+                          768
+                      ],
+        "Actual":  [
+                       1366,
+                       768
+                   ],
+        "ResizeError":  null,
+        "VisibleCapture":  true,
+        "SizeMatched":  true
+    },
+    {
+        "Scale":  125,
+        "Dpi":  120,
+        "Requested":  [
+                          1280,
+                          720
+                      ],
+        "Actual":  [
+                       1280,
+                       720
+                   ],
+        "ResizeError":  null,
+        "VisibleCapture":  true,
+        "SizeMatched":  true
+    },
+    {
+        "Scale":  125,
+        "Keyboard":  [
+                         {
+                             "Name":  "Tải trạng thái bàn",
+                             "Sent":  2,
+                             "ProcessId":  6196,
+                             "Type":  "ControlType.Button",
+                             "Key":  "{TAB}",
+                             "ExpectedPID":  6196
+                         },
+                         {
+                             "Name":  "Mã bàn Row 1, Not sorted.",
+                             "Sent":  2,
+                             "ProcessId":  6196,
+                             "Type":  "ControlType.DataItem",
+                             "Key":  "{TAB}",
+                             "ExpectedPID":  6196
+                         },
+                         {
+                             "ProcessId":  6196,
+                             "ExpectedPID":  6196,
+                             "Key":  "DOWN x3",
+                             "Name":  "Mã bàn Row 4, Not sorted.",
+                             "Type":  "ControlType.DataItem"
+                         },
+                         {
+                             "Name":  "Hóa đơn mở Row 3, Not sorted.",
+                             "Sent":  4,
+                             "ProcessId":  6196,
+                             "Type":  "ControlType.DataItem",
+                             "Key":  "+{TAB}",
+                             "ExpectedPID":  6196
+                         },
+                         {
+                             "ProcessId":  6196,
+                             "ExpectedPID":  6196,
+                             "Key":  "DOWN x3",
+                             "Name":  "Hóa đơn mở Row 4, Not sorted.",
+                             "Type":  "ControlType.DataItem"
+                         },
+                         {
+                             "Name":  "Trạng thái Row 4, Not sorted.",
+                             "Sent":  4,
+                             "ProcessId":  6196,
+                             "Type":  "ControlType.DataItem",
+                             "Key":  "+{TAB}",
+                             "ExpectedPID":  6196
+                         },
+                         {
+                             "ProcessId":  6196,
+                             "ExpectedPID":  6196,
+                             "Key":  "DOWN x3",
+                             "Name":  "Trạng thái Row 4, Not sorted.",
+                             "Type":  "ControlType.DataItem"
+                         }
+                     ]
+    },
+    {
+        "Scale":  150,
+        "Dpi":  144,
+        "Requested":  [
+                          1280,
+                          720
+                      ],
+        "Actual":  [
+                       1280,
+                       720
+                   ],
+        "ResizeError":  null,
+        "VisibleCapture":  true,
+        "SizeMatched":  true
+    },
+    {
+        "Scale":  150,
+        "Dpi":  144,
+        "Requested":  [
+                          1366,
+                          768
+                      ],
+        "Actual":  [
+                       1366,
+                       768
+                   ],
+        "ResizeError":  null,
+        "VisibleCapture":  true,
+        "SizeMatched":  true
+    },
+    {
+        "Scale":  150,
+        "Dpi":  144,
+        "Requested":  [
+                          1280,
+                          720
+                      ],
+        "Actual":  [
+                       1280,
+                       720
+                   ],
+        "ResizeError":  null,
+        "VisibleCapture":  true,
+        "SizeMatched":  true
+    },
+    {
+        "Scale":  150,
+        "Keyboard":  [
+                         {
+                             "Name":  "Tải trạng thái bàn",
+                             "Sent":  2,
+                             "ProcessId":  32096,
+                             "Type":  "ControlType.Button",
+                             "Key":  "{TAB}",
+                             "ExpectedPID":  32096
+                         },
+                         {
+                             "Name":  "Mã bàn Row 1, Not sorted.",
+                             "Sent":  2,
+                             "ProcessId":  32096,
+                             "Type":  "ControlType.DataItem",
+                             "Key":  "{TAB}",
+                             "ExpectedPID":  32096
+                         },
+                         {
+                             "ProcessId":  32096,
+                             "ExpectedPID":  32096,
+                             "Key":  "DOWN x3",
+                             "Name":  "Mã bàn Row 4, Not sorted.",
+                             "Type":  "ControlType.DataItem"
+                         },
+                         {
+                             "Name":  "Hóa đơn mở Row 3, Not sorted.",
+                             "Sent":  4,
+                             "ProcessId":  32096,
+                             "Type":  "ControlType.DataItem",
+                             "Key":  "+{TAB}",
+                             "ExpectedPID":  32096
+                         },
+                         {
+                             "ProcessId":  32096,
+                             "ExpectedPID":  32096,
+                             "Key":  "DOWN x3",
+                             "Name":  "Hóa đơn mở Row 4, Not sorted.",
+                             "Type":  "ControlType.DataItem"
+                         },
+                         {
+                             "Name":  "Trạng thái Row 4, Not sorted.",
+                             "Sent":  4,
+                             "ProcessId":  32096,
+                             "Type":  "ControlType.DataItem",
+                             "Key":  "+{TAB}",
+                             "ExpectedPID":  32096
+                         },
+                         {
+                             "ProcessId":  32096,
+                             "ExpectedPID":  32096,
+                             "Key":  "DOWN x3",
+                             "Name":  "Trạng thái Row 4, Not sorted.",
+                             "Type":  "ControlType.DataItem"
+                         }
+                     ]
+    }
+]

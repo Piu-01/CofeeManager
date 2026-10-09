@@ -1,0 +1,81 @@
+{
+    "Title":  "CoffeeManager · G01",
+    "Handle":  2099644,
+    "Controls":  [
+                     {
+                         "Name":  "",
+                         "Enabled":  true,
+                         "Type":  "ControlType.Pane"
+                     },
+                     {
+                         "Name":  "CoffeeManager · Nền kỹ thuật",
+                         "Enabled":  true,
+                         "Type":  "ControlType.Text"
+                     },
+                     {
+                         "Name":  "CoffeeManager · Nền kỹ thuật",
+                         "Enabled":  true,
+                         "Type":  "ControlType.Pane"
+                     },
+                     {
+                         "Name":  "Mã khu vực (trống: tất cả)",
+                         "Enabled":  true,
+                         "Type":  "ControlType.Text"
+                     },
+                     {
+                         "Name":  "Mã khu vực",
+                         "Enabled":  true,
+                         "Type":  "ControlType.Edit"
+                     },
+                     {
+                         "Name":  "Tải trạng thái bàn",
+                         "Enabled":  false,
+                         "Type":  "ControlType.Button"
+                     },
+                     {
+                         "Name":  "Hủy tải",
+                         "Enabled":  false,
+                         "Type":  "ControlType.Button"
+                     },
+                     {
+                         "Name":  "Chưa cấu hình CAFEMANAGER_APP_CONNECTION. Chọn tài khoản app riêng theo tài liệu database.",
+                         "Enabled":  true,
+                         "Type":  "ControlType.Text"
+                     },
+                     {
+                         "Name":  "Chưa cấu hình CAFEMANAGER_APP_CONNECTION. Chọn tài khoản app riêng theo tài liệu database.",
+                         "Enabled":  true,
+                         "Type":  "ControlType.DataGrid"
+                     },
+                     {
+                         "Name":  "Top Row",
+                         "Enabled":  true,
+                         "Type":  "ControlType.Custom"
+                     },
+                     {
+                         "Name":  "Mã bàn",
+                         "Enabled":  true,
+                         "Type":  "ControlType.Header"
+                     },
+                     {
+                         "Name":  "Tên bàn",
+                         "Enabled":  true,
+                         "Type":  "ControlType.Header"
+                     },
+                     {
+                         "Name":  "Khu vực",
+                         "Enabled":  true,
+                         "Type":  "ControlType.Header"
+                     },
+                     {
+                         "Name":  "Trạng thái DB",
+                         "Enabled":  true,
+                         "Type":  "ControlType.Header"
+                     },
+                     {
+                         "Name":  "Hóa đơn mở",
+                         "Enabled":  true,
+                         "Type":  "ControlType.Header"
+                     }
+                 ]
+}

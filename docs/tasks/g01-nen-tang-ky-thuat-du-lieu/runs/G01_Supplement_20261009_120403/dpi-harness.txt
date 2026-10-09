@@ -1,0 +1,69 @@
+param([string]$Root,[string]$Output,[string]$PreviewExe)
+$ErrorActionPreference='Stop'
+Add-Type -AssemblyName UIAutomationClient
+Add-Type -AssemblyName UIAutomationTypes
+Add-Type -AssemblyName System.Drawing
+Add-Type -AssemblyName System.Windows.Forms
+Add-Type @'
+using System;
+using System.Runtime.InteropServices;
+public static class DpiCapture {
+ [DllImport("user32.dll")] public static extern IntPtr SetThreadDpiAwarenessContext(IntPtr c);
+ [DllImport("user32.dll")] public static extern uint GetDpiForWindow(IntPtr h);
+ [DllImport("user32.dll")] public static extern bool PrintWindow(IntPtr h,IntPtr dc,uint flags);
+ [DllImport("user32.dll")] public static extern bool SetForegroundWindow(IntPtr h);
+ [DllImport("user32.dll")] public static extern IntPtr GetForegroundWindow();
+}
+'@
+[void][DpiCapture]::SetThreadDpiAwarenessContext([IntPtr]::new(-4))
+function Settings-Window {
+ return [System.Windows.Automation.AutomationElement]::RootElement.FindFirst([System.Windows.Automation.TreeScope]::Children,[System.Windows.Automation.PropertyCondition]::new([System.Windows.Automation.AutomationElement]::NameProperty,'Settings'))
+}
+function Set-Scale([string]$Name) {
+ $w=Settings-Window
+ $combo=$w.FindFirst([System.Windows.Automation.TreeScope]::Descendants,[System.Windows.Automation.PropertyCondition]::new([System.Windows.Automation.AutomationElement]::AutomationIdProperty,'SystemSettings_Display_Scaling_ItemSizeOverride_ComboBox'))
+ ([System.Windows.Automation.ExpandCollapsePattern]$combo.GetCurrentPattern([System.Windows.Automation.ExpandCollapsePattern]::Pattern)).Expand()
+ Start-Sleep -Milliseconds 200
+ $item=[System.Windows.Automation.AutomationElement]::RootElement.FindFirst([System.Windows.Automation.TreeScope]::Descendants,[System.Windows.Automation.PropertyCondition]::new([System.Windows.Automation.AutomationElement]::NameProperty,$Name))
+ if($null -eq $item){throw "Scale item missing: $Name"}
+ ([System.Windows.Automation.SelectionItemPattern]$item.GetCurrentPattern([System.Windows.Automation.SelectionItemPattern]::Pattern)).Select()
+ Start-Sleep -Seconds 2
+}
+$results=[Collections.Generic.List[object]]::new()
+try {
+ foreach($scale in @(100,150)) {
+  Set-Scale "$scale%"
+  $p=Start-Process $PreviewExe -PassThru
+  try {
+   for($i=0;$i -lt 100;$i++){$p.Refresh();if($p.MainWindowHandle -ne [IntPtr]::Zero){break};Start-Sleep -Milliseconds 100}
+   Start-Sleep -Milliseconds 500
+   $w=[System.Windows.Automation.AutomationElement]::FromHandle($p.MainWindowHandle)
+   $transform=[System.Windows.Automation.TransformPattern]$w.GetCurrentPattern([System.Windows.Automation.TransformPattern]::Pattern)
+   foreach($size in @(@(1280,720),@(1366,768))) {
+    $error=$null
+    try {$transform.Resize($size[0],$size[1])} catch {$error=$_.Exception.Message}
+    Start-Sleep -Milliseconds 300
+    $r=$w.Current.BoundingRectangle
+    $b=[Drawing.Bitmap]::new([int]$r.Width,[int]$r.Height);$g=[Drawing.Graphics]::FromImage($b)
+    try {$dc=$g.GetHdc();try {[void][DpiCapture]::PrintWindow($p.MainWindowHandle,$dc,2)} finally {$g.ReleaseHdc($dc)};$b.Save((Join-Path $Output "dpi$scale-$($size[0])x$($size[1]).png"),[Drawing.Imaging.ImageFormat]::Png)} finally {$g.Dispose();$b.Dispose()}
+    $results.Add([ordered]@{Scale=$scale;Dpi=[DpiCapture]::GetDpiForWindow($p.MainWindowHandle);Requested=@($size);Actual=@($r.Width,$r.Height);ResizeError=$error;SizeMatched=($r.Width -eq $size[0] -and $r.Height -eq $size[1])})
+   }
+   $focusResults=@()
+   $edit=$w.FindFirst([System.Windows.Automation.TreeScope]::Descendants,[System.Windows.Automation.PropertyCondition]::new([System.Windows.Automation.AutomationElement]::ControlTypeProperty,[System.Windows.Automation.ControlType]::Edit))
+   [void][DpiCapture]::SetForegroundWindow($p.MainWindowHandle);$edit.SetFocus();Start-Sleep -Milliseconds 200
+   if([DpiCapture]::GetForegroundWindow() -ne $p.MainWindowHandle){$focusResults+='BLOCKED: app not foreground'}
+   else {
+    foreach($key in @('{TAB}','{TAB}','+{TAB}','+{TAB}')) {
+     [Windows.Forms.SendKeys]::SendWait($key);Start-Sleep -Milliseconds 100
+     $focused=[System.Windows.Automation.AutomationElement]::FocusedElement
+     $focusResults+=@{Key=$key;Name=$focused.Current.Name;Type=$focused.Current.ControlType.ProgrammaticName;ProcessId=$focused.Current.ProcessId}
+    }
+   }
+   $results.Add([ordered]@{Scale=$scale;Keyboard=$focusResults})
+   [void]$p.CloseMainWindow();[void]$p.WaitForExit(5000)
+  } finally {if(-not $p.HasExited){[void]$p.CloseMainWindow()}}
+ }
+} finally {
+ Set-Scale '125% (Recommended)'
+ $results|ConvertTo-Json -Depth 7|Set-Content (Join-Path $Output 'dpi-keyboard.json') -Encoding UTF8
+}

@@ -1,0 +1,71 @@
+{
+    "RunId":  "20261008_221536_f995bfc1",
+    "Stage":  "PASS T03-K07-direct-writes",
+    "Databases":  [
+                      "CoffeeManager_Test_T03_20261008_221536_f995bfc1",
+                      "CoffeeManager_Test_T03_20261008_221536_f995bfc1_empty"
+                  ],
+    "Cases":  [
+                  {
+                      "Id":  "T03-K01-seed",
+                      "Status":  "PASS",
+                      "Expected":  "Migration preserves all baseline rows and trusted FK.",
+                      "Actual":  "Assertions passed."
+                  },
+                  {
+                      "Id":  "T03-K01-empty",
+                      "Status":  "PASS",
+                      "Expected":  "Migration applies to empty schema.",
+                      "Actual":  "Assertions passed."
+                  },
+                  {
+                      "Id":  "T03-K01-rollback",
+                      "Status":  "PASS",
+                      "Expected":  "Late DDL failure rolls back object and version.",
+                      "Actual":  "Assertions passed."
+                  },
+                  {
+                      "Id":  "T03-K02-repeat",
+                      "Status":  "PASS",
+                      "Expected":  "Repeat returns AlreadyApplied and retains sequence current value.",
+                      "Actual":  "Assertions passed."
+                  },
+                  {
+                      "Id":  "T03-K02-checksum",
+                      "Status":  "PASS",
+                      "Expected":  "Same version with altered bytes is refused.",
+                      "Actual":  "Assertions passed."
+                  },
+                  {
+                      "Id":  "T03-K03-concurrent",
+                      "Status":  "FAIL",
+                      "Expected":  "Two overlapping sessions return 100 unique HD codes absent from seed.",
+                      "Actual":  "Method invocation failed because [System.Data.Common.DataRecordInternal] does not contain a method named \u0027Dispose\u0027."
+                  },
+                  {
+                      "Id":  "T03-K04-limits",
+                      "Status":  "PASS",
+                      "Expected":  "DM/NV last code accepted, next call fails explicitly; unknown source refused.",
+                      "Actual":  "Assertions passed."
+                  },
+                  {
+                      "Id":  "T03-K05-gap",
+                      "Status":  "PASS",
+                      "Expected":  "Rolled back invoice absent; later code differs.",
+                      "Actual":  "Assertions passed."
+                  },
+                  {
+                      "Id":  "T03-K06-permissions",
+                      "Status":  "PASS",
+                      "Expected":  "App user reads views and executes existing procedures with ownership chain.",
+                      "Actual":  "Assertions passed."
+                  },
+                  {
+                      "Id":  "T03-K07-direct-writes",
+                      "Status":  "PASS",
+                      "Expected":  "All protected table writes fail with permission error and unchanged rows.",
+                      "Actual":  "Assertions passed."
+                  }
+              ],
+    "UpdatedAt":  "2026-10-08T22:15:46.2417425+07:00"
+}

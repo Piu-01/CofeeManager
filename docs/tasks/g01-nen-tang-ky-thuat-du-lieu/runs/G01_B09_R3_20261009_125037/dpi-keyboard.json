@@ -1,0 +1,269 @@
+﻿[
+    {
+        "Scale":  100,
+        "Dpi":  96,
+        "Requested":  [
+                          1280,
+                          720
+                      ],
+        "Actual":  [
+                       1280,
+                       720
+                   ],
+        "ResizeError":  null,
+        "VisibleCapture":  false,
+        "SizeMatched":  true
+    },
+    {
+        "Scale":  100,
+        "Dpi":  96,
+        "Requested":  [
+                          1366,
+                          768
+                      ],
+        "Actual":  [
+                       1366,
+                       768
+                   ],
+        "ResizeError":  null,
+        "VisibleCapture":  true,
+        "SizeMatched":  true
+    },
+    {
+        "Scale":  100,
+        "Dpi":  96,
+        "Requested":  [
+                          1280,
+                          720
+                      ],
+        "Actual":  [
+                       1280,
+                       720
+                   ],
+        "ResizeError":  null,
+        "VisibleCapture":  true,
+        "SizeMatched":  true
+    },
+    {
+        "Scale":  100,
+        "Keyboard":  [
+                         {
+                             "Name":  "Tải trạng thái bàn",
+                             "Sent":  2,
+                             "ProcessId":  33284,
+                             "Type":  "ControlType.Button",
+                             "Key":  "{TAB}",
+                             "ExpectedPID":  33284
+                         },
+                         {
+                             "Name":  "Mã bàn Row 1, Not sorted.",
+                             "Sent":  2,
+                             "ProcessId":  33284,
+                             "Type":  "ControlType.DataItem",
+                             "Key":  "{TAB}",
+                             "ExpectedPID":  33284
+                         },
+                         {
+                             "Name":  "Tải trạng thái bàn",
+                             "Sent":  4,
+                             "ProcessId":  33284,
+                             "Type":  "ControlType.Button",
+                             "Key":  "+{TAB}",
+                             "ExpectedPID":  33284
+                         },
+                         {
+                             "Name":  "Mã khu vực",
+                             "Sent":  4,
+                             "ProcessId":  33284,
+                             "Type":  "ControlType.Edit",
+                             "Key":  "+{TAB}",
+                             "ExpectedPID":  33284
+                         },
+                         {
+                             "ProcessId":  33284,
+                             "ExpectedPID":  33284,
+                             "Key":  "Grid DOWN x3 after tab cycle",
+                             "Name":  "Mã bàn Row 4, Not sorted.",
+                             "Type":  "ControlType.DataItem"
+                         }
+                     ]
+    },
+    {
+        "Scale":  125,
+        "Dpi":  120,
+        "Requested":  [
+                          1280,
+                          720
+                      ],
+        "Actual":  [
+                       1280,
+                       720
+                   ],
+        "ResizeError":  null,
+        "VisibleCapture":  true,
+        "SizeMatched":  true
+    },
+    {
+        "Scale":  125,
+        "Dpi":  120,
+        "Requested":  [
+                          1366,
+                          768
+                      ],
+        "Actual":  [
+                       1366,
+                       768
+                   ],
+        "ResizeError":  null,
+        "VisibleCapture":  true,
+        "SizeMatched":  true
+    },
+    {
+        "Scale":  125,
+        "Dpi":  120,
+        "Requested":  [
+                          1280,
+                          720
+                      ],
+        "Actual":  [
+                       1280,
+                       720
+                   ],
+        "ResizeError":  null,
+        "VisibleCapture":  true,
+        "SizeMatched":  true
+    },
+    {
+        "Scale":  125,
+        "Keyboard":  [
+                         {
+                             "Name":  "Tải trạng thái bàn",
+                             "Sent":  2,
+                             "ProcessId":  31592,
+                             "Type":  "ControlType.Button",
+                             "Key":  "{TAB}",
+                             "ExpectedPID":  31592
+                         },
+                         {
+                             "Name":  "Mã bàn Row 1, Not sorted.",
+                             "Sent":  2,
+                             "ProcessId":  31592,
+                             "Type":  "ControlType.DataItem",
+                             "Key":  "{TAB}",
+                             "ExpectedPID":  31592
+                         },
+                         {
+                             "Name":  "Tải trạng thái bàn",
+                             "Sent":  4,
+                             "ProcessId":  31592,
+                             "Type":  "ControlType.Button",
+                             "Key":  "+{TAB}",
+                             "ExpectedPID":  31592
+                         },
+                         {
+                             "Name":  "Mã khu vực",
+                             "Sent":  4,
+                             "ProcessId":  31592,
+                             "Type":  "ControlType.Edit",
+                             "Key":  "+{TAB}",
+                             "ExpectedPID":  31592
+                         },
+                         {
+                             "ProcessId":  31592,
+                             "ExpectedPID":  31592,
+                             "Key":  "Grid DOWN x3 after tab cycle",
+                             "Name":  "Mã bàn Row 4, Not sorted.",
+                             "Type":  "ControlType.DataItem"
+                         }
+                     ]
+    },
+    {
+        "Scale":  150,
+        "Dpi":  144,
+        "Requested":  [
+                          1280,
+                          720
+                      ],
+        "Actual":  [
+                       1280,
+                       720
+                   ],
+        "ResizeError":  null,
+        "VisibleCapture":  true,
+        "SizeMatched":  true
+    },
+    {
+        "Scale":  150,
+        "Dpi":  144,
+        "Requested":  [
+                          1366,
+                          768
+                      ],
+        "Actual":  [
+                       1366,
+                       768
+                   ],
+        "ResizeError":  null,
+        "VisibleCapture":  true,
+        "SizeMatched":  true
+    },
+    {
+        "Scale":  150,
+        "Dpi":  144,
+        "Requested":  [
+                          1280,
+                          720
+                      ],
+        "Actual":  [
+                       1280,
+                       720
+                   ],
+        "ResizeError":  null,
+        "VisibleCapture":  true,
+        "SizeMatched":  true
+    },
+    {
+        "Scale":  150,
+        "Keyboard":  [
+                         {
+                             "Name":  "Tải trạng thái bàn",
+                             "Sent":  2,
+                             "ProcessId":  17652,
+                             "Type":  "ControlType.Button",
+                             "Key":  "{TAB}",
+                             "ExpectedPID":  17652
+                         },
+                         {
+                             "Name":  "Mã bàn Row 1, Not sorted.",
+                             "Sent":  2,
+                             "ProcessId":  17652,
+                             "Type":  "ControlType.DataItem",
+                             "Key":  "{TAB}",
+                             "ExpectedPID":  17652
+                         },
+                         {
+                             "Name":  "Tải trạng thái bàn",
+                             "Sent":  4,
+                             "ProcessId":  17652,
+                             "Type":  "ControlType.Button",
+                             "Key":  "+{TAB}",
+                             "ExpectedPID":  17652
+                         },
+                         {
+                             "Name":  "Mã khu vực",
+                             "Sent":  4,
+                             "ProcessId":  17652,
+                             "Type":  "ControlType.Edit",
+                             "Key":  "+{TAB}",
+                             "ExpectedPID":  17652
+                         },
+                         {
+                             "ProcessId":  17652,
+                             "ExpectedPID":  17652,
+                             "Key":  "Grid DOWN x3 after tab cycle",
+                             "Name":  "Mã bàn Row 4, Not sorted.",
+                             "Type":  "ControlType.DataItem"
+                         }
+                     ]
+    }
+]

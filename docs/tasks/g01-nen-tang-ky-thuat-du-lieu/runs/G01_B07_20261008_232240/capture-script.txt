@@ -1,0 +1,63 @@
+param([string]$Root,[string]$Output,[string]$PreviewExe)
+$ErrorActionPreference='Stop'
+Add-Type -AssemblyName UIAutomationClient
+Add-Type -AssemblyName UIAutomationTypes
+Add-Type -AssemblyName System.Drawing
+Add-Type @'
+using System;
+using System.Runtime.InteropServices;
+public static class B07Window {
+ [DllImport("user32.dll")] public static extern bool SetForegroundWindow(IntPtr h);
+ [DllImport("user32.dll")] public static extern bool MoveWindow(IntPtr h,int x,int y,int w,int ht,bool repaint);
+ [DllImport("user32.dll")] public static extern uint GetDpiForWindow(IntPtr h);
+ [DllImport("user32.dll")] public static extern IntPtr SetThreadDpiAwarenessContext(IntPtr value);
+ [DllImport("user32.dll")] public static extern bool PrintWindow(IntPtr h,IntPtr dc,uint flags);
+}
+'@
+[void][B07Window]::SetThreadDpiAwarenessContext([IntPtr]::new(-4))
+$saved=$env:CAFEMANAGER_APP_CONNECTION
+$results=[Collections.Generic.List[object]]::new()
+function Save-Window($Process,[string]$Name) {
+ $Process.Refresh()
+ $window=[System.Windows.Automation.AutomationElement]::FromHandle($Process.MainWindowHandle)
+ $r=$window.Current.BoundingRectangle
+ $bitmap=[Drawing.Bitmap]::new([int]$r.Width,[int]$r.Height)
+ $graphics=[Drawing.Graphics]::FromImage($bitmap)
+ try {$dc=$graphics.GetHdc();try {if(-not [B07Window]::PrintWindow($Process.MainWindowHandle,$dc,2)){throw 'PrintWindow failed'}} finally {$graphics.ReleaseHdc($dc)};$bitmap.Save((Join-Path $Output "$Name.png"),[Drawing.Imaging.ImageFormat]::Png)} finally {$graphics.Dispose();$bitmap.Dispose()}
+ $items=$window.FindAll([System.Windows.Automation.TreeScope]::Descendants,[System.Windows.Automation.Condition]::TrueCondition)
+ $controls=@($items|ForEach-Object {[ordered]@{Name=$_.Current.Name;Enabled=$_.Current.IsEnabled;Offscreen=$_.Current.IsOffscreen;Type=$_.Current.ControlType.ProgrammaticName;Bounds=[string]$_.Current.BoundingRectangle}})
+ $results.Add([ordered]@{State=$Name;Dpi=[B07Window]::GetDpiForWindow($Process.MainWindowHandle);Bounds=[string]$r;Controls=$controls})
+ return $window
+}
+try {
+ $states=if($PreviewExe){@('grid-demo')}else{@('unconfigured','connection-error')}
+ foreach($state in $states) {
+  if($state -eq 'unconfigured') {$env:CAFEMANAGER_APP_CONNECTION=$null}
+  else {$env:CAFEMANAGER_APP_CONNECTION='Server=127.0.0.1,1;Initial Catalog=CoffeeManager_Test_Unavailable;Integrated Security=True;Encrypt=True;Connect Timeout=1'}
+  $exe=if($PreviewExe){$PreviewExe}else{Join-Path $Root 'src/CafeManager.WinForms/bin/Debug/net10.0-windows/CafeManager.WinForms.exe'}
+  $p=Start-Process $exe -PassThru
+  try {
+   for($i=0;$i -lt 100;$i++) {$p.Refresh();if($p.MainWindowHandle -ne [IntPtr]::Zero){break};if($p.HasExited){throw 'App exited early'};Start-Sleep -Milliseconds 100}
+   [void][B07Window]::SetForegroundWindow($p.MainWindowHandle)
+   foreach($size in @(@(1280,720),@(1366,768))) {
+    [void][B07Window]::MoveWindow($p.MainWindowHandle,40,40,$size[0],$size[1],$true)
+    Start-Sleep -Milliseconds 400
+    $window=Save-Window $p "$state-$($size[0])x$($size[1])"
+   }
+   if($state -eq 'connection-error') {
+    $buttons=$window.FindAll([System.Windows.Automation.TreeScope]::Descendants,[System.Windows.Automation.PropertyCondition]::new([System.Windows.Automation.AutomationElement]::ControlTypeProperty,[System.Windows.Automation.ControlType]::Button))
+    $button=@($buttons | Where-Object {$_.Current.Name.StartsWith('T')})[0]
+    $invoke=[System.Windows.Automation.InvokePattern]$button.GetCurrentPattern([System.Windows.Automation.InvokePattern]::Pattern)
+    $invoke.Invoke();Start-Sleep -Milliseconds 200
+    $null=Save-Window $p 'loading'
+    Start-Sleep -Seconds 3
+    $null=Save-Window $p 'connection-failed'
+   }
+   [void]$p.CloseMainWindow();if(-not $p.WaitForExit(10000)){throw 'App did not close'}
+  } finally {if(-not $p.HasExited){[void]$p.CloseMainWindow()}}
+ }
+} finally {
+ $env:CAFEMANAGER_APP_CONNECTION=$saved
+ $file=if($PreviewExe){'grid-demo-evidence.json'}else{'ui-evidence.json'}
+ $results | ConvertTo-Json -Depth 7 | Set-Content (Join-Path $Output $file) -Encoding UTF8
+}

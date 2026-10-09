@@ -1,0 +1,71 @@
+{
+    "RunId":  "20261008_222434_ca0e775e",
+    "Stage":  "PASS T03-K07-direct-writes",
+    "Databases":  [
+                      "CoffeeManager_Test_T03_20261008_222434_ca0e775e",
+                      "CoffeeManager_Test_T03_20261008_222434_ca0e775e_empty"
+                  ],
+    "Cases":  [
+                  {
+                      "Id":  "T03-K01-seed",
+                      "Status":  "PASS",
+                      "Expected":  "Migration preserves all baseline rows and trusted FK.",
+                      "Actual":  "Assertions passed."
+                  },
+                  {
+                      "Id":  "T03-K01-empty",
+                      "Status":  "PASS",
+                      "Expected":  "Migration applies to empty schema.",
+                      "Actual":  "Assertions passed."
+                  },
+                  {
+                      "Id":  "T03-K01-rollback",
+                      "Status":  "PASS",
+                      "Expected":  "Late DDL failure rolls back object and version.",
+                      "Actual":  "Assertions passed."
+                  },
+                  {
+                      "Id":  "T03-K02-repeat",
+                      "Status":  "PASS",
+                      "Expected":  "Repeat returns AlreadyApplied and retains sequence current value.",
+                      "Actual":  "Assertions passed."
+                  },
+                  {
+                      "Id":  "T03-K02-checksum",
+                      "Status":  "PASS",
+                      "Expected":  "Same version with altered bytes is refused.",
+                      "Actual":  "Assertions passed."
+                  },
+                  {
+                      "Id":  "T03-K03-concurrent",
+                      "Status":  "PASS",
+                      "Expected":  "Two overlapping sessions return 100 unique HD codes absent from seed.",
+                      "Actual":  "Assertions passed."
+                  },
+                  {
+                      "Id":  "T03-K04-limits",
+                      "Status":  "PASS",
+                      "Expected":  "DM/NV last code accepted, next call fails explicitly; unknown source refused.",
+                      "Actual":  "Assertions passed."
+                  },
+                  {
+                      "Id":  "T03-K05-gap",
+                      "Status":  "PASS",
+                      "Expected":  "Rolled back invoice absent; later code differs.",
+                      "Actual":  "Assertions passed."
+                  },
+                  {
+                      "Id":  "T03-K06-permissions",
+                      "Status":  "PASS",
+                      "Expected":  "App user reads views and executes existing procedures with ownership chain.",
+                      "Actual":  "Assertions passed."
+                  },
+                  {
+                      "Id":  "T03-K07-direct-writes",
+                      "Status":  "PASS",
+                      "Expected":  "All protected table writes fail with permission error and unchanged rows.",
+                      "Actual":  "Assertions passed."
+                  }
+              ],
+    "UpdatedAt":  "2026-10-08T22:24:53.8410795+07:00"
+}

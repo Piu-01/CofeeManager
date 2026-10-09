@@ -1,0 +1,106 @@
+{
+    "RunId":  "20261008_205445_1b831793",
+    "StartedAt":  "2026-10-08T20:54:45.1687144+07:00",
+    "CompletedAt":  "2026-10-08T20:54:45.4786564+07:00",
+    "Server":  "localhost",
+    "Engine":  null,
+    "Databases":  [
+
+                  ],
+    "SetupError":  "Exception calling \"ExecuteScalar\" with \"0\" argument(s): \"Implicit conversion from data type sql_variant to varchar is not allowed. Use the CONVERT function to run this query.\"",
+    "SchemaSHA256":  "53351D5CA521464558DE6FC4AA1F839CC45CBBD091FDDB4EC005643F2D6EE151",
+    "SeedSHA256":  "FBC1CAB2233D8B3B588F6C3DE61DB9A8ADCD40CFE19997531EB91354BADDF706",
+    "SourceCommit":  "uncommitted",
+    "Cases":  [
+
+              ],
+    "Summary":  [
+                    {
+                        "Id":  "T02-K01",
+                        "Status":  "BLOCKED",
+                        "Subcases":  [
+
+                                     ]
+                    },
+                    {
+                        "Id":  "T02-K02",
+                        "Status":  "BLOCKED",
+                        "Subcases":  [
+
+                                     ]
+                    },
+                    {
+                        "Id":  "T02-K03",
+                        "Status":  "BLOCKED",
+                        "Subcases":  [
+
+                                     ]
+                    },
+                    {
+                        "Id":  "T02-K04",
+                        "Status":  "BLOCKED",
+                        "Subcases":  [
+
+                                     ]
+                    },
+                    {
+                        "Id":  "T02-K05",
+                        "Status":  "BLOCKED",
+                        "Subcases":  [
+
+                                     ]
+                    },
+                    {
+                        "Id":  "T02-K06",
+                        "Status":  "BLOCKED",
+                        "Subcases":  [
+
+                                     ]
+                    },
+                    {
+                        "Id":  "T02-K07",
+                        "Status":  "BLOCKED",
+                        "Subcases":  [
+
+                                     ]
+                    },
+                    {
+                        "Id":  "T02-K08",
+                        "Status":  "BLOCKED",
+                        "Subcases":  [
+
+                                     ]
+                    },
+                    {
+                        "Id":  "T02-K09",
+                        "Status":  "BLOCKED",
+                        "Subcases":  [
+
+                                     ]
+                    },
+                    {
+                        "Id":  "T02-K10",
+                        "Status":  "BLOCKED",
+                        "Subcases":  [
+
+                                     ]
+                    },
+                    {
+                        "Id":  "T02-K11",
+                        "Status":  "BLOCKED",
+                        "Subcases":  [
+
+                                     ]
+                    },
+                    {
+                        "Id":  "T02-K12",
+                        "Status":  "BLOCKED",
+                        "Subcases":  [
+
+                                     ]
+                    }
+                ],
+    "SetupSqlErrors":  [
+                           "257: Implicit conversion from data type sql_variant to varchar is not allowed. Use the CONVERT function to run this query."
+                       ]
+}

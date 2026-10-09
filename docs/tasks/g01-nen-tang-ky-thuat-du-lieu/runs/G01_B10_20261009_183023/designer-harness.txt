@@ -1,0 +1,44 @@
+param([string]$Output)
+$ErrorActionPreference='Stop'
+Add-Type -AssemblyName UIAutomationClient
+Add-Type -AssemblyName UIAutomationTypes
+Add-Type -AssemblyName System.Windows.Forms
+Add-Type -AssemblyName System.Drawing
+Add-Type @'
+using System;using System.Runtime.InteropServices;
+public static class B09Designer {
+ [DllImport("user32.dll")] public static extern bool SetForegroundWindow(IntPtr h);
+ [DllImport("user32.dll")] public static extern IntPtr GetForegroundWindow();
+ [DllImport("user32.dll")] public static extern bool PrintWindow(IntPtr h,IntPtr dc,uint flags);
+ [DllImport("user32.dll")] public static extern IntPtr SetThreadDpiAwarenessContext(IntPtr h);
+}
+'@
+[void][B09Designer]::SetThreadDpiAwarenessContext([IntPtr]::new(-4))
+$p=Get-Process devenv | Where-Object {$_.MainWindowTitle.StartsWith('CafeManager -')} | Select-Object -First 1
+if(-not $p){throw 'CafeManager Visual Studio window not found'}
+$w=[System.Windows.Automation.AutomationElement]::FromHandle($p.MainWindowHandle)
+function Key([string]$key) {
+ (New-Object -ComObject WScript.Shell).AppActivate($p.Id) | Out-Null
+ try {$w.SetFocus()} catch {}
+ [void][B09Designer]::SetForegroundWindow($p.MainWindowHandle)
+ Start-Sleep -Milliseconds 200
+ if([B09Designer]::GetForegroundWindow() -ne $p.MainWindowHandle){throw 'VS not foreground'}
+ [Windows.Forms.SendKeys]::SendWait($key)
+ Start-Sleep -Seconds 2
+}
+$save=$w.FindFirst([System.Windows.Automation.TreeScope]::Descendants,[System.Windows.Automation.PropertyCondition]::new([System.Windows.Automation.AutomationElement]::NameProperty,'Save StartupForm.cs'))
+([System.Windows.Automation.InvokePattern]$save.GetCurrentPattern([System.Windows.Automation.InvokePattern]::Pattern)).Invoke()
+Key '^{F4}'
+$closed=(Get-Process -Id $p.Id).MainWindowTitle
+$tree=$w.FindAll([System.Windows.Automation.TreeScope]::Descendants,[System.Windows.Automation.PropertyCondition]::new([System.Windows.Automation.AutomationElement]::NameProperty,'StartupForm.cs'))|Where-Object {$_.Current.ControlType -eq [System.Windows.Automation.ControlType]::TreeItem}|Select-Object -First 1
+([System.Windows.Automation.ScrollItemPattern]$tree.GetCurrentPattern([System.Windows.Automation.ScrollItemPattern]::Pattern)).ScrollIntoView()
+([System.Windows.Automation.SelectionItemPattern]$tree.GetCurrentPattern([System.Windows.Automation.SelectionItemPattern]::Pattern)).Select()
+$tree.SetFocus()
+Key '+{F7}'
+Start-Sleep -Seconds 5
+$reopened=(Get-Process -Id $p.Id).MainWindowTitle
+$items=@($w.FindAll([System.Windows.Automation.TreeScope]::Descendants,[System.Windows.Automation.Condition]::TrueCondition)|ForEach-Object {[ordered]@{Name=$_.Current.Name;Type=$_.Current.ControlType.ProgrammaticName;Id=$_.Current.AutomationId}})
+$r=$w.Current.BoundingRectangle;$b=[Drawing.Bitmap]::new([int]$r.Width,[int]$r.Height);$g=[Drawing.Graphics]::FromImage($b)
+try {$dc=$g.GetHdc();try {[void][B09Designer]::PrintWindow($p.MainWindowHandle,$dc,2)}finally{$g.ReleaseHdc($dc)};$b.Save((Join-Path $Output 'designer-reopened.png'))}finally{$g.Dispose();$b.Dispose()}
+[ordered]@{ClosedTitle=$closed;ReopenedTitle=$reopened;Elements=$items;At=(Get-Date).ToString('o')}|ConvertTo-Json -Depth 6|Set-Content (Join-Path $Output 'designer-evidence.json') -Encoding UTF8
+if($reopened -notmatch 'StartupForm.cs \[Design\]' -or $reopened.Contains('*')){throw 'Designer did not reopen cleanly'}

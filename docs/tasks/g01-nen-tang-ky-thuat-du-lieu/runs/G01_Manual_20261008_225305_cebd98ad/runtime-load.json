@@ -1,0 +1,437 @@
+﻿[
+    {
+        "Name":  "",
+        "Enabled":  true,
+        "Type":  "ControlType.Pane"
+    },
+    {
+        "Name":  "",
+        "Enabled":  true,
+        "Type":  "ControlType.Pane"
+    },
+    {
+        "Name":  "CoffeeManager · Trạng thái bàn",
+        "Enabled":  true,
+        "Type":  "ControlType.Text"
+    },
+    {
+        "Name":  "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+        "Enabled":  true,
+        "Type":  "ControlType.Text"
+    },
+    {
+        "Name":  "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+        "Enabled":  true,
+        "Type":  "ControlType.Pane"
+    },
+    {
+        "Name":  "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+        "Enabled":  true,
+        "Type":  "ControlType.Pane"
+    },
+    {
+        "Name":  "Mã khu vực · trống để xem tất cả",
+        "Enabled":  true,
+        "Type":  "ControlType.Text"
+    },
+    {
+        "Name":  "Mã khu vực · trống để xem tất cả",
+        "Enabled":  true,
+        "Type":  "ControlType.Pane"
+    },
+    {
+        "Name":  "Mã khu vực",
+        "Enabled":  true,
+        "Type":  "ControlType.Edit"
+    },
+    {
+        "Name":  "Tải trạng thái bàn",
+        "Enabled":  true,
+        "Type":  "ControlType.Button"
+    },
+    {
+        "Name":  "Hủy tải",
+        "Enabled":  false,
+        "Type":  "ControlType.Button"
+    },
+    {
+        "Name":  "Đã tải 10 bàn lúc 11:03.",
+        "Enabled":  true,
+        "Type":  "ControlType.Text"
+    },
+    {
+        "Name":  "Đã tải 10 bàn lúc 11:03.",
+        "Enabled":  true,
+        "Type":  "ControlType.Pane"
+    },
+    {
+        "Name":  "Đã tải 10 bàn lúc 11:03.",
+        "Enabled":  true,
+        "Type":  "ControlType.Pane"
+    },
+    {
+        "Name":  "Đã tải 10 bàn lúc 11:03.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataGrid"
+    },
+    {
+        "Name":  "Vertical",
+        "Enabled":  true,
+        "Type":  "ControlType.ScrollBar"
+    },
+    {
+        "Name":  "Line up",
+        "Enabled":  true,
+        "Type":  "ControlType.Button"
+    },
+    {
+        "Name":  "Position",
+        "Enabled":  true,
+        "Type":  "ControlType.Thumb"
+    },
+    {
+        "Name":  "Page down",
+        "Enabled":  true,
+        "Type":  "ControlType.Button"
+    },
+    {
+        "Name":  "Line down",
+        "Enabled":  true,
+        "Type":  "ControlType.Button"
+    },
+    {
+        "Name":  "Top Row",
+        "Enabled":  true,
+        "Type":  "ControlType.Custom"
+    },
+    {
+        "Name":  "Mã bàn",
+        "Enabled":  true,
+        "Type":  "ControlType.Header"
+    },
+    {
+        "Name":  "Tên bàn",
+        "Enabled":  true,
+        "Type":  "ControlType.Header"
+    },
+    {
+        "Name":  "Khu vực",
+        "Enabled":  true,
+        "Type":  "ControlType.Header"
+    },
+    {
+        "Name":  "Trạng thái",
+        "Enabled":  true,
+        "Type":  "ControlType.Header"
+    },
+    {
+        "Name":  "Hóa đơn mở",
+        "Enabled":  true,
+        "Type":  "ControlType.Header"
+    },
+    {
+        "Name":  "Row 1",
+        "Enabled":  true,
+        "Type":  "ControlType.Custom"
+    },
+    {
+        "Name":  "Mã bàn Row 1, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Tên bàn Row 1, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Khu vực Row 1, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Trạng thái Row 1, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Hóa đơn mở Row 1, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Row 2",
+        "Enabled":  true,
+        "Type":  "ControlType.Custom"
+    },
+    {
+        "Name":  "Mã bàn Row 2, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Tên bàn Row 2, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Khu vực Row 2, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Trạng thái Row 2, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Hóa đơn mở Row 2, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Row 3",
+        "Enabled":  true,
+        "Type":  "ControlType.Custom"
+    },
+    {
+        "Name":  "Mã bàn Row 3, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Tên bàn Row 3, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Khu vực Row 3, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Trạng thái Row 3, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Hóa đơn mở Row 3, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Row 4",
+        "Enabled":  true,
+        "Type":  "ControlType.Custom"
+    },
+    {
+        "Name":  "Mã bàn Row 4, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Tên bàn Row 4, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Khu vực Row 4, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Trạng thái Row 4, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Hóa đơn mở Row 4, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Row 5",
+        "Enabled":  true,
+        "Type":  "ControlType.Custom"
+    },
+    {
+        "Name":  "Mã bàn Row 5, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Tên bàn Row 5, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Khu vực Row 5, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Trạng thái Row 5, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Hóa đơn mở Row 5, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Row 6",
+        "Enabled":  true,
+        "Type":  "ControlType.Custom"
+    },
+    {
+        "Name":  "Mã bàn Row 6, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Tên bàn Row 6, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Khu vực Row 6, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Trạng thái Row 6, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Hóa đơn mở Row 6, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Row 7",
+        "Enabled":  true,
+        "Type":  "ControlType.Custom"
+    },
+    {
+        "Name":  "Mã bàn Row 7, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Tên bàn Row 7, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Khu vực Row 7, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Trạng thái Row 7, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Hóa đơn mở Row 7, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Row 8",
+        "Enabled":  true,
+        "Type":  "ControlType.Custom"
+    },
+    {
+        "Name":  "Mã bàn Row 8, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Tên bàn Row 8, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Khu vực Row 8, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Trạng thái Row 8, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Hóa đơn mở Row 8, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Row 9",
+        "Enabled":  true,
+        "Type":  "ControlType.Custom"
+    },
+    {
+        "Name":  "Mã bàn Row 9, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Tên bàn Row 9, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Khu vực Row 9, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Trạng thái Row 9, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Hóa đơn mở Row 9, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Row 10",
+        "Enabled":  true,
+        "Type":  "ControlType.Custom"
+    },
+    {
+        "Name":  "Mã bàn Row 10, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Tên bàn Row 10, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Khu vực Row 10, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Trạng thái Row 10, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Hóa đơn mở Row 10, Not sorted.",
+        "Enabled":  true,
+        "Type":  "ControlType.DataItem"
+    },
+    {
+        "Name":  "Danh sách bàn · 10 bàn",
+        "Enabled":  true,
+        "Type":  "ControlType.Text"
+    }
+]

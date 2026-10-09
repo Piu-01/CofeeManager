@@ -1,0 +1,347 @@
+#nullable enable
+namespace CafeManager.WinForms.Forms;
+
+partial class StartupForm
+{
+    private System.ComponentModel.IContainer? components;
+    private TableLayoutPanel layout = null!;
+    private FlowLayoutPanel toolbar = null!;
+    private TableLayoutPanel header = null!;
+    private Label subtitleLabel = null!;
+    private TableLayoutPanel filter = null!;
+    private Panel inputPanel = null!;
+    private Panel contentPanel = null!;
+    private Label contentHeading = null!;
+    private Panel gridPanel = null!;
+    private Label emptyStateLabel = null!;
+    private Label titleLabel = null!;
+    private Label areaLabel = null!;
+    private TextBox areaInput = null!;
+    private Button loadButton = null!;
+    private Button cancelButton = null!;
+    private Label statusLabel = null!;
+    private DataGridView tableGrid = null!;
+
+    protected override void Dispose(bool disposing)
+    {
+        if (disposing) { validation?.Dispose(); components?.Dispose(); }
+        base.Dispose(disposing);
+    }
+
+    private void InitializeComponent()
+    {
+        DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+        layout = new TableLayoutPanel();
+        header = new TableLayoutPanel();
+        titleLabel = new Label();
+        subtitleLabel = new Label();
+        toolbar = new FlowLayoutPanel();
+        filter = new TableLayoutPanel();
+        areaLabel = new Label();
+        inputPanel = new Panel();
+        areaInput = new TextBox();
+        loadButton = new Button();
+        cancelButton = new Button();
+        statusLabel = new Label();
+        contentPanel = new Panel();
+        gridPanel = new Panel();
+        tableGrid = new DataGridView();
+        emptyStateLabel = new Label();
+        contentHeading = new Label();
+        layout.SuspendLayout();
+        header.SuspendLayout();
+        toolbar.SuspendLayout();
+        filter.SuspendLayout();
+        inputPanel.SuspendLayout();
+        contentPanel.SuspendLayout();
+        gridPanel.SuspendLayout();
+        ((System.ComponentModel.ISupportInitialize)tableGrid).BeginInit();
+        SuspendLayout();
+        // 
+        // layout
+        // 
+        layout.ColumnCount = 1;
+        layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+        layout.Controls.Add(header, 0, 0);
+        layout.Controls.Add(toolbar, 0, 1);
+        layout.Controls.Add(statusLabel, 0, 2);
+        layout.Controls.Add(contentPanel, 0, 3);
+        layout.Dock = DockStyle.Fill;
+        layout.Location = new Point(0, 0);
+        layout.Margin = new Padding(4, 4, 4, 4);
+        layout.Name = "layout";
+        layout.Padding = new Padding(30, 30, 30, 30);
+        layout.RowCount = 4;
+        layout.RowStyles.Add(new RowStyle());
+        layout.RowStyles.Add(new RowStyle());
+        layout.RowStyles.Add(new RowStyle());
+        layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+        layout.Size = new Size(1250, 750);
+        layout.TabIndex = 0;
+        // 
+        // header
+        // 
+        header.AutoSize = true;
+        header.BackColor = Color.FromArgb(36, 24, 20);
+        header.ColumnCount = 1;
+        header.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+        header.Controls.Add(titleLabel, 0, 0);
+        header.Controls.Add(subtitleLabel, 0, 1);
+        header.Dock = DockStyle.Fill;
+        header.Location = new Point(30, 30);
+        header.Margin = new Padding(0, 0, 0, 20);
+        header.Name = "header";
+        header.Padding = new Padding(25, 20, 25, 20);
+        header.RowCount = 2;
+        header.RowStyles.Add(new RowStyle());
+        header.RowStyles.Add(new RowStyle());
+        header.Size = new Size(1190, 113);
+        header.TabIndex = 0;
+        // 
+        // titleLabel
+        // 
+        titleLabel.AutoSize = true;
+        titleLabel.Font = new Font("Segoe UI", 17F, FontStyle.Bold);
+        titleLabel.ForeColor = Color.FromArgb(255, 252, 248);
+        titleLabel.Location = new Point(25, 20);
+        titleLabel.Margin = new Padding(0, 0, 0, 10);
+        titleLabel.Name = "titleLabel";
+        titleLabel.Size = new Size(454, 40);
+        titleLabel.TabIndex = 0;
+        titleLabel.Text = "CoffeeManager · Trạng thái bàn";
+        // 
+        // subtitleLabel
+        // 
+        subtitleLabel.AutoSize = true;
+        subtitleLabel.ForeColor = Color.FromArgb(234, 216, 195);
+        subtitleLabel.Location = new Point(25, 70);
+        subtitleLabel.Margin = new Padding(0);
+        subtitleLabel.Name = "subtitleLabel";
+        subtitleLabel.Size = new Size(505, 23);
+        subtitleLabel.TabIndex = 1;
+        subtitleLabel.Text = "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập";
+        // 
+        // toolbar
+        // 
+        toolbar.AutoSize = true;
+        toolbar.BackColor = Color.FromArgb(255, 252, 248);
+        toolbar.Controls.Add(filter);
+        toolbar.Controls.Add(loadButton);
+        toolbar.Controls.Add(cancelButton);
+        toolbar.Dock = DockStyle.Fill;
+        toolbar.Location = new Point(30, 163);
+        toolbar.Margin = new Padding(0, 0, 0, 15);
+        toolbar.Name = "toolbar";
+        toolbar.Padding = new Padding(20, 20, 20, 20);
+        toolbar.Size = new Size(1190, 124);
+        toolbar.TabIndex = 1;
+        // 
+        // filter
+        // 
+        filter.AutoSize = true;
+        filter.ColumnCount = 1;
+        filter.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 275F));
+        filter.Controls.Add(areaLabel, 0, 0);
+        filter.Controls.Add(inputPanel, 0, 1);
+        filter.Location = new Point(20, 20);
+        filter.Margin = new Padding(0);
+        filter.Name = "filter";
+        filter.RowCount = 2;
+        filter.RowStyles.Add(new RowStyle());
+        filter.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+        filter.Size = new Size(275, 83);
+        filter.TabIndex = 0;
+        // 
+        // areaLabel
+        // 
+        areaLabel.AutoSize = true;
+        areaLabel.Location = new Point(0, 0);
+        areaLabel.Margin = new Padding(0, 0, 0, 10);
+        areaLabel.Name = "areaLabel";
+        areaLabel.Size = new Size(263, 23);
+        areaLabel.TabIndex = 0;
+        areaLabel.Text = "&Mã khu vực · trống để xem tất cả";
+        // 
+        // inputPanel
+        // 
+        inputPanel.BackColor = Color.FromArgb(245, 239, 230);
+        inputPanel.Controls.Add(areaInput);
+        inputPanel.Dock = DockStyle.Fill;
+        inputPanel.Location = new Point(0, 33);
+        inputPanel.Margin = new Padding(0);
+        inputPanel.Name = "inputPanel";
+        inputPanel.Padding = new Padding(12, 10, 12, 10);
+        inputPanel.Size = new Size(275, 50);
+        inputPanel.TabIndex = 1;
+        // 
+        // areaInput
+        // 
+        areaInput.AccessibleName = "Mã khu vực";
+        areaInput.BackColor = Color.FromArgb(245, 239, 230);
+        areaInput.BorderStyle = BorderStyle.None;
+        areaInput.Dock = DockStyle.Top;
+        areaInput.ForeColor = Color.FromArgb(41, 30, 24);
+        areaInput.Location = new Point(12, 10);
+        areaInput.Margin = new Padding(4, 4, 4, 4);
+        areaInput.Name = "areaInput";
+        areaInput.PlaceholderText = "Ví dụ: KV001";
+        areaInput.Size = new Size(251, 23);
+        areaInput.TabIndex = 0;
+        // 
+        // loadButton
+        // 
+        loadButton.BackColor = Color.FromArgb(75, 46, 35);
+        loadButton.FlatAppearance.BorderSize = 0;
+        loadButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(99, 62, 45);
+        loadButton.FlatStyle = FlatStyle.Flat;
+        loadButton.ForeColor = Color.White;
+        loadButton.Location = new Point(310, 54);
+        loadButton.Margin = new Padding(15, 34, 0, 0);
+        loadButton.Name = "loadButton";
+        loadButton.Size = new Size(238, 50);
+        loadButton.TabIndex = 1;
+        loadButton.Text = "&Tải trạng thái bàn";
+        loadButton.UseVisualStyleBackColor = false;
+        loadButton.Click += LoadButton_Click;
+        // 
+        // cancelButton
+        // 
+        cancelButton.BackColor = Color.FromArgb(245, 239, 230);
+        cancelButton.Enabled = false;
+        cancelButton.FlatAppearance.BorderColor = Color.FromArgb(221, 208, 194);
+        cancelButton.FlatStyle = FlatStyle.Flat;
+        cancelButton.ForeColor = Color.FromArgb(41, 30, 24);
+        cancelButton.Location = new Point(563, 54);
+        cancelButton.Margin = new Padding(15, 34, 0, 0);
+        cancelButton.Name = "cancelButton";
+        cancelButton.Size = new Size(138, 50);
+        cancelButton.TabIndex = 2;
+        cancelButton.Text = "&Hủy tải";
+        cancelButton.UseVisualStyleBackColor = false;
+        cancelButton.Click += CancelButton_Click;
+        // 
+        // statusLabel
+        // 
+        statusLabel.AutoSize = true;
+        statusLabel.BackColor = Color.FromArgb(234, 216, 195);
+        statusLabel.Dock = DockStyle.Fill;
+        statusLabel.Location = new Point(30, 302);
+        statusLabel.Margin = new Padding(0, 0, 0, 15);
+        statusLabel.Name = "statusLabel";
+        statusLabel.Padding = new Padding(20, 15, 20, 15);
+        statusLabel.Size = new Size(1190, 53);
+        statusLabel.TabIndex = 2;
+        statusLabel.Text = "Sẵn sàng · Chọn khu vực rồi tải trạng thái bàn.";
+        // 
+        // contentPanel
+        // 
+        contentPanel.BackColor = Color.FromArgb(255, 252, 248);
+        contentPanel.Controls.Add(gridPanel);
+        contentPanel.Controls.Add(contentHeading);
+        contentPanel.Dock = DockStyle.Fill;
+        contentPanel.Location = new Point(30, 370);
+        contentPanel.Margin = new Padding(0);
+        contentPanel.Name = "contentPanel";
+        contentPanel.Size = new Size(1190, 350);
+        contentPanel.TabIndex = 3;
+        // 
+        // gridPanel
+        // 
+        gridPanel.AccessibleName = "Nội dung danh sách bàn";
+        gridPanel.AutoScroll = true;
+        gridPanel.Controls.Add(tableGrid);
+        gridPanel.Controls.Add(emptyStateLabel);
+        gridPanel.Dock = DockStyle.Fill;
+        gridPanel.Location = new Point(0, 65);
+        gridPanel.Margin = new Padding(4, 4, 4, 4);
+        gridPanel.Name = "gridPanel";
+        gridPanel.Padding = new Padding(20, 0, 20, 20);
+        gridPanel.Size = new Size(1190, 285);
+        gridPanel.TabIndex = 0;
+        // 
+        // tableGrid
+        // 
+        tableGrid.AllowUserToAddRows = false;
+        tableGrid.AllowUserToDeleteRows = false;
+        dataGridViewCellStyle1.BackColor = Color.FromArgb(245, 239, 230);
+        tableGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+        tableGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        tableGrid.BackgroundColor = Color.FromArgb(255, 252, 248);
+        tableGrid.BorderStyle = BorderStyle.None;
+        tableGrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+        tableGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+        tableGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+        tableGrid.ColumnHeadersHeight = 40;
+        tableGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+        tableGrid.Dock = DockStyle.Fill;
+        tableGrid.EnableHeadersVisualStyles = false;
+        tableGrid.GridColor = Color.FromArgb(221, 208, 194);
+        tableGrid.Location = new Point(20, 29);
+        tableGrid.Margin = new Padding(4, 4, 4, 4);
+        tableGrid.MultiSelect = false;
+        tableGrid.Name = "tableGrid";
+        tableGrid.ReadOnly = true;
+        tableGrid.RowHeadersVisible = false;
+        tableGrid.RowHeadersWidth = 51;
+        tableGrid.RowTemplate.Height = 36;
+        tableGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        tableGrid.Size = new Size(1150, 236);
+        tableGrid.TabIndex = 3;
+        // 
+        // emptyStateLabel
+        // 
+        emptyStateLabel.AccessibleName = "Trạng thái danh sách bàn";
+        emptyStateLabel.Dock = DockStyle.Top;
+        emptyStateLabel.Font = new Font("Segoe UI", 12F);
+        emptyStateLabel.ForeColor = Color.FromArgb(75, 46, 35);
+        emptyStateLabel.Location = new Point(20, 0);
+        emptyStateLabel.Margin = new Padding(4, 0, 4, 0);
+        emptyStateLabel.Name = "emptyStateLabel";
+        emptyStateLabel.Padding = new Padding(15, 15, 15, 15);
+        emptyStateLabel.Size = new Size(1150, 29);
+        emptyStateLabel.TabIndex = 4;
+        emptyStateLabel.Text = "Chưa tải dữ liệu\r\n\r\nChọn khu vực hoặc để trống, rồi nhấn Tải trạng thái bàn.";
+        emptyStateLabel.TextAlign = ContentAlignment.MiddleCenter;
+        // 
+        // contentHeading
+        // 
+        contentHeading.Dock = DockStyle.Top;
+        contentHeading.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+        contentHeading.Location = new Point(0, 0);
+        contentHeading.Margin = new Padding(4, 0, 4, 0);
+        contentHeading.Name = "contentHeading";
+        contentHeading.Padding = new Padding(20, 15, 20, 10);
+        contentHeading.Size = new Size(1190, 65);
+        contentHeading.TabIndex = 1;
+        contentHeading.Text = "Danh sách bàn";
+        // 
+        // StartupForm
+        // 
+        AutoScaleDimensions = new SizeF(120F, 120F);
+        AutoScaleMode = AutoScaleMode.Dpi;
+        BackColor = Color.FromArgb(245, 239, 230);
+        ClientSize = new Size(1250, 750);
+        Controls.Add(layout);
+        ForeColor = Color.FromArgb(41, 30, 24);
+        Margin = new Padding(4, 4, 4, 4);
+        MinimumSize = new Size(796, 488);
+        Name = "StartupForm";
+        StartPosition = FormStartPosition.CenterScreen;
+        Text = "CoffeeManager · G01";
+        layout.ResumeLayout(false);
+        layout.PerformLayout();
+        header.ResumeLayout(false);
+        header.PerformLayout();
+        toolbar.ResumeLayout(false);
+        toolbar.PerformLayout();
+        filter.ResumeLayout(false);
+        filter.PerformLayout();
+        inputPanel.ResumeLayout(false);
+        inputPanel.PerformLayout();
+        contentPanel.ResumeLayout(false);
+        gridPanel.ResumeLayout(false);
+        ((System.ComponentModel.ISupportInitialize)tableGrid).EndInit();
+        ResumeLayout(false);
+    }
+}

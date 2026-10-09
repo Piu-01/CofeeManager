@@ -1,0 +1,42 @@
+param([string]$Root,[string]$Output)
+$ErrorActionPreference='Stop'
+$root=$Root
+. (Join-Path $Root 'tools/database/DatabaseTestTools.ps1')
+$runs=Join-Path $Root 'docs/tasks/g01-nen-tang-ky-thuat-du-lieu/t05-dal-nen-kiem-thu/runs'
+$before=@(Get-ChildItem $runs -Directory|Select-Object -ExpandProperty Name)
+$runner=Join-Path $Root 'tools/database/Test-DataAccess.ps1'
+$p=Start-Process powershell.exe -ArgumentList @('-NoProfile','-ExecutionPolicy','Bypass','-File',"`"$runner`"") -WorkingDirectory $Root -RedirectStandardOutput (Join-Path $Output 'runner-fault-output.txt') -RedirectStandardError (Join-Path $Output 'runner-fault-error.txt') -PassThru
+$processHandle=$p.Handle
+$connection=$null;$injected=$false;$report=[ordered]@{StartedAt=(Get-Date).ToString('o');Expected='One intentional xUnit failure, complete TRX, exit 1, SetupError null'}
+try {
+ $progress=$null
+ for($i=0;$i -lt 400;$i++) {
+  $new=@(Get-ChildItem $runs -Directory|Where-Object {$_.Name -notin $before}|Sort-Object CreationTime -Descending)
+  if($new.Count){
+   $file=Join-Path $new[0].FullName 'progress.json'
+   if(Test-Path $file){try {$progress=Get-Content $file -Raw|ConvertFrom-Json} catch {$progress=$null}}
+   if($progress -and $progress.Stage -eq 'XUNIT'){break}
+  }
+  if($p.HasExited){throw 'Runner exited before fault could be injected'}
+  Start-Sleep -Milliseconds 50
+ }
+ if(-not $progress -or $progress.Stage -ne 'XUNIT'){throw 'XUnit setup phase not reached'}
+ $report.RunId=$progress.RunId;$report.Database=$progress.Database
+ $connection=Open-TestConnection $progress.Database;Assert-TestTarget $connection 'T05'
+ Run-TestSql $connection "ALTER PROCEDURE dbo.T05_Unknown AS THROW 51109,'Controlled runner failure fixture',1;"
+ $injected=$true;$report.Fault='Test-only T05_Unknown temporarily throws mapped 51109 rather than unknown 52905'
+ if(-not $p.WaitForExit(60000)){throw 'Runner timeout'}
+ $result=Get-Content (Join-Path $new[0].FullName 'results.json') -Raw -Encoding UTF8|ConvertFrom-Json
+ $report.RunnerExitCode=$p.ExitCode;$report.DotnetExitCode=$result.DotnetExitCode;$report.SetupError=$result.SetupError
+ $report.Total=$result.Results.Count;$report.Failed=@($result.Results|Where-Object {$_.Outcome -eq 'Failed'}).Count
+ $report.Passed=@($result.Results|Where-Object {$_.Outcome -eq 'Passed'}).Count
+ $report.FailureNames=@($result.Results|Where-Object {$_.Outcome -eq 'Failed'}|ForEach-Object {$_.Name})
+ Copy-Item (Join-Path $new[0].FullName 'tests.trx') (Join-Path $Output 'runner-fault.trx')
+ if($report.RunnerExitCode -ne 1 -or $report.DotnetExitCode -ne 1 -or $report.SetupError -or $report.Total -ne 20 -or $report.Failed -ne 1){throw 'Runner did not preserve expected complete failure results'}
+ $report.Status='PASS'
+} catch {$report.Status='FAIL';$report.Error=$_.Exception.Message;throw}
+finally {
+ if($connection){try {if($injected){Run-TestSql $connection "ALTER PROCEDURE dbo.T05_Unknown AS THROW 52905,'Test-only unknown error with sensitive text that must never be logged.',1;";$report.FixtureRestored=$true}} finally {$connection.Dispose()}}
+ $report.CompletedAt=(Get-Date).ToString('o')
+ $report|ConvertTo-Json -Depth 6|Set-Content (Join-Path $Output 'runner-failure-check.json') -Encoding UTF8
+}

@@ -1,0 +1,33 @@
+using System.Reflection;
+using CafeManager.Models.Dtos;
+using CafeManager.WinForms.Forms;
+
+internal static class Program
+{
+    [STAThread]
+    private static void Main()
+    {
+        Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
+        Application.EnableVisualStyles();
+        Application.SetCompatibleTextRenderingDefault(false);
+        Application.SetDefaultFont(new Font("Segoe UI", 10));
+        var form = new StartupForm();
+        var flags = BindingFlags.Instance | BindingFlags.NonPublic;
+        T Control<T>(string name) => (T)typeof(StartupForm).GetField(name, flags)!.GetValue(form)!;
+        form.Text = "CoffeeManager · B07 · Dữ liệu minh họa";
+        form.Shown += (_, _) =>
+        {
+            Control<DataGridView>("tableGrid").DataSource = new List<TableStatusDto>
+            {
+                new("B0001", "Bàn 01", "KV001", "Trong", null),
+                new("B0002", "Bàn 02", "KV001", "Dang phuc vu", "HD00000001"),
+                new("B0003", "Bàn 03", "KV002", "Trong", null),
+                new("B0004", "Bàn sân vườn", "KV002", "Dang phuc vu", "HD00000002")
+            };
+            Control<Label>("statusLabel").Text = "Xem trước hình thức · 4 dòng minh họa, không phải kết quả query SQL.";
+            Control<Label>("contentHeading").Text = "Danh sách bàn · 4 bàn minh họa";
+            typeof(StartupForm).GetMethod("SetContentState", flags)!.Invoke(form, new object[] { "" });
+        };
+        Application.Run(form);
+    }
+}

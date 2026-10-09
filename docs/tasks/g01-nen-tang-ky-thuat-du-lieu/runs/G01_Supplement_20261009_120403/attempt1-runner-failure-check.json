@@ -1,0 +1,20 @@
+﻿{
+    "StartedAt":  "2026-10-09T12:06:11.0647428+07:00",
+    "Expected":  "One intentional xUnit failure, complete TRX, exit 1, SetupError null",
+    "RunId":  "20261009_120612_179690fc",
+    "Database":  "CoffeeManager_Test_T05_20261009_120612_179690fc",
+    "Fault":  "Test-only T05_Unknown temporarily throws mapped 51109 rather than unknown 52905",
+    "RunnerExitCode":  null,
+    "DotnetExitCode":  1,
+    "SetupError":  null,
+    "Total":  20,
+    "Failed":  1,
+    "Passed":  19,
+    "FailureNames":  [
+                         "CafeManager.Tests.Integration.DataAccessTests.UnknownAndTimeoutErrorsDoNotLeakSensitiveTextOrReportSuccess"
+                     ],
+    "Status":  "FAIL",
+    "Error":  "Runner did not preserve expected complete failure results",
+    "FixtureRestored":  true,
+    "CompletedAt":  "2026-10-09T12:06:37.5937365+07:00"
+}

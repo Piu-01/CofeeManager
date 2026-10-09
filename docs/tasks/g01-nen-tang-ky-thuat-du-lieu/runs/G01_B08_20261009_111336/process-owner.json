@@ -1,0 +1,7 @@
+﻿{
+    "PID":  16932,
+    "Domain":  "LAPTOP-79UNRIRC",
+    "User":  "CafeManagerApp",
+    "Evidence":  "Win32_Process.GetOwner output before B08 regression",
+    "RecordedAt":  "2026-10-09T11:19:38.8402593+07:00"
+}

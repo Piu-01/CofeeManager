@@ -1,0 +1,45 @@
+Test run for D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+  Failed CafeManager.Tests.Integration.DataAccessTests.ParametersRoundTripWithoutExecutingInput(text: "O'Brien") [11 ms]
+  Error Message:
+   CafeManager.DataAccess.DataAccessException : Có lỗi dữ liệu chưa xác định; tra mã hỗ trợ trước khi tiếp tục.
+  Stack Trace:
+     at CafeManager.DataAccess.SqlProcedureExecutor.ExecuteAsync(String procedure, IEnumerable`1 parameters, String sourceCode, CancellationToken cancellationToken, Func`2 inspectSession) in D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.DataAccess\SqlProcedureExecutor.cs:line 38
+   at CafeManager.DataAccess.SqlProcedureExecutor.ExecuteAsync(String procedure, IEnumerable`1 parameters, String sourceCode, CancellationToken cancellationToken, Func`2 inspectSession) in D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.DataAccess\SqlProcedureExecutor.cs:line 46
+   at CafeManager.Tests.Integration.DataAccessTests.ParametersRoundTripWithoutExecutingInput(String text) in D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\Integration\DataAccessTests.cs:line 34
+--- End of stack trace from previous location ---
+  Failed CafeManager.Tests.Integration.DataAccessTests.SuccessfulProcedureHasNoOuterTransactionAndAppCanExecute [8 ms]
+  Error Message:
+   CafeManager.DataAccess.DataAccessException : Có lỗi dữ liệu chưa xác định; tra mã hỗ trợ trước khi tiếp tục.
+  Stack Trace:
+     at CafeManager.DataAccess.SqlProcedureExecutor.ExecuteAsync(String procedure, IEnumerable`1 parameters, String sourceCode, CancellationToken cancellationToken, Func`2 inspectSession) in D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.DataAccess\SqlProcedureExecutor.cs:line 38
+   at CafeManager.DataAccess.SqlProcedureExecutor.ExecuteAsync(String procedure, IEnumerable`1 parameters, String sourceCode, CancellationToken cancellationToken, Func`2 inspectSession) in D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.DataAccess\SqlProcedureExecutor.cs:line 46
+   at CafeManager.Tests.Integration.DataAccessTests.SuccessfulProcedureHasNoOuterTransactionAndAppCanExecute() in D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\Integration\DataAccessTests.cs:line 143
+--- End of stack trace from previous location ---
+  Failed CafeManager.Tests.Integration.DataAccessTests.LateProcedureErrorRollsBackRowsAndSession(invoice: "Z5PAY00003", method: "PT001", expectedNumber: 52906) [514 ms]
+  Error Message:
+   System.InvalidCastException : Unable to cast object of type 'System.DBNull' to type 'System.String'.
+  Stack Trace:
+     at CafeManager.Tests.TestDatabaseFixture.SnapshotAsync(SqlConnection connection) in D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\TestDatabaseFixture.cs:line 84
+   at CafeManager.Tests.Integration.DataAccessTests.LateProcedureErrorRollsBackRowsAndSession(String invoice, String method, Int32 expectedNumber) in D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\Integration\DataAccessTests.cs:line 116
+   at CafeManager.Tests.Integration.DataAccessTests.LateProcedureErrorRollsBackRowsAndSession(String invoice, String method, Int32 expectedNumber) in D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\Integration\DataAccessTests.cs:line 134
+--- End of stack trace from previous location ---
+  Failed CafeManager.Tests.Integration.DataAccessTests.LateProcedureErrorRollsBackRowsAndSession(invoice: "Z5PAY00001", method: "ZZ999", expectedNumber: 547) [37 ms]
+  Error Message:
+   System.InvalidCastException : Unable to cast object of type 'System.DBNull' to type 'System.String'.
+  Stack Trace:
+     at CafeManager.Tests.TestDatabaseFixture.SnapshotAsync(SqlConnection connection) in D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\TestDatabaseFixture.cs:line 84
+   at CafeManager.Tests.Integration.DataAccessTests.LateProcedureErrorRollsBackRowsAndSession(String invoice, String method, Int32 expectedNumber) in D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\Integration\DataAccessTests.cs:line 116
+   at CafeManager.Tests.Integration.DataAccessTests.LateProcedureErrorRollsBackRowsAndSession(String invoice, String method, Int32 expectedNumber) in D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\Integration\DataAccessTests.cs:line 134
+--- End of stack trace from previous location ---
+  Failed CafeManager.Tests.Integration.DataAccessTests.UnknownAndTimeoutErrorsDoNotLeakSensitiveTextOrReportSuccess [1 s]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: BusinessRule
+Actual:   Unknown
+  Stack Trace:
+     at CafeManager.Tests.Integration.DataAccessTests.UnknownAndTimeoutErrorsDoNotLeakSensitiveTextOrReportSuccess() in D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\Integration\DataAccessTests.cs:line 169
+--- End of stack trace from previous location ---
+Results File: D:\Workspace\Nam_3\HK1\CoffeeManager\docs\tasks\g01-nen-tang-ky-thuat-du-lieu\runs\G01_Regression_20261008_221528\direct\direct.trx
+
+Failed!  - Failed:     5, Passed:    15, Skipped:     0, Total:    20, Duration: 3 s - CafeManager.Tests.dll (net10.0)

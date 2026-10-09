@@ -1,0 +1,82 @@
+param([string]$Root,[string]$Output,[int]$AppPID)
+$ErrorActionPreference='Stop'
+$root=$Root
+. (Join-Path $Root 'tools/database/DatabaseTestTools.ps1')
+Add-Type -AssemblyName UIAutomationClient
+Add-Type -AssemblyName UIAutomationTypes
+Add-Type -AssemblyName System.Drawing
+Add-Type @'
+using System;
+using System.Runtime.InteropServices;
+public static class ManualCapture {
+ [DllImport("user32.dll")] public static extern IntPtr SetThreadDpiAwarenessContext(IntPtr context);
+ [DllImport("user32.dll")] public static extern bool PrintWindow(IntPtr h,IntPtr dc,uint flags);
+ [DllImport("user32.dll")] public static extern uint GetDpiForWindow(IntPtr h);
+}
+'@
+[void][ManualCapture]::SetThreadDpiAwarenessContext([IntPtr]::new(-4))
+$p=Get-Process -Id $AppPID
+$w=[System.Windows.Automation.AutomationElement]::FromHandle($p.MainWindowHandle)
+function Items($Type) {
+ return $w.FindAll([System.Windows.Automation.TreeScope]::Descendants,[System.Windows.Automation.PropertyCondition]::new([System.Windows.Automation.AutomationElement]::ControlTypeProperty,$Type))
+}
+function Texts {return @(Items ([System.Windows.Automation.ControlType]::Text) | ForEach-Object {$_.Current.Name})}
+function Invoke-Button($Button) {([System.Windows.Automation.InvokePattern]$Button.GetCurrentPattern([System.Windows.Automation.InvokePattern]::Pattern)).Invoke()}
+function Wait-Ready {
+ for($i=0;$i -lt 100 -and -not $load.Current.IsEnabled;$i++){Start-Sleep -Milliseconds 100}
+ if(-not $load.Current.IsEnabled){throw 'Load did not become available'}
+}
+function Capture([string]$Name) {
+ $r=$w.Current.BoundingRectangle
+ $b=[Drawing.Bitmap]::new([int]$r.Width,[int]$r.Height);$g=[Drawing.Graphics]::FromImage($b)
+ try {$dc=$g.GetHdc();try {if(-not [ManualCapture]::PrintWindow($p.MainWindowHandle,$dc,2)){throw 'Capture failed'}} finally {$g.ReleaseHdc($dc)};$b.Save((Join-Path $Output "$Name.png"),[Drawing.Imaging.ImageFormat]::Png)} finally {$g.Dispose();$b.Dispose()}
+}
+$buttons=Items ([System.Windows.Automation.ControlType]::Button)
+$load=@($buttons|Where-Object {$_.Current.Name.StartsWith('T')})[0]
+$cancel=@($buttons|Where-Object {$_.Current.Name.StartsWith('H')})[0]
+$result=[ordered]@{StartedAt=(Get-Date).ToString('o');PID=$AppPID;Dpi=[ManualCapture]::GetDpiForWindow($p.MainWindowHandle)}
+$lock=Open-TestConnection 'CoffeeManager_Test_T05_20261008_225305_cebd98ad'
+$monitor=Open-TestConnection 'master'
+$tx=$null
+function Start-Lock {
+ $script:tx=$lock.BeginTransaction()
+ $cmd=$lock.CreateCommand();$cmd.Transaction=$tx;$cmd.CommandText='SELECT COUNT(*) FROM dbo.BAN WITH(TABLOCKX,HOLDLOCK);'
+ try {[void]$cmd.ExecuteScalar()} finally {$cmd.Dispose()}
+}
+function Blocked-Requests {return Read-TestScalar $monitor "SELECT COUNT(*) FROM sys.dm_exec_requests r JOIN sys.dm_exec_sessions s ON s.session_id=r.session_id WHERE s.host_process_id=$AppPID AND r.blocking_session_id<>0;"}
+try {
+ Wait-Ready
+ Invoke-Button $load;Start-Sleep -Milliseconds 500;Wait-Ready
+ $result.LoadedText=Texts
+ $transform=[System.Windows.Automation.TransformPattern]$w.GetCurrentPattern([System.Windows.Automation.TransformPattern]::Pattern)
+ foreach($size in @(@(1280,720),@(1366,768))){$transform.Resize($size[0],$size[1]);Start-Sleep -Milliseconds 300;Capture "runtime-tables-$($size[0])x$($size[1])"}
+ $edit=@(Items ([System.Windows.Automation.ControlType]::Edit))[0]
+ $value=[System.Windows.Automation.ValuePattern]$edit.GetCurrentPattern([System.Windows.Automation.ValuePattern]::Pattern)
+ $value.SetValue('ZZZZZ');Invoke-Button $load;Start-Sleep -Milliseconds 500;Wait-Ready
+ $result.EmptyText=Texts;Capture 'runtime-empty'
+ $value.SetValue('');Invoke-Button $load;Start-Sleep -Milliseconds 500;Wait-Ready
+ Start-Lock;Invoke-Button $load;Start-Sleep -Milliseconds 500
+ $result.Loading=@{LoadEnabled=$load.Current.IsEnabled;CancelEnabled=$cancel.Current.IsEnabled;BlockedRequests=(Blocked-Requests)}
+ if($load.Current.IsEnabled -or -not $cancel.Current.IsEnabled -or $result.Loading.BlockedRequests -lt 1){throw 'Loading/blocked query not established'}
+ $timer=[Diagnostics.Stopwatch]::StartNew();$transform.Resize(1280,720);$timer.Stop();$result.ResizeWhileLoadingMs=$timer.ElapsedMilliseconds
+ Capture 'runtime-loading-locked'
+ Invoke-Button $cancel;Wait-Ready
+ $result.Cancel=@{LoadEnabled=$load.Current.IsEnabled;CancelEnabled=$cancel.Current.IsEnabled;Text=(Texts);BlockedRequests=(Blocked-Requests)}
+ Capture 'runtime-canceled'
+ $tx.Rollback();$tx.Dispose();$tx=$null;Start-Sleep -Milliseconds 500
+ $result.AfterUnlockText=Texts
+ Invoke-Button $load;Start-Sleep -Milliseconds 500;Wait-Ready;$result.ReloadText=Texts
+ Start-Lock;Invoke-Button $load;Start-Sleep -Milliseconds 500
+ $result.BeforeClose=@{BlockedRequests=(Blocked-Requests);Text=(Texts)}
+ if($result.BeforeClose.BlockedRequests -lt 1){throw 'Close test has no blocked query'}
+ [void]$p.CloseMainWindow();$result.ExitedWhileLocked=$p.WaitForExit(10000)
+ if(-not $result.ExitedWhileLocked){throw 'App did not close while query was blocked'}
+ $result.ExitCode=$p.ExitCode
+ $tx.Rollback();$tx.Dispose();$tx=$null
+ $result.ActiveRequestsAfterClose=Read-TestScalar $monitor "SELECT COUNT(*) FROM sys.dm_exec_requests r JOIN sys.dm_exec_sessions s ON s.session_id=r.session_id WHERE s.host_process_id=$AppPID;"
+ $result.CompletedAt=(Get-Date).ToString('o');$result.Status='PASS'
+} catch {$result.Status='FAIL';$result.Error=$_.Exception.Message;throw}
+finally {
+ if($tx){$tx.Rollback();$tx.Dispose()};$lock.Dispose();$monitor.Dispose()
+ $result|ConvertTo-Json -Depth 7|Set-Content (Join-Path $Output 'runtime-slow-ui.json') -Encoding UTF8
+}

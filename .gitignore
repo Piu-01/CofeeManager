@@ -1,0 +1,32 @@
+# .NET build outputs
+[Bb]in/
+[Oo]bj/
+/artifacts/
+/publish/
+
+# Visual Studio and local editor state
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+appsettings.local.json
+appsettings.*.local.json
+*.local.config
+/config/local/
+*.pfx
+*.p12
+
+# SQL backups and local test data
+*.bak
+*.trn
+*.mdf
+*.ldf
+/test-data/local/
+/TestResults/
+*.log

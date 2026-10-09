@@ -1,0 +1,194 @@
+﻿[
+    {
+        "Path":  "src\\CafeManager.Business\\CafeManager.Business.csproj",
+        "Hash":  "A4C3654F1C78FEF6601C62FB029262447E9FA5F70E7EB6962025AD746F12A1F4"
+    },
+    {
+        "Path":  "src\\CafeManager.Business\\Services\\TableStatusService.cs",
+        "Hash":  "FAF1ACF10622C85726B043024370CCFD2DBBE5F087DB33E77F89EE18856AAB8D"
+    },
+    {
+        "Path":  "src\\CafeManager.DataAccess\\CafeManager.DataAccess.csproj",
+        "Hash":  "472A43D85BA8A9D36C62937F1418A92FF73CF0877B404573898AE1FDF3A749EC"
+    },
+    {
+        "Path":  "src\\CafeManager.DataAccess\\ConnectionFactory.cs",
+        "Hash":  "68AB25E8025E347CCD30D0E4A90A0F0010735A61CF6B04BEBE1A85EB19963DF1"
+    },
+    {
+        "Path":  "src\\CafeManager.DataAccess\\DataAccessException.cs",
+        "Hash":  "78F89C608F9A3EB5285E97FE226297400B854934A9030E827668B8D746ED41E2"
+    },
+    {
+        "Path":  "src\\CafeManager.DataAccess\\DataOperationLog.cs",
+        "Hash":  "6AC892826A226B94800B8AA5407763C4FE996FDD348CF64A6DDA53762FED454C"
+    },
+    {
+        "Path":  "src\\CafeManager.DataAccess\\PaymentTableBuilder.cs",
+        "Hash":  "822AB7D4D0D42D63F0E5047B5492D248897CB01EDE1C982A1D2F5C7552D036CA"
+    },
+    {
+        "Path":  "src\\CafeManager.DataAccess\\SqlErrorMapper.cs",
+        "Hash":  "C9E86A2395C440AC4AFC3217192884E40B286F5F06109DF57908078C912246BE"
+    },
+    {
+        "Path":  "src\\CafeManager.DataAccess\\SqlParameters.cs",
+        "Hash":  "D2B28D3EAB331A4DFAA032803403F1C670E9D3F81316356DC12E4F773AF789EB"
+    },
+    {
+        "Path":  "src\\CafeManager.DataAccess\\SqlProcedureExecutor.cs",
+        "Hash":  "EBA1875B30F008C5A82B92C4BE8A3C59715314449113506CFDB05694EC4CDD0E"
+    },
+    {
+        "Path":  "src\\CafeManager.DataAccess\\Repositories\\TableStatusRepository.cs",
+        "Hash":  "040009D44F06BF0B7B00EEAD026D666C78FB185AA397D43FDC9E0FE55D197488"
+    },
+    {
+        "Path":  "src\\CafeManager.Models\\CafeManager.Models.csproj",
+        "Hash":  "2FDBB0CCDEF922BFDA5B379CBC768B7C0C1CFCE3B8A8F7DCDACECB06B4E736D7"
+    },
+    {
+        "Path":  "src\\CafeManager.Models\\Dtos\\TableStatusDto.cs",
+        "Hash":  "5F87607CF1A5AA60FE1D9F40DAF8F0AAB36109E30740DBB431244A8D662DB4D8"
+    },
+    {
+        "Path":  "src\\CafeManager.Models\\Errors\\DataError.cs",
+        "Hash":  "A81171A152C27293D2123A610709119B23A48BA81D6CD66F474511A86FF21CF5"
+    },
+    {
+        "Path":  "src\\CafeManager.Models\\Requests\\PaymentAllocation.cs",
+        "Hash":  "AE5A2267C928C6DCC021DE484A8293DD58B0DA9EB78CF07419E2A00549297C0D"
+    },
+    {
+        "Path":  "src\\CafeManager.WinForms\\CafeManager.WinForms.csproj",
+        "Hash":  "35F2610088E58E7C2F80EB591BB8224FC7DE3E19FF2D361E690B07CC2D2A2DAA"
+    },
+    {
+        "Path":  "src\\CafeManager.WinForms\\CafeManager.WinForms.csproj.user",
+        "Hash":  "8084FEB1D0747173BA61AA40B97C4C2E6890BE8E142E8263A8CFA6F43D4DA8CF"
+    },
+    {
+        "Path":  "src\\CafeManager.WinForms\\Program.cs",
+        "Hash":  "8CAA44B0F01225A8536AA68F63012D97753895B1F2E46816A1798F5F6B82F518"
+    },
+    {
+        "Path":  "src\\CafeManager.WinForms\\Forms\\StartupForm.cs",
+        "Hash":  "EEFB4143CAFEF015C7BC3EAF8A2711EABDB0DCC85CB0DFA1794D78DCC0D65570"
+    },
+    {
+        "Path":  "src\\CafeManager.WinForms\\Forms\\StartupForm.Designer.cs",
+        "Hash":  "997721E50428DD8A6CE386AD27FEDBC53592790366EBB5E636902F6D18EEF197"
+    },
+    {
+        "Path":  "src\\CafeManager.WinForms\\Forms\\StartupForm.resx",
+        "Hash":  "AD197010B4AEC54E7DA62CBFD3938B8F26485E949E9938D266FD4B4F281F0B39"
+    },
+    {
+        "Path":  "tests\\CafeManager.Tests\\CafeManager.Tests.csproj",
+        "Hash":  "5E1FEEDBF891AE53D6577F15EEED446124B66192FE416A3B3F28E2FEBD9901CF"
+    },
+    {
+        "Path":  "tests\\CafeManager.Tests\\ParameterAndErrorTests.cs",
+        "Hash":  "5AC866B25911C388F707891EF13DC625C73FFDC4E09E49D94AD5F29F761A916D"
+    },
+    {
+        "Path":  "tests\\CafeManager.Tests\\TestDatabaseFixture.cs",
+        "Hash":  "1CB66CA1B3FD4496E5CC2F3C1675EAD077B4FA7E9C36135B80ECE5F9358C9652"
+    },
+    {
+        "Path":  "tests\\CafeManager.Tests\\Integration\\DataAccessTests.cs",
+        "Hash":  "B96A6DF5ACD9817E59DEA054F017AB0E6209F7F21EA0D6B8D9F01A2509E10ED8"
+    },
+    {
+        "Path":  "database\\DB_Schema.sql",
+        "Hash":  "53351D5CA521464558DE6FC4AA1F839CC45CBBD091FDDB4EC005643F2D6EE151"
+    },
+    {
+        "Path":  "database\\Insert_Data.sql",
+        "Hash":  "FBC1CAB2233D8B3B588F6C3DE61DB9A8ADCD40CFE19997531EB91354BADDF706"
+    },
+    {
+        "Path":  "database\\migrations\\001_contract_and_code_generation.sql",
+        "Hash":  "0C4300BB58CE9E29A3A8E2B814AEB1F259F51F2DC0251142CD6479D23D44036C"
+    },
+    {
+        "Path":  "database\\security\\provision-app-user.sql",
+        "Hash":  "B34BC3D02A950DABC4603AAD8B3BF5004DA9CEB230DBAA45173BE1489B501E1A"
+    },
+    {
+        "Path":  "database\\tests\\t02\\batch-triggers.sql",
+        "Hash":  "704EDAE90E15C82F8CAC5D8123437EB1B9C71182B1ABA1B8DFDC4DC14D0D6400"
+    },
+    {
+        "Path":  "database\\tests\\t02\\catalog-seed.sql",
+        "Hash":  "A0A57D127E29383EF22F763904050F485572250F8F28EDEFACC09C248DED7592"
+    },
+    {
+        "Path":  "database\\tests\\t02\\constraints.sql",
+        "Hash":  "4F14D2B0665A038AAFD8492A6F2343190166F12C5DE12034947A7611622B042C"
+    },
+    {
+        "Path":  "database\\tests\\t02\\fixtures.sql",
+        "Hash":  "9AD855A5ACF9F56165CA601878983EB6A9F46CB732BEEA8B3F0266A0DC1AFF8C"
+    },
+    {
+        "Path":  "database\\tests\\t02\\procedure-cases.sql",
+        "Hash":  "6FCAF99EDFCA494D85211BB7C36049834AA0294F1B7A270025D8442E46E8F515"
+    },
+    {
+        "Path":  "database\\tests\\t03\\permissions.sql",
+        "Hash":  "C175CF2D79C2D8370AFC2F5F6B47B0E2434377B791BD8F13AF224B4531B77587"
+    },
+    {
+        "Path":  "database\\tests\\t05\\fixtures.sql",
+        "Hash":  "C6A4BB0311EE18551FCACE6A0EA705D0B39B8E9A5E5D05DF7B66F158A33561B7"
+    },
+    {
+        "Path":  "database\\tests\\t05\\slow-ui.sql",
+        "Hash":  "DBBC2CD95EB01821C409C60FC867D745CF5B3101F9632251B3CDA9835E575A2E"
+    },
+    {
+        "Path":  "tools\\CafeManager.EnvironmentProbe\\CafeManager.EnvironmentProbe.csproj",
+        "Hash":  "B01BE238023D2A95F41D2A88F7A13E7C6F0AB7E0358975EFBD416538151F1A27"
+    },
+    {
+        "Path":  "tools\\CafeManager.EnvironmentProbe\\CafeManager.EnvironmentProbe.csproj.user",
+        "Hash":  "0162BBA2A08BAB5F20296314F586239790B84B4545BB0E83E6A4E20229904D35"
+    },
+    {
+        "Path":  "tools\\CafeManager.EnvironmentProbe\\EnvironmentProbeForm.cs",
+        "Hash":  "3203C812933C76A04247BD4A32E173699FFA99127EC320A97E57E8819BDC0BDC"
+    },
+    {
+        "Path":  "tools\\CafeManager.EnvironmentProbe\\EnvironmentProbeForm.Designer.cs",
+        "Hash":  "6239FE74C4AF6C2CA38DBEAD1F3A25BA0721906D3C084191F5E75496F1EFC1F9"
+    },
+    {
+        "Path":  "tools\\CafeManager.EnvironmentProbe\\EnvironmentProbeForm.resx",
+        "Hash":  "4363CD7D5B8671C72442CE1A1BFC10D64EBD24B2D718B54BD4FCD025E4967298"
+    },
+    {
+        "Path":  "tools\\CafeManager.EnvironmentProbe\\Program.cs",
+        "Hash":  "1BA193C8B584F79C1AEA3CDFB3CC83EBFBADA764E0E7A446F613B291DE5701DC"
+    },
+    {
+        "Path":  "tools\\database\\Apply-Migration.ps1",
+        "Hash":  "894548AE0EEABFF319EA0BA6E9F68A9DE269826B5DFF1BCB1C5D82CB5EE4C158"
+    },
+    {
+        "Path":  "tools\\database\\DatabaseTestTools.ps1",
+        "Hash":  "A4E826CDF06C6C4EBDBEB5A69347736CA490F4ACABDFAC6F238041C01D16A5F0"
+    },
+    {
+        "Path":  "tools\\database\\Test-Baseline.ps1",
+        "Hash":  "46F91704CC8478BF18EDB616293863A181E4CF06ADE3AF832E7DA0933F307A1B"
+    },
+    {
+        "Path":  "tools\\database\\Test-ContractMigration.ps1",
+        "Hash":  "E273035B6C1600747D8712ED34F3C7F40EA0D35D1430ABBB369EAB8CCCF5D385"
+    },
+    {
+        "Path":  "tools\\database\\Test-DataAccess.ps1",
+        "Hash":  "2A50E191B020004AD13D9B958EE61F476D31B5B9BFA7917F429C51140CDFC2EC"
+    }
+]

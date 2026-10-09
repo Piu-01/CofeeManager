@@ -1,0 +1,116 @@
+﻿[
+    {
+        "Scale":  100,
+        "Dpi":  96,
+        "Requested":  [
+                          1280,
+                          720
+                      ],
+        "Actual":  [
+                       1280,
+                       720
+                   ],
+        "ResizeError":  null,
+        "SizeMatched":  true
+    },
+    {
+        "Scale":  100,
+        "Dpi":  96,
+        "Requested":  [
+                          1366,
+                          768
+                      ],
+        "Actual":  [
+                       1366,
+                       768
+                   ],
+        "ResizeError":  null,
+        "SizeMatched":  true
+    },
+    {
+        "Scale":  100,
+        "Keyboard":  [
+                         {
+                             "ProcessId":  23124,
+                             "Key":  "{TAB}",
+                             "Name":  "Tải trạng thái bàn",
+                             "Type":  "ControlType.Button"
+                         },
+                         {
+                             "ProcessId":  23124,
+                             "Key":  "{TAB}",
+                             "Name":  "Mã bàn Row 1, Not sorted.",
+                             "Type":  "ControlType.DataItem"
+                         },
+                         {
+                             "ProcessId":  10692,
+                             "Key":  "+{TAB}",
+                             "Name":  "CoffeeManager · B07 · Dữ liệu minh họa",
+                             "Type":  "ControlType.ListItem"
+                         },
+                         {
+                             "ProcessId":  null,
+                             "Key":  "+{TAB}",
+                             "Name":  null,
+                             "Type":  null
+                         }
+                     ]
+    },
+    {
+        "Scale":  150,
+        "Dpi":  144,
+        "Requested":  [
+                          1280,
+                          720
+                      ],
+        "Actual":  [
+                       1280,
+                       812
+                   ],
+        "ResizeError":  null,
+        "SizeMatched":  false
+    },
+    {
+        "Scale":  150,
+        "Dpi":  144,
+        "Requested":  [
+                          1366,
+                          768
+                      ],
+        "Actual":  [
+                       1366,
+                       812
+                   ],
+        "ResizeError":  null,
+        "SizeMatched":  false
+    },
+    {
+        "Scale":  150,
+        "Keyboard":  [
+                         {
+                             "ProcessId":  10692,
+                             "Key":  "{TAB}",
+                             "Name":  "",
+                             "Type":  "ControlType.Pane"
+                         },
+                         {
+                             "ProcessId":  10692,
+                             "Key":  "{TAB}",
+                             "Name":  "",
+                             "Type":  "ControlType.Pane"
+                         },
+                         {
+                             "ProcessId":  10692,
+                             "Key":  "+{TAB}",
+                             "Name":  "",
+                             "Type":  "ControlType.Pane"
+                         },
+                         {
+                             "ProcessId":  10692,
+                             "Key":  "+{TAB}",
+                             "Name":  "",
+                             "Type":  "ControlType.Pane"
+                         }
+                     ]
+    }
+]

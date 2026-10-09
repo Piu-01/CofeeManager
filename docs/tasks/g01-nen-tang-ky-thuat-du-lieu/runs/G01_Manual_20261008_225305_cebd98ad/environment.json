@@ -1,0 +1,9 @@
+﻿{
+    "RunId":  "20261008_225305_cebd98ad",
+    "Database":  "CoffeeManager_Test_T05_20261008_225305_cebd98ad",
+    "TableCount":  10,
+    "PrincipalStatus":  "Waiting for dedicated Windows account",
+    "DesignerStatus":  "Waiting for user evidence",
+    "UiStatus":  "NOT RUN",
+    "ConnectionTemplate":  "Server=localhost;Initial Catalog=CoffeeManager_Test_T05_20261008_225305_cebd98ad;Integrated Security=True;Encrypt=True;TrustServerCertificate=True"
+}

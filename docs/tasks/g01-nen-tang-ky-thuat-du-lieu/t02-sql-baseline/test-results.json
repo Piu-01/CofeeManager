@@ -1,0 +1,2336 @@
+{
+    "RunId":  "20261008_205557_93421dd4",
+    "StartedAt":  "2026-10-08T20:55:57.4926310+07:00",
+    "CompletedAt":  "2026-10-08T20:56:11.5208876+07:00",
+    "Server":  "localhost",
+    "Engine":  "LAPTOP-79UNRIRC | 17.0.1000.7 | Enterprise Developer Edition (64-bit)",
+    "Databases":  [
+                      {
+                          "Role":  "baseline",
+                          "Name":  "CoffeeManager_Test_T02_baseline_20261008_205557_93421dd4"
+                      },
+                      {
+                          "Role":  "fixture",
+                          "Name":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4"
+                      }
+                  ],
+    "SetupError":  null,
+    "SchemaSHA256":  "53351D5CA521464558DE6FC4AA1F839CC45CBBD091FDDB4EC005643F2D6EE151",
+    "SeedSHA256":  "FBC1CAB2233D8B3B588F6C3DE61DB9A8ADCD40CFE19997531EB91354BADDF706",
+    "SourceCommit":  "uncommitted",
+    "Cases":  [
+                  {
+                      "Id":  "T02-K01-catalog",
+                      "Description":  "Exact baseline object counts and enabled trusted constraints",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_baseline_20261008_205557_93421dd4",
+                      "Source":  "catalog-seed.sql",
+                      "ExpectedError":  0,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "IF (SELECT COUNT(*) FROM sys.tables WHERE is_ms_shipped=0)\u003c\u003e35 THROW 52001,\u0027Expected 35 tables\u0027,1;\nIF (SELECT COUNT(*) FROM sys.views WHERE is_ms_shipped=0)\u003c\u003e2 THROW 52001,\u0027Expected 2 views\u0027,1;\nIF (SELECT COUNT(*) FROM sys.procedures WHERE is_ms_shipped=0)\u003c\u003e4 THROW 52001,\u0027Expected 4 procedures\u0027,1;\nIF (SELECT COUNT(*) FROM sys.table_types WHERE is_user_defined=1)\u003c\u003e1 THROW 52001,\u0027Expected 1 table type\u0027,1;\nIF EXISTS(SELECT 1 FROM sys.foreign_keys WHERE is_disabled=1 OR is_not_trusted=1) THROW 52001,\u0027Untrusted/disabled FK\u0027,1;\nIF EXISTS(SELECT 1 FROM sys.check_constraints WHERE is_disabled=1 OR is_not_trusted=1) THROW 52001,\u0027Untrusted/disabled CHECK\u0027,1;\nIF EXISTS(SELECT 1 FROM sys.triggers WHERE is_disabled=1) THROW 52001,\u0027Disabled trigger\u0027,1;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  null,
+                      "SnapshotAfter":  null,
+                      "Failure":  null,
+                      "DurationMs":  254
+                  },
+                  {
+                      "Id":  "T02-K01-modules",
+                      "Description":  "SQL modules resolve dependencies and compile on engine",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_baseline_20261008_205557_93421dd4",
+                      "Source":  "catalog-seed.sql",
+                      "ExpectedError":  0,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "DECLARE @name NVARCHAR(776), @definition NVARCHAR(MAX);\nDECLARE modules CURSOR LOCAL FAST_FORWARD FOR\nSELECT QUOTENAME(OBJECT_SCHEMA_NAME(object_id))+N\u0027.\u0027+QUOTENAME(OBJECT_NAME(object_id)),definition\nFROM sys.sql_modules WHERE OBJECTPROPERTY(object_id,\u0027IsMSShipped\u0027)=0;\nOPEN modules;\nFETCH NEXT FROM modules INTO @name,@definition;\nWHILE @@FETCH_STATUS=0\nBEGIN\n    EXEC sys.sp_refreshsqlmodule @name;\n    FETCH NEXT FROM modules INTO @name,@definition;\nEND;\nCLOSE modules; DEALLOCATE modules;\nSELECT * FROM dbo.vw_TrangThaiBan;\nSELECT * FROM dbo.vw_CongNoNCC;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  null,
+                      "SnapshotAfter":  null,
+                      "Failure":  null,
+                      "DurationMs":  835
+                  },
+                  {
+                      "Id":  "T02-K02-seed",
+                      "Description":  "Seed commits 10 bills 18 lines 9 paid and one open table B0003",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_baseline_20261008_205557_93421dd4",
+                      "Source":  "catalog-seed.sql",
+                      "ExpectedError":  0,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "IF (SELECT COUNT(*) FROM dbo.HOADON)\u003c\u003e10 THROW 52002,\u0027Expected 10 invoices\u0027,1;\nIF (SELECT COUNT(*) FROM dbo.CHITIET_HD)\u003c\u003e18 THROW 52002,\u0027Expected 18 lines\u0027,1;\nIF (SELECT COUNT(*) FROM dbo.HOADON WHERE TrangThai=N\u0027Da thanh toan\u0027)\u003c\u003e9 THROW 52002,\u0027Expected 9 paid\u0027,1;\nIF (SELECT COUNT(*) FROM dbo.HOADON WHERE TrangThai=N\u0027Chua thanh toan\u0027)\u003c\u003e1 THROW 52002,\u0027Expected 1 open\u0027,1;\nIF NOT EXISTS(SELECT 1 FROM dbo.vw_TrangThaiBan WHERE MaBan=\u0027B0003\u0027 AND MaHD=\u0027HD20250410\u0027 AND TrangThai=N\u0027Dang phuc vu\u0027) THROW 52002,\u0027Wrong open table\u0027,1;\nIF EXISTS(SELECT 1 FROM dbo.vw_TrangThaiBan WHERE MaBan\u003c\u003e\u0027B0003\u0027 AND TrangThai\u003c\u003eN\u0027Trong\u0027) THROW 52002,\u0027Unexpected occupied table\u0027,1;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  null,
+                      "SnapshotAfter":  null,
+                      "Failure":  null,
+                      "DurationMs":  50
+                  },
+                  {
+                      "Id":  "T02-K03-money",
+                      "Description":  "Sample bills and split payments match explicit amounts",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_baseline_20261008_205557_93421dd4",
+                      "Source":  "catalog-seed.sql",
+                      "ExpectedError":  0,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "IF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD=\u0027HD20250401\u0027 AND TongTien=125000 AND GiamGia=12500 AND ThanhTien=112500) THROW 52003,\u0027HD01 mismatch\u0027,1;\nIF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD=\u0027HD20250409\u0027 AND ThanhTien=81000) THROW 52003,\u0027HD09 mismatch\u0027,1;\nIF (SELECT COUNT(*) FROM dbo.CHITIET_THANHTOAN WHERE MaHD=\u0027HD20250409\u0027)\u003c\u003e2 THROW 52003,\u0027Expected 2 allocations\u0027,1;\nIF NOT EXISTS(SELECT 1 FROM dbo.CHITIET_THANHTOAN WHERE MaHD=\u0027HD20250409\u0027 AND MaPT=\u0027PT002\u0027 AND SoTien=30000) THROW 52003,\u0027Missing 30000\u0027,1;\nIF NOT EXISTS(SELECT 1 FROM dbo.CHITIET_THANHTOAN WHERE MaHD=\u0027HD20250409\u0027 AND MaPT=\u0027PT005\u0027 AND SoTien=51000) THROW 52003,\u0027Missing 51000\u0027,1;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  null,
+                      "SnapshotAfter":  null,
+                      "Failure":  null,
+                      "DurationMs":  30
+                  },
+                  {
+                      "Id":  "T02-K04-invariants",
+                      "Description":  "Every invoice receipt allocation stock and customer tier is consistent",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_baseline_20261008_205557_93421dd4",
+                      "Source":  "catalog-seed.sql",
+                      "ExpectedError":  0,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "IF EXISTS(SELECT 1 FROM dbo.HOADON h WHERE h.TongTien\u003c\u003eCOALESCE((SELECT SUM(CONVERT(DECIMAL(18,0),SoLuong)*GiaBan) FROM dbo.CHITIET_HD WHERE MaHD=h.MaHD),0)) THROW 52004,\u0027Invoice total mismatch\u0027,1;\nIF EXISTS(SELECT 1 FROM dbo.HOADON h WHERE h.TrangThai=N\u0027Da thanh toan\u0027 AND h.ThanhTien\u003c\u003eCOALESCE((SELECT SUM(SoTien) FROM dbo.CHITIET_THANHTOAN WHERE MaHD=h.MaHD),0)) THROW 52004,\u0027Payment mismatch\u0027,1;\nIF EXISTS(SELECT 1 FROM dbo.PHIEUNHAP p WHERE p.TongTien\u003c\u003eCOALESCE((SELECT SUM(ROUND(SoLuong*DonGiaNhap,0)) FROM dbo.CHITIET_PN WHERE MaPN=p.MaPN),0)) THROW 52004,\u0027Receipt total mismatch\u0027,1;\nIF EXISTS(SELECT 1 FROM dbo.vw_CongNoNCC WHERE ConNo\u003c0) THROW 52004,\u0027Negative debt\u0027,1;\nIF EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE SoLuongTon\u003c0) THROW 52004,\u0027Negative stock\u0027,1;\nIF EXISTS(SELECT 1 FROM dbo.KHACHHANG k CROSS APPLY(SELECT TOP(1) MaHang FROM dbo.HANGTHANHVIEN WHERE DiemToiThieu\u003c=k.DiemTichLuy ORDER BY DiemToiThieu DESC) h WHERE k.MaHang\u003c\u003eh.MaHang) THROW 52004,\u0027Tier mismatch\u0027,1;\nIF (SELECT COUNT(*) FROM dbo.TIEUHAO_HOADON)=0 THROW 52004,\u0027Missing consumption snapshots\u0027,1;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  null,
+                      "SnapshotAfter":  null,
+                      "Failure":  null,
+                      "DurationMs":  72
+                  },
+                  {
+                      "Id":  "T02-K05-repeat",
+                      "Description":  "Seed refuses repeat and preserves all rows",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_baseline_20261008_205557_93421dd4",
+                      "Source":  "Insert_Data.sql (second invocation)",
+                      "ExpectedError":  51200,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "-- DU LIEU MAU cho QuanLyCafe_ERP_V2; chay SAU DB_Schema.sql.\n-- Chi chay mot lan tren schema rong. Khong xoa hay ghi de du lieu hien co.\n-- Mat khau mau bi khoa: tao hash that tu app va bat HoatDong khi can dang nhap.\n-- Ton va diem ban dau la so du dau ky; nhap/xuat/ban/diem phat sinh tu dong.\n-- Tat ca INSERT va thanh toan mau nam trong mot transaction.\nUSE [CoffeeManager_Test_T02_baseline_20261008_205557_93421dd4];\nGO\nSET NOCOUNT ON;\nSET XACT_ABORT ON;\nBEGIN TRY\n    BEGIN TRAN;\n    IF EXISTS (SELECT 1 FROM dbo.NHANVIEN)\n        THROW 51200,N\u0027Du lieu mau da ton tai; khong chay lai file INSERT.\u0027,1;\n\nINSERT INTO dbo.CHUCVU (MaCV, TenCV, PhuCap, HeSoTangCa) VALUES\n(N\u0027CV001\u0027, N\u0027Quan ly\u0027, 2000000, 2.0),\n(N\u0027CV002\u0027, N\u0027Pha che\u0027, 500000, 1.5),\n(N\u0027CV003\u0027, N\u0027Thu ngan\u0027, 300000, 1.5),\n(N\u0027CV004\u0027, N\u0027Phuc vu\u0027, 200000, 1.5),\n(N\u0027CV005\u0027, N\u0027Bao ve\u0027, 100000, 1.5),\n(N\u0027CV006\u0027, N\u0027Tap vu\u0027, 100000, 1.5),\n(N\u0027CV007\u0027, N\u0027Giao hang\u0027, 150000, 1.5),\n(N\u0027CV008\u0027, N\u0027Ke toan\u0027, 800000, 1.75),\n(N\u0027CV009\u0027, N\u0027Marketing\u0027, 600000, 1.75),\n(N\u0027CV010\u0027, N\u0027Quan ly kho\u0027, 400000, 1.5);\n\nINSERT INTO dbo.CALAMVIEC (MaCa, TenCa, GioBatDau, GioKetThuc) VALUES\n(N\u0027CA001\u0027, N\u0027Ca sang\u0027, N\u002706:00\u0027, N\u002714:00\u0027),\n(N\u0027CA002\u0027, N\u0027Ca chieu\u0027, N\u002714:00\u0027, N\u002722:00\u0027),\n(N\u0027CA003\u0027, N\u0027Ca toi\u0027, N\u002718:00\u0027, N\u002723:00\u0027),\n(N\u0027CA004\u0027, N\u0027Ca hanh chinh\u0027, N\u002708:00\u0027, N\u002717:00\u0027),\n(N\u0027CA005\u0027, N\u0027Ca cuoi tuan sang\u0027, N\u002707:00\u0027, N\u002715:00\u0027),\n(N\u0027CA006\u0027, N\u0027Ca cuoi tuan chieu\u0027, N\u002715:00\u0027, N\u002723:00\u0027),\n(N\u0027CA007\u0027, N\u0027Ca ngan sang\u0027, N\u002706:00\u0027, N\u002710:00\u0027),\n(N\u0027CA008\u0027, N\u0027Ca ngan trua\u0027, N\u002710:00\u0027, N\u002714:00\u0027),\n(N\u0027CA009\u0027, N\u0027Ca ngan chieu\u0027, N\u002714:00\u0027, N\u002718:00\u0027),\n(N\u0027CA010\u0027, N\u0027Ca ngan toi\u0027, N\u002718:00\u0027, N\u002722:00\u0027);\n\nINSERT INTO dbo.NHANVIEN (MaNV, TenNV, SDT, LoaiHopDong, LuongCung, LuongTheoGio, MaCV) VALUES\n(N\u0027NV001\u0027, N\u0027Nguyen Van An\u0027, N\u00270901111111\u0027, N\u0027Full-time\u0027, 12000000, 0, N\u0027CV001\u0027),\n(N\u0027NV002\u0027, N\u0027Tran Thi Binh\u0027, N\u00270902222222\u0027, N\u0027Full-time\u0027, 9000000, 0, N\u0027CV002\u0027),\n(N\u0027NV003\u0027, N\u0027Le Van Cuong\u0027, N\u00270903333333\u0027, N\u0027Part-time\u0027, 0, 35000, N\u0027CV002\u0027),\n(N\u0027NV004\u0027, N\u0027Pham Thi Dung\u0027, N\u00270904444444\u0027, N\u0027Full-time\u0027, 8500000, 0, N\u0027CV003\u0027),\n(N\u0027NV005\u0027, N\u0027Hoang Van Em\u0027, N\u00270905555555\u0027, N\u0027Part-time\u0027, 0, 30000, N\u0027CV004\u0027),\n(N\u0027NV006\u0027, N\u0027Vu Thi Phuong\u0027, N\u00270906666666\u0027, N\u0027Full-time\u0027, 8000000, 0, N\u0027CV003\u0027),\n(N\u0027NV007\u0027, N\u0027Dang Van Giang\u0027, N\u00270907777777\u0027, N\u0027Part-time\u0027, 0, 28000, N\u0027CV004\u0027),\n(N\u0027NV008\u0027, N\u0027Bui Thi Huong\u0027, N\u00270908888888\u0027, N\u0027Full-time\u0027, 7500000, 0, N\u0027CV004\u0027),\n(N\u0027NV009\u0027, N\u0027Do Van Kien\u0027, N\u00270909999999\u0027, N\u0027Part-time\u0027, 0, 32000, N\u0027CV002\u0027),\n(N\u0027NV010\u0027, N\u0027Nguyen Thi Lan\u0027, N\u00270910000000\u0027, N\u0027Full-time\u0027, 10000000, 0, N\u0027CV008\u0027);\n\nINSERT INTO dbo.CHAMCONG (MaNV, NgayLam, MaCa, GioVao, GioRa, TrangThai) VALUES\n(N\u0027NV002\u0027, N\u00272025-04-01\u0027, N\u0027CA001\u0027, N\u00272025-04-01 06:05\u0027, N\u00272025-04-01 14:10\u0027, N\u0027Di lam\u0027),\n(N\u0027NV004\u0027, N\u00272025-04-01\u0027, N\u0027CA001\u0027, N\u00272025-04-01 05:58\u0027, N\u00272025-04-01 14:00\u0027, N\u0027Di lam\u0027),\n(N\u0027NV003\u0027, N\u00272025-04-01\u0027, N\u0027CA002\u0027, N\u00272025-04-01 14:02\u0027, N\u00272025-04-01 22:05\u0027, N\u0027Di lam\u0027),\n(N\u0027NV006\u0027, N\u00272025-04-02\u0027, N\u0027CA002\u0027, N\u00272025-04-02 14:00\u0027, N\u00272025-04-02 22:00\u0027, N\u0027Di lam\u0027),\n(N\u0027NV005\u0027, N\u00272025-04-02\u0027, N\u0027CA002\u0027, N\u00272025-04-02 14:00\u0027, N\u00272025-04-02 22:00\u0027, N\u0027Di lam\u0027),\n(N\u0027NV002\u0027, N\u00272025-04-03\u0027, N\u0027CA001\u0027, N\u00272025-04-03 06:03\u0027, N\u00272025-04-03 14:05\u0027, N\u0027Di lam\u0027),\n(N\u0027NV003\u0027, N\u00272025-04-03\u0027, N\u0027CA002\u0027, NULL, NULL, N\u0027Vang\u0027),\n(N\u0027NV004\u0027, N\u00272025-04-04\u0027, N\u0027CA001\u0027, NULL, NULL, N\u0027Nghi phep\u0027),\n(N\u0027NV002\u0027, N\u00272025-04-05\u0027, N\u0027CA001\u0027, N\u00272025-04-05 06:00\u0027, N\u00272025-04-05 14:00\u0027, N\u0027Di lam\u0027),\n(N\u0027NV009\u0027, N\u00272025-04-05\u0027, N\u0027CA002\u0027, N\u00272025-04-05 14:00\u0027, N\u00272025-04-05 22:00\u0027, N\u0027Di lam\u0027);\n\nINSERT INTO dbo.DANHMUC_SP (MaDM, TenDM) VALUES\n(N\u0027DM001\u0027, N\u0027Ca phe\u0027),\n(N\u0027DM002\u0027, N\u0027Tra sua\u0027),\n(N\u0027DM003\u0027, N\u0027Sinh to\u0027),\n(N\u0027DM004\u0027, N\u0027Banh ngot\u0027),\n(N\u0027DM005\u0027, N\u0027Nuoc ep\u0027),\n(N\u0027DM006\u0027, N\u0027Nuoc ngot\u0027),\n(N\u0027DM007\u0027, N\u0027Tra trai cay\u0027),\n(N\u0027DM008\u0027, N\u0027Do uong nong\u0027),\n(N\u0027DM009\u0027, N\u0027Kem - Trang mien\u0027),\n(N\u0027DM010\u0027, N\u0027Mon an nhe\u0027);\n\nINSERT INTO dbo.NGUYENVATLIEU (MaNVL, TenNVL, DonViTinh, SoLuongTon) VALUES\n(N\u0027NVL01\u0027, N\u0027Ca phe hat\u0027, N\u0027Kg\u0027, 50.0),\n(N\u0027NVL02\u0027, N\u0027Sua tuoi\u0027, N\u0027Lit\u0027, 30.0),\n(N\u0027NVL03\u0027, N\u0027Duong\u0027, N\u0027Kg\u0027, 20.0),\n(N\u0027NVL04\u0027, N\u0027Tra xanh\u0027, N\u0027Kg\u0027, 15.0),\n(N\u0027NVL05\u0027, N\u0027Bot matcha\u0027, N\u0027Kg\u0027, 5.0),\n(N\u0027NVL06\u0027, N\u0027Tran chau\u0027, N\u0027Kg\u0027, 10.0),\n(N\u0027NVL07\u0027, N\u0027Bo\u0027, N\u0027Kg\u0027, 8.0),\n(N\u0027NVL08\u0027, N\u0027Xoai\u0027, N\u0027Kg\u0027, 12.0),\n(N\u0027NVL09\u0027, N\u0027Kem tuoi\u0027, N\u0027Lit\u0027, 6.0),\n(N\u0027NVL10\u0027, N\u0027Ly nhua\u0027, N\u0027Cai\u0027, 500.0);\n\nINSERT INTO dbo.NHACUNGCAP (MaNCC, TenNCC, SDT) VALUES\n(N\u0027NCC01\u0027, N\u0027Cty Ca phe Trung Nguyen\u0027, N\u002702873001234\u0027),\n(N\u0027NCC02\u0027, N\u0027Cty Thuc Pham Mien Nam\u0027, N\u002702838886666\u0027),\n(N\u0027NCC03\u0027, N\u0027Cty Tra Thai Nguyen\u0027, N\u002702459991111\u0027),\n(N\u0027NCC04\u0027, N\u0027Cty Sua Vinamilk\u0027, N\u002702836001234\u0027),\n(N\u0027NCC05\u0027, N\u0027Cty Duong Bien Hoa\u0027, N\u002702512345678\u0027),\n(N\u0027NCC06\u0027, N\u0027Cty Trai Cay Mien Tay\u0027, N\u002707091234567\u0027),\n(N\u0027NCC07\u0027, N\u0027Cty Bao Bi Xanh\u0027, N\u002702866778899\u0027),\n(N\u0027NCC08\u0027, N\u0027Cty Kem Kido\u0027, N\u002702812345678\u0027),\n(N\u0027NCC09\u0027, N\u0027Cty Nguyen Lieu Banh Ngot\u0027, N\u002702899887766\u0027),\n(N\u0027NCC10\u0027, N\u0027Cty Ca phe Highlands\u0027, N\u002702845678901\u0027);\n\nINSERT INTO dbo.SANPHAM (MaSP, TenSP, MaDM, GiaBan, TrangThai) VALUES\n(N\u0027SP001\u0027, N\u0027Ca phe den\u0027, N\u0027DM001\u0027, 25000, N\u0027Dang ban\u0027),\n(N\u0027SP002\u0027, N\u0027Ca phe sua\u0027, N\u0027DM001\u0027, 30000, N\u0027Dang ban\u0027),\n(N\u0027SP003\u0027, N\u0027Bac xiu\u0027, N\u0027DM001\u0027, 32000, N\u0027Dang ban\u0027),\n(N\u0027SP004\u0027, N\u0027Cappuccino\u0027, N\u0027DM001\u0027, 55000, N\u0027Dang ban\u0027),\n(N\u0027SP005\u0027, N\u0027Tra sua tran chau\u0027, N\u0027DM002\u0027, 45000, N\u0027Dang ban\u0027),\n(N\u0027SP006\u0027, N\u0027Tra xanh\u0027, N\u0027DM002\u0027, 40000, N\u0027Dang ban\u0027),\n(N\u0027SP007\u0027, N\u0027Sinh to bo\u0027, N\u0027DM003\u0027, 55000, N\u0027Dang ban\u0027),\n(N\u0027SP008\u0027, N\u0027Sinh to xoai\u0027, N\u0027DM003\u0027, 50000, N\u0027Dang ban\u0027),\n(N\u0027SP009\u0027, N\u0027Banh tiramisu\u0027, N\u0027DM004\u0027, 65000, N\u0027Dang ban\u0027),\n(N\u0027SP010\u0027, N\u0027Banh croissant\u0027, N\u0027DM004\u0027, 35000, N\u0027Ngung ban\u0027);\n\nINSERT INTO dbo.NGUYENVATLIEU (MaNVL, TenNVL, DonViTinh, SoLuongTon) VALUES\n(N\u0027NVL11\u0027, N\u0027Banh tiramisu thanh pham\u0027, N\u0027Cai\u0027, 30),\n(N\u0027NVL12\u0027, N\u0027Banh croissant thanh pham\u0027, N\u0027Cai\u0027, 30);\n\nINSERT INTO dbo.CONGTHUC (MaSP, MaNVL, DinhMuc) VALUES\n(N\u0027SP001\u0027, N\u0027NVL01\u0027, 0.018),\n(N\u0027SP001\u0027, N\u0027NVL03\u0027, 0.01),\n(N\u0027SP002\u0027, N\u0027NVL01\u0027, 0.018),\n(N\u0027SP002\u0027, N\u0027NVL02\u0027, 0.12),\n(N\u0027SP002\u0027, N\u0027NVL03\u0027, 0.015),\n(N\u0027SP003\u0027, N\u0027NVL01\u0027, 0.012),\n(N\u0027SP003\u0027, N\u0027NVL02\u0027, 0.15),\n(N\u0027SP004\u0027, N\u0027NVL01\u0027, 0.02),\n(N\u0027SP004\u0027, N\u0027NVL02\u0027, 0.1),\n(N\u0027SP004\u0027, N\u0027NVL09\u0027, 0.03),\n(N\u0027SP005\u0027, N\u0027NVL04\u0027, 0.005),\n(N\u0027SP005\u0027, N\u0027NVL02\u0027, 0.15),\n(N\u0027SP005\u0027, N\u0027NVL03\u0027, 0.02),\n(N\u0027SP005\u0027, N\u0027NVL06\u0027, 0.05),\n(N\u0027SP006\u0027, N\u0027NVL04\u0027, 0.005),\n(N\u0027SP006\u0027, N\u0027NVL03\u0027, 0.01),\n(N\u0027SP007\u0027, N\u0027NVL07\u0027, 0.15),\n(N\u0027SP007\u0027, N\u0027NVL02\u0027, 0.1),\n(N\u0027SP007\u0027, N\u0027NVL03\u0027, 0.015),\n(N\u0027SP008\u0027, N\u0027NVL08\u0027, 0.15),\n(N\u0027SP008\u0027, N\u0027NVL02\u0027, 0.1),\n(N\u0027SP008\u0027, N\u0027NVL03\u0027, 0.015),\n(N\u0027SP009\u0027, N\u0027NVL11\u0027, 1),\n(N\u0027SP010\u0027, N\u0027NVL12\u0027, 1);\n\nINSERT INTO dbo.PHIEUNHAP (MaPN, NgayNhap, MaNV, MaNCC, TongTien) VALUES\n(N\u0027PN20250101\u0027, N\u00272025-01-05\u0027, N\u0027NV001\u0027, N\u0027NCC01\u0027, 0),\n(N\u0027PN20250102\u0027, N\u00272025-01-20\u0027, N\u0027NV001\u0027, N\u0027NCC04\u0027, 0),\n(N\u0027PN20250201\u0027, N\u00272025-02-03\u0027, N\u0027NV001\u0027, N\u0027NCC02\u0027, 0),\n(N\u0027PN20250202\u0027, N\u00272025-02-15\u0027, N\u0027NV010\u0027, N\u0027NCC05\u0027, 0),\n(N\u0027PN20250301\u0027, N\u00272025-03-01\u0027, N\u0027NV001\u0027, N\u0027NCC01\u0027, 0),\n(N\u0027PN20250302\u0027, N\u00272025-03-18\u0027, N\u0027NV001\u0027, N\u0027NCC09\u0027, 0),\n(N\u0027PN20250401\u0027, N\u00272025-04-01\u0027, N\u0027NV001\u0027, N\u0027NCC03\u0027, 0),\n(N\u0027PN20250402\u0027, N\u00272025-04-10\u0027, N\u0027NV002\u0027, N\u0027NCC02\u0027, 0),\n(N\u0027PN20250403\u0027, N\u00272025-04-22\u0027, N\u0027NV001\u0027, N\u0027NCC06\u0027, 0),\n(N\u0027PN20250501\u0027, N\u00272025-05-02\u0027, N\u0027NV001\u0027, N\u0027NCC01\u0027, 0);\n\nINSERT INTO dbo.CHITIET_PN (MaPN, MaNVL, SoLuong, DonGiaNhap) VALUES\n(N\u0027PN20250101\u0027, N\u0027NVL01\u0027, 20.0, 180000),\n(N\u0027PN20250101\u0027, N\u0027NVL02\u0027, 50.0, 30000),\n(N\u0027PN20250102\u0027, N\u0027NVL02\u0027, 40.0, 30000),\n(N\u0027PN20250201\u0027, N\u0027NVL03\u0027, 30.0, 25000),\n(N\u0027PN20250202\u0027, N\u0027NVL03\u0027, 25.0, 25000),\n(N\u0027PN20250301\u0027, N\u0027NVL01\u0027, 25.0, 185000),\n(N\u0027PN20250301\u0027, N\u0027NVL09\u0027, 15.0, 80000),\n(N\u0027PN20250401\u0027, N\u0027NVL04\u0027, 10.0, 90000),\n(N\u0027PN20250402\u0027, N\u0027NVL07\u0027, 15.0, 80000),\n(N\u0027PN20250403\u0027, N\u0027NVL08\u0027, 30.0, 40000),\n(N\u0027PN20250302\u0027, N\u0027NVL11\u0027, 30, 60000),\n(N\u0027PN20250501\u0027, N\u0027NVL01\u0027, 24, 200000);\n\n-- Phieu xuat mau chi mo ta hao hut/huy/tra NCC; khong phai chuyen ra quay.\nINSERT INTO dbo.PHIEUXUAT (MaPX, NgayXuat, MaNV, LoaiXuat) VALUES\n(N\u0027PX20250101\u0027, N\u00272025-01-31\u0027, N\u0027NV002\u0027, N\u0027Huy do hong\u0027),\n(N\u0027PX20250201\u0027, N\u00272025-02-28\u0027, N\u0027NV002\u0027, N\u0027Huy do hong\u0027),\n(N\u0027PX20250301\u0027, N\u00272025-03-05\u0027, N\u0027NV001\u0027, N\u0027Huy do hong\u0027),\n(N\u0027PX20250302\u0027, N\u00272025-03-31\u0027, N\u0027NV002\u0027, N\u0027Huy do hong\u0027),\n(N\u0027PX20250401\u0027, N\u00272025-04-03\u0027, N\u0027NV001\u0027, N\u0027Huy do hong\u0027),\n(N\u0027PX20250402\u0027, N\u00272025-04-30\u0027, N\u0027NV002\u0027, N\u0027Huy do hong\u0027),\n(N\u0027PX20250403\u0027, N\u00272025-04-15\u0027, N\u0027NV001\u0027, N\u0027Tra hang\u0027),\n(N\u0027PX20250501\u0027, N\u00272025-05-01\u0027, N\u0027NV002\u0027, N\u0027Huy do hong\u0027),\n(N\u0027PX20250502\u0027, N\u00272025-05-10\u0027, N\u0027NV001\u0027, N\u0027Huy do hong\u0027),\n(N\u0027PX20250503\u0027, N\u00272025-05-25\u0027, N\u0027NV002\u0027, N\u0027Huy do hong\u0027);\n\nINSERT INTO dbo.CHITIET_PX (MaPX, MaNVL, SoLuongXuat) VALUES\n(N\u0027PX20250101\u0027, N\u0027NVL01\u0027, 5.0),\n(N\u0027PX20250201\u0027, N\u0027NVL02\u0027, 8.0),\n(N\u0027PX20250301\u0027, N\u0027NVL03\u0027, 2.0),\n(N\u0027PX20250302\u0027, N\u0027NVL01\u0027, 6.0),\n(N\u0027PX20250401\u0027, N\u0027NVL02\u0027, 1.5),\n(N\u0027PX20250402\u0027, N\u0027NVL01\u0027, 7.0),\n(N\u0027PX20250403\u0027, N\u0027NVL04\u0027, 3.0),\n(N\u0027PX20250501\u0027, N\u0027NVL02\u0027, 10.0),\n(N\u0027PX20250502\u0027, N\u0027NVL09\u0027, 0.5),\n(N\u0027PX20250503\u0027, N\u0027NVL01\u0027, 4.0);\n\nINSERT INTO dbo.HANGTHANHVIEN (MaHang, DiemToiThieu, PhanTramGiam) VALUES\n(N\u0027DONG\u0027, 0, 0),\n(N\u0027BAC\u0027, 300, 3),\n(N\u0027VANG\u0027, 800, 7),\n(N\u0027BKIM\u0027, 2000, 10),\n(N\u0027KIM\u0027, 5000, 15),\n(N\u0027PLAT\u0027, 8000, 18),\n(N\u0027DIAM\u0027, 12000, 20),\n(N\u0027TITA\u0027, 20000, 25),\n(N\u0027ROYA\u0027, 35000, 30),\n(N\u0027LEGE\u0027, 50000, 35);\n\nINSERT INTO dbo.KHACHHANG (MaKH, TenKH, SDT, DiemTichLuy, MaHang) VALUES\n(N\u0027KH001\u0027, N\u0027Nguyen Minh Khoa\u0027, N\u00270911111111\u0027, 3200, N\u0027BKIM\u0027),\n(N\u0027KH002\u0027, N\u0027Tran Lan Anh\u0027, N\u00270922222222\u0027, 750, N\u0027BAC\u0027),\n(N\u0027KH003\u0027, N\u0027Le Thanh Dat\u0027, N\u00270933333333\u0027, 6100, N\u0027KIM\u0027),\n(N\u0027KH004\u0027, N\u0027Pham Thu Ha\u0027, N\u00270944444444\u0027, 120, N\u0027DONG\u0027),\n(N\u0027KH005\u0027, N\u0027Hoang Bao Chau\u0027, N\u00270955555555\u0027, 1800, N\u0027VANG\u0027),\n(N\u0027KH006\u0027, N\u0027Vo Quoc Hung\u0027, N\u00270966666666\u0027, 9200, N\u0027PLAT\u0027),\n(N\u0027KH007\u0027, N\u0027Nguyen Thi Mai\u0027, N\u00270977777777\u0027, 350, N\u0027BAC\u0027),\n(N\u0027KH008\u0027, N\u0027Tran Duc Thinh\u0027, N\u00270988888888\u0027, 50, N\u0027DONG\u0027),\n(N\u0027KH009\u0027, N\u0027Ly Khanh Linh\u0027, N\u00270999999999\u0027, 14500, N\u0027DIAM\u0027),\n(N\u0027KH010\u0027, N\u0027Do Van Minh\u0027, N\u00270912345678\u0027, 2500, N\u0027BKIM\u0027);\n\nINSERT INTO dbo.KHUYENMAI (MaKM, TenKM, NgayBD, NgayKT, PhanTramGiam) VALUES\n(N\u0027KM24TET\u0027, N\u0027Khuyen mai Tet Giap Thin 2024\u0027, N\u00272024-01-20\u0027, N\u00272024-02-10\u0027, 20),\n(N\u0027KM24SAL\u0027, N\u0027Flash Sale He 2024\u0027, N\u00272024-06-01\u0027, N\u00272024-06-30\u0027, 10),\n(N\u0027KM24BF\u0027, N\u0027Black Friday 2024\u0027, N\u00272024-11-29\u0027, N\u00272024-12-01\u0027, 30),\n(N\u0027KM24NEL\u0027, N\u0027Giang Sinh 2024\u0027, N\u00272024-12-20\u0027, N\u00272024-12-31\u0027, 15),\n(N\u0027KM25TET\u0027, N\u0027Khuyen mai Tet At Ti 2025\u0027, N\u00272025-01-20\u0027, N\u00272025-02-10\u0027, 25),\n(N\u0027KM25VLT\u0027, N\u0027Valentine 14/2\u0027, N\u00272025-02-12\u0027, N\u00272025-02-14\u0027, 12),\n(N\u0027KM25WM\u0027, N\u0027Ngay Phu nu 8/3\u0027, N\u00272025-03-07\u0027, N\u00272025-03-08\u0027, 8),\n(N\u0027KM25BD\u0027, N\u0027Sinh nhat quan 5 tuoi\u0027, N\u00272025-05-01\u0027, N\u00272025-05-31\u0027, 25),\n(N\u0027KM25SAL\u0027, N\u0027Flash Sale He 2025\u0027, N\u00272025-06-01\u0027, N\u00272025-06-30\u0027, 10),\n(N\u0027KM25BCK\u0027, N\u0027Back to School 2025\u0027, N\u00272025-08-15\u0027, N\u00272025-09-15\u0027, 5);\n\nINSERT INTO dbo.KHUYENMAI (MaKM, TenKM, NgayBD, NgayKT, PhanTramGiam) VALUES\n(N\u0027KM25ONE\u0027, N\u0027Uu dai mot ngay\u0027, N\u00272025-04-01\u0027, N\u00272025-04-01\u0027, 10);\n\nINSERT INTO dbo.KHUVUC (MaKV, TenKV) VALUES\n(N\u0027KV001\u0027, N\u0027Trong nha\u0027),\n(N\u0027KV002\u0027, N\u0027San vuon\u0027),\n(N\u0027KV003\u0027, N\u0027Tang 2\u0027),\n(N\u0027KV004\u0027, N\u0027Khu VIP\u0027),\n(N\u0027KV005\u0027, N\u0027Ban bar\u0027),\n(N\u0027KV006\u0027, N\u0027Hien ngoai\u0027),\n(N\u0027KV007\u0027, N\u0027Phong rieng\u0027),\n(N\u0027KV008\u0027, N\u0027Tang thuong\u0027),\n(N\u0027KV009\u0027, N\u0027Khu khoi dong\u0027),\n(N\u0027KV010\u0027, N\u0027Khu khong khoi thuoc\u0027);\n\nINSERT INTO dbo.BAN (MaBan, TenBan, MaKV) VALUES\n(N\u0027B0001\u0027, N\u0027Ban 01\u0027, N\u0027KV001\u0027),\n(N\u0027B0002\u0027, N\u0027Ban 02\u0027, N\u0027KV001\u0027),\n(N\u0027B0003\u0027, N\u0027Ban 03\u0027, N\u0027KV001\u0027),\n(N\u0027B0004\u0027, N\u0027Ban 04\u0027, N\u0027KV002\u0027),\n(N\u0027B0005\u0027, N\u0027Ban 05\u0027, N\u0027KV002\u0027),\n(N\u0027B0006\u0027, N\u0027Ban 06\u0027, N\u0027KV003\u0027),\n(N\u0027B0007\u0027, N\u0027Ban 07\u0027, N\u0027KV003\u0027),\n(N\u0027B0008\u0027, N\u0027Ban 08\u0027, N\u0027KV004\u0027),\n(N\u0027B0009\u0027, N\u0027Ban 09\u0027, N\u0027KV004\u0027),\n(N\u0027B0010\u0027, N\u0027Ban 10\u0027, N\u0027KV005\u0027);\n\nINSERT INTO dbo.DOITACGIAOHANG (MaDT, TenDT, ChietKhau) VALUES\n(N\u0027DT001\u0027, N\u0027ShopeeFood\u0027, 20.0),\n(N\u0027DT002\u0027, N\u0027GrabFood\u0027, 25.0);\n\nINSERT INTO dbo.PHUONGTHUCTT (MaPT, TenPT) VALUES\n(N\u0027PT001\u0027, N\u0027Tien mat\u0027),\n(N\u0027PT002\u0027, N\u0027Chuyen khoan ngan hang\u0027),\n(N\u0027PT003\u0027, N\u0027Quet the noi dia\u0027),\n(N\u0027PT004\u0027, N\u0027Vi MoMo\u0027),\n(N\u0027PT005\u0027, N\u0027ZaloPay\u0027),\n(N\u0027PT006\u0027, N\u0027VNPay QR\u0027),\n(N\u0027PT007\u0027, N\u0027ShopeePay\u0027),\n(N\u0027PT008\u0027, N\u0027Moca (Grab Pay)\u0027),\n(N\u0027PT009\u0027, N\u0027The tin dung quoc te\u0027),\n(N\u0027PT010\u0027, N\u0027Diem thuong doi\u0027);\n\nUPDATE dbo.SANPHAM SET TrangThai=N\u0027Dang ban\u0027 WHERE MaSP=\u0027SP010\u0027;\n\nINSERT INTO dbo.HOADON (MaHD, NgayLap, MaNV, MaKH, MaBan, MaDT, TongTien, PhiShip, GiamGia, TrangThai, LoaiDon, TenNguoiNhan, SDTNguoiNhan, DiaChiGiao, TrangThaiGiao, MaKM) VALUES\n(N\u0027HD20250401\u0027, N\u00272025-04-01 09:15\u0027, N\u0027NV004\u0027, N\u0027KH001\u0027, N\u0027B0001\u0027, NULL, 0, 0, 0, N\u0027Chua thanh toan\u0027, N\u0027Tai quan\u0027, NULL, NULL, NULL, NULL, N\u0027KM25ONE\u0027);\n\nINSERT INTO dbo.CHITIET_HD (MaHD, MaSP, SoLuong, GiaBan, GhiChu) VALUES\n(N\u0027HD20250401\u0027, N\u0027SP002\u0027, 2, 30000, NULL),\n(N\u0027HD20250401\u0027, N\u0027SP009\u0027, 1, 65000, N\u0027It duong\u0027);\n\nUPDATE dbo.HOADON SET GiamGia=12500 WHERE MaHD=\u0027HD20250401\u0027;\nDECLARE @tt dbo.DanhSachThanhToan;\nINSERT INTO @tt(MaPT,SoTien) VALUES(\u0027PT001\u0027,112500);\nEXEC dbo.sp_ThanhToanHoaDon @MaHD=\u0027HD20250401\u0027, @ThanhToan=@tt, @NgayTT=\u00272025-04-01 09:15\u0027;\n\nINSERT INTO dbo.HOADON (MaHD, NgayLap, MaNV, MaKH, MaBan, MaDT, TongTien, PhiShip, GiamGia, TrangThai, LoaiDon, TenNguoiNhan, SDTNguoiNhan, DiaChiGiao, TrangThaiGiao, MaKM) VALUES\n(N\u0027HD20250402\u0027, N\u00272025-04-01 10:30\u0027, N\u0027NV004\u0027, NULL, N\u0027B0003\u0027, NULL, 0, 0, 0, N\u0027Chua thanh toan\u0027, N\u0027Tai quan\u0027, NULL, NULL, NULL, NULL, NULL);\n\nINSERT INTO dbo.CHITIET_HD (MaHD, MaSP, SoLuong, GiaBan, GhiChu) VALUES\n(N\u0027HD20250402\u0027, N\u0027SP001\u0027, 3, 25000, NULL);\n\nUPDATE dbo.HOADON SET GiamGia=0 WHERE MaHD=\u0027HD20250402\u0027;\nDELETE FROM @tt;\nINSERT INTO @tt(MaPT,SoTien) VALUES(\u0027PT001\u0027,75000);\nEXEC dbo.sp_ThanhToanHoaDon @MaHD=\u0027HD20250402\u0027, @ThanhToan=@tt, @NgayTT=\u00272025-04-01 10:30\u0027;\n\nINSERT INTO dbo.HOADON (MaHD, NgayLap, MaNV, MaKH, MaBan, MaDT, TongTien, PhiShip, GiamGia, TrangThai, LoaiDon, TenNguoiNhan, SDTNguoiNhan, DiaChiGiao, TrangThaiGiao, MaKM) VALUES\n(N\u0027HD20250403\u0027, N\u00272025-04-02 14:00\u0027, N\u0027NV006\u0027, N\u0027KH002\u0027, NULL, N\u0027DT001\u0027, 0, 15000, 0, N\u0027Chua thanh toan\u0027, N\u0027Giao hang\u0027, N\u0027Tran Lan Anh\u0027, N\u00270922222222\u0027, N\u0027Dia chi giao hang mau - Thu Duc\u0027, N\u0027Cho giao\u0027, NULL);\n\nINSERT INTO dbo.CHITIET_HD (MaHD, MaSP, SoLuong, GiaBan, GhiChu) VALUES\n(N\u0027HD20250403\u0027, N\u0027SP005\u0027, 2, 45000, NULL);\n\nUPDATE dbo.HOADON SET GiamGia=2700 WHERE MaHD=\u0027HD20250403\u0027;\nDELETE FROM @tt;\nINSERT INTO @tt(MaPT,SoTien) VALUES(\u0027PT002\u0027,102300);\nEXEC dbo.sp_ThanhToanHoaDon @MaHD=\u0027HD20250403\u0027, @ThanhToan=@tt, @NgayTT=\u00272025-04-02 14:00\u0027;\nUPDATE dbo.HOADON SET TrangThaiGiao=N\u0027Da giao\u0027 WHERE MaHD=\u0027HD20250403\u0027;\n\nINSERT INTO dbo.HOADON (MaHD, NgayLap, MaNV, MaKH, MaBan, MaDT, TongTien, PhiShip, GiamGia, TrangThai, LoaiDon, TenNguoiNhan, SDTNguoiNhan, DiaChiGiao, TrangThaiGiao, MaKM) VALUES\n(N\u0027HD20250404\u0027, N\u00272025-04-03 08:45\u0027, N\u0027NV004\u0027, N\u0027KH003\u0027, N\u0027B0002\u0027, NULL, 0, 0, 0, N\u0027Chua thanh toan\u0027, N\u0027Tai quan\u0027, NULL, NULL, NULL, NULL, NULL);\n\nINSERT INTO dbo.CHITIET_HD (MaHD, MaSP, SoLuong, GiaBan, GhiChu) VALUES\n(N\u0027HD20250404\u0027, N\u0027SP004\u0027, 2, 55000, NULL),\n(N\u0027HD20250404\u0027, N\u0027SP007\u0027, 1, 55000, NULL);\n\nUPDATE dbo.HOADON SET GiamGia=24750 WHERE MaHD=\u0027HD20250404\u0027;\nDELETE FROM @tt;\nINSERT INTO @tt(MaPT,SoTien) VALUES(\u0027PT001\u0027,140250);\nEXEC dbo.sp_ThanhToanHoaDon @MaHD=\u0027HD20250404\u0027, @ThanhToan=@tt, @NgayTT=\u00272025-04-03 08:45\u0027;\n\nINSERT INTO dbo.HOADON (MaHD, NgayLap, MaNV, MaKH, MaBan, MaDT, TongTien, PhiShip, GiamGia, TrangThai, LoaiDon, TenNguoiNhan, SDTNguoiNhan, DiaChiGiao, TrangThaiGiao, MaKM) VALUES\n(N\u0027HD20250405\u0027, N\u00272025-04-05 16:20\u0027, N\u0027NV006\u0027, N\u0027KH001\u0027, NULL, N\u0027DT002\u0027, 0, 20000, 0, N\u0027Chua thanh toan\u0027, N\u0027Giao hang\u0027, N\u0027Nguyen Minh Khoa\u0027, N\u00270911111111\u0027, N\u0027Dia chi giao hang mau - Thu Duc\u0027, N\u0027Cho giao\u0027, NULL);\n\nINSERT INTO dbo.CHITIET_HD (MaHD, MaSP, SoLuong, GiaBan, GhiChu) VALUES\n(N\u0027HD20250405\u0027, N\u0027SP005\u0027, 1, 45000, NULL),\n(N\u0027HD20250405\u0027, N\u0027SP007\u0027, 1, 55000, NULL);\n\nUPDATE dbo.HOADON SET GiamGia=10000 WHERE MaHD=\u0027HD20250405\u0027;\nDELETE FROM @tt;\nINSERT INTO @tt(MaPT,SoTien) VALUES(\u0027PT004\u0027,110000);\nEXEC dbo.sp_ThanhToanHoaDon @MaHD=\u0027HD20250405\u0027, @ThanhToan=@tt, @NgayTT=\u00272025-04-05 16:20\u0027;\nUPDATE dbo.HOADON SET TrangThaiGiao=N\u0027Da giao\u0027 WHERE MaHD=\u0027HD20250405\u0027;\n\nINSERT INTO dbo.HOADON (MaHD, NgayLap, MaNV, MaKH, MaBan, MaDT, TongTien, PhiShip, GiamGia, TrangThai, LoaiDon, TenNguoiNhan, SDTNguoiNhan, DiaChiGiao, TrangThaiGiao, MaKM) VALUES\n(N\u0027HD20250406\u0027, N\u00272025-04-10 09:30\u0027, N\u0027NV004\u0027, N\u0027KH004\u0027, N\u0027B0001\u0027, NULL, 0, 0, 0, N\u0027Chua thanh toan\u0027, N\u0027Tai quan\u0027, NULL, NULL, NULL, NULL, NULL);\n\nINSERT INTO dbo.CHITIET_HD (MaHD, MaSP, SoLuong, GiaBan, GhiChu) VALUES\n(N\u0027HD20250406\u0027, N\u0027SP002\u0027, 2, 30000, NULL),\n(N\u0027HD20250406\u0027, N\u0027SP010\u0027, 1, 35000, NULL);\n\nUPDATE dbo.HOADON SET GiamGia=0 WHERE MaHD=\u0027HD20250406\u0027;\nDELETE FROM @tt;\nINSERT INTO @tt(MaPT,SoTien) VALUES(\u0027PT002\u0027,95000);\nEXEC dbo.sp_ThanhToanHoaDon @MaHD=\u0027HD20250406\u0027, @ThanhToan=@tt, @NgayTT=\u00272025-04-10 09:30\u0027;\n\nINSERT INTO dbo.HOADON (MaHD, NgayLap, MaNV, MaKH, MaBan, MaDT, TongTien, PhiShip, GiamGia, TrangThai, LoaiDon, TenNguoiNhan, SDTNguoiNhan, DiaChiGiao, TrangThaiGiao, MaKM) VALUES\n(N\u0027HD20250407\u0027, N\u00272025-04-12 15:00\u0027, N\u0027NV006\u0027, N\u0027KH002\u0027, N\u0027B0004\u0027, NULL, 0, 0, 0, N\u0027Chua thanh toan\u0027, N\u0027Tai quan\u0027, NULL, NULL, NULL, NULL, NULL);\n\nINSERT INTO dbo.CHITIET_HD (MaHD, MaSP, SoLuong, GiaBan, GhiChu) VALUES\n(N\u0027HD20250407\u0027, N\u0027SP005\u0027, 1, 45000, NULL),\n(N\u0027HD20250407\u0027, N\u0027SP006\u0027, 1, 40000, NULL);\n\nUPDATE dbo.HOADON SET GiamGia=5950 WHERE MaHD=\u0027HD20250407\u0027;\nDELETE FROM @tt;\nINSERT INTO @tt(MaPT,SoTien) VALUES(\u0027PT003\u0027,79050);\nEXEC dbo.sp_ThanhToanHoaDon @MaHD=\u0027HD20250407\u0027, @ThanhToan=@tt, @NgayTT=\u00272025-04-12 15:00\u0027;\n\nINSERT INTO dbo.HOADON (MaHD, NgayLap, MaNV, MaKH, MaBan, MaDT, TongTien, PhiShip, GiamGia, TrangThai, LoaiDon, TenNguoiNhan, SDTNguoiNhan, DiaChiGiao, TrangThaiGiao, MaKM) VALUES\n(N\u0027HD20250408\u0027, N\u00272025-04-20 13:30\u0027, N\u0027NV006\u0027, N\u0027KH003\u0027, N\u0027B0003\u0027, NULL, 0, 0, 0, N\u0027Chua thanh toan\u0027, N\u0027Tai quan\u0027, NULL, NULL, NULL, NULL, NULL);\n\nINSERT INTO dbo.CHITIET_HD (MaHD, MaSP, SoLuong, GiaBan, GhiChu) VALUES\n(N\u0027HD20250408\u0027, N\u0027SP004\u0027, 2, 55000, NULL),\n(N\u0027HD20250408\u0027, N\u0027SP005\u0027, 2, 45000, NULL);\n\nUPDATE dbo.HOADON SET GiamGia=30000 WHERE MaHD=\u0027HD20250408\u0027;\nDELETE FROM @tt;\nINSERT INTO @tt(MaPT,SoTien) VALUES(\u0027PT001\u0027,170000);\nEXEC dbo.sp_ThanhToanHoaDon @MaHD=\u0027HD20250408\u0027, @ThanhToan=@tt, @NgayTT=\u00272025-04-20 13:30\u0027;\n\nINSERT INTO dbo.HOADON (MaHD, NgayLap, MaNV, MaKH, MaBan, MaDT, TongTien, PhiShip, GiamGia, TrangThai, LoaiDon, TenNguoiNhan, SDTNguoiNhan, DiaChiGiao, TrangThaiGiao, MaKM) VALUES\n(N\u0027HD20250409\u0027, N\u00272025-05-01 08:00\u0027, N\u0027NV004\u0027, N\u0027KH001\u0027, N\u0027B0002\u0027, NULL, 0, 0, 0, N\u0027Chua thanh toan\u0027, N\u0027Tai quan\u0027, NULL, NULL, NULL, NULL, NULL);\n\nINSERT INTO dbo.CHITIET_HD (MaHD, MaSP, SoLuong, GiaBan, GhiChu) VALUES\n(N\u0027HD20250409\u0027, N\u0027SP002\u0027, 1, 30000, N\u0027It da\u0027),\n(N\u0027HD20250409\u0027, N\u0027SP002\u0027, 2, 30000, N\u0027Khong da\u0027);\n\nUPDATE dbo.HOADON SET GiamGia=9000 WHERE MaHD=\u0027HD20250409\u0027;\nDELETE FROM @tt;\nINSERT INTO @tt(MaPT,SoTien) VALUES(\u0027PT002\u0027,30000),(\u0027PT005\u0027,51000);\nEXEC dbo.sp_ThanhToanHoaDon @MaHD=\u0027HD20250409\u0027, @ThanhToan=@tt, @NgayTT=\u00272025-05-01 08:00\u0027;\n\nINSERT INTO dbo.HOADON (MaHD, NgayLap, MaNV, MaKH, MaBan, MaDT, TongTien, PhiShip, GiamGia, TrangThai, LoaiDon, TenNguoiNhan, SDTNguoiNhan, DiaChiGiao, TrangThaiGiao, MaKM) VALUES\n(N\u0027HD20250410\u0027, N\u00272025-05-10 09:00\u0027, N\u0027NV004\u0027, NULL, N\u0027B0003\u0027, NULL, 0, 0, 0, N\u0027Chua thanh toan\u0027, N\u0027Tai quan\u0027, NULL, NULL, NULL, NULL, NULL);\n\nINSERT INTO dbo.CHITIET_HD (MaHD, MaSP, SoLuong, GiaBan, GhiChu) VALUES\n(N\u0027HD20250410\u0027, N\u0027SP005\u0027, 1, 45000, NULL),\n(N\u0027HD20250410\u0027, N\u0027SP006\u0027, 1, 40000, NULL);\n\nUPDATE dbo.HOADON SET GiamGia=0 WHERE MaHD=\u0027HD20250410\u0027;\n\nINSERT INTO dbo.LICHSU_DIEM (MaKH, NgayGD, Loai, SoDiem, LyDo) VALUES\n(N\u0027KH001\u0027, N\u00272025-04-01\u0027, N\u0027Tru\u0027, 50, N\u0027Doi diem lay voucher giam 50k\u0027),\n(N\u0027KH003\u0027, N\u00272025-01-15\u0027, N\u0027Cong\u0027, 500, N\u0027Thuong sinh nhat khach hang\u0027);\n\nINSERT INTO dbo.DANHMUC_THUCHI (MaDMTC, TenDMTC, Loai) VALUES\n(N\u0027TC001\u0027, N\u0027Tien dien\u0027, N\u0027Chi\u0027),\n(N\u0027TC002\u0027, N\u0027Tien nuoc\u0027, N\u0027Chi\u0027),\n(N\u0027TC003\u0027, N\u0027Thue mat bang\u0027, N\u0027Chi\u0027),\n(N\u0027TC004\u0027, N\u0027Mua cong cu dung cu\u0027, N\u0027Chi\u0027),\n(N\u0027TC005\u0027, N\u0027Luong nhan vien\u0027, N\u0027Chi\u0027),\n(N\u0027TC006\u0027, N\u0027Sua chua thiet bi\u0027, N\u0027Chi\u0027),\n(N\u0027TC007\u0027, N\u0027Phi Internet - dien thoai\u0027, N\u0027Chi\u0027),\n(N\u0027TC008\u0027, N\u0027Mua nguyen lieu phat sinh\u0027, N\u0027Chi\u0027),\n(N\u0027TC009\u0027, N\u0027Thu tien dat coc ban\u0027, N\u0027Thu\u0027),\n(N\u0027TC010\u0027, N\u0027Thu phi to chuc su kien\u0027, N\u0027Thu\u0027),\n(N\u0027TC011\u0027, N\u0027Tra no nha cung cap\u0027, N\u0027Chi\u0027);\n\nINSERT INTO dbo.TAISAN_CODINH (MaTS, TenTS, NgayMua, GiaTri, SoThangKH) VALUES\n(N\u0027TS001\u0027, N\u0027May pha ca phe La Marzocco Linea\u0027, N\u00272022-01-15\u0027, 85000000, 60),\n(N\u0027TS002\u0027, N\u0027May xay ca phe Mahlkonig E65S\u0027, N\u00272022-01-15\u0027, 25000000, 48),\n(N\u0027TS003\u0027, N\u0027Tu mat Sanaky VH-408W\u0027, N\u00272022-03-01\u0027, 12000000, 60),\n(N\u0027TS004\u0027, N\u0027Dieu hoa Daikin 18000BTU\u0027, N\u00272022-06-01\u0027, 15000000, 84),\n(N\u0027TS005\u0027, N\u0027He thong camera Hikvision 8 mat\u0027, N\u00272023-01-10\u0027, 8000000, 36),\n(N\u0027TS006\u0027, N\u0027May pha tra Jura E8\u0027, N\u00272023-03-15\u0027, 18000000, 48),\n(N\u0027TS007\u0027, N\u0027May tinh thu ngan POS Dell\u0027, N\u00272023-06-01\u0027, 12000000, 36),\n(N\u0027TS008\u0027, N\u0027Bang hieu LED mat tien\u0027, N\u00272022-08-01\u0027, 5000000, 24),\n(N\u0027TS009\u0027, N\u0027Bo ban ghe ngoai troi 10 bo\u0027, N\u00272022-09-01\u0027, 20000000, 60),\n(N\u0027TS010\u0027, N\u0027He thong am thanh Bose\u0027, N\u00272023-01-01\u0027, 15000000, 48);\n\nINSERT INTO dbo.PHIEUTHUCHI (MaTC, NgayLap, MaDMTC, MaNV, MaTS, SoTien, GhiChu) VALUES\n(N\u0027TC20250401\u0027, N\u00272025-04-01\u0027, N\u0027TC003\u0027, N\u0027NV001\u0027, NULL, 15000000, N\u0027Thue mat bang thang 4/2025\u0027),\n(N\u0027TC20250402\u0027, N\u00272025-04-03\u0027, N\u0027TC001\u0027, N\u0027NV001\u0027, NULL, 2500000, N\u0027Tien dien thang 4/2025\u0027),\n(N\u0027TC20250403\u0027, N\u00272025-04-05\u0027, N\u0027TC002\u0027, N\u0027NV001\u0027, NULL, 400000, N\u0027Tien nuoc thang 4/2025\u0027),\n(N\u0027TC20250404\u0027, N\u00272025-04-07\u0027, N\u0027TC007\u0027, N\u0027NV001\u0027, NULL, 350000, N\u0027Phi Internet thang 4\u0027),\n(N\u0027TC20250405\u0027, N\u00272025-04-10\u0027, N\u0027TC004\u0027, N\u0027NV001\u0027, NULL, 850000, N\u0027Mua them ly va ong hut\u0027),\n(N\u0027TC20250406\u0027, N\u00272025-04-15\u0027, N\u0027TC006\u0027, N\u0027NV001\u0027, N\u0027TS007\u0027, 500000, N\u0027Bao tri may tinh POS\u0027),\n(N\u0027TC20250501\u0027, N\u00272025-05-01\u0027, N\u0027TC003\u0027, N\u0027NV001\u0027, NULL, 15000000, N\u0027Thue mat bang thang 5/2025\u0027),\n(N\u0027TC20250502\u0027, N\u00272025-05-05\u0027, N\u0027TC001\u0027, N\u0027NV001\u0027, NULL, 2800000, N\u0027Tien dien thang 5/2025\u0027),\n(N\u0027TC20250503\u0027, N\u00272025-05-08\u0027, N\u0027TC006\u0027, N\u0027NV001\u0027, N\u0027TS001\u0027, 800000, N\u0027Bao tri may pha ca phe\u0027),\n(N\u0027TC20250504\u0027, N\u00272025-05-12\u0027, N\u0027TC004\u0027, N\u0027NV001\u0027, NULL, 450000, N\u0027Mua hop dung thuc pham\u0027);\n\nINSERT INTO dbo.CONGNO_NCC (MaCN, MaPN, TienNo, HanTra) VALUES\n(N\u0027CN20250101\u0027, N\u0027PN20250101\u0027, 2000000, N\u00272025-02-15\u0027),\n(N\u0027CN20250102\u0027, N\u0027PN20250102\u0027, 1000000, N\u00272025-03-01\u0027),\n(N\u0027CN20250201\u0027, N\u0027PN20250201\u0027, 750000, N\u00272025-03-20\u0027),\n(N\u0027CN20250301\u0027, N\u0027PN20250301\u0027, 3000000, N\u00272025-04-30\u0027),\n(N\u0027CN20250302\u0027, N\u0027PN20250302\u0027, 1800000, N\u00272025-05-01\u0027),\n(N\u0027CN20250401\u0027, N\u0027PN20250401\u0027, 900000, N\u00272025-05-15\u0027),\n(N\u0027CN20250402\u0027, N\u0027PN20250402\u0027, 1200000, N\u00272025-06-01\u0027),\n(N\u0027CN20250403\u0027, N\u0027PN20250403\u0027, 1200000, N\u00272025-06-10\u0027),\n(N\u0027CN20250404\u0027, N\u0027PN20250501\u0027, 2500000, N\u00272025-07-01\u0027);\n\nEXEC dbo.sp_TraCongNo \u0027CN20250101\u0027,\u0027TR00000001\u0027,\u0027NV001\u0027,\u0027PT002\u0027,2000000,\u00272025-02-15\u0027;\nEXEC dbo.sp_TraCongNo \u0027CN20250102\u0027,\u0027TR00000002\u0027,\u0027NV001\u0027,\u0027PT002\u0027,1000000,\u00272025-03-01\u0027;\nEXEC dbo.sp_TraCongNo \u0027CN20250201\u0027,\u0027TR00000003\u0027,\u0027NV001\u0027,\u0027PT002\u0027,750000,\u00272025-03-20\u0027;\nEXEC dbo.sp_TraCongNo \u0027CN20250301\u0027,\u0027TR00000004\u0027,\u0027NV001\u0027,\u0027PT002\u0027,3000000,\u00272025-04-30\u0027;\nEXEC dbo.sp_TraCongNo \u0027CN20250302\u0027,\u0027TR00000005\u0027,\u0027NV001\u0027,\u0027PT002\u0027,1800000,\u00272025-05-01\u0027;\nEXEC dbo.sp_TraCongNo \u0027CN20250401\u0027,\u0027TR00000006\u0027,\u0027NV001\u0027,\u0027PT002\u0027,300000,\u00272025-05-10\u0027;\n\nINSERT INTO dbo.VAITRO (MaVT, TenVT) VALUES\n(N\u0027ADMIN\u0027, N\u0027Quan tri\u0027),\n(N\u0027CASH\u0027, N\u0027Thu ngan\u0027),\n(N\u0027STORE\u0027, N\u0027Quan ly kho\u0027);\n\nINSERT INTO dbo.TAIKHOAN (MaNV, TenDangNhap, MatKhauHash, MaVT, HoatDong) VALUES\n(N\u0027NV001\u0027, N\u0027admin\u0027, N\u0027!DISABLED_REPLACE_WITH_APP_PASSWORD_HASH!\u0027, N\u0027ADMIN\u0027, 0),\n(N\u0027NV004\u0027, N\u0027thungan\u0027, N\u0027!DISABLED_REPLACE_WITH_APP_PASSWORD_HASH!\u0027, N\u0027CASH\u0027, 0),\n(N\u0027NV010\u0027, N\u0027kho\u0027, N\u0027!DISABLED_REPLACE_WITH_APP_PASSWORD_HASH!\u0027, N\u0027STORE\u0027, 0);\n\nINSERT INTO dbo.BANGLUONG (MaNV, Thang, Nam, NgayChot, LuongCoBan, SoGioLam, DonGiaGio, TienTangCa, PhuCap, Thuong, KhauTru) VALUES\n(N\u0027NV001\u0027, 4, 2025, N\u00272025-04-30\u0027, 12000000, 0, 0, 0, 2000000, 500000, 0),\n(N\u0027NV003\u0027, 4, 2025, N\u00272025-04-30\u0027, 0, 80, 35000, 0, 500000, 0, 0);\n\nINSERT INTO dbo.PHIEUKIEMKE(MaKK,NgayKK,MaNV)\nVALUES(\u0027KKDEMO0001\u0027,CONVERT(DATE,SYSDATETIME()),\u0027NV001\u0027);\nINSERT INTO dbo.CHITIET_KK(MaKK,MaNVL,TonHeThong,TonThucTe,LyDo)\nSELECT \u0027KKDEMO0001\u0027,MaNVL,SoLuongTon,SoLuongTon,NULL FROM dbo.NGUYENVATLIEU;\n\n-- Kiem tra bat bien truoc khi COMMIT. Neu loi thi rollback toan bo seed.\nIF EXISTS (SELECT 1 FROM dbo.HOADON h WHERE h.TongTien\u003c\u003e\n  COALESCE((SELECT SUM(CONVERT(DECIMAL(18,0),SoLuong)*GiaBan) FROM dbo.CHITIET_HD WHERE MaHD=h.MaHD),0))\n    THROW 51201,N\u0027Tong hoa don sai.\u0027,1;\nIF EXISTS (SELECT 1 FROM dbo.HOADON h WHERE h.TrangThai=N\u0027Da thanh toan\u0027 AND h.ThanhTien\u003c\u003e\n  COALESCE((SELECT SUM(SoTien) FROM dbo.CHITIET_THANHTOAN WHERE MaHD=h.MaHD),0))\n    THROW 51202,N\u0027Phan bo thanh toan sai.\u0027,1;\nIF EXISTS (SELECT 1 FROM dbo.PHIEUNHAP p WHERE p.TongTien\u003c\u003e\n  COALESCE((SELECT SUM(ROUND(SoLuong*DonGiaNhap,0)) FROM dbo.CHITIET_PN WHERE MaPN=p.MaPN),0))\n    THROW 51203,N\u0027Tong phieu nhap sai.\u0027,1;\nIF EXISTS (SELECT 1 FROM dbo.vw_CongNoNCC WHERE ConNo\u003c0)\n    THROW 51204,N\u0027Tra no vuot muc.\u0027,1;\nIF EXISTS (SELECT 1 FROM dbo.KHACHHANG k CROSS APPLY\n  (SELECT TOP(1) MaHang FROM dbo.HANGTHANHVIEN WHERE DiemToiThieu\u003c=k.DiemTichLuy ORDER BY DiemToiThieu DESC) h\n  WHERE k.MaHang\u003c\u003eh.MaHang)\n    THROW 51205,N\u0027Hang thanh vien sai.\u0027,1;\nCOMMIT;\nEND TRY\nBEGIN CATCH\n    IF @@TRANCOUNT\u003e0 ROLLBACK;\n    THROW;\nEND CATCH;\nGO\n-- Ket qua mau: 9 don da thanh toan, 1 don dang mo; ban B0003 dang phuc vu.\nSELECT MaHD,TongTien,GiamGia,PhiShip,ThanhTien,TrangThai FROM dbo.HOADON ORDER BY MaHD;\nSELECT * FROM dbo.vw_TrangThaiBan ORDER BY MaBan;\nSELECT * FROM dbo.vw_CongNoNCC ORDER BY MaCN;\nSELECT MaNVL,TenNVL,SoLuongTon FROM dbo.NGUYENVATLIEU ORDER BY MaNVL;\nGO",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51200,
+                                            "Message":  "Du lieu mau da ton tai; khong chay lai file INSERT.",
+                                            "Procedure":  "",
+                                            "Line":  7
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "885896E5529144257D1901EA77643351BE53C785E890DABC97A69122AB00E065",
+                      "SnapshotAfter":  "885896E5529144257D1901EA77643351BE53C785E890DABC97A69122AB00E065",
+                      "Failure":  null,
+                      "DurationMs":  654
+                  },
+                  {
+                      "Id":  "T02-K06-product-fk",
+                      "Description":  "Product category FK rejects missing code",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "constraints.sql",
+                      "ExpectedError":  547,
+                      "ExpectedMessage":  "FK_SP_DANHMUC",
+                      "SetupSql":  null,
+                      "ActSql":  "INSERT dbo.SANPHAM(MaSP,TenSP,MaDM,GiaBan) VALUES(\u0027ZZ001\u0027,N\u0027T02 FK\u0027,\u0027ZZ999\u0027,1000);",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  547,
+                                            "Message":  "The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_SP_DANHMUC\". The conflict occurred in database \"CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4\", table \"dbo.DANHMUC_SP\", column \u0027MaDM\u0027.",
+                                            "Procedure":  "",
+                                            "Line":  1
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "885896E5529144257D1901EA77643351BE53C785E890DABC97A69122AB00E065",
+                      "SnapshotAfter":  "885896E5529144257D1901EA77643351BE53C785E890DABC97A69122AB00E065",
+                      "Failure":  null,
+                      "DurationMs":  506
+                  },
+                  {
+                      "Id":  "T02-K06-order-fk",
+                      "Description":  "Invoice employee FK rejects missing code",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "constraints.sql",
+                      "ExpectedError":  547,
+                      "ExpectedMessage":  "FK_HD_NHANVIEN",
+                      "SetupSql":  null,
+                      "ActSql":  "INSERT dbo.HOADON(MaHD,MaNV,LoaiDon) VALUES(\u0027ZZFK000001\u0027,\u0027ZZ999\u0027,N\u0027Mang di\u0027);",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  547,
+                                            "Message":  "The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_HD_NHANVIEN\". The conflict occurred in database \"CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4\", table \"dbo.NHANVIEN\", column \u0027MaNV\u0027.",
+                                            "Procedure":  "",
+                                            "Line":  1
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "885896E5529144257D1901EA77643351BE53C785E890DABC97A69122AB00E065",
+                      "SnapshotAfter":  "885896E5529144257D1901EA77643351BE53C785E890DABC97A69122AB00E065",
+                      "Failure":  null,
+                      "DurationMs":  74
+                  },
+                  {
+                      "Id":  "T02-K06-negative-money",
+                      "Description":  "Negative product price violates CHECK",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "constraints.sql",
+                      "ExpectedError":  547,
+                      "ExpectedMessage":  "CHK_SP_GiaBan",
+                      "SetupSql":  null,
+                      "ActSql":  "INSERT dbo.SANPHAM(MaSP,TenSP,MaDM,GiaBan) VALUES(\u0027ZZ002\u0027,N\u0027T02 price\u0027,\u0027DM001\u0027,-1);",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  547,
+                                            "Message":  "The INSERT statement conflicted with the CHECK constraint \"CHK_SP_GiaBan\". The conflict occurred in database \"CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4\", table \"dbo.SANPHAM\", column \u0027GiaBan\u0027.",
+                                            "Procedure":  "",
+                                            "Line":  1
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "885896E5529144257D1901EA77643351BE53C785E890DABC97A69122AB00E065",
+                      "SnapshotAfter":  "885896E5529144257D1901EA77643351BE53C785E890DABC97A69122AB00E065",
+                      "Failure":  null,
+                      "DurationMs":  60
+                  },
+                  {
+                      "Id":  "T02-K06-negative-stock",
+                      "Description":  "Negative stock violates CHECK",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "constraints.sql",
+                      "ExpectedError":  547,
+                      "ExpectedMessage":  "CHK_NVL_TonKho",
+                      "SetupSql":  null,
+                      "ActSql":  "INSERT dbo.NGUYENVATLIEU(MaNVL,TenNVL,DonViTinh,SoLuongTon) VALUES(\u0027ZZ003\u0027,N\u0027T02 stock\u0027,N\u0027Kg\u0027,-1);",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  547,
+                                            "Message":  "The INSERT statement conflicted with the CHECK constraint \"CHK_NVL_TonKho\". The conflict occurred in database \"CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4\", table \"dbo.NGUYENVATLIEU\", column \u0027SoLuongTon\u0027.",
+                                            "Procedure":  "",
+                                            "Line":  1
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "885896E5529144257D1901EA77643351BE53C785E890DABC97A69122AB00E065",
+                      "SnapshotAfter":  "885896E5529144257D1901EA77643351BE53C785E890DABC97A69122AB00E065",
+                      "Failure":  null,
+                      "DurationMs":  64
+                  },
+                  {
+                      "Id":  "T02-K06-zero-line",
+                      "Description":  "Zero invoice quantity violates CHECK",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "constraints.sql",
+                      "ExpectedError":  547,
+                      "ExpectedMessage":  "CHK_CTHD_SoLuong",
+                      "SetupSql":  "EXEC dbo.T02_Order \u0027ZZZERO0001\u0027,@Quantity=0;",
+                      "ActSql":  "INSERT dbo.CHITIET_HD(MaHD,MaSP,SoLuong,GiaBan) VALUES(\u0027ZZZERO0001\u0027,\u0027SP001\u0027,0,25000);",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  547,
+                                            "Message":  "The INSERT statement conflicted with the CHECK constraint \"CHK_CTHD_SoLuong\". The conflict occurred in database \"CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4\", table \"dbo.CHITIET_HD\", column \u0027SoLuong\u0027.",
+                                            "Procedure":  "",
+                                            "Line":  1
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "A68961E450786A05B8528D997CB5F0B3A901E067352272E70396A235652D2F44",
+                      "SnapshotAfter":  "A68961E450786A05B8528D997CB5F0B3A901E067352272E70396A235652D2F44",
+                      "Failure":  null,
+                      "DurationMs":  87
+                  },
+                  {
+                      "Id":  "T02-K06-zero-receipt",
+                      "Description":  "Zero receipt quantity violates CHECK",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "constraints.sql",
+                      "ExpectedError":  547,
+                      "ExpectedMessage":  "CHK_CTPN_SoLuong",
+                      "SetupSql":  "INSERT dbo.PHIEUNHAP(MaPN,MaNV,MaNCC) VALUES(\u0027ZZZERO0002\u0027,\u0027NV001\u0027,\u0027NCC01\u0027);",
+                      "ActSql":  "INSERT dbo.CHITIET_PN(MaPN,MaNVL,SoLuong,DonGiaNhap) VALUES(\u0027ZZZERO0002\u0027,\u0027NVL01\u0027,0,1000);",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  547,
+                                            "Message":  "The INSERT statement conflicted with the CHECK constraint \"CHK_CTPN_SoLuong\". The conflict occurred in database \"CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4\", table \"dbo.CHITIET_PN\", column \u0027SoLuong\u0027.",
+                                            "Procedure":  "",
+                                            "Line":  1
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "F1EDE712B435CF3D16B0BDFBB3224240FEA72E4A82F6CC2518FBF9F0F8D2E490",
+                      "SnapshotAfter":  "F1EDE712B435CF3D16B0BDFBB3224240FEA72E4A82F6CC2518FBF9F0F8D2E490",
+                      "Failure":  null,
+                      "DurationMs":  119
+                  },
+                  {
+                      "Id":  "T02-K06-zero-export",
+                      "Description":  "Zero export quantity violates CHECK",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "constraints.sql",
+                      "ExpectedError":  547,
+                      "ExpectedMessage":  "CHK_CTPX_SoLuong",
+                      "SetupSql":  "INSERT dbo.PHIEUXUAT(MaPX,MaNV,LoaiXuat) VALUES(\u0027ZZZERO0003\u0027,\u0027NV001\u0027,N\u0027Huy do hong\u0027);",
+                      "ActSql":  "INSERT dbo.CHITIET_PX(MaPX,MaNVL,SoLuongXuat) VALUES(\u0027ZZZERO0003\u0027,\u0027NVL01\u0027,0);",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  547,
+                                            "Message":  "The INSERT statement conflicted with the CHECK constraint \"CHK_CTPX_SoLuong\". The conflict occurred in database \"CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4\", table \"dbo.CHITIET_PX\", column \u0027SoLuongXuat\u0027.",
+                                            "Procedure":  "",
+                                            "Line":  1
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "12A6730283C120A05B9DBE5DB6B3B2E76C8F542F6ACD9C76D60502B2CB2B1A82",
+                      "SnapshotAfter":  "12A6730283C120A05B9DBE5DB6B3B2E76C8F542F6ACD9C76D60502B2CB2B1A82",
+                      "Failure":  null,
+                      "DurationMs":  83
+                  },
+                  {
+                      "Id":  "T02-K06-reverse-promotion",
+                      "Description":  "Reversed promotion dates violate CHECK",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "constraints.sql",
+                      "ExpectedError":  547,
+                      "ExpectedMessage":  "CHK_KM_NgayHopLe",
+                      "SetupSql":  null,
+                      "ActSql":  "INSERT dbo.KHUYENMAI(MaKM,TenKM,NgayBD,NgayKT,PhanTramGiam) VALUES(\u0027ZZDATE0001\u0027,N\u0027T02 reversed\u0027,\u00272025-04-02\u0027,\u00272025-04-01\u0027,10);",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  547,
+                                            "Message":  "The INSERT statement conflicted with the CHECK constraint \"CHK_KM_NgayHopLe\". The conflict occurred in database \"CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4\", table \"dbo.KHUYENMAI\".",
+                                            "Procedure":  "",
+                                            "Line":  1
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "12A6730283C120A05B9DBE5DB6B3B2E76C8F542F6ACD9C76D60502B2CB2B1A82",
+                      "SnapshotAfter":  "12A6730283C120A05B9DBE5DB6B3B2E76C8F542F6ACD9C76D60502B2CB2B1A82",
+                      "Failure":  null,
+                      "DurationMs":  79
+                  },
+                  {
+                      "Id":  "T02-K06-same-day",
+                      "Description":  "Same-day promotion is valid",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "constraints.sql",
+                      "ExpectedError":  0,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "INSERT dbo.KHUYENMAI(MaKM,TenKM,NgayBD,NgayKT,PhanTramGiam) VALUES(\u0027ZZDATE0002\u0027,N\u0027T02 same day\u0027,\u00272025-04-01\u0027,\u00272025-04-01\u0027,10);",
+                      "AssertSql":  "IF NOT EXISTS(SELECT 1 FROM dbo.KHUYENMAI WHERE MaKM=\u0027ZZDATE0002\u0027 AND NgayBD=NgayKT) THROW 52006,\u0027Same-day promotion missing\u0027,1;",
+                      "SqlErrors":  [
+
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  null,
+                      "SnapshotAfter":  null,
+                      "Failure":  null,
+                      "DurationMs":  10
+                  },
+                  {
+                      "Id":  "T02-K07-null-phones",
+                      "Description":  "Two NULL phones each for customers and employees are accepted",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "constraints.sql",
+                      "ExpectedError":  0,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "INSERT dbo.KHACHHANG(MaKH,TenKH,SDT,MaHang) VALUES(\u0027ZN001\u0027,N\u0027T02 NULL 1\u0027,NULL,\u0027DONG\u0027),(\u0027ZN002\u0027,N\u0027T02 NULL 2\u0027,NULL,\u0027DONG\u0027);\nINSERT dbo.NHANVIEN(MaNV,TenNV,SDT,LoaiHopDong,MaCV) VALUES(\u0027ZN001\u0027,N\u0027T02 NULL NV1\u0027,NULL,\u0027Part-time\u0027,\u0027CV004\u0027),(\u0027ZN002\u0027,N\u0027T02 NULL NV2\u0027,NULL,\u0027Part-time\u0027,\u0027CV004\u0027);",
+                      "AssertSql":  "IF (SELECT COUNT(*) FROM dbo.KHACHHANG WHERE MaKH IN (\u0027ZN001\u0027,\u0027ZN002\u0027) AND SDT IS NULL)\u003c\u003e2 THROW 52007,\u0027Customer NULLs missing\u0027,1;\nIF (SELECT COUNT(*) FROM dbo.NHANVIEN WHERE MaNV IN (\u0027ZN001\u0027,\u0027ZN002\u0027) AND SDT IS NULL)\u003c\u003e2 THROW 52007,\u0027Employee NULLs missing\u0027,1;",
+                      "SqlErrors":  [
+
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  null,
+                      "SnapshotAfter":  null,
+                      "Failure":  null,
+                      "DurationMs":  48
+                  },
+                  {
+                      "Id":  "T02-K07-customer-duplicate",
+                      "Description":  "Customer non-NULL phone duplicates are rejected",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "constraints.sql",
+                      "ExpectedError":  2601,
+                      "ExpectedMessage":  "UX_KH_SDT",
+                      "SetupSql":  null,
+                      "ActSql":  "INSERT dbo.KHACHHANG(MaKH,TenKH,SDT,MaHang) VALUES(\u0027ZN003\u0027,N\u0027T02 duplicate\u0027,\u00270911111111\u0027,\u0027DONG\u0027);",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  2601,
+                                            "Message":  "Cannot insert duplicate key row in object \u0027dbo.KHACHHANG\u0027 with unique index \u0027UX_KH_SDT\u0027. The duplicate key value is (0911111111).",
+                                            "Procedure":  "",
+                                            "Line":  1
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "C85918CB33BF1F39B2D79549632E00C28D3C4B496FA56EE086FD64BBF379AB87",
+                      "SnapshotAfter":  "C85918CB33BF1F39B2D79549632E00C28D3C4B496FA56EE086FD64BBF379AB87",
+                      "Failure":  null,
+                      "DurationMs":  92
+                  },
+                  {
+                      "Id":  "T02-K07-employee-duplicate",
+                      "Description":  "Employee non-NULL phone duplicates are rejected",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "constraints.sql",
+                      "ExpectedError":  2601,
+                      "ExpectedMessage":  "UX_NV_SDT",
+                      "SetupSql":  null,
+                      "ActSql":  "INSERT dbo.NHANVIEN(MaNV,TenNV,SDT,LoaiHopDong,MaCV) VALUES(\u0027ZN003\u0027,N\u0027T02 duplicate\u0027,\u00270901111111\u0027,\u0027Part-time\u0027,\u0027CV004\u0027);",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  2601,
+                                            "Message":  "Cannot insert duplicate key row in object \u0027dbo.NHANVIEN\u0027 with unique index \u0027UX_NV_SDT\u0027. The duplicate key value is (0901111111).",
+                                            "Procedure":  "",
+                                            "Line":  1
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "C85918CB33BF1F39B2D79549632E00C28D3C4B496FA56EE086FD64BBF379AB87",
+                      "SnapshotAfter":  "C85918CB33BF1F39B2D79549632E00C28D3C4B496FA56EE086FD64BBF379AB87",
+                      "Failure":  null,
+                      "DurationMs":  96
+                  },
+                  {
+                      "Id":  "T02-K07-customer-update",
+                      "Description":  "Updating a phone to an existing customer phone is rejected",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "constraints.sql",
+                      "ExpectedError":  2601,
+                      "ExpectedMessage":  "UX_KH_SDT",
+                      "SetupSql":  null,
+                      "ActSql":  "UPDATE dbo.KHACHHANG SET SDT=\u00270911111111\u0027 WHERE MaKH=\u0027ZN001\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  2601,
+                                            "Message":  "Cannot insert duplicate key row in object \u0027dbo.KHACHHANG\u0027 with unique index \u0027UX_KH_SDT\u0027. The duplicate key value is (0911111111).",
+                                            "Procedure":  "",
+                                            "Line":  1
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "C85918CB33BF1F39B2D79549632E00C28D3C4B496FA56EE086FD64BBF379AB87",
+                      "SnapshotAfter":  "C85918CB33BF1F39B2D79549632E00C28D3C4B496FA56EE086FD64BBF379AB87",
+                      "Failure":  null,
+                      "DurationMs":  97
+                  },
+                  {
+                      "Id":  "T02-K07-employee-update",
+                      "Description":  "Updating a phone to an existing employee phone is rejected",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "constraints.sql",
+                      "ExpectedError":  2601,
+                      "ExpectedMessage":  "UX_NV_SDT",
+                      "SetupSql":  null,
+                      "ActSql":  "UPDATE dbo.NHANVIEN SET SDT=\u00270901111111\u0027 WHERE MaNV=\u0027ZN001\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  2601,
+                                            "Message":  "Cannot insert duplicate key row in object \u0027dbo.NHANVIEN\u0027 with unique index \u0027UX_NV_SDT\u0027. The duplicate key value is (0901111111).",
+                                            "Procedure":  "",
+                                            "Line":  1
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "C85918CB33BF1F39B2D79549632E00C28D3C4B496FA56EE086FD64BBF379AB87",
+                      "SnapshotAfter":  "C85918CB33BF1F39B2D79549632E00C28D3C4B496FA56EE086FD64BBF379AB87",
+                      "Failure":  null,
+                      "DurationMs":  97
+                  },
+                  {
+                      "Id":  "T02-K08-lines-insert",
+                      "Description":  "Batch insert groups independent invoice totals",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "batch-triggers.sql",
+                      "ExpectedError":  0,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  "EXEC dbo.T02_Order \u0027ZBILL00001\u0027,@Quantity=0;\nEXEC dbo.T02_Order \u0027ZBILL00002\u0027,@Quantity=0;",
+                      "ActSql":  "INSERT dbo.CHITIET_HD(MaHD,MaSP,SoLuong,GiaBan,GhiChu) VALUES\n(\u0027ZBILL00001\u0027,\u0027SP001\u0027,2,25000,N\u0027line A\u0027),(\u0027ZBILL00001\u0027,\u0027SP002\u0027,1,30000,N\u0027line B\u0027),\n(\u0027ZBILL00002\u0027,\u0027SP001\u0027,3,25000,N\u0027line C\u0027),(\u0027ZBILL00002\u0027,\u0027SP002\u0027,2,30000,N\u0027line D\u0027);",
+                      "AssertSql":  "IF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD=\u0027ZBILL00001\u0027 AND TongTien=80000) THROW 52008,\u0027Bill1 insert total\u0027,1;\nIF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD=\u0027ZBILL00002\u0027 AND TongTien=135000) THROW 52008,\u0027Bill2 insert total\u0027,1;",
+                      "SqlErrors":  [
+
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  null,
+                      "SnapshotAfter":  null,
+                      "Failure":  null,
+                      "DurationMs":  135
+                  },
+                  {
+                      "Id":  "T02-K08-lines-update",
+                      "Description":  "Batch quantity update preserves per-invoice groups",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "batch-triggers.sql",
+                      "ExpectedError":  0,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "UPDATE dbo.CHITIET_HD SET SoLuong=SoLuong+1 WHERE MaHD IN (\u0027ZBILL00001\u0027,\u0027ZBILL00002\u0027);",
+                      "AssertSql":  "IF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD=\u0027ZBILL00001\u0027 AND TongTien=135000) THROW 52008,\u0027Bill1 update total\u0027,1;\nIF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD=\u0027ZBILL00002\u0027 AND TongTien=190000) THROW 52008,\u0027Bill2 update total\u0027,1;",
+                      "SqlErrors":  [
+
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  null,
+                      "SnapshotAfter":  null,
+                      "Failure":  null,
+                      "DurationMs":  28
+                  },
+                  {
+                      "Id":  "T02-K08-lines-delete",
+                      "Description":  "Batch delete recomputes all affected invoices",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "batch-triggers.sql",
+                      "ExpectedError":  0,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "DELETE dbo.CHITIET_HD WHERE MaHD IN (\u0027ZBILL00001\u0027,\u0027ZBILL00002\u0027) AND MaSP=\u0027SP001\u0027;",
+                      "AssertSql":  "IF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD=\u0027ZBILL00001\u0027 AND TongTien=60000) THROW 52008,\u0027Bill1 delete total\u0027,1;\nIF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD=\u0027ZBILL00002\u0027 AND TongTien=90000) THROW 52008,\u0027Bill2 delete total\u0027,1;",
+                      "SqlErrors":  [
+
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  null,
+                      "SnapshotAfter":  null,
+                      "Failure":  null,
+                      "DurationMs":  26
+                  },
+                  {
+                      "Id":  "T02-K08-lines-atomic",
+                      "Description":  "One invalid quantity rolls back the entire batch",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "batch-triggers.sql",
+                      "ExpectedError":  547,
+                      "ExpectedMessage":  "CHK_CTHD_SoLuong",
+                      "SetupSql":  null,
+                      "ActSql":  "INSERT dbo.CHITIET_HD(MaHD,MaSP,SoLuong,GiaBan) VALUES(\u0027ZBILL00001\u0027,\u0027SP001\u0027,1,25000),(\u0027ZBILL00002\u0027,\u0027SP001\u0027,0,25000);",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  547,
+                                            "Message":  "The INSERT statement conflicted with the CHECK constraint \"CHK_CTHD_SoLuong\". The conflict occurred in database \"CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4\", table \"dbo.CHITIET_HD\", column \u0027SoLuong\u0027.",
+                                            "Procedure":  "",
+                                            "Line":  1
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "7B6E97EC41D3012D69526F8E19DF242506A756EDDB51F8619052219BA5D29D1B",
+                      "SnapshotAfter":  "7B6E97EC41D3012D69526F8E19DF242506A756EDDB51F8619052219BA5D29D1B",
+                      "Failure":  null,
+                      "DurationMs":  122
+                  },
+                  {
+                      "Id":  "T02-K08-receipts-insert",
+                      "Description":  "Receipt insert accumulates a shared ingredient across two headers",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "batch-triggers.sql",
+                      "ExpectedError":  0,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  "INSERT dbo.NGUYENVATLIEU(MaNVL,TenNVL,DonViTinh,SoLuongTon) VALUES(\u0027ZB001\u0027,N\u0027T02 batch 1\u0027,N\u0027Kg\u0027,10),(\u0027ZB002\u0027,N\u0027T02 batch 2\u0027,N\u0027Lit\u0027,20);\nINSERT dbo.PHIEUNHAP(MaPN,MaNV,MaNCC) VALUES(\u0027ZREC000001\u0027,\u0027NV001\u0027,\u0027NCC01\u0027),(\u0027ZREC000002\u0027,\u0027NV001\u0027,\u0027NCC02\u0027);",
+                      "ActSql":  "INSERT dbo.CHITIET_PN(MaPN,MaNVL,SoLuong,DonGiaNhap) VALUES\n(\u0027ZREC000001\u0027,\u0027ZB001\u0027,1.1111,1000),(\u0027ZREC000001\u0027,\u0027ZB002\u0027,2,2000),(\u0027ZREC000002\u0027,\u0027ZB001\u0027,3,2000);",
+                      "AssertSql":  "IF NOT EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE MaNVL=\u0027ZB001\u0027 AND SoLuongTon=14.1111) THROW 52008,\u0027Receipt shared stock\u0027,1;\nIF NOT EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE MaNVL=\u0027ZB002\u0027 AND SoLuongTon=22) THROW 52008,\u0027Receipt stock2\u0027,1;\nIF NOT EXISTS(SELECT 1 FROM dbo.PHIEUNHAP WHERE MaPN=\u0027ZREC000001\u0027 AND TongTien=5111) THROW 52008,\u0027Receipt1 rounding\u0027,1;\nIF NOT EXISTS(SELECT 1 FROM dbo.PHIEUNHAP WHERE MaPN=\u0027ZREC000002\u0027 AND TongTien=6000) THROW 52008,\u0027Receipt2 total\u0027,1;",
+                      "SqlErrors":  [
+
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  null,
+                      "SnapshotAfter":  null,
+                      "Failure":  null,
+                      "DurationMs":  59
+                  },
+                  {
+                      "Id":  "T02-K08-receipts-update",
+                      "Description":  "Receipt update uses inserted minus deleted delta",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "batch-triggers.sql",
+                      "ExpectedError":  0,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "UPDATE dbo.CHITIET_PN SET SoLuong=SoLuong+1 WHERE MaPN IN (\u0027ZREC000001\u0027,\u0027ZREC000002\u0027);",
+                      "AssertSql":  "IF NOT EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE MaNVL=\u0027ZB001\u0027 AND SoLuongTon=16.1111) THROW 52008,\u0027Receipt delta shared\u0027,1;\nIF NOT EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE MaNVL=\u0027ZB002\u0027 AND SoLuongTon=23) THROW 52008,\u0027Receipt delta2\u0027,1;\nIF NOT EXISTS(SELECT 1 FROM dbo.PHIEUNHAP WHERE MaPN=\u0027ZREC000001\u0027 AND TongTien=8111) THROW 52008,\u0027Receipt1 update total\u0027,1;\nIF NOT EXISTS(SELECT 1 FROM dbo.PHIEUNHAP WHERE MaPN=\u0027ZREC000002\u0027 AND TongTien=8000) THROW 52008,\u0027Receipt2 update total\u0027,1;",
+                      "SqlErrors":  [
+
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  null,
+                      "SnapshotAfter":  null,
+                      "Failure":  null,
+                      "DurationMs":  28
+                  },
+                  {
+                      "Id":  "T02-K08-receipts-delete",
+                      "Description":  "Receipt delete reverses every grouped stock delta",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "batch-triggers.sql",
+                      "ExpectedError":  0,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "DELETE dbo.CHITIET_PN WHERE MaPN IN (\u0027ZREC000001\u0027,\u0027ZREC000002\u0027);",
+                      "AssertSql":  "IF NOT EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE MaNVL=\u0027ZB001\u0027 AND SoLuongTon=10) THROW 52008,\u0027Receipt delete stock1\u0027,1;\nIF NOT EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE MaNVL=\u0027ZB002\u0027 AND SoLuongTon=20) THROW 52008,\u0027Receipt delete stock2\u0027,1;\nIF EXISTS(SELECT 1 FROM dbo.PHIEUNHAP WHERE MaPN IN (\u0027ZREC000001\u0027,\u0027ZREC000002\u0027) AND TongTien\u003c\u003e0) THROW 52008,\u0027Receipt delete totals\u0027,1;",
+                      "SqlErrors":  [
+
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  null,
+                      "SnapshotAfter":  null,
+                      "Failure":  null,
+                      "DurationMs":  36
+                  },
+                  {
+                      "Id":  "T02-K08-exports-insert",
+                      "Description":  "Export batch groups stock shared across two headers",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "batch-triggers.sql",
+                      "ExpectedError":  0,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  "INSERT dbo.PHIEUXUAT(MaPX,MaNV,LoaiXuat) VALUES(\u0027ZEXP000001\u0027,\u0027NV001\u0027,N\u0027Huy do hong\u0027),(\u0027ZEXP000002\u0027,\u0027NV001\u0027,N\u0027Tra hang\u0027);",
+                      "ActSql":  "INSERT dbo.CHITIET_PX(MaPX,MaNVL,SoLuongXuat) VALUES\n(\u0027ZEXP000001\u0027,\u0027ZB001\u0027,1),(\u0027ZEXP000001\u0027,\u0027ZB002\u0027,2),(\u0027ZEXP000002\u0027,\u0027ZB001\u0027,3);",
+                      "AssertSql":  "IF NOT EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE MaNVL=\u0027ZB001\u0027 AND SoLuongTon=6) THROW 52008,\u0027Export shared stock\u0027,1;\nIF NOT EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE MaNVL=\u0027ZB002\u0027 AND SoLuongTon=18) THROW 52008,\u0027Export stock2\u0027,1;",
+                      "SqlErrors":  [
+
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  null,
+                      "SnapshotAfter":  null,
+                      "Failure":  null,
+                      "DurationMs":  48
+                  },
+                  {
+                      "Id":  "T02-K08-exports-update",
+                      "Description":  "Export update subtracts only changed quantities",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "batch-triggers.sql",
+                      "ExpectedError":  0,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "UPDATE dbo.CHITIET_PX SET SoLuongXuat=SoLuongXuat+1 WHERE MaPX IN (\u0027ZEXP000001\u0027,\u0027ZEXP000002\u0027);",
+                      "AssertSql":  "IF NOT EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE MaNVL=\u0027ZB001\u0027 AND SoLuongTon=4) THROW 52008,\u0027Export delta1\u0027,1;\nIF NOT EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE MaNVL=\u0027ZB002\u0027 AND SoLuongTon=17) THROW 52008,\u0027Export delta2\u0027,1;",
+                      "SqlErrors":  [
+
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  null,
+                      "SnapshotAfter":  null,
+                      "Failure":  null,
+                      "DurationMs":  26
+                  },
+                  {
+                      "Id":  "T02-K08-exports-delete",
+                      "Description":  "Export delete restores grouped amounts",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "batch-triggers.sql",
+                      "ExpectedError":  0,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "DELETE dbo.CHITIET_PX WHERE MaPX IN (\u0027ZEXP000001\u0027,\u0027ZEXP000002\u0027);",
+                      "AssertSql":  "IF NOT EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE MaNVL=\u0027ZB001\u0027 AND SoLuongTon=10) THROW 52008,\u0027Export delete1\u0027,1;\nIF NOT EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE MaNVL=\u0027ZB002\u0027 AND SoLuongTon=20) THROW 52008,\u0027Export delete2\u0027,1;",
+                      "SqlErrors":  [
+
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  null,
+                      "SnapshotAfter":  null,
+                      "Failure":  null,
+                      "DurationMs":  16
+                  },
+                  {
+                      "Id":  "T02-K08-exports-atomic",
+                      "Description":  "Insufficient stock in one row rolls back all export rows",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "batch-triggers.sql",
+                      "ExpectedError":  547,
+                      "ExpectedMessage":  "CHK_NVL_TonKho",
+                      "SetupSql":  null,
+                      "ActSql":  "INSERT dbo.CHITIET_PX(MaPX,MaNVL,SoLuongXuat) VALUES(\u0027ZEXP000001\u0027,\u0027ZB001\u0027,1),(\u0027ZEXP000002\u0027,\u0027ZB002\u0027,21);",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  547,
+                                            "Message":  "The UPDATE statement conflicted with the CHECK constraint \"CHK_NVL_TonKho\". The conflict occurred in database \"CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4\", table \"dbo.NGUYENVATLIEU\", column \u0027SoLuongTon\u0027.",
+                                            "Procedure":  "TR_CTPX_Kho",
+                                            "Line":  5
+                                        },
+                                        {
+                                            "Number":  3621,
+                                            "Message":  "The statement has been terminated.",
+                                            "Procedure":  "",
+                                            "Line":  1
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "B670A7D70F720592F626AB6C63ED55010DDB52ED798CB7DECD279C48C4AC7614",
+                      "SnapshotAfter":  "B670A7D70F720592F626AB6C63ED55010DDB52ED798CB7DECD279C48C4AC7614",
+                      "Failure":  null,
+                      "DurationMs":  116
+                  },
+                  {
+                      "Id":  "T02-K08-receipts-atomic",
+                      "Description":  "Invalid ingredient FK rolls back all receipt rows",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "batch-triggers.sql",
+                      "ExpectedError":  547,
+                      "ExpectedMessage":  "FK_CTPN_NVL",
+                      "SetupSql":  null,
+                      "ActSql":  "INSERT dbo.CHITIET_PN(MaPN,MaNVL,SoLuong,DonGiaNhap) VALUES(\u0027ZREC000001\u0027,\u0027ZB001\u0027,1,1000),(\u0027ZREC000002\u0027,\u0027ZZ999\u0027,1,1000);",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  547,
+                                            "Message":  "The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_CTPN_NVL\". The conflict occurred in database \"CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4\", table \"dbo.NGUYENVATLIEU\", column \u0027MaNVL\u0027.",
+                                            "Procedure":  "",
+                                            "Line":  1
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "B670A7D70F720592F626AB6C63ED55010DDB52ED798CB7DECD279C48C4AC7614",
+                      "SnapshotAfter":  "B670A7D70F720592F626AB6C63ED55010DDB52ED798CB7DECD279C48C4AC7614",
+                      "Failure":  null,
+                      "DurationMs":  133
+                  },
+                  {
+                      "Id":  "T02-K09-success",
+                      "Description":  "Checkout records grouped consumption split payments and exact points once",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  0,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  "EXEC dbo.T02_Order \u0027ZPAYOK0001\u0027;\nINSERT dbo.CHITIET_HD(MaHD,MaSP,SoLuong,GiaBan,GhiChu) VALUES(\u0027ZPAYOK0001\u0027,\u0027SP002\u0027,2,30000,N\u0027Separate note\u0027);",
+                      "ActSql":  "DECLARE @coffee DECIMAL(18,4),@milk DECIMAL(18,4),@sugar DECIMAL(18,4),@points INT;\nSELECT @coffee=SoLuongTon FROM dbo.NGUYENVATLIEU WHERE MaNVL=\u0027NVL01\u0027;\nSELECT @milk=SoLuongTon FROM dbo.NGUYENVATLIEU WHERE MaNVL=\u0027NVL02\u0027;\nSELECT @sugar=SoLuongTon FROM dbo.NGUYENVATLIEU WHERE MaNVL=\u0027NVL03\u0027;\nSELECT @points=DiemTichLuy FROM dbo.KHACHHANG WHERE MaKH=\u0027KH004\u0027;\nDECLARE @tt dbo.DanhSachThanhToan;\nINSERT @tt(MaPT,SoTien) VALUES(\u0027PT001\u0027,30000),(\u0027PT002\u0027,60000);\nEXEC dbo.sp_ThanhToanHoaDon \u0027ZPAYOK0001\u0027,@tt,\u00272025-04-01\u0027;\nIF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD=\u0027ZPAYOK0001\u0027 AND TrangThai=N\u0027Da thanh toan\u0027 AND ThanhTien=90000) THROW 52009,\u0027Checkout header\u0027,1;\nIF (SELECT COUNT(*) FROM dbo.TIEUHAO_HOADON WHERE MaHD=\u0027ZPAYOK0001\u0027)\u003c\u003e3 THROW 52009,\u0027Grouped consumption count\u0027,1;\nIF NOT EXISTS(SELECT 1 FROM dbo.TIEUHAO_HOADON WHERE MaHD=\u0027ZPAYOK0001\u0027 AND MaNVL=\u0027NVL01\u0027 AND SoLuong=0.0540) THROW 52009,\u0027Coffee consumption\u0027,1;\nIF NOT EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE MaNVL=\u0027NVL01\u0027 AND SoLuongTon=@coffee-0.0540) THROW 52009,\u0027Coffee stock\u0027,1;\nIF NOT EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE MaNVL=\u0027NVL02\u0027 AND SoLuongTon=@milk-0.3600) THROW 52009,\u0027Milk stock\u0027,1;\nIF NOT EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE MaNVL=\u0027NVL03\u0027 AND SoLuongTon=@sugar-0.0450) THROW 52009,\u0027Sugar stock\u0027,1;\nIF NOT EXISTS(SELECT 1 FROM dbo.KHACHHANG WHERE MaKH=\u0027KH004\u0027 AND DiemTichLuy=@points+90) THROW 52009,\u0027Points\u0027,1;\nIF (SELECT COUNT(*) FROM dbo.CHITIET_THANHTOAN WHERE MaHD=\u0027ZPAYOK0001\u0027)\u003c\u003e2 THROW 52009,\u0027Payment allocations\u0027,1;\nIF (SELECT COUNT(*) FROM dbo.LICHSU_DIEM WHERE MaHD=\u0027ZPAYOK0001\u0027)\u003c\u003e1 THROW 52009,\u0027One point award\u0027,1;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  null,
+                      "SnapshotAfter":  null,
+                      "Failure":  null,
+                      "DurationMs":  82
+                  },
+                  {
+                      "Id":  "T02-K09-stock",
+                      "Description":  "Checkout with one insufficient ingredient rolls back all 35 tables",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  547,
+                      "ExpectedMessage":  "CHK_NVL_TonKho",
+                      "SetupSql":  "INSERT dbo.NGUYENVATLIEU(MaNVL,TenNVL,DonViTinh,SoLuongTon) VALUES(\u0027ZS001\u0027,N\u0027T02 enough\u0027,N\u0027Kg\u0027,10),(\u0027ZS002\u0027,N\u0027T02 short\u0027,N\u0027Kg\u0027,0.5);\nINSERT dbo.SANPHAM(MaSP,TenSP,MaDM,GiaBan) VALUES(\u0027ZS001\u0027,N\u0027T02 stock test\u0027,\u0027DM001\u0027,10000);\nINSERT dbo.CONGTHUC(MaSP,MaNVL,DinhMuc) VALUES(\u0027ZS001\u0027,\u0027ZS001\u0027,0.25),(\u0027ZS001\u0027,\u0027ZS002\u0027,1);\nEXEC dbo.T02_Order \u0027ZSHORT0001\u0027,@Product=\u0027ZS001\u0027;",
+                      "ActSql":  "EXEC dbo.T02_Pay \u0027ZSHORT0001\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  547,
+                                            "Message":  "The UPDATE statement conflicted with the CHECK constraint \"CHK_NVL_TonKho\". The conflict occurred in database \"CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4\", table \"dbo.NGUYENVATLIEU\", column \u0027SoLuongTon\u0027.",
+                                            "Procedure":  "TR_TieuHao_Kho",
+                                            "Line":  10
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "D92F583F7C1DC4BB81FC05C907FDBF580D989F30424BF7B4AA53CDF67E66DC66",
+                      "SnapshotAfter":  "D92F583F7C1DC4BB81FC05C907FDBF580D989F30424BF7B4AA53CDF67E66DC66",
+                      "Failure":  null,
+                      "DurationMs":  145
+                  },
+                  {
+                      "Id":  "T02-K09-method",
+                      "Description":  "Invalid method after consumption insertion rolls back stock and all rows",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  547,
+                      "ExpectedMessage":  "FK_CTTT_PHUONGTHUC",
+                      "SetupSql":  "EXEC dbo.T02_Order \u0027ZMETHOD001\u0027;",
+                      "ActSql":  "EXEC dbo.T02_Pay \u0027ZMETHOD001\u0027,@Method=\u0027ZZ999\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  547,
+                                            "Message":  "The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_CTTT_PHUONGTHUC\". The conflict occurred in database \"CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4\", table \"dbo.PHUONGTHUCTT\", column \u0027MaPT\u0027.",
+                                            "Procedure":  "dbo.sp_ThanhToanHoaDon",
+                                            "Line":  42
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "42DE4AF98DC85AE879E2EDAFA1EDA6B00F47E44FF28F377A7E675D5172B53DFF",
+                      "SnapshotAfter":  "42DE4AF98DC85AE879E2EDAFA1EDA6B00F47E44FF28F377A7E675D5172B53DFF",
+                      "Failure":  null,
+                      "DurationMs":  96
+                  },
+                  {
+                      "Id":  "T02-K10-overpay",
+                      "Description":  "Debt overpayment creates neither expense nor repayment history",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51111,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  "EXEC dbo.T02_Debt \u0027ZDEBT00001\u0027;",
+                      "ActSql":  "EXEC dbo.sp_TraCongNo \u0027ZDEBT00001\u0027,\u0027ZCASH00001\u0027,\u0027NV001\u0027,\u0027PT001\u0027,1001;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51111,
+                                            "Message":  "So tien tra no khong hop le.",
+                                            "Procedure":  "dbo.sp_TraCongNo",
+                                            "Line":  14
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "3B930299516AE2919F24A71837D02DA7F258E9EDC3C63A09ACFB66D1DB9C3B0C",
+                      "SnapshotAfter":  "3B930299516AE2919F24A71837D02DA7F258E9EDC3C63A09ACFB66D1DB9C3B0C",
+                      "Failure":  null,
+                      "DurationMs":  179
+                  },
+                  {
+                      "Id":  "T02-K10-partial",
+                      "Description":  "Partial debt payment creates exactly one linked expense and correct balance",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  0,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "EXEC dbo.sp_TraCongNo \u0027ZDEBT00001\u0027,\u0027ZCASH00002\u0027,\u0027NV001\u0027,\u0027PT001\u0027,400;",
+                      "AssertSql":  "IF NOT EXISTS(SELECT 1 FROM dbo.vw_CongNoNCC WHERE MaCN=\u0027ZDEBT00001\u0027 AND TienNo=1000 AND DaTra=400 AND ConNo=600) THROW 52010,\u0027Partial debt balance\u0027,1;\nIF NOT EXISTS(SELECT 1 FROM dbo.PHIEUTHUCHI WHERE MaTC=\u0027ZCASH00002\u0027 AND MaDMTC=\u0027TC011\u0027 AND SoTien=400) THROW 52010,\u0027One source expense\u0027,1;\nIF (SELECT COUNT(*) FROM dbo.THANHTOAN_CONGNO WHERE MaCN=\u0027ZDEBT00001\u0027)\u003c\u003e1 THROW 52010,\u0027One repayment row\u0027,1;",
+                      "SqlErrors":  [
+
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  null,
+                      "SnapshotAfter":  null,
+                      "Failure":  null,
+                      "DurationMs":  38
+                  },
+                  {
+                      "Id":  "T02-K10-debt-lock",
+                      "Description":  "Debt with payment history cannot be edited",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51013,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "UPDATE dbo.CONGNO_NCC SET TienNo=900 WHERE MaCN=\u0027ZDEBT00001\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51013,
+                                            "Message":  "Khong sua cong no da co thanh toan.",
+                                            "Procedure":  "TR_CongNo",
+                                            "Line":  6
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "DA16E81D95202166DEECB199583D97EBD747FBDE1024BAAD87C63FACA5A2D5DD",
+                      "SnapshotAfter":  "DA16E81D95202166DEECB199583D97EBD747FBDE1024BAAD87C63FACA5A2D5DD",
+                      "Failure":  null,
+                      "DurationMs":  109
+                  },
+                  {
+                      "Id":  "T02-K10-history-update",
+                      "Description":  "Repayment history cannot be updated",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51017,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "UPDATE dbo.THANHTOAN_CONGNO SET MaPT=\u0027PT002\u0027 WHERE MaCN=\u0027ZDEBT00001\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51017,
+                                            "Message":  "Lich su tra no khong sua/xoa.",
+                                            "Procedure":  "TR_TraNo",
+                                            "Line":  5
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "DA16E81D95202166DEECB199583D97EBD747FBDE1024BAAD87C63FACA5A2D5DD",
+                      "SnapshotAfter":  "DA16E81D95202166DEECB199583D97EBD747FBDE1024BAAD87C63FACA5A2D5DD",
+                      "Failure":  null,
+                      "DurationMs":  92
+                  },
+                  {
+                      "Id":  "T02-K10-history-delete",
+                      "Description":  "Repayment history cannot be deleted",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51017,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "DELETE dbo.THANHTOAN_CONGNO WHERE MaCN=\u0027ZDEBT00001\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51017,
+                                            "Message":  "Lich su tra no khong sua/xoa.",
+                                            "Procedure":  "TR_TraNo",
+                                            "Line":  5
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "DA16E81D95202166DEECB199583D97EBD747FBDE1024BAAD87C63FACA5A2D5DD",
+                      "SnapshotAfter":  "DA16E81D95202166DEECB199583D97EBD747FBDE1024BAAD87C63FACA5A2D5DD",
+                      "Failure":  null,
+                      "DurationMs":  69
+                  },
+                  {
+                      "Id":  "T02-K10-expense-update",
+                      "Description":  "Linked expense cannot be edited",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51020,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "UPDATE dbo.PHIEUTHUCHI SET SoTien=1 WHERE MaTC=\u0027ZCASH00002\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51020,
+                                            "Message":  "Khong sua/xoa phieu chi da lien ket tra no.",
+                                            "Procedure":  "TR_PhieuChi_LichSu",
+                                            "Line":  6
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "DA16E81D95202166DEECB199583D97EBD747FBDE1024BAAD87C63FACA5A2D5DD",
+                      "SnapshotAfter":  "DA16E81D95202166DEECB199583D97EBD747FBDE1024BAAD87C63FACA5A2D5DD",
+                      "Failure":  null,
+                      "DurationMs":  82
+                  },
+                  {
+                      "Id":  "T02-K10-expense-delete",
+                      "Description":  "Linked expense delete is blocked by FK",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  547,
+                      "ExpectedMessage":  "FK_TTCN_TC",
+                      "SetupSql":  null,
+                      "ActSql":  "DELETE dbo.PHIEUTHUCHI WHERE MaTC=\u0027ZCASH00002\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  547,
+                                            "Message":  "The DELETE statement conflicted with the REFERENCE constraint \"FK_TTCN_TC\". The conflict occurred in database \"CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4\", table \"dbo.THANHTOAN_CONGNO\", column \u0027MaTC\u0027.",
+                                            "Procedure":  "",
+                                            "Line":  1
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "DA16E81D95202166DEECB199583D97EBD747FBDE1024BAAD87C63FACA5A2D5DD",
+                      "SnapshotAfter":  "DA16E81D95202166DEECB199583D97EBD747FBDE1024BAAD87C63FACA5A2D5DD",
+                      "Failure":  null,
+                      "DurationMs":  77
+                  },
+                  {
+                      "Id":  "T02-K11-success",
+                      "Description":  "Count adjusts two ingredients once and marks header finalized",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  0,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  "EXEC dbo.T02_Count \u0027ZCOUNT0001\u0027;",
+                      "ActSql":  "EXEC dbo.sp_ChotKiemKe \u0027ZCOUNT0001\u0027;",
+                      "AssertSql":  "IF NOT EXISTS(SELECT 1 FROM dbo.PHIEUKIEMKE WHERE MaKK=\u0027ZCOUNT0001\u0027 AND DaDieuChinh=1) THROW 52011,\u0027Count header\u0027,1;\nIF EXISTS(SELECT 1 FROM dbo.CHITIET_KK k JOIN dbo.NGUYENVATLIEU n ON n.MaNVL=k.MaNVL WHERE k.MaKK=\u0027ZCOUNT0001\u0027 AND n.SoLuongTon\u003c\u003ek.TonThucTe) THROW 52011,\u0027Count quantities\u0027,1;",
+                      "SqlErrors":  [
+
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  null,
+                      "SnapshotAfter":  null,
+                      "Failure":  null,
+                      "DurationMs":  68
+                  },
+                  {
+                      "Id":  "T02-K11-repeat",
+                      "Description":  "Already finalized count cannot be applied again",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51112,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "EXEC dbo.sp_ChotKiemKe \u0027ZCOUNT0001\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51112,
+                                            "Message":  "Chi chot phieu kiem ke hom nay chua dieu chinh.",
+                                            "Procedure":  "dbo.sp_ChotKiemKe",
+                                            "Line":  11
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "DA95BE3A098EACA832E82E193259C757719523C92F26291AC6271F6B7C22B3CC",
+                      "SnapshotAfter":  "DA95BE3A098EACA832E82E193259C757719523C92F26291AC6271F6B7C22B3CC",
+                      "Failure":  null,
+                      "DurationMs":  73
+                  },
+                  {
+                      "Id":  "T02-K11-old",
+                      "Description":  "Past-day count is rejected",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51112,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  "EXEC dbo.T02_Count \u0027ZCOUNT0002\u0027,@DayOffset=-1;",
+                      "ActSql":  "EXEC dbo.sp_ChotKiemKe \u0027ZCOUNT0002\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51112,
+                                            "Message":  "Chi chot phieu kiem ke hom nay chua dieu chinh.",
+                                            "Procedure":  "dbo.sp_ChotKiemKe",
+                                            "Line":  11
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "9C18497BCBFF27E3922EA488F71D7082B271264561BD3436D0DD91696E62EFC5",
+                      "SnapshotAfter":  "9C18497BCBFF27E3922EA488F71D7082B271264561BD3436D0DD91696E62EFC5",
+                      "Failure":  null,
+                      "DurationMs":  69
+                  },
+                  {
+                      "Id":  "T02-K11-stale",
+                      "Description":  "One stale snapshot in multi-row count rolls back all ingredients",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51114,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  "EXEC dbo.T02_Count \u0027ZCOUNT0003\u0027;\nUPDATE dbo.CHITIET_KK SET TonHeThong=TonHeThong+1 WHERE MaKK=\u0027ZCOUNT0003\u0027 AND MaNVL=\u0027NVL02\u0027;",
+                      "ActSql":  "EXEC dbo.sp_ChotKiemKe \u0027ZCOUNT0003\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51114,
+                                            "Message":  "Ton da thay doi sau khi dem, can kiem ke lai.",
+                                            "Procedure":  "dbo.sp_ChotKiemKe",
+                                            "Line":  16
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "FD3809713C4A4D4F45D72DBAF2A3EDD5B61DFA5E1CEFC9046ECEE0A59BDFA281",
+                      "SnapshotAfter":  "FD3809713C4A4D4F45D72DBAF2A3EDD5B61DFA5E1CEFC9046ECEE0A59BDFA281",
+                      "Failure":  null,
+                      "DurationMs":  105
+                  },
+                  {
+                      "Id":  "T02-K11-detail-update",
+                      "Description":  "Finalized count detail cannot be edited",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51115,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "UPDATE dbo.CHITIET_KK SET TonThucTe=TonThucTe+1 WHERE MaKK=\u0027ZCOUNT0001\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51115,
+                                            "Message":  "Khong sua chi tiet kiem ke da chot.",
+                                            "Procedure":  "TR_KK_LichSu",
+                                            "Line":  7
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "FD3809713C4A4D4F45D72DBAF2A3EDD5B61DFA5E1CEFC9046ECEE0A59BDFA281",
+                      "SnapshotAfter":  "FD3809713C4A4D4F45D72DBAF2A3EDD5B61DFA5E1CEFC9046ECEE0A59BDFA281",
+                      "Failure":  null,
+                      "DurationMs":  88
+                  },
+                  {
+                      "Id":  "T02-K11-detail-delete",
+                      "Description":  "Finalized count detail cannot be deleted",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51115,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "DELETE dbo.CHITIET_KK WHERE MaKK=\u0027ZCOUNT0001\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51115,
+                                            "Message":  "Khong sua chi tiet kiem ke da chot.",
+                                            "Procedure":  "TR_KK_LichSu",
+                                            "Line":  7
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "FD3809713C4A4D4F45D72DBAF2A3EDD5B61DFA5E1CEFC9046ECEE0A59BDFA281",
+                      "SnapshotAfter":  "FD3809713C4A4D4F45D72DBAF2A3EDD5B61DFA5E1CEFC9046ECEE0A59BDFA281",
+                      "Failure":  null,
+                      "DurationMs":  100
+                  },
+                  {
+                      "Id":  "T02-K12-pay-missing",
+                      "Description":  "Checkout missing invoice hits 51101",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51101,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "EXEC dbo.T02_Pay \u0027ZZMISSING1\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51101,
+                                            "Message":  "Hoa don khong ton tai hoac da chot/huy.",
+                                            "Procedure":  "dbo.sp_ThanhToanHoaDon",
+                                            "Line":  20
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "FD3809713C4A4D4F45D72DBAF2A3EDD5B61DFA5E1CEFC9046ECEE0A59BDFA281",
+                      "SnapshotAfter":  "FD3809713C4A4D4F45D72DBAF2A3EDD5B61DFA5E1CEFC9046ECEE0A59BDFA281",
+                      "Failure":  null,
+                      "DurationMs":  84
+                  },
+                  {
+                      "Id":  "T02-K12-pay-paid",
+                      "Description":  "Checkout paid invoice is not charged again",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51101,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "EXEC dbo.T02_Pay \u0027ZPAYOK0001\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51101,
+                                            "Message":  "Hoa don khong ton tai hoac da chot/huy.",
+                                            "Procedure":  "dbo.sp_ThanhToanHoaDon",
+                                            "Line":  20
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "FD3809713C4A4D4F45D72DBAF2A3EDD5B61DFA5E1CEFC9046ECEE0A59BDFA281",
+                      "SnapshotAfter":  "FD3809713C4A4D4F45D72DBAF2A3EDD5B61DFA5E1CEFC9046ECEE0A59BDFA281",
+                      "Failure":  null,
+                      "DurationMs":  92
+                  },
+                  {
+                      "Id":  "T02-K12-pay-canceled",
+                      "Description":  "Checkout canceled invoice is refused",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51101,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  "EXEC dbo.T02_Order \u0027ZCANCEL001\u0027;\nEXEC dbo.sp_HuyHoaDon \u0027ZCANCEL001\u0027;",
+                      "ActSql":  "EXEC dbo.T02_Pay \u0027ZCANCEL001\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51101,
+                                            "Message":  "Hoa don khong ton tai hoac da chot/huy.",
+                                            "Procedure":  "dbo.sp_ThanhToanHoaDon",
+                                            "Line":  20
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "45383E3A2193A745F34D9AE03423ADF2F8B64B9E063A99D514997878C0172902",
+                      "SnapshotAfter":  "45383E3A2193A745F34D9AE03423ADF2F8B64B9E063A99D514997878C0172902",
+                      "Failure":  null,
+                      "DurationMs":  115
+                  },
+                  {
+                      "Id":  "T02-K12-pay-empty",
+                      "Description":  "Empty invoice hits 51102",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51102,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  "EXEC dbo.T02_Order \u0027ZEMPTY0001\u0027,@Quantity=0;",
+                      "ActSql":  "EXEC dbo.T02_Pay \u0027ZEMPTY0001\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51102,
+                                            "Message":  "Hoa don phai co mon.",
+                                            "Procedure":  "dbo.sp_ThanhToanHoaDon",
+                                            "Line":  21
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "2DCA64794CABDB936B92ED792025566562FC800592AB94508B3EA2459184C5B1",
+                      "SnapshotAfter":  "2DCA64794CABDB936B92ED792025566562FC800592AB94508B3EA2459184C5B1",
+                      "Failure":  null,
+                      "DurationMs":  75
+                  },
+                  {
+                      "Id":  "T02-K12-pay-existing",
+                      "Description":  "Invoice with an earlier allocation hits 51103",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51103,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  "EXEC dbo.T02_Order \u0027ZEARLY0001\u0027;\nINSERT dbo.CHITIET_THANHTOAN(MaHD,MaPT,SoTien) VALUES(\u0027ZEARLY0001\u0027,\u0027PT001\u0027,1);",
+                      "ActSql":  "EXEC dbo.T02_Pay \u0027ZEARLY0001\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51103,
+                                            "Message":  "Thu tuc nhan toan bo phan bo TT; don nay da co dong TT.",
+                                            "Procedure":  "dbo.sp_ThanhToanHoaDon",
+                                            "Line":  23
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "8CAA56E3839F18618C7A4417186929165C93901D4A5F9F32ECEFB8D2FC2C82F9",
+                      "SnapshotAfter":  "8CAA56E3839F18618C7A4417186929165C93901D4A5F9F32ECEFB8D2FC2C82F9",
+                      "Failure":  null,
+                      "DurationMs":  76
+                  },
+                  {
+                      "Id":  "T02-K12-pay-short",
+                      "Description":  "Insufficient TVP allocation hits 51104",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51104,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  "EXEC dbo.T02_Order \u0027ZALLOC0001\u0027;",
+                      "ActSql":  "EXEC dbo.T02_Pay \u0027ZALLOC0001\u0027,@Amount=29999;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51104,
+                                            "Message":  "Tong phan bo thanh toan khong bang ThanhTien.",
+                                            "Procedure":  "dbo.sp_ThanhToanHoaDon",
+                                            "Line":  25
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "A2271C6678DCB1A0035BD8D5FAEBEACB7C762DBAFB51F7C3AE872AF6B67C43FF",
+                      "SnapshotAfter":  "A2271C6678DCB1A0035BD8D5FAEBEACB7C762DBAFB51F7C3AE872AF6B67C43FF",
+                      "Failure":  null,
+                      "DurationMs":  74
+                  },
+                  {
+                      "Id":  "T02-K12-pay-over",
+                      "Description":  "Excess TVP allocation hits 51104",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51104,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "EXEC dbo.T02_Pay \u0027ZALLOC0001\u0027,@Amount=30001;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51104,
+                                            "Message":  "Tong phan bo thanh toan khong bang ThanhTien.",
+                                            "Procedure":  "dbo.sp_ThanhToanHoaDon",
+                                            "Line":  25
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "A2271C6678DCB1A0035BD8D5FAEBEACB7C762DBAFB51F7C3AE872AF6B67C43FF",
+                      "SnapshotAfter":  "A2271C6678DCB1A0035BD8D5FAEBEACB7C762DBAFB51F7C3AE872AF6B67C43FF",
+                      "Failure":  null,
+                      "DurationMs":  66
+                  },
+                  {
+                      "Id":  "T02-K12-pay-promotion",
+                      "Description":  "Expired promotion hits 51105",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51105,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  "EXEC dbo.T02_Order \u0027ZPROMO0001\u0027,@Promotion=\u0027KM24TET\u0027;",
+                      "ActSql":  "EXEC dbo.T02_Pay \u0027ZPROMO0001\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51105,
+                                            "Message":  "Khuyen mai khong con hieu luc tai ngay lap don.",
+                                            "Procedure":  "dbo.sp_ThanhToanHoaDon",
+                                            "Line":  28
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "B14D9053E48AAA23E5856ED871D663322E2FE548C1E9A4337512D5CA501C721F",
+                      "SnapshotAfter":  "B14D9053E48AAA23E5856ED871D663322E2FE548C1E9A4337512D5CA501C721F",
+                      "Failure":  null,
+                      "DurationMs":  67
+                  },
+                  {
+                      "Id":  "T02-K12-pay-stopped",
+                      "Description":  "Stopped product hits 51106",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51106,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  "EXEC dbo.T02_Order \u0027ZSTOP00001\u0027;\nUPDATE dbo.SANPHAM SET TrangThai=N\u0027Ngung ban\u0027 WHERE MaSP=\u0027SP002\u0027;",
+                      "ActSql":  "EXEC dbo.T02_Pay \u0027ZSTOP00001\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51106,
+                                            "Message":  "Hoa don co mon da ngung ban.",
+                                            "Procedure":  "dbo.sp_ThanhToanHoaDon",
+                                            "Line":  31
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "3829EEE2836EC594B6E067355C8A38F7C7E31F72A61F374E73CA3BBAEEBF89CA",
+                      "SnapshotAfter":  "3829EEE2836EC594B6E067355C8A38F7C7E31F72A61F374E73CA3BBAEEBF89CA",
+                      "Failure":  null,
+                      "DurationMs":  113
+                  },
+                  {
+                      "Id":  "T02-K12-pay-recipe",
+                      "Description":  "Product without recipe hits 51107",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51107,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  "INSERT dbo.SANPHAM(MaSP,TenSP,MaDM,GiaBan) VALUES(\u0027ZR001\u0027,N\u0027T02 no recipe\u0027,\u0027DM001\u0027,10000);\nEXEC dbo.T02_Order \u0027ZRECIPE001\u0027,@Product=\u0027ZR001\u0027;",
+                      "ActSql":  "EXEC dbo.T02_Pay \u0027ZRECIPE001\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51107,
+                                            "Message":  "Mon chua co cong thuc. Hang ban san can nguyen lieu thanh pham.",
+                                            "Procedure":  "dbo.sp_ThanhToanHoaDon",
+                                            "Line":  34
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "C7164F2DE47CD6647B2C003F47CAFBCD7DD4E462F855AA539A0FBA67473D88ED",
+                      "SnapshotAfter":  "C7164F2DE47CD6647B2C003F47CAFBCD7DD4E462F855AA539A0FBA67473D88ED",
+                      "Failure":  null,
+                      "DurationMs":  86
+                  },
+                  {
+                      "Id":  "T02-K12-pay-date",
+                      "Description":  "Payment before invoice date hits 51108",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51108,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  "EXEC dbo.T02_Order \u0027ZDATE00001\u0027;",
+                      "ActSql":  "EXEC dbo.T02_Pay \u0027ZDATE00001\u0027,@Date=\u00272025-03-31\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51108,
+                                            "Message":  "Ngay thanh toan khong duoc truoc ngay lap.",
+                                            "Procedure":  "dbo.sp_ThanhToanHoaDon",
+                                            "Line":  37
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "8AA332FE6622B49D6D91F7DEDCD710723667957F3031FCFECF84D1DCCDDA3597",
+                      "SnapshotAfter":  "8AA332FE6622B49D6D91F7DEDCD710723667957F3031FCFECF84D1DCCDDA3597",
+                      "Failure":  null,
+                      "DurationMs":  71
+                  },
+                  {
+                      "Id":  "T02-K12-pay-late-fault",
+                      "Description":  "Failure at loyalty stage reverses financial close stock payments and points",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  52901,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  "EXEC dbo.T02_Order \u0027ZFAULT0001\u0027;\nGO\nCREATE TRIGGER dbo.TR_T02_FailPoint ON dbo.LICHSU_DIEM AFTER INSERT AS\nBEGIN\n    IF EXISTS(SELECT 1 FROM inserted WHERE MaHD=\u0027ZFAULT0001\u0027) THROW 52901,\u0027T02 injected loyalty failure\u0027,1;\nEND;",
+                      "ActSql":  "EXEC dbo.T02_Pay \u0027ZFAULT0001\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  52901,
+                                            "Message":  "T02 injected loyalty failure",
+                                            "Procedure":  "TR_T02_FailPoint",
+                                            "Line":  4
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "9EE03E43A4F0BA837C8FFC834A0C9CC18B56F35355306238D7C549252F1562C7",
+                      "SnapshotAfter":  "9EE03E43A4F0BA837C8FFC834A0C9CC18B56F35355306238D7C549252F1562C7",
+                      "Failure":  null,
+                      "DurationMs":  130
+                  },
+                  {
+                      "Id":  "T02-K12-cancel-missing",
+                      "Description":  "Cancel missing invoice hits 51109",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51109,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "EXEC dbo.sp_HuyHoaDon \u0027ZZMISSING1\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51109,
+                                            "Message":  "Chi huy duoc hoa don dang mo.",
+                                            "Procedure":  "dbo.sp_HuyHoaDon",
+                                            "Line":  10
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "9EE03E43A4F0BA837C8FFC834A0C9CC18B56F35355306238D7C549252F1562C7",
+                      "SnapshotAfter":  "9EE03E43A4F0BA837C8FFC834A0C9CC18B56F35355306238D7C549252F1562C7",
+                      "Failure":  null,
+                      "DurationMs":  68
+                  },
+                  {
+                      "Id":  "T02-K12-cancel-paid",
+                      "Description":  "Paid invoice cannot be canceled",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51109,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "EXEC dbo.sp_HuyHoaDon \u0027ZPAYOK0001\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51109,
+                                            "Message":  "Chi huy duoc hoa don dang mo.",
+                                            "Procedure":  "dbo.sp_HuyHoaDon",
+                                            "Line":  10
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "9EE03E43A4F0BA837C8FFC834A0C9CC18B56F35355306238D7C549252F1562C7",
+                      "SnapshotAfter":  "9EE03E43A4F0BA837C8FFC834A0C9CC18B56F35355306238D7C549252F1562C7",
+                      "Failure":  null,
+                      "DurationMs":  90
+                  },
+                  {
+                      "Id":  "T02-K12-cancel-canceled",
+                      "Description":  "Already canceled invoice cannot be canceled twice",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51109,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "EXEC dbo.sp_HuyHoaDon \u0027ZCANCEL001\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51109,
+                                            "Message":  "Chi huy duoc hoa don dang mo.",
+                                            "Procedure":  "dbo.sp_HuyHoaDon",
+                                            "Line":  10
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "9EE03E43A4F0BA837C8FFC834A0C9CC18B56F35355306238D7C549252F1562C7",
+                      "SnapshotAfter":  "9EE03E43A4F0BA837C8FFC834A0C9CC18B56F35355306238D7C549252F1562C7",
+                      "Failure":  null,
+                      "DurationMs":  78
+                  },
+                  {
+                      "Id":  "T02-K12-cancel-allocation",
+                      "Description":  "Cancel with payment allocation hits financial trigger",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51006,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "EXEC dbo.sp_HuyHoaDon \u0027ZEARLY0001\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51006,
+                                            "Message":  "Chi huy don chua thu tien va chua tru nguyen lieu.",
+                                            "Procedure":  "TR_HD_Chot",
+                                            "Line":  26
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "9EE03E43A4F0BA837C8FFC834A0C9CC18B56F35355306238D7C549252F1562C7",
+                      "SnapshotAfter":  "9EE03E43A4F0BA837C8FFC834A0C9CC18B56F35355306238D7C549252F1562C7",
+                      "Failure":  null,
+                      "DurationMs":  89
+                  },
+                  {
+                      "Id":  "T02-K12-cancel-consumption",
+                      "Description":  "Cancel with earlier consumption is refused",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51006,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  "EXEC dbo.T02_Order \u0027ZUSED00001\u0027;\nINSERT dbo.TIEUHAO_HOADON(MaHD,MaNVL,SoLuong) VALUES(\u0027ZUSED00001\u0027,\u0027NVL01\u0027,0.01);",
+                      "ActSql":  "EXEC dbo.sp_HuyHoaDon \u0027ZUSED00001\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51006,
+                                            "Message":  "Chi huy don chua thu tien va chua tru nguyen lieu.",
+                                            "Procedure":  "TR_HD_Chot",
+                                            "Line":  26
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "C60B0E22306C3AFA669F358EA19C9E8F91D40F03D6DDF8F61630ABE7E3ADCF59",
+                      "SnapshotAfter":  "C60B0E22306C3AFA669F358EA19C9E8F91D40F03D6DDF8F61630ABE7E3ADCF59",
+                      "Failure":  null,
+                      "DurationMs":  93
+                  },
+                  {
+                      "Id":  "T02-K12-cancel-fault",
+                      "Description":  "Cancel header failure preserves original status",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  52904,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  "EXEC dbo.T02_Order \u0027ZFAULT0004\u0027;\nGO\nCREATE TRIGGER dbo.TR_T02_FailCancel ON dbo.HOADON AFTER UPDATE AS\nBEGIN\n    IF EXISTS(SELECT 1 FROM inserted WHERE MaHD=\u0027ZFAULT0004\u0027 AND TrangThai=N\u0027Huy\u0027) THROW 52904,\u0027T02 injected cancel failure\u0027,1;\nEND;",
+                      "ActSql":  "EXEC dbo.sp_HuyHoaDon \u0027ZFAULT0004\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  52904,
+                                            "Message":  "T02 injected cancel failure",
+                                            "Procedure":  "TR_T02_FailCancel",
+                                            "Line":  4
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "3D5AC4312292827F76563543D23F64B9EC83F4C2EB8B34B6A86B9FC7EAEA683A",
+                      "SnapshotAfter":  "3D5AC4312292827F76563543D23F64B9EC83F4C2EB8B34B6A86B9FC7EAEA683A",
+                      "Failure":  null,
+                      "DurationMs":  199
+                  },
+                  {
+                      "Id":  "T02-K12-cancel-success",
+                      "Description":  "Valid cancellation preserves stock and releases table",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  0,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  "INSERT dbo.HOADON(MaHD,MaNV,MaBan,LoaiDon) VALUES(\u0027ZCANCEL002\u0027,\u0027NV004\u0027,\u0027B0001\u0027,N\u0027Tai quan\u0027);\nINSERT dbo.CHITIET_HD(MaHD,MaSP,SoLuong,GiaBan) VALUES(\u0027ZCANCEL002\u0027,\u0027SP001\u0027,1,25000);",
+                      "ActSql":  "DECLARE @stock DECIMAL(18,4)=(SELECT SoLuongTon FROM dbo.NGUYENVATLIEU WHERE MaNVL=\u0027NVL01\u0027);\nEXEC dbo.sp_HuyHoaDon \u0027ZCANCEL002\u0027;\nIF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD=\u0027ZCANCEL002\u0027 AND TrangThai=N\u0027Huy\u0027) THROW 52012,\u0027Cancel status\u0027,1;\nIF NOT EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE MaNVL=\u0027NVL01\u0027 AND SoLuongTon=@stock) THROW 52012,\u0027Cancel must not restore/deduct stock\u0027,1;\nIF NOT EXISTS(SELECT 1 FROM dbo.vw_TrangThaiBan WHERE MaBan=\u0027B0001\u0027 AND TrangThai=N\u0027Trong\u0027) THROW 52012,\u0027Table not released\u0027,1;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  null,
+                      "SnapshotAfter":  null,
+                      "Failure":  null,
+                      "DurationMs":  235
+                  },
+                  {
+                      "Id":  "T02-K12-debt-missing",
+                      "Description":  "Missing debt hits 51110",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51110,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "EXEC dbo.sp_TraCongNo \u0027ZZMISSING1\u0027,\u0027ZCASH10001\u0027,\u0027NV001\u0027,\u0027PT001\u0027,1;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51110,
+                                            "Message":  "Cong no khong ton tai.",
+                                            "Procedure":  "dbo.sp_TraCongNo",
+                                            "Line":  12
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "B1092237229F8A647A5F7B7A7C82CB1CC62E2453E8C59D5B11A48239F802C1C6",
+                      "SnapshotAfter":  "B1092237229F8A647A5F7B7A7C82CB1CC62E2453E8C59D5B11A48239F802C1C6",
+                      "Failure":  null,
+                      "DurationMs":  71
+                  },
+                  {
+                      "Id":  "T02-K12-debt-zero",
+                      "Description":  "Zero repayment hits 51111",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51111,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "EXEC dbo.sp_TraCongNo \u0027ZDEBT00001\u0027,\u0027ZCASH10002\u0027,\u0027NV001\u0027,\u0027PT001\u0027,0;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51111,
+                                            "Message":  "So tien tra no khong hop le.",
+                                            "Procedure":  "dbo.sp_TraCongNo",
+                                            "Line":  14
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "B1092237229F8A647A5F7B7A7C82CB1CC62E2453E8C59D5B11A48239F802C1C6",
+                      "SnapshotAfter":  "B1092237229F8A647A5F7B7A7C82CB1CC62E2453E8C59D5B11A48239F802C1C6",
+                      "Failure":  null,
+                      "DurationMs":  64
+                  },
+                  {
+                      "Id":  "T02-K12-debt-negative",
+                      "Description":  "Negative repayment hits 51111",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51111,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "EXEC dbo.sp_TraCongNo \u0027ZDEBT00001\u0027,\u0027ZCASH10003\u0027,\u0027NV001\u0027,\u0027PT001\u0027,-1;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51111,
+                                            "Message":  "So tien tra no khong hop le.",
+                                            "Procedure":  "dbo.sp_TraCongNo",
+                                            "Line":  14
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "B1092237229F8A647A5F7B7A7C82CB1CC62E2453E8C59D5B11A48239F802C1C6",
+                      "SnapshotAfter":  "B1092237229F8A647A5F7B7A7C82CB1CC62E2453E8C59D5B11A48239F802C1C6",
+                      "Failure":  null,
+                      "DurationMs":  65
+                  },
+                  {
+                      "Id":  "T02-K12-debt-employee",
+                      "Description":  "Invalid employee reverses expense creation",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  547,
+                      "ExpectedMessage":  "FK_PTC_NHANVIEN",
+                      "SetupSql":  null,
+                      "ActSql":  "EXEC dbo.sp_TraCongNo \u0027ZDEBT00001\u0027,\u0027ZCASH10004\u0027,\u0027ZZ999\u0027,\u0027PT001\u0027,1;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  547,
+                                            "Message":  "The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_PTC_NHANVIEN\". The conflict occurred in database \"CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4\", table \"dbo.NHANVIEN\", column \u0027MaNV\u0027.",
+                                            "Procedure":  "dbo.sp_TraCongNo",
+                                            "Line":  15
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "B1092237229F8A647A5F7B7A7C82CB1CC62E2453E8C59D5B11A48239F802C1C6",
+                      "SnapshotAfter":  "B1092237229F8A647A5F7B7A7C82CB1CC62E2453E8C59D5B11A48239F802C1C6",
+                      "Failure":  null,
+                      "DurationMs":  68
+                  },
+                  {
+                      "Id":  "T02-K12-debt-method",
+                      "Description":  "Invalid method after expense creation reverses both writes",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  547,
+                      "ExpectedMessage":  "FK_TTCN_PT",
+                      "SetupSql":  null,
+                      "ActSql":  "EXEC dbo.sp_TraCongNo \u0027ZDEBT00001\u0027,\u0027ZCASH10005\u0027,\u0027NV001\u0027,\u0027ZZ999\u0027,1;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  547,
+                                            "Message":  "The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_TTCN_PT\". The conflict occurred in database \"CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4\", table \"dbo.PHUONGTHUCTT\", column \u0027MaPT\u0027.",
+                                            "Procedure":  "dbo.sp_TraCongNo",
+                                            "Line":  17
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "B1092237229F8A647A5F7B7A7C82CB1CC62E2453E8C59D5B11A48239F802C1C6",
+                      "SnapshotAfter":  "B1092237229F8A647A5F7B7A7C82CB1CC62E2453E8C59D5B11A48239F802C1C6",
+                      "Failure":  null,
+                      "DurationMs":  63
+                  },
+                  {
+                      "Id":  "T02-K12-debt-duplicate",
+                      "Description":  "Duplicate expense code rolls back repayment",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  2627,
+                      "ExpectedMessage":  "PK_PHIEUTHUCHI",
+                      "SetupSql":  null,
+                      "ActSql":  "EXEC dbo.sp_TraCongNo \u0027ZDEBT00001\u0027,\u0027ZCASH00002\u0027,\u0027NV001\u0027,\u0027PT001\u0027,1;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  2627,
+                                            "Message":  "Violation of PRIMARY KEY constraint \u0027PK_PHIEUTHUCHI\u0027. Cannot insert duplicate key in object \u0027dbo.PHIEUTHUCHI\u0027. The duplicate key value is (ZCASH00002).",
+                                            "Procedure":  "dbo.sp_TraCongNo",
+                                            "Line":  15
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "B1092237229F8A647A5F7B7A7C82CB1CC62E2453E8C59D5B11A48239F802C1C6",
+                      "SnapshotAfter":  "B1092237229F8A647A5F7B7A7C82CB1CC62E2453E8C59D5B11A48239F802C1C6",
+                      "Failure":  null,
+                      "DurationMs":  72
+                  },
+                  {
+                      "Id":  "T02-K12-debt-missing-category",
+                      "Description":  "Missing TC011 prevents expense and history creation",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  547,
+                      "ExpectedMessage":  "FK_PTC_DANHMUC",
+                      "SetupSql":  "INSERT dbo.DANHMUC_THUCHI(MaDMTC,TenDMTC,Loai) VALUES(\u0027ZT011\u0027,N\u0027T02 holding category\u0027,N\u0027Chi\u0027);\nDISABLE TRIGGER dbo.TR_PhieuChi_LichSu ON dbo.PHIEUTHUCHI;\nUPDATE dbo.PHIEUTHUCHI SET MaDMTC=\u0027ZT011\u0027 WHERE MaDMTC=\u0027TC011\u0027;\nENABLE TRIGGER dbo.TR_PhieuChi_LichSu ON dbo.PHIEUTHUCHI;\nDELETE dbo.DANHMUC_THUCHI WHERE MaDMTC=\u0027TC011\u0027;",
+                      "ActSql":  "EXEC dbo.sp_TraCongNo \u0027ZDEBT00001\u0027,\u0027ZCASH10006\u0027,\u0027NV001\u0027,\u0027PT001\u0027,1;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  547,
+                                            "Message":  "The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_PTC_DANHMUC\". The conflict occurred in database \"CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4\", table \"dbo.DANHMUC_THUCHI\", column \u0027MaDMTC\u0027.",
+                                            "Procedure":  "dbo.sp_TraCongNo",
+                                            "Line":  15
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "2B041744415BE3D10FC46C06D143907F69C953BE6A09D40E005E8DC44958C210",
+                      "SnapshotAfter":  "2B041744415BE3D10FC46C06D143907F69C953BE6A09D40E005E8DC44958C210",
+                      "Failure":  null,
+                      "DurationMs":  141
+                  },
+                  {
+                      "Id":  "T02-K12-debt-wrong-category",
+                      "Description":  "Wrong TC011 type is rejected by repayment trigger",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51018,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  "-- Existing repayment rows reference TC011; detach their category only in this fixture.\nDISABLE TRIGGER dbo.TR_PhieuChi_LichSu ON dbo.PHIEUTHUCHI;\nUPDATE dbo.PHIEUTHUCHI SET MaDMTC=\u0027ZT011\u0027 WHERE MaDMTC=\u0027TC011\u0027;\nENABLE TRIGGER dbo.TR_PhieuChi_LichSu ON dbo.PHIEUTHUCHI;\nUPDATE dbo.DANHMUC_THUCHI SET Loai=N\u0027Thu\u0027 WHERE MaDMTC=\u0027TC011\u0027;",
+                      "ActSql":  "EXEC dbo.sp_TraCongNo \u0027ZDEBT00001\u0027,\u0027ZCASH10007\u0027,\u0027NV001\u0027,\u0027PT001\u0027,1;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51018,
+                                            "Message":  "Tra no phai lien ket phieu chi.",
+                                            "Procedure":  "TR_TraNo",
+                                            "Line":  8
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "4EDA02EA93B49043CCAC58A500BAD602F28F74537EA312089EF20AC0C1CF7C46",
+                      "SnapshotAfter":  "4EDA02EA93B49043CCAC58A500BAD602F28F74537EA312089EF20AC0C1CF7C46",
+                      "Failure":  null,
+                      "DurationMs":  189
+                  },
+                  {
+                      "Id":  "T02-K12-debt-fault",
+                      "Description":  "Failure on repayment link reverses newly inserted expense",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  52902,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  "GO\nCREATE TRIGGER dbo.TR_T02_FailDebt ON dbo.THANHTOAN_CONGNO AFTER INSERT AS\nBEGIN\n    IF EXISTS(SELECT 1 FROM inserted WHERE MaTC=\u0027ZCASH10008\u0027) THROW 52902,\u0027T02 injected debt failure\u0027,1;\nEND;",
+                      "ActSql":  "EXEC dbo.sp_TraCongNo \u0027ZDEBT00001\u0027,\u0027ZCASH10008\u0027,\u0027NV001\u0027,\u0027PT001\u0027,1;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  52902,
+                                            "Message":  "T02 injected debt failure",
+                                            "Procedure":  "TR_T02_FailDebt",
+                                            "Line":  4
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "5BF009EC65611396F959AB1EA45E7FE3BF4B7BF9242357F05910C0240E721FF8",
+                      "SnapshotAfter":  "5BF009EC65611396F959AB1EA45E7FE3BF4B7BF9242357F05910C0240E721FF8",
+                      "Failure":  null,
+                      "DurationMs":  165
+                  },
+                  {
+                      "Id":  "T02-K12-count-missing",
+                      "Description":  "Missing count hits 51112",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51112,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  null,
+                      "ActSql":  "EXEC dbo.sp_ChotKiemKe \u0027ZZMISSING1\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51112,
+                                            "Message":  "Chi chot phieu kiem ke hom nay chua dieu chinh.",
+                                            "Procedure":  "dbo.sp_ChotKiemKe",
+                                            "Line":  11
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "5BF009EC65611396F959AB1EA45E7FE3BF4B7BF9242357F05910C0240E721FF8",
+                      "SnapshotAfter":  "5BF009EC65611396F959AB1EA45E7FE3BF4B7BF9242357F05910C0240E721FF8",
+                      "Failure":  null,
+                      "DurationMs":  69
+                  },
+                  {
+                      "Id":  "T02-K12-count-future",
+                      "Description":  "Future-day count hits 51112",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51112,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  "EXEC dbo.T02_Count \u0027ZCOUNT0004\u0027,@DayOffset=1;",
+                      "ActSql":  "EXEC dbo.sp_ChotKiemKe \u0027ZCOUNT0004\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51112,
+                                            "Message":  "Chi chot phieu kiem ke hom nay chua dieu chinh.",
+                                            "Procedure":  "dbo.sp_ChotKiemKe",
+                                            "Line":  11
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "B5594F25BBFCD1BE6B7FA253CF2593DF5778F7D6A6AE6BFEA80766C552D2A10B",
+                      "SnapshotAfter":  "B5594F25BBFCD1BE6B7FA253CF2593DF5778F7D6A6AE6BFEA80766C552D2A10B",
+                      "Failure":  null,
+                      "DurationMs":  71
+                  },
+                  {
+                      "Id":  "T02-K12-count-empty",
+                      "Description":  "Empty current count hits 51113",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  51113,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  "INSERT dbo.PHIEUKIEMKE(MaKK,NgayKK,MaNV) VALUES(\u0027ZCOUNT0005\u0027,CONVERT(DATE,SYSDATETIME()),\u0027NV001\u0027);",
+                      "ActSql":  "EXEC dbo.sp_ChotKiemKe \u0027ZCOUNT0005\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  51113,
+                                            "Message":  "Phieu kiem ke chua co chi tiet.",
+                                            "Procedure":  "dbo.sp_ChotKiemKe",
+                                            "Line":  13
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "1F705CF0A1682D98FD5DB9844322D1441034EE37C73E79DDEEFF2545B7546578",
+                      "SnapshotAfter":  "1F705CF0A1682D98FD5DB9844322D1441034EE37C73E79DDEEFF2545B7546578",
+                      "Failure":  null,
+                      "DurationMs":  71
+                  },
+                  {
+                      "Id":  "T02-K12-count-fault",
+                      "Description":  "Failure marking count finalized reverses prior stock updates",
+                      "Status":  "PASS",
+                      "Database":  "CoffeeManager_Test_T02_fixture_20261008_205557_93421dd4",
+                      "Source":  "procedure-cases.sql",
+                      "ExpectedError":  52903,
+                      "ExpectedMessage":  "",
+                      "SetupSql":  "EXEC dbo.T02_Count \u0027ZCOUNT0006\u0027;\nGO\nCREATE TRIGGER dbo.TR_T02_FailCount ON dbo.PHIEUKIEMKE AFTER UPDATE AS\nBEGIN\n    IF EXISTS(SELECT 1 FROM inserted WHERE MaKK=\u0027ZCOUNT0006\u0027 AND DaDieuChinh=1) THROW 52903,\u0027T02 injected count failure\u0027,1;\nEND;",
+                      "ActSql":  "EXEC dbo.sp_ChotKiemKe \u0027ZCOUNT0006\u0027;",
+                      "AssertSql":  null,
+                      "SqlErrors":  [
+                                        {
+                                            "Number":  52903,
+                                            "Message":  "T02 injected count failure",
+                                            "Procedure":  "TR_T02_FailCount",
+                                            "Line":  4
+                                        }
+                                    ],
+                      "TransactionState":  "0:0",
+                      "ChangedTables":  [
+
+                                        ],
+                      "SnapshotBefore":  "9E7611A614306E995EC4840E5F6E574A82FAF508022D88CA9CA3A8B9E644A30B",
+                      "SnapshotAfter":  "9E7611A614306E995EC4840E5F6E574A82FAF508022D88CA9CA3A8B9E644A30B",
+                      "Failure":  null,
+                      "DurationMs":  90
+                  }
+              ],
+    "Summary":  [
+                    {
+                        "Id":  "T02-K01",
+                        "Status":  "PASS",
+                        "Subcases":  [
+                                         "T02-K01-catalog",
+                                         "T02-K01-modules"
+                                     ]
+                    },
+                    {
+                        "Id":  "T02-K02",
+                        "Status":  "PASS",
+                        "Subcases":  [
+                                         "T02-K02-seed"
+                                     ]
+                    },
+                    {
+                        "Id":  "T02-K03",
+                        "Status":  "PASS",
+                        "Subcases":  [
+                                         "T02-K03-money"
+                                     ]
+                    },
+                    {
+                        "Id":  "T02-K04",
+                        "Status":  "PASS",
+                        "Subcases":  [
+                                         "T02-K04-invariants"
+                                     ]
+                    },
+                    {
+                        "Id":  "T02-K05",
+                        "Status":  "PASS",
+                        "Subcases":  [
+                                         "T02-K05-repeat"
+                                     ]
+                    },
+                    {
+                        "Id":  "T02-K06",
+                        "Status":  "PASS",
+                        "Subcases":  [
+                                         "T02-K06-product-fk",
+                                         "T02-K06-order-fk",
+                                         "T02-K06-negative-money",
+                                         "T02-K06-negative-stock",
+                                         "T02-K06-zero-line",
+                                         "T02-K06-zero-receipt",
+                                         "T02-K06-zero-export",
+                                         "T02-K06-reverse-promotion",
+                                         "T02-K06-same-day"
+                                     ]
+                    },
+                    {
+                        "Id":  "T02-K07",
+                        "Status":  "PASS",
+                        "Subcases":  [
+                                         "T02-K07-null-phones",
+                                         "T02-K07-customer-duplicate",
+                                         "T02-K07-employee-duplicate",
+                                         "T02-K07-customer-update",
+                                         "T02-K07-employee-update"
+                                     ]
+                    },
+                    {
+                        "Id":  "T02-K08",
+                        "Status":  "PASS",
+                        "Subcases":  [
+                                         "T02-K08-lines-insert",
+                                         "T02-K08-lines-update",
+                                         "T02-K08-lines-delete",
+                                         "T02-K08-lines-atomic",
+                                         "T02-K08-receipts-insert",
+                                         "T02-K08-receipts-update",
+                                         "T02-K08-receipts-delete",
+                                         "T02-K08-exports-insert",
+                                         "T02-K08-exports-update",
+                                         "T02-K08-exports-delete",
+                                         "T02-K08-exports-atomic",
+                                         "T02-K08-receipts-atomic"
+                                     ]
+                    },
+                    {
+                        "Id":  "T02-K09",
+                        "Status":  "PASS",
+                        "Subcases":  [
+                                         "T02-K09-success",
+                                         "T02-K09-stock",
+                                         "T02-K09-method"
+                                     ]
+                    },
+                    {
+                        "Id":  "T02-K10",
+                        "Status":  "PASS",
+                        "Subcases":  [
+                                         "T02-K10-overpay",
+                                         "T02-K10-partial",
+                                         "T02-K10-debt-lock",
+                                         "T02-K10-history-update",
+                                         "T02-K10-history-delete",
+                                         "T02-K10-expense-update",
+                                         "T02-K10-expense-delete"
+                                     ]
+                    },
+                    {
+                        "Id":  "T02-K11",
+                        "Status":  "PASS",
+                        "Subcases":  [
+                                         "T02-K11-success",
+                                         "T02-K11-repeat",
+                                         "T02-K11-old",
+                                         "T02-K11-stale",
+                                         "T02-K11-detail-update",
+                                         "T02-K11-detail-delete"
+                                     ]
+                    },
+                    {
+                        "Id":  "T02-K12",
+                        "Status":  "PASS",
+                        "Subcases":  [
+                                         "T02-K12-pay-missing",
+                                         "T02-K12-pay-paid",
+                                         "T02-K12-pay-canceled",
+                                         "T02-K12-pay-empty",
+                                         "T02-K12-pay-existing",
+                                         "T02-K12-pay-short",
+                                         "T02-K12-pay-over",
+                                         "T02-K12-pay-promotion",
+                                         "T02-K12-pay-stopped",
+                                         "T02-K12-pay-recipe",
+                                         "T02-K12-pay-date",
+                                         "T02-K12-pay-late-fault",
+                                         "T02-K12-cancel-missing",
+                                         "T02-K12-cancel-paid",
+                                         "T02-K12-cancel-canceled",
+                                         "T02-K12-cancel-allocation",
+                                         "T02-K12-cancel-consumption",
+                                         "T02-K12-cancel-fault",
+                                         "T02-K12-cancel-success",
+                                         "T02-K12-debt-missing",
+                                         "T02-K12-debt-zero",
+                                         "T02-K12-debt-negative",
+                                         "T02-K12-debt-employee",
+                                         "T02-K12-debt-method",
+                                         "T02-K12-debt-duplicate",
+                                         "T02-K12-debt-missing-category",
+                                         "T02-K12-debt-wrong-category",
+                                         "T02-K12-debt-fault",
+                                         "T02-K12-count-missing",
+                                         "T02-K12-count-future",
+                                         "T02-K12-count-empty",
+                                         "T02-K12-count-fault",
+                                         "T02-K09-stock",
+                                         "T02-K09-method",
+                                         "T02-K10-overpay",
+                                         "T02-K10-debt-lock",
+                                         "T02-K10-history-update",
+                                         "T02-K10-history-delete",
+                                         "T02-K10-expense-update",
+                                         "T02-K10-expense-delete",
+                                         "T02-K11-repeat",
+                                         "T02-K11-old",
+                                         "T02-K11-stale",
+                                         "T02-K11-detail-update",
+                                         "T02-K11-detail-delete"
+                                     ]
+                    }
+                ]
+}

@@ -1,0 +1,23 @@
+{
+    "RunId":  "20261008_220320_d0edc907",
+    "StartedAt":  "2026-10-08T22:03:20.4762104+07:00",
+    "CompletedAt":  "2026-10-08T22:03:21.4755591+07:00",
+    "Databases":  [
+                      null,
+                      null
+                  ],
+    "SetupError":  "Unexpected seed USE.",
+    "Cases":  [
+
+              ],
+    "ConcurrentCodes":  null,
+    "SeededSnapshotBefore":  null,
+    "SourceCommit":  "uncommitted",
+    "SchemaHash":  "53351D5CA521464558DE6FC4AA1F839CC45CBBD091FDDB4EC005643F2D6EE151",
+    "SeedHash":  "FBC1CAB2233D8B3B588F6C3DE61DB9A8ADCD40CFE19997531EB91354BADDF706",
+    "MigrationHash":  "0C4300BB58CE9E29A3A8E2B814AEB1F259F51F2DC0251142CD6479D23D44036C",
+    "ManualCases":  [
+                        "T03-K08",
+                        "T03-K09"
+                    ]
+}

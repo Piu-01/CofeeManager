@@ -1,0 +1,5 @@
+[xUnit.net 00:00:00.65]     CafeManager.Tests.Integration.DataAccessTests.ParametersRoundTripWithoutExecutingInput(text: "O'Brien") [FAIL]
+[xUnit.net 00:00:00.70]     CafeManager.Tests.Integration.DataAccessTests.SuccessfulProcedureHasNoOuterTransactionAndAppCanExecute [FAIL]
+[xUnit.net 00:00:02.30]     CafeManager.Tests.Integration.DataAccessTests.LateProcedureErrorRollsBackRowsAndSession(invoice: "Z5PAY00003", method: "PT001", expectedNumber: 52906) [FAIL]
+[xUnit.net 00:00:02.34]     CafeManager.Tests.Integration.DataAccessTests.LateProcedureErrorRollsBackRowsAndSession(invoice: "Z5PAY00001", method: "ZZ999", expectedNumber: 547) [FAIL]
+[xUnit.net 00:00:03.44]     CafeManager.Tests.Integration.DataAccessTests.UnknownAndTimeoutErrorsDoNotLeakSensitiveTextOrReportSuccess [FAIL]

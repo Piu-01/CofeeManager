@@ -1,0 +1,106 @@
+param([string]$Root,[string]$Output,[string]$PreviewExe)
+$ErrorActionPreference='Stop'
+Add-Type -AssemblyName UIAutomationClient
+Add-Type -AssemblyName UIAutomationTypes
+Add-Type -AssemblyName System.Drawing
+Add-Type -AssemblyName System.Windows.Forms
+Add-Type @'
+using System;
+using System.Runtime.InteropServices;
+public static class DpiCapture {
+ [StructLayout(LayoutKind.Sequential)] public struct KEYBDINPUT { public ushort vk,scan;public uint flags,time;public IntPtr extra; }
+ [StructLayout(LayoutKind.Explicit,Size=32)] public struct UNION { [FieldOffset(0)] public KEYBDINPUT keyboard; }
+ [StructLayout(LayoutKind.Sequential)] public struct INPUT {public uint type;public UNION data;}
+ [DllImport("user32.dll")] public static extern IntPtr SetThreadDpiAwarenessContext(IntPtr c);
+ [DllImport("user32.dll")] public static extern uint GetDpiForWindow(IntPtr h);
+ [DllImport("user32.dll")] public static extern bool PrintWindow(IntPtr h,IntPtr dc,uint flags);
+ [DllImport("user32.dll")] public static extern bool SetForegroundWindow(IntPtr h);
+ [DllImport("user32.dll")] public static extern IntPtr GetForegroundWindow();
+ [DllImport("user32.dll")] public static extern short GetAsyncKeyState(int key);
+ [DllImport("user32.dll")] public static extern bool RedrawWindow(IntPtr h,IntPtr rect,IntPtr region,uint flags);
+ [DllImport("user32.dll",SetLastError=true)] public static extern uint SendInput(uint count,INPUT[] input,int size);
+ public static uint Tab(bool reverse) {
+  var items=new INPUT[reverse?4:2];int i=0;
+  if(reverse){items[i++]=Key(0x10,false);}
+  items[i++]=Key(0x09,false);items[i++]=Key(0x09,true);
+  if(reverse){items[i++]=Key(0x10,true);}
+  return SendInput((uint)items.Length,items,Marshal.SizeOf(typeof(INPUT)));
+ }
+ public static uint KeyPress(ushort key){var items=new INPUT[]{Key(key,false),Key(key,true)};return SendInput(2,items,Marshal.SizeOf(typeof(INPUT)));}
+ private static INPUT Key(ushort key,bool up){return new INPUT{type=1,data=new UNION{keyboard=new KEYBDINPUT{vk=key,flags=up?2u:0u}}};}
+}
+'@
+[void][DpiCapture]::SetThreadDpiAwarenessContext([IntPtr]::new(-4))
+function Settings-Window {
+ return [System.Windows.Automation.AutomationElement]::RootElement.FindFirst([System.Windows.Automation.TreeScope]::Children,[System.Windows.Automation.PropertyCondition]::new([System.Windows.Automation.AutomationElement]::NameProperty,'Settings'))
+}
+function Set-Scale([string]$Name) {
+ $w=Settings-Window
+ if($null -eq $w){Start-Process 'ms-settings:display';Start-Sleep -Seconds 2;$w=Settings-Window}
+ if($null -eq $w){throw 'Windows Display Settings not available'}
+ $combo=$w.FindFirst([System.Windows.Automation.TreeScope]::Descendants,[System.Windows.Automation.PropertyCondition]::new([System.Windows.Automation.AutomationElement]::AutomationIdProperty,'SystemSettings_Display_Scaling_ItemSizeOverride_ComboBox'))
+ ([System.Windows.Automation.ExpandCollapsePattern]$combo.GetCurrentPattern([System.Windows.Automation.ExpandCollapsePattern]::Pattern)).Expand()
+ Start-Sleep -Milliseconds 200
+ $item=[System.Windows.Automation.AutomationElement]::RootElement.FindFirst([System.Windows.Automation.TreeScope]::Descendants,[System.Windows.Automation.PropertyCondition]::new([System.Windows.Automation.AutomationElement]::NameProperty,$Name))
+ if($null -eq $item){throw "Scale item missing: $Name"}
+ ([System.Windows.Automation.SelectionItemPattern]$item.GetCurrentPattern([System.Windows.Automation.SelectionItemPattern]::Pattern)).Select()
+ Start-Sleep -Seconds 2
+}
+$results=[Collections.Generic.List[object]]::new()
+try {
+ foreach($scale in @(100,125,150)) {
+  $name=if($scale -eq 125){'125% (Recommended)'}else{"$scale%"}
+  Set-Scale $name
+  $p=Start-Process $PreviewExe -PassThru
+  try {
+   for($i=0;$i -lt 100;$i++){$p.Refresh();if($p.MainWindowHandle -ne [IntPtr]::Zero){break};Start-Sleep -Milliseconds 100}
+   Start-Sleep -Milliseconds 500
+   $w=[System.Windows.Automation.AutomationElement]::FromHandle($p.MainWindowHandle)
+   $transform=[System.Windows.Automation.TransformPattern]$w.GetCurrentPattern([System.Windows.Automation.TransformPattern]::Pattern)
+   foreach($size in @(@(1280,720),@(1366,768),@(1280,720))) {
+    $error=$null
+    try {$transform.Resize($size[0],$size[1])} catch {$error=$_.Exception.Message}
+    Start-Sleep -Milliseconds 300
+    $r=$w.Current.BoundingRectangle
+    $b=[Drawing.Bitmap]::new([int]$r.Width,[int]$r.Height);$g=[Drawing.Graphics]::FromImage($b)
+    $visibleCapture=$false
+    try {
+     for($capture=0;$capture -lt 4;$capture++) {
+      [void][DpiCapture]::RedrawWindow($p.MainWindowHandle,[IntPtr]::Zero,[IntPtr]::Zero,0x181)
+      Start-Sleep -Milliseconds 250
+      $dc=$g.GetHdc();try {[void][DpiCapture]::PrintWindow($p.MainWindowHandle,$dc,2)} finally {$g.ReleaseHdc($dc)}
+      $visibleCapture=$b.GetPixel(70,90).GetBrightness() -gt 0
+      if($visibleCapture){break}
+     }
+     $b.Save((Join-Path $Output "dpi$scale-$($size[0])x$($size[1]).png"),[Drawing.Imaging.ImageFormat]::Png)
+    } finally {$g.Dispose();$b.Dispose()}
+    $results.Add([ordered]@{Scale=$scale;Dpi=[DpiCapture]::GetDpiForWindow($p.MainWindowHandle);Requested=@($size);Actual=@($r.Width,$r.Height);ResizeError=$error;VisibleCapture=$visibleCapture;SizeMatched=($r.Width -eq $size[0] -and $r.Height -eq $size[1])})
+   }
+   $focusResults=@()
+   $edit=$w.FindFirst([System.Windows.Automation.TreeScope]::Descendants,[System.Windows.Automation.PropertyCondition]::new([System.Windows.Automation.AutomationElement]::ControlTypeProperty,[System.Windows.Automation.ControlType]::Edit))
+   [void][DpiCapture]::SetForegroundWindow($p.MainWindowHandle);$edit.SetFocus();Start-Sleep -Milliseconds 200
+   if([DpiCapture]::GetForegroundWindow() -ne $p.MainWindowHandle){$focusResults+='BLOCKED: app not foreground'}
+   else {
+    foreach($key in @('{TAB}','{TAB}','+{TAB}','+{TAB}')) {
+     if([DpiCapture]::GetForegroundWindow() -ne $p.MainWindowHandle){$focusResults+='BLOCKED: focus lost';break}
+     $held=@(0x10,0x11,0x12,0x5b,0x5c|Where-Object {([DpiCapture]::GetAsyncKeyState($_) -band 0x8000) -ne 0})
+     if($held.Count){$focusResults+='BLOCKED: keyboard modifier held';break}
+     $sent=[DpiCapture]::Tab($key.StartsWith('+'));Start-Sleep -Milliseconds 200
+     $focused=[System.Windows.Automation.AutomationElement]::FocusedElement
+     $focusResults+=@{Key=$key;Name=$focused.Current.Name;Type=$focused.Current.ControlType.ProgrammaticName;ProcessId=$focused.Current.ProcessId;Sent=$sent;ExpectedPID=$p.Id}
+    }
+    if([DpiCapture]::GetForegroundWindow() -eq $p.MainWindowHandle) {
+     [void][DpiCapture]::Tab($false);[void][DpiCapture]::Tab($false);Start-Sleep -Milliseconds 100
+     for($row=0;$row -lt 3;$row++){[void][DpiCapture]::KeyPress(0x28);Start-Sleep -Milliseconds 100}
+     $last=[System.Windows.Automation.AutomationElement]::FocusedElement
+     $focusResults+=@{Key='Grid DOWN x3 after tab cycle';Name=$last.Current.Name;Type=$last.Current.ControlType.ProgrammaticName;ProcessId=$last.Current.ProcessId;ExpectedPID=$p.Id}
+    }
+   }
+   $results.Add([ordered]@{Scale=$scale;Keyboard=$focusResults})
+   [void]$p.CloseMainWindow();[void]$p.WaitForExit(5000)
+  } finally {if(-not $p.HasExited){[void]$p.CloseMainWindow()}}
+ }
+} finally {
+ Set-Scale '125% (Recommended)'
+ $results|ConvertTo-Json -Depth 7|Set-Content (Join-Path $Output 'dpi-keyboard.json') -Encoding UTF8
+}

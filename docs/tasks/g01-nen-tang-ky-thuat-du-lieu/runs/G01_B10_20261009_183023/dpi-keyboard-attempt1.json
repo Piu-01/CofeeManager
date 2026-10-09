@@ -1,0 +1,236 @@
+﻿[
+    {
+        "Scale":  100,
+        "Dpi":  96,
+        "Requested":  [
+                          1280,
+                          720
+                      ],
+        "Actual":  [
+                       1280,
+                       720
+                   ],
+        "ResizeError":  null,
+        "VisibleCapture":  false,
+        "SizeMatched":  true
+    },
+    {
+        "Scale":  100,
+        "Dpi":  96,
+        "Requested":  [
+                          1366,
+                          768
+                      ],
+        "Actual":  [
+                       1366,
+                       768
+                   ],
+        "ResizeError":  null,
+        "VisibleCapture":  true,
+        "SizeMatched":  true
+    },
+    {
+        "Scale":  100,
+        "Dpi":  96,
+        "Requested":  [
+                          1280,
+                          720
+                      ],
+        "Actual":  [
+                       1280,
+                       720
+                   ],
+        "ResizeError":  null,
+        "VisibleCapture":  true,
+        "SizeMatched":  true
+    },
+    {
+        "Scale":  100,
+        "Keyboard":  [
+                         {
+                             "Name":  "Tải trạng thái bàn",
+                             "Sent":  2,
+                             "ProcessId":  24228,
+                             "Type":  "ControlType.Button",
+                             "Key":  "{TAB}",
+                             "ExpectedPID":  24228
+                         },
+                         {
+                             "Name":  "Mã bàn Row 1, Not sorted.",
+                             "Sent":  2,
+                             "ProcessId":  24228,
+                             "Type":  "ControlType.DataItem",
+                             "Key":  "{TAB}",
+                             "ExpectedPID":  24228
+                         },
+                         {
+                             "Name":  "Tải trạng thái bàn",
+                             "Sent":  4,
+                             "ProcessId":  24228,
+                             "Type":  "ControlType.Button",
+                             "Key":  "+{TAB}",
+                             "ExpectedPID":  24228
+                         },
+                         {
+                             "Name":  "Mã khu vực",
+                             "Sent":  4,
+                             "ProcessId":  24228,
+                             "Type":  "ControlType.Edit",
+                             "Key":  "+{TAB}",
+                             "ExpectedPID":  24228
+                         },
+                         {
+                             "ProcessId":  10396,
+                             "ExpectedPID":  24228,
+                             "Key":  "Grid DOWN x3 after tab cycle",
+                             "Name":  "",
+                             "Type":  "ControlType.Pane"
+                         }
+                     ]
+    },
+    {
+        "Scale":  100,
+        "Minimized":  false,
+        "Restored":  true,
+        "RestoredBounds":  [
+                               1280,
+                               720
+                           ]
+    },
+    {
+        "Scale":  125,
+        "Dpi":  120,
+        "Requested":  [
+                          1280,
+                          720
+                      ],
+        "Actual":  [
+                       1280,
+                       720
+                   ],
+        "ResizeError":  null,
+        "VisibleCapture":  true,
+        "SizeMatched":  true
+    },
+    {
+        "Scale":  125,
+        "Dpi":  120,
+        "Requested":  [
+                          1366,
+                          768
+                      ],
+        "Actual":  [
+                       1366,
+                       768
+                   ],
+        "ResizeError":  null,
+        "VisibleCapture":  true,
+        "SizeMatched":  true
+    },
+    {
+        "Scale":  125,
+        "Dpi":  120,
+        "Requested":  [
+                          1280,
+                          720
+                      ],
+        "Actual":  [
+                       1280,
+                       720
+                   ],
+        "ResizeError":  null,
+        "VisibleCapture":  true,
+        "SizeMatched":  true
+    },
+    {
+        "Scale":  125,
+        "Keyboard":  [
+                         "BLOCKED: app not foreground"
+                     ]
+    },
+    {
+        "Scale":  125,
+        "Minimized":  false,
+        "Restored":  true,
+        "RestoredBounds":  [
+                               1280,
+                               720
+                           ]
+    },
+    {
+        "Scale":  150,
+        "Dpi":  144,
+        "Requested":  [
+                          1280,
+                          720
+                      ],
+        "Actual":  [
+                       1280,
+                       720
+                   ],
+        "ResizeError":  null,
+        "VisibleCapture":  true,
+        "SizeMatched":  true
+    },
+    {
+        "Scale":  150,
+        "Dpi":  144,
+        "Requested":  [
+                          1366,
+                          768
+                      ],
+        "Actual":  [
+                       1366,
+                       768
+                   ],
+        "ResizeError":  null,
+        "VisibleCapture":  true,
+        "SizeMatched":  true
+    },
+    {
+        "Scale":  150,
+        "Dpi":  144,
+        "Requested":  [
+                          1280,
+                          720
+                      ],
+        "Actual":  [
+                       1280,
+                       720
+                   ],
+        "ResizeError":  null,
+        "VisibleCapture":  true,
+        "SizeMatched":  true
+    },
+    {
+        "Scale":  150,
+        "Keyboard":  [
+                         {
+                             "Name":  "Tải trạng thái bàn",
+                             "Sent":  2,
+                             "ProcessId":  13372,
+                             "Type":  "ControlType.Button",
+                             "Key":  "{TAB}",
+                             "ExpectedPID":  13372
+                         },
+                         {
+                             "Name":  "",
+                             "Sent":  2,
+                             "ProcessId":  11084,
+                             "Type":  "ControlType.Pane",
+                             "Key":  "{TAB}",
+                             "ExpectedPID":  13372
+                         },
+                         "BLOCKED: focus lost"
+                     ]
+    },
+    {
+        "Scale":  150,
+        "Minimized":  false,
+        "Restored":  true,
+        "RestoredBounds":  [
+                               1280,
+                               720
+                           ]
+    }
+]

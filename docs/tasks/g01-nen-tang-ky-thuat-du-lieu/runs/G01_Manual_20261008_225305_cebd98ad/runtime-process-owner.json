@@ -1,0 +1,8 @@
+﻿{
+    "ProcessId":  30036,
+    "Domain":  "LAPTOP-79UNRIRC",
+    "User":  "CafeManagerApp",
+    "OwnerReturn":  0,
+    "RecordedAt":  "2026-10-09T11:06:29.1726314+07:00",
+    "Evidence":  "Recorded from Win32_Process.GetOwner tool output before the runtime load test; process now closed"
+}

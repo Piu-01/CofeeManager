@@ -1,0 +1,102 @@
+﻿{
+    "StartedAt":  "2026-10-09T11:18:37.0004117+07:00",
+    "PID":  16932,
+    "Dpi":  120,
+    "CancelBeforeFirstLoad":  {
+                                  "Text":  [
+                                               "CoffeeManager · Trạng thái bàn",
+                                               "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                                               "Mã khu vực · trống để xem tất cả",
+                                               "Đã hủy tải; dữ liệu cũ chưa cập nhật.",
+                                               "Trạng thái danh sách bàn",
+                                               "Danh sách bàn"
+                                           ],
+                                  "BlockedRequests":  0
+                              },
+    "LoadedText":  [
+                       "CoffeeManager · Trạng thái bàn",
+                       "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                       "Mã khu vực · trống để xem tất cả",
+                       "Đã tải 10 bàn lúc 11:18.",
+                       "Danh sách bàn · 10 bàn"
+                   ],
+    "EmptyText":  [
+                      "CoffeeManager · Trạng thái bàn",
+                      "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                      "Mã khu vực · trống để xem tất cả",
+                      "Không có bàn trong khu vực đã chọn.",
+                      "Trạng thái danh sách bàn",
+                      "Danh sách bàn"
+                  ],
+    "Loading":  {
+                    "BlockedRequests":  1,
+                    "CancelEnabled":  true,
+                    "LoadEnabled":  false
+                },
+    "ResizeWhileLoadingMs":  22,
+    "Cancel":  {
+                   "BlockedRequests":  0,
+                   "CancelEnabled":  false,
+                   "LoadEnabled":  true,
+                   "Text":  [
+                                "CoffeeManager · Trạng thái bàn",
+                                "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                                "Mã khu vực · trống để xem tất cả",
+                                "Đã hủy tải; dữ liệu cũ chưa cập nhật.",
+                                "Danh sách bàn · 10 bàn"
+                            ]
+               },
+    "AfterUnlockText":  [
+                            "CoffeeManager · Trạng thái bàn",
+                            "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                            "Mã khu vực · trống để xem tất cả",
+                            "Đã hủy tải; dữ liệu cũ chưa cập nhật.",
+                            "Danh sách bàn · 10 bàn"
+                        ],
+    "ReloadText":  [
+                       "CoffeeManager · Trạng thái bàn",
+                       "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                       "Mã khu vực · trống để xem tất cả",
+                       "Đã tải 10 bàn lúc 11:18.",
+                       "Danh sách bàn · 10 bàn"
+                   ],
+    "RepeatedCancellations":  [
+                                  {
+                                      "Iteration":  0,
+                                      "BlockedRequests":  0,
+                                      "Text":  [
+                                                   "CoffeeManager · Trạng thái bàn",
+                                                   "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                                                   "Mã khu vực · trống để xem tất cả",
+                                                   "Đã hủy tải; dữ liệu cũ chưa cập nhật.",
+                                                   "Danh sách bàn · 10 bàn"
+                                               ]
+                                  },
+                                  {
+                                      "Iteration":  1,
+                                      "BlockedRequests":  0,
+                                      "Text":  [
+                                                   "CoffeeManager · Trạng thái bàn",
+                                                   "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                                                   "Mã khu vực · trống để xem tất cả",
+                                                   "Đã hủy tải; dữ liệu cũ chưa cập nhật.",
+                                                   "Danh sách bàn · 10 bàn"
+                                               ]
+                                  }
+                              ],
+    "BeforeClose":  {
+                        "Text":  [
+                                     "CoffeeManager · Trạng thái bàn",
+                                     "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập",
+                                     "Mã khu vực · trống để xem tất cả",
+                                     "Đang tải…",
+                                     "Danh sách bàn · 10 bàn"
+                                 ],
+                        "BlockedRequests":  1
+                    },
+    "ExitedWhileLocked":  true,
+    "ExitCode":  null,
+    "ActiveRequestsAfterClose":  0,
+    "CompletedAt":  "2026-10-09T11:18:48.1212112+07:00",
+    "Status":  "PASS"
+}

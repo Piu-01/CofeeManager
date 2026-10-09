@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/CafeManager.Models/CafeManager.Models.csproj" />
+    <Project Path="src/CafeManager.DataAccess/CafeManager.DataAccess.csproj" />
+    <Project Path="src/CafeManager.Business/CafeManager.Business.csproj" />
+    <Project Path="src/CafeManager.WinForms/CafeManager.WinForms.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/CafeManager.Tests/CafeManager.Tests.csproj" />
+  </Folder>
+</Solution>
