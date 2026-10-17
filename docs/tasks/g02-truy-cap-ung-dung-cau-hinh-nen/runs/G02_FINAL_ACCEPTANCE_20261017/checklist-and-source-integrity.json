@@ -1,0 +1,41 @@
+{
+    "At":  "2026-10-17T16:16:00.0494957+07:00",
+    "OriginalChecklistIdCount":  325,
+    "G02CheckedIdCount":  27,
+    "G02MatrixUniqueIdCount":  27,
+    "G02Ids":  [
+                   "T06-K01",
+                   "T06-K02",
+                   "T06-K03",
+                   "T06-K04",
+                   "T06-K05",
+                   "T06-K06",
+                   "T06-K07",
+                   "T06-K08",
+                   "T06-K09",
+                   "T06-K10",
+                   "T07-K01",
+                   "T07-K02",
+                   "T07-K03",
+                   "T07-K04",
+                   "T07-K05",
+                   "T07-K06",
+                   "T07-K07",
+                   "T08-K01",
+                   "T08-K02",
+                   "T08-K03",
+                   "T08-K04",
+                   "T08-K05",
+                   "T08-K06",
+                   "T08-K07",
+                   "T08-K08",
+                   "T08-K09",
+                   "T08-K10"
+               ],
+    "FrozenProductFiles":  99,
+    "ProductChangesAfterLastSqlUiWindowsAndDocs":  [
+
+                                                   ],
+    "Status":  "27/27 original IDs accepted, Git handoff pending",
+    "Commit":  "Not committed or pushed"
+}

@@ -1,0 +1,122 @@
+[
+    {
+        "Id":  "T08-K03.a.ratio.minus1.SQL",
+        "Expected":  "Reject invalid boundary, no changes after error",
+        "Actual":  "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Implicit conversion from data type nvarchar to binary is not allowed. Use the CONVERT function to run this query.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K03.a.ratio.above100.SQL",
+        "Expected":  "Reject invalid boundary, no changes after error",
+        "Actual":  "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Implicit conversion from data type nvarchar to binary is not allowed. Use the CONVERT function to run this query.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K03.a.allowance.minus1.SQL",
+        "Expected":  "Reject invalid boundary, no changes after error",
+        "Actual":  "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Implicit conversion from data type nvarchar to binary is not allowed. Use the CONVERT function to run this query.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K03.a.factor.below1.SQL",
+        "Expected":  "Reject invalid boundary, no changes after error",
+        "Actual":  "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Implicit conversion from data type nvarchar to binary is not allowed. Use the CONVERT function to run this query.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K03.a.shift.equal.SQL",
+        "Expected":  "Reject invalid boundary, no changes after error",
+        "Actual":  "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Implicit conversion from data type nvarchar to binary is not allowed. Use the CONVERT function to run this query.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.ncc.NULL.SQL",
+        "Expected":  "Reject required phone without writes",
+        "Actual":  "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Implicit conversion from data type nvarchar to binary is not allowed. Use the CONVERT function to run this query.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.ncc.empty.SQL",
+        "Expected":  "Reject required phone without writes",
+        "Actual":  "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Implicit conversion from data type nvarchar to binary is not allowed. Use the CONVERT function to run this query.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.fk.actorMissing.write",
+        "Expected":  "Unknown actor cannot write",
+        "Actual":  "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Implicit conversion from data type nvarchar to binary is not allowed. Use the CONVERT function to run this query.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.fk.stampWrong.write",
+        "Expected":  "Wrong stamp cannot write",
+        "Actual":  "SQL51505; transaction0:0; full table snapshot unchanged",
+        "Status":  "PASS"
+    },
+    {
+        "Id":  "T08-K02.fk.invalidCategory",
+        "Expected":  "Product FK rejects, snapshot unchanged",
+        "Actual":  "SQL547; transaction0:0; full snapshot unchanged",
+        "Status":  "PASS"
+    },
+    {
+        "Id":  "T08-K04.DT0.SQL",
+        "Expected":  "Boundary persists exactly 0.00",
+        "Actual":  "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Implicit conversion from data type nvarchar to binary is not allowed. Use the CONVERT function to run this query.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K04.DT100.SQL",
+        "Expected":  "Boundary persists exactly 100.00",
+        "Actual":  "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Implicit conversion from data type nvarchar to binary is not allowed. Use the CONVERT function to run this query.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K04.CV0factor1.SQL",
+        "Expected":  "Boundary persists exactly 0:1.00",
+        "Actual":  "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Implicit conversion from data type nvarchar to binary is not allowed. Use the CONVERT function to run this query.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K04.CAovernight.SQL",
+        "Expected":  "Boundary persists exactly 22:00:06:00",
+        "Actual":  "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Implicit conversion from data type nvarchar to binary is not allowed. Use the CONVERT function to run this query.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K08.a.selector.ADMIN.Checkout.SQL",
+        "Expected":  "Role/purpose restrictions and supported-only projection",
+        "Actual":  "Exception calling \"ExecuteReader\" with \"0\" argument(s): \"Implicit conversion from data type nvarchar to binary is not allowed. Use the CONVERT function to run this query.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K08.a.selector.ADMIN.Inventory.SQL",
+        "Expected":  "Role/purpose restrictions and supported-only projection",
+        "Actual":  "Exception calling \"ExecuteReader\" with \"0\" argument(s): \"Implicit conversion from data type nvarchar to binary is not allowed. Use the CONVERT function to run this query.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K08.a.selector.CASH.Checkout.SQL",
+        "Expected":  "Role/purpose restrictions and supported-only projection",
+        "Actual":  "Exception calling \"ExecuteReader\" with \"0\" argument(s): \"Implicit conversion from data type nvarchar to binary is not allowed. Use the CONVERT function to run this query.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K08.a.selector.CASH.Inventory.SQL",
+        "Expected":  "Role/purpose restrictions and supported-only projection",
+        "Actual":  "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Implicit conversion from data type nvarchar to binary is not allowed. Use the CONVERT function to run this query.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K08.a.selector.STORE.Checkout.SQL",
+        "Expected":  "Role/purpose restrictions and supported-only projection",
+        "Actual":  "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Implicit conversion from data type nvarchar to binary is not allowed. Use the CONVERT function to run this query.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K08.a.selector.STORE.Inventory.SQL",
+        "Expected":  "Role/purpose restrictions and supported-only projection",
+        "Actual":  "Exception calling \"ExecuteReader\" with \"0\" argument(s): \"Implicit conversion from data type nvarchar to binary is not allowed. Use the CONVERT function to run this query.\"",
+        "Status":  "FAIL"
+    }
+]

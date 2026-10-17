@@ -1,0 +1,344 @@
+[
+  {
+    "Id": "T08-K02.Supplier.maxplus1.SQL.confirm",
+    "Expected": "Name101 rejected without truncation",
+    "Actual": "Expected rejection absent",
+    "Status": "FAIL"
+  },
+  {
+    "Id": "T08-K02.ncc.length16.SQL.confirm",
+    "Expected": "Phone16 rejected without truncation",
+    "Actual": "Expected rejection absent",
+    "Status": "FAIL"
+  },
+  {
+    "Id": "T08-K02.ProductCategory.empty.SQL.confirm",
+    "Expected": "Invalid required name rejected, idle transaction",
+    "Actual": "SQL51501; @@TRANCOUNT/XACT_STATE captured before SELECT are0:0",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.ProductCategory.space.SQL.confirm",
+    "Expected": "Invalid required name rejected, idle transaction",
+    "Actual": "SQL51501; @@TRANCOUNT/XACT_STATE captured before SELECT are0:0",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.ProductCategory.tab.SQL.confirm",
+    "Expected": "Invalid required name rejected, idle transaction",
+    "Actual": "SQL51501; @@TRANCOUNT/XACT_STATE captured before SELECT are0:0",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.Supplier.empty.SQL.confirm",
+    "Expected": "Invalid required name rejected, idle transaction",
+    "Actual": "SQL51501; @@TRANCOUNT/XACT_STATE captured before SELECT are0:0",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.Supplier.space.SQL.confirm",
+    "Expected": "Invalid required name rejected, idle transaction",
+    "Actual": "SQL51501; @@TRANCOUNT/XACT_STATE captured before SELECT are0:0",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.Supplier.tab.SQL.confirm",
+    "Expected": "Invalid required name rejected, idle transaction",
+    "Actual": "SQL51501; @@TRANCOUNT/XACT_STATE captured before SELECT are0:0",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.PaymentMethod.empty.SQL.confirm",
+    "Expected": "Invalid required name rejected, idle transaction",
+    "Actual": "SQL51501; @@TRANCOUNT/XACT_STATE captured before SELECT are0:0",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.PaymentMethod.space.SQL.confirm",
+    "Expected": "Invalid required name rejected, idle transaction",
+    "Actual": "SQL51501; @@TRANCOUNT/XACT_STATE captured before SELECT are0:0",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.PaymentMethod.tab.SQL.confirm",
+    "Expected": "Invalid required name rejected, idle transaction",
+    "Actual": "SQL51501; @@TRANCOUNT/XACT_STATE captured before SELECT are0:0",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.DeliveryPartner.empty.SQL.confirm",
+    "Expected": "Invalid required name rejected, idle transaction",
+    "Actual": "SQL51501; @@TRANCOUNT/XACT_STATE captured before SELECT are0:0",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.DeliveryPartner.space.SQL.confirm",
+    "Expected": "Invalid required name rejected, idle transaction",
+    "Actual": "SQL51501; @@TRANCOUNT/XACT_STATE captured before SELECT are0:0",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.DeliveryPartner.tab.SQL.confirm",
+    "Expected": "Invalid required name rejected, idle transaction",
+    "Actual": "SQL51501; @@TRANCOUNT/XACT_STATE captured before SELECT are0:0",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.ExpenseCategory.empty.SQL.confirm",
+    "Expected": "Invalid required name rejected, idle transaction",
+    "Actual": "SQL51501; @@TRANCOUNT/XACT_STATE captured before SELECT are0:0",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.ExpenseCategory.space.SQL.confirm",
+    "Expected": "Invalid required name rejected, idle transaction",
+    "Actual": "SQL51501; @@TRANCOUNT/XACT_STATE captured before SELECT are0:0",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.ExpenseCategory.tab.SQL.confirm",
+    "Expected": "Invalid required name rejected, idle transaction",
+    "Actual": "SQL51501; @@TRANCOUNT/XACT_STATE captured before SELECT are0:0",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.Position.empty.SQL.confirm",
+    "Expected": "Invalid required name rejected, idle transaction",
+    "Actual": "SQL51501; @@TRANCOUNT/XACT_STATE captured before SELECT are0:0",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.Position.space.SQL.confirm",
+    "Expected": "Invalid required name rejected, idle transaction",
+    "Actual": "SQL51501; @@TRANCOUNT/XACT_STATE captured before SELECT are0:0",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.Position.tab.SQL.confirm",
+    "Expected": "Invalid required name rejected, idle transaction",
+    "Actual": "SQL51501; @@TRANCOUNT/XACT_STATE captured before SELECT are0:0",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.Shift.empty.SQL.confirm",
+    "Expected": "Invalid required name rejected, idle transaction",
+    "Actual": "SQL51501; @@TRANCOUNT/XACT_STATE captured before SELECT are0:0",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.Shift.space.SQL.confirm",
+    "Expected": "Invalid required name rejected, idle transaction",
+    "Actual": "SQL51501; @@TRANCOUNT/XACT_STATE captured before SELECT are0:0",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.Shift.tab.SQL.confirm",
+    "Expected": "Invalid required name rejected, idle transaction",
+    "Actual": "SQL51501; @@TRANCOUNT/XACT_STATE captured before SELECT are0:0",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K07.a.TC005.type.raw.confirm",
+    "Expected": "Unused system row protected",
+    "Actual": "Rejected, mapping remains and transaction idle",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K07.a.TC005.code.raw.confirm",
+    "Expected": "Unused system row protected",
+    "Actual": "Rejected, mapping remains and transaction idle",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K07.a.TC005.delete.raw.confirm",
+    "Expected": "Unused system row protected",
+    "Actual": "Rejected, mapping remains and transaction idle",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K07.a.TC011.type.raw.confirm",
+    "Expected": "Unused system row protected",
+    "Actual": "Rejected, mapping remains and transaction idle",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K07.a.TC011.code.raw.confirm",
+    "Expected": "Unused system row protected",
+    "Actual": "Rejected, mapping remains and transaction idle",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K07.a.TC011.delete.raw.confirm",
+    "Expected": "Unused system row protected",
+    "Actual": "Rejected, mapping remains and transaction idle",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K07.a.TC012.type.raw.confirm",
+    "Expected": "Unused system row protected",
+    "Actual": "Rejected, mapping remains and transaction idle",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K07.a.TC012.code.raw.confirm",
+    "Expected": "Unused system row protected",
+    "Actual": "Rejected, mapping remains and transaction idle",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K07.a.TC012.delete.raw.confirm",
+    "Expected": "Unused system row protected",
+    "Actual": "Rejected, mapping remains and transaction idle",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.ADMIN.ProductCategory.confirm",
+    "Expected": "Approved role and exact nonfinancial columns",
+    "Actual": "Allowed fields=Code,Name",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.ADMIN.Supplier.confirm",
+    "Expected": "Approved role and exact nonfinancial columns",
+    "Actual": "Allowed fields=Code,Name,Phone",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.ADMIN.DeliveryPartner.confirm",
+    "Expected": "Approved role and exact nonfinancial columns",
+    "Actual": "Allowed fields=Code,Name",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.ADMIN.ExpenseCategory.confirm",
+    "Expected": "Approved role and exact nonfinancial columns",
+    "Actual": "Allowed fields=Code,Name,ExpenseType",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.ADMIN.Position.confirm",
+    "Expected": "Approved role and exact nonfinancial columns",
+    "Actual": "Allowed fields=Code,Name",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.ADMIN.Shift.confirm",
+    "Expected": "Approved role and exact nonfinancial columns",
+    "Actual": "Allowed fields=Code,Name,StartTime,EndTime",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.CASH.ProductCategory.confirm",
+    "Expected": "Approved role and exact nonfinancial columns",
+    "Actual": "Allowed fields=Code,Name",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.CASH.Supplier.confirm",
+    "Expected": "Approved role and exact nonfinancial columns",
+    "Actual": "Denied51505; transaction idle",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.CASH.DeliveryPartner.confirm",
+    "Expected": "Approved role and exact nonfinancial columns",
+    "Actual": "Allowed fields=Code,Name",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.CASH.ExpenseCategory.confirm",
+    "Expected": "Approved role and exact nonfinancial columns",
+    "Actual": "Denied51505; transaction idle",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.CASH.Position.confirm",
+    "Expected": "Approved role and exact nonfinancial columns",
+    "Actual": "Denied51505; transaction idle",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.CASH.Shift.confirm",
+    "Expected": "Approved role and exact nonfinancial columns",
+    "Actual": "Denied51505; transaction idle",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.STORE.ProductCategory.confirm",
+    "Expected": "Approved role and exact nonfinancial columns",
+    "Actual": "Allowed fields=Code,Name",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.STORE.Supplier.confirm",
+    "Expected": "Approved role and exact nonfinancial columns",
+    "Actual": "Allowed fields=Code,Name,Phone",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.STORE.DeliveryPartner.confirm",
+    "Expected": "Approved role and exact nonfinancial columns",
+    "Actual": "Denied51505; transaction idle",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.STORE.ExpenseCategory.confirm",
+    "Expected": "Approved role and exact nonfinancial columns",
+    "Actual": "Denied51505; transaction idle",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.STORE.Position.confirm",
+    "Expected": "Approved role and exact nonfinancial columns",
+    "Actual": "Denied51505; transaction idle",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.STORE.Shift.confirm",
+    "Expected": "Approved role and exact nonfinancial columns",
+    "Actual": "Denied51505; transaction idle",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K06.c.TC011Thu",
+    "Expected": "Preflight rejects and leaves version/DDL absent",
+    "Actual": "Rejected; version/DDL absent; fixture CoffeeManager_Test_G02_20261009_223412_eaae7df7",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K06.c.TC012Existing",
+    "Expected": "Preflight rejects and leaves version/DDL absent",
+    "Actual": "Rejected; version/DDL absent; fixture CoffeeManager_Test_G02_20261009_223413_1147ff91",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K06.c.PaymentNameCollision",
+    "Expected": "Preflight rejects and leaves version/DDL absent",
+    "Actual": "Rejected; version/DDL absent; fixture CoffeeManager_Test_G02_20261009_223413_1872ccf6",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T06-K10.b.UsernameCaseCollision",
+    "Expected": "Preflight rejects and leaves version/DDL absent",
+    "Actual": "Rejected; version/DDL absent; fixture CoffeeManager_Test_G02_20261009_223414_ef817f6e",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K06.b.rerun",
+    "Expected": "Real runner returns AlreadyApplied without reset",
+    "Actual": "AlreadyApplied; custom system-category name retained",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T06-K09.a.DB-error",
+    "Expected": "Connection failure distinct from invalid credentials",
+    "Actual": "Not connection error",
+    "Status": "FAIL"
+  },
+  {
+    "Id": "T08-K02.ncc.truncation.actual",
+    "Expected": "Observe persisted widths without exposing data",
+    "Actual": "InputName101 persisted100; inputPhone16 persisted15 (evidence of preceding FAIL, not valid contract)",
+    "Status": "PASS"
+  }
+]

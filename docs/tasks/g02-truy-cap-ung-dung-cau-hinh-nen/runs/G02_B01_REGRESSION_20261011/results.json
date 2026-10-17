@@ -1,0 +1,37 @@
+{
+  "Database": "CoffeeManager_Test_G02_20261011_171040_3f1e9b28",
+  "Process": 7932,
+  "Principal": "G02_Runtime impersonation; Pooling=false; native product forms",
+  "Results": [
+    {
+      "Id": "B01.slowRead.10clickAndDirectHandlers",
+      "Expected": "One pending read; T\u00ECm/T\u1EA3i disabled; handlers preserve page/filter",
+      "Actual": "10 user repeats \u002B40 direct handler calls suppressed; pending recheck1, completed recheck/list2; input/page retained, buttons restored",
+      "Status": "PASS"
+    },
+    {
+      "Id": "B01.cancelRead.retry",
+      "Expected": "Cancel unlocks actions; reload succeeds",
+      "Actual": "Canceled linked read while SQL locked, buttons enabled, retry completed",
+      "Status": "PASS"
+    },
+    {
+      "Id": "B01.readTimeout.retry",
+      "Expected": "SQL read error restores actions, preserves input, reload succeeds",
+      "Actual": "SQL timeout with command timeout1s; error status, input retained, buttons enabled, retry completed",
+      "Status": "PASS"
+    },
+    {
+      "Id": "B01.unknownDelete.reconcile",
+      "Expected": "T\u1EA3i remains enabled for unknown-write state; reconciliation refreshes",
+      "Actual": "Harness injected unknownDelete from existing DB row; native T\u1EA3i performed Get/refresh, cleared unknown state; not a network-loss simulation",
+      "Status": "PASS"
+    },
+    {
+      "Id": "B01.logout.pendingRead",
+      "Expected": "Logout disposes old view; late SQL unlock cannot reopen it",
+      "Actual": "Logout canceled pending read and disposed Main/control; unlock left only Login visible",
+      "Status": "PASS"
+    }
+  ]
+}

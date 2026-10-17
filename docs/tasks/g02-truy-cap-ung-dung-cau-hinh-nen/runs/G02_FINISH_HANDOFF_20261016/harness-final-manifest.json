@@ -1,0 +1,30 @@
+[
+    {
+        "Path":  "G02AcceptSetupOk.ps1",
+        "Hash":  "9372170CCE0083D8BC7D035756615AEC96FAE85A36328106D0C7E5C49C11EDBC"
+    },
+    {
+        "Path":  "G02CatalogCodeSql.ps1",
+        "Hash":  "B5AF9B35BD2DC0F0D66DA825E5F409B9ADFF3B28D80CEEB945083548A20418FA"
+    },
+    {
+        "Path":  "G02DemoRerun.ps1",
+        "Hash":  "A1B81B43930D758F352C53FDAB6A411B3D2B7D7101782F404CAB8D48546A0BB3"
+    },
+    {
+        "Path":  "G02FinishData\\G02FinishData.csproj",
+        "Hash":  "97DFF1881FE7FF4B8BE503E0FA7BDEA2194FF1056949E319C176277F5711E2F5"
+    },
+    {
+        "Path":  "G02FinishData\\Program.cs",
+        "Hash":  "65E3FCF91E0ECDF10489D96751DA64F26F81DA487E486FFF4F96F581C1B02317"
+    },
+    {
+        "Path":  "G02FinishUi\\G02FinishUi.csproj",
+        "Hash":  "4A08BBE122F2928499ECBBFD3CD5BD0FAB46A7E9258F082DB269CD1D5434803F"
+    },
+    {
+        "Path":  "G02FinishUi\\Program.cs",
+        "Hash":  "41D8463F7CAE3C1543561FE1EBD87859448A0BF08853C05210B6A689A8F4368E"
+    }
+]

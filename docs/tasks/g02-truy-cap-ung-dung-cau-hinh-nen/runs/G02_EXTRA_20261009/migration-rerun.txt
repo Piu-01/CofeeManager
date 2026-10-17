@@ -1,0 +1,6 @@
+
+Version Checksum                                                         Status         Database                       
+------- --------                                                         ------         --------                       
+      3 59502E3FF02E2D16FC0248A8F7FEBA04DA63F7CC227ED6C2D8D46D9696E1E950 AlreadyApplied CoffeeManager_Test_G02_20261...
+
+

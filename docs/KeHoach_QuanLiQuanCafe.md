@@ -246,6 +246,15 @@ Query chọn cột cần dùng, phân trang, lọc ngày bằng khoảng nửa m
 
 Login C# verify hash, SQL cung cấp account/nhân viên/role. Session không giữ password. BLL kiểm tra quyền mọi thao tác, không chỉ ẩn nút. Tài khoản SQL app có quyền tối thiểu, tài khoản migration riêng; hạn chế DML trực tiếp lên bảng số dư/lịch sử/chứng từ và cấp execute procedure.
 
+Bootstrap chỉ được phép khi DB chưa hoàn tất thiết lập quản trị lần đầu, không
+dựa riêng vào việc thiếu admin hoạt động. Trạng thái hoàn tất được lưu bền vững
+tại DB, nguyên tử cùng dữ liệu bootstrap; thất bại rollback toàn bộ và thử lại
+hợp lệ. Hai session đồng thời chỉ một kết quả thành công. Restart, admin bị
+khóa/nghỉ việc không mở lại bootstrap; khôi phục quyền quản trị là quy trình
+riêng, không là reset password qua bootstrap. Không mật khẩu mặc định/qua chat
+hoặc plaintext trong file/log/session. Quyền setup tách credential runtime,
+không fallback sang quyền migration. Cấu trúc lưu/khóa cụ thể chốt trong plan T06.
+
 Nếu mọi client dùng chung SQL credential, BLL không là ranh giới chống người có credential truy cập SQL trực tiếp. Không tin tham số MaVT do client gửi như xác thực server. Dùng danh tính SQL/Windows riêng hoặc API nếu yêu cầu bảo mật tập trung về sau.
 
 Query có tham số đúng kiểu, NULL dùng DBNull; secret nằm cấu hình local bị Git ignore. Log có mã chứng từ và lỗi, không password/secret. Phân biệt không có dữ liệu với query thất bại. Lỗi nghiệp vụ hiển thị tiếng Việt; không catch rồi trả thành công.
@@ -253,7 +262,7 @@ Query có tham số đúng kiểu, NULL dùng DBNull; secret nằm cấu hình l
 ## 11. Quy tắc thực hiện và nghiệm thu task
 
 - Làm một task tại một thời điểm, theo T01–T32. Phụ thuộc ghi ở mỗi task; không tạo lớp/màn hình rỗng của task sau.
-- Task SQL: migration có version → chạy engine thật → DAL → BLL → UI → kiểm thử trong phạm vi → commit. Không sửa seed để né ràng buộc.
+- Task SQL: migration có version → DAL → BLL → UI; kiểm tra kỹ thuật tối thiểu trên engine thật trong phạm vi đã duyệt để xác nhận contract cho lớp/task sau. Kiểm thử nghiệm thu chờ duyệt đợt nhóm, commit/push chỉ khi được giao riêng. Không sửa seed để né ràng buộc.
 - Task chỉ hoàn tất khi đầu ra có thật và mọi ca kiểm thử đã PASS; không tick test chưa chạy. Bug ảnh hưởng task cũ phải chạy regression liên quan.
 - Quy mô S: việc giới hạn; M: phân hệ nhỏ; L: nhiều bảng/trạng thái hoặc giao dịch quan trọng. Quy mô không phải lịch tuần hoặc chia cho nhiều người.
 - U: unit test; I: integration SQL Server; M: thao tác/vận hành; P: đo hiệu năng. Không phải mọi ca đều cần UI automation; kết quả manual cũng phải ghi rõ dữ liệu/thao tác/expected/actual.
@@ -261,13 +270,26 @@ Query có tham số đúng kiểu, NULL dùng DBNull; secret nằm cấu hình l
 - Giữ test có giá trị về nghiệp vụ; không test getters hoặc sao chép mọi dòng CRUD. Checklist sau là đầy đủ theo scope đã xác định; yêu cầu mới kéo theo test mới.
 - Git gốc solution, không gom cả Workspace. Không commit credential/bin/obj/backup nhạy cảm. Codex nhận một task đang làm với scope/test của task, không tự mở rộng.
 
-**Quy trình duyệt theo nhóm (08/10/2026):** Requirements duyệt một lần cho nhóm
-lớn G01–G08. Mỗi task con Txx có một plan riêng, người dùng duyệt plan một lần
-rồi agent triển khai và kiểm thử ngay trong phạm vi đó, không xin duyệt test riêng.
-Lưu kết quả từng task vào hồ sơ, báo cáo nghiệm thu tổng hợp khi hoàn thành nhóm.
-Thông báo giữa nhóm chỉ khi cần duyệt plan tiếp theo, thiếu dữ liệu/thao tác manual
-chặn tiến độ hoặc phát sinh thay đổi ngoài phạm vi. Lỗi nội bộ trong scope đã duyệt
-được điều tra, sửa và regression, không tạo thêm vòng duyệt cho mỗi lỗi test.
+Quy trình duyệt theo nhóm G01–G08, thống nhất với mục 12–13; với G02:
+
+1. Duyệt requirements một lần cho cả nhóm G02.
+2. Sau duyệt requirements, viết đầy đủ plan T06, T07, T08 và chỉ mục plans.md;
+   duyệt cả bộ plan một lần trước triển khai, không duyệt từng plan riêng.
+3. Sau duyệt bộ plan, triển khai tuần tự T06 → T07 → T08.
+4. Hoàn thành triển khai, báo sẵn sàng và chờ duyệt đợt kiểm thử nghiệm thu nhóm.
+5. Chạy nghiệm thu trên source cố định; lưu PASS/FAIL/BLOCKED/NOT RUN tại từng
+   task, tổng hợp report.md. Không sửa source/migration giữa lượt nghiệm thu.
+6. Có lỗi: lập bug-report tại task sở hữu, tổng hợp đợt lỗi và chờ duyệt trước
+   debug. Duyệt debug bao gồm regression đúng phạm vi ảnh hưởng; bug mới ngoài
+   đợt đã duyệt cần duyệt bổ sung.
+7. Chỉ commit/push khi người dùng giao riêng cho bàn giao G02.
+
+Trong triển khai được build, kiểm tra compile SQL/migration và smoke check tối
+thiểu để xác nhận đầu ra task trước dùng được cho task sau, trong phạm vi đã
+duyệt. Ghi riêng là kiểm tra kỹ thuật với lệnh/môi trường/kết quả; không thay
+checklist nghiệm thu hoặc tự đánh dấu PASS Txx-Kxx. Phát hiện blocker, thiếu
+đầu ra phụ thuộc hoặc cần đổi phạm vi/contract ngoài duyệt phải báo rõ để người
+dùng quyết định. Việc sửa kỹ thuật không phải cho phép tự debug bug nghiệm thu.
 
 ## 12. Kế hoạch triển khai và nghiệm thu theo task
 
@@ -310,6 +332,24 @@ duyệt một lần trước khi debug toàn bộ đợt và regression các ph�
 Không tự sửa bug trong đợt test. Đầu ra của task trước là đầu vào triển khai task
 sau; nghiệm thu PASS được chốt trong đợt test, không giả PASS khi mới viết code.
 Blocker phụ thuộc phải ghi rõ và xin quyết định nếu ngăn triển khai task sau.
+
+G02 requirements đã được người dùng duyệt; bộ plan T06–T08 tại
+`docs/tasks/g02-truy-cap-ung-dung-cau-hinh-nen/plans.md` đã được duyệt cả bộ và
+đã triển khai và nghiệm thu **PASS27/27IDgốc ngày17/10/2026**; đủ điều kiện
+chốt kỹ thuật, chờ bàn giao Git riêng (G02 chưa commit/push). Ma trận đối chiếu
+và biên bản tại `docs/tasks/g02-truy-cap-ung-dung-cau-hinh-nen/acceptance-matrix.md`
+và `report.md`. B01–B07/PKCS đã sửa/regressionPASS; Windowsidentity thật,
+setupOK/thoát/restart exe vàcleanup đềuPASS. Bộ plan chốt đầy đủ
+các quyết định và subcase bắt buộc tại
+`docs/tasks/g02-truy-cap-ung-dung-cau-hinh-nen/requirements.md`, mục 5–6.
+Mỗi quyết định có phương án/lý do/tác động SQL/DAL/BLL/UI và kiểm chứng; không
+để quyết định lúc code. Giữ 27 ID T06–T08 và 325 ID toàn dự án; subcase có thể
+dùng hậu tố, mỗi subcase có expected/actual và PASS/FAIL/BLOCKED/NOT RUN riêng.
+Bao gồm bootstrap concurrency/rollback/restart/khóa admin; DB sạch/demo và
+migration chạy lại; rehash DB/race; thay đổi quyền trong phiên/logout/async
+muộn; CRUD/biên/NULL/trùng/tìm tiếng Việt đủ 7 danh mục; mã hệ thống chưa có
+lịch sử; selector/PT010; số lượt đổi module cụ thể và kiểm tài nguyên; DPI150%
+và Designer round-trip có bằng chứng riêng. Subcase không là tùy chọn.
 
 ### T01 — Xác nhận môi trường .NET 10 và tạo repository đúng thư mục
 
@@ -467,18 +507,27 @@ G01 đủ kiểm chứng kỹ thuật, chờ cho phép commit bàn giao.
 | Phụ thuộc | T05 |
 | Đầu ra | Đăng nhập thật, admin đầu tiên có hash hợp lệ, authorization BLL. |
 
+Điều kiện duyệt plan T06: đề xuất cụ thể bootstrap DB sạch/DB demo (dữ liệu
+chức vụ/nhân viên/account tối thiểu, trường nhập, transaction), DB đã có admin
+hợp lệ nhưng chưa có trạng thái bootstrap khi chuyển phiên bản, quyền setup
+riêng và chuyển về credential runtime. Chốt charset/length/trim/case/collation
+username thống nhất UI/C#/SQL; không trim password. Chốt recheck account/nhân
+viên/role trước thao tác mới, vô hiệu tham chiếu cũ và async muộn sau logout;
+rehash không ghi đè password đổi sau lúc đọc và có integration test ghi DB thật.
+Cấu trúc bảng/cột/procedure/lock phải được đề xuất trong plan, không coi đã có.
+
 **Kiểm thử bắt buộc:**
 
-- [ ] `T06-K01` [M] Bootstrap khi chưa có admin hoạt động tạo/bật đúng một tài khoản với mật khẩu người dùng nhập.
-- [ ] `T06-K02` [I] Bootstrap lần hai bị chặn, không reset password hoặc tạo admin trùng.
-- [ ] `T06-K03` [U/M] Đúng mật khẩu thành công; sai/username không có/placeholder hash thất bại an toàn.
-- [ ] `T06-K04` [I/M] Tài khoản HoatDong=0 hoặc nhân viên DangLamViec=0 bị từ chối.
-- [ ] `T06-K05` [U] Verify cần rehash cập nhật hash đúng, không lưu plaintext.
-- [ ] `T06-K06` [U] ADMIN/CASH/STORE được/chặn đúng từng nhóm quyền, kể cả gọi service không qua menu.
-- [ ] `T06-K07` [M] Password không hiện ở log/session; UI che ký tự.
-- [ ] `T06-K08` [M] Đăng xuất xóa session và đóng màn hình có quyền; không thao tác bằng session cũ.
-- [ ] `T06-K09` [M] Lỗi DB khi login không biến thành login thành công hoặc thông báo sai password đơn thuần.
-- [ ] `T06-K10` [I] Tên login trùng theo collation đã chọn bị chặn; chuẩn hóa khoảng trắng nhất quán.
+- [x] `T06-K01` [M] Bootstrap chỉ khi database chưa hoàn tất thiết lập quản trị lần đầu; tạo/bật đúng một tài khoản admin với mật khẩu người dùng nhập, lưu bền vững trạng thái hoàn tất tại DB nguyên tử cùng dữ liệu bootstrap. Không dùng việc thiếu admin hoạt động làm điều kiện duy nhất.
+- [x] `T06-K02` [I] Bootstrap lần hai bị chặn, không reset password hoặc tạo admin trùng.
+- [x] `T06-K03` [U/M] Đúng mật khẩu thành công; sai/username không có/placeholder hash thất bại an toàn.
+- [x] `T06-K04` [I/M] Tài khoản HoatDong=0 hoặc nhân viên DangLamViec=0 bị từ chối.
+- [x] `T06-K05` [U] Verify cần rehash cập nhật hash đúng, không lưu plaintext.
+- [x] `T06-K06` [U] ADMIN/CASH/STORE được/chặn đúng từng nhóm quyền, kể cả gọi service không qua menu.
+- [x] `T06-K07` [M] Password không hiện ở log/session; UI che ký tự.
+- [x] `T06-K08` [M] Đăng xuất xóa session và đóng màn hình có quyền; không thao tác bằng session cũ.
+- [x] `T06-K09` [M] Lỗi DB khi login không biến thành login thành công hoặc thông báo sai password đơn thuần.
+- [x] `T06-K10` [I] Tên login trùng theo collation đã chọn bị chặn; chuẩn hóa khoảng trắng nhất quán.
 
 **Điều kiện hoàn tất:** Có đủ đầu ra; các ca kiểm thử trong phạm vi đã chạy và PASS, có dữ liệu thử và kết quả đối chiếu; không còn lỗi trọng yếu của task. Lưu commit cùng biên bản kiểm thử. Nếu thay SQL, migration phải chạy được trên phiên bản trước và bảo toàn dữ liệu cũ ngoài thay đổi đã mô tả.
 
@@ -492,15 +541,22 @@ G01 đủ kiểm chứng kỹ thuật, chờ cho phép commit bàn giao.
 | Phụ thuộc | T06 |
 | Đầu ra | MainForm dùng được; style cơ bản và navigation theo vai trò. |
 
+G02 chỉ làm shell và các màn T06–T08. CASH/STORE có màn bắt đầu hợp lệ, thể hiện
+chức năng chưa triển khai; không giao dịch POS/kho giả hoặc dựng toàn bộ module
+tương lai. Mẫu chung loading/rỗng/lỗi/xung đột/kết quả chưa biết áp dụng khi màn
+hiện có cần. AppTheme theo UI Style Guide Espresso/Kem/Caramel. Plan bắt buộc
+Designer save/close/reopen, kiểm bản sau Save, keyboard/focus và hai kích thước
+1280×720/1366×768 tại DPI100/125/150%; không giảm ca K04 vì có subcase bổ sung.
+
 **Kiểm thử bắt buộc:**
 
-- [ ] `T07-K01` [M] Login thành công vào MainForm, hiển thị đúng tên nhân viên/vai trò.
-- [ ] `T07-K02` [M] Menu theo role; không tồn tại hai MainForm/session khác nhau ngoài ý định.
-- [ ] `T07-K03` [M] Đổi module nhiều lần không mở connection hoặc giữ event handler/control trùng.
-- [ ] `T07-K04` [M] Resize/DPI 100% và 125% không che menu, nút và cột chính.
-- [ ] `T07-K05` [M] Nhấn thao tác đang loading không gửi lặp; xong/lỗi đều mở lại trạng thái nút đúng.
-- [ ] `T07-K06` [M] Dialog hủy không ghi; dialog lưu refresh đúng module.
-- [ ] `T07-K07` [M] Đóng app khi có input chưa lưu hỏi bỏ/lưu phù hợp; đơn đã lưu không bị xóa.
+- [x] `T07-K01` [M] Login thành công vào MainForm, hiển thị đúng tên nhân viên/vai trò.
+- [x] `T07-K02` [M] Menu theo role; không tồn tại hai MainForm/session khác nhau ngoài ý định.
+- [x] `T07-K03` [M] Đổi module nhiều lần không mở connection hoặc giữ event handler/control trùng.
+- [x] `T07-K04` [M] Resize/DPI 100% và 125% không che menu, nút và cột chính.
+- [x] `T07-K05` [M] Nhấn thao tác đang loading không gửi lặp; xong/lỗi đều mở lại trạng thái nút đúng.
+- [x] `T07-K06` [M] Dialog hủy không ghi; dialog lưu refresh đúng module.
+- [x] `T07-K07` [M] Đóng app khi có input chưa lưu hỏi bỏ/lưu phù hợp; đơn đã lưu không bị xóa.
 
 **Điều kiện hoàn tất:** Có đủ đầu ra; các ca kiểm thử trong phạm vi đã chạy và PASS, có dữ liệu thử và kết quả đối chiếu; không còn lỗi trọng yếu của task. Lưu commit cùng biên bản kiểm thử. Nếu thay SQL, migration phải chạy được trên phiên bản trước và bảo toàn dữ liệu cũ ngoài thay đổi đã mô tả.
 
@@ -514,18 +570,37 @@ G01 đủ kiểm chứng kỹ thuật, chờ cho phép commit bàn giao.
 | Phụ thuộc | T07 |
 | Đầu ra | Các tab quản trị và dữ liệu hệ thống phục vụ app cài mới không seed. |
 
+Điều kiện duyệt plan T08: có ma trận đọc/thêm/sửa/xóa cho từng ADMIN/CASH/STORE
+trên DANHMUC_SP, NHACUNGCAP, PHUONGTHUCTT, DOITACGIAOHANG, DANHMUC_THUCHI,
+CHUCVU, CALAMVIEC. Tách quản trị khỏi đọc phục vụ use case, liệt kê trường được
+đọc (không mặc nhiên lộ trường tài chính); BLL kiểm kể cả service gọi trực tiếp.
+
+Chốt mã chi lương/trả nợ/trả ngay từ schema/seed/contract và trường được sửa.
+Seed có TC005 loại Chi cho lương, TC011 loại Chi trả nợ; schema sp_TraCongNo
+dùng TC011. Chưa có contract chi lương T26 hoặc mã chi trả ngay hệ thống được
+xác lập trong source G01; phải đề xuất trước duyệt plan, không suy từ tên TC008.
+Cấm đổi mã/loại hoặc xóa bản ghi hệ thống ngay cả chưa có lịch sử. Migration
+DB sạch/demo và chạy lại không tạo trùng/ghi đè cấu hình hợp lệ/thay lịch sử.
+Chốt cách nhập/cấp mã từng danh mục; sp_CapMa G01 chỉ HD/DM/NV theo contract.
+Chưa triển khai nhập hàng T20 hoặc chi lương T26.
+
+Chốt tiêu chí hỗ trợ phương thức và selector/service checkout, không dựa vào
+tên. PT010 bị loại tại contract/service; chốt phương thức ADMIN thêm có được
+dùng ngay hay cần cấu hình/xác nhận hỗ trợ. T08 kiểm selector/service, không
+tạo checkout UI T15. Đây là yêu cầu cần thiết kế, chưa có selector trong G01.
+
 **Kiểm thử bắt buộc:**
 
-- [ ] `T08-K01` [I/M] Thêm/sửa/tìm từng danh mục hợp lệ, mở lại app vẫn có dữ liệu.
-- [ ] `T08-K02` [I/M] Tên rỗng/whitespace/quá dài, SDT NCC trùng, FK sai bị từ chối rõ.
-- [ ] `T08-K03` [I] Tỷ lệ đối tác -1/>100, phụ cấp âm, hệ số <1 và giờ ca bắt đầu=kết thúc bị chặn.
-- [ ] `T08-K04` [I] Tỷ lệ 0/100 và ca qua đêm được xử lý đúng quy ước.
-- [ ] `T08-K05` [I] Xóa danh mục chưa dùng được; danh mục có lịch sử bị từ chối, không cascade lịch sử.
-- [ ] `T08-K06` [I] TC011 và loại chi trả ngay/chi lương hệ thống tồn tại khi không chạy seed demo.
-- [ ] `T08-K07` [I/M] Người dùng không đổi Thu/Chi của danh mục đã gắn chi hệ thống; không xóa phương thức đã dùng.
-- [ ] `T08-K08` [M] PT010 không xuất hiện ở danh sách checkout; tên phương thức không có nghĩa đã tích hợp online.
-- [ ] `T08-K09` [U/M] CASH/STORE không sửa giá trị cấu hình tài chính hoặc quyền không được cấp.
-- [ ] `T08-K10` [I] Sửa tỷ lệ hiện tại không đổi snapshot phí đối tác của đơn cũ.
+- [x] `T08-K01` [I/M] Thêm/sửa/tìm từng danh mục hợp lệ, mở lại app vẫn có dữ liệu.
+- [x] `T08-K02` [I/M] Tên rỗng/whitespace/quá dài, SDT NCC trùng, FK sai bị từ chối rõ.
+- [x] `T08-K03` [I] Tỷ lệ đối tác -1/>100, phụ cấp âm, hệ số <1 và giờ ca bắt đầu=kết thúc bị chặn.
+- [x] `T08-K04` [I] Tỷ lệ 0/100 và ca qua đêm được xử lý đúng quy ước.
+- [x] `T08-K05` [I] Xóa danh mục chưa dùng được; danh mục có lịch sử bị từ chối, không cascade lịch sử.
+- [x] `T08-K06` [I] TC011 và loại chi trả ngay/chi lương hệ thống tồn tại khi không chạy seed demo.
+- [x] `T08-K07` [I/M] Người dùng không đổi Thu/Chi của danh mục đã gắn chi hệ thống; không xóa phương thức đã dùng.
+- [x] `T08-K08` [M] PT010 không xuất hiện ở danh sách checkout; tên phương thức không có nghĩa đã tích hợp online.
+- [x] `T08-K09` [U/M] CASH/STORE không sửa giá trị cấu hình tài chính hoặc quyền không được cấp.
+- [x] `T08-K10` [I] Sửa tỷ lệ hiện tại không đổi snapshot phí đối tác của đơn cũ.
 
 **Điều kiện hoàn tất:** Có đủ đầu ra; các ca kiểm thử trong phạm vi đã chạy và PASS, có dữ liệu thử và kết quả đối chiếu; không còn lỗi trọng yếu của task. Lưu commit cùng biên bản kiểm thử. Nếu thay SQL, migration phải chạy được trên phiên bản trước và bảo toàn dữ liệu cũ ngoài thay đổi đã mô tả.
 
@@ -1157,6 +1232,11 @@ Không sửa source/migration giữa lượt test. Không gửi báo cáo hoàn 
 từng task con. T01/T02 đã chạy được kế thừa, không xóa hoặc viết lại lịch sử.
 Nếu cần thao tác GUI/dữ liệu hoặc blocker phụ thuộc, gom yêu cầu và hỏi ngắn gọn.
 Phát sinh đổi nghiệp vụ/phạm vi/contract ngoài duyệt phải xin duyệt phần thay đổi.
+
+Kiểm tra kỹ thuật trong triển khai theo mục 11 được ghi riêng, không thay kiểm
+thử nghiệm thu hoặc đánh dấu PASS Txx-Kxx. Mỗi subcase bắt buộc có expected/
+actual và kết quả riêng; không coi subcase là tùy chọn. Commit/push G02 cần
+người dùng giao riêng, không kế thừa quyền bàn giao Git của G01.
 
 Bản bàn giao T32 gồm source, baseline SQL, migrations theo thứ tự, dữ liệu demo tương thích, bản publish, README cài đặt/khôi phục và kết quả kiểm thử. Các procedure, khóa và index được mô tả là thiết kế đích ở tài liệu này chỉ được ghi đã triển khai khi migration tương ứng đã chạy và được nghiệm thu. Hiệu năng được xác nhận bằng số đo ở T29; không cam kết tối ưu tuyệt đối chỉ từ sơ đồ DB.
 

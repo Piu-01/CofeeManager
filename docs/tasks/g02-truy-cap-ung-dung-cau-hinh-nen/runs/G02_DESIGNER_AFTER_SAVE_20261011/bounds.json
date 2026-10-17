@@ -1,0 +1,251 @@
+{
+  "Dpi": 120,
+  "ButtonHeight": 12,
+  "FontHeight": 23,
+  "RowHeights": [
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    405
+  ],
+  "RowStyles": [
+    {
+      "SizeType": 1,
+      "Height": 20
+    },
+    {
+      "SizeType": 1,
+      "Height": 20
+    },
+    {
+      "SizeType": 1,
+      "Height": 20
+    },
+    {
+      "SizeType": 1,
+      "Height": 20
+    },
+    {
+      "SizeType": 1,
+      "Height": 20
+    },
+    {
+      "SizeType": 1,
+      "Height": 20
+    },
+    {
+      "SizeType": 1,
+      "Height": 20
+    },
+    {
+      "SizeType": 1,
+      "Height": 20
+    }
+  ],
+  "Controls": [
+    {
+      "Name": "title",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 44,
+          "Y": 40
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 405,
+          "Height": 20
+        },
+        "X": 44,
+        "Y": 40,
+        "Width": 405,
+        "Height": 20,
+        "Left": 44,
+        "Top": 40,
+        "Right": 449,
+        "Bottom": 60,
+        "IsEmpty": false
+      },
+      "Visible": true
+    },
+    {
+      "Name": "usernameLabel",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 44,
+          "Y": 60
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 124,
+          "Height": 20
+        },
+        "X": 44,
+        "Y": 60,
+        "Width": 124,
+        "Height": 20,
+        "Left": 44,
+        "Top": 60,
+        "Right": 168,
+        "Bottom": 80,
+        "IsEmpty": false
+      },
+      "Visible": true
+    },
+    {
+      "Name": "usernameInput",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 44,
+          "Y": 84
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 637,
+          "Height": 30
+        },
+        "X": 44,
+        "Y": 84,
+        "Width": 637,
+        "Height": 30,
+        "Left": 44,
+        "Top": 84,
+        "Right": 681,
+        "Bottom": 114,
+        "IsEmpty": false
+      },
+      "Visible": true
+    },
+    {
+      "Name": "passwordLabel",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 44,
+          "Y": 100
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 82,
+          "Height": 20
+        },
+        "X": 44,
+        "Y": 100,
+        "Width": 82,
+        "Height": 20,
+        "Left": 44,
+        "Top": 100,
+        "Right": 126,
+        "Bottom": 120,
+        "IsEmpty": false
+      },
+      "Visible": true
+    },
+    {
+      "Name": "passwordInput",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 44,
+          "Y": 124
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 637,
+          "Height": 30
+        },
+        "X": 44,
+        "Y": 124,
+        "Width": 637,
+        "Height": 30,
+        "Left": 44,
+        "Top": 124,
+        "Right": 681,
+        "Bottom": 154,
+        "IsEmpty": false
+      },
+      "Visible": true
+    },
+    {
+      "Name": "showPassword",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 44,
+          "Y": 144
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 144,
+          "Height": 12
+        },
+        "X": 44,
+        "Y": 144,
+        "Width": 144,
+        "Height": 12,
+        "Left": 44,
+        "Top": 144,
+        "Right": 188,
+        "Bottom": 156,
+        "IsEmpty": false
+      },
+      "Visible": true
+    },
+    {
+      "Name": "loginButton",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 44,
+          "Y": 164
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 145,
+          "Height": 12
+        },
+        "X": 44,
+        "Y": 164,
+        "Width": 145,
+        "Height": 12,
+        "Left": 44,
+        "Top": 164,
+        "Right": 189,
+        "Bottom": 176,
+        "IsEmpty": false
+      },
+      "Visible": true
+    },
+    {
+      "Name": "statusLabel",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 44,
+          "Y": 180
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 637,
+          "Height": 405
+        },
+        "X": 44,
+        "Y": 180,
+        "Width": 637,
+        "Height": 405,
+        "Left": 44,
+        "Top": 180,
+        "Right": 681,
+        "Bottom": 585,
+        "IsEmpty": false
+      },
+      "Visible": true
+    }
+  ]
+}

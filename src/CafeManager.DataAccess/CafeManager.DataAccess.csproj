@@ -7,6 +7,8 @@
   <ItemGroup>
     <ProjectReference Include="../CafeManager.Models/CafeManager.Models.csproj" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.3" />
+    <!-- Pin the patched transitive dependency; keep the SqlClient API and target framework unchanged. -->
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="10.0.13" />
     <InternalsVisibleTo Include="CafeManager.Tests" />
   </ItemGroup>
 </Project>

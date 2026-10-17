@@ -1,0 +1,35 @@
+{
+  "Status": "PASS",
+  "Database": "CoffeeManager_Test_G02_20261017_161145_d4434b36",
+  "Role": "setup",
+  "Checks": [
+    {
+      "Id": "PkcsLoadObservation",
+      "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.WindowsDesktop.App\\10.0.13\\System.Security.Cryptography.Pkcs.dll",
+      "FileVersion": "10.0.1326.50504",
+      "InformationalVersion": "10.0.13\u002B4099f83977f4d29604a9aeb971fb0a7bc1d5f699"
+    },
+    {
+      "Id": "RealWindowsSqlIdentity",
+      "Status": "PASS",
+      "WindowsIdentity": "LAPTOP-79UNRIRC\\CMG02S_d4434b36",
+      "SqlLogin": "LAPTOP-79UNRIRC\\CMG02S_d4434b36",
+      "DatabaseUser": "LAPTOP-79UNRIRC\\CMG02S_d4434b36",
+      "SetupRole": 1,
+      "RuntimeRole": 0,
+      "SqlSysadmin": 0
+    },
+    {
+      "Id": "CompletedBootstrapBlockedForRealSetupIdentity",
+      "Status": "PASS",
+      "SqlError": 51401
+    },
+    {
+      "Id": "ActualPatchedPkcsLoaded",
+      "Status": "PASS",
+      "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.WindowsDesktop.App\\10.0.13\\System.Security.Cryptography.Pkcs.dll",
+      "FileVersion": "10.0.1326.50504",
+      "InformationalVersion": "10.0.13\u002B4099f83977f4d29604a9aeb971fb0a7bc1d5f699"
+    }
+  ]
+}

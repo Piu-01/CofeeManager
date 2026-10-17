@@ -1,0 +1,16 @@
+{
+    "At":  "2026-10-16T20:26:03.0625324+07:00",
+    "BaselineRun":  "20261011_171039_f2e46bea",
+    "FilesChecked":  97,
+    "Changes":  [
+
+                ],
+    "Sdk":  "10.0.401",
+    "ProductStatus":  "No source/migration/test edits during supplemental acceptance",
+    "FaultFixtures":  "WAITFOR after COMMIT on isolated marked DB only; original body restored with ALTER in finally",
+    "Designer":  "Snapshot clone only; Login serializer mutation preserved as evidence, not copied into workspace",
+    "Desktop":  "DPI restored125% Recommended",
+    "WindowsIdentity":  "Medium integrity, Administrators deny-only; no new local accounts created",
+    "NewBugs":  "B03-B06 pending approval",
+    "CommitPush":  "Not performed"
+}

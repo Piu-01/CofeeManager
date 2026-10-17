@@ -1,0 +1,119 @@
+{
+    "At":  "2026-10-16T20:40:05.9998045+07:00",
+    "FilesChecked":  97,
+    "SourceChanges":  [
+
+                      ],
+    "ResultCountsAreNotAcceptanceIds":  true,
+    "Runs":  [
+                 {
+                     "Run":  "G02_FINISH_UI_CONFIRMED_20261011",
+                     "Pass":  23,
+                     "Fail":  0,
+                     "Blocked":  0
+                 },
+                 {
+                     "Run":  "G02_FINISH_REOPEN_20261011",
+                     "Pass":  7,
+                     "Fail":  0,
+                     "Blocked":  0
+                 },
+                 {
+                     "Run":  "G02_FINISH_RESOURCE_20261011",
+                     "Pass":  4,
+                     "Fail":  0,
+                     "Blocked":  0
+                 },
+                 {
+                     "Run":  "G02_FINISH_DATA_20261011",
+                     "Pass":  59,
+                     "Fail":  1,
+                     "Blocked":  0
+                 },
+                 {
+                     "Run":  "G02_FINISH_AUTH_CONFIRMED_20261011",
+                     "Pass":  4,
+                     "Fail":  1,
+                     "Blocked":  0
+                 },
+                 {
+                     "Run":  "G02_FINISH_LAYOUT_CONFIRMED_96_20261016",
+                     "Pass":  10,
+                     "Fail":  0,
+                     "Blocked":  0
+                 },
+                 {
+                     "Run":  "G02_FINISH_LAYOUT_CONFIRMED_120_20261016",
+                     "Pass":  10,
+                     "Fail":  0,
+                     "Blocked":  0
+                 },
+                 {
+                     "Run":  "G02_FINISH_LAYOUT_CONFIRMED_144_20261016",
+                     "Pass":  10,
+                     "Fail":  0,
+                     "Blocked":  0
+                 },
+                 {
+                     "Run":  "G02_FINISH_VALIDATION_DELETE_20261016",
+                     "Pass":  47,
+                     "Fail":  1,
+                     "Blocked":  0
+                 },
+                 {
+                     "Run":  "G02_FINISH_EXPENSE_MOUSE_20261016",
+                     "Pass":  1,
+                     "Fail":  0,
+                     "Blocked":  0
+                 },
+                 {
+                     "Run":  "G02_FINISH_PROTECTION_20261016",
+                     "Pass":  3,
+                     "Fail":  0,
+                     "Blocked":  0
+                 },
+                 {
+                     "Run":  "G02_FINISH_CONFLICT_20261016",
+                     "Pass":  2,
+                     "Fail":  0,
+                     "Blocked":  0
+                 },
+                 {
+                     "Run":  "G02_CODE_SQL_20261016",
+                     "Pass":  12,
+                     "Fail":  0,
+                     "Blocked":  0
+                 },
+                 {
+                     "Run":  "G02_CODE_SERVICE_20261016",
+                     "Pass":  13,
+                     "Fail":  0,
+                     "Blocked":  0
+                 },
+                 {
+                     "Run":  "G02_CLEAN_DEFAULTS_20261016",
+                     "Pass":  9,
+                     "Fail":  0,
+                     "Blocked":  0
+                 },
+                 {
+                     "Run":  "G02_DEMO_RERUN_20261016",
+                     "Pass":  1,
+                     "Fail":  0,
+                     "Blocked":  0
+                 },
+                 {
+                     "Run":  "G02_FINISH_LEAVE_CONFIRMED_20261016",
+                     "Pass":  3,
+                     "Fail":  0,
+                     "Blocked":  0
+                 }
+             ],
+    "PendingBugs":  [
+                        "B03",
+                        "B04",
+                        "B05",
+                        "B06"
+                    ],
+    "Note":  "Raw FAIL retained; reviewed Designer screenshot results are documented separately; no product edits, commits or pushes"
+}

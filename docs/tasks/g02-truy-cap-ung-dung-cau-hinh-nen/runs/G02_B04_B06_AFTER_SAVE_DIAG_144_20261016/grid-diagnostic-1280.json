@@ -1,0 +1,46 @@
+{
+  "Grid": {
+    "IsEmpty": false,
+    "Width": 886,
+    "Height": 5
+  },
+  "Parent": {
+    "Location": {
+      "IsEmpty": false,
+      "X": 4,
+      "Y": 235
+    },
+    "Size": {
+      "IsEmpty": false,
+      "Width": 886,
+      "Height": 5
+    },
+    "X": 4,
+    "Y": 235,
+    "Width": 886,
+    "Height": 5,
+    "Left": 4,
+    "Top": 235,
+    "Right": 890,
+    "Bottom": 240,
+    "IsEmpty": false
+  },
+  "Root": {
+    "IsEmpty": false,
+    "Width": 950,
+    "Height": 516
+  },
+  "Tab": {
+    "IsEmpty": false,
+    "Width": 894,
+    "Height": 244
+  },
+  "Rows": [
+    164,
+    252,
+    52
+  ],
+  "Columns": [
+    902
+  ]
+}

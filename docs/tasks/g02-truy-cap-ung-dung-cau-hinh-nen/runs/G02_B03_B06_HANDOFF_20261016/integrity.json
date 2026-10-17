@@ -1,0 +1,21 @@
+{
+    "At":  "2026-10-16T21:30:45.7481476+07:00",
+    "FinalRunner":  "20261016_211207_a26a8e4f",
+    "Passed":  222,
+    "RunnerSourceUnchanged":  true,
+    "FilesChecked":  98,
+    "ChangesAfterFinalNativeAndSql":  [
+
+                                      ],
+    "CloneAfterSaveBinary":  "5A44A8A13CDCA7B430A0659D93AC8F0ACFD529EF973A3E809714F22CD3CE660A",
+    "RuntimeBinary":  "5A44A8A13CDCA7B430A0659D93AC8F0ACFD529EF973A3E809714F22CD3CE660A",
+    "AfterSaveBinaryMatches":  true,
+    "DesignerFinal":  "G02_B03_B06_DESIGNER_FINAL_CONFIRMED_20261016",
+    "BootstrapDirect":  "17/17 PASS",
+    "AuthSupplement":  "28/28 PASS",
+    "PostSaveCrud":  "23/23 PASS",
+    "PostSaveDpi":  "12/12 PASS at each96/120/144",
+    "DpiRestored":  "125% Recommended",
+    "Commit":  "Uncommitted G02",
+    "NugetAudit":  "Fresh clone restore reports Pkcs9.0.4 NU1902/NU1903; no dependency upgraded"
+}

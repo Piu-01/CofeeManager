@@ -1,0 +1,6 @@
+﻿{
+    "Url":  "https://builds.dotnet.microsoft.com/dotnet/WindowsDesktop/10.0.13/windowsdesktop-runtime-10.0.13-win-x64.exe",
+    "SHA512":  "ADAF5E06B66B145848F3A994B51EA1590D19A5C02F6E7C5899ED896BBDB020AF6386D2EAEF613034D697388ADAF48AA8C3291343F0BBB5F8E62E37AFF9564A00",
+    "Signature":  "Valid",
+    "Signer":  "CN=.NET, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+}

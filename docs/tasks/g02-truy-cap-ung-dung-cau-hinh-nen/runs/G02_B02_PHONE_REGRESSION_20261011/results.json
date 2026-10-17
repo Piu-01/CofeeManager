@@ -1,0 +1,62 @@
+[
+    {
+        "Id":  "B02.Phone.Create.NULL",
+        "Expected":  "Reject invalid/duplicate phone; no truncation or partial write",
+        "Actual":  "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"The identifier that starts with \u0027EXEC dbo.sp_CatalogSupplier$action @Actor=$actor,@Stamp=$stamp,@Code=\u0027NCC87\u0027,@Name=N\u0027Phone regression\u0027,@ExpectedRevision=$revisi\u0027 is too long. Maximum length is 128.\r\nIncorrect syntax near \u0027EXEC dbo.sp_CatalogSupplier$action @Actor=$actor,@Stamp=$stamp,@Code=\u0027NCC87\u0027,@Name=N\u0027Phone regression\u0027,@ExpectedRevision=$revisi\u0027.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "B02.Phone.Create.empty",
+        "Expected":  "Reject invalid/duplicate phone; no truncation or partial write",
+        "Actual":  "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"The identifier that starts with \u0027EXEC dbo.sp_CatalogSupplier$action @Actor=$actor,@Stamp=$stamp,@Code=\u0027NCC87\u0027,@Name=N\u0027Phone regression\u0027,@ExpectedRevision=$revisi\u0027 is too long. Maximum length is 128.\r\nIncorrect syntax near \u0027EXEC dbo.sp_CatalogSupplier$action @Actor=$actor,@Stamp=$stamp,@Code=\u0027NCC87\u0027,@Name=N\u0027Phone regression\u0027,@ExpectedRevision=$revisi\u0027.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "B02.Phone.Create.duplicate",
+        "Expected":  "Reject invalid/duplicate phone; no truncation or partial write",
+        "Actual":  "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"The identifier that starts with \u0027EXEC dbo.sp_CatalogSupplier$action @Actor=$actor,@Stamp=$stamp,@Code=\u0027NCC87\u0027,@Name=N\u0027Phone regression\u0027,@ExpectedRevision=$revisi\u0027 is too long. Maximum length is 128.\r\nIncorrect syntax near \u0027EXEC dbo.sp_CatalogSupplier$action @Actor=$actor,@Stamp=$stamp,@Code=\u0027NCC87\u0027,@Name=N\u0027Phone regression\u0027,@ExpectedRevision=$revisi\u0027.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "B02.Phone.Create.length16",
+        "Expected":  "Reject invalid/duplicate phone; no truncation or partial write",
+        "Actual":  "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"The identifier that starts with \u0027EXEC dbo.sp_CatalogSupplier$action @Actor=$actor,@Stamp=$stamp,@Code=\u0027NCC87\u0027,@Name=N\u0027Phone regression\u0027,@ExpectedRevision=$revisi\u0027 is too long. Maximum length is 128.\r\nIncorrect syntax near \u0027EXEC dbo.sp_CatalogSupplier$action @Actor=$actor,@Stamp=$stamp,@Code=\u0027NCC87\u0027,@Name=N\u0027Phone regression\u0027,@ExpectedRevision=$revisi\u0027.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "B02.Phone.Create.valid15.leading0",
+        "Expected":  "Phone15 including leading0 persists exactly",
+        "Actual":  "Length15 and leading0 preserved",
+        "Status":  "PASS"
+    },
+    {
+        "Id":  "B02.Phone.Update.NULL",
+        "Expected":  "Reject invalid/duplicate phone; no truncation or partial write",
+        "Actual":  "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"The identifier that starts with \u0027EXEC dbo.sp_CatalogSupplier$action @Actor=$actor,@Stamp=$stamp,@Code=\u0027NCC87\u0027,@Name=N\u0027Phone regression\u0027,@ExpectedRevision=$revisi\u0027 is too long. Maximum length is 128.\r\nIncorrect syntax near \u0027EXEC dbo.sp_CatalogSupplier$action @Actor=$actor,@Stamp=$stamp,@Code=\u0027NCC87\u0027,@Name=N\u0027Phone regression\u0027,@ExpectedRevision=$revisi\u0027.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "B02.Phone.Update.empty",
+        "Expected":  "Reject invalid/duplicate phone; no truncation or partial write",
+        "Actual":  "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"The identifier that starts with \u0027EXEC dbo.sp_CatalogSupplier$action @Actor=$actor,@Stamp=$stamp,@Code=\u0027NCC87\u0027,@Name=N\u0027Phone regression\u0027,@ExpectedRevision=$revisi\u0027 is too long. Maximum length is 128.\r\nIncorrect syntax near \u0027EXEC dbo.sp_CatalogSupplier$action @Actor=$actor,@Stamp=$stamp,@Code=\u0027NCC87\u0027,@Name=N\u0027Phone regression\u0027,@ExpectedRevision=$revisi\u0027.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "B02.Phone.Update.duplicate",
+        "Expected":  "Reject invalid/duplicate phone; no truncation or partial write",
+        "Actual":  "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"The identifier that starts with \u0027EXEC dbo.sp_CatalogSupplier$action @Actor=$actor,@Stamp=$stamp,@Code=\u0027NCC87\u0027,@Name=N\u0027Phone regression\u0027,@ExpectedRevision=$revisi\u0027 is too long. Maximum length is 128.\r\nIncorrect syntax near \u0027EXEC dbo.sp_CatalogSupplier$action @Actor=$actor,@Stamp=$stamp,@Code=\u0027NCC87\u0027,@Name=N\u0027Phone regression\u0027,@ExpectedRevision=$revisi\u0027.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "B02.Phone.Update.length16",
+        "Expected":  "Reject invalid/duplicate phone; no truncation or partial write",
+        "Actual":  "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"The identifier that starts with \u0027EXEC dbo.sp_CatalogSupplier$action @Actor=$actor,@Stamp=$stamp,@Code=\u0027NCC87\u0027,@Name=N\u0027Phone regression\u0027,@ExpectedRevision=$revisi\u0027 is too long. Maximum length is 128.\r\nIncorrect syntax near \u0027EXEC dbo.sp_CatalogSupplier$action @Actor=$actor,@Stamp=$stamp,@Code=\u0027NCC87\u0027,@Name=N\u0027Phone regression\u0027,@ExpectedRevision=$revisi\u0027.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "B02.Phone.Update.valid15.leading0",
+        "Expected":  "Update to phone15 preserves exact string",
+        "Actual":  "Update length15 and leading0 preserved",
+        "Status":  "PASS"
+    }
+]

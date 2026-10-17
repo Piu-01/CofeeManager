@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "T07-K03.b.requests",
+    "Expected": "After100navigation, one click executes one recheck/list pair; no live SQL sessions",
+    "Actual": "100transitions then oneclick=2connections(recheck/list); SQLDMV runtime sessions0-\u003E0",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T07-K03.b.weakGC",
+    "Expected": "Disposed Main/modules/session collect; logout callback once",
+    "Actual": "Main, session and allcachedcontrols weakrefs dead after forcedGC; one logout callback",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T07-K02.b.nativeRoleChange",
+    "Expected": "Role change while Main open closes/revokes old view on next action",
+    "Actual": "Next native navigation revoked session and disposed Main",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T07-K02.b.nativeAccountLock",
+    "Expected": "Account lock while Main open closes/revokes on next action",
+    "Actual": "Next native navigation revoked and disposed Main",
+    "Status": "PASS"
+  }
+]

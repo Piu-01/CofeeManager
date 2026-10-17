@@ -1,0 +1,362 @@
+[
+  {
+    "Id": "T06-K02.d.HoatDong",
+    "Expected": "Completed cannot reopen even if admin disabled/departed",
+    "Actual": "Setup rejected; Completed durable",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T06-K02.d.DangLamViec",
+    "Expected": "Completed cannot reopen even if admin disabled/departed",
+    "Actual": "Setup rejected; Completed durable",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T06-K06.b.directReadWrite",
+    "Expected": "Role change revokes old object before read and write",
+    "Actual": "Both old sessions revoked; no row; fresh CASH role",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.nv.twoNull",
+    "Expected": "Filtered phone uniqueness permits two NV NULL",
+    "Actual": "Two NULL persisted",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.nv.duplicate",
+    "Expected": "NonNULL duplicate phone rejected without changing employee",
+    "Actual": "Unique violation; other phone staysNULL",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.ADMIN.ProductCategory.BLL",
+    "Expected": "Allowed role and narrow DTO; unauthorized rejected",
+    "Actual": "Allowed DTO NameLookup fields=Code,Name",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.ADMIN.Supplier.BLL",
+    "Expected": "Allowed role and narrow DTO; unauthorized rejected",
+    "Actual": "Allowed DTO SupplierLookup fields=Code,Name,Phone",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.ADMIN.DeliveryPartner.BLL",
+    "Expected": "Allowed role and narrow DTO; unauthorized rejected",
+    "Actual": "Allowed DTO NameLookup fields=Code,Name",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.ADMIN.ExpenseCategory.BLL",
+    "Expected": "Allowed role and narrow DTO; unauthorized rejected",
+    "Actual": "Allowed DTO ExpenseLookup fields=Code,Name,Type",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.ADMIN.Position.BLL",
+    "Expected": "Allowed role and narrow DTO; unauthorized rejected",
+    "Actual": "Allowed DTO NameLookup fields=Code,Name",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.ADMIN.Shift.BLL",
+    "Expected": "Allowed role and narrow DTO; unauthorized rejected",
+    "Actual": "Allowed DTO ShiftLookup fields=Code,Name,StartTime,EndTime",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.CASH.ProductCategory.BLL",
+    "Expected": "Allowed role and narrow DTO; unauthorized rejected",
+    "Actual": "Allowed DTO NameLookup fields=Code,Name",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.CASH.Supplier.BLL",
+    "Expected": "Allowed role and narrow DTO; unauthorized rejected",
+    "Actual": "Denied",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.CASH.DeliveryPartner.BLL",
+    "Expected": "Allowed role and narrow DTO; unauthorized rejected",
+    "Actual": "Allowed DTO NameLookup fields=Code,Name",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.CASH.ExpenseCategory.BLL",
+    "Expected": "Allowed role and narrow DTO; unauthorized rejected",
+    "Actual": "Denied",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.CASH.Position.BLL",
+    "Expected": "Allowed role and narrow DTO; unauthorized rejected",
+    "Actual": "Denied",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.CASH.Shift.BLL",
+    "Expected": "Allowed role and narrow DTO; unauthorized rejected",
+    "Actual": "Denied",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.STORE.ProductCategory.BLL",
+    "Expected": "Allowed role and narrow DTO; unauthorized rejected",
+    "Actual": "Allowed DTO NameLookup fields=Code,Name",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.STORE.Supplier.BLL",
+    "Expected": "Allowed role and narrow DTO; unauthorized rejected",
+    "Actual": "Allowed DTO SupplierLookup fields=Code,Name,Phone",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.STORE.DeliveryPartner.BLL",
+    "Expected": "Allowed role and narrow DTO; unauthorized rejected",
+    "Actual": "Denied",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.STORE.ExpenseCategory.BLL",
+    "Expected": "Allowed role and narrow DTO; unauthorized rejected",
+    "Actual": "Denied",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.STORE.Position.BLL",
+    "Expected": "Allowed role and narrow DTO; unauthorized rejected",
+    "Actual": "Denied",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K09.lookup.STORE.Shift.BLL",
+    "Expected": "Allowed role and narrow DTO; unauthorized rejected",
+    "Actual": "Denied",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K08.a.Validate.ADMIN.Checkout.PT001",
+    "Expected": "Only authorized supported codes accepted",
+    "Actual": "Accepted supported manual method",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K08.a.Validate.ADMIN.Checkout.PT002",
+    "Expected": "Only authorized supported codes accepted",
+    "Actual": "Accepted supported manual method",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K08.a.Validate.ADMIN.Checkout.PT003",
+    "Expected": "Only authorized supported codes accepted",
+    "Actual": "Rejected",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K08.a.Validate.ADMIN.Checkout.PT010",
+    "Expected": "Only authorized supported codes accepted",
+    "Actual": "Rejected",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K08.a.Validate.ADMIN.Checkout.PT404",
+    "Expected": "Only authorized supported codes accepted",
+    "Actual": "Rejected",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K08.a.Validate.ADMIN.Inventory.PT001",
+    "Expected": "Only authorized supported codes accepted",
+    "Actual": "Accepted supported manual method",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K08.a.Validate.ADMIN.Inventory.PT002",
+    "Expected": "Only authorized supported codes accepted",
+    "Actual": "Accepted supported manual method",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K08.a.Validate.ADMIN.Inventory.PT003",
+    "Expected": "Only authorized supported codes accepted",
+    "Actual": "Rejected",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K08.a.Validate.ADMIN.Inventory.PT010",
+    "Expected": "Only authorized supported codes accepted",
+    "Actual": "Rejected",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K08.a.Validate.ADMIN.Inventory.PT404",
+    "Expected": "Only authorized supported codes accepted",
+    "Actual": "Rejected",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K08.a.Validate.CASH.Checkout.PT001",
+    "Expected": "Only authorized supported codes accepted",
+    "Actual": "Accepted supported manual method",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K08.a.Validate.CASH.Checkout.PT002",
+    "Expected": "Only authorized supported codes accepted",
+    "Actual": "Accepted supported manual method",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K08.a.Validate.CASH.Checkout.PT003",
+    "Expected": "Only authorized supported codes accepted",
+    "Actual": "Rejected",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K08.a.Validate.CASH.Checkout.PT010",
+    "Expected": "Only authorized supported codes accepted",
+    "Actual": "Rejected",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K08.a.Validate.CASH.Checkout.PT404",
+    "Expected": "Only authorized supported codes accepted",
+    "Actual": "Rejected",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K08.a.Validate.CASH.Inventory.PT001",
+    "Expected": "Only authorized supported codes accepted",
+    "Actual": "Rejected",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K08.a.Validate.CASH.Inventory.PT002",
+    "Expected": "Only authorized supported codes accepted",
+    "Actual": "Rejected",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K08.a.Validate.CASH.Inventory.PT003",
+    "Expected": "Only authorized supported codes accepted",
+    "Actual": "Rejected",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K08.a.Validate.CASH.Inventory.PT010",
+    "Expected": "Only authorized supported codes accepted",
+    "Actual": "Rejected",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K08.a.Validate.CASH.Inventory.PT404",
+    "Expected": "Only authorized supported codes accepted",
+    "Actual": "Rejected",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K08.a.Validate.STORE.Checkout.PT001",
+    "Expected": "Only authorized supported codes accepted",
+    "Actual": "Rejected",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K08.a.Validate.STORE.Checkout.PT002",
+    "Expected": "Only authorized supported codes accepted",
+    "Actual": "Rejected",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K08.a.Validate.STORE.Checkout.PT003",
+    "Expected": "Only authorized supported codes accepted",
+    "Actual": "Rejected",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K08.a.Validate.STORE.Checkout.PT010",
+    "Expected": "Only authorized supported codes accepted",
+    "Actual": "Rejected",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K08.a.Validate.STORE.Checkout.PT404",
+    "Expected": "Only authorized supported codes accepted",
+    "Actual": "Rejected",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K08.a.Validate.STORE.Inventory.PT001",
+    "Expected": "Only authorized supported codes accepted",
+    "Actual": "Accepted supported manual method",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K08.a.Validate.STORE.Inventory.PT002",
+    "Expected": "Only authorized supported codes accepted",
+    "Actual": "Accepted supported manual method",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K08.a.Validate.STORE.Inventory.PT003",
+    "Expected": "Only authorized supported codes accepted",
+    "Actual": "Rejected",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K08.a.Validate.STORE.Inventory.PT010",
+    "Expected": "Only authorized supported codes accepted",
+    "Actual": "Rejected",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K08.a.Validate.STORE.Inventory.PT404",
+    "Expected": "Only authorized supported codes accepted",
+    "Actual": "Rejected",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K01.concurrent.update/update",
+    "Expected": "Two runtime sessions, exactly one commit and one stale conflict",
+    "Actual": "Two separate runtime connections:1commit/1SQL51503; cleanup current winner",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K01.concurrent.update/delete",
+    "Expected": "Two runtime sessions, exactly one commit and one stale conflict",
+    "Actual": "Two separate runtime connections:1commit/1SQL51503; cleanup current winner",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K07.b.usedPayment",
+    "Expected": "Used method rename/support preserve history; delete rejected",
+    "Actual": "Support/rename committed, history exact JSON unchanged, delete rejected",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K08.b.PT010.enable.BLLSQL",
+    "Expected": "PT010 cannot be enabled",
+    "Actual": "BLL and directSQL rejected; support stays0",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T06-K10.a.SQL.usernameLength1",
+    "Expected": "1/50 persist exact;51 rejected before writing",
+    "Actual": "Persisted exact length; fixture=CoffeeManager_Test_G02_20261011_173514_3b716fc6",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T06-K10.a.SQL.usernameLength50",
+    "Expected": "1/50 persist exact;51 rejected before writing",
+    "Actual": "Persisted exact length; fixture=CoffeeManager_Test_G02_20261011_173516_22e5162e",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T06-K10.a.SQL.usernameLength51",
+    "Expected": "1/50 persist exact;51 rejected before writing",
+    "Actual": "SQL accepted input51, persistedLength=50, Completed; fixture=CoffeeManager_Test_G02_20261011_173517_c4978bd4",
+    "Status": "FAIL"
+  }
+]

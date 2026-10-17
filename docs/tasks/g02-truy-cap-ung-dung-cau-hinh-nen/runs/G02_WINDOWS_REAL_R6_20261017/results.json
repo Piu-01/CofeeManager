@@ -1,0 +1,90 @@
+{
+    "At":  "2026-10-17T16:11:17.9451343+07:00",
+    "Status":  "BLOCKED",
+    "Database":  "CoffeeManager_Test_G02_20261017_161110_93dc93f3",
+    "Stage":  "runtime exe setup denied",
+    "TemporaryAccounts":  [
+                              {
+                                  "Name":  "CMG02S_93dc93f3",
+                                  "Sid":  "S-1-5-21-995916740-4115604996-2892334199-1012"
+                              },
+                              {
+                                  "Name":  "CMG02R_93dc93f3",
+                                  "Sid":  "S-1-5-21-995916740-4115604996-2892334199-1013"
+                              }
+                          ],
+    "Records":  [
+                    {
+                        "Id":  "WindowsPrincipal.runtime",
+                        "Expected":  "Real Windows/SQL identity and separate roles, patched runtime; no impersonation",
+                        "Actual":  [
+                                       {
+                                           "Id":  "PkcsLoadObservation",
+                                           "Path":  "C:\\Program Files\\dotnet\\shared\\Microsoft.WindowsDesktop.App\\10.0.13\\System.Security.Cryptography.Pkcs.dll",
+                                           "FileVersion":  "10.0.1326.50504",
+                                           "InformationalVersion":  "10.0.13+4099f83977f4d29604a9aeb971fb0a7bc1d5f699"
+                                       },
+                                       {
+                                           "Id":  "RealWindowsSqlIdentity",
+                                           "Status":  "PASS",
+                                           "WindowsIdentity":  "LAPTOP-79UNRIRC\\CMG02R_93dc93f3",
+                                           "SqlLogin":  "LAPTOP-79UNRIRC\\CMG02R_93dc93f3",
+                                           "DatabaseUser":  "LAPTOP-79UNRIRC\\CMG02R_93dc93f3",
+                                           "SetupRole":  0,
+                                           "RuntimeRole":  1,
+                                           "SqlSysadmin":  0
+                                       },
+                                       {
+                                           "Id":  "RuntimeSetupCheckDenied",
+                                           "Status":  "PASS",
+                                           "SqlError":  229
+                                       },
+                                       {
+                                           "Id":  "RuntimeRawCredentialsDenied",
+                                           "Status":  "PASS",
+                                           "SqlError":  229
+                                       },
+                                       {
+                                           "Id":  "RuntimeBootstrapDenied",
+                                           "Status":  "PASS",
+                                           "SqlError":  229
+                                       },
+                                       {
+                                           "Id":  "ActualPatchedPkcsLoaded",
+                                           "Status":  "PASS",
+                                           "Path":  "C:\\Program Files\\dotnet\\shared\\Microsoft.WindowsDesktop.App\\10.0.13\\System.Security.Cryptography.Pkcs.dll",
+                                           "FileVersion":  "10.0.1326.50504",
+                                           "InformationalVersion":  "10.0.13+4099f83977f4d29604a9aeb971fb0a7bc1d5f699"
+                                       }
+                                   ],
+                        "Status":  "PASS"
+                    },
+                    {
+                        "Id":  "WindowsRound",
+                        "Expected":  "Complete all native/principal cases",
+                        "Actual":  "Stage=runtime exe setup denied; exception=RuntimeException; command=; line=35; errorId=Native action absent",
+                        "Status":  "BLOCKED"
+                    }
+                ],
+    "Cleanup":  [
+                    {
+                        "Kind":  "SqlPrincipals",
+                        "Status":  "PASS",
+                        "Count":  2
+                    },
+                    {
+                        "Kind":  "WindowsAccount",
+                        "Name":  "CMG02S_93dc93f3",
+                        "Sid":  "S-1-5-21-995916740-4115604996-2892334199-1012",
+                        "Status":  "PASS"
+                    },
+                    {
+                        "Kind":  "WindowsAccount",
+                        "Name":  "CMG02R_93dc93f3",
+                        "Sid":  "S-1-5-21-995916740-4115604996-2892334199-1013",
+                        "Status":  "PASS"
+                    }
+                ],
+    "Passwords":  "Generated in RAM only; not emitted",
+    "Deployment":  "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\opencode\\G02-Windows-20261017_161110_93dc93f3"
+}

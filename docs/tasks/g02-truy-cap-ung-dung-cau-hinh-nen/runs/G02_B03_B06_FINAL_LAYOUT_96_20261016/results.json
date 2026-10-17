@@ -1,0 +1,78 @@
+{
+  "Database": "CoffeeManager_Test_G02_20261016_211208_2f6e1357",
+  "Dpi": 96,
+  "Results": [
+    {
+      "Id": "B04.Login.afterSave.96",
+      "Expected": "Login after Designer Save has8explicit rows, readable button/labels and masked password; constructor no query",
+      "Actual": "ButtonHeight=47,FontHeight=18;8rows, labelbounds readable; Opens0",
+      "Status": "PASS"
+    },
+    {
+      "Id": "B05.Bootstrap.afterSave.96",
+      "Expected": "Bootstrap native after Save retains modes, masking, readable fields/button and no constructor SQL",
+      "Actual": "9rows; both modes and masking retained; completebutton readable, noSQL during constructor/mode changes",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T07-K04.viewport.96.1280",
+      "Expected": "Exact viewport, resize/minimize/restore; seven tab actions remain usable",
+      "Actual": "Exact1280x720,DPI96;7native tab captures; minimize/restore and grid viewport verified",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T07-K04.viewport.96.1366",
+      "Expected": "Exact viewport, resize/minimize/restore; seven tab actions remain usable",
+      "Actual": "Exact1366x768,DPI96;7native tab captures; minimize/restore and grid viewport verified",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T07-K04.keyboard.96",
+      "Expected": "Native Tab/ShiftTab/mnemonic; Enter cannot save; modal disables owner",
+      "Actual": "Foreground native Tab/ShiftTab/AltT validated; Enter no write, modal native owner disabled, snapshot unchanged",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T07-K04.editor.96.ProductCategory",
+      "Expected": "Native fields/footer remain usable at DPI",
+      "Actual": "Editor actualDPI, Save within client viewport; native screenshot",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T07-K04.editor.96.Supplier",
+      "Expected": "Native fields/footer remain usable at DPI",
+      "Actual": "Editor actualDPI, Save within client viewport; native screenshot",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T07-K04.editor.96.PaymentMethod",
+      "Expected": "Native fields/footer remain usable at DPI",
+      "Actual": "Editor actualDPI, Save within client viewport; native screenshot",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T07-K04.editor.96.DeliveryPartner",
+      "Expected": "Native fields/footer remain usable at DPI",
+      "Actual": "Editor actualDPI, Save within client viewport; native screenshot",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T07-K04.editor.96.ExpenseCategory",
+      "Expected": "Native fields/footer remain usable at DPI",
+      "Actual": "Editor actualDPI, Save within client viewport; native screenshot",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T07-K04.editor.96.Position",
+      "Expected": "Native fields/footer remain usable at DPI",
+      "Actual": "Editor actualDPI, Save within client viewport; native screenshot",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T07-K04.editor.96.Shift",
+      "Expected": "Native fields/footer remain usable at DPI",
+      "Actual": "Editor actualDPI, Save within client viewport; native screenshot",
+      "Status": "PASS"
+    }
+  ]
+}

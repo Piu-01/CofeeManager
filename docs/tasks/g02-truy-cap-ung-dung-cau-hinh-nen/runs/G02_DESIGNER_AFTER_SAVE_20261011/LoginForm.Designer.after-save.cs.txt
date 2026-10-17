@@ -1,0 +1,161 @@
+namespace CafeManager.WinForms.Forms;
+
+partial class LoginForm
+{
+    private TextBox usernameInput = null!;
+    private TextBox passwordInput = null!;
+    private CheckBox showPassword = null!;
+    private Button loginButton = null!;
+    private Label statusLabel = null!;
+    private TableLayoutPanel layout = null!;
+    private Label title = null!;
+    private Label usernameLabel = null!;
+    private Label passwordLabel = null!;
+    private void InitializeComponent()
+    {
+        layout = new TableLayoutPanel();
+        title = new Label();
+        usernameLabel = new Label();
+        usernameInput = new TextBox();
+        passwordLabel = new Label();
+        passwordInput = new TextBox();
+        showPassword = new CheckBox();
+        loginButton = new Button();
+        statusLabel = new Label();
+        layout.SuspendLayout();
+        SuspendLayout();
+        // 
+        // layout
+        // 
+        layout.AutoScroll = true;
+        layout.ColumnCount = 1;
+        layout.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+        layout.Controls.Add(title, 0, 0);
+        layout.Controls.Add(usernameLabel, 0, 1);
+        layout.Controls.Add(usernameInput, 0, 2);
+        layout.Controls.Add(passwordLabel, 0, 3);
+        layout.Controls.Add(passwordInput, 0, 4);
+        layout.Controls.Add(showPassword, 0, 5);
+        layout.Controls.Add(loginButton, 0, 6);
+        layout.Controls.Add(statusLabel, 0, 7);
+        layout.Dock = DockStyle.Fill;
+        layout.Location = new Point(0, 0);
+        layout.Margin = new Padding(4);
+        layout.Name = "layout";
+        layout.Padding = new Padding(40);
+        layout.RowCount = 8;
+        layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+        layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+        layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+        layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+        layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+        layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+        layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+        layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+        layout.Size = new Size(725, 625);
+        layout.TabIndex = 0;
+        // 
+        // title
+        // 
+        title.AutoSize = true;
+        title.Font = new Font("Segoe UI", 17F, FontStyle.Bold);
+        title.Location = new Point(44, 40);
+        title.Margin = new Padding(4, 0, 4, 0);
+        title.Name = "title";
+        title.Size = new Size(405, 20);
+        title.TabIndex = 0;
+        title.Text = "CoffeeManager · Đăng nhập";
+        // 
+        // usernameLabel
+        // 
+        usernameLabel.AutoSize = true;
+        usernameLabel.Location = new Point(44, 60);
+        usernameLabel.Margin = new Padding(4, 0, 4, 0);
+        usernameLabel.Name = "usernameLabel";
+        usernameLabel.Size = new Size(124, 20);
+        usernameLabel.TabIndex = 1;
+        usernameLabel.Text = "&Tên đăng nhập";
+        // 
+        // usernameInput
+        // 
+        usernameInput.AccessibleName = "Tên đăng nhập";
+        usernameInput.Dock = DockStyle.Top;
+        usernameInput.Location = new Point(44, 84);
+        usernameInput.Margin = new Padding(4);
+        usernameInput.MaxLength = 50;
+        usernameInput.Name = "usernameInput";
+        usernameInput.Size = new Size(637, 30);
+        usernameInput.TabIndex = 0;
+        // 
+        // passwordLabel
+        // 
+        passwordLabel.AutoSize = true;
+        passwordLabel.Location = new Point(44, 100);
+        passwordLabel.Margin = new Padding(4, 0, 4, 0);
+        passwordLabel.Name = "passwordLabel";
+        passwordLabel.Size = new Size(82, 20);
+        passwordLabel.TabIndex = 2;
+        passwordLabel.Text = "&Mật khẩu";
+        // 
+        // passwordInput
+        // 
+        passwordInput.AccessibleName = "Mật khẩu";
+        passwordInput.Dock = DockStyle.Top;
+        passwordInput.Location = new Point(44, 124);
+        passwordInput.Margin = new Padding(4);
+        passwordInput.MaxLength = 128;
+        passwordInput.Name = "passwordInput";
+        passwordInput.Size = new Size(637, 30);
+        passwordInput.TabIndex = 1;
+        passwordInput.UseSystemPasswordChar = true;
+        // 
+        // showPassword
+        // 
+        showPassword.AutoSize = true;
+        showPassword.Location = new Point(44, 144);
+        showPassword.Margin = new Padding(4);
+        showPassword.Name = "showPassword";
+        showPassword.Size = new Size(144, 12);
+        showPassword.TabIndex = 2;
+        showPassword.Text = "&Hiện mật khẩu";
+        showPassword.CheckedChanged += ShowPassword_Changed;
+        // 
+        // loginButton
+        // 
+        loginButton.AutoSize = true;
+        loginButton.Location = new Point(44, 164);
+        loginButton.Margin = new Padding(4);
+        loginButton.Name = "loginButton";
+        loginButton.Padding = new Padding(15, 10, 15, 10);
+        loginButton.Size = new Size(145, 12);
+        loginButton.TabIndex = 3;
+        loginButton.Text = "Đăng &nhập";
+        loginButton.Click += Login_Click;
+        // 
+        // statusLabel
+        // 
+        statusLabel.AutoSize = true;
+        statusLabel.Dock = DockStyle.Fill;
+        statusLabel.Location = new Point(44, 180);
+        statusLabel.Margin = new Padding(4, 0, 4, 0);
+        statusLabel.Name = "statusLabel";
+        statusLabel.Padding = new Padding(0, 15, 0, 0);
+        statusLabel.Size = new Size(637, 405);
+        statusLabel.TabIndex = 4;
+        // 
+        // LoginForm
+        // 
+        AutoScaleDimensions = new SizeF(120F, 120F);
+        AutoScaleMode = AutoScaleMode.Dpi;
+        ClientSize = new Size(725, 625);
+        Controls.Add(layout);
+        Margin = new Padding(4);
+        MinimumSize = new Size(596, 488);
+        Name = "LoginForm";
+        StartPosition = FormStartPosition.CenterScreen;
+        Text = "CoffeeManager · Đăng nhập";
+        layout.ResumeLayout(false);
+        layout.PerformLayout();
+        ResumeLayout(false);
+    }
+}

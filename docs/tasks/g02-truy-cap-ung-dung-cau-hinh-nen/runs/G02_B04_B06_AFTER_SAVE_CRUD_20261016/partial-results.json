@@ -1,0 +1,140 @@
+[
+  {
+    "Id": "T07-K06.a.ProductCategory",
+    "Expected": "Cancel and X: No retains input; Yes discards; exact DB snapshot unchanged",
+    "Actual": "Both Cancel/X, No/Yes native MessageBoxes; exact 7-table SHA256 unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K01.ProductCategory.a.nativeCRUD",
+    "Expected": "Native add/edit/search persist correct kind and fields",
+    "Actual": "Native create/edit; literal/Vietnamese name in typed grid; persisted code=DM009",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K01.ProductCategory.b.nativeSearch",
+    "Expected": "Quote/%/_/[ treated as literal and Vietnamese searchable",
+    "Actual": "5 searches matched fixture; unmatched special-literal search empty",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T07-K06.a.Supplier",
+    "Expected": "Cancel and X: No retains input; Yes discards; exact DB snapshot unchanged",
+    "Actual": "Both Cancel/X, No/Yes native MessageBoxes; exact 7-table SHA256 unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K01.Supplier.a.nativeCRUD",
+    "Expected": "Native add/edit/search persist correct kind and fields",
+    "Actual": "Native create/edit; literal/Vietnamese name in typed grid; persisted code=NCC75",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K01.Supplier.b.nativeSearch",
+    "Expected": "Quote/%/_/[ treated as literal and Vietnamese searchable",
+    "Actual": "5 searches matched fixture; unmatched special-literal search empty",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T07-K06.a.PaymentMethod",
+    "Expected": "Cancel and X: No retains input; Yes discards; exact DB snapshot unchanged",
+    "Actual": "Both Cancel/X, No/Yes native MessageBoxes; exact 7-table SHA256 unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K01.PaymentMethod.a.nativeCRUD",
+    "Expected": "Native add/edit/search persist correct kind and fields",
+    "Actual": "Native create/edit; literal/Vietnamese name in typed grid; persisted code=PT775",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K01.PaymentMethod.b.nativeSearch",
+    "Expected": "Quote/%/_/[ treated as literal and Vietnamese searchable",
+    "Actual": "5 searches matched fixture; unmatched special-literal search empty",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T07-K06.a.DeliveryPartner",
+    "Expected": "Cancel and X: No retains input; Yes discards; exact DB snapshot unchanged",
+    "Actual": "Both Cancel/X, No/Yes native MessageBoxes; exact 7-table SHA256 unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K01.DeliveryPartner.a.nativeCRUD",
+    "Expected": "Native add/edit/search persist correct kind and fields",
+    "Actual": "Native create/edit; literal/Vietnamese name in typed grid; persisted code=DT775",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K01.DeliveryPartner.b.nativeSearch",
+    "Expected": "Quote/%/_/[ treated as literal and Vietnamese searchable",
+    "Actual": "5 searches matched fixture; unmatched special-literal search empty",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T07-K06.a.ExpenseCategory",
+    "Expected": "Cancel and X: No retains input; Yes discards; exact DB snapshot unchanged",
+    "Actual": "Both Cancel/X, No/Yes native MessageBoxes; exact 7-table SHA256 unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K01.ExpenseCategory.a.nativeCRUD",
+    "Expected": "Native add/edit/search persist correct kind and fields",
+    "Actual": "Native create/edit; literal/Vietnamese name in typed grid; persisted code=TC775",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K01.ExpenseCategory.b.nativeSearch",
+    "Expected": "Quote/%/_/[ treated as literal and Vietnamese searchable",
+    "Actual": "5 searches matched fixture; unmatched special-literal search empty",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T07-K06.a.Position",
+    "Expected": "Cancel and X: No retains input; Yes discards; exact DB snapshot unchanged",
+    "Actual": "Both Cancel/X, No/Yes native MessageBoxes; exact 7-table SHA256 unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K01.Position.a.nativeCRUD",
+    "Expected": "Native add/edit/search persist correct kind and fields",
+    "Actual": "Native create/edit; literal/Vietnamese name in typed grid; persisted code=CV775",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K01.Position.b.nativeSearch",
+    "Expected": "Quote/%/_/[ treated as literal and Vietnamese searchable",
+    "Actual": "5 searches matched fixture; unmatched special-literal search empty",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T07-K06.a.Shift",
+    "Expected": "Cancel and X: No retains input; Yes discards; exact DB snapshot unchanged",
+    "Actual": "Both Cancel/X, No/Yes native MessageBoxes; exact 7-table SHA256 unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K01.Shift.a.nativeCRUD",
+    "Expected": "Native add/edit/search persist correct kind and fields",
+    "Actual": "Native create/edit; literal/Vietnamese name in typed grid; persisted code=CA775",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K01.Shift.b.nativeSearch",
+    "Expected": "Quote/%/_/[ treated as literal and Vietnamese searchable",
+    "Actual": "5 searches matched fixture; unmatched special-literal search empty",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T07-K06.b.ownerRefresh",
+    "Expected": "Save NCC preserves owning tab/filter, other catalog unchanged",
+    "Actual": "Only NCC refresh, filter/selected tab retained, partner exact JSON unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T07-K07.b.closeKeepsOpenOrder",
+    "Expected": "Closing Main preserves open order header/details",
+    "Actual": "Native Main close; open header/detail exact JSON unchanged",
+    "Status": "PASS"
+  }
+]

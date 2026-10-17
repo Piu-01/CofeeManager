@@ -1,0 +1,42 @@
+[
+    {
+        "File":  "Forms\\MainForm.cs",
+        "Status":  "OBSERVED",
+        "Open":  "MainForm.cs [Design]",
+        "After":  "MainForm.cs [Design]",
+        "Error":  null,
+        "Info":  " | CafeManager.WinForms - MainForm.cs [Design] - Microsoft Visual Studio | C:\\Users\\Lenovo\\AppData\\Local\\Temp\\opencode\\G02DesignerFinal\\src\\CafeManager.WinForms\\Forms\\MainForm.cs"
+    },
+    {
+        "File":  "Forms\\LoginForm.cs",
+        "Status":  "OBSERVED",
+        "Open":  "LoginForm.cs [Design]",
+        "After":  "LoginForm.cs [Design]",
+        "Error":  null,
+        "Info":  " | CafeManager.WinForms - LoginForm.cs [Design] - Microsoft Visual Studio | C:\\Users\\Lenovo\\AppData\\Local\\Temp\\opencode\\G02DesignerFinal\\src\\CafeManager.WinForms\\Forms\\LoginForm.cs"
+    },
+    {
+        "File":  "Forms\\BootstrapForm.cs",
+        "Status":  "OBSERVED",
+        "Open":  "BootstrapForm.cs [Design]",
+        "After":  "BootstrapForm.cs [Design]",
+        "Error":  null,
+        "Info":  " | CafeManager.WinForms - BootstrapForm.cs [Design] - Microsoft Visual Studio | C:\\Users\\Lenovo\\AppData\\Local\\Temp\\opencode\\G02DesignerFinal\\src\\CafeManager.WinForms\\Forms\\BootstrapForm.cs"
+    },
+    {
+        "File":  "Forms\\CatalogEditorDialog.cs",
+        "Status":  "OBSERVED",
+        "Open":  "CatalogEditorDialog.cs [Design]",
+        "After":  "CatalogEditorDialog.cs [Design]",
+        "Error":  null,
+        "Info":  " | CafeManager.WinForms - CatalogEditorDialog.cs [Design] - Microsoft Visual Studio | C:\\Users\\Lenovo\\AppData\\Local\\Temp\\opencode\\G02DesignerFinal\\src\\CafeManager.WinForms\\Forms\\CatalogEditorDialog.cs"
+    },
+    {
+        "File":  "Modules\\Catalogs\\CatalogsControl.cs",
+        "Status":  "OBSERVED",
+        "Open":  "CatalogsControl.cs [Design]",
+        "After":  "CatalogsControl.cs [Design]",
+        "Error":  null,
+        "Info":  " | CafeManager.WinForms - CatalogsControl.cs [Design] - Microsoft Visual Studio | C:\\Users\\Lenovo\\AppData\\Local\\Temp\\opencode\\G02DesignerFinal\\src\\CafeManager.WinForms\\Modules\\Catalogs\\CatalogsControl.cs"
+    }
+]

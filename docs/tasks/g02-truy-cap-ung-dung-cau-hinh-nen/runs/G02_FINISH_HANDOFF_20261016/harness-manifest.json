@@ -1,0 +1,42 @@
+[
+    {
+        "Path":  "G02AcceptSetupOk.ps1",
+        "Hash":  "9372170CCE0083D8BC7D035756615AEC96FAE85A36328106D0C7E5C49C11EDBC"
+    },
+    {
+        "Path":  "G02DesignerTyped.ps1",
+        "Hash":  "0C3022F66081C8C09F532EC7D70457BE68536C2F8BF05B577187A384C7E9C251"
+    },
+    {
+        "Path":  "integrity.json",
+        "Hash":  "A412C353B3E39107190267B9008EAB1BBED3F1D5BBF3CCF8960F135B85170DE2"
+    },
+    {
+        "Path":  "Set-CoffeeTestScale.ps1",
+        "Hash":  "4AC72D592678A34669D96C0EB99F14381268EC1F22B644B0BE6684E41C30E41C"
+    },
+    {
+        "Path":  "G02AfterDesigner\\G02AfterDesigner.csproj",
+        "Hash":  "1D0D6D69CE37FF4C6A55498312BA65458E87D07D59D99A1EF7E826A7A83F1224"
+    },
+    {
+        "Path":  "G02AfterDesigner\\Program.cs",
+        "Hash":  "601E54F65C4B65CFAE94C41BB6E958A01CB48147020A7A48DD35F7367BC8067A"
+    },
+    {
+        "Path":  "G02FinishData\\G02FinishData.csproj",
+        "Hash":  "97DFF1881FE7FF4B8BE503E0FA7BDEA2194FF1056949E319C176277F5711E2F5"
+    },
+    {
+        "Path":  "G02FinishData\\Program.cs",
+        "Hash":  "5DBDA48F97405AE97FB807C5BCAE60C9CC9E06206D3CB9B9BD71BEABE0E5A9D0"
+    },
+    {
+        "Path":  "G02FinishUi\\G02FinishUi.csproj",
+        "Hash":  "4A08BBE122F2928499ECBBFD3CD5BD0FAB46A7E9258F082DB269CD1D5434803F"
+    },
+    {
+        "Path":  "G02FinishUi\\Program.cs",
+        "Hash":  "6CBD7F15ACA410BF6440485809EB62496A7403F973116EC884EA95E975505C7B"
+    }
+]

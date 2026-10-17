@@ -1,0 +1,44 @@
+[
+  {
+    "Id": "T08-K01.ProductCategory.restart.native",
+    "Expected": "New process reloads persisted edited row",
+    "Actual": "New host process loaded edited persisted row in native grid",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K01.Supplier.restart.native",
+    "Expected": "New process reloads persisted edited row",
+    "Actual": "New host process loaded edited persisted row in native grid",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K01.PaymentMethod.restart.native",
+    "Expected": "New process reloads persisted edited row",
+    "Actual": "New host process loaded edited persisted row in native grid",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K01.DeliveryPartner.restart.native",
+    "Expected": "New process reloads persisted edited row",
+    "Actual": "New host process loaded edited persisted row in native grid",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K01.ExpenseCategory.restart.native",
+    "Expected": "New process reloads persisted edited row",
+    "Actual": "New host process loaded edited persisted row in native grid",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K01.Position.restart.native",
+    "Expected": "New process reloads persisted edited row",
+    "Actual": "New host process loaded edited persisted row in native grid",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K01.Shift.restart.native",
+    "Expected": "New process reloads persisted edited row",
+    "Actual": "New host process loaded edited persisted row in native grid",
+    "Status": "PASS"
+  }
+]

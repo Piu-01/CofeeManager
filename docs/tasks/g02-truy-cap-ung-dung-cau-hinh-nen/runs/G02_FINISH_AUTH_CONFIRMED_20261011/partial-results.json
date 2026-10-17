@@ -1,0 +1,32 @@
+[
+  {
+    "Id": "T06-K08.b.loginPendingClose",
+    "Expected": "Closing pending Login cancels and cannot emit a session/Main",
+    "Actual": "Native Login close while SQL blocked; callback0, disposed, no new Main",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T06-K09.a.loginDBError.native",
+    "Expected": "SQL login timeout distinct from invalid password; input retained",
+    "Actual": "Native SQLtimeout error, input kept (not logged), no session, masked screenshot",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T06-K01.a.bootstrapNative.clean",
+    "Expected": "Native clean setup creates1ADMIN, NVNULLphone; passwordmasked",
+    "Actual": "Wait timeout",
+    "Status": "FAIL"
+  },
+  {
+    "Id": "T06-K01.a.bootstrapNative.timeoutAfterCommit",
+    "Expected": "Timeout after commit reconciles Completed and blocks retry",
+    "Actual": "Native setup masked;1ADMIN/1NVNULL; Completed durable on reopen; fixtureDB=CoffeeManager_Test_G02_20261011_181929_f9a50fce; actual SQLcommand timeout after COMMIT, reconciled state disables retry",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K01.unknown.nativeCommitTimeout",
+    "Expected": "Commit DM then response timeout, keep draft/sendlock; receipt reconciliation one row",
+    "Actual": "SQL COMMIT then delayed result timeout; actual editorUnknown/locked/input kept; receipt Get confirms1row and closesOK",
+    "Status": "PASS"
+  }
+]

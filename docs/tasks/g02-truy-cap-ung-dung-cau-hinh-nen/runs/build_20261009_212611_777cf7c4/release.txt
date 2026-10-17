@@ -1,0 +1,11 @@
+﻿  CafeManager.Models -> D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.Models\bin\Release\net10.0\CafeManager.Models.dll
+  CafeManager.DataAccess -> D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.DataAccess\bin\Release\net10.0\CafeManager.DataAccess.dll
+  CafeManager.Business -> D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.Business\bin\Release\net10.0\CafeManager.Business.dll
+  CafeManager.Tests -> D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Release\net10.0-windows\CafeManager.Tests.dll
+  CafeManager.WinForms -> D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Release\net10.0-windows\CafeManager.WinForms.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:02.01

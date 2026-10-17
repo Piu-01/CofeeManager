@@ -1,0 +1,20 @@
+[
+  {
+    "Id": "T07-K07.a.modalDraft.Navigate",
+    "Expected": "Modal blocks parent leave; No retains draft; Yes discards then requested parent action allowed without save",
+    "Actual": "Unable to cast object of type \u0027CafeManager.WinForms.Modules.Home.SessionHomeControl\u0027 to type \u0027CafeManager.WinForms.Modules.Catalogs.CatalogsControl\u0027.",
+    "Status": "FAIL"
+  },
+  {
+    "Id": "T07-K07.a.modalDraft.Logout",
+    "Expected": "Modal blocks parent leave; No retains draft; Yes discards then requested parent action allowed without save",
+    "Actual": "Actual modal workflow: parent disabled while draft; X/No retains, X/Yes discards; then nativeLogout succeeds, exact7table snapshot unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T07-K07.a.modalDraft.Close",
+    "Expected": "Modal blocks parent leave; No retains draft; Yes discards then requested parent action allowed without save",
+    "Actual": "Actual modal workflow: parent disabled while draft; X/No retains, X/Yes discards; then nativeClose succeeds, exact7table snapshot unchanged",
+    "Status": "PASS"
+  }
+]

@@ -1,0 +1,42 @@
+[
+    {
+        "Path":  "G02DesignerCheck.ps1",
+        "Hash":  "A16EFF3A7BED9EB135FCDBF39A985854F1426B32F4AF4AC9F9C877F53BDF7E1C"
+    },
+    {
+        "Path":  "G02SqlSupplement.ps1",
+        "Hash":  "A76F5049C990283550A791D7D0279325FC2283D2C64B28152BE1FDD3DA204825"
+    },
+    {
+        "Path":  "G02AcceptanceProbe\\G02AcceptanceProbe.csproj",
+        "Hash":  "E2FF51BDE6CA0C0CCEB39D9E7119E7AFC3DFF689652EA3B0C5E8890CC0CD72C8"
+    },
+    {
+        "Path":  "G02AcceptanceProbe\\Program.cs",
+        "Hash":  "1802D265D14132CD202D8BC11AECC72911817B887640B53BAF173151E9EFC26C"
+    },
+    {
+        "Path":  "G02ExtraProbe\\G02ExtraProbe.csproj",
+        "Hash":  "9C56647F007A27B5139F7621689F769E995BBF1A54F87F3E566FCD80BCB5389C"
+    },
+    {
+        "Path":  "G02ExtraProbe\\Program.cs",
+        "Hash":  "1742F1C0F3632E9EB5AAC32BFB228FEEB1F702AF848B5FB0C5FB8C413DFC1784"
+    },
+    {
+        "Path":  "G02UiExtra\\G02UiExtra.csproj",
+        "Hash":  "C980866623DBDF5BD91B089B2277C71E2FE76AFFFF2258757ADAEF84E37F2D1F"
+    },
+    {
+        "Path":  "G02UiExtra\\Program.cs",
+        "Hash":  "E0F56F236DBE2875D22E52C4DB5ED2E198359306651589CB94CDD8C184C8CCBB"
+    },
+    {
+        "Path":  "G02UiProbe\\G02UiProbe.csproj",
+        "Hash":  "CB04A405102D75D5D18B94530CAB9F4B76BC729B1122EDD9FEDB3E17398FCF34"
+    },
+    {
+        "Path":  "G02UiProbe\\Program.cs",
+        "Hash":  "876FF978192DDD009B1DD4A2B425F51D103C28AAD92406E03257BB200BB622C4"
+    }
+]

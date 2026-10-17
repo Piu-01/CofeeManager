@@ -1,0 +1,56 @@
+﻿{
+    "Database":  "CoffeeManager_Test_G02_20261016_223719_4d0416e5",
+    "Operation":  "SELECT only, no source or DB object changes",
+    "Rows":  [
+                 {
+                     "Input":  "a",
+                     "CurrentInvalid":  0,
+                     "ProposedInvalid":  0
+                 },
+                 {
+                     "Input":  "b",
+                     "CurrentInvalid":  0,
+                     "ProposedInvalid":  0
+                 },
+                 {
+                     "Input":  ".",
+                     "CurrentInvalid":  0,
+                     "ProposedInvalid":  0
+                 },
+                 {
+                     "Input":  "_",
+                     "CurrentInvalid":  1,
+                     "ProposedInvalid":  0
+                 },
+                 {
+                     "Input":  "-",
+                     "CurrentInvalid":  1,
+                     "ProposedInvalid":  0
+                 },
+                 {
+                     "Input":  "1",
+                     "CurrentInvalid":  0,
+                     "ProposedInvalid":  0
+                 },
+                 {
+                     "Input":  "9",
+                     "CurrentInvalid":  0,
+                     "ProposedInvalid":  0
+                 },
+                 {
+                     "Input":  "/",
+                     "CurrentInvalid":  1,
+                     "ProposedInvalid":  1
+                 },
+                 {
+                     "Input":  " ",
+                     "CurrentInvalid":  1,
+                     "ProposedInvalid":  1
+                 },
+                 {
+                     "Input":  "ab._-19",
+                     "CurrentInvalid":  1,
+                     "ProposedInvalid":  0
+                 }
+             ]
+}

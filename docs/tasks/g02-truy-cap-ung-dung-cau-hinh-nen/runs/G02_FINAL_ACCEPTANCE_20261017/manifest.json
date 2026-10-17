@@ -1,0 +1,22 @@
+[
+    {
+        "Path":  "checklist-and-source-integrity.json",
+        "SHA256":  "EF5C704EAF8475E07029D0F2F39AAE48E1E8AFE036403A6D3E9AE035573C9BEE"
+    },
+    {
+        "Path":  "Complete-G02Windows.ps1",
+        "SHA256":  "6367D90B54E6BDCA09ACEBF804959C0AA789E5B22272A19D5D47C5271F0D789D"
+    },
+    {
+        "Path":  "integrity-and-cleanup.json",
+        "SHA256":  "F87792CD0D9C614EEF7AAD7ED7397BC80401C50B879C3F4630B833B0D4E537B1"
+    },
+    {
+        "Path":  "G02WindowsPrincipalProbe\\G02WindowsPrincipalProbe.csproj",
+        "SHA256":  "07370B519173C3E6A3E9E9331CBD340929330CE8AA13AEF1D2B017F0C68BE996"
+    },
+    {
+        "Path":  "G02WindowsPrincipalProbe\\Program.cs",
+        "SHA256":  "69FB5EF4C19C9FE26A3B65F10C02E4612C0942FC47C54008F4FB190E628ACD76"
+    }
+]

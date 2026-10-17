@@ -1,0 +1,8 @@
+{
+  "Status": "FAIL",
+  "Database": "CoffeeManager_Test_G02_20261017_152520_15a503ec",
+  "Role": "runtime",
+  "ErrorType": "InvalidOperationException",
+  "SqlError": null,
+  "Checks": []
+}

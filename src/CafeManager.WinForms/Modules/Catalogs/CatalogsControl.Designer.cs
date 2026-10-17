@@ -1,0 +1,85 @@
+namespace CafeManager.WinForms.Modules.Catalogs;
+
+partial class CatalogsControl
+{
+    private TableLayoutPanel layout = null!;
+    private FlowLayoutPanel toolbar = null!;
+    private TabControl tabs = null!;
+    private TabPage productTab = null!;
+    private TabPage supplierTab = null!;
+    private TabPage paymentTab = null!;
+    private TabPage deliveryTab = null!;
+    private TabPage expenseTab = null!;
+    private TabPage positionTab = null!;
+    private TabPage shiftTab = null!;
+    private TextBox searchInput = null!;
+    private Button searchButton = null!;
+    private Button reloadButton = null!;
+    private Button addButton = null!;
+    private Button editButton = null!;
+    private Button deleteButton = null!;
+    private Button previousButton = null!;
+    private Button nextButton = null!;
+    private Label statusLabel = null!;
+    private DataGridView grid = null!;
+    private DataGridViewTextBoxColumn codeColumn = null!;
+    private DataGridViewTextBoxColumn nameColumn = null!;
+    private DataGridViewTextBoxColumn phoneColumn = null!;
+    private DataGridViewTextBoxColumn ratioColumn = null!;
+    private DataGridViewTextBoxColumn allowanceColumn = null!;
+    private DataGridViewTextBoxColumn factorColumn = null!;
+    private DataGridViewTextBoxColumn startColumn = null!;
+    private DataGridViewTextBoxColumn endColumn = null!;
+    private DataGridViewTextBoxColumn typeColumn = null!;
+    private DataGridViewCheckBoxColumn supportedColumn = null!;
+    private void InitializeComponent()
+    {
+        layout = new TableLayoutPanel(); toolbar = new FlowLayoutPanel(); tabs = new TabControl();
+        productTab = new TabPage(); supplierTab = new TabPage(); paymentTab = new TabPage(); deliveryTab = new TabPage(); expenseTab = new TabPage(); positionTab = new TabPage(); shiftTab = new TabPage();
+        searchInput = new TextBox(); searchButton = new Button(); reloadButton = new Button(); addButton = new Button(); editButton = new Button(); deleteButton = new Button(); previousButton = new Button(); nextButton = new Button(); statusLabel = new Label(); grid = new DataGridView();
+        codeColumn = new DataGridViewTextBoxColumn(); nameColumn = new DataGridViewTextBoxColumn(); phoneColumn = new DataGridViewTextBoxColumn(); ratioColumn = new DataGridViewTextBoxColumn(); allowanceColumn = new DataGridViewTextBoxColumn(); factorColumn = new DataGridViewTextBoxColumn(); startColumn = new DataGridViewTextBoxColumn(); endColumn = new DataGridViewTextBoxColumn(); typeColumn = new DataGridViewTextBoxColumn(); supportedColumn = new DataGridViewCheckBoxColumn();
+        SuspendLayout(); layout.SuspendLayout(); toolbar.SuspendLayout(); tabs.SuspendLayout(); ((global::System.ComponentModel.ISupportInitialize)grid).BeginInit();
+        layout.Dock = DockStyle.Fill; layout.Padding = new Padding(16); layout.ColumnCount = 1; layout.RowCount = 3;
+        layout.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+        layout.RowStyles.Add(new RowStyle(SizeType.AutoSize)); layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100F)); layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+        toolbar.Dock = DockStyle.Fill; toolbar.AutoSize = true; toolbar.WrapContents = true;
+        searchInput.Width = 210; searchInput.MaxLength = 100; searchInput.PlaceholderText = "Tên danh mục…"; searchInput.AccessibleName = "Tìm tên danh mục";
+        searchButton.Text = "Tìm"; reloadButton.Text = "Tải / đối chiếu"; addButton.Text = "Thêm"; editButton.Text = "Sửa"; deleteButton.Text = "Xóa"; previousButton.Text = "Trước"; nextButton.Text = "Sau";
+        searchButton.AutoSize = true;
+        reloadButton.AutoSize = true;
+        addButton.AutoSize = true;
+        editButton.AutoSize = true;
+        deleteButton.AutoSize = true;
+        previousButton.AutoSize = true;
+        nextButton.AutoSize = true;
+        searchButton.Padding = new Padding(8, 6, 8, 6);
+        reloadButton.Padding = new Padding(8, 6, 8, 6);
+        addButton.Padding = new Padding(8, 6, 8, 6);
+        editButton.Padding = new Padding(8, 6, 8, 6);
+        deleteButton.Padding = new Padding(8, 6, 8, 6);
+        previousButton.Padding = new Padding(8, 6, 8, 6);
+        nextButton.Padding = new Padding(8, 6, 8, 6);
+        searchButton.Click += Search_Click; reloadButton.Click += Reload_Click; addButton.Click += Add_Click; editButton.Click += Edit_Click; deleteButton.Click += Delete_Click; previousButton.Click += Previous_Click; nextButton.Click += Next_Click;
+        toolbar.Controls.Add(searchInput); toolbar.Controls.Add(searchButton); toolbar.Controls.Add(reloadButton); toolbar.Controls.Add(addButton); toolbar.Controls.Add(editButton); toolbar.Controls.Add(deleteButton); toolbar.Controls.Add(previousButton); toolbar.Controls.Add(nextButton);
+        tabs.Dock = DockStyle.Fill; tabs.Multiline = true;
+        productTab.Text = "Sản phẩm"; supplierTab.Text = "Nhà cung cấp"; paymentTab.Text = "Phương thức"; deliveryTab.Text = "Đối tác"; expenseTab.Text = "Thu / chi"; positionTab.Text = "Chức vụ"; shiftTab.Text = "Ca làm";
+        tabs.Controls.Add(productTab); tabs.Controls.Add(supplierTab); tabs.Controls.Add(paymentTab); tabs.Controls.Add(deliveryTab); tabs.Controls.Add(expenseTab); tabs.Controls.Add(positionTab); tabs.Controls.Add(shiftTab);
+        grid.Dock = DockStyle.Fill; grid.AutoGenerateColumns = false; grid.ReadOnly = true; grid.AllowUserToAddRows = false; grid.AllowUserToDeleteRows = false; grid.MultiSelect = false; grid.SelectionMode = DataGridViewSelectionMode.FullRowSelect; grid.RowHeadersVisible = false;
+        codeColumn.DataPropertyName = "Code"; codeColumn.HeaderText = "Mã"; codeColumn.Width = 90;
+        nameColumn.DataPropertyName = "Name"; nameColumn.HeaderText = "Tên"; nameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; nameColumn.MinimumWidth = 180;
+        phoneColumn.DataPropertyName = "Phone"; phoneColumn.HeaderText = "SDT"; phoneColumn.Width = 140; phoneColumn.Visible = false;
+        ratioColumn.DataPropertyName = "Ratio"; ratioColumn.HeaderText = "Chiết khấu (%)"; ratioColumn.Width = 130; ratioColumn.Visible = false;
+        allowanceColumn.DataPropertyName = "Allowance"; allowanceColumn.HeaderText = "Phụ cấp"; allowanceColumn.Width = 160; allowanceColumn.Visible = false;
+        factorColumn.DataPropertyName = "Factor"; factorColumn.HeaderText = "Hệ số tăng ca"; factorColumn.Width = 130; factorColumn.Visible = false;
+        startColumn.DataPropertyName = "StartTime"; startColumn.HeaderText = "Bắt đầu"; startColumn.Width = 100; startColumn.Visible = false;
+        endColumn.DataPropertyName = "EndTime"; endColumn.HeaderText = "Kết thúc"; endColumn.Width = 100; endColumn.Visible = false;
+        typeColumn.DataPropertyName = "Type"; typeColumn.HeaderText = "Loại"; typeColumn.Width = 90; typeColumn.Visible = false;
+        supportedColumn.DataPropertyName = "Supported"; supportedColumn.HeaderText = "Hỗ trợ thủ công"; supportedColumn.Width = 160; supportedColumn.Visible = false;
+        grid.Columns.AddRange(new DataGridViewColumn[] { codeColumn, nameColumn, phoneColumn, ratioColumn, allowanceColumn, factorColumn, startColumn, endColumn, typeColumn, supportedColumn });
+        grid.CellFormatting += Grid_CellFormatting; productTab.Controls.Add(grid);
+        statusLabel.AutoSize = true; statusLabel.Dock = DockStyle.Fill; statusLabel.Padding = new Padding(0, 8, 0, 8);
+        layout.Controls.Add(toolbar, 0, 0); layout.Controls.Add(tabs, 0, 1); layout.Controls.Add(statusLabel, 0, 2);
+        AutoScaleDimensions = new SizeF(96F, 96F); AutoScaleMode = AutoScaleMode.Dpi; Size = new Size(900, 580); Controls.Add(layout);
+        ((global::System.ComponentModel.ISupportInitialize)grid).EndInit(); tabs.ResumeLayout(false); toolbar.ResumeLayout(false); toolbar.PerformLayout(); layout.ResumeLayout(false); layout.PerformLayout(); ResumeLayout(false);
+    }
+}

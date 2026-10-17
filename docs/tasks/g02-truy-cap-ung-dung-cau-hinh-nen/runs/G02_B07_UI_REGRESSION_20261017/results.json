@@ -1,0 +1,77 @@
+[
+  {
+    "Id": "T06-K10.UI.invalid.empty",
+    "Actual": "Rejected by UI service path before SQL; input retained; no session",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T06-K10.UI.invalid.space",
+    "Actual": "Rejected by UI service path before SQL; input retained; no session",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T06-K10.UI.invalid.51",
+    "Actual": "Rejected by UI service path before SQL; input retained; no session",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T06-K10.UI.invalid.inner",
+    "Actual": "Rejected by UI service path before SQL; input retained; no session",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T06-K10.UI.invalid.tab",
+    "Actual": "Rejected by UI service path before SQL; input retained; no session",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T06-K10.UI.invalid.newline",
+    "Actual": "Rejected by UI service path before SQL; input retained; no session",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T06-K10.UI.invalid.slash",
+    "Actual": "Rejected by UI service path before SQL; input retained; no session",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T06-K10.UI.invalid.vietnamese",
+    "Actual": "Rejected by UI service path before SQL; input retained; no session",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T06-K10.UI.invalid.fullwidth",
+    "Actual": "Rejected by UI service path before SQL; input retained; no session",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T06-K10.UI.invalid.emoji",
+    "Actual": "Rejected by UI service path before SQL; input retained; no session",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T06-K10.UI.valid.1",
+    "Actual": "Actual Login_Click, same account authenticated via canonical key; success clears password",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T06-K10.UI.valid.50",
+    "Actual": "Actual Login_Click, same account authenticated via canonical key; success clears password",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T06-K10.UI.valid.trim-case",
+    "Actual": "Actual Login_Click, same account authenticated via canonical key; success clears password",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T06-K10.UI.nativeLimit",
+    "Actual": "WM_EM_REPLACESEL51 inserts50; programmatic51 was independently rejected above",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T06-K07.session-context-audit",
+    "Actual": "Session fields/identity contain identity, stamp, generation/cancellation only; no password/hash fields; generated secret never emitted",
+    "Status": "PASS"
+  }
+]

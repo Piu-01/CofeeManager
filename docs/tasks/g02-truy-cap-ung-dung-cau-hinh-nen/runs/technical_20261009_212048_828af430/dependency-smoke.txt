@@ -1,0 +1,2 @@
+TECHNICAL CHECK: setup -> login -> permission dependency is available (not acceptance).
+TECHNICAL CHECK: catalog create/read/update and supported-method selector are connected (not acceptance).

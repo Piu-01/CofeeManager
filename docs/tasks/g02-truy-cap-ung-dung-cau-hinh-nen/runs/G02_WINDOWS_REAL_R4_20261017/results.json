@@ -1,0 +1,45 @@
+{
+    "At":  "2026-10-17T15:26:37.6348429+07:00",
+    "Status":  "BLOCKED",
+    "Database":  "CoffeeManager_Test_G02_20261017_152633_e53ddabf",
+    "Stage":  "runtime principal probe before setup",
+    "TemporaryAccounts":  [
+                              {
+                                  "Name":  "CMG02S_e53ddabf",
+                                  "Sid":  "S-1-5-21-995916740-4115604996-2892334199-1010"
+                              },
+                              {
+                                  "Name":  "CMG02R_e53ddabf",
+                                  "Sid":  "S-1-5-21-995916740-4115604996-2892334199-1011"
+                              }
+                          ],
+    "Records":  [
+                    {
+                        "Id":  "WindowsRound",
+                        "Expected":  "Complete all native/principal cases",
+                        "Actual":  "Stage=runtime principal probe before setup; exception=RuntimeException; command=; line=35; errorId=Principal probe failed: runtime",
+                        "Status":  "BLOCKED"
+                    }
+                ],
+    "Cleanup":  [
+                    {
+                        "Kind":  "SqlPrincipals",
+                        "Status":  "PASS",
+                        "Count":  2
+                    },
+                    {
+                        "Kind":  "WindowsAccount",
+                        "Name":  "CMG02S_e53ddabf",
+                        "Sid":  "S-1-5-21-995916740-4115604996-2892334199-1010",
+                        "Status":  "PASS"
+                    },
+                    {
+                        "Kind":  "WindowsAccount",
+                        "Name":  "CMG02R_e53ddabf",
+                        "Sid":  "S-1-5-21-995916740-4115604996-2892334199-1011",
+                        "Status":  "PASS"
+                    }
+                ],
+    "Passwords":  "Generated in RAM only; not emitted",
+    "Deployment":  "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\opencode\\G02-Windows-20261017_152633_e53ddabf"
+}

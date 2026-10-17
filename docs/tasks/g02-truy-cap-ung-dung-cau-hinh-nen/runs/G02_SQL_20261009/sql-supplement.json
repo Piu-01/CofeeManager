@@ -1,0 +1,572 @@
+[
+    {
+        "Id":  "T08-K02.ProductCategory.a.empty.SQL",
+        "Expected":  "SQL rejects invalid name without truncation",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.ProductCategory.a.space.SQL",
+        "Expected":  "SQL rejects invalid name without truncation",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.ProductCategory.a.tab.SQL",
+        "Expected":  "SQL rejects invalid name without truncation",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.ProductCategory.a.maxplus1.SQL",
+        "Expected":  "SQL rejects invalid name without truncation",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.ProductCategory.a.max.SQL",
+        "Expected":  "Maximum name length persists",
+        "Actual":  "Maximum name accepted",
+        "Status":  "PASS"
+    },
+    {
+        "Id":  "T08-K02.Supplier.a.empty.SQL",
+        "Expected":  "SQL rejects invalid name without truncation",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.Supplier.a.space.SQL",
+        "Expected":  "SQL rejects invalid name without truncation",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.Supplier.a.tab.SQL",
+        "Expected":  "SQL rejects invalid name without truncation",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.Supplier.a.maxplus1.SQL",
+        "Expected":  "SQL rejects invalid name without truncation",
+        "Actual":  "Expected rejection absent; command accepted",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.Supplier.a.max.SQL",
+        "Expected":  "Maximum name length persists",
+        "Actual":  "Maximum name accepted",
+        "Status":  "PASS"
+    },
+    {
+        "Id":  "T08-K02.Supplier.b.duplicate.SQL",
+        "Expected":  "Duplicate code rejected",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.Supplier.b.malformed.SQL",
+        "Expected":  "Malformed code rejected",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.PaymentMethod.a.empty.SQL",
+        "Expected":  "SQL rejects invalid name without truncation",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.PaymentMethod.a.space.SQL",
+        "Expected":  "SQL rejects invalid name without truncation",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.PaymentMethod.a.tab.SQL",
+        "Expected":  "SQL rejects invalid name without truncation",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.PaymentMethod.a.maxplus1.SQL",
+        "Expected":  "SQL rejects invalid name without truncation",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.PaymentMethod.a.max.SQL",
+        "Expected":  "Maximum name length persists",
+        "Actual":  "Maximum name accepted",
+        "Status":  "PASS"
+    },
+    {
+        "Id":  "T08-K02.PaymentMethod.b.duplicate.SQL",
+        "Expected":  "Duplicate code rejected",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.PaymentMethod.b.malformed.SQL",
+        "Expected":  "Malformed code rejected",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.DeliveryPartner.a.empty.SQL",
+        "Expected":  "SQL rejects invalid name without truncation",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.DeliveryPartner.a.space.SQL",
+        "Expected":  "SQL rejects invalid name without truncation",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.DeliveryPartner.a.tab.SQL",
+        "Expected":  "SQL rejects invalid name without truncation",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.DeliveryPartner.a.maxplus1.SQL",
+        "Expected":  "SQL rejects invalid name without truncation",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.DeliveryPartner.a.max.SQL",
+        "Expected":  "Maximum name length persists",
+        "Actual":  "Maximum name accepted",
+        "Status":  "PASS"
+    },
+    {
+        "Id":  "T08-K02.DeliveryPartner.b.duplicate.SQL",
+        "Expected":  "Duplicate code rejected",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.DeliveryPartner.b.malformed.SQL",
+        "Expected":  "Malformed code rejected",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.ExpenseCategory.a.empty.SQL",
+        "Expected":  "SQL rejects invalid name without truncation",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.ExpenseCategory.a.space.SQL",
+        "Expected":  "SQL rejects invalid name without truncation",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.ExpenseCategory.a.tab.SQL",
+        "Expected":  "SQL rejects invalid name without truncation",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.ExpenseCategory.a.maxplus1.SQL",
+        "Expected":  "SQL rejects invalid name without truncation",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.ExpenseCategory.a.max.SQL",
+        "Expected":  "Maximum name length persists",
+        "Actual":  "Maximum name accepted",
+        "Status":  "PASS"
+    },
+    {
+        "Id":  "T08-K02.ExpenseCategory.b.duplicate.SQL",
+        "Expected":  "Duplicate code rejected",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.ExpenseCategory.b.malformed.SQL",
+        "Expected":  "Malformed code rejected",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.Position.a.empty.SQL",
+        "Expected":  "SQL rejects invalid name without truncation",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.Position.a.space.SQL",
+        "Expected":  "SQL rejects invalid name without truncation",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.Position.a.tab.SQL",
+        "Expected":  "SQL rejects invalid name without truncation",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.Position.a.maxplus1.SQL",
+        "Expected":  "SQL rejects invalid name without truncation",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.Position.a.max.SQL",
+        "Expected":  "Maximum name length persists",
+        "Actual":  "Maximum name accepted",
+        "Status":  "PASS"
+    },
+    {
+        "Id":  "T08-K02.Position.b.duplicate.SQL",
+        "Expected":  "Duplicate code rejected",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.Position.b.malformed.SQL",
+        "Expected":  "Malformed code rejected",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.Shift.a.empty.SQL",
+        "Expected":  "SQL rejects invalid name without truncation",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.Shift.a.space.SQL",
+        "Expected":  "SQL rejects invalid name without truncation",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.Shift.a.tab.SQL",
+        "Expected":  "SQL rejects invalid name without truncation",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.Shift.a.maxplus1.SQL",
+        "Expected":  "SQL rejects invalid name without truncation",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.Shift.a.max.SQL",
+        "Expected":  "Maximum name length persists",
+        "Actual":  "Maximum name accepted",
+        "Status":  "PASS"
+    },
+    {
+        "Id":  "T08-K02.Shift.b.duplicate.SQL",
+        "Expected":  "Duplicate code rejected",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.Shift.b.malformed.SQL",
+        "Expected":  "Malformed code rejected",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.ncc.NULL.SQL",
+        "Expected":  "Invalid phone rejected, no truncation",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.ncc.empty.SQL",
+        "Expected":  "Invalid phone rejected, no truncation",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.ncc.length16.SQL",
+        "Expected":  "Invalid phone rejected, no truncation",
+        "Actual":  "Expected rejection absent; command accepted",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K03.a.ratio.minus1.SQL",
+        "Expected":  "Invalid boundary rejected, transaction0",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K03.a.ratio.above100.SQL",
+        "Expected":  "Invalid boundary rejected, transaction0",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K03.a.allowance.minus1.SQL",
+        "Expected":  "Invalid boundary rejected, transaction0",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K03.a.factor.below1.SQL",
+        "Expected":  "Invalid boundary rejected, transaction0",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K03.a.shift.equal.SQL",
+        "Expected":  "Invalid boundary rejected, transaction0",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K07.a.TC005.type.raw",
+        "Expected":  "Even unused system row protected",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K07.a.TC005.code.raw",
+        "Expected":  "Even unused system row protected",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K07.a.TC005.delete.raw",
+        "Expected":  "Even unused system row protected",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K07.a.TC005.rename.raw",
+        "Expected":  "System expense name remains editable",
+        "Actual":  "Rename accepted; mapping retained",
+        "Status":  "PASS"
+    },
+    {
+        "Id":  "T08-K07.a.TC011.type.raw",
+        "Expected":  "Even unused system row protected",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K07.a.TC011.code.raw",
+        "Expected":  "Even unused system row protected",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K07.a.TC011.delete.raw",
+        "Expected":  "Even unused system row protected",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K07.a.TC011.rename.raw",
+        "Expected":  "System expense name remains editable",
+        "Actual":  "Rename accepted; mapping retained",
+        "Status":  "PASS"
+    },
+    {
+        "Id":  "T08-K07.a.TC012.type.raw",
+        "Expected":  "Even unused system row protected",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K07.a.TC012.code.raw",
+        "Expected":  "Even unused system row protected",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K07.a.TC012.delete.raw",
+        "Expected":  "Even unused system row protected",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K07.a.TC012.rename.raw",
+        "Expected":  "System expense name remains editable",
+        "Actual":  "Rename accepted; mapping retained",
+        "Status":  "PASS"
+    },
+    {
+        "Id":  "T08-K08.a.ADMIN.Checkout.SQL",
+        "Expected":  "Selector enforces role/purpose and excludes unsupported/PT010",
+        "Actual":  "Exception calling \"ExecuteReader\" with \"0\" argument(s): \"Incorrect syntax near \u0027-\u0027.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K08.a.ADMIN.Inventory.SQL",
+        "Expected":  "Selector enforces role/purpose and excludes unsupported/PT010",
+        "Actual":  "Exception calling \"ExecuteReader\" with \"0\" argument(s): \"Incorrect syntax near \u0027-\u0027.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K09.lookup.ADMIN.ProductCategory.SQL",
+        "Expected":  "Lookup role and field projection match contract",
+        "Actual":  "Exception calling \"ExecuteReader\" with \"0\" argument(s): \"Incorrect syntax near \u0027-\u0027.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K09.lookup.ADMIN.Supplier.SQL",
+        "Expected":  "Lookup role and field projection match contract",
+        "Actual":  "Exception calling \"ExecuteReader\" with \"0\" argument(s): \"Incorrect syntax near \u0027-\u0027.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K09.lookup.ADMIN.DeliveryPartner.SQL",
+        "Expected":  "Lookup role and field projection match contract",
+        "Actual":  "Exception calling \"ExecuteReader\" with \"0\" argument(s): \"Incorrect syntax near \u0027-\u0027.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K09.lookup.ADMIN.ExpenseCategory.SQL",
+        "Expected":  "Lookup role and field projection match contract",
+        "Actual":  "Exception calling \"ExecuteReader\" with \"0\" argument(s): \"Incorrect syntax near \u0027-\u0027.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K09.lookup.ADMIN.Position.SQL",
+        "Expected":  "Lookup role and field projection match contract",
+        "Actual":  "Exception calling \"ExecuteReader\" with \"0\" argument(s): \"Incorrect syntax near \u0027-\u0027.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K09.lookup.ADMIN.Shift.SQL",
+        "Expected":  "Lookup role and field projection match contract",
+        "Actual":  "Exception calling \"ExecuteReader\" with \"0\" argument(s): \"Incorrect syntax near \u0027-\u0027.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K08.a.CASH.Checkout.SQL",
+        "Expected":  "Selector enforces role/purpose and excludes unsupported/PT010",
+        "Actual":  "Exception calling \"ExecuteReader\" with \"0\" argument(s): \"Incorrect syntax near \u0027-\u0027.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K08.a.CASH.Inventory.SQL",
+        "Expected":  "Selector enforces role/purpose and excludes unsupported/PT010",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K09.lookup.CASH.ProductCategory.SQL",
+        "Expected":  "Lookup role and field projection match contract",
+        "Actual":  "Exception calling \"ExecuteReader\" with \"0\" argument(s): \"Incorrect syntax near \u0027-\u0027.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K09.lookup.CASH.Supplier.SQL",
+        "Expected":  "Lookup role and field projection match contract",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K09.lookup.CASH.DeliveryPartner.SQL",
+        "Expected":  "Lookup role and field projection match contract",
+        "Actual":  "Exception calling \"ExecuteReader\" with \"0\" argument(s): \"Incorrect syntax near \u0027-\u0027.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K09.lookup.CASH.ExpenseCategory.SQL",
+        "Expected":  "Lookup role and field projection match contract",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K09.lookup.CASH.Position.SQL",
+        "Expected":  "Lookup role and field projection match contract",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K09.lookup.CASH.Shift.SQL",
+        "Expected":  "Lookup role and field projection match contract",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K08.a.STORE.Checkout.SQL",
+        "Expected":  "Selector enforces role/purpose and excludes unsupported/PT010",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K08.a.STORE.Inventory.SQL",
+        "Expected":  "Selector enforces role/purpose and excludes unsupported/PT010",
+        "Actual":  "Exception calling \"ExecuteReader\" with \"0\" argument(s): \"Incorrect syntax near \u0027-\u0027.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K09.lookup.STORE.ProductCategory.SQL",
+        "Expected":  "Lookup role and field projection match contract",
+        "Actual":  "Exception calling \"ExecuteReader\" with \"0\" argument(s): \"Incorrect syntax near \u0027-\u0027.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K09.lookup.STORE.Supplier.SQL",
+        "Expected":  "Lookup role and field projection match contract",
+        "Actual":  "Exception calling \"ExecuteReader\" with \"0\" argument(s): \"Incorrect syntax near \u0027-\u0027.\"",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K09.lookup.STORE.DeliveryPartner.SQL",
+        "Expected":  "Lookup role and field projection match contract",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K09.lookup.STORE.ExpenseCategory.SQL",
+        "Expected":  "Lookup role and field projection match contract",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K09.lookup.STORE.Position.SQL",
+        "Expected":  "Lookup role and field projection match contract",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K09.lookup.STORE.Shift.SQL",
+        "Expected":  "Lookup role and field projection match contract",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.fk.actorMissing",
+        "Expected":  "Unknown actor rejected",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.fk.stampWrong",
+        "Expected":  "Wrong security stamp rejected",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K02.fk.productMissingCategory",
+        "Expected":  "Invalid category FK rejected",
+        "Actual":  "Transaction remained after error",
+        "Status":  "FAIL"
+    },
+    {
+        "Id":  "T08-K06.a",
+        "Expected":  "Clean target includes all system rows/mappings",
+        "Actual":  "Three mappings, default methods and roles from clean runner fixture present",
+        "Status":  "PASS"
+    }
+]

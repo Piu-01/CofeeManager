@@ -1,0 +1,45 @@
+{
+  "Status": "PASS",
+  "Database": "CoffeeManager_Test_G02_20261017_161110_93dc93f3",
+  "Role": "runtime",
+  "Checks": [
+    {
+      "Id": "PkcsLoadObservation",
+      "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.WindowsDesktop.App\\10.0.13\\System.Security.Cryptography.Pkcs.dll",
+      "FileVersion": "10.0.1326.50504",
+      "InformationalVersion": "10.0.13\u002B4099f83977f4d29604a9aeb971fb0a7bc1d5f699"
+    },
+    {
+      "Id": "RealWindowsSqlIdentity",
+      "Status": "PASS",
+      "WindowsIdentity": "LAPTOP-79UNRIRC\\CMG02R_93dc93f3",
+      "SqlLogin": "LAPTOP-79UNRIRC\\CMG02R_93dc93f3",
+      "DatabaseUser": "LAPTOP-79UNRIRC\\CMG02R_93dc93f3",
+      "SetupRole": 0,
+      "RuntimeRole": 1,
+      "SqlSysadmin": 0
+    },
+    {
+      "Id": "RuntimeSetupCheckDenied",
+      "Status": "PASS",
+      "SqlError": 229
+    },
+    {
+      "Id": "RuntimeRawCredentialsDenied",
+      "Status": "PASS",
+      "SqlError": 229
+    },
+    {
+      "Id": "RuntimeBootstrapDenied",
+      "Status": "PASS",
+      "SqlError": 229
+    },
+    {
+      "Id": "ActualPatchedPkcsLoaded",
+      "Status": "PASS",
+      "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.WindowsDesktop.App\\10.0.13\\System.Security.Cryptography.Pkcs.dll",
+      "FileVersion": "10.0.1326.50504",
+      "InformationalVersion": "10.0.13\u002B4099f83977f4d29604a9aeb971fb0a7bc1d5f699"
+    }
+  ]
+}

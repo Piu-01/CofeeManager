@@ -1,0 +1,54 @@
+[
+    {
+        "Path":  "clone-after-save-manifest.json",
+        "Hash":  "229861AAFAA370880FE2D66FCEF931716ADF69498D8DBB6AB5267A5660BD03FE"
+    },
+    {
+        "Path":  "dependency-finding.json",
+        "Hash":  "7A34A65B2998267A0021DD65EDCD1884841593A9496B30969ACD4B9630EB55AB"
+    },
+    {
+        "Path":  "final-source-check.json",
+        "Hash":  "E1A3F61EF7A9D2F1CE0E261BEE6E01DDCC5A7C52A74877DA1CC5F5CC7531EF3E"
+    },
+    {
+        "Path":  "fresh-clone-build.txt",
+        "Hash":  "763880DEEEC31B4F3A031B94E60AD91F3D1B680C18B7F0C67705EBE83008217D"
+    },
+    {
+        "Path":  "G02B03B06Designer.ps1",
+        "Hash":  "1408931342953E1F7B658197F39C97753D95238F07BC6AA0056465710BA6D1D6"
+    },
+    {
+        "Path":  "integrity.json",
+        "Hash":  "5271BA695BD5FA2D43D030ADDC3D2F1632F5BAD6534EC837F92D5FEA5C114B7C"
+    },
+    {
+        "Path":  "owned-vs-cleanup.json",
+        "Hash":  "2676D6A425EEEEB9B17799DCFA776A355BE249DEF21B7A21A9BC5F0827CD51B0"
+    },
+    {
+        "Path":  "post-save-probe-build.txt",
+        "Hash":  "13EE396A987872789E5B7F50E7602E4C0DFEA07A68B774A1FB9FAE80148CBC74"
+    },
+    {
+        "Path":  "release-build.txt",
+        "Hash":  "398480B52783BA41DBA84AD75353934AB03E8643DC4AEA4C03A00834A9FD696B"
+    },
+    {
+        "Path":  "G02AfterSaveUi\\G02AfterSaveUi.csproj",
+        "Hash":  "A47AC21D4508773D1E859D7F55B4A27340FAAA78CD8E7E5393ED5799545B3385"
+    },
+    {
+        "Path":  "G02AfterSaveUi\\Program.cs",
+        "Hash":  "E59FF13DABF289EF447F63C28F53B57A8C46B252B25E0498BE1C3051C52DF3FB"
+    },
+    {
+        "Path":  "G02B03Bootstrap\\G02B03Bootstrap.csproj",
+        "Hash":  "97DFF1881FE7FF4B8BE503E0FA7BDEA2194FF1056949E319C176277F5711E2F5"
+    },
+    {
+        "Path":  "G02B03Bootstrap\\Program.cs",
+        "Hash":  "51F5B6FCCD400610DA1ED3F86A928C6FEF959DD9C8699D2891314DDE9B0B6FC6"
+    }
+]

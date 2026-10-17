@@ -1,0 +1,80 @@
+[
+  {
+    "Id": "T08-K02.Supplier.duplicate.directService",
+    "Expected": "Invalid code rejected, existing catalog row/revision unchanged",
+    "Actual": "Duplicate code rejected by procedure via direct service; row/revision unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.Supplier.malformed.directService",
+    "Expected": "Invalid code rejected, existing catalog row/revision unchanged",
+    "Actual": "BAD00 rejected by direct service validation; row/revision unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.PaymentMethod.duplicate.directService",
+    "Expected": "Invalid code rejected, existing catalog row/revision unchanged",
+    "Actual": "Duplicate code rejected by procedure via direct service; row/revision unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.PaymentMethod.malformed.directService",
+    "Expected": "Invalid code rejected, existing catalog row/revision unchanged",
+    "Actual": "BAD00 rejected by direct service validation; row/revision unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.DeliveryPartner.duplicate.directService",
+    "Expected": "Invalid code rejected, existing catalog row/revision unchanged",
+    "Actual": "Duplicate code rejected by procedure via direct service; row/revision unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.DeliveryPartner.malformed.directService",
+    "Expected": "Invalid code rejected, existing catalog row/revision unchanged",
+    "Actual": "BAD00 rejected by direct service validation; row/revision unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.ExpenseCategory.duplicate.directService",
+    "Expected": "Invalid code rejected, existing catalog row/revision unchanged",
+    "Actual": "Duplicate code rejected by procedure via direct service; row/revision unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.ExpenseCategory.malformed.directService",
+    "Expected": "Invalid code rejected, existing catalog row/revision unchanged",
+    "Actual": "BAD00 rejected by direct service validation; row/revision unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.Position.duplicate.directService",
+    "Expected": "Invalid code rejected, existing catalog row/revision unchanged",
+    "Actual": "Duplicate code rejected by procedure via direct service; row/revision unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.Position.malformed.directService",
+    "Expected": "Invalid code rejected, existing catalog row/revision unchanged",
+    "Actual": "BAD00 rejected by direct service validation; row/revision unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.Shift.duplicate.directService",
+    "Expected": "Invalid code rejected, existing catalog row/revision unchanged",
+    "Actual": "Duplicate code rejected by procedure via direct service; row/revision unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.Shift.malformed.directService",
+    "Expected": "Invalid code rejected, existing catalog row/revision unchanged",
+    "Actual": "BAD00 rejected by direct service validation; row/revision unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.ProductCategory.code.generated",
+    "Expected": "DM ignores caller code and allocates only server code",
+    "Actual": "Client code not used; server allocatedDM###; unused fixture deleted; receipt retained",
+    "Status": "PASS"
+  }
+]

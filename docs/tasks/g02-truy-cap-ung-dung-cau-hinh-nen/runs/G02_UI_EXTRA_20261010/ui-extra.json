@@ -1,0 +1,92 @@
+[
+  {
+    "Id": "T07-K01.ready.CASH",
+    "Expected": "Start page appears after Shown/recheck finishes",
+    "Actual": "One native start control, role/name matched; screenshot after readiness",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T07-K02.direct.CASH",
+    "Expected": "Unauthorized navigation keeps current page",
+    "Actual": "Denied, current start control retained",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T07-K01.ready.STORE",
+    "Expected": "Start page appears after Shown/recheck finishes",
+    "Actual": "One native start control, role/name matched; screenshot after readiness",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T07-K02.direct.STORE",
+    "Expected": "Unauthorized navigation keeps current page",
+    "Actual": "Denied, current start control retained",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T07-K01.ready.ADMIN",
+    "Expected": "Start page appears after Shown/recheck finishes",
+    "Actual": "One native start control, role/name matched; screenshot after readiness",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T07-K06.exact-cancel.ProductCategory",
+    "Expected": "No catalog row/field/revision changes on dirty cancel",
+    "Actual": "Wait timeout",
+    "Status": "FAIL"
+  },
+  {
+    "Id": "T07-K06.exact-cancel.Supplier",
+    "Expected": "No catalog row/field/revision changes on dirty cancel",
+    "Actual": "Wait timeout",
+    "Status": "FAIL"
+  },
+  {
+    "Id": "T07-K06.exact-cancel.PaymentMethod",
+    "Expected": "No catalog row/field/revision changes on dirty cancel",
+    "Actual": "Sequence contains more than one element",
+    "Status": "FAIL"
+  },
+  {
+    "Id": "T07-K06.exact-cancel.DeliveryPartner",
+    "Expected": "No catalog row/field/revision changes on dirty cancel",
+    "Actual": "Sequence contains more than one element",
+    "Status": "FAIL"
+  },
+  {
+    "Id": "T07-K06.exact-cancel.ExpenseCategory",
+    "Expected": "No catalog row/field/revision changes on dirty cancel",
+    "Actual": "Sequence contains more than one element",
+    "Status": "FAIL"
+  },
+  {
+    "Id": "T07-K06.exact-cancel.Position",
+    "Expected": "No catalog row/field/revision changes on dirty cancel",
+    "Actual": "Sequence contains more than one element",
+    "Status": "FAIL"
+  },
+  {
+    "Id": "T07-K06.exact-cancel.Shift",
+    "Expected": "No catalog row/field/revision changes on dirty cancel",
+    "Actual": "Sequence contains more than one element",
+    "Status": "FAIL"
+  },
+  {
+    "Id": "T07-K04.keyboard.125",
+    "Expected": "Tab/ShiftTab change focus; Enter does not save editor",
+    "Actual": "Sequence contains more than one element",
+    "Status": "FAIL"
+  },
+  {
+    "Id": "T07-K04.restore.125.1280",
+    "Expected": "Minimize/restore preserves exact viewport",
+    "Actual": "Restored {Width=1280, Height=720}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T07-K04.restore.125.1366",
+    "Expected": "Minimize/restore preserves exact viewport",
+    "Actual": "Restored {Width=1366, Height=768}",
+    "Status": "PASS"
+  }
+]

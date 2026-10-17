@@ -1,0 +1,104 @@
+[
+  {
+    "Id": "B03.Bootstrap.SQL.NULL",
+    "Expected": "Validate full original input before writes; durable atomic Completed only for valid canonical ASCII",
+    "Actual": "SQL51404, unchanged Pending/NV/account/CV, transaction0:0; fixture=CoffeeManager_Test_G02_20261016_210539_81b4e04e",
+    "Status": "PASS"
+  },
+  {
+    "Id": "B03.Bootstrap.SQL.Empty",
+    "Expected": "Validate full original input before writes; durable atomic Completed only for valid canonical ASCII",
+    "Actual": "SQL51404, unchanged Pending/NV/account/CV, transaction0:0; fixture=CoffeeManager_Test_G02_20261016_210539_81b4e04e",
+    "Status": "PASS"
+  },
+  {
+    "Id": "B03.Bootstrap.SQL.Space",
+    "Expected": "Validate full original input before writes; durable atomic Completed only for valid canonical ASCII",
+    "Actual": "SQL51404, unchanged Pending/NV/account/CV, transaction0:0; fixture=CoffeeManager_Test_G02_20261016_210539_81b4e04e",
+    "Status": "PASS"
+  },
+  {
+    "Id": "B03.Bootstrap.SQL.OuterLeft",
+    "Expected": "Validate full original input before writes; durable atomic Completed only for valid canonical ASCII",
+    "Actual": "SQL51404, unchanged Pending/NV/account/CV, transaction0:0; fixture=CoffeeManager_Test_G02_20261016_210539_81b4e04e",
+    "Status": "PASS"
+  },
+  {
+    "Id": "B03.Bootstrap.SQL.OuterRight",
+    "Expected": "Validate full original input before writes; durable atomic Completed only for valid canonical ASCII",
+    "Actual": "SQL51404, unchanged Pending/NV/account/CV, transaction0:0; fixture=CoffeeManager_Test_G02_20261016_210539_81b4e04e",
+    "Status": "PASS"
+  },
+  {
+    "Id": "B03.Bootstrap.SQL.InnerSpace",
+    "Expected": "Validate full original input before writes; durable atomic Completed only for valid canonical ASCII",
+    "Actual": "SQL51404, unchanged Pending/NV/account/CV, transaction0:0; fixture=CoffeeManager_Test_G02_20261016_210539_81b4e04e",
+    "Status": "PASS"
+  },
+  {
+    "Id": "B03.Bootstrap.SQL.Tab",
+    "Expected": "Validate full original input before writes; durable atomic Completed only for valid canonical ASCII",
+    "Actual": "SQL51404, unchanged Pending/NV/account/CV, transaction0:0; fixture=CoffeeManager_Test_G02_20261016_210539_81b4e04e",
+    "Status": "PASS"
+  },
+  {
+    "Id": "B03.Bootstrap.SQL.Slash",
+    "Expected": "Validate full original input before writes; durable atomic Completed only for valid canonical ASCII",
+    "Actual": "SQL51404, unchanged Pending/NV/account/CV, transaction0:0; fixture=CoffeeManager_Test_G02_20261016_210539_81b4e04e",
+    "Status": "PASS"
+  },
+  {
+    "Id": "B03.Bootstrap.SQL.Vietnamese",
+    "Expected": "Validate full original input before writes; durable atomic Completed only for valid canonical ASCII",
+    "Actual": "SQL51404, unchanged Pending/NV/account/CV, transaction0:0; fixture=CoffeeManager_Test_G02_20261016_210539_81b4e04e",
+    "Status": "PASS"
+  },
+  {
+    "Id": "B03.Bootstrap.SQL.FullWidth",
+    "Expected": "Validate full original input before writes; durable atomic Completed only for valid canonical ASCII",
+    "Actual": "SQL51404, unchanged Pending/NV/account/CV, transaction0:0; fixture=CoffeeManager_Test_G02_20261016_210539_81b4e04e",
+    "Status": "PASS"
+  },
+  {
+    "Id": "B03.Bootstrap.SQL.Emoji",
+    "Expected": "Validate full original input before writes; durable atomic Completed only for valid canonical ASCII",
+    "Actual": "SQL51404, unchanged Pending/NV/account/CV, transaction0:0; fixture=CoffeeManager_Test_G02_20261016_210539_81b4e04e",
+    "Status": "PASS"
+  },
+  {
+    "Id": "B03.Bootstrap.SQL.Length51",
+    "Expected": "Validate full original input before writes; durable atomic Completed only for valid canonical ASCII",
+    "Actual": "SQL51404, unchanged Pending/NV/account/CV, transaction0:0; fixture=CoffeeManager_Test_G02_20261016_210539_81b4e04e",
+    "Status": "PASS"
+  },
+  {
+    "Id": "B03.Bootstrap.SQL.Length1001",
+    "Expected": "Validate full original input before writes; durable atomic Completed only for valid canonical ASCII",
+    "Actual": "SQL51404, unchanged Pending/NV/account/CV, transaction0:0; fixture=CoffeeManager_Test_G02_20261016_210539_81b4e04e",
+    "Status": "PASS"
+  },
+  {
+    "Id": "B03.Bootstrap.Valid1.default",
+    "Expected": "Validate full original input before writes; durable atomic Completed only for valid canonical ASCII",
+    "Actual": "Exact ASCII length, Completed, login case/outerSpace normalization valid; fixture=CoffeeManager_Test_G02_20261016_210544_fb0f4b00",
+    "Status": "PASS"
+  },
+  {
+    "Id": "B03.Bootstrap.Valid50.default",
+    "Expected": "Validate full original input before writes; durable atomic Completed only for valid canonical ASCII",
+    "Actual": "Exact ASCII length, Completed, login case/outerSpace normalization valid; fixture=CoffeeManager_Test_G02_20261016_210545_5c3c5d92",
+    "Status": "PASS"
+  },
+  {
+    "Id": "B03.Bootstrap.Valid50.Latin1_General_100_CI_AS",
+    "Expected": "Validate full original input before writes; durable atomic Completed only for valid canonical ASCII",
+    "Actual": "Exact ASCII length, Completed, login case/outerSpace normalization valid; fixture=CoffeeManager_Test_G02_20261016_210547_0214e4ac",
+    "Status": "PASS"
+  },
+  {
+    "Id": "B03.Bootstrap.Valid50.Latin1_General_100_CS_AS",
+    "Expected": "Validate full original input before writes; durable atomic Completed only for valid canonical ASCII",
+    "Actual": "Exact ASCII length, Completed, login case/outerSpace normalization valid; fixture=CoffeeManager_Test_G02_20261016_210549_86b5a6a2",
+    "Status": "PASS"
+  }
+]

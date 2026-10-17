@@ -1,0 +1,7 @@
+{
+    "Id":  "T08-K06.b.demoRerun.currentChecksum",
+    "Database":  "CoffeeManager_Test_G02_20261016_203440_cf630de7",
+    "Expected":  "AlreadyApplied; custom name/support and complete seed/history unchanged",
+    "Actual":  "AlreadyApplied, complete DB snapshot unchanged including custom payroll name, disabledPT001 and seed financial history",
+    "Status":  "PASS"
+}

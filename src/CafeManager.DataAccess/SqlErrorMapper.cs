@@ -37,7 +37,21 @@ internal static class SqlErrorMapper
         [51110] = "Công nợ không tồn tại.", [51111] = "Số tiền trả nợ không hợp lệ.",
         [51112] = "Chỉ chốt phiếu kiểm kê hôm nay chưa điều chỉnh.", [51113] = "Phiếu kiểm kê chưa có chi tiết.",
         [51114] = "Tồn đã thay đổi sau khi đếm; cần lấy lại snapshot.", [51115] = "Không sửa chi tiết kiểm kê đã chốt.",
-        [51301] = "Nguồn cấp mã chưa được hỗ trợ.", [51302] = "Đã hết giới hạn cấp mã; liên hệ quản trị."
+        [51301] = "Nguồn cấp mã chưa được hỗ trợ.", [51302] = "Đã hết giới hạn cấp mã; liên hệ quản trị.",
+        [51401] = "Thiết lập quản trị đã hoàn tất hoặc không còn được phép.",
+        [51402] = "Cần xác nhận admin hiện tại trước khi hoàn tất thiết lập.",
+        [51403] = "Dữ liệu hoặc nhân viên được chọn không hợp lệ.",
+        [51404] = "Tên đăng nhập không hợp lệ hoặc dữ liệu cũ cần xử lý xung đột.",
+        [51405] = "Thông tin tài khoản đã thay đổi; tải lại hoặc đăng nhập lại.",
+        [51406] = "Không đủ quyền thiết lập.", [51407] = "Cấu hình thiết lập xung đột; cần người cài kiểm tra.",
+        [51501] = "Dữ liệu danh mục không hợp lệ; kiểm tra trường nhập.",
+        [51502] = "Danh mục hệ thống hoặc có lịch sử được bảo vệ; không thể xóa/đổi loại.",
+        [51503] = "Danh mục đã thay đổi hoặc bị xóa ở phiên khác; tải lại trước khi lưu.",
+        [51504] = "Phương thức này chưa được hỗ trợ; PT010 không được phép dùng.",
+        [51505] = "Tài khoản hoặc quyền đã thay đổi; đăng nhập lại.",
+        [51506] = "Mã danh mục không hợp lệ hoặc đã tồn tại.",
+        [51507] = "Dữ liệu danh mục cũ xung đột; cần người cài kiểm tra.",
+        [51508] = "Mã yêu cầu đã được dùng với dữ liệu khác; cần đối chiếu."
     };
 
     public static DataError Map(SqlException exception, bool writing)

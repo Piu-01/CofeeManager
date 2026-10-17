@@ -1,0 +1,18 @@
+{
+  "Database": "CoffeeManager_Test_G02_20261011_171040_3f1e9b28",
+  "Dpi": 120,
+  "Results": [
+    {
+      "Id": "T08-K01.concurrent.native.update-update",
+      "Expected": "Stale editor keeps draft; reload explicit and no overwrite",
+      "Actual": "Native stale save retained draft/error, SQL winner unchanged; explicit reload loaded winner in-place",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T08-K01.concurrent.native.update-delete",
+      "Expected": "Stale editor keeps draft; reload explicit and no overwrite",
+      "Actual": "Native stale save retained draft/error, SQL winner unchanged; explicit reload hidSave for deleted row",
+      "Status": "PASS"
+    }
+  ]
+}

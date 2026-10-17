@@ -1,0 +1,44 @@
+{
+    "Approved":  "User xác nhận; B01/B02 debug includes regression",
+    "At":  "2026-10-11T17:15:22.1448003+07:00",
+    "DotnetRun":  "20261011_171039_f2e46bea",
+    "DotnetExit":  0,
+    "DotnetCount":  196,
+    "DotnetSourceUnchanged":  true,
+    "FilesChecked":  97,
+    "ChangesAfterNativeAndSql":  [
+
+                                 ],
+    "Schema":  {
+                   "value":  [
+                                 {
+                                     "Version":  1,
+                                     "Checksum":  "0C4300BB58CE9E29A3A8E2B814AEB1F259F51F2DC0251142CD6479D23D44036C"
+                                 },
+                                 {
+                                     "Version":  2,
+                                     "Checksum":  "0C547F91BF3B99E08BFAD01A108FFEF1CC2AD6C853663D76A3714EF2FDE09E52"
+                                 },
+                                 {
+                                     "Version":  3,
+                                     "Checksum":  "6054F75F7285190879ED60EABA8A5D985DBD56DD16712049ED11005A7D0EA49D"
+                                 }
+                             ],
+                   "Count":  3
+               },
+    "SqlEnvironment":  {
+                           "value":  [
+                                         {
+                                             "SqlVersion":  "17.0.1000.7",
+                                             "DatabaseName":  "CoffeeManager_Test_G02_20261011_171040_3f1e9b28"
+                                         }
+                                     ],
+                           "Count":  1
+                       },
+    "Sdk":  "10.0.401",
+    "BuildDebug":  "Succeeded, 0 warnings / 0 errors (conversation tool output)",
+    "BuildRelease":  "Succeeded, 0 warnings / 0 errors (conversation tool output)",
+    "Native":  "5 PASS; host has one unused-field compile warning, product builds 0 warnings",
+    "Phone":  "10 PASS; first harness attempt preserved separately",
+    "SourceCommit":  "G02 uncommitted"
+}

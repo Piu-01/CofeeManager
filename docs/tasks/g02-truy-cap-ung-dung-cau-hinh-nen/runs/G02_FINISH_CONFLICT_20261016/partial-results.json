@@ -1,0 +1,14 @@
+[
+  {
+    "Id": "T08-K01.concurrent.native.update-update",
+    "Expected": "Stale editor keeps draft; reload explicit and no overwrite",
+    "Actual": "Native stale save retained draft/error, SQL winner unchanged; explicit reload loaded winner in-place",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K01.concurrent.native.update-delete",
+    "Expected": "Stale editor keeps draft; reload explicit and no overwrite",
+    "Actual": "Native stale save retained draft/error, SQL winner unchanged; explicit reload hidSave for deleted row",
+    "Status": "PASS"
+  }
+]

@@ -1,0 +1,22 @@
+{
+    "At":  "2026-10-17T16:12:52.5522449+07:00",
+    "Runner":  "20261017_155948_e814a21e",
+    "Xunit":  "484/484PASS",
+    "SourceFiles":  99,
+    "SourceChanges":  [
+
+                      ],
+    "SqlSupplement":  "83/83PASS",
+    "UiBoundary":  "15/15PASS",
+    "WindowsRun":  "G02_WINDOWS_REAL_R7_20261017",
+    "WindowsRecords":  8,
+    "WindowsStatus":  "PASS",
+    "DeployedExeDirectory":  "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\opencode\\G02-Windows-20261017_161145_d4434b36",
+    "ProductWinFormsSHA256":  "82B8DED4D1567121612267F90F3B7E9C7431148A2E39925083086DA7017C1F9F",
+    "DeployedWinFormsSHA256":  "82B8DED4D1567121612267F90F3B7E9C7431148A2E39925083086DA7017C1F9F",
+    "TemporaryWindowsAccountsRemaining":  0,
+    "TemporaryDatabaseUsersRemaining":  0,
+    "TemporaryServerLoginsRemaining":  0,
+    "PkcsActualVersion":  "10.0.13",
+    "Commit":  "G02 remains uncommitted; not authorized to commit/push"
+}

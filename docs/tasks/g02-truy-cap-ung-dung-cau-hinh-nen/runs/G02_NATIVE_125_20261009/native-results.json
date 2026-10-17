@@ -1,0 +1,217 @@
+{
+  "Results": [
+    {
+      "Id": "T06-K07.a.mask-session",
+      "Status": "PASS",
+      "Expected": "Login hides password; session excludes credentials",
+      "Actual": "Mask true, no credential property, native screenshot"
+    },
+    {
+      "Id": "T07-K01.a.ADMIN",
+      "Status": "PASS",
+      "Expected": "Native login opens one Main with correct identity",
+      "Actual": "Main=1, role ADMIN, identity label matched"
+    },
+    {
+      "Id": "T07-K02.a.ADMIN",
+      "Status": "PASS",
+      "Expected": "Menu and direct navigate enforce role",
+      "Actual": "Role-specific menu; unauthorized navigation stays on existing control"
+    },
+    {
+      "Id": "T07-K04.viewport.120.1280",
+      "Status": "PASS",
+      "Expected": "Requested native size and menu/content usable",
+      "Actual": "Actual 1280x720, DeviceDpi=120; visual screenshot requires inspection"
+    },
+    {
+      "Id": "T07-K04.viewport.120.1366",
+      "Status": "PASS",
+      "Expected": "Requested native size and menu/content usable",
+      "Actual": "Actual 1366x768, DeviceDpi=120; visual screenshot requires inspection"
+    },
+    {
+      "Id": "T07-K03.a.ADMIN",
+      "Status": "PASS",
+      "Expected": "100 transitions preserve lazy instances",
+      "Actual": "100 transitions, cached 2-\u003E2 same instances, visible child1, SQL connections short-lived"
+    },
+    {
+      "Id": "T07-K06.a.ProductCategory",
+      "Status": "PASS",
+      "Expected": "Dirty editor cancel does not write",
+      "Actual": "Dirty dialog canceled with confirmation; persistent row count unchanged"
+    },
+    {
+      "Id": "T07-K06.a.Supplier",
+      "Status": "PASS",
+      "Expected": "Dirty editor cancel does not write",
+      "Actual": "Dirty dialog canceled with confirmation; persistent row count unchanged"
+    },
+    {
+      "Id": "T07-K06.a.PaymentMethod",
+      "Status": "PASS",
+      "Expected": "Dirty editor cancel does not write",
+      "Actual": "Dirty dialog canceled with confirmation; persistent row count unchanged"
+    },
+    {
+      "Id": "T07-K06.a.DeliveryPartner",
+      "Status": "PASS",
+      "Expected": "Dirty editor cancel does not write",
+      "Actual": "Dirty dialog canceled with confirmation; persistent row count unchanged"
+    },
+    {
+      "Id": "T07-K06.a.ExpenseCategory",
+      "Status": "FAIL",
+      "Expected": "Dirty editor cancel does not write",
+      "Actual": "Cancel wrote rows"
+    },
+    {
+      "Id": "T07-K06.a.Position",
+      "Status": "PASS",
+      "Expected": "Dirty editor cancel does not write",
+      "Actual": "Dirty dialog canceled with confirmation; persistent row count unchanged"
+    },
+    {
+      "Id": "T07-K06.a.Shift",
+      "Status": "PASS",
+      "Expected": "Dirty editor cancel does not write",
+      "Actual": "Dirty dialog canceled with confirmation; persistent row count unchanged"
+    },
+    {
+      "Id": "T07-K06.b",
+      "Status": "PASS",
+      "Expected": "NCC save refreshes owning tab and preserves filter",
+      "Actual": "Save closed dialog, NCC row appears, selected tab/filter unchanged"
+    },
+    {
+      "Id": "T07-K05.a.repeat-read",
+      "Status": "FAIL",
+      "Expected": "Slow read locks repeated user actions",
+      "Actual": "Search stayed enabled=True; connection opens for repeated read=2 (expected1)"
+    },
+    {
+      "Id": "T07-K01.a.CASH",
+      "Status": "PASS",
+      "Expected": "Native login opens one Main with correct identity",
+      "Actual": "Main=1, role CASH, identity label matched"
+    },
+    {
+      "Id": "T07-K02.a.CASH",
+      "Status": "FAIL",
+      "Expected": "Menu and direct navigate enforce role",
+      "Actual": "index (\u00270\u0027) must be less than \u00270\u0027. (Parameter \u0027index\u0027)\r\nActual value was 0."
+    },
+    {
+      "Id": "T07-K04.viewport.120.1280",
+      "Status": "PASS",
+      "Expected": "Requested native size and menu/content usable",
+      "Actual": "Actual 1280x720, DeviceDpi=120; visual screenshot requires inspection"
+    },
+    {
+      "Id": "T07-K04.viewport.120.1366",
+      "Status": "PASS",
+      "Expected": "Requested native size and menu/content usable",
+      "Actual": "Actual 1366x768, DeviceDpi=120; visual screenshot requires inspection"
+    },
+    {
+      "Id": "T07-K01.a.STORE",
+      "Status": "PASS",
+      "Expected": "Native login opens one Main with correct identity",
+      "Actual": "Main=1, role STORE, identity label matched"
+    },
+    {
+      "Id": "T07-K02.a.STORE",
+      "Status": "FAIL",
+      "Expected": "Menu and direct navigate enforce role",
+      "Actual": "index (\u00270\u0027) must be less than \u00270\u0027. (Parameter \u0027index\u0027)\r\nActual value was 0."
+    },
+    {
+      "Id": "T07-K04.viewport.120.1280",
+      "Status": "PASS",
+      "Expected": "Requested native size and menu/content usable",
+      "Actual": "Actual 1280x720, DeviceDpi=120; visual screenshot requires inspection"
+    },
+    {
+      "Id": "T07-K04.viewport.120.1366",
+      "Status": "PASS",
+      "Expected": "Requested native size and menu/content usable",
+      "Actual": "Actual 1366x768, DeviceDpi=120; visual screenshot requires inspection"
+    },
+    {
+      "Id": "T07-K03.a.STORE",
+      "Status": "PASS",
+      "Expected": "100 transitions preserve lazy instances",
+      "Actual": "100 transitions, cached 2-\u003E2 same instances, visible child1, SQL connections short-lived"
+    },
+    {
+      "Id": "T07-K02.b.cycle0",
+      "Status": "PASS",
+      "Expected": "One native Main per login/logout",
+      "Actual": "One Main opened, disposed on logout, session revoked, no Main remains"
+    },
+    {
+      "Id": "T07-K02.b.cycle1",
+      "Status": "PASS",
+      "Expected": "One native Main per login/logout",
+      "Actual": "One Main opened, disposed on logout, session revoked, no Main remains"
+    },
+    {
+      "Id": "T07-K02.b.cycle2",
+      "Status": "PASS",
+      "Expected": "One native Main per login/logout",
+      "Actual": "One Main opened, disposed on logout, session revoked, no Main remains"
+    },
+    {
+      "Id": "T07-K02.b.cycle3",
+      "Status": "PASS",
+      "Expected": "One native Main per login/logout",
+      "Actual": "One Main opened, disposed on logout, session revoked, no Main remains"
+    },
+    {
+      "Id": "T07-K02.b.cycle4",
+      "Status": "PASS",
+      "Expected": "One native Main per login/logout",
+      "Actual": "One Main opened, disposed on logout, session revoked, no Main remains"
+    },
+    {
+      "Id": "T07-K02.b.cycle5",
+      "Status": "PASS",
+      "Expected": "One native Main per login/logout",
+      "Actual": "One Main opened, disposed on logout, session revoked, no Main remains"
+    },
+    {
+      "Id": "T07-K02.b.cycle6",
+      "Status": "PASS",
+      "Expected": "One native Main per login/logout",
+      "Actual": "One Main opened, disposed on logout, session revoked, no Main remains"
+    },
+    {
+      "Id": "T07-K02.b.cycle7",
+      "Status": "PASS",
+      "Expected": "One native Main per login/logout",
+      "Actual": "One Main opened, disposed on logout, session revoked, no Main remains"
+    },
+    {
+      "Id": "T07-K02.b.cycle8",
+      "Status": "PASS",
+      "Expected": "One native Main per login/logout",
+      "Actual": "One Main opened, disposed on logout, session revoked, no Main remains"
+    },
+    {
+      "Id": "T07-K02.b.cycle9",
+      "Status": "PASS",
+      "Expected": "One native Main per login/logout",
+      "Actual": "One Main opened, disposed on logout, session revoked, no Main remains"
+    },
+    {
+      "Id": "T07-K05.b",
+      "Status": "PASS",
+      "Expected": "Logout cancels blocked native navigation; no late UI",
+      "Actual": "Pending read canceled, old Main disposed; unlock did not reopen Main"
+    }
+  ],
+  "Dpi": 120,
+  "Process": 9812,
+  "Principal": "G02_Runtime impersonation, Pooling=false; native product forms in test host"
+}

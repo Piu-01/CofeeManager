@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="f3983ec4-6460-4650-9f0d-f1a8de40db6d" name="Lenovo@LAPTOP-79UNRIRC 2026-10-09 21:38:37" runUser="LAPTOP-79UNRIRC\Lenovo" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-09T21:38:37.0759012+07:00" queuing="2026-10-09T21:38:37.0759016+07:00" start="2026-10-09T21:38:30.8756797+07:00" finish="2026-10-09T21:38:41.8961885+07:00" />
+  <TestSettings name="default" id="d7c65d19-6f0e-492f-8d4b-3ace83b3d377">
+    <Deployment runDeploymentRoot="Lenovo_LAPTOP-79UNRIRC_2026-10-09_21_38_37" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="50f2a46a-572f-4cfd-b68a-6c45694cb3de" testId="f43ac971-7000-b0fe-7e13-a2d750ff375c" testName="CafeManager.Tests.Auth.AuthRulesTests.InvalidUsernamesAreRejected(input: &quot;a b&quot;)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.2387891" startTime="2026-10-09T21:38:36.8189417+07:00" endTime="2026-10-09T21:38:37.0083631+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="50f2a46a-572f-4cfd-b68a-6c45694cb3de" />
+    <UnitTestResult executionId="2eac1374-51f9-47a8-a4b7-be539ed7f66d" testId="9eabcd30-7712-2ab1-5556-2047a2f1a35b" testName="CafeManager.Tests.Auth.AuthRulesTests.UsernameNormalizationPreservesDisplayCase(input: &quot;x&quot;, expected: &quot;x&quot;)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0023049" startTime="2026-10-09T21:38:37.7769236+07:00" endTime="2026-10-09T21:38:37.7774392+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2eac1374-51f9-47a8-a4b7-be539ed7f66d" />
+    <UnitTestResult executionId="455df7d0-f37c-4764-bb04-007444d377bb" testId="46dab3bf-f646-0e0b-9357-c68084981705" testName="CafeManager.Tests.Auth.AuthRulesTests.PermissionMatrixIsIndependentOfMenu(role: &quot;CASH&quot;, permission: Finance, expected: False)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0000085" startTime="2026-10-09T21:38:37.0495543+07:00" endTime="2026-10-09T21:38:37.0496847+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="455df7d0-f37c-4764-bb04-007444d377bb" />
+    <UnitTestResult executionId="81f60ced-b17a-4694-9d61-27d693883210" testId="bba25b55-3366-ed1d-75db-92fb297d8915" testName="CafeManager.Tests.Auth.AuthRulesTests.HashVerificationPreservesPasswordSpacesAndRejectsPlaceholder" computerName="LAPTOP-79UNRIRC" duration="00:00:00.7551896" startTime="2026-10-09T21:38:37.0501116+07:00" endTime="2026-10-09T21:38:37.7747714+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="81f60ced-b17a-4694-9d61-27d693883210" />
+    <UnitTestResult executionId="bbb66b50-db9e-424d-8c76-85616322d5d6" testId="f100b2f0-e6ea-40e8-ad7f-bc7ba36b731a" testName="CafeManager.Tests.G02.AuthIntegrationTests.T06_K01_RollbackKeepsStateAndEmployeeAccountRowsRetryable" computerName="LAPTOP-79UNRIRC" duration="00:00:01.0058632" startTime="2026-10-09T21:38:40.0709674+07:00" endTime="2026-10-09T21:38:41.0772383+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bbb66b50-db9e-424d-8c76-85616322d5d6" />
+    <UnitTestResult executionId="09f4da87-00ef-4a58-868e-b00c47129fbd" testId="db68d583-8afd-20cb-97b0-03b1095a4cbb" testName="CafeManager.Tests.Auth.AuthRulesTests.PermissionMatrixIsIndependentOfMenu(role: &quot;STORE&quot;, permission: DebtRead, expected: True)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0005558" startTime="2026-10-09T21:38:37.0333365+07:00" endTime="2026-10-09T21:38:37.0334021+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="09f4da87-00ef-4a58-868e-b00c47129fbd" />
+    <UnitTestResult executionId="4c15bdd2-159b-410a-97e4-f94208b59b40" testId="010db135-8d54-db7c-b974-ed53099a1cfa" testName="CafeManager.Tests.Auth.AuthRulesTests.PermissionMatrixIsIndependentOfMenu(role: &quot;STORE&quot;, permission: Sales, expected: False)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0000077" startTime="2026-10-09T21:38:37.0337002+07:00" endTime="2026-10-09T21:38:37.0337649+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4c15bdd2-159b-410a-97e4-f94208b59b40" />
+    <UnitTestResult executionId="cffd0be9-6c92-4ac6-a71f-51e01d96feeb" testId="89a8301e-f31a-70d9-8c38-776056aa5361" testName="CafeManager.Tests.Auth.AuthRulesTests.PermissionMatrixIsIndependentOfMenu(role: &quot;CASH&quot;, permission: Customers, expected: True)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0000065" startTime="2026-10-09T21:38:37.0489835+07:00" endTime="2026-10-09T21:38:37.0492044+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cffd0be9-6c92-4ac6-a71f-51e01d96feeb" />
+    <UnitTestResult executionId="2795c86f-8354-4655-bdf1-6bd1c830f17d" testId="291ad802-68da-1800-e57c-86a66991e0b4" testName="CafeManager.Tests.Auth.AuthRulesTests.InvalidUsernamesAreRejected(input: &quot;nguyễn&quot;)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0000240" startTime="2026-10-09T21:38:37.0304327+07:00" endTime="2026-10-09T21:38:37.0304987+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2795c86f-8354-4655-bdf1-6bd1c830f17d" />
+    <UnitTestResult executionId="9caece09-f788-418c-8566-807e729c75b7" testId="85006762-b8a3-5f91-4c13-ac6ef09d6538" testName="CafeManager.Tests.Auth.AuthRulesTests.InvalidUsernamesAreRejected(input: &quot;a\tb&quot;)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0000841" startTime="2026-10-09T21:38:37.0297465+07:00" endTime="2026-10-09T21:38:37.0298663+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9caece09-f788-418c-8566-807e729c75b7" />
+    <UnitTestResult executionId="1336e67b-566b-4e7f-9c64-83d7ed411d34" testId="80a5ba04-00bb-964d-7b89-3bb3b5d09cf5" testName="CafeManager.Tests.G02.AuthIntegrationTests.T06_K08_OldSessionCannotOperateAfterAccountRevocation" computerName="LAPTOP-79UNRIRC" duration="00:00:00.1883286" startTime="2026-10-09T21:38:39.6513218+07:00" endTime="2026-10-09T21:38:39.8437368+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1336e67b-566b-4e7f-9c64-83d7ed411d34" />
+    <UnitTestResult executionId="35d9bb71-46fd-48af-bbaa-9b56159879c1" testId="a4099af3-d032-a9fe-3e6f-87e8f4455adf" testName="CafeManager.Tests.Auth.AuthRulesTests.UsernameNormalizationPreservesDisplayCase(input: &quot; a.B_1- &quot;, expected: &quot;a.B_1-&quot;)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0012990" startTime="2026-10-09T21:38:37.7806672+07:00" endTime="2026-10-09T21:38:37.7809585+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="35d9bb71-46fd-48af-bbaa-9b56159879c1" />
+    <UnitTestResult executionId="cf6cbb70-7669-453c-a771-370b5c176b2f" testId="b79fe897-a1c4-10cb-a8f7-46ccd6620582" testName="CafeManager.Tests.G02.AuthIntegrationTests.T06_K02_RestartAndAdminLockDoNotReopenBootstrap" computerName="LAPTOP-79UNRIRC" duration="00:00:00.2214293" startTime="2026-10-09T21:38:39.8484887+07:00" endTime="2026-10-09T21:38:40.0704331+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cf6cbb70-7669-453c-a771-370b5c176b2f" />
+    <UnitTestResult executionId="8ecae1c0-27ba-4473-a024-d581a438b24c" testId="6435ef8d-b808-60c4-4850-08c08563ead4" testName="CafeManager.Tests.Auth.AuthRulesTests.PermissionMatrixIsIndependentOfMenu(role: &quot;unknown&quot;, permission: SystemInfo, expected: False)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0000173" startTime="2026-10-09T21:38:37.0335194+07:00" endTime="2026-10-09T21:38:37.0335827+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8ecae1c0-27ba-4473-a024-d581a438b24c" />
+    <UnitTestResult executionId="465077be-d0e8-46d4-b9c8-10b88f7da19f" testId="af113c9c-57db-d886-6370-0d97ffe7eaba" testName="CafeManager.Tests.Auth.AuthRulesTests.InvalidUsernamesAreRejected(input: &quot; &quot;)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0003449" startTime="2026-10-09T21:38:37.0269936+07:00" endTime="2026-10-09T21:38:37.0271295+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="465077be-d0e8-46d4-b9c8-10b88f7da19f" />
+    <UnitTestResult executionId="f02f0e3d-c9c5-4238-8ba1-2c19c549fc18" testId="9a33bbdb-2b73-2751-f7ba-5268d99dcc8b" testName="CafeManager.Tests.G02.AuthIntegrationTests.T06_K01_ConcurrentBootstrapAllowsExactlyOneCommit" computerName="LAPTOP-79UNRIRC" duration="00:00:00.2347432" startTime="2026-10-09T21:38:41.0779164+07:00" endTime="2026-10-09T21:38:41.3136566+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f02f0e3d-c9c5-4238-8ba1-2c19c549fc18" />
+    <UnitTestResult executionId="9ed4f583-92e7-4a1c-94cd-9dc962552517" testId="2dd3102c-ea24-8969-bd64-2674b33c9c4d" testName="CafeManager.Tests.Auth.AuthRulesTests.PermissionMatrixIsIndependentOfMenu(role: &quot;ADMIN&quot;, permission: CatalogAdmin, expected: True)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0079967" startTime="2026-10-09T21:38:37.0330588+07:00" endTime="2026-10-09T21:38:37.0331442+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9ed4f583-92e7-4a1c-94cd-9dc962552517" />
+    <UnitTestResult executionId="17edfea6-7f62-4697-8579-110524fa16d3" testId="1d663894-8ddb-2cae-2813-cc97caeaffda" testName="CafeManager.Tests.G02.AuthIntegrationTests.T06_K05_CasCannotOverwritePasswordChangedAfterRead" computerName="LAPTOP-79UNRIRC" duration="00:00:00.4966153" startTime="2026-10-09T21:38:41.3140634+07:00" endTime="2026-10-09T21:38:41.8111765+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="17edfea6-7f62-4697-8579-110524fa16d3" />
+    <UnitTestResult executionId="d8723f1e-7fd9-4248-bbdb-ece76ab1b7a2" testId="fdfdd892-efa5-ca75-1c10-265b08e7a870" testName="CafeManager.Tests.Auth.AuthRulesTests.InvalidUsernamesAreRejected(input: &quot;&quot;)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0000270" startTime="2026-10-09T21:38:37.0301718+07:00" endTime="2026-10-09T21:38:37.0302477+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d8723f1e-7fd9-4248-bbdb-ece76ab1b7a2" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="CafeManager.Tests.Auth.AuthRulesTests.UsernameNormalizationPreservesDisplayCase(input: &quot;x&quot;, expected: &quot;x&quot;)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="9eabcd30-7712-2ab1-5556-2047a2f1a35b">
+      <Execution id="2eac1374-51f9-47a8-a4b7-be539ed7f66d" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Auth.AuthRulesTests" name="UsernameNormalizationPreservesDisplayCase" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.G02.AuthIntegrationTests.T06_K01_RollbackKeepsStateAndEmployeeAccountRowsRetryable" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="f100b2f0-e6ea-40e8-ad7f-bc7ba36b731a">
+      <Execution id="bbb66b50-db9e-424d-8c76-85616322d5d6" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.G02.AuthIntegrationTests" name="T06_K01_RollbackKeepsStateAndEmployeeAccountRowsRetryable" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Auth.AuthRulesTests.InvalidUsernamesAreRejected(input: &quot;a\tb&quot;)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="85006762-b8a3-5f91-4c13-ac6ef09d6538">
+      <Execution id="9caece09-f788-418c-8566-807e729c75b7" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Auth.AuthRulesTests" name="InvalidUsernamesAreRejected" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Auth.AuthRulesTests.InvalidUsernamesAreRejected(input: &quot; &quot;)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="af113c9c-57db-d886-6370-0d97ffe7eaba">
+      <Execution id="465077be-d0e8-46d4-b9c8-10b88f7da19f" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Auth.AuthRulesTests" name="InvalidUsernamesAreRejected" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.G02.AuthIntegrationTests.T06_K05_CasCannotOverwritePasswordChangedAfterRead" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="1d663894-8ddb-2cae-2813-cc97caeaffda">
+      <Execution id="17edfea6-7f62-4697-8579-110524fa16d3" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.G02.AuthIntegrationTests" name="T06_K05_CasCannotOverwritePasswordChangedAfterRead" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Auth.AuthRulesTests.PermissionMatrixIsIndependentOfMenu(role: &quot;CASH&quot;, permission: Customers, expected: True)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="89a8301e-f31a-70d9-8c38-776056aa5361">
+      <Execution id="cffd0be9-6c92-4ac6-a71f-51e01d96feeb" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Auth.AuthRulesTests" name="PermissionMatrixIsIndependentOfMenu" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Auth.AuthRulesTests.InvalidUsernamesAreRejected(input: &quot;a b&quot;)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="f43ac971-7000-b0fe-7e13-a2d750ff375c">
+      <Execution id="50f2a46a-572f-4cfd-b68a-6c45694cb3de" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Auth.AuthRulesTests" name="InvalidUsernamesAreRejected" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Auth.AuthRulesTests.InvalidUsernamesAreRejected(input: &quot;nguyễn&quot;)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="291ad802-68da-1800-e57c-86a66991e0b4">
+      <Execution id="2795c86f-8354-4655-bdf1-6bd1c830f17d" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Auth.AuthRulesTests" name="InvalidUsernamesAreRejected" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Auth.AuthRulesTests.UsernameNormalizationPreservesDisplayCase(input: &quot; a.B_1- &quot;, expected: &quot;a.B_1-&quot;)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="a4099af3-d032-a9fe-3e6f-87e8f4455adf">
+      <Execution id="35d9bb71-46fd-48af-bbaa-9b56159879c1" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Auth.AuthRulesTests" name="UsernameNormalizationPreservesDisplayCase" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Auth.AuthRulesTests.InvalidUsernamesAreRejected(input: &quot;&quot;)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="fdfdd892-efa5-ca75-1c10-265b08e7a870">
+      <Execution id="d8723f1e-7fd9-4248-bbdb-ece76ab1b7a2" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Auth.AuthRulesTests" name="InvalidUsernamesAreRejected" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Auth.AuthRulesTests.PermissionMatrixIsIndependentOfMenu(role: &quot;ADMIN&quot;, permission: CatalogAdmin, expected: True)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="2dd3102c-ea24-8969-bd64-2674b33c9c4d">
+      <Execution id="9ed4f583-92e7-4a1c-94cd-9dc962552517" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Auth.AuthRulesTests" name="PermissionMatrixIsIndependentOfMenu" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.G02.AuthIntegrationTests.T06_K01_ConcurrentBootstrapAllowsExactlyOneCommit" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="9a33bbdb-2b73-2751-f7ba-5268d99dcc8b">
+      <Execution id="f02f0e3d-c9c5-4238-8ba1-2c19c549fc18" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.G02.AuthIntegrationTests" name="T06_K01_ConcurrentBootstrapAllowsExactlyOneCommit" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.G02.AuthIntegrationTests.T06_K08_OldSessionCannotOperateAfterAccountRevocation" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="80a5ba04-00bb-964d-7b89-3bb3b5d09cf5">
+      <Execution id="1336e67b-566b-4e7f-9c64-83d7ed411d34" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.G02.AuthIntegrationTests" name="T06_K08_OldSessionCannotOperateAfterAccountRevocation" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Auth.AuthRulesTests.PermissionMatrixIsIndependentOfMenu(role: &quot;CASH&quot;, permission: Finance, expected: False)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="46dab3bf-f646-0e0b-9357-c68084981705">
+      <Execution id="455df7d0-f37c-4764-bb04-007444d377bb" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Auth.AuthRulesTests" name="PermissionMatrixIsIndependentOfMenu" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Auth.AuthRulesTests.PermissionMatrixIsIndependentOfMenu(role: &quot;unknown&quot;, permission: SystemInfo, expected: False)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="6435ef8d-b808-60c4-4850-08c08563ead4">
+      <Execution id="8ecae1c0-27ba-4473-a024-d581a438b24c" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Auth.AuthRulesTests" name="PermissionMatrixIsIndependentOfMenu" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Auth.AuthRulesTests.PermissionMatrixIsIndependentOfMenu(role: &quot;STORE&quot;, permission: Sales, expected: False)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="010db135-8d54-db7c-b974-ed53099a1cfa">
+      <Execution id="4c15bdd2-159b-410a-97e4-f94208b59b40" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Auth.AuthRulesTests" name="PermissionMatrixIsIndependentOfMenu" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Auth.AuthRulesTests.HashVerificationPreservesPasswordSpacesAndRejectsPlaceholder" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="bba25b55-3366-ed1d-75db-92fb297d8915">
+      <Execution id="81f60ced-b17a-4694-9d61-27d693883210" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Auth.AuthRulesTests" name="HashVerificationPreservesPasswordSpacesAndRejectsPlaceholder" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Auth.AuthRulesTests.PermissionMatrixIsIndependentOfMenu(role: &quot;STORE&quot;, permission: DebtRead, expected: True)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="db68d583-8afd-20cb-97b0-03b1095a4cbb">
+      <Execution id="09f4da87-00ef-4a58-868e-b00c47129fbd" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Auth.AuthRulesTests" name="PermissionMatrixIsIndependentOfMenu" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.G02.AuthIntegrationTests.T06_K02_RestartAndAdminLockDoNotReopenBootstrap" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="b79fe897-a1c4-10cb-a8f7-46ccd6620582">
+      <Execution id="cf6cbb70-7669-453c-a771-370b5c176b2f" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.G02.AuthIntegrationTests" name="T06_K02_RestartAndAdminLockDoNotReopenBootstrap" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="f43ac971-7000-b0fe-7e13-a2d750ff375c" executionId="50f2a46a-572f-4cfd-b68a-6c45694cb3de" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9eabcd30-7712-2ab1-5556-2047a2f1a35b" executionId="2eac1374-51f9-47a8-a4b7-be539ed7f66d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="46dab3bf-f646-0e0b-9357-c68084981705" executionId="455df7d0-f37c-4764-bb04-007444d377bb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bba25b55-3366-ed1d-75db-92fb297d8915" executionId="81f60ced-b17a-4694-9d61-27d693883210" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f100b2f0-e6ea-40e8-ad7f-bc7ba36b731a" executionId="bbb66b50-db9e-424d-8c76-85616322d5d6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="db68d583-8afd-20cb-97b0-03b1095a4cbb" executionId="09f4da87-00ef-4a58-868e-b00c47129fbd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="010db135-8d54-db7c-b974-ed53099a1cfa" executionId="4c15bdd2-159b-410a-97e4-f94208b59b40" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="89a8301e-f31a-70d9-8c38-776056aa5361" executionId="cffd0be9-6c92-4ac6-a71f-51e01d96feeb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="291ad802-68da-1800-e57c-86a66991e0b4" executionId="2795c86f-8354-4655-bdf1-6bd1c830f17d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="85006762-b8a3-5f91-4c13-ac6ef09d6538" executionId="9caece09-f788-418c-8566-807e729c75b7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="80a5ba04-00bb-964d-7b89-3bb3b5d09cf5" executionId="1336e67b-566b-4e7f-9c64-83d7ed411d34" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a4099af3-d032-a9fe-3e6f-87e8f4455adf" executionId="35d9bb71-46fd-48af-bbaa-9b56159879c1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b79fe897-a1c4-10cb-a8f7-46ccd6620582" executionId="cf6cbb70-7669-453c-a771-370b5c176b2f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6435ef8d-b808-60c4-4850-08c08563ead4" executionId="8ecae1c0-27ba-4473-a024-d581a438b24c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="af113c9c-57db-d886-6370-0d97ffe7eaba" executionId="465077be-d0e8-46d4-b9c8-10b88f7da19f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9a33bbdb-2b73-2751-f7ba-5268d99dcc8b" executionId="f02f0e3d-c9c5-4238-8ba1-2c19c549fc18" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2dd3102c-ea24-8969-bd64-2674b33c9c4d" executionId="9ed4f583-92e7-4a1c-94cd-9dc962552517" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1d663894-8ddb-2cae-2813-cc97caeaffda" executionId="17edfea6-7f62-4697-8579-110524fa16d3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fdfdd892-efa5-ca75-1c10-265b08e7a870" executionId="d8723f1e-7fd9-4248-bbdb-ece76ab1b7a2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="19" executed="19" passed="19" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)&#xD;
+[xUnit.net 00:00:01.73]   Discovering: CafeManager.Tests&#xD;
+[xUnit.net 00:00:01.90]   Discovered:  CafeManager.Tests&#xD;
+[xUnit.net 00:00:01.98]   Starting:    CafeManager.Tests&#xD;
+[xUnit.net 00:00:07.11]   Finished:    CafeManager.Tests&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

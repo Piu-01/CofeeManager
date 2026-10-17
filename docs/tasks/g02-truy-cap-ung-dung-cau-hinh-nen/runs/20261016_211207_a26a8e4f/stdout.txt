@@ -1,0 +1,11 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  CafeManager.Models -> D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.Models\bin\Debug\net10.0\CafeManager.Models.dll
+  CafeManager.DataAccess -> D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.DataAccess\bin\Debug\net10.0\CafeManager.DataAccess.dll
+  CafeManager.Business -> D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.Business\bin\Debug\net10.0\CafeManager.Business.dll
+  CafeManager.Tests -> D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll
+Test run for D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+Results File: D:\Workspace\Nam_3\HK1\CoffeeManager\docs\tasks\g02-truy-cap-ung-dung-cau-hinh-nen\runs\20261016_211207_a26a8e4f\tests.trx
+
+Passed!  - Failed:     0, Passed:   222, Skipped:     0, Total:   222, Duration: 36 s - CafeManager.Tests.dll (net10.0)

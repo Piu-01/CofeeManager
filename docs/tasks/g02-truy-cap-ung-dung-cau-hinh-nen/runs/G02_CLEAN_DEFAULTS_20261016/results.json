@@ -1,0 +1,59 @@
+{
+    "Database":  "CoffeeManager_Test_G02_20261016_201835_e1946da6",
+    "Results":  [
+                    {
+                        "Id":  "T08-K06.a.role.ADMIN",
+                        "Expected":  1,
+                        "Actual":  1,
+                        "Status":  "PASS"
+                    },
+                    {
+                        "Id":  "T08-K06.a.role.CASH",
+                        "Expected":  1,
+                        "Actual":  1,
+                        "Status":  "PASS"
+                    },
+                    {
+                        "Id":  "T08-K06.a.role.STORE",
+                        "Expected":  1,
+                        "Actual":  1,
+                        "Status":  "PASS"
+                    },
+                    {
+                        "Id":  "T08-K06.a.Payroll.TC005",
+                        "Expected":  1,
+                        "Actual":  1,
+                        "Status":  "PASS"
+                    },
+                    {
+                        "Id":  "T08-K06.a.SupplierDebt.TC011",
+                        "Expected":  1,
+                        "Actual":  1,
+                        "Status":  "PASS"
+                    },
+                    {
+                        "Id":  "T08-K06.a.PurchaseImmediate.TC012",
+                        "Expected":  1,
+                        "Actual":  1,
+                        "Status":  "PASS"
+                    },
+                    {
+                        "Id":  "T08-K06.a.PT001",
+                        "Expected":  1,
+                        "Actual":  1,
+                        "Status":  "PASS"
+                    },
+                    {
+                        "Id":  "T08-K06.a.PT002",
+                        "Expected":  1,
+                        "Actual":  1,
+                        "Status":  "PASS"
+                    },
+                    {
+                        "Id":  "T08-K06.a.noDemoTransactions",
+                        "Expected":  0,
+                        "Actual":  0,
+                        "Status":  "PASS"
+                    }
+                ]
+}

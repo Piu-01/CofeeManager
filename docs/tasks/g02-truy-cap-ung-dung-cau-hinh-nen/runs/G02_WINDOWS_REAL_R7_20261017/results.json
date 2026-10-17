@@ -1,0 +1,155 @@
+{
+    "At":  "2026-10-17T16:12:01.6065886+07:00",
+    "Status":  "PASS",
+    "Database":  "CoffeeManager_Test_G02_20261017_161145_d4434b36",
+    "Stage":  "real runtime login",
+    "TemporaryAccounts":  [
+                              {
+                                  "Name":  "CMG02S_d4434b36",
+                                  "Sid":  "S-1-5-21-995916740-4115604996-2892334199-1014"
+                              },
+                              {
+                                  "Name":  "CMG02R_d4434b36",
+                                  "Sid":  "S-1-5-21-995916740-4115604996-2892334199-1015"
+                              }
+                          ],
+    "Records":  [
+                    {
+                        "Id":  "WindowsPrincipal.runtime",
+                        "Expected":  "Real Windows/SQL identity and separate roles, patched runtime; no impersonation",
+                        "Actual":  [
+                                       {
+                                           "Id":  "PkcsLoadObservation",
+                                           "Path":  "C:\\Program Files\\dotnet\\shared\\Microsoft.WindowsDesktop.App\\10.0.13\\System.Security.Cryptography.Pkcs.dll",
+                                           "FileVersion":  "10.0.1326.50504",
+                                           "InformationalVersion":  "10.0.13+4099f83977f4d29604a9aeb971fb0a7bc1d5f699"
+                                       },
+                                       {
+                                           "Id":  "RealWindowsSqlIdentity",
+                                           "Status":  "PASS",
+                                           "WindowsIdentity":  "LAPTOP-79UNRIRC\\CMG02R_d4434b36",
+                                           "SqlLogin":  "LAPTOP-79UNRIRC\\CMG02R_d4434b36",
+                                           "DatabaseUser":  "LAPTOP-79UNRIRC\\CMG02R_d4434b36",
+                                           "SetupRole":  0,
+                                           "RuntimeRole":  1,
+                                           "SqlSysadmin":  0
+                                       },
+                                       {
+                                           "Id":  "RuntimeSetupCheckDenied",
+                                           "Status":  "PASS",
+                                           "SqlError":  229
+                                       },
+                                       {
+                                           "Id":  "RuntimeRawCredentialsDenied",
+                                           "Status":  "PASS",
+                                           "SqlError":  229
+                                       },
+                                       {
+                                           "Id":  "RuntimeBootstrapDenied",
+                                           "Status":  "PASS",
+                                           "SqlError":  229
+                                       },
+                                       {
+                                           "Id":  "ActualPatchedPkcsLoaded",
+                                           "Status":  "PASS",
+                                           "Path":  "C:\\Program Files\\dotnet\\shared\\Microsoft.WindowsDesktop.App\\10.0.13\\System.Security.Cryptography.Pkcs.dll",
+                                           "FileVersion":  "10.0.1326.50504",
+                                           "InformationalVersion":  "10.0.13+4099f83977f4d29604a9aeb971fb0a7bc1d5f699"
+                                       }
+                                   ],
+                        "Status":  "PASS"
+                    },
+                    {
+                        "Id":  "T06-K02.e.WindowsRuntimeDenied",
+                        "Expected":  "Runtime executable cannot enter bootstrap, SQL229, no write",
+                        "Actual":  "Actual runtime Windows exe rejected; Pending unchanged",
+                        "Status":  "PASS"
+                    },
+                    {
+                        "Id":  "T06-K01.a.WindowsCleanSetup",
+                        "Expected":  "Actual setup Windows exe creates exactly1ADMIN/1NVNULL, Completed, OK closes process",
+                        "Actual":  "Committed once; native success OK invoked; process exit0; runtime environment deliberately points at invalid port and was not used",
+                        "Status":  "PASS"
+                    },
+                    {
+                        "Id":  "WindowsPrincipal.setup",
+                        "Expected":  "Real Windows/SQL identity and separate roles, patched runtime; no impersonation",
+                        "Actual":  [
+                                       {
+                                           "Id":  "PkcsLoadObservation",
+                                           "Path":  "C:\\Program Files\\dotnet\\shared\\Microsoft.WindowsDesktop.App\\10.0.13\\System.Security.Cryptography.Pkcs.dll",
+                                           "FileVersion":  "10.0.1326.50504",
+                                           "InformationalVersion":  "10.0.13+4099f83977f4d29604a9aeb971fb0a7bc1d5f699"
+                                       },
+                                       {
+                                           "Id":  "RealWindowsSqlIdentity",
+                                           "Status":  "PASS",
+                                           "WindowsIdentity":  "LAPTOP-79UNRIRC\\CMG02S_d4434b36",
+                                           "SqlLogin":  "LAPTOP-79UNRIRC\\CMG02S_d4434b36",
+                                           "DatabaseUser":  "LAPTOP-79UNRIRC\\CMG02S_d4434b36",
+                                           "SetupRole":  1,
+                                           "RuntimeRole":  0,
+                                           "SqlSysadmin":  0
+                                       },
+                                       {
+                                           "Id":  "CompletedBootstrapBlockedForRealSetupIdentity",
+                                           "Status":  "PASS",
+                                           "SqlError":  51401
+                                       },
+                                       {
+                                           "Id":  "ActualPatchedPkcsLoaded",
+                                           "Status":  "PASS",
+                                           "Path":  "C:\\Program Files\\dotnet\\shared\\Microsoft.WindowsDesktop.App\\10.0.13\\System.Security.Cryptography.Pkcs.dll",
+                                           "FileVersion":  "10.0.1326.50504",
+                                           "InformationalVersion":  "10.0.13+4099f83977f4d29604a9aeb971fb0a7bc1d5f699"
+                                       }
+                                   ],
+                        "Status":  "PASS"
+                    },
+                    {
+                        "Id":  "T06-K02.Windows.Restart",
+                        "Expected":  "Completed persists across actual exe restart/admin lock/departure; no reset",
+                        "Actual":  "Complete disabled, explanatory state visible, exe exits0, hash unchanged",
+                        "Status":  "PASS"
+                    },
+                    {
+                        "Id":  "T06-K02.Windows.LockedAdmin",
+                        "Expected":  "Completed persists across actual exe restart/admin lock/departure; no reset",
+                        "Actual":  "Complete disabled, explanatory state visible, exe exits0, hash unchanged",
+                        "Status":  "PASS"
+                    },
+                    {
+                        "Id":  "T06-K02.Windows.DepartedAdmin",
+                        "Expected":  "Completed persists across actual exe restart/admin lock/departure; no reset",
+                        "Actual":  "Complete disabled, explanatory state visible, exe exits0, hash unchanged",
+                        "Status":  "PASS"
+                    },
+                    {
+                        "Id":  "T07-K01.WindowsRuntimeExe",
+                        "Expected":  "Actual runtime Windows exe logs in and opens ADMIN shell, then exits without financial write",
+                        "Actual":  "Owner/runtime identity verified; authenticated Main/catalog navigation visible; exit0",
+                        "Status":  "PASS"
+                    }
+                ],
+    "Cleanup":  [
+                    {
+                        "Kind":  "SqlPrincipals",
+                        "Status":  "PASS",
+                        "Count":  2
+                    },
+                    {
+                        "Kind":  "WindowsAccount",
+                        "Name":  "CMG02S_d4434b36",
+                        "Sid":  "S-1-5-21-995916740-4115604996-2892334199-1014",
+                        "Status":  "PASS"
+                    },
+                    {
+                        "Kind":  "WindowsAccount",
+                        "Name":  "CMG02R_d4434b36",
+                        "Sid":  "S-1-5-21-995916740-4115604996-2892334199-1015",
+                        "Status":  "PASS"
+                    }
+                ],
+    "Passwords":  "Generated in RAM only; not emitted",
+    "Deployment":  "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\opencode\\G02-Windows-20261017_161145_d4434b36"
+}

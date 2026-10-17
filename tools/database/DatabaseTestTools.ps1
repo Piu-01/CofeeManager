@@ -27,7 +27,7 @@ function New-IsolatedDatabase([string]$Task,[string]$RunId,[bool]$IncludeSeed=$t
     $name="CoffeeManager_Test_${Task}_$RunId"; if ($Empty) { $name+='_empty' }
     $master=Open-TestConnection 'master'
     try {
-        if ($name -notmatch '^CoffeeManager_Test_T0[35]_\d{8}_\d{6}_[a-f0-9]{8}(?:_empty)?$') { throw 'Invalid test name.' }
+        if ($name -notmatch '^CoffeeManager_Test_(?:T0[35]|G02)_\d{8}_\d{6}_[a-f0-9]{8}(?:_empty)?$') { throw 'Invalid test name.' }
         if ((Read-TestScalar $master "SELECT COUNT(*) FROM sys.databases WHERE name=N'$name';") -ne 0) { throw 'Database already exists.' }
         $schema=[IO.File]::ReadAllText((Join-Path $root 'database\DB_Schema.sql'),[Text.Encoding]::UTF8)
         foreach ($pattern in @('(?im)^CREATE DATABASE QuanLyCafe_ERP_V2;\s*$','(?im)^USE QuanLyCafe_ERP_V2;\s*$')) {
@@ -43,6 +43,7 @@ function New-IsolatedDatabase([string]$Task,[string]$RunId,[bool]$IncludeSeed=$t
             if ([regex]::Matches($seedSql,'(?im)^USE QuanLyCafe_ERP_V2;\s*$').Count -ne 1) { throw 'Unexpected seed USE.' }
             Run-TestSql $master ([regex]::Replace($seedSql,'(?im)^USE QuanLyCafe_ERP_V2;\s*$',"USE [$name];"))
         }
+        if($Task -eq 'G02') { Run-TestSql $master "CREATE TABLE dbo.G02TestMarker (RunId varchar(40) NOT NULL PRIMARY KEY); INSERT dbo.G02TestMarker VALUES('$RunId');" }
         return $name
     } finally { $master.Dispose() }
 }

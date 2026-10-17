@@ -1,0 +1,9 @@
+{
+    "SourceFilesChecked":  96,
+    "SourceChanges":  [
+                          "src\\CafeManager.WinForms\\CafeManager.WinForms.csproj.user"
+                      ],
+    "IdentityHashPatternHits":  0,
+    "At":  "2026-10-10T15:15:46.6595831+07:00",
+    "Note":  "Does not prove absence of every possible secret; credential-generated probes avoided emission and native mask was observed"
+}

@@ -1,0 +1,74 @@
+[
+    {
+        "Id":  "T08-K02.Supplier.malformed.SQL.confirmed",
+        "Expected":  "Reject SQL51506, no partial write",
+        "Actual":  "SQL51506; full DB snapshot unchanged; transaction0:0",
+        "Status":  "PASS"
+    },
+    {
+        "Id":  "T08-K02.Supplier.duplicate.SQL.confirmed",
+        "Expected":  "Reject SQL2627, no partial write",
+        "Actual":  "SQL2627; full DB snapshot unchanged; transaction0:0",
+        "Status":  "PASS"
+    },
+    {
+        "Id":  "T08-K02.PaymentMethod.malformed.SQL.confirmed",
+        "Expected":  "Reject SQL51506, no partial write",
+        "Actual":  "SQL51506; full DB snapshot unchanged; transaction0:0",
+        "Status":  "PASS"
+    },
+    {
+        "Id":  "T08-K02.PaymentMethod.duplicate.SQL.confirmed",
+        "Expected":  "Reject SQL2627, no partial write",
+        "Actual":  "SQL2627; full DB snapshot unchanged; transaction0:0",
+        "Status":  "PASS"
+    },
+    {
+        "Id":  "T08-K02.DeliveryPartner.malformed.SQL.confirmed",
+        "Expected":  "Reject SQL51506, no partial write",
+        "Actual":  "SQL51506; full DB snapshot unchanged; transaction0:0",
+        "Status":  "PASS"
+    },
+    {
+        "Id":  "T08-K02.DeliveryPartner.duplicate.SQL.confirmed",
+        "Expected":  "Reject SQL2627, no partial write",
+        "Actual":  "SQL2627; full DB snapshot unchanged; transaction0:0",
+        "Status":  "PASS"
+    },
+    {
+        "Id":  "T08-K02.ExpenseCategory.malformed.SQL.confirmed",
+        "Expected":  "Reject SQL51506, no partial write",
+        "Actual":  "SQL51506; full DB snapshot unchanged; transaction0:0",
+        "Status":  "PASS"
+    },
+    {
+        "Id":  "T08-K02.ExpenseCategory.duplicate.SQL.confirmed",
+        "Expected":  "Reject SQL2627, no partial write",
+        "Actual":  "SQL2627; full DB snapshot unchanged; transaction0:0",
+        "Status":  "PASS"
+    },
+    {
+        "Id":  "T08-K02.Position.malformed.SQL.confirmed",
+        "Expected":  "Reject SQL51506, no partial write",
+        "Actual":  "SQL51506; full DB snapshot unchanged; transaction0:0",
+        "Status":  "PASS"
+    },
+    {
+        "Id":  "T08-K02.Position.duplicate.SQL.confirmed",
+        "Expected":  "Reject SQL2627, no partial write",
+        "Actual":  "SQL2627; full DB snapshot unchanged; transaction0:0",
+        "Status":  "PASS"
+    },
+    {
+        "Id":  "T08-K02.Shift.malformed.SQL.confirmed",
+        "Expected":  "Reject SQL51506, no partial write",
+        "Actual":  "SQL51506; full DB snapshot unchanged; transaction0:0",
+        "Status":  "PASS"
+    },
+    {
+        "Id":  "T08-K02.Shift.duplicate.SQL.confirmed",
+        "Expected":  "Reject SQL2627, no partial write",
+        "Actual":  "SQL2627; full DB snapshot unchanged; transaction0:0",
+        "Status":  "PASS"
+    }
+]

@@ -1,0 +1,26 @@
+{
+    "At":  "2026-10-16T22:38:27.1020922+07:00",
+    "Status":  "BLOCKED",
+    "Database":  "CoffeeManager_Test_G02_20261016_223823_d7e014d5",
+    "Stage":  "create temporary Windows identity",
+    "TemporaryAccounts":  [
+
+                          ],
+    "Records":  [
+                    {
+                        "Id":  "WindowsRound",
+                        "Expected":  "Complete all native/principal cases",
+                        "Actual":  "Stage=create temporary Windows identity; exception=ParameterBindingValidationException",
+                        "Status":  "BLOCKED"
+                    }
+                ],
+    "Cleanup":  [
+                    {
+                        "Kind":  "SqlPrincipals",
+                        "Status":  "PASS",
+                        "Count":  0
+                    }
+                ],
+    "Passwords":  "Generated in RAM only; not emitted",
+    "Deployment":  "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\opencode\\G02-Windows-20261016_223823_d7e014d5"
+}

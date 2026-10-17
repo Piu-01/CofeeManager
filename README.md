@@ -10,11 +10,13 @@ cùng kiểm chứng bổ sung Designer, DPI 100/125/150%, bàn phím và runner
 thất bại. B01–B10 đã xử lý theo duyệt. Build Debug/Release **0 warning, 0 error**.
 Người dùng đã duyệt commit bàn giao vào repo GitHub ngày 09/10/2026.
 Chi tiết: [báo cáo G01](docs/tasks/g01-nen-tang-ky-thuat-du-lieu/report.md).
-G02 chưa triển khai.
+**G02 (T06–T08) đã viết đầu ra triển khai theo bộ plan được duyệt**, gồm setup
+admin một lần, login/session/quyền, shell/theme và7tab danh mục. Chờ duyệt đợt
+nghiệm thu27ca; chưa đánh dấu Hoàn tất. [Hồ sơ G02](docs/tasks/g02-truy-cap-ung-dung-cau-hinh-nen/plans.md).
 
 Mở `CafeManager.slnx` để xem solution hiện tại. Build bằng
 `dotnet build CafeManager.slnx -c Debug` hoặc `-c Release`.
-Ứng dụng mẫu G01 chạy từ `src/CafeManager.WinForms`; cấu hình kết nối qua
+Ứng dụng hiện chạy Login/MainForm từ `src/CafeManager.WinForms`; cấu hình kết nối qua
 `CAFEMANAGER_APP_CONNECTION` với tài khoản ứng dụng riêng. Các hướng dẫn
 Environment Probe bên dưới giữ làm tham chiếu kiểm chứng T01.
 
@@ -23,7 +25,7 @@ Environment Probe bên dưới giữ làm tham chiếu kiểm chứng T01.
 | Thành phần | Phiên bản đã phát hiện |
 |---|---|
 | .NET SDK | 10.0.401, pin trong `global.json` |
-| Windows Desktop Runtime | 10.0.12 x64 |
+| Windows Desktop Runtime | 10.0.13 x64 hoặc bản vá .NET 10 LTS mới hơn |
 | Visual Studio | Community 2026, 18.10.2, workload .NET desktop đã cài |
 | SSMS | 22.9.2 |
 | SQL Server | Default instance local `MSSQLSERVER`, engine 17.0.1000.7, Enterprise Developer Edition (64-bit) |
@@ -32,6 +34,11 @@ Environment Probe bên dưới giữ làm tham chiếu kiểm chứng T01.
 Máy phát triển cần Windows, SDK đã pin và Visual Studio có workload **.NET desktop
 development** để mở Designer. SDK khác phiên bản sẽ không được chọn ngầm vì
 `rollForward` là `disable`.
+
+Runtime phải được cập nhật riêng với SDK: PKCS có trong shared Windows Desktop
+Runtime, nên audit NuGet sạch không chứng minh binary đang chạy đã được vá.
+DataAccess pin `System.Security.Cryptography.Pkcs 10.0.13`; kiểm assembly thực tế
+khi triển khai. Không dùng Desktop Runtime 10.0.12 cho bản bàn giao này.
 
 ## Restore, build và chạy form kiểm chứng
 
@@ -91,7 +98,7 @@ cho runtime/LAN. Script chỉ đọc; không tạo DB, sửa schema hoặc chạ
 - `docs/`: kế hoạch, UX, UI guide và hồ sơ task.
 - `.agents/skills/`, `AGENTS.md`: quy trình làm việc của agent.
 
-Chưa có cấu hình kết nối runtime của app nghiệp vụ. Khi cần cấu hình local,
+App đọc chuỗi kết nối runtime từ môi trường process CAFEMANAGER_APP_CONNECTION. Cấu hình local,
 dùng `config/local/`, `appsettings.local.json` hoặc `appsettings.*.local.json`,
 đã được Git ignore; không lưu credential vào source, README hay log.
 Output bin/obj, state Visual Studio, backup SQL và dữ liệu test local cũng bị ignore.
@@ -103,7 +110,7 @@ git rev-parse --show-toplevel
 git status --short
 ```
 
-Repository đang ở nhánh `main`, chưa có commit hoặc remote. Chỉ commit khi được
+Repository đang ở nhánh `main`, G01 đã commit/push origin; G02 chưa commit. Chỉ commit khi được
 người dùng cho phép. T01–T32 được tổ chức thành tám nhóm G01–G08 trong mục 12
 của kế hoạch, giữ nguyên chi tiết/325 ca nghiệm thu. Duyệt requirements nhóm một
 lần, viết đủ plan rồi duyệt cả bộ một lần → triển khai tuần tự → duyệt đợt test
@@ -115,9 +122,9 @@ Chỉ mục toàn bộ plan G01: [docs/tasks/g01-nen-tang-ky-thuat-du-lieu/plans
 ## Solution và nền dữ liệu G01
 
 Đã viết đầu ra và chạy đợt test T03–T05 theo duyệt: restore/build/app/unit chạy
-được; B01–B06 đã sửa theo duyệt, regression tự động PASS; còn 3 ca manual BLOCKED. Kết quả chung:
+được; B01–B10 đã xử lý và45/45ca bắt buộcPASS. Kết quả chung:
 [report.md](docs/tasks/g01-nen-tang-ky-thuat-du-lieu/report.md).
-G01 chưa nghiệm thu; chi tiết phạm vi ở
+G01 đã nghiệm thu; chi tiết phạm vi ở
 [test-plan.md](docs/tasks/g01-nen-tang-ky-thuat-du-lieu/test-plan.md).
 
 ```powershell
@@ -132,10 +139,26 @@ dotnet run --project src/CafeManager.WinForms/CafeManager.WinForms.csproj
 
 App đọc `CAFEMANAGER_APP_CONNECTION` từ môi trường process, dùng Windows
 principal riêng có role CafeManagerApp; không tự chọn DB hoặc fallback admin.
-Thiếu cấu hình, Form vẫn mở và hiển thị lý do, nút tải vô hiệu. Không nhập
+Thiếu cấu hình, Login vẫn mở và hiển thị lý do, nút đăng nhập vô hiệu. Không nhập
 connection string chứa secret vào source hoặc đưa vào log.
 
 Contract/quyền/migration: [docs/database/data-contract.md](docs/database/data-contract.md),
 [write-ownership.md](docs/database/write-ownership.md), [migrations.md](docs/database/migrations.md).
 SQL test tools dùng Windows identity setup riêng của process, tạo DB T03/T05
 mới và giữ để tra cứu; fixtures/procedure T03/T05 chỉ tồn tại trong DB test.
+
+## Cài mới / truy cập G02
+
+Schema→seed nếu cần demo (một lần)→migration001→002→003 theo
+[migrations.md](docs/database/migrations.md). Provision Windows identity setup
+riêng vào CafeManagerSetup. Chạy `dotnet run --project src/CafeManager.WinForms
+-- --setup --server localhost --database <DB_da_chon>` bằngidentity đó; nhập
+password tại form. Success đóngsetup; thu hồi rolesetup, chạyapp bằngruntime
+CafeManagerApp với CAFEMANAGER_APP_CONNECTION. Không lưu password trongGit/chat/
+CLIargs/log. Không dùng việc thiếuadminactive làm điều kiện mở lạibootstrap.
+
+[Auth contract](docs/database/auth-contract.md) ·
+[Catalog contract](docs/database/catalog-contract.md) ·
+[Hướng dẫn nghiệm thuG02](docs/tasks/g02-truy-cap-ung-dung-cau-hinh-nen/manual-test-guide.md).
+Runner `tools/database/Test-G02.ps1` và `tools/ui/Verify-G02.ps1` đã chuẩn bị,
+chỉ chạy sau duyệt đợt testG02; build/SQLcompile/smoke không thay nghiệm thu.

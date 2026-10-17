@@ -1,0 +1,417 @@
+[
+  {
+    "Id": "B07.Bootstrap.invalid.U0000",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U0001",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U0002",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U0003",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U0004",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U0005",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U0006",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U0007",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U0008",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U0009",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U000A",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U000B",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U000C",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U000D",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U000E",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U000F",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U0010",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U0011",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U0012",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U0013",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U0014",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U0015",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U0016",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U0017",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U0018",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U0019",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U001A",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U001B",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U001C",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U001D",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U001E",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U001F",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U0020",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U0021",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U0022",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U0023",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U0024",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U0025",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U0026",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U0027",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U0028",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U0029",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U002A",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U002B",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U002C",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U002F",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U003A",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U003B",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U003C",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U003D",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U003E",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U003F",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U0040",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U005B",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U005C",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U005D",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U005E",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U0060",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U007B",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U007C",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U007D",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U007E",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U007F",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U00A0",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U00E9",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.U200B",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.UFF21",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.UFF3F",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.invalid.UFF0D",
+    "Status": "PASS",
+    "Actual": "SQL51404; Pending/account0/NV0;transaction0:0; DB=CoffeeManager_Test_G02_20261017_160148_6fbd9f42"
+  },
+  {
+    "Id": "B07.Bootstrap.valid.Latin1_General_100_CI_AS._",
+    "Status": "PASS",
+    "Actual": "Committed exact username and1ADMIN; case/outerspace login succeeds;DB=CoffeeManager_Test_G02_20261017_160200_1a63b9bb"
+  },
+  {
+    "Id": "B07.Bootstrap.valid.Latin1_General_100_CI_AS.-",
+    "Status": "PASS",
+    "Actual": "Committed exact username and1ADMIN; case/outerspace login succeeds;DB=CoffeeManager_Test_G02_20261017_160202_48d31088"
+  },
+  {
+    "Id": "B07.Bootstrap.valid.Latin1_General_100_CI_AS..",
+    "Status": "PASS",
+    "Actual": "Committed exact username and1ADMIN; case/outerspace login succeeds;DB=CoffeeManager_Test_G02_20261017_160204_426985bb"
+  },
+  {
+    "Id": "B07.Bootstrap.valid.Latin1_General_100_CI_AS.Ab._-19",
+    "Status": "PASS",
+    "Actual": "Committed exact username and1ADMIN; case/outerspace login succeeds;DB=CoffeeManager_Test_G02_20261017_160205_5c2b3b5c"
+  },
+  {
+    "Id": "B07.Bootstrap.valid.Latin1_General_100_CI_AS._50",
+    "Status": "PASS",
+    "Actual": "Committed exact username and1ADMIN; case/outerspace login succeeds;DB=CoffeeManager_Test_G02_20261017_160207_358499b1"
+  },
+  {
+    "Id": "B07.Bootstrap.valid.Latin1_General_100_CI_AS.-50",
+    "Status": "PASS",
+    "Actual": "Committed exact username and1ADMIN; case/outerspace login succeeds;DB=CoffeeManager_Test_G02_20261017_160209_ad9dda4c"
+  },
+  {
+    "Id": "B07.Legacy.preflight.Latin1_General_100_CI_AS",
+    "Status": "PASS",
+    "Actual": "Preflight accepted/trimmed existing symbols; legacy confirmation kept hash; runtime login succeeded;DB=CoffeeManager_Test_G02_20261017_160211_737b15c7"
+  },
+  {
+    "Id": "B07.Bootstrap.valid.Latin1_General_100_CS_AS._",
+    "Status": "PASS",
+    "Actual": "Committed exact username and1ADMIN; case/outerspace login succeeds;DB=CoffeeManager_Test_G02_20261017_160214_ef71b50a"
+  },
+  {
+    "Id": "B07.Bootstrap.valid.Latin1_General_100_CS_AS.-",
+    "Status": "PASS",
+    "Actual": "Committed exact username and1ADMIN; case/outerspace login succeeds;DB=CoffeeManager_Test_G02_20261017_160216_c0cbaf0b"
+  },
+  {
+    "Id": "B07.Bootstrap.valid.Latin1_General_100_CS_AS..",
+    "Status": "PASS",
+    "Actual": "Committed exact username and1ADMIN; case/outerspace login succeeds;DB=CoffeeManager_Test_G02_20261017_160218_2affd7b4"
+  },
+  {
+    "Id": "B07.Bootstrap.valid.Latin1_General_100_CS_AS.Ab._-19",
+    "Status": "PASS",
+    "Actual": "Committed exact username and1ADMIN; case/outerspace login succeeds;DB=CoffeeManager_Test_G02_20261017_160219_1effe3d7"
+  },
+  {
+    "Id": "B07.Bootstrap.valid.Latin1_General_100_CS_AS._50",
+    "Status": "PASS",
+    "Actual": "Committed exact username and1ADMIN; case/outerspace login succeeds;DB=CoffeeManager_Test_G02_20261017_160221_6e6708ed"
+  },
+  {
+    "Id": "B07.Bootstrap.valid.Latin1_General_100_CS_AS.-50",
+    "Status": "PASS",
+    "Actual": "Committed exact username and1ADMIN; case/outerspace login succeeds;DB=CoffeeManager_Test_G02_20261017_160223_3480ddd6"
+  },
+  {
+    "Id": "B07.Legacy.preflight.Latin1_General_100_CS_AS",
+    "Status": "PASS",
+    "Actual": "Preflight accepted/trimmed existing symbols; legacy confirmation kept hash; runtime login succeeded;DB=CoffeeManager_Test_G02_20261017_160225_a2cfda81"
+  }
+]

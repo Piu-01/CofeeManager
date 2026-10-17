@@ -1,0 +1,24 @@
+{
+  "Database": "CoffeeManager_Test_G02_20261011_171040_3f1e9b28",
+  "Dpi": 120,
+  "Results": [
+    {
+      "Id": "T08-K07.a.TC005.native",
+      "Expected": "System code/type/delete protected; rename allowed and mapping unchanged",
+      "Actual": "Delete disabled, code readonly, type disabled; native rename committed, code/Chi and all3mappings retained",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T08-K07.a.TC011.native",
+      "Expected": "System code/type/delete protected; rename allowed and mapping unchanged",
+      "Actual": "Delete disabled, code readonly, type disabled; native rename committed, code/Chi and all3mappings retained",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T08-K07.a.TC012.native",
+      "Expected": "System code/type/delete protected; rename allowed and mapping unchanged",
+      "Actual": "Delete disabled, code readonly, type disabled; native rename committed, code/Chi and all3mappings retained",
+      "Status": "PASS"
+    }
+  ]
+}

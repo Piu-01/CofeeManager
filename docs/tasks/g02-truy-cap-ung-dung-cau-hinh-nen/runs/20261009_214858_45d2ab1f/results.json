@@ -1,0 +1,1378 @@
+{
+    "RunId":  "20261009_214858_45d2ab1f",
+    "Task":  "T08",
+    "StartedAt":  "2026-10-09T21:48:58.7705712+07:00",
+    "CompletedAt":  "2026-10-09T21:49:36.2150402+07:00",
+    "Databases":  [
+                      "CoffeeManager_Test_G02_20261009_214859_40b6b849",
+                      "CoffeeManager_Test_G02_20261009_214901_c110296b",
+                      "CoffeeManager_Test_G02_20261009_214902_652a7bdc"
+                  ],
+    "SetupError":  null,
+    "DotnetExitCode":  0,
+    "Results":  [
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"CASH\", kind: Position, action: \"Create\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1638640",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"CASH\", kind: Supplier, action: \"Update\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1551943",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"STORE\", kind: ProductCategory, action: \"Delete\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1861369",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Catalogs.CatalogRulesTests.InvalidNamesAreRejected(name: \" \")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0000310",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K05_EachCatalogWithHistoryCannotDelete(kind: Shift, code: \"CA990\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.3081767",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"CASH\", kind: Position, action: \"Read\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1496611",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Catalogs.CatalogRulesTests.PositionDoesNotRoundInvalidFinancialFields(allowance: -1, factor: 1)",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0009755",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"STORE\", kind: Position, action: \"Update\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1718419",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K07_UnusedSystemExpenseCannotDeleteOrChangeType(code: \"TC005\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.2985554",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"CASH\", kind: Shift, action: \"Read\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1637586",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"STORE\", kind: Supplier, action: \"Update\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1651261",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"STORE\", kind: DeliveryPartner, action: \"Read\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1599638",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Catalogs.CatalogRulesTests.SupplierCodeRespectsFiniteAsciiContract(code: \"NCC100\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0004487",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"CASH\", kind: PaymentMethod, action: \"Create\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1715048",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Catalogs.CatalogRulesTests.NewMethodCannotEnableSupportAndPointsNeverEnable",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0008000",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"CASH\", kind: Supplier, action: \"Read\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1740910",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"CASH\", kind: ExpenseCategory, action: \"Update\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1618808",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"STORE\", kind: ProductCategory, action: \"Create\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1916588",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Catalogs.CatalogRulesTests.RatioIncludesBothBoundaries(input: 100)",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0003188",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K10_PartnerEditLeavesPaidOrderSnapshotUnchanged",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.3085113",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K07_UnusedSystemExpenseCannotDeleteOrChangeType(code: \"TC011\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.3845172",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"CASH\", kind: ExpenseCategory, action: \"Delete\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1500334",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Catalogs.CatalogRulesTests.SupplierCodeRespectsFiniteAsciiContract(code: \"NCC00\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0000422",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Catalogs.CatalogRulesTests.SupplierCodeRespectsFiniteAsciiContract(code: \"NCC1\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0093622",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"STORE\", kind: DeliveryPartner, action: \"Update\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1620340",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"CASH\", kind: ExpenseCategory, action: \"Read\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1446740",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"STORE\", kind: Supplier, action: \"Read\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1876192",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K01_EachCatalogPersistsSearchesAndRejectsStaleEditor(request: ShiftRequest { Code = CA999, Name = Tiếng Việt %_[ \u0027 CA, StartTime = 22:00:00, EndTime = 06:00:00 })",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.5331977",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K05_EachCatalogWithHistoryCannotDelete(kind: ProductCategory, code: \"DM990\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.2853989",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K01_EachCatalogPersistsSearchesAndRejectsStaleEditor(request: DeliveryPartnerRequest { Code = DT999, Name = Tiếng Việt %_[ \u0027 DT, Ratio = 100 })",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.4983730",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"STORE\", kind: ExpenseCategory, action: \"Create\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1782048",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"STORE\", kind: PaymentMethod, action: \"Delete\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.2259522",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"CASH\", kind: Shift, action: \"Delete\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.2049477",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Catalogs.CatalogRulesTests.PositionDoesNotRoundInvalidFinancialFields(allowance: 1.5, factor: 1)",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0000147",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"CASH\", kind: DeliveryPartner, action: \"Read\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1552012",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Catalogs.CatalogRulesTests.InvalidNamesAreRejected(name: \"Tên\\nkhác\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0003874",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K05_EachCatalogWithHistoryCannotDelete(kind: ExpenseCategory, code: \"TC990\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.2702618",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"STORE\", kind: Position, action: \"Create\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1860332",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"STORE\", kind: Supplier, action: \"Delete\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1702175",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K05_EachCatalogWithHistoryCannotDelete(kind: Supplier, code: \"NCC90\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.2973092",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"CASH\", kind: Position, action: \"Delete\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1454300",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"STORE\", kind: ExpenseCategory, action: \"Delete\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1628854",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"STORE\", kind: ExpenseCategory, action: \"Update\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1716634",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"CASH\", kind: DeliveryPartner, action: \"Create\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1874701",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"CASH\", kind: ProductCategory, action: \"Delete\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1751560",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K01_EachCatalogPersistsSearchesAndRejectsStaleEditor(request: PaymentMethodRequest { Code = PT999, Name = Tiếng Việt %_[ \u0027 PT, Supported = False })",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.5965600",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"STORE\", kind: Shift, action: \"Read\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1681122",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"STORE\", kind: PaymentMethod, action: \"Read\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1596962",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K05_EachCatalogWithHistoryCannotDelete(kind: DeliveryPartner, code: \"DT990\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.2931548",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"STORE\", kind: Shift, action: \"Update\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1834774",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"STORE\", kind: Position, action: \"Read\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.2217682",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Catalogs.CatalogRulesTests.OvernightShiftIsAllowedButEqualOrSubMinuteTimesAreNot",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0009785",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"STORE\", kind: PaymentMethod, action: \"Create\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.2078280",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"STORE\", kind: Shift, action: \"Delete\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.2066253",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"CASH\", kind: PaymentMethod, action: \"Read\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1740446",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K07_UnusedSystemExpenseCannotDeleteOrChangeType(code: \"TC012\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.2917007",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"STORE\", kind: PaymentMethod, action: \"Update\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.2095864",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"CASH\", kind: DeliveryPartner, action: \"Update\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1706747",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K01_EachCatalogPersistsSearchesAndRejectsStaleEditor(request: PositionRequest { Code = CV999, Name = Tiếng Việt %_[ \u0027 CV, Allowance = 0, Factor = 1 })",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.5036438",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"STORE\", kind: DeliveryPartner, action: \"Create\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1710814",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"CASH\", kind: Shift, action: \"Update\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1754091",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"STORE\", kind: ProductCategory, action: \"Update\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1653254",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"CASH\", kind: ExpenseCategory, action: \"Create\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1636234",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Catalogs.CatalogRulesTests.RatioDoesNotRoundOrAcceptOutOfRange(input: -1)",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0022594",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"CASH\", kind: Shift, action: \"Create\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1593066",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"CASH\", kind: Supplier, action: \"Delete\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.2183063",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K05_EachCatalogWithHistoryCannotDelete(kind: PaymentMethod, code: \"PT990\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.3018661",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"STORE\", kind: Position, action: \"Delete\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1451772",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K01_EachCatalogPersistsSearchesAndRejectsStaleEditor(request: SupplierRequest { Code = NCC99, Name = Tiếng Việt %_[ \u0027 NCC, Phone = 012345678901234 })",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.5881001",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"CASH\", kind: Position, action: \"Update\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1804382",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Catalogs.CatalogRulesTests.SystemExpenseCanRenameButNotCreateOrChangeType(code: \"TC012\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0029026",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Catalogs.CatalogRulesTests.InvalidNamesAreRejected(name: \"\\t\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0005541",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"CASH\", kind: ProductCategory, action: \"Create\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1636713",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Catalogs.CatalogRulesTests.SupplierCodeRespectsFiniteAsciiContract(code: \"NCC０1\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0000523",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"CASH\", kind: ProductCategory, action: \"Read\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1750628",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K08_ManualSupportIsExplicitAndNameIndependent",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.6308093",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"STORE\", kind: ExpenseCategory, action: \"Read\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.2337910",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"STORE\", kind: DeliveryPartner, action: \"Delete\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1521383",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"CASH\", kind: DeliveryPartner, action: \"Delete\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1626745",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Catalogs.CatalogRulesTests.PositionDoesNotRoundInvalidFinancialFields(allowance: 0, factor: 1.0009999999999999)",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0006378",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"STORE\", kind: Supplier, action: \"Create\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.2072196",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Catalogs.CatalogRulesTests.InvalidNamesAreRejected(name: \"\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0000432",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Catalogs.CatalogRulesTests.RatioIncludesBothBoundaries(input: 0)",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0037882",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"CASH\", kind: ProductCategory, action: \"Update\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1984564",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Catalogs.CatalogRulesTests.SystemExpenseCanRenameButNotCreateOrChangeType(code: \"TC005\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0000479",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Catalogs.CatalogRulesTests.SystemExpenseCanRenameButNotCreateOrChangeType(code: \"TC011\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0003196",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Catalogs.CatalogRulesTests.RatioDoesNotRoundOrAcceptOutOfRange(input: 0.001)",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0002084",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Catalogs.CatalogRulesTests.PositionDoesNotRoundInvalidFinancialFields(allowance: 0, factor: 0.98999999999999999)",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0000408",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"CASH\", kind: PaymentMethod, action: \"Delete\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1410465",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"STORE\", kind: Shift, action: \"Create\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1512303",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K05_EachCatalogWithHistoryCannotDelete(kind: Position, code: \"CV990\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.3262642",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"CASH\", kind: PaymentMethod, action: \"Update\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1432709",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K01_CreateReceiptReplaysOnlyTheSameRequestPayload",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.4621594",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Catalogs.CatalogRulesTests.RatioDoesNotRoundOrAcceptOutOfRange(input: 100.01000000000001)",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0006479",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"CASH\", kind: Supplier, action: \"Create\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.3666038",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K09_EachCatalogBlocksUnauthorizedServiceCalls(role: \"STORE\", kind: ProductCategory, action: \"Read\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1465179",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K01_EachCatalogPersistsSearchesAndRejectsStaleEditor(request: ProductCategoryRequest { Code = , Name = Tiếng Việt %_[ \u0027 DM, RequestId = 28606fe0-04e3-4a24-b80e-31033497ef02 })",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.6639887",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.G02.CatalogIntegrationTests.T08_K01_EachCatalogPersistsSearchesAndRejectsStaleEditor(request: ExpenseCategoryRequest { Code = TC999, Name = Tiếng Việt %_[ \u0027 TC, Type = Thu })",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.6266889",
+                        "Error":  null
+                    }
+                ],
+    "SourceUnchanged":  true,
+    "SourceBefore":  [
+                         {
+                             "Path":  "database\\DB_Schema.sql",
+                             "Hash":  "53351D5CA521464558DE6FC4AA1F839CC45CBBD091FDDB4EC005643F2D6EE151"
+                         },
+                         {
+                             "Path":  "database\\Insert_Data.sql",
+                             "Hash":  "FBC1CAB2233D8B3B588F6C3DE61DB9A8ADCD40CFE19997531EB91354BADDF706"
+                         },
+                         {
+                             "Path":  "database\\migrations\\001_contract_and_code_generation.sql",
+                             "Hash":  "0C4300BB58CE9E29A3A8E2B814AEB1F259F51F2DC0251142CD6479D23D44036C"
+                         },
+                         {
+                             "Path":  "database\\migrations\\002_auth_and_bootstrap.sql",
+                             "Hash":  "0C547F91BF3B99E08BFAD01A108FFEF1CC2AD6C853663D76A3714EF2FDE09E52"
+                         },
+                         {
+                             "Path":  "database\\migrations\\003_reference_catalogs.sql",
+                             "Hash":  "59502E3FF02E2D16FC0248A8F7FEBA04DA63F7CC227ED6C2D8D46D9696E1E950"
+                         },
+                         {
+                             "Path":  "database\\security\\provision-app-user.sql",
+                             "Hash":  "B34BC3D02A950DABC4603AAD8B3BF5004DA9CEB230DBAA45173BE1489B501E1A"
+                         },
+                         {
+                             "Path":  "database\\security\\provision-setup-user.sql",
+                             "Hash":  "ABA05675B31734C59FBF4F0B16ABA37AAACF4D995926AC4320502B315BDD07AA"
+                         },
+                         {
+                             "Path":  "database\\tests\\g02\\security-fixtures.sql",
+                             "Hash":  "6232950854A08DD52EA8C15985DF1C3237323634BB17D1C500EF34EDA0203AAC"
+                         },
+                         {
+                             "Path":  "database\\tests\\t02\\batch-triggers.sql",
+                             "Hash":  "704EDAE90E15C82F8CAC5D8123437EB1B9C71182B1ABA1B8DFDC4DC14D0D6400"
+                         },
+                         {
+                             "Path":  "database\\tests\\t02\\catalog-seed.sql",
+                             "Hash":  "A0A57D127E29383EF22F763904050F485572250F8F28EDEFACC09C248DED7592"
+                         },
+                         {
+                             "Path":  "database\\tests\\t02\\constraints.sql",
+                             "Hash":  "4F14D2B0665A038AAFD8492A6F2343190166F12C5DE12034947A7611622B042C"
+                         },
+                         {
+                             "Path":  "database\\tests\\t02\\fixtures.sql",
+                             "Hash":  "9AD855A5ACF9F56165CA601878983EB6A9F46CB732BEEA8B3F0266A0DC1AFF8C"
+                         },
+                         {
+                             "Path":  "database\\tests\\t02\\procedure-cases.sql",
+                             "Hash":  "6FCAF99EDFCA494D85211BB7C36049834AA0294F1B7A270025D8442E46E8F515"
+                         },
+                         {
+                             "Path":  "database\\tests\\t03\\permissions.sql",
+                             "Hash":  "C175CF2D79C2D8370AFC2F5F6B47B0E2434377B791BD8F13AF224B4531B77587"
+                         },
+                         {
+                             "Path":  "database\\tests\\t05\\fixtures.sql",
+                             "Hash":  "C6A4BB0311EE18551FCACE6A0EA705D0B39B8E9A5E5D05DF7B66F158A33561B7"
+                         },
+                         {
+                             "Path":  "database\\tests\\t05\\slow-ui.sql",
+                             "Hash":  "DBBC2CD95EB01821C409C60FC867D745CF5B3101F9632251B3CDA9835E575A2E"
+                         },
+                         {
+                             "Path":  "database\\tests\\t06\\rollback-fixture.sql",
+                             "Hash":  "A3A76CB34110FCB9B24505E6E99EAC33329BBF8CB2AEF8C689BC819ABBB377F3"
+                         },
+                         {
+                             "Path":  "database\\tests\\t08\\fixture-guard.sql",
+                             "Hash":  "C84AD94EAD6778223543C704E5087A8ACF8AF4AA761088EC8D644CDC44277C20"
+                         },
+                         {
+                             "Path":  "database\\tests\\t08\\history-fixtures.sql",
+                             "Hash":  "8E009C5E108A9A9D992CEC9F19316D59F7B3DC18498A67BB2E1D2BA5DE92829E"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Business\\CafeManager.Business.csproj",
+                             "Hash":  "16AC6882D6C19DF5278E55D69A306CB0F35433187F07DB6A92B2E523CFBC9C6C"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Business\\Security\\PasswordService.cs",
+                             "Hash":  "176178AEF133C23E03E0F3DBF651D2A5FA28D17BA6A203FA5916E82847809EC7"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Business\\Security\\PermissionService.cs",
+                             "Hash":  "F9F6A87376CDD2D462BD3715B3F024BA3AA2100675BD623E5A0F2A656E00F1B5"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Business\\Security\\SessionContext.cs",
+                             "Hash":  "393D31F683FEAEA0C0C419BEADF2D1AE8BFAFE328E2FD5AC1B7F4B1EA4813A67"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Business\\Services\\AuthService.cs",
+                             "Hash":  "4C3378FF7E93A3AA93DC80E519DE491850305E542D5AC36D54A0C0E0F32F84F0"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Business\\Services\\BootstrapService.cs",
+                             "Hash":  "6E6D5F2F219E9D3C87964909677F3BD1C255340C69FEED51C759F0BDCD628212"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Business\\Services\\CatalogService.cs",
+                             "Hash":  "EF233B5EF85713B035E49C41E17300FB2E589585F74E245F412B4F50B7E73EAB"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Business\\Services\\PaymentMethodService.cs",
+                             "Hash":  "0EAE95247FBC30DBA63EAD18D2876D07421321D8E04E9B024A70C2018B9EC6C7"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Business\\Services\\TableStatusService.cs",
+                             "Hash":  "FAF1ACF10622C85726B043024370CCFD2DBBE5F087DB33E77F89EE18856AAB8D"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Business\\Services\\UserOperationException.cs",
+                             "Hash":  "DA9C339F1CB85A2D59532ADB92D0AB4ED38B804227813A24517FA8FCFC02F991"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.DataAccess\\CafeManager.DataAccess.csproj",
+                             "Hash":  "472A43D85BA8A9D36C62937F1418A92FF73CF0877B404573898AE1FDF3A749EC"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.DataAccess\\ConnectionFactory.cs",
+                             "Hash":  "68AB25E8025E347CCD30D0E4A90A0F0010735A61CF6B04BEBE1A85EB19963DF1"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.DataAccess\\DataAccessException.cs",
+                             "Hash":  "78F89C608F9A3EB5285E97FE226297400B854934A9030E827668B8D746ED41E2"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.DataAccess\\DataOperationLog.cs",
+                             "Hash":  "6AC892826A226B94800B8AA5407763C4FE996FDD348CF64A6DDA53762FED454C"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.DataAccess\\PaymentTableBuilder.cs",
+                             "Hash":  "822AB7D4D0D42D63F0E5047B5492D248897CB01EDE1C982A1D2F5C7552D036CA"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.DataAccess\\Repositories\\AuthRepository.cs",
+                             "Hash":  "DB83D9FED8F95DED3F331F253EB79DE29BC5F6726E276C12E63ED3613BE40C3E"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.DataAccess\\Repositories\\CatalogRepository.cs",
+                             "Hash":  "C62996482AEE25AC43D9DF9C9EE95FFA5BC115C582D0D14B2B1393758EA008BD"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.DataAccess\\Repositories\\PaymentMethodRepository.cs",
+                             "Hash":  "B2DB0ECB7E644CD7484886FE791D820E9EC6F760D98D72E830973FABDE0CC546"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.DataAccess\\Repositories\\SetupRepository.cs",
+                             "Hash":  "C97D1663763813C66181E2A014134C35C4FC2683B946A19CEBBC79DA00EEC037"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.DataAccess\\Repositories\\TableStatusRepository.cs",
+                             "Hash":  "040009D44F06BF0B7B00EEAD026D666C78FB185AA397D43FDC9E0FE55D197488"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.DataAccess\\SqlErrorMapper.cs",
+                             "Hash":  "F5A2C8FC2BF4AFC6393B0A21F9F46F3BA009AAEBE69085B75D665BD16CC9E107"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.DataAccess\\SqlParameters.cs",
+                             "Hash":  "D2B28D3EAB331A4DFAA032803403F1C670E9D3F81316356DC12E4F773AF789EB"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.DataAccess\\SqlProcedureExecutor.cs",
+                             "Hash":  "EBA1875B30F008C5A82B92C4BE8A3C59715314449113506CFDB05694EC4CDD0E"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Models\\CafeManager.Models.csproj",
+                             "Hash":  "2FDBB0CCDEF922BFDA5B379CBC768B7C0C1CFCE3B8A8F7DCDACECB06B4E736D7"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Models\\Dtos\\AccountIdentity.cs",
+                             "Hash":  "B315F03B2E86C1BAA6E48BBC26236455A3384DED0A8BDF8F3D413E7A8DCA6890"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Models\\Dtos\\Catalogs\\CatalogRows.cs",
+                             "Hash":  "94FEF731531695D981D45958CCEF0DD4A10AE0D0A55223B88CCB46725E6101A5"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Models\\Dtos\\TableStatusDto.cs",
+                             "Hash":  "5F87607CF1A5AA60FE1D9F40DAF8F0AAB36109E30740DBB431244A8D662DB4D8"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Models\\Errors\\DataError.cs",
+                             "Hash":  "A81171A152C27293D2123A610709119B23A48BA81D6CD66F474511A86FF21CF5"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Models\\Requests\\Catalogs\\CatalogRequests.cs",
+                             "Hash":  "4FA25DA966BADD8B7096865AAF94AB97698E99FED6572594B3D96B7A37411223"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Models\\Requests\\LoginRequest.cs",
+                             "Hash":  "22FCD1658890F7437C9AF9982E8EB0CE9B6F0360FF5361395BAC9D1BCAB2DD98"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Models\\Requests\\PaymentAllocation.cs",
+                             "Hash":  "AE5A2267C928C6DCC021DE484A8293DD58B0DA9EB78CF07419E2A00549297C0D"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\ApplicationSessionContext.cs",
+                             "Hash":  "6CFCFCE0D3C79DA4E891D68676EFF11F84F8D26171FBC2CC1A7BBA3A5089B3FD"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\CafeManager.WinForms.csproj",
+                             "Hash":  "35F2610088E58E7C2F80EB591BB8224FC7DE3E19FF2D361E690B07CC2D2A2DAA"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\CafeManager.WinForms.csproj.user",
+                             "Hash":  "8084FEB1D0747173BA61AA40B97C4C2E6890BE8E142E8263A8CFA6F43D4DA8CF"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Forms\\BootstrapForm.cs",
+                             "Hash":  "64790097A213F1F6A6790AA34AAA6D84563D5C6D36B557C4256DEC50A6394CA9"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Forms\\BootstrapForm.Designer.cs",
+                             "Hash":  "15C6E2716858749DE82480AC2157519BA0D0C25584B236FE618B217096077083"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Forms\\CatalogEditorDialog.cs",
+                             "Hash":  "99434C9B24C2F256BDD3D01D82D5AD5565D0F24B63697EF30B00CA29F1C85682"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Forms\\CatalogEditorDialog.Designer.cs",
+                             "Hash":  "6215026374C9B4B293E0F0B05874B99D73C02B3663BE5DD762BA5E71F2B2515A"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Forms\\LoginForm.cs",
+                             "Hash":  "0E7857DA6011C4B6AED46E8BB02CFC4094BA9ABAA3D8BF3A7913707825612EA9"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Forms\\LoginForm.Designer.cs",
+                             "Hash":  "4EA34ECB993F76EA3D2F8DCE4B6BE078A582AC78863013C99963F7E4EAB6F85E"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Forms\\MainForm.cs",
+                             "Hash":  "6CC227C344063C4F3ED48BD54C1A354F4A975B820BACA534E2D2E62DA4F91969"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Forms\\MainForm.Designer.cs",
+                             "Hash":  "B344B9B7F07972C9F04F5F6D5FD0B8C6E92682BC7991B13FDC99BA829DD8E87A"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Forms\\StartupForm.cs",
+                             "Hash":  "CF01367B9818FD6EE39746AC08E595814D0A9D086F430814129A0AFF7C0E6F98"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Forms\\StartupForm.Designer.cs",
+                             "Hash":  "6E88363E94DD9B3D6B742BB95CBBB36402F3B28BF751CBACCCC8698085BDD700"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Forms\\StartupForm.resx",
+                             "Hash":  "AD197010B4AEC54E7DA62CBFD3938B8F26485E949E9938D266FD4B4F281F0B39"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Modules\\Catalogs\\CatalogsControl.cs",
+                             "Hash":  "01F130C27B090E34CDF4D93331DE5381495E63647F7CD07F4909663341BEE546"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Modules\\Catalogs\\CatalogsControl.Designer.cs",
+                             "Hash":  "92FA31AA5B1831795BB2606F5FEA4F682DF20B9F9C826D1084BF361B1BA17274"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Modules\\Home\\SessionHomeControl.cs",
+                             "Hash":  "EACCF754CBEA72568C143B00C2D98076219E3CEE1793C0D7B2E81220262B1CED"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Modules\\System\\SystemInfoControl.cs",
+                             "Hash":  "C321FD6E9669BC1FA36DFDE752E60F594AA5AE22F9FDF1D608C6716415B8F810"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Navigation\\NavigationController.cs",
+                             "Hash":  "DA7181E0E27C89D641353FC47AB8E02CF00172B104F41A6EA940A7CA30E4C335"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Program.cs",
+                             "Hash":  "E5C040CC3982189497941928753D8D053462BDA6C24008F44E231CA2316AAAFB"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Theme\\AppTheme.cs",
+                             "Hash":  "C86A1C67C17E922D00E526D30BEA165615A211A71831E1DCA22F3EF5CE188A03"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\UI\\ModuleState.cs",
+                             "Hash":  "E8864441884DC7D5859BCA280A5D6CC375E1F08C47BCE42E4CD1E769DADE3C4A"
+                         },
+                         {
+                             "Path":  "tests\\CafeManager.Tests\\Auth\\AuthRulesTests.cs",
+                             "Hash":  "C3F5DC846EB035D586C7FF7028FE74047A13D5752B071E417912493D9A9B8938"
+                         },
+                         {
+                             "Path":  "tests\\CafeManager.Tests\\CafeManager.Tests.csproj",
+                             "Hash":  "5E1FEEDBF891AE53D6577F15EEED446124B66192FE416A3B3F28E2FEBD9901CF"
+                         },
+                         {
+                             "Path":  "tests\\CafeManager.Tests\\Catalogs\\CatalogRulesTests.cs",
+                             "Hash":  "192FF35EF480E3E82BFA3C134B3D9FCEB70B3BB9C88C32EBD3E6A574939E72FD"
+                         },
+                         {
+                             "Path":  "tests\\CafeManager.Tests\\G02\\AuthIntegrationTests.cs",
+                             "Hash":  "5992E38A12F90E6CBE412F0E00369B8F2533158B0F6BC6D0536BEBE73F4933D5"
+                         },
+                         {
+                             "Path":  "tests\\CafeManager.Tests\\G02\\CatalogIntegrationTests.cs",
+                             "Hash":  "2308FC370792D463E5C27DD4BE521182131C4E67FA850851ECC4B50FA2019B93"
+                         },
+                         {
+                             "Path":  "tests\\CafeManager.Tests\\G02\\G02DatabaseFixture.cs",
+                             "Hash":  "E635BBF6204653E58EDCF6B7F39B255CDF46A615898E5C1D0C0235C82DB9D181"
+                         },
+                         {
+                             "Path":  "tests\\CafeManager.Tests\\Integration\\DataAccessTests.cs",
+                             "Hash":  "B96A6DF5ACD9817E59DEA054F017AB0E6209F7F21EA0D6B8D9F01A2509E10ED8"
+                         },
+                         {
+                             "Path":  "tests\\CafeManager.Tests\\ParameterAndErrorTests.cs",
+                             "Hash":  "5AC866B25911C388F707891EF13DC625C73FFDC4E09E49D94AD5F29F761A916D"
+                         },
+                         {
+                             "Path":  "tests\\CafeManager.Tests\\TestDatabaseFixture.cs",
+                             "Hash":  "1CB66CA1B3FD4496E5CC2F3C1675EAD077B4FA7E9C36135B80ECE5F9358C9652"
+                         },
+                         {
+                             "Path":  "tools\\CafeManager.EnvironmentProbe\\CafeManager.EnvironmentProbe.csproj",
+                             "Hash":  "B01BE238023D2A95F41D2A88F7A13E7C6F0AB7E0358975EFBD416538151F1A27"
+                         },
+                         {
+                             "Path":  "tools\\CafeManager.EnvironmentProbe\\CafeManager.EnvironmentProbe.csproj.user",
+                             "Hash":  "0162BBA2A08BAB5F20296314F586239790B84B4545BB0E83E6A4E20229904D35"
+                         },
+                         {
+                             "Path":  "tools\\CafeManager.EnvironmentProbe\\EnvironmentProbeForm.cs",
+                             "Hash":  "3203C812933C76A04247BD4A32E173699FFA99127EC320A97E57E8819BDC0BDC"
+                         },
+                         {
+                             "Path":  "tools\\CafeManager.EnvironmentProbe\\EnvironmentProbeForm.Designer.cs",
+                             "Hash":  "6239FE74C4AF6C2CA38DBEAD1F3A25BA0721906D3C084191F5E75496F1EFC1F9"
+                         },
+                         {
+                             "Path":  "tools\\CafeManager.EnvironmentProbe\\EnvironmentProbeForm.resx",
+                             "Hash":  "4363CD7D5B8671C72442CE1A1BFC10D64EBD24B2D718B54BD4FCD025E4967298"
+                         },
+                         {
+                             "Path":  "tools\\CafeManager.EnvironmentProbe\\Program.cs",
+                             "Hash":  "1BA193C8B584F79C1AEA3CDFB3CC83EBFBADA764E0E7A446F613B291DE5701DC"
+                         },
+                         {
+                             "Path":  "tools\\database\\Apply-Migration.ps1",
+                             "Hash":  "894548AE0EEABFF319EA0BA6E9F68A9DE269826B5DFF1BCB1C5D82CB5EE4C158"
+                         },
+                         {
+                             "Path":  "tools\\database\\DatabaseTestTools.ps1",
+                             "Hash":  "2E0874438B6068849B54D8A1DA4C70D4D5C221CCBAF297DA3AC45F8C0D3402AC"
+                         },
+                         {
+                             "Path":  "tools\\database\\Test-Baseline.ps1",
+                             "Hash":  "46F91704CC8478BF18EDB616293863A181E4CF06ADE3AF832E7DA0933F307A1B"
+                         },
+                         {
+                             "Path":  "tools\\database\\Test-ContractMigration.ps1",
+                             "Hash":  "E273035B6C1600747D8712ED34F3C7F40EA0D35D1430ABBB369EAB8CCCF5D385"
+                         },
+                         {
+                             "Path":  "tools\\database\\Test-DataAccess.ps1",
+                             "Hash":  "661B2DF7B15441AD914C1A0C6B21CBA65953A2CDB88E9DBD6CE95E2019B494BF"
+                         },
+                         {
+                             "Path":  "tools\\database\\Test-G02.ps1",
+                             "Hash":  "371736D9BEC103BCFF7D7FA2F136377A5E80D51B6390BAC8806C0CD0CBB1ECA0"
+                         },
+                         {
+                             "Path":  "tools\\G02TechnicalSmoke\\G02TechnicalSmoke.csproj",
+                             "Hash":  "82916D366B9BDFCF530B5ACD27C0C4F9C73792E1E2E157A97D7600B22B78DC60"
+                         },
+                         {
+                             "Path":  "tools\\G02TechnicalSmoke\\Program.cs",
+                             "Hash":  "FA62E6D28AF87C1ED822B43106A75C9AA2D8C51884B6D47549344C472DE4C571"
+                         },
+                         {
+                             "Path":  "tools\\ui\\Verify-G02.ps1",
+                             "Hash":  "C4DFD8577040E02D33C991ED1F3BE4DBE148732059D85399C91CA7FED499434B"
+                         }
+                     ],
+    "SourceAfter":  [
+                        {
+                            "Path":  "database\\DB_Schema.sql",
+                            "Hash":  "53351D5CA521464558DE6FC4AA1F839CC45CBBD091FDDB4EC005643F2D6EE151"
+                        },
+                        {
+                            "Path":  "database\\Insert_Data.sql",
+                            "Hash":  "FBC1CAB2233D8B3B588F6C3DE61DB9A8ADCD40CFE19997531EB91354BADDF706"
+                        },
+                        {
+                            "Path":  "database\\migrations\\001_contract_and_code_generation.sql",
+                            "Hash":  "0C4300BB58CE9E29A3A8E2B814AEB1F259F51F2DC0251142CD6479D23D44036C"
+                        },
+                        {
+                            "Path":  "database\\migrations\\002_auth_and_bootstrap.sql",
+                            "Hash":  "0C547F91BF3B99E08BFAD01A108FFEF1CC2AD6C853663D76A3714EF2FDE09E52"
+                        },
+                        {
+                            "Path":  "database\\migrations\\003_reference_catalogs.sql",
+                            "Hash":  "59502E3FF02E2D16FC0248A8F7FEBA04DA63F7CC227ED6C2D8D46D9696E1E950"
+                        },
+                        {
+                            "Path":  "database\\security\\provision-app-user.sql",
+                            "Hash":  "B34BC3D02A950DABC4603AAD8B3BF5004DA9CEB230DBAA45173BE1489B501E1A"
+                        },
+                        {
+                            "Path":  "database\\security\\provision-setup-user.sql",
+                            "Hash":  "ABA05675B31734C59FBF4F0B16ABA37AAACF4D995926AC4320502B315BDD07AA"
+                        },
+                        {
+                            "Path":  "database\\tests\\g02\\security-fixtures.sql",
+                            "Hash":  "6232950854A08DD52EA8C15985DF1C3237323634BB17D1C500EF34EDA0203AAC"
+                        },
+                        {
+                            "Path":  "database\\tests\\t02\\batch-triggers.sql",
+                            "Hash":  "704EDAE90E15C82F8CAC5D8123437EB1B9C71182B1ABA1B8DFDC4DC14D0D6400"
+                        },
+                        {
+                            "Path":  "database\\tests\\t02\\catalog-seed.sql",
+                            "Hash":  "A0A57D127E29383EF22F763904050F485572250F8F28EDEFACC09C248DED7592"
+                        },
+                        {
+                            "Path":  "database\\tests\\t02\\constraints.sql",
+                            "Hash":  "4F14D2B0665A038AAFD8492A6F2343190166F12C5DE12034947A7611622B042C"
+                        },
+                        {
+                            "Path":  "database\\tests\\t02\\fixtures.sql",
+                            "Hash":  "9AD855A5ACF9F56165CA601878983EB6A9F46CB732BEEA8B3F0266A0DC1AFF8C"
+                        },
+                        {
+                            "Path":  "database\\tests\\t02\\procedure-cases.sql",
+                            "Hash":  "6FCAF99EDFCA494D85211BB7C36049834AA0294F1B7A270025D8442E46E8F515"
+                        },
+                        {
+                            "Path":  "database\\tests\\t03\\permissions.sql",
+                            "Hash":  "C175CF2D79C2D8370AFC2F5F6B47B0E2434377B791BD8F13AF224B4531B77587"
+                        },
+                        {
+                            "Path":  "database\\tests\\t05\\fixtures.sql",
+                            "Hash":  "C6A4BB0311EE18551FCACE6A0EA705D0B39B8E9A5E5D05DF7B66F158A33561B7"
+                        },
+                        {
+                            "Path":  "database\\tests\\t05\\slow-ui.sql",
+                            "Hash":  "DBBC2CD95EB01821C409C60FC867D745CF5B3101F9632251B3CDA9835E575A2E"
+                        },
+                        {
+                            "Path":  "database\\tests\\t06\\rollback-fixture.sql",
+                            "Hash":  "A3A76CB34110FCB9B24505E6E99EAC33329BBF8CB2AEF8C689BC819ABBB377F3"
+                        },
+                        {
+                            "Path":  "database\\tests\\t08\\fixture-guard.sql",
+                            "Hash":  "C84AD94EAD6778223543C704E5087A8ACF8AF4AA761088EC8D644CDC44277C20"
+                        },
+                        {
+                            "Path":  "database\\tests\\t08\\history-fixtures.sql",
+                            "Hash":  "8E009C5E108A9A9D992CEC9F19316D59F7B3DC18498A67BB2E1D2BA5DE92829E"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.Business\\CafeManager.Business.csproj",
+                            "Hash":  "16AC6882D6C19DF5278E55D69A306CB0F35433187F07DB6A92B2E523CFBC9C6C"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.Business\\Security\\PasswordService.cs",
+                            "Hash":  "176178AEF133C23E03E0F3DBF651D2A5FA28D17BA6A203FA5916E82847809EC7"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.Business\\Security\\PermissionService.cs",
+                            "Hash":  "F9F6A87376CDD2D462BD3715B3F024BA3AA2100675BD623E5A0F2A656E00F1B5"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.Business\\Security\\SessionContext.cs",
+                            "Hash":  "393D31F683FEAEA0C0C419BEADF2D1AE8BFAFE328E2FD5AC1B7F4B1EA4813A67"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.Business\\Services\\AuthService.cs",
+                            "Hash":  "4C3378FF7E93A3AA93DC80E519DE491850305E542D5AC36D54A0C0E0F32F84F0"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.Business\\Services\\BootstrapService.cs",
+                            "Hash":  "6E6D5F2F219E9D3C87964909677F3BD1C255340C69FEED51C759F0BDCD628212"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.Business\\Services\\CatalogService.cs",
+                            "Hash":  "EF233B5EF85713B035E49C41E17300FB2E589585F74E245F412B4F50B7E73EAB"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.Business\\Services\\PaymentMethodService.cs",
+                            "Hash":  "0EAE95247FBC30DBA63EAD18D2876D07421321D8E04E9B024A70C2018B9EC6C7"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.Business\\Services\\TableStatusService.cs",
+                            "Hash":  "FAF1ACF10622C85726B043024370CCFD2DBBE5F087DB33E77F89EE18856AAB8D"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.Business\\Services\\UserOperationException.cs",
+                            "Hash":  "DA9C339F1CB85A2D59532ADB92D0AB4ED38B804227813A24517FA8FCFC02F991"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.DataAccess\\CafeManager.DataAccess.csproj",
+                            "Hash":  "472A43D85BA8A9D36C62937F1418A92FF73CF0877B404573898AE1FDF3A749EC"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.DataAccess\\ConnectionFactory.cs",
+                            "Hash":  "68AB25E8025E347CCD30D0E4A90A0F0010735A61CF6B04BEBE1A85EB19963DF1"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.DataAccess\\DataAccessException.cs",
+                            "Hash":  "78F89C608F9A3EB5285E97FE226297400B854934A9030E827668B8D746ED41E2"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.DataAccess\\DataOperationLog.cs",
+                            "Hash":  "6AC892826A226B94800B8AA5407763C4FE996FDD348CF64A6DDA53762FED454C"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.DataAccess\\PaymentTableBuilder.cs",
+                            "Hash":  "822AB7D4D0D42D63F0E5047B5492D248897CB01EDE1C982A1D2F5C7552D036CA"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.DataAccess\\Repositories\\AuthRepository.cs",
+                            "Hash":  "DB83D9FED8F95DED3F331F253EB79DE29BC5F6726E276C12E63ED3613BE40C3E"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.DataAccess\\Repositories\\CatalogRepository.cs",
+                            "Hash":  "C62996482AEE25AC43D9DF9C9EE95FFA5BC115C582D0D14B2B1393758EA008BD"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.DataAccess\\Repositories\\PaymentMethodRepository.cs",
+                            "Hash":  "B2DB0ECB7E644CD7484886FE791D820E9EC6F760D98D72E830973FABDE0CC546"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.DataAccess\\Repositories\\SetupRepository.cs",
+                            "Hash":  "C97D1663763813C66181E2A014134C35C4FC2683B946A19CEBBC79DA00EEC037"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.DataAccess\\Repositories\\TableStatusRepository.cs",
+                            "Hash":  "040009D44F06BF0B7B00EEAD026D666C78FB185AA397D43FDC9E0FE55D197488"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.DataAccess\\SqlErrorMapper.cs",
+                            "Hash":  "F5A2C8FC2BF4AFC6393B0A21F9F46F3BA009AAEBE69085B75D665BD16CC9E107"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.DataAccess\\SqlParameters.cs",
+                            "Hash":  "D2B28D3EAB331A4DFAA032803403F1C670E9D3F81316356DC12E4F773AF789EB"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.DataAccess\\SqlProcedureExecutor.cs",
+                            "Hash":  "EBA1875B30F008C5A82B92C4BE8A3C59715314449113506CFDB05694EC4CDD0E"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.Models\\CafeManager.Models.csproj",
+                            "Hash":  "2FDBB0CCDEF922BFDA5B379CBC768B7C0C1CFCE3B8A8F7DCDACECB06B4E736D7"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.Models\\Dtos\\AccountIdentity.cs",
+                            "Hash":  "B315F03B2E86C1BAA6E48BBC26236455A3384DED0A8BDF8F3D413E7A8DCA6890"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.Models\\Dtos\\Catalogs\\CatalogRows.cs",
+                            "Hash":  "94FEF731531695D981D45958CCEF0DD4A10AE0D0A55223B88CCB46725E6101A5"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.Models\\Dtos\\TableStatusDto.cs",
+                            "Hash":  "5F87607CF1A5AA60FE1D9F40DAF8F0AAB36109E30740DBB431244A8D662DB4D8"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.Models\\Errors\\DataError.cs",
+                            "Hash":  "A81171A152C27293D2123A610709119B23A48BA81D6CD66F474511A86FF21CF5"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.Models\\Requests\\Catalogs\\CatalogRequests.cs",
+                            "Hash":  "4FA25DA966BADD8B7096865AAF94AB97698E99FED6572594B3D96B7A37411223"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.Models\\Requests\\LoginRequest.cs",
+                            "Hash":  "22FCD1658890F7437C9AF9982E8EB0CE9B6F0360FF5361395BAC9D1BCAB2DD98"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.Models\\Requests\\PaymentAllocation.cs",
+                            "Hash":  "AE5A2267C928C6DCC021DE484A8293DD58B0DA9EB78CF07419E2A00549297C0D"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.WinForms\\ApplicationSessionContext.cs",
+                            "Hash":  "6CFCFCE0D3C79DA4E891D68676EFF11F84F8D26171FBC2CC1A7BBA3A5089B3FD"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.WinForms\\CafeManager.WinForms.csproj",
+                            "Hash":  "35F2610088E58E7C2F80EB591BB8224FC7DE3E19FF2D361E690B07CC2D2A2DAA"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.WinForms\\CafeManager.WinForms.csproj.user",
+                            "Hash":  "8084FEB1D0747173BA61AA40B97C4C2E6890BE8E142E8263A8CFA6F43D4DA8CF"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.WinForms\\Forms\\BootstrapForm.cs",
+                            "Hash":  "64790097A213F1F6A6790AA34AAA6D84563D5C6D36B557C4256DEC50A6394CA9"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.WinForms\\Forms\\BootstrapForm.Designer.cs",
+                            "Hash":  "15C6E2716858749DE82480AC2157519BA0D0C25584B236FE618B217096077083"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.WinForms\\Forms\\CatalogEditorDialog.cs",
+                            "Hash":  "99434C9B24C2F256BDD3D01D82D5AD5565D0F24B63697EF30B00CA29F1C85682"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.WinForms\\Forms\\CatalogEditorDialog.Designer.cs",
+                            "Hash":  "6215026374C9B4B293E0F0B05874B99D73C02B3663BE5DD762BA5E71F2B2515A"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.WinForms\\Forms\\LoginForm.cs",
+                            "Hash":  "0E7857DA6011C4B6AED46E8BB02CFC4094BA9ABAA3D8BF3A7913707825612EA9"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.WinForms\\Forms\\LoginForm.Designer.cs",
+                            "Hash":  "4EA34ECB993F76EA3D2F8DCE4B6BE078A582AC78863013C99963F7E4EAB6F85E"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.WinForms\\Forms\\MainForm.cs",
+                            "Hash":  "6CC227C344063C4F3ED48BD54C1A354F4A975B820BACA534E2D2E62DA4F91969"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.WinForms\\Forms\\MainForm.Designer.cs",
+                            "Hash":  "B344B9B7F07972C9F04F5F6D5FD0B8C6E92682BC7991B13FDC99BA829DD8E87A"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.WinForms\\Forms\\StartupForm.cs",
+                            "Hash":  "CF01367B9818FD6EE39746AC08E595814D0A9D086F430814129A0AFF7C0E6F98"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.WinForms\\Forms\\StartupForm.Designer.cs",
+                            "Hash":  "6E88363E94DD9B3D6B742BB95CBBB36402F3B28BF751CBACCCC8698085BDD700"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.WinForms\\Forms\\StartupForm.resx",
+                            "Hash":  "AD197010B4AEC54E7DA62CBFD3938B8F26485E949E9938D266FD4B4F281F0B39"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.WinForms\\Modules\\Catalogs\\CatalogsControl.cs",
+                            "Hash":  "01F130C27B090E34CDF4D93331DE5381495E63647F7CD07F4909663341BEE546"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.WinForms\\Modules\\Catalogs\\CatalogsControl.Designer.cs",
+                            "Hash":  "92FA31AA5B1831795BB2606F5FEA4F682DF20B9F9C826D1084BF361B1BA17274"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.WinForms\\Modules\\Home\\SessionHomeControl.cs",
+                            "Hash":  "EACCF754CBEA72568C143B00C2D98076219E3CEE1793C0D7B2E81220262B1CED"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.WinForms\\Modules\\System\\SystemInfoControl.cs",
+                            "Hash":  "C321FD6E9669BC1FA36DFDE752E60F594AA5AE22F9FDF1D608C6716415B8F810"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.WinForms\\Navigation\\NavigationController.cs",
+                            "Hash":  "DA7181E0E27C89D641353FC47AB8E02CF00172B104F41A6EA940A7CA30E4C335"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.WinForms\\Program.cs",
+                            "Hash":  "E5C040CC3982189497941928753D8D053462BDA6C24008F44E231CA2316AAAFB"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.WinForms\\Theme\\AppTheme.cs",
+                            "Hash":  "C86A1C67C17E922D00E526D30BEA165615A211A71831E1DCA22F3EF5CE188A03"
+                        },
+                        {
+                            "Path":  "src\\CafeManager.WinForms\\UI\\ModuleState.cs",
+                            "Hash":  "E8864441884DC7D5859BCA280A5D6CC375E1F08C47BCE42E4CD1E769DADE3C4A"
+                        },
+                        {
+                            "Path":  "tests\\CafeManager.Tests\\Auth\\AuthRulesTests.cs",
+                            "Hash":  "C3F5DC846EB035D586C7FF7028FE74047A13D5752B071E417912493D9A9B8938"
+                        },
+                        {
+                            "Path":  "tests\\CafeManager.Tests\\CafeManager.Tests.csproj",
+                            "Hash":  "5E1FEEDBF891AE53D6577F15EEED446124B66192FE416A3B3F28E2FEBD9901CF"
+                        },
+                        {
+                            "Path":  "tests\\CafeManager.Tests\\Catalogs\\CatalogRulesTests.cs",
+                            "Hash":  "192FF35EF480E3E82BFA3C134B3D9FCEB70B3BB9C88C32EBD3E6A574939E72FD"
+                        },
+                        {
+                            "Path":  "tests\\CafeManager.Tests\\G02\\AuthIntegrationTests.cs",
+                            "Hash":  "5992E38A12F90E6CBE412F0E00369B8F2533158B0F6BC6D0536BEBE73F4933D5"
+                        },
+                        {
+                            "Path":  "tests\\CafeManager.Tests\\G02\\CatalogIntegrationTests.cs",
+                            "Hash":  "2308FC370792D463E5C27DD4BE521182131C4E67FA850851ECC4B50FA2019B93"
+                        },
+                        {
+                            "Path":  "tests\\CafeManager.Tests\\G02\\G02DatabaseFixture.cs",
+                            "Hash":  "E635BBF6204653E58EDCF6B7F39B255CDF46A615898E5C1D0C0235C82DB9D181"
+                        },
+                        {
+                            "Path":  "tests\\CafeManager.Tests\\Integration\\DataAccessTests.cs",
+                            "Hash":  "B96A6DF5ACD9817E59DEA054F017AB0E6209F7F21EA0D6B8D9F01A2509E10ED8"
+                        },
+                        {
+                            "Path":  "tests\\CafeManager.Tests\\ParameterAndErrorTests.cs",
+                            "Hash":  "5AC866B25911C388F707891EF13DC625C73FFDC4E09E49D94AD5F29F761A916D"
+                        },
+                        {
+                            "Path":  "tests\\CafeManager.Tests\\TestDatabaseFixture.cs",
+                            "Hash":  "1CB66CA1B3FD4496E5CC2F3C1675EAD077B4FA7E9C36135B80ECE5F9358C9652"
+                        },
+                        {
+                            "Path":  "tools\\CafeManager.EnvironmentProbe\\CafeManager.EnvironmentProbe.csproj",
+                            "Hash":  "B01BE238023D2A95F41D2A88F7A13E7C6F0AB7E0358975EFBD416538151F1A27"
+                        },
+                        {
+                            "Path":  "tools\\CafeManager.EnvironmentProbe\\CafeManager.EnvironmentProbe.csproj.user",
+                            "Hash":  "0162BBA2A08BAB5F20296314F586239790B84B4545BB0E83E6A4E20229904D35"
+                        },
+                        {
+                            "Path":  "tools\\CafeManager.EnvironmentProbe\\EnvironmentProbeForm.cs",
+                            "Hash":  "3203C812933C76A04247BD4A32E173699FFA99127EC320A97E57E8819BDC0BDC"
+                        },
+                        {
+                            "Path":  "tools\\CafeManager.EnvironmentProbe\\EnvironmentProbeForm.Designer.cs",
+                            "Hash":  "6239FE74C4AF6C2CA38DBEAD1F3A25BA0721906D3C084191F5E75496F1EFC1F9"
+                        },
+                        {
+                            "Path":  "tools\\CafeManager.EnvironmentProbe\\EnvironmentProbeForm.resx",
+                            "Hash":  "4363CD7D5B8671C72442CE1A1BFC10D64EBD24B2D718B54BD4FCD025E4967298"
+                        },
+                        {
+                            "Path":  "tools\\CafeManager.EnvironmentProbe\\Program.cs",
+                            "Hash":  "1BA193C8B584F79C1AEA3CDFB3CC83EBFBADA764E0E7A446F613B291DE5701DC"
+                        },
+                        {
+                            "Path":  "tools\\database\\Apply-Migration.ps1",
+                            "Hash":  "894548AE0EEABFF319EA0BA6E9F68A9DE269826B5DFF1BCB1C5D82CB5EE4C158"
+                        },
+                        {
+                            "Path":  "tools\\database\\DatabaseTestTools.ps1",
+                            "Hash":  "2E0874438B6068849B54D8A1DA4C70D4D5C221CCBAF297DA3AC45F8C0D3402AC"
+                        },
+                        {
+                            "Path":  "tools\\database\\Test-Baseline.ps1",
+                            "Hash":  "46F91704CC8478BF18EDB616293863A181E4CF06ADE3AF832E7DA0933F307A1B"
+                        },
+                        {
+                            "Path":  "tools\\database\\Test-ContractMigration.ps1",
+                            "Hash":  "E273035B6C1600747D8712ED34F3C7F40EA0D35D1430ABBB369EAB8CCCF5D385"
+                        },
+                        {
+                            "Path":  "tools\\database\\Test-DataAccess.ps1",
+                            "Hash":  "661B2DF7B15441AD914C1A0C6B21CBA65953A2CDB88E9DBD6CE95E2019B494BF"
+                        },
+                        {
+                            "Path":  "tools\\database\\Test-G02.ps1",
+                            "Hash":  "371736D9BEC103BCFF7D7FA2F136377A5E80D51B6390BAC8806C0CD0CBB1ECA0"
+                        },
+                        {
+                            "Path":  "tools\\G02TechnicalSmoke\\G02TechnicalSmoke.csproj",
+                            "Hash":  "82916D366B9BDFCF530B5ACD27C0C4F9C73792E1E2E157A97D7600B22B78DC60"
+                        },
+                        {
+                            "Path":  "tools\\G02TechnicalSmoke\\Program.cs",
+                            "Hash":  "FA62E6D28AF87C1ED822B43106A75C9AA2D8C51884B6D47549344C472DE4C571"
+                        },
+                        {
+                            "Path":  "tools\\ui\\Verify-G02.ps1",
+                            "Hash":  "C4DFD8577040E02D33C991ED1F3BE4DBE148732059D85399C91CA7FED499434B"
+                        }
+                    ],
+    "SourceCommit":  "uncommitted",
+    "ManualStatus":  "NOT RUN; see complete mandatory subcases in approved task plans"
+}

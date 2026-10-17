@@ -1,0 +1,9 @@
+{
+  "Status": "FAIL",
+  "Database": "CoffeeManager_Test_G02_20261017_152633_e53ddabf",
+  "Role": "runtime",
+  "ErrorType": "InvalidOperationException",
+  "Diagnostic": "Runtime did not load patched PKCS10.0.13",
+  "SqlError": null,
+  "Checks": []
+}

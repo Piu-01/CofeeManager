@@ -1,0 +1,290 @@
+[
+  {
+    "Id": "T08-K02.ProductCategory.name.empty.native",
+    "Expected": "Invalid name refused with draft retained and no DB writes",
+    "Actual": "UI typed limit correct; programmatic invalid input rejected by BLL/ErrorProvider; exact snapshot unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.ProductCategory.name.spaces.native",
+    "Expected": "Invalid name refused with draft retained and no DB writes",
+    "Actual": "UI typed limit correct; programmatic invalid input rejected by BLL/ErrorProvider; exact snapshot unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.ProductCategory.name.tab.native",
+    "Expected": "Invalid name refused with draft retained and no DB writes",
+    "Actual": "UI typed limit correct; programmatic invalid input rejected by BLL/ErrorProvider; exact snapshot unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.ProductCategory.name.maxplus1.native",
+    "Expected": "Invalid name refused with draft retained and no DB writes",
+    "Actual": "UI typed limit correct; programmatic invalid input rejected by BLL/ErrorProvider; exact snapshot unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K05.ProductCategory.unused.native",
+    "Expected": "Confirm delete unused row and refresh owning grid",
+    "Actual": "Native confirmed deletion persisted and row removed from owning grid",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K05.ProductCategory.history.native",
+    "Expected": "Used row delete refused, row/DB snapshot unchanged",
+    "Actual": "Native confirmation followed by FK/history error; typed grid row and exact catalog snapshot retained",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.Supplier.name.empty.native",
+    "Expected": "Invalid name refused with draft retained and no DB writes",
+    "Actual": "UI typed limit correct; programmatic invalid input rejected by BLL/ErrorProvider; exact snapshot unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.Supplier.name.spaces.native",
+    "Expected": "Invalid name refused with draft retained and no DB writes",
+    "Actual": "UI typed limit correct; programmatic invalid input rejected by BLL/ErrorProvider; exact snapshot unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.Supplier.name.tab.native",
+    "Expected": "Invalid name refused with draft retained and no DB writes",
+    "Actual": "UI typed limit correct; programmatic invalid input rejected by BLL/ErrorProvider; exact snapshot unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.Supplier.name.maxplus1.native",
+    "Expected": "Invalid name refused with draft retained and no DB writes",
+    "Actual": "UI typed limit correct; programmatic invalid input rejected by BLL/ErrorProvider; exact snapshot unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.Supplier.malformed.native",
+    "Expected": "Malformed code refused before write",
+    "Actual": "BAD00 rejected nearCode, no mutation",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K05.Supplier.unused.native",
+    "Expected": "Confirm delete unused row and refresh owning grid",
+    "Actual": "Native confirmed deletion persisted and row removed from owning grid",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K05.Supplier.history.native",
+    "Expected": "Used row delete refused, row/DB snapshot unchanged",
+    "Actual": "Native confirmation followed by FK/history error; typed grid row and exact catalog snapshot retained",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.PaymentMethod.name.empty.native",
+    "Expected": "Invalid name refused with draft retained and no DB writes",
+    "Actual": "UI typed limit correct; programmatic invalid input rejected by BLL/ErrorProvider; exact snapshot unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.PaymentMethod.name.spaces.native",
+    "Expected": "Invalid name refused with draft retained and no DB writes",
+    "Actual": "UI typed limit correct; programmatic invalid input rejected by BLL/ErrorProvider; exact snapshot unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.PaymentMethod.name.tab.native",
+    "Expected": "Invalid name refused with draft retained and no DB writes",
+    "Actual": "UI typed limit correct; programmatic invalid input rejected by BLL/ErrorProvider; exact snapshot unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.PaymentMethod.name.maxplus1.native",
+    "Expected": "Invalid name refused with draft retained and no DB writes",
+    "Actual": "UI typed limit correct; programmatic invalid input rejected by BLL/ErrorProvider; exact snapshot unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.PaymentMethod.malformed.native",
+    "Expected": "Malformed code refused before write",
+    "Actual": "BAD00 rejected nearCode, no mutation",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K05.PaymentMethod.unused.native",
+    "Expected": "Confirm delete unused row and refresh owning grid",
+    "Actual": "Native confirmed deletion persisted and row removed from owning grid",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K05.PaymentMethod.history.native",
+    "Expected": "Used row delete refused, row/DB snapshot unchanged",
+    "Actual": "Native confirmation followed by FK/history error; typed grid row and exact catalog snapshot retained",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.DeliveryPartner.name.empty.native",
+    "Expected": "Invalid name refused with draft retained and no DB writes",
+    "Actual": "UI typed limit correct; programmatic invalid input rejected by BLL/ErrorProvider; exact snapshot unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.DeliveryPartner.name.spaces.native",
+    "Expected": "Invalid name refused with draft retained and no DB writes",
+    "Actual": "UI typed limit correct; programmatic invalid input rejected by BLL/ErrorProvider; exact snapshot unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.DeliveryPartner.name.tab.native",
+    "Expected": "Invalid name refused with draft retained and no DB writes",
+    "Actual": "UI typed limit correct; programmatic invalid input rejected by BLL/ErrorProvider; exact snapshot unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.DeliveryPartner.name.maxplus1.native",
+    "Expected": "Invalid name refused with draft retained and no DB writes",
+    "Actual": "UI typed limit correct; programmatic invalid input rejected by BLL/ErrorProvider; exact snapshot unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.DeliveryPartner.malformed.native",
+    "Expected": "Malformed code refused before write",
+    "Actual": "BAD00 rejected nearCode, no mutation",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K05.DeliveryPartner.unused.native",
+    "Expected": "Confirm delete unused row and refresh owning grid",
+    "Actual": "Native confirmed deletion persisted and row removed from owning grid",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K05.DeliveryPartner.history.native",
+    "Expected": "Used row delete refused, row/DB snapshot unchanged",
+    "Actual": "Native confirmation followed by FK/history error; typed grid row and exact catalog snapshot retained",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.ExpenseCategory.name.empty.native",
+    "Expected": "Invalid name refused with draft retained and no DB writes",
+    "Actual": "UI typed limit correct; programmatic invalid input rejected by BLL/ErrorProvider; exact snapshot unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.ExpenseCategory.name.spaces.native",
+    "Expected": "Invalid name refused with draft retained and no DB writes",
+    "Actual": "UI typed limit correct; programmatic invalid input rejected by BLL/ErrorProvider; exact snapshot unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.ExpenseCategory.name.tab.native",
+    "Expected": "Invalid name refused with draft retained and no DB writes",
+    "Actual": "UI typed limit correct; programmatic invalid input rejected by BLL/ErrorProvider; exact snapshot unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.ExpenseCategory.name.maxplus1.native",
+    "Expected": "Invalid name refused with draft retained and no DB writes",
+    "Actual": "UI typed limit correct; programmatic invalid input rejected by BLL/ErrorProvider; exact snapshot unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.ExpenseCategory.malformed.native",
+    "Expected": "Malformed code refused before write",
+    "Actual": "BAD00 rejected nearCode, no mutation",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K05.ExpenseCategory.unused.native",
+    "Expected": "Confirm delete unused row and refresh owning grid",
+    "Actual": "Native confirmed deletion persisted and row removed from owning grid",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K05.ExpenseCategory.history.native",
+    "Expected": "Used row delete refused, row/DB snapshot unchanged",
+    "Actual": "Native message box not found",
+    "Status": "FAIL"
+  },
+  {
+    "Id": "T08-K02.Position.name.empty.native",
+    "Expected": "Invalid name refused with draft retained and no DB writes",
+    "Actual": "UI typed limit correct; programmatic invalid input rejected by BLL/ErrorProvider; exact snapshot unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.Position.name.spaces.native",
+    "Expected": "Invalid name refused with draft retained and no DB writes",
+    "Actual": "UI typed limit correct; programmatic invalid input rejected by BLL/ErrorProvider; exact snapshot unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.Position.name.tab.native",
+    "Expected": "Invalid name refused with draft retained and no DB writes",
+    "Actual": "UI typed limit correct; programmatic invalid input rejected by BLL/ErrorProvider; exact snapshot unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.Position.name.maxplus1.native",
+    "Expected": "Invalid name refused with draft retained and no DB writes",
+    "Actual": "UI typed limit correct; programmatic invalid input rejected by BLL/ErrorProvider; exact snapshot unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.Position.malformed.native",
+    "Expected": "Malformed code refused before write",
+    "Actual": "BAD00 rejected nearCode, no mutation",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K05.Position.unused.native",
+    "Expected": "Confirm delete unused row and refresh owning grid",
+    "Actual": "Native confirmed deletion persisted and row removed from owning grid",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K05.Position.history.native",
+    "Expected": "Used row delete refused, row/DB snapshot unchanged",
+    "Actual": "Native confirmation followed by FK/history error; typed grid row and exact catalog snapshot retained",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.Shift.name.empty.native",
+    "Expected": "Invalid name refused with draft retained and no DB writes",
+    "Actual": "UI typed limit correct; programmatic invalid input rejected by BLL/ErrorProvider; exact snapshot unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.Shift.name.spaces.native",
+    "Expected": "Invalid name refused with draft retained and no DB writes",
+    "Actual": "UI typed limit correct; programmatic invalid input rejected by BLL/ErrorProvider; exact snapshot unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.Shift.name.tab.native",
+    "Expected": "Invalid name refused with draft retained and no DB writes",
+    "Actual": "UI typed limit correct; programmatic invalid input rejected by BLL/ErrorProvider; exact snapshot unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.Shift.name.maxplus1.native",
+    "Expected": "Invalid name refused with draft retained and no DB writes",
+    "Actual": "UI typed limit correct; programmatic invalid input rejected by BLL/ErrorProvider; exact snapshot unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K02.Shift.malformed.native",
+    "Expected": "Malformed code refused before write",
+    "Actual": "BAD00 rejected nearCode, no mutation",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K05.Shift.unused.native",
+    "Expected": "Confirm delete unused row and refresh owning grid",
+    "Actual": "Native confirmed deletion persisted and row removed from owning grid",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T08-K05.Shift.history.native",
+    "Expected": "Used row delete refused, row/DB snapshot unchanged",
+    "Actual": "Native confirmation followed by FK/history error; typed grid row and exact catalog snapshot retained",
+    "Status": "PASS"
+  }
+]

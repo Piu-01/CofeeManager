@@ -1,0 +1,183 @@
+{
+  "Results": [
+    {
+      "Id": "T06-K01.a.clean",
+      "Status": "PASS",
+      "Expected": "One admin and atomic Completed, optional NV phone NULL",
+      "Actual": "1 ADMIN, 1 NV with NULL phone, Completed; credential not emitted"
+    },
+    {
+      "Id": "T06-K03.a.correct",
+      "Status": "PASS",
+      "Expected": "Only exact password login succeeds",
+      "Actual": "Correct accepted; display identity verified"
+    },
+    {
+      "Id": "T06-K03.a.wrong",
+      "Status": "PASS",
+      "Expected": "Only exact password login succeeds",
+      "Actual": "Rejected"
+    },
+    {
+      "Id": "T06-K03.a.missing",
+      "Status": "PASS",
+      "Expected": "Only exact password login succeeds",
+      "Actual": "Rejected"
+    },
+    {
+      "Id": "T06-K03.a.trimmed",
+      "Status": "PASS",
+      "Expected": "Only exact password login succeeds",
+      "Actual": "Rejected"
+    },
+    {
+      "Id": "T06-K04.a.HoatDong",
+      "Status": "PASS",
+      "Expected": "Login rejected",
+      "Actual": "Rejected independently"
+    },
+    {
+      "Id": "T06-K04.b.HoatDong",
+      "Status": "PASS",
+      "Expected": "Existing session revoked",
+      "Actual": "Next call rejected and session revoked"
+    },
+    {
+      "Id": "T06-K04.a.DangLamViec",
+      "Status": "PASS",
+      "Expected": "Login rejected",
+      "Actual": "Rejected independently"
+    },
+    {
+      "Id": "T06-K04.b.DangLamViec",
+      "Status": "PASS",
+      "Expected": "Existing session revoked",
+      "Actual": "Next call rejected and session revoked"
+    },
+    {
+      "Id": "T06-K08.a",
+      "Status": "PASS",
+      "Expected": "Disposed session rejects protected read",
+      "Actual": "Old object denied without disposed-token exception"
+    },
+    {
+      "Id": "T06-K03.b.placeholder",
+      "Status": "PASS",
+      "Expected": "Invalid hash safely rejected",
+      "Actual": "Rejected, no raw hash emitted"
+    },
+    {
+      "Id": "T06-K03.b.malformed",
+      "Status": "PASS",
+      "Expected": "Invalid hash safely rejected",
+      "Actual": "Rejected, no raw hash emitted"
+    },
+    {
+      "Id": "T06-K05.a",
+      "Status": "PASS",
+      "Expected": "Old V3 cost requests rehash",
+      "Actual": "SuccessRehashNeeded at 10000 -\u003E configured 100000"
+    },
+    {
+      "Id": "T06-K05.b",
+      "Status": "PASS",
+      "Expected": "Login upgrades real DB hash/stamp",
+      "Actual": "DB upgraded, stamp changed, verification Success; no hash in evidence"
+    },
+    {
+      "Id": "T06-K06.b",
+      "Status": "PASS",
+      "Expected": "Role change revokes old session; new login uses new role",
+      "Actual": "Old revoked, fresh CASH identity"
+    },
+    {
+      "Id": "T06-K02.e.runtime",
+      "Status": "PASS",
+      "Expected": "Runtime cannot execute bootstrap",
+      "Actual": "SQL229 through runtime user"
+    },
+    {
+      "Id": "T06-K01.b",
+      "Status": "PASS",
+      "Expected": "Only selected demo ADMIN activated",
+      "Actual": "Only admin enabled; thungan/kho unchanged"
+    },
+    {
+      "Id": "T06-K01.existing",
+      "Status": "PASS",
+      "Expected": "Existing employee without account retains personnel fields",
+      "Actual": "New account only; employee fields unchanged"
+    },
+    {
+      "Id": "T06-K01.c.valid",
+      "Status": "PASS",
+      "Expected": "LegacyReview; valid confirms without reset, others blocked",
+      "Actual": "Completed without hash change"
+    },
+    {
+      "Id": "T06-K01.d.inactive",
+      "Status": "PASS",
+      "Expected": "LegacyReview; valid confirms without reset, others blocked",
+      "Actual": "Rejected, still LegacyReview, no reset"
+    },
+    {
+      "Id": "T06-K01.d.departed",
+      "Status": "PASS",
+      "Expected": "LegacyReview; valid confirms without reset, others blocked",
+      "Actual": "Rejected, still LegacyReview, no reset"
+    },
+    {
+      "Id": "T06-K01.d.malformed",
+      "Status": "PASS",
+      "Expected": "LegacyReview; valid confirms without reset, others blocked",
+      "Actual": "Rejected, still LegacyReview, no reset"
+    },
+    {
+      "Id": "T06-K10.c.Latin1_General_100_CI_AS",
+      "Status": "PASS",
+      "Expected": "Case-independent login/key uniqueness",
+      "Actual": "Login uppercase accepted; duplicate lowercase rejected"
+    },
+    {
+      "Id": "T06-K10.c.Latin1_General_100_CS_AS",
+      "Status": "PASS",
+      "Expected": "Case-independent login/key uniqueness",
+      "Actual": "Login uppercase accepted; duplicate lowercase rejected"
+    },
+    {
+      "Id": "T06-K06.a.fullMatrix",
+      "Status": "PASS",
+      "Expected": "All role/permission pairs match approved matrix",
+      "Actual": "3 roles x all 12 permission values compared"
+    },
+    {
+      "Id": "T06-K10.a.length1",
+      "Status": "PASS",
+      "Expected": "1/50 accepted;51 rejected",
+      "Actual": "Accepted"
+    },
+    {
+      "Id": "T06-K10.a.length50",
+      "Status": "PASS",
+      "Expected": "1/50 accepted;51 rejected",
+      "Actual": "Accepted"
+    },
+    {
+      "Id": "T06-K10.a.length51",
+      "Status": "PASS",
+      "Expected": "1/50 accepted;51 rejected",
+      "Actual": "Rejected"
+    }
+  ],
+  "Databases": [
+    "CoffeeManager_Test_G02_20261009_214237_4969002a",
+    "CoffeeManager_Test_G02_20261009_214241_073fe34c",
+    "CoffeeManager_Test_G02_20261009_214243_1007536e",
+    "CoffeeManager_Test_G02_20261009_214246_01ea3bee",
+    "CoffeeManager_Test_G02_20261009_214249_28eb34da",
+    "CoffeeManager_Test_G02_20261009_214251_cb00f892",
+    "CoffeeManager_Test_G02_20261009_214253_434857d1",
+    "CoffeeManager_Test_G02_20261009_214256_b2deee20",
+    "CoffeeManager_Test_G02_20261009_214258_98a45a20"
+  ]
+}

@@ -1,0 +1,8 @@
+[
+  {
+    "Id": "T08-K05.ExpenseCategory.history.nativeMouse",
+    "Expected": "Native mouse selects used non-system expense and delete is refused by history",
+    "Actual": "WM_LBUTTONDOWN/UP selectedTC990; delete enabled and confirmed; history refusal kept grid and exact DB snapshot",
+    "Status": "PASS"
+  }
+]

@@ -1,0 +1,8 @@
+﻿{
+    "At":  "2026-10-11T17:01:11.5629695+07:00",
+    "Checked":  96,
+    "Changes":  [
+                    "src\\CafeManager.WinForms\\CafeManager.WinForms.csproj.user"
+                ],
+    "Note":  "csproj.user is Visual Studio local document subtype metadata; product source/migrations/tests unchanged"
+}

@@ -1,0 +1,16 @@
+{
+  "Status": "FAIL",
+  "Database": "CoffeeManager_Test_G02_20261016_223719_4d0416e5",
+  "Role": "runtime",
+  "ErrorType": "InvalidOperationException",
+  "Diagnostic": "Runtime did not load patched PKCS10.0.13",
+  "SqlError": null,
+  "Checks": [
+    {
+      "Id": "PkcsLoadObservation",
+      "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.WindowsDesktop.App\\10.0.12\\System.Security.Cryptography.Pkcs.dll",
+      "FileVersion": "10.0.1226.42308",
+      "InformationalVersion": "10.0.12\u002B95017c711e6afc1085133d440e42b4bd78155701"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+﻿[
+    {
+        "Path":  "Complete-G02Windows.ps1",
+        "SHA256":  "3FD974EB930A71F5CFCFCEBC1F97B04AE5C8158D92C1765C4C0D8C0598447C63"
+    },
+    {
+        "Path":  "g02-pkcs-observation.json",
+        "SHA256":  "2A3B98E942282B7177675F921D8B24081456E2F0A3355DCF2AAB17F7D7196EEE"
+    },
+    {
+        "Path":  "release-build.txt",
+        "SHA256":  "C8D7F43F0F1539B15E71F19A365447D80631D99C010EBB0E148DD742A85CB7AF"
+    },
+    {
+        "Path":  "runtimes.txt",
+        "SHA256":  "654AC74F6B2E1B3B1177E42B95925461F9B6F02040810FB26A1B7DDBDE480769"
+    },
+    {
+        "Path":  "source-integrity.json",
+        "SHA256":  "B8E278A4C7015AA9B3670144725298DA47291397B3B5529896C48662D743D04C"
+    },
+    {
+        "Path":  "G02CloseBoundary\\G02CloseBoundary.csproj",
+        "SHA256":  "AD8244412E4B5EE7C48FE9DF4268AE5498902E241C666CD7B862C8E93CC134A6"
+    },
+    {
+        "Path":  "G02CloseBoundary\\Program.cs",
+        "SHA256":  "914EC32D317190446FAC66E5704087069EF7D1F4E797D436BC1A6DEB77FB03E6"
+    },
+    {
+        "Path":  "G02WindowsPrincipalProbe\\G02WindowsPrincipalProbe.csproj",
+        "SHA256":  "07370B519173C3E6A3E9E9331CBD340929330CE8AA13AEF1D2B017F0C68BE996"
+    },
+    {
+        "Path":  "G02WindowsPrincipalProbe\\Program.cs",
+        "SHA256":  "4A07FFA183C8515EB3BCFFFAB34A24B3797282C12644639F02F443BB745D1D62"
+    }
+]

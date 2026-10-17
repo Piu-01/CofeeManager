@@ -23,7 +23,7 @@ try {
     $env:CAFEMANAGER_TEST_CONNECTION="Server=localhost;Initial Catalog=$database;Integrated Security=True;Encrypt=True;TrustServerCertificate=True"
     Save-Progress 'XUNIT'
     $project=Join-Path $root 'tests\CafeManager.Tests\CafeManager.Tests.csproj'
-    $process=Start-Process dotnet -ArgumentList @('test',"`"$project`"",'--logger','trx;LogFileName=tests.trx','--results-directory',"`"$history`"") -WorkingDirectory $root -RedirectStandardOutput (Join-Path $history 'console.log') -RedirectStandardError (Join-Path $history 'stderr.txt') -Wait -PassThru
+    $process=Start-Process dotnet -ArgumentList @('test',"`"$project`"",'--filter','Group!=G02','--logger','trx;LogFileName=tests.trx','--results-directory',"`"$history`"") -WorkingDirectory $root -RedirectStandardOutput (Join-Path $history 'console.log') -RedirectStandardError (Join-Path $history 'stderr.txt') -Wait -PassThru
     $exitCode=$process.ExitCode
     Get-Content (Join-Path $history 'console.log')
     Get-Content (Join-Path $history 'stderr.txt')

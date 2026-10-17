@@ -17,8 +17,25 @@
    chỉ hợp lệ. Mẫu `database/security/provision-app-user.sql` nhận tham số
    WindowsLogin/DatabaseUser, login đã được quản trị tạo; không password mặc định.
 
-App hiện chưa tự bootstrap/login (T06). Program chỉ cấu hình nền/query view.
-Thiếu cấu hình báo rõ, không tự fallback sang administrator hoặc DB test.
+G02 đã có code setup/login/shell/danh mục; đợt nghiệm thu riêng chưa chạy.
+Thiếu cấu hình báo rõ, không fallback administrator/DBtest. Contract:
+[auth-contract.md](auth-contract.md), [catalog-contract.md](catalog-contract.md).
+
+## Chuỗi migration G02
+
+```powershell
+& .\tools\database\Apply-Migration.ps1 -Database <DB_da_chon>
+& .\tools\database\Apply-Migration.ps1 -Database <DB_da_chon> -Version 2 -File .\database\migrations\002_auth_and_bootstrap.sql
+& .\tools\database\Apply-Migration.ps1 -Database <DB_da_chon> -Version 3 -File .\database\migrations\003_reference_catalogs.sql
+```
+
+002 tạo role/setupstate/loginKey/stamp/procedure;003 tạo catalogrevision,
+systemexpense/payment-support/receipt/CRUD/lookup. Clean không cần seeddemo;
+demo chỉseed trước001 trên schema rỗng. Preflightconflict rollback, giữ dữ liệu
+và báo người cài; không reset cấu hình để bỏ qua xung đột. Rerun qua runner
+version/checksum, không chạy SQL003 trực tiếp nhiều lần. Các DB smoke có bản
+migration tạm trong triển khai được giữ làm lịch sử; chạy bản cuối trên DB
+test mới, không sửa checksum đã ghi để ép rerun.
 
 ## Kiểm chứng sau duyệt test
 
@@ -26,4 +43,5 @@ Thiếu cấu hình báo rõ, không tự fallback sang administrator hoặc DB 
 đối chiếu rows/FK/version, hai session cấp mã, quyền user WITHOUT LOGIN.
 `Test-DataAccess.ps1` tạo DB T05 mới, migration và SQL test-only fixtures,
 chạy xUnit; không dùng DB ứng dụng. Test/bug ở task con trong G01, giữ các lượt.
-G01 đã duyệt triển khai nhưng **chưa duyệt đợt test**: các lệnh trên chưa chạy.
+G01 đã nghiệm thu45/45; lịch sử tại reportG01. RunnerG02/collectorUI chỉ chạy
+sau duyệt đợt testG02; build và dependency smoke được ghi riêng trong triển khai.

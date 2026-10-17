@@ -1,0 +1,406 @@
+{
+    "RunId":  "20261017_155740_13e97169",
+    "StartedAt":  "2026-10-17T15:57:40.8091324+07:00",
+    "CompletedAt":  "2026-10-17T15:57:55.2656658+07:00",
+    "Database":  "CoffeeManager_Test_T05_20261017_155740_13e97169",
+    "SetupError":  null,
+    "DotnetExitCode":  0,
+    "Results":  [
+                    {
+                        "Name":  "CafeManager.Tests.Integration.DataAccessTests.ParametersRoundTripWithoutExecutingInput(text: \"\u0027; DROP TABLE dbo.T05_Sentinel;--\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0173293",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.ParameterAndErrorTests.UnknownWriteAndReadTimeoutHaveDifferentReconciliationSemantics",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0080809",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Integration.DataAccessTests.TvpPreservesColumnsTypesAndNull(count: 0)",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0066375",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Integration.DataAccessTests.UnknownAndTimeoutErrorsDoNotLeakSensitiveTextOrReportSuccess",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:01.1910063",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Integration.DataAccessTests.InvalidTvpTypeProducesDiagnosticError",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0427521",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Integration.DataAccessTests.EmptyResultsAreDifferentFromConnectionFailure",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:01.0632771",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.ParameterAndErrorTests.TestGuardRejectsNonIsolatedDatabase(database: \"CoffeeManager_Test_T05_wrong\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0000523",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Integration.DataAccessTests.ParametersRoundTripWithoutExecutingInput(text: \"Cà phê sữa\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.3660965",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.ParameterAndErrorTests.TestGuardRejectsNonIsolatedDatabase(database: \"tempdb\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0166300",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.ParameterAndErrorTests.PaymentRowsRejectInvalidAmountsAndReferences",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0168964",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Integration.DataAccessTests.SuccessfulProcedureHasNoOuterTransactionAndAppCanExecute",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.1128974",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Integration.DataAccessTests.FixtureCleanupPreservesSentinelAndSeed",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0106073",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Integration.DataAccessTests.ParametersRoundTripWithoutExecutingInput(text: \"O\u0027Brien\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0175392",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Integration.DataAccessTests.TvpPreservesColumnsTypesAndNull(count: 3)",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0076975",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.ParameterAndErrorTests.TestGuardRejectsNonIsolatedDatabase(database: \"QuanLyCafe_ERP_V2\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0000423",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Integration.DataAccessTests.LateProcedureErrorRollsBackRowsAndSession(invoice: \"Z5PAY00003\", method: \"PT001\", expectedNumber: 52906)",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.5900406",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.ParameterAndErrorTests.PrecisionAndLengthAreRejectedInsteadOfTruncated",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0040784",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Integration.DataAccessTests.TvpPreservesColumnsTypesAndNull(count: 1)",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0169297",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.ParameterAndErrorTests.TestGuardRejectsNonIsolatedDatabase(database: \"master\")",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0004116",
+                        "Error":  null
+                    },
+                    {
+                        "Name":  "CafeManager.Tests.Integration.DataAccessTests.LateProcedureErrorRollsBackRowsAndSession(invoice: \"Z5PAY00001\", method: \"ZZ999\", expectedNumber: 547)",
+                        "Outcome":  "Passed",
+                        "Duration":  "00:00:00.0982703",
+                        "Error":  null
+                    }
+                ],
+    "SourceCommit":  "uncommitted",
+    "SourceHashes":  [
+                         {
+                             "Path":  "src\\CafeManager.Business\\CafeManager.Business.csproj",
+                             "Hash":  "16AC6882D6C19DF5278E55D69A306CB0F35433187F07DB6A92B2E523CFBC9C6C"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Business\\Security\\PasswordService.cs",
+                             "Hash":  "176178AEF133C23E03E0F3DBF651D2A5FA28D17BA6A203FA5916E82847809EC7"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Business\\Security\\PermissionService.cs",
+                             "Hash":  "F9F6A87376CDD2D462BD3715B3F024BA3AA2100675BD623E5A0F2A656E00F1B5"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Business\\Security\\SessionContext.cs",
+                             "Hash":  "393D31F683FEAEA0C0C419BEADF2D1AE8BFAFE328E2FD5AC1B7F4B1EA4813A67"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Business\\Services\\AuthService.cs",
+                             "Hash":  "4C3378FF7E93A3AA93DC80E519DE491850305E542D5AC36D54A0C0E0F32F84F0"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Business\\Services\\BootstrapService.cs",
+                             "Hash":  "6E6D5F2F219E9D3C87964909677F3BD1C255340C69FEED51C759F0BDCD628212"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Business\\Services\\CatalogService.cs",
+                             "Hash":  "EF233B5EF85713B035E49C41E17300FB2E589585F74E245F412B4F50B7E73EAB"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Business\\Services\\PaymentMethodService.cs",
+                             "Hash":  "0EAE95247FBC30DBA63EAD18D2876D07421321D8E04E9B024A70C2018B9EC6C7"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Business\\Services\\TableStatusService.cs",
+                             "Hash":  "FAF1ACF10622C85726B043024370CCFD2DBBE5F087DB33E77F89EE18856AAB8D"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Business\\Services\\UserOperationException.cs",
+                             "Hash":  "DA9C339F1CB85A2D59532ADB92D0AB4ED38B804227813A24517FA8FCFC02F991"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.DataAccess\\CafeManager.DataAccess.csproj",
+                             "Hash":  "0325172701C7FD6C4B9E7699909C3CF02F3BD9923D4724B330995720370B49C1"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.DataAccess\\ConnectionFactory.cs",
+                             "Hash":  "68AB25E8025E347CCD30D0E4A90A0F0010735A61CF6B04BEBE1A85EB19963DF1"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.DataAccess\\DataAccessException.cs",
+                             "Hash":  "78F89C608F9A3EB5285E97FE226297400B854934A9030E827668B8D746ED41E2"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.DataAccess\\DataOperationLog.cs",
+                             "Hash":  "6AC892826A226B94800B8AA5407763C4FE996FDD348CF64A6DDA53762FED454C"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.DataAccess\\PaymentTableBuilder.cs",
+                             "Hash":  "822AB7D4D0D42D63F0E5047B5492D248897CB01EDE1C982A1D2F5C7552D036CA"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.DataAccess\\SqlErrorMapper.cs",
+                             "Hash":  "F5A2C8FC2BF4AFC6393B0A21F9F46F3BA009AAEBE69085B75D665BD16CC9E107"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.DataAccess\\SqlParameters.cs",
+                             "Hash":  "D2B28D3EAB331A4DFAA032803403F1C670E9D3F81316356DC12E4F773AF789EB"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.DataAccess\\SqlProcedureExecutor.cs",
+                             "Hash":  "EBA1875B30F008C5A82B92C4BE8A3C59715314449113506CFDB05694EC4CDD0E"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.DataAccess\\Repositories\\AuthRepository.cs",
+                             "Hash":  "DB83D9FED8F95DED3F331F253EB79DE29BC5F6726E276C12E63ED3613BE40C3E"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.DataAccess\\Repositories\\CatalogRepository.cs",
+                             "Hash":  "C62996482AEE25AC43D9DF9C9EE95FFA5BC115C582D0D14B2B1393758EA008BD"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.DataAccess\\Repositories\\PaymentMethodRepository.cs",
+                             "Hash":  "B2DB0ECB7E644CD7484886FE791D820E9EC6F760D98D72E830973FABDE0CC546"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.DataAccess\\Repositories\\SetupRepository.cs",
+                             "Hash":  "C97D1663763813C66181E2A014134C35C4FC2683B946A19CEBBC79DA00EEC037"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.DataAccess\\Repositories\\TableStatusRepository.cs",
+                             "Hash":  "040009D44F06BF0B7B00EEAD026D666C78FB185AA397D43FDC9E0FE55D197488"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Models\\CafeManager.Models.csproj",
+                             "Hash":  "2FDBB0CCDEF922BFDA5B379CBC768B7C0C1CFCE3B8A8F7DCDACECB06B4E736D7"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Models\\Dtos\\AccountIdentity.cs",
+                             "Hash":  "B315F03B2E86C1BAA6E48BBC26236455A3384DED0A8BDF8F3D413E7A8DCA6890"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Models\\Dtos\\TableStatusDto.cs",
+                             "Hash":  "5F87607CF1A5AA60FE1D9F40DAF8F0AAB36109E30740DBB431244A8D662DB4D8"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Models\\Dtos\\Catalogs\\CatalogRows.cs",
+                             "Hash":  "94FEF731531695D981D45958CCEF0DD4A10AE0D0A55223B88CCB46725E6101A5"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Models\\Errors\\DataError.cs",
+                             "Hash":  "A81171A152C27293D2123A610709119B23A48BA81D6CD66F474511A86FF21CF5"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Models\\Requests\\LoginRequest.cs",
+                             "Hash":  "22FCD1658890F7437C9AF9982E8EB0CE9B6F0360FF5361395BAC9D1BCAB2DD98"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Models\\Requests\\PaymentAllocation.cs",
+                             "Hash":  "AE5A2267C928C6DCC021DE484A8293DD58B0DA9EB78CF07419E2A00549297C0D"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.Models\\Requests\\Catalogs\\CatalogRequests.cs",
+                             "Hash":  "4FA25DA966BADD8B7096865AAF94AB97698E99FED6572594B3D96B7A37411223"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\ApplicationSessionContext.cs",
+                             "Hash":  "6CFCFCE0D3C79DA4E891D68676EFF11F84F8D26171FBC2CC1A7BBA3A5089B3FD"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\CafeManager.WinForms.csproj",
+                             "Hash":  "35F2610088E58E7C2F80EB591BB8224FC7DE3E19FF2D361E690B07CC2D2A2DAA"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\CafeManager.WinForms.csproj.user",
+                             "Hash":  "6132AF62021728EC952C80FA86EC1BB78182F02C242797DAA7B23A0532E2611B"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Program.cs",
+                             "Hash":  "E5C040CC3982189497941928753D8D053462BDA6C24008F44E231CA2316AAAFB"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Forms\\BootstrapForm.cs",
+                             "Hash":  "64790097A213F1F6A6790AA34AAA6D84563D5C6D36B557C4256DEC50A6394CA9"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Forms\\BootstrapForm.Designer.cs",
+                             "Hash":  "820B77647DE8E3835AEE6F6C1033A80EE682E6A252CA5F4B874FEDF4B8F036EC"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Forms\\CatalogEditorDialog.cs",
+                             "Hash":  "99434C9B24C2F256BDD3D01D82D5AD5565D0F24B63697EF30B00CA29F1C85682"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Forms\\CatalogEditorDialog.Designer.cs",
+                             "Hash":  "723760CA2EA1F727B57F5D67F5A5346E9DA2DB8068CF854CB1D6E7E3C6F878AF"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Forms\\LoginForm.cs",
+                             "Hash":  "0E7857DA6011C4B6AED46E8BB02CFC4094BA9ABAA3D8BF3A7913707825612EA9"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Forms\\LoginForm.Designer.cs",
+                             "Hash":  "A8C19401216E9C1C6FDC6FB5818094E349878E744213444602A1836371954736"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Forms\\MainForm.cs",
+                             "Hash":  "6CC227C344063C4F3ED48BD54C1A354F4A975B820BACA534E2D2E62DA4F91969"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Forms\\MainForm.Designer.cs",
+                             "Hash":  "B344B9B7F07972C9F04F5F6D5FD0B8C6E92682BC7991B13FDC99BA829DD8E87A"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Forms\\StartupForm.cs",
+                             "Hash":  "CF01367B9818FD6EE39746AC08E595814D0A9D086F430814129A0AFF7C0E6F98"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Forms\\StartupForm.Designer.cs",
+                             "Hash":  "6E88363E94DD9B3D6B742BB95CBBB36402F3B28BF751CBACCCC8698085BDD700"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Forms\\StartupForm.resx",
+                             "Hash":  "AD197010B4AEC54E7DA62CBFD3938B8F26485E949E9938D266FD4B4F281F0B39"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Modules\\Catalogs\\CatalogsControl.cs",
+                             "Hash":  "D174C65ABAC59BE463BCE767CE4694A1B1B59EA611ECFA897EB2040C5F465857"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Modules\\Catalogs\\CatalogsControl.Designer.cs",
+                             "Hash":  "AE130873101C3409B40BD849AA1FD7E251F27D56E760BA9C36A846EC9CC9EAD8"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Modules\\Home\\SessionHomeControl.cs",
+                             "Hash":  "EACCF754CBEA72568C143B00C2D98076219E3CEE1793C0D7B2E81220262B1CED"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Modules\\System\\SystemInfoControl.cs",
+                             "Hash":  "C321FD6E9669BC1FA36DFDE752E60F594AA5AE22F9FDF1D608C6716415B8F810"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Navigation\\NavigationController.cs",
+                             "Hash":  "DA7181E0E27C89D641353FC47AB8E02CF00172B104F41A6EA940A7CA30E4C335"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\Theme\\AppTheme.cs",
+                             "Hash":  "C86A1C67C17E922D00E526D30BEA165615A211A71831E1DCA22F3EF5CE188A03"
+                         },
+                         {
+                             "Path":  "src\\CafeManager.WinForms\\UI\\ModuleState.cs",
+                             "Hash":  "E8864441884DC7D5859BCA280A5D6CC375E1F08C47BCE42E4CD1E769DADE3C4A"
+                         },
+                         {
+                             "Path":  "tests\\CafeManager.Tests\\CafeManager.Tests.csproj",
+                             "Hash":  "5E1FEEDBF891AE53D6577F15EEED446124B66192FE416A3B3F28E2FEBD9901CF"
+                         },
+                         {
+                             "Path":  "tests\\CafeManager.Tests\\ParameterAndErrorTests.cs",
+                             "Hash":  "5AC866B25911C388F707891EF13DC625C73FFDC4E09E49D94AD5F29F761A916D"
+                         },
+                         {
+                             "Path":  "tests\\CafeManager.Tests\\TestDatabaseFixture.cs",
+                             "Hash":  "1CB66CA1B3FD4496E5CC2F3C1675EAD077B4FA7E9C36135B80ECE5F9358C9652"
+                         },
+                         {
+                             "Path":  "tests\\CafeManager.Tests\\Auth\\AuthRulesTests.cs",
+                             "Hash":  "C3F5DC846EB035D586C7FF7028FE74047A13D5752B071E417912493D9A9B8938"
+                         },
+                         {
+                             "Path":  "tests\\CafeManager.Tests\\Catalogs\\CatalogRulesTests.cs",
+                             "Hash":  "192FF35EF480E3E82BFA3C134B3D9FCEB70B3BB9C88C32EBD3E6A574939E72FD"
+                         },
+                         {
+                             "Path":  "tests\\CafeManager.Tests\\G02\\AuthBoundaryRegressionTests.cs",
+                             "Hash":  "FAE2A440C0FB0C840CACA7A3BED539B732687CA42A003A4A1A937489F521A9E6"
+                         },
+                         {
+                             "Path":  "tests\\CafeManager.Tests\\G02\\AuthIntegrationTests.cs",
+                             "Hash":  "5992E38A12F90E6CBE412F0E00369B8F2533158B0F6BC6D0536BEBE73F4933D5"
+                         },
+                         {
+                             "Path":  "tests\\CafeManager.Tests\\G02\\CatalogBoundaryRegressionTests.cs",
+                             "Hash":  "8B77A211CA369982BF15DC004FF32020B1F5BA03CD282D14FD0CCF87A8B411A9"
+                         },
+                         {
+                             "Path":  "tests\\CafeManager.Tests\\G02\\CatalogIntegrationTests.cs",
+                             "Hash":  "2308FC370792D463E5C27DD4BE521182131C4E67FA850851ECC4B50FA2019B93"
+                         },
+                         {
+                             "Path":  "tests\\CafeManager.Tests\\G02\\G02DatabaseFixture.cs",
+                             "Hash":  "E635BBF6204653E58EDCF6B7F39B255CDF46A615898E5C1D0C0235C82DB9D181"
+                         },
+                         {
+                             "Path":  "tests\\CafeManager.Tests\\Integration\\DataAccessTests.cs",
+                             "Hash":  "B96A6DF5ACD9817E59DEA054F017AB0E6209F7F21EA0D6B8D9F01A2509E10ED8"
+                         },
+                         {
+                             "Path":  "database\\tests\\t05\\fixtures.sql",
+                             "Hash":  "C6A4BB0311EE18551FCACE6A0EA705D0B39B8E9A5E5D05DF7B66F158A33561B7"
+                         },
+                         {
+                             "Path":  "database\\tests\\t05\\slow-ui.sql",
+                             "Hash":  "DBBC2CD95EB01821C409C60FC867D745CF5B3101F9632251B3CDA9835E575A2E"
+                         }
+                     ],
+    "ManualCases":  [
+                        "T05-K07",
+                        "T05-K08",
+                        "T05-K09",
+                        "T05-K10"
+                    ],
+    "SchemaHash":  "53351D5CA521464558DE6FC4AA1F839CC45CBBD091FDDB4EC005643F2D6EE151",
+    "SeedHash":  "FBC1CAB2233D8B3B588F6C3DE61DB9A8ADCD40CFE19997531EB91354BADDF706",
+    "MigrationHash":  "0C4300BB58CE9E29A3A8E2B814AEB1F259F51F2DC0251142CD6479D23D44036C"
+}

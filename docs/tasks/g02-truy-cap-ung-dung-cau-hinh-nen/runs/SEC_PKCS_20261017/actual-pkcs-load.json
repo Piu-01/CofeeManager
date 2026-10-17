@@ -1,0 +1,8 @@
+{
+  "Status": "PASS",
+  "Id": "ActualPatchedPkcsLoaded.WindowsForms",
+  "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.WindowsDesktop.App\\10.0.13\\System.Security.Cryptography.Pkcs.dll",
+  "InformationalVersion": "10.0.13\u002B4099f83977f4d29604a9aeb971fb0a7bc1d5f699",
+  "Runtime": "10.0.13",
+  "FileSHA256": "2FBFE5CB2DD4E5CC4F533AA135FA9F9720E4E9CC1D7B553D5DDB56247BA555F7"
+}

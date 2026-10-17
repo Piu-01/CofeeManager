@@ -1,0 +1,10 @@
+[
+    {
+        "ProcessId":  28428,
+        "CommandLine":  "\"C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\devenv.exe\" \"C:\\Users\\Lenovo\\AppData\\Local\\Temp\\opencode\\G02B03B06DesignerRound2\\CafeManager.slnx\" "
+    },
+    {
+        "ProcessId":  4776,
+        "CommandLine":  "\"C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\devenv.exe\" \"C:\\Users\\Lenovo\\AppData\\Local\\Temp\\opencode\\G02B03B06DesignerRound2\\CafeManager.slnx\" "
+    }
+]
