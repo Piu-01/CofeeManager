@@ -10,7 +10,8 @@ ownerđúng,SQLApp1/Setup0/sysadmin0,exit0. Ảnh đãreview;source99filekhông�
 vàdeployedDLLhashkhớptại`../runs/G02_FINAL_ACCEPTANCE_20261017/`.
 
 Cácbảngphíadưới là **lịch sử** trước/saufix;khôngxóaFAIL/BLOCKED cũ vàkhông
-quycounttestthànhID. ChờbàngiaoGit riêng,chưa commit/push.
+quycounttestthànhID. Đã bàn giaoGit,commit`1ab09af368f320a598a577d22542e41563e5e432`
+đãpush`origin/main`; xem`../git-handoff.md`.
 
 Source cố định của G02; native WinForms .NET10 trong STA testhost, app forms/
 ApplicationSessionContext thật, runtimeDB G02_Runtime impersonation với

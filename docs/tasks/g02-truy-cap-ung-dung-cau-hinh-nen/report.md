@@ -20,8 +20,10 @@ số test xUnit/harness thành sốID. Bảng đối chiếu:
   khôngđổi trongregression; deployedWinFormsDLLkhớpSHA256workingtree.
   Đốichiếulạisaudọn:0Windowsaccounttạm,0DBuser,0SQLlogin tạm.
 
-**Không còn blocker nghiệm thu. Chưa commit/push G02**,chưa cómãcommitG02;
-chờngườidùnggiaoriêngbàngiaoGit. KhôngtriểnkhaiG03 tựđộng.
+**G02 đã bàn giao Git:** source/evidence commit
+`1ab09af368f320a598a577d22542e41563e5e432` đã push thành công `origin/main`
+theo yêu cầu “push đi”. Xem [git-handoff.md](git-handoff.md).
+Không còn blocker nghiệm thu; không triển khaiG03 tự động.
 Cácbáocáodưới là **lịch sử**, giữnguyênFAIL/BLOCKED vàđiểmchờduyệt cũ;
 khôngdùngchúngthaykếtluậnmới.
 

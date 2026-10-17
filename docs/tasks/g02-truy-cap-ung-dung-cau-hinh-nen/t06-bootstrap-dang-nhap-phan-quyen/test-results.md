@@ -23,7 +23,8 @@ nhận99filesourcekhôngđổi,deployedDLLkhớpworkingtreeSHA256,principalstạ
 KhôngthaySQLimpersonation bằng“realidentity” suông:SQLvàownerprocess đãđọc
 thực tế. RawR6driverOKBLOCKED giữ lại;R7tìmchildnativeOK rồiPostBM_CLICK.
 
-Chốtnghiệmthukỹthuật,chưa commit/push; mãcommitG02sẽbổsungkhiđượcgiaoriêng.
+Đã bàn giao source/evidence:commit`1ab09af368f320a598a577d22542e41563e5e432`
+đãpush`origin/main`; xem`../git-handoff.md`. Ghi chú uncommitted phía dưới là lịch sử.
 
 ## Windows thật R6 — 17/10/2026
 

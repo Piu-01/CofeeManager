@@ -1,6 +1,6 @@
 # Plan T08 — Danh mục nền, dữ liệu hệ thống và selector
 
-Trạng thái: Bộ plan G02 đã duyệt; đầu ra đã triển khai, nghiệm thu T08 10/10IDgốc PASS17/10/2026. ChờbàngiaoGit riêng. Phụ thuộc T07 shell và T06 quyền/session đã nghiệm thu.
+Trạng thái: Hoàn tất; bộplan đãduyệt, nghiệm thu T08 10/10IDgốc PASS17/10/2026. ĐãbàngiaoGit,xem`../git-handoff.md`. Phụ thuộc T07 shell và T06 quyền/session đã nghiệm thu.
 Nguồn: requirements G02, kế hoạch T08, UX09/UX-K39/40, schema/seed/migration001.
 Đầu ra: 7 tab quản trị, dữ liệu hệ thống DB sạch, lookup/selector có quyền.
 

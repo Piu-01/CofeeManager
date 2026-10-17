@@ -336,7 +336,9 @@ Blocker phụ thuộc phải ghi rõ và xin quyết định nếu ngăn triển
 G02 requirements đã được người dùng duyệt; bộ plan T06–T08 tại
 `docs/tasks/g02-truy-cap-ung-dung-cau-hinh-nen/plans.md` đã được duyệt cả bộ và
 đã triển khai và nghiệm thu **PASS27/27IDgốc ngày17/10/2026**; đủ điều kiện
-chốt kỹ thuật, chờ bàn giao Git riêng (G02 chưa commit/push). Ma trận đối chiếu
+chốt kỹ thuật và đã bàn giao Git theo yêu cầu “push đi”:commit G02
+`1ab09af368f320a598a577d22542e41563e5e432` đãpush`origin/main`; hồ sơ tại
+`docs/tasks/g02-truy-cap-ung-dung-cau-hinh-nen/git-handoff.md`. Ma trận đối chiếu
 và biên bản tại `docs/tasks/g02-truy-cap-ung-dung-cau-hinh-nen/acceptance-matrix.md`
 và `report.md`. B01–B07/PKCS đã sửa/regressionPASS; Windowsidentity thật,
 setupOK/thoát/restart exe vàcleanup đềuPASS. Bộ plan chốt đầy đủ

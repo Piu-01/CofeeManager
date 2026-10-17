@@ -2,8 +2,9 @@
 
 **Trạng thái:** Đã duyệt requirements/bộplan/đợttest; triển khai và nghiệm thu
 G02 **PASS27/27IDgốc ngày17/10/2026**, B01–B07/PKCSđãsửa/regressionPASS,
-Windowsidentitythật/setup-popup/restart exe đãPASS. ChờbàngiaoGit riêng,
-chưa commit/push. Xem`acceptance-matrix.md`/`report.md`.
+Windowsidentitythật/setup-popup/restart exe đãPASS. Đã bàn giao Git theo yêu cầu:
+commit`1ab09af368f320a598a577d22542e41563e5e432` đãpush`origin/main`.
+Xem`acceptance-matrix.md`/`report.md`/`git-handoff.md`.
 **Duyệt requirements:** Người dùng “duyệt” sau lần rà soát tài liệu ngày 09/10/2026.
 **Ngày:** 09/10/2026.
 **Yêu cầu khởi động:** Người dùng “ok triển khai g02”.

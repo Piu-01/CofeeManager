@@ -1,6 +1,6 @@
 # Plan T07 — Shell, theme và điều hướng
 
-Trạng thái: Bộ plan G02 đã duyệt; đầu ra đã triển khai, nghiệm thu T07 7/7IDgốc PASS17/10/2026. ChờbàngiaoGit riêng. Phụ thuộc T06 auth/session đã nghiệm thu.
+Trạng thái: Hoàn tất; bộplan đãduyệt, nghiệm thu T07 7/7IDgốc PASS17/10/2026. ĐãbàngiaoGit,xem`../git-handoff.md`. Phụ thuộc T06 auth/session đã nghiệm thu.
 Nguồn: kế hoạch T07; requirements G02; UX02/UX09/mục3–6; guide README,
 index.html và preview.html. Không SQL migration tại T07.
 

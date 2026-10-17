@@ -84,6 +84,8 @@ DM/NCC/PT/DT/TC/CV/CA; không lấy một kind thay cả nhóm.
 
 Đủ điều kiện **chốt kỹ thuật/nghiệm thu G02**; không còn ca bắt buộc
 FAIL/BLOCKED/NOT RUN sau đối chiếu. Raw lịch sử không bị xóa. Chỉ bàn giao kỹ
-thuật ở đây; **G02 chưa commit/push**, chưa có mã commit G02. Giữ mốc G01
-`deabac108cbeddaa18126733ad18803b0626d7d7` và manifest source G02; chờ người
-dùng giao riêng thao tác Git. Không tự triển khaiG03 hoặc đổi325ca toàn dự án.
+thuật ở đây; sau đó người dùng đã yêu cầu push. Commit G02
+`1ab09af368f320a598a577d22542e41563e5e432` đãpush`origin/main`; xem
+[git-handoff.md](git-handoff.md). Giữ mốc G01
+`deabac108cbeddaa18126733ad18803b0626d7d7` và manifest source G02.
+Không tự triển khaiG03 hoặc đổi325ca toàn dự án.

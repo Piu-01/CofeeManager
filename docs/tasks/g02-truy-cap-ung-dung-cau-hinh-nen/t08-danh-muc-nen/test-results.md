@@ -11,7 +11,8 @@ vàPKCSđãregressiontrênbảncuối,runner484/484gồm177caseT08.
 CácgateWindowsidentity/setup-popupliênquanT06đãPASS ởR7;khôngcòndùngchúng
 làlýdochưanghiệmthuT08. Source99filekhôngđổi,manifest/handoff tại
 `../runs/G02_FINAL_ACCEPTANCE_20261017/`. Cácbảngphíasau là **lịch sử**,
-giữrawFAIL/BLOCKEDvàbằngchứnglượtmới. ChờbàngiaoGit riêng,chưa commit/push.
+giữrawFAIL/BLOCKEDvàbằngchứnglượtmới. Đã bàn giaoGit,commit
+`1ab09af368f320a598a577d22542e41563e5e432` đãpush`origin/main`;xem`../git-handoff.md`.
 
 SQL Server thật/DBtest có marker, principal runtime userWITHOUTLOGIN,
 Pooling=false khiEXECUTE AS. Source/schema/checksum tại runner evidence;

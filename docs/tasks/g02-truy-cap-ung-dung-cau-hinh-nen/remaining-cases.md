@@ -7,7 +7,8 @@ restart/lock/departure không mở lại bootstrap,runtimeexe loginđược. Cle
 đãđốichiếulại0account/DBuser/SQLlogintạm. B07/PKCS đãđóngregression;
 27/27IDgốc vàmọisubcase đãđốichiếutại [acceptance-matrix.md](acceptance-matrix.md).
 
-**Chỉ còn bàn giao Git:** chưa commit/push,chờngườidùnggiaoriêng.
+**Đã bàn giao Git:** commit sản phẩm`1ab09af368f320a598a577d22542e41563e5e432`
+đãpush`origin/main` theo yêu cầu; xem[git-handoff.md](git-handoff.md).
 Khôngcòn yêu cầu bấmUAC hoặcduyệtbug đangchờ củaG02.
 
 Cácmụcphíasau là **lịch sử blocker đã gỡ**, khônglàtrạngtháihiện tại.

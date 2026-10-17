@@ -4,7 +4,8 @@ Trạng thái: Requirements và cả bộ plan đã được người dùng duy�
 Đã triển khai tuần tự T06→T07→T08 và nghiệm thu **PASS27/27IDgốc17/10/2026**.
 CácđợtdebugB01–B07 vàPKCSđượcduyệt,sửa/regressionPASS. HaiWindowsidentity
 thật/setup-popup/restart exe đãPASS,cleanupđầyđủ. Xem`acceptance-matrix.md`.
-ChờbàngiaoGit riêng,chưa commit/push; khôngcònblockernghiệmthu.
+Đã bàn giao Git theo yêu cầu:commit`1ab09af368f320a598a577d22542e41563e5e432`
+đãpush`origin/main`; xem`git-handoff.md`. Không cònblockernghiệmthu.
 Mốc source G01:
 `deabac108cbeddaa18126733ad18803b0626d7d7`.
 

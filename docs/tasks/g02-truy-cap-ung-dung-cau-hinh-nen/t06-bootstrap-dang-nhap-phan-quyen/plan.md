@@ -1,6 +1,6 @@
 # Plan T06 — Bootstrap, đăng nhập và phân quyền
 
-Trạng thái: Bộ plan G02 đã duyệt; đầu ra đã triển khai, nghiệm thu T06 10/10IDgốc PASS17/10/2026. ChờbàngiaoGit riêng. Phụ thuộc T05 đã bàn giao.
+Trạng thái: Hoàn tất; bộplan đãduyệt, nghiệm thu T06 10/10IDgốc PASS17/10/2026. ĐãbàngiaoGit,xem`../git-handoff.md`. Phụ thuộc T05 đã bàn giao.
 Nguồn: requirements G02; kế hoạch T06/mục10–13; UX01/mục6; UI guide.
 Đầu ra: admin hợp lệ, đăng nhập thật, session và authorization BLL; editor
 nhân viên/tài khoản đầy đủ vẫn T24.
