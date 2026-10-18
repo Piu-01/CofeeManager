@@ -8,6 +8,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources/Orbit/*.png" />
+    <None Update="Resources/Orbit/LUCIDE-LICENSE.txt" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="../CafeManager.Models/CafeManager.Models.csproj" />
     <ProjectReference Include="../CafeManager.Business/CafeManager.Business.csproj" />
     <ProjectReference Include="../CafeManager.DataAccess/CafeManager.DataAccess.csproj" />

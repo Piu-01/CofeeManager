@@ -12,7 +12,13 @@ public partial class StartupForm : Form
     public StartupForm()
     {
         InitializeComponent();
-        Font = new Font("Segoe UI", 10F);
+        Theme.AppTheme.Apply(this);
+        header.BackColor = Theme.AppTheme.Espresso;
+        titleLabel.BackColor = subtitleLabel.BackColor = Color.Transparent;
+        titleLabel.Font = Theme.AppTheme.TitleFont; subtitleLabel.ForeColor = Theme.AppTheme.Muted;
+        toolbar.BackColor = filter.BackColor = Theme.AppTheme.Surface;
+        areaLabel.BackColor = Theme.AppTheme.Surface;
+        Theme.AppTheme.Status(statusLabel);
         Text = "CoffeeManager · G01";
         tableGrid.AutoGenerateColumns = false;
         loadButton.EnabledChanged += (_, _) => UpdateButtonAppearance();
@@ -34,10 +40,8 @@ public partial class StartupForm : Form
 
     private void UpdateButtonAppearance()
     {
-        loadButton.BackColor = loadButton.Enabled ? Color.FromArgb(75, 46, 35) : Color.FromArgb(234, 216, 195);
-        loadButton.ForeColor = loadButton.Enabled ? Color.White : Color.FromArgb(41, 30, 24);
-        loadButton.FlatAppearance.MouseOverBackColor = loadButton.Enabled ? Color.FromArgb(99, 62, 45) : loadButton.BackColor;
-        cancelButton.BackColor = cancelButton.Enabled ? Color.FromArgb(255, 252, 248) : Color.FromArgb(245, 239, 230);
+        Theme.AppTheme.PrimaryButton(loadButton);
+        Theme.AppTheme.SecondaryButton(cancelButton);
     }
 
     private void SetContentState(string message)

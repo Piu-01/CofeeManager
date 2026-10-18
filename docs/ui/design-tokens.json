@@ -1,0 +1,281 @@
+{
+  "version": "3.0.0",
+  "name": "Orbit Café",
+  "date": "2026-10-17",
+  "source": "reference.html bundled in the same folder",
+  "units": {
+    "geometry": "logical px at 96 DPI",
+    "font": "CSS px; WinForms pt = px * 0.75",
+    "duration": "ms",
+    "angles": "degrees"
+  },
+  "color": {
+    "canvas": "#100E15",
+    "header": "#141118",
+    "surface": "#211B28",
+    "surfaceHover": "#282030",
+    "text": "#FFF4E7",
+    "muted": "#D0C2D7",
+    "caramel": "#FFD09A",
+    "lilac": "#D0BEFF",
+    "line": "#514357",
+    "cardBorder": "#594760",
+    "inputBorder": "#776180",
+    "onCaramel": "#28180E",
+    "selectedSurface": "#3D2D22",
+    "selectedBorder": "#B28A62",
+    "starCaramel": "#FFD99F",
+    "starLilac": "#D7BAFF",
+    "starCream": "#FFF8DF"
+  },
+  "font": {
+    "family": [
+      "Segoe UI",
+      "Arial",
+      "sans-serif"
+    ],
+    "bodyPx": 14,
+    "bodyPt": 10.5,
+    "pageTitlePx": 28,
+    "pageTitlePt": 21,
+    "productNamePx": 13,
+    "productNamePt": 9.75,
+    "productDescriptionPx": 11,
+    "productDescriptionPt": 8.25,
+    "pricePx": 14,
+    "orderTitlePx": 19,
+    "amountPx": 27,
+    "labelPx": 12,
+    "eyebrowPx": 10,
+    "weight": {
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600
+    },
+    "note": "Small labels follow the approved browser reference; validate legibility on Windows, do not shrink further."
+  },
+  "spacing": [
+    4,
+    6,
+    7,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22,
+    24,
+    25,
+    26,
+    28,
+    32,
+    38,
+    44,
+    64
+  ],
+  "layout": {
+    "standaloneMaxWidth": 1366,
+    "bodyPadding": 24,
+    "bodyPaddingMobile": 0,
+    "railWidth": 76,
+    "railWidthMobile": 58,
+    "mainPadding": 24,
+    "mainPaddingMedium": 18,
+    "mainPaddingMobileX": 12,
+    "mainPaddingMobileY": 16,
+    "orderWidth": 282,
+    "orderWidthMedium": 250,
+    "orderWidthWide": 282,
+    "columnGap": 22,
+    "columnGapMedium": 14,
+    "productColumns": {
+      "default": 2,
+      "min1100": 2,
+      "max390": 1
+    },
+    "breakpoints": {
+      "wide": 1100,
+      "medium": 900,
+      "mobile": 680,
+      "narrow": 390
+    },
+    "menuScrollMaxHeight": 490,
+    "menuScrollMobileMaxHeight": 470,
+    "pageSectionMarginTop": 44,
+    "pageSectionPaddingTop": 64,
+    "referenceOnlySections": true,
+    "note": "Effective reference CSS at desktop: 2 product columns, 282px order. Use computed-styles.json captured from browser; inline wide head rules are overridden by later scoped CSS."
+  },
+  "radius": {
+    "app": 18,
+    "card": 13,
+    "dialog": 12,
+    "buttonPrimary": 10,
+    "buttonSecondary": 7,
+    "input": 10,
+    "badge": 30,
+    "order": 16
+  },
+  "border": {
+    "default": 1,
+    "focus": 2,
+    "focusOffset": 3
+  },
+  "productCard": {
+    "padding": 14,
+    "gap": 12,
+    "rows": [
+      124,
+      "minmax(38,auto)",
+      "minmax(32,auto)",
+      38
+    ],
+    "titleLineHeight": 19,
+    "descriptionLineHeight": 16,
+    "priceLineHeight": 20,
+    "plusSize": 32,
+    "plusHorizontal": [
+      12,
+      2
+    ],
+    "plusVertical": [
+      2,
+      12
+    ],
+    "plusRotation": 0,
+    "plusCenter": "50% / 50%",
+    "ceramicImageCompensationRight": 15
+  },
+  "shadow": {
+    "cardHover": [
+      "inset 0 1px 0 #F7DDFF66",
+      "0 0 0 1px #D0BEFF24",
+      "0 0 25px #B5A1EF2B",
+      "0 12px 20px #00000066"
+    ],
+    "primaryNormal": [
+      "inset 0 1px 0 #FFF4E7",
+      "0 4px 0 #8E613D",
+      "0 7px 18px #00000055"
+    ],
+    "primaryHover": [
+      "inset 0 1px 0 #FFFFFF",
+      "0 5px 0 #8E613D",
+      "0 0 25px #FFD09A4D",
+      "0 10px 20px #00000055"
+    ],
+    "pressedCard": [
+      "inset 0 3px 14px #00000099",
+      "inset 0 0 0 1px #FFD09A55",
+      "0 0 12px #FFD09A22"
+    ]
+  },
+  "gradient": {
+    "primary": {
+      "angleDeg": 175,
+      "stops": [
+        [
+          "#FFE6C0",
+          0
+        ],
+        [
+          "#FFD09A",
+          45
+        ],
+        [
+          "#DDA76C",
+          100
+        ]
+      ]
+    },
+    "cardHover": {
+      "angleDeg": 160,
+      "stops": [
+        [
+          "#40304A",
+          0
+        ],
+        [
+          "#241C2C",
+          65
+        ]
+      ]
+    }
+  },
+  "motion": {
+    "easingEnter": [
+      0.16,
+      1,
+      0.3,
+      1
+    ],
+    "cardHoverMs": 160,
+    "cardHoverLiftY": -3,
+    "pressMs": 55,
+    "releaseMs": 150,
+    "cardPressScale": 0.972,
+    "cardPressY": 1,
+    "primaryHoverY": -2,
+    "primaryPressScale": 0.975,
+    "primaryPressY": 3,
+    "rippleMs": 300,
+    "rippleCleanupMs": 600,
+    "sheenMs": 650,
+    "cardConfirmPulseMs": 220,
+    "menuReveal": {
+      "opacityFrom": 0.4,
+      "translateYFrom": 16,
+      "duration": 360,
+      "stagger": 45,
+      "threshold": 0.12
+    },
+    "pageReveal": {
+      "opacityFrom": 0.3,
+      "translateYFrom": 22,
+      "duration": 520,
+      "stagger": 65,
+      "threshold": 0.12,
+      "bottomRootMargin": -24
+    },
+    "backgroundPageShiftPercent": 100
+  },
+  "stardust": {
+    "defaultEnabled": false,
+    "enabledControlIds": [
+      "co-confirm-pay"
+    ],
+    "trigger": "valid click activation only; not opening payment; no burst if disabled",
+    "particleCount": 40,
+    "radiusMin": 75,
+    "radiusMax": 215,
+    "lifeMin": 850,
+    "lifeMax": 1250,
+    "dotSizeMin": 3,
+    "dotSizeMax": 7,
+    "starSizeMin": 10,
+    "starSizeMax": 19,
+    "starEvery": 3,
+    "gravityOffsetY": 30,
+    "spinMin": -120,
+    "spinMax": 120,
+    "cleanupGraceMs": 50,
+    "ringDurationMs": 520,
+    "ringCleanupMs": 570,
+    "ringBaseSize": 14,
+    "ringScaleEnd": 9,
+    "maxLiveParticlesBudget": 280,
+    "overlay": "form-level, hit-test transparent; visible outside button/card/scroll clip",
+    "colors": [
+      "#FFD99F",
+      "#D7BAFF",
+      "#FFF8DF"
+    ]
+  },
+  "policy": {
+    "reducedMotionOption": false,
+    "referenceData": "demo only; never use mock totals or success in real checkout",
+    "newStarDustTargets": "user explicit per-control instruction required"
+  }
+}

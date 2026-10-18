@@ -1,0 +1,52 @@
+{
+  "viewport": {
+    "width": 1366,
+    "height": 768,
+    "dpr": 1
+  },
+  "card": {
+    "color": "rgb(255, 244, 231)",
+    "background": "rgb(33, 27, 40)",
+    "fontSize": "14px",
+    "padding": "14px",
+    "borderRadius": "13px",
+    "gridTemplateColumns": "400.5px",
+    "width": "430.5px"
+  },
+  "products": {
+    "color": "rgb(255, 244, 231)",
+    "background": "rgba(0, 0, 0, 0)",
+    "fontSize": "14px",
+    "padding": "7px 10px 16px 7px",
+    "borderRadius": "0px",
+    "gridTemplateColumns": "430.5px 430.5px",
+    "width": "890px"
+  },
+  "order": {
+    "color": "rgb(255, 244, 231)",
+    "background": "rgba(0, 0, 0, 0)",
+    "fontSize": "14px",
+    "padding": "20px",
+    "borderRadius": "16px",
+    "gridTemplateColumns": "none",
+    "width": "282px"
+  },
+  "primary": {
+    "color": "rgb(40, 24, 14)",
+    "background": "rgba(0, 0, 0, 0)",
+    "fontSize": "14px",
+    "padding": "13px 12px",
+    "borderRadius": "10px",
+    "gridTemplateColumns": "none",
+    "width": "240px"
+  },
+  "text": {
+    "color": "rgb(255, 244, 231)",
+    "background": "rgba(0, 0, 0, 0)",
+    "fontSize": "13px",
+    "padding": "0px",
+    "borderRadius": "0px",
+    "gridTemplateColumns": "none",
+    "width": "400.5px"
+  }
+}

@@ -21,6 +21,11 @@ partial class CatalogsControl
     private Button previousButton = null!;
     private Button nextButton = null!;
     private Label statusLabel = null!;
+    private Label titleLabel = null!;
+    private Label subtitleLabel = null!;
+    private TableLayoutPanel heading = null!;
+    private TableLayoutPanel footer = null!;
+    private FlowLayoutPanel pagination = null!;
     private DataGridView grid = null!;
     private DataGridViewTextBoxColumn codeColumn = null!;
     private DataGridViewTextBoxColumn nameColumn = null!;
@@ -34,16 +39,23 @@ partial class CatalogsControl
     private DataGridViewCheckBoxColumn supportedColumn = null!;
     private void InitializeComponent()
     {
-        layout = new TableLayoutPanel(); toolbar = new FlowLayoutPanel(); tabs = new TabControl();
+        layout = new TableLayoutPanel(); toolbar = new FlowLayoutPanel(); tabs = new CafeManager.WinForms.UI.OrbitTabControl();
+        heading = new CafeManager.WinForms.UI.OrbitHeader(); titleLabel = new Label(); subtitleLabel = new Label();
+        footer = new TableLayoutPanel(); pagination = new FlowLayoutPanel();
         productTab = new TabPage(); supplierTab = new TabPage(); paymentTab = new TabPage(); deliveryTab = new TabPage(); expenseTab = new TabPage(); positionTab = new TabPage(); shiftTab = new TabPage();
-        searchInput = new TextBox(); searchButton = new Button(); reloadButton = new Button(); addButton = new Button(); editButton = new Button(); deleteButton = new Button(); previousButton = new Button(); nextButton = new Button(); statusLabel = new Label(); grid = new DataGridView();
+        searchInput = new TextBox(); searchButton = new CafeManager.WinForms.UI.OrbitButton(); reloadButton = new CafeManager.WinForms.UI.OrbitButton(); addButton = new CafeManager.WinForms.UI.OrbitButton(); editButton = new CafeManager.WinForms.UI.OrbitButton(); deleteButton = new CafeManager.WinForms.UI.OrbitButton(); previousButton = new CafeManager.WinForms.UI.OrbitButton(); nextButton = new CafeManager.WinForms.UI.OrbitButton(); statusLabel = new Label(); grid = new DataGridView();
         codeColumn = new DataGridViewTextBoxColumn(); nameColumn = new DataGridViewTextBoxColumn(); phoneColumn = new DataGridViewTextBoxColumn(); ratioColumn = new DataGridViewTextBoxColumn(); allowanceColumn = new DataGridViewTextBoxColumn(); factorColumn = new DataGridViewTextBoxColumn(); startColumn = new DataGridViewTextBoxColumn(); endColumn = new DataGridViewTextBoxColumn(); typeColumn = new DataGridViewTextBoxColumn(); supportedColumn = new DataGridViewCheckBoxColumn();
         SuspendLayout(); layout.SuspendLayout(); toolbar.SuspendLayout(); tabs.SuspendLayout(); ((global::System.ComponentModel.ISupportInitialize)grid).BeginInit();
-        layout.Dock = DockStyle.Fill; layout.Padding = new Padding(16); layout.ColumnCount = 1; layout.RowCount = 3;
-        layout.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
-        layout.RowStyles.Add(new RowStyle(SizeType.AutoSize)); layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100F)); layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+        layout.Dock = DockStyle.Fill; layout.Padding = new Padding(16); layout.ColumnCount = 1; layout.RowCount = 4;
+        layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+        layout.RowStyles.Add(new RowStyle(SizeType.AutoSize)); layout.RowStyles.Add(new RowStyle(SizeType.AutoSize)); layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100F)); layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+        heading.Dock = DockStyle.Fill; heading.AutoSize = true; heading.ColumnCount = 1; heading.RowCount = 2; heading.Padding = new Padding(12, 6, 12, 6); heading.Margin = new Padding(0, 0, 0, 8);
+        heading.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F)); heading.RowStyles.Add(new RowStyle(SizeType.AutoSize)); heading.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+        titleLabel.Text = "Danh mục nền"; titleLabel.Font = new Font("Segoe UI", 16F, FontStyle.Bold); titleLabel.AutoSize = true;
+        subtitleLabel.Text = "Dữ liệu tham chiếu · CoffeeManager"; subtitleLabel.AutoSize = true; subtitleLabel.Margin = new Padding(3, 6, 3, 0);
+        heading.Controls.Add(titleLabel, 0, 0); heading.Controls.Add(subtitleLabel, 0, 1);
         toolbar.Dock = DockStyle.Fill; toolbar.AutoSize = true; toolbar.WrapContents = true;
-        searchInput.Width = 210; searchInput.MaxLength = 100; searchInput.PlaceholderText = "Tên danh mục…"; searchInput.AccessibleName = "Tìm tên danh mục";
+        searchInput.Width = 210; searchInput.Margin = new Padding(0, 10, 10, 10); searchInput.MaxLength = 100; searchInput.PlaceholderText = "Tên danh mục…"; searchInput.AccessibleName = "Tìm tên danh mục";
         searchButton.Text = "Tìm"; reloadButton.Text = "Tải / đối chiếu"; addButton.Text = "Thêm"; editButton.Text = "Sửa"; deleteButton.Text = "Xóa"; previousButton.Text = "Trước"; nextButton.Text = "Sau";
         searchButton.AutoSize = true;
         reloadButton.AutoSize = true;
@@ -60,8 +72,8 @@ partial class CatalogsControl
         previousButton.Padding = new Padding(8, 6, 8, 6);
         nextButton.Padding = new Padding(8, 6, 8, 6);
         searchButton.Click += Search_Click; reloadButton.Click += Reload_Click; addButton.Click += Add_Click; editButton.Click += Edit_Click; deleteButton.Click += Delete_Click; previousButton.Click += Previous_Click; nextButton.Click += Next_Click;
-        toolbar.Controls.Add(searchInput); toolbar.Controls.Add(searchButton); toolbar.Controls.Add(reloadButton); toolbar.Controls.Add(addButton); toolbar.Controls.Add(editButton); toolbar.Controls.Add(deleteButton); toolbar.Controls.Add(previousButton); toolbar.Controls.Add(nextButton);
-        tabs.Dock = DockStyle.Fill; tabs.Multiline = true;
+        toolbar.Controls.Add(searchInput); toolbar.Controls.Add(searchButton); toolbar.Controls.Add(reloadButton); toolbar.Controls.Add(addButton); toolbar.Controls.Add(editButton); toolbar.Controls.Add(deleteButton);
+        tabs.Dock = DockStyle.Fill; tabs.Multiline = false;
         productTab.Text = "Sản phẩm"; supplierTab.Text = "Nhà cung cấp"; paymentTab.Text = "Phương thức"; deliveryTab.Text = "Đối tác"; expenseTab.Text = "Thu / chi"; positionTab.Text = "Chức vụ"; shiftTab.Text = "Ca làm";
         tabs.Controls.Add(productTab); tabs.Controls.Add(supplierTab); tabs.Controls.Add(paymentTab); tabs.Controls.Add(deliveryTab); tabs.Controls.Add(expenseTab); tabs.Controls.Add(positionTab); tabs.Controls.Add(shiftTab);
         grid.Dock = DockStyle.Fill; grid.AutoGenerateColumns = false; grid.ReadOnly = true; grid.AllowUserToAddRows = false; grid.AllowUserToDeleteRows = false; grid.MultiSelect = false; grid.SelectionMode = DataGridViewSelectionMode.FullRowSelect; grid.RowHeadersVisible = false;
@@ -78,7 +90,12 @@ partial class CatalogsControl
         grid.Columns.AddRange(new DataGridViewColumn[] { codeColumn, nameColumn, phoneColumn, ratioColumn, allowanceColumn, factorColumn, startColumn, endColumn, typeColumn, supportedColumn });
         grid.CellFormatting += Grid_CellFormatting; productTab.Controls.Add(grid);
         statusLabel.AutoSize = true; statusLabel.Dock = DockStyle.Fill; statusLabel.Padding = new Padding(0, 8, 0, 8);
-        layout.Controls.Add(toolbar, 0, 0); layout.Controls.Add(tabs, 0, 1); layout.Controls.Add(statusLabel, 0, 2);
+        footer.Dock = DockStyle.Fill; footer.AutoSize = true; footer.ColumnCount = 2; footer.RowCount = 1;
+        footer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F)); footer.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize)); footer.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+        pagination.Dock = DockStyle.Fill; pagination.AutoSize = true; pagination.WrapContents = false;
+        pagination.Controls.Add(previousButton); pagination.Controls.Add(nextButton);
+        footer.Controls.Add(statusLabel, 0, 0); footer.Controls.Add(pagination, 1, 0);
+        layout.Controls.Add(heading, 0, 0); layout.Controls.Add(toolbar, 0, 1); layout.Controls.Add(tabs, 0, 2); layout.Controls.Add(footer, 0, 3);
         AutoScaleDimensions = new SizeF(96F, 96F); AutoScaleMode = AutoScaleMode.Dpi; Size = new Size(900, 580); Controls.Add(layout);
         ((global::System.ComponentModel.ISupportInitialize)grid).EndInit(); tabs.ResumeLayout(false); toolbar.ResumeLayout(false); toolbar.PerformLayout(); layout.ResumeLayout(false); layout.PerformLayout(); ResumeLayout(false);
     }

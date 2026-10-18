@@ -19,15 +19,28 @@ partial class BootstrapForm
     private Label usernameLabel = null!;
     private Label passwordLabel = null!;
     private Label confirmationLabel = null!;
+    private TableLayoutPanel shell = null!;
+    private TableLayoutPanel heading = null!;
+    private Label titleLabel = null!;
+    private Label subtitleLabel = null!;
     private void InitializeComponent()
     {
         layout = new TableLayoutPanel(); modeInput = new ComboBox(); candidateInput = new ComboBox();
+        shell = new TableLayoutPanel(); heading = new CafeManager.WinForms.UI.OrbitHeader(); titleLabel = new Label(); subtitleLabel = new Label();
         nameInput = new TextBox(); phoneInput = new TextBox(); usernameInput = new TextBox(); passwordInput = new TextBox();
-        confirmationInput = new TextBox(); completeButton = new Button(); statusLabel = new Label();
+        confirmationInput = new TextBox(); completeButton = new CafeManager.WinForms.UI.OrbitButton(); statusLabel = new Label();
         modeLabel = new Label(); candidateLabel = new Label(); nameLabel = new Label(); phoneLabel = new Label();
         usernameLabel = new Label(); passwordLabel = new Label(); confirmationLabel = new Label();
         SuspendLayout(); layout.SuspendLayout();
-        layout.Dock = DockStyle.Fill; layout.Padding = new Padding(24); layout.ColumnCount = 2; layout.RowCount = 9; layout.AutoScroll = true;
+        shell.Dock = DockStyle.Fill; shell.Padding = new Padding(24); shell.ColumnCount = 1; shell.RowCount = 4;
+        shell.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+        shell.RowStyles.Add(new RowStyle(SizeType.AutoSize)); shell.RowStyles.Add(new RowStyle(SizeType.AutoSize)); shell.RowStyles.Add(new RowStyle(SizeType.AutoSize)); shell.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+        heading.Dock = DockStyle.Fill; heading.AutoSize = true; heading.ColumnCount = 1; heading.RowCount = 2; heading.Padding = new Padding(16); heading.Margin = new Padding(0, 0, 0, 16);
+        heading.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F)); heading.RowStyles.Add(new RowStyle(SizeType.AutoSize)); heading.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+        titleLabel.Text = "Thiết lập quản trị"; titleLabel.Font = new Font("Segoe UI", 16F, FontStyle.Bold); titleLabel.AutoSize = true;
+        subtitleLabel.Text = "CoffeeManager · Thiết lập ban đầu"; subtitleLabel.AutoSize = true;
+        heading.Controls.Add(titleLabel, 0, 0); heading.Controls.Add(subtitleLabel, 0, 1);
+        layout.Dock = DockStyle.Top; layout.AutoSize = true; layout.Padding = new Padding(0, 0, 16, 0); layout.ColumnCount = 2; layout.RowCount = 7; layout.AutoScroll = false;
         layout.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize)); layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
         layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
         layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
@@ -36,8 +49,6 @@ partial class BootstrapForm
         layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
         layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
         layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-        layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-        layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
         modeInput.DropDownStyle = ComboBoxStyle.DropDownList; modeInput.Items.AddRange(new object[] { "Tạo admin / nhân viên mới", "Dùng nhân viên / account demo được chọn" }); modeInput.SelectedIndex = 0;
         candidateInput.DropDownStyle = ComboBoxStyle.DropDownList;
         nameInput.MaxLength = 50; phoneInput.MaxLength = 15; usernameInput.MaxLength = 50;
@@ -80,12 +91,12 @@ partial class BootstrapForm
         layout.Controls.Add(nameLabel, 0, 2); layout.Controls.Add(nameInput, 1, 2); layout.Controls.Add(phoneLabel, 0, 3); layout.Controls.Add(phoneInput, 1, 3);
         layout.Controls.Add(usernameLabel, 0, 4); layout.Controls.Add(usernameInput, 1, 4); layout.Controls.Add(passwordLabel, 0, 5); layout.Controls.Add(passwordInput, 1, 5);
         layout.Controls.Add(confirmationLabel, 0, 6); layout.Controls.Add(confirmationInput, 1, 6);
-        completeButton.Text = "Hoàn tất thiết lập"; completeButton.AutoSize = true; completeButton.Enabled = false; completeButton.Click += Complete_Click;
-        layout.Controls.Add(completeButton, 1, 7); statusLabel.AutoSize = true; statusLabel.Dock = DockStyle.Fill;
-        layout.Controls.Add(statusLabel, 0, 8); layout.SetColumnSpan(statusLabel, 2);
+        completeButton.Text = "Hoàn tất thiết lập"; completeButton.AutoSize = true; completeButton.Padding = new Padding(16, 12, 16, 12); completeButton.Margin = new Padding(0, 16, 0, 12); completeButton.Enabled = false; completeButton.Click += Complete_Click;
+        statusLabel.AutoSize = true; statusLabel.Dock = DockStyle.Fill;
+        shell.Controls.Add(heading, 0, 0); shell.Controls.Add(layout, 0, 1); shell.Controls.Add(completeButton, 0, 2); shell.Controls.Add(statusLabel, 0, 3);
         AutoScaleDimensions = new SizeF(96F, 96F); AutoScaleMode = AutoScaleMode.Dpi;
-        ClientSize = new Size(780, 540); MinimumSize = new Size(560, 400); Text = "CoffeeManager · Thiết lập quản trị";
-        StartPosition = FormStartPosition.CenterScreen; Controls.Add(layout);
+        ClientSize = new Size(820, 660); MinimumSize = new Size(420, 360); Text = "CoffeeManager · Thiết lập quản trị";
+        StartPosition = FormStartPosition.CenterScreen; Controls.Add(shell);
         layout.ResumeLayout(false); layout.PerformLayout(); ResumeLayout(false);
     }
 }

@@ -11,7 +11,14 @@ public partial class LoginForm : Form
     private CancellationTokenSource? pending;
     private int generation;
     public event Action<SessionContext>? LoggedIn;
-    public LoginForm() { InitializeComponent(); Theme.AppTheme.Apply(this); Theme.AppTheme.PrimaryButton(loginButton); }
+    public LoginForm()
+    {
+        InitializeComponent(); Theme.AppTheme.Apply(this); Theme.AppTheme.PrimaryButton(loginButton);
+        title.BackColor = caption.BackColor = Color.Transparent;
+        caption.ForeColor = Theme.AppTheme.Primary; Theme.AppTheme.Status(statusLabel);
+        UI.OrbitField.Wrap(usernameInput); UI.OrbitField.Wrap(passwordInput);
+        Controls.Add(new UI.OrbitContentHost(layout, 480, centerVertically: true));
+    }
     public LoginForm(AuthService? auth, string? configurationError) : this()
     {
         this.auth = auth;

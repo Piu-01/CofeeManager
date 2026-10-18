@@ -1,0 +1,1153 @@
+{
+  "package": "Orbit Café UI handoff",
+  "version": "3.0.0",
+  "date": "2026-10-17",
+  "evidence": "Real Chromium browser capture; Windows/WinForms not tested",
+  "files": [
+    {
+      "path": "HuongDan_UI_Orbit_Cafe.md",
+      "bytes": 14326,
+      "sha256": "775ec5a1a07ab63f61fc01be15177f28fdb4a89ff154a29f55e31d0c2cd1c8af"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1932,
+      "sha256": "e8076bb6d4a8556384ff94ed4f412b18c6aeb2e8f902dda2a2e88fae80d12e28"
+    },
+    {
+      "path": "VERIFICATION.md",
+      "bytes": 1235,
+      "sha256": "a451f758d2a97b7f67ade4f7398dc584942b77b6dbbd9b0ac36878b1d99d3b4b"
+    },
+    {
+      "path": "WINFORMS_IMPLEMENTATION.md",
+      "bytes": 9928,
+      "sha256": "c7befa1ca4a757fd4f8d974b0d475b3706e3b71fc263808017c03173a9db8b4f"
+    },
+    {
+      "path": "assets/README.md",
+      "bytes": 2451,
+      "sha256": "b183f9f0b47392636cb0cd1f8620216a14876f9447697c7d621646858a6fea14"
+    },
+    {
+      "path": "assets/branding/orbit-logo.png",
+      "bytes": 7395,
+      "sha256": "2bb11a2f6797cfc7824eba9a9875cdf378c439b55925d9c056305bf4d8dd60fe"
+    },
+    {
+      "path": "assets/branding/orbit-logo.svg",
+      "bytes": 501,
+      "sha256": "d1717805c690537b5ba9d65db2392701655c430ff5a17720eb6f86313ecd6fe8"
+    },
+    {
+      "path": "assets/branding/orbit-mark.png",
+      "bytes": 3594,
+      "sha256": "43a16df6f2c7b5918849b84c8d2bb734dacd5a5f89290316491f57fc873bf658"
+    },
+    {
+      "path": "assets/branding/orbit-mark.svg",
+      "bytes": 224,
+      "sha256": "e3141a12e8b243e60d8a2bb04748e17304caed2c0aec7e446f4a568cb32f95b4"
+    },
+    {
+      "path": "assets/icons/png/caramel/20/armchair.png",
+      "bytes": 531,
+      "sha256": "c988d8d0ac4596de0555bb7c492dda6af808d8921ac41d438fdefdcc67cb1757"
+    },
+    {
+      "path": "assets/icons/png/caramel/20/calendar.png",
+      "bytes": 488,
+      "sha256": "d9e29a37663b062a8efe0527af08ac1c582d895c32e7100e0e78a73628419747"
+    },
+    {
+      "path": "assets/icons/png/caramel/20/chart-column.png",
+      "bytes": 375,
+      "sha256": "a0238ebd4d2197bc7ecfa65bae95757cdbdef3b6d0779bd9f548626b0eadcc75"
+    },
+    {
+      "path": "assets/icons/png/caramel/20/check.png",
+      "bytes": 389,
+      "sha256": "742f2c89219e383e525c357fe08ddb6fa76a3005ce1b2869a5816b41d76348de"
+    },
+    {
+      "path": "assets/icons/png/caramel/20/clock.png",
+      "bytes": 730,
+      "sha256": "0c5cc1532dc51f883bce61ff60c216f02d641920947a00eedd0e885f185c324d"
+    },
+    {
+      "path": "assets/icons/png/caramel/20/coffee.png",
+      "bytes": 608,
+      "sha256": "40b0a21164168529b5ae8bb02d918d8141390a342952ec761b48f5dfe0862d26"
+    },
+    {
+      "path": "assets/icons/png/caramel/20/layout-grid.png",
+      "bytes": 626,
+      "sha256": "b1c63e410fa0d25080409c3d38784fb821821b0cbc660a070d459917a246988d"
+    },
+    {
+      "path": "assets/icons/png/caramel/20/loader-circle.png",
+      "bytes": 583,
+      "sha256": "c8303a4ef818ef0e83e0627d93278e052ba5c7025fbadb74449c264cf18911a4"
+    },
+    {
+      "path": "assets/icons/png/caramel/20/lock.png",
+      "bytes": 485,
+      "sha256": "61536c73b7abd7de7ccf3109ab5af5cc6fb14b6faf2ef94946fd66f359b5b612"
+    },
+    {
+      "path": "assets/icons/png/caramel/20/log-out.png",
+      "bytes": 457,
+      "sha256": "8f200fb982e75aaf99460a8b2ea3820719cd7b3fc6dece3b0d42692a548aeb2b"
+    },
+    {
+      "path": "assets/icons/png/caramel/20/package.png",
+      "bytes": 769,
+      "sha256": "53a98bdbe28224add16e4c1cc555765fdb9efd0cfc8ce7d6cec9f8dc841024d9"
+    },
+    {
+      "path": "assets/icons/png/caramel/20/palette.png",
+      "bytes": 845,
+      "sha256": "e6445f1946e87032d8f97c5107f398e13697dd117e2feecc60f5ca3a1fcff657"
+    },
+    {
+      "path": "assets/icons/png/caramel/20/pencil.png",
+      "bytes": 644,
+      "sha256": "aab60339d46d9cb4e01a5b0f17bf482217814425ae3966d5042ab3336fedc7e6"
+    },
+    {
+      "path": "assets/icons/png/caramel/20/plus.png",
+      "bytes": 228,
+      "sha256": "625cf136fb03df4333013fa0e651893b5cfe05ae7f595cbf40acfffbdfcff221"
+    },
+    {
+      "path": "assets/icons/png/caramel/20/printer.png",
+      "bytes": 511,
+      "sha256": "0a8d548c48af647cba9f4704b0d0be0d1dc617b7b01965b033643d52ee5eabbd"
+    },
+    {
+      "path": "assets/icons/png/caramel/20/receipt.png",
+      "bytes": 794,
+      "sha256": "e8cac11e0990a7284a9e5757660df8bed0b2b3115fe548d043bb39a8a7196da5"
+    },
+    {
+      "path": "assets/icons/png/caramel/20/refresh-cw.png",
+      "bytes": 716,
+      "sha256": "fbe8e5aa102639e576d9876ed2e34ac55b3ae99e229270e314b591f2078ee76f"
+    },
+    {
+      "path": "assets/icons/png/caramel/20/search.png",
+      "bytes": 641,
+      "sha256": "3307c76d719e49916074de357f2e676029957e330843982b746f9bfc2fa1ecb6"
+    },
+    {
+      "path": "assets/icons/png/caramel/20/settings.png",
+      "bytes": 832,
+      "sha256": "60162d78e1210e16a3bcfe4fd1e6e22b631bab0d974f6ef2ecf8453371192b70"
+    },
+    {
+      "path": "assets/icons/png/caramel/20/shopping-cart.png",
+      "bytes": 556,
+      "sha256": "08c74272d9109437958fa44d230e4a8ca0234940426f33e2cfafee6615c8a68e"
+    },
+    {
+      "path": "assets/icons/png/caramel/20/trash2.png",
+      "bytes": 517,
+      "sha256": "9bc2217836662428884d0e67ae5d298a5a3e85bc811b13d602d0bcd45b254410"
+    },
+    {
+      "path": "assets/icons/png/caramel/20/triangle-alert.png",
+      "bytes": 643,
+      "sha256": "834630420a7bb5809da52f0153533e5c07f30adc71977f6722b5665e266acf94"
+    },
+    {
+      "path": "assets/icons/png/caramel/20/truck.png",
+      "bytes": 632,
+      "sha256": "df0d79b3f2bdc994248366f183ba6c49c7db3d6199317e13a6bca81ef726d85f"
+    },
+    {
+      "path": "assets/icons/png/caramel/20/user-round.png",
+      "bytes": 581,
+      "sha256": "934a765da3a97829c3a5c48ca4acded9ca584f81afa5a849b3404d72ec3e63e3"
+    },
+    {
+      "path": "assets/icons/png/caramel/20/users.png",
+      "bytes": 710,
+      "sha256": "58e147febf7cd97698a0702c1c97d60b3e048b861217cfb398dd0a42ac549ec5"
+    },
+    {
+      "path": "assets/icons/png/caramel/20/wallet.png",
+      "bytes": 515,
+      "sha256": "766db39a3f13f4d97bef615e6f8ff769fdc119eda39bb75edd0d6c1704e22e01"
+    },
+    {
+      "path": "assets/icons/png/caramel/20/warehouse.png",
+      "bytes": 626,
+      "sha256": "ce657f2bd0dc4e8f271e898fc220c1fdc70f28e8c6b39a12e9b302ecf0d78198"
+    },
+    {
+      "path": "assets/icons/png/caramel/20/x.png",
+      "bytes": 270,
+      "sha256": "570181c681f88d6cd504c0ef0109f381bd01dc5e8deef45972eae6619b795234"
+    },
+    {
+      "path": "assets/icons/png/caramel/24/armchair.png",
+      "bytes": 409,
+      "sha256": "4dd3c36a66449a8e9cbdb222fb862faa8234fc2c8d3d1a95eb33c665d0dd4a3c"
+    },
+    {
+      "path": "assets/icons/png/caramel/24/calendar.png",
+      "bytes": 357,
+      "sha256": "4885e18f7b98387114915bc7b0bfa4f1e8942722eb7f6d8acbfcdbef7024587e"
+    },
+    {
+      "path": "assets/icons/png/caramel/24/chart-column.png",
+      "bytes": 249,
+      "sha256": "567f201333bcb4fa4e2a4f7c0975c2f356d86dde61c35942a60c81efef2daa20"
+    },
+    {
+      "path": "assets/icons/png/caramel/24/check.png",
+      "bytes": 356,
+      "sha256": "5cd62c670e39f19b476b303f6b96802bb4782d55256a42a67f11c30871445340"
+    },
+    {
+      "path": "assets/icons/png/caramel/24/clock.png",
+      "bytes": 853,
+      "sha256": "2fa1b6e1c1eec56af9862cf876483384fd042876e33ad51cac92785a38d36156"
+    },
+    {
+      "path": "assets/icons/png/caramel/24/coffee.png",
+      "bytes": 464,
+      "sha256": "e37994eaf5a565da10abe2383466516e004371f61043222e449e130d2d8168e3"
+    },
+    {
+      "path": "assets/icons/png/caramel/24/layout-grid.png",
+      "bytes": 226,
+      "sha256": "519dda0efeb05e87020e27aef2c06569397a299f61e9707a84f46bd05b66c447"
+    },
+    {
+      "path": "assets/icons/png/caramel/24/loader-circle.png",
+      "bytes": 654,
+      "sha256": "79914f4f58072d1db57f290383b41e3f13370cd3cbe48a0531131e217c9da651"
+    },
+    {
+      "path": "assets/icons/png/caramel/24/lock.png",
+      "bytes": 462,
+      "sha256": "191c4646b2e0316c0c8ac8a6c27c6fe0c9ff12dfa1a2fbe89aa9a8b707c5c078"
+    },
+    {
+      "path": "assets/icons/png/caramel/24/log-out.png",
+      "bytes": 420,
+      "sha256": "58fc3f82fdb6cc73f5bdad6c60a202548b8f8cee20b94a0cc90faf45c7412563"
+    },
+    {
+      "path": "assets/icons/png/caramel/24/package.png",
+      "bytes": 826,
+      "sha256": "c8d4d0daa04ae05749d7cae8e5f43d40612772a66a1ab2d1dc8d8f0bea674bec"
+    },
+    {
+      "path": "assets/icons/png/caramel/24/palette.png",
+      "bytes": 879,
+      "sha256": "f77c524b20c35919400b9dbe1b622173ed239b01e262a1659daaa67c1ca1d62d"
+    },
+    {
+      "path": "assets/icons/png/caramel/24/pencil.png",
+      "bytes": 727,
+      "sha256": "e7f2ff2fbe8d01aefb71400524838b7bddd3c69dfabb3f17096519b07ea7ff6d"
+    },
+    {
+      "path": "assets/icons/png/caramel/24/plus.png",
+      "bytes": 181,
+      "sha256": "74651e09648737a7ab45c2c081b47bf95922ee6a479be189a49f474b32c6c367"
+    },
+    {
+      "path": "assets/icons/png/caramel/24/printer.png",
+      "bytes": 400,
+      "sha256": "e6eaffa7f0c435a29e38bd0bc97b41096e9aa4b73059c510870e2b02740d22b4"
+    },
+    {
+      "path": "assets/icons/png/caramel/24/receipt.png",
+      "bytes": 575,
+      "sha256": "6102f2b7022f92581d5b6d4d5d2d589fe593f83e16951f3ef038f2d5411d125e"
+    },
+    {
+      "path": "assets/icons/png/caramel/24/refresh-cw.png",
+      "bytes": 721,
+      "sha256": "cb26d5d41f8f40871f59e84d5eb5e480b3df6a1d39f4546bce170168d24e21d2"
+    },
+    {
+      "path": "assets/icons/png/caramel/24/search.png",
+      "bytes": 723,
+      "sha256": "aa951e069d0948f1c432c8f7604d60e283a728ff56af5e7cfbf7de7f87998f36"
+    },
+    {
+      "path": "assets/icons/png/caramel/24/settings.png",
+      "bytes": 983,
+      "sha256": "04b4a6162094434922d959f2adb929115feb1c669950fd679863855e1552ef7c"
+    },
+    {
+      "path": "assets/icons/png/caramel/24/shopping-cart.png",
+      "bytes": 502,
+      "sha256": "e59c21b33fe8f39ca5a435aff5cd2d51de030a5e58eb88662ecda2bf0b2998f9"
+    },
+    {
+      "path": "assets/icons/png/caramel/24/trash2.png",
+      "bytes": 361,
+      "sha256": "07af9dbf8f72dd7a410defaa7b78481e47d8f1ca5ff3014b4a8e42498d294cd3"
+    },
+    {
+      "path": "assets/icons/png/caramel/24/triangle-alert.png",
+      "bytes": 625,
+      "sha256": "d59ee49498559f86bad6c69ce4ab15056606856d923547c770b361a868c2600f"
+    },
+    {
+      "path": "assets/icons/png/caramel/24/truck.png",
+      "bytes": 484,
+      "sha256": "19a92de1ee3201bad7fb82ba34f32f57173842b94541d137f3d08b8e76284799"
+    },
+    {
+      "path": "assets/icons/png/caramel/24/user-round.png",
+      "bytes": 664,
+      "sha256": "dc7dda5c27e319398de1246727eb61861dc9a3e62df7ee8d86f652ddd1a8b66e"
+    },
+    {
+      "path": "assets/icons/png/caramel/24/users.png",
+      "bytes": 677,
+      "sha256": "134a0c374d94d56cee34236186b72499e56371cb02cec6da61960bc1d2f41145"
+    },
+    {
+      "path": "assets/icons/png/caramel/24/wallet.png",
+      "bytes": 369,
+      "sha256": "0660eea93592181b5701074af63c6ced5c0a4e5a1436867086ae3c9c61e20874"
+    },
+    {
+      "path": "assets/icons/png/caramel/24/warehouse.png",
+      "bytes": 535,
+      "sha256": "e8905b5a15f38d5734d01d84d332467ab39b18aff33cd65dd9809ec6073c4224"
+    },
+    {
+      "path": "assets/icons/png/caramel/24/x.png",
+      "bytes": 396,
+      "sha256": "8054730f033164905fc0e8482002074243a0efa7a286488db4e4efc38bc35a4d"
+    },
+    {
+      "path": "assets/icons/png/caramel/32/armchair.png",
+      "bytes": 731,
+      "sha256": "7945442a8698111d25509ee3ef3538cd51b9d4a1d3ffb84e10fa0b4671e89b3b"
+    },
+    {
+      "path": "assets/icons/png/caramel/32/calendar.png",
+      "bytes": 648,
+      "sha256": "7af2a05bd6e0ea121028b0a2d21cbd460f69480febc24384665ceff3881eb48b"
+    },
+    {
+      "path": "assets/icons/png/caramel/32/chart-column.png",
+      "bytes": 460,
+      "sha256": "13060dd9f810dbe33a3149497f97115a101a586265c2004ddc0f863c9e64d91f"
+    },
+    {
+      "path": "assets/icons/png/caramel/32/check.png",
+      "bytes": 536,
+      "sha256": "a60b1e76521fba61d37a2ceef83d479bd4b75fff4ac34e218564ace44c6956fe"
+    },
+    {
+      "path": "assets/icons/png/caramel/32/clock.png",
+      "bytes": 1162,
+      "sha256": "f9a68181363b33b16bae95d19609c4bd6cdaba8a74d37ff6a98a84f28b24b704"
+    },
+    {
+      "path": "assets/icons/png/caramel/32/coffee.png",
+      "bytes": 794,
+      "sha256": "d9614b86846bf472e974e56ca49c4b0696c2ffadb2542b5148484773e0139959"
+    },
+    {
+      "path": "assets/icons/png/caramel/32/layout-grid.png",
+      "bytes": 693,
+      "sha256": "61acf819a3df7eba18ccc2e7d04ee874f2c8e19952f981a681b15476c3992594"
+    },
+    {
+      "path": "assets/icons/png/caramel/32/loader-circle.png",
+      "bytes": 890,
+      "sha256": "d0e976d16897eb061457ccebb806da0c7037553c0c179cd5db88a4c8a87a19c7"
+    },
+    {
+      "path": "assets/icons/png/caramel/32/lock.png",
+      "bytes": 664,
+      "sha256": "2b19b54996b1b10a2351d391f9d78bf2d20185da492fd62b4c8d432b93ceeb46"
+    },
+    {
+      "path": "assets/icons/png/caramel/32/log-out.png",
+      "bytes": 647,
+      "sha256": "2ec892eda0d6e580b4d91bf07537ce824edf132d406047d31a0bdce7d8d0f108"
+    },
+    {
+      "path": "assets/icons/png/caramel/32/package.png",
+      "bytes": 1237,
+      "sha256": "b7200db3583541175d8053c8ee4158a0090c3cb0d87cc6a97af9c7a735b0a72d"
+    },
+    {
+      "path": "assets/icons/png/caramel/32/palette.png",
+      "bytes": 1320,
+      "sha256": "4d3a8ac9d81205ea6f074b81a39a5fe2946f5cef970c821705ae422649e67239"
+    },
+    {
+      "path": "assets/icons/png/caramel/32/pencil.png",
+      "bytes": 894,
+      "sha256": "9e84bb9568203121c8587bff9db938fe5e7e5708b9990e3b6859c3c008e803fb"
+    },
+    {
+      "path": "assets/icons/png/caramel/32/plus.png",
+      "bytes": 332,
+      "sha256": "2f52e24da9122d456c72ba2596336ebb819a5c9424cac54eea73cedf62dac099"
+    },
+    {
+      "path": "assets/icons/png/caramel/32/printer.png",
+      "bytes": 688,
+      "sha256": "af8ef5f1af46e5b4bc46d17bbd9b17d4678674e148ee32d5827ee5860c7ce24e"
+    },
+    {
+      "path": "assets/icons/png/caramel/32/receipt.png",
+      "bytes": 1114,
+      "sha256": "5ca451581bd4e3c3f2b1956bbbeed604262cde09f3d78db1de0f1b4a903b66d6"
+    },
+    {
+      "path": "assets/icons/png/caramel/32/refresh-cw.png",
+      "bytes": 1116,
+      "sha256": "b6ab46564cbd691c9694516dd1d85c7444b1fd59c2efbe9c0bdbb6f790ea5375"
+    },
+    {
+      "path": "assets/icons/png/caramel/32/search.png",
+      "bytes": 942,
+      "sha256": "f70e2d554b8b3c8413c6e75022855c856070ae4ee7ed148342fc70bc06d8e2e0"
+    },
+    {
+      "path": "assets/icons/png/caramel/32/settings.png",
+      "bytes": 1345,
+      "sha256": "629238601c7b61851af383017ea2ecc2313669b3ab80b9d0faafb87df3a08ce0"
+    },
+    {
+      "path": "assets/icons/png/caramel/32/shopping-cart.png",
+      "bytes": 770,
+      "sha256": "2d9fba99cc8e017e9352740a2da68e1c8860862391f288c35d7eaa7d7173c8b3"
+    },
+    {
+      "path": "assets/icons/png/caramel/32/trash2.png",
+      "bytes": 639,
+      "sha256": "065edd6ed71fb6b72b5afd406a02bebe3a32bfcfab4e1664c1c972dd9a104510"
+    },
+    {
+      "path": "assets/icons/png/caramel/32/triangle-alert.png",
+      "bytes": 1054,
+      "sha256": "d7f7ebc64c8a4bb610b1a634471d6e6a8b343081b8b73cdabd622f528a48bd8b"
+    },
+    {
+      "path": "assets/icons/png/caramel/32/truck.png",
+      "bytes": 827,
+      "sha256": "580bd6917563476cb340d0e12b6ee65de45283c2aac16273ace6aa5521a8dabd"
+    },
+    {
+      "path": "assets/icons/png/caramel/32/user-round.png",
+      "bytes": 925,
+      "sha256": "d3d059db549b72ee97321f346eca20f6bd97abd793af6793a0a74bd4d6ef9f40"
+    },
+    {
+      "path": "assets/icons/png/caramel/32/users.png",
+      "bytes": 977,
+      "sha256": "42e88cb3e610fb1aca04ce2ed2f57df5c85e55d63145cd00822e0da085cae250"
+    },
+    {
+      "path": "assets/icons/png/caramel/32/wallet.png",
+      "bytes": 687,
+      "sha256": "8e4047dae52c828aff8ce3a12a9af2edae98d6858cf46a82d76eaf69f1bdf9ad"
+    },
+    {
+      "path": "assets/icons/png/caramel/32/warehouse.png",
+      "bytes": 959,
+      "sha256": "d4d064255f92c683bae67dfeebe31b620738365c20e5d702f898201f0178ec09"
+    },
+    {
+      "path": "assets/icons/png/caramel/32/x.png",
+      "bytes": 363,
+      "sha256": "f897482eb7f565aa7c32b3a653ebb547314d11f8096404953264154e5059de58"
+    },
+    {
+      "path": "assets/icons/png/milk/20/armchair.png",
+      "bytes": 504,
+      "sha256": "f1c87270dbe1cef0041892adb96181d3d130f85bec522fae1645120c02c5b7f4"
+    },
+    {
+      "path": "assets/icons/png/milk/20/calendar.png",
+      "bytes": 469,
+      "sha256": "ad2ebb06228cc7df75238467f0abc574928e7e14edec878ed2c9e7cf70efbcbf"
+    },
+    {
+      "path": "assets/icons/png/milk/20/chart-column.png",
+      "bytes": 360,
+      "sha256": "11ecc5c93b07d3da095dbc68d503c09c60c97daee71e1484c2798badbe4104b0"
+    },
+    {
+      "path": "assets/icons/png/milk/20/check.png",
+      "bytes": 378,
+      "sha256": "61f1ef7c96c8bd5bd18cc42639a301a9bb1aa9fe4744d0484aaba66f832e6a4c"
+    },
+    {
+      "path": "assets/icons/png/milk/20/clock.png",
+      "bytes": 726,
+      "sha256": "739abb50d920224a2210f0d290e71d13a423ec2f94d58b1774db87af20faf34b"
+    },
+    {
+      "path": "assets/icons/png/milk/20/coffee.png",
+      "bytes": 581,
+      "sha256": "1c03ef0d6497ef63d0aaff5fca63d4bed6f316e2e01382d381f28b80e2bd2998"
+    },
+    {
+      "path": "assets/icons/png/milk/20/layout-grid.png",
+      "bytes": 594,
+      "sha256": "afca54c4496d2a5c8574318311d8dd93e3303673f44bf4c02590f5474139dacf"
+    },
+    {
+      "path": "assets/icons/png/milk/20/loader-circle.png",
+      "bytes": 556,
+      "sha256": "91641d836d3bbea125494cb8e6dc045605bc64f125af4b7d76e64da39c3595d5"
+    },
+    {
+      "path": "assets/icons/png/milk/20/lock.png",
+      "bytes": 477,
+      "sha256": "7d84588b091d4e5e52f4c098e36b88e6020328f4c53a8a10fc38fd126e8ba61a"
+    },
+    {
+      "path": "assets/icons/png/milk/20/log-out.png",
+      "bytes": 458,
+      "sha256": "5853c70a73ff7ddf33f5faf0c2e9adbd3128b98e0923fe8243fcab208c1f3c9b"
+    },
+    {
+      "path": "assets/icons/png/milk/20/package.png",
+      "bytes": 749,
+      "sha256": "5805cd2a764eb68bbd03bb3b24e27a1c057acce2e85ef6c6bd2b1bd24182a5cc"
+    },
+    {
+      "path": "assets/icons/png/milk/20/palette.png",
+      "bytes": 814,
+      "sha256": "0590ddd10205e6bebe8fb878568e03d4a42125007ebe401ae9086dd39b2c978e"
+    },
+    {
+      "path": "assets/icons/png/milk/20/pencil.png",
+      "bytes": 625,
+      "sha256": "170090da81e39f7a9f5e8b610d1b3b260bb429b9b078ac0966c9b115973411e9"
+    },
+    {
+      "path": "assets/icons/png/milk/20/plus.png",
+      "bytes": 242,
+      "sha256": "47c7aa380e4335c4e9e4ba1976709bc9306e02ff51222296e023175932aabdc1"
+    },
+    {
+      "path": "assets/icons/png/milk/20/printer.png",
+      "bytes": 500,
+      "sha256": "5346a90ae1bdcd71f23ebc594d5cd621b951ba18bb78a9638d9c38b3790c0d9f"
+    },
+    {
+      "path": "assets/icons/png/milk/20/receipt.png",
+      "bytes": 766,
+      "sha256": "4e70c443a62794ad08f5a86f4fca5c40cba9e113ced023239e70d10152c15dbb"
+    },
+    {
+      "path": "assets/icons/png/milk/20/refresh-cw.png",
+      "bytes": 713,
+      "sha256": "d067e5205bd77f7ced33ac86f917a36000ee64d94d8379f8b0ecb097caaad32d"
+    },
+    {
+      "path": "assets/icons/png/milk/20/search.png",
+      "bytes": 626,
+      "sha256": "6003c28e8a27468580c2b7728861548e4929fab8017e88fd99efbd4b07d8f86f"
+    },
+    {
+      "path": "assets/icons/png/milk/20/settings.png",
+      "bytes": 783,
+      "sha256": "7ff6cf24e5a3ddd2e4b1c261718a67782a44346ae42650809a81a0eb552d5c28"
+    },
+    {
+      "path": "assets/icons/png/milk/20/shopping-cart.png",
+      "bytes": 533,
+      "sha256": "691982827e838b85558b9d550da17a4091cbdbce97832b54f15673987df1b6e8"
+    },
+    {
+      "path": "assets/icons/png/milk/20/trash2.png",
+      "bytes": 514,
+      "sha256": "45b1b39930e8188ea281ea8832b7a2f62bf1aed28189a1caaa6af3fc1549166d"
+    },
+    {
+      "path": "assets/icons/png/milk/20/triangle-alert.png",
+      "bytes": 643,
+      "sha256": "6c6cbc3f15382cf8b68ea66d35f0da4a62c39d4debd9767c630f6e9ef7dcaa9d"
+    },
+    {
+      "path": "assets/icons/png/milk/20/truck.png",
+      "bytes": 611,
+      "sha256": "92bca02b5ca48efc6c541d5075f5457e00bf957228cbefe4dc1157b65d4e046f"
+    },
+    {
+      "path": "assets/icons/png/milk/20/user-round.png",
+      "bytes": 586,
+      "sha256": "d82714c1b5fd12e2dd61620e4b20d65b7f4ba010e65a8b675b31dabc2564c2c8"
+    },
+    {
+      "path": "assets/icons/png/milk/20/users.png",
+      "bytes": 688,
+      "sha256": "58a39c4d3286cf3da5325894829335f87d985cd1ab7feb7301c7f8942a7af3e6"
+    },
+    {
+      "path": "assets/icons/png/milk/20/wallet.png",
+      "bytes": 500,
+      "sha256": "42da7778b3c00e828e3b965bb798d7d1223f59361da51489c61c572f034b64d9"
+    },
+    {
+      "path": "assets/icons/png/milk/20/warehouse.png",
+      "bytes": 621,
+      "sha256": "ef1b0418e350bc491e9aefb49d1a2f5ea46cce9a485266b9d8828faa55b52a7d"
+    },
+    {
+      "path": "assets/icons/png/milk/20/x.png",
+      "bytes": 291,
+      "sha256": "5d28fce38a9ba88a369890b6b3676c7c947ba1edad74ee772edcd673a7b87765"
+    },
+    {
+      "path": "assets/icons/png/milk/24/armchair.png",
+      "bytes": 379,
+      "sha256": "8fe60a14509abb1d536bfd25628726f981d9a65a2704c3704d9293b32aeb6032"
+    },
+    {
+      "path": "assets/icons/png/milk/24/calendar.png",
+      "bytes": 333,
+      "sha256": "867814a4161dbcad772f59aa3aeca613e57fadbec7a9fd3cbaaf1dfd4e5933ba"
+    },
+    {
+      "path": "assets/icons/png/milk/24/chart-column.png",
+      "bytes": 240,
+      "sha256": "c4e6c53ca88ba0b585fb76d75b7207235ee0b8fe14e3351c10da4b0dee890c29"
+    },
+    {
+      "path": "assets/icons/png/milk/24/check.png",
+      "bytes": 332,
+      "sha256": "13f32212b84f96d5ccf693c83419651d3a993825a767a94e01ef18451a28d40f"
+    },
+    {
+      "path": "assets/icons/png/milk/24/clock.png",
+      "bytes": 828,
+      "sha256": "2960d248243e1f94d41a8ca962e31e1f7329c3eed366ff4295e854697a48c76c"
+    },
+    {
+      "path": "assets/icons/png/milk/24/coffee.png",
+      "bytes": 448,
+      "sha256": "737f0b80b6c29f9ea1467b482193267cf61054ee60c58a5961092dd27e36631d"
+    },
+    {
+      "path": "assets/icons/png/milk/24/layout-grid.png",
+      "bytes": 231,
+      "sha256": "63342d3f9775f6a726b6e0e689661a9edd71bf7e8e46ac772b86afa1d2ad3508"
+    },
+    {
+      "path": "assets/icons/png/milk/24/loader-circle.png",
+      "bytes": 629,
+      "sha256": "e568e5227e4da4be3c907354f5c05262b525024d9451831dfd63e4ae168d5ac4"
+    },
+    {
+      "path": "assets/icons/png/milk/24/lock.png",
+      "bytes": 445,
+      "sha256": "7ea39d1623047825c097a980d36acb458248106d0805fba758acfcc20fc9202e"
+    },
+    {
+      "path": "assets/icons/png/milk/24/log-out.png",
+      "bytes": 403,
+      "sha256": "95d21a14ccb0050bfd872897ca87cc7eb26833c2209bb60d74c7759cbe74afd8"
+    },
+    {
+      "path": "assets/icons/png/milk/24/package.png",
+      "bytes": 813,
+      "sha256": "cf118b15bf8d864014401f98c8c3f1db11bd0ff185eef7613bf0c9c0c5fdb084"
+    },
+    {
+      "path": "assets/icons/png/milk/24/palette.png",
+      "bytes": 852,
+      "sha256": "5b28b18ad7eca3ed6cd7e665778a1fea8ceb1458656f9914a147ae69d175a92f"
+    },
+    {
+      "path": "assets/icons/png/milk/24/pencil.png",
+      "bytes": 705,
+      "sha256": "50411e20747f8c2fa884f4ab07123cf2a92dfc1e3772250ad6764be392d6c2c6"
+    },
+    {
+      "path": "assets/icons/png/milk/24/plus.png",
+      "bytes": 180,
+      "sha256": "cc5114e42463f655ae416f645771de8681366a02e5a07636198890bd6bc2e831"
+    },
+    {
+      "path": "assets/icons/png/milk/24/printer.png",
+      "bytes": 401,
+      "sha256": "72e204e558551ece2230e8ca812b7bce28a0a5c9e831d6ce150762a071d6be73"
+    },
+    {
+      "path": "assets/icons/png/milk/24/receipt.png",
+      "bytes": 549,
+      "sha256": "a4c0446ce65ef972bf5b3c440484ab90f6e22451ff3e00c23ff42292d14baaf3"
+    },
+    {
+      "path": "assets/icons/png/milk/24/refresh-cw.png",
+      "bytes": 716,
+      "sha256": "b7dfcf64e7d84b23e4350feefe294cb183a8e2a48997f3a5bbd6288b2a780566"
+    },
+    {
+      "path": "assets/icons/png/milk/24/search.png",
+      "bytes": 717,
+      "sha256": "8b5785b261e14f3389d16d7de8a26a30d4e4b11c6aba9de9a273747f1c548fce"
+    },
+    {
+      "path": "assets/icons/png/milk/24/settings.png",
+      "bytes": 969,
+      "sha256": "778028ddd4f88b4956ae83297972c206c5ac3519ff445d3a1fc5359e107fc660"
+    },
+    {
+      "path": "assets/icons/png/milk/24/shopping-cart.png",
+      "bytes": 481,
+      "sha256": "e0ba17542c005079177dc8bfd96568af6d80e688a91074ab4236e4da06d7e826"
+    },
+    {
+      "path": "assets/icons/png/milk/24/trash2.png",
+      "bytes": 326,
+      "sha256": "44a39dac6598ffaacf8824cba6028a74374fa36270df4201bbe9a04ffe353f71"
+    },
+    {
+      "path": "assets/icons/png/milk/24/triangle-alert.png",
+      "bytes": 659,
+      "sha256": "a54ee879cd845fb9e8809327b38fb22a572b013c49148e6cd08e265f9f2fadb8"
+    },
+    {
+      "path": "assets/icons/png/milk/24/truck.png",
+      "bytes": 465,
+      "sha256": "800436d7423d06689d4423dd5b15f9b9134b341e2e414f15a1190a91715d1cde"
+    },
+    {
+      "path": "assets/icons/png/milk/24/user-round.png",
+      "bytes": 637,
+      "sha256": "0f9d19b1dee5696bc443b04ec5028b793701b91fd067c14c173a228e3dc643e4"
+    },
+    {
+      "path": "assets/icons/png/milk/24/users.png",
+      "bytes": 678,
+      "sha256": "13d40f717df23ad1b4a35500e28dc51b66789d28e20a577924940700eeaf3ca8"
+    },
+    {
+      "path": "assets/icons/png/milk/24/wallet.png",
+      "bytes": 385,
+      "sha256": "42651d8bdaea752e964f6cd68844e3455671bc6888f92768d34e2d8ba9a7278e"
+    },
+    {
+      "path": "assets/icons/png/milk/24/warehouse.png",
+      "bytes": 521,
+      "sha256": "7088f6a919f3123a6addc630220af66ad1ef57060f06412e9af96786becea567"
+    },
+    {
+      "path": "assets/icons/png/milk/24/x.png",
+      "bytes": 385,
+      "sha256": "c8659446091af909062280ffe676e677fbdb617c6bd80c38fc1f874d0c3f7a28"
+    },
+    {
+      "path": "assets/icons/png/milk/32/armchair.png",
+      "bytes": 723,
+      "sha256": "226fec217bfb9d28103c2d19cd7afa0a16d899e100194d7142c9f8539f8cc090"
+    },
+    {
+      "path": "assets/icons/png/milk/32/calendar.png",
+      "bytes": 619,
+      "sha256": "2fdf6976ea8d510ceaa2e9fa7d6925a4f5e0c6fe7003d3fe7172e8ff29dc0003"
+    },
+    {
+      "path": "assets/icons/png/milk/32/chart-column.png",
+      "bytes": 446,
+      "sha256": "086b81accf3d1f64bdcd8732acd8117f747ea5a11450f6f059a5804095111c6e"
+    },
+    {
+      "path": "assets/icons/png/milk/32/check.png",
+      "bytes": 519,
+      "sha256": "889fc96d829130a37a165ebf79f48fa465e48c083817cbef0785c011d872092d"
+    },
+    {
+      "path": "assets/icons/png/milk/32/clock.png",
+      "bytes": 1153,
+      "sha256": "6e1532bf271098b7d9b673eb2fd7a3beca434ddf208f1c3d5e87dc261bc5b26a"
+    },
+    {
+      "path": "assets/icons/png/milk/32/coffee.png",
+      "bytes": 772,
+      "sha256": "9a215c6a5c1fd78e1d4ed89959c58aba30d12b221cb13190d346d771357752e4"
+    },
+    {
+      "path": "assets/icons/png/milk/32/layout-grid.png",
+      "bytes": 683,
+      "sha256": "88b6665f375aeb65b2db5e8653e9a2ef6872ad090a400130e69306d2e690b0d9"
+    },
+    {
+      "path": "assets/icons/png/milk/32/loader-circle.png",
+      "bytes": 885,
+      "sha256": "6b9840c9c8695af108a5d7b836139ae645c78fbdada71896ab2decf40078ceb4"
+    },
+    {
+      "path": "assets/icons/png/milk/32/lock.png",
+      "bytes": 642,
+      "sha256": "3d6e523472350bfe225037a1fe3dcbb7816d1862c228445bb037f6a75c1e7985"
+    },
+    {
+      "path": "assets/icons/png/milk/32/log-out.png",
+      "bytes": 652,
+      "sha256": "a9ad06b0a6fd9a58f842314953ba722001f03468ed173b41eca594f1cef798ee"
+    },
+    {
+      "path": "assets/icons/png/milk/32/package.png",
+      "bytes": 1196,
+      "sha256": "78e841a66001b6f95385712b091489fad8d1d31e5923a92235c8bea37a89bd65"
+    },
+    {
+      "path": "assets/icons/png/milk/32/palette.png",
+      "bytes": 1271,
+      "sha256": "90df3e7a89bf80f74f7a0391fcaedc990cd4720ac32859ad579d46659e77ecd9"
+    },
+    {
+      "path": "assets/icons/png/milk/32/pencil.png",
+      "bytes": 865,
+      "sha256": "2bf6e9c68e32b7392a6b92af3fec264dffb6dbc556f6ba0c98fef66cd44264d7"
+    },
+    {
+      "path": "assets/icons/png/milk/32/plus.png",
+      "bytes": 308,
+      "sha256": "b61f2b87829a976434da7a06fa880db1da5f6c7a5d4a3baf432644494d15f289"
+    },
+    {
+      "path": "assets/icons/png/milk/32/printer.png",
+      "bytes": 662,
+      "sha256": "7d93eb7674224552bfc034565f9e1ce38428c414533d3aeeba753543dc773292"
+    },
+    {
+      "path": "assets/icons/png/milk/32/receipt.png",
+      "bytes": 1070,
+      "sha256": "680bd13ea228073ab842ff9c0bef510939da94c279579166d701edc8be20794c"
+    },
+    {
+      "path": "assets/icons/png/milk/32/refresh-cw.png",
+      "bytes": 1105,
+      "sha256": "942e7326832ccfe9cf41a478afb5bd43590705f1776d8202deaeeb1d6ff19c39"
+    },
+    {
+      "path": "assets/icons/png/milk/32/search.png",
+      "bytes": 926,
+      "sha256": "f8999b6ca9ce0c5cba30bef91c239f9101f773fe306e3fd439511e496db7c577"
+    },
+    {
+      "path": "assets/icons/png/milk/32/settings.png",
+      "bytes": 1311,
+      "sha256": "c6944353dc70f9982550106bfb80c1c5e931520a88d8215db9482accd2d76869"
+    },
+    {
+      "path": "assets/icons/png/milk/32/shopping-cart.png",
+      "bytes": 740,
+      "sha256": "635c4b420ff7282e7e65897e53c95ce0d1085bf229396957409feca7fa192d65"
+    },
+    {
+      "path": "assets/icons/png/milk/32/trash2.png",
+      "bytes": 621,
+      "sha256": "92ef2f272682a1b952773e2236e6b0282d559ba9dbaa6977ed26121409e4343a"
+    },
+    {
+      "path": "assets/icons/png/milk/32/triangle-alert.png",
+      "bytes": 1032,
+      "sha256": "c827d1cade3a5b2c0bd61746e9650037dfb4fbda23177451b4cb955569afc9c9"
+    },
+    {
+      "path": "assets/icons/png/milk/32/truck.png",
+      "bytes": 804,
+      "sha256": "702a02f45aa0e6c0e54f9c5deaff408297535039f6afbab962c79338b4b201be"
+    },
+    {
+      "path": "assets/icons/png/milk/32/user-round.png",
+      "bytes": 943,
+      "sha256": "0531e763cea87b876f10754b625a1b381b748169ec390ec670543bdbac71a410"
+    },
+    {
+      "path": "assets/icons/png/milk/32/users.png",
+      "bytes": 989,
+      "sha256": "e9f6dc33929f220a5e142f2de9c10213e7721084bae7bcea00e58be659b0afbd"
+    },
+    {
+      "path": "assets/icons/png/milk/32/wallet.png",
+      "bytes": 663,
+      "sha256": "52577df5b929d25a89a1af0e8d1346331d0c01e09bfbd5a6b6f5d14d27ffef4b"
+    },
+    {
+      "path": "assets/icons/png/milk/32/warehouse.png",
+      "bytes": 918,
+      "sha256": "fa9d8f37692c56ad765168133c6d6e79f560d5d5b3fd9fb2a759c2881bb8066d"
+    },
+    {
+      "path": "assets/icons/png/milk/32/x.png",
+      "bytes": 376,
+      "sha256": "a526545c2835adc62959d4ee0841c7fb63b7d6fa09c7b367aee8d68df0f6fdaa"
+    },
+    {
+      "path": "assets/icons/svg/armchair.svg",
+      "bytes": 400,
+      "sha256": "612c77d32c203c9381b7e4caf9420213b004e0cdec78733d2101e8d7f5d6b689"
+    },
+    {
+      "path": "assets/icons/svg/calendar.svg",
+      "bytes": 293,
+      "sha256": "82d72f947da9ffb283d6b1427299e0be8a43383e14c1351ee4fded7f7a3be67a"
+    },
+    {
+      "path": "assets/icons/svg/chart-column.svg",
+      "bytes": 283,
+      "sha256": "c57bccf58c9d5e57f2372529fbe42271289aed4376c405c8ef40ada6cf9d5053"
+    },
+    {
+      "path": "assets/icons/svg/check.svg",
+      "bytes": 214,
+      "sha256": "dfe35d2f57f4de8509a7a8f0929c6b88d6325cd90d065536ae230a737a075c09"
+    },
+    {
+      "path": "assets/icons/svg/clock.svg",
+      "bytes": 242,
+      "sha256": "d0d9b4611d8fed6a94005c0eb73fad7d814e02b37e561faec8abed87c210625f"
+    },
+    {
+      "path": "assets/icons/svg/coffee.svg",
+      "bytes": 407,
+      "sha256": "f433b4b8abe8100d7d3d9509587a6f6b60a21b4aa4b7b19afd8e4e30923c576e"
+    },
+    {
+      "path": "assets/icons/svg/layout-grid.svg",
+      "bytes": 449,
+      "sha256": "44549476df738d979d3b564ced1b6005dbc0aeb26c081977597b12944cc106e4"
+    },
+    {
+      "path": "assets/icons/svg/loader-circle.svg",
+      "bytes": 226,
+      "sha256": "0a2045b10bc2fe7622e4574d0e6ea939251ceacc7b1ba5d58457d3d8001196ec"
+    },
+    {
+      "path": "assets/icons/svg/lock.svg",
+      "bytes": 280,
+      "sha256": "1508bb278962fc11bce6c3ba7321c69f15f29cae882bacc758e716e5e7c98c71"
+    },
+    {
+      "path": "assets/icons/svg/log-out.svg",
+      "bytes": 284,
+      "sha256": "b6753800297557e0d73a1889e6f71e1b4e832c738ab6d5965bd609fef208fac8"
+    },
+    {
+      "path": "assets/icons/svg/package.svg",
+      "bytes": 409,
+      "sha256": "a59c16b12eba7efc9110ac88a78d5011d500c4fdcec36ce66e681655e4e8d596"
+    },
+    {
+      "path": "assets/icons/svg/palette.svg",
+      "bytes": 610,
+      "sha256": "d5a8c37072540ae94b3b02a87dec59b15bb1de94ffec4c00257094f13d5658bf"
+    },
+    {
+      "path": "assets/icons/svg/pencil.svg",
+      "bytes": 348,
+      "sha256": "398461b031f0fcfbcb076ccc39d506d082b1b235ce8e2df510975be39f48d505"
+    },
+    {
+      "path": "assets/icons/svg/plus.svg",
+      "bytes": 227,
+      "sha256": "d485e5238f405ed0e18ed8bc9cde46017b3cd83b734147bd2a587adf5dd79df2"
+    },
+    {
+      "path": "assets/icons/svg/printer.svg",
+      "bytes": 373,
+      "sha256": "0fd4acfefdab8b105e115ad7736b3267d8922456f7716c4d8edc95a042e5029b"
+    },
+    {
+      "path": "assets/icons/svg/receipt.svg",
+      "bytes": 708,
+      "sha256": "b060f81bb865bf8b06aedde9f06dcfef6062841be6d446d9255fb9a8fec143d6"
+    },
+    {
+      "path": "assets/icons/svg/refresh-cw.svg",
+      "bytes": 355,
+      "sha256": "a6d1a2506bb12bb58361e76b5fb256a625821d14a26d12c7a39625ed11dd8d71"
+    },
+    {
+      "path": "assets/icons/svg/search.svg",
+      "bytes": 246,
+      "sha256": "ba2a54f92eb9057fdbca4f7a128922882e74615fb1741fabd7e17dfe76281140"
+    },
+    {
+      "path": "assets/icons/svg/settings.svg",
+      "bytes": 557,
+      "sha256": "cd2311128db09b946f6d2994b47a4dda2361de7947441833422dd8a5842ebadb"
+    },
+    {
+      "path": "assets/icons/svg/shopping-cart.svg",
+      "bytes": 340,
+      "sha256": "0abebeef2a95e7a90d1e0d30cfd8e9a52d638cf20d65f2cc98a9b6199850cfac"
+    },
+    {
+      "path": "assets/icons/svg/trash2.svg",
+      "bytes": 348,
+      "sha256": "79fe24bd8d95d9be62a6814261cf0cad83ef125917be0c92b3d1cdd7476ce6e8"
+    },
+    {
+      "path": "assets/icons/svg/triangle-alert.svg",
+      "bytes": 312,
+      "sha256": "d650642b23ba3011b65b3ee09a70733dcedb1f1af5e01fd7a30185a00fe0064d"
+    },
+    {
+      "path": "assets/icons/svg/truck.svg",
+      "bytes": 428,
+      "sha256": "aa77ceeee465969755880ef45e3ae2fd68214eba4f843a4335c218d042770fdd"
+    },
+    {
+      "path": "assets/icons/svg/user-round.svg",
+      "bytes": 250,
+      "sha256": "2bdb858e60f62b9ccacd61106f426766db2cdb30dc8a26427d984563a70243b4"
+    },
+    {
+      "path": "assets/icons/svg/users.svg",
+      "bytes": 346,
+      "sha256": "e78a5388688620a3399163c1ecc50a1f02d39876f28fbe5dae5efae4e34e9594"
+    },
+    {
+      "path": "assets/icons/svg/wallet.svg",
+      "bytes": 358,
+      "sha256": "6ed0f6c474ab2789182724d5cd08ba66b2f0e8501c2c6887df4daa1b8f86aea1"
+    },
+    {
+      "path": "assets/icons/svg/warehouse.svg",
+      "bytes": 410,
+      "sha256": "142fc250ff9630110e50543884b228486351d9ffb7dff9fceccd617a86e09de1"
+    },
+    {
+      "path": "assets/icons/svg/x.svg",
+      "bytes": 231,
+      "sha256": "f3bc24503442adbf8cc60237248ee73e4c12db91a6e5adeacb93920f48bc990c"
+    },
+    {
+      "path": "assets/licenses/LUCIDE-LICENSE.txt",
+      "bytes": 3208,
+      "sha256": "b495047bd93a9b06913511076f504daba17d5bbeb3e0650f3bb53a4220329c57"
+    },
+    {
+      "path": "assets/licenses/ORIGINAL-ASSETS.md",
+      "bytes": 490,
+      "sha256": "61636abe88047671b5d5f0e64ef34938ad13cdf2ccffbfc23d59d5f028f9462c"
+    },
+    {
+      "path": "assets/products/ceramic-coffee.png",
+      "bytes": 21546,
+      "sha256": "240aa8fc6b0cb18e09b26f50591969fec5a9a29d436ec2f23ba5a3a27d648008"
+    },
+    {
+      "path": "assets/products/iced-coffee.png",
+      "bytes": 23166,
+      "sha256": "4c583dd63fea6bb16bc18f4dabe101faafe9d714bc025d9eaaf2d73148adaea3"
+    },
+    {
+      "path": "assets/products/iced-matcha.png",
+      "bytes": 21906,
+      "sha256": "5cf3c4c35d3b4a675df80ffdd5492aeaba3a2b85fb9ef528fcdf34f8328d9b89"
+    },
+    {
+      "path": "design-tokens.json",
+      "bytes": 5954,
+      "sha256": "591d1665053419dc68457c24688a6251245eead0e1efe9434b0786d20327bee9"
+    },
+    {
+      "path": "reference.html",
+      "bytes": 445255,
+      "sha256": "bf067a037f7739b70af699311403984ca7430c2513592231a237d40e7a859fd0"
+    },
+    {
+      "path": "references/README.md",
+      "bytes": 3381,
+      "sha256": "f50121f0776d3b65f8cb572b72439156faee9e31a9522f3f13b73560ecedb2cd"
+    },
+    {
+      "path": "references/computed-styles.json",
+      "bytes": 1216,
+      "sha256": "58e2870c12be528aa62d403f5acb17e5763e7d7e6a0b5b4f8a2b41b1c30a6199"
+    },
+    {
+      "path": "references/screenshots/card-hover.png",
+      "bytes": 455149,
+      "sha256": "1e72248e187b399e877e77968c54043c8c9179a79544049924961a208fb03d58"
+    },
+    {
+      "path": "references/screenshots/menu-scrolled.png",
+      "bytes": 377848,
+      "sha256": "cda72e41fb731025f910725f5d0c517b5e96ffb9197c3e775c13d8a97b8ee68f"
+    },
+    {
+      "path": "references/screenshots/page-components.png",
+      "bytes": 57571,
+      "sha256": "ae6fe8c87ad8884bcd307137bda66160c225c7b4e205efd527f7873d7eb58cc2"
+    },
+    {
+      "path": "references/screenshots/page-full-1366.png",
+      "bytes": 685592,
+      "sha256": "33ee1be93447da7a442fab8ba679d68e2b4db45ba315b2dc131d2de5aa78aa07"
+    },
+    {
+      "path": "references/screenshots/payment-before-confirm.png",
+      "bytes": 297846,
+      "sha256": "6659cc18e64688123d16aba508c64a409f37b68236e9f9aacd3840e5efd65928"
+    },
+    {
+      "path": "references/screenshots/payment-stardust.png",
+      "bytes": 307133,
+      "sha256": "73271a8b953e058580833157b2bfd239f0dbb8d58cda9f3bfb21d2bdfa4fe11e"
+    },
+    {
+      "path": "references/screenshots/pos-1280x720.png",
+      "bytes": 344183,
+      "sha256": "d0688e4f8288a36b6b9551107f694255d2e0ad3a757295f686f8309ef529bd0d"
+    },
+    {
+      "path": "references/screenshots/pos-1366x768.png",
+      "bytes": 370619,
+      "sha256": "2afbf650bb1ff716e7456d3b2725893d5fe2f1f3a8175c8c1e65b4dc956a5314"
+    },
+    {
+      "path": "references/screenshots/tables.png",
+      "bytes": 350618,
+      "sha256": "92d2413a6899da6866cb3f06e906d93429955f764ffba3d00688a1e0721be326"
+    },
+    {
+      "path": "references/videos/hover-click-stardust.mp4",
+      "bytes": 622195,
+      "sha256": "28309edc92cc5db23b76c9b051c90b0a8c1e8823befc172eb64567c176294230"
+    },
+    {
+      "path": "references/videos/raw/page@5366d73c522d268cd3ab5c9b94ca5531.webm",
+      "bytes": 1310720,
+      "sha256": "1fa5910d77b74164a3d4641f92b9d00227bf3c8ec0bfc683659b17b1d81d2dea"
+    },
+    {
+      "path": "references/videos/scroll-menu-page.mp4",
+      "bytes": 1490063,
+      "sha256": "957dfcda48c366d96ba464179d65805f2c1a85b53db69aff0cc7ce68bcfe7aef"
+    },
+    {
+      "path": "tools/capture-reference.cjs",
+      "bytes": 5584,
+      "sha256": "bfa6c14e54edfe065408bd43145c15751b63947a4625cf20cf5a750a0e173393"
+    },
+    {
+      "path": "tools/package.json",
+      "bytes": 341,
+      "sha256": "b8f5c9c1f86577e34e658834651d8aa3e5a4d04b587b828e166f2cedc2400e44"
+    },
+    {
+      "path": "tools/record-interactions.cjs",
+      "bytes": 1870,
+      "sha256": "664c4820f303c68f76800f3b7cb0debe6d604ce780674a6db39818da79265f9e"
+    }
+  ]
+}

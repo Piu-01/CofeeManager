@@ -1,0 +1,13 @@
+{
+  "name": "orbit-reference-capture",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Optional offline-reference capture tools; not WinForms runtime dependencies",
+  "scripts": {
+    "capture": "node capture-reference.cjs",
+    "record": "node record-interactions.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}

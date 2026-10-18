@@ -15,8 +15,13 @@ public partial class BootstrapForm : Form
     public BootstrapForm()
     {
         InitializeComponent(); Theme.AppTheme.Apply(this); Theme.AppTheme.PrimaryButton(completeButton);
+        titleLabel.BackColor = subtitleLabel.BackColor = Color.Transparent;
+        subtitleLabel.ForeColor = Theme.AppTheme.Muted; Theme.AppTheme.Status(statusLabel);
         modeInput.SelectedIndexChanged += (_, _) => UpdateMode();
         candidateInput.SelectedIndexChanged += (_, _) => UpdateMode();
+        foreach (var input in new[] { nameInput, phoneInput, usernameInput, passwordInput, confirmationInput }) UI.OrbitField.Wrap(input);
+        UI.OrbitFieldLayout.Attach(layout);
+        Controls.Add(new UI.OrbitContentHost(shell, 720));
         UpdateMode();
     }
     private void UpdateMode()
@@ -38,7 +43,10 @@ public partial class BootstrapForm : Form
         {
             var status = await service!.ReadStateAsync(lifetime.Token);
             state = status.State;
-            UpdateMode();
+            foreach (var input in new[] { nameInput, phoneInput, usernameInput, passwordInput, confirmationInput }) UI.OrbitField.Wrap(input);
+        UI.OrbitFieldLayout.Attach(layout);
+        Controls.Add(new UI.OrbitContentHost(shell, 720));
+        UpdateMode();
             if (state == "Completed") { statusLabel.Text = "Thiết lập đã hoàn tất. Đóng setup và chạy app bằng tài khoản runtime."; return; }
             candidates = await service.CandidatesAsync(lifetime.Token);
             if (IsDisposed) return;

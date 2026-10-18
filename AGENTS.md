@@ -11,13 +11,13 @@ Các đường dẫn dưới đây tính từ gốc CoffeeManager, không phụ 
 |---|---|
 | Bắt đầu phiên làm việc, trước lập requirements/plan cho task lớn | `docs/KeHoach_QuanLiQuanCafe.md`: kiến trúc, phạm vi, mục 12 và phụ thuộc T01–T32, mục 13 về trạng thái |
 | Trước code bất kỳ module/use case | Đọc lại phần nghiệp vụ và task tương ứng trong kế hoạch; `docs/UX_QuanLiQuanCafe.md` phần luồng, trạng thái, contract và ca UX liên quan |
-| Trước thiết kế hoặc sửa Form/UserControl/dialog/theme | `docs/Cafe_UI_Style_Guide/Cafe_UI_Style_Guide/README.md` và `index.html`; xem `preview.html` để tham chiếu bố cục; đọc `ASSET_SOURCES.md` khi dùng asset |
+| Trước thiết kế, code hoặc sửa giao diện (Form/UserControl/dialog/theme) | Đọc `docs/ui/README.md` trước, rồi đọc style guide UI chung trong `docs/ui/` theo thứ tự được chỉ dẫn: `HuongDan_UI_Orbit_Cafe.md`, `reference.html`, `design-tokens.json`, `references/README.md`, `WINFORMS_IMPLEMENTATION.md`, `assets/README.md` |
 | Trước thay SQL hoặc gọi contract dữ liệu | `database/DB_Schema.sql`, `database/Insert_Data.sql` và migrations đã có của task |
 
-**Lưu ý đường dẫn:** bộ UI guide hiện có hai cấp `Cafe_UI_Style_Guide/` lồng nhau.
+**Style guide UI chung:** dùng bộ tài liệu tại `docs/ui/`; không dùng đường dẫn bộ guide cũ.
 Kế hoạch quy định nghiệp vụ/task; UX quy định luồng; style guide quy định hình thức.
 Khi mâu thuẫn, nêu rõ và chốt theo nghiệp vụ, cập nhật tài liệu liên quan trong phạm vi
-được duyệt. Preview HTML chỉ mô phỏng local, không phải app hay chứng cứ test WinForms.
+được duyệt. `docs/ui/reference.html` chỉ mô phỏng local, không phải app hay chứng cứ test WinForms.
 Không coi procedure/trường ghi “bổ sung/sửa” trong kế hoạch là đã tồn tại.
 
 ## 2. Skill cục bộ và cách chọn
@@ -142,9 +142,11 @@ chứng bằng engine. Mở rộng bằng migration có version theo task.
 
 ## 5. UI dùng chung và UX bắt buộc
 
-- Style theo guide Espresso/Kem/Caramel: sidebar `#241814`, nút chính `#4B2E23`,
-  hover `#633E2D`, nhấn `#C58B52`, nền `#F5EFE6`, panel `#FFFCF8`, chữ `#291E18`,
-  viền `#DDD0C2`, chọn `#EAD8C3`. Tập trung màu/font/spacing vào AppTheme khi T07.
+- Trước khi code giao diện, bắt buộc đọc style guide UI chung tại `docs/ui/`
+  theo mục 1. Hành vi theo `HuongDan_UI_Orbit_Cafe.md`, hình thức theo
+  `reference.html` và ảnh/video trong `references/`, giá trị theo `design-tokens.json`;
+  chuyển sang WinForms theo `WINFORMS_IMPLEMENTATION.md`. Không trộn style guide cũ.
+  Tập trung màu/font/spacing vào AppTheme khi T07.
 - Segoe UI 10–11pt, tiêu đề theo guide; native controls và helper nhỏ trước custom
   control. Dock/Anchor/TableLayoutPanel; kiểm tra 1280×720, 1366×768 và DPI 100/125/150%.
 - MainForm + UserControl; dialog editor, một hành động chính mỗi bước. Menu và màn

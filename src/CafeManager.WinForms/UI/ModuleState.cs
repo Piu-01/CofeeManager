@@ -6,6 +6,13 @@ public static class OperationStatePresenter
 {
     public static void Show(Label label, ModuleState state, string message)
     {
+        label.ForeColor = state switch
+        {
+            ModuleState.Error => Theme.AppTheme.Error,
+            ModuleState.Conflict or ModuleState.Unknown => Theme.AppTheme.Warning,
+            ModuleState.Saved => Theme.AppTheme.Success,
+            _ => Theme.AppTheme.Muted
+        };
         label.Text = state switch
         {
             ModuleState.Loading => "Đang tải/gửi · " + message,

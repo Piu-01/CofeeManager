@@ -12,6 +12,8 @@ internal static class Program
     private static void Main(string[] args)
     {
         ApplicationConfiguration.Initialize();
+        // Áp dụng theme native trước khi tạo HWND, giữ nguyên control nhập giờ/bàn phím.
+        Application.SetColorMode(SystemColorMode.Dark);
         var connectionString = Environment.GetEnvironmentVariable("CAFEMANAGER_APP_CONNECTION");
         AuthRepository? repository = null;
         var passwords = new PasswordService();

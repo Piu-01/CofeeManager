@@ -22,7 +22,18 @@ public partial class CatalogEditorDialog : Form, IUnsavedChanges
     public bool HasUnsavedChanges => !saved && Snapshot() != initial;
     public bool IsWriting => writing || unknown is not null;
     public void DiscardChanges() { saved = true; }
-    public CatalogEditorDialog() { InitializeComponent(); AppTheme.Apply(this); AppTheme.PrimaryButton(saveButton); initial = Snapshot(); }
+    public CatalogEditorDialog()
+    {
+        InitializeComponent(); AppTheme.Apply(this); AppTheme.PrimaryButton(saveButton);
+        AppTheme.Status(statusLabel);
+        statusLabel.Visible = false;
+        statusLabel.TextChanged += (_, _) => statusLabel.Visible = !string.IsNullOrWhiteSpace(statusLabel.Text);
+        foreach (Control field in fields.Controls) field.Margin = new Padding(4, 8, 4, 8);
+        foreach (var input in new[] { codeInput, nameInput, phoneInput, ratioInput, allowanceInput, factorInput }) OrbitField.Wrap(input);
+        OrbitFieldLayout.Attach(fields);
+        Controls.Add(new OrbitContentHost(layout, 640, fitHeight: true, scrollBody: fields));
+        initial = Snapshot();
+    }
     public CatalogEditorDialog(CatalogService service, SessionContext session, CatalogKind kind, CatalogRow? row) : this()
     {
         this.service = service; this.session = session; this.kind = kind; original = row;
@@ -55,7 +66,7 @@ public partial class CatalogEditorDialog : Form, IUnsavedChanges
         }
         initial = Snapshot();
     }
-    private static void ShowField(Control label, Control input, bool visible) { label.Visible = input.Visible = visible; }
+    private static void ShowField(Control label, Control input, bool visible) { label.Visible = input.Visible = visible; if (input.Parent is OrbitField frame) frame.Visible = visible; }
     private string Snapshot() => string.Join("\u001f", codeInput.Text, nameInput.Text, phoneInput.Text, ratioInput.Text,
         allowanceInput.Text, factorInput.Text, typeInput.Text, startInput.Value.TimeOfDay, endInput.Value.TimeOfDay, supportedInput.Checked);
     private decimal Amount(TextBox input, string field)

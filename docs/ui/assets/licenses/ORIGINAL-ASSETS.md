@@ -1,0 +1,2 @@
+# Orbit original assets
+Logo/mark and product illustrations in this handoff are original schematic artwork created for this project using code/CSS, not real product photographs. The user may reuse and modify these assets in this project. Orbit is a concept name, not a trademark clearance. Segoe UI/Arial are system font references; no font binaries are redistributed. Lucide artwork has its own license in LUCIDE-LICENSE.txt. Product PNGs are captured from the approved reference artwork.

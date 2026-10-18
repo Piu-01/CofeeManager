@@ -41,7 +41,7 @@ partial class StartupForm
         DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
         DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
         layout = new TableLayoutPanel();
-        header = new TableLayoutPanel();
+        header = new CafeManager.WinForms.UI.OrbitHeader();
         titleLabel = new Label();
         subtitleLabel = new Label();
         toolbar = new FlowLayoutPanel();
@@ -49,8 +49,8 @@ partial class StartupForm
         areaLabel = new Label();
         inputPanel = new Panel();
         areaInput = new TextBox();
-        loadButton = new Button();
-        cancelButton = new Button();
+        loadButton = new CafeManager.WinForms.UI.OrbitButton();
+        cancelButton = new CafeManager.WinForms.UI.OrbitButton();
         statusLabel = new Label();
         contentPanel = new Panel();
         gridPanel = new Panel();
@@ -86,7 +86,7 @@ partial class StartupForm
         layout.Location = new Point(0, 0);
         layout.Margin = new Padding(4);
         layout.Name = "layout";
-        layout.Padding = new Padding(30);
+        layout.Padding = new Padding(16);
         layout.RowCount = 4;
         layout.RowStyles.Add(new RowStyle());
         layout.RowStyles.Add(new RowStyle());
@@ -98,16 +98,16 @@ partial class StartupForm
         // header
         // 
         header.AutoSize = true;
-        header.BackColor = Color.FromArgb(36, 24, 20);
+        header.BackColor = CafeManager.WinForms.Theme.AppTheme.Espresso;
         header.ColumnCount = 1;
         header.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
         header.Controls.Add(titleLabel, 0, 0);
         header.Controls.Add(subtitleLabel, 0, 1);
         header.Dock = DockStyle.Fill;
         header.Location = new Point(30, 30);
-        header.Margin = new Padding(0, 0, 0, 20);
+        header.Margin = new Padding(0, 0, 0, 12);
         header.Name = "header";
-        header.Padding = new Padding(25, 20, 25, 20);
+        header.Padding = new Padding(16, 10, 16, 10);
         header.RowCount = 2;
         header.RowStyles.Add(new RowStyle());
         header.RowStyles.Add(new RowStyle());
@@ -118,7 +118,7 @@ partial class StartupForm
         // 
         titleLabel.AutoSize = true;
         titleLabel.Font = new Font("Segoe UI", 17F, FontStyle.Bold);
-        titleLabel.ForeColor = Color.FromArgb(255, 252, 248);
+        titleLabel.ForeColor = CafeManager.WinForms.Theme.AppTheme.Surface;
         titleLabel.Location = new Point(25, 20);
         titleLabel.Margin = new Padding(0, 0, 0, 10);
         titleLabel.Name = "titleLabel";
@@ -129,7 +129,7 @@ partial class StartupForm
         // subtitleLabel
         // 
         subtitleLabel.AutoSize = true;
-        subtitleLabel.ForeColor = Color.FromArgb(234, 216, 195);
+        subtitleLabel.ForeColor = CafeManager.WinForms.Theme.AppTheme.Selected;
         subtitleLabel.Location = new Point(25, 70);
         subtitleLabel.Margin = new Padding(0);
         subtitleLabel.Name = "subtitleLabel";
@@ -140,7 +140,7 @@ partial class StartupForm
         // toolbar
         // 
         toolbar.AutoSize = true;
-        toolbar.BackColor = Color.FromArgb(255, 252, 248);
+        toolbar.BackColor = CafeManager.WinForms.Theme.AppTheme.Surface;
         toolbar.Controls.Add(filter);
         toolbar.Controls.Add(loadButton);
         toolbar.Controls.Add(cancelButton);
@@ -148,7 +148,7 @@ partial class StartupForm
         toolbar.Location = new Point(30, 163);
         toolbar.Margin = new Padding(0, 0, 0, 15);
         toolbar.Name = "toolbar";
-        toolbar.Padding = new Padding(20);
+        toolbar.Padding = new Padding(12);
         toolbar.Size = new Size(1190, 124);
         toolbar.TabIndex = 1;
         // 
@@ -180,7 +180,7 @@ partial class StartupForm
         // 
         // inputPanel
         // 
-        inputPanel.BackColor = Color.FromArgb(245, 239, 230);
+        inputPanel.BackColor = CafeManager.WinForms.Theme.AppTheme.Background;
         inputPanel.Controls.Add(areaInput);
         inputPanel.Dock = DockStyle.Fill;
         inputPanel.Location = new Point(0, 33);
@@ -193,10 +193,10 @@ partial class StartupForm
         // areaInput
         // 
         areaInput.AccessibleName = "Mã khu vực";
-        areaInput.BackColor = Color.FromArgb(245, 239, 230);
+        areaInput.BackColor = CafeManager.WinForms.Theme.AppTheme.Background;
         areaInput.BorderStyle = BorderStyle.None;
         areaInput.Dock = DockStyle.Top;
-        areaInput.ForeColor = Color.FromArgb(41, 30, 24);
+        areaInput.ForeColor = CafeManager.WinForms.Theme.AppTheme.Text;
         areaInput.Location = new Point(12, 10);
         areaInput.Margin = new Padding(4);
         areaInput.Name = "areaInput";
@@ -206,11 +206,11 @@ partial class StartupForm
         // 
         // loadButton
         // 
-        loadButton.BackColor = Color.FromArgb(75, 46, 35);
+        loadButton.BackColor = CafeManager.WinForms.Theme.AppTheme.Primary;
         loadButton.FlatAppearance.BorderSize = 0;
-        loadButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(99, 62, 45);
+        loadButton.FlatAppearance.MouseOverBackColor = CafeManager.WinForms.Theme.AppTheme.PrimaryLight;
         loadButton.FlatStyle = FlatStyle.Flat;
-        loadButton.ForeColor = Color.White;
+        loadButton.ForeColor = CafeManager.WinForms.Theme.AppTheme.OnPrimary;
         loadButton.Location = new Point(310, 54);
         loadButton.Margin = new Padding(15, 34, 0, 0);
         loadButton.Name = "loadButton";
@@ -222,11 +222,11 @@ partial class StartupForm
         // 
         // cancelButton
         // 
-        cancelButton.BackColor = Color.FromArgb(245, 239, 230);
+        cancelButton.BackColor = CafeManager.WinForms.Theme.AppTheme.Background;
         cancelButton.Enabled = false;
-        cancelButton.FlatAppearance.BorderColor = Color.FromArgb(221, 208, 194);
+        cancelButton.FlatAppearance.BorderColor = CafeManager.WinForms.Theme.AppTheme.Border;
         cancelButton.FlatStyle = FlatStyle.Flat;
-        cancelButton.ForeColor = Color.FromArgb(41, 30, 24);
+        cancelButton.ForeColor = CafeManager.WinForms.Theme.AppTheme.Text;
         cancelButton.Location = new Point(563, 54);
         cancelButton.Margin = new Padding(15, 34, 0, 0);
         cancelButton.Name = "cancelButton";
@@ -239,7 +239,7 @@ partial class StartupForm
         // statusLabel
         // 
         statusLabel.AutoSize = true;
-        statusLabel.BackColor = Color.FromArgb(234, 216, 195);
+        statusLabel.BackColor = CafeManager.WinForms.Theme.AppTheme.Selected;
         statusLabel.Dock = DockStyle.Fill;
         statusLabel.Location = new Point(30, 302);
         statusLabel.Margin = new Padding(0, 0, 0, 15);
@@ -251,7 +251,7 @@ partial class StartupForm
         // 
         // contentPanel
         // 
-        contentPanel.BackColor = Color.FromArgb(255, 252, 248);
+        contentPanel.BackColor = CafeManager.WinForms.Theme.AppTheme.Surface;
         contentPanel.Controls.Add(gridPanel);
         contentPanel.Controls.Add(contentHeading);
         contentPanel.Dock = DockStyle.Fill;
@@ -279,33 +279,33 @@ partial class StartupForm
         // 
         tableGrid.AllowUserToAddRows = false;
         tableGrid.AllowUserToDeleteRows = false;
-        dataGridViewCellStyle1.BackColor = Color.FromArgb(245, 239, 230);
+        dataGridViewCellStyle1.BackColor = CafeManager.WinForms.Theme.AppTheme.Background;
         tableGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
         tableGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-        tableGrid.BackgroundColor = Color.FromArgb(255, 252, 248);
+        tableGrid.BackgroundColor = CafeManager.WinForms.Theme.AppTheme.Surface;
         tableGrid.BorderStyle = BorderStyle.None;
         tableGrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
         tableGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-        dataGridViewCellStyle2.BackColor = Color.FromArgb(234, 216, 195);
+        dataGridViewCellStyle2.BackColor = CafeManager.WinForms.Theme.AppTheme.Selected;
         dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-        dataGridViewCellStyle2.ForeColor = Color.FromArgb(41, 30, 24);
-        dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(234, 216, 195);
-        dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(41, 30, 24);
+        dataGridViewCellStyle2.ForeColor = CafeManager.WinForms.Theme.AppTheme.Text;
+        dataGridViewCellStyle2.SelectionBackColor = CafeManager.WinForms.Theme.AppTheme.Selected;
+        dataGridViewCellStyle2.SelectionForeColor = CafeManager.WinForms.Theme.AppTheme.Text;
         tableGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
         tableGrid.ColumnHeadersHeight = 40;
         tableGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
         tableGrid.Columns.AddRange(new DataGridViewColumn[] { tableCodeColumn, tableNameColumn, areaCodeColumn, statusColumn, invoiceCodeColumn });
         dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-        dataGridViewCellStyle3.BackColor = Color.FromArgb(255, 252, 248);
+        dataGridViewCellStyle3.BackColor = CafeManager.WinForms.Theme.AppTheme.Surface;
         dataGridViewCellStyle3.Font = new Font("Segoe UI", 10F);
-        dataGridViewCellStyle3.ForeColor = Color.FromArgb(41, 30, 24);
-        dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(234, 216, 195);
-        dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(41, 30, 24);
+        dataGridViewCellStyle3.ForeColor = CafeManager.WinForms.Theme.AppTheme.Text;
+        dataGridViewCellStyle3.SelectionBackColor = CafeManager.WinForms.Theme.AppTheme.Selected;
+        dataGridViewCellStyle3.SelectionForeColor = CafeManager.WinForms.Theme.AppTheme.Text;
         dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
         tableGrid.DefaultCellStyle = dataGridViewCellStyle3;
         tableGrid.Dock = DockStyle.Fill;
         tableGrid.EnableHeadersVisualStyles = false;
-        tableGrid.GridColor = Color.FromArgb(221, 208, 194);
+        tableGrid.GridColor = CafeManager.WinForms.Theme.AppTheme.Border;
         tableGrid.Location = new Point(20, 29);
         tableGrid.Margin = new Padding(4);
         tableGrid.MultiSelect = false;
@@ -363,7 +363,7 @@ partial class StartupForm
         emptyStateLabel.AccessibleName = "Trạng thái danh sách bàn";
         emptyStateLabel.Dock = DockStyle.Top;
         emptyStateLabel.Font = new Font("Segoe UI", 12F);
-        emptyStateLabel.ForeColor = Color.FromArgb(75, 46, 35);
+        emptyStateLabel.ForeColor = CafeManager.WinForms.Theme.AppTheme.Primary;
         emptyStateLabel.Location = new Point(20, 0);
         emptyStateLabel.Margin = new Padding(4, 0, 4, 0);
         emptyStateLabel.Name = "emptyStateLabel";
@@ -389,12 +389,12 @@ partial class StartupForm
         // 
         AutoScaleDimensions = new SizeF(120F, 120F);
         AutoScaleMode = AutoScaleMode.Dpi;
-        BackColor = Color.FromArgb(245, 239, 230);
+        BackColor = CafeManager.WinForms.Theme.AppTheme.Background;
         ClientSize = new Size(1250, 750);
         Controls.Add(layout);
-        ForeColor = Color.FromArgb(41, 30, 24);
+        ForeColor = CafeManager.WinForms.Theme.AppTheme.Text;
         Margin = new Padding(4);
-        MinimumSize = new Size(796, 488);
+        MinimumSize = new Size(360, 320);
         Name = "StartupForm";
         StartPosition = FormStartPosition.CenterScreen;
         validation.ContainerControl = this;
