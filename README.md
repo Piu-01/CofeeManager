@@ -3,6 +3,49 @@
 C# WinForms .NET 10 và SQL Server, triển khai theo
 [kế hoạch T01–T32](docs/KeHoach_QuanLiQuanCafe.md).
 
+## Chạy development bằng Visual Studio — cập nhật 18/10/2026
+
+Máy hiện tại đã có DB cố định `CoffeeManager_Development` trên `localhost`.
+Mở đúng `CafeManager.slnx` trong checkout này, đặt `CafeManager.WinForms` làm Startup
+Project, chọn launch profile **CoffeeManager.Development**, rồi F5.
+
+| Tên đăng nhập | Mật khẩu demo | Vai trò |
+|---|---|---|
+| admin | Admin@123 | ADMIN — quản trị |
+| thungan | Cash@123 | CASH — thu ngân |
+| kho | Store@123 | STORE — thủ kho |
+
+Nhập tên và mật khẩu trên Login rồi bấm **Đăng nhập**. Không có nút chọn vai trò,
+không cần terminal để nhận mật khẩu. Xem [file dữ liệu mẫu dành cho người dùng](database/demo/README.md)
+và [fixture tài khoản](database/demo/accounts.json). Đây là thông tin mock công khai,
+không phải credential SQL/Windows hoặc tài khoản sử dụng thật.
+
+Để tái lập trên máy development có SQL Server Mixed Mode và operator có quyền tạo
+DB/login (không tự bật Mixed Mode):
+
+```powershell
+dotnet restore tools/CafeManager.DevelopmentSetup/CafeManager.DevelopmentSetup.csproj
+& .\tools\database\Initialize-Development.ps1
+```
+
+Công cụ chỉ nhận DB cố định có marker của nó; chạy lại không reset tài khoản/dữ liệu.
+Schema chạy DDL trước, seed cùng marker commit trong transaction của seed; sau đó
+áp dụng migration 001–003 nguyên checksum. Không chạy trực tiếp seed lần hai.
+
+Profile chỉ chứa cờ `CAFEMANAGER_USE_DEVELOPMENT=1`. Connection được mã hóa DPAPI
+CurrentUser trong `%LOCALAPPDATA%\CoffeeManager\development\connection.dpapi`;
+ba mật khẩu ứng dụng và bí mật provision trong `accounts.dpapi` cùng thư mục.
+`CAFEMANAGER_APP_CONNECTION` nếu đã đặt vẫn ưu tiên. Chạy exe ngoài profile không
+tự chọn DB development. Không copy hai file DPAPI sang tài khoản Windows khác.
+
+Thay đổi máy của bước này: một DB development, một SQL login runtime chỉ thuộc
+`CafeManagerApp`, hai file DPAPI. SQL login setup tạm được thu hồi sau bootstrap.
+Không tạo Windows user. Theo duyệt bổ sung 18/10/2026, đã xóa 112 DB test cũ, SQL Windows login liên quan và Windows user `CafeManagerApp`; DB development được giữ nguyên.
+Không có đăng ký công khai; quản lý/cấp tài khoản đầy đủ thuộc T24, home CASH/STORE
+vẫn theo phạm vi module đã triển khai. Không đánh dấu toàn bộ G02 hoàn tất từ bước này.
+
+Chi tiết kiểm chứng: [bàn giao development](docs/tasks/g02-truy-cap-ung-dung-cau-hinh-nen/development-handoff-results.md).
+
 ## Trạng thái hiện tại
 
 **G01 (T01–T05) đã nghiệm thu kỹ thuật — 45/45 ca bắt buộc PASS**,
@@ -162,3 +205,14 @@ CLIargs/log. Không dùng việc thiếuadminactive làm điều kiện mở l�
 [Hướng dẫn nghiệm thuG02](docs/tasks/g02-truy-cap-ung-dung-cau-hinh-nen/manual-test-guide.md).
 Runner `tools/database/Test-G02.ps1` và `tools/ui/Verify-G02.ps1` đã chuẩn bị,
 chỉ chạy sau duyệt đợt testG02; build/SQLcompile/smoke không thay nghiệm thu.
+
+## G03 — dữ liệu phục vụ bán hàng
+
+Đã có nguyên liệu/mở sổ, menu/công thức, bàn/khu vực, khách/hạng, khuyến mãi và
+điều chỉnh điểm; đang chờ duyệt đợt nghiệm thu. Xem
+[đường chạy F5 và kịch bản dùng thử](docs/tasks/g03-du-lieu-phuc-vu-ban-hang/development-guide.md)
+và [báo cáo triển khai](docs/tasks/g03-du-lieu-phuc-vu-ban-hang/report.md).
+Development cố định `localhost/CoffeeManager_Development`, schema009; cập nhật bằng
+`tools/database/Update-DevelopmentG03.ps1` khi đã đóng app (backup và đối chiếu trước/
+sau, không seed/reset account). Khởi tạo mới giữ baseline→seed tùy chọn→001..009.
+G03 chưa có POS/checkout đích, nhập/xuất/kiểm kê hoặc tra cứu/in hoàn chỉnh.

@@ -51,6 +51,26 @@ internal static class SqlErrorMapper
         [51505] = "Tài khoản hoặc quyền đã thay đổi; đăng nhập lại.",
         [51506] = "Mã danh mục không hợp lệ hoặc đã tồn tại.",
         [51507] = "Dữ liệu danh mục cũ xung đột; cần người cài kiểm tra.",
+        [51701] = "Thông tin sản phẩm/công thức không hợp lệ.",
+        [51702] = "Món cần công thức trước bật bán; sản phẩm có lịch sử không thể xóa.",
+        [51704] = "Công thức đang được sử dụng; đối chiếu trước khi thử lại.",
+        [51707] = "Dữ liệu menu cũ xung đột; cần người cài kiểm tra.",
+        [51801] = "Thông tin bàn/khu vực không hợp lệ.",
+        [51807] = "Dữ liệu bàn/khu vực cũ xung đột; cần người cài kiểm tra.",
+        [51901] = "Thông tin khách hoặc điểm mở sổ không hợp lệ.",
+        [51902] = "Khách đã có mốc hoặc giao dịch; không thể mở sổ lại.",
+        [51904] = "Chính sách đang thay đổi; đối chiếu trước khi thử lại.",
+        [51907] = "Dữ liệu hạng/khách cũ xung đột; cần người cài kiểm tra.",
+        [52001] = "Thông tin ưu đãi/chính sách/điểm không hợp lệ hoặc chương trình không hiệu lực.",
+        [52002] = "Không đủ điểm hoặc số dư vượt giới hạn.",
+        [52004] = "Chính sách đang được sử dụng; đối chiếu trước khi thử lại.",
+        [52007] = "Dữ liệu ưu đãi cũ xung đột; cần người cài kiểm tra.",
+        [51601] = "Dữ liệu nguyên liệu hoặc lượng không hợp lệ.",
+        [51602] = "Đã có mốc mở sổ, công thức hoặc giao dịch; không thể thực hiện thao tác này.",
+        [51603] = "Dữ liệu đã thay đổi hoặc bị xóa; tải lại trước khi lưu.",
+        [51605] = "Bạn không có quyền thực hiện thao tác này.",
+        [51607] = "Dữ liệu chuyển đổi xung đột; cần người cài kiểm tra.",
+        [51608] = "Mã yêu cầu đã dùng với nội dung khác; cần đối chiếu.",
         [51508] = "Mã yêu cầu đã được dùng với dữ liệu khác; cần đối chiếu."
     };
 
@@ -71,6 +91,7 @@ internal static class SqlErrorMapper
         {
             547 => new(DataErrorKind.Constraint, number, "Dữ liệu không thỏa ràng buộc hoặc không đủ tồn; kiểm tra nguồn liên quan."),
             2601 or 2627 => new(DataErrorKind.Duplicate, number, "Mã hoặc dữ liệu duy nhất đã tồn tại; tải lại để đối chiếu."),
+            1205 => new(DataErrorKind.BusinessRule, number, "Giao dịch gặp xung đột khóa và đã rollback; tải lại/đối chiếu trước thử lại."),
             229 => new(DataErrorKind.Permission, number, "Tài khoản kết nối không có quyền thao tác này."),
             -2 => new(DataErrorKind.Timeout, number, writing ? "Chưa xác định kết quả ghi; đối chiếu mã nguồn trước khi gửi lại." : "Truy vấn quá thời gian; thử tải lại.", writing),
             2 or 20 or 53 or 64 or 233 or 10060 or 10061 or 11001 or 18456 or 4060 =>

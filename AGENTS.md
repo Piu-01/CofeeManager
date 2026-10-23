@@ -80,7 +80,18 @@ sang WinForms/SQL Server; không cần Studio, Rojo hay skill Roblox khác.
   nợ, trạng thái, bảng liên kết và transaction sau lỗi; dùng hai session cho ca đồng
   thời. Không thay engine bằng SQLite, không ghi test vào DB sử dụng thật.
 - Unit test dùng xUnit cho quy tắc có giá trị; không test getters hay sao chép mọi
-  dòng CRUD. UI cần thao tác app thật: Designer, resize/DPI, bàn phím, loading/lỗi.
+  dòng CRUD. Agent kiểm chức năng UI trên WinForms thật khi phù hợp: binding,
+  bàn phím, loading/lỗi, validation, quyền và handler nghiệp vụ.
+- Theo yêu cầu người dùng ngày 22/10/2026, người dùng tự kiểm hình thức giao diện;
+  agent không chạy test thị giác, chụp ảnh đối chiếu, hover/spacing hoặc nghiệm thu
+  hình thức qua Designer. Không ghi PASS hình thức thay người dùng. Phần này ghi
+  SKIPPED theo phân công, không dùng làm blocker của kiểm chức năng.
+- Code vẫn phải tương thích DPI 100%, 125%, 150%, ưu tiên thiết kế và xử lý ở125%.
+  Agent chỉ chạy kiểm chức năng/layout kỹ thuật liên quan DPI tại125%; không tự đổi
+  Windows Scale để test100%/150%. Không ép app chạy một DPI cố định hoặc dùng bitmap
+  scaling thay cho hỗ trợ DPI. Phần100%/150% chưa chạy phải ghi rõ, không suy diễn PASS.
+  Quy định này áp dụng cho các đợt tiếp theo, ưu tiên hơn yêu cầu test hình thức/DPI
+  khác trong tài liệu hoặc skill cục bộ; giữ nguyên lịch sử và checklist T01–T32.
 - Lưu `test-results.md` cạnh hồ sơ task/bug: mã ca, môi trường và schema/commit,
   dữ liệu, lệnh/thao tác, expected/actual, PASS/FAIL/BLOCKED/NOT RUN và bằng chứng.
   Không tick test chưa chạy; thiếu SDK/SQL/GUI ghi rõ blocker.
@@ -148,7 +159,8 @@ chứng bằng engine. Mở rộng bằng migration có version theo task.
   chuyển sang WinForms theo `WINFORMS_IMPLEMENTATION.md`. Không trộn style guide cũ.
   Tập trung màu/font/spacing vào AppTheme khi T07.
 - Segoe UI 10–11pt, tiêu đề theo guide; native controls và helper nhỏ trước custom
-  control. Dock/Anchor/TableLayoutPanel; kiểm tra 1280×720, 1366×768 và DPI 100/125/150%.
+  control. Dock/Anchor/TableLayoutPanel; code hỗ trợ1280×720,1366×768 và DPI100/125/150%,
+  tập trung125%. Phạm vi agent kiểm chỉ ở125%; hình thức do người dùng tự kiểm theo mục2.
 - MainForm + UserControl; dialog editor, một hành động chính mỗi bước. Menu và màn
   bắt đầu theo vai trò; nháp hỏi khi rời, rời POS không tự hủy đơn đã lưu.
 - Tách loading/rỗng/lỗi/xung đột/kết quả chưa biết/đã chốt. Lỗi DB không hiển thị
@@ -162,6 +174,13 @@ chứng bằng engine. Mở rộng bằng migration có version theo task.
   phụ thuộc tải Internet để app hoạt động. Guide vẫn cần nghiệm thu trên WinForms thật.
 
 ## 6. Git và báo cáo bàn giao
+
+- Điều kiện bắt buộc chốt G08 (cuối T32): gỡ hoàn toàn tiện ích “Bỏ qua đăng nhập — TEST”
+  khỏi source, hooks, launcher và cấu hình bàn giao; không chỉ ẩn nút hoặc loại khỏi Release.
+  Build Debug/Release/publish cuối và regression đăng nhập thường, logout/phiên/quyền;
+  lưu bằng chứng đã gỡ ở T32/báo cáo G08. **Chưa gỡ hoặc chưa kiểm lại thì G08 chưa PASS**.
+  Tham chiếu mục “Điều kiện chốt G08” trong `docs/KeHoach_QuanLiQuanCafe.md` và checklist
+  gỡ tại `docs/tasks/temporary-test-login/README.md`. Giữ nguyên325ID/T01–T32 và lịch sử test.
 
 Kiểm tra `git rev-parse --show-toplevel` trước thao tác Git. T01 đã khởi tạo repo
 riêng tại CoffeeManager trên nhánh `main`; root phải là thư mục CoffeeManager,

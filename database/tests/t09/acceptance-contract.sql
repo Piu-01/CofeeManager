@@ -1,0 +1,14 @@
+IF DB_NAME() NOT LIKE 'CoffeeManager_Test_G03_%' OR OBJECT_ID('dbo.G03TestMarker') IS NULL THROW 52999,'Test DB required',1;
+UPDATE dbo.TAIKHOAN SET HoatDong=1 WHERE MaNV='NV001';
+DECLARE @a int,@s binary(8),@id uniqueidentifier=NEWID(),@rev binary(8),@before decimal(18,4);
+SELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001';
+EXEC dbo.sp_MaterialCreate @a,@s,'NVL97',@id,NULL,N'Nguyên liệu kiểm thử',N'Kg';
+IF NOT EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE MaNVL='NVL97' AND SoLuongTon=0) THROW 52999,'T09 initial balance mismatch',1;
+SELECT @rev=Revision FROM dbo.NGUYENVATLIEU WHERE MaNVL='NVL97';SET @id=NEWID();
+EXEC dbo.sp_MaterialOpen @Actor=@a,@Stamp=@s,@Code='NVL97',@RequestId=@id,@ExpectedRevision=@rev,@Quantity=0.0180,@Source=N'Acceptance opening';
+EXEC dbo.sp_MaterialOpen @Actor=@a,@Stamp=@s,@Code='NVL97',@RequestId=@id,@ExpectedRevision=@rev,@Quantity=0.0180,@Source=N'Acceptance opening';
+IF (SELECT SoLuongTon FROM dbo.NGUYENVATLIEU WHERE MaNVL='NVL97')<>0.0180 OR (SELECT COUNT(*) FROM dbo.MaterialOpening WHERE MaNVL='NVL97')<>1 THROW 52999,'T09 receipt duplicated balance',1;
+SELECT @rev=Revision FROM dbo.NGUYENVATLIEU WHERE MaNVL='NVL97';SET @id=NEWID();
+BEGIN TRY EXEC dbo.sp_MaterialOpen @Actor=@a,@Stamp=@s,@Code='NVL97',@RequestId=@id,@ExpectedRevision=@rev,@Quantity=1,@Source=N'Second open';THROW 52999,'Second opening accepted',1;END TRY BEGIN CATCH IF ERROR_NUMBER()<>51602 THROW;END CATCH;
+IF @@TRANCOUNT<>0 OR XACT_STATE()<>0 THROW 52999,'Transaction leaked',1;
+SET @id=NEWID();BEGIN TRY EXEC dbo.sp_MaterialOpen @Actor=@a,@Stamp=@s,@Code='NVL97',@RequestId=@id,@ExpectedRevision=@rev,@Quantity=0.00001,@Source=N'Invalid scale';THROW 52999,'Scale accepted',1;END TRY BEGIN CATCH IF ERROR_NUMBER()<>51601 THROW;END CATCH;

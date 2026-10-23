@@ -1,0 +1,16 @@
+-- Minimal contract smoke, not acceptance. Demo test database only.
+IF DB_NAME() NOT LIKE 'CoffeeManager_Test_G03_%' OR OBJECT_ID('dbo.G03TestMarker') IS NULL THROW 51607,'Test target required',1;
+UPDATE dbo.TAIKHOAN SET HoatDong=1 WHERE MaNV='NV001';
+DECLARE @actor int,@stamp binary(8),@id uniqueidentifier=NEWID(),@revision binary(8);
+SELECT @actor=MaTK,@stamp=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001';
+EXEC dbo.sp_MaterialCreate @Actor=@actor,@Stamp=@stamp,@Code='NVL98',@RequestId=@id,@Name=N'Kỹ thuật nguyên liệu',@Unit=N'Kg';
+SELECT @revision=Revision FROM dbo.NGUYENVATLIEU WHERE MaNVL='NVL98';
+SET @id=NEWID();
+EXEC dbo.sp_MaterialOpen @Actor=@actor,@Stamp=@stamp,@Code='NVL98',@RequestId=@id,@ExpectedRevision=@revision,@Quantity=0.0180,@Source=N'Dependency smoke';
+IF NOT EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE MaNVL='NVL98' AND SoLuongTon=0.0180) THROW 51607,'Smoke balance mismatch',1;
+EXEC dbo.sp_MaterialGet @actor,@stamp,'NVL98';
+DECLARE @a int,@s binary(8),@r uniqueidentifier=NEWID(),@recipe dbo.RecipeLineInput;
+SELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001';
+INSERT @recipe VALUES('NVL98',0.0180);
+EXEC dbo.sp_ProductCreate @Actor=@a,@Stamp=@s,@Code='SP998',@RequestId=@r,@Recipe=@recipe,@Name=N'Món kỹ thuật',@Category='DM001',@Price=10000,@Status=N'Dang ban';
+EXEC dbo.sp_RecipeList @a,@s,'SP998';

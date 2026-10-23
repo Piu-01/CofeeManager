@@ -45,3 +45,33 @@ test mới, không sửa checksum đã ghi để ép rerun.
 chạy xUnit; không dùng DB ứng dụng. Test/bug ở task con trong G01, giữ các lượt.
 G01 đã nghiệm thu45/45; lịch sử tại reportG01. RunnerG02/collectorUI chỉ chạy
 sau duyệt đợt testG02; build và dependency smoke được ghi riêng trong triển khai.
+
+## Development cố định (18/10/2026)
+
+Ngoại lệ development được duyệt: `Initialize-Development.ps1` dùng Windows operator
+để provision SQL login runtime `CoffeeManager_Development_Runtime` vào đúng DB
+`CoffeeManager_Development`, chỉ role `CafeManagerApp`; không tạo Windows account.
+SQL login setup riêng tạm thời gọi BootstrapService/contract hiện có rồi bị thu hồi.
+Chỉ công cụ provision development kích hoạt hai placeholder CASH/STORE chính xác;
+bootstrap của ứng dụng thông thường không tự bật chúng. Không reset account đã active.
+Không đổi migration hoặc contract đăng nhập. Cấu hình và bí mật lưu DPAPI CurrentUser;
+profile F5 không chứa credential. Xem README và biên bản development-handoff-results.md
+trong hồ sơ G02. Quy trình `--setup` thông thường giữ nguyên.
+
+## Chuỗi G03 (004–008)
+
+Chạy `Apply-Migration.ps1` lần lượt Version4..8 với file tương ứng:
+004_inventory_materials.sql →005_products_recipes.sql →006_tables_areas.sql →
+007_customers.sql →008_promotions_loyalty.sql. Không sửa001–003/baseline/seed.
+Preflight không hợp lệ dừng, không tự sửa dữ liệu hoặc ghi đèchecksum.
+
+Development cố định: `tools/database/Update-DevelopmentG03.ps1` kiểmmarker,
+backupCOPY_ONLY CHECKSUM khi đang dưới008, áp dụng migration, đối chiếu tồn/
+điểm+hạng/tài chính hóađơn. Khôngseed/resetaccount/ghi fixture; app phảiđóng.
+Backup giữ tới khi G03 nghiệm thu và người dùng chấp nhận, đường dẫn trong manifest.
+Initialize-Development gọi cập nhật này sau003; app runtime không tựchạy migration.
+Contract: material-contract.md, product-contract.md, table-contract.md,
+customer-contract.md, loyalty-contract.md. Technicalsmoke không là nghiệm thu.
+
+009_promotion_legacy_codes.sql thuộc T13, chạy sau008: cho phép sửa/xóa mã seed cũ
+như KM24BF, giữ mãPK; tạo mới vẫn KM+8số. Development/runnerG03 hiện đến009.

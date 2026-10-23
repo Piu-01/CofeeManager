@@ -6,10 +6,11 @@ namespace CafeManager.WinForms.UI;
 public sealed class OrbitField : Panel
 {
     private readonly Control input;
-    public OrbitField(Control input)
+    private readonly bool managementPalette;
+    public OrbitField(Control input, bool managementPalette = false)
     {
-        this.input = input; TabStop = false; TabIndex = input.TabIndex;
-        BackColor = AppTheme.Surface; Margin = input.Margin; Dock = input.Dock;
+        this.input = input; this.managementPalette = managementPalette; TabStop = false; TabIndex = input.TabIndex;
+        BackColor = managementPalette ? OrbitManagementTheme.Input : AppTheme.Surface; Margin = input.Margin; Dock = input.Dock;
         SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw, true);
         input.Dock = DockStyle.None; input.Margin = Padding.Empty;
         if (input is TextBox text) text.BorderStyle = BorderStyle.None;
@@ -17,15 +18,15 @@ public sealed class OrbitField : Panel
         input.Enter += (_, _) => Invalidate(); input.Leave += (_, _) => Invalidate();
     }
 
-    public static void Wrap(Control input)
+    public static void Wrap(Control input, bool managementPalette = false)
     {
         if (input.Parent is not TableLayoutPanel parent) return;
         var cell = parent.GetPositionFromControl(input);
-        var frame = new OrbitField(input);
+        var frame = new OrbitField(input, managementPalette);
         parent.Controls.Add(frame, cell.Column, cell.Row);
     }
 
-    public override Size GetPreferredSize(Size proposedSize) => new(proposedSize.Width, input.PreferredSize.Height + (int)(18 * DeviceDpi / 96F));
+    public override Size GetPreferredSize(Size proposedSize) => new(proposedSize.Width, Math.Max(managementPalette ? OrbitManagementTheme.Px(this, 40) : 0, input.PreferredSize.Height + (int)(18 * DeviceDpi / 96F)));
     protected override void OnLayout(LayoutEventArgs levent)
     {
         var inset = (int)(10 * DeviceDpi / 96F);
@@ -41,7 +42,7 @@ public sealed class OrbitField : Panel
         var bounds = new RectangleF(1, 1, Math.Max(1, Width - 3), Math.Max(1, Height - 3));
         using var path = new GraphicsPath();
         path.AddRoundedRectangle(bounds, new SizeF(radius, radius));
-        using var pen = new Pen(ContainsFocus ? AppTheme.Accent : AppTheme.InputBorder, ContainsFocus ? 2 : 1);
+        using var pen = new Pen(ContainsFocus ? (managementPalette ? OrbitManagementTheme.Lilac : AppTheme.Accent) : (managementPalette ? OrbitManagementTheme.InputBorder : AppTheme.InputBorder), ContainsFocus ? 2 : 1);
         e.Graphics.DrawPath(pen, path);
     }
 }

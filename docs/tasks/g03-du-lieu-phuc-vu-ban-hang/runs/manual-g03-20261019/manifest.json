@@ -1,0 +1,14 @@
+{
+  "RunId": "20261019_215457_29e552a9",
+  "Database": "CoffeeManager_Test_G03_20261019_215457_29e552a9_demo",
+  "Server": "localhost",
+  "Marker": "20261019_215457_29e552a9",
+  "Created": true,
+  "Cleaned": false,
+  "Purpose": "Approved Orbit 9 remaining eight screens and inventory regression",
+  "RetainReason": "Active UI validation on existing isolated test database",
+  "Expiry": "2026-10-21",
+  "Principal": "G03Gui mapped existing runtime login; no new server login",
+  "ProcessId": 3172,
+  "State": "Awaiting manual login; test database only"
+}

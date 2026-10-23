@@ -13,76 +13,97 @@ public partial class MainForm : Form
     private readonly NavigationController? navigation;
     private readonly Func<CancellationToken, Task<AppSetupStatus>>? readState;
     private readonly Func<UserControl>? catalogs;
+    private readonly IReadOnlyDictionary<NavigationTarget, Func<UserControl>> modules = new Dictionary<NavigationTarget, Func<UserControl>>();
     public event Action? LoggedOut;
     private bool loggingOut;
     private bool navigating;
-    private bool compactNavigation;
+
     private bool arrangingNavigation;
     public MainForm()
     {
         InitializeComponent(); AppTheme.Apply(this);
-        sidebar.BackColor = brandLabel.BackColor = brandCaption.BackColor = AppTheme.Espresso;
-        brandLabel.ForeColor = AppTheme.Primary; brandCaption.ForeColor = AppTheme.Muted;
-        identityLabel.BackColor = AppTheme.Espresso; identityLabel.ForeColor = AppTheme.Muted;
-        AppTheme.Status(statusLabel);
-        AppTheme.SetIcon(homeButton, "coffee"); AppTheme.SetIcon(catalogsButton, "layout-grid");
-        AppTheme.SetIcon(systemButton, "settings"); AppTheme.SetIcon(logoutButton, "log-out");
+
+
+
+
+        UI.OrbitManagementLayout.Icon(homeButton, "coffee"); UI.OrbitManagementLayout.Icon(catalogsButton, "layout-grid");
+        UI.OrbitManagementLayout.Icon(systemButton, "settings"); UI.OrbitManagementLayout.Icon(logoutButton, "log-out");
+        foreach (var item in sidebar.Controls.OfType<UI.OrbitButton>()) { item.AlignTextLeft = true; item.Quiet = true; }
+        sidebar.BackColor = OrbitManagementTheme.Sidebar;
+        brandLabel.BackColor = brandCaption.BackColor = OrbitManagementTheme.Sidebar;
+        brandLabel.Font = OrbitManagementTheme.Brand; brandLabel.ForeColor = OrbitManagementTheme.Text;
+        brandCaption.Font = OrbitManagementTheme.Header; brandCaption.ForeColor = OrbitManagementTheme.Muted;
+        topbar.BackColor = identityLabel.BackColor = breadcrumbLabel.BackColor = OrbitManagementTheme.Background;
+        identityLabel.Font = breadcrumbLabel.Font = OrbitManagementTheme.Small;
+        identityLabel.ForeColor = breadcrumbLabel.ForeColor = OrbitManagementTheme.Muted;
+        foreach (var button in sidebar.Controls.OfType<Button>()) ConfigureNavigation(button);
+        statusLabel.BackColor = OrbitManagementTheme.Sidebar; statusLabel.Font = OrbitManagementTheme.Header;
+        statusLabel.Padding = Padding.Empty; statusLabel.AutoSize = false;
+        ((UI.OrbitSidebar)sidebar).SessionStatus = statusLabel;
+        ((UI.OrbitSidebar)sidebar).Person.ForeColor = OrbitManagementTheme.Text;
+        ((UI.OrbitSidebar)sidebar).Role.ForeColor = OrbitManagementTheme.Muted;
         ClientSizeChanged += (_, _) => ArrangeNavigation();
         ArrangeNavigation();
+        Shown += (_, _) => { UpdateMinimumSize(); ArrangeNavigation(); };
+        DpiChanged += (_, _) => { UpdateMinimumSize(); ArrangeNavigation(); };
     }
 
-    // Chỉ đổi vị trí control hiện có; không điều hướng lại hoặc reset nháp khi resize.
+    private static void ConfigureNavigation(Button button)
+    {
+        if (button is not UI.OrbitButton orbit) return;
+        var icon = button.Text switch { "Menu / Công thức" => "book", "Ưu đãi / Điểm" => "ticket", "Thông tin hệ thống" => "settings", _ => "" };
+        OrbitManagementTheme.Button(orbit, ManagementButtonStyle.Navigation, icon);
+    }
+
+    private void UpdateMinimumSize()
+    {
+        var area = Screen.FromControl(this).WorkingArea;
+        var scale = DeviceDpi / 96F;
+        // Hạ giới hạn theo vùng Snap thật ở DPI cao; không thu font hoặc cắt hành động.
+        MinimumSize = new Size(Math.Max(1, Math.Min((int)(640 * scale), area.Width / 2)),
+            Math.Max(1, Math.Min((int)(480 * scale), area.Height - 48)));
+    }
+
+    // Shell chỉ đổi bố cục, không tạo lại module hoặc reset nháp khi resize.
     private void ArrangeNavigation()
     {
         if (arrangingNavigation) return;
-        var compact = ClientSize.Width * 96F / DeviceDpi < 1000;
-        if (compact == compactNavigation) return;
-        arrangingNavigation = true; compactNavigation = compact;
-        layout.SuspendLayout(); sidebar.SuspendLayout();
+        arrangingNavigation = true;
         try
         {
-            layout.SetRowSpan(sidebar, 1);
-            layout.ColumnStyles.Clear(); layout.RowStyles.Clear();
-            layout.ColumnCount = compact ? 1 : 2; layout.RowCount = compact ? 4 : 3;
-            if (!compact) layout.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 232 * DeviceDpi / 96F));
-            layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-            if (compact) layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-            layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-            layout.SetCellPosition(sidebar, new TableLayoutPanelCellPosition(0, 0));
-            layout.SetCellPosition(identityLabel, new TableLayoutPanelCellPosition(compact ? 0 : 1, compact ? 1 : 0));
-            layout.SetCellPosition(content, new TableLayoutPanelCellPosition(compact ? 0 : 1, compact ? 2 : 1));
-            layout.SetCellPosition(statusLabel, new TableLayoutPanelCellPosition(compact ? 0 : 1, compact ? 3 : 2));
-            layout.SetRowSpan(sidebar, compact ? 1 : 3);
-            brandLabel.Visible = brandCaption.Visible = !compact;
-            sidebar.Controls.SetChildIndex(brandLabel, 0);
-            sidebar.Controls.SetChildIndex(brandCaption, 1);
-            sidebar.AutoSize = compact; sidebar.WrapContents = compact;
-            sidebar.FlowDirection = compact ? FlowDirection.LeftToRight : FlowDirection.TopDown;
-            sidebar.Padding = compact ? new Padding(8) : new Padding(16, 24, 16, 16);
-            identityLabel.Padding = compact ? new Padding(12, 4, 12, 4) : new Padding(16, 10, 16, 10);
-            foreach (var button in new[] { homeButton, catalogsButton, systemButton, logoutButton })
-            {
-                button.AutoSize = compact;
-                button.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-                button.Margin = compact ? new Padding(3) : new Padding(0, 0, 0, 10);
-                button.Padding = compact ? new Padding(8, 4, 8, 4) : Padding.Empty;
-                if (!compact) button.Size = new Size((int)(194 * DeviceDpi / 96F), (int)(52 * DeviceDpi / 96F));
-            }
+            var compact = ClientSize.Width * 96F / DeviceDpi < 760;
+            var navigationSidebar = (UI.OrbitSidebar)sidebar;
+            navigationSidebar.Compact = compact;
+            layout.ColumnStyles[0].Width = (compact ? 62 : 200) * DeviceDpi / 96F;
+            layout.RowStyles[0].Height = 50 * DeviceDpi / 96F;
+            navigationSidebar.PerformLayout();
         }
-        finally { sidebar.ResumeLayout(true); layout.ResumeLayout(true); arrangingNavigation = false; }
+        finally { arrangingNavigation = false; }
     }
     public MainForm(SessionContext session, PermissionService permissions,
-        Func<CancellationToken, Task<AppSetupStatus>> readState, Func<UserControl>? catalogs = null) : this()
+        Func<CancellationToken, Task<AppSetupStatus>> readState, Func<UserControl>? catalogs = null, IReadOnlyDictionary<NavigationTarget, Func<UserControl>>? modules = null) : this()
     {
         this.session = session; this.readState = readState; this.catalogs = catalogs;
+        this.modules = modules ?? new Dictionary<NavigationTarget, Func<UserControl>>();
+        foreach (var target in this.modules.Keys.Where(target => target is not (NavigationTarget.Tables or NavigationTarget.Customers or NavigationTarget.Loyalty) || session.Identity.Role is "ADMIN" or "CASH"))
+        {
+            var button = new UI.OrbitButton { Tag = target, Text = target switch { NavigationTarget.Materials => "Nguyên liệu / Tồn", NavigationTarget.Products => "Menu / Công thức", NavigationTarget.Tables => "Bàn / Khu vực", NavigationTarget.Customers => "Khách hàng", NavigationTarget.Loyalty => "Ưu đãi / Điểm", _ => target.ToString() }, AutoSize = false, Size = new Size(168, 44), Margin = new Padding(0, 0, 0, 10) };
+            button.AlignTextLeft = true; button.Quiet = true; AppTheme.Apply(button); UI.OrbitManagementLayout.Icon(button, target switch { NavigationTarget.Materials => "package", NavigationTarget.Products => "receipt", NavigationTarget.Tables => "armchair", NavigationTarget.Customers => "users", NavigationTarget.Loyalty => "wallet", _ => "settings" }); sidebar.Controls.Add(button); sidebar.Controls.SetChildIndex(button, sidebar.Controls.Count - 2);
+            ConfigureNavigation(button);
+            button.Click += async (_, _) => await Navigate(target);
+        }
+        var order=new[]{"Trang phiên","Danh mục nền","Khách hàng","Bàn / Khu vực","Menu / Công thức","Nguyên liệu / Tồn","Ưu đãi / Điểm","Thông tin hệ thống","Đăng xuất"};
+        for(var i=0;i<order.Length;i++){var item=sidebar.Controls.OfType<Button>().FirstOrDefault(b=>b.Text==order[i]);if(item is not null)sidebar.Controls.SetChildIndex(item,Math.Min(i+2,sidebar.Controls.Count-1));}
+        ArrangeNavigation();
         session.Revoked += SessionRevoked;
         navigation = new NavigationController(content, session, permissions);
         identityLabel.Text = $"{session.Identity.EmployeeName} · {session.Identity.Role}";
+        ((UI.OrbitSidebar)sidebar).Person.Text = session.Identity.EmployeeName;
+        ((UI.OrbitSidebar)sidebar).Role.Text = $"{(session.Identity.Role == "ADMIN" ? "Quản trị viên" : "Nhân viên")} · {session.Identity.Role}";
         catalogsButton.Visible = session.Identity.Role == "ADMIN" && catalogs is not null;
         Shown += async (_, _) => await Navigate(session.Identity.Role == "ADMIN" && catalogs is not null ? NavigationTarget.Catalogs : NavigationTarget.Home);
     }
+    internal void SetWorkspaceTitle(string caption) { breadcrumbLabel.Text = caption == "Nguyên liệu / Tồn" ? "Kho nguyên liệu  /  Tồn hiện tại" : "Quản lý / " + caption; }
     private async Task Navigate(NavigationTarget target)
     {
         if (navigation is null || session is null || navigating || loggingOut) return;
@@ -90,7 +111,7 @@ public partial class MainForm : Form
         homeButton.Enabled = catalogsButton.Enabled = systemButton.Enabled = false;
         try
         {
-            var changed = await navigation.NavigateAsync(target, () => target switch
+            var changed = await navigation.NavigateAsync(target, () => modules.TryGetValue(target, out var factory) ? factory() : target switch
             {
                 NavigationTarget.Home => new SessionHomeControl(session.Identity),
                 NavigationTarget.Catalogs => catalogs!(),
@@ -99,10 +120,10 @@ public partial class MainForm : Form
             if (!changed) return;
             if (!IsDisposed && !loggingOut)
             {
-                foreach (var button in new[] { homeButton, catalogsButton, systemButton })
-                { button.BackColor = AppTheme.Espresso; button.ForeColor = AppTheme.Muted; }
-                var selected = target switch { NavigationTarget.Home => homeButton, NavigationTarget.Catalogs => catalogsButton, _ => systemButton };
-                selected.BackColor = AppTheme.Selected; selected.ForeColor = AppTheme.Primary;
+                foreach (var button in sidebar.Controls.OfType<Button>().Where(b => b != logoutButton))
+                { button.BackColor = AppTheme.Espresso; button.ForeColor = AppTheme.Muted; if (button is UI.OrbitButton item) { item.NavigationSelected = false; item.Invalidate(); } }
+                var selected = sidebar.Controls.OfType<Button>().FirstOrDefault(b => b.Tag is NavigationTarget tagged && tagged == target) ?? (target switch { NavigationTarget.Home => homeButton, NavigationTarget.Catalogs => catalogsButton, _ => systemButton });
+                selected.BackColor = AppTheme.Selected; selected.ForeColor = AppTheme.Primary; if (selected is UI.OrbitButton selectedItem) { selectedItem.NavigationSelected = true; selectedItem.Invalidate(); } SetWorkspaceTitle(selected.Text);
             }
             if (target == NavigationTarget.SystemInfo && content.Controls.Count == 1 && content.Controls[0] is SystemInfoControl info)
             {
@@ -147,3 +168,12 @@ public partial class MainForm : Form
         base.Dispose(disposing);
     }
 }
+
+
+
+
+
+
+
+
+

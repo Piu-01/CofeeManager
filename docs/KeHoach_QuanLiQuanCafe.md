@@ -3,7 +3,7 @@
 **Người thực hiện:** Nguyễn Minh Phú, làm một mình.  
 **Công nghệ:** C# WinForms .NET 10.0 LTS, SQL Server.  
 **Thiết kế:** SQL xử lý nghiệp vụ dữ liệu; C# xử lý giao diện, xác thực và quyền thao tác.  
-**Phiên bản kế hoạch:** 3.2 — 08/10/2026. Hồ sơ task con nằm trong nhóm; duyệt cả bộ plan, đợt test và đợt debug riêng; giữ nguyên chi tiết T01–T32.
+**Phiên bản kế hoạch:** 3.3 — 18/10/2026. Bổ sung điều kiện bàn giao, vòng đời tài nguyên test và truy vết UX; giữ nhóm, thứ tự, phụ thuộc và 325 ID kiểm thử T01–T32. Không tự nâng trạng thái nghiệm thu từ việc cập nhật tài liệu.
 
 ## 1. Mục tiêu và phạm vi
 
@@ -119,7 +119,7 @@ Không dùng seed làm thay thế cho chức năng quản trị: mỗi phân h�
 | Chốt/chi lương | `sp_ChotBangLuong`, `sp_ChiLuong` — bổ sung; tính/snapshot/nguồn chi một lần | Duyệt khoản bổ sung và hiển thị | T26 |
 | Báo cáo | Query/procedure aggregate theo ngày và nguồn; phân trang | Filter, grid, chart | T28 |
 
-Tên procedure “bổ sung” là contract đích; không gọi trước khi migration của task đã được thực thi. Mỗi task triển khai SQL → integration test → DAL → BLL → UI. Không tạo toàn bộ procedure trước rồi bỏ quên kiểm thử từng phân hệ.
+Tên procedure “bổ sung” là contract đích; không gọi trước khi migration của task đã được thực thi. Mỗi task triển khai SQL → kiểm tra kỹ thuật contract tối thiểu trên SQL Server → DAL → BLL → UI; nghiệm thu integration thực hiện trong đợt test nhóm được duyệt theo mục 11. Không tạo toàn bộ procedure trước rồi bỏ quên kiểm thử từng phân hệ.
 
 ### 5.3. Tối ưu đúng chỗ
 
@@ -293,7 +293,7 @@ dùng quyết định. Việc sửa kỹ thuật không phải cho phép tự de
 
 ## 12. Kế hoạch triển khai và nghiệm thu theo task
 
-Thực hiện tuần tự **T01 → T32**, một người làm. Tất cả task ban đầu ở trạng thái **Chưa bắt đầu**; tài liệu này không xác nhận task hay kiểm thử đã hoàn tất. Không phân lịch theo tuần. Quy mô S/M/L diễn tả độ rộng công việc, không phải số người.
+Thực hiện tuần tự **T01 → T32**, một người làm. Trạng thái khởi tạo của task là **Chưa bắt đầu**; trạng thái hiện tại và giới hạn kế thừa được quản lý tại bảng dưới đây. Không phân lịch theo tuần. Quy mô S/M/L diễn tả độ rộng công việc, không phải số người.
 
 Mỗi task dưới đây có cùng mẫu: tên, mô tả, phạm vi, quy mô, phụ thuộc, đầu ra, kiểm thử và điều kiện hoàn tất. Mã kiểm thử dùng để ghi expected/actual và kết quả PASS/FAIL trong biên bản của task. Kiểm thử SQL chạy trên SQL Server thật, với DB test riêng.
 
@@ -341,7 +341,7 @@ chốt kỹ thuật và đã bàn giao Git theo yêu cầu “push đi”:commit
 `docs/tasks/g02-truy-cap-ung-dung-cau-hinh-nen/git-handoff.md`. Ma trận đối chiếu
 và biên bản tại `docs/tasks/g02-truy-cap-ung-dung-cau-hinh-nen/acceptance-matrix.md`
 và `report.md`. B01–B07/PKCS đã sửa/regressionPASS; Windowsidentity thật,
-setupOK/thoát/restart exe vàcleanup đềuPASS. Bộ plan chốt đầy đủ
+setupOK/thoát/restart exe và cleanup trong phạm vi biên bản cũ đều PASS; không có nghĩa mọi DB test hoặc Windows account trên máy đã được dọn. Bộ plan chốt đầy đủ
 các quyết định và subcase bắt buộc tại
 `docs/tasks/g02-truy-cap-ung-dung-cau-hinh-nen/requirements.md`, mục 5–6.
 Mỗi quyết định có phương án/lý do/tác động SQL/DAL/BLL/UI và kiểm chứng; không
@@ -352,6 +352,133 @@ migration chạy lại; rehash DB/race; thay đổi quyền trong phiên/logout/
 muộn; CRUD/biên/NULL/trùng/tìm tiếng Việt đủ 7 danh mục; mã hệ thống chưa có
 lịch sử; selector/PT010; số lượt đổi module cụ thể và kiểm tài nguyên; DPI150%
 và Designer round-trip có bằng chứng riêng. Subcase không là tùy chọn.
+
+### 12.1. Trạng thái hiện tại và nguyên tắc kế thừa
+
+Bảng này là chỉ mục trạng thái hiện tại tại ngày 18/10/2026. Các dòng tiến độ có
+ngày ở từng task và checkbox cũ là lịch sử, không dùng riêng để suy ra trạng thái
+bản source đang chạy. Biên bản phải chỉ rõ commit hoặc hash source, schema và bản build.
+
+| Phạm vi | Trạng thái và bằng chứng | Giới hạn |
+|---|---|---|
+| G01 / T01–T05 | Kế thừa 45/45 ID gốc PASS; xem `docs/tasks/g01-nen-tang-ky-thuat-du-lieu/report.md` | Không chạy lại chỉ vì thay cấu trúc tài liệu; kiểm tra bàn giao Git theo hồ sơ nhóm, không suy từ ghi chú chờ commit cũ |
+| G02 / T06–T08, bản nghiệm thu cũ | Kế thừa 27/27 ID gốc PASS ngày 17/10 và commit đã ghi ở trên | PASS của bản cũ không chứng nhận các thay đổi Orbit/config sau đó |
+| Thay đổi UI Orbit hiện tại | Theo dõi tại `docs/tasks/orbit-ui-refresh/` và hồ sơ bug T07 | Không tự đánh dấu ma trận GUI/DPI/Designer mới PASS từ ảnh mẫu hoặc kết quả cũ |
+| Development và cleanup 18/10 | Xem `development-handoff-results.md` trong G02 và `docs/bugs/project-environment-audit-20261018/report.md` | Đã xác minh service ba role, DB/config và cleanup; GUI login profile mới còn NOT RUN trong biên bản bàn giao |
+| G03 / T09–T13 | PASS nghiệm thu theo quyết định người dùng20/10/2026; xem `docs/tasks/g03-du-lieu-phuc-vu-ban-hang/acceptance-decision.md` và report.md | Chấp nhận ngoại lệ kiểm thử; không phải47/47cađãchạyPASS. Giữ kết quả thực tế và phần GUI chưa đủ bằng chứng; tích hợp G04 đích NOT RUN |
+| G04–G08 / T14–T32 | Chưa triển khai/nghiệm thu trong đợt G03 | Phần tích hợp POS/checkout đích vẫn NOT RUN |
+
+Không sửa hồi tố kết quả thật hoặc tick lại checklist cũ để khớp bảng. Bug và
+thay đổi mới ghi rõ phiên bản bị ảnh hưởng; chỉ regression phần cần thiết.
+
+### 12.2. Điều kiện bàn giao áp dụng cho từng nhóm
+
+Các điều kiện này bổ sung checklist gốc bằng subcase trong hồ sơ task sở hữu;
+không tạo vòng duyệt riêng cho từng task, không thay 325 ID và không tự cấp quyền
+chạy test. Đợt test/bug vẫn duyệt theo nhóm tại mục 11–13.
+
+**Bản chạy và dữ liệu dùng thử:** từ G02, bàn giao một đường chạy development
+cố định: đúng solution/startup project/profile, vị trí exe, SQL instance, tên DB
+và schema version; có thao tác F5 để người dùng tái lập. T06 sở hữu đăng nhập và
+tài khoản thử đủ ADMIN/CASH/STORE, T03/T05 sở hữu cấu hình và kết nối, T07 sở hữu
+màn đích đúng role. README chỉ cách xem/thiết lập mật khẩu riêng tại máy, không
+ghi bí mật vào repo/log/chat. Phân biệt dữ liệu hệ thống tối thiểu, seed demo và
+fixture test; không chạy lại seed trên DB đã dùng. G02 bàn giao danh mục thật,
+CASH/STORE có màn tạm ghi đúng phần chưa triển khai; không gọi là POS/kho hoàn chỉnh.
+Mỗi nhóm sau bổ sung kịch bản dùng thử chức năng mới vào cùng đường chạy, không
+bắt người dùng tìm DB fixture hoặc checkout tạm. Kết quả service không thay thế
+thao tác GUI; chưa thao tác phải ghi NOT RUN.
+
+**Vòng đời tài nguyên test — T05 sở hữu, mọi runner tuân thủ:** trước chạy ghi
+manifest gồm run ID, server, tên DB, marker, SQL/Windows principal, file cấu hình
+hoặc thư mục tạm do lượt chạy tạo. Tài nguyên ngoài repo phải có trong phạm vi
+được duyệt; ưu tiên SQL principal giới hạn thay vì tạo thêm Windows user. Mặc định
+dọn tài nguyên thuộc chính lượt chạy sau khi lưu bằng chứng, kể cả khi FAIL;
+giữ phục vụ điều tra phải được chỉ định và ghi danh sách, lý do, hạn giữ, cách dọn.
+Cleanup có allowlist tên cụ thể, xác minh ownership/marker và dependency; không
+DROP theo wildcard, không xóa tài nguyên sẵn có, không đổi SQL mode/registry/service
+để chạy test nếu chưa được duyệt. Nếu dọn thất bại, báo tài nguyên còn lại và lệnh
+khắc phục; không ghi cleanup PASS chỉ vì đã rollback data fixture. DB development
+và DB sử dụng không nằm trong danh sách cleanup test. Bàn giao nhóm ghi số lượng
+tài nguyên trước/tạo mới/đã dọn/còn giữ; không cần tạo một DB cho mỗi subcase nếu
+có thể cô lập dữ liệu và tái lập an toàn trên fixture của lượt chạy.
+
+**Bố cục và UX — T07 sở hữu mẫu chung, task màn hình sở hữu áp dụng:** dùng bộ
+Orbit tại `docs/ui/`, theo thứ tự đọc trong `AGENTS.md`; thay tham chiếu style cũ.
+Đối chiếu form/control thật với guide; HTML không là chứng cứ WinForms. Editor/login
+giới hạn chiều rộng theo nội dung, nhóm nhập liệu và thông báo rõ, hành động sát
+vùng nhập; không kéo giãn vài trường để lấp cửa sổ. Grid là vùng co giãn chính của
+màn danh sách; trạng thái rỗng/lỗi gọn và có hành động tiếp, không chiếm một khối
+trang trí lớn. Control nhập, tab, ngày/giờ, focus và validation phải đồng bộ.
+
+Plan UI phải chốt kích thước cửa sổ tối thiểu và cách thích ứng: full màn hình,
+cửa sổ thường, thu nhỏ và chia đôi màn hình. Ghi rõ desktop resolution, client size
+và DPI thực tế; kiểm 1280×720, 1366×768, DPI 100/125/150%, cùng chế độ chia đôi trên
+màn máy thử. Khi thiếu chỗ: thu menu/filter, xếp lại nhóm hoặc cuộn vùng nội dung;
+giữ hành động truy cập được, không cắt nhãn/nút hay chỉ chặn resize để bỏ ca khó.
+Trước mở rộng mẫu, kiểm một màn hiện có gồm danh sách/editor và các trạng thái;
+đến T16 đối chiếu thêm POS hoàn chỉnh trước khi áp dụng bố cục POS sang màn khác.
+Designer save/close/reopen, keyboard, tên Việt dài và empty/loading/error đều có
+bằng chứng riêng; không lấy một ảnh full màn hình thay toàn bộ ma trận.
+
+**Giới hạn và mốc dùng được:** cuối G04 (T17–T18) có mốc bán hàng có thể demo;
+T17 là mốc demo POS/checkout/tra cứu/in, chưa phải bản đủ vận hành mọi phân hệ.
+Quản lý tài khoản đầy đủ vẫn thuộc T24: ADMIN cấp/reset/khóa tài khoản, chức vụ
+không tự quyết định role; không có public signup. Trước T24, ba account demo giúp
+thử role, không thay chức năng cấp tài khoản. T30 hoàn thiện cài sạch/backup/restore;
+T31 nghiệm thu tích hợp và T32 bàn giao publish mới là mốc hoàn chỉnh. Quy trình
+khôi phục quyền admin đã nêu tại mục 10 phải được chốt trong hướng dẫn operator
+T30; không mở lại bootstrap hoặc tự thêm chức năng recovery chưa được duyệt.
+
+### 12.3. Trách nhiệm xuyên task và hồi quy bắt buộc
+
+| Chủ sở hữu | Đầu ra và nơi tích hợp sau | Cách nghiệm thu |
+|---|---|---|
+| T09–T10 | Tồn/công thức/giá; T14–T16 dùng khi bán | T09-K09, T10-K04/K06–K08 ghi rõ kiểm bằng baseline/fixture ở G03; G04 regression với checkout đích. Không gọi procedure tương lai khi chưa có migration |
+| T07 | Mẫu shell và màn bắt đầu theo role | G02 kiểm màn tạm đúng scope; T16 thay điểm vào CASH bằng POS; T20–T23 thay điểm vào STORE bằng tồn/chứng từ/nợ được phép |
+| T28 | Tổng quan ADMIN dùng aggregate thật, cùng báo cáo | T07 giữ vị trí/điều hướng; T28 cung cấp doanh thu hôm nay, đơn mở, nợ và trạng thái rỗng/lỗi; không điền số giả trước khi có nguồn |
+| T18 | Trạng thái giao và cách xem lại | Plan T18 chốt lưu lịch sử chuyển trạng thái hay chỉ trạng thái hiện tại. T31-K05 chỉ yêu cầu lịch sử bền vững khi contract đã duyệt có lưu; nếu chỉ hiện trạng, công khai giới hạn và đối chiếu lại UX trước triển khai, không giả dữ liệu lịch sử |
+| T19–T23, T26 | Ghi nhiều bảng và đối chiếu sau timeout | Plan chốt mã nguồn/request ổn định, truy vấn đối chiếu và chống ghi lặp; kiểm timeout trước/sau commit tại task sở hữu rồi regression trong T31 |
+| T30–T32 | Cài sạch, phục hồi và publish | Kế thừa quickstart development nhưng kiểm lại đúng package, quyền và DB đích; không coi F5 PASS là publish PASS |
+
+Giữ thứ tự/phụ thuộc gốc bên dưới. Trong plan phân biệt dữ liệu/migration đã tồn tại
+với contract tương lai. Nếu ca kiểm cần đầu ra task sau, phải ghi phần đã kiểm và
+phần chưa kiểm, nối tới subcase tích hợp bắt buộc; không bỏ ca hoặc đánh dấu toàn
+ca PASS từ fixture. Blocker thực sự vẫn xử lý theo quy trình nhóm đã chốt.
+
+### 12.4. Truy vết nghiệm thu UX
+
+Đối chiếu `docs/UX_QuanLiQuanCafe.md`, mục 18. Bảng dưới phân công đủ 44 UX ID;
+task đầu tiên sở hữu ca, các task sau cung cấp đầu vào hoặc regression tích hợp.
+Plan nhóm phải ánh xạ tới Txx-Kxx/subcase, ghi dataset, thao tác và expected/actual;
+report nhóm liên kết biên bản. Một bằng chứng phù hợp có thể dùng cho nhiều ID,
+không nhân bản lượt chạy chỉ để tăng số PASS. T31 kiểm mức bao phủ và regression
+theo ảnh hưởng, không mặc định chạy lại mọi subcase đã PASS trên source tương thích.
+
+| UX ID | Task sở hữu / tích hợp |
+|---|---|
+| UX-K01–K04 | T06; T07/T24 tích hợp điều hướng, nháp và thay đổi account |
+| UX-K05–K08 | T14; T11/T16 tích hợp bàn và POS |
+| UX-K09–K10 | T12–T13; T16 tích hợp |
+| UX-K11–K18 | T15–T16; T13 cung cấp preview |
+| UX-K19 | T17; T16 tích hợp kết quả chốt |
+| UX-K20 | T16 |
+| UX-K21 | T14; T16 tích hợp nhập liệu |
+| UX-K22 | T18 |
+| UX-K23 | T17 |
+| UX-K24–K26 | T20; T09 cung cấp đơn vị/tồn |
+| UX-K27 | T21 |
+| UX-K28–K30 | T22 |
+| UX-K31 | T23 |
+| UX-K32 | T19; T20/T23/T26 tích hợp nguồn hệ thống |
+| UX-K33 | T13 |
+| UX-K34 | T25; T26 kiểm trước chốt |
+| UX-K35–K36 | T26 |
+| UX-K37 | T28 |
+| UX-K38 | T27 |
+| UX-K39–K42 | T07 sở hữu mẫu; mọi task UI áp dụng cho màn của mình; T16/T28/T31 tích hợp |
+| UX-K43 | T16; T31 regression |
+| UX-K44 | T30; T32 kiểm bản publish |
 
 ### T01 — Xác nhận môi trường .NET 10 và tạo repository đúng thư mục
 
@@ -546,7 +673,7 @@ Cấu trúc bảng/cột/procedure/lock phải được đề xuất trong plan,
 G02 chỉ làm shell và các màn T06–T08. CASH/STORE có màn bắt đầu hợp lệ, thể hiện
 chức năng chưa triển khai; không giao dịch POS/kho giả hoặc dựng toàn bộ module
 tương lai. Mẫu chung loading/rỗng/lỗi/xung đột/kết quả chưa biết áp dụng khi màn
-hiện có cần. AppTheme theo UI Style Guide Espresso/Kem/Caramel. Plan bắt buộc
+hiện có cần. AppTheme theo bộ Orbit tại `docs/ui/` và tiêu chí bố cục mục 12.2. Plan bắt buộc
 Designer save/close/reopen, kiểm bản sau Save, keyboard/focus và hai kích thước
 1280×720/1366×768 tại DPI100/125/150%; không giảm ca K04 vì có subcase bổ sung.
 
@@ -820,7 +947,7 @@ tạo checkout UI T15. Đây là yêu cầu cần thiết kế, chưa có select
 | Phạm vi | Danh sách/filter/detail/PrintDocument/PrintPreview, tài chính read-only sau chốt. |
 | Quy mô | M — hậu giao dịch |
 | Phụ thuộc | T16 |
-| Đầu ra | Tra cứu, xem preview và in lại; hoàn thành mốc MVP. |
+| Đầu ra | Tra cứu, xem preview và in lại; hoàn thành mốc demo bán hàng theo mục 12.2, chưa là bản vận hành đầy đủ. |
 
 **Kiểm thử bắt buộc:**
 
@@ -1219,6 +1346,27 @@ tạo checkout UI T15. Đây là yêu cầu cần thiết kế, chưa có select
 
 **Điều kiện hoàn tất:** Có đủ đầu ra; các ca kiểm thử trong phạm vi đã chạy và PASS, có dữ liệu thử và kết quả đối chiếu; không còn lỗi trọng yếu của task. Lưu commit cùng biên bản kiểm thử. Nếu thay SQL, migration phải chạy được trên phiên bản trước và bảo toàn dữ liệu cũ ngoài thay đổi đã mô tả.
 
+### Điều kiện chốt G08 — gỡ đăng nhập test ở cuối T32
+
+**Bổ sung theo yêu cầu người dùng ngày 22/10/2026:** thực hiện ở cuối G08, tại bước
+dọn bản bàn giao T32 và trước khi chốt PASS G08. Đây là điều kiện bàn giao bổ sung,
+không thay thứ tự/phụ thuộc T01–T32 hoặc325ID kiểm thử gốc.
+
+- [ ] Gỡ hoàn toàn nút “Bỏ qua đăng nhập — TEST”, helper tạo phiên không xác thực,
+  hook trong Program/ApplicationSessionContext/LoginForm và launcher bật bypass.
+  Không chỉ ẩn nút hoặc dựa vào `#if DEBUG`; source bàn giao phải hết đường bypass.
+- [ ] Gỡ cờ/cấu hình/hướng dẫn bật bypass khỏi cấu hình chạy và tài liệu vận hành;
+  giữ hồ sơ lịch sử kiểm thử. Danh sách gỡ chi tiết:
+  `docs/tasks/temporary-test-login/README.md`.
+- [ ] Build Debug/Release và kiểm bản publish cuối: không có nút/helper/đường vào
+  bỏ qua đăng nhập, kể cả khi còn biến môi trường test từ lần chạy trước.
+- [ ] Regression đăng nhập thường, sai mật khẩu, logout, khóa/thu hồi phiên và quyền;
+  lưu bằng chứng đã gỡ và kết quả kiểm tra trong hồ sơ T32/báo cáo G08.
+
+**G08 không được PASS nếu chưa gỡ tiện ích hoặc chưa có bằng chứng kiểm lại sau gỡ**,
+kể cả các ca nghiệm thu khác đã đạt. Hiện chưa thực hiện bước gỡ; tiện ích còn phục vụ
+test các nhóm trước G08, không tự đánh dấu checklist này hoàn tất.
+
 ## 13. Cách dùng kế hoạch và bàn giao
 
 Khi bắt đầu task, ghi trạng thái Đang làm và phiên bản schema/commit. Khi nghiệm thu, ghi Hoàn tất cùng đường dẫn biên bản test; lỗi chưa xử lý giữ task ở Đang làm. Mỗi yêu cầu giao Codex dùng ID task, phạm vi, đầu ra và các mã kiểm thử tương ứng. Yêu cầu mới phải cập nhật phạm vi và test trước khi mở rộng code.
@@ -1249,3 +1397,5 @@ Bản bàn giao T32 gồm source, baseline SQL, migrations theo thứ tự, dữ
 - [SQL Server — Sequence](https://learn.microsoft.com/en-us/sql/relational-databases/sequence-numbers/sequence-numbers)
 - [SQL Server — Table-valued parameters](https://learn.microsoft.com/en-us/sql/relational-databases/tables/use-table-valued-parameters-database-engine)
 - [SQL Server — Index design guide](https://learn.microsoft.com/en-us/sql/relational-databases/sql-server-index-design-guide)
+
+

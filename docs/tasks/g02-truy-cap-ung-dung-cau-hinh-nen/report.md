@@ -1,5 +1,11 @@
 # G02 — Kết quả nghiệm thu và bàn giao kỹ thuật
 
+**Điều tra bổ sung 18/10/2026:** người dùng chưa chạy được luồng F5 với DB/tài
+khoản sử dụng được; phát hiện tác động DB test/tài khoản Windows chưa được bàn
+giao rõ. Xem [báo cáo điều tra](../../bugs/project-environment-audit-20261018/report.md).
+Kết quả PASS bên dưới là lịch sử kiểm chứng của bản/fixture ghi kèm, không thay
+bằng chứng chạy development hiện tại. Lượt điều tra chỉ đọc, chưa sửa hay dọn dữ liệu.
+
 ## Kết luận nghiệm thu cuối — 17/10/2026
 
 **G02 đủ điều kiện chốt kỹ thuật: 27/27 ID gốc PASS** (T06:10/10,
@@ -237,3 +243,7 @@ Mỗi subcase có expected/actual/status/evidence riêng theo ba plan đã duy�
 test lần lượt T06→T07→T08, giữ source/migration cố định. Biên bản tại task,
 báo cáo chung kể cả FAIL/BLOCKED. Bug ghi task sở hữu, gom đợt để duyệt debug/
 regression. Không đánh dấu Hoàn tất từ build/smoke hoặc số test tự động.
+
+Bổ sung 18/10/2026: đã provision DB development cố định, profile F5 và ba account. Xem [kết quả bàn giao](development-handoff-results.md); không thay thế nghiệm thu G02/UI hoặc xử lý 112 DB test/Windows user cũ.
+
+18/10/2026 — bàn giao Login thường, bỏ chọn account; thông tin mock có tại database/demo/README.md và accounts.json. Xem development-login-ui-results.md, mục phương án cuối. Ba role service PASS; GUI bản cuối NOT RUN.

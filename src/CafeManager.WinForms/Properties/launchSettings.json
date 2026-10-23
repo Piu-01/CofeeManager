@@ -1,0 +1,17 @@
+{
+  "profiles": {
+    "CoffeeManager.Development": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "CAFEMANAGER_USE_DEVELOPMENT": "1"
+      }
+    },
+    "CoffeeManager.Test": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "CAFEMANAGER_TEST_LOGIN": "1",
+        "CAFEMANAGER_TEST_MANIFEST": "docs/tasks/g03-du-lieu-phuc-vu-ban-hang/runs/manual-g03-20261019/manifest.json"
+      }
+    }
+  }
+}

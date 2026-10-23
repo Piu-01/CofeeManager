@@ -126,3 +126,39 @@ nâng PASS theo nhãn probe. Các lượt trước mở file ngoài project là 
 khiển IDE, không phải nguyên nhân B04/B05. Bug được xác nhận sau khi mở đúng
 solution và chạy bản clone sauSave. Ca setup clean còn timeout trong harness
 MessageBox, DB đãCompleted; chưa đủ bằng chứng để thêm bug runtime setup.
+
+## Điều tra bổ sung 18/10/2026 — chưa sửa
+
+Người dùng báo không chạy được luồng đăng nhập từ Visual Studio và tác động môi
+trường ngoài ý muốn. Hồ sơ điều tra chỉ đọc, mapping từng finding về task và hướng
+khắc phục: [báo cáo toàn đợt](../../../bugs/project-environment-audit-20261018/report.md).
+
+PASS cũ giữ làm lịch sử của bản/fixture đã nghiệm thu; không thay bằng chứng chạy
+F5 hiện tại. Đợt này không chạy test hoặc sửa source/migration/configuration.
+Các thao tác khắc phục/xóa DB hoặc tài khoản Windows chưa được thực hiện.
+
+## Bổ sung 18/10/2026 — nhận tài khoản demo ngay trên Login
+
+Người dùng duyệt sau phản ánh không muốn dùng terminal để tìm tài khoản.
+Nguyên nhân: tool DevelopmentSetup chỉ hiển thị mật khẩu qua console; Login không
+có đường nhận credential demo đã provision. Ba account đã tồn tại, không phải thiếu seed.
+
+Hướng sửa đã triển khai: Login development có ba lựa chọn vai trò, đọc đúng ba
+mật khẩu ứng dụng từ DPAPI CurrentUser và điền vào form; người dùng bấm Đăng nhập
+qua AuthService như cũ. Không tự đăng nhập, không reset password, không ghi SQL,
+không tạo public signup hay thay module account T24. Cờ chỉ được truyền khi Program
+thực sự chọn DevelopmentConnection; env connection explicit không bật lựa chọn demo.
+Thiếu/hỏng DPAPI báo lỗi tại Login, không xuất exception/secret. Mật khẩu mặc định che.
+
+File: Configuration/DevelopmentAccounts.cs, Program.cs, ApplicationSessionContext.cs,
+Forms/LoginForm.cs, README.md. Kiểm tra compile Debug/Release ghi tại
+`development-login-ui-results.md` ở thư mục G02. GUI chưa chạy không coi PASS.
+
+## Thay thế phương án chọn account — 18/10/2026
+
+Người dùng bác bỏ nút chọn vai trò, duyệt bàn giao Login thông thường và file mock
+có tên/mật khẩu rõ ràng. Phương án GUI chọn account ở mục trước được gỡ bỏ hoàn toàn.
+Đã tạo database/demo/accounts.json và README người dùng; đồng bộ hash đúng ba account
+trong DB development có marker bằng lệnh operator --apply-mock-accounts. Không đổi baseline,
+migration, BLL/DAL, role hoặc dữ liệu nghiệp vụ. Ngoại lệ mật khẩu demo công khai được
+người dùng yêu cầu rõ; bí mật SQL/runtime vẫn DPAPI, không xuất ra file mock.

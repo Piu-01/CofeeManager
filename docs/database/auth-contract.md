@@ -64,3 +64,23 @@ Không cấp SELECT toàn TAIKHOAN, DML account/state hoặc EXECUTE bootstrap c
 runtime. SQL51401–51407 dịch thông báo thân thiện; không đưa rawSQL/hash ra UI.
 Mô hình này không chống người nắm credential DB gọi procedure giả actor; giới
 hạn đã chốt trong plan, không có API server. Recovery admin là scope riêng.
+
+## Development cố định (18/10/2026)
+
+Ngoại lệ development được duyệt: `Initialize-Development.ps1` dùng Windows operator
+để provision SQL login runtime `CoffeeManager_Development_Runtime` vào đúng DB
+`CoffeeManager_Development`, chỉ role `CafeManagerApp`; không tạo Windows account.
+SQL login setup riêng tạm thời gọi BootstrapService/contract hiện có rồi bị thu hồi.
+Chỉ công cụ provision development kích hoạt hai placeholder CASH/STORE chính xác;
+bootstrap của ứng dụng thông thường không tự bật chúng. Không reset account đã active.
+Không đổi migration hoặc contract đăng nhập. Cấu hình và bí mật lưu DPAPI CurrentUser;
+profile F5 không chứa credential. Xem README và biên bản development-handoff-results.md
+trong hồ sơ G02. Quy trình `--setup` thông thường giữ nguyên.
+
+## Ngoại lệ mock data được người dùng duyệt 18/10/2026
+
+Ba mật khẩu ứng dụng demo công khai nằm tại database/demo/accounts.json, hướng dẫn
+ở database/demo/README.md; operator đồng bộ hash qua DevelopmentSetup --apply-mock-accounts.
+Chỉ DB CoffeeManager_Development có marker, không dùng cho cài đặt thật. Login nhập
+username/password bình thường; đã bỏ nút chọn account. SQL credential vẫn ngẫu nhiên
+và DPAPI. Baseline/migrations và bootstrap production không thay đổi.

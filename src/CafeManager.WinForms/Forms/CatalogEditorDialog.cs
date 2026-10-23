@@ -24,14 +24,15 @@ public partial class CatalogEditorDialog : Form, IUnsavedChanges
     public void DiscardChanges() { saved = true; }
     public CatalogEditorDialog()
     {
-        InitializeComponent(); AppTheme.Apply(this); AppTheme.PrimaryButton(saveButton);
-        AppTheme.Status(statusLabel);
-        statusLabel.Visible = false;
-        statusLabel.TextChanged += (_, _) => statusLabel.Visible = !string.IsNullOrWhiteSpace(statusLabel.Text);
-        foreach (Control field in fields.Controls) field.Margin = new Padding(4, 8, 4, 8);
-        foreach (var input in new[] { codeInput, nameInput, phoneInput, ratioInput, allowanceInput, factorInput }) OrbitField.Wrap(input);
+        InitializeComponent();
+        foreach (Control field in fields.Controls)
+        {
+            field.Margin = new Padding(4, 8, 4, 8);
+            OrbitManagementTheme.DialogInput(field);
+            if (field is Label) { field.Font = OrbitManagementTheme.Table; field.ForeColor = OrbitManagementTheme.Muted; field.Anchor = AnchorStyles.Left; }
+        }
+        foreach (var input in new Control[] { codeInput, nameInput, phoneInput, ratioInput, allowanceInput, factorInput, typeInput }) OrbitField.Wrap(input, true);
         OrbitFieldLayout.Attach(fields);
-        Controls.Add(new OrbitContentHost(layout, 640, fitHeight: true, scrollBody: fields));
         initial = Snapshot();
     }
     public CatalogEditorDialog(CatalogService service, SessionContext session, CatalogKind kind, CatalogRow? row) : this()
@@ -147,7 +148,7 @@ public partial class CatalogEditorDialog : Form, IUnsavedChanges
                 statusLabel.Text = "Dữ liệu DB khác nháp. Đối chiếu đã xong; chọn Hủy để rời hoặc tải lại bản hiện tại.";
                 unknown = null; return;
             }
-            if (original is not null && MessageBox.Show(this, "Bỏ nháp và tải lại dữ liệu hiện tại?", "Tải lại", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (original is not null && OrbitConfirmationDialog.Show(this, "Bỏ nháp và tải lại dữ liệu hiện tại?", "Tải lại", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 var row = await service.GetAsync(session, kind, original.Code);
                 if (row is null) { statusLabel.Text = "Bản ghi đã bị xóa. Chọn Hủy để rời."; saveButton.Visible = false; }
@@ -164,8 +165,10 @@ public partial class CatalogEditorDialog : Form, IUnsavedChanges
     {
         if (session?.IsRevoked == true) { base.OnFormClosing(e); return; }
         if (IsWriting) { e.Cancel = true; statusLabel.Text = "Chờ/đối chiếu kết quả ghi trước khi đóng."; }
-        else if (!saved && HasUnsavedChanges && MessageBox.Show(this, "Bỏ nháp danh mục?", "Chưa lưu", MessageBoxButtons.YesNo) != DialogResult.Yes) e.Cancel = true;
+        else if (!saved && HasUnsavedChanges && OrbitConfirmationDialog.Show(this, "Bỏ nháp danh mục?", "Chưa lưu", MessageBoxButtons.YesNo) != DialogResult.Yes) e.Cancel = true;
         base.OnFormClosing(e);
     }
+    protected override void OnShown(EventArgs e) { base.OnShown(e); layout.FitToContent(this); }
     protected override void Dispose(bool disposing) { if (disposing) errors?.Dispose(); base.Dispose(disposing); }
 }
+

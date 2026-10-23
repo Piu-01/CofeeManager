@@ -76,3 +76,13 @@ toàn runner 10/10 subcase PASS. Phần điều tra ban đầu phía dưới gi�
   dispose đúng một lần, giữ lỗi gốc và lưu danh sách mã trước cleanup.
 - Regression: K03 trên DB mới, hai session chồng lấn, đủ 100 mã duy nhất/đúng
   format/không va seed; cleanup không có exception. Không đổi procedure cấp mã.
+
+## Điều tra bổ sung 18/10/2026 — chưa sửa
+
+Người dùng báo không chạy được luồng đăng nhập từ Visual Studio và tác động môi
+trường ngoài ý muốn. Hồ sơ điều tra chỉ đọc, mapping từng finding về task và hướng
+khắc phục: [báo cáo toàn đợt](../../../bugs/project-environment-audit-20261018/report.md).
+
+PASS cũ giữ làm lịch sử của bản/fixture đã nghiệm thu; không thay bằng chứng chạy
+F5 hiện tại. Đợt này không chạy test hoặc sửa source/migration/configuration.
+Các thao tác khắc phục/xóa DB hoặc tài khoản Windows chưa được thực hiện.

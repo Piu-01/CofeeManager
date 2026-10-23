@@ -1,0 +1,58 @@
+{
+  "colors": {
+    "background": "#100E15",
+    "sidebar": "#15111B",
+    "surface": "#1C1823",
+    "text": "#FFF4E7",
+    "muted": "#C3B6CD",
+    "border": "#3C3146",
+    "caramel": "#FFD09A",
+    "lilac": "#D0BEFF",
+    "selected": "#342820"
+  },
+  "font": {
+    "family": "Segoe UI, Arial, sans-serif",
+    "bodyPx": 14,
+    "tablePx": 12,
+    "titlePx": 26,
+    "tableHeaderPx": 10
+  },
+  "layout": {
+    "referenceViewport": {
+      "width": 1366,
+      "height": 768
+    },
+    "sidebarPx": 200,
+    "topbarPx": 50,
+    "contentPaddingPx": [
+      22,
+      26,
+      16
+    ],
+    "tableRowsPx": {
+      "inventory": 46,
+      "menu": 46,
+      "areas": 28,
+      "customers": 34,
+      "promotions": 36,
+      "ranks": 33,
+      "methods": 33
+    },
+    "cardHeightPx": 142,
+    "cardGapPx": 12
+  },
+  "radiusPx": {
+    "panel": 12,
+    "button": 8
+  },
+  "motionMs": {
+    "hover": 160,
+    "press": 55,
+    "rowReveal": 180,
+    "panelEnter": 240
+  },
+  "stardust": {
+    "enabledOnTheseScreens": false,
+    "rule": "Only payment confirmation or explicitly designated buttons."
+  }
+}

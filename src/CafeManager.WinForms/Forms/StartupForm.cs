@@ -5,6 +5,7 @@ namespace CafeManager.WinForms.Forms;
 public partial class StartupForm : Form
 {
     private readonly TableStatusService? service;
+    private readonly Business.Security.SessionContext? session;
     private CancellationTokenSource? loadCancellation;
     private int requestVersion;
 
@@ -28,11 +29,11 @@ public partial class StartupForm : Form
         UpdateEmptyStateSize();
     }
 
-    public StartupForm(TableStatusService? service, string? configurationError) : this()
+    public StartupForm(TableStatusService? service, string? configurationError, Business.Security.SessionContext? session = null) : this()
     {
-        this.service = service;
+        this.service = service; this.session = session;
         statusLabel.Text = configurationError ?? "Sẵn sàng tải trạng thái bàn (mẫu nền G01, chưa đăng nhập).";
-        loadButton.Enabled = service is not null;
+        loadButton.Enabled = service is not null && session is not null;
         SetContentState(service is null
             ? "Chưa kết nối dữ liệu\r\n\r\nThiết lập kết nối bằng tài khoản ứng dụng riêng để xem danh sách bàn."
             : "Chưa tải dữ liệu\r\n\r\nChọn khu vực hoặc để trống, rồi nhấn Tải trạng thái bàn.");
@@ -69,7 +70,7 @@ public partial class StartupForm : Form
 
     private async void LoadButton_Click(object? sender, EventArgs e)
     {
-        if (service is null) return;
+        if (service is null || session is null) return;
         if (areaInput.Text.Trim().Length > 5)
         {
             validation.SetError(areaInput, "Mã khu vực tối đa 5 ký tự.");
@@ -87,7 +88,7 @@ public partial class StartupForm : Form
         SetContentState("Đang tải danh sách bàn…\r\n\r\nBạn có thể hủy tải; dữ liệu cũ được giữ nguyên.");
         try
         {
-            var result = await service.LoadAsync(areaInput.Text, cancellation.Token);
+            var result = await service.LoadAsync(session, areaInput.Text, cancellation.Token);
             if (IsDisposed || Disposing || version != requestVersion) return;
             if (cancellation.IsCancellationRequested)
             {
@@ -146,3 +147,4 @@ public partial class StartupForm : Form
         if (!e.Cancel) { ++requestVersion; loadCancellation?.Cancel(); }
     }
 }
+

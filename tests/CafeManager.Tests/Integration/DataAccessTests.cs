@@ -61,14 +61,14 @@ public sealed class DataAccessTests(TestDatabaseFixture fixture)
     [Trait("Case", "T05-K03")]
     public async Task EmptyResultsAreDifferentFromConnectionFailure()
     {
-        var service = new TableStatusService(new TableStatusRepository(fixture.AppFactory()));
-        var empty = await service.LoadAsync("ZZ999", default);
-        Assert.Null(empty.Error); Assert.Empty(empty.Rows!);
+        // T05 fixture chỉ có migration001; kiểm DAL, quyền phiên được kiểm ở G03/T11.
+        var repository = new TableStatusRepository(fixture.AppFactory());
+        var empty = await repository.GetAsync("ZZ999", default);
+        Assert.Empty(empty);
         var broken = new SqlConnectionStringBuilder(fixture.ConnectionString)
         { DataSource = "tcp:127.0.0.1,1", ConnectTimeout = 1, Pooling = false };
-        var failure = await new TableStatusService(new TableStatusRepository(new ConnectionFactory(broken.ConnectionString)))
-            .LoadAsync(null, default);
-        Assert.Null(failure.Rows); Assert.NotNull(failure.Error);
+        var failure = await Assert.ThrowsAsync<DataAccessException>(() => new TableStatusRepository(new ConnectionFactory(broken.ConnectionString)).GetAsync(null, default));
+        Assert.NotNull(failure.Error);
     }
 
     [Theory]

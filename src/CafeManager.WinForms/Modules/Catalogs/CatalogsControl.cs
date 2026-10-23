@@ -14,16 +14,13 @@ public partial class CatalogsControl : UserControl, IUnsavedChanges
     private readonly CancellationTokenSource lifetime = new();
     private CancellationTokenSource? loading;
     private int generation;
-    private int skip;
+    private int skip, rowCount, dataSkip;
+    private OrbitListWorkspace management = null!;
     private bool writing;
     private CatalogRow? unknownDelete;
     private CatalogEditorDialog? editor;
-    private readonly ComboBox catalogPicker = new() { DropDownStyle = ComboBoxStyle.DropDownList, Dock = DockStyle.Top, AccessibleName = "Chọn danh mục", Visible = false };
-    private readonly Panel compactWorkspace = new() { Dock = DockStyle.Fill, Visible = false };
-    private bool compactCatalog;
-    private readonly Label emptyState = new()
+    private readonly OrbitEmptyState emptyState = new()
     {
-        Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleCenter,
         AccessibleName = "Danh mục không có dữ liệu", Visible = false
     };
     private CatalogKind Kind => (CatalogKind)Math.Max(0, tabs.SelectedIndex);
@@ -32,56 +29,27 @@ public partial class CatalogsControl : UserControl, IUnsavedChanges
     public void DiscardChanges() => editor?.DiscardChanges();
     public CatalogsControl()
     {
-        InitializeComponent(); AppTheme.Apply(this); AppTheme.PrimaryButton(addButton);
-        titleLabel.BackColor = subtitleLabel.BackColor = Color.Transparent;
-        subtitleLabel.ForeColor = AppTheme.Muted; AppTheme.Status(statusLabel);
+        InitializeComponent();
         allowanceColumn.DefaultCellStyle.Alignment = ratioColumn.DefaultCellStyle.Alignment = factorColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-        tabs.SelectedIndexChanged += TabChanged;
-        grid.SelectionChanged += (_, _) => UpdateActions();
-        AppTheme.Apply(emptyState); emptyState.ForeColor = AppTheme.Muted;
-        emptyState.BackColor = AppTheme.Background;
-        catalogPicker.Items.AddRange(tabs.TabPages.Cast<TabPage>().Select(page => (object)page.Text).ToArray());
-        catalogPicker.SelectedIndex = tabs.SelectedIndex;
-        catalogPicker.SelectedIndexChanged += (_, _) => { if (catalogPicker.SelectedIndex >= 0) tabs.SelectedIndex = catalogPicker.SelectedIndex; };
-        tabs.EnabledChanged += (_, _) => catalogPicker.Enabled = tabs.Enabled;
-        layout.Controls.Remove(tabs);
-        var workspace = new Panel { Dock = DockStyle.Fill, Margin = Padding.Empty };
-        workspace.Controls.Add(tabs); workspace.Controls.Add(compactWorkspace); workspace.Controls.Add(catalogPicker);
-        layout.Controls.Add(workspace, 0, 2);
-        AppTheme.Apply(catalogPicker); compactWorkspace.BackColor = AppTheme.Background;
-        workspace.SizeChanged += (_, _) =>
-        {
-            compactCatalog = workspace.Width * 96F / DeviceDpi < 780;
-            tabs.Visible = !compactCatalog; catalogPicker.Visible = compactWorkspace.Visible = compactCatalog;
-            subtitleLabel.Visible = !compactCatalog;
-            heading.Padding = compactCatalog ? new Padding(8, 4, 8, 4) : new Padding(12, 6, 12, 6);
-            heading.Margin = compactCatalog ? new Padding(0, 0, 0, 4) : new Padding(0, 0, 0, 8);
-            AttachWorkspace();
-        };
+        tabs.SelectedIndexChanged += TabChanged; grid.SelectionChanged += (_, _) => UpdateActions();
+        searchInput.KeyDown += (_, e) => { if (e.KeyCode == Keys.Enter) { e.SuppressKeyPress = true; Search_Click(searchInput, EventArgs.Empty); } };
+        management.Body.SizeChanged += (_, _) => PositionEmpty(); UpdateActions();
     }
     public CatalogsControl(CatalogService service, SessionContext session) : this()
     { this.service = service; this.session = session; Load += async (_, _) => await RefreshRows(); }
     private async void TabChanged(object? sender, EventArgs e)
     {
         if (IsWriting || loading is not null) return;
-        catalogPicker.SelectedIndex = tabs.SelectedIndex;
-        AttachWorkspace(); grid.DataSource = null; skip = 0; await RefreshRows();
+        grid.DataSource = null; skip = 0; await RefreshRows();
     }
-    private void AttachWorkspace()
-    {
-        var parent = compactCatalog ? compactWorkspace : (Control?)tabs.SelectedTab;
-        if (parent is null) return;
-        if (grid.Parent != parent) parent.Controls.Add(grid);
-        if (emptyState.Parent != parent) parent.Controls.Add(emptyState);
-        if (emptyState.Visible) emptyState.BringToFront(); else grid.BringToFront();
-    }
+    private void PositionEmpty() => emptyState.SetBounds(0, grid.ColumnHeadersHeight, management.Body.Width, Math.Max(0, management.Body.Height - grid.ColumnHeadersHeight));
     private void UpdateActions()
     {
         var available = loading is null && !IsWriting && service is not null;
         addButton.Enabled = available; editButton.Enabled = available && grid.CurrentRow?.DataBoundItem is CatalogRow;
         deleteButton.Enabled = editButton.Enabled && !(Kind == CatalogKind.ExpenseCategory && grid.CurrentRow?.DataBoundItem is CatalogRow r && CatalogService.IsSystemExpense(r.Code));
         tabs.Enabled = searchInput.Enabled = searchButton.Enabled = previousButton.Enabled = nextButton.Enabled = available;
-        previousButton.Enabled &= skip > 0;
+        previousButton.Enabled &= skip > 0; nextButton.Enabled &= rowCount == 50;
         reloadButton.Enabled = loading is null && !writing && editor is null && service is not null;
     }
     private async Task RefreshRows()
@@ -107,6 +75,9 @@ public partial class CatalogsControl : UserControl, IUnsavedChanges
             startColumn.Visible = endColumn.Visible = kind == CatalogKind.Shift;
             typeColumn.Visible = kind == CatalogKind.ExpenseCategory; supportedColumn.Visible = kind == CatalogKind.PaymentMethod;
             OperationStatePresenter.Show(statusLabel, rows.Count == 0 ? ModuleState.Empty : ModuleState.Saved, $"Trang {skip / 50 + 1} · {rows.Count} dòng · {DateTime.Now:HH:mm}.");
+            rowCount=rows.Count;dataSkip=skip;
+            var noun=kind switch{CatalogKind.ProductCategory=>"danh mục sản phẩm",CatalogKind.Supplier=>"nhà cung cấp",CatalogKind.PaymentMethod=>"phương thức",CatalogKind.DeliveryPartner=>"đối tác",CatalogKind.ExpenseCategory=>"loại thu / chi",CatalogKind.Position=>"chức vụ",_=>"ca làm"};
+            management.Pagination.SetServerPage(skip/50,rows.Count,50,noun);
             ShowEmptyState(rows.Count == 0);
         }
         catch (OperationCanceledException) when (request.IsCancellationRequested) { }
@@ -114,6 +85,7 @@ public partial class CatalogsControl : UserControl, IUnsavedChanges
         {
             if (!IsDisposed && version == generation) OperationStatePresenter.Show(statusLabel, ModuleState.Error,
                 ex is CafeManager.DataAccess.DataAccessException d ? d.Error.Message : ex.Message);
+            skip=dataSkip;
         }
         finally { if (ReferenceEquals(loading, request)) loading = null; if (!IsDisposed && version == generation) UpdateActions(); }
     }
@@ -124,12 +96,11 @@ public partial class CatalogsControl : UserControl, IUnsavedChanges
             emptyState.Text = skip > 0 ? "Không còn dữ liệu ở trang này.\r\nChọn Trước để quay lại."
                 : string.IsNullOrWhiteSpace(searchInput.Text) ? "Chưa có danh mục.\r\nChọn Thêm để tạo bản ghi đầu tiên."
                 : "Không tìm thấy danh mục.\r\nThay đổi tên tìm kiếm rồi thử lại.";
-            var parent = compactCatalog ? compactWorkspace : (Control?)tabs.SelectedTab;
-            parent?.Controls.Add(emptyState);
+            PositionEmpty();
             emptyState.BringToFront();
         }
         emptyState.Visible = visible;
-        grid.Visible = !visible;
+        grid.Visible = true;
     }
     private async void Reload_Click(object? sender, EventArgs e)
     {
@@ -166,7 +137,7 @@ public partial class CatalogsControl : UserControl, IUnsavedChanges
     private async void Delete_Click(object? sender, EventArgs e)
     {
         if (service is null || session is null || IsWriting || loading is not null || grid.CurrentRow?.DataBoundItem is not CatalogRow row) return;
-        if (MessageBox.Show(this, $"Xóa {row.Code} · {row.Name}? Danh mục có lịch sử hoặc mã hệ thống sẽ bị từ chối.", "Xóa danh mục", MessageBoxButtons.YesNo) != DialogResult.Yes) return;
+        if (OrbitConfirmationDialog.Show(this, $"Xóa {row.Code} · {row.Name}? Danh mục có lịch sử hoặc mã hệ thống sẽ bị từ chối.", "Xóa danh mục", MessageBoxButtons.YesNo) != DialogResult.Yes) return;
         writing = true; UpdateActions();
         var deleted = false;
         try { await service.DeleteAsync(session, Kind, row); deleted = true; statusLabel.Text = "Đã xóa danh mục."; }
@@ -188,3 +159,7 @@ public partial class CatalogsControl : UserControl, IUnsavedChanges
         base.Dispose(disposing);
     }
 }
+
+
+
+

@@ -3,7 +3,7 @@ using CafeManager.WinForms.UI;
 
 namespace CafeManager.WinForms.Navigation;
 
-public enum NavigationTarget { Home, Catalogs, SystemInfo }
+public enum NavigationTarget { Home, Catalogs, SystemInfo, Materials, Products, Tables, Customers, Loyalty }
 
 public sealed class NavigationController(Panel content, SessionContext session, PermissionService permissions) : IDisposable
 {
@@ -25,10 +25,13 @@ public sealed class NavigationController(Panel content, SessionContext session, 
         switching = true;
         try
         {
-            await permissions.DemandAsync(session, target == NavigationTarget.Catalogs ? AppPermission.CatalogAdmin : AppPermission.SystemInfo, session.Token);
+            await permissions.DemandAsync(session, target switch { NavigationTarget.Catalogs => AppPermission.CatalogAdmin, NavigationTarget.Materials => AppPermission.MaterialRead, NavigationTarget.Products => AppPermission.MenuRead, NavigationTarget.Tables => AppPermission.Sales, NavigationTarget.Customers => AppPermission.Customers, NavigationTarget.Loyalty => AppPermission.Sales, _ => AppPermission.SystemInfo }, session.Token);
             session.EnsureCurrent(); if (disposed || content.IsDisposed) return false;
             if (!modules.TryGetValue(target, out var control)) { control = create(); control.Dock = DockStyle.Fill; modules.Add(target, control); }
-            content.Controls.Clear(); content.Controls.Add(control); current = control;
+            // Giữ màn cache trong cây control để màn đang ẩn vẫn nhận thay đổi DPI.
+            foreach (Control page in content.Controls) if (page != control) page.Visible = false;
+            if (control.Parent != content) content.Controls.Add(control);
+            control.Visible = true; control.BringToFront(); current = control;
             return true;
         }
         finally { switching = false; }

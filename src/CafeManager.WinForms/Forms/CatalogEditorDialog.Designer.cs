@@ -2,7 +2,7 @@ namespace CafeManager.WinForms.Forms;
 
 partial class CatalogEditorDialog
 {
-    private TableLayoutPanel layout = null!;
+    private CafeManager.WinForms.UI.OrbitDialogLayout layout = null!;
     private TableLayoutPanel fields = null!;
     private TextBox codeInput = null!;
     private TextBox nameInput = null!;
@@ -29,22 +29,16 @@ partial class CatalogEditorDialog
     private Button cancelButton = null!;
     private Button reloadButton = null!;
     private ErrorProvider errors = null!;
-    private Label headingLabel = null!;
     private void InitializeComponent()
     {
-        layout = new TableLayoutPanel(); fields = new TableLayoutPanel(); actions = new FlowLayoutPanel();
-        headingLabel = new Label();
+        fields = new TableLayoutPanel(); actions = new FlowLayoutPanel();
         codeInput = new TextBox(); nameInput = new TextBox(); phoneInput = new TextBox(); ratioInput = new TextBox(); allowanceInput = new TextBox(); factorInput = new TextBox();
         typeInput = new ComboBox(); startInput = new CafeManager.WinForms.UI.OrbitTimeInput(); endInput = new CafeManager.WinForms.UI.OrbitTimeInput(); supportedInput = new CheckBox();
         codeLabel = new Label(); nameLabel = new Label(); phoneLabel = new Label(); ratioLabel = new Label(); allowanceLabel = new Label(); factorLabel = new Label();
         typeLabel = new Label(); startLabel = new Label(); endLabel = new Label(); statusLabel = new Label();
         saveButton = new CafeManager.WinForms.UI.OrbitButton(); cancelButton = new CafeManager.WinForms.UI.OrbitButton(); reloadButton = new CafeManager.WinForms.UI.OrbitButton(); errors = new ErrorProvider();
-        SuspendLayout(); layout.SuspendLayout(); fields.SuspendLayout(); actions.SuspendLayout();
-        layout.Dock = DockStyle.Fill; layout.Padding = new Padding(24); layout.ColumnCount = 1; layout.RowCount = 4;
-        layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-        layout.RowStyles.Add(new RowStyle(SizeType.AutoSize)); layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100F)); layout.RowStyles.Add(new RowStyle(SizeType.AutoSize)); layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-        headingLabel.Text = "Thông tin danh mục"; headingLabel.Font = new Font("Segoe UI", 16F, FontStyle.Bold); headingLabel.AutoSize = true; headingLabel.Dock = DockStyle.Fill; headingLabel.Margin = new Padding(0, 0, 0, 16);
-        fields.Dock = DockStyle.Fill; fields.AutoScroll = true; fields.Padding = new Padding(0, 0, 24, 0); fields.ColumnCount = 2; fields.RowCount = 10;
+        SuspendLayout(); fields.SuspendLayout(); actions.SuspendLayout();
+        fields.Dock = DockStyle.Fill; fields.AutoScroll = true; fields.Padding = new Padding(16); fields.ColumnCount = 2; fields.RowCount = 10;
         fields.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize)); fields.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
         fields.RowStyles.Add(new RowStyle(SizeType.AutoSize));
         fields.RowStyles.Add(new RowStyle(SizeType.AutoSize));
@@ -93,15 +87,11 @@ partial class CatalogEditorDialog
         saveButton.AutoSize = true;
         cancelButton.AutoSize = true;
         reloadButton.AutoSize = true;
-        saveButton.Padding = new Padding(12, 8, 12, 8);
-        cancelButton.Padding = new Padding(12, 8, 12, 8);
-        reloadButton.Padding = new Padding(12, 8, 12, 8);
         saveButton.Click += Save_Click; reloadButton.Click += Reload_Click; cancelButton.DialogResult = DialogResult.Cancel;
         actions.Controls.Add(saveButton); actions.Controls.Add(reloadButton); actions.Controls.Add(cancelButton);
-        statusLabel.AutoSize = true; statusLabel.Dock = DockStyle.Fill; statusLabel.Padding = new Padding(0, 8, 0, 8);
-        layout.Controls.Add(headingLabel, 0, 0); layout.Controls.Add(fields, 0, 1); layout.Controls.Add(statusLabel, 0, 2); layout.Controls.Add(actions, 0, 3); errors.ContainerControl = this;
+        layout = new CafeManager.WinForms.UI.OrbitDialogLayout(this, fields, statusLabel, actions); errors.ContainerControl = this;
         AutoScaleDimensions = new SizeF(96F, 96F); AutoScaleMode = AutoScaleMode.Dpi; ClientSize = new Size(720, 600); MinimumSize = new Size(400, 360);
         StartPosition = FormStartPosition.CenterParent; Text = "Danh mục"; Controls.Add(layout); CancelButton = cancelButton;
-        actions.ResumeLayout(false); actions.PerformLayout(); fields.ResumeLayout(false); fields.PerformLayout(); layout.ResumeLayout(false); layout.PerformLayout(); ResumeLayout(false);
+        actions.ResumeLayout(false); actions.PerformLayout(); fields.ResumeLayout(false); fields.PerformLayout(); ResumeLayout(false);
     }
 }

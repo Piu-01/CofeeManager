@@ -50,3 +50,20 @@ trong ownership chain. Không cấp trực tiếp UPDATE sequence: execute sp_Ca
 DENY toàn bảng HOADON/PHIEUTHUCHI là quyền nền hiện tại; mở contract tại task
 nghiệp vụ bằng procedure, không GRANT đại trà. Bootstrap số dư ban đầu chỉ cài
 mới/seed; không sửa tồn/điểm sau mở sổ. Migration 001 không thay rows baseline.
+
+## G03 — ownership bổ sung (004–008)
+
+| Dữ liệu | Nguồn ghi được phép | Giữ bất biến |
+|---|---|---|
+| MaterialOpening / CustomerOpening | Migration cutover hoặc procedure mở sổ ADMIN | Không sửa/xóa/ghi lại qua app |
+| Tồn nguyên liệu | Mở sổ một lần; trigger nguồn giao dịch hiện có | Profile không có field sửa tồn |
+| Sản phẩm/công thức | Procedure ADMIN transaction, revision + receipt | Giá dòng và tiêu hao hóa đơn cũ |
+| Bàn/khu vực | Procedure ADMIN metadata | Status chỉ từ view/HOADON |
+| Profile khách | Procedure ADMIN/CASH theo thao tác | Không sửa điểm/hạng qua profile |
+| Hạng/điểm | PolicyReplace / history point trigger / mởsổ | Không UPDATE điểm thêm lần hai trong Adjust |
+| G03OperationReceipt | Cùng transaction thao tác sở hữu | Actor/payload/request không tái sử dụng khác nội dung |
+
+Runtime CafeManagerApp DENY DML nguồn, helper nội bộ không cấp execute trực tiếp.
+Checkout T15 kế thừa lock Policy→Recipes→Header→Customer và function preview SQL;
+G03 chưa triển khai use case checkout đích. Contract chi tiết: material/product/
+table/customer/loyalty-contract.md.

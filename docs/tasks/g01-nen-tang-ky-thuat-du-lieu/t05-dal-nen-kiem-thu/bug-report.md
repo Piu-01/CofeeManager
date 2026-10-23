@@ -255,3 +255,13 @@ Regression toàn T05 SQL trên DB mới, chú ý thứ tự sau lỗi/timeout v�
 Bằng chứng B04–B06: `../runs/G01_Regression_20261008_221528/` gồm direct/direct.trx,
 t05-direct-output.txt, t05-direct-error.txt, t05-sql-diagnostics.txt và tên DB
 t05-direct-database.txt. Run direct đạt **15 PASS/5 FAIL/20 tests** (7 unit PASS).
+
+## Điều tra bổ sung 18/10/2026 — chưa sửa
+
+Người dùng báo không chạy được luồng đăng nhập từ Visual Studio và tác động môi
+trường ngoài ý muốn. Hồ sơ điều tra chỉ đọc, mapping từng finding về task và hướng
+khắc phục: [báo cáo toàn đợt](../../../bugs/project-environment-audit-20261018/report.md).
+
+PASS cũ giữ làm lịch sử của bản/fixture đã nghiệm thu; không thay bằng chứng chạy
+F5 hiện tại. Đợt này không chạy test hoặc sửa source/migration/configuration.
+Các thao tác khắc phục/xóa DB hoặc tài khoản Windows chưa được thực hiện.
