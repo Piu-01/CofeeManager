@@ -1,0 +1,37 @@
+{
+  "SourceFiles": 206,
+  "ChangedDuringRegression": 0,
+  "ChangedProductFilesSinceFooter": [
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Modules\\Sales\\CheckoutDialog.cs",
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Modules\\Sales\\CheckoutDialog.Layout.cs",
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\UI\\OrbitDataGridView.cs",
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\UI\\OrbitSummaryPanel.cs"
+  ],
+  "DebugUiSHA256": "7FC95D52641245B1E320D2BC88A9CC2CB6B6DA447DE03361DBEF045D5B3DC71F",
+  "FrozenFixtureCopies": [
+    {
+      "Fixture": "component-bin",
+      "SameUiDll": true
+    },
+    {
+      "Fixture": "probe-bin",
+      "SameUiDll": true
+    },
+    {
+      "Fixture": "layout-bin",
+      "SameUiDll": true
+    },
+    {
+      "Fixture": "sql-bin",
+      "SameUiDll": true
+    }
+  ],
+  "ComponentPass": 32,
+  "LayoutBindingDark125Pass": 60,
+  "SqlBridgePass": 7,
+  "SqlDatabaseCleaned": true,
+  "VisualQA": "SKIPPED; user responsibility",
+  "Dpi100150": "NOT RUN",
+  "PhysicalInput": "NOT RUN in this wave",
+  "G04": "33 PASS /0 FAIL /23 BLOCKED; not accepted"
+}

@@ -1,0 +1,9 @@
+{
+  "Kind": "Native read/binding smoke with owned SQL fixture; operator principal; no login/visual acceptance",
+  "Database": "CoffeeManager_Test_G04_20261023_155844_f4c85032_demo",
+  "MenuCards": 10,
+  "DeviceDpi": 120,
+  "InvoiceRows": 2,
+  "DeliveryRows": 4,
+  "Success": true
+}

@@ -131,13 +131,13 @@ public partial class CatalogsControl : UserControl, IUnsavedChanges
     {
         if (service is null || session is null || IsWriting || loading is not null) return;
         using var dialog = new CatalogEditorDialog(service, session, Kind, row); editor = dialog; UpdateActions();
-        var result = dialog.ShowDialog(FindForm()); editor = null; UpdateActions();
+        var result = await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this); editor = null; UpdateActions();
         if (result == DialogResult.OK) await RefreshRows();
     }
     private async void Delete_Click(object? sender, EventArgs e)
     {
         if (service is null || session is null || IsWriting || loading is not null || grid.CurrentRow?.DataBoundItem is not CatalogRow row) return;
-        if (OrbitConfirmationDialog.Show(this, $"Xóa {row.Code} · {row.Name}? Danh mục có lịch sử hoặc mã hệ thống sẽ bị từ chối.", "Xóa danh mục", MessageBoxButtons.YesNo) != DialogResult.Yes) return;
+        if (await OrbitConfirmationDialog.ShowAsync(this, $"Xóa {row.Code} · {row.Name}? Danh mục có lịch sử hoặc mã hệ thống sẽ bị từ chối.", "Xóa danh mục", MessageBoxButtons.YesNo) != DialogResult.Yes) return;
         writing = true; UpdateActions();
         var deleted = false;
         try { await service.DeleteAsync(session, Kind, row); deleted = true; statusLabel.Text = "Đã xóa danh mục."; }
@@ -159,6 +159,7 @@ public partial class CatalogsControl : UserControl, IUnsavedChanges
         base.Dispose(disposing);
     }
 }
+
 
 
 

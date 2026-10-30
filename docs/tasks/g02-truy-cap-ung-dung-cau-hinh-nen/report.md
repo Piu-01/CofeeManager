@@ -1,5 +1,10 @@
 # G02 — Kết quả nghiệm thu và bàn giao kỹ thuật
 
+**Bổ sung24/10/2026:** người dùng duyệt sửa menu theo role, giữ ba role SQL.
+T07-NAV-20261024 đã sửa; componentMainForm/startup18/18PASS ở125%, buildDebug/Release
+sạch. [Biên bản và giới hạn kiểm](t07-khung-giao-dien-dieu-huong/menu-fix-test-results.md).
+Chỉ2file WinForms đổi, BLL/SQL/account hiện có không đổi; lịch sử nghiệm thu vẫn giữ.
+
 **Điều tra bổ sung 18/10/2026:** người dùng chưa chạy được luồng F5 với DB/tài
 khoản sử dụng được; phát hiện tác động DB test/tài khoản Windows chưa được bàn
 giao rõ. Xem [báo cáo điều tra](../../bugs/project-environment-audit-20261018/report.md).

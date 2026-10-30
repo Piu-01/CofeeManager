@@ -1,0 +1,41 @@
+{
+  "ActualMapping": {
+    "HD20250418": "User chose Yes; actual printing outcome not confirmed",
+    "PC02": "Yes/Cancel on HD20250417 per UI/user",
+    "PC01": "No on HD20250419 per user"
+  },
+  "Payments": [
+    {
+      "MaHD": "HD20250417",
+      "MaPT": "PT001",
+      "SoTien": 81000
+    },
+    {
+      "MaHD": "HD20250418",
+      "MaPT": "PT001",
+      "SoTien": 81000
+    },
+    {
+      "MaHD": "HD20250419",
+      "MaPT": "PT001",
+      "SoTien": 81000
+    }
+  ],
+  "StockDelta": [
+    {
+      "Material": "NVL01",
+      "Consumed": 0.054,
+      "SnapshotSum": 0.054
+    },
+    {
+      "Material": "NVL03",
+      "Consumed": 0.03,
+      "SnapshotSum": 0.03
+    }
+  ],
+  "TotalOrders": 20,
+  "OriginalTotalOrders": 20,
+  "NoEmptyInvoice": true,
+  "SourceChanged": 0,
+  "AffectedStockMatches": true
+}

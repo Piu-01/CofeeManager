@@ -7,6 +7,13 @@ public sealed class OrbitFilterBox : UserControl
     public ComboBox Input { get; }
     [System.ComponentModel.DefaultValue(124)]
     public int LogicalWidth { get; set; } = 124;
+    private bool plain;
+    [System.ComponentModel.DefaultValue(false)]
+    public bool Plain
+    {
+        get => plain;
+        set { plain = value; Input.BackColor = value ? OrbitManagementTheme.Surface : OrbitManagementTheme.Input; Invalidate(); }
+    }
     public OrbitFilterBox() : this(new ComboBox()) { }
     public OrbitFilterBox(ComboBox input)
     {
@@ -25,6 +32,7 @@ public sealed class OrbitFilterBox : UserControl
     {
         base.OnPaint(e); var scale = DeviceDpi / 96F; e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
         using var path = OrbitManagementTheme.Round(new RectangleF(scale, scale, Width - 2 * scale, Height - 2 * scale), 8 * scale);
+        if (Plain) { if (ContainsFocus) { using var focus = new Pen(OrbitManagementTheme.Lilac, scale); e.Graphics.DrawPath(focus, path); } return; }
         using var fill = new SolidBrush(OrbitManagementTheme.Input); e.Graphics.FillPath(fill, path);
         using var pen = new Pen(ContainsFocus ? OrbitManagementTheme.Lilac : OrbitManagementTheme.InputBorder, scale); e.Graphics.DrawPath(pen, path);
     }

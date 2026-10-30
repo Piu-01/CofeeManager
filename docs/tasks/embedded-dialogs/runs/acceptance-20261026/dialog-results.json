@@ -1,0 +1,562 @@
+{
+  "Failed": 0,
+  "Database": "CoffeeManager_Test_G04_20261025_181739_98e5df59_checkout",
+  "Scope": "Frozen product DLL; real AuthService/runtime SQL; component calls, no physical input/visual QA/checkout commit",
+  "Results": [
+    {
+      "Name": "ED11 actual MainForm menu ADMIN",
+      "Outcome": "PASS",
+      "Actual": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "Name": "ED11 actual MainForm menu CASH",
+      "Outcome": "PASS",
+      "Actual": [
+        3,
+        6,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "Name": "ED11 actual MainForm menu STORE",
+      "Outcome": "PASS",
+      "Actual": [
+        3,
+        4
+      ]
+    },
+    {
+      "Name": "OrderLine embedded",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "OrderLine bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=600, Height=375}"
+      }
+    },
+    {
+      "Name": "OrderLine bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=600, Height=375}"
+      }
+    },
+    {
+      "Name": "OrderLine closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Header Mang di embedded",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Header Mang di bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=700, Height=628}"
+      }
+    },
+    {
+      "Name": "Header Mang di bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=700, Height=676}"
+      }
+    },
+    {
+      "Name": "Header typed result Mang di",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Header Mang di closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Header Tai quan embedded",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Header Tai quan bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=700, Height=628}"
+      }
+    },
+    {
+      "Name": "Header Tai quan bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=700, Height=676}"
+      }
+    },
+    {
+      "Name": "Header typed result Tai quan",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Header Tai quan closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Header Giao hang embedded",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Header Giao hang bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=700, Height=628}"
+      }
+    },
+    {
+      "Name": "Header Giao hang bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=700, Height=676}"
+      }
+    },
+    {
+      "Name": "ED07 UI06 recipient",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED07 UI06 phone",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED07 UI06 address",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Header typed result Giao hang",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Header Giao hang closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "OpenOrders embedded",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "OpenOrders bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=1225, Height=628}"
+      }
+    },
+    {
+      "Name": "OpenOrders bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=1225, Height=676}"
+      }
+    },
+    {
+      "Name": "ED08 open orders loaded",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "OpenOrders closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Invoice paid embedded",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Invoice paid bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=1125, Height=628}"
+      }
+    },
+    {
+      "Name": "Invoice paid bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=1125, Height=676}"
+      }
+    },
+    {
+      "Name": "ED06 paid POS disabled",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Invoice paid closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Delivery embedded",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Delivery bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=950, Height=628}"
+      }
+    },
+    {
+      "Name": "Delivery bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=950, Height=676}"
+      }
+    },
+    {
+      "Name": "Delivery closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Checkout embedded",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Checkout bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=1150, Height=628}"
+      }
+    },
+    {
+      "Name": "Checkout bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=1150, Height=676}"
+      }
+    },
+    {
+      "Name": "ED09 tendered invalid 80000",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED09 tendered invalid abc",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED09 tendered invalid 999999999999999999999999999999",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED09 valid tendered enabled",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Checkout closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CustomerPicker embedded",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CustomerPicker bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=1143, Height=628}"
+      }
+    },
+    {
+      "Name": "CustomerPicker bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=1143, Height=676}"
+      }
+    },
+    {
+      "Name": "CustomerPicker closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Catalog ProductCategory embedded",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Catalog ProductCategory bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=918, Height=628}"
+      }
+    },
+    {
+      "Name": "Catalog ProductCategory bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=918, Height=676}"
+      }
+    },
+    {
+      "Name": "Catalog ProductCategory closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Catalog Supplier embedded",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Catalog Supplier bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=918, Height=628}"
+      }
+    },
+    {
+      "Name": "Catalog Supplier bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=918, Height=676}"
+      }
+    },
+    {
+      "Name": "Catalog Supplier closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Catalog PaymentMethod embedded",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Catalog PaymentMethod bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=918, Height=628}"
+      }
+    },
+    {
+      "Name": "Catalog PaymentMethod bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=918, Height=676}"
+      }
+    },
+    {
+      "Name": "Catalog PaymentMethod closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Catalog DeliveryPartner embedded",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Catalog DeliveryPartner bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=918, Height=628}"
+      }
+    },
+    {
+      "Name": "Catalog DeliveryPartner bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=918, Height=676}"
+      }
+    },
+    {
+      "Name": "Catalog DeliveryPartner closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Catalog ExpenseCategory embedded",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Catalog ExpenseCategory bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=918, Height=628}"
+      }
+    },
+    {
+      "Name": "Catalog ExpenseCategory bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=918, Height=676}"
+      }
+    },
+    {
+      "Name": "Catalog ExpenseCategory closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Catalog Position embedded",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Catalog Position bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=918, Height=628}"
+      }
+    },
+    {
+      "Name": "Catalog Position bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=918, Height=676}"
+      }
+    },
+    {
+      "Name": "Catalog Position closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Catalog Shift embedded",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Catalog Shift bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=918, Height=628}"
+      }
+    },
+    {
+      "Name": "Catalog Shift bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=918, Height=676}"
+      }
+    },
+    {
+      "Name": "Catalog Shift closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED03 production picker preserves parent input",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Invoice preview embedded",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Invoice preview bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=1125, Height=628}"
+      }
+    },
+    {
+      "Name": "Invoice preview bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=1125, Height=676}"
+      }
+    },
+    {
+      "Name": "Invoice preview closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED11 no orphan forms after inventory",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED06 read/bounds/validation did not change financial data",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Fixture actors removed",
+      "Outcome": "PASS",
+      "Actual": null
+    }
+  ]
+}

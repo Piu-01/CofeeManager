@@ -1,0 +1,45 @@
+{
+  "Invoice": [
+    {
+      "MaHD": "HD20250411",
+      "TrangThai": "Da thanh toan",
+      "ThanhTien": 81000,
+      "NgayThanhToan": "2026-10-25T18:00:24"
+    }
+  ],
+  "Payments": [
+    {
+      "MaPT": "PT001",
+      "SoTien": 81000
+    }
+  ],
+  "Consumption": [
+    {
+      "MaNVL": "NVL01",
+      "SoLuong": 0.018
+    },
+    {
+      "MaNVL": "NVL03",
+      "SoLuong": 0.01
+    }
+  ],
+  "StockDelta": [
+    {
+      "Material": "NVL01",
+      "Before": 96.74,
+      "After": 96.722,
+      "Consumed": 0.018
+    },
+    {
+      "Material": "NVL03",
+      "Before": 72.705,
+      "After": 72.695,
+      "Consumed": 0.010
+    }
+  ],
+  "PaidOnce": true,
+  "UserObservedTender": 100000,
+  "UserObservedChange": 19000,
+  "CashChangeSource": "User observation; not persisted",
+  "SourceChanged": 0
+}

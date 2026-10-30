@@ -1,0 +1,19 @@
+{
+  "SourceFiles": 207,
+  "ChangedDuringTests": 0,
+  "ChangedSinceUI04": [
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Modules\\Sales\\CheckoutDialog.cs",
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\UI\\OrbitField.cs",
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\UI\\StarDustOverlay.cs"
+  ],
+  "DebugSHA256": "9A2C22FFBA85D689CFF4DDCA9DD1B6B26C9EB9C93AB8AF2316A789244BB6E711",
+  "Component": 32,
+  "LayoutBinding": 60,
+  "FullConfirmSql": "PASS manual real Confirm + read-only SQL: paid81000, one PT001, consumption matches stock",
+  "SQLWritesByAgent": "None in this fix wave",
+  "DPI": 120,
+  "Visual": "SKIPPED/user",
+  "EffectInputPass": 11,
+  "OriginalHarness": "9/11 preserved: wrong fault target; corrected follow-up11/11 with same product DLL",
+  "G04": "34 PASS /0 FAIL /22 BLOCKED"
+}

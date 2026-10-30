@@ -1,0 +1,186 @@
+Window: "CoffeeManager", App: CafeManager.WinForms.exe.
+	0 window CoffeeManager Secondary Actions: Raise
+		1 pane
+			2 pane
+				3 text CoffeeManager
+				4 text KHÔNG GIAN QUẢN LÝ
+				5 text G05 fixture ADMIN
+				6 text Quản trị viên · ADMIN
+				7 button Trang phiên
+				8 button Danh mục nền
+				9 button Bán hàng
+				10 button Lịch sử hóa đơn
+				11 button Giao hàng
+				12 button Khách hàng
+				13 button Bàn / Khu vực
+				14 button Menu / Công thức
+				15 button Nguyên liệu / Tồn
+				16 button Ưu đãi / Điểm
+				17 button Thu chi
+				18 button Kho
+				19 button Công nợ
+				20 button Thông tin hệ thống
+				21 button Đăng xuất ID: logout
+				22 text Phiên đang hoạt động.
+				23 scroll bar (settable, float) Vertical Value: 54 ID: NonClientVerticalScrollBar
+					24 button Line up ID: UpButton
+					25 button Page up ID: UpPageButton
+					26 thumb Position ID: ScrollbarThumb
+					27 button Page down ID: DownPageButton
+					28 button Line down ID: DownButton
+			29 pane
+				30 text Quản lý / Kho
+				31 text G05 fixture ADMIN · ADMIN
+			32 pane G05 fixture ADMIN · ADMIN
+				344 pane G05 fixture ADMIN · ADMIN ID: 3868526
+					345 tab
+						820 pane Xuất kho
+							821 pane ID: 984754
+								822 pane ID: 852012
+									823 text INVENTORY WORKSPACE
+									824 text Xuất nguyên liệu
+									825 text Hủy do hỏng / Trả hàng; chưa tự hoàn tiền hoặc cấn nợ.
+									826 pane
+										827 pane ID: 24317468
+											828 edit (settable, string) Description: Tìm tên hoặc mã nguyên liệu…
+										829 pane
+											830 data grid
+												831 scroll bar (settable, float) Vertical Value: 0
+													832 button Line up
+													833 thumb Position
+													834 button Page down
+													835 button Line down
+												836 custom Top Row
+													837 header Top Left Header Cell ID: 4240396056
+													838 header MÃ ID: 4255386681
+													839 header NGÀY XUẤT ID: 4248938213
+													840 header LOẠI ID: 4232216998
+													841 header LÝ DO ID: 4216167796
+												842 custom Row 1
+													843 header Row 1 ID: 4248003051
+													844 item MÃ Row 1 Value: PX20250517 ID: 4220059891
+													845 item NGÀY XUẤT Row 1 Value: 27/10/2026 00:00 ID: 4259451999
+													846 item LOẠI Row 1 Value: Huy do hong ID: 4234678495
+													847 item LÝ DO Row 1 Value: G05 fixture ID: 4248167256
+												848 custom Row 2
+													849 header Row 2 ID: 4220093770
+													850 item MÃ Row 2 Value: PX20250515 ID: 4259892423
+													851 item NGÀY XUẤT Row 2 Value: 27/10/2026 00:00 ID: 4240403996
+													852 item LOẠI Row 2 Value: Huy do hong ID: 4255489903
+													853 item LÝ DO Row 2 Value: G05 fixture ID: 4250280099
+												854 custom Row 3
+													855 header Row 3 ID: 4241620007
+													856 item MÃ Row 3 Value: PX20250512 ID: 424189181
+													857 item NGÀY XUẤT Row 3 Value: 27/10/2026 00:00 ID: 4254459356
+													858 item LOẠI Row 3 Value: Huy do hong ID: 4236882991
+													859 item LÝ DO Row 3 Value: G05 fixture ID: 429716841
+												860 custom Row 4
+													861 header Row 4 ID: 4231533411
+													862 item MÃ Row 4 Value: PX20250510 ID: 427281168
+													863 item NGÀY XUẤT Row 4 Value: 27/10/2026 00:00 ID: 4227546322
+													864 item LOẠI Row 4 Value: Huy do hong ID: 4222557866
+													865 item LÝ DO Row 4 Value: G05 fixture ID: 4224816810
+												866 custom Row 5
+													867 header Row 5 ID: 4233291345
+													868 item MÃ Row 5 Value: PX20250509 ID: 4230134313
+													869 item NGÀY XUẤT Row 5 Value: 27/10/2026 00:00 ID: 4256201759
+													870 item LOẠI Row 5 Value: Huy do hong ID: 4259534234
+													871 item LÝ DO Row 5 Value: G05 fixture ID: 4235747544
+												872 custom Row 6
+													873 header Row 6 ID: 421537332
+													874 item MÃ Row 6 Value: PX20250508 ID: 4219985316
+													875 item NGÀY XUẤT Row 6 Value: 27/10/2026 00:00 ID: 4258482518
+													876 item LOẠI Row 6 Value: Huy do hong ID: 4222075241
+													877 item LÝ DO Row 6 Value: G05 fixture ID: 4218542679
+												878 custom Row 7
+													879 header Row 7 ID: 4246705083
+													880 item MÃ Row 7 Value: PX20250507 ID: 423186313
+													881 item NGÀY XUẤT Row 7 Value: 27/10/2026 00:00 ID: 4241422073
+													882 item LOẠI Row 7 Value: Huy do hong ID: 421616048
+													883 item LÝ DO Row 7 Value: G05 fixture ID: 4221008631
+												884 custom Row 8
+													885 header Row 8 ID: 4260797835
+													886 item MÃ Row 8 Value: PX20250504 ID: 4252174355
+													887 item NGÀY XUẤT Row 8 Value: 26/10/2026 00:00 ID: 427177978
+													888 item LOẠI Row 8 Value: Huy do hong ID: 4226204858
+													889 item LÝ DO Row 8 Value: G05 fixture ID: 425118843
+												890 custom Row 9
+													891 header Row 9 ID: 4259778228
+													892 item MÃ Row 9 Value: PX20250503 ID: 4238919467
+													893 item NGÀY XUẤT Row 9 Value: 25/05/2025 00:00 ID: 4236191035
+													894 item LOẠI Row 9 Value: Huy do hong ID: 42721409
+													895 item LÝ DO Row 9 Value: (null) ID: 429378325
+												896 custom Row 10
+													897 header Row 10 ID: 4241433145
+													898 item MÃ Row 10 Value: PX20250502 ID: 421759981
+													899 item NGÀY XUẤT Row 10 Value: 10/05/2025 00:00 ID: 4222879757
+													900 item LOẠI Row 10 Value: Huy do hong ID: 4229001391
+													901 item LÝ DO Row 10 Value: (null) ID: 4241473767
+												902 custom Row 11
+													903 header Row 11 ID: 4229744780
+													904 item MÃ Row 11 Value: PX20250501 ID: 4251137825
+													905 item NGÀY XUẤT Row 11 Value: 01/05/2025 00:00 ID: 4260811955
+													906 item LOẠI Row 11 Value: Huy do hong ID: 4252357917
+													907 item LÝ DO Row 11 Value: (null) ID: 429564290
+												908 custom Row 12
+													909 header Row 12 ID: 425752334
+													910 item MÃ Row 12 Value: PX20250402 ID: 427671490
+													911 item NGÀY XUẤT Row 12 Value: 30/04/2025 00:00 ID: 4232620511
+													912 item LOẠI Row 12 Value: Huy do hong ID: 4221413462
+													913 item LÝ DO Row 12 Value: (null) ID: 429939561
+												914 custom Row 13
+													915 header Row 13 ID: 422064275
+													916 item MÃ Row 13 Value: PX20250403 ID: 4226835578
+													917 item NGÀY XUẤT Row 13 Value: 15/04/2025 00:00 ID: 4213318194
+													918 item LOẠI Row 13 Value: Tra hang ID: 4238918804
+													919 item LÝ DO Row 13 Value: (null) ID: 4236182414
+												920 custom Row 14
+													921 header Row 14 ID: 427921371
+													922 item MÃ Row 14 Value: PX20250401 ID: 4235868962
+													923 item NGÀY XUẤT Row 14 Value: 03/04/2025 00:00 ID: 4263643328
+													924 item LOẠI Row 14 Value: Huy do hong ID: 4222056897
+													925 item LÝ DO Row 14 Value: (null) ID: 4218304210
+												926 custom Row 15
+													927 header Row 15 ID: 426403865
+													928 item MÃ Row 15 Value: PX20250302 ID: 4216141381
+													929 item NGÀY XUẤT Row 15 Value: 31/03/2025 00:00 ID: 428511369
+													930 item LOẠI Row 15 Value: Huy do hong ID: 4243538934
+													931 item LÝ DO Row 15 Value: (null) ID: 4229135240
+												932 custom Row 16
+													933 header Row 16 ID: 4224908654
+													934 item MÃ Row 16 Value: PX20250301 ID: 4255377053
+													935 item NGÀY XUẤT Row 16 Value: 05/03/2025 00:00 ID: 4248813055
+													936 item LOẠI Row 16 Value: Huy do hong ID: 4230589951
+													937 item LÝ DO Row 16 Value: (null) ID: 4262125043
+												938 custom Row 17
+													939 header Row 17 ID: 4230149485
+													940 item MÃ Row 17 Value: PX20250201 ID: 4256398996
+													941 item NGÀY XUẤT Row 17 Value: 28/02/2025 00:00 ID: 4262098310
+													942 item LOẠI Row 17 Value: Huy do hong ID: 421971667
+													943 item LÝ DO Row 17 Value: (null) ID: 4225631682
+												944 custom Row 18
+													945 header Row 18 ID: 4236787096
+													946 item MÃ Row 18 Value: PX20250101 ID: 428470211
+													947 item NGÀY XUẤT Row 18 Value: 31/01/2025 00:00 ID: 4243003886
+													948 item LOẠI Row 18 Value: Huy do hong ID: 4222179615
+													949 item LÝ DO Row 18 Value: (null) ID: 4219899546
+										950 pane ID: 790248
+											951 text
+											952 button Trang trước
+											953 text 1 / 1
+											954 button Trang sau
+									955 text 18 phiếu — Trang 1
+						530 tab item (selectable) Tồn kho
+						531 tab item (selectable) Nhập hàng
+						532 tab item (selectable) Xuất kho
+						533 tab item (selectable) Kiểm kê
+		39 title bar (settable, string) Value: CoffeeManager
+			40 menu bar System ID: MenuBar
+				41 menu item System
+			42 button Minimize
+			43 button Restore
+			44 button Close
+
+The focused UI element is 828 edit (settable, string) Description: Tìm tên hoặc mã nguyên liệu….
+
+Focused element: 828 edit (settable, string) Description: Tìm tên hoặc mã nguyên liệu…

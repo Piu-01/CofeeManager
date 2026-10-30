@@ -1,0 +1,1620 @@
+[
+  {
+    "Case": "One",
+    "State": "All",
+    "Size": {
+      "IsEmpty": false,
+      "Width": 640,
+      "Height": 420
+    },
+    "Dpi": 120,
+    "Body": {
+      "IsEmpty": false,
+      "Width": 592,
+      "Height": 242
+    },
+    "Result": "PASS",
+    "Buttons": [
+      {
+        "Text": "Quay l\u1EA1i",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 0,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Case": "One",
+    "State": "All",
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1280,
+      "Height": 720
+    },
+    "Dpi": 120,
+    "Body": {
+      "IsEmpty": false,
+      "Width": 1232,
+      "Height": 542
+    },
+    "Result": "PASS",
+    "Buttons": [
+      {
+        "Text": "Quay l\u1EA1i",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 0,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Case": "One",
+    "State": "All",
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1366,
+      "Height": 768
+    },
+    "Dpi": 120,
+    "Body": {
+      "IsEmpty": false,
+      "Width": 1318,
+      "Height": 590
+    },
+    "Result": "PASS",
+    "Buttons": [
+      {
+        "Text": "Quay l\u1EA1i",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 0,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Case": "Three",
+    "State": "All",
+    "Size": {
+      "IsEmpty": false,
+      "Width": 640,
+      "Height": 420
+    },
+    "Dpi": 120,
+    "Body": {
+      "IsEmpty": false,
+      "Width": 592,
+      "Height": 242
+    },
+    "Result": "PASS",
+    "Buttons": [
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 0",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 1",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Accessible": true,
+        "Left": 356,
+        "Top": 0,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Case": "Three",
+    "State": "All",
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1280,
+      "Height": 720
+    },
+    "Dpi": 120,
+    "Body": {
+      "IsEmpty": false,
+      "Width": 1232,
+      "Height": 542
+    },
+    "Result": "PASS",
+    "Buttons": [
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 0",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 1",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Accessible": true,
+        "Left": 356,
+        "Top": 0,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Case": "Three",
+    "State": "All",
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1366,
+      "Height": 768
+    },
+    "Dpi": 120,
+    "Body": {
+      "IsEmpty": false,
+      "Width": 1318,
+      "Height": 590
+    },
+    "Result": "PASS",
+    "Buttons": [
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 0",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 1",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Accessible": true,
+        "Left": 356,
+        "Top": 0,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Case": "Seven",
+    "State": "All",
+    "Size": {
+      "IsEmpty": false,
+      "Width": 640,
+      "Height": 420
+    },
+    "Dpi": 120,
+    "Body": {
+      "IsEmpty": false,
+      "Width": 592,
+      "Height": 142
+    },
+    "Result": "PASS",
+    "Buttons": [
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 0",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 1",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 2",
+        "Accessible": true,
+        "Left": 356,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 3",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 50,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 4",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 50,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 5",
+        "Accessible": true,
+        "Left": 356,
+        "Top": 50,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 100,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Case": "Seven",
+    "State": "Hidden",
+    "Size": {
+      "IsEmpty": false,
+      "Width": 640,
+      "Height": 420
+    },
+    "Dpi": 120,
+    "Body": {
+      "IsEmpty": false,
+      "Width": 592,
+      "Height": 192
+    },
+    "Result": "PASS",
+    "Buttons": [
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 0",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 2",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 3",
+        "Accessible": true,
+        "Left": 356,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 4",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 50,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 5",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 50,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Accessible": true,
+        "Left": 356,
+        "Top": 50,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Case": "Seven",
+    "State": "ShownLong",
+    "Size": {
+      "IsEmpty": false,
+      "Width": 640,
+      "Height": 420
+    },
+    "Dpi": 120,
+    "Body": {
+      "IsEmpty": false,
+      "Width": 592,
+      "Height": 142
+    },
+    "Result": "PASS",
+    "Buttons": [
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 0",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 1",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Ki\u1EC3m tra k\u1EBFt qu\u1EA3 sau khi b\u1ECB timeout",
+        "Accessible": true,
+        "Left": 356,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 3",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 50,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 4",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 50,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 5",
+        "Accessible": true,
+        "Left": 356,
+        "Top": 50,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 100,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Case": "Seven",
+    "State": "All",
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1280,
+      "Height": 720
+    },
+    "Dpi": 120,
+    "Body": {
+      "IsEmpty": false,
+      "Width": 1232,
+      "Height": 542
+    },
+    "Result": "PASS",
+    "Buttons": [
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 0",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 1",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Ki\u1EC3m tra k\u1EBFt qu\u1EA3 sau khi b\u1ECB timeout",
+        "Accessible": true,
+        "Left": 356,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 3",
+        "Accessible": true,
+        "Left": 530,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 4",
+        "Accessible": true,
+        "Left": 704,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 5",
+        "Accessible": true,
+        "Left": 878,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Accessible": true,
+        "Left": 1052,
+        "Top": 0,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Case": "Seven",
+    "State": "Hidden",
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1280,
+      "Height": 720
+    },
+    "Dpi": 120,
+    "Body": {
+      "IsEmpty": false,
+      "Width": 1232,
+      "Height": 542
+    },
+    "Result": "PASS",
+    "Buttons": [
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 0",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Ki\u1EC3m tra k\u1EBFt qu\u1EA3 sau khi b\u1ECB timeout",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 3",
+        "Accessible": true,
+        "Left": 356,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 4",
+        "Accessible": true,
+        "Left": 530,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 5",
+        "Accessible": true,
+        "Left": 704,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Accessible": true,
+        "Left": 878,
+        "Top": 0,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Case": "Seven",
+    "State": "ShownLong",
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1280,
+      "Height": 720
+    },
+    "Dpi": 120,
+    "Body": {
+      "IsEmpty": false,
+      "Width": 1232,
+      "Height": 542
+    },
+    "Result": "PASS",
+    "Buttons": [
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 0",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 1",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Ki\u1EC3m tra k\u1EBFt qu\u1EA3 sau khi b\u1ECB timeout",
+        "Accessible": true,
+        "Left": 356,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 3",
+        "Accessible": true,
+        "Left": 530,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 4",
+        "Accessible": true,
+        "Left": 704,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 5",
+        "Accessible": true,
+        "Left": 878,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Accessible": true,
+        "Left": 1052,
+        "Top": 0,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Case": "Seven",
+    "State": "All",
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1366,
+      "Height": 768
+    },
+    "Dpi": 120,
+    "Body": {
+      "IsEmpty": false,
+      "Width": 1318,
+      "Height": 590
+    },
+    "Result": "PASS",
+    "Buttons": [
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 0",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 1",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Ki\u1EC3m tra k\u1EBFt qu\u1EA3 sau khi b\u1ECB timeout",
+        "Accessible": true,
+        "Left": 356,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 3",
+        "Accessible": true,
+        "Left": 530,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 4",
+        "Accessible": true,
+        "Left": 704,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 5",
+        "Accessible": true,
+        "Left": 878,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Accessible": true,
+        "Left": 1052,
+        "Top": 0,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Case": "Seven",
+    "State": "Hidden",
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1366,
+      "Height": 768
+    },
+    "Dpi": 120,
+    "Body": {
+      "IsEmpty": false,
+      "Width": 1318,
+      "Height": 590
+    },
+    "Result": "PASS",
+    "Buttons": [
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 0",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Ki\u1EC3m tra k\u1EBFt qu\u1EA3 sau khi b\u1ECB timeout",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 3",
+        "Accessible": true,
+        "Left": 356,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 4",
+        "Accessible": true,
+        "Left": 530,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 5",
+        "Accessible": true,
+        "Left": 704,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Accessible": true,
+        "Left": 878,
+        "Top": 0,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Case": "Seven",
+    "State": "ShownLong",
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1366,
+      "Height": 768
+    },
+    "Dpi": 120,
+    "Body": {
+      "IsEmpty": false,
+      "Width": 1318,
+      "Height": 590
+    },
+    "Result": "PASS",
+    "Buttons": [
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 0",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 1",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Ki\u1EC3m tra k\u1EBFt qu\u1EA3 sau khi b\u1ECB timeout",
+        "Accessible": true,
+        "Left": 356,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 3",
+        "Accessible": true,
+        "Left": 530,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 4",
+        "Accessible": true,
+        "Left": 704,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 5",
+        "Accessible": true,
+        "Left": 878,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Accessible": true,
+        "Left": 1052,
+        "Top": 0,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Case": "Leading",
+    "State": "All",
+    "Size": {
+      "IsEmpty": false,
+      "Width": 640,
+      "Height": 420
+    },
+    "Dpi": 120,
+    "Body": {
+      "IsEmpty": false,
+      "Width": 592,
+      "Height": 92
+    },
+    "Result": "PASS",
+    "Buttons": [
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 0",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 1",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 2",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 50,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 3",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 50,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 4",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 100,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 5",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 100,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 150,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Case": "Leading",
+    "State": "Hidden",
+    "Size": {
+      "IsEmpty": false,
+      "Width": 640,
+      "Height": 420
+    },
+    "Dpi": 120,
+    "Body": {
+      "IsEmpty": false,
+      "Width": 592,
+      "Height": 142
+    },
+    "Result": "PASS",
+    "Buttons": [
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 0",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 2",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 3",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 50,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 4",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 50,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 5",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 100,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 100,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Case": "Leading",
+    "State": "ShownLong",
+    "Size": {
+      "IsEmpty": false,
+      "Width": 640,
+      "Height": 420
+    },
+    "Dpi": 120,
+    "Body": {
+      "IsEmpty": false,
+      "Width": 592,
+      "Height": 92
+    },
+    "Result": "PASS",
+    "Buttons": [
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 0",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 1",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Ki\u1EC3m tra k\u1EBFt qu\u1EA3 sau khi b\u1ECB timeout",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 50,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 3",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 50,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 4",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 100,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 5",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 100,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 150,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Case": "Leading",
+    "State": "All",
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1280,
+      "Height": 720
+    },
+    "Dpi": 120,
+    "Body": {
+      "IsEmpty": false,
+      "Width": 1232,
+      "Height": 492
+    },
+    "Result": "PASS",
+    "Buttons": [
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 0",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 1",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Ki\u1EC3m tra k\u1EBFt qu\u1EA3 sau khi b\u1ECB timeout",
+        "Accessible": true,
+        "Left": 356,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 3",
+        "Accessible": true,
+        "Left": 530,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 4",
+        "Accessible": true,
+        "Left": 704,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 5",
+        "Accessible": true,
+        "Left": 878,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 50,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Case": "Leading",
+    "State": "Hidden",
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1280,
+      "Height": 720
+    },
+    "Dpi": 120,
+    "Body": {
+      "IsEmpty": false,
+      "Width": 1232,
+      "Height": 542
+    },
+    "Result": "PASS",
+    "Buttons": [
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 0",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Ki\u1EC3m tra k\u1EBFt qu\u1EA3 sau khi b\u1ECB timeout",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 3",
+        "Accessible": true,
+        "Left": 356,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 4",
+        "Accessible": true,
+        "Left": 530,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 5",
+        "Accessible": true,
+        "Left": 704,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Accessible": true,
+        "Left": 878,
+        "Top": 0,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Case": "Leading",
+    "State": "ShownLong",
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1280,
+      "Height": 720
+    },
+    "Dpi": 120,
+    "Body": {
+      "IsEmpty": false,
+      "Width": 1232,
+      "Height": 492
+    },
+    "Result": "PASS",
+    "Buttons": [
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 0",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 1",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Ki\u1EC3m tra k\u1EBFt qu\u1EA3 sau khi b\u1ECB timeout",
+        "Accessible": true,
+        "Left": 356,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 3",
+        "Accessible": true,
+        "Left": 530,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 4",
+        "Accessible": true,
+        "Left": 704,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 5",
+        "Accessible": true,
+        "Left": 878,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 50,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Case": "Leading",
+    "State": "All",
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1366,
+      "Height": 768
+    },
+    "Dpi": 120,
+    "Body": {
+      "IsEmpty": false,
+      "Width": 1318,
+      "Height": 590
+    },
+    "Result": "PASS",
+    "Buttons": [
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 0",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 1",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Ki\u1EC3m tra k\u1EBFt qu\u1EA3 sau khi b\u1ECB timeout",
+        "Accessible": true,
+        "Left": 356,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 3",
+        "Accessible": true,
+        "Left": 530,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 4",
+        "Accessible": true,
+        "Left": 704,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 5",
+        "Accessible": true,
+        "Left": 878,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Accessible": true,
+        "Left": 1052,
+        "Top": 0,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Case": "Leading",
+    "State": "Hidden",
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1366,
+      "Height": 768
+    },
+    "Dpi": 120,
+    "Body": {
+      "IsEmpty": false,
+      "Width": 1318,
+      "Height": 590
+    },
+    "Result": "PASS",
+    "Buttons": [
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 0",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Ki\u1EC3m tra k\u1EBFt qu\u1EA3 sau khi b\u1ECB timeout",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 3",
+        "Accessible": true,
+        "Left": 356,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 4",
+        "Accessible": true,
+        "Left": 530,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 5",
+        "Accessible": true,
+        "Left": 704,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Accessible": true,
+        "Left": 878,
+        "Top": 0,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Case": "Leading",
+    "State": "ShownLong",
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1366,
+      "Height": 768
+    },
+    "Dpi": 120,
+    "Body": {
+      "IsEmpty": false,
+      "Width": 1318,
+      "Height": 590
+    },
+    "Result": "PASS",
+    "Buttons": [
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 0",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 1",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Ki\u1EC3m tra k\u1EBFt qu\u1EA3 sau khi b\u1ECB timeout",
+        "Accessible": true,
+        "Left": 356,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 3",
+        "Accessible": true,
+        "Left": 530,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 4",
+        "Accessible": true,
+        "Left": 704,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 5",
+        "Accessible": true,
+        "Left": 878,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Accessible": true,
+        "Left": 1052,
+        "Top": 0,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Case": "Legacy",
+    "State": "All",
+    "Size": {
+      "IsEmpty": false,
+      "Width": 640,
+      "Height": 420
+    },
+    "Dpi": 120,
+    "Body": {
+      "IsEmpty": false,
+      "Width": 592,
+      "Height": 242
+    },
+    "Result": "PASS",
+    "Buttons": [
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 0",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 1",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Accessible": true,
+        "Left": 356,
+        "Top": 0,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Case": "Legacy",
+    "State": "All",
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1280,
+      "Height": 720
+    },
+    "Dpi": 120,
+    "Body": {
+      "IsEmpty": false,
+      "Width": 1232,
+      "Height": 542
+    },
+    "Result": "PASS",
+    "Buttons": [
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 0",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 1",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Accessible": true,
+        "Left": 356,
+        "Top": 0,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Case": "Legacy",
+    "State": "All",
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1366,
+      "Height": 768
+    },
+    "Dpi": 120,
+    "Body": {
+      "IsEmpty": false,
+      "Width": 1318,
+      "Height": 590
+    },
+    "Result": "PASS",
+    "Buttons": [
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 0",
+        "Accessible": true,
+        "Left": 8,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Thao t\u00E1c ki\u1EC3m th\u1EED 1",
+        "Accessible": true,
+        "Left": 182,
+        "Top": 0,
+        "Width": 166,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Accessible": true,
+        "Left": 356,
+        "Top": 0,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Case": "LegacyFlags",
+    "Result": "PASS"
+  }
+]

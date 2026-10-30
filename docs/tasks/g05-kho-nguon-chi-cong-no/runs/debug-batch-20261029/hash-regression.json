@@ -1,0 +1,12 @@
+{
+  "Part": "B04.FullFinancialSourcesHash",
+  "Result": "PASS",
+  "Source": "tools/database/Update-DevelopmentG05.ps1 moneySql AST; upgrade script not executed",
+  "Database": "CoffeeManager_Test_G05_20261029_134725_96d98d09_demo",
+  "PayloadLength": 25068,
+  "LegacyFirstChunkLength": 2033,
+  "LegacyChunkUnchanged": true,
+  "BeforeHash": "084D0CCF7A565B661C193654B00F3B02DE514E9FBCFF139F64D6C7C5657DB6E5",
+  "RepeatHash": "084D0CCF7A565B661C193654B00F3B02DE514E9FBCFF139F64D6C7C5657DB6E5",
+  "AfterTailInsertHash": "2BBA1F88656BE66D2DF8096CCD7E57E57F3900A9BF893CA7C022C7D9F92DA876"
+}

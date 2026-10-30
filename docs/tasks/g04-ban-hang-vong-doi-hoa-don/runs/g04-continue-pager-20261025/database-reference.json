@@ -1,0 +1,18 @@
+{
+  "RunId": "20261025_181739_98e5df59",
+  "Server": "localhost",
+  "Database": "CoffeeManager_Test_G04_20261025_181739_98e5df59_checkout",
+  "Marker": "20261025_181739_98e5df59",
+  "Created": true,
+  "Cleaned": false,
+  "State": "Ready for guided GUI; no test cases passed by provisioning",
+  "Purpose": "Approved post-checkout print/reset functional wave",
+  "RetainReason": "Active manual PC01-PC04; four open test orders, user testing Yes/No/print",
+  "ReviewBy": "2026-10-26",
+  "ProcessIds": [
+    23512,
+    29336,
+    25508
+  ],
+  "SchemaVersion": 16
+}

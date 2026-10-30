@@ -1,0 +1,27 @@
+{
+  "Checklist": {
+    "BLOCKED": 10.0,
+    "PASS": 38.0,
+    "FAIL": 5.0,
+    "NOT_RUN": 2.0
+  },
+  "SourceFiles": 304,
+  "SourceChanged": 0,
+  "ExpectedChanged": [],
+  "ResourceAudit": {
+    "CreatedNames": [
+      "CoffeeManager_Test_G05_20261027_110753_fb67dcbb_clean",
+      "CoffeeManager_Test_G05_20261027_110753_fb67dcbb_demo",
+      "CoffeeManager_Test_G05_20261027_115441_2b75067c_backup",
+      "CoffeeManager_Test_G05_20261027_115708_3ab510d5_backup",
+      "CoffeeManager_Test_G05_20261027_115710_e4a77bc9_backup"
+    ],
+    "Created": 5,
+    "Cleaned": 5,
+    "Remaining": [],
+    "BackupDevelopmentRetained": true,
+    "GuiProcess27396Exited": true,
+    "PrivateCredentialDirectoryDeleted": true,
+    "CheckedUtc": "2026-10-27T08:58:23.2614224Z"
+  }
+}

@@ -1,0 +1,129 @@
+Window: "CoffeeManager", App: CafeManager.WinForms.exe.
+	0 window CoffeeManager Secondary Actions: Raise
+		1 pane
+			2 pane
+				3 text CoffeeManager
+				4 text KHÔNG GIAN THU NGÂN
+				5 text G05 fixture CASH
+				6 text Thu ngân · CASH
+				7 button Trang phiên
+				8 button Bán hàng
+				9 button Lịch sử hóa đơn
+				10 button Giao hàng
+				11 button Khách hàng
+				12 button Tồn phục vụ bán
+				13 button Thông tin hệ thống
+				14 button Đăng xuất ID: logout
+				15 text Phiên đang hoạt động.
+			16 pane
+				17 text Thu ngân / Bán hàng
+				18 text G05 fixture CASH · CASH
+			19 pane G05 fixture CASH · CASH
+				20 pane G05 fixture CASH · CASH ID: 68815186
+					21 pane
+						22 pane
+							23 pane
+								24 pane ID: 51776030
+									25 pane Ảnh minh họa schematic, không phải ảnh thật món
+									26 text Ca phe den
+									27 button Thêm Ca phe den
+								28 pane ID: 1312970
+									29 pane Ảnh minh họa schematic, không phải ảnh thật món
+									30 text Ca phe sua
+									31 button Thêm Ca phe sua
+								32 pane ID: 920442
+									33 pane Ảnh minh họa schematic, không phải ảnh thật món
+									34 text Bac xiu
+									35 button Thêm Bac xiu
+								36 pane ID: 23071362
+									37 pane Ảnh minh họa schematic, không phải ảnh thật món
+									38 text Cappuccino
+									39 button Thêm Cappuccino
+								40 pane ID: 7932118
+									41 pane Ảnh minh họa schematic, không phải ảnh thật món
+									42 text Tra sua tran chau
+									43 button Thêm Tra sua tran chau
+								44 pane ID: 8849198
+									45 pane Ảnh minh họa schematic, không phải ảnh thật món
+									46 text Tra xanh
+									47 button Thêm Tra xanh
+								48 pane ID: 526620
+									49 pane Ảnh minh họa schematic, không phải ảnh thật món
+									50 text Sinh to bo
+									51 button Thêm Sinh to bo
+								52 pane ID: 723854
+									53 pane Ảnh minh họa schematic, không phải ảnh thật món
+									54 text Sinh to xoai
+									55 button Thêm Sinh to xoai
+								56 pane ID: 130812428
+									57 pane Ảnh minh họa schematic, không phải ảnh thật món
+									58 text Banh tiramisu
+									59 button Thêm Banh tiramisu
+								60 pane ID: 8915078
+									61 pane Ảnh minh họa schematic, không phải ảnh thật món
+									62 text Banh croissant
+									63 button Thêm Banh croissant
+								64 scroll bar (settable, float) Vertical Value: 0 ID: NonClientVerticalScrollBar
+									65 button Line up ID: UpButton
+									66 thumb Position ID: ScrollbarThumb
+									67 button Page down ID: DownPageButton
+									68 button Line down ID: DownButton
+							69 pane
+								70 edit (settable, string) Description: F2 · Tìm món
+								71 combo box (settable, string) Tất cả danh mục Value: Tất cả danh mục
+									72 text
+									73 button Open
+								74 button Tìm món
+								75 button Trước
+								76 button Sau
+						77 pane ID: 1706274
+							78 data grid
+								79 scroll bar (settable, float) Horizontal Value: 0
+									80 button Column left
+									81 thumb Position
+									82 button Page right
+									83 button Column right
+								84 custom Top Row
+									85 header Top Left Header Cell ID: 4255448858
+									86 header MÓN ID: 4249746524
+									87 header SL ID: 4242725043
+									88 header GIÁ ID: 4218554653
+									89 header GHI CHÚ ID: 4239883909
+									90 header TIỀN DÒNG ID: 4248728769
+							91 text Chưa tạo đơn · thêm món đầu để lưu
+							92 text Tổng tiền sẽ lấy từ SQL sau khi thêm món.
+							93 pane Tổng tiền sẽ lấy từ SQL sau khi thêm món.
+								94 button F3 · Khách / Ưu đãi
+								95 button (disabled) Sửa dòng
+								96 button (disabled) Xóa dòng
+								97 button (disabled) Hủy đơn mở
+								98 button (disabled) F8 · Thanh toán
+								99 button (disabled) Kiểm tra kết quả
+					100 pane
+						101 pane
+							102 text Khu vực / Bàn
+							103 combo box (settable, string) Khu vực / Bàn Value: Tất cả khu vực
+								104 text Khu vực / Bàn
+								105 button Open
+							106 combo box (settable, string) Ban 01 · Trống Value: Ban 01 · Trống
+								107 text
+								108 button Open
+							109 button Chọn bàn
+					110 pane
+						111 combo box (settable, string) Tại quán Value: Tại quán
+							112 text
+							113 button Open
+						114 button Đơn mới
+						115 button F4 · Đơn mở
+						116 button Làm mới
+					117 text Đã tải từ SQL · 04:03
+		118 title bar (settable, string) Value: CoffeeManager
+			119 menu bar System ID: MenuBar
+				120 menu item System
+			121 button Minimize
+			122 button Maximize
+			123 button Close
+
+The focused UI element is 70 edit (settable, string) Description: F2 · Tìm món.
+
+Focused element: 70 edit (settable, string) Description: F2 · Tìm món

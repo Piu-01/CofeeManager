@@ -1,0 +1,21 @@
+{
+  "source": "docs\\tasks\\g04-ban-hang-vong-doi-hoa-don\\runs\\pdf-print-20261025\\G04-HD20250421.pdf",
+  "pages": 1,
+  "header": "COFFEE MANAGER · HD20250421",
+  "checks": {
+    "readable_pdf_with_pages": true,
+    "correct_invoice": true,
+    "first_print_not_labeled_reprint": true,
+    "payable_81000": true,
+    "cash_allocation_81000": false,
+    "correct_product": true,
+    "fixture_note_retained": true,
+    "no_unpersisted_tender_or_change": true
+  },
+  "passed": 7,
+  "failed": 1,
+  "scope": "Text/content only; no visual QA or physical printer claim",
+  "text": [
+    "COFFEE MANAGER · HD20250421\n25/10/2026 18:50 · Mang đi · Bàn —\nĐã thanh toán\nTên hiển thị theo danh mục hiện tại; giá/số lượng theo snapshot.\nMÓN · SỐ LƯỢNG × GIÁ = TIỀN DÒNG TRƯỚC GIẢM\nSP001 · Ca phe den\n1 × 81.000 ₫ = 81.000 ₫\nGhi chú: OO pagination fixture\nTiền món: 81.000 ₫\nGiảm: 0 ₫ (Hạng thành viên 0%)\nShip: 0 ₫\nPHẢI TRẢ: 81.000 ₫\nTien mat: 81.000 ₫\nThanh toán: 25/10/2026 22:49\nKhông phải hóa đơn VAT. In lại không dựng tiền đưa/thối chưa lưu.\nTrang 1"
+  ]
+}

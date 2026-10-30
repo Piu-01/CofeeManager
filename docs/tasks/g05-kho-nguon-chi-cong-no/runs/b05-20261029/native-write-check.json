@@ -1,0 +1,9 @@
+{
+  "Purchases": 12,
+  "Debts": 11,
+  "Finance": 20,
+  "ActorReceipts": 1,
+  "Inventory": "[{\"MaNVL\":\"NVL01\",\"SoLuongTon\":98.6400},{\"MaNVL\":\"NVL02\",\"SoLuongTon\":98.1600},{\"MaNVL\":\"NVL03\",\"SoLuongTon\":72.7050},{\"MaNVL\":\"NVL04\",\"SoLuongTon\":21.9650},{\"MaNVL\":\"NVL05\",\"SoLuongTon\":5.0000},{\"MaNVL\":\"NVL06\",\"SoLuongTon\":9.7000},{\"MaNVL\":\"NVL07\",\"SoLuongTon\":22.7000},{\"MaNVL\":\"NVL08\",\"SoLuongTon\":42.0000},{\"MaNVL\":\"NVL09\",\"SoLuongTon\":20.3800},{\"MaNVL\":\"NVL10\",\"SoLuongTon\":500.0000},{\"MaNVL\":\"NVL11\",\"SoLuongTon\":59.0000},{\"MaNVL\":\"NVL12\",\"SoLuongTon\":29.0000}]",
+  "NativeFinance": "[{\"MaTC\":\"TC20250508\",\"SoTien\":2345,\"GhiChu\":\"B05-native-20261029\",\"OriginKind\":\"Manual\",\"Operation\":\"FinanceCreate\",\"ActorAccountId\":9001001}]",
+  "Result": "PASS"
+}

@@ -1,0 +1,14 @@
+{
+  "Database": "CoffeeManager_Test_G05_20261029_194514_8bfcd1ce_demo",
+  "Marker": "20261029_194514_8bfcd1ce",
+  "PrivateDirectory": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\CoffeeManager_G05_20261029_194514_8bfcd1ce",
+  "CredentialPath": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\CoffeeManager_G05_20261029_194514_8bfcd1ce\\credentials.bin",
+  "ActorIds": {
+    "ADMIN": 9001001,
+    "STORE": 9001002,
+    "CASH": 9001003
+  },
+  "WindowsOwner": "LAPTOP-79UNRIRC\\Lenovo",
+  "Note": "DPAPI encrypted fixture credentials; never print or commit password/hash. Delete private directory after test.",
+  "GuiProcessId": 17252
+}

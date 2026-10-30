@@ -58,8 +58,10 @@ public sealed class OrbitDateField : UserControl
         Value = DateTime.Today;
     }
 
-    internal void ApplyManagementTheme()
+    internal void SetInputName(string name) { AccessibleName = input.AccessibleName = name; }
+    internal void ApplyManagementTheme(bool borderless = false)
     {
+        input.BorderStyle = borderless ? BorderStyle.None : BorderStyle.FixedSingle;
         Height = OrbitManagementTheme.Px(this, 40);
         popup.BackColor = OrbitManagementTheme.Border;
         calendar.BackColor = OrbitManagementTheme.Surface; calendar.ForeColor = OrbitManagementTheme.Text;

@@ -17,11 +17,15 @@ public partial class MainForm : Form
     public event Action? LoggedOut;
     private bool loggingOut;
     private bool navigating;
+    private bool closingMain, closeApproved;
+    public UI.OrbitDialogHost Dialogs { get; }
 
     private bool arrangingNavigation;
     public MainForm()
     {
         InitializeComponent(); AppTheme.Apply(this);
+        Dialogs = new UI.OrbitDialogHost(this);
+        UI.OrbitField.ApplyInputBehavior(this);
 
 
 
@@ -85,28 +89,50 @@ public partial class MainForm : Form
     {
         this.session = session; this.readState = readState; this.catalogs = catalogs;
         this.modules = modules ?? new Dictionary<NavigationTarget, Func<UserControl>>();
-        foreach (var target in this.modules.Keys.Where(target => target is not (NavigationTarget.Tables or NavigationTarget.Customers or NavigationTarget.Loyalty) || session.Identity.Role is "ADMIN" or "CASH"))
+        // Menu theo công việc; CASH chọn bàn/món/ưu đãi trong POS, không mở màn quản trị.
+        NavigationTarget[] menuTargets = session.Identity.Role switch
         {
-            var button = new UI.OrbitButton { Tag = target, Text = target switch { NavigationTarget.Materials => "Nguyên liệu / Tồn", NavigationTarget.Products => "Menu / Công thức", NavigationTarget.Tables => "Bàn / Khu vực", NavigationTarget.Customers => "Khách hàng", NavigationTarget.Loyalty => "Ưu đãi / Điểm", _ => target.ToString() }, AutoSize = false, Size = new Size(168, 44), Margin = new Padding(0, 0, 0, 10) };
-            button.AlignTextLeft = true; button.Quiet = true; AppTheme.Apply(button); UI.OrbitManagementLayout.Icon(button, target switch { NavigationTarget.Materials => "package", NavigationTarget.Products => "receipt", NavigationTarget.Tables => "armchair", NavigationTarget.Customers => "users", NavigationTarget.Loyalty => "wallet", _ => "settings" }); sidebar.Controls.Add(button); sidebar.Controls.SetChildIndex(button, sidebar.Controls.Count - 2);
+            "ADMIN" => [NavigationTarget.Sales, NavigationTarget.Invoices, NavigationTarget.Delivery, NavigationTarget.Customers, NavigationTarget.Tables, NavigationTarget.Products, NavigationTarget.Materials, NavigationTarget.Loyalty, NavigationTarget.Finance, NavigationTarget.Inventory, NavigationTarget.Debt],
+            "CASH" => [NavigationTarget.Sales, NavigationTarget.Invoices, NavigationTarget.Delivery, NavigationTarget.Customers, NavigationTarget.Materials],
+            "STORE" => [NavigationTarget.Inventory, NavigationTarget.Materials, NavigationTarget.Products, NavigationTarget.Debt],
+            _ => []
+        };
+        foreach (var target in menuTargets.Where(this.modules.ContainsKey))
+        {
+            var button = new UI.OrbitButton { Tag = target, Text = target switch { NavigationTarget.Delivery => "Giao hàng", NavigationTarget.Invoices => "Lịch sử hóa đơn", NavigationTarget.Sales => "Bán hàng", NavigationTarget.Materials => session.Identity.Role == "CASH" ? "Tồn phục vụ bán" : "Nguyên liệu / Tồn", NavigationTarget.Products => "Menu / Công thức", NavigationTarget.Tables => "Bàn / Khu vực", NavigationTarget.Customers => "Khách hàng", NavigationTarget.Debt => "Công nợ", NavigationTarget.Inventory => "Kho", NavigationTarget.Finance => "Thu chi", NavigationTarget.Loyalty => "Ưu đãi / Điểm", _ => target.ToString() }, AutoSize = false, Size = new Size(168, 44), Margin = new Padding(0, 0, 0, 10) };
+            button.AlignTextLeft = true; button.Quiet = true; AppTheme.Apply(button); UI.OrbitManagementLayout.Icon(button, target switch { NavigationTarget.Delivery => "receipt", NavigationTarget.Invoices => "receipt", NavigationTarget.Sales => "receipt", NavigationTarget.Materials => "package", NavigationTarget.Products => "receipt", NavigationTarget.Tables => "armchair", NavigationTarget.Customers => "users", NavigationTarget.Finance => "wallet", NavigationTarget.Loyalty => "wallet", _ => "settings" }); sidebar.Controls.Add(button); sidebar.Controls.SetChildIndex(button, sidebar.Controls.GetChildIndex(systemButton));
             ConfigureNavigation(button);
             button.Click += async (_, _) => await Navigate(target);
         }
-        var order=new[]{"Trang phiên","Danh mục nền","Khách hàng","Bàn / Khu vực","Menu / Công thức","Nguyên liệu / Tồn","Ưu đãi / Điểm","Thông tin hệ thống","Đăng xuất"};
-        for(var i=0;i<order.Length;i++){var item=sidebar.Controls.OfType<Button>().FirstOrDefault(b=>b.Text==order[i]);if(item is not null)sidebar.Controls.SetChildIndex(item,Math.Min(i+2,sidebar.Controls.Count-1));}
         ArrangeNavigation();
         session.Revoked += SessionRevoked;
         navigation = new NavigationController(content, session, permissions);
         identityLabel.Text = $"{session.Identity.EmployeeName} · {session.Identity.Role}";
         ((UI.OrbitSidebar)sidebar).Person.Text = session.Identity.EmployeeName;
-        ((UI.OrbitSidebar)sidebar).Role.Text = $"{(session.Identity.Role == "ADMIN" ? "Quản trị viên" : "Nhân viên")} · {session.Identity.Role}";
+        var roleLabel = session.Identity.Role switch { "ADMIN" => "Quản trị viên", "CASH" => "Thu ngân", "STORE" => "Quản lý kho", _ => "Nhân viên" };
+        ((UI.OrbitSidebar)sidebar).Role.Text = $"{roleLabel} · {session.Identity.Role}";
+        brandCaption.Text = session.Identity.Role switch { "CASH" => "KHÔNG GIAN THU NGÂN", "STORE" => "KHÔNG GIAN KHO", _ => "KHÔNG GIAN QUẢN LÝ" };
         catalogsButton.Visible = session.Identity.Role == "ADMIN" && catalogs is not null;
-        Shown += async (_, _) => await Navigate(session.Identity.Role == "ADMIN" && catalogs is not null ? NavigationTarget.Catalogs : NavigationTarget.Home);
+        Shown += async (_, _) => await Navigate(session.Identity.Role == "CASH" && this.modules.ContainsKey(NavigationTarget.Sales) ? NavigationTarget.Sales : NavigationTarget.Home);
     }
-    internal void SetWorkspaceTitle(string caption) { breadcrumbLabel.Text = caption == "Nguyên liệu / Tồn" ? "Kho nguyên liệu  /  Tồn hiện tại" : "Quản lý / " + caption; }
+    internal async Task OpenSalesOrderAsync(string code)
+    {
+        await Navigate(NavigationTarget.Sales);
+        if (content.Controls.OfType<Modules.Sales.SalesControl>().FirstOrDefault() is { } sales && sales.Visible) await sales.OpenOrderAsync(code);
+    }
+    internal async Task OpenSalesTableAsync(string code)
+    {
+        await Navigate(NavigationTarget.Sales);
+        if (content.Controls.OfType<Modules.Sales.SalesControl>().FirstOrDefault() is { } sales && sales.Visible) await sales.OpenTableAsync(code);
+    }
+    internal void SetWorkspaceTitle(string caption)
+    {
+        var workspace = session?.Identity.Role switch { "CASH" => "Thu ngân", "STORE" => "Kho", _ => "Quản lý" };
+        breadcrumbLabel.Text = caption == "Nguyên liệu / Tồn" ? "Kho nguyên liệu  /  Tồn hiện tại" : workspace + " / " + caption;
+    }
     private async Task Navigate(NavigationTarget target)
     {
-        if (navigation is null || session is null || navigating || loggingOut) return;
+        if (navigation is null || session is null || navigating || loggingOut || Dialogs.IsOpen) return;
         navigating = true;
         homeButton.Enabled = catalogsButton.Enabled = systemButton.Enabled = false;
         try
@@ -144,11 +170,12 @@ public partial class MainForm : Form
     private async void Home_Click(object? sender, EventArgs e) => await Navigate(NavigationTarget.Home);
     private async void Catalogs_Click(object? sender, EventArgs e) => await Navigate(NavigationTarget.Catalogs);
     private async void System_Click(object? sender, EventArgs e) => await Navigate(NavigationTarget.SystemInfo);
-    private void Logout_Click(object? sender, EventArgs e) { if (navigation?.ConfirmLeave(this) != false) Logout(); }
+    private async void Logout_Click(object? sender, EventArgs e)
+    { if (!Dialogs.IsOpen && (navigation is null || await navigation.ConfirmLeaveAsync(this))) Logout(); }
     private void Logout()
     {
         if (loggingOut) return;
-        loggingOut = true; session?.Revoke(); navigation?.Dispose(); LoggedOut?.Invoke(); Close();
+        loggingOut = true; Dialogs.AbortAll(); session?.Revoke(); navigation?.Dispose(); LoggedOut?.Invoke(); Close();
     }
     private void SessionRevoked()
     {
@@ -158,16 +185,40 @@ public partial class MainForm : Form
     }
     protected override void OnFormClosing(FormClosingEventArgs e)
     {
-        if (!loggingOut && navigation?.ConfirmLeave(this) == false) e.Cancel = true;
+        if (!loggingOut && !closeApproved)
+        {
+            e.Cancel = true;
+            if (!closingMain)
+            {
+                closingMain = true;
+                BeginInvoke((Action)(async () =>
+                {
+                    try
+                    {
+                        if (!await Dialogs.CloseAllAsync() || navigation is not null && !await navigation.ConfirmLeaveAsync(this)) return;
+                        closeApproved = true; Close();
+                    }
+                    finally { closingMain = false; }
+                }));
+            }
+        }
         base.OnFormClosing(e);
         if (!e.Cancel) { if (session is not null) session.Revoked -= SessionRevoked; session?.Revoke(); navigation?.Dispose(); }
     }
     protected override void Dispose(bool disposing)
     {
-        if (disposing) { if (session is not null) session.Revoked -= SessionRevoked; navigation?.Dispose(); }
+        if (disposing) { Dialogs?.Dispose(); if (session is not null) session.Revoked -= SessionRevoked; navigation?.Dispose(); }
         base.Dispose(disposing);
     }
 }
+
+
+
+
+
+
+
+
 
 
 

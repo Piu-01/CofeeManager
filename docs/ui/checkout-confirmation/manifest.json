@@ -1,0 +1,20 @@
+{
+  "Source": "User attachment Orbit_XacNhanThanhToan.zip",
+  "ProvidedOn": "2026-10-25",
+  "Scope": "Checkout confirmation UI only; demo HTML is not runtime or acceptance evidence",
+  "ArchiveSha256": "2E46BDF8C710D6B7AEB3DC246C907859EE66DD9977A7ADD1F47E5EDB037433C7",
+  "Files": [
+    {
+      "Name": "Orbit_XacNhanThanhToan_Laptop.png",
+      "Sha256": "27C8DB168C8A30CC194974E775A33B22A93FABA286377A5192E0D64610A07CE9"
+    },
+    {
+      "Name": "Orbit_XacNhanThanhToan.html",
+      "Sha256": "80B8C83F04D3F685F51A6D78B22A373E18548B49701D06FB438DE094462B4C72"
+    },
+    {
+      "Name": "README_XacNhanThanhToan.md",
+      "Sha256": "641A6DC402CBE1217D964ABABAEFE62A4B74D8F6ADD216005DC5485CD96818CE"
+    }
+  ]
+}

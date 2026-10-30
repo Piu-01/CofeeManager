@@ -14,6 +14,7 @@ public class OrbitRecordListControl : UserControl
     protected TextBox Search => searchBox.Input;
     protected bool Paginated = true;
     protected Func<string?>? EmptyHint;
+    protected Func<IList, int>? TotalCountSelector;
     protected SessionContext? Session;
     protected object? Selected => Grid.CurrentRow?.DataBoundItem;
     internal OrbitListWorkspace PageWorkspace => Workspace;
@@ -23,15 +24,21 @@ public class OrbitRecordListControl : UserControl
     private readonly OrbitEmptyState empty = new() { Visible = false };
     private readonly OrbitButton refresh = new() { AccessibleName = "Tải lại danh sách" };
     private readonly CancellationTokenSource lifetime = new();
+    private readonly ToolTip tips = new();
     private readonly List<(OrbitButton Button, bool NeedsRow, string Command)> buttons = [];
     private readonly HashSet<Button> running = [];
     private CancellationTokenSource? reading;
     private Func<string, int, CancellationToken, Task<IList>>? query;
     private int page, generation, rowCount, dataPage;
     private bool ready, shuttingDown, busy;
+    private bool committedSearchOnly, dataValid = true;
+    private int? totalCount;
+    private string appliedSearch = "";
+    private string emptyMessage = "Chưa có dữ liệu trong bộ lọc này.";
     private string createCaption = "Thêm", noun = "dòng";
     public OrbitRecordListControl()
     {
+        OrbitField.ApplyInputBehavior(this);
         AutoScaleMode = AutoScaleMode.Dpi; AutoScaleDimensions = new SizeF(96, 96);
         BackColor = OrbitManagementTheme.Background; Font = OrbitManagementTheme.Body;
         searchHost.Controls.Add(searchBox); Workspace = new OrbitListWorkspace(searchHost);
@@ -43,7 +50,7 @@ public class OrbitRecordListControl : UserControl
         Register(Workspace.Pagination.Previous, "Trước", async () => { page = Math.Max(0, page - 1); await Reload(); });
         Register(Workspace.Pagination.Next, "Sau", async () => { page++; await Reload(); });
         Search.PlaceholderText = "Tìm mã hoặc tên…";
-        Search.KeyDown += async (_, e) => { if (e.KeyCode == Keys.Enter && !busy) { e.SuppressKeyPress = true; await ResetAndReload(); } };
+        Search.KeyDown += async (_, e) => { if (e.KeyCode == Keys.Enter) { e.SuppressKeyPress = true; if (!busy || committedSearchOnly) await SubmitSearch(); } };
         Grid.SelectionChanged += (_, _) => UpdateActions();
         Grid.CellFormatting += (_, e) =>
         {
@@ -84,14 +91,30 @@ public class OrbitRecordListControl : UserControl
         }
         Workspace.PerformLayout();
     }
-    protected void AddFilter(Control control, int logicalWidth = 140)
+    protected void AddFilter(Control control, int logicalWidth = 140, bool plain = false)
     {
         Control presented = control;
-        if (control is ComboBox combo) presented = new OrbitFilterBox(combo) { LogicalWidth = logicalWidth };
+        if (control is ComboBox combo) presented = new OrbitFilterBox(combo) { LogicalWidth = logicalWidth, Plain = plain };
         else { control.Font = OrbitManagementTheme.Table; control.ForeColor = OrbitManagementTheme.Muted; control.BackColor = OrbitManagementTheme.Surface; control.AutoSize = false; control.Size = new Size(OrbitManagementTheme.Px(this, logicalWidth), OrbitManagementTheme.Px(this, 40)); }
-        Workspace.Filters.Controls.Add(presented); Workspace.Filters.Controls.SetChildIndex(refresh, Workspace.Filters.Controls.Count - 1);
+        Workspace.Filters.Controls.Add(presented); if (refresh.Parent == Workspace.Filters) Workspace.Filters.Controls.SetChildIndex(refresh, Workspace.Filters.Controls.Count - 1);
     }
-    protected OrbitButton AddAction(string text, Func<Task> action, bool visible = true)
+    protected void UseStackedSearch(string itemNoun, string? emptyDescription = null)
+    {
+        committedSearchOnly = true; noun = itemNoun; Workspace.StackedTools = true;
+        if (emptyDescription is not null) { emptyMessage = emptyDescription; empty.HistoryPrompt = true; empty.TitleText = $"Chưa có {itemNoun} phù hợp"; }
+        var submit = new OrbitButton { AccessibleName = "Tìm kiếm" };
+        OrbitManagementTheme.Button(submit, ManagementButtonStyle.Icon, "search");
+        Workspace.SearchActions.Controls.AddRange([submit, refresh]);
+        tips.SetToolTip(submit, "Tìm kiếm (Enter)"); tips.SetToolTip(refresh, "Làm mới kết quả theo tìm kiếm và bộ lọc đang áp dụng");
+        tips.SetToolTip(Search, "Nhấn Enter hoặc kính lúp để tìm");
+        Register(submit, "Tìm kiếm", SubmitSearch); Workspace.PerformLayout();
+    }
+    private async Task SubmitSearch()
+    {
+        if (committedSearchOnly) appliedSearch = Search.Text.Trim();
+        await ResetAndReload();
+    }
+    protected OrbitButton AddAction(string text, Func<Task> action, bool visible = true, bool needsRow = false)
     {
         var primary = text is "Thêm" or "Thay chính sách" or "Điều chỉnh điểm";
         var button = new OrbitButton { Text = text == "Thêm" ? createCaption : text, Visible = visible, AccessibleName = text };
@@ -100,7 +123,7 @@ public class OrbitRecordListControl : UserControl
         if (primary) Workspace.PrimaryActions.Controls.Add(button);
         else if (text == "Chọn khách" && Grid.Profile == OrbitGridProfile.Points) { searchHost.Controls.Add(button); ArrangeCustomerSelector(); }
         else Workspace.RowActions.Controls.Add(button);
-        Register(button, text, action); OrderActions(); return button;
+        Register(button, text, action, needsRow); OrderActions(); return button;
     }
     private void OrderActions()
     {
@@ -115,9 +138,9 @@ public class OrbitRecordListControl : UserControl
         var gap = OrbitManagementTheme.Px(this, 10); selectionCaption.SetBounds(button.Right + gap, 0, Math.Max(1, searchHost.Width - button.Right - gap), searchHost.Height);
     }
     protected void SetSelectionCaption(string? caption) => selectionCaption.Text = caption ?? "Chưa chọn khách hàng";
-    private void Register(OrbitButton button, string command, Func<Task> action)
+    private void Register(OrbitButton button, string command, Func<Task> action, bool needsRow = false)
     {
-        buttons.Add((button, command is "Sửa" or "Xóa" or "Công thức" or "Mở sổ điểm" or "Hóa đơn" or "Chọn bàn", command));
+        buttons.Add((button, needsRow || command is "Sửa" or "Xóa" or "Công thức" or "Mở sổ điểm" or "Hóa đơn" or "Chọn bàn", command));
         button.Click += async (_, _) =>
         {
             if (!button.Enabled) return; running.Add(button); UpdateActions();
@@ -127,35 +150,46 @@ public class OrbitRecordListControl : UserControl
             finally { running.Remove(button); if (!IsDisposed) UpdateActions(); }
         };
     }
-    private void UpdateActions()
+    protected virtual bool IsActionAvailable(string command) => true;
+    protected void UpdateActions()
     {
         foreach (var (button, needsRow, command) in buttons)
-            button.Enabled = !busy && !running.Contains(button) && (!needsRow || Selected is not null) && (command != "Trước" || Paginated && page > 0) && (command != "Sau" || Paginated && rowCount == 50);
+            button.Enabled = !busy && !running.Contains(button) && IsActionAvailable(command) && (!needsRow || dataValid && Selected is not null)
+                && (command != "Trước" || Paginated && dataValid && page > 0)
+                && (command != "Sau" || Paginated && dataValid && (totalCount is { } total ? ((long)page + 1) * 50 < total : rowCount == 50));
     }
     protected async Task ResetAndReload() { page = 0; await Reload(); }
     protected async Task Reload()
     {
         if (shuttingDown || query is null || Session is null) return;
         reading?.Cancel(); reading?.Dispose(); reading = CancellationTokenSource.CreateLinkedTokenSource(lifetime.Token, Session.Token);
+        var token = reading.Token; var keyword = committedSearchOnly ? appliedSearch : Search.Text.Trim();
         var current = ++generation; State.Text = "Đang tải…"; Grid.Enabled = false; busy = true; empty.Visible = false; UpdateActions();
+        if (TotalCountSelector is not null) { dataValid = false; Grid.DataSource = null; Workspace.Pagination.SetPending("Đang tải…"); }
         try
         {
-            var rows = await query(Search.Text.Trim(), page * 50, reading.Token); if (IsDisposed || current != generation) return;
+            var rows = await query(keyword, page * 50, token); if (IsDisposed || current != generation) return;
+            if (TotalCountSelector is not null && page > 0 && rows.Count == 0)
+            {
+                page = 0; rows = await query(keyword, 0, token); if (IsDisposed || current != generation) return;
+            }
+            totalCount = TotalCountSelector?.Invoke(rows); dataValid = true;
             rowCount = rows.Count; dataPage = page; Grid.DataSource = rows;
-            var hint = EmptyHint?.Invoke(); empty.Text = hint ?? "Chưa có dữ liệu trong bộ lọc này."; PositionEmpty(); empty.Visible = rowCount == 0; if (rowCount == 0) empty.BringToFront();
+            var hint = EmptyHint?.Invoke(); empty.Text = hint ?? emptyMessage; PositionEmpty(); empty.Visible = rowCount == 0; if (rowCount == 0) empty.BringToFront();
             Workspace.Count.Text = $"{rowCount} {noun}" + (rowCount == 50 ? " trong trang" : "");
-            Workspace.Pagination.SetServerPage(page, rowCount, 50, noun, Paginated);
+            if (totalCount is { } total) Workspace.Pagination.SetPage(page, 50, total, noun);
+            else Workspace.Pagination.SetServerPage(page, rowCount, 50, noun, Paginated);
             if (hint is not null) Workspace.Pagination.Range.Text = "0 giao dịch";
             State.Text = $"Đã cập nhật {DateTime.Now:HH:mm:ss}";
         }
-        catch (OperationCanceledException) { }
-        catch (Exception ex) when (ex is UserOperationException or UnauthorizedAccessException or ArgumentException) { if (!IsDisposed && current == generation) { page = dataPage; State.Text = "Chưa cập nhật · " + ex.Message; } }
-        finally { if (!IsDisposed && current == generation) { busy = false; Grid.Enabled = true; UpdateActions(); } }
+        catch (OperationCanceledException) { if (!IsDisposed && current == generation && TotalCountSelector is not null) { State.Text = "Đã dừng tải. Có thể tìm hoặc làm mới lại."; Workspace.Pagination.SetPending("Đã dừng tải"); } }
+        catch (Exception ex) when (ex is UserOperationException or UnauthorizedAccessException or ArgumentException) { if (!IsDisposed && current == generation) { page = dataPage; State.Text = "Chưa cập nhật · " + ex.Message; if (TotalCountSelector is not null) Workspace.Pagination.SetPending("Chưa tải được dữ liệu"); } }
+        finally { if (!IsDisposed && current == generation) { busy = false; Grid.Enabled = dataValid; UpdateActions(); } }
     }
     private void PositionEmpty() => empty.SetBounds(0, Grid.ColumnHeadersHeight, Workspace.Body.Width, Math.Max(0, Workspace.Body.Height - Grid.ColumnHeadersHeight));
     protected override void Dispose(bool disposing)
     {
-        if (disposing && !shuttingDown) { shuttingDown = true; generation++; lifetime.Cancel(); reading?.Cancel(); reading?.Dispose(); lifetime.Dispose(); }
+        if (disposing && !shuttingDown) { shuttingDown = true; generation++; lifetime.Cancel(); reading?.Cancel(); reading?.Dispose(); lifetime.Dispose(); tips.Dispose(); }
         base.Dispose(disposing);
     }
 }

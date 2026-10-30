@@ -1,0 +1,155 @@
+{
+  "Failed": false,
+  "Results": [
+    {
+      "Name": "{Width=1280, Height=720} bounds Label",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=55,Height=50}"
+    },
+    {
+      "Name": "{Width=1280, Height=720} bounds OrbitFilterBox",
+      "Outcome": "PASS",
+      "Actual": "{X=65,Y=0,Width=156,Height=50}"
+    },
+    {
+      "Name": "{Width=1280, Height=720} bounds OrbitDateRangeField",
+      "Outcome": "PASS",
+      "Actual": "{X=231,Y=0,Width=375,Height=50}"
+    },
+    {
+      "Name": "{Width=1280, Height=720} bounds OrbitFilterBox",
+      "Outcome": "PASS",
+      "Actual": "{X=616,Y=0,Width=175,Height=50}"
+    },
+    {
+      "Name": "{Width=1280, Height=720} bounds OrbitFilterBox",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=60,Width=150,Height=50}"
+    },
+    {
+      "Name": "{Width=1280, Height=720} bounds T\u00ECm ki\u1EBFm",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=50,Height=50}"
+    },
+    {
+      "Name": "{Width=1280, Height=720} bounds T\u1EA3i l\u1EA1i danh s\u00E1ch",
+      "Outcome": "PASS",
+      "Actual": "{X=60,Y=0,Width=50,Height=50}"
+    },
+    {
+      "Name": "{Width=1280, Height=720} bounds Chi ti\u1EBFt / In",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=128,Height=41}"
+    },
+    {
+      "Name": "{Width=1280, Height=720} bounds T\u1EEB ng\u00E0y, dd/MM/yyyy",
+      "Outcome": "PASS",
+      "Actual": "{X=6,Y=6,Width=166,Height=38}"
+    },
+    {
+      "Name": "{Width=1280, Height=720} bounds \u0110\u1EBFn ng\u00E0y, dd/MM/yyyy",
+      "Outcome": "PASS",
+      "Actual": "{X=202,Y=6,Width=166,Height=38}"
+    },
+    {
+      "Name": "{Width=1280, Height=720} bounds OrbitPagination",
+      "Outcome": "PASS",
+      "Actual": "{X=1,Y=387,Width=963,Height=66}"
+    },
+    {
+      "Name": "{Width=1280, Height=720} table body usable",
+      "Outcome": "PASS",
+      "Actual": {
+        "Height": 121,
+        "Dpi": 120
+      }
+    },
+    {
+      "Name": "{Width=1280, Height=720} full code",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1366, Height=768} bounds Label",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=55,Height=50}"
+    },
+    {
+      "Name": "{Width=1366, Height=768} bounds OrbitFilterBox",
+      "Outcome": "PASS",
+      "Actual": "{X=65,Y=0,Width=156,Height=50}"
+    },
+    {
+      "Name": "{Width=1366, Height=768} bounds OrbitDateRangeField",
+      "Outcome": "PASS",
+      "Actual": "{X=231,Y=0,Width=375,Height=50}"
+    },
+    {
+      "Name": "{Width=1366, Height=768} bounds OrbitFilterBox",
+      "Outcome": "PASS",
+      "Actual": "{X=616,Y=0,Width=175,Height=50}"
+    },
+    {
+      "Name": "{Width=1366, Height=768} bounds OrbitFilterBox",
+      "Outcome": "PASS",
+      "Actual": "{X=801,Y=0,Width=150,Height=50}"
+    },
+    {
+      "Name": "{Width=1366, Height=768} bounds T\u00ECm ki\u1EBFm",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=50,Height=50}"
+    },
+    {
+      "Name": "{Width=1366, Height=768} bounds T\u1EA3i l\u1EA1i danh s\u00E1ch",
+      "Outcome": "PASS",
+      "Actual": "{X=60,Y=0,Width=50,Height=50}"
+    },
+    {
+      "Name": "{Width=1366, Height=768} bounds Chi ti\u1EBFt / In",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=128,Height=41}"
+    },
+    {
+      "Name": "{Width=1366, Height=768} bounds T\u1EEB ng\u00E0y, dd/MM/yyyy",
+      "Outcome": "PASS",
+      "Actual": "{X=6,Y=6,Width=166,Height=38}"
+    },
+    {
+      "Name": "{Width=1366, Height=768} bounds \u0110\u1EBFn ng\u00E0y, dd/MM/yyyy",
+      "Outcome": "PASS",
+      "Actual": "{X=202,Y=6,Width=166,Height=38}"
+    },
+    {
+      "Name": "{Width=1366, Height=768} bounds OrbitPagination",
+      "Outcome": "PASS",
+      "Actual": "{X=1,Y=435,Width=1049,Height=66}"
+    },
+    {
+      "Name": "{Width=1366, Height=768} table body usable",
+      "Outcome": "PASS",
+      "Actual": {
+        "Height": 229,
+        "Dpi": 120
+      }
+    },
+    {
+      "Name": "{Width=1366, Height=768} full code",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Invoice profile only",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Two search icon actions",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "DeviceDpi": 120,
+      "Scope": "Presentation-only constructor/layout smoke, null service/session never queried; in-memory demo row; no visual QA/business action/auth/SQL"
+    }
+  ]
+}

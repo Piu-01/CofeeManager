@@ -1,0 +1,10 @@
+[
+  {
+    "Path": "database\\migrations\\016_payment_guard_point_locks.sql",
+    "SHA256": "E14C5B11B667593A1A48080C0496EF04684EDDF0DB90E4B78BBFE0917FC307E8"
+  },
+  {
+    "Path": "tools\\database\\Update-DevelopmentG04Concurrency.ps1",
+    "SHA256": "566E5A7671A72ED632697EE28017A3F474B403F0E68FA0B90347A49CF87BE696"
+  }
+]

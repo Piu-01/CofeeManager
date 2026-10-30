@@ -209,10 +209,25 @@ chỉ chạy sau duyệt đợt testG02; build/SQLcompile/smoke không thay nghi
 ## G03 — dữ liệu phục vụ bán hàng
 
 Đã có nguyên liệu/mở sổ, menu/công thức, bàn/khu vực, khách/hạng, khuyến mãi và
-điều chỉnh điểm; đang chờ duyệt đợt nghiệm thu. Xem
+điều chỉnh điểm; đã nghiệm thu theo quyết định người dùng20/10/2026 với ngoại lệ kiểm thử. Xem
 [đường chạy F5 và kịch bản dùng thử](docs/tasks/g03-du-lieu-phuc-vu-ban-hang/development-guide.md)
 và [báo cáo triển khai](docs/tasks/g03-du-lieu-phuc-vu-ban-hang/report.md).
 Development cố định `localhost/CoffeeManager_Development`, schema009; cập nhật bằng
 `tools/database/Update-DevelopmentG03.ps1` khi đã đóng app (backup và đối chiếu trước/
 sau, không seed/reset account). Khởi tạo mới giữ baseline→seed tùy chọn→001..009.
 G03 chưa có POS/checkout đích, nhập/xuất/kiểm kê hoặc tra cứu/in hoàn chỉnh.
+
+
+## G04 — POS và vòng đời hóa đơn
+
+Đã triển khai T14–T18, đang chờ duyệt đợt test riêng; chưa nghiệm thu56ID.
+[Hướng dẫn F5/dùng thử](docs/tasks/g04-ban-hang-vong-doi-hoa-don/development-guide.md) ·
+[Báo cáo](docs/tasks/g04-ban-hang-vong-doi-hoa-don/report.md) ·
+[Đợt test đề nghị](docs/tasks/g04-ban-hang-vong-doi-hoa-don/test-plan.md).
+
+Development hiện tại schema015 sau Update-DevelopmentG04.ps1 (backup/đối chiếu,
+không seed/reset account). G03/schema009 phía trên là mốc lịch sử. CASH bắt đầu ở
+Bán hàng; ADMIN vào menu Bán hàng/Lịch sử hóa đơn/Giao hàng. STORE bị chặn các thao tác
+này. Đơn cũ thiếu nguồn/tỷ lệ ưu đãi ghi rõ LegacyUnknown, không bịa dữ liệu in lại.
+T18 chỉ lưu tiến độ hiện tại, không timeline/hoàn tiền; ứng dụng chưa là bản đầy đủ
+các phân hệ G05–G08. Tiện ích đăng nhập TEST vẫn phải gỡ hoàn toàn trước chốtG08/T32.

@@ -1,0 +1,35 @@
+{
+  "SourceFiles": 208,
+  "ChangedDuringTests": 0,
+  "UiSHA256": "F9667F577E484EB766A4FA8C20460162A2C8F55071BA55B7642A4BA5DDE2B0AF",
+  "FixtureCopies": [
+    {
+      "Fixture": "bin",
+      "SameUiDll": true
+    },
+    {
+      "Fixture": "checkout-bin",
+      "SameUiDll": true
+    },
+    {
+      "Fixture": "content-bin",
+      "SameUiDll": true
+    }
+  ],
+  "OpenOrdersRealSqlAndLayoutPass": 59,
+  "AdditionalContentHandlersPass": 7,
+  "CheckoutRegressionPass": 32,
+  "ObservedDpi": 120,
+  "CodeMeasuredPixels": 80,
+  "CodeAvailableContentPixels": 156,
+  "CodeColumnPixels": 188,
+  "CodeWidthsStableAcrossSizesAndPaging": true,
+  "FinancialReadsSnapshotUnchanged": true,
+  "Database": "CoffeeManager_Test_G04_20261025_181739_98e5df59_checkout",
+  "FixtureOrders": 51,
+  "PhysicalInput": "Pending user review",
+  "VisualQA": "SKIPPED:user responsibility",
+  "Dpi100150": "NOT RUN",
+  "ProductChangesDuringTest": 0,
+  "G04": "34 PASS /0 FAIL /22 BLOCKED; subset does not complete original cases"
+}

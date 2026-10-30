@@ -1,0 +1,58 @@
+{
+  "Database": "CoffeeManager_Test_G05_20261027_115441_2b75067c_backup",
+  "Backup": "C:\\Program Files\\Microsoft SQL Server\\MSSQL17.MSSQLSERVER\\MSSQL\\Backup\\CoffeeManager_Development_before_G05_021_20261027_112555_5d4d8de7.bak",
+  "Purpose": "Compare complete server-side hashes with approved pre-upgrade backup; no live data changes",
+  "Created": true,
+  "Cleaned": true,
+  "Comparisons": [
+    {
+      "BeforeHash": "06E5CB12E2832352B015F36669B4770BECB8EA1BE45568A13C7DDBE43E161FBA",
+      "AfterHash": "06E5CB12E2832352B015F36669B4770BECB8EA1BE45568A13C7DDBE43E161FBA",
+      "Part": "Inventory",
+      "Equal": true
+    },
+    {
+      "BeforeHash": "E0D69906BF4F8F58BFE662736BF5EF85001E08B6A3C5EA9118DE2A20049173DA",
+      "AfterHash": "E0D69906BF4F8F58BFE662736BF5EF85001E08B6A3C5EA9118DE2A20049173DA",
+      "Part": "Points",
+      "Equal": true
+    },
+    {
+      "BeforeHash": "39D469DBF87F66576C1C66E45D6E37FD3FC9B2FC918D91070F4F72F9EC17CACA",
+      "AfterHash": "39D469DBF87F66576C1C66E45D6E37FD3FC9B2FC918D91070F4F72F9EC17CACA",
+      "Part": "Accounts",
+      "Equal": true
+    },
+    {
+      "BeforeHash": "D08C95A51AEE41BA6C0557CFA4A636FFAB72BD8D1938600AC9B2320EAD6958B4",
+      "AfterHash": "D08C95A51AEE41BA6C0557CFA4A636FFAB72BD8D1938600AC9B2320EAD6958B4",
+      "Part": "Invoices",
+      "Equal": true
+    },
+    {
+      "BeforeHash": "F34B7FF06E4C70319C928E1177D3973C08526E8CF0CE7A1561E2A1BBF002E168",
+      "AfterHash": "F34B7FF06E4C70319C928E1177D3973C08526E8CF0CE7A1561E2A1BBF002E168",
+      "Part": "Finance",
+      "Equal": true
+    },
+    {
+      "BeforeHash": "DF17CEE11C52D01429756EB848B0BBD7C605E15056D9D99484DD9F401F454638",
+      "AfterHash": "DF17CEE11C52D01429756EB848B0BBD7C605E15056D9D99484DD9F401F454638",
+      "Part": "Purchases",
+      "Equal": true
+    },
+    {
+      "BeforeHash": "DF5C37A834C69D23211CAF6FC6E796DEDBFB7C9BD677DE1C0820D4695EE4FD31",
+      "AfterHash": "DF5C37A834C69D23211CAF6FC6E796DEDBFB7C9BD677DE1C0820D4695EE4FD31",
+      "Part": "Debts",
+      "Equal": true
+    },
+    {
+      "BeforeHash": "109FFB6F13CBC88785F84DD3BC77490F536E41E77BA035D17DE49A84B0142242",
+      "AfterHash": "109FFB6F13CBC88785F84DD3BC77490F536E41E77BA035D17DE49A84B0142242",
+      "Part": "Payments",
+      "Equal": true
+    }
+  ],
+  "Status": "PASS"
+}

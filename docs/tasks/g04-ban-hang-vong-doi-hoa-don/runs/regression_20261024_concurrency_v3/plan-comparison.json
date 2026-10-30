@@ -1,0 +1,16 @@
+[
+  {
+    "Phase": "Before",
+    "File": "checkout-trigger-44.sqlplan",
+    "Statement": "IF EXISTS (SELECT 1 FROM HOADON h WITH (UPDLOCK,HOLDLOCK)\n        WHERE h.MaHD IN (SELECT MaHD FROM inserted UNION SELECT MaHD FROM deleted)\n          AND h.TrangThai<>N'Chua thanh toan')",
+    "Physical": "Clustered Index Scan",
+    "ActualRows": "9"
+  },
+  {
+    "Phase": "After",
+    "File": "checkout-trigger-46.sqlplan",
+    "Statement": "SELECT @status=TrangThai,@payable=ThanhTien\n  FROM dbo.HOADON WITH(UPDLOCK,HOLDLOCK,INDEX(PK_HOADON),FORCESEEK)\n  WHERE MaHD=@code",
+    "Physical": "Clustered Index Seek",
+    "ActualRows": "1"
+  }
+]

@@ -35,6 +35,7 @@ public static class AppTheme
 
     public static void Apply(Control root)
     {
+        UI.OrbitField.ApplyInputBehavior(root);
         if (root is Form or UserControl) root.Font = BodyFont;
         root.BackColor = root is Form or UserControl ? Background : root.Parent?.BackColor ?? Background;
         root.ForeColor = Text;

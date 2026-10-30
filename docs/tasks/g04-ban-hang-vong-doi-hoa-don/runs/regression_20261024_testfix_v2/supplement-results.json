@@ -1,0 +1,51 @@
+{
+  "RunId": "20261024_122048_58a29a82",
+  "Database": "CoffeeManager_Test_G04_20261024_122048_58a29a82_demo",
+  "Created": [
+    "CoffeeManager_Test_G04_20261024_122048_58a29a82_demo"
+  ],
+  "Cleaned": [
+    "CoffeeManager_Test_G04_20261024_122048_58a29a82_demo"
+  ],
+  "Retained": [],
+  "Cases": [
+    {
+      "Id": "T14-K03 observe zero header inside atomic create",
+      "Sql": "CREATE TABLE dbo.G04HeaderAudit(Code char(10),InitialTotal decimal(18,0),InitialDiscount decimal(18,0),TranCount int);\nEXEC(N'CREATE TRIGGER dbo.G04ObserveHeader ON dbo.HOADON AFTER INSERT AS BEGIN INSERT dbo.G04HeaderAudit SELECT MaHD,TongTien,GiamGia,@@TRANCOUNT FROM inserted WHERE MaHD=''HD93000001''; END;');\nEXEC dbo.G04New 'HD93000001';\nIF (SELECT COUNT(*) FROM dbo.G04HeaderAudit WHERE Code='HD93000001' AND InitialTotal=0 AND InitialDiscount=0 AND TranCount>0)<>1 OR NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD='HD93000001' AND TongTien=25000) THROW 52990,'Initial header or trigger sum mismatch',1;\nDROP TRIGGER dbo.G04ObserveHeader;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K02 policy revision changed with same amount requires re-confirm",
+      "Sql": "EXEC dbo.G04New 'HD93000002'; DECLARE @token binary(32)=(SELECT PreviewToken FROM dbo.fn_CheckoutPreview('HD93000002')),@b nvarchar(max),@e nvarchar(max),@seen bit=0;\nUPDATE dbo.LoyaltyPolicyState SET Id=Id;\nEXEC dbo.G04State @b OUTPUT;\nBEGIN TRY EXEC dbo.G04Pay 'HD93000002',@token=@token; END TRY BEGIN CATCH IF ERROR_NUMBER()<>52201 THROW; SET @seen=1; END CATCH;\nEXEC dbo.G04State @e OUTPUT; IF @seen=0 OR @b<>@e OR @@TRANCOUNT<>0 OR XACT_STATE()<>0 THROW 52990,'Policy token not enforced',1;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K02 customer revision changed requires re-confirm",
+      "Sql": "EXEC dbo.G04New 'HD93000003',@customer='KH001'; DECLARE @token binary(32)=(SELECT PreviewToken FROM dbo.fn_CheckoutPreview('HD93000003')),@b nvarchar(max),@e nvarchar(max),@seen bit=0;\nUPDATE dbo.KHACHHANG SET TenKH=TenKH WHERE MaKH='KH001'; EXEC dbo.G04State @b OUTPUT;\nBEGIN TRY EXEC dbo.G04Pay 'HD93000003',@token=@token; END TRY BEGIN CATCH IF ERROR_NUMBER()<>52201 THROW; SET @seen=1; END CATCH;\nEXEC dbo.G04State @e OUTPUT; IF @seen=0 OR @b<>@e THROW 52990,'Customer token not enforced',1;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K02 partner revision changed requires re-confirm",
+      "Sql": "DECLARE @partner varchar(5)=(SELECT MIN(MaDT) FROM dbo.DOITACGIAOHANG); EXEC dbo.G04New 'HD93000004',N'Giao hang',@partner=@partner;\nDECLARE @token binary(32)=(SELECT PreviewToken FROM dbo.fn_CheckoutPreview('HD93000004')),@b nvarchar(max),@e nvarchar(max),@seen bit=0;\nUPDATE dbo.DOITACGIAOHANG SET ChietKhau=ChietKhau WHERE MaDT=@partner; EXEC dbo.G04State @b OUTPUT;\nBEGIN TRY EXEC dbo.G04Pay 'HD93000004',@token=@token; END TRY BEGIN CATCH IF ERROR_NUMBER()<>52201 THROW; SET @seen=1; END CATCH;\nEXEC dbo.G04State @e OUTPUT; IF @seen=0 OR @b<>@e THROW 52990,'Partner token not enforced',1;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K07 multiple products shared materials decimal4 snapshot",
+      "Sql": "DECLARE @n1 char(5)=(SELECT MIN(MaNVL) FROM dbo.NGUYENVATLIEU),@n2 char(5); SELECT @n2=MIN(MaNVL) FROM dbo.NGUYENVATLIEU WHERE MaNVL>@n1;\nDELETE dbo.CONGTHUC WHERE MaSP IN('SP001','SP002'); INSERT dbo.CONGTHUC(MaSP,MaNVL,DinhMuc) VALUES('SP001',@n1,0.0180),('SP001',@n2,1.2345),('SP002',@n1,1.2345),('SP002',@n2,1);\nUPDATE dbo.NGUYENVATLIEU SET SoLuongTon=10000 WHERE MaNVL IN(@n1,@n2); UPDATE dbo.SANPHAM SET TrangThai=N'Dang ban' WHERE MaSP='SP002';\nEXEC dbo.G04New 'HD93000005'; EXEC dbo.G04Edit 'HD93000005',@qty=2; EXEC dbo.G04Edit 'HD93000005',@product='SP002'; EXEC dbo.G04Pay 'HD93000005';\nIF (SELECT COUNT(*) FROM dbo.TIEUHAO_HOADON WHERE MaHD='HD93000005')<>2 OR NOT EXISTS(SELECT 1 FROM dbo.TIEUHAO_HOADON WHERE MaHD='HD93000005' AND MaNVL=@n1 AND SoLuong=1.2885) OR NOT EXISTS(SELECT 1 FROM dbo.TIEUHAO_HOADON WHERE MaHD='HD93000005' AND MaNVL=@n2 AND SoLuong=4.7035) THROW 52990,'Decimal consumption mismatch',1;\nIF (SELECT SoLuongTon FROM dbo.NGUYENVATLIEU WHERE MaNVL=@n1)<>9998.7115 OR (SELECT SoLuongTon FROM dbo.NGUYENVATLIEU WHERE MaNVL=@n2)<>9995.2965 THROW 52990,'Decimal stock mismatch',1;\nUPDATE dbo.CONGTHUC SET DinhMuc=10 WHERE MaSP='SP001'; IF (SELECT SUM(SoLuong) FROM dbo.TIEUHAO_HOADON WHERE MaHD='HD93000005')<>5.9920 THROW 52990,'Recipe edit changed snapshot',1;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K08 customer points overflow rolls back",
+      "Sql": "DECLARE @old int=(SELECT DiemTichLuy FROM dbo.KHACHHANG WHERE MaKH='KH001'); UPDATE dbo.KHACHHANG SET DiemTichLuy=2147483647 WHERE MaKH='KH001';\nEXEC dbo.G04New 'HD93000006',@customer='KH001',@promotion='KM90000003';\nDECLARE @b nvarchar(max),@e nvarchar(max); EXEC dbo.G04State @b OUTPUT; EXEC dbo.G04Expect N'EXEC dbo.G04Pay ''HD93000006'';',52205; EXEC dbo.G04State @e OUTPUT; IF @b<>@e THROW 52990,'Points overflow leaked',1;\nUPDATE dbo.KHACHHANG SET DiemTichLuy=@old WHERE MaKH='KH001';\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T18-K06 ADMIN CASH allowed STORE forbidden at SQL boundary",
+      "Sql": "DECLARE @a int,@s binary(8),@role varchar(5),@i int=0,@code varchar(10),@r binary(8),@id uniqueidentifier,@seen bit;\nSELECT @a=MaTK,@role=MaVT FROM dbo.TAIKHOAN WHERE MaNV='NV001';\nWHILE @i<3 BEGIN\n UPDATE dbo.TAIKHOAN SET MaVT='ADMIN' WHERE MaTK=@a; SET @code='HD930000'+CONVERT(varchar,10+@i); EXEC dbo.G04New @code,N'Giao hang';\n UPDATE dbo.TAIKHOAN SET MaVT=CASE @i WHEN 0 THEN 'ADMIN' WHEN 1 THEN 'CASH' ELSE 'STORE' END WHERE MaTK=@a;\n SELECT @s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaTK=@a; SELECT @r=Revision FROM dbo.HOADON WHERE MaHD=@code; SELECT @id=NEWID(),@seen=0;\n BEGIN TRY EXEC dbo.sp_ChuyenTrangThaiGiaoHang @a,@s,@code,@r,N'Cho giao',N'Dang giao',@id; END TRY BEGIN CATCH IF @i<>2 OR ERROR_NUMBER()<>51605 THROW; SET @seen=1; END CATCH;\n IF (@i<2 AND NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD=@code AND TrangThaiGiao=N'Dang giao')) OR (@i=2 AND (@seen=0 OR EXISTS(SELECT 1 FROM dbo.G03OperationReceipt WHERE RequestId=@id))) THROW 52990,'Delivery role boundary',1;\n SET @i+=1;\nEND; UPDATE dbo.TAIKHOAN SET MaVT=@role WHERE MaTK=@a;\n",
+      "Status": "PASS"
+    }
+  ],
+  "Status": "Completed",
+  "Schema": 15,
+  "Kind": "Independent remaining scenarios and observations; prior FAIL retained"
+}

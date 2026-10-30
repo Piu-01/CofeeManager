@@ -1,0 +1,16 @@
+{
+  "Run": "delivery-ui-implementation-20261026",
+  "Scope": "Approved Delivery UI plan, implementation only",
+  "ReleaseExit": 0,
+  "SourceCount": 142,
+  "SqlChanges": false,
+  "TechnicalSmoke": "48/48 PASS; DeviceDpi120; client1280x720 and1366x768; 0/1/50 in-memory rows; no SQL/auth/business/visual test",
+  "Acceptance": "NOT RUN - separate test approval required",
+  "Visual": "User assigned, agent SKIPPED",
+  "Dpi100and150": "NOT RUN",
+  "ChangedProductFiles": [
+    "src\\CafeManager.WinForms\\Modules\\Sales\\DeliveryControl.cs",
+    "src\\CafeManager.WinForms\\UI\\OrbitDataGridView.cs",
+    "src\\CafeManager.WinForms\\UI\\OrbitRecordListControl.cs"
+  ]
+}

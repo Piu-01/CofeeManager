@@ -1,0 +1,4333 @@
+{
+  "Scope": "Actual CheckoutDialog keyboard/validation UI with isolated in-memory order; no login/SQL/commit claim",
+  "Pid": 15460,
+  "DeviceDpi": 120,
+  "Samples": [
+    {
+      "Time": "2026-10-24T04:49:19.2101461Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:20.2106811Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:21.2092987Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:22.2094086Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:23.2106259Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:24.2105844Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:25.2088136Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:26.211537Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:27.2101524Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:28.2105978Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:29.2091405Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:30.2133835Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:31.2093117Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:32.2105902Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:33.211543Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:34.2104171Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:35.2106241Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:36.2104522Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:37.2109439Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:38.2085469Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:39.2080738Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:40.20916Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:41.2099833Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:42.2089396Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:43.2085345Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:44.2088087Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:45.2116797Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:46.2106492Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:47.2095362Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:48.2099366Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:49.2098765Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:50.2076124Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:51.2085329Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:52.21168Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:53.2104947Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:54.2094298Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:55.2101615Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:56.2088195Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:57.2106924Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:58.2097599Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:49:59.2103466Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:00.2098197Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:01.2091194Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:02.2081891Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:03.2084354Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:04.2090002Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:05.2087284Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:06.2074808Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:07.2082158Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:08.2079549Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:09.2092502Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:10.2094258Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:11.2096872Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:12.2082177Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:13.2090189Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:14.2213936Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:15.2242663Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:16.2252907Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:17.2279893Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:18.2252494Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:19.227022Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:20.2257761Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:21.2254791Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:22.225268Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:23.2258552Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:24.2279254Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:25.2256679Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:26.228438Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:27.2287995Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:28.224537Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:29.2258626Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:30.2259893Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:31.227105Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:32.224963Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:33.2264886Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:34.2270674Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:35.2253755Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:36.225696Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:37.2250827Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:38.2259202Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:39.2264713Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:40.2258966Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:41.2256569Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:42.2266814Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:43.2270365Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:44.2256014Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:45.2242274Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:46.2267687Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:47.2268267Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:48.2269003Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:49.225352Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:50.2250717Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:51.2249437Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:52.2257315Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:53.2271001Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:54.2272629Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:55.2274078Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:56.2260712Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:57.227662Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:58.2255734Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:50:59.2270772Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:00.225874Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:01.2275693Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:02.2260283Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:03.2413551Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:04.2420532Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:05.2425553Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:06.2439556Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:07.2428713Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:08.2415966Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:09.2427933Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:10.2450059Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:11.2422055Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:12.2421234Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:13.2428012Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:14.2433406Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:15.2426864Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:16.2444051Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:17.2425308Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:18.2418831Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:19.2414287Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:20.2422797Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:21.2426507Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:22.2425619Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:23.2435244Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:24.2403619Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:25.2439797Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:26.242147Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:27.242316Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:28.2427614Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:29.24277Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:30.2419611Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:31.2421838Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:32.2437199Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:33.2420151Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:34.2420202Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:35.2413482Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:36.2421896Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:37.2439096Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:38.2397975Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:39.2428137Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:40.2411666Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:41.2417498Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:42.240757Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:43.241035Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:44.2408643Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:45.2431955Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:46.2411778Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:47.2420617Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:48.2434769Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:49.2417259Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:50.2401164Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:51.2402128Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:52.2417821Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:53.2417038Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:54.2412046Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:55.2420957Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:56.2410309Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:57.2429714Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:58.2413885Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:51:59.2400724Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:00.241231Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:01.2416796Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:02.2408951Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:03.2415835Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:04.2420714Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:05.241443Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:06.2404205Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:07.2519692Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:08.2389965Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:09.2420629Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:10.2419855Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:11.2404097Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:12.240223Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:13.2417273Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:14.2410929Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:15.239679Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:16.2405907Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:17.2411597Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:18.2410596Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:19.2415397Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:20.2584472Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:21.2568239Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:22.2583245Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:23.2574395Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:24.2570527Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:25.2576296Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:26.2587082Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:27.2578771Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:28.2582227Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:29.2579667Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:30.2573551Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:31.2569508Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:32.2583485Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:33.274813Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:34.273891Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:35.2739867Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:36.2736954Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:37.2739573Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:38.271741Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:39.2734891Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:40.273918Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:41.2753165Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:42.2725202Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:43.2735473Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:44.2743368Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:45.2742632Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:46.2730026Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:47.2730827Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:48.274519Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:49.2754484Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:50.2734494Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:51.2713617Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:52.2732214Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:53.2745983Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:54.2726131Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:55.2729923Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:56.2727714Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:57.2739738Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:58.2721992Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:52:59.2732776Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:00.273279Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:01.2723669Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:02.2725106Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:03.272999Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:04.2732677Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:05.2751221Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:06.2740195Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:07.2713449Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:08.2726881Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:09.2812964Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:10.2725086Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:11.2722621Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:12.2713638Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:13.2742769Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:14.2731623Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:15.2717445Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:16.272778Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:17.2729867Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:18.2904229Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:19.288314Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:20.2912081Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:21.2897476Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:22.2904517Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:23.2908636Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:24.2876268Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:25.2904236Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:26.2906561Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:27.2857743Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:28.2879819Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:29.2913663Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:30.2888528Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:31.2888013Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:32.2904001Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:33.2906369Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:34.2892478Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:35.289299Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:36.2908574Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:37.2900352Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:38.2879791Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:39.2894359Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:40.2899793Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:41.2902301Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:42.2893168Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:43.2890001Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:44.2907827Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:45.287749Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:46.290677Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:47.2888823Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:48.2886134Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:49.2885181Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:50.2901989Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:51.2870838Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:52.2901999Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:53.2904266Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:54.2887478Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:55.2889999Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:56.2886122Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:57.2893575Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:58.2892114Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:53:59.2886542Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:00.2884663Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:01.2888408Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:02.2907127Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:03.2872085Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:04.2864549Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:05.2873612Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:06.2900275Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:07.2890528Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:08.2878712Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:09.2888778Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:10.2873862Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:11.2869552Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:12.2876242Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:13.2877751Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:14.2874267Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:15.2884103Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:16.2894971Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:17.2894863Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:18.2889434Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:19.2889255Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:20.2889442Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:21.2863381Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:22.2888107Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:23.2888661Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:24.2892731Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:25.2893719Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:26.2890794Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:27.2885501Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:28.2877111Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:29.2892201Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:30.2863738Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:31.289271Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:32.2893249Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:33.2890052Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:34.286731Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:35.2860806Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:36.2860907Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:37.2857011Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:38.2874342Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:39.2871996Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:40.2869984Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:41.2871679Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:42.3025816Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:43.3023075Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:44.3021236Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:45.3026911Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:46.3022223Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:47.302193Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:48.3026151Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:49.3030443Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:50.3029209Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:51.3030188Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:52.3023881Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:53.3028411Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:54.3021439Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:55.302757Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:56.3017279Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:57.3035004Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:58.3024586Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:54:59.9613827Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:00.9482546Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:01.9420975Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:02.9442877Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:03.9463176Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:04.9473259Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:05.950782Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:06.9481632Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:07.9558641Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:08.9432382Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:09.9533048Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:10.9431425Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:11.9456411Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:12.9451338Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:13.9515824Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:14.950702Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:15.9483842Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:16.947739Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:17.9541703Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:18.9466688Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:19.9469428Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:20.9544193Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:21.9512578Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:22.9504748Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:23.9491248Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:24.9502272Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:25.9564063Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:26.9415549Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:27.9495829Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:28.9429833Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:29.9478986Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:30.9563531Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:31.9438756Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:32.9442169Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:33.948864Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:34.9433124Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:35.9503725Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:36.9519356Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:37.9505476Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:38.9510924Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:39.9450046Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:40.9504691Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:41.9542098Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:42.9424402Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:43.950202Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:44.9556559Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:45.9562763Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:46.9421139Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:47.9434033Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:48.9424773Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:49.9561462Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:50.9420684Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:51.9504724Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:52.9564754Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:53.950327Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:54.9427837Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:55.9470487Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:56.957424Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:57.9622469Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:58.9628188Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:55:59.963356Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:00.96213Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:01.9722919Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:02.9586158Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:03.966071Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:04.9631537Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:05.9664333Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:06.9650901Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:07.9686355Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:08.9723255Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:09.9585238Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:10.9692941Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:11.968836Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:12.9683779Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:13.9668354Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:14.9578187Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:15.9650906Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:16.9624966Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:17.962493Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:18.964492Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:19.9644701Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:20.9638416Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:21.9589867Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:22.9590036Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:23.9582527Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:24.957375Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:25.9699898Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:26.9721948Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:27.9646043Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:28.9591945Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:29.970873Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:30.9672363Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:31.9634584Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:32.9622849Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:33.9641228Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:34.9665329Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:35.9637815Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:36.9593068Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:37.9682634Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:38.9630326Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:39.9623924Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:40.9614072Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:41.9604064Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:42.9688966Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:43.9651099Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:44.963519Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:45.9670383Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:46.9606549Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:47.9648825Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:48.9646602Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:49.9589948Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:50.9621021Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:51.9621299Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:52.9642649Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:53.9662599Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:54.9696614Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:55.9685455Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:56.9595492Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:57.9596576Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:58.9698843Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:56:59.9643199Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:57:00.9609235Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:57:01.963619Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:57:02.9658966Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:57:03.9708019Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:57:04.9658935Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:57:05.9577332Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:57:06.9724538Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:57:07.9600626Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:57:08.9708882Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:57:09.9681678Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:57:10.9608479Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:57:11.9707524Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:57:12.9582384Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:57:13.966094Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:57:14.9694476Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:57:15.9592769Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:57:16.9679012Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:57:17.9678327Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T04:57:18.9623845Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    }
+  ],
+  "Closed": true,
+  "ElapsedSeconds": 480.8488392,
+  "PrintPages1": 9,
+  "PrintPages2": 18,
+  "PrintCursor": 210,
+  "PrinterJobSent": false
+}

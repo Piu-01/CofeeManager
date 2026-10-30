@@ -7,6 +7,22 @@ internal static class SqlErrorMapper
 {
     private static readonly Dictionary<int, string> BusinessMessages = new()
     {
+        [52201] = "Preview đã thay đổi; tải và xác nhận lại số mới.",
+        [52202] = "Phân bổ chưa đủ/không đúng hoặc phương thức chưa được hỗ trợ.",
+        [52203] = "Không đủ nguyên liệu. Đơn chưa chốt; kiểm tra tồn và sửa đơn.",
+        [52204] = "Đơn có món ngừng bán hoặc thiếu công thức.",
+        [52205] = "Tiền/điểm/tiêu hao vượt giới hạn hoặc ngày thanh toán không hợp lệ.",
+        [52207] = "Snapshot/dữ liệu nâng cấp checkout không hợp lệ.",
+        [52501] = "Đơn giao không có hoặc đã hủy.",
+        [52502] = "Chỉ chuyển bước giao kế tiếp; không nhảy/lùi trạng thái.",
+        [52503] = "Thông tin người nhận chưa hợp lệ.",
+        [52101] = "Thông tin đơn/số lượng vượt giới hạn hoặc không phù hợp loại đơn.",
+        [52102] = "Đơn đã chốt/hủy hoặc không cho phép sửa thông tin hiện tại.",
+        [52103] = "Đơn đã thay đổi ở phiên khác. Tải lại trước khi tiếp tục.",
+        [52104] = "Bàn đã có đơn. Tải đơn hiện tại trước khi thêm món.",
+        [52105] = "Món/công thức/bàn/khách/chương trình không còn hợp lệ; tải lại và sửa lựa chọn.",
+        [52106] = "Đang xử lý ở phiên khác; đối chiếu kết quả trước khi thử lại.",
+        [52107] = "Dữ liệu hoặc phiên bản schema chưa phù hợp để nâng cấp bán hàng.",
         [51001] = "Không được sửa món của hóa đơn đã chốt hoặc hủy.",
         [51002] = "Không được sửa thanh toán của hóa đơn đã chốt hoặc hủy.",
         [51003] = "Phân bổ thanh toán vượt số phải trả.",
@@ -71,6 +87,27 @@ internal static class SqlErrorMapper
         [51605] = "Bạn không có quyền thực hiện thao tác này.",
         [51607] = "Dữ liệu chuyển đổi xung đột; cần người cài kiểm tra.",
         [51608] = "Mã yêu cầu đã dùng với nội dung khác; cần đối chiếu.",
+        [53001] = "Số tiền, ngày nguồn hoặc phương thức trả nợ không hợp lệ.",
+        [53002] = "Nợ hoặc nguồn chi trả nợ không hợp lệ.",
+        [53003] = "Số trả vượt còn nợ; tải lại số dư và sửa số tiền.",
+        [53007] = "Lịch sử nợ cũ cần được đối chiếu trước nâng cấp.",
+        [52901] = "Số đếm, lý do hoặc phạm vi kiểm kê không hợp lệ.",
+        [52902] = "Chỉ chốt phiếu hôm nay chưa điều chỉnh; phiếu đã chốt chỉ đọc.",
+        [52903] = "Phiếu hoặc kho đã thay đổi; tải lại và xác nhận đếm lại.",
+        [52907] = "Dữ liệu kiểm kê cũ cần được đối chiếu.",
+        [52801] = "Thông tin hoặc dòng xuất không hợp lệ.",
+        [52802] = "Phiếu xuất đã chốt chỉ đọc.",
+        [52803] = "Không đủ nguyên liệu; toàn phiếu chưa chốt.",
+        [52807] = "Dữ liệu xuất cũ cần được đối chiếu trước nâng cấp.",
+        [52701] = "Thông tin nhập hoặc dòng nguyên liệu không hợp lệ.",
+        [52702] = "Chứng từ nhập và nợ đã chốt không được sửa/xóa.",
+        [52703] = "Preview hoặc phần trả ngay thay đổi; kiểm tra và xác nhận lại.",
+        [52705] = "Tổng nhập vượt giới hạn lưu trữ.",
+        [52707] = "Dữ liệu nhập cũ cần được đối chiếu trước nâng cấp.",
+        [52601] = "Ngày, số tiền nguyên VND hoặc thông tin phiếu không hợp lệ.",
+        [52602] = "Nguồn hoặc trạng thái thu chi không hợp lệ; phiếu đã ghi chỉ đọc.",
+        [52603] = "Yêu cầu đang xử lý; kiểm tra kết quả trước khi gửi lại.",
+        [52607] = "Dữ liệu thu chi cũ xung đột; cần người cài kiểm tra.",
         [51508] = "Mã yêu cầu đã được dùng với dữ liệu khác; cần đối chiếu."
     };
 
@@ -100,3 +137,11 @@ internal static class SqlErrorMapper
         };
     }
 }
+
+
+
+
+
+
+
+

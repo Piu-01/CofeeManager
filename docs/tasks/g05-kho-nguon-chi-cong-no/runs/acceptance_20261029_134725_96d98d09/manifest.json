@@ -1,0 +1,36 @@
+{
+  "RunId": "20261029_134725_96d98d09",
+  "Kind": "Acceptance SQL subset; full55ID/native/parallel not implied",
+  "Server": "localhost",
+  "ThroughVersion": 21,
+  "Operator": "LAPTOP-79UNRIRC\\Lenovo",
+  "Created": [
+    {
+      "Marker": "20261029_134725_96d98d09",
+      "Database": "CoffeeManager_Test_G05_20261029_134725_96d98d09_clean",
+      "Mode": "clean"
+    },
+    {
+      "Marker": "20261029_134725_96d98d09",
+      "Database": "CoffeeManager_Test_G05_20261029_134725_96d98d09_demo",
+      "Mode": "demo"
+    }
+  ],
+  "Cleaned": [
+    "CoffeeManager_Test_G05_20261029_134725_96d98d09_clean"
+  ],
+  "Retained": [
+    {
+      "RunId": "20261029_134725_96d98d09",
+      "Cleanup": "Verify exact database name and G05TestMarker.RunId, then close own connections and DROP only this database.",
+      "Database": "CoffeeManager_Test_G05_20261029_134725_96d98d09_demo",
+      "Reason": "Explicit KeepForGui",
+      "ExpiresUtc": "2026-10-29T12:47:59.1110523Z"
+    }
+  ],
+  "Status": "Succeeded",
+  "UnitExitCode": 0,
+  "SqlFailed": 0,
+  "SqlScope": "Only suffix.SQL subcases. Runtime permissions, concurrency, faults and native55ID need separate evidence.",
+  "SourceUnchanged": true
+}

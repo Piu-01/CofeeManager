@@ -10,6 +10,23 @@ Giữ MainForm + UserControl, C# / SQL Server và kiến trúc dự án. HTML l�
 
 ## 2. Thành phần dùng chung
 
+Bổ sung26/10/2026, đã làm rõ sau dùng thử: hộp nghiệp vụ dùng Form modal Windows
+có titlebar/X native, không thêm taskbar riêng. `OrbitDialogHost` là bộ quản lý
+owner/stack/result chung, không còn panel/container. Caller await ShowAsync;
+chỉ bộ quản lý gọi ShowDialog trên UI thread, Windows khóa owner. Dialog đầu
+thuộc MainForm, dialog lồng thuộc hộp cha. Guard CanCloseAsync giữ kết quả đóng
+khi WinForms hủy close để hỏi bỏ nháp. Không DoEvents/polling hoặc UI thread mới.
+`OrbitConfirmationDialog.ShowAsync` dùng cùng đường này. Native PrintDialog nhận
+HWND của hộp đang hoạt động; StarDustOverlay là tool window hiệu ứng không nhận
+input/taskbar, không là hộp nghiệp vụ. Không dùng bitmap scaling để thay DPI.
+
+Hành vi nhập chung ở `OrbitField.ApplyInputBehavior`/`SelectAllOnEntry`: chọn hết
+khi mới vào bằng click/Tab, không chọn lại mỗi TextChanged hoặc mỗi click trong
+cùng lần focus. Gắn idempotent, theo dõi control động/editor grid; bỏ qua readonly
+và ComboBox chỉ chọn. AppTheme, field theme và host/MainForm dùng cùng helper.
+Kiểm hồi quy theo hồ sơ `docs/tasks/embedded-dialogs/`; build/smoke không chứng
+nhận nghiệm thu các màn đã chuyển.
+
 | Thành phần đề xuất | Trách nhiệm |
 |---|---|
 | AppTheme / ThemeTokens | Parse tokens một lần hoặc ánh xạ hằng C# có nguồn; cấm magic number màu/motion rải rác. |
@@ -23,6 +40,67 @@ Giữ MainForm + UserControl, C# / SQL Server và kiến trúc dự án. HTML l�
 | StarDustService | Opt-in từng button; phát hạt ở overlay cấp form, không gắn toàn bộ nút. |
 
 Giữ DataGridView/ComboBox native ở nghiệp vụ cần nhập liệu; custom paint phần header/selection/border hợp lý. Không custom vẽ lại toàn bộ accessibility của các control phức tạp chỉ để giống web.
+
+### 2.1. Trang danh sách — control và API đã có 26/10/2026
+
+Hành vi/bố cục bắt buộc xem [guide mục11](HuongDan_UI_Orbit_Cafe.md#11-chuẩn-trang-danh-sách-dùng-chung--26102026).
+Các thành phần dưới đây **đã tồn tại trong source**, khác bảng đề xuất ban đầu
+ở trên. Đường dẫn tính từ `src/CafeManager.WinForms/`. Đọc implementation hiện
+hành trước dùng; không tạo lại chỉ vì đang code một module mới.
+
+| Thành phần/API | File | Cách tận dụng |
+|---|---|---|
+| AppTheme |`Theme/AppTheme.cs` |Theme nền/control native và hành vi input chung; không rải mã màu/font riêng. |
+| OrbitManagementTheme |`Theme/OrbitManagementTheme.cs` |Màu Background/Surface/Input/Text/Muted/Caramel/Lilac, font, Px/DrawingFont; Button(style,icon), DialogInput/DialogGrid. Các style nút Icon/Action/Primary/Secondary/Danger/Pager dùng đúng vai trò. |
+| OrbitListWorkspace |`UI/OrbitListWorkspace.cs` |Header, card, SearchActions, Filters, PrimaryActions/RowActions, Body, Pagination, Status; Dock.Fill. StackedTools=true xếp search hết hàng + filter hàng dưới, wrap và tính phần Body còn lại. Không tự bọc thêm container cao50% hoặc fixedHeight chặn workspace. |
+| OrbitRecordListControl |`UI/OrbitRecordListControl.cs` |Base của danh sách: Configure, AddFilter, AddAction, query async, cancellation/generation, loading/actionstate. UseStackedSearch(noun,emptyDescription) bật layout mới và tách draft/applied keyword, gắn kính lúp và chuyển nút refresh có sẵn. Không đăng ký thêm handler tìm/refresh trùng. |
+| OrbitSearchBox |`UI/OrbitSearchBox.cs` |TextBox native và style tìm kiếm dùng chung. Qua base control dùng Search; đặt placeholder/AccessibleName đúng nghiệp vụ. |
+| OrbitFilterBox |`UI/OrbitFilterBox.cs` |Bọc ComboBox chỉ chọn; LogicalWidth và Plain cho filter phẳng theo mẫu. AddFilter(combo,width,plain:true) trong base tự bọc. Không tự vẽ dropdown khác cho từng màn. |
+| OrbitDateField/OrbitDateRangeField |`UI/OrbitDateField.cs`, `UI/OrbitDateRangeField.cs` |DateField giữ typed Value/parser dd/MM/yyyy/calendar native; DateRangeField ghép hai instance hiện có, tên Từ/Đến, layout chung. Không nhân đôi parser hoặc mất handler/giá trị khi ghép. |
+| OrbitDataGridView/OrbitGridProfile |`UI/OrbitDataGridView.cs` |Style/selection/paint badge và profile theo loại bảng. InvoiceHistory dành cho hóa đơn; Delivery dành cho giao hàng: Code freeze/đo mã, Phone chuỗi, Address fill, badge Delivery và PaymentStatus riêng; tooltip tên/địa chỉ đầy đủ. Chọn profile đúng module, không copy paint handler riêng. |
+| OrbitPagination |`UI/OrbitPagination.cs` |SetPage(page,50,total,noun) khi có tổng thật; SetServerPage khi contract chưa có tổng; SetPending cho loading/lỗi. Chỉ số trang đo theo text, không fixed width cắt nhiều chữ số. |
+| TotalCountSelector |`UI/OrbitRecordListControl.cs` |Hook opt-in lấy tổng typed từ DTO; cùng điều khiển pager và enable action. Không hardcode tổng hoặc sửa query SQL khi chưa được giao contract. |
+| OrbitEmptyState |`UI/OrbitEmptyState.cs` |Trạng thái rỗng; TitleText/HistoryPrompt theo nhu cầu, thông điệp đúng module. Không dùng empty để che lỗi đọc. |
+| OrbitButton |`UI/OrbitButton.cs` |Nút có style/icon từ management theme; reuse icon search/refresh/printer/left/right. Icon action cần tên truy cập/tooltip; không thêm bụi sao mặc định. |
+| OrbitField |`UI/OrbitField.cs` |ApplyInputBehavior/SelectAllOnEntry dùng chung, idempotent cho input động/grid editor; không chép handler SelectAll mỗi màn. |
+| OrbitDialogHost/OrbitDialogForm |`UI/OrbitDialogHost.cs`, `Forms/OrbitDialogForm.cs` |ShowAsync có owner/stack/result, native modal/title/X/no taskbar; không tự tạo cửa sổ nghiệp vụ độc lập hoặc host panel giả. |
+
+`Modules/Sales/InvoicesControl.cs` là ví dụ ghép layout V4 đã triển khai:
+Configure → profile cột/tổng thật → AddFilter → UseStackedSearch → AddAction.
+`Modules/Sales/DeliveryControl.cs` đã dùng cùng chuỗi với profile Delivery và
+DeliveryRow.TotalCount. Hook IsActionAvailable(command) ở base mặc định true;
+module có thể khóa action theo writing/unknown, rồi gọi UpdateActions khi trạng
+thái thay đổi. Reconcile không requires-row vì dùng pendingCode/requestId cũ,
+không dùng dòng hiện chọn. Các helper mới đã compile/smoke kỹ thuật, không tự
+đồng nghĩa các màn đã PASS chức năng hoặc hình thức.
+Trong lớp con của OrbitRecordListControl:
+
+```csharp
+// Sau Configure và cấu hình cột/filters theo contract của module.
+UseStackedSearch("hóa đơn", "Thử thay đổi khoảng ngày hoặc điều kiện tìm kiếm.");
+TotalCountSelector = rows => rows.Count == 0 ? 0 : ((SalesOrderRow)rows[0]!).TotalCount;
+// Nối SelectedValueChanged/ValueChanged của filter vào ResetAndReload.
+// Base dùng appliedSearch; không đọc Search.Text trong callback query/filter.
+```
+
+Đoạn trên chỉ minh họa API trong lớp con với DTO hóa đơn đã có, không là template
+ép DTO/filters/permission của mọi module thành hóa đơn. Base hiện bật chế độ mới
+theo opt-in, chưa tự chuyển mọi màn cũ; màn code/chỉnh tiếp phải chủ động dùng nó
+theo chuẩn được chốt. ShowTools/ShowMeta/Compact chỉ đặt khi đúng use case.
+
+**Chuỗi bố cục phải giãn đầy đủ:** MainForm content → UserControl module → tab
+container (nếu có) → OrbitRecordListControl/workspace → card → Body → grid.
+Grid Dock.Fill trong Body không đủ nếu một ancestor còn fixedHeight hoặc chia
+50/50. Kiểm lần lượt ancestor, Dock/Anchor, RowStyle Percent100 cho hàng fill
+và thứ tự add/z-order; toolbar/footer có hàng đo riêng, vùng bảng nhận phần dư.
+Không dùng AutoSize theo số dòng cho vùng bảng, không cho toàn workspace cuộn
+làm pager biến mất. Khi thiếu ngang, filter wrap và grid cuộn ngang; không giảm
+font/cắt mã/đẩy footer ra ngoài để giả vừa.
+
+Không thay màu/token bằng giá trị của HTML demo; tiếp tục dùng tokens/theme
+chung. Bounds do WinForms scale không nhân DPI lần hai. Agent chỉ kiểm layout
+kỹ thuật/chức năng tại125%, hình thức người dùng kiểm; quy định này ưu tiên
+các đoạn workflow chụp ảnh/DPI chung lịch sử phía dưới.
 
 ## 3. DPI, font và bố cục
 

@@ -1,0 +1,15 @@
+IF DB_NAME() NOT LIKE 'CoffeeManager_Test_G05_%' OR OBJECT_ID('dbo.G05TestMarker') IS NULL THROW 53900,N'Chỉ dùng fixture G05.',1;
+DECLARE @actor int=(SELECT MIN(MaTK) FROM dbo.TAIKHOAN WHERE MaVT='ADMIN' AND HoatDong=1),@stamp binary(8),@id uniqueidentifier=NEWID(),@code varchar(10),@ok bit;
+SELECT @stamp=SecurityStamp FROM dbo.TAIKHOAN WHERE MaTK=@actor;
+IF @actor IS NULL THROW 53900,N'Thiếu actor fixture.',1;
+DECLARE @scope dbo.StocktakeScope;INSERT @scope VALUES('NVL01');
+EXEC dbo.sp_StocktakeCreate @actor,@stamp,@id,@scope;
+SELECT @code=EntityCode FROM dbo.G03OperationReceipt WHERE RequestId=@id;
+DECLARE @revision binary(8)=(SELECT Revision FROM dbo.PHIEUKIEMKE WHERE MaKK=@code),@counts dbo.StocktakeCounts;
+INSERT @counts SELECT MaNVL,TonHeThong,NULL FROM dbo.CHITIET_KK WHERE MaKK=@code;
+SET @id=NEWID();EXEC dbo.sp_StocktakeSaveCounts @actor,@stamp,@id,@code,@revision,@counts;
+SELECT @revision=Revision FROM dbo.PHIEUKIEMKE WHERE MaKK=@code;
+SET @id=NEWID();EXEC dbo.sp_ChotKiemKe @actor,@stamp,@id,@code,@revision;
+EXEC dbo.sp_ChotKiemKe @actor,@stamp,@id,@code,@revision;
+SET @ok=CASE WHEN EXISTS(SELECT 1 FROM dbo.PHIEUKIEMKE WHERE MaKK=@code AND DaDieuChinh=1) THEN 1 ELSE 0 END;
+EXEC dbo.sp_G05Assert 'T22-K04.SQL-replay',@ok,N'Save counts equals snapshot; commit/replay closed once. ABA/concurrency chưa chạy.';

@@ -1,0 +1,10 @@
+[
+  {
+    "PayloadPresent": false,
+    "Operation": "PurchaseCreate"
+  },
+  {
+    "PayloadPresent": false,
+    "Operation": "StockIssueCreate"
+  }
+]

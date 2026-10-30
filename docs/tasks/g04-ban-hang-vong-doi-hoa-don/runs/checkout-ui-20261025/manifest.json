@@ -1,0 +1,18 @@
+{
+  "ComparedSourceFiles": 203,
+  "ChangedExistingFiles": [
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Modules\\Sales\\CheckoutDialog.cs",
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Theme\\OrbitManagementTheme.cs",
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\UI\\OrbitDataGridView.cs",
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\UI\\OrbitDialogLayout.cs"
+  ],
+  "NewSourceFiles": [
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Modules\\Sales\\CheckoutDialog.Layout.cs",
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\UI\\OrbitNotice.cs",
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\UI\\OrbitSummaryPanel.cs"
+  ],
+  "BllDalModelsChanged": 0,
+  "DebugDllSha256": "B6F6E7E9C205C4E61EBE1095DB89322C7489A50856E3D21F20FB4E7F766801E3",
+  "ReleaseDllSha256": "B204F6235412D8C49939745A4C008737A38D17168C5C7F9FD3601002096F02AB",
+  "FunctionalTests": "NOT RUN; awaiting approval of updated UI test wave"
+}

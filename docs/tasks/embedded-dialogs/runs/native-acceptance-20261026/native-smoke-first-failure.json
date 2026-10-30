@@ -1,0 +1,80 @@
+{
+  "Failed": 1,
+  "Results": [
+    {
+      "Name": "Native title/X frame and ownerMain",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "No taskbar entry",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Windows locks main owner",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Main lookup through owner chain",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Native child belongs to parent",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Only top native dialog enabled",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "One taskbar form",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Native printer owner is active child",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Native OK result preserved",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Windows re-enables parent only",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Native Cancel completes",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Main enabled after modal returns",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Discard prompt native owner",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "No discard keeps draft/resultNone",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Runner exception",
+      "Outcome": "FAIL",
+      "Actual": "System.TimeoutException: Native modal deadline\r\n   at Program.Wait(Func\u00601 ready) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\embedded-dialogs\\runs\\native-implementation-20261026\\Program.cs:line 15\r\n   at Program.\u003C\u003Ec__DisplayClass6_0.\u003C\u003CMain\u003Eb__1\u003Ed.MoveNext() in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\embedded-dialogs\\runs\\native-implementation-20261026\\Program.cs:line 58"
+    }
+  ]
+}

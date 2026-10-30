@@ -1,0 +1,195 @@
+Window: "CoffeeManager", App: CafeManager.WinForms.exe.
+	0 window CoffeeManager Secondary Actions: Raise
+		1 pane
+			2 pane
+				3 text CoffeeManager
+				4 text KHÔNG GIAN QUẢN LÝ
+				5 text G05 fixture ADMIN
+				6 text Quản trị viên · ADMIN
+				7 button Trang phiên
+				8 button Danh mục nền
+				9 button Bán hàng
+				10 button Lịch sử hóa đơn
+				11 button Giao hàng
+				12 button Khách hàng
+				13 button Bàn / Khu vực
+				14 button Menu / Công thức
+				15 button Nguyên liệu / Tồn
+				16 button Ưu đãi / Điểm
+				17 button Thu chi
+				18 button Kho
+				19 button Công nợ
+				20 button Thông tin hệ thống
+				21 button Đăng xuất ID: logout
+				22 text Phiên đang hoạt động.
+				23 scroll bar (settable, float) Vertical Value: 45 ID: NonClientVerticalScrollBar
+					24 button Line up ID: UpButton
+					25 button Page up ID: UpPageButton
+					26 thumb Position ID: ScrollbarThumb
+					27 button Page down ID: DownPageButton
+					28 button Line down ID: DownButton
+			29 pane
+				30 text Quản lý / Thu chi
+				31 text G05 fixture ADMIN · ADMIN
+			32 pane G05 fixture ADMIN · ADMIN
+				45 pane G05 fixture ADMIN · ADMIN ID: 1966308
+					46 pane ID: 48303518
+						47 text TÀI CHÍNH
+						48 text Thu chi
+						49 text Ghi tay và nguồn chi từ nghiệp vụ; phiếu đã ghi chỉ đọc.
+						50 pane Ghi tay và nguồn chi từ nghiệp vụ; phiếu đã ghi chỉ đọc.
+							51 button Ghi phiếu
+						52 pane
+							53 pane ID: 5507458
+								54 edit (settable, string) Description: Tìm tên hoặc mã nguyên liệu…
+							55 pane
+								56 data grid
+									57 scroll bar (settable, float) Vertical Value: 0
+										58 button Line up
+										59 thumb Position
+										60 button Page down
+										61 button Line down
+									62 custom Top Row
+										63 header Top Left Header Cell ID: 4243093740
+										64 header MÃ ID: 4223347710
+										65 header NGÀY ID: 4235084785
+										66 header LOẠI ID: 4253449023
+										67 header DANH MỤC ID: 4223748664
+										68 header SỐ TIỀN ID: 4240297187
+										69 header GHI CHÚ ID: 4254101393
+									224 custom Row 1
+										225 header Row 1 ID: 4260277295
+										226 item MÃ Row 1 Value: TC20250521 ID: 4245407337
+										227 item NGÀY Row 1 Value: 27/10/2026 11:43 ID: 4253424475
+										228 item LOẠI Row 1 Value: Chi ID: 4223429544
+										229 item DANH MỤC Row 1 Value: Tien dien ID: 4236148620
+										230 item SỐ TIỀN Row 1 Value: 1.234 ID: 42170020
+										231 item GHI CHÚ Row 1 Value: (null) ID: 422210272
+									232 custom Row 2
+										233 header Row 2 ID: 4237991716
+										234 item MÃ Row 2 Value: TC99000004 ID: 4224130271
+										235 item NGÀY Row 2 Value: 27/10/2026 11:19 ID: 4245258072
+										236 item LOẠI Row 2 Value: Chi ID: 4251484025
+										237 item DANH MỤC Row 2 Value: Luong nhan vien ID: 4265312552
+										238 item SỐ TIỀN Row 2 Value: 1.000 ID: 4243756808
+										239 item GHI CHÚ Row 2 Value: (null) ID: 4231967602
+									240 custom Row 3
+										241 header Row 3 ID: 4233815750
+										242 item MÃ Row 3 Value: TC20250520 ID: 4236951569
+										243 item NGÀY Row 3 Value: 27/10/2026 00:00 ID: 4210608352
+										244 item LOẠI Row 3 Value: Chi ID: 423690854
+										245 item DANH MỤC Row 3 Value: Tra no nha cung cap ID: 4247981103
+										246 item SỐ TIỀN Row 3 Value: 10.000 ID: 4219774568
+										247 item GHI CHÚ Row 3 Value: SupplierDebt ID: 4255742801
+									248 custom Row 4
+										249 header Row 4 ID: 4225292435
+										250 item MÃ Row 4 Value: TC20250519 ID: 4260366207
+										251 item NGÀY Row 4 Value: 27/10/2026 00:00 ID: 4246563188
+										252 item LOẠI Row 4 Value: Chi ID: 421341678
+										253 item DANH MỤC Row 4 Value: Tra no nha cung cap ID: 4217441826
+										254 item SỐ TIỀN Row 4 Value: 10.000 ID: 4225417156
+										255 item GHI CHÚ Row 4 Value: SupplierDebt ID: 4261987579
+									256 custom Row 5
+										257 header Row 5 ID: 426918157
+										258 item MÃ Row 5 Value: TC20250515 ID: 4222827177
+										259 item NGÀY Row 5 Value: 27/10/2026 00:00 ID: 4228317845
+										260 item LOẠI Row 5 Value: Chi ID: 4232587667
+										261 item DANH MỤC Row 5 Value: Tra no nha cung cap ID: 4220986498
+										262 item SỐ TIỀN Row 5 Value: 5.000 ID: 424389020
+										263 item GHI CHÚ Row 5 Value: SupplierDebt ID: 4257057265
+									264 custom Row 6
+										265 header Row 6 ID: 4246110386
+										266 item MÃ Row 6 Value: TC20250514 ID: 4262564110
+										267 item NGÀY Row 6 Value: 27/10/2026 00:00 ID: 428027073
+										268 item LOẠI Row 6 Value: Chi ID: 4237243092
+										269 item DANH MỤC Row 6 Value: Tra no nha cung cap ID: 4214398157
+										270 item SỐ TIỀN Row 6 Value: 2.000 ID: 4252958320
+										271 item GHI CHÚ Row 6 Value: SupplierDebt ID: 4217369524
+									272 custom Row 7
+										273 header Row 7 ID: 4249768451
+										274 item MÃ Row 7 Value: TC20250511 ID: 4243010096
+										275 item NGÀY Row 7 Value: 27/10/2026 00:00 ID: 4222260345
+										276 item LOẠI Row 7 Value: Chi ID: 4220949041
+										277 item DANH MỤC Row 7 Value: Tra no nha cung cap ID: 423902084
+										278 item SỐ TIỀN Row 7 Value: 1.000 ID: 4250727104
+										279 item GHI CHÚ Row 7 Value: SupplierDebt ID: 4255472578
+									280 custom Row 8
+										281 header Row 8 ID: 4246733697
+										282 item MÃ Row 8 Value: TC20250510 ID: 423558286
+										283 item NGÀY Row 8 Value: 27/10/2026 00:00 ID: 4246257726
+										284 item LOẠI Row 8 Value: Chi ID: 4264479530
+										285 item DANH MỤC Row 8 Value: Trả ngay nhập hàng ID: 4232927528
+										286 item SỐ TIỀN Row 8 Value: 4.000 ID: 4225404684
+										287 item GHI CHÚ Row 8 Value: PurchaseImmediate ID: 4261825437
+									288 custom Row 9
+										289 header Row 9 ID: 4246624938
+										290 item MÃ Row 9 Value: TC20250509 ID: 422144424
+										291 item NGÀY Row 9 Value: 27/10/2026 00:00 ID: 4227877518
+										292 item LOẠI Row 9 Value: Chi ID: 4226863423
+										293 item DANH MỤC Row 9 Value: Trả ngay nhập hàng ID: 4213680183
+										294 item SỐ TIỀN Row 9 Value: 10.000 ID: 4243624659
+										295 item GHI CHÚ Row 9 Value: PurchaseImmediate ID: 4230249667
+									296 custom Row 10
+										297 header Row 10 ID: 4211920127
+										298 item MÃ Row 10 Value: TC20250508 ID: 4220743934
+										299 item NGÀY Row 10 Value: 27/10/2026 00:00 ID: 421235691
+										300 item LOẠI Row 10 Value: Chi ID: 4216063984
+										301 item DANH MỤC Row 10 Value: Tien dien ID: 427505203
+										302 item SỐ TIỀN Row 10 Value: 1.234 ID: 4230458775
+										303 item GHI CHÚ Row 10 Value: (null) ID: 4260419765
+									304 custom Row 11
+										305 header Row 11 ID: 4210393089
+										306 item MÃ Row 11 Value: TC20250513 ID: 42892432
+										307 item NGÀY Row 11 Value: 26/10/2026 00:00 ID: 4211601619
+										308 item LOẠI Row 11 Value: Chi ID: 4216603325
+										309 item DANH MỤC Row 11 Value: Tra no nha cung cap ID: 4214516634
+										310 item SỐ TIỀN Row 11 Value: 1.000 ID: 4254498519
+										311 item GHI CHÚ Row 11 Value: SupplierDebt ID: 4237392116
+									312 custom Row 12
+										313 header Row 12 ID: 4211034414
+										314 item MÃ Row 12 Value: TC20250507 ID: 429229662
+										315 item NGÀY Row 12 Value: 26/10/2026 00:00 ID: 4252876743
+										316 item LOẠI Row 12 Value: Chi ID: 4216309029
+										317 item DANH MỤC Row 12 Value: Tra no nha cung cap ID: 4210690797
+										318 item SỐ TIỀN Row 12 Value: 1.000 ID: 424762643
+										319 item GHI CHÚ Row 12 Value: SupplierDebt ID: 4261914366
+									320 custom Row 13
+										321 header Row 13 ID: 4261654024
+										322 item MÃ Row 13 Value: TC20250506 ID: 4263304808
+										323 item NGÀY Row 13 Value: 26/10/2026 00:00 ID: 4217656136
+										324 item LOẠI Row 13 Value: Chi ID: 4228203178
+										325 item DANH MỤC Row 13 Value: Trả ngay nhập hàng ID: 4231097005
+										326 item SỐ TIỀN Row 13 Value: 4.000 ID: 421607883
+										327 item GHI CHÚ Row 13 Value: PurchaseImmediate ID: 4220902484
+									328 custom Row 14
+										329 header Row 14 ID: 4242859021
+										330 item MÃ Row 14 Value: TC20250505 ID: 4220296365
+										331 item NGÀY Row 14 Value: 26/10/2026 00:00 ID: 4262526164
+										332 item LOẠI Row 14 Value: Chi ID: 427533771
+										333 item DANH MỤC Row 14 Value: Tien dien ID: 4230830168
+										334 item SỐ TIỀN Row 14 Value: 1.234 ID: 4265247871
+										335 item GHI CHÚ Row 14 Value: G05 fixture ID: 4242915959
+									336 custom Row 15
+										337 header Row 15 ID: 425039806
+										338 item MÃ Row 15 Value: TC20250512 ID: 4265517487
+										339 item NGÀY Row 15 Value: 25/10/2026 00:00 ID: 4246420972
+										340 item LOẠI Row 15 Value: Chi ID: 4266601736
+										341 item DANH MỤC Row 15 Value: Trả ngay nhập hàng ID: 4260516207
+										342 item SỐ TIỀN Row 15 Value: 2.000 ID: 4248513199
+										343 item GHI CHÚ Row 15 Value: PurchaseImmediate ID: 4226691813
+							182 pane ID: 7801020
+								183 text
+								184 button Trang trước
+								185 text 1 / 1
+								186 button Trang sau
+						187 text 15 phiếu · Thu 0 ₫ · Chi 54.702 ₫ · Trang 1
+		39 title bar (settable, string) Value: CoffeeManager
+			40 menu bar System ID: MenuBar
+				41 menu item System
+			42 button Minimize
+			43 button Maximize
+			44 button Close
+
+The focused UI element is 54 edit (settable, string) Description: Tìm tên hoặc mã nguyên liệu….
+
+Focused element: 54 edit (settable, string) Description: Tìm tên hoặc mã nguyên liệu…

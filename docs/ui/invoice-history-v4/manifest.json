@@ -1,0 +1,19 @@
+{
+  "SourceZip": "C:\\Users\\Lenovo\\Downloads\\Orbit_LichSuHoaDon_V4.zip",
+  "ZipHash": "E622A994C43B8CFE771193282D1F787FFC613A6ACECFFC1C6FB5E76E44381DD9",
+  "Purpose": "User supplied invoice-history V4 design reference only; demo content not app contracts",
+  "Files": [
+    {
+      "Name": "Orbit_LichSuHoaDon_V4_Laptop.png",
+      "Hash": "5184EA78AD573F5699B59B535CACB7ABFBCBE218FD27611D6ADEB9C7CF40C86D"
+    },
+    {
+      "Name": "Orbit_LichSuHoaDon_V4.html",
+      "Hash": "0F25E97C36DDAA722F9E15E61308931DEE32A4DE2EB15F22A0025817221B1DFD"
+    },
+    {
+      "Name": "README.md",
+      "Hash": "A42CAD2B60A08976F29423ABAE900BDEFD982306AF66890A0A1A263D5755687E"
+    }
+  ]
+}

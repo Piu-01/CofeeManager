@@ -1,0 +1,215 @@
+Window: "CoffeeManager", App: CafeManager.WinForms.exe.
+	0 window CoffeeManager Secondary Actions: Raise
+		1 window Nhập hàng — Chưa ghi kho Secondary Actions: Raise
+			194 window Chốt nhập kho Secondary Actions: Raise
+				195 pane
+					196 text Chốt nhập kho
+					197 text Chốt nhập 1 dòng, tổng 21.000 ₫, trả ngay 0 ₫, nợ 21.000 ₫? Chứng từ sau chốt chỉ đọc.
+					198 pane
+						199 pane
+							200 button Có
+							201 button Không
+				202 title bar (settable, string) Value: Chốt nhập kho
+					203 menu bar System ID: MenuBar
+						204 menu item System
+					205 button Close
+			2 pane
+				3 text Nhập hàng — Chưa ghi kho
+				4 pane Nhập hàng — Chưa ghi kho
+					5 pane Nhập hàng — Chưa ghi kho
+						6 text Nhà cung cấp
+						7 combo box (settable, string) Nhà cung cấp Value: NCC07 — Cty Bao Bi Xanh
+							8 text Nhà cung cấp
+							9 button Open
+						10 text Ngày nhập
+						11 date and time picker (settable, string) Value: 29/10/2026
+						12 text Hạn nợ
+						13 date and time picker (settable, string) Value: 29/10/2026
+						14 text Trả ngay (₫)
+						15 edit Trả ngay (₫) Value: 0
+						16 text Thanh toán do quản lý xử lý
+					17 data grid Thanh toán do quản lý xử lý
+						18 custom Top Row
+							19 header Top Left Header Cell ID: 4240436168
+							20 header MÃ ID: 4255908138
+							21 header NGUYÊN LIỆU ID: 4255717159
+							22 header ĐƠN VỊ ID: 4253234438
+							23 header LƯỢNG ID: 4220959064
+							24 header GIÁ / ĐƠN VỊ ID: 424032380
+						25 custom Row 1
+							26 header Row 1 ID: 4253993749
+							27 item MÃ Row 1 Value: NVL12 ID: 4230830104
+							28 item NGUYÊN LIỆU Row 1 Value: Banh croissant thanh pham ID: 4265247036
+							29 item ĐƠN VỊ Row 1 Value: Cai ID: 4242905103
+							30 item (settable, string) LƯỢNG Row 1 Value: 3,0000 ID: 4220895435
+							32 item (settable, string) GIÁ / ĐƠN VỊ Row 1 Value: 7.000 ID: 423205208
+					33 pane
+						34 combo box (settable, string) NVL12 — Banh croissant thanh pham (Cai) Value: NVL12 — Banh croissant thanh pham (Cai)
+							35 text
+							36 button Open
+						37 button Thêm dòng
+						38 button Bỏ dòng
+				193 text Tổng nhập SQL: 21.000 ₫ — Chưa ghi kho
+				39 pane Tổng nhập SQL: 21.000 ₫ — Chưa ghi kho
+					40 pane Tổng nhập SQL: 21.000 ₫ — Chưa ghi kho
+						41 button Tính tổng
+						42 button Chốt nhập kho
+						43 button Quay lại
+			44 title bar (settable, string) Value: Nhập hàng — Chưa ghi kho
+				45 menu bar System ID: MenuBar
+					46 menu item System
+				47 button Close
+		48 pane
+			49 pane
+				50 text CoffeeManager
+				51 text KHÔNG GIAN KHO
+				52 text G05 fixture STORE
+				53 text Quản lý kho · STORE
+				54 button Trang phiên
+				55 button Kho
+				56 button Nguyên liệu / Tồn
+				57 button Menu / Công thức
+				58 button Công nợ
+				59 button Thông tin hệ thống
+				60 button Đăng xuất ID: logout
+				61 text Phiên đang hoạt động.
+			62 pane
+				63 text Kho / Trang phiên
+				64 text G05 fixture STORE · STORE
+			65 pane G05 fixture STORE · STORE
+				66 pane G05 fixture STORE · STORE ID: 63244986
+					67 tab
+						68 pane Nhập hàng
+							69 pane ID: 87558758
+								70 pane ID: 4259978
+									71 text INVENTORY WORKSPACE
+									72 text Nhập hàng
+									73 text Nháp không ghi kho; chốt tạo kho/chi/nợ nguyên tử.
+									74 pane Nháp không ghi kho; chốt tạo kho/chi/nợ nguyên tử.
+										75 button Lập phiếu nhập
+									76 pane
+										77 pane ID: 208996710
+											78 edit (settable, string) Description: Tìm tên hoặc mã nguyên liệu…
+										79 pane
+											80 button Tìm / Tải lại
+											81 button Xem chi tiết
+										82 pane
+											83 data grid
+												84 scroll bar (settable, float) Vertical Value: 0
+													85 button Line up
+													86 thumb Position
+													87 button Page down
+													88 button Line down
+												89 custom Top Row
+													90 header Top Left Header Cell ID: 4241677319
+													91 header MÃ ID: 424934235
+													92 header NGÀY NHẬP ID: 4264145055
+													93 header NHÀ CUNG CẤP ID: 4228579349
+													94 header TỔNG ID: 4235987228
+													95 header TRẢ NGAY ID: 4265180782
+													96 header NỢ GỐC ID: 4242043803
+												97 custom Row 1
+													98 header Row 1 ID: 4258972140
+													99 item MÃ Row 1 Value: PN20250501 ID: 4228440320
+													100 item NGÀY NHẬP Row 1 Value: 02/05/2025 00:00 ID: 4234179851
+													101 item NHÀ CUNG CẤP Row 1 Value: NCC01 ID: 4241684886
+													102 item TỔNG Row 1 Value: 4.800.000 ID: 425032615
+													103 item TRẢ NGAY Row 1 Value: (null) ID: 4265424002
+													104 item NỢ GỐC Row 1 Value: 2.500.000 ID: 4245205662
+												105 custom Row 2
+													106 header Row 2 ID: 4256455293
+													107 item MÃ Row 2 Value: PN20250403 ID: 4262830178
+													108 item NGÀY NHẬP Row 2 Value: 22/04/2025 00:00 ID: 4211485955
+													109 item NHÀ CUNG CẤP Row 2 Value: NCC06 ID: 4215099699
+													110 item TỔNG Row 2 Value: 1.200.000 ID: 4262078366
+													111 item TRẢ NGAY Row 2 Value: (null) ID: 421712402
+													112 item NỢ GỐC Row 2 Value: 1.200.000 ID: 4222261228
+												113 custom Row 3
+													114 header Row 3 ID: 424051259
+													115 item MÃ Row 3 Value: PN20250402 ID: 4252666368
+													116 item NGÀY NHẬP Row 3 Value: 10/04/2025 00:00 ID: 4213574152
+													117 item NHÀ CUNG CẤP Row 3 Value: NCC02 ID: 4242246252
+													118 item TỔNG Row 3 Value: 1.200.000 ID: 4212330370
+													119 item TRẢ NGAY Row 3 Value: (null) ID: 4226077086
+													120 item NỢ GỐC Row 3 Value: 1.200.000 ID: 423457799
+												121 custom Row 4
+													122 header Row 4 ID: 4247497124
+													123 item MÃ Row 4 Value: PN20250401 ID: 4213482842
+													124 item NGÀY NHẬP Row 4 Value: 01/04/2025 00:00 ID: 4241059224
+													125 item NHÀ CUNG CẤP Row 4 Value: NCC03 ID: 4264007873
+													126 item TỔNG Row 4 Value: 900.000 ID: 4226795985
+													127 item TRẢ NGAY Row 4 Value: (null) ID: 4212803493
+													128 item NỢ GỐC Row 4 Value: 900.000 ID: 4232227693
+												129 custom Row 5
+													130 header Row 5 ID: 4210662201
+													131 item MÃ Row 5 Value: PN20250302 ID: 424390896
+													132 item NGÀY NHẬP Row 5 Value: 18/03/2025 00:00 ID: 4257081653
+													133 item NHÀ CUNG CẤP Row 5 Value: NCC09 ID: 423863986
+													134 item TỔNG Row 5 Value: 1.800.000 ID: 4250231821
+													135 item TRẢ NGAY Row 5 Value: (null) ID: 4249033897
+													136 item NỢ GỐC Row 5 Value: 1.800.000 ID: 4233460895
+												137 custom Row 6
+													138 header Row 6 ID: 4217746811
+													139 item MÃ Row 6 Value: PN20250301 ID: 4229381954
+													140 item NGÀY NHẬP Row 6 Value: 01/03/2025 00:00 ID: 4246421085
+													141 item NHÀ CUNG CẤP Row 6 Value: NCC01 ID: 4266603199
+													142 item TỔNG Row 6 Value: 5.825.000 ID: 4260535220
+													143 item TRẢ NGAY Row 6 Value: (null) ID: 4248760361
+													144 item NỢ GỐC Row 6 Value: 3.000.000 ID: 4229904926
+												145 custom Row 7
+													146 header Row 7 ID: 4220767720
+													147 item MÃ Row 7 Value: PN20250202 ID: 421544912
+													148 item NGÀY NHẬP Row 7 Value: 15/02/2025 00:00 ID: 4220083857
+													149 item NHÀ CUNG CẤP Row 7 Value: NCC05 ID: 4259763559
+													150 item TỔNG Row 7 Value: 625.000 ID: 4238728775
+													151 item TRẢ NGAY Row 7 Value: (null) ID: 4233712037
+													152 item NỢ GỐC Row 7 Value: (null) ID: 4235603304
+												153 custom Row 8
+													154 header Row 8 ID: 4244269570
+													155 item MÃ Row 8 Value: PN20250201 ID: 4238633498
+													156 item NGÀY NHẬP Row 8 Value: 03/02/2025 00:00 ID: 4232473426
+													157 item NHÀ CUNG CẤP Row 8 Value: NCC02 ID: 4219501356
+													158 item TỔNG Row 8 Value: 750.000 ID: 4252191047
+													159 item TRẢ NGAY Row 8 Value: (null) ID: 427394973
+													160 item NỢ GỐC Row 8 Value: 750.000 ID: 4229025790
+												161 custom Row 9
+													162 header Row 9 ID: 426411591
+													163 item MÃ Row 9 Value: PN20250102 ID: 4216241823
+													164 item NGÀY NHẬP Row 9 Value: 20/01/2025 00:00 ID: 429817118
+													165 item NHÀ CUNG CẤP Row 9 Value: NCC04 ID: 4260513677
+													166 item TỔNG Row 9 Value: 1.200.000 ID: 4248480306
+													167 item TRẢ NGAY Row 9 Value: (null) ID: 4226264209
+													168 item NỢ GỐC Row 9 Value: 1.000.000 ID: 425890401
+												169 custom Row 10
+													170 header Row 10 ID: 4255953720
+													171 item MÃ Row 10 Value: PN20250101 ID: 4256309729
+													172 item NGÀY NHẬP Row 10 Value: 05/01/2025 00:00 ID: 4260937846
+													173 item NHÀ CUNG CẤP Row 10 Value: NCC01 ID: 4253994506
+													174 item TỔNG Row 10 Value: 5.100.000 ID: 4230839945
+													175 item TRẢ NGAY Row 10 Value: (null) ID: 4265374977
+													176 item NỢ GỐC Row 10 Value: 2.000.000 ID: 4244568335
+										177 pane ID: 21367426
+											178 text Hiển thị 1–10 / 10 phiếu
+											179 button (disabled) Trang trước
+											180 text 1 / 1
+											181 button (disabled) Trang sau
+									182 text 10 phiếu — Trang 1
+						183 tab item (selectable) Tồn kho
+						184 tab item (selectable) Nhập hàng
+						185 tab item (selectable) Xuất kho
+						186 tab item (selectable) Kiểm kê
+		187 title bar (settable, string) Value: CoffeeManager
+			188 menu bar System ID: MenuBar
+				189 menu item System
+			190 button Minimize
+			191 button Maximize
+			192 button Close
+
+Document text: ```
+0
+```
+
+Focused element: 15 edit Trả ngay (₫) Value: 0
+
+Document text:
+0

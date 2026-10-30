@@ -67,3 +67,12 @@ Runtime CafeManagerApp DENY DML nguồn, helper nội bộ không cấp execute 
 Checkout T15 kế thừa lock Policy→Recipes→Header→Customer và function preview SQL;
 G03 chưa triển khai use case checkout đích. Contract chi tiết: material/product/
 table/customer/loyalty-contract.md.
+
+## G04/schema015
+
+HOADON/CHITIET_HD chỉ ghi qua sp_TaoHoaDon/sp_SuaDongHoaDon/sp_SuaThongTinHoaDon;
+checkout/hủy bắt buộc actor/stamp/version/request (checkout có token). Không cho
+runtime DML dòng trực tiếp. HoaDonUuDaiSnapshot chỉ011ghi/cutover, bất biến saughi.
+G03OperationReceipt dùng lại cho SalesCreate/Line/Header/Checkout/Cancel/Delivery,
+không nhân bản receipt. Giao chỉ cập nhật TrangThaiGiao qua procedure014, giữ tài
+chính và snapshot. Không thay engine tiền/kho/điểm sang C# hoặc tạo phiếu Thu thứhai.

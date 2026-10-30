@@ -1,0 +1,25 @@
+[
+  {
+    "Part": "T23-K09.OverdueNow",
+    "Result": "PASS",
+    "Actual": {
+      "Remaining": 10000.0,
+      "Status": "Qua han",
+      "Code": "CN20250429"
+    }
+  },
+  {
+    "Part": "T23.NativeUnpaidHistoryNullEvidence",
+    "Result": "PASS",
+    "Actual": "CN20250429"
+  },
+  {
+    "Part": "T20-K09.LegacyClosed",
+    "Result": "PASS",
+    "Actual": {
+      "NotClosed": 0,
+      "Legacy": 10,
+      "Balances": "Full eight-part backup hash compare in development-backup-verification.json"
+    }
+  }
+]

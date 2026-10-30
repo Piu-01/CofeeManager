@@ -1,0 +1,1 @@
+Original fault injection disabled the owner, not the overlay; Form.Show(owner-disabled) succeeds, so the fixture did not induce its expected fault. Original9/11 and logs preserved. New fixture disables the overlay itself, matching the proven UI05 cause; all assertions and product DLL unchanged.

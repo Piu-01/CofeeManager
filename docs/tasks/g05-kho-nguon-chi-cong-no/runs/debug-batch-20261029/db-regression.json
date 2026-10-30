@@ -1,0 +1,93 @@
+[
+  {
+    "Part": "B03.UnpaidGetAndList",
+    "Result": "PASS",
+    "Actual": {
+      "debtCode": "CN20250407",
+      "Original": 10000,
+      "Paid": 0,
+      "Remaining": 10000,
+      "History": 0
+    }
+  },
+  {
+    "Part": "B03.AsOfBeforeFirstPayment",
+    "Result": "PASS",
+    "Actual": {
+      "Count": 1,
+      "History": 0,
+      "Remaining": 10000
+    }
+  },
+  {
+    "Part": "B03.PartialHistory",
+    "Result": "PASS",
+    "Actual": {
+      "Remaining": 9000,
+      "History": 1
+    }
+  },
+  {
+    "Part": "B03.FullHistory",
+    "Result": "PASS",
+    "Actual": {
+      "Remaining": 0,
+      "History": 2
+    }
+  },
+  {
+    "Part": "B02.EmptyLegacyGetAndList",
+    "Result": "PASS",
+    "Actual": {
+      "Code": "KKTEST0001",
+      "Lines": 0
+    }
+  },
+  {
+    "Part": "B02.EmptyStillCannotCommit",
+    "Result": "PASS",
+    "Actual": {
+      "SqlError": 52902
+    }
+  },
+  {
+    "Part": "B02.UncountedRemainsNull",
+    "Result": "PASS",
+    "Actual": {
+      "Code": "KK00000002",
+      "Actual": null
+    }
+  },
+  {
+    "Part": "B02.CountedZeroRemainsZero",
+    "Result": "PASS",
+    "Actual": {
+      "Code": "KK00000002",
+      "Actual": 0.0000
+    }
+  },
+  {
+    "Part": "B03.PayPermission.STORE",
+    "Result": "PASS",
+    "Actual": {
+      "Error": 51605
+    }
+  },
+  {
+    "Part": "B03.PayPermission.CASH",
+    "Result": "PASS",
+    "Actual": {
+      "Error": 51605
+    }
+  },
+  {
+    "Part": "B01.PaginationFixtures",
+    "Result": "PASS",
+    "Actual": {
+      "Finance": 60,
+      "Purchases": 60,
+      "Issues": 60,
+      "Stocktakes": 60
+    }
+  }
+]

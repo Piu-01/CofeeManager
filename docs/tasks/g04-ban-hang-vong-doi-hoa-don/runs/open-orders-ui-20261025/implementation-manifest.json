@@ -1,0 +1,15 @@
+{
+  "State": "Implemented; waiting separate functional test approval",
+  "SourceFiles": 208,
+  "ChangedSincePrintFlow": [
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Modules\\Sales\\OpenOrdersDialog.cs",
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\UI\\OrbitDataGridView.cs"
+  ],
+  "DebugSHA256": "F9667F577E484EB766A4FA8C20460162A2C8F55071BA55B7642A4BA5DDE2B0AF",
+  "DebugBuild": "0 warnings/0 errors",
+  "ReleaseBuild": "0 warnings/0 errors",
+  "FunctionalTests": "NOT RUN",
+  "SQLWrites": "None",
+  "VisualQA": "User responsibility",
+  "G04": "34 PASS /0 FAIL /22 BLOCKED; unchanged by implementation"
+}

@@ -1,0 +1,12 @@
+{
+  "Kind": "Native technical binding/layout only; not acceptance; no visual inspection",
+  "DeviceDpi": 120,
+  "ClientSize": {
+    "Width": 932,
+    "Height": 728
+  },
+  "Rows": 1,
+  "Columns": 3,
+  "HandleCreated": true,
+  "TechnicalSuccess": true
+}

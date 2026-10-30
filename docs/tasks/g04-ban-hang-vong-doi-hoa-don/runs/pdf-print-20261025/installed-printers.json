@@ -1,0 +1,12 @@
+[
+  {
+    "Name": "OneNote (Desktop)",
+    "DriverName": "Send to Microsoft OneNote 16 Driver",
+    "PrinterStatus": 0
+  },
+  {
+    "Name": "Microsoft Print to PDF",
+    "DriverName": "Microsoft Print To PDF",
+    "PrinterStatus": 0
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "Scope": "Approved continuation on compact pager binary",
+  "UiSHA256": "51FDC28FD3F600D1621997F7E462FE36F26427ECD04002ECE5005F99E6AE72C2",
+  "SourceFiles": 208,
+  "ChangedDuringTests": 0,
+  "ComponentSqlPassed": 59,
+  "ComponentSqlFailed": 0,
+  "ExistingFixtureOrders": 51,
+  "NewOrdersCreated": 0,
+  "FixtureAuth": "New isolated fixture actor NPG02, real AuthService",
+  "FinancialSnapshot": "Unchanged",
+  "NativeInput": "set_value changes search; Enter sent to root did not prove search, two owned modal entries observed; no further key injection",
+  "ManualPending": "OO51/page2/open; print outcome of HD20250418",
+  "G04": "34 PASS /0 FAIL /22 BLOCKED"
+}

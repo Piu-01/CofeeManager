@@ -1,0 +1,11 @@
+{
+  "State": "Native modal implementation complete; awaiting separate acceptance approval",
+  "ChangedExistingProductFiles": 5,
+  "SelectAllHelperUnchanged": true,
+  "NewDatabaseCount": 0,
+  "SqlWrites": 0,
+  "SmokeChecks": 18,
+  "Dpi": 120,
+  "UserProductLaunch": "Not launched yet",
+  "PreviousHostEvidence": "acceptance-20261026 retained unchanged"
+}

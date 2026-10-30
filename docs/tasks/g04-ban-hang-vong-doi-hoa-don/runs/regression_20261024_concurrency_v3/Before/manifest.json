@@ -1,0 +1,133 @@
+{
+  "Phase": "Before",
+  "RunId": "20261024_132407_675996ac",
+  "Database": "CoffeeManager_Test_G04_20261024_132407_675996ac_demo",
+  "Schema": 15,
+  "Approval": "User duyệt24/10/2026 G04-TEST-06/G04-CONC-01 + regression",
+  "Created": [
+    "CoffeeManager_Test_G04_20261024_132407_675996ac_demo"
+  ],
+  "Cleaned": [
+    "CoffeeManager_Test_G04_20261024_132407_675996ac_demo"
+  ],
+  "Retained": [],
+  "Cases": [
+    {
+      "DifferentCount": false,
+      "Negative102_102": false,
+      "Id": "G04-TEST-06 validator negative/positive/count controls",
+      "Status": "PASS",
+      "ReorderedPositive": true
+    },
+    {
+      "Id": "T15-K11 last stock round1 forward",
+      "Sql1": "EXEC dbo.G04Pay 'HD92000102';",
+      "Sql2": "EXEC dbo.G04Pay 'HD92000103';",
+      "Expected": [
+        0,
+        52203
+      ],
+      "Actual": [
+        0,
+        1205
+      ],
+      "Exceptions": [
+        "System.Management.Automation.MethodInvocationException: Exception calling \"EndExecuteNonQuery\" with \"1\" argument(s): \"Transaction (Process ID 66) was deadlocked on lock resources with another process and has been chosen as the deadlock victim. Rerun the transaction.\"\r\n ---> System.Data.SqlClient.SqlException (0x80131904): Transaction (Process ID 66) was deadlocked on lock resources with another process and has been chosen as the deadlock victim. Rerun the transaction.\r\n   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQuery(IAsyncResult asyncResult)\r\n   at CallSite.Target(Closure, CallSite, Object, Object)\r\nClientConnectionId:ee3f0fc2-20ea-4f58-b25c-5508c231142c\r\nError Number:1205,State:51,Class:13\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)"
+      ],
+      "TransactionStates": [
+        "0:1",
+        "0:1"
+      ],
+      "Status": "FAIL"
+    },
+    {
+      "Id": "T15-K11 money-stock-points-receipt round1",
+      "Sql": "IF (SELECT COUNT(*) FROM dbo.HOADON WHERE MaHD IN('HD92000102','HD92000103') AND TrangThai=N'Da thanh toan')<>1 OR EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE SoLuongTon<0) OR EXISTS(SELECT 1 FROM dbo.HOADON h WHERE MaHD IN('HD92000102','HD92000103') AND TrangThai=N'Chua thanh toan' AND (EXISTS(SELECT 1 FROM dbo.CHITIET_THANHTOAN p WHERE p.MaHD=h.MaHD) OR EXISTS(SELECT 1 FROM dbo.TIEUHAO_HOADON x WHERE x.MaHD=h.MaHD) OR EXISTS(SELECT 1 FROM dbo.HoaDonUuDaiSnapshot s WHERE s.MaHD=h.MaHD))) THROW 52990,'Stock race partial state',1; IF (SELECT COUNT(*) FROM dbo.G03OperationReceipt WHERE EntityCode IN('HD92000102','HD92000103') AND Operation='SalesCheckout')<>1 THROW 52990,'Checkout receipt count',1;",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K11 last stock round2 reversed",
+      "Sql1": "EXEC dbo.G04Pay 'HD92000105';",
+      "Sql2": "EXEC dbo.G04Pay 'HD92000104';",
+      "Expected": [
+        0,
+        52203
+      ],
+      "Actual": [
+        0,
+        52203
+      ],
+      "Exceptions": [
+        "System.Management.Automation.MethodInvocationException: Exception calling \"EndExecuteNonQuery\" with \"1\" argument(s): \"Không đủ nguyên liệu. Đơn vẫn mở; kiểm tra tồn trước khi tiếp tục.\"\r\n ---> System.Data.SqlClient.SqlException (0x80131904): Không đủ nguyên liệu. Đơn vẫn mở; kiểm tra tồn trước khi tiếp tục.\r\n   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQuery(IAsyncResult asyncResult)\r\n   at CallSite.Target(Closure, CallSite, Object, Object)\r\nClientConnectionId:d2ec5967-6d50-431f-b84b-22c5ecb30348\r\nError Number:52203,State:1,Class:16\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)"
+      ],
+      "TransactionStates": [
+        "0:1",
+        "0:1"
+      ],
+      "Status": "FAIL"
+    },
+    {
+      "Id": "T15-K11 money-stock-points-receipt round2",
+      "Sql": "IF (SELECT COUNT(*) FROM dbo.HOADON WHERE MaHD IN('HD92000104','HD92000105') AND TrangThai=N'Da thanh toan')<>1 OR EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE SoLuongTon<0) OR EXISTS(SELECT 1 FROM dbo.HOADON h WHERE MaHD IN('HD92000104','HD92000105') AND TrangThai=N'Chua thanh toan' AND (EXISTS(SELECT 1 FROM dbo.CHITIET_THANHTOAN p WHERE p.MaHD=h.MaHD) OR EXISTS(SELECT 1 FROM dbo.TIEUHAO_HOADON x WHERE x.MaHD=h.MaHD) OR EXISTS(SELECT 1 FROM dbo.HoaDonUuDaiSnapshot s WHERE s.MaHD=h.MaHD))) THROW 52990,'Stock race partial state',1; IF (SELECT COUNT(*) FROM dbo.G03OperationReceipt WHERE EntityCode IN('HD92000104','HD92000105') AND Operation='SalesCheckout')<>1 THROW 52990,'Checkout receipt count',1;",
+      "Status": "PASS"
+    }
+  ],
+  "Plans": [
+    "checkout-trigger-1.sqlplan",
+    "checkout-trigger-2.sqlplan",
+    "checkout-trigger-3.sqlplan",
+    "checkout-trigger-4.sqlplan",
+    "checkout-trigger-5.sqlplan",
+    "checkout-trigger-6.sqlplan",
+    "checkout-trigger-7.sqlplan",
+    "checkout-trigger-8.sqlplan",
+    "checkout-trigger-9.sqlplan",
+    "checkout-trigger-10.sqlplan",
+    "checkout-trigger-11.sqlplan",
+    "checkout-trigger-12.sqlplan",
+    "checkout-trigger-13.sqlplan",
+    "checkout-trigger-14.sqlplan",
+    "checkout-trigger-15.sqlplan",
+    "checkout-trigger-16.sqlplan",
+    "checkout-trigger-17.sqlplan",
+    "checkout-trigger-18.sqlplan",
+    "checkout-trigger-19.sqlplan",
+    "checkout-trigger-20.sqlplan",
+    "checkout-trigger-21.sqlplan",
+    "checkout-trigger-22.sqlplan",
+    "checkout-trigger-23.sqlplan",
+    "checkout-trigger-24.sqlplan",
+    "checkout-trigger-25.sqlplan",
+    "checkout-trigger-26.sqlplan",
+    "checkout-trigger-27.sqlplan",
+    "checkout-trigger-28.sqlplan",
+    "checkout-trigger-29.sqlplan",
+    "checkout-trigger-30.sqlplan",
+    "checkout-trigger-31.sqlplan",
+    "checkout-trigger-32.sqlplan",
+    "checkout-trigger-33.sqlplan",
+    "checkout-trigger-34.sqlplan",
+    "checkout-trigger-35.sqlplan",
+    "checkout-trigger-36.sqlplan",
+    "checkout-trigger-37.sqlplan",
+    "checkout-trigger-38.sqlplan",
+    "checkout-trigger-39.sqlplan",
+    "checkout-trigger-40.sqlplan",
+    "checkout-trigger-41.sqlplan",
+    "checkout-trigger-42.sqlplan",
+    "checkout-trigger-43.sqlplan",
+    "checkout-trigger-44.sqlplan",
+    "checkout-trigger-45.sqlplan",
+    "checkout-trigger-46.sqlplan",
+    "checkout-trigger-47.sqlplan",
+    "checkout-trigger-48.sqlplan",
+    "checkout-trigger-49.sqlplan",
+    "checkout-trigger-50.sqlplan",
+    "checkout-trigger-51.sqlplan",
+    "checkout-trigger-52.sqlplan",
+    "checkout-trigger-53.sqlplan",
+    "checkout-trigger-54.sqlplan"
+  ],
+  "Status": "Aborted",
+  "Error": "System.Management.Automation.PSArgumentException: An operator is required to compare the two specified values. Include a valid operator in the command, and then try the command again. For example, Get-Process | Where-Object -Property Name -eq Idle\r\n   at System.Management.Automation.MshCommandRuntime.ThrowTerminatingError(ErrorRecord errorRecord)"
+}

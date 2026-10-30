@@ -1,0 +1,33 @@
+[
+  {
+    "Check": "Guard",
+    "Database": "CoffeeManager_Test_G03_20261019_215457_29e552a9_demo",
+    "MarkerMatches": true
+  },
+  {
+    "Check": "Provision",
+    "Database": "CoffeeManager_Test_G03_20261019_215457_29e552a9_demo",
+    "User": "G03Gui",
+    "Permission": "SELECT dbo.G03TestMarker only"
+  },
+  {
+    "Check": "RuntimeMarkerSelectPermission",
+    "Value": 1
+  },
+  {
+    "Check": "RuntimeReadMarker",
+    "Success": true
+  },
+  {
+    "Check": "RuntimeReadState",
+    "State": "Completed",
+    "HasAdmin": true
+  },
+  {
+    "Check": "RuntimeReadAdminIdentity",
+    "Exists": true,
+    "Role": "ADMIN",
+    "Active": true,
+    "Employed": true
+  }
+]

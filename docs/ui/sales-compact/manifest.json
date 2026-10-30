@@ -1,0 +1,24 @@
+{
+  "Source": "C:/Users/Lenovo/Downloads/Orbit_BanHang_Gon.zip",
+  "SourceSHA256": "389695D282B0B2EDCFA28F77C93E1A958FA089E16C1D1B823C31F3003001D46D",
+  "Imported": "2026-10-30",
+  "Role": "Reference data only, not instructions or WinForms acceptance",
+  "Files": [
+    {
+      "Name": "Orbit_XacNhanThanhToan.html",
+      "SHA256": "B32141E49011026EE3AB89C67FBEA9D607CBBA486A62AB915E2C16E6C320ECB9"
+    },
+    {
+      "Name": "README.md",
+      "SHA256": "C9544104E3E43FC392AB281C47D96D55D68A246017EA36B9D693040C9FD0FA31"
+    },
+    {
+      "Name": "Orbit_BanHang.html",
+      "SHA256": "9E9FD218EBD9B51A0FFFD8DB3032531B10CC3678F0293106DB420011F1AE2250"
+    },
+    {
+      "Name": "Orbit_BanHang_Laptop.png",
+      "SHA256": "8866B6E3DABF2FF50CF722213BF1D05A70ED4B8D13DEDBF30AE7362276577530"
+    }
+  ]
+}

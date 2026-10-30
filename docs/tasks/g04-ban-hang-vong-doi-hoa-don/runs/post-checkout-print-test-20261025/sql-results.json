@@ -1,0 +1,75 @@
+{
+  "Database": "CoffeeManager_Test_G04_20261025_181739_98e5df59_checkout",
+  "Schema": 16,
+  "Scope": "Exact frozen dialog captures allocations; production SalesService called directly for SQL commit. No physical Confirm click or real timeout delivery claimed.",
+  "Results": [
+    {
+      "Name": "C01 UI allocation81000/tender100000 commits once, stock/points/replay",
+      "Outcome": "PASS",
+      "Actual": {
+        "Code": "HD20250411",
+        "Allocated": 81000,
+        "Paid": 81000,
+        "pointDelta": 81,
+        "stockDelta": 0.0180,
+        "ReplaySnapshotEqual": true
+      }
+    },
+    {
+      "Name": "C05 mixed cash31000/bank50000 only cash determines change",
+      "Outcome": "PASS",
+      "Actual": {
+        "Code": "HD20250412",
+        "Payments": [
+          {
+            "Method": "PT001",
+            "Amount": 31000
+          },
+          {
+            "Method": "PT002",
+            "Amount": 50000
+          }
+        ]
+      }
+    },
+    {
+      "Name": "C05 bank only ignores tender and persists bank81000",
+      "Outcome": "PASS",
+      "Actual": {
+        "Code": "HD20250413"
+      }
+    },
+    {
+      "Name": "C05 zero payable commits without fake payment",
+      "Outcome": "PASS",
+      "Actual": {
+        "Code": "HD20250414"
+      }
+    },
+    {
+      "Name": "C06 competing session checkout then UI preview reads paid",
+      "Outcome": "PASS",
+      "Actual": {
+        "Code": "HD20250415",
+        "UiResult": "Da thanh toan",
+        "SnapshotEqual": true
+      }
+    },
+    {
+      "Name": "C07 unknown reconcile uses original request without duplicate payment",
+      "Outcome": "PASS",
+      "Actual": {
+        "Code": "HD20250416",
+        "UiResult": "Da thanh toan",
+        "SnapshotEqual": true,
+        "FaultScope": "Unknown state injected; no real lost-response fault in this case"
+      }
+    },
+    {
+      "Name": "Transaction state clean",
+      "Outcome": "PASS",
+      "Actual": "0:0"
+    }
+  ],
+  "Failed": 0
+}

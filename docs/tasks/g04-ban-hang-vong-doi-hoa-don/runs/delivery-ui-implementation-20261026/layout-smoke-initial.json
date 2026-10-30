@@ -1,0 +1,364 @@
+{
+  "Failed": 1,
+  "Scope": "Constructor/layout only, null service/session, no query/auth/SQL/business action/visual QA",
+  "Results": [
+    {
+      "Name": "DeviceDpi125",
+      "Outcome": "PASS",
+      "Actual": 120
+    },
+    {
+      "Name": "{Width=1280, Height=720} 0 module fills content",
+      "Outcome": "PASS",
+      "Actual": {
+        "Page": "{X=0,Y=0,Width=1030,Height=658}",
+        "Content": "{X=0,Y=0,Width=1030,Height=658}"
+      }
+    },
+    {
+      "Name": "{Width=1280, Height=720} 0 grid fills body",
+      "Outcome": "PASS",
+      "Actual": {
+        "Grid": "{X=0,Y=0,Width=963,Height=181}",
+        "Body": "{X=0,Y=0,Width=963,Height=181}"
+      }
+    },
+    {
+      "Name": "{Width=1280, Height=720} 0 grid to footer",
+      "Outcome": "PASS",
+      "Actual": {
+        "BodyBottom": 387,
+        "FooterTop": 387,
+        "FooterBottom": 453,
+        "CardHeight": 455
+      }
+    },
+    {
+      "Name": "{Width=1280, Height=720} 0 no spare horizontal allocation",
+      "Outcome": "PASS",
+      "Actual": {
+        "Columns": 1118,
+        "Viewport": 963
+      }
+    },
+    {
+      "Name": "{Width=1280, Height=720} 1 module fills content",
+      "Outcome": "PASS",
+      "Actual": {
+        "Page": "{X=0,Y=0,Width=1030,Height=658}",
+        "Content": "{X=0,Y=0,Width=1030,Height=658}"
+      }
+    },
+    {
+      "Name": "{Width=1280, Height=720} 1 grid fills body",
+      "Outcome": "PASS",
+      "Actual": {
+        "Grid": "{X=0,Y=0,Width=963,Height=181}",
+        "Body": "{X=0,Y=0,Width=963,Height=181}"
+      }
+    },
+    {
+      "Name": "{Width=1280, Height=720} 1 grid to footer",
+      "Outcome": "PASS",
+      "Actual": {
+        "BodyBottom": 387,
+        "FooterTop": 387,
+        "FooterBottom": 453,
+        "CardHeight": 455
+      }
+    },
+    {
+      "Name": "{Width=1280, Height=720} 1 no spare horizontal allocation",
+      "Outcome": "PASS",
+      "Actual": {
+        "Columns": 1118,
+        "Viewport": 963
+      }
+    },
+    {
+      "Name": "{Width=1280, Height=720} 50 module fills content",
+      "Outcome": "PASS",
+      "Actual": {
+        "Page": "{X=0,Y=0,Width=1030,Height=658}",
+        "Content": "{X=0,Y=0,Width=1030,Height=658}"
+      }
+    },
+    {
+      "Name": "{Width=1280, Height=720} 50 grid fills body",
+      "Outcome": "PASS",
+      "Actual": {
+        "Grid": "{X=0,Y=0,Width=963,Height=181}",
+        "Body": "{X=0,Y=0,Width=963,Height=181}"
+      }
+    },
+    {
+      "Name": "{Width=1280, Height=720} 50 grid to footer",
+      "Outcome": "PASS",
+      "Actual": {
+        "BodyBottom": 387,
+        "FooterTop": 387,
+        "FooterBottom": 453,
+        "CardHeight": 455
+      }
+    },
+    {
+      "Name": "{Width=1280, Height=720} 50 no spare horizontal allocation",
+      "Outcome": "PASS",
+      "Actual": {
+        "Columns": 1118,
+        "Viewport": 963
+      }
+    },
+    {
+      "Name": "{Width=1280, Height=720} empty/single/many keep same body",
+      "Outcome": "PASS",
+      "Actual": [
+        "{Width=963, Height=181}",
+        "{Width=963, Height=181}",
+        "{Width=963, Height=181}"
+      ]
+    },
+    {
+      "Name": "{Width=1280, Height=720} body usable",
+      "Outcome": "FAIL",
+      "Actual": 181
+    },
+    {
+      "Name": "{Width=1280, Height=720} filter Label inside",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1280, Height=720} filter OrbitFilterBox inside",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1280, Height=720} filter OrbitFilterBox inside",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1280, Height=720} action Chi ti\u1EBFt / B\u01B0\u1EDBc ti\u1EBFp inside",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1280, Height=720} action Ki\u1EC3m tra k\u1EBFt qu\u1EA3 inside",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1280, Height=720} pager inside",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1280, Height=720} search full remaining row",
+      "Outcome": "PASS",
+      "Actual": {
+        "Search": "{X=21,Y=18,Width=803,Height=50}",
+        "Actions": "{X=834,Y=18,Width=110,Height=50}",
+        "Filters": "{X=21,Y=80,Width=923,Height=50}"
+      }
+    },
+    {
+      "Name": "{Width=1280, Height=720} full code",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1280, Height=720} phone remains text",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1366, Height=768} 0 module fills content",
+      "Outcome": "PASS",
+      "Actual": {
+        "Page": "{X=0,Y=0,Width=1116,Height=706}",
+        "Content": "{X=0,Y=0,Width=1116,Height=706}"
+      }
+    },
+    {
+      "Name": "{Width=1366, Height=768} 0 grid fills body",
+      "Outcome": "PASS",
+      "Actual": {
+        "Grid": "{X=0,Y=0,Width=1049,Height=229}",
+        "Body": "{X=0,Y=0,Width=1049,Height=229}"
+      }
+    },
+    {
+      "Name": "{Width=1366, Height=768} 0 grid to footer",
+      "Outcome": "PASS",
+      "Actual": {
+        "BodyBottom": 435,
+        "FooterTop": 435,
+        "FooterBottom": 501,
+        "CardHeight": 503
+      }
+    },
+    {
+      "Name": "{Width=1366, Height=768} 0 no spare horizontal allocation",
+      "Outcome": "PASS",
+      "Actual": {
+        "Columns": 1118,
+        "Viewport": 1049
+      }
+    },
+    {
+      "Name": "{Width=1366, Height=768} 1 module fills content",
+      "Outcome": "PASS",
+      "Actual": {
+        "Page": "{X=0,Y=0,Width=1116,Height=706}",
+        "Content": "{X=0,Y=0,Width=1116,Height=706}"
+      }
+    },
+    {
+      "Name": "{Width=1366, Height=768} 1 grid fills body",
+      "Outcome": "PASS",
+      "Actual": {
+        "Grid": "{X=0,Y=0,Width=1049,Height=229}",
+        "Body": "{X=0,Y=0,Width=1049,Height=229}"
+      }
+    },
+    {
+      "Name": "{Width=1366, Height=768} 1 grid to footer",
+      "Outcome": "PASS",
+      "Actual": {
+        "BodyBottom": 435,
+        "FooterTop": 435,
+        "FooterBottom": 501,
+        "CardHeight": 503
+      }
+    },
+    {
+      "Name": "{Width=1366, Height=768} 1 no spare horizontal allocation",
+      "Outcome": "PASS",
+      "Actual": {
+        "Columns": 1118,
+        "Viewport": 1049
+      }
+    },
+    {
+      "Name": "{Width=1366, Height=768} 50 module fills content",
+      "Outcome": "PASS",
+      "Actual": {
+        "Page": "{X=0,Y=0,Width=1116,Height=706}",
+        "Content": "{X=0,Y=0,Width=1116,Height=706}"
+      }
+    },
+    {
+      "Name": "{Width=1366, Height=768} 50 grid fills body",
+      "Outcome": "PASS",
+      "Actual": {
+        "Grid": "{X=0,Y=0,Width=1049,Height=229}",
+        "Body": "{X=0,Y=0,Width=1049,Height=229}"
+      }
+    },
+    {
+      "Name": "{Width=1366, Height=768} 50 grid to footer",
+      "Outcome": "PASS",
+      "Actual": {
+        "BodyBottom": 435,
+        "FooterTop": 435,
+        "FooterBottom": 501,
+        "CardHeight": 503
+      }
+    },
+    {
+      "Name": "{Width=1366, Height=768} 50 no spare horizontal allocation",
+      "Outcome": "PASS",
+      "Actual": {
+        "Columns": 1118,
+        "Viewport": 1049
+      }
+    },
+    {
+      "Name": "{Width=1366, Height=768} empty/single/many keep same body",
+      "Outcome": "PASS",
+      "Actual": [
+        "{Width=1049, Height=229}",
+        "{Width=1049, Height=229}",
+        "{Width=1049, Height=229}"
+      ]
+    },
+    {
+      "Name": "{Width=1366, Height=768} body usable",
+      "Outcome": "PASS",
+      "Actual": 229
+    },
+    {
+      "Name": "{Width=1366, Height=768} filter Label inside",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1366, Height=768} filter OrbitFilterBox inside",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1366, Height=768} filter OrbitFilterBox inside",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1366, Height=768} action Chi ti\u1EBFt / B\u01B0\u1EDBc ti\u1EBFp inside",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1366, Height=768} action Ki\u1EC3m tra k\u1EBFt qu\u1EA3 inside",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1366, Height=768} pager inside",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1366, Height=768} search full remaining row",
+      "Outcome": "PASS",
+      "Actual": {
+        "Search": "{X=21,Y=18,Width=889,Height=50}",
+        "Actions": "{X=920,Y=18,Width=110,Height=50}",
+        "Filters": "{X=21,Y=80,Width=1009,Height=50}"
+      }
+    },
+    {
+      "Name": "{Width=1366, Height=768} full code",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1366, Height=768} phone remains text",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Delivery profile readonly and stacked",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Address fill and Code frozen",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Plain filters",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Observation": "Previous generic profile on same six columns",
+      "OldColumns": 962,
+      "OldHadFill": false,
+      "Viewport": 1049,
+      "NewColumns": 1118,
+      "Note": "Technical allocation comparison, not visual acceptance or proof of prior screenshot height"
+    }
+  ]
+}

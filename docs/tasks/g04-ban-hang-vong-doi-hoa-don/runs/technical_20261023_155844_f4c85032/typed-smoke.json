@@ -1,0 +1,9 @@
+{
+  "Kind": "Typed DAL/BLL dependency smoke; operator SQL principal; not acceptance/GUI role evidence",
+  "Database": "CoffeeManager_Test_G04_20261023_155844_f4c85032_demo",
+  "InvoiceRows": 1,
+  "PaidCode": "HD20250414",
+  "Payable": 25000,
+  "DeliveryCode": "HD20250415",
+  "Success": true
+}

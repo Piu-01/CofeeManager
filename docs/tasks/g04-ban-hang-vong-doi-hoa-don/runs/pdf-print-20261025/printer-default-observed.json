@@ -1,0 +1,10 @@
+[
+  {
+    "Name": "OneNote (Desktop)",
+    "Default": false
+  },
+  {
+    "Name": "Microsoft Print to PDF",
+    "Default": true
+  }
+]

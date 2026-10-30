@@ -1,0 +1,6 @@
+[
+  {
+    "Result": "FAIL",
+    "Error": "System.InvalidOperationException: H\u1ED9p nghi\u1EC7p v\u1EE5 c\u1EA7n c\u00F3 c\u1EEDa s\u1ED5 cha CoffeeManager.\r\n   at CafeManager.WinForms.UI.OrbitDialogHost.FindMainForm(Control owner) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\UI\\OrbitDialogHost.cs:line 31\r\n   at CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(OrbitDialogForm dialog, Control owner) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\UI\\OrbitDialogHost.cs:line 33\r\n   at Program.\u003C\u003Ec__DisplayClass1_0.\u003C\u003CMain\u003Eb__0\u003Ed.MoveNext() in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g05-kho-nguon-chi-cong-no\\runs\\b05-20261029\\dialogs\\Program.cs:line 60"
+  }
+]

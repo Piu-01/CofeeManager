@@ -19,21 +19,8 @@ internal static class Program
         AuthRepository? repository = null;
         var passwords = new PasswordService();
         string? configurationError = null;
-        var testManifest = Environment.GetEnvironmentVariable("CAFEMANAGER_TEST_MANIFEST");
-        // Chỉ profile Test mới đọc manifest; lỗi không được rơi về DB development.
-        if (!string.IsNullOrWhiteSpace(testManifest))
-        {
-            connectionString = null;
-#if DEBUG
-            try { connectionString = Configuration.TemporaryTestLogin.ReadProfileConnection(testManifest); }
-            catch (Exception ex) when (ex is IOException or System.Text.Json.JsonException or System.Security.Cryptography.CryptographicException or ArgumentException or InvalidOperationException or UnauthorizedAccessException)
-            { configurationError = "Không mở được profile Test. Kiểm tra manifest DB test và cấu hình local."; }
-#else
-            configurationError = "Profile CoffeeManager.Test chỉ dùng với bản Debug.";
-#endif
-        }
         // Profile F5 chọn development rõ ràng; chạy exe thường không tự chuyển DB.
-        else if (string.IsNullOrWhiteSpace(connectionString)
+        if (string.IsNullOrWhiteSpace(connectionString)
             && Environment.GetEnvironmentVariable("CAFEMANAGER_USE_DEVELOPMENT") == "1")
         {
             try
@@ -73,19 +60,39 @@ internal static class Program
         var permissionService = repository is null ? null : new PermissionService(repository);
         var runtimeConnection = connectionString;
         var catalogService = repository is null ? null : new CatalogService(new CatalogRepository(new ConnectionFactory(runtimeConnection!)), permissionService!);
+        UI.DocumentLinks DocumentLinks(SessionContext session) => new(new PurchaseService(new PurchaseRepository(new ConnectionFactory(runtimeConnection!)),permissionService!),new FinanceService(new FinanceRepository(new ConnectionFactory(runtimeConnection!)),permissionService!),new SupplierDebtService(new SupplierDebtRepository(new ConnectionFactory(runtimeConnection!)),permissionService!),session);
+        UserControl Inventory(SessionContext session) => new Modules.Inventory.InventoryControl(new MaterialService(new MaterialRepository(new ConnectionFactory(runtimeConnection!)),permissionService!),new PurchaseService(new PurchaseRepository(new ConnectionFactory(runtimeConnection!)),permissionService!),new StockIssueService(new StockIssueRepository(new ConnectionFactory(runtimeConnection!)),permissionService!),new StocktakeService(new StocktakeRepository(new ConnectionFactory(runtimeConnection!)),permissionService!),session,new Configuration.PendingOperationFile(),DocumentLinks(session));
         var context = new ApplicationSessionContext(repository is null ? null : new AuthService(repository, passwords),
             permissionService, repository, configurationError, catalogService is null ? null : session => new Modules.Catalogs.CatalogsControl(catalogService, session),
             repository is null ? null : session => new Dictionary<Navigation.NavigationTarget, Func<UserControl>>
             {
+                [Navigation.NavigationTarget.Home] = () => session.Identity.Role=="STORE"?Inventory(session):new Modules.Home.SessionHomeControl(session.Identity),
+                [Navigation.NavigationTarget.Inventory] = () => Inventory(session),
+                [Navigation.NavigationTarget.Debt] = () => new Modules.Finance.SupplierDebtsControl(new SupplierDebtService(new SupplierDebtRepository(new ConnectionFactory(runtimeConnection!)),permissionService!),session,new Configuration.PendingOperationFile(),DocumentLinks(session)),
+                [Navigation.NavigationTarget.Finance] = () => new Modules.Finance.FinanceControl(new FinanceService(new FinanceRepository(new ConnectionFactory(runtimeConnection!)), permissionService!), session, new Configuration.PendingOperationFile(), DocumentLinks(session)),
+                [Navigation.NavigationTarget.Sales] = () =>
+                {
+                    var invoices = new InvoiceService(new InvoiceRepository(new ConnectionFactory(runtimeConnection!)), permissionService!);
+                    var sales = new Modules.Sales.SalesControl(new SalesService(new SalesRepository(new ConnectionFactory(runtimeConnection!)), permissionService!), new TableService(new TableRepository(new ConnectionFactory(runtimeConnection!)), permissionService!), new CustomerService(new CustomerRepository(new ConnectionFactory(runtimeConnection!)), permissionService!), new LoyaltyService(new LoyaltyRepository(new ConnectionFactory(runtimeConnection!)), permissionService!), session, invoices);
+                    return sales;
+                },
+                [Navigation.NavigationTarget.Delivery] = () => new Modules.Sales.DeliveryControl(new DeliveryService(new DeliveryRepository(new ConnectionFactory(runtimeConnection!)), permissionService!), new SalesService(new SalesRepository(new ConnectionFactory(runtimeConnection!)), permissionService!), new InvoiceService(new InvoiceRepository(new ConnectionFactory(runtimeConnection!)), permissionService!), session),
+                [Navigation.NavigationTarget.Invoices] = () => new Modules.Sales.InvoicesControl(new InvoiceService(new InvoiceRepository(new ConnectionFactory(runtimeConnection!)), permissionService!), session),
                 [Navigation.NavigationTarget.Loyalty] = () => new Modules.Loyalty.LoyaltyControl(new LoyaltyService(new LoyaltyRepository(new ConnectionFactory(runtimeConnection!)), permissionService!), new CustomerService(new CustomerRepository(new ConnectionFactory(runtimeConnection!)), permissionService!), session),
                 [Navigation.NavigationTarget.Customers] = () => new Modules.Customers.CustomersControl(new CustomerService(new CustomerRepository(new ConnectionFactory(runtimeConnection!)), permissionService!), session),
                 [Navigation.NavigationTarget.Tables] = () => new Modules.Tables.TablesControl(new TableService(new TableRepository(new ConnectionFactory(runtimeConnection!)), permissionService!), session),
                 [Navigation.NavigationTarget.Products] = () => new Modules.Menu.ProductsControl(new ProductService(new ProductRepository(new ConnectionFactory(runtimeConnection!)), permissionService!), session),
                 [Navigation.NavigationTarget.Materials] = () => new Modules.Inventory.MaterialsControl(new MaterialService(new MaterialRepository(new ConnectionFactory(runtimeConnection!)), permissionService!), session)
             });
-#if DEBUG
-        context.TemporaryTestLogin = Configuration.TemporaryTestLogin.Create(runtimeConnection);
-#endif
         context.Start(); Application.Run(context);
     }
 }
+
+
+
+
+
+
+
+
+

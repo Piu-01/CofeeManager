@@ -12,6 +12,7 @@ public sealed class OrbitListWorkspace : UserControl
     public Label Status { get; } = Label("Sẵn sàng", OrbitManagementTheme.Small, OrbitManagementTheme.Caramel);
     public Panel PrimaryActions { get; } = new();
     public Panel Filters { get; } = new();
+    public Panel SearchActions { get; } = new();
     public Panel RowActions { get; } = new();
     public Panel Body { get; } = new();
     public Panel Tabs { get; } = new();
@@ -21,6 +22,8 @@ public sealed class OrbitListWorkspace : UserControl
     public bool ShowMeta { get; set; } = true;
     [System.ComponentModel.DefaultValue(false)]
     public bool Compact { get; set; }
+    [System.ComponentModel.DefaultValue(false)]
+    public bool StackedTools { get; set; }
     public OrbitPagination Pagination { get; } = new();
     private readonly RoundedPanel card = new();
     private readonly Control search;
@@ -31,10 +34,10 @@ public sealed class OrbitListWorkspace : UserControl
         this.search = search; Dock = DockStyle.Fill; AutoScaleMode = AutoScaleMode.Dpi; AutoScaleDimensions = new SizeF(96, 96);
         BackColor = OrbitManagementTheme.Background;
         Controls.AddRange([Eyebrow, Title, Description, PrimaryActions, Tabs, card, Status]);
-        card.Controls.AddRange([search, Filters, Count, RowActions, Body, Pagination]);
-        foreach (var panel in new[] { Filters, RowActions, Body }) panel.BackColor = OrbitManagementTheme.Surface;
+        card.Controls.AddRange([search, SearchActions, Filters, Count, RowActions, Body, Pagination]);
+        foreach (var panel in new[] { SearchActions, Filters, RowActions, Body }) panel.BackColor = OrbitManagementTheme.Surface;
         PrimaryActions.BackColor = BackColor;
-        foreach (var panel in new[] { Filters, RowActions, PrimaryActions })
+        foreach (var panel in new[] { SearchActions, Filters, RowActions, PrimaryActions })
         {
             panel.ControlAdded += (_, e) => { if (e.Control is { } control) { control.VisibleChanged += (_, _) => PerformLayout(); control.SizeChanged += (_, _) => { if (!arranging) PerformLayout(); }; } PerformLayout(); };
         }
@@ -59,6 +62,9 @@ public sealed class OrbitListWorkspace : UserControl
             Tabs.Visible = tabHeight > 0; Tabs.SetBounds(x, y + P(98), width, P(38));
             card.SetBounds(x, Compact ? 0 : y + P(98 + tabHeight), width, Math.Max(P(180), ClientSize.Height - (Compact ? P(28) : y + P(98 + tabHeight + 42))));
             Status.SetBounds(x, card.Bottom + P(8), width, P(18));
+            SearchActions.Visible = StackedTools && ShowTools;
+            if (StackedTools) { ArrangeStackedTools(); return; }
+            card.ToolsDividerY = -1;
             var filterWidth = ArrangeButtons(Filters, P(10));
             Filters.Visible = ShowTools; search.Visible = ShowTools;
             Filters.SetBounds(card.Width - P(17) - filterWidth, P(14), filterWidth, P(40));
@@ -78,6 +84,40 @@ public sealed class OrbitListWorkspace : UserControl
         }
         finally { arranging = false; }
     }
+    private void ArrangeStackedTools()
+    {
+        int P(float n) => OrbitManagementTheme.Px(this, n);
+        var left = P(17); var innerWidth = Math.Max(1, card.Width - P(34));
+        var actionWidth = ArrangeButtons(SearchActions, P(8));
+        search.Visible = Filters.Visible = ShowTools; Count.Visible = false;
+        SearchActions.SetBounds(card.Width - left - actionWidth, P(14), actionWidth, P(40));
+        search.SetBounds(left, P(14), Math.Max(1, SearchActions.Left - left - P(8)), P(40));
+        Filters.SetBounds(left, P(64), innerWidth, P(40));
+        var fx = 0; var fy = 0; var rowHeight = 0;
+        foreach (Control control in Filters.Controls)
+        {
+            if (!control.Visible) continue;
+            var size = control switch
+            {
+                OrbitFilterBox filter => new Size(Math.Min(innerWidth, P(filter.LogicalWidth)), P(40)),
+                OrbitDateRangeField range => range.GetPreferredSize(new Size(innerWidth, 0)),
+                _ => new Size(Math.Min(innerWidth, control.Width), P(40))
+            };
+            if (fx > 0 && fx + size.Width > innerWidth) { fx = 0; fy += rowHeight + P(8); rowHeight = 0; }
+            control.SetBounds(fx, fy, size.Width, size.Height); fx += size.Width + P(8); rowHeight = Math.Max(rowHeight, size.Height);
+        }
+        Filters.Height = fy + rowHeight;
+        var toolsBottom = ShowTools ? Filters.Bottom + P(14) : 0;
+        var actionsWidth = ArrangeButtons(RowActions, P(6));
+        var actionsHeight = Math.Max(P(33), RowActions.Controls.Cast<Control>().Where(c => c.Visible).Select(c => c.Height).DefaultIfEmpty(0).Max());
+        var metaHeight = ShowMeta ? Math.Max(P(46), actionsHeight + P(12)) : 0;
+        RowActions.Visible = ShowMeta;
+        RowActions.SetBounds(card.Width - left - actionsWidth, toolsBottom + (metaHeight - actionsHeight) / 2, actionsWidth, actionsHeight);
+        var bodyTop = toolsBottom + metaHeight;
+        Body.SetBounds(P(1), bodyTop, Math.Max(1, card.Width - P(2)), Math.Max(1, card.Height - bodyTop - P(54)));
+        Pagination.SetBounds(P(1), card.Height - P(54), card.Width - P(2), P(53));
+        card.ToolsDivider = ShowTools; card.ToolsDividerY = toolsBottom; card.Invalidate();
+    }
     private static int ArrangeButtons(Panel panel, int gap)
     {
         var x = 0;
@@ -94,6 +134,8 @@ public sealed class OrbitListWorkspace : UserControl
     {
         [System.ComponentModel.DefaultValue(true)]
         public bool ToolsDivider { get; set; } = true;
+        [System.ComponentModel.DefaultValue(-1)]
+        public int ToolsDividerY { get; set; } = -1;
         public RoundedPanel() { DoubleBuffered = true; BackColor = OrbitManagementTheme.Surface; }
         protected override void OnSizeChanged(EventArgs e)
         {
@@ -107,7 +149,7 @@ public sealed class OrbitListWorkspace : UserControl
             e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             using var path = OrbitManagementTheme.Round(new RectangleF(.5F, .5F, Width - 1, Height - 1), 12 * scale);
             using var pen = new Pen(OrbitManagementTheme.Border); e.Graphics.DrawPath(pen, path);
-            if (ToolsDivider) e.Graphics.DrawLine(pen, 0, 70 * scale, Width, 70 * scale);
+            if (ToolsDivider) { var y = ToolsDividerY >= 0 ? ToolsDividerY : 70 * scale; e.Graphics.DrawLine(pen, 0, y, Width, y); }
         }
     }
 }

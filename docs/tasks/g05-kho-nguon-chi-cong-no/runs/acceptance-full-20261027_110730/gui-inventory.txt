@@ -1,0 +1,234 @@
+Window: "CoffeeManager", App: CafeManager.WinForms.exe.
+	0 window CoffeeManager Secondary Actions: Raise
+		1 pane
+			2 pane
+				3 text CoffeeManager
+				4 text KHÔNG GIAN QUẢN LÝ
+				5 text G05 fixture ADMIN
+				6 text Quản trị viên · ADMIN
+				7 button Trang phiên
+				8 button Danh mục nền
+				9 button Bán hàng
+				10 button Lịch sử hóa đơn
+				11 button Giao hàng
+				12 button Khách hàng
+				13 button Bàn / Khu vực
+				14 button Menu / Công thức
+				15 button Nguyên liệu / Tồn
+				16 button Ưu đãi / Điểm
+				17 button Thu chi
+				18 button Kho
+				19 button Công nợ
+				20 button Thông tin hệ thống
+				21 button Đăng xuất ID: logout
+				22 text Phiên đang hoạt động.
+				23 scroll bar (settable, float) Vertical Value: 45 ID: NonClientVerticalScrollBar
+					24 button Line up ID: UpButton
+					25 button Page up ID: UpPageButton
+					26 thumb Position ID: ScrollbarThumb
+					27 button Page down ID: DownPageButton
+					28 button Line down ID: DownButton
+			29 pane
+				30 text Quản lý / Kho
+				31 text G05 fixture ADMIN · ADMIN
+			32 pane G05 fixture ADMIN · ADMIN
+				344 pane G05 fixture ADMIN · ADMIN ID: 3868526
+					345 tab
+						346 pane Tồn kho
+							347 pane ID: 88279748
+								348 pane ID: 6097742
+									349 text INVENTORY WORKSPACE
+									350 text Nguyên liệu & tồn kho
+									351 text Tra cứu nguyên liệu, đơn vị và số lượng tồn.
+									352 pane Tra cứu nguyên liệu, đơn vị và số lượng tồn.
+										353 button Thêm nguyên liệu
+									354 pane
+										355 pane ID: 1378964
+											356 edit (settable, string) Description: Tìm tên hoặc mã nguyên liệu…
+										357 pane
+											358 pane ID: 1576434
+												359 combo box (settable, string) Tất cả đơn vị Value: Tất cả đơn vị
+													360 text
+													361 button Open
+											362 button Tải lại danh sách
+										363 pane 24 nguyên liệu
+											364 button Mở sổ
+											365 button Sửa
+											366 button Xóa
+										367 pane
+											368 data grid
+												369 scroll bar (settable, float) Vertical Value: 0
+													370 button Line up
+													371 thumb Position
+													372 button Page down
+													373 button Line down
+												374 custom Top Row
+													375 header Top Left Header Cell ID: 4264963064
+													376 header MÃ ID: 4239213476
+													377 header NGUYÊN LIỆU ID: 4240013140
+													378 header ĐƠN VỊ ID: 4250408772
+													379 header TỒN HIỆN TẠI ID: 4251334262
+												380 custom Row 1
+													381 header Row 1 ID: 4218446967
+													382 item MÃ Row 1 Value: NVL01 ID: 4238483984
+													383 item NGUYÊN LIỆU Row 1 Value: Ca phe hat ID: 4230529755
+													384 item ĐƠN VỊ Row 1 Value: Kg ID: 4261342505
+													385 item TỒN HIỆN TẠI Row 1 Value: 98,6400 ID: 4259255065
+												386 custom Row 2
+													387 header Row 2 ID: 4214885399
+													388 item MÃ Row 2 Value: NVL02 ID: 4259292468
+													389 item NGUYÊN LIỆU Row 2 Value: Sua tuoi ID: 4232604587
+													390 item ĐƠN VỊ Row 2 Value: Lit ID: 4221206451
+													391 item TỒN HIỆN TẠI Row 2 Value: 98,1600 ID: 427248410
+												392 custom Row 3
+													393 header Row 3 ID: 4217021851
+													394 item MÃ Row 3 Value: NVL03 ID: 4219957480
+													395 item NGUYÊN LIỆU Row 3 Value: Duong ID: 4258120660
+													396 item ĐƠN VỊ Row 3 Value: Kg ID: 4217371083
+													397 item TỒN HIỆN TẠI Row 3 Value: 72,7050 ID: 4224497499
+												398 custom Row 4
+													399 header Row 4 ID: 4246436661
+													400 item MÃ Row 4 Value: NVL04 ID: 4266805688
+													401 item NGUYÊN LIỆU Row 4 Value: Tra xanh ID: 4263167577
+													402 item ĐƠN VỊ Row 4 Value: Kg ID: 4215872141
+													403 item TỒN HIỆN TẠI Row 4 Value: 21,9650 ID: 425011245
+												404 custom Row 5
+													405 header Row 5 ID: 4241594119
+													406 item MÃ Row 5 Value: NVL05 ID: 423852636
+													407 item NGUYÊN LIỆU Row 5 Value: Bot matcha ID: 4250084268
+													408 item ĐƠN VỊ Row 5 Value: Kg ID: 4247115713
+													409 item TỒN HIỆN TẠI Row 5 Value: 5,0000 ID: 428524499
+												410 custom Row 6
+													411 header Row 6 ID: 4231354274
+													412 item MÃ Row 6 Value: NVL06 ID: 424952382
+													413 item NGUYÊN LIỆU Row 6 Value: Tran chau ID: 4264380974
+													414 item ĐƠN VỊ Row 6 Value: Kg ID: 4231646306
+													415 item TỒN HIỆN TẠI Row 6 Value: 9,7000 ID: 428748799
+												416 custom Row 7
+													417 header Row 7 ID: 422152073
+													418 item MÃ Row 7 Value: NVL07 ID: 4227976954
+													419 item NGUYÊN LIỆU Row 7 Value: Bo ID: 4228156083
+													420 item ĐƠN VỊ Row 7 Value: Kg ID: 4230484762
+													421 item TỒN HIỆN TẠI Row 7 Value: 22,7000 ID: 4260757586
+												422 custom Row 8
+													423 header Row 8 ID: 42375982
+													424 item MÃ Row 8 Value: NVL08 ID: 424887768
+													425 item NGUYÊN LIỆU Row 8 Value: Xoai ID: 4263540987
+													426 item ĐƠN VỊ Row 8 Value: Kg ID: 4220726466
+													427 item TỒN HIỆN TẠI Row 8 Value: 42,0000 ID: 421008608
+												428 custom Row 9
+													429 header Row 9 ID: 4236237042
+													430 item MÃ Row 9 Value: NVL09 ID: 421319507
+													431 item NGUYÊN LIỆU Row 9 Value: Kem tuoi ID: 4217153593
+													432 item ĐƠN VỊ Row 9 Value: Lit ID: 4221670117
+													433 item TỒN HIỆN TẠI Row 9 Value: 20,3800 ID: 4213276073
+												434 custom Row 10
+													435 header Row 10 ID: 4229063848
+													436 item MÃ Row 10 Value: NVL10 ID: 4242285716
+													437 item NGUYÊN LIỆU Row 10 Value: Ly nhua ID: 4212843406
+													438 item ĐƠN VỊ Row 10 Value: Cai ID: 4232746557
+													439 item TỒN HIỆN TẠI Row 10 Value: 500,0000 ID: 4223052063
+												440 custom Row 11
+													441 header Row 11 ID: 423484691
+													442 item MÃ Row 11 Value: NVL11 ID: 4245300983
+													443 item NGUYÊN LIỆU Row 11 Value: Banh tiramisu thanh pham ID: 4252041869
+													444 item ĐƠN VỊ Row 11 Value: Cai ID: 425455668
+													445 item TỒN HIỆN TẠI Row 11 Value: 59,0000 ID: 423814822
+												446 custom Row 12
+													447 header Row 12 ID: 4240725218
+													448 item MÃ Row 12 Value: NVL12 ID: 4259665796
+													449 item NGUYÊN LIỆU Row 12 Value: Banh croissant thanh pham ID: 4237457848
+													450 item ĐƠN VỊ Row 12 Value: Cai ID: 4217189987
+													451 item TỒN HIỆN TẠI Row 12 Value: 29,0000 ID: 4222143246
+												452 custom Row 13
+													453 header Row 13 ID: 4251221178
+													454 item MÃ Row 13 Value: NVL80 ID: 4261895542
+													455 item NGUYÊN LIỆU Row 13 Value: Fixture G05 80 ID: 4266444545
+													456 item ĐƠN VỊ Row 13 Value: Kg ID: 4258472725
+													457 item TỒN HIỆN TẠI Row 13 Value: 12,8001 ID: 4221947930
+												458 custom Row 14
+													459 header Row 14 ID: 4218212779
+													460 item MÃ Row 14 Value: NVL81 ID: 4235439542
+													461 item NGUYÊN LIỆU Row 14 Value: Fixture G05 81 ID: 4258060874
+													462 item ĐƠN VỊ Row 14 Value: Kg ID: 4216593860
+													463 item TỒN HIỆN TẠI Row 14 Value: 5,0001 ID: 4214393596
+												464 custom Row 15
+													465 header Row 15 ID: 4216598712
+													466 item MÃ Row 15 Value: NVL82 ID: 4214456672
+													467 item NGUYÊN LIỆU Row 15 Value: Fixture G05 82 ID: 4253719012
+													468 item ĐƠN VỊ Row 15 Value: Kg ID: 4227258522
+													469 item TỒN HIỆN TẠI Row 15 Value: 0,0000 ID: 4218816470
+												470 custom Row 16
+													471 header Row 16 ID: 4225866835
+													472 item MÃ Row 16 Value: NVL83 ID: 42724540
+													473 item NGUYÊN LIỆU Row 16 Value: Fixture G05 83 ID: 429419026
+													474 item ĐƠN VỊ Row 16 Value: Kg ID: 4255338480
+													475 item TỒN HIỆN TẠI Row 16 Value: 5,0000 ID: 4248311609
+												476 custom Row 17
+													477 header Row 17 ID: 4244489437
+													478 item MÃ Row 17 Value: NVL84 ID: 4241491781
+													479 item NGUYÊN LIỆU Row 17 Value: Fixture G05 84 ID: 422522246
+													480 item ĐƠN VỊ Row 17 Value: Kg ID: 4232789201
+													481 item TỒN HIỆN TẠI Row 17 Value: 5,0000 ID: 4223606440
+												482 custom Row 18
+													483 header Row 18 ID: 4230065450
+													484 item MÃ Row 18 Value: NVL85 ID: 4255306533
+													485 item NGUYÊN LIỆU Row 18 Value: Fixture G05 85 ID: 4247896289
+													486 item ĐƠN VỊ Row 18 Value: Kg ID: 4218671991
+													487 item TỒN HIỆN TẠI Row 18 Value: 6,0000 ID: 4241409301
+												488 custom Row 19
+													489 header Row 19 ID: 4218850042
+													490 item MÃ Row 19 Value: NVL86 ID: 4243723957
+													491 item NGUYÊN LIỆU Row 19 Value: Fixture G05 86 ID: 4231540535
+													492 item ĐƠN VỊ Row 19 Value: Kg ID: 427373772
+													493 item TỒN HIỆN TẠI Row 19 Value: 5,0000 ID: 4228750177
+												494 custom Row 20
+													495 header Row 20 ID: 4226941824
+													496 item MÃ Row 20 Value: NVL87 ID: 4214699392
+													497 item NGUYÊN LIỆU Row 20 Value: Fixture G05 87 ID: 4256874376
+													498 item ĐƠN VỊ Row 20 Value: Kg ID: 421169385
+													499 item TỒN HIỆN TẠI Row 20 Value: 6,0000 ID: 4215202015
+												500 custom Row 21
+													501 header Row 21 ID: 4219003869
+													502 item MÃ Row 21 Value: NVL88 ID: 4245723712
+													503 item NGUYÊN LIỆU Row 21 Value: Fixture G05 88 ID: 4257537350
+													504 item ĐƠN VỊ Row 21 Value: Kg ID: 429788058
+													505 item TỒN HIỆN TẠI Row 21 Value: 13,0000 ID: 4260135890
+												506 custom Row 22
+													507 header Row 22 ID: 4229526948
+													508 item MÃ Row 22 Value: NVL89 ID: 4248306015
+													509 item NGUYÊN LIỆU Row 22 Value: Fixture G05 89 ID: 4223998421
+													510 item ĐƠN VỊ Row 22 Value: Kg ID: 4243544022
+													511 item TỒN HIỆN TẠI Row 22 Value: 0,0000 ID: 4229201385
+												512 custom Row 23
+													513 header Row 23 ID: 4236087127
+													514 item MÃ Row 23 Value: NVL90 ID: 4266479478
+													515 item NGUYÊN LIỆU Row 23 Value: Fixture G05 90 ID: 4258926853
+													516 item ĐƠN VỊ Row 23 Value: Kg ID: 4227851594
+													517 item TỒN HIỆN TẠI Row 23 Value: 5,0000 ID: 4226526409
+												518 custom Row 24
+													519 header Row 24 ID: 4253778152
+													520 item MÃ Row 24 Value: NVL91 ID: 4228027344
+													521 item NGUYÊN LIỆU Row 24 Value: Fixture G05 91 ID: 4228811161
+													522 item ĐƠN VỊ Row 24 Value: Kg ID: 4239000782
+													523 item TỒN HIỆN TẠI Row 24 Value: 0,0000 ID: 4237248130
+										524 pane ID: 1115848
+											525 text Hiển thị 1–24 / 24
+											526 button (disabled) Trang trước
+											527 text 1 / 1
+											528 button (disabled) Trang sau
+									529 text Đã cập nhật 11:46:54
+						530 tab item (selectable) Tồn kho
+						531 tab item (selectable) Nhập hàng
+						532 tab item (selectable) Xuất kho
+						533 tab item (selectable) Kiểm kê
+		39 title bar (settable, string) Value: CoffeeManager
+			40 menu bar System ID: MenuBar
+				41 menu item System
+			42 button Minimize
+			43 button Maximize
+			44 button Close
+
+The focused UI element is 356 edit (settable, string) Description: Tìm tên hoặc mã nguyên liệu….
+
+Focused element: 356 edit (settable, string) Description: Tìm tên hoặc mã nguyên liệu…

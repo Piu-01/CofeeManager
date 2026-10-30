@@ -1,0 +1,1 @@
+UI03 vòng1:32/32 component PASS; grid129px/tender visible; notice clipped23px by viewport434px (input481px). FAIL nội dung, chưa bàn giao. Kết thúc lượt test source cố định; tiếp tục cùng UI03 được duyệt, thu gọn padding/header/cash card và bỏ dự phòng scrollbar khi không cần.

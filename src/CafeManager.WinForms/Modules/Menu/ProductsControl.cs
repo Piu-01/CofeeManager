@@ -36,7 +36,7 @@ public sealed class ProductsControl : OrbitRecordListControl
         var price=dialog.AddText("Giá bán nguyên VND",row?.Price.ToString("0",CultureInfo.InvariantCulture)??"");
         var status=new ComboBox{DropDownStyle=ComboBoxStyle.DropDownList};status.Items.AddRange(["Ngừng bán","Đang bán"]);status.SelectedIndex=row?.Status=="Dang ban"?1:0;dialog.AddField("Trạng thái",status);
         dialog.CaptureWrite=()=>{if(!decimal.TryParse(price.Text,NumberStyles.Number,CultureInfo.GetCultureInfo("vi-VN"),out var amount))throw new ArgumentException("Giá không hợp lệ.");var request=ProductService.Normalize(new(code.Text,name.Text,category.SelectedValue as string??"",amount,status.SelectedIndex==1?"Dang ban":"Ngung ban",[]));return id=>service.SaveAsync(session,request,row?.Revision,id);};
-        if(dialog.ShowDialog(this)==DialogResult.OK)await Reload();
+        if(await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this)==DialogResult.OK)await Reload();
     }
     private async Task Recipe()
     {
@@ -80,7 +80,7 @@ public sealed class ProductsControl : OrbitRecordListControl
         grid.Columns["Đơn vị"]!.ReadOnly=true;
         if(session.Identity.Role!="ADMIN"){dialog.SetReadOnly();}
         else dialog.CaptureWrite=()=>{if(!grid.EndEdit())throw new ArgumentException("Hoàn tất dòng công thức.");var recipe=table.Rows.Cast<global::System.Data.DataRow>().Where(x=>x.RowState!=global::System.Data.DataRowState.Deleted).Select(x=>new RecipeInput(Convert.ToString(x[0])??"",decimal.TryParse(Convert.ToString(x[1]),NumberStyles.Number,CultureInfo.GetCultureInfo("vi-VN"),out var amount)?amount:0)).ToArray();ProductService.Normalize(new(row.Code,row.Name,row.Category,row.Price,row.Status,recipe));return id=>service.RecipeSaveAsync(session,row,recipe,id);};
-        if(dialog.ShowDialog(this)==DialogResult.OK)await Reload();
+        if(await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this)==DialogResult.OK)await Reload();
     }
     private static void DrawRecipeMaterial(object? sender,DrawItemEventArgs e)
     {
@@ -94,9 +94,10 @@ public sealed class ProductsControl : OrbitRecordListControl
     private async Task Delete()
     {
         if(service is null||session is null||Selected is not ProductRow row)return;
-        using var dialog=new OperationEditorDialog("Xóa sản phẩm",id=>service.ReconcileAsync(session,id));dialog.AddNote($"Xóa {row.Code} · {row.Name}; có lịch sử sẽ bị chặn.");dialog.Confirmation=$"Xóa {row.Code}?";dialog.CaptureWrite=()=>id=>service.DeleteAsync(session,row,id);if(dialog.ShowDialog(this)==DialogResult.OK)await Reload();
+        using var dialog=new OperationEditorDialog("Xóa sản phẩm",id=>service.ReconcileAsync(session,id));dialog.AddNote($"Xóa {row.Code} · {row.Name}; có lịch sử sẽ bị chặn.");dialog.Confirmation=$"Xóa {row.Code}?";dialog.CaptureWrite=()=>id=>service.DeleteAsync(session,row,id);if(await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this)==DialogResult.OK)await Reload();
     }
 }
+
 
 
 

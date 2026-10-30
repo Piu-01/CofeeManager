@@ -1,0 +1,67 @@
+{
+  "Database": "CoffeeManager_Test_G04_20261024_152759_12204643_manual",
+  "Schema": 16,
+  "Runtime": "Existing application runtime login; no new server login",
+  "Results": [
+    {
+      "Name": "Login correct admin",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Login correct cash",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Login correct store",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Wrong password rejected",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Unknown account rejected",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "CASH sales allowed finance denied",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "STORE sales denied",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "ADMIN sales and finance allowed",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Lock rejects login and revokes old session",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Employee left rejects login and revokes session",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Role change invalidates old security stamp",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Password change rejects old password and old session",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Logout disposal invalidates old session, relogin new ID",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Cancelled login returns no session",
+      "Outcome": "PASS"
+    }
+  ],
+  "Failed": 0,
+  "FixtureEmployeesRemaining": 0,
+  "OwnerTransactionState": "0:0",
+  "GuiScope": "Separate; no UI credential input automated"
+}

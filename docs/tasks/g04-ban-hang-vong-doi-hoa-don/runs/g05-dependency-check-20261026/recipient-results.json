@@ -1,0 +1,44 @@
+[
+  {
+    "Case": "Recipient spaces",
+    "Outcome": "PASS",
+    "Error": 52503,
+    "Transaction": "0:0",
+    "ReceiptCount": 0
+  },
+  {
+    "Case": "Phone empty",
+    "Outcome": "PASS",
+    "Error": 52503,
+    "Transaction": "0:0",
+    "ReceiptCount": 0
+  },
+  {
+    "Case": "Phone letters",
+    "Outcome": "PASS",
+    "Error": 52503,
+    "Transaction": "0:0",
+    "ReceiptCount": 0
+  },
+  {
+    "Case": "Address spaces",
+    "Outcome": "PASS",
+    "Error": 52503,
+    "Transaction": "0:0",
+    "ReceiptCount": 0
+  },
+  {
+    "Case": "Reject non-delivery Tai quan",
+    "Code": "HD20250401",
+    "Outcome": "PASS",
+    "Error": 52501,
+    "Transaction": "0:0"
+  },
+  {
+    "Case": "Reject non-delivery Mang di",
+    "Code": "HD20250411",
+    "Outcome": "PASS",
+    "Error": 52501,
+    "Transaction": "0:0"
+  }
+]

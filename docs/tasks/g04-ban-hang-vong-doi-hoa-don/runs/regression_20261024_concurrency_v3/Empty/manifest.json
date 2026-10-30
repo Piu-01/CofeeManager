@@ -1,0 +1,28 @@
+{
+  "RunId": "20261024_132951_d6669965",
+  "Database": "CoffeeManager_Test_G04_20261024_132951_d6669965_clean",
+  "Created": [
+    "CoffeeManager_Test_G04_20261024_132951_d6669965_clean"
+  ],
+  "Cleaned": [
+    "CoffeeManager_Test_G04_20261024_132951_d6669965_clean"
+  ],
+  "Retained": [],
+  "Status": "Succeeded",
+  "Cases": [
+    {
+      "Id": "Clean baseline001-016 no seed/no invoice mutation",
+      "Status": "PASS"
+    },
+    {
+      "Status": "PASS",
+      "Id": "016 exact checksum rerun",
+      "Actual": "AlreadyApplied"
+    },
+    {
+      "Id": "016 changed checksum rejected with trigger unchanged",
+      "Status": "PASS"
+    }
+  ],
+  "ChecksumRejectMessage": "Migration version exists with a different checksum; create a new version."
+}

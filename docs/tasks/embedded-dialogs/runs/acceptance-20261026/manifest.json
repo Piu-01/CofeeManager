@@ -1,0 +1,12 @@
+{
+  "State": "Acceptance test approved by user26/10/2026; source frozen",
+  "Database": "CoffeeManager_Test_G04_20261025_181739_98e5df59_checkout",
+  "Marker": "20261025_181739_98e5df59",
+  "SchemaVersion": 16,
+  "RestoredInvoiceDetailExecute": 1,
+  "CreatedDatabase": false,
+  "SourceFiles": 210,
+  "ReviewBy": "2026-10-27",
+  "RetainReason": "Active embedded-dialog ED01-ED13 acceptance; shared isolated DB checkout",
+  "CleanupReference": "../../../g04-ban-hang-vong-doi-hoa-don/runs/post-checkout-print-test-20261025/cleanup.ps1"
+}

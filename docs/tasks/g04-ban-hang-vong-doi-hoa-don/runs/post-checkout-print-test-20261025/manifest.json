@@ -1,0 +1,21 @@
+{
+  "RunId": "20261025_181739_98e5df59",
+  "Server": "localhost",
+  "Database": "CoffeeManager_Test_G04_20261025_181739_98e5df59_checkout",
+  "Marker": "20261025_181739_98e5df59",
+  "Created": true,
+  "Cleaned": false,
+  "State": "Ready for guided GUI; no test cases passed by provisioning",
+  "Purpose": "Approved post-checkout print/reset functional wave",
+  "RetainReason": "Delivery UI manual/visual check active PID6748; keep shared DB and prior native475-478 fixtures. Delivery acceptance103headers/actors/receipts and regression fixtures cleaned, snapshots unchanged. Old process entries retained as ownership history; verify actual processes before cleanup.",
+  "ReviewBy": "2026-10-27",
+  "ProcessIds": [
+    23512,
+    34776,
+    37712,
+    27260,
+    23728,
+    6748
+  ],
+  "SchemaVersion": 16
+}

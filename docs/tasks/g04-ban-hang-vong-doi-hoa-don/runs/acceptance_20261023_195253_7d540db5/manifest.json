@@ -1,0 +1,51 @@
+{
+  "RunId": "20261023_195253_7d540db5",
+  "Kind": "Approved acceptance SQL subset + unit; remaining manual/concurrency tracked separately",
+  "Server": "localhost",
+  "ThroughVersion": 15,
+  "Operator": "LAPTOP-79UNRIRC\\Lenovo",
+  "Created": [
+    {
+      "Mode": "clean",
+      "Database": "CoffeeManager_Test_G04_20261023_195253_7d540db5_clean",
+      "Marker": "20261023_195253_7d540db5"
+    },
+    {
+      "Mode": "demo",
+      "Database": "CoffeeManager_Test_G04_20261023_195253_7d540db5_demo",
+      "Marker": "20261023_195253_7d540db5"
+    }
+  ],
+  "Cleaned": [
+    "CoffeeManager_Test_G04_20261023_195253_7d540db5_clean",
+    "CoffeeManager_Test_G04_20261023_195253_7d540db5_demo"
+  ],
+  "Retained": [],
+  "Status": "SucceededPartialCoverage",
+  "ProbeBuildExitCode": 0,
+  "SqlSubsets": [
+    {
+      "File": "acceptance-orders.sql",
+      "Kind": "SQL subcases only; not whole checklist IDs",
+      "Status": "PASS"
+    },
+    {
+      "File": "acceptance-checkout.sql",
+      "Kind": "SQL subcases only; not whole checklist IDs",
+      "Status": "PASS"
+    },
+    {
+      "File": "acceptance-delivery.sql",
+      "Kind": "SQL subcases only; not whole checklist IDs",
+      "Status": "PASS"
+    }
+  ],
+  "UnitExitCode": 0,
+  "UnitCounters": {
+    "Passed": 18,
+    "Failed": 0,
+    "Total": 18,
+    "NotExecuted": 0
+  },
+  "SourceUnchanged": true
+}

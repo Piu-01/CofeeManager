@@ -1,0 +1,26 @@
+[
+  {
+    "Folder": "src/CafeManager.WinForms/bin/Debug/net10.0-windows",
+    "LoginFormPresent": true,
+    "AuthRepositoryPresent": true,
+    "BypassTypePresent": false,
+    "BypassFlagsPresent": false,
+    "UiSha256": "DC03CD79EF6A6B04B12DCC43C148A7B86EA7545FA2489BC157DC60E032685AB6"
+  },
+  {
+    "Folder": "src/CafeManager.WinForms/bin/Release/net10.0-windows",
+    "LoginFormPresent": true,
+    "AuthRepositoryPresent": true,
+    "BypassTypePresent": false,
+    "BypassFlagsPresent": false,
+    "UiSha256": "E7F19189F84398526F576EF77B85EA9FB7A6351D7AB6667C4113559A3F18468D"
+  },
+  {
+    "Folder": "docs/tasks/temporary-test-login/runs/removal-20261024/publish",
+    "LoginFormPresent": true,
+    "AuthRepositoryPresent": true,
+    "BypassTypePresent": false,
+    "BypassFlagsPresent": false,
+    "UiSha256": "E7F19189F84398526F576EF77B85EA9FB7A6351D7AB6667C4113559A3F18468D"
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "checks": [
+    {
+      "method": "PT001",
+      "catalog_name": "Tien mat",
+      "expected_money": "81.000",
+      "matches_pdf": true
+    }
+  ],
+  "passed": true,
+  "scope": "Compare actual SQL method name and amount with PDF, preserving original hardcoded-accent check failure"
+}

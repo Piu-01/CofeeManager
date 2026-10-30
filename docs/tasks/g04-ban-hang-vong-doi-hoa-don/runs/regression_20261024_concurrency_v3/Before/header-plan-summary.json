@@ -1,0 +1,268 @@
+[
+  {
+    "File": "checkout-trigger-10.sqlplan",
+    "Physical": "Clustered Index Seek",
+    "Logical": "Clustered Index Seek",
+    "Index": "[PK_HOADON]",
+    "Statement": "IF @ExpectedRevision IS NULL OR NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD=@Code AND Revision=@ExpectedRevision)"
+  },
+  {
+    "File": "checkout-trigger-12.sqlplan",
+    "Physical": "Clustered Index Seek",
+    "Logical": "Clustered Index Seek",
+    "Index": "[PK_HOADON]",
+    "Statement": "SELECT @customer=MaKH,@total=TongTien,@created=NgayLap,@channel=LoaiDon,@recipient=TenNguoiNhan,@phone=SDTNguoiNhan,@address=DiaChiGiao FROM dbo.HOADON WHERE MaHD=@Code"
+  },
+  {
+    "File": "checkout-trigger-15.sqlplan",
+    "Physical": "Clustered Index Seek",
+    "Logical": "Clustered Index Seek",
+    "Index": "[PK_HOADON]",
+    "Statement": "IF EXISTS(SELECT 1 FROM dbo.HOADON h WHERE h.MaHD=@Code AND h.MaKM IS NOT NULL AND NOT EXISTS(SELECT 1 FROM dbo.KHUYENMAI WITH(HOLDLOCK) WHERE MaKM=h.MaKM AND CONVERT(date,h.NgayLap) BETWEEN NgayBD AND NgayKT))"
+  },
+  {
+    "File": "checkout-trigger-16.sqlplan",
+    "Physical": "Clustered Index Seek",
+    "Logical": "Clustered Index Seek",
+    "Index": "[PK_HOADON]",
+    "Statement": "SELECT @promotionRevision=m.Revision FROM dbo.KHUYENMAI m WITH(HOLDLOCK) JOIN dbo.HOADON h ON h.MaKM=m.MaKM WHERE h.MaHD=@Code"
+  },
+  {
+    "File": "checkout-trigger-17.sqlplan",
+    "Physical": "Clustered Index Seek",
+    "Logical": "Clustered Index Seek",
+    "Index": "[PK_HOADON]",
+    "Statement": "SELECT @partnerRevision=d.CatalogRevision FROM dbo.DOITACGIAOHANG d WITH(HOLDLOCK) JOIN dbo.HOADON h ON h.MaDT=d.MaDT WHERE h.MaHD=@Code"
+  },
+  {
+    "File": "checkout-trigger-18.sqlplan",
+    "Physical": "Clustered Index Seek",
+    "Logical": "Clustered Index Seek",
+    "Index": "[PK_HOADON]",
+    "Statement": "SELECT @token=PreviewToken,@discount=Discount,@payable=Payable,@percent=PercentDiscount,@source=Source,@tier=Tier,@promotion=Promotion,@partnerPercent=PartnerPercent,@partnerFee=PartnerFee,@points=Points,@policyRevision=PolicyRevision,@customerRevision=CustomerRevision FROM dbo.fn_CheckoutPreview(CONVERT(char(10),@Code))"
+  },
+  {
+    "File": "checkout-trigger-2.sqlplan",
+    "Physical": "Clustered Index Seek",
+    "Logical": "Clustered Index Seek",
+    "Index": "[PK_HOADON]",
+    "Statement": "SELECT @r=COALESCE(@revision,h.Revision),@t=COALESCE(@token,p.PreviewToken),@amount=p.Payable FROM dbo.HOADON h CROSS APPLY dbo.fn_CheckoutPreview(h.MaHD) p WHERE h.MaHD=@code"
+  },
+  {
+    "File": "checkout-trigger-2.sqlplan",
+    "Physical": "Clustered Index Seek",
+    "Logical": "Clustered Index Seek",
+    "Index": "[PK_HOADON]",
+    "Statement": "SELECT @r=COALESCE(@revision,h.Revision),@t=COALESCE(@token,p.PreviewToken),@amount=p.Payable FROM dbo.HOADON h CROSS APPLY dbo.fn_CheckoutPreview(h.MaHD) p WHERE h.MaHD=@code"
+  },
+  {
+    "File": "checkout-trigger-29.sqlplan",
+    "Physical": "Clustered Index Update",
+    "Logical": "Update",
+    "Index": "[PK_HOADON]",
+    "Statement": "UPDATE dbo.HOADON SET GiamGia=@discount WHERE MaHD=@Code"
+  },
+  {
+    "File": "checkout-trigger-29.sqlplan",
+    "Physical": "Clustered Index Seek",
+    "Logical": "Clustered Index Seek",
+    "Index": "[PK_HOADON]",
+    "Statement": "UPDATE dbo.HOADON SET GiamGia=@discount WHERE MaHD=@Code"
+  },
+  {
+    "File": "checkout-trigger-30.sqlplan",
+    "Physical": "Deleted Scan",
+    "Logical": "Deleted Scan",
+    "Index": "[PK_HOADON]",
+    "Statement": "IF EXISTS (SELECT 1 FROM deleted WHERE TrangThai=N'Huy')"
+  },
+  {
+    "File": "checkout-trigger-31.sqlplan",
+    "Physical": "Deleted Scan",
+    "Logical": "Deleted Scan",
+    "Index": "[PK_HOADON]",
+    "Statement": "IF EXISTS (\n        SELECT MaHD,NgayLap,MaNV,MaKH,MaBan,MaDT,MaKM,LoaiDon,TenNguoiNhan,\n               SDTNguoiNhan,DiaChiGiao,NgayThanhToan,PhanTramPhiDoiTac,PhiDoiTac,\n               TongTien,PhiShip,GiamGia,TrangThai\n        FROM deleted WHERE TrangThai=N'Da thanh toan'\n        EXCEPT\n        SELECT MaHD,NgayLap,MaNV,MaKH,MaBan,MaDT,MaKM,LoaiDon,TenNguoiNhan,\n               SDTNguoiNhan,DiaChiGiao,NgayThanhToan,PhanTramPhiDoiTac,PhiDoiTac,\n               TongTien,PhiShip,GiamGia,TrangThai FROM inserted)"
+  },
+  {
+    "File": "checkout-trigger-31.sqlplan",
+    "Physical": "Inserted Scan",
+    "Logical": "Inserted Scan",
+    "Index": "[PK_HOADON]",
+    "Statement": "IF EXISTS (\n        SELECT MaHD,NgayLap,MaNV,MaKH,MaBan,MaDT,MaKM,LoaiDon,TenNguoiNhan,\n               SDTNguoiNhan,DiaChiGiao,NgayThanhToan,PhanTramPhiDoiTac,PhiDoiTac,\n               TongTien,PhiShip,GiamGia,TrangThai\n        FROM deleted WHERE TrangThai=N'Da thanh toan'\n        EXCEPT\n        SELECT MaHD,NgayLap,MaNV,MaKH,MaBan,MaDT,MaKM,LoaiDon,TenNguoiNhan,\n               SDTNguoiNhan,DiaChiGiao,NgayThanhToan,PhanTramPhiDoiTac,PhiDoiTac,\n               TongTien,PhiShip,GiamGia,TrangThai FROM inserted)"
+  },
+  {
+    "File": "checkout-trigger-32.sqlplan",
+    "Physical": "Inserted Scan",
+    "Logical": "Inserted Scan",
+    "Index": "[PK_HOADON]",
+    "Statement": "IF EXISTS (SELECT 1 FROM inserted i WHERE i.TrangThai=N'Da thanh toan'\n        AND (i.TongTien<=0 OR NOT EXISTS (SELECT 1 FROM CHITIET_HD WHERE MaHD=i.MaHD)\n             OR i.ThanhTien<>COALESCE((SELECT SUM(SoTien) FROM CHITIET_THANHTOAN WHERE MaHD=i.MaHD),0)\n             OR NOT EXISTS (SELECT 1 FROM TIEUHAO_HOADON WHERE MaHD=i.MaHD)))"
+  },
+  {
+    "File": "checkout-trigger-33.sqlplan",
+    "Physical": "Inserted Scan",
+    "Logical": "Inserted Scan",
+    "Index": "[PK_HOADON]",
+    "Statement": "IF EXISTS (SELECT 1 FROM inserted i WHERE i.TrangThai=N'Huy'\n        AND (EXISTS (SELECT 1 FROM CHITIET_THANHTOAN WHERE MaHD=i.MaHD)\n             OR EXISTS (SELECT 1 FROM TIEUHAO_HOADON WHERE MaHD=i.MaHD)))"
+  },
+  {
+    "File": "checkout-trigger-34.sqlplan",
+    "Physical": "Inserted Scan",
+    "Logical": "Inserted Scan",
+    "Index": "[PK_HOADON]",
+    "Statement": "IF EXISTS (SELECT 1 FROM inserted i WHERE i.TongTien <>\n        COALESCE((SELECT SUM(CONVERT(DECIMAL(18,0),SoLuong)*GiaBan) FROM CHITIET_HD WHERE MaHD=i.MaHD),0))"
+  },
+  {
+    "File": "checkout-trigger-35.sqlplan",
+    "Physical": "Inserted Scan",
+    "Logical": "Inserted Scan",
+    "Index": "[PK_HOADON]",
+    "Statement": "IF EXISTS (SELECT 1 FROM inserted i WHERE COALESCE(\n        (SELECT SUM(SoTien) FROM CHITIET_THANHTOAN WHERE MaHD=i.MaHD),0)>i.ThanhTien)"
+  },
+  {
+    "File": "checkout-trigger-36.sqlplan",
+    "Physical": "Clustered Index Seek",
+    "Logical": "Clustered Index Seek",
+    "Index": "[PK_HOADON]",
+    "Statement": "INSERT dbo.HoaDonUuDaiSnapshot(MaHD,Kind,Source,TierCode,PromotionCode,PercentDiscount,Discount,PolicyRevision,CustomerRevision,PromotionRevision)\n    VALUES(@Code,'Checkout',@source,@tier,@promotion,@percent,@discount,@policyRevision,@customerRevision,@promotionRevision)"
+  },
+  {
+    "File": "checkout-trigger-38.sqlplan",
+    "Physical": "Clustered Index Seek",
+    "Logical": "Clustered Index Seek",
+    "Index": "[PK_HOADON]",
+    "Statement": "IF EXISTS(SELECT 1 FROM inserted i JOIN dbo.HOADON h ON h.MaHD=i.MaHD WHERE i.Kind<>'Checkout' OR h.TrangThai<>N'Chua thanh toan' OR h.GiamGia<>i.Discount)"
+  },
+  {
+    "File": "checkout-trigger-39.sqlplan",
+    "Physical": "Clustered Index Seek",
+    "Logical": "Clustered Index Seek",
+    "Index": "[PK_HOADON]",
+    "Statement": "INSERT dbo.TIEUHAO_HOADON(MaHD,MaNVL,SoLuong) SELECT @Code,MaNVL,CONVERT(decimal(18,4),Quantity) FROM @consume"
+  },
+  {
+    "File": "checkout-trigger-41.sqlplan",
+    "Physical": "Clustered Index Seek",
+    "Logical": "Clustered Index Seek",
+    "Index": "[PK_HOADON]",
+    "Statement": "IF EXISTS (SELECT 1 FROM inserted i JOIN HOADON h WITH (UPDLOCK,HOLDLOCK) ON h.MaHD=i.MaHD\n               WHERE h.TrangThai<>N'Chua thanh toan')"
+  },
+  {
+    "File": "checkout-trigger-43.sqlplan",
+    "Physical": "Clustered Index Seek",
+    "Logical": "Clustered Index Seek",
+    "Index": "[PK_HOADON]",
+    "Statement": "INSERT dbo.CHITIET_THANHTOAN(MaHD,MaPT,SoTien,NgayTT,MaThamChieu) SELECT @Code,MaPT,SoTien,@date,MaThamChieu FROM @ThanhToan"
+  },
+  {
+    "File": "checkout-trigger-44.sqlplan",
+    "Physical": "Clustered Index Scan",
+    "Logical": "Clustered Index Scan",
+    "Index": "[PK_HOADON]",
+    "Statement": "IF EXISTS (SELECT 1 FROM HOADON h WITH (UPDLOCK,HOLDLOCK)\n        WHERE h.MaHD IN (SELECT MaHD FROM inserted UNION SELECT MaHD FROM deleted)\n          AND h.TrangThai<>N'Chua thanh toan')"
+  },
+  {
+    "File": "checkout-trigger-45.sqlplan",
+    "Physical": "Clustered Index Seek",
+    "Logical": "Clustered Index Seek",
+    "Index": "[PK_HOADON]",
+    "Statement": "IF EXISTS (SELECT 1 FROM HOADON h\n        CROSS APPLY (SELECT SUM(SoTien) AS Tong FROM CHITIET_THANHTOAN WHERE MaHD=h.MaHD) t\n        WHERE h.MaHD IN (SELECT MaHD FROM inserted UNION SELECT MaHD FROM deleted)\n          AND t.Tong>h.ThanhTien)"
+  },
+  {
+    "File": "checkout-trigger-45.sqlplan",
+    "Physical": "Clustered Index Seek",
+    "Logical": "Clustered Index Seek",
+    "Index": "[PK_HOADON]",
+    "Statement": "IF EXISTS (SELECT 1 FROM HOADON h\n        CROSS APPLY (SELECT SUM(SoTien) AS Tong FROM CHITIET_THANHTOAN WHERE MaHD=h.MaHD) t\n        WHERE h.MaHD IN (SELECT MaHD FROM inserted UNION SELECT MaHD FROM deleted)\n          AND t.Tong>h.ThanhTien)"
+  },
+  {
+    "File": "checkout-trigger-46.sqlplan",
+    "Physical": "Clustered Index Update",
+    "Logical": "Update",
+    "Index": "[PK_HOADON]",
+    "Statement": "UPDATE dbo.HOADON SET TrangThai=N'Da thanh toan',NgayThanhToan=@date,PhanTramPhiDoiTac=@partnerPercent,PhiDoiTac=@partnerFee WHERE MaHD=@Code"
+  },
+  {
+    "File": "checkout-trigger-46.sqlplan",
+    "Physical": "Clustered Index Update",
+    "Logical": "Update",
+    "Index": "[UX_HD_BanMo]",
+    "Statement": "UPDATE dbo.HOADON SET TrangThai=N'Da thanh toan',NgayThanhToan=@date,PhanTramPhiDoiTac=@partnerPercent,PhiDoiTac=@partnerFee WHERE MaHD=@Code"
+  },
+  {
+    "File": "checkout-trigger-46.sqlplan",
+    "Physical": "Clustered Index Update",
+    "Logical": "Update",
+    "Index": "[IX_HD_NgayLap]",
+    "Statement": "UPDATE dbo.HOADON SET TrangThai=N'Da thanh toan',NgayThanhToan=@date,PhanTramPhiDoiTac=@partnerPercent,PhiDoiTac=@partnerFee WHERE MaHD=@Code"
+  },
+  {
+    "File": "checkout-trigger-46.sqlplan",
+    "Physical": "Clustered Index Seek",
+    "Logical": "Clustered Index Seek",
+    "Index": "[PK_HOADON]",
+    "Statement": "UPDATE dbo.HOADON SET TrangThai=N'Da thanh toan',NgayThanhToan=@date,PhanTramPhiDoiTac=@partnerPercent,PhiDoiTac=@partnerFee WHERE MaHD=@Code"
+  },
+  {
+    "File": "checkout-trigger-47.sqlplan",
+    "Physical": "Deleted Scan",
+    "Logical": "Deleted Scan",
+    "Index": "[PK_HOADON]",
+    "Statement": "IF EXISTS (SELECT 1 FROM deleted WHERE TrangThai=N'Huy')"
+  },
+  {
+    "File": "checkout-trigger-48.sqlplan",
+    "Physical": "Deleted Scan",
+    "Logical": "Deleted Scan",
+    "Index": "[PK_HOADON]",
+    "Statement": "IF EXISTS (\n        SELECT MaHD,NgayLap,MaNV,MaKH,MaBan,MaDT,MaKM,LoaiDon,TenNguoiNhan,\n               SDTNguoiNhan,DiaChiGiao,NgayThanhToan,PhanTramPhiDoiTac,PhiDoiTac,\n               TongTien,PhiShip,GiamGia,TrangThai\n        FROM deleted WHERE TrangThai=N'Da thanh toan'\n        EXCEPT\n        SELECT MaHD,NgayLap,MaNV,MaKH,MaBan,MaDT,MaKM,LoaiDon,TenNguoiNhan,\n               SDTNguoiNhan,DiaChiGiao,NgayThanhToan,PhanTramPhiDoiTac,PhiDoiTac,\n               TongTien,PhiShip,GiamGia,TrangThai FROM inserted)"
+  },
+  {
+    "File": "checkout-trigger-48.sqlplan",
+    "Physical": "Inserted Scan",
+    "Logical": "Inserted Scan",
+    "Index": "[PK_HOADON]",
+    "Statement": "IF EXISTS (\n        SELECT MaHD,NgayLap,MaNV,MaKH,MaBan,MaDT,MaKM,LoaiDon,TenNguoiNhan,\n               SDTNguoiNhan,DiaChiGiao,NgayThanhToan,PhanTramPhiDoiTac,PhiDoiTac,\n               TongTien,PhiShip,GiamGia,TrangThai\n        FROM deleted WHERE TrangThai=N'Da thanh toan'\n        EXCEPT\n        SELECT MaHD,NgayLap,MaNV,MaKH,MaBan,MaDT,MaKM,LoaiDon,TenNguoiNhan,\n               SDTNguoiNhan,DiaChiGiao,NgayThanhToan,PhanTramPhiDoiTac,PhiDoiTac,\n               TongTien,PhiShip,GiamGia,TrangThai FROM inserted)"
+  },
+  {
+    "File": "checkout-trigger-49.sqlplan",
+    "Physical": "Inserted Scan",
+    "Logical": "Inserted Scan",
+    "Index": "[PK_HOADON]",
+    "Statement": "IF EXISTS (SELECT 1 FROM inserted i WHERE i.TrangThai=N'Da thanh toan'\n        AND (i.TongTien<=0 OR NOT EXISTS (SELECT 1 FROM CHITIET_HD WHERE MaHD=i.MaHD)\n             OR i.ThanhTien<>COALESCE((SELECT SUM(SoTien) FROM CHITIET_THANHTOAN WHERE MaHD=i.MaHD),0)\n             OR NOT EXISTS (SELECT 1 FROM TIEUHAO_HOADON WHERE MaHD=i.MaHD)))"
+  },
+  {
+    "File": "checkout-trigger-50.sqlplan",
+    "Physical": "Inserted Scan",
+    "Logical": "Inserted Scan",
+    "Index": "[PK_HOADON]",
+    "Statement": "IF EXISTS (SELECT 1 FROM inserted i WHERE i.TrangThai=N'Huy'\n        AND (EXISTS (SELECT 1 FROM CHITIET_THANHTOAN WHERE MaHD=i.MaHD)\n             OR EXISTS (SELECT 1 FROM TIEUHAO_HOADON WHERE MaHD=i.MaHD)))"
+  },
+  {
+    "File": "checkout-trigger-51.sqlplan",
+    "Physical": "Inserted Scan",
+    "Logical": "Inserted Scan",
+    "Index": "[PK_HOADON]",
+    "Statement": "IF EXISTS (SELECT 1 FROM inserted i WHERE i.TongTien <>\n        COALESCE((SELECT SUM(CONVERT(DECIMAL(18,0),SoLuong)*GiaBan) FROM CHITIET_HD WHERE MaHD=i.MaHD),0))"
+  },
+  {
+    "File": "checkout-trigger-52.sqlplan",
+    "Physical": "Inserted Scan",
+    "Logical": "Inserted Scan",
+    "Index": "[PK_HOADON]",
+    "Statement": "IF EXISTS (SELECT 1 FROM inserted i WHERE COALESCE(\n        (SELECT SUM(SoTien) FROM CHITIET_THANHTOAN WHERE MaHD=i.MaHD),0)>i.ThanhTien)"
+  },
+  {
+    "File": "checkout-trigger-53.sqlplan",
+    "Physical": "Clustered Index Seek",
+    "Logical": "Clustered Index Seek",
+    "Index": "[PK_HOADON]",
+    "Statement": "INSERT dbo.G03OperationReceipt(RequestId,ActorAccountId,Operation,EntityCode,PayloadHash,ResultRevision)\n SELECT @RequestId,@Actor,@Operation,@Code,HASHBYTES('SHA2_256',CONVERT(varbinary(max),@Payload)),Revision FROM dbo.HOADON WHERE MaHD=@Code"
+  },
+  {
+    "File": "checkout-trigger-9.sqlplan",
+    "Physical": "Clustered Index Seek",
+    "Logical": "Clustered Index Seek",
+    "Index": "[PK_HOADON]",
+    "Statement": "IF DATALENGTH(@Code)<>10 OR NOT EXISTS(SELECT 1 FROM dbo.HOADON WITH(UPDLOCK,HOLDLOCK) WHERE MaHD=@Code AND TrangThai=N'Chua thanh toan')"
+  }
+]

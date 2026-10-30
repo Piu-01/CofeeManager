@@ -163,8 +163,31 @@ chứng bằng engine. Mở rộng bằng migration có version theo task.
   tập trung125%. Phạm vi agent kiểm chỉ ở125%; hình thức do người dùng tự kiểm theo mục2.
 - MainForm + UserControl; dialog editor, một hành động chính mỗi bước. Menu và màn
   bắt đầu theo vai trò; nháp hỏi khi rời, rời POS không tự hủy đơn đã lưu.
+- **Form con là hộp thoại Windows có owner** (người dùng làm rõ26/10/2026 sau
+  dùng thử): Thêm/Sửa/Chọn/Xem chi tiết, F3/F4/F8, thanh toán, preview và xác
+  nhận dùng Form modal như trước, có thanh tiêu đề/nút X native, đi cùng cửa sổ
+  cha và ShowInTaskbar=false. Dialog đầu có owner MainForm; dialog lồng có owner
+  là hộp cha đang hoạt động. Windows khóa owner, chỉ hộp trên cùng nhận input.
+  Không nhúng Form thành card/panel, không titlebar giả hoặc MDI; quyết định này
+  thay thế cách hiểu cũ “hộp nổi trong vùng client”. Dùng cơ chế mở dialog chung,
+  tái sử dụng theme/control Orbit và clamp WorkingArea/DPI; không tạo cửa sổ nghiệp
+  vụ độc lập. Giữ input/selection/focus của cha, trả kết quả một lần, dispose đúng;
+  đóng/Quay lại/Esc theo nháp/busy/unknown/session, phím không xuyên xuống nền,
+  Enter không tự chốt tiền. POS vẫn là UserControl trong MainForm. Hộp máy in/
+  lưuPDF/chọn file native có owner đúng hộp đang hoạt động; Login/Bootstrap/
+  Startup thuộc vòng đời app. Hồ sơ `docs/tasks/embedded-dialogs/` ghi phiên bản
+  triển khai/kiểm thực tế, không suy đã PASS chỉ từ quy tắc này.
 - Tách loading/rỗng/lỗi/xung đột/kết quả chưa biết/đã chốt. Lỗi DB không hiển thị
   tổng 0 giả; giữ input khi lỗi, ErrorProvider gần trường, focus/tab rõ.
+- **Chọn hết nội dung khi vào ô nhập** (người dùng chốt26/10/2026): mọi ô nhập
+  văn bản/số có thể sửa, gồm tìm kiếm, tiền, số lượng, ghi chú và ô editor trong
+  grid, phải chọn hết nội dung hiện có khi người dùng mới vào ô bằng click hoặc
+  Tab để gõ thay ngay. Trong cùng lần focus, click tiếp cho phép đặt caret/chọn
+  đoạn bình thường; rời rồi vào lại thì chọn hết lại. Không đổi giá trị hoặc tự
+  ghi dữ liệu từ thao tác focus. Ô chỉ đọc/khóa và danh sách chỉ chọn không áp
+  dụng. Dùng helper hành vi chung, gắn một lần cho mỗi input, kể cả control tạo
+  động và editor tái sử dụng; không chép handler riêng cho từng màn. Tái sử dụng/
+  mở rộng `OrbitField.SelectAllOnEntry` hiện có và giữ hoạt động nhập/IME bình thường.
 - Trạng thái có chữ/icon cùng màu. Tiền căn phải và định dạng `81.000 ₫`, ngày
   `dd/MM/yyyy`, giờ `HH:mm`; truyền giá trị typed, không truyền chuỗi đã format vào SQL.
 - Enter không tự chốt tiền/kho/nợ/lương. F2/F3/F4/F8 chỉ theo contract UX, không

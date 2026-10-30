@@ -1,0 +1,12 @@
+{
+  "Database": "CoffeeManager_Test_G04_20261024_152759_12204643_manual",
+  "Order": {
+    "MaHD": "HD20250411",
+    "TrangThai": "Chua thanh toan",
+    "TongTien": 81000,
+    "GiamGia": 0,
+    "PhiShip": 0,
+    "PaymentCount": 0
+  },
+  "Note": "Read-only preservation check; SQL checkout test used a separate catalog"
+}

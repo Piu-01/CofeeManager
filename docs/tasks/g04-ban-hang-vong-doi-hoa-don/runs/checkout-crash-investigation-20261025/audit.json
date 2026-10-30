@@ -1,0 +1,14 @@
+{
+  "Invoice": [
+    {
+      "MaHD": "HD20250411",
+      "TrangThai": "Chua thanh toan",
+      "ThanhTien": 81000
+    }
+  ],
+  "Payments": 0,
+  "Consumption": 0,
+  "StockEqualBeforeAfter": true,
+  "SourceFiles": 207,
+  "SourceChanged": 0
+}

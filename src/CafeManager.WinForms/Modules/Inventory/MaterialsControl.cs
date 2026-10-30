@@ -81,7 +81,7 @@ public partial class MaterialsControl : UserControl
         var code = dialog.AddText("Mã NVL01–NVL99", row?.Code ?? "", row is not null);
         var name = dialog.AddText("Tên nguyên liệu", row?.Name ?? ""); var unit = dialog.AddText("Đơn vị chuẩn", row?.Unit ?? "");
         dialog.CaptureWrite = () => { var request = MaterialService.Normalize(new(code.Text, name.Text, unit.Text)); return id => service.SaveAsync(session, request, row?.Revision, id); };
-        if (dialog.ShowDialog(this) == DialogResult.OK) await LoadRows();
+        if (await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this) == DialogResult.OK) await LoadRows();
     }
     private async Task OpenBalance()
     {
@@ -96,7 +96,7 @@ public partial class MaterialsControl : UserControl
             dialog.Confirmation = $"Ghi tồn đầu kỳ {amount:N4} {row.Unit} cho {row.Code}? Nguồn: {request.Source}. Không thể mở sổ lại.";
             return id => service.OpenAsync(session, request, row.Revision, id);
         };
-        if (dialog.ShowDialog(this) == DialogResult.OK) await LoadRows();
+        if (await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this) == DialogResult.OK) await LoadRows();
     }
     private async Task Delete()
     {
@@ -104,10 +104,11 @@ public partial class MaterialsControl : UserControl
         using var dialog = new OperationEditorDialog("Xóa nguyên liệu", id => service.ReconcileAsync(session, id));
         dialog.AddNote($"Xóa {row.Code} · {row.Name}. Chỉ xóa được nguyên liệu chưa được dùng.");
         dialog.Confirmation = $"Xóa nguyên liệu {row.Code}?"; dialog.CaptureWrite = () => id => service.DeleteAsync(session, row, id);
-        if (dialog.ShowDialog(this) == DialogResult.OK) await LoadRows();
+        if (await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this) == DialogResult.OK) await LoadRows();
     }
     protected override void Dispose(bool disposing) { if (disposing && !shuttingDown) { shuttingDown = true; generation++; loading?.Cancel(); loading?.Dispose(); loading = null; hints.Dispose(); } base.Dispose(disposing); }
 }
+
 
 
 

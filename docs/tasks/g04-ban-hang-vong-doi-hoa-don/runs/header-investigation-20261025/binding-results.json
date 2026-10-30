@@ -1,0 +1,18 @@
+[
+  {
+    "Attached": false,
+    "ItemsAfterDataSource": 0,
+    "IndexBefore": -1,
+    "IndexAfter": -1,
+    "Error": "ArgumentOutOfRangeException",
+    "Message": "value (\u00270\u0027) must be less than \u00270\u0027. (Parameter \u0027value\u0027)\r\nActual value was 0."
+  },
+  {
+    "Attached": true,
+    "ItemsAfterDataSource": 1,
+    "IndexBefore": 0,
+    "IndexAfter": 0,
+    "Error": null,
+    "Message": null
+  }
+]

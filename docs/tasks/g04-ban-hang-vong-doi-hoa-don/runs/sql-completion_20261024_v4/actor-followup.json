@@ -1,0 +1,55 @@
+{
+  "RunId": "20261024_145321_05a7a052",
+  "Database": "CoffeeManager_Test_G04_20261024_145321_05a7a052_demo",
+  "Case": "T14-K02 actor observation after captured transaction state",
+  "Status": "PASS",
+  "Created": [
+    "CoffeeManager_Test_G04_20261024_145321_05a7a052_demo"
+  ],
+  "Cleaned": [
+    "CoffeeManager_Test_G04_20261024_145321_05a7a052_demo"
+  ],
+  "Retained": [],
+  "Observations": [
+    {
+      "Rejected": true,
+      "Headers": 0,
+      "Mode": 0,
+      "CapturedState": 0,
+      "InlineState": 1,
+      "Receipts": 0,
+      "TranCount": 0,
+      "SnapshotEqual": true
+    },
+    {
+      "Rejected": true,
+      "Headers": 0,
+      "Mode": 1,
+      "CapturedState": 0,
+      "InlineState": 1,
+      "Receipts": 0,
+      "TranCount": 0,
+      "SnapshotEqual": true
+    },
+    {
+      "Rejected": true,
+      "Headers": 0,
+      "Mode": 2,
+      "CapturedState": 0,
+      "InlineState": 1,
+      "Receipts": 0,
+      "TranCount": 0,
+      "SnapshotEqual": true
+    },
+    {
+      "Rejected": true,
+      "Headers": 0,
+      "Mode": 3,
+      "CapturedState": 0,
+      "InlineState": 1,
+      "Receipts": 0,
+      "TranCount": 0,
+      "SnapshotEqual": true
+    }
+  ]
+}

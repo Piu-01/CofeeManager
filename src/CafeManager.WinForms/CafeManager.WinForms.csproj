@@ -11,6 +11,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources/Orbit/*.png" />
     <None Update="Resources/Orbit/LUCIDE-LICENSE.txt" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <None Update="Resources/Orbit/PRODUCT-ART-LICENSE.txt" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="../CafeManager.Models/CafeManager.Models.csproj" />

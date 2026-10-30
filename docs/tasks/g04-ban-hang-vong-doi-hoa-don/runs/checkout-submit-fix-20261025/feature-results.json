@@ -1,0 +1,52 @@
+{
+  "Scope": "Real frozen CheckoutDialog/overlay; direct focus and synthetic MouseUp handler, not physical mouse or Confirm/SQL",
+  "Results": [
+    {
+      "Name": "125 percent",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Focus selects all original amount",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "First mouse-up restores selection after native caret placement",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Second click allows caret",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "New entry replaces rather than appends",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Leave format and re-entry retain full selection",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Overlay can show without stealing control focus",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Overlay native no-activate and transparent flags",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Overlay timer hides and releases particles",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Display failure cannot propagate or retain effect timer",
+      "Outcome": "FAIL",
+      "Error": "System.InvalidOperationException: Effect left visible after failed show\r\n   at Program.\u003CMain\u003Eg__Check|0_1(Boolean condition, String message) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g04-ban-hang-vong-doi-hoa-don\\runs\\checkout-submit-fix-20261025\\Program.cs:line 25\r\n   at Program.\u003C\u003Ec__DisplayClass0_0.\u003CMain\u003Eb__16() in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g04-ban-hang-vong-doi-hoa-don\\runs\\checkout-submit-fix-20261025\\Program.cs:line 46\r\n   at Program.\u003C\u003Ec__DisplayClass0_0.\u003CMain\u003Eg__Case|2(String name, Action action) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g04-ban-hang-vong-doi-hoa-don\\runs\\checkout-submit-fix-20261025\\Program.cs:line 26"
+    },
+    {
+      "Name": "Effect can show after display failure",
+      "Outcome": "FAIL",
+      "Error": "System.InvalidOperationException: Recovery\r\n   at Program.\u003CMain\u003Eg__Check|0_1(Boolean condition, String message) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g04-ban-hang-vong-doi-hoa-don\\runs\\checkout-submit-fix-20261025\\Program.cs:line 25\r\n   at Program.\u003C\u003Ec__DisplayClass0_0.\u003CMain\u003Eb__17() in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g04-ban-hang-vong-doi-hoa-don\\runs\\checkout-submit-fix-20261025\\Program.cs:line 47\r\n   at Program.\u003C\u003Ec__DisplayClass0_0.\u003CMain\u003Eg__Case|2(String name, Action action) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g04-ban-hang-vong-doi-hoa-don\\runs\\checkout-submit-fix-20261025\\Program.cs:line 26"
+    }
+  ],
+  "Failed": 2
+}

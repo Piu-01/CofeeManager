@@ -1,0 +1,58 @@
+{
+  "Purchases": 10,
+  "Issues": 10,
+  "Debts": 9,
+  "Finance": 16,
+  "Receipts": 0,
+  "Inventory": [
+    {
+      "MaNVL": "NVL01",
+      "SoLuongTon": 96.74
+    },
+    {
+      "MaNVL": "NVL02",
+      "SoLuongTon": 98.16
+    },
+    {
+      "MaNVL": "NVL03",
+      "SoLuongTon": 72.705
+    },
+    {
+      "MaNVL": "NVL04",
+      "SoLuongTon": 21.965
+    },
+    {
+      "MaNVL": "NVL05",
+      "SoLuongTon": 5.0
+    },
+    {
+      "MaNVL": "NVL06",
+      "SoLuongTon": 9.7
+    },
+    {
+      "MaNVL": "NVL07",
+      "SoLuongTon": 22.7
+    },
+    {
+      "MaNVL": "NVL08",
+      "SoLuongTon": 42.0
+    },
+    {
+      "MaNVL": "NVL09",
+      "SoLuongTon": 20.38
+    },
+    {
+      "MaNVL": "NVL10",
+      "SoLuongTon": 500.0
+    },
+    {
+      "MaNVL": "NVL11",
+      "SoLuongTon": 59.0
+    },
+    {
+      "MaNVL": "NVL12",
+      "SoLuongTon": 29.0
+    }
+  ],
+  "DataUnchanged": true
+}

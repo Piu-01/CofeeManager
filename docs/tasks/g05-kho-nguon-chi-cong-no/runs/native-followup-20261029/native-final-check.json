@@ -1,0 +1,85 @@
+{
+  "Purchases": 11,
+  "Issues": 11,
+  "Debts": 10,
+  "Finance": 18,
+  "Receipts": 4,
+  "Inventory": [
+    {
+      "MaNVL": "NVL01",
+      "SoLuongTon": 96.74
+    },
+    {
+      "MaNVL": "NVL02",
+      "SoLuongTon": 98.16
+    },
+    {
+      "MaNVL": "NVL03",
+      "SoLuongTon": 72.705
+    },
+    {
+      "MaNVL": "NVL04",
+      "SoLuongTon": 21.965
+    },
+    {
+      "MaNVL": "NVL05",
+      "SoLuongTon": 5.0
+    },
+    {
+      "MaNVL": "NVL06",
+      "SoLuongTon": 9.7
+    },
+    {
+      "MaNVL": "NVL07",
+      "SoLuongTon": 22.7
+    },
+    {
+      "MaNVL": "NVL08",
+      "SoLuongTon": 42.0
+    },
+    {
+      "MaNVL": "NVL09",
+      "SoLuongTon": 20.38
+    },
+    {
+      "MaNVL": "NVL10",
+      "SoLuongTon": 500.0
+    },
+    {
+      "MaNVL": "NVL11",
+      "SoLuongTon": 59.0
+    },
+    {
+      "MaNVL": "NVL12",
+      "SoLuongTon": 30.0
+    }
+  ],
+  "Debt": [
+    {
+      "MaCN": "CN20250405",
+      "MaNCC": "NCC07",
+      "MaPN": "PN20250502",
+      "TienNo": 21000,
+      "DaTra": 21000,
+      "ConNo": 0,
+      "TrangThai": "Da tra"
+    }
+  ],
+  "Payments": [
+    {
+      "MaTC": "TC20250505",
+      "SoTien": 10000,
+      "OriginKind": "SupplierDebt",
+      "MaPT": "PT001",
+      "MaNV": "NV991"
+    },
+    {
+      "MaTC": "TC20250506",
+      "SoTien": 11000,
+      "OriginKind": "SupplierDebt",
+      "MaPT": "PT001",
+      "MaNV": "NV991"
+    }
+  ],
+  "Result": "PASS"
+}

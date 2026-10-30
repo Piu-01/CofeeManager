@@ -1,0 +1,10 @@
+{
+  "State": "Implementation complete; awaiting separate acceptance-test approval",
+  "NewDatabases": 0,
+  "SqlWrites": 0,
+  "TechnicalSmoke": "9 host assertions; no DB/auth",
+  "ProductLaunch": "Not launched for native acceptance",
+  "ActiveBackgroundServices": 0,
+  "SourceManifest": "source-final.csv",
+  "DllManifest": "dll-hashes.json"
+}

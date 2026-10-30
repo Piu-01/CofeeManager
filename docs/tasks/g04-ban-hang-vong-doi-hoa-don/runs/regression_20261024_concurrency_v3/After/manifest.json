@@ -1,0 +1,704 @@
+{
+  "Phase": "After",
+  "RunId": "20261024_132529_155c5f34",
+  "Database": "CoffeeManager_Test_G04_20261024_132529_155c5f34_demo",
+  "Schema": 16,
+  "Approval": "User duyệt24/10/2026 G04-TEST-06/G04-CONC-01 + regression",
+  "Created": [
+    "CoffeeManager_Test_G04_20261024_132529_155c5f34_demo"
+  ],
+  "Cleaned": [
+    "CoffeeManager_Test_G04_20261024_132529_155c5f34_demo"
+  ],
+  "Retained": [],
+  "Cases": [
+    {
+      "DifferentCount": false,
+      "ReorderedPositive": true,
+      "Status": "PASS",
+      "Id": "G04-TEST-06 validator negative/positive/count controls",
+      "Negative102_102": false
+    },
+    {
+      "Id": "T14-K01 three channels",
+      "Sql": "EXEC dbo.G04New 'HD90000001'; EXEC dbo.G04New 'HD90000002',N'Tai quan',@table='B009'; EXEC dbo.G04New 'HD90000003',N'Giao hang',@ship=15000;\nIF (SELECT COUNT(*) FROM dbo.HOADON WHERE MaHD BETWEEN 'HD90000001' AND 'HD90000003')<>3 THROW 52990,'Missing channel',1;\nDECLARE @a int,@s binary(8),@r binary(8),@id uniqueidentifier=NEWID(); SELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001'; SELECT @r=Revision FROM dbo.HOADON WHERE MaHD='HD90000002'; EXEC dbo.sp_HuyHoaDon @a,@s,'HD90000002',@r,@id;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T14-K01 invalid header rollback",
+      "Sql": "DECLARE @before nvarchar(max),@after nvarchar(max); EXEC dbo.G04State @before OUTPUT;\nEXEC dbo.G04Expect N'EXEC dbo.G04New ''HD90000004'',N''Tai quan'';',52101;\nEXEC dbo.G04Expect N'EXEC dbo.G04New ''HD90000004'',@table=''B009'';',52101;\nEXEC dbo.G04Expect N'EXEC dbo.G04New ''HD90000004'',@ship=1;',52101;\nEXEC dbo.G04State @after OUTPUT; IF @before<>@after THROW 52990,'Invalid header changed database',1;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T14-K02 missing customer FK",
+      "Sql": "EXEC dbo.G04Expect N'EXEC dbo.G04New ''HD90000004'',@customer=''ZZZZZ'';',52105;\nIF EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD='HD90000004') THROW 52990,'Orphan',1;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T14-K04 foreign line",
+      "Sql": "DECLARE @l int=(SELECT MIN(MaDong) FROM dbo.CHITIET_HD WHERE MaHD='HD90000003'),@sql nvarchar(max);\nSET @sql=N'EXEC dbo.G04Edit ''HD90000001'',''Delete'',@line='+CONVERT(varchar,@l); EXEC dbo.G04Expect @sql,52101;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T14-K05 price snapshot and quantity bounds",
+      "Sql": "UPDATE dbo.SANPHAM SET GiaBan=30000 WHERE MaSP='SP001';\nDECLARE @l int=(SELECT MIN(MaDong) FROM dbo.CHITIET_HD WHERE MaHD='HD90000001'); EXEC dbo.G04Edit 'HD90000001','Update',2,@l;\nEXEC dbo.G04Edit 'HD90000001';\nIF NOT EXISTS(SELECT 1 FROM dbo.CHITIET_HD WHERE MaHD='HD90000001' AND MaDong=@l AND GiaBan=25000 AND SoLuong=2) OR NOT EXISTS(SELECT 1 FROM dbo.CHITIET_HD WHERE MaHD='HD90000001' AND MaDong<>@l AND GiaBan=30000) THROW 52990,'Price snapshot',1;\nEXEC dbo.G04Expect N'EXEC dbo.G04Edit ''HD90000001'',@qty=-1;',52101;\nEXEC dbo.G04Expect N'EXEC dbo.G04Edit ''HD90000001'',@qty=2147483648;',52101;\nUPDATE dbo.SANPHAM SET GiaBan=25000 WHERE MaSP='SP001';\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T14-K06 reduce 99 percent discount then delete",
+      "Sql": "EXEC dbo.G04New 'HD90000005',@promotion='KM90000002',@qty=2;\nDECLARE @l int=(SELECT MIN(MaDong) FROM dbo.CHITIET_HD WHERE MaHD='HD90000005'); EXEC dbo.G04Edit 'HD90000005','Update',1,@l;\nIF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD='HD90000005' AND TongTien=25000 AND GiamGia=24750) THROW 52990,'Discount reduction',1;\nEXEC dbo.G04Edit 'HD90000005','Delete',@line=@l;\nIF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD='HD90000005' AND TongTien=0 AND GiamGia=0 AND TrangThai=N'Chua thanh toan') THROW 52990,'Empty discount',1;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T14-K07 stopped product allows reduce/delete only",
+      "Sql": "EXEC dbo.G04New 'HD90000006',@qty=2; UPDATE dbo.SANPHAM SET TrangThai=N'Ngung ban' WHERE MaSP='SP001';\nEXEC dbo.G04Expect N'EXEC dbo.G04Edit ''HD90000006'';',52105;\nDECLARE @l int=(SELECT MIN(MaDong) FROM dbo.CHITIET_HD WHERE MaHD='HD90000006'); EXEC dbo.G04Edit 'HD90000006','Update',1,@l;\nDECLARE @sql nvarchar(max)=N'EXEC dbo.G04Edit ''HD90000006'',''Update'',2,'+CONVERT(varchar,@l); EXEC dbo.G04Expect @sql,52105;\nEXEC dbo.G04Expect N'EXEC dbo.G04Pay ''HD90000006'';',52204;\nEXEC dbo.G04Edit 'HD90000006','Delete',@line=@l; UPDATE dbo.SANPHAM SET TrangThai=N'Dang ban' WHERE MaSP='SP001';\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T14-K08 paid and canceled immutable",
+      "Sql": "EXEC dbo.G04Pay 'HD90000001';\nDECLARE @before nvarchar(max),@after nvarchar(max); EXEC dbo.G04State @before OUTPUT;\nEXEC dbo.G04Expect N'EXEC dbo.G04Edit ''HD90000001'';',52102; EXEC dbo.G04Expect N'EXEC dbo.G04Edit ''HD90000002'';',52102;\nEXEC dbo.G04State @after OUTPUT; IF @before<>@after THROW 52990,'Closed edit changed state',1;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T14-K12 empty checkout blocked then cancel",
+      "Sql": "EXEC dbo.G04Expect N'EXEC dbo.G04Pay ''HD90000005'';',51102;\nDECLARE @a int,@s binary(8),@r binary(8),@id uniqueidentifier=NEWID(); SELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001'; SELECT @r=Revision FROM dbo.HOADON WHERE MaHD='HD90000005'; EXEC dbo.sp_HuyHoaDon @a,@s,'HD90000005',@r,@id;\nIF EXISTS(SELECT 1 FROM dbo.TIEUHAO_HOADON WHERE MaHD='HD90000005') THROW 52990,'Cancel empty consumed',1;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K02 stale preview when promotion same amount changes",
+      "Sql": "EXEC dbo.G04New 'HD90000007',@promotion='KM90000002';\nDECLARE @t binary(32)=(SELECT PreviewToken FROM dbo.fn_CheckoutPreview('HD90000007')); UPDATE dbo.KHUYENMAI SET TenKM=N'Revised same percent' WHERE MaKM='KM90000002';\nDECLARE @a int,@s binary(8),@r binary(8),@id uniqueidentifier=NEWID(),@pay dbo.DanhSachThanhToan;\nSELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001'; SELECT @r=Revision FROM dbo.HOADON WHERE MaHD='HD90000007'; INSERT @pay VALUES('PT001',250,NULL);\nDECLARE @seen bit=0; BEGIN TRY EXEC dbo.sp_ThanhToanHoaDon @a,@s,'HD90000007',@r,@id,@t,@pay; END TRY BEGIN CATCH IF ERROR_NUMBER()<>52201 THROW; SET @seen=1; END CATCH;\nIF @seen=0 OR EXISTS(SELECT 1 FROM dbo.CHITIET_THANHTOAN WHERE MaHD='HD90000007') THROW 52990,'Stale token accepted',1;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K03 allocation mismatch and unknown methods",
+      "Sql": "EXEC dbo.G04New 'HD90000008'; DECLARE @before nvarchar(max),@after nvarchar(max); EXEC dbo.G04State @before OUTPUT;\nEXEC dbo.G04Expect N'EXEC dbo.G04Pay ''HD90000008'',@delta=1;',52202; EXEC dbo.G04Expect N'EXEC dbo.G04Pay ''HD90000008'',@delta=-1;',52202;\nEXEC dbo.G04Expect N'EXEC dbo.G04Pay ''HD90000008'',@method=''XXXXX'';',52202; EXEC dbo.G04Expect N'EXEC dbo.G04Pay ''HD90000008'',@method=''PT010'';',52202;\nEXEC dbo.G04State @after OUTPUT; IF @before<>@after THROW 52990,'Rejected allocation changed state',1;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K04 zero bill consumes no payment",
+      "Sql": "EXEC dbo.G04New 'HD90000009',@promotion='KM90000001'; EXEC dbo.G04Pay 'HD90000009';\nIF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD='HD90000009' AND ThanhTien=0 AND TrangThai=N'Da thanh toan') OR EXISTS(SELECT 1 FROM dbo.CHITIET_THANHTOAN WHERE MaHD='HD90000009') OR NOT EXISTS(SELECT 1 FROM dbo.TIEUHAO_HOADON WHERE MaHD='HD90000009') THROW 52990,'Zero bill',1;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K05 full discount still pays ship no points",
+      "Sql": "EXEC dbo.G04New 'HD90000010',N'Giao hang',@customer='KH001',@promotion='KM90000001',@ship=15000; EXEC dbo.G04Pay 'HD90000010';\nIF (SELECT SUM(SoTien) FROM dbo.CHITIET_THANHTOAN WHERE MaHD='HD90000010')<>15000 OR EXISTS(SELECT 1 FROM dbo.LICHSU_DIEM WHERE MaHD='HD90000010') THROW 52990,'Ship points mismatch',1;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K07 grouped decimal consumption",
+      "Sql": "EXEC dbo.G04New 'HD90000011'; EXEC dbo.G04Edit 'HD90000011',@qty=2;\nSELECT MaNVL,SoLuongTon BeforeStock INTO #stock FROM dbo.NGUYENVATLIEU;\nEXEC dbo.G04Pay 'HD90000011';\nIF EXISTS(SELECT 1 FROM dbo.CONGTHUC r JOIN dbo.TIEUHAO_HOADON x ON x.MaNVL=r.MaNVL AND x.MaHD='HD90000011' JOIN dbo.NGUYENVATLIEU n ON n.MaNVL=r.MaNVL JOIN #stock b ON b.MaNVL=n.MaNVL WHERE r.MaSP='SP001' AND (x.SoLuong<>r.DinhMuc*3 OR n.SoLuongTon<>b.BeforeStock-x.SoLuong)) OR (SELECT COUNT(*) FROM dbo.TIEUHAO_HOADON WHERE MaHD='HD90000011')<>(SELECT COUNT(*) FROM dbo.CONGTHUC WHERE MaSP='SP001') THROW 52990,'Group consumption',1;\nDROP TABLE #stock;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K08 points floor net excludes ship",
+      "Sql": "DECLARE @p decimal(18,0)=999,@i int=12;\nWHILE @i<=14 BEGIN\n UPDATE dbo.SANPHAM SET GiaBan=@p WHERE MaSP='SP001'; DECLARE @code varchar(10)='HD900000'+CONVERT(varchar,@i); EXEC dbo.G04New @code,N'Giao hang',@customer='KH001',@promotion='KM90000003',@ship=15000; EXEC dbo.G04Pay @code;\n IF COALESCE((SELECT SUM(SoDiem) FROM dbo.LICHSU_DIEM WHERE MaHD=@code),0)<>FLOOR(@p/1000) THROW 52990,'Points floor',1;\n SELECT @i=@i+1,@p=CASE WHEN @p=999 THEN 1000 ELSE 1999 END;\nEND;\nUPDATE dbo.SANPHAM SET GiaBan=25000 WHERE MaSP='SP001';\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K09 partner fee 0 100 rounding and immutable",
+      "Sql": "DECLARE @partner varchar(5)=(SELECT MIN(MaDT) FROM dbo.DOITACGIAOHANG),@original decimal(5,2); SELECT @original=ChietKhau FROM dbo.DOITACGIAOHANG WHERE MaDT=@partner;\nUPDATE dbo.SANPHAM SET GiaBan=25001 WHERE MaSP='SP001'; UPDATE dbo.DOITACGIAOHANG SET ChietKhau=50 WHERE MaDT=@partner;\nEXEC dbo.G04New 'HD90000015',N'Giao hang',@partner=@partner,@ship=15000; EXEC dbo.G04Pay 'HD90000015';\nUPDATE dbo.DOITACGIAOHANG SET ChietKhau=0 WHERE MaDT=@partner; EXEC dbo.G04New 'HD90000016',N'Giao hang',@partner=@partner; EXEC dbo.G04Pay 'HD90000016';\nUPDATE dbo.DOITACGIAOHANG SET ChietKhau=100 WHERE MaDT=@partner; EXEC dbo.G04New 'HD90000017',N'Giao hang',@partner=@partner; EXEC dbo.G04Pay 'HD90000017';\nIF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD='HD90000015' AND PhiDoiTac=12501 AND ThanhTien=40001 AND PhanTramPhiDoiTac=50) OR NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD='HD90000016' AND PhiDoiTac=0) OR NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD='HD90000017' AND PhiDoiTac=25001) THROW 52990,'Partner snapshot',1;\nUPDATE dbo.DOITACGIAOHANG SET ChietKhau=@original WHERE MaDT=@partner; UPDATE dbo.SANPHAM SET GiaBan=25000 WHERE MaSP='SP001';\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T18-K02 paid delivery moves without finance",
+      "Sql": "DECLARE @before nvarchar(max)=(SELECT TongTien,GiamGia,PhiShip,PhiDoiTac,NgayThanhToan FROM dbo.HOADON WHERE MaHD='HD90000010' FOR JSON PATH),@a int,@s binary(8),@r binary(8),@id uniqueidentifier=NEWID(); SELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001'; SELECT @r=Revision FROM dbo.HOADON WHERE MaHD='HD90000010';\nEXEC dbo.sp_ChuyenTrangThaiGiaoHang @a,@s,'HD90000010',@r,N'Cho giao',N'Dang giao',@id;\nIF @before<>(SELECT TongTien,GiamGia,PhiShip,PhiDoiTac,NgayThanhToan FROM dbo.HOADON WHERE MaHD='HD90000010' FOR JSON PATH) THROW 52990,'Delivery changed finance',1;\nDECLARE @seen bit=0; SET @id=NEWID(); BEGIN TRY EXEC dbo.sp_ChuyenTrangThaiGiaoHang @a,@s,'HD90000010',@r,N'Cho giao',N'Dang giao',@id; END TRY BEGIN CATCH IF ERROR_NUMBER()<>52103 THROW; SET @seen=1; END CATCH;\nIF @seen=0 THROW 52990,'Stale delivery accepted',1;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K14 future creation rejects checkout",
+      "Sql": "EXEC dbo.G04New 'HD90000018'; UPDATE dbo.HOADON SET NgayLap=DATEADD(day,1,SYSDATETIME()) WHERE MaHD='HD90000018';\nDECLARE @b nvarchar(max),@e nvarchar(max); EXEC dbo.G04State @b OUTPUT;\nEXEC dbo.G04Expect N'EXEC dbo.G04Pay ''HD90000018'';',52205;\nEXEC dbo.G04State @e OUTPUT; IF @b<>@e THROW 52990,'Future date rollback mismatch',1;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K13 runtime DML denied",
+      "Sql": "CREATE USER G04Runtime WITHOUT LOGIN; ALTER ROLE CafeManagerApp ADD MEMBER G04Runtime;\nDECLARE @sql nvarchar(max),@table sysname;\nDECLARE t CURSOR LOCAL FAST_FORWARD FOR SELECT name FROM sys.tables WHERE name IN('HOADON','CHITIET_HD','TIEUHAO_HOADON','CHITIET_THANHTOAN','LICHSU_DIEM','HoaDonUuDaiSnapshot');\nOPEN t; FETCH NEXT FROM t INTO @table;\nWHILE @@FETCH_STATUS=0 BEGIN\n SET @sql=N'EXECUTE AS USER=''G04Runtime''; BEGIN TRY DELETE FROM dbo.'+QUOTENAME(@table)+N' WHERE 1=0; REVERT; THROW 52990,''Runtime DML accepted'',1; END TRY BEGIN CATCH DECLARE @e int=ERROR_NUMBER(); REVERT; IF @e<>229 THROW; END CATCH;';\n EXEC sys.sp_executesql @sql; FETCH NEXT FROM t INTO @table;\nEND; CLOSE t; DEALLOCATE t;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K13 role STORE denied",
+      "Sql": "DECLARE @old varchar(5),@a int,@s binary(8),@seen bit=0; SELECT @a=MaTK,@s=SecurityStamp,@old=MaVT FROM dbo.TAIKHOAN WHERE MaNV='NV001';\nUPDATE dbo.TAIKHOAN SET MaVT='STORE' WHERE MaTK=@a; SELECT @s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaTK=@a;\nBEGIN TRY EXEC dbo.sp_SalesMenu @a,@s; END TRY BEGIN CATCH IF ERROR_NUMBER()<>51605 THROW; SET @seen=1; END CATCH;\nUPDATE dbo.TAIKHOAN SET MaVT=@old WHERE MaTK=@a; IF @seen=0 THROW 52990,'STORE could access sales',1;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K15 legacy snapshot unknown amount preserved",
+      "Sql": "IF EXISTS(SELECT 1 FROM dbo.HOADON h LEFT JOIN dbo.HoaDonUuDaiSnapshot s ON s.MaHD=h.MaHD WHERE h.MaHD NOT LIKE 'HD9%' AND h.TrangThai=N'Da thanh toan' AND (s.Kind<>'LegacyUnknown' OR s.Source IS NOT NULL OR s.PercentDiscount IS NOT NULL OR s.Discount<>h.GiamGia)) THROW 52990,'Legacy snapshot fabricated',1;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T14-K01 delivery boundary validation atomic",
+      "Sql": "DECLARE @a int,@s binary(8),@id uniqueidentifier,@n nvarchar(max),@p varchar(max),@ad nvarchar(max),@seen bit,@i int=0;\nSELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001';\nWHILE @i<7 BEGIN\n SELECT @id=NEWID(),@seen=0,@n=N'Khách',@p='0901234567',@ad=N'Địa chỉ';\n IF @i=0 SET @n=N'   '; IF @i=1 SET @n=REPLICATE(N'a',101); IF @i=2 SET @p=REPLICATE('1',16); IF @i=3 SET @p='090a'; IF @i=4 SET @ad=REPLICATE(N'a',251); IF @i=5 SET @ad=N' '; IF @i=6 SET @p=NULL;\n BEGIN TRY EXEC dbo.sp_TaoHoaDon @Actor=@a,@Stamp=@s,@Code='HD94000001',@RequestId=@id,@Channel=N'Giao hang',@Recipient=@n,@Phone=@p,@Address=@ad,@Product='SP001',@Quantity=1; END TRY BEGIN CATCH IF ERROR_NUMBER()<>52101 THROW; SET @seen=1; END CATCH;\n IF @seen=0 OR EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD='HD94000001') OR EXISTS(SELECT 1 FROM dbo.G03OperationReceipt WHERE RequestId=@id) THROW 52990,'Boundary validation leaked',1;\n IF @@TRANCOUNT<>0 OR XACT_STATE()<>0 THROW 52990,'Boundary transaction leaked',1;\n SET @i+=1;\nEND;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T14-K02 actor inactive stale stamp missing and employee resigned",
+      "Sql": "DECLARE @a int,@s binary(8),@seen bit=0; SELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001';\nBEGIN TRY EXEC dbo.sp_SalesMenu @a,0x0000000000000000; END TRY BEGIN CATCH IF ERROR_NUMBER()<>51505 THROW; SET @seen=1; END CATCH; IF @seen=0 THROW 52990,'Stale actor allowed',1;\nSET @seen=0; UPDATE dbo.TAIKHOAN SET HoatDong=0 WHERE MaTK=@a; SELECT @s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaTK=@a;\nBEGIN TRY EXEC dbo.sp_SalesMenu @a,@s; END TRY BEGIN CATCH IF ERROR_NUMBER()<>51505 THROW; SET @seen=1; END CATCH; UPDATE dbo.TAIKHOAN SET HoatDong=1 WHERE MaTK=@a; IF @seen=0 THROW 52990,'Inactive allowed',1;\nSET @seen=0; UPDATE dbo.NHANVIEN SET DangLamViec=0 WHERE MaNV='NV001'; SELECT @s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaTK=@a;\nBEGIN TRY EXEC dbo.sp_SalesMenu @a,@s; END TRY BEGIN CATCH IF ERROR_NUMBER()<>51505 THROW; SET @seen=1; END CATCH; UPDATE dbo.NHANVIEN SET DangLamViec=1 WHERE MaNV='NV001'; IF @seen=0 THROW 52990,'Resigned allowed',1;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T14-K07 T15-K06 missing recipe rejects add and checkout",
+      "Sql": "EXEC dbo.G04New 'HD94000002'; SELECT * INTO #recipe FROM dbo.CONGTHUC WHERE MaSP='SP001'; DELETE dbo.CONGTHUC WHERE MaSP='SP001';\nEXEC dbo.G04Expect N'EXEC dbo.G04Edit ''HD94000002'';',52105;\nDECLARE @b nvarchar(max),@e nvarchar(max); EXEC dbo.G04State @b OUTPUT; EXEC dbo.G04Expect N'EXEC dbo.G04Pay ''HD94000002'';',52204; EXEC dbo.G04State @e OUTPUT;\nIF @b<>@e THROW 52990,'Missing recipe changed finance',1;\nINSERT dbo.CONGTHUC SELECT * FROM #recipe; DROP TABLE #recipe;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T14-K03 observe zero header inside atomic create",
+      "Sql": "CREATE TABLE dbo.G04HeaderAudit(Code char(10),InitialTotal decimal(18,0),InitialDiscount decimal(18,0),TranCount int);\nEXEC(N'CREATE TRIGGER dbo.G04ObserveHeader ON dbo.HOADON AFTER INSERT AS BEGIN INSERT dbo.G04HeaderAudit SELECT MaHD,TongTien,GiamGia,@@TRANCOUNT FROM inserted WHERE MaHD=''HD93000001''; END;');\nEXEC dbo.G04New 'HD93000001';\nIF (SELECT COUNT(*) FROM dbo.G04HeaderAudit WHERE Code='HD93000001' AND InitialTotal=0 AND InitialDiscount=0 AND TranCount>0)<>1 OR NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD='HD93000001' AND TongTien=25000) THROW 52990,'Initial header or trigger sum mismatch',1;\nDROP TRIGGER dbo.G04ObserveHeader;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K02 policy revision changed with same amount requires re-confirm",
+      "Sql": "EXEC dbo.G04New 'HD93000002'; DECLARE @token binary(32)=(SELECT PreviewToken FROM dbo.fn_CheckoutPreview('HD93000002')),@b nvarchar(max),@e nvarchar(max),@seen bit=0;\nUPDATE dbo.LoyaltyPolicyState SET Id=Id;\nEXEC dbo.G04State @b OUTPUT;\nBEGIN TRY EXEC dbo.G04Pay 'HD93000002',@token=@token; END TRY BEGIN CATCH IF ERROR_NUMBER()<>52201 THROW; SET @seen=1; END CATCH;\nEXEC dbo.G04State @e OUTPUT; IF @seen=0 OR @b<>@e OR @@TRANCOUNT<>0 OR XACT_STATE()<>0 THROW 52990,'Policy token not enforced',1;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K02 customer revision changed requires re-confirm",
+      "Sql": "EXEC dbo.G04New 'HD93000003',@customer='KH001'; DECLARE @token binary(32)=(SELECT PreviewToken FROM dbo.fn_CheckoutPreview('HD93000003')),@b nvarchar(max),@e nvarchar(max),@seen bit=0;\nUPDATE dbo.KHACHHANG SET TenKH=TenKH WHERE MaKH='KH001'; EXEC dbo.G04State @b OUTPUT;\nBEGIN TRY EXEC dbo.G04Pay 'HD93000003',@token=@token; END TRY BEGIN CATCH IF ERROR_NUMBER()<>52201 THROW; SET @seen=1; END CATCH;\nEXEC dbo.G04State @e OUTPUT; IF @seen=0 OR @b<>@e THROW 52990,'Customer token not enforced',1;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K02 partner revision changed requires re-confirm",
+      "Sql": "DECLARE @partner varchar(5)=(SELECT MIN(MaDT) FROM dbo.DOITACGIAOHANG); EXEC dbo.G04New 'HD93000004',N'Giao hang',@partner=@partner;\nDECLARE @token binary(32)=(SELECT PreviewToken FROM dbo.fn_CheckoutPreview('HD93000004')),@b nvarchar(max),@e nvarchar(max),@seen bit=0;\nUPDATE dbo.DOITACGIAOHANG SET ChietKhau=ChietKhau WHERE MaDT=@partner; EXEC dbo.G04State @b OUTPUT;\nBEGIN TRY EXEC dbo.G04Pay 'HD93000004',@token=@token; END TRY BEGIN CATCH IF ERROR_NUMBER()<>52201 THROW; SET @seen=1; END CATCH;\nEXEC dbo.G04State @e OUTPUT; IF @seen=0 OR @b<>@e THROW 52990,'Partner token not enforced',1;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K07 multiple products shared materials decimal4 snapshot",
+      "Sql": "DECLARE @n1 char(5)=(SELECT MIN(MaNVL) FROM dbo.NGUYENVATLIEU),@n2 char(5); SELECT @n2=MIN(MaNVL) FROM dbo.NGUYENVATLIEU WHERE MaNVL>@n1;\nDELETE dbo.CONGTHUC WHERE MaSP IN('SP001','SP002'); INSERT dbo.CONGTHUC(MaSP,MaNVL,DinhMuc) VALUES('SP001',@n1,0.0180),('SP001',@n2,1.2345),('SP002',@n1,1.2345),('SP002',@n2,1);\nUPDATE dbo.NGUYENVATLIEU SET SoLuongTon=10000 WHERE MaNVL IN(@n1,@n2); UPDATE dbo.SANPHAM SET TrangThai=N'Dang ban' WHERE MaSP='SP002';\nEXEC dbo.G04New 'HD93000005'; EXEC dbo.G04Edit 'HD93000005',@qty=2; EXEC dbo.G04Edit 'HD93000005',@product='SP002'; EXEC dbo.G04Pay 'HD93000005';\nIF (SELECT COUNT(*) FROM dbo.TIEUHAO_HOADON WHERE MaHD='HD93000005')<>2 OR NOT EXISTS(SELECT 1 FROM dbo.TIEUHAO_HOADON WHERE MaHD='HD93000005' AND MaNVL=@n1 AND SoLuong=1.2885) OR NOT EXISTS(SELECT 1 FROM dbo.TIEUHAO_HOADON WHERE MaHD='HD93000005' AND MaNVL=@n2 AND SoLuong=4.7035) THROW 52990,'Decimal consumption mismatch',1;\nIF (SELECT SoLuongTon FROM dbo.NGUYENVATLIEU WHERE MaNVL=@n1)<>9998.7115 OR (SELECT SoLuongTon FROM dbo.NGUYENVATLIEU WHERE MaNVL=@n2)<>9995.2965 THROW 52990,'Decimal stock mismatch',1;\nUPDATE dbo.CONGTHUC SET DinhMuc=10 WHERE MaSP='SP001'; IF (SELECT SUM(SoLuong) FROM dbo.TIEUHAO_HOADON WHERE MaHD='HD93000005')<>5.9920 THROW 52990,'Recipe edit changed snapshot',1;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K08 customer points overflow rolls back",
+      "Sql": "DECLARE @old int=(SELECT DiemTichLuy FROM dbo.KHACHHANG WHERE MaKH='KH001'); UPDATE dbo.KHACHHANG SET DiemTichLuy=2147483647 WHERE MaKH='KH001';\nEXEC dbo.G04New 'HD93000006',@customer='KH001',@promotion='KM90000003';\nDECLARE @b nvarchar(max),@e nvarchar(max); EXEC dbo.G04State @b OUTPUT; EXEC dbo.G04Expect N'EXEC dbo.G04Pay ''HD93000006'';',52205; EXEC dbo.G04State @e OUTPUT; IF @b<>@e THROW 52990,'Points overflow leaked',1;\nUPDATE dbo.KHACHHANG SET DiemTichLuy=@old WHERE MaKH='KH001';\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T18-K06 ADMIN CASH allowed STORE forbidden at SQL boundary",
+      "Sql": "DECLARE @a int,@s binary(8),@role varchar(5),@i int=0,@code varchar(10),@r binary(8),@id uniqueidentifier,@seen bit;\nSELECT @a=MaTK,@role=MaVT FROM dbo.TAIKHOAN WHERE MaNV='NV001';\nWHILE @i<3 BEGIN\n UPDATE dbo.TAIKHOAN SET MaVT='ADMIN' WHERE MaTK=@a; SET @code='HD930000'+CONVERT(varchar,10+@i); EXEC dbo.G04New @code,N'Giao hang';\n UPDATE dbo.TAIKHOAN SET MaVT=CASE @i WHEN 0 THEN 'ADMIN' WHEN 1 THEN 'CASH' ELSE 'STORE' END WHERE MaTK=@a;\n SELECT @s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaTK=@a; SELECT @r=Revision FROM dbo.HOADON WHERE MaHD=@code; SELECT @id=NEWID(),@seen=0;\n BEGIN TRY EXEC dbo.sp_ChuyenTrangThaiGiaoHang @a,@s,@code,@r,N'Cho giao',N'Dang giao',@id; END TRY BEGIN CATCH IF @i<>2 OR ERROR_NUMBER()<>51605 THROW; SET @seen=1; END CATCH;\n IF (@i<2 AND NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD=@code AND TrangThaiGiao=N'Dang giao')) OR (@i=2 AND (@seen=0 OR EXISTS(SELECT 1 FROM dbo.G03OperationReceipt WHERE RequestId=@id))) THROW 52990,'Delivery role boundary',1;\n SET @i+=1;\nEND; UPDATE dbo.TAIKHOAN SET MaVT=@role WHERE MaTK=@a;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K11 last stock round1 forward",
+      "Sql1": "EXEC dbo.G04Pay 'HD92000102';",
+      "Sql2": "EXEC dbo.G04Pay 'HD92000103';",
+      "Expected": [
+        0,
+        52203
+      ],
+      "Actual": [
+        0,
+        52203
+      ],
+      "Exceptions": [
+        "System.Management.Automation.MethodInvocationException: Exception calling \"EndExecuteNonQuery\" with \"1\" argument(s): \"Không đủ nguyên liệu. Đơn vẫn mở; kiểm tra tồn trước khi tiếp tục.\"\r\n ---> System.Data.SqlClient.SqlException (0x80131904): Không đủ nguyên liệu. Đơn vẫn mở; kiểm tra tồn trước khi tiếp tục.\r\n   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQuery(IAsyncResult asyncResult)\r\n   at CallSite.Target(Closure, CallSite, Object, Object)\r\nClientConnectionId:5fdaa39f-f929-4f7e-8e62-58d209d1180c\r\nError Number:52203,State:1,Class:16\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)"
+      ],
+      "TransactionStates": [
+        "0:0",
+        "0:0"
+      ],
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K11 money-stock-points-receipt round1",
+      "Sql": "IF (SELECT COUNT(*) FROM dbo.HOADON WHERE MaHD IN('HD92000102','HD92000103') AND TrangThai=N'Da thanh toan')<>1 OR EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE SoLuongTon<0) OR EXISTS(SELECT 1 FROM dbo.HOADON h WHERE MaHD IN('HD92000102','HD92000103') AND TrangThai=N'Chua thanh toan' AND (EXISTS(SELECT 1 FROM dbo.CHITIET_THANHTOAN p WHERE p.MaHD=h.MaHD) OR EXISTS(SELECT 1 FROM dbo.TIEUHAO_HOADON x WHERE x.MaHD=h.MaHD) OR EXISTS(SELECT 1 FROM dbo.HoaDonUuDaiSnapshot s WHERE s.MaHD=h.MaHD))) THROW 52990,'Stock race partial state',1; IF (SELECT COUNT(*) FROM dbo.G03OperationReceipt WHERE EntityCode IN('HD92000102','HD92000103') AND Operation='SalesCheckout')<>1 THROW 52990,'Checkout receipt count',1;",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K11 last stock round2 reversed",
+      "Sql1": "EXEC dbo.G04Pay 'HD92000105';",
+      "Sql2": "EXEC dbo.G04Pay 'HD92000104';",
+      "Expected": [
+        0,
+        52203
+      ],
+      "Actual": [
+        0,
+        52203
+      ],
+      "Exceptions": [
+        "System.Management.Automation.MethodInvocationException: Exception calling \"EndExecuteNonQuery\" with \"1\" argument(s): \"Không đủ nguyên liệu. Đơn vẫn mở; kiểm tra tồn trước khi tiếp tục.\"\r\n ---> System.Data.SqlClient.SqlException (0x80131904): Không đủ nguyên liệu. Đơn vẫn mở; kiểm tra tồn trước khi tiếp tục.\r\n   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQuery(IAsyncResult asyncResult)\r\n   at CallSite.Target(Closure, CallSite, Object, Object)\r\nClientConnectionId:6a94ffa3-7f89-4b62-9b5f-890f395a8f5a\r\nError Number:52203,State:1,Class:16\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)"
+      ],
+      "TransactionStates": [
+        "0:0",
+        "0:0"
+      ],
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K11 money-stock-points-receipt round2",
+      "Sql": "IF (SELECT COUNT(*) FROM dbo.HOADON WHERE MaHD IN('HD92000104','HD92000105') AND TrangThai=N'Da thanh toan')<>1 OR EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE SoLuongTon<0) OR EXISTS(SELECT 1 FROM dbo.HOADON h WHERE MaHD IN('HD92000104','HD92000105') AND TrangThai=N'Chua thanh toan' AND (EXISTS(SELECT 1 FROM dbo.CHITIET_THANHTOAN p WHERE p.MaHD=h.MaHD) OR EXISTS(SELECT 1 FROM dbo.TIEUHAO_HOADON x WHERE x.MaHD=h.MaHD) OR EXISTS(SELECT 1 FROM dbo.HoaDonUuDaiSnapshot s WHERE s.MaHD=h.MaHD))) THROW 52990,'Stock race partial state',1; IF (SELECT COUNT(*) FROM dbo.G03OperationReceipt WHERE EntityCode IN('HD92000104','HD92000105') AND Operation='SalesCheckout')<>1 THROW 52990,'Checkout receipt count',1;",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K11 last stock round3 forward",
+      "Sql1": "EXEC dbo.G04Pay 'HD92000106';",
+      "Sql2": "EXEC dbo.G04Pay 'HD92000107';",
+      "Expected": [
+        0,
+        52203
+      ],
+      "Actual": [
+        0,
+        52203
+      ],
+      "Exceptions": [
+        "System.Management.Automation.MethodInvocationException: Exception calling \"EndExecuteNonQuery\" with \"1\" argument(s): \"Không đủ nguyên liệu. Đơn vẫn mở; kiểm tra tồn trước khi tiếp tục.\"\r\n ---> System.Data.SqlClient.SqlException (0x80131904): Không đủ nguyên liệu. Đơn vẫn mở; kiểm tra tồn trước khi tiếp tục.\r\n   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQuery(IAsyncResult asyncResult)\r\n   at CallSite.Target(Closure, CallSite, Object, Object)\r\nClientConnectionId:5fdaa39f-f929-4f7e-8e62-58d209d1180c\r\nError Number:52203,State:1,Class:16\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)"
+      ],
+      "TransactionStates": [
+        "0:0",
+        "0:0"
+      ],
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K11 money-stock-points-receipt round3",
+      "Sql": "IF (SELECT COUNT(*) FROM dbo.HOADON WHERE MaHD IN('HD92000106','HD92000107') AND TrangThai=N'Da thanh toan')<>1 OR EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE SoLuongTon<0) OR EXISTS(SELECT 1 FROM dbo.HOADON h WHERE MaHD IN('HD92000106','HD92000107') AND TrangThai=N'Chua thanh toan' AND (EXISTS(SELECT 1 FROM dbo.CHITIET_THANHTOAN p WHERE p.MaHD=h.MaHD) OR EXISTS(SELECT 1 FROM dbo.TIEUHAO_HOADON x WHERE x.MaHD=h.MaHD) OR EXISTS(SELECT 1 FROM dbo.HoaDonUuDaiSnapshot s WHERE s.MaHD=h.MaHD))) THROW 52990,'Stock race partial state',1; IF (SELECT COUNT(*) FROM dbo.G03OperationReceipt WHERE EntityCode IN('HD92000106','HD92000107') AND Operation='SalesCheckout')<>1 THROW 52990,'Checkout receipt count',1;",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K11 last stock round4 reversed",
+      "Sql1": "EXEC dbo.G04Pay 'HD92000109';",
+      "Sql2": "EXEC dbo.G04Pay 'HD92000108';",
+      "Expected": [
+        0,
+        52203
+      ],
+      "Actual": [
+        0,
+        52203
+      ],
+      "Exceptions": [
+        "System.Management.Automation.MethodInvocationException: Exception calling \"EndExecuteNonQuery\" with \"1\" argument(s): \"Không đủ nguyên liệu. Đơn vẫn mở; kiểm tra tồn trước khi tiếp tục.\"\r\n ---> System.Data.SqlClient.SqlException (0x80131904): Không đủ nguyên liệu. Đơn vẫn mở; kiểm tra tồn trước khi tiếp tục.\r\n   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQuery(IAsyncResult asyncResult)\r\n   at CallSite.Target(Closure, CallSite, Object, Object)\r\nClientConnectionId:6a94ffa3-7f89-4b62-9b5f-890f395a8f5a\r\nError Number:52203,State:1,Class:16\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)"
+      ],
+      "TransactionStates": [
+        "0:0",
+        "0:0"
+      ],
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K11 money-stock-points-receipt round4",
+      "Sql": "IF (SELECT COUNT(*) FROM dbo.HOADON WHERE MaHD IN('HD92000108','HD92000109') AND TrangThai=N'Da thanh toan')<>1 OR EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE SoLuongTon<0) OR EXISTS(SELECT 1 FROM dbo.HOADON h WHERE MaHD IN('HD92000108','HD92000109') AND TrangThai=N'Chua thanh toan' AND (EXISTS(SELECT 1 FROM dbo.CHITIET_THANHTOAN p WHERE p.MaHD=h.MaHD) OR EXISTS(SELECT 1 FROM dbo.TIEUHAO_HOADON x WHERE x.MaHD=h.MaHD) OR EXISTS(SELECT 1 FROM dbo.HoaDonUuDaiSnapshot s WHERE s.MaHD=h.MaHD))) THROW 52990,'Stock race partial state',1; IF (SELECT COUNT(*) FROM dbo.G03OperationReceipt WHERE EntityCode IN('HD92000108','HD92000109') AND Operation='SalesCheckout')<>1 THROW 52990,'Checkout receipt count',1;",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K11 last stock round5 forward",
+      "Sql1": "EXEC dbo.G04Pay 'HD92000110';",
+      "Sql2": "EXEC dbo.G04Pay 'HD92000111';",
+      "Expected": [
+        0,
+        52203
+      ],
+      "Actual": [
+        0,
+        52203
+      ],
+      "Exceptions": [
+        "System.Management.Automation.MethodInvocationException: Exception calling \"EndExecuteNonQuery\" with \"1\" argument(s): \"Không đủ nguyên liệu. Đơn vẫn mở; kiểm tra tồn trước khi tiếp tục.\"\r\n ---> System.Data.SqlClient.SqlException (0x80131904): Không đủ nguyên liệu. Đơn vẫn mở; kiểm tra tồn trước khi tiếp tục.\r\n   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQuery(IAsyncResult asyncResult)\r\n   at CallSite.Target(Closure, CallSite, Object, Object)\r\nClientConnectionId:5fdaa39f-f929-4f7e-8e62-58d209d1180c\r\nError Number:52203,State:1,Class:16\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)"
+      ],
+      "TransactionStates": [
+        "0:0",
+        "0:0"
+      ],
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K11 money-stock-points-receipt round5",
+      "Sql": "IF (SELECT COUNT(*) FROM dbo.HOADON WHERE MaHD IN('HD92000110','HD92000111') AND TrangThai=N'Da thanh toan')<>1 OR EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE SoLuongTon<0) OR EXISTS(SELECT 1 FROM dbo.HOADON h WHERE MaHD IN('HD92000110','HD92000111') AND TrangThai=N'Chua thanh toan' AND (EXISTS(SELECT 1 FROM dbo.CHITIET_THANHTOAN p WHERE p.MaHD=h.MaHD) OR EXISTS(SELECT 1 FROM dbo.TIEUHAO_HOADON x WHERE x.MaHD=h.MaHD) OR EXISTS(SELECT 1 FROM dbo.HoaDonUuDaiSnapshot s WHERE s.MaHD=h.MaHD))) THROW 52990,'Stock race partial state',1; IF (SELECT COUNT(*) FROM dbo.G03OperationReceipt WHERE EntityCode IN('HD92000110','HD92000111') AND Operation='SalesCheckout')<>1 THROW 52990,'Checkout receipt count',1;",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K11 last stock round6 reversed",
+      "Sql1": "EXEC dbo.G04Pay 'HD92000113';",
+      "Sql2": "EXEC dbo.G04Pay 'HD92000112';",
+      "Expected": [
+        0,
+        52203
+      ],
+      "Actual": [
+        0,
+        52203
+      ],
+      "Exceptions": [
+        "System.Management.Automation.MethodInvocationException: Exception calling \"EndExecuteNonQuery\" with \"1\" argument(s): \"Không đủ nguyên liệu. Đơn vẫn mở; kiểm tra tồn trước khi tiếp tục.\"\r\n ---> System.Data.SqlClient.SqlException (0x80131904): Không đủ nguyên liệu. Đơn vẫn mở; kiểm tra tồn trước khi tiếp tục.\r\n   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQuery(IAsyncResult asyncResult)\r\n   at CallSite.Target(Closure, CallSite, Object, Object)\r\nClientConnectionId:6a94ffa3-7f89-4b62-9b5f-890f395a8f5a\r\nError Number:52203,State:1,Class:16\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)"
+      ],
+      "TransactionStates": [
+        "0:0",
+        "0:0"
+      ],
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K11 money-stock-points-receipt round6",
+      "Sql": "IF (SELECT COUNT(*) FROM dbo.HOADON WHERE MaHD IN('HD92000112','HD92000113') AND TrangThai=N'Da thanh toan')<>1 OR EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE SoLuongTon<0) OR EXISTS(SELECT 1 FROM dbo.HOADON h WHERE MaHD IN('HD92000112','HD92000113') AND TrangThai=N'Chua thanh toan' AND (EXISTS(SELECT 1 FROM dbo.CHITIET_THANHTOAN p WHERE p.MaHD=h.MaHD) OR EXISTS(SELECT 1 FROM dbo.TIEUHAO_HOADON x WHERE x.MaHD=h.MaHD) OR EXISTS(SELECT 1 FROM dbo.HoaDonUuDaiSnapshot s WHERE s.MaHD=h.MaHD))) THROW 52990,'Stock race partial state',1; IF (SELECT COUNT(*) FROM dbo.G03OperationReceipt WHERE EntityCode IN('HD92000112','HD92000113') AND Operation='SalesCheckout')<>1 THROW 52990,'Checkout receipt count',1;",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K11 last stock round7 forward",
+      "Sql1": "EXEC dbo.G04Pay 'HD92000114';",
+      "Sql2": "EXEC dbo.G04Pay 'HD92000115';",
+      "Expected": [
+        0,
+        52203
+      ],
+      "Actual": [
+        0,
+        52203
+      ],
+      "Exceptions": [
+        "System.Management.Automation.MethodInvocationException: Exception calling \"EndExecuteNonQuery\" with \"1\" argument(s): \"Không đủ nguyên liệu. Đơn vẫn mở; kiểm tra tồn trước khi tiếp tục.\"\r\n ---> System.Data.SqlClient.SqlException (0x80131904): Không đủ nguyên liệu. Đơn vẫn mở; kiểm tra tồn trước khi tiếp tục.\r\n   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQuery(IAsyncResult asyncResult)\r\n   at CallSite.Target(Closure, CallSite, Object, Object)\r\nClientConnectionId:5fdaa39f-f929-4f7e-8e62-58d209d1180c\r\nError Number:52203,State:1,Class:16\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at lambda_method226(Closure, Object[], StrongBox`1[], InterpretedFrame)"
+      ],
+      "TransactionStates": [
+        "0:0",
+        "0:0"
+      ],
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K11 money-stock-points-receipt round7",
+      "Sql": "IF (SELECT COUNT(*) FROM dbo.HOADON WHERE MaHD IN('HD92000114','HD92000115') AND TrangThai=N'Da thanh toan')<>1 OR EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE SoLuongTon<0) OR EXISTS(SELECT 1 FROM dbo.HOADON h WHERE MaHD IN('HD92000114','HD92000115') AND TrangThai=N'Chua thanh toan' AND (EXISTS(SELECT 1 FROM dbo.CHITIET_THANHTOAN p WHERE p.MaHD=h.MaHD) OR EXISTS(SELECT 1 FROM dbo.TIEUHAO_HOADON x WHERE x.MaHD=h.MaHD) OR EXISTS(SELECT 1 FROM dbo.HoaDonUuDaiSnapshot s WHERE s.MaHD=h.MaHD))) THROW 52990,'Stock race partial state',1; IF (SELECT COUNT(*) FROM dbo.G03OperationReceipt WHERE EntityCode IN('HD92000114','HD92000115') AND Operation='SalesCheckout')<>1 THROW 52990,'Checkout receipt count',1;",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K11 last stock round8 reversed",
+      "Sql1": "EXEC dbo.G04Pay 'HD92000117';",
+      "Sql2": "EXEC dbo.G04Pay 'HD92000116';",
+      "Expected": [
+        0,
+        52203
+      ],
+      "Actual": [
+        0,
+        52203
+      ],
+      "Exceptions": [
+        "System.Management.Automation.MethodInvocationException: Exception calling \"EndExecuteNonQuery\" with \"1\" argument(s): \"Không đủ nguyên liệu. Đơn vẫn mở; kiểm tra tồn trước khi tiếp tục.\"\r\n ---> System.Data.SqlClient.SqlException (0x80131904): Không đủ nguyên liệu. Đơn vẫn mở; kiểm tra tồn trước khi tiếp tục.\r\n   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQuery(IAsyncResult asyncResult)\r\n   at CallSite.Target(Closure, CallSite, Object, Object)\r\nClientConnectionId:6a94ffa3-7f89-4b62-9b5f-890f395a8f5a\r\nError Number:52203,State:1,Class:16\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at lambda_method226(Closure, Object[], StrongBox`1[], InterpretedFrame)"
+      ],
+      "TransactionStates": [
+        "0:0",
+        "0:0"
+      ],
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K11 money-stock-points-receipt round8",
+      "Sql": "IF (SELECT COUNT(*) FROM dbo.HOADON WHERE MaHD IN('HD92000116','HD92000117') AND TrangThai=N'Da thanh toan')<>1 OR EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE SoLuongTon<0) OR EXISTS(SELECT 1 FROM dbo.HOADON h WHERE MaHD IN('HD92000116','HD92000117') AND TrangThai=N'Chua thanh toan' AND (EXISTS(SELECT 1 FROM dbo.CHITIET_THANHTOAN p WHERE p.MaHD=h.MaHD) OR EXISTS(SELECT 1 FROM dbo.TIEUHAO_HOADON x WHERE x.MaHD=h.MaHD) OR EXISTS(SELECT 1 FROM dbo.HoaDonUuDaiSnapshot s WHERE s.MaHD=h.MaHD))) THROW 52990,'Stock race partial state',1; IF (SELECT COUNT(*) FROM dbo.G03OperationReceipt WHERE EntityCode IN('HD92000116','HD92000117') AND Operation='SalesCheckout')<>1 THROW 52990,'Checkout receipt count',1;",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K11 last stock round9 forward",
+      "Sql1": "EXEC dbo.G04Pay 'HD92000118';",
+      "Sql2": "EXEC dbo.G04Pay 'HD92000119';",
+      "Expected": [
+        0,
+        52203
+      ],
+      "Actual": [
+        0,
+        52203
+      ],
+      "Exceptions": [
+        "System.Management.Automation.MethodInvocationException: Exception calling \"EndExecuteNonQuery\" with \"1\" argument(s): \"Không đủ nguyên liệu. Đơn vẫn mở; kiểm tra tồn trước khi tiếp tục.\"\r\n ---> System.Data.SqlClient.SqlException (0x80131904): Không đủ nguyên liệu. Đơn vẫn mở; kiểm tra tồn trước khi tiếp tục.\r\n   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQuery(IAsyncResult asyncResult)\r\n   at CallSite.Target(Closure, CallSite, Object, Object)\r\nClientConnectionId:5fdaa39f-f929-4f7e-8e62-58d209d1180c\r\nError Number:52203,State:1,Class:16\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at lambda_method226(Closure, Object[], StrongBox`1[], InterpretedFrame)"
+      ],
+      "TransactionStates": [
+        "0:0",
+        "0:0"
+      ],
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K11 money-stock-points-receipt round9",
+      "Sql": "IF (SELECT COUNT(*) FROM dbo.HOADON WHERE MaHD IN('HD92000118','HD92000119') AND TrangThai=N'Da thanh toan')<>1 OR EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE SoLuongTon<0) OR EXISTS(SELECT 1 FROM dbo.HOADON h WHERE MaHD IN('HD92000118','HD92000119') AND TrangThai=N'Chua thanh toan' AND (EXISTS(SELECT 1 FROM dbo.CHITIET_THANHTOAN p WHERE p.MaHD=h.MaHD) OR EXISTS(SELECT 1 FROM dbo.TIEUHAO_HOADON x WHERE x.MaHD=h.MaHD) OR EXISTS(SELECT 1 FROM dbo.HoaDonUuDaiSnapshot s WHERE s.MaHD=h.MaHD))) THROW 52990,'Stock race partial state',1; IF (SELECT COUNT(*) FROM dbo.G03OperationReceipt WHERE EntityCode IN('HD92000118','HD92000119') AND Operation='SalesCheckout')<>1 THROW 52990,'Checkout receipt count',1;",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K11 last stock round10 reversed",
+      "Sql1": "EXEC dbo.G04Pay 'HD92000121';",
+      "Sql2": "EXEC dbo.G04Pay 'HD92000120';",
+      "Expected": [
+        0,
+        52203
+      ],
+      "Actual": [
+        0,
+        52203
+      ],
+      "Exceptions": [
+        "System.Management.Automation.MethodInvocationException: Exception calling \"EndExecuteNonQuery\" with \"1\" argument(s): \"Không đủ nguyên liệu. Đơn vẫn mở; kiểm tra tồn trước khi tiếp tục.\"\r\n ---> System.Data.SqlClient.SqlException (0x80131904): Không đủ nguyên liệu. Đơn vẫn mở; kiểm tra tồn trước khi tiếp tục.\r\n   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQuery(IAsyncResult asyncResult)\r\n   at CallSite.Target(Closure, CallSite, Object, Object)\r\nClientConnectionId:6a94ffa3-7f89-4b62-9b5f-890f395a8f5a\r\nError Number:52203,State:1,Class:16\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at lambda_method226(Closure, Object[], StrongBox`1[], InterpretedFrame)"
+      ],
+      "TransactionStates": [
+        "0:0",
+        "0:0"
+      ],
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K11 money-stock-points-receipt round10",
+      "Sql": "IF (SELECT COUNT(*) FROM dbo.HOADON WHERE MaHD IN('HD92000120','HD92000121') AND TrangThai=N'Da thanh toan')<>1 OR EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE SoLuongTon<0) OR EXISTS(SELECT 1 FROM dbo.HOADON h WHERE MaHD IN('HD92000120','HD92000121') AND TrangThai=N'Chua thanh toan' AND (EXISTS(SELECT 1 FROM dbo.CHITIET_THANHTOAN p WHERE p.MaHD=h.MaHD) OR EXISTS(SELECT 1 FROM dbo.TIEUHAO_HOADON x WHERE x.MaHD=h.MaHD) OR EXISTS(SELECT 1 FROM dbo.HoaDonUuDaiSnapshot s WHERE s.MaHD=h.MaHD))) THROW 52990,'Stock race partial state',1; IF (SELECT COUNT(*) FROM dbo.G03OperationReceipt WHERE EntityCode IN('HD92000120','HD92000121') AND Operation='SalesCheckout')<>1 THROW 52990,'Checkout receipt count',1;",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T18-K05 typed delivery round1",
+      "Sql1": "DECLARE @a int,@s binary(8),@r binary(8),@id uniqueidentifier=NEWID(); SELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001'; SELECT @r=Rev FROM dbo.G04Revision WHERE Code='HD92000301'; EXEC dbo.sp_ChuyenTrangThaiGiaoHang @a,@s,'HD92000301',@r,N'Cho giao',N'Dang giao',@id;",
+      "Sql2": "DECLARE @a int,@s binary(8),@r binary(8),@id uniqueidentifier=NEWID(); SELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001'; SELECT @r=Rev FROM dbo.G04Revision WHERE Code='HD92000301'; EXEC dbo.sp_ChuyenTrangThaiGiaoHang @a,@s,'HD92000301',@r,N'Cho giao',N'Dang giao',@id;",
+      "Expected": [
+        0,
+        52103
+      ],
+      "Actual": [
+        0,
+        52103
+      ],
+      "Exceptions": [
+        "System.Management.Automation.MethodInvocationException: Exception calling \"EndExecuteNonQuery\" with \"1\" argument(s): \"Trạng thái đã thay đổi. Tải lại.\"\r\n ---> System.Data.SqlClient.SqlException (0x80131904): Trạng thái đã thay đổi. Tải lại.\r\n   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQuery(IAsyncResult asyncResult)\r\n   at CallSite.Target(Closure, CallSite, Object, Object)\r\nClientConnectionId:5fdaa39f-f929-4f7e-8e62-58d209d1180c\r\nError Number:52103,State:1,Class:16\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at lambda_method226(Closure, Object[], StrongBox`1[], InterpretedFrame)"
+      ],
+      "TransactionStates": [
+        "0:0",
+        "0:0"
+      ],
+      "Status": "PASS"
+    },
+    {
+      "Id": "T18-K05 invariants round1",
+      "Sql": "IF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD='HD92000301' AND TrangThaiGiao=N'Dang giao' AND TrangThai=N'Chua thanh toan') OR EXISTS(SELECT 1 FROM dbo.CHITIET_THANHTOAN WHERE MaHD='HD92000301') OR (SELECT COUNT(*) FROM dbo.G03OperationReceipt WHERE EntityCode='HD92000301' AND Operation='SalesDelivery')<>1 THROW 52990,'Delivery race overwrite',1;",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T18-K05 typed delivery round2",
+      "Sql1": "DECLARE @a int,@s binary(8),@r binary(8),@id uniqueidentifier=NEWID(); SELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001'; SELECT @r=Rev FROM dbo.G04Revision WHERE Code='HD92000302'; EXEC dbo.sp_ChuyenTrangThaiGiaoHang @a,@s,'HD92000302',@r,N'Cho giao',N'Dang giao',@id;",
+      "Sql2": "DECLARE @a int,@s binary(8),@r binary(8),@id uniqueidentifier=NEWID(); SELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001'; SELECT @r=Rev FROM dbo.G04Revision WHERE Code='HD92000302'; EXEC dbo.sp_ChuyenTrangThaiGiaoHang @a,@s,'HD92000302',@r,N'Cho giao',N'Dang giao',@id;",
+      "Expected": [
+        0,
+        52103
+      ],
+      "Actual": [
+        52103,
+        0
+      ],
+      "Exceptions": [
+        "System.Management.Automation.MethodInvocationException: Exception calling \"EndExecuteNonQuery\" with \"1\" argument(s): \"Trạng thái đã thay đổi. Tải lại.\"\r\n ---> System.Data.SqlClient.SqlException (0x80131904): Trạng thái đã thay đổi. Tải lại.\r\n   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQuery(IAsyncResult asyncResult)\r\n   at CallSite.Target(Closure, CallSite, Object, Object)\r\nClientConnectionId:5fdaa39f-f929-4f7e-8e62-58d209d1180c\r\nError Number:52103,State:1,Class:16\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at lambda_method226(Closure, Object[], StrongBox`1[], InterpretedFrame)"
+      ],
+      "TransactionStates": [
+        "0:0",
+        "0:0"
+      ],
+      "Status": "PASS"
+    },
+    {
+      "Id": "T18-K05 invariants round2",
+      "Sql": "IF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD='HD92000302' AND TrangThaiGiao=N'Dang giao' AND TrangThai=N'Chua thanh toan') OR EXISTS(SELECT 1 FROM dbo.CHITIET_THANHTOAN WHERE MaHD='HD92000302') OR (SELECT COUNT(*) FROM dbo.G03OperationReceipt WHERE EntityCode='HD92000302' AND Operation='SalesDelivery')<>1 THROW 52990,'Delivery race overwrite',1;",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T18-K05 typed delivery round3",
+      "Sql1": "DECLARE @a int,@s binary(8),@r binary(8),@id uniqueidentifier=NEWID(); SELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001'; SELECT @r=Rev FROM dbo.G04Revision WHERE Code='HD92000303'; EXEC dbo.sp_ChuyenTrangThaiGiaoHang @a,@s,'HD92000303',@r,N'Cho giao',N'Dang giao',@id;",
+      "Sql2": "DECLARE @a int,@s binary(8),@r binary(8),@id uniqueidentifier=NEWID(); SELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001'; SELECT @r=Rev FROM dbo.G04Revision WHERE Code='HD92000303'; EXEC dbo.sp_ChuyenTrangThaiGiaoHang @a,@s,'HD92000303',@r,N'Cho giao',N'Dang giao',@id;",
+      "Expected": [
+        0,
+        52103
+      ],
+      "Actual": [
+        52103,
+        0
+      ],
+      "Exceptions": [
+        "System.Management.Automation.MethodInvocationException: Exception calling \"EndExecuteNonQuery\" with \"1\" argument(s): \"Trạng thái đã thay đổi. Tải lại.\"\r\n ---> System.Data.SqlClient.SqlException (0x80131904): Trạng thái đã thay đổi. Tải lại.\r\n   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQuery(IAsyncResult asyncResult)\r\n   at CallSite.Target(Closure, CallSite, Object, Object)\r\nClientConnectionId:6a94ffa3-7f89-4b62-9b5f-890f395a8f5a\r\nError Number:52103,State:1,Class:16\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at lambda_method226(Closure, Object[], StrongBox`1[], InterpretedFrame)"
+      ],
+      "TransactionStates": [
+        "0:0",
+        "0:0"
+      ],
+      "Status": "PASS"
+    },
+    {
+      "Id": "T18-K05 invariants round3",
+      "Sql": "IF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD='HD92000303' AND TrangThaiGiao=N'Dang giao' AND TrangThai=N'Chua thanh toan') OR EXISTS(SELECT 1 FROM dbo.CHITIET_THANHTOAN WHERE MaHD='HD92000303') OR (SELECT COUNT(*) FROM dbo.G03OperationReceipt WHERE EntityCode='HD92000303' AND Operation='SalesDelivery')<>1 THROW 52990,'Delivery race overwrite',1;",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T18-K05 typed delivery round4",
+      "Sql1": "DECLARE @a int,@s binary(8),@r binary(8),@id uniqueidentifier=NEWID(); SELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001'; SELECT @r=Rev FROM dbo.G04Revision WHERE Code='HD92000304'; EXEC dbo.sp_ChuyenTrangThaiGiaoHang @a,@s,'HD92000304',@r,N'Cho giao',N'Dang giao',@id;",
+      "Sql2": "DECLARE @a int,@s binary(8),@r binary(8),@id uniqueidentifier=NEWID(); SELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001'; SELECT @r=Rev FROM dbo.G04Revision WHERE Code='HD92000304'; EXEC dbo.sp_ChuyenTrangThaiGiaoHang @a,@s,'HD92000304',@r,N'Cho giao',N'Dang giao',@id;",
+      "Expected": [
+        0,
+        52103
+      ],
+      "Actual": [
+        52103,
+        0
+      ],
+      "Exceptions": [
+        "System.Management.Automation.MethodInvocationException: Exception calling \"EndExecuteNonQuery\" with \"1\" argument(s): \"Trạng thái đã thay đổi. Tải lại.\"\r\n ---> System.Data.SqlClient.SqlException (0x80131904): Trạng thái đã thay đổi. Tải lại.\r\n   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQuery(IAsyncResult asyncResult)\r\n   at CallSite.Target(Closure, CallSite, Object, Object)\r\nClientConnectionId:5fdaa39f-f929-4f7e-8e62-58d209d1180c\r\nError Number:52103,State:1,Class:16\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at lambda_method226(Closure, Object[], StrongBox`1[], InterpretedFrame)"
+      ],
+      "TransactionStates": [
+        "0:0",
+        "0:0"
+      ],
+      "Status": "PASS"
+    },
+    {
+      "Id": "T18-K05 invariants round4",
+      "Sql": "IF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD='HD92000304' AND TrangThaiGiao=N'Dang giao' AND TrangThai=N'Chua thanh toan') OR EXISTS(SELECT 1 FROM dbo.CHITIET_THANHTOAN WHERE MaHD='HD92000304') OR (SELECT COUNT(*) FROM dbo.G03OperationReceipt WHERE EntityCode='HD92000304' AND Operation='SalesDelivery')<>1 THROW 52990,'Delivery race overwrite',1;",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T14-K10 typed line revision",
+      "Sql1": "DECLARE @a int,@s binary(8),@r binary(8),@id uniqueidentifier=NEWID(); SELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001'; SELECT @r=Rev FROM dbo.G04Revision WHERE Code='HD92000401'; EXEC dbo.sp_SuaDongHoaDon @a,@s,'HD92000401',@r,@id,'Add',@Product='SP001',@Quantity=1;",
+      "Sql2": "DECLARE @a int,@s binary(8),@r binary(8),@id uniqueidentifier=NEWID(); SELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001'; SELECT @r=Rev FROM dbo.G04Revision WHERE Code='HD92000401'; EXEC dbo.sp_SuaDongHoaDon @a,@s,'HD92000401',@r,@id,'Add',@Product='SP001',@Quantity=1;",
+      "Expected": [
+        0,
+        52103
+      ],
+      "Actual": [
+        52103,
+        0
+      ],
+      "Exceptions": [
+        "System.Management.Automation.MethodInvocationException: Exception calling \"EndExecuteNonQuery\" with \"1\" argument(s): \"Đơn đã thay đổi ở phiên khác. Tải lại trước khi tiếp tục.\"\r\n ---> System.Data.SqlClient.SqlException (0x80131904): Đơn đã thay đổi ở phiên khác. Tải lại trước khi tiếp tục.\r\n   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQuery(IAsyncResult asyncResult)\r\n   at CallSite.Target(Closure, CallSite, Object, Object)\r\nClientConnectionId:6a94ffa3-7f89-4b62-9b5f-890f395a8f5a\r\nError Number:52103,State:1,Class:16\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at lambda_method226(Closure, Object[], StrongBox`1[], InterpretedFrame)"
+      ],
+      "TransactionStates": [
+        "0:0",
+        "0:0"
+      ],
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K10 same invoice different requests",
+      "Sql1": "EXEC dbo.G04Pay 'HD92000402';",
+      "Sql2": "EXEC dbo.G04Pay 'HD92000402';",
+      "Expected": [
+        0,
+        52102
+      ],
+      "Actual": [
+        0,
+        52102
+      ],
+      "Exceptions": [
+        "System.Management.Automation.MethodInvocationException: Exception calling \"EndExecuteNonQuery\" with \"1\" argument(s): \"Đơn không có hoặc đã chốt/hủy.\"\r\n ---> System.Data.SqlClient.SqlException (0x80131904): Đơn không có hoặc đã chốt/hủy.\r\n   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQuery(IAsyncResult asyncResult)\r\n   at CallSite.Target(Closure, CallSite, Object, Object)\r\nClientConnectionId:6a94ffa3-7f89-4b62-9b5f-890f395a8f5a\r\nError Number:52102,State:1,Class:16\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at lambda_method226(Closure, Object[], StrongBox`1[], InterpretedFrame)"
+      ],
+      "TransactionStates": [
+        "0:0",
+        "0:0"
+      ],
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K10 exactly one payment/history",
+      "Sql": "IF (SELECT COUNT(*) FROM dbo.CHITIET_THANHTOAN WHERE MaHD='HD92000402')<>1 OR (SELECT COUNT(*) FROM dbo.LICHSU_DIEM WHERE MaHD='HD92000402')<>1 THROW 52990,'Duplicate payment or points',1;",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K10 same request typed replay concurrent",
+      "Sql1": "DECLARE @a int,@s binary(8),@r binary(8),@t binary(32),@amount decimal(18,0),@id uniqueidentifier,@p dbo.DanhSachThanhToan; SELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001'; SELECT @r=Rev,@t=Token,@amount=Amount,@id=Request FROM dbo.G04CheckoutFixed; INSERT @p VALUES('PT001',@amount,NULL); EXEC dbo.sp_ThanhToanHoaDon @a,@s,'HD92000403',@r,@id,@t,@p;",
+      "Sql2": "DECLARE @a int,@s binary(8),@r binary(8),@t binary(32),@amount decimal(18,0),@id uniqueidentifier,@p dbo.DanhSachThanhToan; SELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001'; SELECT @r=Rev,@t=Token,@amount=Amount,@id=Request FROM dbo.G04CheckoutFixed; INSERT @p VALUES('PT001',@amount,NULL); EXEC dbo.sp_ThanhToanHoaDon @a,@s,'HD92000403',@r,@id,@t,@p;",
+      "Expected": [
+        0,
+        0
+      ],
+      "Actual": [
+        0,
+        0
+      ],
+      "Exceptions": [],
+      "TransactionStates": [
+        "0:0",
+        "0:0"
+      ],
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K10 same request inventory points once",
+      "Sql": "IF (SELECT COUNT(*) FROM dbo.CHITIET_THANHTOAN WHERE MaHD='HD92000403')<>1 OR (SELECT COUNT(*) FROM dbo.LICHSU_DIEM WHERE MaHD='HD92000403')<>1 OR (SELECT COUNT(*) FROM dbo.G03OperationReceipt WHERE EntityCode='HD92000403' AND Operation='SalesCheckout')<>1 OR EXISTS(SELECT 1 FROM dbo.TIEUHAO_HOADON x JOIN dbo.NGUYENVATLIEU n ON n.MaNVL=x.MaNVL JOIN dbo.G04StockBefore b ON b.MaNVL=n.MaNVL WHERE x.MaHD='HD92000403' AND n.SoLuongTon<>b.SoLuongTon-x.SoLuong) THROW 52990,'Replay duplicated side effects',1;",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T14-K09 same table two sessions",
+      "Sql1": "EXEC dbo.G04New 'HD92000404',N'Tai quan',@table='B009';",
+      "Sql2": "EXEC dbo.G04New 'HD92000405',N'Tai quan',@table='B009';",
+      "Expected": [
+        0,
+        52104
+      ],
+      "Actual": [
+        52104,
+        0
+      ],
+      "Exceptions": [
+        "System.Management.Automation.MethodInvocationException: Exception calling \"EndExecuteNonQuery\" with \"1\" argument(s): \"Bàn đã có đơn. Tải đơn hiện tại trước khi thêm món.\"\r\n ---> System.Data.SqlClient.SqlException (0x80131904): Bàn đã có đơn. Tải đơn hiện tại trước khi thêm món.\r\n   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQuery(IAsyncResult asyncResult)\r\n   at CallSite.Target(Closure, CallSite, Object, Object)\r\nClientConnectionId:5fdaa39f-f929-4f7e-8e62-58d209d1180c\r\nError Number:52104,State:1,Class:16\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at lambda_method226(Closure, Object[], StrongBox`1[], InterpretedFrame)"
+      ],
+      "TransactionStates": [
+        "0:0",
+        "0:0"
+      ],
+      "Status": "PASS"
+    },
+    {
+      "Id": "T14-K09 actual existing order has first line only",
+      "Sql": "IF (SELECT COUNT(*) FROM dbo.HOADON WHERE MaBan='B009' AND TrangThai=N'Chua thanh toan')<>1 OR (SELECT COUNT(*) FROM dbo.CHITIET_HD WHERE MaHD IN('HD92000404','HD92000405'))<>1 THROW 52990,'Table conflict leaked line',1; DECLARE @a int,@s binary(8); SELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001'; EXEC dbo.sp_TableSelectCurrent @a,@s,'B009';",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K13 paid payment UPDATE DELETE blocked",
+      "Sql": "DECLARE @before nvarchar(max),@after nvarchar(max); EXEC dbo.G04State @before OUTPUT;\nEXEC dbo.G04Expect N'UPDATE dbo.CHITIET_THANHTOAN SET SoTien=SoTien+1 WHERE MaHD=''HD92000402'';',51002;\nEXEC dbo.G04Expect N'DELETE dbo.CHITIET_THANHTOAN WHERE MaHD=''HD92000402'';',51002;\nEXEC dbo.G04Expect N'INSERT dbo.CHITIET_THANHTOAN(MaHD,MaPT,SoTien) VALUES(''HD92000402'',''PT001'',1);',51002;\nEXEC dbo.G04State @after OUTPUT; IF @before<>@after THROW 52990,'Paid guard changed state',1;\nEXEC dbo.G04New 'HD92000501';\nEXEC dbo.G04State @before OUTPUT;\nEXEC dbo.G04Expect N'INSERT dbo.CHITIET_THANHTOAN(MaHD,MaPT,SoTien) VALUES(''HD92000501'',''PT001'',25001);',51003;\nEXEC dbo.G04State @after OUTPUT; IF @before<>@after THROW 52990,'Overpayment changed state',1;\nEXEC dbo.G04New 'HD92000502'; EXEC dbo.G04New 'HD92000503';\nINSERT dbo.CHITIET_THANHTOAN(MaHD,MaPT,SoTien) VALUES('HD92000502','PT001',10000),('HD92000503','PT001',10000);\nIF (SELECT SUM(SoTien) FROM dbo.CHITIET_THANHTOAN WHERE MaHD IN('HD92000502','HD92000503'))<>20000 THROW 52990,'Multiorder trigger lost row',1;\nEXEC dbo.G04State @before OUTPUT;\nEXEC dbo.G04Expect N'INSERT dbo.CHITIET_THANHTOAN(MaHD,MaPT,SoTien) VALUES(''HD92000502'',''PT001'',1),(''HD92000402'',''PT001'',1);',51002;\nEXEC dbo.G04State @after OUTPUT; IF @before<>@after THROW 52990,'Mixed paid batch partially committed',1;\nIF @@TRANCOUNT<>0 OR XACT_STATE()<>0 THROW 52990,'Guard transaction leaked',1;\n",
+      "Status": "PASS"
+    }
+  ],
+  "Plans": [
+    "checkout-trigger-1.sqlplan",
+    "checkout-trigger-2.sqlplan",
+    "checkout-trigger-3.sqlplan",
+    "checkout-trigger-4.sqlplan",
+    "checkout-trigger-5.sqlplan",
+    "checkout-trigger-6.sqlplan",
+    "checkout-trigger-7.sqlplan",
+    "checkout-trigger-8.sqlplan",
+    "checkout-trigger-9.sqlplan",
+    "checkout-trigger-10.sqlplan",
+    "checkout-trigger-11.sqlplan",
+    "checkout-trigger-12.sqlplan",
+    "checkout-trigger-13.sqlplan",
+    "checkout-trigger-14.sqlplan",
+    "checkout-trigger-15.sqlplan",
+    "checkout-trigger-16.sqlplan",
+    "checkout-trigger-17.sqlplan",
+    "checkout-trigger-18.sqlplan",
+    "checkout-trigger-19.sqlplan",
+    "checkout-trigger-20.sqlplan",
+    "checkout-trigger-21.sqlplan",
+    "checkout-trigger-22.sqlplan",
+    "checkout-trigger-23.sqlplan",
+    "checkout-trigger-24.sqlplan",
+    "checkout-trigger-25.sqlplan",
+    "checkout-trigger-26.sqlplan",
+    "checkout-trigger-27.sqlplan",
+    "checkout-trigger-28.sqlplan",
+    "checkout-trigger-29.sqlplan",
+    "checkout-trigger-30.sqlplan",
+    "checkout-trigger-31.sqlplan",
+    "checkout-trigger-32.sqlplan",
+    "checkout-trigger-33.sqlplan",
+    "checkout-trigger-34.sqlplan",
+    "checkout-trigger-35.sqlplan",
+    "checkout-trigger-36.sqlplan",
+    "checkout-trigger-37.sqlplan",
+    "checkout-trigger-38.sqlplan",
+    "checkout-trigger-39.sqlplan",
+    "checkout-trigger-40.sqlplan",
+    "checkout-trigger-41.sqlplan",
+    "checkout-trigger-42.sqlplan",
+    "checkout-trigger-43.sqlplan",
+    "checkout-trigger-44.sqlplan",
+    "checkout-trigger-45.sqlplan",
+    "checkout-trigger-46.sqlplan",
+    "checkout-trigger-47.sqlplan",
+    "checkout-trigger-48.sqlplan",
+    "checkout-trigger-49.sqlplan",
+    "checkout-trigger-50.sqlplan",
+    "checkout-trigger-51.sqlplan",
+    "checkout-trigger-52.sqlplan",
+    "checkout-trigger-53.sqlplan",
+    "checkout-trigger-54.sqlplan",
+    "checkout-trigger-55.sqlplan",
+    "checkout-trigger-56.sqlplan",
+    "checkout-trigger-57.sqlplan"
+  ],
+  "Status": "Succeeded"
+}

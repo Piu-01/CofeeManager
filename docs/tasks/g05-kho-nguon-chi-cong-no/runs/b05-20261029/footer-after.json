@@ -1,0 +1,100 @@
+{
+  "Dpi": 120,
+  "Form": {
+    "IsEmpty": false,
+    "Width": 1107,
+    "Height": 671
+  },
+  "Actions": {
+    "IsEmpty": false,
+    "Width": 1059,
+    "Height": 100
+  },
+  "Buttons": [
+    {
+      "Text": "T\u00EDnh t\u1ED5ng",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 8,
+          "Y": 0
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 99,
+          "Height": 50
+        },
+        "X": 8,
+        "Y": 0,
+        "Width": 99,
+        "Height": 50,
+        "Left": 8,
+        "Top": 0,
+        "Right": 107,
+        "Bottom": 50,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "VisibleWidth": 99,
+      "VisibleHeight": 50,
+      "FullyAccessible": true
+    },
+    {
+      "Text": "Ch\u1ED1t nh\u1EADp kho",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 115,
+          "Y": 0
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 131,
+          "Height": 50
+        },
+        "X": 115,
+        "Y": 0,
+        "Width": 131,
+        "Height": 50,
+        "Left": 115,
+        "Top": 0,
+        "Right": 246,
+        "Bottom": 50,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "VisibleWidth": 131,
+      "VisibleHeight": 50,
+      "FullyAccessible": true
+    },
+    {
+      "Text": "Quay l\u1EA1i",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 254,
+          "Y": 0
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 90,
+          "Height": 50
+        },
+        "X": 254,
+        "Y": 0,
+        "Width": 90,
+        "Height": 50,
+        "Left": 254,
+        "Top": 0,
+        "Right": 344,
+        "Bottom": 50,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "VisibleWidth": 90,
+      "VisibleHeight": 50,
+      "FullyAccessible": true
+    }
+  ],
+  "Result": "PASS"
+}

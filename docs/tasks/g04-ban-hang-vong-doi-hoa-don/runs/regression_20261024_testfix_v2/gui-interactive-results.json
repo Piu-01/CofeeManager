@@ -1,0 +1,4333 @@
+{
+  "Scope": "Actual CheckoutDialog keyboard/validation UI with isolated in-memory order; no login/SQL/commit claim",
+  "Pid": 31080,
+  "DeviceDpi": 120,
+  "Samples": [
+    {
+      "Time": "2026-10-24T05:17:18.9337896Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:19.9299616Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:20.9289275Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:21.9282047Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:22.9294489Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:23.9301111Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:24.9279507Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:25.9285471Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:26.9272559Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:27.9265755Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:28.9295205Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:29.927963Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:30.9293046Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:31.927721Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:32.928328Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:33.9274393Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:34.9287606Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:35.9294951Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 0 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "81000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:36.9284919Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 19.000 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "100000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:37.9266827Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 19.000 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "100000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:38.9272335Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 19.000 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "100000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:39.9271318Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 19.000 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "100000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:40.9276954Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 19.000 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "100000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:41.9278139Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 19.000 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "100000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:42.9285688Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 19.000 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "100000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:43.9293818Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 19.000 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "100000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:44.9290174Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 19.000 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "100000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:45.9261041Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 19.000 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "100000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:46.9288036Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 19.000 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "100000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:47.9288951Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 19.000 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "100000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:48.9287009Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 19.000 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "100000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:49.9324993Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 19.000 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "100000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:50.9311987Z",
+      "State": "\u0110\u00E3 ph\u00E2n b\u1ED5 81.000 \u20AB \u00B7 C\u00F2n thi\u1EBFu 0 \u20AB \u00B7 Th\u1ED1i ti\u1EC1n m\u1EB7t 19.000 \u20AB",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "100000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:51.9289557Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:52.9288775Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:53.9297538Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:54.9276183Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:55.9295426Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:56.9279117Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:57.929187Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:58.930166Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:17:59.9271332Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:00.9266445Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:01.9258045Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:02.9266334Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:03.9268072Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:04.9264572Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:05.9404218Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:06.926035Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:07.9442038Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:08.9442621Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:09.9434459Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:10.9437942Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:11.9432539Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:12.9430638Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:13.9428596Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:14.9442278Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:15.9445954Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:16.9431475Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:17.9448403Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:18.942575Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:19.9430045Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:20.942407Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:21.9607204Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:22.9605609Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:23.9583455Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:24.9713079Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:25.9594141Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:26.9611632Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:27.9627081Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:28.9611538Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:29.9617862Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:30.9595507Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:31.9605067Z",
+      "State": "Ti\u1EC1n \u0111\u01B0a ch\u01B0a \u0111\u1EE7 ph\u1EA7n ti\u1EC1n m\u1EB7t.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "80000",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:32.9596209Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:33.9594176Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:34.9595627Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:35.9590735Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:36.9598093Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:37.9606138Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:38.9593039Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:39.9594193Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:40.9587725Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:41.9597639Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:42.9622559Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:43.9591332Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:44.9588825Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:45.9590799Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:46.9599122Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:47.9586626Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:48.9608649Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:49.9592031Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:50.9591781Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:51.9602557Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:52.9594611Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:53.9636517Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:54.9605749Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:55.9601162Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:56.9588262Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:57.9607924Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:58.9593581Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:18:59.9596346Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:00.9600303Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:01.9603186Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:02.9599176Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:03.9628485Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:04.9608963Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:05.9639888Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:06.9592937Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:07.9650464Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:08.9644708Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:09.9604655Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:10.959564Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:11.9610137Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:12.9633666Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:13.9588596Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:14.9610469Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:15.9622405Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:16.9665287Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:17.9602813Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:18.9603849Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:19.9625651Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:20.9628253Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:21.9609722Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:22.9592203Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:23.9592589Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:24.9594781Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:25.9594926Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:26.9595051Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:27.9599133Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:28.9608451Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:29.9604394Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:30.9609914Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:31.9591964Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:32.960136Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:33.9589495Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:34.9579271Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:35.959167Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:36.9600563Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:37.9593354Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:38.9603052Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:39.9594112Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:40.9590285Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:41.9599594Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:42.9599633Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:43.9605036Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:44.9593861Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:45.9661789Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:46.9581747Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:47.9583624Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:48.9592262Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:49.9591826Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:50.9603014Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:51.9602005Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:52.9592251Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:53.9597591Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:54.9606941Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:55.9610528Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:56.9602733Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:57.957701Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:58.9571956Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:19:59.959215Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:00.9612413Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:01.959481Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:02.9598039Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:03.9596797Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:04.9580486Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:05.9598729Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:06.9586142Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:07.9585599Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:08.9592472Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:09.9618957Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:10.975616Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:11.9770404Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:12.9757441Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:13.9756991Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:14.9754859Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:15.9763046Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:16.9749367Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:17.9740385Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:18.9756321Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:19.9752195Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:20.975399Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:21.975059Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:22.9759725Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:23.975556Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:24.9738993Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:25.9738224Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:26.9752097Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:27.9754785Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:28.9734973Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:29.9751619Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:30.9739385Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:31.9758529Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:32.9753015Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:33.9736935Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:34.9737001Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:35.9763063Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:36.9737004Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:37.9751433Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:38.9739963Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:39.9752703Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:40.9727408Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:41.9729555Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:42.9750092Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:43.9769214Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:44.97445Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:45.9733456Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:46.973156Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:47.9742971Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:48.9759262Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:49.9737183Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:50.9737496Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:51.9739196Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:52.9744748Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:53.9728458Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:54.9734363Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:55.9729369Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:56.9743912Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:57.9749848Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:58.9731807Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:20:59.9730133Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:00.9732781Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:01.972624Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:02.972836Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:03.973037Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:04.9730618Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:05.9737108Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:06.9731177Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:07.9731278Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:08.9730825Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:09.9731926Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:10.973687Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:11.9739737Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:12.9734598Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:13.9901191Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:14.9905468Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:15.9893298Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:16.9908825Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:17.9903462Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:18.991333Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:19.9894894Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:20.9909686Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:21.9903686Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:22.9913432Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:23.9955199Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:24.9907205Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:25.9895146Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:26.9911896Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:27.9908291Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:28.9906767Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:29.9900921Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:30.9907069Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:31.9897736Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:32.9893775Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:33.9900181Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:34.9903487Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:35.990087Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:36.990282Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:37.9892771Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:38.9898838Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:39.9893115Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:40.9899705Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:41.9906095Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:42.9890091Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:43.9891126Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:44.9916036Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:45.9899196Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:46.9994498Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:47.989762Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:48.9915344Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:49.9909535Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:50.9893921Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:51.9901633Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:52.9928993Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:53.9890549Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:54.9899392Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:55.9899472Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:56.9896694Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:57.9897418Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:58.9887255Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:21:59.9893341Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:00.9895876Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:01.9884395Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:03.0069359Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:04.0051355Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:05.0064702Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:06.0049526Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:07.0065157Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:08.0057433Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:09.0078293Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:10.0045773Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:11.0048552Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:12.0073788Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:13.0058309Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:14.0052146Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:15.007319Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:16.006092Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:17.0053115Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:18.0045288Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:19.0077689Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:20.0069542Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:21.0046987Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:22.0067134Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:23.0046647Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:24.0040791Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:25.0044093Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:26.0055236Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:27.0071146Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:28.004549Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:29.0062507Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:30.0046547Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:31.0049386Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:32.0052816Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:33.0064138Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:34.0042796Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:35.0064207Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:36.0056727Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:37.0045333Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:38.0067011Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:39.0073087Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:40.0076484Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:41.0049285Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:42.0070476Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:43.0065489Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:44.0054367Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:45.0053841Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:46.0052086Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:47.0068121Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:48.0065724Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:49.0073362Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:50.0051368Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:51.0053857Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:52.0077141Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:53.006576Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:54.0053496Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:55.0068211Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:56.0071427Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:57.0056991Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:58.0053658Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:22:59.0061324Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:00.0062082Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:01.0059603Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:02.0045979Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:03.0056495Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:04.0214742Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:05.0223842Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:06.0220391Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:07.0228995Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:08.0220617Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:09.0224966Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:10.023593Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:11.0225621Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:12.02265Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:13.0221318Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:14.0227324Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:15.0203938Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:16.0242452Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:17.0226076Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:18.0229265Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:19.0218909Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:20.0211383Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:21.0220416Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:22.0200547Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:23.0233624Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:24.0202113Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:25.0226881Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:26.0227997Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:27.0234244Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:28.0199249Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:29.0214592Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:30.0233612Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:31.0238946Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:32.022654Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:33.0227312Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:34.0206833Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:35.0218543Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:36.0214173Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:37.0226484Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:38.0216777Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:39.0215662Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:40.0215116Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:41.0220479Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:42.0223834Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:43.0213412Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:44.0220744Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:45.0220194Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:46.0372345Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:47.0374273Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:48.0368342Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:49.0378838Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:50.0379529Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:51.0377027Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:52.0376583Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:53.037554Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:54.0378873Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:55.0396467Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:56.0547983Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:57.0571824Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:58.0551952Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:23:59.0546648Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:00.0554709Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:01.0550073Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:02.0558136Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:03.0573077Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:04.052916Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:05.0541196Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:06.0538301Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:07.05413Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:08.0566231Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:09.0558368Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:10.054972Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:11.0542504Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:12.0551397Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:13.0563572Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:14.0535622Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:15.0719469Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:16.0705425Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:17.0718348Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:18.085947Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:19.0892113Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:20.0890976Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:21.0892784Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:22.0872558Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:23.08974Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:24.086767Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:25.0886624Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:26.0865999Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:27.0897407Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:28.0876834Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:29.0889795Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:30.085548Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:31.0862085Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:32.0879369Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:33.0881588Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:34.086453Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:35.089433Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:36.0887163Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:37.0892977Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:38.0867863Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:39.0889428Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:40.0889257Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:41.0890657Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:42.0879276Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:43.090149Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:44.08755Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:45.0892104Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:46.0882105Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:47.0892876Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:48.085797Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:49.0870996Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:50.0873992Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:51.0884051Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:52.0846412Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:53.0910536Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:54.08505Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:55.0909542Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:56.0857812Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:57.0886719Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:58.0864801Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:24:59.087625Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:25:00.0867033Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:25:01.0898519Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:25:02.085796Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:25:03.088142Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:25:04.0857857Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:25:05.0889399Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:25:06.0875408Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:25:07.0883797Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:25:08.0870603Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:25:09.0889488Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:25:10.0860827Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:25:11.0865831Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:25:12.0860811Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:25:13.0878345Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:25:14.0868615Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:25:15.088859Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:25:16.0887417Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:25:17.0865079Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    },
+    {
+      "Time": "2026-10-24T05:25:18.0846952Z",
+      "State": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+      "ConfirmEnabled": true,
+      "Busy": false,
+      "Unknown": false,
+      "Tendered": "abc",
+      "Rows": 1
+    }
+  ],
+  "Closed": true,
+  "ElapsedSeconds": 480.3499499,
+  "PrintPages1": 9,
+  "PrintPages2": 18,
+  "PrintCursor": 210,
+  "PrinterJobSent": false
+}

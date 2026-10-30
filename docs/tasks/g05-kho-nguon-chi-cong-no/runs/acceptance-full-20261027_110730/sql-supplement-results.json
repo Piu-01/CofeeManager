@@ -1,0 +1,12 @@
+{
+  "Part": "T19-K01.NativeAdmin",
+  "Result": "PASS",
+  "Actual": [
+    {
+      "Code": "TC20250521",
+      "Employee": "NV991",
+      "Amount": 1234.0,
+      "Origin": "Manual"
+    }
+  ]
+}

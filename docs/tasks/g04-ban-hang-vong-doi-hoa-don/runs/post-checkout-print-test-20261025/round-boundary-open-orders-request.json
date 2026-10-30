@@ -1,0 +1,10 @@
+{
+  "Reason": "New user request: redesign OpenOrdersDialog; current test evidence retained before future product edits",
+  "SourceFiles": 208,
+  "Changed": 0,
+  "PC02": "PASS actual Yes/Cancel HD20250417, UI shows canceled print/new draft, SQL one PT00181000",
+  "PC01": "Pending isolated No branch on HD20250418; user generic combined reply not enough to assign both invoices paid",
+  "PC03": "NOT RUN",
+  "PC04": "NOT RUN",
+  "CurrentProductEdited": false
+}

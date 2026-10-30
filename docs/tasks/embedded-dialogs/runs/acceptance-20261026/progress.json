@@ -1,0 +1,23 @@
+{
+  "SourceFiles": 210,
+  "ChangedSourceFiles": 0,
+  "HostInputChecks": 32,
+  "DialogChecks": 87,
+  "UnitPassed": 18,
+  "UnitFailed": 0,
+  "NativeStatus": "Waiting for user: nested editor and475 checkout No print",
+  "SqlDbCreated": false,
+  "FixtureOrders": [
+    "HD20250475",
+    "HD20250476",
+    "HD20250477",
+    "HD20250478"
+  ],
+  "TemporaryReadActorsRemoved": [
+    "NEA01",
+    "NEC01",
+    "NES01"
+  ],
+  "RetainedFixtureActor": "NEM01 referenced by open test invoices",
+  "ReviewBy": "2026-10-27"
+}

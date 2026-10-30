@@ -1,0 +1,9 @@
+{
+  "SourceFiles": 206,
+  "ChangedProductFiles": 0,
+  "FrozenFooterDllSha256": "E41D1161D811E7487FA9BEE1452F9BB47671E71F8326C767DCEDC7831B76DA62",
+  "ProbeDllSha256": "E41D1161D811E7487FA9BEE1452F9BB47671E71F8326C767DCEDC7831B76DA62",
+  "Mode": "Dark; functional bounds readout and user supplied image; no agent screenshot comparison",
+  "Status": "G04-UI03 investigated; no product fix yet",
+  "SqlWrites": 0
+}

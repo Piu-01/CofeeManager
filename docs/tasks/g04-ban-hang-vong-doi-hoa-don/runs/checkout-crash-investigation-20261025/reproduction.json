@@ -1,0 +1,6 @@
+{
+  "OwnerEnabled": true,
+  "OverlayEnabled": false,
+  "Error": "System.InvalidOperationException: Forms that are not enabled cannot be displayed as a modal dialog box. Set the form\u0027s enabled property to true before calling Show.\r\n   at System.Windows.Forms.Form.Show(IWin32Window owner)\r\n   at CafeManager.WinForms.UI.StarDustOverlay.Burst(Control button) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\UI\\StarDustOverlay.cs:line 42\r\n   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)\r\n   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span\u00601 copyOfArgs, BindingFlags invokeAttr)",
+  "Scope": "Isolated production StarDustOverlay.Burst, no SQL or checkout submission"
+}

@@ -1,0 +1,246 @@
+{
+  "Scope": "Dark mode, real WinForms component at125%; technical bounds/binding only, no visual QA or physical input/SQL checkout",
+  "Results": [
+    {
+      "Name": "DPI125",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Default1150x750/grid",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Default1150x750/tendered",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Default1150x750/state",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Default1150x750/payableValue",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Default1150x750/allocatedValue",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Default1150x750/receivedValue",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Default1150x750/differenceValue",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Default1150x750/confirm",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Default1150x750/back",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Default1150x750/check",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Default1150x750/add",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Default1150x750/remove",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "After method focus/grid",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "After method focus/tendered",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "After method focus/state",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "After method focus/payableValue",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "After method focus/allocatedValue",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "After method focus/receivedValue",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "After method focus/differenceValue",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "After method focus/confirm",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "After method focus/back",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "After method focus/check",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "After method focus/add",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "After method focus/remove",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Themed owner-drawn editor and code/name binding",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Blank method friendly notice",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1280x720/grid",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1280x720/tendered",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1280x720/state",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1280x720/payableValue",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1280x720/allocatedValue",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1280x720/receivedValue",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1280x720/differenceValue",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1280x720/confirm",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1280x720/back",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1280x720/check",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1280x720/add",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1280x720/remove",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1366x768/grid",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1366x768/tendered",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1366x768/state",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1366x768/payableValue",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1366x768/allocatedValue",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1366x768/receivedValue",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1366x768/differenceValue",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1366x768/confirm",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1366x768/back",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1366x768/check",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1366x768/add",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1366x768/remove",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Six rows bounded to three visible rows",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Sixth row reachable through internal grid scrolling",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Multirow notice reachable via viewport scroll",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Multirow footer stays outside scrolling content",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Narrow cash input reachable",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Stacked summary reachable",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Narrow footer reachable",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Short working area notice scrollable",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Short working area footer reachable",
+      "Outcome": "PASS"
+    }
+  ],
+  "Failed": 0
+}

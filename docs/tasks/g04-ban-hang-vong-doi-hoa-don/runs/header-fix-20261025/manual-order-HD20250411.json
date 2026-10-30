@@ -1,0 +1,19 @@
+{
+  "Date": "2026-10-25",
+  "Database": "CoffeeManager_Test_G04_20261024_152759_12204643_manual",
+  "Source": "User screenshot after Apply and agent read-only SQL verification",
+  "Order": "HD20250411",
+  "Channel": "Mang di",
+  "Status": "Chua thanh toan",
+  "Customer": null,
+  "Table": null,
+  "Total": 81000,
+  "Discount": 0,
+  "Ship": 0,
+  "Created": "2026-10-25T13:11:17",
+  "PaidAt": null,
+  "LineCount": 1,
+  "PaymentCount": 0,
+  "Lines": [{"Product": "SP001", "Quantity": 1, "Price": 81000, "Note": "G04 ít đá, không đường."}],
+  "Result": "PASS for manual Mang di first-line creation after G04-UI01 fix; not full T16-K01 acceptance"
+}

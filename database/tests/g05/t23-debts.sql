@@ -1,0 +1,12 @@
+IF DB_NAME() NOT LIKE 'CoffeeManager_Test_G05_%' OR OBJECT_ID('dbo.G05TestMarker') IS NULL THROW 53900,N'Chỉ dùng fixture G05.',1;
+DECLARE @actor int=(SELECT MIN(MaTK) FROM dbo.TAIKHOAN WHERE MaVT='ADMIN' AND HoatDong=1),@stamp binary(8),@id uniqueidentifier=NEWID(),@code varchar(10),@ok bit;
+SELECT @stamp=SecurityStamp FROM dbo.TAIKHOAN WHERE MaTK=@actor;
+IF @actor IS NULL THROW 53900,N'Thiếu actor fixture.',1;
+DECLARE @lines dbo.PurchaseLinesInput;INSERT @lines VALUES('NVL01',1,10000);
+EXEC dbo.sp_LapPhieuNhap @actor,@stamp,@id,'NCC01','20261026',NULL,0,10000,@lines;
+SELECT @code=EntityCode FROM dbo.G03OperationReceipt WHERE RequestId=@id;
+DECLARE @debt char(10)=(SELECT MaCN FROM dbo.CONGNO_NCC WHERE MaPN=@code);
+SET @id=NEWID();EXEC dbo.sp_TraCongNo @actor,@stamp,@id,@debt,'PT001',1000,'20261026';
+EXEC dbo.sp_TraCongNo @actor,@stamp,@id,@debt,'PT001',1000,'20261026';
+SET @ok=CASE WHEN EXISTS(SELECT 1 FROM dbo.vw_CongNoNCC WHERE MaCN=@debt AND DaTra=1000 AND ConNo=9000) AND (SELECT COUNT(*) FROM dbo.THANHTOAN_CONGNO WHERE MaCN=@debt)=1 THEN 1 ELSE 0 END;
+EXEC dbo.sp_G05Assert 'T23-K03.SQL-replay',@ok,N'One1000VND payment, remaining9000; native/parallel/as-of boundaries chưa chạy.';

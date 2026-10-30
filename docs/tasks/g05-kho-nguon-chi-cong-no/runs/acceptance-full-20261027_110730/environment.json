@@ -1,0 +1,11 @@
+{
+  "Database": "CoffeeManager_Test_G05_20261027_110753_fb67dcbb_demo",
+  "Marker": "20261027_110753_fb67dcbb",
+  "SqlVersion": "Microsoft SQL Server 2025 (RTM) - 17.0.1000.7 (X64) \n\tOct 21 2025 12:05:57 \n\tCopyright (C) 2025 Microsoft Corporation\n\tEnterprise Developer Edition (64-bit) on Windows 10 Home Single Language 10.0 <X64> (Build 26200: ) (Hypervisor)\n",
+  "Schema": 21,
+  "Sdk": "10.0.401",
+  "Windows": "Microsoft Windows NT 10.0.26200.0",
+  "GuiFixtureActor": 9001001,
+  "GuiDpi": "NOT VERIFIED; no DPI PASS inferred",
+  "Connection": "localhost Integrated Security; G05Runtime WITHOUT LOGIN/CafeManagerApp for permission subcases"
+}

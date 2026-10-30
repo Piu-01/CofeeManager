@@ -1,0 +1,80 @@
+[
+  {
+    "Part": "T22-K09.CheckoutStocktake.reverse=False",
+    "Codes": [
+      0,
+      0
+    ],
+    "Messages": [
+      "Committed",
+      "Committed"
+    ],
+    "Sessions": [
+      60,
+      61
+    ],
+    "Barrier": 59,
+    "Waits": [
+      {
+        "Session": 60,
+        "Wait": "LCK_M_U",
+        "BlockedBy": 59
+      },
+      {
+        "Session": 61,
+        "Wait": "LCK_M_U",
+        "BlockedBy": 60
+      }
+    ],
+    "BothBlocked": true,
+    "Transaction": [
+      "0:0",
+      "0:0"
+    ],
+    "Actual": {
+      "Stock": 3.0000,
+      "Stocktake": "KK00000008",
+      "Closed": true
+    },
+    "Result": "PASS"
+  },
+  {
+    "Part": "T22-K09.CheckoutStocktake.reverse=True",
+    "Codes": [
+      0,
+      52903
+    ],
+    "Messages": [
+      "Committed",
+      "Exception calling \"GetResult\" with \"0\" argument(s): \"Kho đã thay đổi sau snapshot; lấy số liệu và xác nhận đếm lại.\""
+    ],
+    "Sessions": [
+      61,
+      60
+    ],
+    "Barrier": 59,
+    "Waits": [
+      {
+        "Session": 60,
+        "Wait": "LCK_M_U",
+        "BlockedBy": 61
+      },
+      {
+        "Session": 61,
+        "Wait": "LCK_M_U",
+        "BlockedBy": 59
+      }
+    ],
+    "BothBlocked": true,
+    "Transaction": [
+      "0:0",
+      "0:0"
+    ],
+    "Actual": {
+      "Stock": 4.0000,
+      "Stocktake": "KK00000009",
+      "Closed": false
+    },
+    "Result": "PASS"
+  }
+]

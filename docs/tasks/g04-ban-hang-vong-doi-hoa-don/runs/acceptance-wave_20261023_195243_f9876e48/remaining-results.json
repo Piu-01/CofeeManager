@@ -1,0 +1,513 @@
+{
+  "RunId": "20261023_200846_9b8448ba",
+  "Database": "CoffeeManager_Test_G04_20261023_200846_9b8448ba_demo",
+  "Created": [
+    "CoffeeManager_Test_G04_20261023_200846_9b8448ba_demo"
+  ],
+  "Cleaned": [
+    "CoffeeManager_Test_G04_20261023_200846_9b8448ba_demo"
+  ],
+  "Retained": [],
+  "Cases": [
+    {
+      "Id": "T17 fixture dates channels and pages",
+      "Sql": "EXEC dbo.G04New 'HD97000001'; EXEC dbo.G04New 'HD97000002',@customer='KH001'; EXEC dbo.G04Pay 'HD97000002'; EXEC dbo.G04New 'HD97000003';\nUPDATE dbo.HOADON SET NgayLap='20261023 23:59:59' WHERE MaHD='HD97000001'; UPDATE dbo.HOADON SET NgayLap='20261022 12:00:00',NgayThanhToan='20261023 15:00:00' WHERE MaHD='HD97000002'; UPDATE dbo.HOADON SET NgayLap='20261023 12:00:00' WHERE MaHD='HD97000003';\nDECLARE @i int=1,@code varchar(10); WHILE @i<=51 BEGIN SET @code='HD98'+RIGHT('000000'+CONVERT(varchar,@i),6); EXEC dbo.G04New @code; UPDATE dbo.HOADON SET NgayLap='20261023 12:00:00' WHERE MaHD=@code; SET @i+=1; END;\n",
+      "Status": "FAIL",
+      "Error": "System.Management.Automation.MethodInvocationException: Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Hoa don da TT chi duoc cap nhat trang thai giao hang.\"\r\n ---> System.Data.SqlClient.SqlException (0x80131904): Hoa don da TT chi duoc cap nhat trang thai giao hang.\r\n   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)\r\n   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)\r\n   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()\r\n   at CallSite.Target(Closure, CallSite, Object)\r\nClientConnectionId:e47b9323-7752-4c07-8090-6d1356e39407\r\nError Number:51022,State:1,Class:16\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)"
+    },
+    {
+      "Id": "T17-K02 stored money unchanged after price and promotion edits",
+      "Sql": "DECLARE @before nvarchar(max)=(SELECT TongTien,GiamGia,ThanhTien FROM dbo.HOADON WHERE MaHD='HD97000002' FOR JSON PATH);\nUPDATE dbo.SANPHAM SET GiaBan=30000 WHERE MaSP='SP001'; UPDATE dbo.KHUYENMAI SET PhanTramGiam=50 WHERE MaKM='KM90000001';\nIF @before<>(SELECT TongTien,GiamGia,ThanhTien FROM dbo.HOADON WHERE MaHD='HD97000002' FOR JSON PATH) OR (SELECT GiaBan FROM dbo.CHITIET_HD WHERE MaHD='HD97000002')<>25000 THROW 52990,'Historical money changed',1;\nUPDATE dbo.SANPHAM SET GiaBan=25000 WHERE MaSP='SP001';\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T18-K01 non-delivery access rejected",
+      "Sql": "DECLARE @a int,@s binary(8),@seen bit=0; SELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001';\nBEGIN TRY EXEC dbo.sp_DeliveryGet @a,@s,'HD97000001'; END TRY BEGIN CATCH IF ERROR_NUMBER()<>52501 THROW; SET @seen=1; END CATCH;\nIF @seen=0 THROW 52990,'Non delivery accepted',1;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T18-K02 K03 paid next steps preserve all financial rows",
+      "Sql": "EXEC dbo.G04New 'HD97000004',N'Giao hang'; EXEC dbo.G04Pay 'HD97000004';\nDECLARE @a int,@s binary(8),@r binary(8),@id uniqueidentifier=NEWID(),@seen bit=0; SELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001'; SELECT @r=Revision FROM dbo.HOADON WHERE MaHD='HD97000004';\nBEGIN TRY EXEC dbo.sp_ChuyenTrangThaiGiaoHang @a,@s,'HD97000004',@r,N'Cho giao',N'Da giao',@id; END TRY BEGIN CATCH IF ERROR_NUMBER()<>52502 THROW; SET @seen=1; END CATCH; IF @seen=0 THROW 52990,'Skipped step',1;\nSET @id=NEWID(); EXEC dbo.sp_ChuyenTrangThaiGiaoHang @a,@s,'HD97000004',@r,N'Cho giao',N'Dang giao',@id; SELECT @r=Revision FROM dbo.HOADON WHERE MaHD='HD97000004'; SET @id=NEWID(); EXEC dbo.sp_ChuyenTrangThaiGiaoHang @a,@s,'HD97000004',@r,N'Dang giao',N'Da giao',@id;\nIF (SELECT COUNT(*) FROM dbo.CHITIET_THANHTOAN WHERE MaHD='HD97000004')<>1 THROW 52990,'Delivery duplicated finance',1;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T18-K04 open delivery cancellation no refund paid cancellation refused",
+      "Sql": "EXEC dbo.G04New 'HD97000006',N'Giao hang';\nDECLARE @a int,@s binary(8),@r binary(8),@id uniqueidentifier=NEWID(); SELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001'; SELECT @r=Revision FROM dbo.HOADON WHERE MaHD='HD97000006'; EXEC dbo.sp_HuyHoaDon @a,@s,'HD97000006',@r,@id;\nIF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD='HD97000006' AND TrangThai=N'Huy' AND TrangThaiGiao=N'Huy giao') OR EXISTS(SELECT 1 FROM dbo.TIEUHAO_HOADON WHERE MaHD='HD97000006') THROW 52990,'Cancel delivery',1;\nSELECT @r=Revision FROM dbo.HOADON WHERE MaHD='HD97000004'; SET @id=NEWID(); DECLARE @seen bit=0; BEGIN TRY EXEC dbo.sp_HuyHoaDon @a,@s,'HD97000004',@r,@id; END TRY BEGIN CATCH IF ERROR_NUMBER()<>52102 THROW; SET @seen=1; END CATCH; IF @seen=0 THROW 52990,'Paid canceled',1;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "Investigation points capture actual stored net independently",
+      "Sql": "UPDATE dbo.SANPHAM SET GiaBan=1000 WHERE MaSP='SP001'; EXEC dbo.G04New 'HD97000005',N'Giao hang',@customer='KH001',@ship=15000; EXEC dbo.G04Pay 'HD97000005';\nIF COALESCE((SELECT SUM(SoDiem) FROM dbo.LICHSU_DIEM WHERE MaHD='HD97000005'),0)<>(SELECT FLOOR((TongTien-GiamGia)/1000) FROM dbo.HOADON WHERE MaHD='HD97000005') THROW 52990,'Actual net points defect',1;\nUPDATE dbo.SANPHAM SET GiaBan=25000 WHERE MaSP='SP001';\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T15-K06 insufficient stock rollback all tables",
+      "Sql": "EXEC dbo.G04New 'HD97000007',@customer='KH001';\nUPDATE dbo.NGUYENVATLIEU SET SoLuongTon=0 WHERE MaNVL=(SELECT MIN(MaNVL) FROM dbo.CONGTHUC WHERE MaSP='SP001');\nDECLARE @b nvarchar(max),@e nvarchar(max); EXEC dbo.G04State @b OUTPUT; EXEC dbo.G04Expect N'EXEC dbo.G04Pay ''HD97000007'';',52203; EXEC dbo.G04State @e OUTPUT; IF @b<>@e THROW 52990,'Stock error rollback changed state',1;\n",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T17-K01 created full last day versus paid date",
+      "Sql": "DECLARE @a int,@s binary(8); SELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001'; EXEC dbo.sp_InvoiceList @a,@s,'Created','20261023','20261023',@Search='HD970'; EXEC dbo.sp_InvoiceList @a,@s,'Paid','20261023','20261023',@Search='HD970';",
+      "ExpectedRowCounts": [
+        2,
+        1
+      ],
+      "Tables": [
+        {
+          "Rows": [
+            {
+              "Code": "HD97000001",
+              "Created": "2026-10-23T23:59:59",
+              "Channel": "Mang di",
+              "TableCode": null,
+              "Customer": null,
+              "Payable": 25000.0,
+              "Status": "Chua thanh toan",
+              "Delivery": null,
+              "Revision": "00000000000008DD",
+              "TotalCount": 7
+            },
+            {
+              "Code": "HD97000003",
+              "Created": "2026-10-23T20:08:55",
+              "Channel": "Mang di",
+              "TableCode": null,
+              "Customer": null,
+              "Payable": 25000.0,
+              "Status": "Chua thanh toan",
+              "Delivery": null,
+              "Revision": "00000000000008DC",
+              "TotalCount": 7
+            },
+            {
+              "Code": "HD97000004",
+              "Created": "2026-10-23T20:08:55",
+              "Channel": "Giao hang",
+              "TableCode": null,
+              "Customer": null,
+              "Payable": 25000.0,
+              "Status": "Da thanh toan",
+              "Delivery": "Da giao",
+              "Revision": "00000000000008F1",
+              "TotalCount": 7
+            },
+            {
+              "Code": "HD97000005",
+              "Created": "2026-10-23T20:08:55",
+              "Channel": "Giao hang",
+              "TableCode": null,
+              "Customer": "Nguyen Minh Khoa",
+              "Payable": 15900.0,
+              "Status": "Da thanh toan",
+              "Delivery": "Cho giao",
+              "Revision": "0000000000000901",
+              "TotalCount": 7
+            },
+            {
+              "Code": "HD97000006",
+              "Created": "2026-10-23T20:08:55",
+              "Channel": "Giao hang",
+              "TableCode": null,
+              "Customer": null,
+              "Payable": 25000.0,
+              "Status": "Huy",
+              "Delivery": "Huy giao",
+              "Revision": "00000000000008F8",
+              "TotalCount": 7
+            },
+            {
+              "Code": "HD97000007",
+              "Created": "2026-10-23T20:08:55",
+              "Channel": "Mang di",
+              "TableCode": null,
+              "Customer": "Nguyen Minh Khoa",
+              "Payable": 22500.0,
+              "Status": "Chua thanh toan",
+              "Delivery": null,
+              "Revision": "0000000000000905",
+              "TotalCount": 7
+            },
+            {
+              "Code": "HD97000002",
+              "Created": "2026-10-23T20:08:54",
+              "Channel": "Mang di",
+              "TableCode": null,
+              "Customer": "Nguyen Minh Khoa",
+              "Payable": 22500.0,
+              "Status": "Da thanh toan",
+              "Delivery": null,
+              "Revision": "00000000000008D4",
+              "TotalCount": 7
+            }
+          ],
+          "Count": 7
+        },
+        {
+          "Rows": [
+            {
+              "Code": "HD97000004",
+              "Created": "2026-10-23T20:08:55",
+              "Channel": "Giao hang",
+              "TableCode": null,
+              "Customer": null,
+              "Payable": 25000.0,
+              "Status": "Da thanh toan",
+              "Delivery": "Da giao",
+              "Revision": "00000000000008F1",
+              "TotalCount": 3
+            },
+            {
+              "Code": "HD97000005",
+              "Created": "2026-10-23T20:08:55",
+              "Channel": "Giao hang",
+              "TableCode": null,
+              "Customer": "Nguyen Minh Khoa",
+              "Payable": 15900.0,
+              "Status": "Da thanh toan",
+              "Delivery": "Cho giao",
+              "Revision": "0000000000000901",
+              "TotalCount": 3
+            },
+            {
+              "Code": "HD97000002",
+              "Created": "2026-10-23T20:08:54",
+              "Channel": "Mang di",
+              "TableCode": null,
+              "Customer": "Nguyen Minh Khoa",
+              "Payable": 22500.0,
+              "Status": "Da thanh toan",
+              "Delivery": null,
+              "Revision": "00000000000008D4",
+              "TotalCount": 3
+            }
+          ],
+          "Count": 3
+        }
+      ],
+      "Status": "FAIL",
+      "ActualRowCounts": [
+        7,
+        3
+      ]
+    },
+    {
+      "Id": "T17-K01 status channel customer combined filters",
+      "Sql": "DECLARE @a int,@s binary(8); SELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001'; EXEC dbo.sp_InvoiceList @a,@s,'Created','20261022','20261024',@Status=N'Da thanh toan',@Channel=N'Mang di',@Customer='KH001',@Search='HD970';",
+      "ExpectedRowCounts": [
+        1
+      ],
+      "Tables": [
+        {
+          "Rows": [
+            {
+              "Code": "HD97000002",
+              "Created": "2026-10-23T20:08:54",
+              "Channel": "Mang di",
+              "TableCode": null,
+              "Customer": "Nguyen Minh Khoa",
+              "Payable": 22500.0,
+              "Status": "Da thanh toan",
+              "Delivery": null,
+              "Revision": "00000000000008D4",
+              "TotalCount": 1
+            }
+          ],
+          "Count": 1
+        }
+      ],
+      "Status": "PASS",
+      "ActualRowCounts": [
+        1
+      ]
+    },
+    {
+      "Id": "T17-K01 51 order pagination no duplicate boundary",
+      "Sql": "DECLARE @a int,@s binary(8); SELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001'; EXEC dbo.sp_InvoiceList @a,@s,'Created','20261023','20261023',@Search='HD98',@Skip=0; EXEC dbo.sp_InvoiceList @a,@s,'Created','20261023','20261023',@Search='HD98',@Skip=50;",
+      "ExpectedRowCounts": [
+        50,
+        1
+      ],
+      "Tables": [
+        {
+          "Rows": [],
+          "Count": 0
+        },
+        {
+          "Rows": [],
+          "Count": 0
+        }
+      ],
+      "Status": "FAIL",
+      "ActualRowCounts": [
+        0,
+        0
+      ]
+    },
+    {
+      "Id": "T17-K02 detail stored price and discount after catalog change",
+      "Sql": "DECLARE @a int,@s binary(8); SELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001'; EXEC dbo.sp_InvoiceDetail @a,@s,'HD97000002';",
+      "ExpectedRowCounts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "Tables": [
+        {
+          "Rows": [
+            {
+              "MaHD": "HD97000002",
+              "NgayLap": "2026-10-23T20:08:54",
+              "MaNV": "NV001",
+              "MaKH": "KH001",
+              "MaBan": null,
+              "MaDT": null,
+              "MaKM": null,
+              "LoaiDon": "Mang di",
+              "TenNguoiNhan": null,
+              "SDTNguoiNhan": null,
+              "DiaChiGiao": null,
+              "TrangThaiGiao": null,
+              "NgayThanhToan": "2026-10-23T20:08:54",
+              "PhanTramPhiDoiTac": 0.00,
+              "PhiDoiTac": 0.0,
+              "TongTien": 25000.0,
+              "PhiShip": 0.0,
+              "GiamGia": 2500.0,
+              "Payable": 22500.0,
+              "TrangThai": "Da thanh toan",
+              "Revision": "00000000000008D4",
+              "PreviewValid": true,
+              "PreviewSource": "Tier",
+              "PreviewPercent": 10,
+              "ReadAt": "2026-10-23T20:08:55.1929828"
+            }
+          ],
+          "Count": 1
+        },
+        {
+          "Rows": [
+            {
+              "MaDong": 20,
+              "MaSP": "SP001",
+              "TenSP": "Ca phe den",
+              "SoLuong": 1,
+              "GiaBan": 25000.0,
+              "GhiChu": "Ghi chú tiếng Việt",
+              "Amount": 25000.0
+            }
+          ],
+          "Count": 1
+        },
+        {
+          "Rows": [
+            {
+              "MaTT": 11,
+              "MaPT": "PT001",
+              "TenPT": "Tien mat",
+              "SoTien": 22500.0,
+              "MaThamChieu": null
+            }
+          ],
+          "Count": 1
+        },
+        {
+          "Rows": [
+            {
+              "Kind": "Checkout",
+              "Source": "Tier",
+              "PercentDiscount": 10,
+              "Points": 22,
+              "RecordedAt": "2026-10-23T20:08:54.468009"
+            }
+          ],
+          "Count": 1
+        }
+      ],
+      "Status": "PASS",
+      "ActualRowCounts": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "Id": "T17-K09 missing detail empty sets",
+      "Sql": "DECLARE @a int,@s binary(8); SELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001'; EXEC dbo.sp_InvoiceDetail @a,@s,'HD99999998';",
+      "ExpectedRowCounts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "Tables": [
+        {
+          "Rows": [],
+          "Count": 0
+        },
+        {
+          "Rows": [],
+          "Count": 0
+        },
+        {
+          "Rows": [],
+          "Count": 0
+        },
+        {
+          "Rows": [],
+          "Count": 0
+        }
+      ],
+      "Status": "PASS",
+      "ActualRowCounts": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "Id": "T18-K07 delivery filters by code phone status",
+      "Sql": "DECLARE @a int,@s binary(8); SELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001'; EXEC dbo.sp_DeliveryList @a,@s,@Search='HD97000004',@Delivery=N'Da giao',@Status=N'Da thanh toan'; EXEC dbo.sp_DeliveryList @a,@s,@Search='0901234567',@Delivery=N'Da giao';",
+      "ExpectedRowCounts": [
+        1,
+        1
+      ],
+      "Tables": [
+        {
+          "Rows": [
+            {
+              "Code": "HD97000004",
+              "Created": "2026-10-23T20:08:55",
+              "Recipient": "Khách test",
+              "Phone": "0901234567",
+              "Address": "Địa chỉ test",
+              "Partner": null,
+              "Delivery": "Da giao",
+              "PaymentStatus": "Da thanh toan",
+              "Revision": "00000000000008F1",
+              "TotalCount": 1
+            }
+          ],
+          "Count": 1
+        },
+        {
+          "Rows": [
+            {
+              "Code": "HD97000004",
+              "Created": "2026-10-23T20:08:55",
+              "Recipient": "Khách test",
+              "Phone": "0901234567",
+              "Address": "Địa chỉ test",
+              "Partner": null,
+              "Delivery": "Da giao",
+              "PaymentStatus": "Da thanh toan",
+              "Revision": "00000000000008F1",
+              "TotalCount": 1
+            }
+          ],
+          "Count": 1
+        }
+      ],
+      "Status": "PASS",
+      "ActualRowCounts": [
+        1,
+        1
+      ]
+    },
+    {
+      "Id": "Investigate T15-K08 fixture tier versus expected gross",
+      "Sql": "SELECT k.MaKH,k.MaHang,t.PhanTramGiam,k.DiemTichLuy FROM dbo.KHACHHANG k JOIN dbo.HANGTHANHVIEN t ON t.MaHang=k.MaHang WHERE MaKH='KH001'; SELECT MaHD,TongTien,GiamGia,TongTien-GiamGia Net,COALESCE((SELECT SUM(SoDiem) FROM dbo.LICHSU_DIEM WHERE MaHD=h.MaHD),0) ActualPoints FROM dbo.HOADON h WHERE MaHD='HD97000005';",
+      "ExpectedRowCounts": [
+        1,
+        1
+      ],
+      "Tables": [
+        {
+          "Rows": [
+            {
+              "MaKH": "KH001",
+              "MaHang": "BKIM ",
+              "PhanTramGiam": 10,
+              "DiemTichLuy": 3455
+            }
+          ],
+          "Count": 1
+        },
+        {
+          "Rows": [
+            {
+              "MaHD": "HD97000005",
+              "TongTien": 1000.0,
+              "GiamGia": 100.0,
+              "Net": 900.0,
+              "ActualPoints": 0
+            }
+          ],
+          "Count": 1
+        }
+      ],
+      "Status": "PASS",
+      "ActualRowCounts": [
+        1,
+        1
+      ]
+    },
+    {
+      "Id": "T14-K11 timeout after commit",
+      "Sql": "DECLARE @a int,@s binary(8); SELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001'; DECLARE @id uniqueidentifier='fe47234c-6355-487a-b925-6a9080e1e1f8'; EXEC dbo.sp_TaoHoaDon @Actor=@a,@Stamp=@s,@Code='HD99000001',@RequestId=@id,@Channel=N'Mang di',@Product='SP001',@Quantity=1; WAITFOR DELAY '00:00:03';",
+      "ExpectedError": -2,
+      "Status": "FAIL",
+      "ActualError": null
+    },
+    {
+      "Id": "T14-K11 reconcile committed timed out request",
+      "Sql": "DECLARE @a int,@s binary(8); SELECT @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001'; EXEC dbo.sp_SalesReconcile @a,@s,'fe47234c-6355-487a-b925-6a9080e1e1f8','HD99000001','SalesCreate'; SELECT @@TRANCOUNT TranCount,XACT_STATE() XactState; SELECT COUNT(*) HeaderCount FROM dbo.HOADON WHERE MaHD='HD99000001';",
+      "ExpectedRowCounts": [
+        1,
+        1,
+        1
+      ],
+      "Tables": [
+        {
+          "Rows": [
+            {
+              "EntityCode": "HD99000001",
+              "ResultRevision": "0000000000000910",
+              "Operation": "SalesCreate",
+              "CompletedAt": "2026-10-23T20:08:55.3044977"
+            }
+          ],
+          "Count": 1
+        },
+        {
+          "Rows": [
+            {
+              "TranCount": 0,
+              "XactState": 0
+            }
+          ],
+          "Count": 1
+        },
+        {
+          "Rows": [
+            {
+              "HeaderCount": 1
+            }
+          ],
+          "Count": 1
+        }
+      ],
+      "Status": "PASS",
+      "ActualRowCounts": [
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "Status": "Completed",
+  "Schema": 15,
+  "Kind": "Independent remaining scenarios and observations; prior FAIL retained"
+}

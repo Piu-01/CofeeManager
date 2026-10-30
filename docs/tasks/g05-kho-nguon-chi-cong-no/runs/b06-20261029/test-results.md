@@ -1,0 +1,22 @@
+# Regression G05-B06 —29/10/2026
+
+Người dùng đã duyệt sửa B06 và regression. Thay đúng hai dòng cấu hình grid tại PurchaseEditorDialog và StockIssueEditorDialog: ReadOnly=false, EditMode=EditOnEnter. Mã/tên/đơn vị vẫn readonly theo cột. Không đổi default OrbitDataGridView, helper nhập, nghiệp vụ/SQL/quyền. Source cố định theo source-fixed.csv/source-freeze-check.json, không thay trong regression.
+
+Môi trường: Windows, .NET10, WinForms thật DeviceDpi120 (125%); SQL Server localhost, DB riêng CoffeeManager_Test_G05_20261029_194514_8bfcd1ce_demo, schema001–021. Actor fixture9001001 ADMIN/9001002 STORE/9001003 CASH; mật khẩu ngẫu nhiên lưu DPAPI tạm, không đưa vào bằng chứng. Hình thức SKIPPED theo phân công;100/150% NOT RUN, không đổi Windows Scale.
+
+| Ca/phạm vi | Thao tác, expected và actual | Kết quả/bằng chứng |
+|---|---|---|
+| B06 editor ADMIN/STORE | Mở hai dialog thật qua MainForm/OrbitDialogHost; thêm dòng bằng handler; vào Quantity/Price; editor TextBox mở và chọn hết; EndEdit cập nhật BindingList đúng1/10000 |54/54 component assertion PASS, component-results.json và probe/Program.cs. Bao gồm readonly các cột tham chiếu, STORE khóa trả ngay, preview10000, invalid0/âm/quá precision/giá lẻ bị chặn, AcceptButton=null, unknown khóa body, CASH lookup bị BLL chặn, grid mặc định vẫn readonly |
+| T20-K01/K05/K12, UX-K25 nhánh ADMIN | Đăng nhập thường→Kho→Nhập→thêm NVL12; click lượng mở editor chọn hết; lượng2, giá10000, trả4000; Tính tổng→SQL20000; xác nhận tổng20000/trả4000/nợ16000→Có |PASS nhánh native: PN20250504 tải lại đúng tổng/trả/nợ; native-purchase-editor.txt/preview.txt/confirm.txt/after.txt |
+| T21-K03 nhánh zero | Thêm NVL12, lượng0, Chốt xuất |PASS chặn trước xác nhận, “Lượng xuất phải dương.”; native-issue-zero-validation.txt |
+| T21-K04 nhánh vượt tồn | ADMIN nhập9999, xác nhận xuất; expected rollback, giữ nháp |PASS: “Không đủ nguyên liệu; toàn phiếu chưa chốt.”; giữ lượng9999/lý do. native-issue-overstock.txt; native-overstock-sql.json:11PX,0issue receipt,tồn31 sau nhập |
+| T21-K01/K07/K10 nhánh ADMIN | Sau lỗi, click lượng sửa1→Chốt xuất→Có→reload |PASS: PX20250506,12PX toàn DB; native-issue-confirm.txt/after.txt. Một receipt StockIssueCreate và lượng xuất1 |
+| T21-K01/UX-K24 tương tự bỏ nháp | Mở phiếu mới, thêm NVL12, sửa editor3→Quay lại→Có |PASS: dialog xác nhận có owner rồi về12phiếu; native-issue-discard-confirm.txt/after.txt; đối chiếu SQL cuối không thêm PX hoặc giảm tồn |
+| Đối chiếu transaction/source | So snapshot trước native: PN12→13/PX11→12/chi19→20/nợ11→12/receipt actor0→2; chi4000 Origin PurchaseImmediate liên kết PN; nợ16000; phiếu chốt; tồn NVL1229→30, mọi NVL khác giữ nguyên |PASS native-write-check.json, verify-native.ps1. Request lỗi vượt tồn không tạo receipt/PX; pending payload PurchaseCreate và StockIssueCreate đều đã xóa sau commit (native-pending-check.json) |
+| Unit/SQL subset | Runner Test-G05.ps1 -KeepForGui trên clean/demo riêng, schema001–021, rule unit/replay |22/22 unit PASS,5 SQL subcase PASS; ../acceptance_20261029_194514_8bfcd1ce/manifest.json/unit.log/sql-subcases.json. Không suy đủ55ID hay runtime principal từ component dùng owner connection |
+| Build | Debug/Release sản phẩm |0warning/0error ở product-debug-build.log/release-build.log. Build riêng harness có1warning nullable CS8602, chạy54assertion không lỗi; giữ debug-build.log, không sửa test/source để che kết quả |
+| Native Tab | Thử Tab khi editor lượng3 đang focus |BLOCKED về bằng chứng native: CUA kích hoạt MainForm owner, AX báo focus Lý do trong khi editor vẫn3/chưa commit. Không kết luận lỗi sản phẩm, không đánh PASS Tab/IME từ component BeginEdit. Lưu native-issue-tab.txt; cần kiểm bàn phím trực tiếp trước nghiệm thu đầy đủ G05 |
+| T21 trả hàng/STORE chốt native, toàn bộ busy/session/crash/I/O, stocktake/list/detail | Không có thay đổi source ở các vùng này; component kiểm default grid khóa, SQL subset/22unit giữ contract |NOT RUN đầy đủ native trong lượt B06. Không suy PASS mọi role/loại xuất/luồng từ hai chứng từ ADMIN; các kết quả lịch sử vẫn giữ |
+| Dọn tài nguyên | Đóng GUI17252, xác nhận marker rồi drop đúng DBtest, xóa đúng thư mục DPAPI |PASS resource-audit.json: tạo2/dọn2/còn0, GUI thoát/credential đã xóa; không thao tác development, không xóa pending của tài khoản thật, không commit |
+
+B06 đã sửa và các nhánh regression chính PASS; không phát hiện bug mới. G05 vẫn Đang làm vì chưa đủ các nhánh nghiệm thu gốc, đặc biệt native keyboard/STORE/trả hàng/UX còn thiếu. Không thay325ID hoặc bảng55ID27/10.

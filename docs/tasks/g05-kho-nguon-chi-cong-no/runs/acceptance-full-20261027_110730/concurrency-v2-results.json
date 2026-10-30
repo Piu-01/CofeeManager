@@ -1,0 +1,331 @@
+[
+  {
+    "Part": "T20-K10.TwoOrders.reverse=False",
+    "Codes": [
+      0,
+      0
+    ],
+    "Messages": [
+      "Committed",
+      "Committed"
+    ],
+    "Sessions": [
+      83,
+      85
+    ],
+    "Barrier": 82,
+    "Waits": [
+      {
+        "Session": 83,
+        "Wait": "LCK_M_U",
+        "BlockedBy": 82
+      },
+      {
+        "Session": 85,
+        "Wait": "LCK_M_U",
+        "BlockedBy": 83
+      }
+    ],
+    "BothBlocked": true,
+    "Transaction": [
+      "0:0",
+      "0:0"
+    ],
+    "Actual": {
+      "Before": 5.0000,
+      "After": 8.0000
+    },
+    "Result": "PASS"
+  },
+  {
+    "Part": "T20-K10.TwoOrders.reverse=True",
+    "Codes": [
+      0,
+      0
+    ],
+    "Messages": [
+      "Committed",
+      "Committed"
+    ],
+    "Sessions": [
+      85,
+      83
+    ],
+    "Barrier": 82,
+    "Waits": [
+      {
+        "Session": 83,
+        "Wait": "LCK_M_S",
+        "BlockedBy": 85
+      },
+      {
+        "Session": 85,
+        "Wait": "LCK_M_S",
+        "BlockedBy": 82
+      }
+    ],
+    "BothBlocked": true,
+    "Transaction": [
+      "0:0",
+      "0:0"
+    ],
+    "Actual": {
+      "Before": 8.0000,
+      "After": 11.0000
+    },
+    "Result": "PASS"
+  },
+  {
+    "Part": "T21-K06.TwoIssues.reverse=False",
+    "Codes": [
+      0,
+      52803
+    ],
+    "Messages": [
+      "Committed",
+      "Exception calling \"GetResult\" with \"0\" argument(s): \"Không đủ nguyên liệu; toàn phiếu chưa chốt.\""
+    ],
+    "Sessions": [
+      83,
+      85
+    ],
+    "Barrier": 82,
+    "Waits": [
+      {
+        "Session": 83,
+        "Wait": "LCK_M_U",
+        "BlockedBy": 82
+      },
+      {
+        "Session": 85,
+        "Wait": "LCK_M_U",
+        "BlockedBy": 83
+      }
+    ],
+    "BothBlocked": true,
+    "Transaction": [
+      "0:0",
+      "0:0"
+    ],
+    "Actual": 0.0000,
+    "Result": "PASS"
+  },
+  {
+    "Part": "T21-K06.TwoIssues.reverse=True",
+    "Codes": [
+      0,
+      52803
+    ],
+    "Messages": [
+      "Committed",
+      "Exception calling \"GetResult\" with \"0\" argument(s): \"Không đủ nguyên liệu; toàn phiếu chưa chốt.\""
+    ],
+    "Sessions": [
+      85,
+      83
+    ],
+    "Barrier": 82,
+    "Waits": [
+      {
+        "Session": 83,
+        "Wait": "LCK_M_U",
+        "BlockedBy": 85
+      },
+      {
+        "Session": 85,
+        "Wait": "LCK_M_U",
+        "BlockedBy": 82
+      }
+    ],
+    "BothBlocked": true,
+    "Transaction": [
+      "0:0",
+      "0:0"
+    ],
+    "Actual": 0.0000,
+    "Result": "PASS"
+  },
+  {
+    "Part": "T22-K09.SameKK",
+    "Codes": [
+      0,
+      52902
+    ],
+    "Messages": [
+      "Committed",
+      "Exception calling \"GetResult\" with \"0\" argument(s): \"Chỉ chốt phiếu hôm nay, chưa chốt và đúng revision.\""
+    ],
+    "Sessions": [
+      83,
+      85
+    ],
+    "Barrier": 82,
+    "Waits": [
+      {
+        "Session": 83,
+        "Wait": "LCK_M_RS_U",
+        "BlockedBy": 82
+      },
+      {
+        "Session": 85,
+        "Wait": "LCK_M_RS_U",
+        "BlockedBy": 83
+      }
+    ],
+    "BothBlocked": true,
+    "Transaction": [
+      "0:0",
+      "0:0"
+    ],
+    "Actual": "KK00000006",
+    "Result": "PASS"
+  },
+  {
+    "Part": "T23-K07.LastDebt.reverse=False",
+    "Codes": [
+      0,
+      53003
+    ],
+    "Messages": [
+      "Committed",
+      "Exception calling \"GetResult\" with \"0\" argument(s): \"Số trả vượt còn nợ; tải lại số dư và sửa số tiền.\""
+    ],
+    "Sessions": [
+      85,
+      83
+    ],
+    "Barrier": 82,
+    "Waits": [
+      {
+        "Session": 83,
+        "Wait": "LCK_M_RS_U",
+        "BlockedBy": 85
+      },
+      {
+        "Session": 85,
+        "Wait": "LCK_M_RS_U",
+        "BlockedBy": 82
+      }
+    ],
+    "BothBlocked": true,
+    "Transaction": [
+      "0:0",
+      "0:0"
+    ],
+    "Actual": {
+      "Debt": "CN20250420",
+      "Remaining": 0.0,
+      "Payments": 1
+    },
+    "Result": "PASS"
+  },
+  {
+    "Part": "T23-K07.LastDebt.reverse=True",
+    "Codes": [
+      0,
+      53003
+    ],
+    "Messages": [
+      "Committed",
+      "Exception calling \"GetResult\" with \"0\" argument(s): \"Số trả vượt còn nợ; tải lại số dư và sửa số tiền.\""
+    ],
+    "Sessions": [
+      83,
+      85
+    ],
+    "Barrier": 82,
+    "Waits": [
+      {
+        "Session": 83,
+        "Wait": "LCK_M_RS_U",
+        "BlockedBy": 82
+      },
+      {
+        "Session": 85,
+        "Wait": "LCK_M_RS_U",
+        "BlockedBy": 83
+      }
+    ],
+    "BothBlocked": true,
+    "Transaction": [
+      "0:0",
+      "0:0"
+    ],
+    "Actual": {
+      "Debt": "CN20250421",
+      "Remaining": 0.0,
+      "Payments": 1
+    },
+    "Result": "PASS"
+  },
+  {
+    "Part": "T21-K06.CheckoutIssue.reverse=False",
+    "Codes": [
+      0,
+      52803
+    ],
+    "Messages": [
+      "Committed",
+      "Exception calling \"GetResult\" with \"0\" argument(s): \"Không đủ nguyên liệu; toàn phiếu chưa chốt.\""
+    ],
+    "Sessions": [
+      85,
+      83
+    ],
+    "Barrier": 82,
+    "Waits": [
+      {
+        "Session": 83,
+        "Wait": "LCK_M_U",
+        "BlockedBy": 85
+      },
+      {
+        "Session": 85,
+        "Wait": "LCK_M_U",
+        "BlockedBy": 82
+      }
+    ],
+    "BothBlocked": true,
+    "Transaction": [
+      "0:0",
+      "0:0"
+    ],
+    "Actual": 4.0000,
+    "Result": "PASS"
+  },
+  {
+    "Part": "T21-K06.CheckoutIssue.reverse=True",
+    "Codes": [
+      0,
+      52203
+    ],
+    "Messages": [
+      "Committed",
+      "Exception calling \"GetResult\" with \"0\" argument(s): \"Không đủ nguyên liệu. Đơn vẫn mở; kiểm tra tồn trước khi tiếp tục.\""
+    ],
+    "Sessions": [
+      83,
+      85
+    ],
+    "Barrier": 82,
+    "Waits": [
+      {
+        "Session": 83,
+        "Wait": "LCK_M_U",
+        "BlockedBy": 82
+      },
+      {
+        "Session": 85,
+        "Wait": "LCK_M_U",
+        "BlockedBy": 83
+      }
+    ],
+    "BothBlocked": true,
+    "Transaction": [
+      "0:0",
+      "0:0"
+    ],
+    "Actual": 0.0000,
+    "Result": "PASS"
+  }
+]

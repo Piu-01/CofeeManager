@@ -1,0 +1,29 @@
+[
+  {
+    "Check": "Guard",
+    "Database": "CoffeeManager_Test_G03_20261019_215457_29e552a9_demo",
+    "MarkerMatches": true
+  },
+  {
+    "Check": "RuntimeMarkerSelectPermission",
+    "Value": 0
+  },
+  {
+    "Check": "RuntimeReadMarker",
+    "Success": false,
+    "Number": 229,
+    "Message": "The SELECT permission was denied on the object \u0027G03TestMarker\u0027, database \u0027CoffeeManager_Test_G03_20261019_215457_29e552a9_demo\u0027, schema \u0027dbo\u0027."
+  },
+  {
+    "Check": "RuntimeReadState",
+    "State": "Completed",
+    "HasAdmin": true
+  },
+  {
+    "Check": "RuntimeReadAdminIdentity",
+    "Exists": true,
+    "Role": "ADMIN",
+    "Active": true,
+    "Employed": true
+  }
+]

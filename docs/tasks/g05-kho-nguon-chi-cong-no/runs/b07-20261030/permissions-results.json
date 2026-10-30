@@ -1,0 +1,27 @@
+[
+  {
+    "Id": "CASH.BLL.Finance",
+    "Result": "PASS",
+    "Actual": "51605"
+  },
+  {
+    "Id": "CASH.BLL.Purchases",
+    "Result": "PASS",
+    "Actual": "51605"
+  },
+  {
+    "Id": "CASH.BLL.Issues",
+    "Result": "PASS",
+    "Actual": "51605"
+  },
+  {
+    "Id": "CASH.BLL.Stocktakes",
+    "Result": "PASS",
+    "Actual": "51605"
+  },
+  {
+    "Id": "CASH.BLL.Debts",
+    "Result": "PASS",
+    "Actual": "51605"
+  }
+]

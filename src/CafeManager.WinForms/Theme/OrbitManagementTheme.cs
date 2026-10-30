@@ -60,6 +60,7 @@ public static class OrbitManagementTheme
 
     public static void DialogInput(Control input)
     {
+        OrbitField.ApplyInputBehavior(input);
         input.Font = Body; input.ForeColor = Text;
         input.BackColor = input is TextBoxBase or ComboBox or UpDownBase ? Input : Surface;
         if (input is ComboBox combo) combo.FlatStyle = FlatStyle.Flat;
@@ -113,7 +114,9 @@ public static class OrbitManagementTheme
         switch (name)
         {
             case "plus": graphics.DrawLine(pen, 12, 5, 12, 19); graphics.DrawLine(pen, 5, 12, 19, 12); break;
+            case "check": graphics.DrawLines(pen, [new PointF(5, 12), new(10, 17), new(20, 7)]); break;
             case "search": graphics.DrawEllipse(pen, 3, 3, 13, 13); graphics.DrawLine(pen, 15, 15, 21, 21); break;
+            case "printer": graphics.DrawRectangle(pen, 7, 3, 10, 5); graphics.DrawLines(pen, [new PointF(7, 17), new(3, 17), new(3, 8), new(21, 8), new(21, 17), new(17, 17)]); graphics.DrawRectangle(pen, 7, 13, 10, 8); graphics.DrawLine(pen, 17, 11, 18, 11); break;
             case "left": graphics.DrawLines(pen, [new PointF(15, 6), new(9, 12), new(15, 18)]); break;
             case "right": graphics.DrawLines(pen, [new PointF(9, 6), new(15, 12), new(9, 18)]); break;
             case "down": graphics.DrawLines(pen, [new PointF(7, 10), new(12, 15), new(17, 10)]); break;

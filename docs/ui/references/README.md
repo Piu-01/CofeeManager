@@ -1,5 +1,15 @@
 # Ảnh và video đối chiếu
 
+## Bổ sung trang danh sách26/10/2026
+
+Mẫu người dùng: [Lịch sử hóa đơn V4 PNG](../invoice-history-v4/Orbit_LichSuHoaDon_V4_Laptop.png)
+và [HTML](../invoice-history-v4/Orbit_LichSuHoaDon_V4.html), nguồn/hash trong
+manifest cùng thư mục. Mẫu bổ sung chuẩn search hết hàng, filter hàng dưới,
+action/bảng/footer tại [guide mục11](../HuongDan_UI_Orbit_Cafe.md#11-chuẩn-trang-danh-sách-dùng-chung--26102026).
+Khách hàng là tham chiếu app cho bảng giãn hết vùng nội dung; không kế thừa lỗi
+bảng nửa trang từ màn code sau. Đây là nguồn thiết kế, không ảnh nghiệm thu
+WinForms. Hình thức V4 và màn khác vẫn do người dùng xác nhận riêng.
+
 Nguồn: `../reference.html` trong cùng gói. Capture trên Chromium153, Linux/headless, viewport1366×768 hoặc1280×720, deviceScaleFactor1. Font dùng fallback hệ thống khi Segoe UI không có; ảnh không phải screenshot WinForms/Windows.
 
 ## Ảnh

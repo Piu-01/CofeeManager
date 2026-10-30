@@ -1,0 +1,25 @@
+IF DB_NAME() NOT LIKE 'CoffeeManager_Test_G04_%' OR OBJECT_ID('dbo.G04TestMarker') IS NULL THROW 52207,'Owned test database required',1;
+DECLARE @actor int,@stamp binary(8),@id uniqueidentifier=NEWID(),@code varchar(10),@rev binary(8),@token binary(32),@amount decimal(18,0),@balance int;
+SELECT @actor=MaTK,@stamp=SecurityStamp FROM dbo.TAIKHOAN WHERE MaNV='NV001'; SELECT @balance=DiemTichLuy FROM dbo.KHACHHANG WHERE MaKH='KH001';
+DECLARE @codes TABLE(Loai varchar(20),Ma char(10)); INSERT @codes EXEC dbo.sp_CapMa 'HOADON'; SELECT @code=Ma FROM @codes;
+EXEC dbo.sp_TaoHoaDon @Actor=@actor,@Stamp=@stamp,@Code=@code,@RequestId=@id,@Channel=N'Mang di',@Customer='KH001',@Product='SP001',@Quantity=2;
+SELECT @rev=Revision FROM dbo.HOADON WHERE MaHD=@code;
+DECLARE @preview TABLE(Code char(10),Revision binary(8),Total decimal(18,0),Ship decimal(18,0),Discount decimal(18,0),Payable decimal(38,0),Source varchar(20),PercentDiscount int,PartnerPercent decimal(5,2),PartnerFee decimal(18,0),Points bigint,PreviewToken binary(32));
+INSERT @preview EXEC dbo.sp_SalesCheckoutPreview @actor,@stamp,@code,@rev;
+SELECT @token=PreviewToken,@amount=Payable FROM @preview;
+DECLARE @payments dbo.DanhSachThanhToan;
+INSERT @payments VALUES('PT010',@amount,NULL);
+BEGIN TRY
+ SET @id=NEWID(); EXEC dbo.sp_ThanhToanHoaDon @actor,@stamp,@code,@rev,@id,@token,@payments;
+ THROW 52902,'T15-K03 PT010 accepted',1;
+END TRY BEGIN CATCH IF ERROR_NUMBER()<>52202 THROW; END CATCH;
+IF EXISTS(SELECT 1 FROM dbo.TIEUHAO_HOADON WHERE MaHD=@code) OR EXISTS(SELECT 1 FROM dbo.CHITIET_THANHTOAN WHERE MaHD=@code) THROW 52902,'Rejected payment leaked rows',1;
+DELETE @payments; INSERT @payments VALUES('PT001',10000,N'a'),('PT001',@amount-10000,N'b'); SET @id=NEWID();
+EXEC dbo.sp_ThanhToanHoaDon @actor,@stamp,@code,@rev,@id,@token,@payments;
+DECLARE @net decimal(18,0)=(SELECT TongTien-GiamGia FROM dbo.HOADON WHERE MaHD=@code),@afterStock nvarchar(max)=(SELECT MaNVL,SoLuongTon FROM dbo.NGUYENVATLIEU ORDER BY MaNVL FOR JSON PATH);
+IF (SELECT COUNT(*) FROM dbo.CHITIET_THANHTOAN WHERE MaHD=@code)<>2 OR (SELECT SUM(SoTien) FROM dbo.CHITIET_THANHTOAN WHERE MaHD=@code)<>@amount THROW 52902,'T15-K01 repeated methods mismatch',1;
+IF (SELECT DiemTichLuy FROM dbo.KHACHHANG WHERE MaKH='KH001')<>@balance+CONVERT(int,FLOOR(@net/1000)) THROW 52902,'T15-K08 points mismatch',1;
+EXEC dbo.sp_ThanhToanHoaDon @actor,@stamp,@code,@rev,@id,@token,@payments;
+IF @afterStock<>(SELECT MaNVL,SoLuongTon FROM dbo.NGUYENVATLIEU ORDER BY MaNVL FOR JSON PATH) OR (SELECT COUNT(*) FROM dbo.LICHSU_DIEM WHERE MaHD=@code)<>1 THROW 52902,'Replay duplicated inventory/points',1;
+IF NOT EXISTS(SELECT 1 FROM dbo.HoaDonUuDaiSnapshot WHERE MaHD=@code AND Kind='Checkout') THROW 52902,'T15 snapshot missing',1;
+IF @@TRANCOUNT<>0 OR XACT_STATE()<>0 THROW 52902,'Transaction not clean',1;

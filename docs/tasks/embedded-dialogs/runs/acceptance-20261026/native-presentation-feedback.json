@@ -1,0 +1,9 @@
+{
+  "UserConfirmed": "Background cannot be clicked",
+  "UserRejected": "Current custom floating-frame presentation is not intended child form",
+  "Clarification": "Owned native dialog vs movable/resizable child within MainForm",
+  "Checkout475": "Not confirmed by user",
+  "SourceFiles": 210,
+  "ChangedSourceFiles": 0,
+  "ProductModified": false
+}

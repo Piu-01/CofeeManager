@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="f685b3aa-b16f-45df-89fa-cb928826e099" name="Lenovo@LAPTOP-79UNRIRC 2026-10-26 11:45:40" runUser="LAPTOP-79UNRIRC\Lenovo" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-26T11:45:40.9078744+07:00" queuing="2026-10-26T11:45:40.9078748+07:00" start="2026-10-26T11:45:39.2897528+07:00" finish="2026-10-26T11:45:40.9587811+07:00" />
+  <TestSettings name="default" id="b022b643-eece-455e-a198-44dcde4e9b38">
+    <Deployment runDeploymentRoot="Lenovo_LAPTOP-79UNRIRC_2026-10-26_11_45_40" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="283e1fbb-582e-4603-bbc6-a4ae44833ed5" testId="9163e8bb-18fd-5b8a-e012-38eb40ef8811" testName="CafeManager.Tests.Sales.SalesRulesTests.TakeawayCannotCarryDeliveryCharges" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0105986" startTime="2026-10-26T11:45:40.7838741+07:00" endTime="2026-10-26T11:45:40.8120743+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="283e1fbb-582e-4603-bbc6-a4ae44833ed5" />
+    <UnitTestResult executionId="0782f32e-42ab-4822-9371-6d701724530b" testId="e14231dd-585b-82cb-1971-0f3f97f32fd4" testName="CafeManager.Tests.Sales.SalesRulesTests.DeliveryPreservesPhoneAndNormalizesOptionalCustomer" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0008976" startTime="2026-10-26T11:45:40.8690117+07:00" endTime="2026-10-26T11:45:40.8690430+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0782f32e-42ab-4822-9371-6d701724530b" />
+    <UnitTestResult executionId="82b1ca20-9a5d-4583-84ce-a82207f317b1" testId="72e54e0d-e4a1-3bfc-6520-91596fd08491" testName="CafeManager.Tests.Sales.CheckoutRulesTests.ChangeOnlyUsesCashPortion(cash: 81000, tendered: 100000, expected: 19000)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0000151" startTime="2026-10-26T11:45:40.8681401+07:00" endTime="2026-10-26T11:45:40.8686541+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="82b1ca20-9a5d-4583-84ce-a82207f317b1" />
+    <UnitTestResult executionId="66986197-ed58-4274-83d8-088efc03ed10" testId="40609c11-dd1b-cc01-3224-10cf5ac5d1af" testName="CafeManager.Tests.Sales.CheckoutRulesTests.PointsCannotBeUsedAsPayment" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0023480" startTime="2026-10-26T11:45:40.8687935+07:00" endTime="2026-10-26T11:45:40.8698868+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="66986197-ed58-4274-83d8-088efc03ed10" />
+    <UnitTestResult executionId="536373ae-4a69-41d9-b4ae-63ec625fe65b" testId="eef4807b-f310-33e3-c9c9-1782219d69f4" testName="CafeManager.Tests.Sales.CheckoutRulesTests.ChangeOnlyUsesCashPortion(cash: 30000, tendered: 100000, expected: 70000)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0130228" startTime="2026-10-26T11:45:40.7815718+07:00" endTime="2026-10-26T11:45:40.8245895+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="536373ae-4a69-41d9-b4ae-63ec625fe65b" />
+    <UnitTestResult executionId="b1417247-0d5b-4561-839a-5446a2817d1e" testId="aa9f6b3a-056b-badc-df7d-8aa27df17142" testName="CafeManager.Tests.Sales.DeliveryTransitionTests.StoreCannotOperateSales" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0004255" startTime="2026-10-26T11:45:40.8267702+07:00" endTime="2026-10-26T11:45:40.8684921+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b1417247-0d5b-4561-839a-5446a2817d1e" />
+    <UnitTestResult executionId="289454c3-43db-469f-ba60-29b322d37a1e" testId="166b0a5d-b2af-86e3-dd68-a10e24380603" testName="CafeManager.Tests.Sales.SalesRulesTests.RejectsInvalidTableByChannel(channel: &quot;Giao hang&quot;, table: &quot;B0001&quot;)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0005192" startTime="2026-10-26T11:45:40.8264004+07:00" endTime="2026-10-26T11:45:40.8681876+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="289454c3-43db-469f-ba60-29b322d37a1e" />
+    <UnitTestResult executionId="a711e464-d33a-417c-82f1-6efc86fb430d" testId="ba18547f-805c-8a35-1adf-5a5087b1cea9" testName="CafeManager.Tests.Sales.DeliveryTransitionTests.OnlyOffersOneForwardStep(current: &quot;Huy giao&quot;, next: null)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0000017" startTime="2026-10-26T11:45:40.8266357+07:00" endTime="2026-10-26T11:45:40.8266666+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a711e464-d33a-417c-82f1-6efc86fb430d" />
+    <UnitTestResult executionId="3bba7241-5e70-4878-817d-853e18c5344e" testId="32b46e50-bc89-6447-af39-96f8e728fd29" testName="CafeManager.Tests.Sales.DeliveryTransitionTests.OnlyOffersOneForwardStep(current: &quot;Da giao&quot;, next: null)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0090446" startTime="2026-10-26T11:45:40.7838210+07:00" endTime="2026-10-26T11:45:40.8048946+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3bba7241-5e70-4878-817d-853e18c5344e" />
+    <UnitTestResult executionId="3910e272-92b5-4c2f-8771-5a50a4e28ee7" testId="11008ffa-970e-4c0d-410f-3d28de90b290" testName="CafeManager.Tests.Sales.CheckoutRulesTests.ZeroBillAllowsEmptyAllocations" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0027077" startTime="2026-10-26T11:45:40.8720115+07:00" endTime="2026-10-26T11:45:40.8727620+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3910e272-92b5-4c2f-8771-5a50a4e28ee7" />
+    <UnitTestResult executionId="8ea28ffb-ddff-4c79-9d66-e836c92a94ee" testId="9f46ae32-9943-df0e-0811-142861ede66c" testName="CafeManager.Tests.Sales.CheckoutRulesTests.RepeatedMethodsArePreserved" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0035403" startTime="2026-10-26T11:45:40.8729009+07:00" endTime="2026-10-26T11:45:40.8729379+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8ea28ffb-ddff-4c79-9d66-e836c92a94ee" />
+    <UnitTestResult executionId="16753fd4-1971-4d8e-8b28-9b5d33de39a0" testId="1c625b79-fdc2-73d1-a765-b670970b2f40" testName="CafeManager.Tests.Sales.DeliveryTransitionTests.OnlyOffersOneForwardStep(current: &quot;Dang giao&quot;, next: &quot;Da giao&quot;)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0006819" startTime="2026-10-26T11:45:40.8244466+07:00" endTime="2026-10-26T11:45:40.8264183+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="16753fd4-1971-4d8e-8b28-9b5d33de39a0" />
+    <UnitTestResult executionId="6ff3867f-ceef-4100-9c5f-3520fa4ab279" testId="eb81508f-59f8-0968-c203-241b5bbdfa7f" testName="CafeManager.Tests.Sales.DeliveryTransitionTests.OnlyOffersOneForwardStep(current: &quot;Cho giao&quot;, next: &quot;Dang giao&quot;)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0000136" startTime="2026-10-26T11:45:40.8265440+07:00" endTime="2026-10-26T11:45:40.8265768+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6ff3867f-ceef-4100-9c5f-3520fa4ab279" />
+    <UnitTestResult executionId="6cb2fd02-ce21-4bac-a46d-4887898d22ba" testId="654a358d-b145-4a55-fb9c-9167cdf7bf21" testName="CafeManager.Tests.Sales.CheckoutRulesTests.InsufficientTenderIsRejected" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0002150" startTime="2026-10-26T11:45:40.8701274+07:00" endTime="2026-10-26T11:45:40.8701590+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6cb2fd02-ce21-4bac-a46d-4887898d22ba" />
+    <UnitTestResult executionId="53e63ce5-2555-4775-ab28-35579303f23f" testId="4a2c9367-02ca-8b8f-a4a0-4b2c7f9e58d1" testName="CafeManager.Tests.Sales.CheckoutRulesTests.ChangeOnlyUsesCashPortion(cash: 0, tendered: 0, expected: 0)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0005601" startTime="2026-10-26T11:45:40.8248642+07:00" endTime="2026-10-26T11:45:40.8268044+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="53e63ce5-2555-4775-ab28-35579303f23f" />
+    <UnitTestResult executionId="8833c0b3-2b83-474e-8a22-d4c50fa03e21" testId="e8c7fdad-3138-f2cf-1c1c-66fce0b9fb06" testName="CafeManager.Tests.Sales.SalesRulesTests.RejectsInvalidTableByChannel(channel: &quot;Tai quan&quot;, table: null)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0003578" startTime="2026-10-26T11:45:40.8687238+07:00" endTime="2026-10-26T11:45:40.8688251+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8833c0b3-2b83-474e-8a22-d4c50fa03e21" />
+    <UnitTestResult executionId="37af7696-f8eb-45eb-843f-c5618c2a7c9b" testId="6ffc26e6-c9f4-227c-0284-d2a94bdc8728" testName="CafeManager.Tests.Sales.CheckoutRulesTests.FractionalMoneyCannotBeRoundedIntoAnAllocation" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0002950" startTime="2026-10-26T11:45:40.8700147+07:00" endTime="2026-10-26T11:45:40.8700530+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="37af7696-f8eb-45eb-843f-c5618c2a7c9b" />
+    <UnitTestResult executionId="a901f752-d068-4603-a7ab-7af2e52644a8" testId="00cc9fad-9d82-7a2e-cabc-bf77ee8b048e" testName="CafeManager.Tests.Sales.SalesRulesTests.RejectsInvalidTableByChannel(channel: &quot;Mang di&quot;, table: &quot;B0001&quot;)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0000365" startTime="2026-10-26T11:45:40.8688771+07:00" endTime="2026-10-26T11:45:40.8689058+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a901f752-d068-4603-a7ab-7af2e52644a8" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="CafeManager.Tests.Sales.CheckoutRulesTests.ChangeOnlyUsesCashPortion(cash: 30000, tendered: 100000, expected: 70000)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="eef4807b-f310-33e3-c9c9-1782219d69f4">
+      <Execution id="536373ae-4a69-41d9-b4ae-63ec625fe65b" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Sales.CheckoutRulesTests" name="ChangeOnlyUsesCashPortion" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Sales.SalesRulesTests.TakeawayCannotCarryDeliveryCharges" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="9163e8bb-18fd-5b8a-e012-38eb40ef8811">
+      <Execution id="283e1fbb-582e-4603-bbc6-a4ae44833ed5" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Sales.SalesRulesTests" name="TakeawayCannotCarryDeliveryCharges" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Sales.CheckoutRulesTests.FractionalMoneyCannotBeRoundedIntoAnAllocation" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="6ffc26e6-c9f4-227c-0284-d2a94bdc8728">
+      <Execution id="37af7696-f8eb-45eb-843f-c5618c2a7c9b" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Sales.CheckoutRulesTests" name="FractionalMoneyCannotBeRoundedIntoAnAllocation" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Sales.DeliveryTransitionTests.OnlyOffersOneForwardStep(current: &quot;Dang giao&quot;, next: &quot;Da giao&quot;)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="1c625b79-fdc2-73d1-a765-b670970b2f40">
+      <Execution id="16753fd4-1971-4d8e-8b28-9b5d33de39a0" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Sales.DeliveryTransitionTests" name="OnlyOffersOneForwardStep" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Sales.CheckoutRulesTests.RepeatedMethodsArePreserved" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="9f46ae32-9943-df0e-0811-142861ede66c">
+      <Execution id="8ea28ffb-ddff-4c79-9d66-e836c92a94ee" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Sales.CheckoutRulesTests" name="RepeatedMethodsArePreserved" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Sales.DeliveryTransitionTests.OnlyOffersOneForwardStep(current: &quot;Da giao&quot;, next: null)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="32b46e50-bc89-6447-af39-96f8e728fd29">
+      <Execution id="3bba7241-5e70-4878-817d-853e18c5344e" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Sales.DeliveryTransitionTests" name="OnlyOffersOneForwardStep" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Sales.SalesRulesTests.RejectsInvalidTableByChannel(channel: &quot;Giao hang&quot;, table: &quot;B0001&quot;)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="166b0a5d-b2af-86e3-dd68-a10e24380603">
+      <Execution id="289454c3-43db-469f-ba60-29b322d37a1e" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Sales.SalesRulesTests" name="RejectsInvalidTableByChannel" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Sales.CheckoutRulesTests.PointsCannotBeUsedAsPayment" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="40609c11-dd1b-cc01-3224-10cf5ac5d1af">
+      <Execution id="66986197-ed58-4274-83d8-088efc03ed10" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Sales.CheckoutRulesTests" name="PointsCannotBeUsedAsPayment" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Sales.SalesRulesTests.RejectsInvalidTableByChannel(channel: &quot;Mang di&quot;, table: &quot;B0001&quot;)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="00cc9fad-9d82-7a2e-cabc-bf77ee8b048e">
+      <Execution id="a901f752-d068-4603-a7ab-7af2e52644a8" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Sales.SalesRulesTests" name="RejectsInvalidTableByChannel" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Sales.CheckoutRulesTests.ZeroBillAllowsEmptyAllocations" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="11008ffa-970e-4c0d-410f-3d28de90b290">
+      <Execution id="3910e272-92b5-4c2f-8771-5a50a4e28ee7" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Sales.CheckoutRulesTests" name="ZeroBillAllowsEmptyAllocations" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Sales.CheckoutRulesTests.InsufficientTenderIsRejected" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="654a358d-b145-4a55-fb9c-9167cdf7bf21">
+      <Execution id="6cb2fd02-ce21-4bac-a46d-4887898d22ba" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Sales.CheckoutRulesTests" name="InsufficientTenderIsRejected" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Sales.CheckoutRulesTests.ChangeOnlyUsesCashPortion(cash: 0, tendered: 0, expected: 0)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="4a2c9367-02ca-8b8f-a4a0-4b2c7f9e58d1">
+      <Execution id="53e63ce5-2555-4775-ab28-35579303f23f" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Sales.CheckoutRulesTests" name="ChangeOnlyUsesCashPortion" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Sales.DeliveryTransitionTests.OnlyOffersOneForwardStep(current: &quot;Huy giao&quot;, next: null)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="ba18547f-805c-8a35-1adf-5a5087b1cea9">
+      <Execution id="a711e464-d33a-417c-82f1-6efc86fb430d" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Sales.DeliveryTransitionTests" name="OnlyOffersOneForwardStep" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Sales.DeliveryTransitionTests.StoreCannotOperateSales" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="aa9f6b3a-056b-badc-df7d-8aa27df17142">
+      <Execution id="b1417247-0d5b-4561-839a-5446a2817d1e" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Sales.DeliveryTransitionTests" name="StoreCannotOperateSales" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Sales.SalesRulesTests.RejectsInvalidTableByChannel(channel: &quot;Tai quan&quot;, table: null)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="e8c7fdad-3138-f2cf-1c1c-66fce0b9fb06">
+      <Execution id="8833c0b3-2b83-474e-8a22-d4c50fa03e21" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Sales.SalesRulesTests" name="RejectsInvalidTableByChannel" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Sales.CheckoutRulesTests.ChangeOnlyUsesCashPortion(cash: 81000, tendered: 100000, expected: 19000)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="72e54e0d-e4a1-3bfc-6520-91596fd08491">
+      <Execution id="82b1ca20-9a5d-4583-84ce-a82207f317b1" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Sales.CheckoutRulesTests" name="ChangeOnlyUsesCashPortion" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Sales.DeliveryTransitionTests.OnlyOffersOneForwardStep(current: &quot;Cho giao&quot;, next: &quot;Dang giao&quot;)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="eb81508f-59f8-0968-c203-241b5bbdfa7f">
+      <Execution id="6ff3867f-ceef-4100-9c5f-3520fa4ab279" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Sales.DeliveryTransitionTests" name="OnlyOffersOneForwardStep" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Sales.SalesRulesTests.DeliveryPreservesPhoneAndNormalizesOptionalCustomer" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="e14231dd-585b-82cb-1971-0f3f97f32fd4">
+      <Execution id="0782f32e-42ab-4822-9371-6d701724530b" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Sales.SalesRulesTests" name="DeliveryPreservesPhoneAndNormalizesOptionalCustomer" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="9163e8bb-18fd-5b8a-e012-38eb40ef8811" executionId="283e1fbb-582e-4603-bbc6-a4ae44833ed5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e14231dd-585b-82cb-1971-0f3f97f32fd4" executionId="0782f32e-42ab-4822-9371-6d701724530b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="72e54e0d-e4a1-3bfc-6520-91596fd08491" executionId="82b1ca20-9a5d-4583-84ce-a82207f317b1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="40609c11-dd1b-cc01-3224-10cf5ac5d1af" executionId="66986197-ed58-4274-83d8-088efc03ed10" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="eef4807b-f310-33e3-c9c9-1782219d69f4" executionId="536373ae-4a69-41d9-b4ae-63ec625fe65b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="aa9f6b3a-056b-badc-df7d-8aa27df17142" executionId="b1417247-0d5b-4561-839a-5446a2817d1e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="166b0a5d-b2af-86e3-dd68-a10e24380603" executionId="289454c3-43db-469f-ba60-29b322d37a1e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ba18547f-805c-8a35-1adf-5a5087b1cea9" executionId="a711e464-d33a-417c-82f1-6efc86fb430d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="32b46e50-bc89-6447-af39-96f8e728fd29" executionId="3bba7241-5e70-4878-817d-853e18c5344e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="11008ffa-970e-4c0d-410f-3d28de90b290" executionId="3910e272-92b5-4c2f-8771-5a50a4e28ee7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9f46ae32-9943-df0e-0811-142861ede66c" executionId="8ea28ffb-ddff-4c79-9d66-e836c92a94ee" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1c625b79-fdc2-73d1-a765-b670970b2f40" executionId="16753fd4-1971-4d8e-8b28-9b5d33de39a0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="eb81508f-59f8-0968-c203-241b5bbdfa7f" executionId="6ff3867f-ceef-4100-9c5f-3520fa4ab279" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="654a358d-b145-4a55-fb9c-9167cdf7bf21" executionId="6cb2fd02-ce21-4bac-a46d-4887898d22ba" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4a2c9367-02ca-8b8f-a4a0-4b2c7f9e58d1" executionId="53e63ce5-2555-4775-ab28-35579303f23f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e8c7fdad-3138-f2cf-1c1c-66fce0b9fb06" executionId="8833c0b3-2b83-474e-8a22-d4c50fa03e21" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6ffc26e6-c9f4-227c-0284-d2a94bdc8728" executionId="37af7696-f8eb-45eb-843f-c5618c2a7c9b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="00cc9fad-9d82-7a2e-cabc-bf77ee8b048e" executionId="a901f752-d068-4603-a7ab-7af2e52644a8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="18" executed="18" passed="18" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.13)&#xD;
+[xUnit.net 00:00:00.57]   Discovering: CafeManager.Tests&#xD;
+[xUnit.net 00:00:00.80]   Discovered:  CafeManager.Tests&#xD;
+[xUnit.net 00:00:00.85]   Starting:    CafeManager.Tests&#xD;
+[xUnit.net 00:00:00.99]   Finished:    CafeManager.Tests&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

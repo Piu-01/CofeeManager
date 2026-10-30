@@ -8,7 +8,7 @@ using CafeManager.WinForms.UI;
 
 namespace CafeManager.WinForms.Forms;
 
-public partial class CatalogEditorDialog : Form, IUnsavedChanges
+public partial class CatalogEditorDialog : CafeManager.WinForms.Forms.OrbitDialogForm, IUnsavedChanges
 {
     private readonly CatalogService? service;
     private readonly SessionContext? session;
@@ -88,6 +88,7 @@ public partial class CatalogEditorDialog : Form, IUnsavedChanges
     };
     private void Busy(bool value)
     {
+        if (IsDisposed) return;
         writing = value; fields.Enabled = !value && unknown is null;
         saveButton.Enabled = !value && unknown is null; reloadButton.Enabled = !value; cancelButton.Enabled = !value && unknown is null;
     }
@@ -101,11 +102,13 @@ public partial class CatalogEditorDialog : Form, IUnsavedChanges
         try
         {
             await service.SaveAsync(session, request, original?.Revision);
-            saved = true; writing = false; DialogResult = DialogResult.OK;
+            if (IsDisposed) return;
+            saved = true; writing = false; DialogResult = DialogResult.OK; Close();
         }
         catch (ArgumentException ex) { Validation(ex); }
         catch (UserOperationException ex)
         {
+            if (IsDisposed) return;
             if (ex.Error.RequiresReconciliation) unknown = request;
             OperationStatePresenter.Show(statusLabel, ex.Error.RequiresReconciliation ? ModuleState.Unknown : ex.Error.Number == 51503 ? ModuleState.Conflict : ModuleState.Error,
                 ex.Message + (unknown is null ? "" : " Chọn Kiểm tra / tải lại; không gửi lại."));
@@ -117,6 +120,7 @@ public partial class CatalogEditorDialog : Form, IUnsavedChanges
     }
     private void Validation(ArgumentException ex)
     {
+        if (IsDisposed) return;
         Control field = ex.ParamName switch { "Code" => codeInput, "Phone" => phoneInput, "Ratio" => ratioInput, "Allowance" => allowanceInput,
             "Factor" => factorInput, "Type" => typeInput, "StartTime" => startInput, "Supported" => supportedInput, _ => nameInput };
         errors.SetError(field, ex.Message); field.Focus(); statusLabel.Text = ex.Message;
@@ -140,7 +144,8 @@ public partial class CatalogEditorDialog : Form, IUnsavedChanges
             if (unknown is not null)
             {
                 var row = await service.ReconcileAsync(session, unknown, original is null);
-                if (row is not null && Matches(unknown, row)) { unknown = null; saved = true; writing = false; DialogResult = DialogResult.OK; return; }
+                if (IsDisposed) return;
+                if (row is not null && Matches(unknown, row)) { unknown = null; saved = true; writing = false; DialogResult = DialogResult.OK; Close(); return; }
                 if (row is null && original is null)
                 {
                     unknown = null; statusLabel.Text = "Chưa có bản ghi/receipt đã commit. Có thể thử lại đúng mã yêu cầu cũ."; return;
@@ -148,9 +153,10 @@ public partial class CatalogEditorDialog : Form, IUnsavedChanges
                 statusLabel.Text = "Dữ liệu DB khác nháp. Đối chiếu đã xong; chọn Hủy để rời hoặc tải lại bản hiện tại.";
                 unknown = null; return;
             }
-            if (original is not null && OrbitConfirmationDialog.Show(this, "Bỏ nháp và tải lại dữ liệu hiện tại?", "Tải lại", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (original is not null && await OrbitConfirmationDialog.ShowAsync(this, "Bỏ nháp và tải lại dữ liệu hiện tại?", "Tải lại", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 var row = await service.GetAsync(session, kind, original.Code);
+                if (IsDisposed) return;
                 if (row is null) { statusLabel.Text = "Bản ghi đã bị xóa. Chọn Hủy để rời."; saveButton.Visible = false; }
                 else { Populate(row); errors.Clear(); statusLabel.Text = "Đã tải bản hiện tại; nháp cũ đã bỏ."; }
             }
@@ -161,14 +167,18 @@ public partial class CatalogEditorDialog : Form, IUnsavedChanges
         catch (OperationCanceledException) when (session.IsRevoked) { statusLabel.Text = "Phiên đã kết thúc."; }
         finally { Busy(false); }
     }
-    protected override void OnFormClosing(FormClosingEventArgs e)
+    protected override async Task<bool> CanCloseAsync()
     {
-        if (session?.IsRevoked == true) { base.OnFormClosing(e); return; }
-        if (IsWriting) { e.Cancel = true; statusLabel.Text = "Chờ/đối chiếu kết quả ghi trước khi đóng."; }
-        else if (!saved && HasUnsavedChanges && OrbitConfirmationDialog.Show(this, "Bỏ nháp danh mục?", "Chưa lưu", MessageBoxButtons.YesNo) != DialogResult.Yes) e.Cancel = true;
-        base.OnFormClosing(e);
+        if (session?.IsRevoked == true) return true;
+        if (IsWriting) { statusLabel.Text = "Chờ/đối chiếu kết quả ghi trước khi đóng."; return false; }
+        if (saved || !HasUnsavedChanges) return true;
+        if (await OrbitConfirmationDialog.ShowAsync(this, "Bỏ nháp danh mục?", "Chưa lưu", MessageBoxButtons.YesNo) != DialogResult.Yes) return false;
+        DiscardChanges(); return true;
     }
     protected override void OnShown(EventArgs e) { base.OnShown(e); layout.FitToContent(this); }
     protected override void Dispose(bool disposing) { if (disposing) errors?.Dispose(); base.Dispose(disposing); }
 }
+
+
+
 

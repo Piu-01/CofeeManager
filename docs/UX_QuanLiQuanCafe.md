@@ -11,7 +11,7 @@ Giúp thu ngân bán và thu tiền nhanh; nhân viên kho lập chứng từ v�
 
 Giả định triển khai: app desktop dùng chuột/bàn phím trên một máy, một quán, một kho; giao dịch ghi trực tiếp SQL Server. Kịch bản đồng thời vẫn được kiểm thử bằng hai cửa sổ/session. Tên trạng thái dưới đây là nhãn cho người dùng, được ánh xạ sang giá trị DB qua Models, không tự đổi enum/chuỗi DB.
 
-Chọn một `MainForm` chứa menu trái và vùng nội dung `UserControl`, dialog cho editor/xác nhận/preview. Cách này giữ ngữ cảnh và phù hợp một người làm. Không dùng nhiều cửa sổ nghiệp vụ tự do hoặc tab không giới hạn. Màn hình POS có bố cục riêng trong cùng cửa sổ chính.
+Chọn một `MainForm` chứa menu trái và vùng nội dung `UserControl`. Theo ý định được người dùng làm rõ26/10/2026 sau dùng thử, editor/xác nhận/picker/chi tiết/preview là Form modal Windows như trước: thanh tiêu đề/nút X native, ShowInTaskbar=false, có owner là MainForm hoặc hộp cha đang hoạt động. Windows khóa owner; chỉ hộp trên cùng tương tác và giữ input của cha khi quay lại. Dùng `OrbitDialogHost` làm bộ quản lý mở/owner/result chung, không nhúng Form thành card/panel hoặc MDI. Màn hình POS có bố cục riêng trong cùng cửa sổ chính. Hộp máy in/lưuPDF native có owner là hộp đang hoạt động, hoặc MainForm khi không có hộp khác; Login/Bootstrap/Startup thuộc vòng đời ứng dụng.
 
 Phạm vi bám kế hoạch: tại quán/mang đi/giao hàng, khách và ưu đãi, kho/công nợ, nhân sự/lương, thu chi/tài sản/báo cáo. Chưa thiết kế đặt bàn, topping/size, gộp/tách hóa đơn, hoàn tiền đơn đã trả, đổi điểm, thanh toán trực tuyến, nhiều kho hoặc đồng bộ offline.
 
@@ -108,7 +108,7 @@ Combobox chọn dữ liệu có tên rõ, chỉ dùng mã khi trùng tên. Grid 
 
 ### 5.3. Bàn phím và khả năng tiếp cận
 
-Tab theo thứ tự nhìn, focus ban đầu vào trường hữu ích; nhãn có mnemonic nếu không trùng trong màn hình. Enter ở ô tìm kiếm thực hiện tìm, Enter ở editor đơn giản có thể Lưu khi hợp lệ. **Enter không tự chốt thanh toán, kiểm kê, trả nợ hoặc lương**; người dùng phải kích hoạt nút xác nhận có tên rõ. Esc đóng dialog không đang ghi, có hỏi bỏ nháp nếu cần.
+Tab theo thứ tự nhìn, focus ban đầu vào trường hữu ích; nhãn có mnemonic nếu không trùng trong màn hình. Input có thể sửa chọn hết nội dung khi mới vào bằng click/Tab; click tiếp trong cùng lần focus vẫn đặt caret/chọn đoạn bình thường, rời rồi vào lại chọn hết lại. Ô readonly/khóa và danh sách chỉ chọn không áp dụng. Enter ở ô tìm kiếm thực hiện tìm, Enter ở editor đơn giản có thể Lưu khi hợp lệ. **Enter không tự chốt thanh toán, kiểm kê, trả nợ hoặc lương**; người dùng phải kích hoạt nút xác nhận có tên rõ. Esc đóng hộp trên cùng không đang ghi, có hỏi bỏ nháp nếu cần; phím không xuyên xuống nền. Đóng MainForm xử lý guard từng hộp trước nháp của màn chính, session revoke giải phóng hộp và không coi đóng UI là rollback SQL.
 
 POS dùng F2 tìm món, F3 chọn khách, F4 xem đơn mở, F8 mở dialog thanh toán; phím không thực hiện chốt trực tiếp và vô hiệu khi modal khác đang mở. Tooltip ghi phím cạnh nút. Không lấy phím hệ thống như Alt+F4 làm phím nghiệp vụ.
 
@@ -218,19 +218,48 @@ Trong khi gửi, không đóng dialog và không bắt đầu thanh toán khác 
 | Món ngừng bán/thiếu công thức | Chỉ rõ món | ADMIN xử lý hoặc bỏ món |
 | Đơn đã chốt ở phiên khác | Tải kết quả thực | Xem/in, không thu lần hai |
 | Mất kết nối/timeout | “Chưa xác định kết quả. Đang kiểm tra hóa đơn …” | Nút Kiểm tra lại; chặn xác nhận mới |
-| In lỗi sau thành công | “Đã thanh toán. Chưa in được hóa đơn.” | In lại/Xem hóa đơn; không gọi checkout |
+| In lỗi sau thành công | “Đã thanh toán. Chưa in được hóa đơn.” | POS về nháp mới; in lại tại Lịch sử hóa đơn, không gọi checkout |
 
-Kết quả thành công: mã, tiền thu, phương thức, điểm đã cộng nếu có, In/Xem chi tiết/Đơn tiếp theo. Chỉ sau SQL xác nhận commit mới làm trống bàn và kết thúc đơn ở POS. In không phải điều kiện thanh toán thành công.
+Kết quả thành công: chỉ sau SQL xác nhận đã chốt mới hỏi “Bạn có muốn in hóa đơn không?” (Có/Không).
+Có mở hộp chọn máy in; Không bỏ qua. Sau gửi in, hủy hoặc lỗi in, POS đều trở về
+nháp đơn mới trống tương đương Đơn mới; không tự lưu hóa đơn rỗng. Giữ thông báo
+mã đơn, tiền thu/thối và điểm nếu đọc được ở status. POS không còn nút Xem/In;
+tra cứu/in lại qua Lịch sử hóa đơn. Lần in từ câu hỏi này không gắn nhãn IN LẠI;
+in từ lịch sử có nhãn. Hủy Checkout, lỗi trước commit hoặc còn unknown giữ đơn và
+input, không hỏi in/xóa nháp. Chỉ sau SQL xác nhận commit mới làm trống bàn và
+kết thúc đơn ở POS. In không phải điều kiện thanh toán thành công.
 
 ## 9. Lịch sử hóa đơn, in và giao hàng
 
 Lịch sử: ngày thanh toán hoặc ngày lập được chọn và ghi rõ, trạng thái, loại đơn, bàn/khách, mã; grid phân trang. Chọn dòng mở chi tiết đọc snapshot giá/giảm/ship/phí, phân bổ và trạng thái. Từ đơn mở có quyền quay lại POS; từ đơn đã trả chỉ xem/in. Không chỉnh chứng từ qua grid lịch sử.
 
+**Lịch sử hóa đơnV4 (26/10/2026):** kínhlúp hoặcEnter chỉ áp dụng từ khóa tìm
+kiếm; loại ngày/từ–đến/trạng thái/kênh đổi là tự lọc ngay. Filter, pager và làm
+mới dùng từ khóa đã tìm gần nhất, giữ nguyên nội dung đang gõ dở để user chủ động
+submit. Không còn nút chữÁp dụng bộ lọc. Card có search/icons trên, filters thành
+hàng riêng, Chi tiết/In bên phải, bảngbadge và footerRange/pagerTotalCountthật;
+không summary kết quả/ngày phía trên bảng. Quy định này riêng màn lịch sử, không
+tự thay hành vi các danh sách khác. MẫuV4 và dữ liệuHTML chỉ là tham chiếu.
+
 Preview in trước khi gửi máy in. In hiện tên quán, mã/ngày, món/số lượng/giá, tiền món/giảm/ship/phải trả và phương thức; không lộ chi phí đối tác nếu không cần cho khách. Hóa đơn nhiều dòng phải phân trang đúng. In lại có nhãn In lại; không tự gọi là hóa đơn VAT. Lỗi không có máy in vẫn xem được preview và đóng bình thường.
 
 Giao hàng: các nhóm Chờ xử lý/Đang giao/Đã giao theo trạng thái thực được hỗ trợ. Trạng thái thanh toán hiển thị riêng, không suy ra đã trả từ Đã giao. Chọn đơn → chi tiết người nhận/đối tác → nút chuyển bước hợp lệ → xác nhận → reload. Đơn đã trả thay tiến độ không thay tài chính. Giao thất bại của đơn đã trả được ghi nhận/hướng dẫn xử lý thủ công theo contract, không phát sinh hoàn tiền tự động.
 
+**UI Giao hàng26/10/2026, plan bổ sung đã duyệt:** tìm kiếm hết hàng với kính
+lúp/làm mới; hai filter tiến độ giao/thanh toán ở hàng dưới tự áp dụng bằng từ
+khóa đã submit, không lấy nháp đang gõ. Kính lúp/Enter chỉ submit tìm kiếm, bỏ
+nút chữ Áp dụng. Search/filter mới về trang đầu; refresh/paging giữ tìm kiếm đã
+submit. Bảng readonly dùng hết phần nội dung còn lại, địa chỉ fill, hai badge
+riêng; footer dùng TotalCount thật đã có trong DTO. Chi tiết chỉ mở dòng hợp lệ;
+writing/unknown khóa thao tác mới, Kiểm tra kết quả đối chiếu pendingCode/requestId
+cũ dù lọc sang tập khác. Không thêm date filter/timeline hoặc đường chuyển bước
+trong grid. Nội dung/owner/native dialog và financial contract giữ nguyên.
+Đã triển khai và chạy đợt component/SQL riêng tại hồ sơ T18; còn xác nhận manual/
+hình thức và giới hạn subcase, không suy PASS toàn bộ từ đặc tả này.
+
 Không hứa lưu lịch sử chuyển trạng thái nếu DB chỉ có trạng thái hiện tại; muốn timeline cần bổ sung lưu vết tại T18 trước khi hiển thị. Lịch sử hóa đơn vẫn xem được đơn giao hoàn tất.
+
+**Contract G04 đã duyệt23/10/2026:** loại đơn và bàn khóa sau tạo (nhánh UX7.3); tạo header cùng món đầu nguyên tử. Hủy chỉ xác nhận, không hỏi lý do chưa có nơi lưu. T18 chỉ lưu trạng thái giao hiện tại, không timeline; chỉ tiến Chờ giao→Đang giao→Đã giao, hủy giao qua hủy đơn mở. Giao thất bại đơn đã trả giữ trạng thái thật và hướng dẫn quản lý xử lý thủ công, không ghi lịch sử/hoàn tiền giả. Đơn đã giao chưa trả vẫn phải thanh toán qua POS.
 
 ## 10. Quản trị khách, menu và bàn
 
@@ -428,3 +457,4 @@ Thực hiện trong các task đã có: UX01–UX02 ở T06–T07; danh mục/b�
 Trước code mỗi màn, phác bố cục control và xác nhận luồng chính/lỗi theo tài liệu này. Không cần thiết kế pixel hoàn chỉnh toàn bộ 20 màn trước khi làm POS. Mỗi task bàn giao màn dùng được, trạng thái đủ và các ca UX liên quan có kết quả; không chỉ ảnh giao diện đẹp chưa gắn nghiệp vụ.
 
 Tài liệu này là file UX riêng, không thay kế hoạch dự án hoặc schema. Khi nghiệp vụ đổi, cập nhật đồng thời màn, trạng thái, contract và ca UX liên quan theo cùng task.
+

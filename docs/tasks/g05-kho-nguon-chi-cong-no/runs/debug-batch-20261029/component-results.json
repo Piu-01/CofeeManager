@@ -1,0 +1,320 @@
+[
+  {
+    "Part": "B01.Finance.Layout.1280",
+    "Result": "PASS",
+    "Actual": {
+      "Dpi": 120,
+      "Size": {
+        "IsEmpty": false,
+        "Width": 1280,
+        "Height": 720
+      },
+      "Primary": [
+        {
+          "Text": "Ghi phi\u1EBFu",
+          "Width": 139,
+          "Height": 50
+        }
+      ],
+      "ActionCount": 2,
+      "FilterCount": 4,
+      "Body": {
+        "IsEmpty": false,
+        "Width": 1205,
+        "Height": 210
+      }
+    }
+  },
+  {
+    "Part": "B01.Finance.Layout.1366",
+    "Result": "PASS",
+    "Actual": {
+      "Dpi": 120,
+      "Size": {
+        "IsEmpty": false,
+        "Width": 1366,
+        "Height": 768
+      },
+      "Primary": [
+        {
+          "Text": "Ghi phi\u1EBFu",
+          "Width": 139,
+          "Height": 50
+        }
+      ],
+      "ActionCount": 2,
+      "FilterCount": 4,
+      "Body": {
+        "IsEmpty": false,
+        "Width": 1291,
+        "Height": 258
+      }
+    }
+  },
+  {
+    "Part": "B01.Finance.Pager",
+    "Result": "PASS",
+    "Actual": {
+      "First": "TC20250569",
+      "Second": "TC20250519",
+      "PreviousEnabled": true,
+      "Rows": 50
+    }
+  },
+  {
+    "Part": "B01.Finance.Filter",
+    "Result": "PASS",
+    "Actual": {
+      "Rows": 0,
+      "Filter": "Thu"
+    }
+  },
+  {
+    "Part": "B01.Purchases.Layout.1280",
+    "Result": "PASS",
+    "Actual": {
+      "Dpi": 120,
+      "Size": {
+        "IsEmpty": false,
+        "Width": 1280,
+        "Height": 720
+      },
+      "Primary": [
+        {
+          "Text": "L\u1EADp phi\u1EBFu nh\u1EADp",
+          "Width": 141,
+          "Height": 35
+        }
+      ],
+      "ActionCount": 2,
+      "FilterCount": 0,
+      "Body": {
+        "IsEmpty": false,
+        "Width": 1205,
+        "Height": 260
+      }
+    }
+  },
+  {
+    "Part": "B01.Purchases.Layout.1366",
+    "Result": "PASS",
+    "Actual": {
+      "Dpi": 120,
+      "Size": {
+        "IsEmpty": false,
+        "Width": 1366,
+        "Height": 768
+      },
+      "Primary": [
+        {
+          "Text": "L\u1EADp phi\u1EBFu nh\u1EADp",
+          "Width": 141,
+          "Height": 35
+        }
+      ],
+      "ActionCount": 2,
+      "FilterCount": 0,
+      "Body": {
+        "IsEmpty": false,
+        "Width": 1291,
+        "Height": 308
+      }
+    }
+  },
+  {
+    "Part": "B01.Purchases.Pager",
+    "Result": "PASS",
+    "Actual": {
+      "First": "PN20250564",
+      "Second": "PN20250514",
+      "PreviousEnabled": true,
+      "Rows": 50
+    }
+  },
+  {
+    "Part": "B01.Issues.Layout.1280",
+    "Result": "PASS",
+    "Actual": {
+      "Dpi": 120,
+      "Size": {
+        "IsEmpty": false,
+        "Width": 1280,
+        "Height": 720
+      },
+      "Primary": [
+        {
+          "Text": "L\u1EADp phi\u1EBFu xu\u1EA5t",
+          "Width": 136,
+          "Height": 35
+        }
+      ],
+      "ActionCount": 2,
+      "FilterCount": 0,
+      "Body": {
+        "IsEmpty": false,
+        "Width": 1205,
+        "Height": 260
+      }
+    }
+  },
+  {
+    "Part": "B01.Issues.Layout.1366",
+    "Result": "PASS",
+    "Actual": {
+      "Dpi": 120,
+      "Size": {
+        "IsEmpty": false,
+        "Width": 1366,
+        "Height": 768
+      },
+      "Primary": [
+        {
+          "Text": "L\u1EADp phi\u1EBFu xu\u1EA5t",
+          "Width": 136,
+          "Height": 35
+        }
+      ],
+      "ActionCount": 2,
+      "FilterCount": 0,
+      "Body": {
+        "IsEmpty": false,
+        "Width": 1291,
+        "Height": 308
+      }
+    }
+  },
+  {
+    "Part": "B01.Issues.Pager",
+    "Result": "PASS",
+    "Actual": {
+      "First": "PX20250564",
+      "Second": "PX20250514",
+      "PreviousEnabled": true,
+      "Rows": 50
+    }
+  },
+  {
+    "Part": "B01.Stocktakes.Layout.1280",
+    "Result": "PASS",
+    "Actual": {
+      "Dpi": 120,
+      "Size": {
+        "IsEmpty": false,
+        "Width": 1280,
+        "Height": 720
+      },
+      "Primary": [
+        {
+          "Text": "L\u1EA5y s\u1ED1 li\u1EC7u t\u1ED3n",
+          "Width": 134,
+          "Height": 35
+        }
+      ],
+      "ActionCount": 2,
+      "FilterCount": 0,
+      "Body": {
+        "IsEmpty": false,
+        "Width": 1205,
+        "Height": 260
+      }
+    }
+  },
+  {
+    "Part": "B01.Stocktakes.Layout.1366",
+    "Result": "PASS",
+    "Actual": {
+      "Dpi": 120,
+      "Size": {
+        "IsEmpty": false,
+        "Width": 1366,
+        "Height": 768
+      },
+      "Primary": [
+        {
+          "Text": "L\u1EA5y s\u1ED1 li\u1EC7u t\u1ED3n",
+          "Width": 134,
+          "Height": 35
+        }
+      ],
+      "ActionCount": 2,
+      "FilterCount": 0,
+      "Body": {
+        "IsEmpty": false,
+        "Width": 1291,
+        "Height": 308
+      }
+    }
+  },
+  {
+    "Part": "B01.Stocktakes.Pager",
+    "Result": "PASS",
+    "Actual": {
+      "First": "KKTEST0001",
+      "Second": "KK00000014",
+      "PreviousEnabled": true,
+      "Rows": 50
+    }
+  },
+  {
+    "Part": "B01.Debts.Layout.1280",
+    "Result": "PASS",
+    "Actual": {
+      "Dpi": 120,
+      "Size": {
+        "IsEmpty": false,
+        "Width": 1280,
+        "Height": 720
+      },
+      "Primary": [
+        {
+          "Text": "Tr\u1EA3 n\u1EE3",
+          "Width": 80,
+          "Height": 35
+        }
+      ],
+      "ActionCount": 2,
+      "FilterCount": 2,
+      "Body": {
+        "IsEmpty": false,
+        "Width": 1205,
+        "Height": 210
+      }
+    }
+  },
+  {
+    "Part": "B01.Debts.Layout.1366",
+    "Result": "PASS",
+    "Actual": {
+      "Dpi": 120,
+      "Size": {
+        "IsEmpty": false,
+        "Width": 1366,
+        "Height": 768
+      },
+      "Primary": [
+        {
+          "Text": "Tr\u1EA3 n\u1EE3",
+          "Width": 80,
+          "Height": 35
+        }
+      ],
+      "ActionCount": 2,
+      "FilterCount": 2,
+      "Body": {
+        "IsEmpty": false,
+        "Width": 1291,
+        "Height": 258
+      }
+    }
+  },
+  {
+    "Part": "B01.Debts.Pager",
+    "Result": "PASS",
+    "Actual": {
+      "First": "CN20250467",
+      "Second": "CN20250417",
+      "PreviousEnabled": true,
+      "Rows": 50
+    }
+  }
+]

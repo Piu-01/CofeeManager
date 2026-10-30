@@ -1,0 +1,303 @@
+{
+  "Failed": 0,
+  "Database": "CoffeeManager_Test_G04_20261025_181739_98e5df59_checkout",
+  "Scope": "Real WinForms component actions at125%, real Auth/runtime SQL, isolated open-order read fixtures. Controlled query seam only for delay/error/cancel/fallback. No physical input or visual acceptance.",
+  "Results": [
+    {
+      "Name": "IH02 default Paid today",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH04 SQL total 0",
+      "Outcome": "PASS",
+      "Actual": {
+        "Total": 0,
+        "Rows": 0,
+        "Range": "0 h\u00F3a \u0111\u01A1n"
+      }
+    },
+    {
+      "Name": "IH04 first next 0",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH04 SQL total 1",
+      "Outcome": "PASS",
+      "Actual": {
+        "Total": 1,
+        "Rows": 1,
+        "Range": "Hi\u1EC3n th\u1ECB 1\u20131 / 1 h\u00F3a \u0111\u01A1n"
+      }
+    },
+    {
+      "Name": "IH04 first next 1",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH04 SQL total 49",
+      "Outcome": "PASS",
+      "Actual": {
+        "Total": 49,
+        "Rows": 49,
+        "Range": "Hi\u1EC3n th\u1ECB 1\u201349 / 49 h\u00F3a \u0111\u01A1n"
+      }
+    },
+    {
+      "Name": "IH04 first next 49",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH04 SQL total 50",
+      "Outcome": "PASS",
+      "Actual": {
+        "Total": 50,
+        "Rows": 50,
+        "Range": "Hi\u1EC3n th\u1ECB 1\u201350 / 50 h\u00F3a \u0111\u01A1n"
+      }
+    },
+    {
+      "Name": "IH04 first next 50",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH04 SQL total 51",
+      "Outcome": "PASS",
+      "Actual": {
+        "Total": 51,
+        "Rows": 50,
+        "Range": "Hi\u1EC3n th\u1ECB 1\u201350 / 51 h\u00F3a \u0111\u01A1n"
+      }
+    },
+    {
+      "Name": "IH04 first next 51",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH04 last 51",
+      "Outcome": "PASS",
+      "Actual": "Hi\u1EC3n th\u1ECB 51\u201351 / 51 h\u00F3a \u0111\u01A1n"
+    },
+    {
+      "Name": "IH04 SQL total 100",
+      "Outcome": "PASS",
+      "Actual": {
+        "Total": 100,
+        "Rows": 50,
+        "Range": "Hi\u1EC3n th\u1ECB 1\u201350 / 100 h\u00F3a \u0111\u01A1n"
+      }
+    },
+    {
+      "Name": "IH04 first next 100",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH04 last 100",
+      "Outcome": "PASS",
+      "Actual": "Hi\u1EC3n th\u1ECB 51\u2013100 / 100 h\u00F3a \u0111\u01A1n"
+    },
+    {
+      "Name": "IH04 SQL total 101",
+      "Outcome": "PASS",
+      "Actual": {
+        "Total": 101,
+        "Rows": 50,
+        "Range": "Hi\u1EC3n th\u1ECB 1\u201350 / 101 h\u00F3a \u0111\u01A1n"
+      }
+    },
+    {
+      "Name": "IH04 first next 101",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH04 last 101",
+      "Outcome": "PASS",
+      "Actual": "Hi\u1EC3n th\u1ECB 101\u2013101 / 101 h\u00F3a \u0111\u01A1n"
+    },
+    {
+      "Name": "IH03 draft ignored filter",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH03 draft ignored paging",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH03 draft ignored refresh",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH03 Enter commits draft",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH03 code exact",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH03 customer search name",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH03 customer search phone",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH03 status auto",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH03 status clear auto",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH03 channel auto",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH02 Paid excludes open",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH02 invalid date error",
+      "Outcome": "PASS",
+      "Actual": "Ch\u01B0a c\u1EADp nh\u1EADt \u00B7 Ng\u00E0y kh\u00F4ng h\u1EE3p l\u1EC7. Nh\u1EADp dd/MM/yyyy trong kho\u1EA3ng 01/01/1753\u201331/12/9998."
+    },
+    {
+      "Name": "IH02 reversed range error",
+      "Outcome": "PASS",
+      "Actual": "Ch\u01B0a c\u1EADp nh\u1EADt \u00B7 Kho\u1EA3ng ng\u00E0y/trang kh\u00F4ng h\u1EE3p l\u1EC7."
+    },
+    {
+      "Name": "IH08 date select all on focus",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH08 search select all on focus",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH08 calendar popup",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH06 readonly code and date",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH06 currency formatted",
+      "Outcome": "PASS",
+      "Actual": "0 \u20AB"
+    },
+    {
+      "Name": "IH05 late completion ignored",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH05 error no stale rows/actions",
+      "Outcome": "PASS",
+      "Actual": "Ch\u01B0a c\u1EADp nh\u1EADt \u00B7 Controlled read fault"
+    },
+    {
+      "Name": "IH05 cancel explicit",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH04 empty stale page fallback",
+      "Outcome": "PASS",
+      "Actual": [
+        100,
+        0
+      ]
+    },
+    {
+      "Name": "IH07 detail native HD20250421",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH07 return POS state HD20250421",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH07 detail native IH26000001",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH07 return POS state IH26000001",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH07 detail native HD20250473",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH07 return POS state HD20250473",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH07 missing detail explicit",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH09 admin read",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH09 STORE denied",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH10 legacy known pager",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH10 legacy server pager",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Owned fixtures removed",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Existing finances/stock/points unchanged",
+      "Outcome": "PASS",
+      "Actual": null
+    }
+  ]
+}

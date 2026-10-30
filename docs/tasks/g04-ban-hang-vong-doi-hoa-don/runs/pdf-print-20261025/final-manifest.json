@@ -1,0 +1,54 @@
+{
+  "UserCompleted": true,
+  "PdfFound": "C:/Users/Lenovo/OneDrive/Máy tính/Documents/G04-HD20250421.pdf",
+  "PdfPages": 1,
+  "Pc03": "PASS PDF output + POS reset; no physical printer claim",
+  "T17K04": "PASS printed line/payable81000, not tender100000",
+  "OriginalPdfChecks": "7/8; hardcoded accented label mismatch preserved",
+  "CatalogLabelCheck": "PASS actual SQL PT001 name Tien mat and amount81000 match PDF",
+  "SqlVerdict": {
+    "Invoice": [
+      {
+        "MaHD": "HD20250421",
+        "MaKH": "KH011",
+        "TrangThai": "Da thanh toan",
+        "ThanhTien": 81000,
+        "DiemTichLuy": 81
+      }
+    ],
+    "Payments": [
+      {
+        "MaHD": "HD20250421",
+        "MaPT": "PT001",
+        "SoTien": 81000
+      }
+    ],
+    "PointsBefore": 0,
+    "PointsAfter": 81,
+    "PointsHistory": [
+      {
+        "MaHD": "HD20250421",
+        "SoDiem": 81,
+        "Loai": "Cong"
+      }
+    ],
+    "StockDelta": [
+      {
+        "Material": "NVL01",
+        "Delta": 0.018,
+        "Consumption": 0.018
+      },
+      {
+        "Material": "NVL03",
+        "Delta": 0.01,
+        "Consumption": 0.01
+      }
+    ],
+    "PaidOnce": true,
+    "StockMatches": true,
+    "SourceChanged": 0
+  },
+  "SourceChanged": 0,
+  "Visual": "User responsibility; text checks only",
+  "Next": "History reprint and error-after-commit remaining"
+}

@@ -366,7 +366,9 @@ bản source đang chạy. Biên bản phải chỉ rõ commit hoặc hash sourc
 | Thay đổi UI Orbit hiện tại | Theo dõi tại `docs/tasks/orbit-ui-refresh/` và hồ sơ bug T07 | Không tự đánh dấu ma trận GUI/DPI/Designer mới PASS từ ảnh mẫu hoặc kết quả cũ |
 | Development và cleanup 18/10 | Xem `development-handoff-results.md` trong G02 và `docs/bugs/project-environment-audit-20261018/report.md` | Đã xác minh service ba role, DB/config và cleanup; GUI login profile mới còn NOT RUN trong biên bản bàn giao |
 | G03 / T09–T13 | PASS nghiệm thu theo quyết định người dùng20/10/2026; xem `docs/tasks/g03-du-lieu-phuc-vu-ban-hang/acceptance-decision.md` và report.md | Chấp nhận ngoại lệ kiểm thử; không phải47/47cađãchạyPASS. Giữ kết quả thực tế và phần GUI chưa đủ bằng chứng; tích hợp G04 đích NOT RUN |
-| G04–G08 / T14–T32 | Chưa triển khai/nghiệm thu trong đợt G03 | Phần tích hợp POS/checkout đích vẫn NOT RUN |
+| G04 / T14–T18 | Đã triển khai ngày23/10/2026 theo bộ plan được duyệt; schema016;26/10:40PASS/0FAIL/16BLOCKED trên56ID; T18 đạt8/8ID sau ưu tiên phụ thuộc G05, còn16ca T16/T17 chưa đủ. Xem docs/tasks/g04-ban-hang-vong-doi-hoa-don/report.md | Build/smoke kỹ thuật không thay nghiệm thu56ID; chưa có PASS G04 |
+| G05 / T19–T23 | 27/10: source T19→T23/migrations017–021; đã duyệt và nâng development021, đối chiếu8 nhóm dữ liệu với backup khớp. Đợt test:38PASS/5FAIL/10BLOCKED/2NOTRUN trên55ID;22/22 xUnit,11 ca đồng thời và8 timeout PASS. Hồ sơ `docs/tasks/g05-kho-nguon-chi-cong-no/report.md` | Đang làm;29/10 B01–B04 đã duyệt/sửa, regression PASS theo phạm vi (22unit,16component, mapper/hash/native). B05 footer đã duyệt/sửa (28helper,23checkpoint/9dialog, native nháp/ghi thu chi PASS theo phạm vi); B06 đã duyệt/sửa (54component,22unit,5SQL,native ADMIN nhập/xuất/rollback PASS theo phạm vi; native STORE nhập/trả hàng và ADMIN trả nợ/link chi bổ sung PASS30/10; B07 CTS đã duyệt/sửa và regression30/10 PASS theo phạm vi (22unit,47lifecycle,5CASH-BLL,native logout/relogin ADMIN-CASH/đóng app); Tab và các nhánh UX khác chưa đủ);55ID27/10 giữ lịch sử, chưa chốt tổng mới. G04 còn16ca chưa đủ |
+| G06–G08 / T24–T32 | Chưa triển khai/nghiệm thu | Giữ thứ tự phụ thuộc sau G05 |
 
 Không sửa hồi tố kết quả thật hoặc tick lại checklist cũ để khớp bảng. Bug và
 thay đổi mới ghi rõ phiên bản bị ảnh hưởng; chỉ regression phần cần thiết.
@@ -1364,8 +1366,10 @@ không thay thứ tự/phụ thuộc T01–T32 hoặc325ID kiểm thử gốc.
   lưu bằng chứng đã gỡ và kết quả kiểm tra trong hồ sơ T32/báo cáo G08.
 
 **G08 không được PASS nếu chưa gỡ tiện ích hoặc chưa có bằng chứng kiểm lại sau gỡ**,
-kể cả các ca nghiệm thu khác đã đạt. Hiện chưa thực hiện bước gỡ; tiện ích còn phục vụ
-test các nhóm trước G08, không tự đánh dấu checklist này hoàn tất.
+kể cả các ca nghiệm thu khác đã đạt. Theo yêu cầu người dùng ngày24/10/2026,
+đã gỡ sớm tiện ích khỏi source/hooks/profile/launcher, xem
+`docs/tasks/temporary-test-login/removal-results.md`. Vẫn giữ checklist chốt bản
+bàn giao cuối ở T32; không tự đánh dấu G08 hoàn tất từ đợt gỡ sớm này.
 
 ## 13. Cách dùng kế hoạch và bàn giao
 
@@ -1397,5 +1401,4 @@ Bản bàn giao T32 gồm source, baseline SQL, migrations theo thứ tự, dữ
 - [SQL Server — Sequence](https://learn.microsoft.com/en-us/sql/relational-databases/sequence-numbers/sequence-numbers)
 - [SQL Server — Table-valued parameters](https://learn.microsoft.com/en-us/sql/relational-databases/tables/use-table-valued-parameters-database-engine)
 - [SQL Server — Index design guide](https://learn.microsoft.com/en-us/sql/relational-databases/sql-server-index-design-guide)
-
 

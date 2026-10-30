@@ -1,0 +1,41 @@
+{
+  "SourceFiles": 207,
+  "ChangedDuringRegression": 0,
+  "DebugUiSHA256": "D2BF8615E7B7AEB51D855029171D48C02BA26AE65A2D938CC048B14AA37F1E67",
+  "FixtureCopies": [
+    {
+      "Directory": "component-bin",
+      "SameDll": true
+    },
+    {
+      "Directory": "layout-bin",
+      "SameDll": true
+    },
+    {
+      "Directory": "probe-bin",
+      "SameDll": true
+    }
+  ],
+  "CenterBeforeAfter": [
+    {
+      "Phase": "before",
+      "Top": 0,
+      "Height": 38,
+      "ParentHeight": 58,
+      "Centered": false
+    },
+    {
+      "Phase": "after",
+      "Top": 10,
+      "Height": 38,
+      "ParentHeight": 58,
+      "Centered": true
+    }
+  ],
+  "ComponentPass": 32,
+  "LayoutBindingPass": 60,
+  "SQL": "Not rerun: positioning only; no SQL writes",
+  "Visual": "SKIPPED:user",
+  "DPI": "120 actual;100/150 NOT RUN",
+  "Physical": "NOT RUN"
+}

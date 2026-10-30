@@ -1,0 +1,22 @@
+[
+  {
+    "Path": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Modules\\Finance\\FinanceControl.cs",
+    "Hash": "5657B0A7DCFD07252858A7889491DB30B1A91ED8E81DD7AC984C403B798756B6"
+  },
+  {
+    "Path": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Modules\\Finance\\SupplierDebtsControl.cs",
+    "Hash": "C47D0AFEABF550A4C2AB75A1C8CEF392DB9B967F89B6ED98BD8B0E6F61195DE0"
+  },
+  {
+    "Path": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Modules\\Inventory\\PurchasesControl.cs",
+    "Hash": "12619206BF3FBCAE036DD4ECF72884FF95C627B2B729C9F4408AE2167595A6E8"
+  },
+  {
+    "Path": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Modules\\Inventory\\StockIssuesControl.cs",
+    "Hash": "3A3EA448DB53D25D2F644306D132DFEED9BFA922F3929F8F5D564C6A2FDB0285"
+  },
+  {
+    "Path": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Modules\\Inventory\\StocktakesControl.cs",
+    "Hash": "BD7CB266553BCA218F571F88EDA363ED8AF6D2183B23D324DAFAE841AED9FA13"
+  }
+]

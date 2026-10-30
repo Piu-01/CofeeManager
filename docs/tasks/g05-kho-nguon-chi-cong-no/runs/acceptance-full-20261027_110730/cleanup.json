@@ -1,0 +1,13 @@
+{
+  "Database": "CoffeeManager_Test_G05_20261027_110753_fb67dcbb_demo",
+  "Marker": "20261027_110753_fb67dcbb",
+  "GuiProcessExited": true,
+  "DatabaseDropped": true,
+  "PrivateDirectoryDeleted": true,
+  "PendingFilesDeleted": [
+    "9001001_FinanceCreate.bin.lock"
+  ],
+  "BackupRetained": true,
+  "CleanedUtc": "2026-10-27T08:53:21.1344286Z",
+  "RemainingOwnedDatabases": 0
+}

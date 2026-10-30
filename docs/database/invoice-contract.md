@@ -1,0 +1,17 @@
+# Tra cứu/in — migration013 / T17
+
+sp_InvoiceList có DateBasis Created/Paid, hai ngày bao gồm ngày cuối, trạng thái,
+kênh, khách, tìm mã/tên/SDT và Skip50. SQL dùng khoảng ngày nửa mở, sắp ngày+MaHD;
+COUNT OVER trên tập hóa đơn, không join món×payment để cộng tiền.
+
+sp_InvoiceDetail đọc một transaction ngắn: header stored, dòng snapshot, payment,
+metadata snapshot/điểm. Không tính ưu đãi hiện tại cho đơn đã trả. Tên sản phẩm là
+nhãn danh mục hiện tại, không giả snapshot tên. LegacyUnknown không có nguồn/tỷ lệ.
+ADMIN/CASH được đọc/in, STORE bị chặn Business và SQL.
+
+PrintDocument nhận DTO sau đọc, connection đã đóng. Preview/in lại không tham
+chiếu checkout, in sau commit; không tiền đưa/thối bịa lại, không lộ phí đối tác.
+State phân trang reset BeginPrint, giữ cursor qua PrintPage; khổ quá nhỏ báo lỗi
+thay vì cắt dòng. Chưa có máy in thì chi tiết vẫn đọc; không tự cài/đổi printer.
+
+Chưa nghiệm thu ca in hoặc hình thức; hình thức do người dùng kiểm theo phân công.

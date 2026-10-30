@@ -1,0 +1,5 @@
+{
+  "Note": "Fixture provisioning only, not Bootstrap acceptance",
+  "Before": "Pending",
+  "After": "Completed"
+}

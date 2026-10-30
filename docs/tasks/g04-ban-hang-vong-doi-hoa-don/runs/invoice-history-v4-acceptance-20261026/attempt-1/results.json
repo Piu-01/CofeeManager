@@ -1,0 +1,165 @@
+{
+  "Failed": 1,
+  "Database": "CoffeeManager_Test_G04_20261025_181739_98e5df59_checkout",
+  "Scope": "Real WinForms component actions at125%, real Auth/runtime SQL, isolated open-order read fixtures. Controlled query seam only for delay/error/cancel/fallback. No physical input or visual acceptance.",
+  "Results": [
+    {
+      "Name": "IH02 default Paid today",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH04 SQL total 0",
+      "Outcome": "PASS",
+      "Actual": {
+        "Total": 0,
+        "Rows": 0,
+        "Range": "0 h\u00F3a \u0111\u01A1n"
+      }
+    },
+    {
+      "Name": "IH04 first next 0",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH04 SQL total 1",
+      "Outcome": "PASS",
+      "Actual": {
+        "Total": 1,
+        "Rows": 1,
+        "Range": "Hi\u1EC3n th\u1ECB 1\u20131 / 1 h\u00F3a \u0111\u01A1n"
+      }
+    },
+    {
+      "Name": "IH04 first next 1",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH04 SQL total 49",
+      "Outcome": "PASS",
+      "Actual": {
+        "Total": 49,
+        "Rows": 49,
+        "Range": "Hi\u1EC3n th\u1ECB 1\u201349 / 49 h\u00F3a \u0111\u01A1n"
+      }
+    },
+    {
+      "Name": "IH04 first next 49",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH04 SQL total 50",
+      "Outcome": "PASS",
+      "Actual": {
+        "Total": 50,
+        "Rows": 50,
+        "Range": "Hi\u1EC3n th\u1ECB 1\u201350 / 50 h\u00F3a \u0111\u01A1n"
+      }
+    },
+    {
+      "Name": "IH04 first next 50",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH04 SQL total 51",
+      "Outcome": "PASS",
+      "Actual": {
+        "Total": 51,
+        "Rows": 50,
+        "Range": "Hi\u1EC3n th\u1ECB 1\u201350 / 51 h\u00F3a \u0111\u01A1n"
+      }
+    },
+    {
+      "Name": "IH04 first next 51",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH04 last 51",
+      "Outcome": "PASS",
+      "Actual": "Hi\u1EC3n th\u1ECB 51\u201351 / 51 h\u00F3a \u0111\u01A1n"
+    },
+    {
+      "Name": "IH04 SQL total 100",
+      "Outcome": "PASS",
+      "Actual": {
+        "Total": 100,
+        "Rows": 50,
+        "Range": "Hi\u1EC3n th\u1ECB 1\u201350 / 100 h\u00F3a \u0111\u01A1n"
+      }
+    },
+    {
+      "Name": "IH04 first next 100",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH04 last 100",
+      "Outcome": "PASS",
+      "Actual": "Hi\u1EC3n th\u1ECB 51\u2013100 / 100 h\u00F3a \u0111\u01A1n"
+    },
+    {
+      "Name": "IH04 SQL total 101",
+      "Outcome": "PASS",
+      "Actual": {
+        "Total": 101,
+        "Rows": 50,
+        "Range": "Hi\u1EC3n th\u1ECB 1\u201350 / 101 h\u00F3a \u0111\u01A1n"
+      }
+    },
+    {
+      "Name": "IH04 first next 101",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH04 last 101",
+      "Outcome": "PASS",
+      "Actual": "Hi\u1EC3n th\u1ECB 101\u2013101 / 101 h\u00F3a \u0111\u01A1n"
+    },
+    {
+      "Name": "IH03 draft ignored filter",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH03 draft ignored paging",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH03 draft ignored refresh",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH03 Enter commits draft",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "IH03 code exact",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Runner exception",
+      "Outcome": "FAIL",
+      "Actual": "System.InvalidCastException: Unable to cast object of type \u0027System.DBNull\u0027 to type \u0027System.String\u0027.\r\n   at Program.\u003C\u003Ec__DisplayClass9_1.\u003C\u003CMain\u003Eb__3\u003Ed.MoveNext() in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g04-ban-hang-vong-doi-hoa-don\\runs\\invoice-history-v4-acceptance-20261026\\Program.cs:line 79"
+    },
+    {
+      "Name": "Owned fixtures removed",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Existing finances/stock/points unchanged",
+      "Outcome": "PASS",
+      "Actual": null
+    }
+  ]
+}

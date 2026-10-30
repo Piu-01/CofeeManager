@@ -1,0 +1,15 @@
+{
+  "FinancialChangedSections": [],
+  "FinancialUnchanged": true,
+  "Order": {
+    "MaHD": "HD20250472",
+    "LoaiDon": "Giao hang",
+    "TrangThai": "Chua thanh toan",
+    "TrangThaiGiao": "Da giao",
+    "TenNguoiNhan": "G05 kiểm thử",
+    "SDTNguoiNhan": "0900000026",
+    "DiaChiGiao": "Địa chỉ fixture DB test",
+    "ThanhTien": 81000
+  },
+  "ExpectedDeliveredUnpaid": true
+}

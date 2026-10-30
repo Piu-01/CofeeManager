@@ -1,0 +1,16 @@
+{
+  "RunId": "20261025_181739_98e5df59",
+  "Server": "localhost",
+  "Database": "CoffeeManager_Test_G04_20261025_181739_98e5df59_checkout",
+  "Marker": "20261025_181739_98e5df59",
+  "Created": true,
+  "Cleaned": false,
+  "State": "Ready for guided GUI; no test cases passed by provisioning",
+  "Purpose": "Approved G04 tests prioritized for G05 dependency T18; delivery GUI and finance invariants",
+  "RetainReason": "Active G05 dependency tests in existing isolated DB; no additional DB",
+  "ReviewBy": "2026-10-26",
+  "ProcessIds": [
+    23512
+  ],
+  "SchemaVersion": 16
+}

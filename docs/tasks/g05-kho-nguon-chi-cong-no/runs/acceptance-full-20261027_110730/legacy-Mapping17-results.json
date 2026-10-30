@@ -1,0 +1,19 @@
+{
+  "Database": "CoffeeManager_Test_G05_20261027_115708_3ab510d5_backup",
+  "Backup": "C:\\Program Files\\Microsoft SQL Server\\MSSQL17.MSSQLSERVER\\MSSQL\\Backup\\CoffeeManager_Development_before_G05_021_20261027_112555_5d4d8de7.bak",
+  "Purpose": "Compare complete server-side hashes with approved pre-upgrade backup; no live data changes",
+  "Created": true,
+  "Cleaned": true,
+  "Comparisons": [],
+  "Case": "Mapping17",
+  "Expected": 52607,
+  "Observed": [
+    52607
+  ],
+  "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Mapping danh mục chi hệ thống không hợp lệ.\"",
+  "BeforeHash": "646C730B0A03E65EDF849C48FCCB4873DFD2ED6E6F2DA83F9AA9AE7623ECE666",
+  "AfterHash": "646C730B0A03E65EDF849C48FCCB4873DFD2ED6E6F2DA83F9AA9AE7623ECE666",
+  "VersionRecorded": 0,
+  "ColumnAdded": 0,
+  "Status": "PASS"
+}

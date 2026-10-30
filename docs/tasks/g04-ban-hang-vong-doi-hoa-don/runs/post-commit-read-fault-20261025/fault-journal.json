@@ -1,0 +1,11 @@
+{
+  "Database": "CoffeeManager_Test_G04_20261025_181739_98e5df59_checkout",
+  "Marker": "20261025_181739_98e5df59",
+  "User": "G04Gui",
+  "Procedure": "dbo.sp_InvoiceDetail",
+  "OriginalDirectPermissionCount": 0,
+  "State": "Restored",
+  "RestoreCommand": "./fixture.ps1 -Mode Restore",
+  "Purpose": "Approved PC04 post-commit invoice read error only",
+  "ReviewBy": "2026-10-26"
+}

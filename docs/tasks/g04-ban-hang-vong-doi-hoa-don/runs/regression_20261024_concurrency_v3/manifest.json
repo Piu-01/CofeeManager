@@ -1,0 +1,54 @@
+{
+  "Approval": "User duyệt24/10/2026 G04-TEST-06 and G04-CONC-01",
+  "Status": "ApprovedFixesCompletedG04IncompleteGuiBlocked",
+  "Schema": 16,
+  "ProductSourceAdditions": [
+    "database\\migrations\\016_payment_guard_point_locks.sql",
+    "tools\\database\\Update-DevelopmentG04Concurrency.ps1"
+  ],
+  "Previous238SourceFilesChanged": 0,
+  "SourceDuringAfterTestsUnchanged": true,
+  "FrozenTestFilesUnchanged": true,
+  "SqlRegression": {
+    "Failed": 0,
+    "Passed": 68
+  },
+  "EmptyMigrationChecks": {
+    "Failed": 0,
+    "Passed": 3
+  },
+  "ConcurrentPairs": 18,
+  "SessionsChecked": 36,
+  "Checklist": {
+    "Passed": 28,
+    "Total": 56,
+    "Failed": 0,
+    "Blocked": 28
+  },
+  "Evidence": [
+    "Before/manifest.json",
+    "Before/interpretation.md",
+    "After/manifest.json",
+    "Empty/manifest.json",
+    "plan-comparison.json",
+    "summary.md"
+  ],
+  "Resources": {
+    "CreatedThisWave": 3,
+    "CleanedThisWave": 3,
+    "RetainedTestDatabases": 0,
+    "FinalG04TestDatabaseCount": 0,
+    "ProbeProcesses": 0,
+    "CheckedAt": "2026-10-24T13:31:50.3783337+07:00"
+  },
+  "Development": {
+    "BalancesPreserved": true,
+    "FixtureWritten": false,
+    "Status": "Schema016AppliedAfterBackup",
+    "Manifest": "../development016_20261024_132735_d5f3a71d/manifest.json"
+  },
+  "Visual": "SKIPPED by assignment",
+  "Dpi": "125% functional partial inherited;100/150%NOT RUN",
+  "CommitCreated": false,
+  "FinishedAt": "2026-10-24T13:32:28.4814588+07:00"
+}

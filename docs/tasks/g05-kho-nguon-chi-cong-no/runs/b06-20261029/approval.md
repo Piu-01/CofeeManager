@@ -1,0 +1,1 @@
+Người dùng duyệt B06 kèm regression29/10/2026. Chỉ mở ReadOnly=false/EditOnEnter tại hai editor nhập/xuất, cột tham chiếu giữ khóa; test riêng SQL/WinForms125%, không đổi development/Scale, không commit.

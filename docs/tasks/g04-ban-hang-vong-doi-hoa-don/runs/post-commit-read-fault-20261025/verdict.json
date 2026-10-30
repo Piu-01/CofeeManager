@@ -1,0 +1,32 @@
+{
+  "Invoice": [
+    {
+      "MaHD": "HD20250420",
+      "TrangThai": "Da thanh toan",
+      "ThanhTien": 81000
+    }
+  ],
+  "Payments": [
+    {
+      "MaHD": "HD20250420",
+      "MaPT": "PT001",
+      "SoTien": 81000
+    }
+  ],
+  "StockDelta": [
+    {
+      "Material": "NVL01",
+      "Delta": 0.018,
+      "Consumption": 0.018
+    },
+    {
+      "Material": "NVL03",
+      "Delta": 0.010,
+      "Consumption": 0.01
+    }
+  ],
+  "PaidOnce": true,
+  "StockMatches": true,
+  "FaultRestored": true,
+  "UserObserved": "POS empty; Paid and Cannot print message"
+}

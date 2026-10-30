@@ -1,0 +1,37 @@
+{
+  "ChangedSections": [],
+  "Unchanged": true,
+  "Orders": [
+    {
+      "MaHD": "HD20250403",
+      "LoaiDon": "Giao hang",
+      "TrangThai": "Da thanh toan",
+      "TrangThaiGiao": "Da giao",
+      "TenNguoiNhan": "Tran Lan Anh",
+      "SDTNguoiNhan": "0922222222",
+      "DiaChiGiao": "Dia chi giao hang mau - Thu Duc",
+      "ThanhTien": 102300,
+      "NgayThanhToan": "2025-04-02T14:00:00"
+    },
+    {
+      "MaHD": "HD20250472",
+      "LoaiDon": "Giao hang",
+      "TrangThai": "Chua thanh toan",
+      "TrangThaiGiao": "Cho giao",
+      "TenNguoiNhan": "G05 kiểm thử",
+      "SDTNguoiNhan": "0900000026",
+      "DiaChiGiao": "Địa chỉ fixture DB test",
+      "ThanhTien": 81000
+    },
+    {
+      "MaHD": "HD20250473",
+      "LoaiDon": "Giao hang",
+      "TrangThai": "Chua thanh toan",
+      "TrangThaiGiao": "Cho giao",
+      "TenNguoiNhan": "G05 kiểm thử",
+      "SDTNguoiNhan": "0900000026",
+      "DiaChiGiao": "Địa chỉ fixture DB test",
+      "ThanhTien": 81000
+    }
+  ]
+}

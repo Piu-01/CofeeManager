@@ -1,0 +1,4 @@
+src/CafeManager.WinForms\Program.cs:56:            catch (ArgumentException ex) { MessageBox.Show(ex.Message, "Thiết lập quản trị"); }
+src/CafeManager.WinForms\Program.cs:57:            catch (DataAccessException ex) { MessageBox.Show(ex.Error.Message + " Người cài cần cấp role CafeManagerSetup cho Windows identity riêng.", "Thiết lập quản trị"); }
+src/CafeManager.WinForms\Forms\BootstrapForm.cs:83:            MessageBox.Show(this, "Thiết lập đã hoàn tất. Đóng process setup; chạy ứng dụng bằng tài khoản runtime. Người cài thu hồi quyền setup.", "CoffeeManager");
+src/CafeManager.WinForms\Printing\InvoicePrinting.cs:17:        if (dialog.ShowDialog(UI.OrbitDialogHost.NativeOwner(owner)) != DialogResult.OK) return false;

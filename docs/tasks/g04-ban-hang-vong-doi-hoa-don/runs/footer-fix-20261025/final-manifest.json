@@ -1,0 +1,17 @@
+{
+  "SourceFiles": 206,
+  "ChangedDuringRegression": 0,
+  "ChangedSinceUiWave": [
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Modules\\Sales\\CheckoutDialog.Layout.cs"
+  ],
+  "Component": "32/32 PASS",
+  "SettledFooter": "3/3 PASS at125%",
+  "DebugSha256": "E41D1161D811E7487FA9BEE1452F9BB47671E71F8326C767DCEDC7831B76DA62",
+  "TestedComponentSha256": "E41D1161D811E7487FA9BEE1452F9BB47671E71F8326C767DCEDC7831B76DA62",
+  "TestedLayoutSha256": "E41D1161D811E7487FA9BEE1452F9BB47671E71F8326C767DCEDC7831B76DA62",
+  "ProductBug": "G04-UI02 fixed; original failures preserved",
+  "G04": "33PASS/0FAIL/23BLOCKED",
+  "SqlWritesThisFix": 0,
+  "Visual": "SKIPPED by assignment",
+  "Dpi100150": "NOT RUN"
+}

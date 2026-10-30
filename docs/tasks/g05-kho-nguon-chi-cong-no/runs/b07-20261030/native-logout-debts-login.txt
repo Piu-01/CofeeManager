@@ -1,0 +1,26 @@
+Window: "CoffeeManager · Đăng nhập", App: CafeManager.WinForms.exe.
+	0 window CoffeeManager · Đăng nhập Secondary Actions: Raise
+		1 pane
+			2 pane
+				3 pane
+					4 text CoffeeManager · Đăng nhập
+					5 text KHÔNG GIAN QUẢN LÝ QUÁN CÀ PHÊ
+				6 text Tên đăng nhập
+				7 text Mật khẩu
+				8 check box Hiện mật khẩu
+				9 button Đăng nhập
+				10 text Nhập tài khoản để đăng nhập.
+				11 pane KHÔNG GIAN QUẢN LÝ QUÁN CÀ PHÊ
+					12 edit (settable, string) Tên đăng nhập
+				13 pane Tên đăng nhập
+					14 edit (settable, string) Mật khẩu Value: Access denied
+		15 title bar (settable, string) Value: CoffeeManager · Đăng nhập
+			16 menu bar System ID: MenuBar
+				17 menu item System
+			18 button Minimize
+			19 button Maximize
+			20 button Close
+
+The focused UI element is 12 edit (settable, string) Tên đăng nhập.
+
+Focused element: 12 edit (settable, string) Tên đăng nhập

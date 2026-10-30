@@ -1,0 +1,62 @@
+{
+  "Approval": "User: duyệt (G04 test batch),23/10/2026",
+  "Source": "source-frozen.csv",
+  "Schema": 15,
+  "Status": "TestedIncompleteAwaitingTestBugBatchApproval",
+  "ProductChangesAllowed": false,
+  "Visual": "SKIPPED by assignment",
+  "Dpi": "125% functional only;100/150% NOT RUN",
+  "Created": [
+    "CoffeeManager_Test_G04_20261023_195253_7d540db5_clean",
+    "CoffeeManager_Test_G04_20261023_195253_7d540db5_demo",
+    "CoffeeManager_Test_G04_20261023_200512_ac66931d_demo",
+    "CoffeeManager_Test_G04_20261023_200846_9b8448ba_demo"
+  ],
+  "Cleaned": [
+    "CoffeeManager_Test_G04_20261023_195253_7d540db5_clean",
+    "CoffeeManager_Test_G04_20261023_195253_7d540db5_demo",
+    "CoffeeManager_Test_G04_20261023_200512_ac66931d_demo",
+    "CoffeeManager_Test_G04_20261023_200846_9b8448ba_demo"
+  ],
+  "Retained": [],
+  "SourceUnchanged": true,
+  "SourceFilesChecked": 238,
+  "Results": {
+    "SqlSubsetBatches": 3,
+    "TestInfrastructureBugs": 5,
+    "Checklist": {
+      "Total": 56,
+      "Failed": 4,
+      "Blocked": 34,
+      "Passed": 18
+    },
+    "UnitG04": {
+      "Passed": 18,
+      "Total": 18
+    },
+    "ProductBugProven": 0,
+    "UnitRegression": {
+      "Passed": 34,
+      "Total": 34
+    },
+    "RemainingSql": {
+      "Passed": 12,
+      "Failed": 4
+    },
+    "ExtendedSql": {
+      "Passed": 32,
+      "Failed": 2
+    }
+  },
+  "FinishedAt": "2026-10-23T20:14:36.6244830+07:00",
+  "Evidence": [
+    "extended-results.json",
+    "remaining-results.json",
+    "../acceptance_20261023_195253_7d540db5/manifest.json",
+    "regression/regression.trx",
+    "native-checkout-print.json",
+    "gui-build.log",
+    "databases-final.json",
+    "processes-final.json"
+  ]
+}

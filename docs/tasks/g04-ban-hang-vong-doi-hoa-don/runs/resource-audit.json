@@ -1,0 +1,12 @@
+{
+  "Kind": "Read-only G04 resource audit",
+  "Server": "localhost",
+  "TestDatabases": [],
+  "ProbeProcesses": [],
+  "TechnicalCreated": 14,
+  "TechnicalCleaned": 14,
+  "TechnicalRetained": 0,
+  "TestDatabaseCount": 0,
+  "BackupRetained": 1,
+  "BackupPolicy": "Keep development COPY_ONLY backup until G04 acceptance and user acceptance of development; no automatic deletion."
+}

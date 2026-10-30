@@ -1,0 +1,5 @@
+{
+  "Before": "Pending",
+  "After": "Completed",
+  "Reason": "Provisioning fixture accounts had left AppSetupState Pending; initialize legacy fixture review and confirm with existing procedure. Not a Bootstrap acceptance test."
+}

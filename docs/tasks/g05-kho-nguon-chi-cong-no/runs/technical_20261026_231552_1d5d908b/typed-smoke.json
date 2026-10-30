@@ -1,0 +1,9 @@
+{
+  "Kind": "Typed dependency smoke; privileged connection; not acceptance",
+  "Finance": "TC20250505",
+  "Purchase": "PN20250502",
+  "Issue": "PX20250504",
+  "Stocktake": "KK00000001",
+  "DebtExpense": "TC20250507",
+  "Status": "Succeeded"
+}

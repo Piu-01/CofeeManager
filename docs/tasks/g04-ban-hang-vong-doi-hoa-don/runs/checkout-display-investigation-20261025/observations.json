@@ -1,0 +1,109 @@
+[
+  {
+    "Phase": "Initial",
+    "Dpi": 120,
+    "Form": "{Width=1150, Height=750}",
+    "Grid": {
+      "Type": "OrbitDataGridView",
+      "Text": "",
+      "Bounds": "{X=98,Y=319,Width=661,Height=1408}",
+      "ClippedBy": [
+        "Panel",
+        "OrbitDialogLayout",
+        "CheckoutDialog"
+      ],
+      "Back": "FF3C3146",
+      "Fore": "FFFFF4E7"
+    },
+    "Tender": {
+      "Type": "TextBox",
+      "Text": "81.000",
+      "Bounds": "{X=129,Y=1805,Width=599,Height=24}",
+      "ClippedBy": [
+        "Panel",
+        "OrbitDialogLayout",
+        "CheckoutDialog"
+      ],
+      "Back": "FF17131D",
+      "Fore": "FFFFF4E7"
+    },
+    "Notice": {
+      "Type": "OrbitNotice",
+      "Text": "\u0110\u1EE7 ti\u1EC1n thanh to\u00E1n \u00B7 Ti\u1EC1n th\u1ED1i 0 \u20AB",
+      "Bounds": "{X=97,Y=1900,Width=663,Height=50}",
+      "ClippedBy": [
+        "Panel",
+        "OrbitDialogLayout",
+        "CheckoutDialog"
+      ],
+      "Back": "FF2E3136",
+      "Fore": "FFADE1BF"
+    },
+    "Payable": {
+      "Type": "Label",
+      "Text": "81.000 \u20AB",
+      "Bounds": "{X=810,Y=552,Width=286,Height=45}",
+      "ClippedBy": [],
+      "Back": "FF100E15",
+      "Fore": "FFFFD09A"
+    },
+    "Editor": null
+  },
+  {
+    "Phase": "After method focus/blank selection",
+    "Dpi": 120,
+    "Form": "{Width=1150, Height=750}",
+    "Grid": {
+      "Type": "OrbitDataGridView",
+      "Text": "",
+      "Bounds": "{X=98,Y=319,Width=661,Height=1408}",
+      "ClippedBy": [
+        "Panel",
+        "OrbitDialogLayout",
+        "CheckoutDialog"
+      ],
+      "Back": "FF3C3146",
+      "Fore": "FFFFF4E7"
+    },
+    "Tender": {
+      "Type": "TextBox",
+      "Text": "81.000",
+      "Bounds": "{X=129,Y=1805,Width=599,Height=24}",
+      "ClippedBy": [
+        "Panel",
+        "OrbitDialogLayout",
+        "CheckoutDialog"
+      ],
+      "Back": "FF17131D",
+      "Fore": "FFFFF4E7"
+    },
+    "Notice": {
+      "Type": "OrbitNotice",
+      "Text": "Thi\u1EBFu m\u00E3 ngu\u1ED3n.",
+      "Bounds": "{X=97,Y=1900,Width=663,Height=50}",
+      "ClippedBy": [
+        "Panel",
+        "OrbitDialogLayout",
+        "CheckoutDialog"
+      ],
+      "Back": "FF382B35",
+      "Fore": "FFFFB4B4"
+    },
+    "Payable": {
+      "Type": "Label",
+      "Text": "81.000 \u20AB",
+      "Bounds": "{X=810,Y=552,Width=286,Height=45}",
+      "ClippedBy": [],
+      "Back": "FF100E15",
+      "Fore": "FFFFD09A"
+    },
+    "Editor": {
+      "Type": "DataGridViewComboBoxEditingControl",
+      "Text": "Ch\u1ECDn ph\u01B0\u01A1ng th\u1EE9c",
+      "Bounds": "{X=162,Y=369,Width=225,Height=33}",
+      "ClippedBy": [],
+      "Back": "FF1C1823",
+      "Fore": "FFFFF4E7"
+    }
+  }
+]

@@ -1,0 +1,313 @@
+{
+  "Failed": 0,
+  "Database": "CoffeeManager_Test_G04_20261025_181739_98e5df59_checkout",
+  "Scope": "Real Auth/runtime SQL/WinForms component actions125%; direct header-only paging fixtures, two real SalesService delivery orders. Query-seam faults/late replies and lost-ack state are simulations, no physical input/visual QA/checkout.",
+  "Results": [
+    {
+      "Name": "DG01 native DPI125 and current-status header",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG05 reconcile initially locked",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG04 SQL total 0",
+      "Outcome": "PASS",
+      "Actual": {
+        "Total": 0,
+        "Rows": 0,
+        "Range": "0 \u0111\u01A1n giao"
+      }
+    },
+    {
+      "Name": "DG04 first controls 0",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG04 SQL total 1",
+      "Outcome": "PASS",
+      "Actual": {
+        "Total": 1,
+        "Rows": 1,
+        "Range": "Hi\u1EC3n th\u1ECB 1\u20131 / 1 \u0111\u01A1n giao"
+      }
+    },
+    {
+      "Name": "DG04 first controls 1",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG04 SQL total 49",
+      "Outcome": "PASS",
+      "Actual": {
+        "Total": 49,
+        "Rows": 49,
+        "Range": "Hi\u1EC3n th\u1ECB 1\u201349 / 49 \u0111\u01A1n giao"
+      }
+    },
+    {
+      "Name": "DG04 first controls 49",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG04 SQL total 50",
+      "Outcome": "PASS",
+      "Actual": {
+        "Total": 50,
+        "Rows": 50,
+        "Range": "Hi\u1EC3n th\u1ECB 1\u201350 / 50 \u0111\u01A1n giao"
+      }
+    },
+    {
+      "Name": "DG04 first controls 50",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG04 SQL total 51",
+      "Outcome": "PASS",
+      "Actual": {
+        "Total": 51,
+        "Rows": 50,
+        "Range": "Hi\u1EC3n th\u1ECB 1\u201350 / 51 \u0111\u01A1n giao"
+      }
+    },
+    {
+      "Name": "DG04 first controls 51",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG04 final controls 51",
+      "Outcome": "PASS",
+      "Actual": "Hi\u1EC3n th\u1ECB 51\u201351 / 51 \u0111\u01A1n giao"
+    },
+    {
+      "Name": "DG04 SQL total 100",
+      "Outcome": "PASS",
+      "Actual": {
+        "Total": 100,
+        "Rows": 50,
+        "Range": "Hi\u1EC3n th\u1ECB 1\u201350 / 100 \u0111\u01A1n giao"
+      }
+    },
+    {
+      "Name": "DG04 first controls 100",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG04 final controls 100",
+      "Outcome": "PASS",
+      "Actual": "Hi\u1EC3n th\u1ECB 51\u2013100 / 100 \u0111\u01A1n giao"
+    },
+    {
+      "Name": "DG04 SQL total 101",
+      "Outcome": "PASS",
+      "Actual": {
+        "Total": 101,
+        "Rows": 50,
+        "Range": "Hi\u1EC3n th\u1ECB 1\u201350 / 101 \u0111\u01A1n giao"
+      }
+    },
+    {
+      "Name": "DG04 first controls 101",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG04 final controls 101",
+      "Outcome": "PASS",
+      "Actual": "Hi\u1EC3n th\u1ECB 101\u2013101 / 101 \u0111\u01A1n giao"
+    },
+    {
+      "Name": "DG03 filter ignores draft",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG03 paging ignores draft",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG03 refresh ignores draft",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG02 Enter submits without transition",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG03 progress auto",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG03 progress clear auto",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG03 payment auto",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG02 clearing draft does not query",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG02 clearing submit removes keyword",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG02 exact code, Phone string and readonly",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG05 select all search on entry",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG05 full code and address fill",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG03 late query ignored",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG05 error no stale detail or fake zero",
+      "Outcome": "PASS",
+      "Actual": "Ch\u01B0a c\u1EADp nh\u1EADt \u00B7 Controlled read fault"
+    },
+    {
+      "Name": "DG05 cancel explicit",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG04 stale empty fallback",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG06 detail owner/title/modal",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG06 nested confirmation owner",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG06 cancel no transition",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG06 transition cancel",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG06 detail owner/title/modal",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG06 nested confirmation owner",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG06 transition Cho giao next",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG06 detail owner/title/modal",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG06 nested confirmation owner",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG06 transition Dang giao next",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG06 delivered independent of payment",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG07 two sessions one winner/stale conflict",
+      "Outcome": "PASS",
+      "Actual": [
+        "OK",
+        "52103"
+      ]
+    },
+    {
+      "Name": "DG07 unknown no row still reconciles",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG07 reconcile no repeat and unlock",
+      "Outcome": "PASS",
+      "Actual": "\u0110\u00E3 x\u00E1c minh chuy\u1EC3n giao; kh\u00F4ng g\u1EEDi l\u1EA1i."
+    },
+    {
+      "Name": "DG07 writing locks actions",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG06/07 financial data unchanged during transitions",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG08 ADMIN read",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "DG08 STORE denied",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Owned fixtures removed",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Existing orders/money/stock/points/receipts unchanged after cleanup",
+      "Outcome": "PASS",
+      "Actual": null
+    }
+  ]
+}

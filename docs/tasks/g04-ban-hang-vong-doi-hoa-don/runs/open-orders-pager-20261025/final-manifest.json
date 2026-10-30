@@ -1,0 +1,14 @@
+{
+  "Scope": "User reference: compact icon-only centered pager",
+  "ChangedProductFiles": [
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Modules\\Sales\\OpenOrdersDialog.cs"
+  ],
+  "ChangedDuringRegression": 0,
+  "Builds": "Debug/Release0warning0error",
+  "ExistingContentHandlerRegression": "7/7 PASS",
+  "NewTests": "None; small presentation change",
+  "VisualQA": "User responsibility; no agent screenshots",
+  "Full98Checks": "Prior version; not rerun or relabeled for this change",
+  "SQLWrites": "None",
+  "UiSHA256": "51FDC28FD3F600D1621997F7E462FE36F26427ECD04002ECE5005F99E6AE72C2"
+}

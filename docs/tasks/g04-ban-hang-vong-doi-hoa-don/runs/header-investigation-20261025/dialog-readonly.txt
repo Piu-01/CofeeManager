@@ -1,0 +1,29 @@
+Window: "Khách / Ưu đãi / Giao hàng", App: CafeManager.WinForms.exe.
+	0 window Khách / Ưu đãi / Giao hàng Secondary Actions: Raise
+		1 pane (disabled)
+			2 text (disabled) Tìm khách (bỏ chọn = vãng lai)
+			3 pane (disabled) Tìm khách (bỏ chọn = vãng lai)
+				4 edit (disabled, settable, string) Tìm khách (bỏ chọn = vãng lai) Description: Tên/số điện thoại khách
+				5 button (disabled) Tìm
+				6 button (disabled) Thêm khách
+			7 text (disabled) Khách / hạng / điểm hiện tại
+			8 combo box (disabled, settable, string) Khách / hạng / điểm hiện tại Value: Khách vãng lai
+				9 text (disabled) Khách / hạng / điểm hiện tại
+				10 button (disabled) Open
+			11 text (disabled) Không chọn chương trình vẫn áp dụng hạng
+			12 combo box (disabled, settable, string) Không chọn chương trình vẫn áp dụng hạng Value: Không chọn chương trình
+				13 text (disabled) Không chọn chương trình vẫn áp dụng hạng
+				14 button (disabled) Open
+		15 text Tối đa50 kết quả; nhập số điện thoại cụ thể để chọn đúng khách.
+		16 pane Tối đa50 kết quả; nhập số điện thoại cụ thể để chọn đúng khách.
+			17 pane Tối đa50 kết quả; nhập số điện thoại cụ thể để chọn đúng khách.
+				18 button (disabled) Áp dụng
+				19 button Quay lại
+		20 title bar (settable, string) Value: Khách / Ưu đãi / Giao hàng
+			21 menu bar System ID: MenuBar
+				22 menu item System
+			23 button Minimize
+			24 button Maximize
+			25 button Close
+
+The focused UI element is 4 edit (disabled, settable, string) Tìm khách (bỏ chọn = vãng lai) Description: Tên/số điện thoại khách.

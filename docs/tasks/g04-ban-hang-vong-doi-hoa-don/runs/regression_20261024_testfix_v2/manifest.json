@@ -1,0 +1,63 @@
+{
+  "Visual": "SKIPPED",
+  "Dpi": "125% functional only;100/150%NOT RUN",
+  "Status": "RegressionCompletedIncompleteNewIssuesAwaitApproval",
+  "Approval": "User duyệt 24/10/2026: five test bugs plus regression and remaining G04",
+  "ProductChangesAllowed": false,
+  "PreviousEvidenceUntouched": true,
+  "SourceUnchanged": true,
+  "SourceFileCount": 238,
+  "ExecutedTestsUnchanged": true,
+  "Results": {
+    "Unit": {
+      "Passed": 52,
+      "Failed": 0,
+      "Total": 52,
+      "Skipped": 0
+    },
+    "Checklist": {
+      "Passed": 26,
+      "Failed": 2,
+      "Blocked": 28,
+      "Total": 56
+    },
+    "RemainingSql": {
+      "Passed": 16,
+      "Failed": 0
+    },
+    "Gui": "Native125% control validation partial; click/focus blocked",
+    "KnownTestBugsFixed": [
+      "G04-TEST-01",
+      "G04-TEST-02",
+      "G04-TEST-03",
+      "G04-TEST-04",
+      "G04-TEST-05"
+    ],
+    "ExtendedSqlAudited": {
+      "Passed": 36,
+      "Failed": 2
+    },
+    "NewIssues": [
+      "G04-TEST-06",
+      "G04-CONC-01"
+    ],
+    "SupplementSql": {
+      "Passed": 7,
+      "Failed": 0
+    }
+  },
+  "Resources": {
+    "ProbeProcesses": 0,
+    "FinalTestDatabases": 0,
+    "CleanedThisWave": 3,
+    "CreatedThisWave": 3,
+    "CheckedAt": "2026-10-24T12:26:54.3804148+07:00",
+    "Retained": 0
+  },
+  "Runs": [
+    "20261024_114856_b5dd5242",
+    "20261024_114915_d6a4c202",
+    "20261024_122048_58a29a82"
+  ],
+  "FinishedAt": "2026-10-24T12:27:24.1439275+07:00"
+}

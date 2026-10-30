@@ -3,7 +3,7 @@ using CafeManager.Business.Services;
 using CafeManager.Models.Dtos.Customers;
 using CafeManager.WinForms.Modules.Customers;
 namespace CafeManager.WinForms.Forms;
-public sealed class CustomerPickerDialog : Form
+public sealed class CustomerPickerDialog : CafeManager.WinForms.Forms.OrbitDialogForm
 {
     public CustomerRow? SelectedCustomer {get;private set;}
     public CustomerPickerDialog(CustomerService service,SessionContext session,bool allowGuest=false)
@@ -18,3 +18,4 @@ public sealed class CustomerPickerDialog : Form
         MinimumSize=new Size(560,420);Shown+=(_,_)=>layout.FitToContent(this,true);
     }
 }
+

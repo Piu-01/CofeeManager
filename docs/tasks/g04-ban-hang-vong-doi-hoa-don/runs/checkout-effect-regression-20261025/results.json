@@ -1,0 +1,50 @@
+{
+  "Scope": "Real frozen CheckoutDialog/overlay; direct focus and synthetic MouseUp handler, not physical mouse or Confirm/SQL",
+  "Results": [
+    {
+      "Name": "125 percent",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Focus selects all original amount",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "First mouse-up restores selection after native caret placement",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Second click allows caret",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "New entry replaces rather than appends",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Leave format and re-entry retain full selection",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Overlay can show without stealing control focus",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Overlay native no-activate and transparent flags",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Overlay timer hides and releases particles",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Display failure cannot propagate or retain effect timer",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Effect can show after display failure",
+      "Outcome": "PASS"
+    }
+  ],
+  "Failed": 0
+}

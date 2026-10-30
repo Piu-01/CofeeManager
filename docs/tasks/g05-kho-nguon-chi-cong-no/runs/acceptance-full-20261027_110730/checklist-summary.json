@@ -1,0 +1,37 @@
+[
+  {
+    "Task": "T19",
+    "PASS": 6,
+    "FAIL": 0,
+    "BLOCKED": 3,
+    "NOT_RUN": 1
+  },
+  {
+    "Task": "T20",
+    "PASS": 8,
+    "FAIL": 1,
+    "BLOCKED": 2,
+    "NOT_RUN": 1
+  },
+  {
+    "Task": "T21",
+    "PASS": 7,
+    "FAIL": 1,
+    "BLOCKED": 2,
+    "NOT_RUN": 0
+  },
+  {
+    "Task": "T22",
+    "PASS": 7,
+    "FAIL": 1,
+    "BLOCKED": 3,
+    "NOT_RUN": 0
+  },
+  {
+    "Task": "T23",
+    "PASS": 10,
+    "FAIL": 2,
+    "BLOCKED": 0,
+    "NOT_RUN": 0
+  }
+]

@@ -1,5 +1,9 @@
 # T07 — Kết quả native và phần còn thiếu
 
+**Bổ sung24/10/2026:** đã sửa T07-NAV-20261024 sau khi người dùng duyệt;
+[menu/startup regression18/18PASS](menu-fix-test-results.md), buildDebug/Release sạch.
+Giữ nguyên các kết quả/checklist lịch sử bên dưới; không suy nghiệm thu toàn G04.
+
 ## Kết luận cuối 17/10/2026 — T07 7/7 ID gốc PASS
 
 Đãđốichiếuđủsubcasebắtbuộc tại[ma trậnG02](../acceptance-matrix.md), gồm

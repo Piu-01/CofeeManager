@@ -1,0 +1,151 @@
+Window: "CoffeeManager", App: CafeManager.WinForms.exe.
+	0 window CoffeeManager Secondary Actions: Raise
+		426 window Ghi phiếu thu chi Secondary Actions: Raise
+			450 window Xác nhận ghi phiếu Secondary Actions: Raise
+				451 pane
+					452 text Xác nhận ghi phiếu
+					453 text Ghi phiếu 2.345 ₫? Sau khi ghi không thể sửa hoặc xóa.
+					454 pane
+						455 pane
+							456 button Có
+							457 button Không
+				458 title bar (settable, string) Value: Xác nhận ghi phiếu
+					459 menu bar System ID: MenuBar
+						460 menu item System
+					461 button Close
+			427 pane
+				428 text Ghi phiếu thu chi
+				429 pane Ghi phiếu thu chi
+					430 text Danh mục
+					431 combo box (settable, string) Danh mục Value: Tien dien (Chi)
+						432 text Danh mục
+						433 button Open
+					434 text Ngày lập
+					435 date and time picker (settable, string) Value: 29/10/2026 19:15
+					436 text Số tiền (₫)
+					437 edit (settable, string) Số tiền (₫) Value: 2345
+					438 text Mã tài sản (tùy chọn)
+					439 edit (settable, string) Mã tài sản (tùy chọn)
+					440 text Ghi chú
+					441 edit (settable, string) Ghi chú Value: B05-native-20261029
+				442 pane
+					443 pane
+						444 button Ghi phiếu
+						445 button Quay lại
+			446 title bar (settable, string) Value: Ghi phiếu thu chi
+				447 menu bar System ID: MenuBar
+					448 menu item System
+				449 button Close
+		1 pane
+			2 pane
+				3 text CoffeeManager
+				4 text KHÔNG GIAN QUẢN LÝ
+				5 text G05 fixture ADMIN
+				6 text Quản trị viên · ADMIN
+				7 button Trang phiên
+				8 button Danh mục nền
+				9 button Bán hàng
+				10 button Lịch sử hóa đơn
+				11 button Giao hàng
+				12 button Khách hàng
+				13 button Bàn / Khu vực
+				14 button Menu / Công thức
+				15 button Nguyên liệu / Tồn
+				16 button Ưu đãi / Điểm
+				17 button Thu chi
+				18 button Kho
+				19 button Công nợ
+				20 button Thông tin hệ thống
+				21 button Đăng xuất ID: logout
+				22 text Phiên đang hoạt động.
+				23 scroll bar (settable, float) Vertical Value: 45 ID: NonClientVerticalScrollBar
+					24 button Line up ID: UpButton
+					25 button Page up ID: UpPageButton
+					26 thumb Position ID: ScrollbarThumb
+					27 button Page down ID: DownPageButton
+					28 button Line down ID: DownButton
+			29 pane
+				30 text Quản lý / Thu chi
+				31 text G05 fixture ADMIN · ADMIN
+			32 pane G05 fixture ADMIN · ADMIN
+				364 pane G05 fixture ADMIN · ADMIN ID: 592370
+					365 pane ID: 133568
+						366 text TÀI CHÍNH
+						367 text Thu chi
+						368 text Ghi tay và nguồn chi từ nghiệp vụ; phiếu đã ghi chỉ đọc.
+						369 pane Ghi tay và nguồn chi từ nghiệp vụ; phiếu đã ghi chỉ đọc.
+							370 button Ghi phiếu
+						371 pane
+							372 pane ID: 10094934
+								373 edit (settable, string) Description: Tìm tên hoặc mã nguyên liệu…
+							374 pane
+								375 date and time picker (settable, string) Value: 29/09/2026
+								376 date and time picker (settable, string) Value: 29/10/2026
+								377 combo box (settable, string) Tất cả Value: Tất cả
+									378 text
+									379 button Open
+								380 combo box (settable, string) Tất cả nguồn Value: Tất cả nguồn
+									381 text
+									382 button Open
+							383 pane
+								384 button Tìm / Tải lại
+								385 button Xem chi tiết
+							386 pane
+								387 data grid
+									388 custom Top Row
+										389 header Top Left Header Cell ID: 428490876
+										390 header MÃ ID: 4243272530
+										391 header NGÀY ID: 4225671984
+										392 header LOẠI ID: 4265300345
+										393 header DANH MỤC ID: 4243598121
+										394 header SỐ TIỀN ID: 4229904669
+										395 header GHI CHÚ ID: 4253216389
+									396 custom Row 1
+										397 header Row 1 ID: 42982033
+										398 item MÃ Row 1 Value: TC20250507 ID: 4212766440
+										399 item NGÀY Row 1 Value: 26/10/2026 00:00 ID: 4231745997
+										400 item LOẠI Row 1 Value: Chi ID: 4210044778
+										401 item DANH MỤC Row 1 Value: Tra no nha cung cap ID: 4263473253
+										402 item SỐ TIỀN Row 1 Value: 1.000 ID: 4219845921
+										403 item GHI CHÚ Row 1 Value: SupplierDebt ID: 4256670391
+									404 custom Row 2
+										405 header Row 2 ID: 4247837523
+										406 item MÃ Row 2 Value: TC20250506 ID: 4217908026
+										407 item NGÀY Row 2 Value: 26/10/2026 00:00 ID: 4231477749
+										408 item LOẠI Row 2 Value: Chi ID: 426557559
+										409 item DANH MỤC Row 2 Value: Trả ngay nhập hàng ID: 4218139404
+										410 item SỐ TIỀN Row 2 Value: 4.000 ID: 4234485665
+										411 item GHI CHÚ Row 2 Value: PurchaseImmediate ID: 4245660470
+									412 custom Row 3
+										413 header Row 3 ID: 4266208960
+										414 item MÃ Row 3 Value: TC20250505 ID: 4255410120
+										415 item NGÀY Row 3 Value: 26/10/2026 00:00 ID: 4249242921
+										416 item LOẠI Row 3 Value: Chi ID: 4236178207
+										417 item DANH MỤC Row 3 Value: Tien dien ID: 42554655
+										418 item SỐ TIỀN Row 3 Value: 1.234 ID: 427210525
+										419 item GHI CHÚ Row 3 Value: G05 fixture ID: 4226627968
+							420 pane ID: 133584
+								421 text Hiển thị 1–3 / 3 phiếu
+								422 button (disabled) Trang trước
+								423 text 1 / 1
+								424 button (disabled) Trang sau
+						425 text 3 phiếu · Thu 0 ₫ · Chi 6.234 ₫ · Trang 1
+		39 title bar (settable, string) Value: CoffeeManager
+			40 menu bar System ID: MenuBar
+				41 menu item System
+			42 button Minimize
+			43 button Maximize
+			44 button Close
+
+Selected text: ```
+B05-native-20261029
+```
+
+Note: Pay special attention to the content selected by the user. If the user asks a question or refers to the content they are looking at on-screen, they might be referring to the selected content (but they might be referring to something else that's visible, too).
+
+Focused element: 437 edit (settable, string) Số tiền (₫) Value: 2345
+
+Selected text: B05-native-20261029
+
+Document text:
+B05-native-20261029

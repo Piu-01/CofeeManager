@@ -1,0 +1,237 @@
+[
+  {
+    "Id": "DPI125",
+    "Result": "PASS",
+    "Actual": 120
+  },
+  {
+    "Id": "Finance.InitialLoad",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Finance.HideReleasesRead",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Finance.ReloadAfterShow",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Finance.DisposeTwice",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Finance.NoReadAfterDispose",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Finance.RealReadPending",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Finance.DisposePendingRead",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Finance.RevokedSkipsRefresh",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Finance.RevokedDispose",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Purchases.InitialLoad",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Purchases.HideReleasesRead",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Purchases.ReloadAfterShow",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Purchases.DisposeTwice",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Purchases.NoReadAfterDispose",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Purchases.RealReadPending",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Purchases.DisposePendingRead",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Purchases.RevokedSkipsRefresh",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Purchases.RevokedDispose",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Issues.InitialLoad",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Issues.HideReleasesRead",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Issues.ReloadAfterShow",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Issues.DisposeTwice",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Issues.NoReadAfterDispose",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Issues.RealReadPending",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Issues.DisposePendingRead",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Issues.RevokedSkipsRefresh",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Issues.RevokedDispose",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Stocktakes.InitialLoad",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Stocktakes.HideReleasesRead",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Stocktakes.ReloadAfterShow",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Stocktakes.DisposeTwice",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Stocktakes.NoReadAfterDispose",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Stocktakes.RealReadPending",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Stocktakes.DisposePendingRead",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Stocktakes.RevokedSkipsRefresh",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Stocktakes.RevokedDispose",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Debts.InitialLoad",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Debts.HideReleasesRead",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Debts.ReloadAfterShow",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Debts.DisposeTwice",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Debts.NoReadAfterDispose",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Debts.RealReadPending",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Debts.DisposePendingRead",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Debts.RevokedSkipsRefresh",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "Debts.RevokedDispose",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "NoAsyncLifecycleExceptions",
+    "Result": "PASS",
+    "Actual": []
+  }
+]

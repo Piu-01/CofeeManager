@@ -1,0 +1,20 @@
+{
+  "Run": "invoice-history-v4-acceptance-20261026",
+  "Approved": "User duyệt26/10/2026",
+  "Database": "CoffeeManager_Test_G04_20261025_181739_98e5df59_checkout",
+  "Marker": "20261025_181739_98e5df59",
+  "Schema": 16,
+  "FunctionalChecks": 53,
+  "FunctionalFailures": 0,
+  "RegressionChecks": 94,
+  "RegressionFailures": 0,
+  "SalesXunit": "18/18 PASS",
+  "SourceUnchanged": true,
+  "FixtureCleanup": "101 open headers, IV426 and IHA01/IHC01/IHS01 removed; NNA01/NNC01/NNS01 removed",
+  "FinancialSnapshot": "Unchanged after cleanup",
+  "GuiProcess": 9492,
+  "RetainReason": "User manual/visual V4 check pending",
+  "ReviewBy": "2026-10-27",
+  "Visual": "User assigned, agent SKIPPED",
+  "Dpi100and150": "NOT RUN"
+}

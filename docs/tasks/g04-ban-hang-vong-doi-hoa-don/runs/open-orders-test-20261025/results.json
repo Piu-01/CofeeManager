@@ -1,0 +1,294 @@
+{
+  "Scope": "Frozen real WinForms dialog, real AuthService/SQL; direct component events/reflection, no physical input or visual QA",
+  "Results": [
+    {
+      "Name": "DPI125",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "SQL51 rows, page50/1, correct initial actions",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Default bounds/grid",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Default bounds/search",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Default bounds/selection",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Default bounds/pageInfo",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Default bounds/previous",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Default bounds/next",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Default bounds/open",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Default bounds/count",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Default full code",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1280x720 bounds/grid",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1280x720 bounds/search",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1280x720 bounds/selection",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1280x720 bounds/pageInfo",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1280x720 bounds/previous",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1280x720 bounds/next",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1280x720 bounds/open",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1280x720 bounds/count",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1280x720 full code",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1366x768 bounds/grid",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1366x768 bounds/search",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1366x768 bounds/selection",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1366x768 bounds/pageInfo",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1366x768 bounds/previous",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1366x768 bounds/next",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1366x768 bounds/open",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1366x768 bounds/count",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "1366x768 full code",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Narrow740x620 bounds/grid",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Narrow740x620 bounds/search",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Narrow740x620 bounds/selection",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Narrow740x620 bounds/pageInfo",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Narrow740x620 bounds/previous",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Narrow740x620 bounds/next",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Narrow740x620 bounds/open",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Narrow740x620 bounds/count",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Narrow740x620 full code",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Narrow horizontal scroll keeps code visible",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "SQL second page has one unique row",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "After rebind page2 bounds/grid",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "After rebind page2 bounds/search",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "After rebind page2 bounds/selection",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "After rebind page2 bounds/pageInfo",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "After rebind page2 bounds/previous",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "After rebind page2 bounds/next",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "After rebind page2 bounds/open",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "After rebind page2 bounds/count",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "After rebind page2 full code",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Date/money/channel formatted from typed data",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Exact invoice search and full footer code",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Empty search disables opening and pagination",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Out-of-range page returns first actual page",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Read fault retains query and rows but disables opening",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Controlled response inversion actually overlaps",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Older response cannot replace latest empty result",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Shared profiles remain readonly/payment editable",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Financial snapshot unchanged by reads",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Open selection returns exact chosen code",
+      "Outcome": "PASS"
+    }
+  ],
+  "Failed": 0,
+  "Observations": [
+    {
+      "Label": "Default",
+      "Dpi": 120,
+      "Form": "{Width=1225, Height=700}",
+      "Code": "HD20250471",
+      "Measured": 80,
+      "Available": 156,
+      "Column": 188,
+      "Minimum": 188
+    },
+    {
+      "Label": "1280x720",
+      "Dpi": 120,
+      "Form": "{Width=1280, Height=720}",
+      "Code": "HD20250471",
+      "Measured": 80,
+      "Available": 156,
+      "Column": 188,
+      "Minimum": 188
+    },
+    {
+      "Label": "1366x768",
+      "Dpi": 120,
+      "Form": "{Width=1366, Height=768}",
+      "Code": "HD20250471",
+      "Measured": 80,
+      "Available": 156,
+      "Column": 188,
+      "Minimum": 188
+    },
+    {
+      "Label": "Narrow740x620",
+      "Dpi": 120,
+      "Form": "{Width=740, Height=620}",
+      "Code": "HD20250471",
+      "Measured": 80,
+      "Available": 156,
+      "Column": 188,
+      "Minimum": 188
+    },
+    {
+      "Label": "After rebind page2",
+      "Dpi": 120,
+      "Form": "{Width=1280, Height=720}",
+      "Code": "HD20250421",
+      "Measured": 80,
+      "Available": 156,
+      "Column": 188,
+      "Minimum": 188
+    }
+  ]
+}

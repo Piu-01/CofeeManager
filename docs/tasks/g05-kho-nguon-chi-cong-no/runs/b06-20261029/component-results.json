@@ -1,0 +1,290 @@
+[
+  {
+    "Id": "SharedDefaultReadOnly",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "ADMIN.Purchase.Editable",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "ADMIN.Purchase.Locked.Code",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "ADMIN.Purchase.Locked.Name",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "ADMIN.Purchase.Locked.Unit",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "ADMIN.Purchase.Immediate",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "ADMIN.Purchase.Editor.Quantity",
+    "Result": "PASS",
+    "Actual": {
+      "TextLength": 6,
+      "SelectionLength": 6
+    }
+  },
+  {
+    "Id": "ADMIN.Purchase.EndEdit.Quantity",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "ADMIN.Purchase.Editor.Price",
+    "Result": "PASS",
+    "Actual": {
+      "TextLength": 1,
+      "SelectionLength": 1
+    }
+  },
+  {
+    "Id": "ADMIN.Purchase.EndEdit.Price",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "ADMIN.Purchase.BoundQuantity",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "ADMIN.Purchase.Preview",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "ADMIN.Purchase.InvalidQuantity.0",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "ADMIN.Purchase.InvalidQuantity.-1",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "ADMIN.Purchase.InvalidQuantity.0.00001",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "ADMIN.Purchase.FractionalPrice",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "ADMIN.Purchase.EnterNotCommit",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "ADMIN.Purchase.UnknownDisablesBody",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "ADMIN.Issue.Editable",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "ADMIN.Issue.Locked.Code",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "ADMIN.Issue.Locked.Name",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "ADMIN.Issue.Locked.Unit",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "ADMIN.Issue.Editor.Quantity",
+    "Result": "PASS",
+    "Actual": {
+      "TextLength": 6,
+      "SelectionLength": 6
+    }
+  },
+  {
+    "Id": "ADMIN.Issue.EndEdit.Quantity",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "ADMIN.Issue.BoundQuantity",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "ADMIN.Issue.EnterNotCommit",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "ADMIN.Issue.UnknownDisablesBody",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "STORE.Purchase.Editable",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "STORE.Purchase.Locked.Code",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "STORE.Purchase.Locked.Name",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "STORE.Purchase.Locked.Unit",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "STORE.Purchase.Immediate",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "STORE.Purchase.Editor.Quantity",
+    "Result": "PASS",
+    "Actual": {
+      "TextLength": 6,
+      "SelectionLength": 6
+    }
+  },
+  {
+    "Id": "STORE.Purchase.EndEdit.Quantity",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "STORE.Purchase.Editor.Price",
+    "Result": "PASS",
+    "Actual": {
+      "TextLength": 1,
+      "SelectionLength": 1
+    }
+  },
+  {
+    "Id": "STORE.Purchase.EndEdit.Price",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "STORE.Purchase.BoundQuantity",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "STORE.Purchase.Preview",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "STORE.Purchase.InvalidQuantity.0",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "STORE.Purchase.InvalidQuantity.-1",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "STORE.Purchase.InvalidQuantity.0.00001",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "STORE.Purchase.FractionalPrice",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "STORE.Purchase.EnterNotCommit",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "STORE.Purchase.UnknownDisablesBody",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "STORE.Issue.Editable",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "STORE.Issue.Locked.Code",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "STORE.Issue.Locked.Name",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "STORE.Issue.Locked.Unit",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "STORE.Issue.Editor.Quantity",
+    "Result": "PASS",
+    "Actual": {
+      "TextLength": 6,
+      "SelectionLength": 6
+    }
+  },
+  {
+    "Id": "STORE.Issue.EndEdit.Quantity",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "STORE.Issue.BoundQuantity",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "STORE.Issue.EnterNotCommit",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "STORE.Issue.UnknownDisablesBody",
+    "Result": "PASS",
+    "Actual": null
+  },
+  {
+    "Id": "CASH.InventoryDenied",
+    "Result": "PASS",
+    "Actual": null
+  }
+]

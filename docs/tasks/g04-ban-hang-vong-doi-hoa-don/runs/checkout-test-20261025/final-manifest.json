@@ -1,0 +1,52 @@
+{
+  "FrozenSourceFiles": 206,
+  "ChangedSourceFiles": 0,
+  "FrozenDllSha256": "B6F6E7E9C205C4E61EBE1095DB89322C7489A50856E3D21F20FB4E7F766801E3",
+  "BinaryChecks": [
+    {
+      "Runner": "checkout-test-20261025",
+      "Hash": "B6F6E7E9C205C4E61EBE1095DB89322C7489A50856E3D21F20FB4E7F766801E3",
+      "MatchesFrozen": true
+    },
+    {
+      "Runner": "checkout-sql-test-20261025",
+      "Hash": "B6F6E7E9C205C4E61EBE1095DB89322C7489A50856E3D21F20FB4E7F766801E3",
+      "MatchesFrozen": true
+    },
+    {
+      "Runner": "checkout-layout-probe-20261025",
+      "Hash": "B6F6E7E9C205C4E61EBE1095DB89322C7489A50856E3D21F20FB4E7F766801E3",
+      "MatchesFrozen": true
+    },
+    {
+      "Runner": "checkout-editor-probe-20261025",
+      "Hash": "B6F6E7E9C205C4E61EBE1095DB89322C7489A50856E3D21F20FB4E7F766801E3",
+      "MatchesFrozen": true
+    },
+    {
+      "Runner": "checkout-editor-followup-20261025",
+      "Hash": "B6F6E7E9C205C4E61EBE1095DB89322C7489A50856E3D21F20FB4E7F766801E3",
+      "MatchesFrozen": true
+    },
+    {
+      "Runner": "checkout-editor-functional-20261025",
+      "Hash": "B6F6E7E9C205C4E61EBE1095DB89322C7489A50856E3D21F20FB4E7F766801E3",
+      "MatchesFrozen": true
+    },
+    {
+      "Runner": "checkout-key-observation-20261025",
+      "Hash": "B6F6E7E9C205C4E61EBE1095DB89322C7489A50856E3D21F20FB4E7F766801E3",
+      "MatchesFrozen": true
+    }
+  ],
+  "Unit": "13 PASS",
+  "MainComponent": "29 PASS /3 FAIL footer",
+  "SqlUiBridge": "7 PASS",
+  "Editor": "Raw probes preserved;4 functional editor cases PASS;Enter assertion inconclusive;appearance excluded",
+  "G04": "33 PASS/1 FAIL/22 BLOCKED",
+  "FixtureDatabase": "CoffeeManager_Test_G04_20261025_141901_db21cda5_checkout",
+  "FixtureCleaned": true,
+  "ManualDatabaseRetained": "CoffeeManager_Test_G04_20261024_152759_12204643_manual",
+  "ProductBug": "G04-UI02; awaiting approval; no product source changed during tests",
+  "Scope": "No physical Confirm/native keyboard/full lost-response timeout claim; visual SKIPPED;100/150% NOT RUN"
+}

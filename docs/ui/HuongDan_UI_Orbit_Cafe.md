@@ -203,3 +203,80 @@ Tài liệu này tổng hợp hướng Orbit hightech–cà phê đã trao đổ
 **Điều chỉnh ngày 17/10/2026:** Đã bỏ mục yêu cầu Giảm chuyển động theo chỉ định mới nhất của người dùng. Quy tắc bụi sao chọn từng nút ở mục 6 thay thế yêu cầu cũ “áp dụng mọi nút”. Các bản xem thử trước đó còn phát bụi sao trên mọi nút chỉ là phiên bản cũ, không dùng hành vi đó làm yêu cầu triển khai. Gói ui/ này đã đồng bộ reference.html: chỉ Xác nhận thanh toán có bụi sao; đã bỏ Giảm chuyển động; có cuộn menu và cuộn toàn trang. Không dùng ZIP trắng–teal cũ làm chuẩn.
 
 Các checklist trên là tiêu chí đối chiếu, chưa được đánh dấu nghiệm thu. Kiểm tra logic ở các bản thử không thay kiểm thử hiển thị/chuyển động thực tế trên Windows.
+
+## 11. Chuẩn trang danh sách dùng chung — 26/10/2026
+
+Người dùng yêu cầu ghi lại thiết kế sau khi triển khai Lịch sử hóa đơn V4 để
+các màn code sau nhất quán, gồm Khách hàng, Giao hàng và các trang quản lý có
+tìm kiếm/bộ lọc/bảng. Đây là yêu cầu chung được chốt trực tiếp, không là quy
+tắc tự trích từ README demo. POS chia vùng món/đơn và dialog editor có bố cục
+nghiệp vụ riêng; không ép các màn đó thành trang danh sách.
+
+### 11.1. Bố cục theo vùng nội dung thực tế
+
+- UserControl của trang giãn hết vùng nội dung MainForm, bên phải sidebar và
+  dưới topbar. Giữ padding của workspace; “hết màn hình” ở đây là hết vùng
+  nội dung được cấp, không tràn lên sidebar/topbar hoặc ra ngoài cửa sổ.
+- Header gồm nhãn workspace, tên màn và mô tả. Card danh sách bên dưới giãn
+  cả ngang lẫn dọc theo vùng còn lại; không đặt chiều cao bảng/card bằng số
+  dòng đang có, kích thước Designer cố định hoặc một hàng50% của container.
+- Trong card, xếp theo thứ tự ở bảng dưới. Bảng ít dòng/rỗng vẫn giữ vùng
+  bảng đầy đủ. Màn Giao hàng code sau phải theo cùng nguyên tắc giãn vùng như
+  Khách hàng; không coi bảng chỉ chiếm nửa chiều cao dù còn khoảng trống là mẫu.
+
+| Vùng | Quy tắc |
+|---|---|
+| Hàng1: tìm kiếm |Ô tìm kiếm co giãn chiếm toàn chiều ngang còn lại; bên phải là kính lúp và làm mới cùng nhóm nút icon. Không nhét bộ lọc vào hàng này làm ô tìm chỉ còn một đoạn ngắn. |
+| Hàng2: bộ lọc |Nhãn Lọc theo và các trường theo nghiệp vụ: loại ngày, khoảng từ–đến, trạng thái, kênh… Chỉ hiện trường màn đó cần; không chép filter hóa đơn sang mọi màn. Thiếu ngang thì wrap ở hàng dưới, không chồng hoặc cắt control. |
+| Hàng hành động |Các hành động trên dòng như Chi tiết/In/Sửa/Xóa ở hàng riêng, căn phải. Hành động tạo mới dùng vị trí PrimaryActions của workspace; không trộn vào ô tìm hoặc footer phân trang. |
+| Vùng bảng |Giãn hết chiều ngang card và chiều cao còn lại sau toolbar/action/footer. Grid cuộn bên trong vùng này; mã/ngày/tiền không bị ép mất nội dung chỉ để vừa chiều ngang. |
+| Footer card |Phạm vi hiển thị bên trái; Trước, chỉ số trang, Sau bên phải. Luôn tiếp cận được khi resize và khi bảng cuộn. Không thêm summary đếm/khoảng ngày phía trên bảng theo mẫu V4. |
+| Trạng thái tải |Dòng trạng thái bên dưới card; phân biệt loading/rỗng/lỗi/hủy tải. Không dùng tổng0 hoặc dữ liệu bộ lọc cũ để giả tải thành công. |
+
+### 11.2. Tìm kiếm và bộ lọc
+
+- Kính lúp thay nút chữ “Áp dụng bộ lọc” trên mẫu danh sách mới. Kính lúp và
+  Enter trong ô tìm chỉ submit từ khóa; gõ chữ chưa tự tìm. Có AccessibleName,
+  tooltip và trạng thái focus/disabled phù hợp, không dùng icon không có tên.
+- Chọn bộ lọc nào thì tự áp dụng bộ lọc đó, không phải bấm thêm kính lúp hoặc
+  Áp dụng. Luôn query bằng **từ khóa đã submit gần nhất**. Nội dung đang sửa
+  trong ô tìm là nháp; đổi ngày/trạng thái/kênh không được vô tình submit nó.
+- Đổi filter hoặc submit từ khóa mới về trang đầu. Chuyển trang và làm mới
+  cũng dùng từ khóa đã submit, giữ filter hiện hành. Xóa ô tìm chỉ xóa nháp;
+  submit ô trống mới bỏ điều kiện từ khóa.
+- Ví dụ: đã tìm HD20250421, sửa ô thành CHUAGUI nhưng chưa submit. Đổi trạng
+  thái vẫn lọc HD20250421; bấm kính lúp/Enter sau đó mới tìm CHUAGUI.
+- Hủy truy vấn cũ/generation guard khi lọc nhanh; kết quả đến muộn không đè
+  kết quả mới. Lỗi/ngày sai giữ input, báo rõ; không mở Chi tiết từ dòng cũ
+  không còn thuộc tập kết quả. Không tự đổi SQL/quyền chỉ để đổi giao diện.
+
+### 11.3. Bảng, phân trang và tái sử dụng
+
+- Giữ font/màu/header/selection/radio/badge từ theme và profile chung. Badge
+  có chữ, không chỉ màu. Mã hóa đơn đủ toàn bộ10ký tự; ngày giờ dd/MM/yyyy HH:mm;
+  tiền căn phải theo vi-VN, ví dụ81.000 ₫. Bảng tra cứu readonly.
+- Cột nội dung dài dùng fill/minwidth phù hợp; nếu không đủ ngang thì grid
+  cuộn ngang. Không chia viewport thành hai nửa trống chỉ để giữ width cột cũ.
+- Khi contract đã trả TotalCount thì dùng tổng thật cho range/số trang/nút Sau,
+  kể cả trang cuối đủ50dòng. Không đoán còn trang chỉ vì rowCount bằng50. Nếu
+  contract chưa có tổng, giữ cơ chế server paging tương ứng, không bịa tổng.
+- Tái dùng AppTheme/OrbitManagementTheme và control tại mục2.1 của
+  [hướng dẫn WinForms](WINFORMS_IMPLEMENTATION.md). Mở rộng tùy chọn dùng chung
+  khi cần; không tạo bản sao theme/grid/date/search cho từng trang. Profile
+  InvoiceHistory chỉ dành cho cột hóa đơn, không áp vào bảng giao hàng/khách.
+- Form chi tiết/thêm/sửa vẫn là modal Windows có owner, titlebar/X native,
+  ShowInTaskbar=false. Input có thể sửa dùng helper chọn hết khi mới vào ô.
+
+### 11.4. Điều kiện bàn giao lần code tiếp theo
+
+- Kiểm cây container/Dock/Anchor và bounds thực tại125% trên1280×720,
+  1366×768: card/bảng giãn hết phần còn lại, filter wrap không làm mất footer.
+- Kiểm cả nhiều dòng, ít dòng, rỗng, loading/lỗi và resize; không suy bố cục
+  đúng từ riêng màn Khách hàng rồi bỏ kiểm màn Giao hàng hoặc màn mới.
+- Người dùng kiểm hình thức. Agent không chụp ảnh/so hình/nghiệm thu visual thay
+  người dùng theo AGENTS.md;100/150% chưa chạy phải ghi NOT RUN, không đổi Scale.
+- Mẫu là [V4 HTML](invoice-history-v4/Orbit_LichSuHoaDon_V4.html) và
+  [V4 PNG](invoice-history-v4/Orbit_LichSuHoaDon_V4_Laptop.png), chỉ để tham chiếu.
+  Không chạy demo JS làm logic app hoặc coi mẫu là bằng chứng WinForms PASS.
+- Việc ghi quy tắc này chưa sửa các màn cũ. Khi được giao chỉnh một màn, áp
+  dụng chuẩn trong phạm vi đó và ghi kết quả thực tế; không tự báo các màn đã đạt.

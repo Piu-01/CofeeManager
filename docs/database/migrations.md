@@ -75,3 +75,34 @@ customer-contract.md, loyalty-contract.md. Technicalsmoke không là nghiệm th
 
 009_promotion_legacy_codes.sql thuộc T13, chạy sau008: cho phép sửa/xóa mã seed cũ
 như KM24BF, giữ mãPK; tạo mới vẫn KM+8số. Development/runnerG03 hiện đến009.
+
+## G04 —010 đến015 (23/10/2026)
+
+Sau009 áp010_sales_orders →011_checkout →012_sales_cancel →013_invoice_queries
+→014_delivery →015_sales_read_normalization bằng Apply-Migration với Version tương ứng.
+010thêm Revision header/API đơn,011snapshot+checkout bắt buộc actor/version/token,
+012hủy có quyền/version,013read-onlyquery,014tiến độ giao hiện tại.015hoàn thiện
+optional NULL và đọc ưu đãi đơn chốt từ snapshot; không đổi checksum010–014.
+
+Seed baseline vẫn chỉ trên schema rỗng trước migrations; không gọi chữ ký checkout
+baseline sau011. Đơn đã trả cũ được LegacyUnknown cho nguồn/tỷ lệ, không tái tính
+lại tiền/kho/điểm. App không tự migrate. Update-DevelopmentG04.ps1 kiểm marker,
+backup COPY_ONLY CHECKSUM, checksum001–015 và so sánh số dư/tài khoản; không reseed.
+Khởi tạo development mới vẫn đi Initialize-Development (đến009) rồi Update-DevelopmentG04.
+Contract: sales-contract.md, checkout-contract.md, invoice-contract.md, delivery-contract.md.
+
+## G04 —016 payment guard point locks (24/10/2026)
+
+016_payment_guard_point_locks.sql chạy sau015 bằng Apply-Migration.ps1 Version16.
+Chỉ ALTER TR_CTTT_KiemTra, không backfill hoặc sửa rows. Khóa affected MaHD theoPK
+seek, tránh scan/range khóa sang đơn đang chờ kho. Giữ closed/overpayment guards
+và xử lý nhiều MaHD trong cùng trigger. Không sửa baseline/checksum001–015.
+Actual plan trước/sau: Clustered Index Scan9rows→Seek1row trên fixture đã lưu tại
+docs/tasks/g04-ban-hang-vong-doi-hoa-don/runs/regression_20261024_concurrency_v3/.
+68ca SQL regressionPASS; đây không là nghiệm thu toàn bộ GUI G04.
+
+Development đã có015: dùng tools/database/Update-DevelopmentG04Concurrency.ps1;
+chỉ nhận DB CoffeeManager_Development có marker/schema015–016, backup COPY_ONLY
+CHECKSUM trước nâng, kiểm checksum001–016 và đối chiếu tồn/điểm/hóa đơn/tài khoản.
+Fresh development: Initialize đến009, Update-DevelopmentG04 đến015 rồi updater016.
+Không seed lại. App đang chạy thì updater dừng, không tự kill process người dùng.

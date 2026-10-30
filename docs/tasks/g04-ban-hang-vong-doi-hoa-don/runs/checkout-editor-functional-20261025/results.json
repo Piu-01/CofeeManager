@@ -1,0 +1,27 @@
+{
+  "Scope": "Frozen actual DataGridView editing control and production key handler invoked as components, not physical key input",
+  "Results": [
+    {
+      "Name": "Editable amount live preview; appearance excluded",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Amount edit commits correct allocation",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Method combo binds code, bank disables tender",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Reference edit length rejected by live validation",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Production Enter handler ends edit without checkout",
+      "Outcome": "FAIL",
+      "Error": "System.InvalidOperationException: Assertion failed\r\n   at Program.\u003CMain\u003Eg__Check|0_1(Boolean ok, String message) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g04-ban-hang-vong-doi-hoa-don\\runs\\checkout-editor-functional-20261025\\Program.cs:line 24\r\n   at Program.\u003C\u003Ec__DisplayClass0_1.\u003CMain\u003Eb__9() in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g04-ban-hang-vong-doi-hoa-don\\runs\\checkout-editor-functional-20261025\\Program.cs:line 33\r\n   at Program.\u003C\u003Ec__DisplayClass0_0.\u003CMain\u003Eg__Test|2(String name, Action action) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g04-ban-hang-vong-doi-hoa-don\\runs\\checkout-editor-functional-20261025\\Program.cs:line 25"
+    }
+  ],
+  "Failed": 1
+}

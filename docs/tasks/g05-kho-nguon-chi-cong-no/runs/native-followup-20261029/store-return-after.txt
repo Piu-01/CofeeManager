@@ -1,0 +1,135 @@
+Window: "CoffeeManager", App: CafeManager.WinForms.exe.
+	0 window CoffeeManager Secondary Actions: Raise
+		48 pane
+			49 pane
+				50 text CoffeeManager
+				51 text KHÔNG GIAN KHO
+				52 text G05 fixture STORE
+				53 text Quản lý kho · STORE
+				54 button Trang phiên
+				55 button Kho
+				56 button Nguyên liệu / Tồn
+				57 button Menu / Công thức
+				58 button Công nợ
+				59 button Thông tin hệ thống
+				60 button Đăng xuất ID: logout
+				61 text Phiên đang hoạt động.
+			62 pane
+				63 text Kho / Trang phiên
+				64 text G05 fixture STORE · STORE
+			65 pane G05 fixture STORE · STORE
+				66 pane G05 fixture STORE · STORE ID: 63244986
+					67 tab
+						330 pane Xuất kho
+							331 pane ID: 1378718
+								332 pane ID: 919876
+									333 text INVENTORY WORKSPACE
+									334 text Xuất nguyên liệu
+									335 text Hủy do hỏng / Trả hàng; chưa tự hoàn tiền hoặc cấn nợ.
+									336 pane Hủy do hỏng / Trả hàng; chưa tự hoàn tiền hoặc cấn nợ.
+										337 button Lập phiếu xuất
+									338 pane
+										339 pane ID: 55184012
+											340 edit (settable, string) Description: Tìm tên hoặc mã nguyên liệu…
+										341 pane
+											342 button Tìm / Tải lại
+											343 button Xem chi tiết
+										344 pane
+											345 data grid
+												346 scroll bar (settable, float) Vertical Value: 0
+													347 button Line up
+													348 thumb Position
+													349 button Page down
+													350 button Line down
+												351 custom Top Row
+													352 header Top Left Header Cell ID: 425968662
+													353 header MÃ ID: 4210483749
+													354 header NGÀY XUẤT ID: 422071018
+													355 header LOẠI ID: 4226923241
+													356 header LÝ DO ID: 4214457817
+												476 custom Row 1
+													477 header Row 1 ID: 4246110386
+													478 item MÃ Row 1 Value: PX20250504 ID: 4262564110
+													479 item NGÀY XUẤT Row 1 Value: 29/10/2026 20:05 ID: 428027073
+													480 item LOẠI Row 1 Value: Tra hang ID: 4237243092
+													481 item LÝ DO Row 1 Value: G05 STORE trả hàng fixture ID: 4214398157
+												482 custom Row 2
+													483 header Row 2 ID: 4217369524
+													484 item MÃ Row 2 Value: PX20250503 ID: 4224477223
+													485 item NGÀY XUẤT Row 2 Value: 25/05/2025 00:00 ID: 4249768451
+													486 item LOẠI Row 2 Value: Huy do hong ID: 4243010096
+													487 item LÝ DO Row 2 Value: (null) ID: 4222260345
+												488 custom Row 3
+													489 header Row 3 ID: 423902084
+													490 item MÃ Row 3 Value: PX20250502 ID: 4250727104
+													491 item NGÀY XUẤT Row 3 Value: 10/05/2025 00:00 ID: 4255472578
+													492 item LOẠI Row 3 Value: Huy do hong ID: 4250054882
+													493 item LÝ DO Row 3 Value: (null) ID: 4246733697
+												494 custom Row 4
+													495 header Row 4 ID: 4246257726
+													496 item MÃ Row 4 Value: PX20250501 ID: 4264479530
+													497 item NGÀY XUẤT Row 4 Value: 01/05/2025 00:00 ID: 4232927528
+													498 item LOẠI Row 4 Value: Huy do hong ID: 4225404684
+													499 item LÝ DO Row 4 Value: (null) ID: 4261825437
+												500 custom Row 5
+													501 header Row 5 ID: 4246624938
+													502 item MÃ Row 5 Value: PX20250402 ID: 422144424
+													503 item NGÀY XUẤT Row 5 Value: 30/04/2025 00:00 ID: 4227877518
+													504 item LOẠI Row 5 Value: Huy do hong ID: 4226863423
+													505 item LÝ DO Row 5 Value: (null) ID: 4213680183
+												506 custom Row 6
+													507 header Row 6 ID: 4230249667
+													508 item MÃ Row 6 Value: PX20250403 ID: 4257701356
+													509 item NGÀY XUẤT Row 6 Value: 15/04/2025 00:00 ID: 4211920127
+													510 item LOẠI Row 6 Value: Tra hang ID: 4220743934
+													511 item LÝ DO Row 6 Value: (null) ID: 421235691
+												512 custom Row 7
+													513 header Row 7 ID: 427505203
+													514 item MÃ Row 7 Value: PX20250401 ID: 4230458775
+													515 item NGÀY XUẤT Row 7 Value: 03/04/2025 00:00 ID: 4260419765
+													516 item LOẠI Row 7 Value: Huy do hong ID: 4247259451
+													517 item LÝ DO Row 7 Value: (null) ID: 4210393089
+												518 custom Row 8
+													519 header Row 8 ID: 4211601619
+													520 item MÃ Row 8 Value: PX20250302 ID: 4216603325
+													521 item NGÀY XUẤT Row 8 Value: 31/03/2025 00:00 ID: 4214516634
+													522 item LOẠI Row 8 Value: Huy do hong ID: 4254498519
+													523 item LÝ DO Row 8 Value: (null) ID: 4237392116
+												524 custom Row 9
+													525 header Row 9 ID: 4211034414
+													526 item MÃ Row 9 Value: PX20250301 ID: 429229662
+													527 item NGÀY XUẤT Row 9 Value: 05/03/2025 00:00 ID: 4252876743
+													528 item LOẠI Row 9 Value: Huy do hong ID: 4216309029
+													529 item LÝ DO Row 9 Value: (null) ID: 4210690797
+												530 custom Row 10
+													531 header Row 10 ID: 4261914366
+													532 item MÃ Row 10 Value: PX20250201 ID: 4266689260
+													533 item NGÀY XUẤT Row 10 Value: 28/02/2025 00:00 ID: 4261654024
+													534 item LOẠI Row 10 Value: Huy do hong ID: 4263304808
+													535 item LÝ DO Row 10 Value: (null) ID: 4217656136
+												536 custom Row 11
+													537 header Row 11 ID: 4231097005
+													538 item MÃ Row 11 Value: PX20250101 ID: 421607883
+													539 item NGÀY XUẤT Row 11 Value: 31/01/2025 00:00 ID: 4220902484
+													540 item LOẠI Row 11 Value: Huy do hong ID: 423296847
+													541 item LÝ DO Row 11 Value: (null) ID: 4242859021
+										417 pane ID: 723766
+											418 text Hiển thị 1–11 / 11 phiếu
+											419 button (disabled) Trang trước
+											420 text 1 / 1
+											421 button (disabled) Trang sau
+									422 text 11 phiếu — Trang 1
+						183 tab item (selectable) Tồn kho
+						184 tab item (selectable) Nhập hàng
+						185 tab item (selectable) Xuất kho
+						186 tab item (selectable) Kiểm kê
+		187 title bar (settable, string) Value: CoffeeManager
+			188 menu bar System ID: MenuBar
+				189 menu item System
+			190 button Minimize
+			191 button Maximize
+			192 button Close
+
+The focused UI element is 340 edit (settable, string) Description: Tìm tên hoặc mã nguyên liệu….
+
+Focused element: 340 edit (settable, string) Description: Tìm tên hoặc mã nguyên liệu…

@@ -1,0 +1,53 @@
+[
+  {
+    "Part": "T23-K02.ZeroIndependent",
+    "Result": "PASS",
+    "Expected": [
+      547,
+      52702
+    ],
+    "Observed": [
+      547,
+      3621
+    ],
+    "Before": "9FE2323898F59265CD621F6F693491A9ED3DB7BB780DA17C43DC687AE5E3C393",
+    "After": "9FE2323898F59265CD621F6F693491A9ED3DB7BB780DA17C43DC687AE5E3C393",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"The INSERT statement conflicted with the CHECK constraint \"CHK_CN_TienNo\". The conflict occurred in database \"CoffeeManager_Test_G05_20261027_110753_fb67dcbb_demo\", table \"dbo.CONGNO_NCC\", column 'TienNo'.\r\nThe statement has been terminated.\""
+  },
+  {
+    "Part": "T23-K02.AboveTotalIndependent",
+    "Result": "PASS",
+    "Expected": [
+      52702,
+      547
+    ],
+    "Observed": [
+      52702
+    ],
+    "Before": "9FE2323898F59265CD621F6F693491A9ED3DB7BB780DA17C43DC687AE5E3C393",
+    "After": "9FE2323898F59265CD621F6F693491A9ED3DB7BB780DA17C43DC687AE5E3C393",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Nguồn nợ đã chốt bất biến hoặc nợ vượt tổng nhập.\""
+  },
+  {
+    "Part": "T21-K08.CancelPreparedNoSalesConsumption",
+    "Result": "PASS",
+    "Actual": {
+      "After": 2.0000,
+      "Note": "SQL only; native draft flow remains blocked",
+      "Issue": "PX20250519",
+      "Before": 3.0000,
+      "Order": "HD20250416"
+    }
+  },
+  {
+    "Part": "T19-K09.CheckoutNoFinanceIncome",
+    "Result": "PASS",
+    "Actual": {
+      "FinanceBefore": 36,
+      "FinanceAfter": 36,
+      "Order": "HD20250417"
+    }
+  }
+]

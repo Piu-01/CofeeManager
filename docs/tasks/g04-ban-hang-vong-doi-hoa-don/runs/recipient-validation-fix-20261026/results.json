@@ -1,0 +1,331 @@
+{
+  "Database": "CoffeeManager_Test_G04_20261025_181739_98e5df59_checkout",
+  "Schema": 16,
+  "Scope": "Real OrderHeaderDialog/BLL/runtime SQL; Save handler component invocation, no physical mouse/keyboard or full POS commit claimed",
+  "Results": [
+    {
+      "Name": "Recipient empty error at field/focus, input retained",
+      "Outcome": "PASS",
+      "Actual": {
+        "Field": "recipient",
+        "Error": "C\u1EA7n nh\u1EADp t\u00EAn ng\u01B0\u1EDDi nh\u1EADn.",
+        "Focused": true,
+        "Dpi": 120
+      }
+    },
+    {
+      "Name": "Recipient empty no misplaced errors",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Recipient empty correction clears errors and yields typed header",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Recipient whitespace error at field/focus, input retained",
+      "Outcome": "PASS",
+      "Actual": {
+        "Field": "recipient",
+        "Error": "C\u1EA7n nh\u1EADp t\u00EAn ng\u01B0\u1EDDi nh\u1EADn.",
+        "Focused": true,
+        "Dpi": 120
+      }
+    },
+    {
+      "Name": "Recipient whitespace no misplaced errors",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Recipient whitespace correction clears errors and yields typed header",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Phone empty error at field/focus, input retained",
+      "Outcome": "PASS",
+      "Actual": {
+        "Field": "phone",
+        "Error": "S\u1ED1 \u0111i\u1EC7n tho\u1EA1i ng\u01B0\u1EDDi nh\u1EADn ch\u1EC9 g\u1ED3m c\u00E1c ch\u1EEF s\u1ED1 0\u20139 v\u00E0 kh\u00F4ng \u0111\u01B0\u1EE3c tr\u1ED1ng.",
+        "Focused": true,
+        "Dpi": 120
+      }
+    },
+    {
+      "Name": "Phone empty no misplaced errors",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Phone empty correction clears errors and yields typed header",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Phone alphabetic error at field/focus, input retained",
+      "Outcome": "PASS",
+      "Actual": {
+        "Field": "phone",
+        "Error": "S\u1ED1 \u0111i\u1EC7n tho\u1EA1i ng\u01B0\u1EDDi nh\u1EADn ch\u1EC9 g\u1ED3m c\u00E1c ch\u1EEF s\u1ED1 0\u20139 v\u00E0 kh\u00F4ng \u0111\u01B0\u1EE3c tr\u1ED1ng.",
+        "Focused": true,
+        "Dpi": 120
+      }
+    },
+    {
+      "Name": "Phone alphabetic no misplaced errors",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Phone alphabetic correction clears errors and yields typed header",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Phone whitespace error at field/focus, input retained",
+      "Outcome": "PASS",
+      "Actual": {
+        "Field": "phone",
+        "Error": "S\u1ED1 \u0111i\u1EC7n tho\u1EA1i ng\u01B0\u1EDDi nh\u1EADn ch\u1EC9 g\u1ED3m c\u00E1c ch\u1EEF s\u1ED1 0\u20139 v\u00E0 kh\u00F4ng \u0111\u01B0\u1EE3c tr\u1ED1ng.",
+        "Focused": true,
+        "Dpi": 120
+      }
+    },
+    {
+      "Name": "Phone whitespace no misplaced errors",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Phone whitespace correction clears errors and yields typed header",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Address empty error at field/focus, input retained",
+      "Outcome": "PASS",
+      "Actual": {
+        "Field": "address",
+        "Error": "C\u1EA7n nh\u1EADp \u0111\u1ECBa ch\u1EC9 giao h\u00E0ng.",
+        "Focused": true,
+        "Dpi": 120
+      }
+    },
+    {
+      "Name": "Address empty no misplaced errors",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Address empty correction clears errors and yields typed header",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Address whitespace error at field/focus, input retained",
+      "Outcome": "PASS",
+      "Actual": {
+        "Field": "address",
+        "Error": "C\u1EA7n nh\u1EADp \u0111\u1ECBa ch\u1EC9 giao h\u00E0ng.",
+        "Focused": true,
+        "Dpi": 120
+      }
+    },
+    {
+      "Name": "Address whitespace no misplaced errors",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Address whitespace correction clears errors and yields typed header",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Several invalid fields focus first error at field/focus, input retained",
+      "Outcome": "PASS",
+      "Actual": {
+        "Field": "recipient",
+        "Error": "C\u1EA7n nh\u1EADp t\u00EAn ng\u01B0\u1EDDi nh\u1EADn.",
+        "Focused": true,
+        "Dpi": 120
+      }
+    },
+    {
+      "Name": "Several invalid fields focus first no misplaced errors",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Several invalid fields focus first correction clears errors and yields typed header",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Invalid ship stays at ship error at field/focus, input retained",
+      "Outcome": "PASS",
+      "Actual": {
+        "Field": "ship",
+        "Error": "Nh\u1EADp s\u1ED1 ti\u1EC1n nguy\u00EAn VND h\u1EE3p l\u1EC7.",
+        "Focused": true,
+        "Dpi": 120
+      }
+    },
+    {
+      "Name": "Invalid ship stays at ship no misplaced errors",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Invalid ship stays at ship correction clears errors and yields typed header",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Mang di apply anonymous/no promotion",
+      "Outcome": "PASS",
+      "Actual": {
+        "Result": {
+          "Channel": "Mang di",
+          "TableCode": null,
+          "Customer": null,
+          "Promotion": null,
+          "Partner": null,
+          "Recipient": null,
+          "Phone": null,
+          "Address": null,
+          "Ship": 0
+        },
+        "Dpi": 120
+      }
+    },
+    {
+      "Name": "Tai quan apply preserves table",
+      "Outcome": "PASS",
+      "Actual": {
+        "Result": {
+          "Channel": "Tai quan",
+          "TableCode": "B0001",
+          "Customer": null,
+          "Promotion": null,
+          "Partner": null,
+          "Recipient": null,
+          "Phone": null,
+          "Address": null,
+          "Ship": 0
+        },
+        "Dpi": 120
+      }
+    },
+    {
+      "Name": "Giao hang self delivery",
+      "Outcome": "PASS",
+      "Actual": {
+        "Result": {
+          "Channel": "Giao hang",
+          "TableCode": null,
+          "Customer": null,
+          "Promotion": null,
+          "Partner": null,
+          "Recipient": "Test header",
+          "Phone": "0900000004",
+          "Address": "Test address",
+          "Ship": 10000
+        },
+        "Dpi": 120
+      }
+    },
+    {
+      "Name": "Giao hang selected partner",
+      "Outcome": "PASS",
+      "Actual": {
+        "Result": {
+          "Channel": "Giao hang",
+          "TableCode": null,
+          "Customer": null,
+          "Promotion": null,
+          "Partner": "DT001",
+          "Recipient": "Test header",
+          "Phone": "0900000004",
+          "Address": "Test address",
+          "Ship": 10000
+        },
+        "Dpi": 120
+      }
+    },
+    {
+      "Name": "Mang di preserves customer/promotion",
+      "Outcome": "PASS",
+      "Actual": {
+        "Result": {
+          "Channel": "Mang di",
+          "TableCode": null,
+          "Customer": "KH001",
+          "Promotion": "KM25ONE",
+          "Partner": null,
+          "Recipient": null,
+          "Phone": null,
+          "Address": null,
+          "Ship": 0
+        },
+        "Dpi": 120
+      }
+    },
+    {
+      "Name": "Cancel ready dialog has no result",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Lookup failure shows error, save disabled, back available",
+      "Outcome": "PASS",
+      "Actual": "Kh\u00F4ng t\u1EA3i \u0111\u01B0\u1EE3c th\u00F4ng tin \u0111\u01A1n. Ch\u1ECDn Quay l\u1EA1i r\u1ED3i m\u1EDF l\u1EA1i. Kh\u00F4ng k\u1EBFt n\u1ED1i \u0111\u01B0\u1EE3c d\u1EEF li\u1EC7u; ki\u1EC3m tra k\u1EBFt n\u1ED1i v\u00E0 th\u1EED l\u1EA1i."
+    },
+    {
+      "Name": "Reopen after lookup failure",
+      "Outcome": "PASS",
+      "Actual": {
+        "Result": {
+          "Channel": "Mang di",
+          "TableCode": null,
+          "Customer": null,
+          "Promotion": null,
+          "Partner": null,
+          "Recipient": null,
+          "Phone": null,
+          "Address": null,
+          "Ship": 0
+        },
+        "Dpi": 120
+      }
+    },
+    {
+      "Name": "Close during loading has no result",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Delivery missing recipient rejected",
+      "Outcome": "PASS",
+      "Actual": "C\u1EA7n nh\u1EADp t\u00EAn ng\u01B0\u1EDDi nh\u1EADn."
+    },
+    {
+      "Name": "Dialog tests did not create invoices",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Fixture actor removed",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Transaction clean",
+      "Outcome": "PASS",
+      "Actual": null
+    }
+  ],
+  "Failed": 0
+}

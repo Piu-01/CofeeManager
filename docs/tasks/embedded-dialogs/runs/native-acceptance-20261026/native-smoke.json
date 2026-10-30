@@ -1,0 +1,111 @@
+{
+  "Failed": 0,
+  "Results": [
+    {
+      "Name": "Native title/X frame and ownerMain",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "No taskbar entry",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Windows locks main owner",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Main lookup through owner chain",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Native child belongs to parent",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Only top native dialog enabled",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "One taskbar form",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Native printer owner is active child",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Native OK result preserved",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Windows re-enables parent only",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Native Cancel completes",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Main enabled after modal returns",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Diagnostic": "Before Close",
+      "ClosingGuard": false,
+      "Visible": true,
+      "Result": "None"
+    },
+    {
+      "Name": "Discard prompt native owner",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "No discard keeps draft/resultNone",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Diagnostic": "Before Close",
+      "ClosingGuard": false,
+      "Visible": true,
+      "Result": "None"
+    },
+    {
+      "Name": "Accept discard closes exactly once",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Abort completes child and parent",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Abort queued dialog cannot show orphan",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "No modal remains",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "DeviceDpi": 120,
+      "Scope": "Implementation smoke: native window metadata/OS enabled state and component closes; no visual QA or SQL"
+    }
+  ]
+}

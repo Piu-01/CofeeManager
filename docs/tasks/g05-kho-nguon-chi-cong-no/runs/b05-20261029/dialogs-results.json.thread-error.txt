@@ -1,0 +1,5 @@
+System.InvalidOperationException: Invoke or BeginInvoke cannot be called on a control until the window handle has been created.
+   at System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
+   at System.Windows.Forms.Control.BeginInvoke(Delegate method, Object[] args)
+   at CafeManager.WinForms.Forms.OrbitDialogForm.OnFormClosing(FormClosingEventArgs e) in D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\Forms\OrbitDialogForm.cs:line 38
+   at System.Windows.Forms.Form.CheckCloseDialog(Boolean closingOnly)

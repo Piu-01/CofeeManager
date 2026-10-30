@@ -1,0 +1,46 @@
+{
+  "Approval": "User24/10/2026 yêu cầu agent kiểm phần tự làm được; G04 test đã duyệt",
+  "Status": "FourSqlChecklistCasesCompletedGuiRemaining",
+  "Schema": 16,
+  "SourceFiles": 240,
+  "ProductSourceUnchanged": true,
+  "FrozenExecutedTestsUnchanged": true,
+  "CompletedSqlIds": [
+    "T14-K02",
+    "T14-K09",
+    "T14-K11",
+    "T15-K15"
+  ],
+  "LatestEvidence": {
+    "PolicyRecipe": "ordering2-manifest.json:4PASS8sessions0:0",
+    "Actor": "actor-followup.json:PASS4modes;captured0:inline1 instrumentation",
+    "Primary": "manifest.json:10PASS/1FAIL original actor assertion retained"
+  },
+  "HistoricalEvidence": [
+    "manifest.json",
+    "ordering-manifest.json",
+    "interpretation.md"
+  ],
+  "Checklist": {
+    "Total": 56,
+    "Passed": 32,
+    "Failed": 0,
+    "Blocked": 24
+  },
+  "OnlyRemainingBlocked": {
+    "T16": "K01-K12",
+    "T17": "K03-K09",
+    "T18": "K01,K04,K06,K07,K08"
+  },
+  "Resources": {
+    "CleanedThisWave": 6,
+    "CheckedAt": "2026-10-24T15:02:08.2160821+07:00",
+    "Retained": 0,
+    "FinalG04TestDatabaseCount": 0,
+    "CreatedThisWave": 6,
+    "ProbeProcesses": 0
+  },
+  "DevelopmentChanged": false,
+  "CommitCreated": false,
+  "FinishedAt": "2026-10-24T15:02:49.2872498+07:00"
+}

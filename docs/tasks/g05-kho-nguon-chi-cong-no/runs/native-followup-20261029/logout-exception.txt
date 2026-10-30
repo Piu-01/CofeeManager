@@ -1,0 +1,34 @@
+Window: "CoffeeManager · Đăng nhập", App: CafeManager.WinForms.exe.
+	0 window CoffeeManager · Đăng nhập Secondary Actions: Raise
+		1 window CoffeeManager · Đăng nhập Secondary Actions: Raise
+			2 pane
+			3 text Unhandled exception has occurred in your application. If you click Continue, the application will ignore this error and attempt to continue. If you click Quit, the application will close immediately. The CancellationTokenSource has been disposed.
+			4 button Details
+			5 button Continue
+			6 button Quit
+			7 title bar (settable, string) Value: CoffeeManager · Đăng nhập
+				8 button Close
+		9 pane
+			10 pane
+				11 pane
+					12 text CoffeeManager · Đăng nhập
+					13 text KHÔNG GIAN QUẢN LÝ QUÁN CÀ PHÊ
+				14 text Tên đăng nhập
+				15 text Mật khẩu
+				16 check box Hiện mật khẩu
+				17 button Đăng nhập
+				18 text Nhập tài khoản để đăng nhập.
+				19 pane KHÔNG GIAN QUẢN LÝ QUÁN CÀ PHÊ
+					20 edit (settable, string) Tên đăng nhập
+				21 pane Tên đăng nhập
+					22 edit (settable, string) Mật khẩu Value: Access denied
+		23 title bar (settable, string) Value: CoffeeManager · Đăng nhập
+			24 menu bar System ID: MenuBar
+				25 menu item System
+			26 button Minimize
+			27 button Maximize
+			28 button Close
+
+The focused UI element is 20 edit (settable, string) Tên đăng nhập.
+
+Focused element: 20 edit (settable, string) Tên đăng nhập

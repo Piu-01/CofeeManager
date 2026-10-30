@@ -1,0 +1,13 @@
+{
+  "Database": "CoffeeManager_Test_G04_20261025_181739_98e5df59_checkout",
+  "Cases": [
+    {
+      "Scenario": "G05 quy\u1EC1n ADMIN chuy\u1EC3n giao",
+      "Code": "HD20250474",
+      "Payable": 81000,
+      "Customer": "V\u00E3ng lai",
+      "Status": "Chua thanh toan"
+    }
+  ],
+  "Note": "Created with real AuthService and SalesService in isolated test DB; these are fixtures, no acceptance cases passed yet"
+}

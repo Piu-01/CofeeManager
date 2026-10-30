@@ -1,0 +1,45 @@
+{
+  "Failed": false,
+  "Results": [
+    {
+      "Name": "Embedded parent / one top-level main",
+      "Actual": true
+    },
+    {
+      "Name": "Nested top only",
+      "Actual": true
+    },
+    {
+      "Name": "Child result",
+      "Actual": true
+    },
+    {
+      "Name": "Parent restored with input",
+      "Actual": true
+    },
+    {
+      "Name": "Parent cancel",
+      "Actual": true
+    },
+    {
+      "Name": "Host idle",
+      "Actual": true
+    },
+    {
+      "Name": "Close guard retains live task",
+      "Actual": true
+    },
+    {
+      "Name": "Close guard then accepts",
+      "Actual": true
+    },
+    {
+      "Name": "Abort completes result",
+      "Actual": true
+    },
+    {
+      "DeviceDpi": 120,
+      "Scope": "Implementation smoke only; no visual QA, no SQL, no native mouse input"
+    }
+  ]
+}

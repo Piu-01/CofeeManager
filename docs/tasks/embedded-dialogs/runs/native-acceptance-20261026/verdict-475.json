@@ -1,0 +1,96 @@
+{
+  "Order": [
+    {
+      "MaHD": "HD20250475",
+      "LoaiDon": "Mang di",
+      "TrangThai": "Da thanh toan",
+      "ThanhTien": 81000,
+      "NgayThanhToan": "2026-10-26T11:50:20"
+    }
+  ],
+  "Payments": [
+    {
+      "MaHD": "HD20250475",
+      "MaPT": "PT001",
+      "SoTien": 81000
+    }
+  ],
+  "OnePayment81000": true,
+  "StockMatches": true,
+  "StockDelta": [
+    {
+      "Material": "NVL01",
+      "Delta": 0.018,
+      "Consumption": 0.018,
+      "Matches": true
+    },
+    {
+      "Material": "NVL02",
+      "Delta": 0.00,
+      "Consumption": 0.0,
+      "Matches": true
+    },
+    {
+      "Material": "NVL03",
+      "Delta": 0.010,
+      "Consumption": 0.01,
+      "Matches": true
+    },
+    {
+      "Material": "NVL04",
+      "Delta": 0.000,
+      "Consumption": 0.0,
+      "Matches": true
+    },
+    {
+      "Material": "NVL05",
+      "Delta": 0.0,
+      "Consumption": 0.0,
+      "Matches": true
+    },
+    {
+      "Material": "NVL06",
+      "Delta": 0.0,
+      "Consumption": 0.0,
+      "Matches": true
+    },
+    {
+      "Material": "NVL07",
+      "Delta": 0.0,
+      "Consumption": 0.0,
+      "Matches": true
+    },
+    {
+      "Material": "NVL08",
+      "Delta": 0.0,
+      "Consumption": 0.0,
+      "Matches": true
+    },
+    {
+      "Material": "NVL09",
+      "Delta": 0.00,
+      "Consumption": 0.0,
+      "Matches": true
+    },
+    {
+      "Material": "NVL10",
+      "Delta": 0.0,
+      "Consumption": 0.0,
+      "Matches": true
+    },
+    {
+      "Material": "NVL11",
+      "Delta": 0.0,
+      "Consumption": 0.0,
+      "Matches": true
+    },
+    {
+      "Material": "NVL12",
+      "Delta": 0.0,
+      "Consumption": 0.0,
+      "Matches": true
+    }
+  ],
+  "PointsUnchanged": true,
+  "UserObserved": "Native form style correct; nested discard No retains input/Yes returns F3; select-all100000/change19000/Enter no commit; Confirm No print resets POS"
+}

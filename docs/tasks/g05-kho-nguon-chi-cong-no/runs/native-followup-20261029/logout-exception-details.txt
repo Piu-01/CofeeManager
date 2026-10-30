@@ -1,0 +1,639 @@
+Window: "CoffeeManager · Đăng nhập", App: CafeManager.WinForms.exe.
+	0 window CoffeeManager · Đăng nhập Secondary Actions: Raise
+		1 window CoffeeManager · Đăng nhập Secondary Actions: Raise
+			2 pane
+			3 text Unhandled exception has occurred in your application. If you click Continue, the application will ignore this error and attempt to continue. If you click Quit, the application will close immediately. The CancellationTokenSource has been disposed.
+			4 button Details
+			5 button Continue
+			6 button Quit
+			29 edit Value: See the end of this message for details on invoking just-in-time (JIT) debugging instead of this dialog box. ************** Exception Text ************** System.ObjectDisposedException: The CancellationTokenSource has been disposed. at System.Threading.CancellationTokenSource.Cancel() at CafeManager.WinForms.Modules.Finance.SupplierDebtsControl.<>c__DisplayClass16_0.<<-ctor>b__8>d.MoveNext() in D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\Modules\Finance\SupplierDebtsControl.cs:line 21 --- End of stack trace from previous location --- at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__124_0(Object state) at System.Windows.Forms.Control.InvokeMarshaledCallbackHelper(Object obj) at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state) --- End of stack trace from previous location --- at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state) at System.Windows.Forms.Control.InvokeMarshaledCallbacks() ************** Loaded Assemblies ************** System.Private.CoreLib Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Private.CoreLib.dll ---------------------------------------- CafeManager.WinForms Assembly Version: 1.0.0.0 Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\CafeManager.WinForms.dll ---------------------------------------- System.Runtime Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Runtime.dll ---------------------------------------- CafeManager.DataAccess Assembly Version: 1.0.0.0 Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\CafeManager.DataAccess.dll ---------------------------------------- CafeManager.Business Assembly Version: 1.0.0.0 Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\CafeManager.Business.dll ---------------------------------------- System.Windows.Forms Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\System.Windows.Forms.dll ---------------------------------------- Microsoft.Data.SqlClient Assembly Version: 6.0.0.0 Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\runtimes\win\lib\net9.0\Microsoft.Data.SqlClient.dll ---------------------------------------- System.Data.Common Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Data.Common.dll ---------------------------------------- System.ComponentModel.TypeConverter Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.ComponentModel.TypeConverter.dll ---------------------------------------- System.Memory Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Memory.dll ---------------------------------------- System.ComponentModel.Primitives Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.ComponentModel.Primitives.dll ---------------------------------------- System.Windows.Forms.Primitives Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\System.Windows.Forms.Primitives.dll ---------------------------------------- System.Private.Windows.Core Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\System.Private.Windows.Core.dll ---------------------------------------- System.Private.Windows.GdiPlus Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\System.Private.Windows.GdiPlus.dll ---------------------------------------- System.Drawing.Primitives Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Drawing.Primitives.dll ---------------------------------------- System.Collections.Specialized Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Collections.Specialized.dll ---------------------------------------- CafeManager.Models Assembly Version: 1.0.0.0 Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\CafeManager.Models.dll ---------------------------------------- System.Drawing.Common Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\System.Drawing.Common.dll ---------------------------------------- System.Runtime.InteropServices Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Runtime.InteropServices.dll ---------------------------------------- System.Threading Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Threading.dll ---------------------------------------- System.Collections Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Collections.dll ---------------------------------------- Microsoft.Win32.Registry Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\Microsoft.Win32.Registry.dll ---------------------------------------- Microsoft.Extensions.Identity.Core Assembly Version: 10.0.0.0 Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\Microsoft.Extensions.Identity.Core.dll ---------------------------------------- Microsoft.Extensions.Options Assembly Version: 10.0.0.0 Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\Microsoft.Extensions.Options.dll ---------------------------------------- System.Security.Cryptography Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Security.Cryptography.dll ---------------------------------------- System.Text.RegularExpressions Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Text.RegularExpressions.dll ---------------------------------------- Microsoft.Win32.Primitives Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\Microsoft.Win32.Primitives.dll ---------------------------------------- System.ComponentModel.EventBasedAsync Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.ComponentModel.EventBasedAsync.dll ---------------------------------------- System.Threading.Thread Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Threading.Thread.dll ---------------------------------------- System.Collections.Concurrent Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Collections.Concurrent.dll ---------------------------------------- Accessibility Assembly Version: 4.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\Accessibility.dll ---------------------------------------- System.ComponentModel Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.ComponentModel.dll ---------------------------------------- System.Numerics.Vectors Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Numerics.Vectors.dll ---------------------------------------- Microsoft.Win32.SystemEvents Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\Microsoft.Win32.SystemEvents.dll ---------------------------------------- System.Linq Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Linq.dll ---------------------------------------- System.Collections.NonGeneric Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Collections.NonGeneric.dll ---------------------------------------- System.Runtime.Loader Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Runtime.Loader.dll ---------------------------------------- System.Transactions.Local Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Transactions.Local.dll ---------------------------------------- System.Diagnostics.DiagnosticSource Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Diagnostics.DiagnosticSource.dll ---------------------------------------- System.Diagnostics.Tracing Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Diagnostics.Tracing.dll ---------------------------------------- System.Diagnostics.StackTrace Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Diagnostics.StackTrace.dll ---------------------------------------- System.Configuration.ConfigurationManager Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\System.Configuration.ConfigurationManager.dll ---------------------------------------- System.Private.Uri Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Private.Uri.dll ---------------------------------------- System.Xml.ReaderWriter Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Xml.ReaderWriter.dll ---------------------------------------- System.Private.Xml Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Private.Xml.dll ---------------------------------------- System.Net.WebClient Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Net.WebClient.dll ---------------------------------------- System.Text.Encoding.Extensions Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Text.Encoding.Extensions.dll ---------------------------------------- System.Security.Principal.Windows Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Security.Principal.Windows.dll ---------------------------------------- System.Security.Claims Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Security.Claims.dll ---------------------------------------- System.Threading.ThreadPool Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Threading.ThreadPool.dll ---------------------------------------- System.Text.Encoding.CodePages Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Text.Encoding.CodePages.dll ---------------------------------------- System.Diagnostics.TraceSource Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Diagnostics.TraceSource.dll ---------------------------------------- System.Net.Primitives Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Net.Primitives.dll ---------------------------------------- System.Text.Json Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Text.Json.dll ---------------------------------------- Microsoft.SqlServer.Server Assembly Version: 1.0.0.0 Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\Microsoft.SqlServer.Server.dll ---------------------------------------- netstandard Assembly Version: 2.1.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\netstandard.dll ---------------------------------------- Microsoft.AspNetCore.Cryptography.KeyDerivation Assembly Version: 10.0.0.0 Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll ---------------------------------------- System.Runtime.Intrinsics Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Runtime.Intrinsics.dll ---------------------------------------- System.ObjectModel Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.ObjectModel.dll ---------------------------------------- System.Text.Encodings.Web Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Text.Encodings.Web.dll ---------------------------------------- System.Reflection.Emit.Lightweight Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Reflection.Emit.Lightweight.dll ---------------------------------------- System.Reflection.Primitives Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Reflection.Primitives.dll ---------------------------------------- System.Reflection.Emit.ILGeneration Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Reflection.Emit.ILGeneration.dll ---------------------------------------- System.Security.Cryptography.ProtectedData Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\System.Security.Cryptography.ProtectedData.dll ---------------------------------------- System.Runtime.Numerics Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Runtime.Numerics.dll ---------------------------------------- System.IO.Pipelines Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.IO.Pipelines.dll ---------------------------------------- System.Reflection.Metadata Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Reflection.Metadata.dll ---------------------------------------- System.Collections.Immutable Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Collections.Immutable.dll ---------------------------------------- System.IO.MemoryMappedFiles Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.IO.MemoryMappedFiles.dll ---------------------------------------- ************** JIT Debugging **************
+				30 scroll bar (settable, float) Vertical Value: 0 ID: NonClientVerticalScrollBar
+					31 button Line up ID: UpButton
+					32 thumb Position ID: ScrollbarThumb
+					33 button Page down ID: DownPageButton
+					34 button Line down ID: DownButton
+				35 scroll bar (settable, float) Horizontal Value: 0 ID: NonClientHorizontalScrollBar
+					36 button Column left ID: UpButton
+					37 thumb Position ID: ScrollbarThumb
+					38 button Page right ID: DownPageButton
+					39 button Column right ID: DownButton
+				40 thumb (disabled)
+			7 title bar (settable, string) Value: CoffeeManager · Đăng nhập
+				8 button Close
+		9 pane
+			10 pane
+				11 pane
+					12 text CoffeeManager · Đăng nhập
+					13 text KHÔNG GIAN QUẢN LÝ QUÁN CÀ PHÊ
+				14 text Tên đăng nhập
+				15 text Mật khẩu
+				16 check box Hiện mật khẩu
+				17 button Đăng nhập
+				18 text Nhập tài khoản để đăng nhập.
+				19 pane KHÔNG GIAN QUẢN LÝ QUÁN CÀ PHÊ
+					20 edit (settable, string) Tên đăng nhập
+				21 pane Tên đăng nhập
+					22 edit (settable, string) Mật khẩu Value: Access denied
+		23 title bar (settable, string) Value: CoffeeManager · Đăng nhập
+			24 menu bar System ID: MenuBar
+				25 menu item System
+			26 button Minimize
+			27 button Maximize
+			28 button Close
+
+Document text: ```
+See the end of this message for details on invoking 
+just-in-time (JIT) debugging instead of this dialog box.
+
+************** Exception Text **************
+System.ObjectDisposedException: The CancellationTokenSource has been disposed.
+   at System.Threading.CancellationTokenSource.Cancel()
+   at CafeManager.WinForms.Modules.Finance.SupplierDebtsControl.<>c__DisplayClass16_0.<<-ctor>b__8>d.MoveNext() in D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\Modules\Finance\SupplierDebtsControl.cs:line 21
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__124_0(Object state)
+   at System.Windows.Forms.Control.InvokeMarshaledCallbackHelper(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Windows.Forms.Control.InvokeMarshaledCallbacks()
+
+
+************** Loaded Assemblies **************
+System.Private.CoreLib
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Private.CoreLib.dll
+----------------------------------------
+CafeManager.WinForms
+    Assembly Version: 1.0.0.0
+    Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\CafeManager.WinForms.dll
+----------------------------------------
+System.Runtime
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Runtime.dll
+----------------------------------------
+CafeManager.DataAccess
+    Assembly Version: 1.0.0.0
+    Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\CafeManager.DataAccess.dll
+----------------------------------------
+CafeManager.Business
+    Assembly Version: 1.0.0.0
+    Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\CafeManager.Business.dll
+----------------------------------------
+System.Windows.Forms
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\System.Windows.Forms.dll
+----------------------------------------
+Microsoft.Data.SqlClient
+    Assembly Version: 6.0.0.0
+    Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\runtimes\win\lib\net9.0\Microsoft.Data.SqlClient.dll
+----------------------------------------
+System.Data.Common
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Data.Common.dll
+----------------------------------------
+System.ComponentModel.TypeConverter
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.ComponentModel.TypeConverter.dll
+----------------------------------------
+System.Memory
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Memory.dll
+----------------------------------------
+System.ComponentModel.Primitives
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.ComponentModel.Primitives.dll
+----------------------------------------
+System.Windows.Forms.Primitives
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\System.Windows.Forms.Primitives.dll
+----------------------------------------
+System.Private.Windows.Core
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\System.Private.Windows.Core.dll
+----------------------------------------
+System.Private.Windows.GdiPlus
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\System.Private.Windows.GdiPlus.dll
+----------------------------------------
+System.Drawing.Primitives
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Drawing.Primitives.dll
+----------------------------------------
+System.Collections.Specialized
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Collections.Specialized.dll
+----------------------------------------
+CafeManager.Models
+    Assembly Version: 1.0.0.0
+    Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\CafeManager.Models.dll
+----------------------------------------
+System.Drawing.Common
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\System.Drawing.Common.dll
+----------------------------------------
+System.Runtime.InteropServices
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Runtime.InteropServices.dll
+----------------------------------------
+System.Threading
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Threading.dll
+----------------------------------------
+System.Collections
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Collections.dll
+----------------------------------------
+Microsoft.Win32.Registry
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\Microsoft.Win32.Registry.dll
+----------------------------------------
+Microsoft.Extensions.Identity.Core
+    Assembly Version: 10.0.0.0
+    Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\Microsoft.Extensions.Identity.Core.dll
+----------------------------------------
+Microsoft.Extensions.Options
+    Assembly Version: 10.0.0.0
+    Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\Microsoft.Extensions.Options.dll
+----------------------------------------
+System.Security.Cryptography
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Security.Cryptography.dll
+----------------------------------------
+System.Text.RegularExpressions
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Text.RegularExpressions.dll
+----------------------------------------
+Microsoft.Win32.Primitives
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\Microsoft.Win32.Primitives.dll
+----------------------------------------
+System.ComponentModel.EventBasedAsync
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.ComponentModel.EventBasedAsync.dll
+----------------------------------------
+System.Threading.Thread
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Threading.Thread.dll
+----------------------------------------
+System.Collections.Concurrent
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Collections.Concurrent.dll
+----------------------------------------
+Accessibility
+    Assembly Version: 4.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\Accessibility.dll
+----------------------------------------
+System.ComponentModel
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.ComponentModel.dll
+----------------------------------------
+System.Numerics.Vectors
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Numerics.Vectors.dll
+----------------------------------------
+Microsoft.Win32.SystemEvents
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\Microsoft.Win32.SystemEvents.dll
+----------------------------------------
+System.Linq
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Linq.dll
+----------------------------------------
+System.Collections.NonGeneric
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Collections.NonGeneric.dll
+----------------------------------------
+System.Runtime.Loader
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Runtime.Loader.dll
+----------------------------------------
+System.Transactions.Local
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Transactions.Local.dll
+----------------------------------------
+System.Diagnostics.DiagnosticSource
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Diagnostics.DiagnosticSource.dll
+----------------------------------------
+System.Diagnostics.Tracing
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Diagnostics.Tracing.dll
+----------------------------------------
+System.Diagnostics.StackTrace
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Diagnostics.StackTrace.dll
+----------------------------------------
+System.Configuration.ConfigurationManager
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\System.Configuration.ConfigurationManager.dll
+----------------------------------------
+System.Private.Uri
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Private.Uri.dll
+----------------------------------------
+System.Xml.ReaderWriter
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Xml.ReaderWriter.dll
+----------------------------------------
+System.Private.Xml
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Private.Xml.dll
+----------------------------------------
+System.Net.WebClient
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Net.WebClient.dll
+----------------------------------------
+System.Text.Encoding.Extensions
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Text.Encoding.Extensions.dll
+----------------------------------------
+System.Security.Principal.Windows
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Security.Principal.Windows.dll
+----------------------------------------
+System.Security.Claims
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Security.Claims.dll
+----------------------------------------
+System.Threading.ThreadPool
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Threading.ThreadPool.dll
+----------------------------------------
+System.Text.Encoding.CodePages
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Text.Encoding.CodePages.dll
+----------------------------------------
+System.Diagnostics.TraceSource
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Diagnostics.TraceSource.dll
+----------------------------------------
+System.Net.Primitives
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Net.Primitives.dll
+----------------------------------------
+System.Text.Json
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Text.Json.dll
+----------------------------------------
+Microsoft.SqlServer.Server
+    Assembly Version: 1.0.0.0
+    Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\Microsoft.SqlServer.Server.dll
+----------------------------------------
+netstandard
+    Assembly Version: 2.1.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\netstandard.dll
+----------------------------------------
+Microsoft.AspNetCore.Cryptography.KeyDerivation
+    Assembly Version: 10.0.0.0
+    Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+----------------------------------------
+System.Runtime.Intrinsics
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Runtime.Intrinsics.dll
+----------------------------------------
+System.ObjectModel
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.ObjectModel.dll
+----------------------------------------
+System.Text.Encodings.Web
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Text.Encodings.Web.dll
+----------------------------------------
+System.Reflection.Emit.Lightweight
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Reflection.Emit.Lightweight.dll
+----------------------------------------
+System.Reflection.Primitives
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Reflection.Primitives.dll
+----------------------------------------
+System.Reflection.Emit.ILGeneration
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Reflection.Emit.ILGeneration.dll
+----------------------------------------
+System.Security.Cryptography.ProtectedData
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\System.Security.Cryptography.ProtectedData.dll
+----------------------------------------
+System.Runtime.Numerics
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Runtime.Numerics.dll
+----------------------------------------
+System.IO.Pipelines
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.IO.Pipelines.dll
+----------------------------------------
+System.Reflection.Metadata
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Reflection.Metadata.dll
+----------------------------------------
+System.Collections.Immutable
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Collections.Immutable.dll
+----------------------------------------
+System.IO.MemoryMappedFiles
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.IO.MemoryMappedFiles.dll
+----------------------------------------
+
+************** JIT Debugging **************
+```
+
+Focused element: 29 edit Value: See the end of this message for details on invoking just-in-time (JIT) debugging instead of this dialog box. ************** Exception Text ************** System.ObjectDisposedException: The CancellationTokenSource has been disposed. at System.Threading.CancellationTokenSource.Cancel() at CafeManager.WinForms.Modules.Finance.SupplierDebtsControl.<>c__DisplayClass16_0.<<-ctor>b__8>d.MoveNext() in D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\Modules\Finance\SupplierDebtsControl.cs:line 21 --- End of stack trace from previous location --- at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__124_0(Object state) at System.Windows.Forms.Control.InvokeMarshaledCallbackHelper(Object obj) at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state) --- End of stack trace from previous location --- at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state) at System.Windows.Forms.Control.InvokeMarshaledCallbacks() ************** Loaded Assemblies ************** System.Private.CoreLib Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Private.CoreLib.dll ---------------------------------------- CafeManager.WinForms Assembly Version: 1.0.0.0 Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\CafeManager.WinForms.dll ---------------------------------------- System.Runtime Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Runtime.dll ---------------------------------------- CafeManager.DataAccess Assembly Version: 1.0.0.0 Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\CafeManager.DataAccess.dll ---------------------------------------- CafeManager.Business Assembly Version: 1.0.0.0 Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\CafeManager.Business.dll ---------------------------------------- System.Windows.Forms Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\System.Windows.Forms.dll ---------------------------------------- Microsoft.Data.SqlClient Assembly Version: 6.0.0.0 Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\runtimes\win\lib\net9.0\Microsoft.Data.SqlClient.dll ---------------------------------------- System.Data.Common Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Data.Common.dll ---------------------------------------- System.ComponentModel.TypeConverter Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.ComponentModel.TypeConverter.dll ---------------------------------------- System.Memory Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Memory.dll ---------------------------------------- System.ComponentModel.Primitives Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.ComponentModel.Primitives.dll ---------------------------------------- System.Windows.Forms.Primitives Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\System.Windows.Forms.Primitives.dll ---------------------------------------- System.Private.Windows.Core Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\System.Private.Windows.Core.dll ---------------------------------------- System.Private.Windows.GdiPlus Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\System.Private.Windows.GdiPlus.dll ---------------------------------------- System.Drawing.Primitives Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Drawing.Primitives.dll ---------------------------------------- System.Collections.Specialized Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Collections.Specialized.dll ---------------------------------------- CafeManager.Models Assembly Version: 1.0.0.0 Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\CafeManager.Models.dll ---------------------------------------- System.Drawing.Common Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\System.Drawing.Common.dll ---------------------------------------- System.Runtime.InteropServices Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Runtime.InteropServices.dll ---------------------------------------- System.Threading Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Threading.dll ---------------------------------------- System.Collections Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Collections.dll ---------------------------------------- Microsoft.Win32.Registry Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\Microsoft.Win32.Registry.dll ---------------------------------------- Microsoft.Extensions.Identity.Core Assembly Version: 10.0.0.0 Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\Microsoft.Extensions.Identity.Core.dll ---------------------------------------- Microsoft.Extensions.Options Assembly Version: 10.0.0.0 Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\Microsoft.Extensions.Options.dll ---------------------------------------- System.Security.Cryptography Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Security.Cryptography.dll ---------------------------------------- System.Text.RegularExpressions Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Text.RegularExpressions.dll ---------------------------------------- Microsoft.Win32.Primitives Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\Microsoft.Win32.Primitives.dll ---------------------------------------- System.ComponentModel.EventBasedAsync Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.ComponentModel.EventBasedAsync.dll ---------------------------------------- System.Threading.Thread Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Threading.Thread.dll ---------------------------------------- System.Collections.Concurrent Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Collections.Concurrent.dll ---------------------------------------- Accessibility Assembly Version: 4.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\Accessibility.dll ---------------------------------------- System.ComponentModel Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.ComponentModel.dll ---------------------------------------- System.Numerics.Vectors Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Numerics.Vectors.dll ---------------------------------------- Microsoft.Win32.SystemEvents Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\Microsoft.Win32.SystemEvents.dll ---------------------------------------- System.Linq Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Linq.dll ---------------------------------------- System.Collections.NonGeneric Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Collections.NonGeneric.dll ---------------------------------------- System.Runtime.Loader Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Runtime.Loader.dll ---------------------------------------- System.Transactions.Local Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Transactions.Local.dll ---------------------------------------- System.Diagnostics.DiagnosticSource Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Diagnostics.DiagnosticSource.dll ---------------------------------------- System.Diagnostics.Tracing Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Diagnostics.Tracing.dll ---------------------------------------- System.Diagnostics.StackTrace Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Diagnostics.StackTrace.dll ---------------------------------------- System.Configuration.ConfigurationManager Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\System.Configuration.ConfigurationManager.dll ---------------------------------------- System.Private.Uri Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Private.Uri.dll ---------------------------------------- System.Xml.ReaderWriter Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Xml.ReaderWriter.dll ---------------------------------------- System.Private.Xml Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Private.Xml.dll ---------------------------------------- System.Net.WebClient Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Net.WebClient.dll ---------------------------------------- System.Text.Encoding.Extensions Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Text.Encoding.Extensions.dll ---------------------------------------- System.Security.Principal.Windows Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Security.Principal.Windows.dll ---------------------------------------- System.Security.Claims Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Security.Claims.dll ---------------------------------------- System.Threading.ThreadPool Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Threading.ThreadPool.dll ---------------------------------------- System.Text.Encoding.CodePages Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Text.Encoding.CodePages.dll ---------------------------------------- System.Diagnostics.TraceSource Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Diagnostics.TraceSource.dll ---------------------------------------- System.Net.Primitives Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Net.Primitives.dll ---------------------------------------- System.Text.Json Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Text.Json.dll ---------------------------------------- Microsoft.SqlServer.Server Assembly Version: 1.0.0.0 Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\Microsoft.SqlServer.Server.dll ---------------------------------------- netstandard Assembly Version: 2.1.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\netstandard.dll ---------------------------------------- Microsoft.AspNetCore.Cryptography.KeyDerivation Assembly Version: 10.0.0.0 Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll ---------------------------------------- System.Runtime.Intrinsics Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Runtime.Intrinsics.dll ---------------------------------------- System.ObjectModel Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.ObjectModel.dll ---------------------------------------- System.Text.Encodings.Web Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Text.Encodings.Web.dll ---------------------------------------- System.Reflection.Emit.Lightweight Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Reflection.Emit.Lightweight.dll ---------------------------------------- System.Reflection.Primitives Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Reflection.Primitives.dll ---------------------------------------- System.Reflection.Emit.ILGeneration Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Reflection.Emit.ILGeneration.dll ---------------------------------------- System.Security.Cryptography.ProtectedData Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\System.Security.Cryptography.ProtectedData.dll ---------------------------------------- System.Runtime.Numerics Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Runtime.Numerics.dll ---------------------------------------- System.IO.Pipelines Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.IO.Pipelines.dll ---------------------------------------- System.Reflection.Metadata Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Reflection.Metadata.dll ---------------------------------------- System.Collections.Immutable Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Collections.Immutable.dll ---------------------------------------- System.IO.MemoryMappedFiles Assembly Version: 10.0.0.0 Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.IO.MemoryMappedFiles.dll ---------------------------------------- ************** JIT Debugging **************
+
+Document text:
+See the end of this message for details on invoking 
+just-in-time (JIT) debugging instead of this dialog box.
+
+************** Exception Text **************
+System.ObjectDisposedException: The CancellationTokenSource has been disposed.
+   at System.Threading.CancellationTokenSource.Cancel()
+   at CafeManager.WinForms.Modules.Finance.SupplierDebtsControl.<>c__DisplayClass16_0.<<-ctor>b__8>d.MoveNext() in D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\Modules\Finance\SupplierDebtsControl.cs:line 21
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__124_0(Object state)
+   at System.Windows.Forms.Control.InvokeMarshaledCallbackHelper(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Windows.Forms.Control.InvokeMarshaledCallbacks()
+
+
+************** Loaded Assemblies **************
+System.Private.CoreLib
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Private.CoreLib.dll
+----------------------------------------
+CafeManager.WinForms
+    Assembly Version: 1.0.0.0
+    Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\CafeManager.WinForms.dll
+----------------------------------------
+System.Runtime
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Runtime.dll
+----------------------------------------
+CafeManager.DataAccess
+    Assembly Version: 1.0.0.0
+    Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\CafeManager.DataAccess.dll
+----------------------------------------
+CafeManager.Business
+    Assembly Version: 1.0.0.0
+    Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\CafeManager.Business.dll
+----------------------------------------
+System.Windows.Forms
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\System.Windows.Forms.dll
+----------------------------------------
+Microsoft.Data.SqlClient
+    Assembly Version: 6.0.0.0
+    Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\runtimes\win\lib\net9.0\Microsoft.Data.SqlClient.dll
+----------------------------------------
+System.Data.Common
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Data.Common.dll
+----------------------------------------
+System.ComponentModel.TypeConverter
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.ComponentModel.TypeConverter.dll
+----------------------------------------
+System.Memory
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Memory.dll
+----------------------------------------
+System.ComponentModel.Primitives
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.ComponentModel.Primitives.dll
+----------------------------------------
+System.Windows.Forms.Primitives
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\System.Windows.Forms.Primitives.dll
+----------------------------------------
+System.Private.Windows.Core
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\System.Private.Windows.Core.dll
+----------------------------------------
+System.Private.Windows.GdiPlus
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\System.Private.Windows.GdiPlus.dll
+----------------------------------------
+System.Drawing.Primitives
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Drawing.Primitives.dll
+----------------------------------------
+System.Collections.Specialized
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Collections.Specialized.dll
+----------------------------------------
+CafeManager.Models
+    Assembly Version: 1.0.0.0
+    Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\CafeManager.Models.dll
+----------------------------------------
+System.Drawing.Common
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\System.Drawing.Common.dll
+----------------------------------------
+System.Runtime.InteropServices
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Runtime.InteropServices.dll
+----------------------------------------
+System.Threading
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Threading.dll
+----------------------------------------
+System.Collections
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Collections.dll
+----------------------------------------
+Microsoft.Win32.Registry
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\Microsoft.Win32.Registry.dll
+----------------------------------------
+Microsoft.Extensions.Identity.Core
+    Assembly Version: 10.0.0.0
+    Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\Microsoft.Extensions.Identity.Core.dll
+----------------------------------------
+Microsoft.Extensions.Options
+    Assembly Version: 10.0.0.0
+    Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\Microsoft.Extensions.Options.dll
+----------------------------------------
+System.Security.Cryptography
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Security.Cryptography.dll
+----------------------------------------
+System.Text.RegularExpressions
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Text.RegularExpressions.dll
+----------------------------------------
+Microsoft.Win32.Primitives
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\Microsoft.Win32.Primitives.dll
+----------------------------------------
+System.ComponentModel.EventBasedAsync
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.ComponentModel.EventBasedAsync.dll
+----------------------------------------
+System.Threading.Thread
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Threading.Thread.dll
+----------------------------------------
+System.Collections.Concurrent
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Collections.Concurrent.dll
+----------------------------------------
+Accessibility
+    Assembly Version: 4.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\Accessibility.dll
+----------------------------------------
+System.ComponentModel
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.ComponentModel.dll
+----------------------------------------
+System.Numerics.Vectors
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Numerics.Vectors.dll
+----------------------------------------
+Microsoft.Win32.SystemEvents
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\Microsoft.Win32.SystemEvents.dll
+----------------------------------------
+System.Linq
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Linq.dll
+----------------------------------------
+System.Collections.NonGeneric
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Collections.NonGeneric.dll
+----------------------------------------
+System.Runtime.Loader
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Runtime.Loader.dll
+----------------------------------------
+System.Transactions.Local
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Transactions.Local.dll
+----------------------------------------
+System.Diagnostics.DiagnosticSource
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Diagnostics.DiagnosticSource.dll
+----------------------------------------
+System.Diagnostics.Tracing
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Diagnostics.Tracing.dll
+----------------------------------------
+System.Diagnostics.StackTrace
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Diagnostics.StackTrace.dll
+----------------------------------------
+System.Configuration.ConfigurationManager
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\System.Configuration.ConfigurationManager.dll
+----------------------------------------
+System.Private.Uri
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Private.Uri.dll
+----------------------------------------
+System.Xml.ReaderWriter
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Xml.ReaderWriter.dll
+----------------------------------------
+System.Private.Xml
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Private.Xml.dll
+----------------------------------------
+System.Net.WebClient
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Net.WebClient.dll
+----------------------------------------
+System.Text.Encoding.Extensions
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Text.Encoding.Extensions.dll
+----------------------------------------
+System.Security.Principal.Windows
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Security.Principal.Windows.dll
+----------------------------------------
+System.Security.Claims
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Security.Claims.dll
+----------------------------------------
+System.Threading.ThreadPool
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Threading.ThreadPool.dll
+----------------------------------------
+System.Text.Encoding.CodePages
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Text.Encoding.CodePages.dll
+----------------------------------------
+System.Diagnostics.TraceSource
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Diagnostics.TraceSource.dll
+----------------------------------------
+System.Net.Primitives
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Net.Primitives.dll
+----------------------------------------
+System.Text.Json
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Text.Json.dll
+----------------------------------------
+Microsoft.SqlServer.Server
+    Assembly Version: 1.0.0.0
+    Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\Microsoft.SqlServer.Server.dll
+----------------------------------------
+netstandard
+    Assembly Version: 2.1.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\netstandard.dll
+----------------------------------------
+Microsoft.AspNetCore.Cryptography.KeyDerivation
+    Assembly Version: 10.0.0.0
+    Location: D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\bin\Debug\net10.0-windows\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+----------------------------------------
+System.Runtime.Intrinsics
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Runtime.Intrinsics.dll
+----------------------------------------
+System.ObjectModel
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.ObjectModel.dll
+----------------------------------------
+System.Text.Encodings.Web
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Text.Encodings.Web.dll
+----------------------------------------
+System.Reflection.Emit.Lightweight
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Reflection.Emit.Lightweight.dll
+----------------------------------------
+System.Reflection.Primitives
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Reflection.Primitives.dll
+----------------------------------------
+System.Reflection.Emit.ILGeneration
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Reflection.Emit.ILGeneration.dll
+----------------------------------------
+System.Security.Cryptography.ProtectedData
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.13\System.Security.Cryptography.ProtectedData.dll
+----------------------------------------
+System.Runtime.Numerics
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Runtime.Numerics.dll
+----------------------------------------
+System.IO.Pipelines
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.IO.Pipelines.dll
+----------------------------------------
+System.Reflection.Metadata
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Reflection.Metadata.dll
+----------------------------------------
+System.Collections.Immutable
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.Collections.Immutable.dll
+----------------------------------------
+System.IO.MemoryMappedFiles
+    Assembly Version: 10.0.0.0
+    Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.13\System.IO.MemoryMappedFiles.dll
+----------------------------------------
+
+************** JIT Debugging **************

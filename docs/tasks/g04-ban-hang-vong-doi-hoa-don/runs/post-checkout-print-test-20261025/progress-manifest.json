@@ -1,0 +1,39 @@
+{
+  "SourceFiles": 208,
+  "ChangedDuringTests": 0,
+  "UiSHA256": "A8AD64781F337700FF9E60154CFB405892D8AF3A3B44ABD662DB5DABBA391BEA",
+  "Copies": [
+    {
+      "Fixture": "component-bin",
+      "SameDll": true
+    },
+    {
+      "Fixture": "sql-bin",
+      "SameDll": true
+    },
+    {
+      "Fixture": "reset-bin",
+      "SameDll": true
+    },
+    {
+      "Fixture": "guard-bin",
+      "SameDll": true
+    },
+    {
+      "Fixture": "prepare-bin",
+      "SameDll": true
+    }
+  ],
+  "ResetPrintComponent": 8,
+  "GuardFixture": 12,
+  "GuardFixtureOverlapWithReset": 8,
+  "CheckoutComponent": 32,
+  "SqlBridge": 7,
+  "NativeBranches": "PC01-PC04 pending manual; not inferred from component or bridge",
+  "Database": "CoffeeManager_Test_G04_20261025_181739_98e5df59_checkout",
+  "Cleaned": false,
+  "RetainedReason": "Active manual PC01-PC04; four open test orders, user testing Yes/No/print",
+  "Visual": "SKIPPED/user",
+  "Dpi100150": "NOT RUN",
+  "PrintJobsByAgent": 0
+}

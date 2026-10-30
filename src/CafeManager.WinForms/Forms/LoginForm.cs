@@ -37,7 +37,6 @@ public partial class LoginForm : Form
         var version = ++generation;
         var request = new CancellationTokenSource(); pending = request;
         loginButton.Enabled = false; statusLabel.Text = "Đang đăng nhập…";
-        SetTemporaryTestLoginBusy(true);
         try
         {
             var session = await createSession(request.Token);
@@ -51,10 +50,9 @@ public partial class LoginForm : Form
         {
             if (ReferenceEquals(pending, request)) pending = null;
             request.Dispose();
-            if (!IsDisposed && version == generation) { loginButton.Enabled = auth is not null; SetTemporaryTestLoginBusy(false); }
+            if (!IsDisposed && version == generation) { loginButton.Enabled = auth is not null; }
         }
     }
-    partial void SetTemporaryTestLoginBusy(bool busy);
     private void ShowPassword_Changed(object? sender, EventArgs e) => passwordInput.UseSystemPasswordChar = !showPassword.Checked;
     protected override void OnFormClosing(FormClosingEventArgs e)
     {

@@ -1,0 +1,116 @@
+Window: "CoffeeManager", App: CafeManager.WinForms.exe.
+	0 window CoffeeManager Secondary Actions: Raise
+		462 tool tip PurchaseImmediate
+		1 pane
+			2 pane
+				3 text CoffeeManager
+				4 text KHÔNG GIAN QUẢN LÝ
+				5 text G05 fixture ADMIN
+				6 text Quản trị viên · ADMIN
+				7 button Trang phiên
+				8 button Danh mục nền
+				9 button Bán hàng
+				10 button Lịch sử hóa đơn
+				11 button Giao hàng
+				12 button Khách hàng
+				13 button Bàn / Khu vực
+				14 button Menu / Công thức
+				15 button Nguyên liệu / Tồn
+				16 button Ưu đãi / Điểm
+				17 button Thu chi
+				18 button Kho
+				19 button Công nợ
+				20 button Thông tin hệ thống
+				21 button Đăng xuất ID: logout
+				22 text Phiên đang hoạt động.
+				23 scroll bar (settable, float) Vertical Value: 45 ID: NonClientVerticalScrollBar
+					24 button Line up ID: UpButton
+					25 button Page up ID: UpPageButton
+					26 thumb Position ID: ScrollbarThumb
+					27 button Page down ID: DownPageButton
+					28 button Line down ID: DownButton
+			29 pane
+				30 text Quản lý / Thu chi
+				31 text G05 fixture ADMIN · ADMIN
+			32 pane G05 fixture ADMIN · ADMIN
+				364 pane G05 fixture ADMIN · ADMIN ID: 592370
+					365 pane ID: 133568
+						366 text TÀI CHÍNH
+						367 text Thu chi
+						368 text Ghi tay và nguồn chi từ nghiệp vụ; phiếu đã ghi chỉ đọc.
+						369 pane Ghi tay và nguồn chi từ nghiệp vụ; phiếu đã ghi chỉ đọc.
+							370 button Ghi phiếu
+						371 pane
+							372 pane ID: 10094934
+								373 edit (settable, string) Description: Tìm tên hoặc mã nguyên liệu…
+							374 pane
+								375 date and time picker (settable, string) Value: 29/09/2026
+								376 date and time picker (settable, string) Value: 29/10/2026
+								377 combo box (settable, string) Tất cả Value: Tất cả
+									378 text
+									379 button Open
+								380 combo box (settable, string) Tất cả nguồn Value: Tất cả nguồn
+									381 text
+									382 button Open
+							383 pane
+								384 button Tìm / Tải lại
+								385 button Xem chi tiết
+							386 pane
+								387 data grid
+									388 custom Top Row
+										389 header Top Left Header Cell ID: 428490876
+										390 header MÃ ID: 4243272530
+										391 header NGÀY ID: 4225671984
+										392 header LOẠI ID: 4265300345
+										393 header DANH MỤC ID: 4243598121
+										394 header SỐ TIỀN ID: 4229904669
+										395 header GHI CHÚ ID: 4253216389
+									463 custom Row 1
+										464 header Row 1 ID: 4232827774
+										465 item MÃ Row 1 Value: TC20250508 ID: 4224107879
+										466 item NGÀY Row 1 Value: 29/10/2026 19:15 ID: 4244966981
+										467 item LOẠI Row 1 Value: Chi ID: 4247699853
+										468 item DANH MỤC Row 1 Value: Tien dien ID: 4216118323
+										469 item SỐ TIỀN Row 1 Value: 2.345 ID: 428211614
+										470 item GHI CHÚ Row 1 Value: B05-native-20261029 ID: 4239642124
+									471 custom Row 2
+										472 header Row 2 ID: 4255741576
+										473 item MÃ Row 2 Value: TC20250507 ID: 4253551848
+										474 item NGÀY Row 2 Value: 26/10/2026 00:00 ID: 4225085386
+										475 item LOẠI Row 2 Value: Chi ID: 4257674573
+										476 item DANH MỤC Row 2 Value: Tra no nha cung cap ID: 4211571947
+										477 item SỐ TIỀN Row 2 Value: 1.000 ID: 4216217588
+										478 item GHI CHÚ Row 2 Value: SupplierDebt ID: 429502063
+									479 custom Row 3
+										480 header Row 3 ID: 4262344909
+										481 item MÃ Row 3 Value: TC20250506 ID: 425177460
+										482 item NGÀY Row 3 Value: 26/10/2026 00:00 ID: 42198123
+										483 item LOẠI Row 3 Value: Chi ID: 422575608
+										484 item DANH MỤC Row 3 Value: Trả ngay nhập hàng ID: 4233482911
+										485 item SỐ TIỀN Row 3 Value: 4.000 ID: 4232624663
+										486 item GHI CHÚ Row 3 Value: PurchaseImmediate ID: 4221467438
+									487 custom Row 4
+										488 header Row 4 ID: 424118479
+										489 item MÃ Row 4 Value: TC20250505 ID: 4253540236
+										490 item NGÀY Row 4 Value: 26/10/2026 00:00 ID: 4224934440
+										491 item LOẠI Row 4 Value: Chi ID: 4255712271
+										492 item DANH MỤC Row 4 Value: Tien dien ID: 4253170895
+										493 item SỐ TIỀN Row 4 Value: 1.234 ID: 4220132997
+										494 item GHI CHÚ Row 4 Value: G05 fixture ID: 4260402377
+							420 pane ID: 133584
+								421 text Hiển thị 1–4 / 4 phiếu
+								422 button (disabled) Trang trước
+								423 text 1 / 1
+								424 button (disabled) Trang sau
+						425 text 4 phiếu · Thu 0 ₫ · Chi 8.579 ₫ · Trang 1
+		39 title bar (settable, string) Value: CoffeeManager
+			40 menu bar System ID: MenuBar
+				41 menu item System
+			42 button Minimize
+			43 button Maximize
+			44 button Close
+		462 tool tip PurchaseImmediate
+
+The focused UI element is 373 edit (settable, string) Description: Tìm tên hoặc mã nguyên liệu….
+
+Focused element: 373 edit (settable, string) Description: Tìm tên hoặc mã nguyên liệu…

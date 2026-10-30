@@ -33,16 +33,16 @@ public sealed class CustomersControl : OrbitRecordListControl
         if(row is not null)dialog.AddNote($"{row.Code} · Điểm {row.Points} · Hạng {row.Tier} (chỉ đọc).");
         var name=dialog.AddText("Tên khách",row?.Name??"");var phone=dialog.AddText("Số điện thoại (có thể trống)",row?.Phone??"");
         dialog.CaptureWrite=()=>{var request=CustomerService.Normalize(new(name.Text,phone.Text));return id=>service.SaveAsync(session,request,row,id);};
-        if(dialog.ShowDialog(this)==DialogResult.OK){await Reload();if(dialog.ResultCode is { } code){var created=await service.GetAsync(session,code);foreach(DataGridViewRow item in Grid.Rows)if(item.DataBoundItem is CustomerRow customer&&customer.Code==code){item.Selected=true;Grid.CurrentCell=item.Cells[0];break;}State.Text=$"Đã lưu {created?.Code??code}. Điểm/hạng được đọc lại từ DB.";}}
+        if(await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this)==DialogResult.OK){await Reload();if(dialog.ResultCode is { } code){var created=await service.GetAsync(session,code);foreach(DataGridViewRow item in Grid.Rows)if(item.DataBoundItem is CustomerRow customer&&customer.Code==code){item.Selected=true;Grid.CurrentCell=item.Cells[0];break;}State.Text=$"Đã lưu {created?.Code??code}. Điểm/hạng được đọc lại từ DB.";}}
     }
     private async Task Open()
     {
         if(service is null||session is null||Selected is not CustomerRow row)return;
         using var dialog=new OperationEditorDialog("Mở sổ điểm khách",id=>service.ReconcileAsync(session,id));dialog.AddNote($"{row.Code} · {row.Name}; chỉ một lần trước giao dịch.");var points=dialog.AddText("Điểm mở sổ","0");var source=dialog.AddText("Nguồn / lý do");
-        dialog.CaptureWrite=()=>{if(!int.TryParse(points.Text,out var value)||value<0)throw new ArgumentException("Điểm phải là số nguyên không âm.");var request=new CustomerOpeningRequest(row.Code,value,MaterialService.Required(source.Text,100,"Nguồn"));dialog.Confirmation=$"Ghi {value} điểm mở sổ cho {row.Code}? Nguồn: {request.Source}. Không thể mở lại.";return id=>service.OpenAsync(session,request,row.Revision,id);};if(dialog.ShowDialog(this)==DialogResult.OK)await Reload();
+        dialog.CaptureWrite=()=>{if(!int.TryParse(points.Text,out var value)||value<0)throw new ArgumentException("Điểm phải là số nguyên không âm.");var request=new CustomerOpeningRequest(row.Code,value,MaterialService.Required(source.Text,100,"Nguồn"));dialog.Confirmation=$"Ghi {value} điểm mở sổ cho {row.Code}? Nguồn: {request.Source}. Không thể mở lại.";return id=>service.OpenAsync(session,request,row.Revision,id);};if(await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this)==DialogResult.OK)await Reload();
     }
-    private async Task Delete(){if(service is null||session is null||Selected is not CustomerRow row)return;using var dialog=new OperationEditorDialog("Xóa khách",id=>service.ReconcileAsync(session,id));dialog.AddNote($"{row.Code} · {row.Name}; chỉ xóa khi chưa có nguồn/lịch sử.");dialog.Confirmation=$"Xóa khách {row.Code}?";dialog.CaptureWrite=()=>id=>service.DeleteAsync(session,row,id);if(dialog.ShowDialog(this)==DialogResult.OK)await Reload();}
-    private async Task Orders(){if(service is null||session is null||Selected is not CustomerRow row)return;using var dialog=new OperationEditorDialog("Hóa đơn · "+row.Name,id=>service.ReconcileAsync(session,id));dialog.SetReadOnly();var history=new CustomerOrderList(service,session,row.Code);dialog.AddField("Hóa đơn",history);dialog.ShowDialog(this);await Task.CompletedTask;}
+    private async Task Delete(){if(service is null||session is null||Selected is not CustomerRow row)return;using var dialog=new OperationEditorDialog("Xóa khách",id=>service.ReconcileAsync(session,id));dialog.AddNote($"{row.Code} · {row.Name}; chỉ xóa khi chưa có nguồn/lịch sử.");dialog.Confirmation=$"Xóa khách {row.Code}?";dialog.CaptureWrite=()=>id=>service.DeleteAsync(session,row,id);if(await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this)==DialogResult.OK)await Reload();}
+    private async Task Orders(){if(service is null||session is null||Selected is not CustomerRow row)return;using var dialog=new OperationEditorDialog("Hóa đơn · "+row.Name,id=>service.ReconcileAsync(session,id));dialog.SetReadOnly();var history=new CustomerOrderList(service,session,row.Code);dialog.AddField("Hóa đơn",history);await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this);await Task.CompletedTask;}
 }
 internal sealed class CustomerOrderList : OrbitRecordListControl
 {
@@ -55,4 +55,5 @@ internal sealed class CustomerOrderList : OrbitRecordListControl
         Grid.HandleCreated+=(_,_)=>FillDateColumn();Grid.DpiChangedAfterParent+=(_,_)=>FillDateColumn();Grid.DataBindingComplete+=(_,_)=>FillDateColumn();FillDateColumn();
     }
 }
+
 

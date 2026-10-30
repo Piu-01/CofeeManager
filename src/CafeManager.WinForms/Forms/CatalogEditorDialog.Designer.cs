@@ -88,6 +88,7 @@ partial class CatalogEditorDialog
         cancelButton.AutoSize = true;
         reloadButton.AutoSize = true;
         saveButton.Click += Save_Click; reloadButton.Click += Reload_Click; cancelButton.DialogResult = DialogResult.Cancel;
+        cancelButton.Click += (_, _) => Close();
         actions.Controls.Add(saveButton); actions.Controls.Add(reloadButton); actions.Controls.Add(cancelButton);
         layout = new CafeManager.WinForms.UI.OrbitDialogLayout(this, fields, statusLabel, actions); errors.ContainerControl = this;
         AutoScaleDimensions = new SizeF(96F, 96F); AutoScaleMode = AutoScaleMode.Dpi; ClientSize = new Size(720, 600); MinimumSize = new Size(400, 360);

@@ -68,3 +68,11 @@ không trả lại số. 51301 loại chưa hỗ trợ, 51302 hết giới hạn
 không báo success. Timeout sau ghi là **kết quả chưa biết**, đối chiếu mã nguồn
 trước retry; cancellation chờ không chứng minh rollback. In sau commit, lỗi
 in chỉ in lại. Không log password/hash/connection string hoặc raw SQL error.
+
+## Contract runtime sau G04/schema015
+
+Bảng procedure baseline phía trên giữ làm lịch sử G01. Từ011checkout và012hủy
+bắt buộc Actor/Stamp, Code, ExpectedRevision, RequestId; checkout thêm tokenpreview
+và TVP, không nhận ngày/giảm tự chọn. Xem sales-contract.md/checkout-contract.md.
+Truy vấn/in dùng invoice-contract.md; giao dùng delivery-contract.md. Snapshot ưu
+đãi mới bất biến, lịch sử thiếu metadata có KindLegacyUnknown, không suy ngược.

@@ -1,0 +1,23 @@
+{
+  "Source": "User attachment Orbit_DonDangMo.zip",
+  "ZipSHA256": "8DEF79FE46F5652BCC8E55FEA64295CE0ABF2F80A7AEE2A8D51160358394048C",
+  "Imported": "2026-10-25",
+  "Files": [
+    {
+      "Name": "Orbit_DonDangMo_Laptop.png",
+      "Bytes": 154260,
+      "SHA256": "AF56FA7DD8EB1337A792283BD06F00AD87CD06CFE3B1FAC75461DF30AA0D4065"
+    },
+    {
+      "Name": "Orbit_DonDangMo.html",
+      "Bytes": 429581,
+      "SHA256": "EA2E9A4E7B52C1B779BD3EE99051FA01A80A8D9D3F24864646F889829DC1C1F4"
+    },
+    {
+      "Name": "README_DonDangMo.md",
+      "Bytes": 1108,
+      "SHA256": "C9A8D267B09B6337D0EDBCF338766A9FCF85D0463C66C4EFB646CFC313ABEF6C"
+    }
+  ],
+  "Use": "Reference only; full invoice codes and real date/money override truncated demo content per user request"
+}

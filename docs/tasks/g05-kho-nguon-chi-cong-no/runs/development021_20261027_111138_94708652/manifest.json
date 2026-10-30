@@ -1,0 +1,10 @@
+{
+  "RunId": "20261027_111138_94708652",
+  "Server": "localhost",
+  "Database": "CoffeeManager_Development",
+  "Status": "Failed",
+  "FixtureWritten": false,
+  "AccountReset": false,
+  "Backup": null,
+  "Error": "Development app is running; close it before applying schema. No process was stopped."
+}

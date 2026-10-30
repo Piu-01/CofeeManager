@@ -1,0 +1,124 @@
+[
+  {
+    "Part": "T19-K01.NativeAdmin",
+    "Result": "PASS",
+    "Actual": [
+      {
+        "Code": "TC20250521",
+        "Employee": "NV991",
+        "Amount": 1234.0,
+        "Origin": "Manual"
+      }
+    ]
+  },
+  {
+    "Part": "T19-K01.Income",
+    "Result": "PASS",
+    "Actual": "TC20250524"
+  },
+  {
+    "Part": "T19-K08.TotalWithoutDoubleDebt",
+    "Result": "PASS",
+    "Actual": {
+      "Income": 3456.0,
+      "ListIncome": 3456.0,
+      "ListExpense": 47702.0,
+      "Expense": 47702.0
+    }
+  },
+  {
+    "Part": "T23-K01.SourceSupplierAndUnique",
+    "Result": "PASS",
+    "Actual": "CN20250426"
+  },
+  {
+    "Part": "T23-K01.DuplicateSource",
+    "Result": "PASS",
+    "Expected": [
+      2601,
+      2627,
+      52702
+    ],
+    "Observed": [
+      2627,
+      3621
+    ],
+    "Before": "6C537887F1F35FE5360D70CD0B022FAF14D2DD99FCE12ED80090BD8447F4C748",
+    "After": "6C537887F1F35FE5360D70CD0B022FAF14D2DD99FCE12ED80090BD8447F4C748",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Violation of UNIQUE KEY constraint 'UQ_CN_MaPN'. Cannot insert duplicate key in object 'dbo.CONGNO_NCC'. The duplicate key value is (PN20250526).\r\nThe statement has been terminated.\""
+  },
+  {
+    "Part": "T23-K02.Zero",
+    "Result": "FAIL",
+    "Expected": [
+      547,
+      52702
+    ],
+    "Observed": [
+      2627,
+      3621
+    ],
+    "Before": "6C537887F1F35FE5360D70CD0B022FAF14D2DD99FCE12ED80090BD8447F4C748",
+    "After": "6C537887F1F35FE5360D70CD0B022FAF14D2DD99FCE12ED80090BD8447F4C748",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Violation of UNIQUE KEY constraint 'UQ_CN_MaPN'. Cannot insert duplicate key in object 'dbo.CONGNO_NCC'. The duplicate key value is (PN20250526).\r\nThe statement has been terminated.\""
+  },
+  {
+    "Part": "T23-K02.AboveTotal",
+    "Result": "FAIL",
+    "Expected": [
+      52702,
+      547
+    ],
+    "Observed": [
+      2627,
+      3621
+    ],
+    "Before": "6C537887F1F35FE5360D70CD0B022FAF14D2DD99FCE12ED80090BD8447F4C748",
+    "After": "6C537887F1F35FE5360D70CD0B022FAF14D2DD99FCE12ED80090BD8447F4C748",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Violation of UNIQUE KEY constraint 'UQ_CN_MaPN'. Cannot insert duplicate key in object 'dbo.CONGNO_NCC'. The duplicate key value is (PN20250526).\r\nThe statement has been terminated.\""
+  },
+  {
+    "Part": "T23-K02.NullDue",
+    "Result": "PASS",
+    "Actual": "CN20250426"
+  },
+  {
+    "Part": "T23-K06.MissingMapping",
+    "Result": "PASS",
+    "Expected": [
+      52602
+    ],
+    "Observed": [
+      52602
+    ],
+    "Before": "6C537887F1F35FE5360D70CD0B022FAF14D2DD99FCE12ED80090BD8447F4C748",
+    "After": "6C537887F1F35FE5360D70CD0B022FAF14D2DD99FCE12ED80090BD8447F4C748",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Thiếu danh mục chi hệ thống đúng loại.\""
+  },
+  {
+    "Part": "T22-K01.SnapshotNoStockChange",
+    "Result": "PASS",
+    "Actual": {
+      "Stock": 6.0000,
+      "Code": "KK00000007"
+    }
+  },
+  {
+    "Part": "T22-K02.ZeroCountAndDelta",
+    "Result": "PASS",
+    "Actual": "KK00000007"
+  },
+  {
+    "Part": "T22.NativeNullEvidence",
+    "Result": "PASS",
+    "Actual": {
+      "Fixture": "deliberately empty negative-case header",
+      "LinesJson": "NULL",
+      "Code": "KK99000002"
+    }
+  }
+]

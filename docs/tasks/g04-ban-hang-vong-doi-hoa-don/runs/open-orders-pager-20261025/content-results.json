@@ -1,0 +1,34 @@
+{
+  "Scope": "Hidden real dialog components with synthetic DTO/session; Shown/reload never run, no auth/SQL/physical-input claim",
+  "Results": [
+    {
+      "Name": "OO03 null customer and large typed money",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "OO03 long Vietnamese customer retains original code and date",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "OO04 doubleclick actual row handler returns exact code",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "OO04 header doubleclick cannot open order",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "OO04 loading selection cannot open stale row",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "OO04 Escape handler closes without selected code",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "OO06 repeated dispose cancels pending token safely",
+      "Outcome": "PASS"
+    }
+  ],
+  "Failed": 0
+}

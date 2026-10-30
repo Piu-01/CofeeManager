@@ -1,0 +1,17 @@
+{
+  "RunId": "20261025_181739_98e5df59",
+  "Server": "localhost",
+  "Database": "CoffeeManager_Test_G04_20261025_181739_98e5df59_checkout",
+  "Marker": "20261025_181739_98e5df59",
+  "Created": true,
+  "Cleaned": false,
+  "State": "Ready for guided GUI; no test cases passed by provisioning",
+  "Purpose": "Approved embedded-dialog native acceptance fixtures",
+  "RetainReason": "Active ED01-ED13 acceptance on frozen host build",
+  "ReviewBy": "2026-10-27",
+  "ProcessIds": [
+    23512,
+    34776
+  ],
+  "SchemaVersion": 16
+}

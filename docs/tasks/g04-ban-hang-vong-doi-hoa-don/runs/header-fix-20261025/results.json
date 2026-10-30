@@ -1,0 +1,151 @@
+{
+  "Database": "CoffeeManager_Test_G04_20261024_152759_12204643_manual",
+  "Schema": 16,
+  "Scope": "Real OrderHeaderDialog/BLL/runtime SQL; Save handler component invocation, no physical mouse/keyboard or full POS commit claimed",
+  "Results": [
+    {
+      "Name": "Mang di apply anonymous/no promotion",
+      "Outcome": "PASS",
+      "Actual": {
+        "Result": {
+          "Channel": "Mang di",
+          "TableCode": null,
+          "Customer": null,
+          "Promotion": null,
+          "Partner": null,
+          "Recipient": null,
+          "Phone": null,
+          "Address": null,
+          "Ship": 0
+        },
+        "Dpi": 120
+      }
+    },
+    {
+      "Name": "Tai quan apply preserves table",
+      "Outcome": "PASS",
+      "Actual": {
+        "Result": {
+          "Channel": "Tai quan",
+          "TableCode": "B0001",
+          "Customer": null,
+          "Promotion": null,
+          "Partner": null,
+          "Recipient": null,
+          "Phone": null,
+          "Address": null,
+          "Ship": 0
+        },
+        "Dpi": 120
+      }
+    },
+    {
+      "Name": "Giao hang self delivery",
+      "Outcome": "PASS",
+      "Actual": {
+        "Result": {
+          "Channel": "Giao hang",
+          "TableCode": null,
+          "Customer": null,
+          "Promotion": null,
+          "Partner": null,
+          "Recipient": "Test header",
+          "Phone": "0900000004",
+          "Address": "Test address",
+          "Ship": 10000
+        },
+        "Dpi": 120
+      }
+    },
+    {
+      "Name": "Giao hang selected partner",
+      "Outcome": "PASS",
+      "Actual": {
+        "Result": {
+          "Channel": "Giao hang",
+          "TableCode": null,
+          "Customer": null,
+          "Promotion": null,
+          "Partner": "DT001",
+          "Recipient": "Test header",
+          "Phone": "0900000004",
+          "Address": "Test address",
+          "Ship": 10000
+        },
+        "Dpi": 120
+      }
+    },
+    {
+      "Name": "Mang di preserves customer/promotion",
+      "Outcome": "PASS",
+      "Actual": {
+        "Result": {
+          "Channel": "Mang di",
+          "TableCode": null,
+          "Customer": "KH001",
+          "Promotion": "KM25ONE",
+          "Partner": null,
+          "Recipient": null,
+          "Phone": null,
+          "Address": null,
+          "Ship": 0
+        },
+        "Dpi": 120
+      }
+    },
+    {
+      "Name": "Cancel ready dialog has no result",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Lookup failure shows error, save disabled, back available",
+      "Outcome": "PASS",
+      "Actual": "Kh\u00F4ng t\u1EA3i \u0111\u01B0\u1EE3c th\u00F4ng tin \u0111\u01A1n. Ch\u1ECDn Quay l\u1EA1i r\u1ED3i m\u1EDF l\u1EA1i. Kh\u00F4ng k\u1EBFt n\u1ED1i \u0111\u01B0\u1EE3c d\u1EEF li\u1EC7u; ki\u1EC3m tra k\u1EBFt n\u1ED1i v\u00E0 th\u1EED l\u1EA1i."
+    },
+    {
+      "Name": "Reopen after lookup failure",
+      "Outcome": "PASS",
+      "Actual": {
+        "Result": {
+          "Channel": "Mang di",
+          "TableCode": null,
+          "Customer": null,
+          "Promotion": null,
+          "Partner": null,
+          "Recipient": null,
+          "Phone": null,
+          "Address": null,
+          "Ship": 0
+        },
+        "Dpi": 120
+      }
+    },
+    {
+      "Name": "Close during loading has no result",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Delivery missing recipient rejected",
+      "Outcome": "PASS",
+      "Actual": "C\u1EA7n t\u00EAn, s\u1ED1 \u0111i\u1EC7n tho\u1EA1i v\u00E0 \u0111\u1ECBa ch\u1EC9 giao h\u1EE3p l\u1EC7."
+    },
+    {
+      "Name": "Dialog tests did not create invoices",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Fixture actor removed",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Transaction clean",
+      "Outcome": "PASS",
+      "Actual": null
+    }
+  ],
+  "Failed": 0
+}

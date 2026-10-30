@@ -11,9 +11,9 @@ public sealed class SessionHomeControl : UserControl
         Dock = DockStyle.Fill;
         var message = identity?.Role switch
         {
-            "CASH" => "Bán hàng chưa triển khai. Phiên thu ngân đã được xác thực.",
-            "STORE" => "Kho chưa triển khai. Phiên quản lý kho đã được xác thực.",
-            "ADMIN" => "Chọn Danh mục nền để quản trị dữ liệu tham chiếu.",
+            "CASH" => "Mở Bán hàng để tạo đơn và thanh toán; dùng Lịch sử hóa đơn để tra cứu/in lại, Giao hàng để chuyển tiến độ.",
+            "STORE" => "Mở Nguyên liệu / Tồn để làm việc với kho; dùng Menu / Công thức để tra định mức. Các nghiệp vụ kho tiếp theo sẽ được bổ sung theo kế hoạch.",
+            "ADMIN" => "Chọn phân hệ cần quản lý; mở Bán hàng khi cần thao tác POS hoặc Danh mục nền để quản trị dữ liệu tham chiếu.",
             _ => "Trang phiên CoffeeManager"
         };
         var layout = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 1, RowCount = 3, Padding = new Padding(24) };
@@ -30,3 +30,4 @@ public sealed class SessionHomeControl : UserControl
         title.BackColor = Color.Transparent; details.BackColor = AppTheme.Surface; details.ForeColor = AppTheme.Muted;
     }
 }
+

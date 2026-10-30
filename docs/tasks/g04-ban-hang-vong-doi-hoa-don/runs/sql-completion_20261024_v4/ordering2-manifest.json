@@ -1,0 +1,105 @@
+{
+  "RunId": "20261024_145818_ef970099",
+  "Approval": "User24/10/2026: kiểm phần agent; existing approved G04 test",
+  "Schema": 16,
+  "Created": [
+    {
+      "Schema": 16,
+      "Marker": "20261024_145818_ef970099",
+      "Database": "CoffeeManager_Test_G04_20261024_145818_ef970099_demo"
+    }
+  ],
+  "Cleaned": [
+    "CoffeeManager_Test_G04_20261024_145818_ef970099_demo"
+  ],
+  "Retained": [],
+  "Cases": [
+    {
+      "Id": "T15 policy-recipe concurrency Policy writer first",
+      "Database": "CoffeeManager_Test_G04_20261024_145818_ef970099_demo",
+      "Procedure": "\n    Run-TestSql $c \"UPDATE dbo.NGUYENVATLIEU SET SoLuongTon=10000;EXEC dbo.G04New '$code',@customer='KH001';INSERT dbo.G04Frozen SELECT h.MaHD,h.Revision,p.PreviewToken,p.Payable,p.PolicyRevision,p.Discount,p.Points,k.DiemTichLuy FROM dbo.HOADON h CROSS APPLY dbo.fn_CheckoutPreview(h.MaHD) p JOIN dbo.KHACHHANG k ON k.MaKH=h.MaKH WHERE h.MaHD='$code'; INSERT dbo.G04RecipeExpected SELECT '$code',r.MaNVL,r.DinhMuc,r.DinhMuc+0.0010,n.SoLuongTon FROM dbo.CONGTHUC r JOIN dbo.NGUYENVATLIEU n ON n.MaNVL=r.MaNVL WHERE r.MaSP='SP001';\"\n    $checkout=$actor+\"DECLARE @r binary(8),@t binary(32),@amount decimal(18,0),@pay dbo.DanhSachThanhToan;SELECT @r=Rev,@t=Token,@amount=Amount FROM dbo.G04Frozen WHERE Code='$code';INSERT @pay VALUES('PT001',@amount,NULL);EXEC dbo.sp_ThanhToanHoaDon @a,@s,'$code',@r,@id,@t,@pay;\"\n    if($writeFirst) {\n     if($kind -eq 'Policy'){Run-TestSql $c \"CREATE TRIGGER dbo.G04Barrier ON dbo.LoyaltyPolicyState AFTER UPDATE AS BEGIN SET CONTEXT_INFO 0x7F01;WAITFOR DELAY '00:00:02';END;\";$writer=$policy;$expected=@(0,52201)}\n     else{Run-TestSql $c \"CREATE TRIGGER dbo.G04Barrier ON dbo.SANPHAM AFTER UPDATE AS BEGIN IF EXISTS(SELECT 1 FROM inserted WHERE MaSP='SP001') BEGIN SET CONTEXT_INFO 0x7F01;WAITFOR DELAY '00:00:02';END;END;\";$writer=$recipe;$expected=@(0,0)}\n     try{OrderedPair $writer $checkout $(if ($kind -eq 'Policy') {'CafeManager:LoyaltyPolicy'} else {'CafeManager:Recipes'}) $expected}finally{Run-TestSql $c 'DROP TRIGGER dbo.G04Barrier;'}\n    }else{\n     Run-TestSql $c \"CREATE TRIGGER dbo.G04Barrier ON dbo.HOADON AFTER UPDATE AS BEGIN IF EXISTS(SELECT 1 FROM inserted WHERE MaHD='$code' AND TrangThai=N'Chua thanh toan') BEGIN SET CONTEXT_INFO 0x7F02;WAITFOR DELAY '00:00:02';END;END;\"\n     $writer=if($kind -eq 'Policy'){$policy}else{$recipe}\n     try{OrderedPair $checkout $writer 'CafeManager:SalesOrder:' @(0,0)}finally{Run-TestSql $c 'DROP TRIGGER dbo.G04Barrier;'}\n    }\n    if($kind -eq 'Policy' -and $writeFirst) {\n     Run-TestSql $c \"IF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD='$code' AND TrangThai=N'Chua thanh toan') OR EXISTS(SELECT 1 FROM dbo.CHITIET_THANHTOAN WHERE MaHD='$code') OR EXISTS(SELECT 1 FROM dbo.TIEUHAO_HOADON WHERE MaHD='$code') OR EXISTS(SELECT 1 FROM dbo.HoaDonUuDaiSnapshot WHERE MaHD='$code') OR EXISTS(SELECT 1 FROM dbo.G03OperationReceipt WHERE EntityCode='$code' AND Operation='SalesCheckout') THROW 52990,'Policy-first rejection leaked',1;\"\n     $script:evidence['ConflictHasNoFinance']=$true;Run-TestSql $c \"EXEC dbo.G04Pay '$code';\";$script:evidence['ExplicitNewPreviewCheckout']='Paid after caller explicitly requested new preview'\n    }\n    if($kind -eq 'Policy' -and -not $writeFirst){Run-TestSql $c \"IF EXISTS(SELECT 1 FROM dbo.HoaDonUuDaiSnapshot s JOIN dbo.G04Frozen f ON f.Code=s.MaHD WHERE s.MaHD='$code' AND (s.PolicyRevision<>f.PolicyRev OR s.Discount<>f.Discount)) THROW 52990,'Policy changed committed snapshot',1;\"}\n    if($kind -eq 'Recipe'){\n     $qty=if($writeFirst){'NewQty'}else{'OldQty'}\n     Run-TestSql $c \"IF EXISTS(SELECT 1 FROM dbo.G04RecipeExpected e LEFT JOIN dbo.TIEUHAO_HOADON x ON x.MaHD=e.Code AND x.MaNVL=e.MaNVL JOIN dbo.NGUYENVATLIEU n ON n.MaNVL=e.MaNVL WHERE e.Code='$code' AND (x.MaHD IS NULL OR x.SoLuong<>e.$qty OR n.SoLuongTon<>e.BeforeStock-e.$qty)) THROW 52990,'Recipe snapshot or stock order mismatch',1;\"\n     $script:evidence['ConsumptionUsed']=$qty\n    }\n    Run-TestSql $c \"IF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD='$code' AND TrangThai=N'Da thanh toan') OR (SELECT COUNT(*) FROM dbo.CHITIET_THANHTOAN WHERE MaHD='$code')<>1 OR (SELECT COUNT(*) FROM dbo.LICHSU_DIEM WHERE MaHD='$code')<>1 OR (SELECT COUNT(*) FROM dbo.G03OperationReceipt WHERE EntityCode='$code' AND Operation='SalesCheckout')<>1 THROW 52990,'Checkout not exactly once',1;IF (SELECT DiemTichLuy FROM dbo.KHACHHANG WHERE MaKH='KH001')<>(SELECT InitialBalance FROM dbo.G04Frozen WHERE Code='$code')+(SELECT SUM(SoDiem) FROM dbo.LICHSU_DIEM WHERE MaHD='$code') THROW 52990,'Lost customer points',1;\"\n   ",
+      "Status": "PASS",
+      "BarrierObserved": true,
+      "Expected": [
+        0,
+        52201
+      ],
+      "Actual": [
+        0,
+        52201
+      ],
+      "Exceptions": [
+        "System.Management.Automation.MethodInvocationException: Exception calling \"EndExecuteNonQuery\" with \"1\" argument(s): \"Preview đã thay đổi. Xác nhận lại số mới.\"\r\n ---> System.Data.SqlClient.SqlException (0x80131904): Preview đã thay đổi. Xác nhận lại số mới.\r\n   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)\r\n   at System.Data.SqlClient.SqlCommand.EndExecuteNonQuery(IAsyncResult asyncResult)\r\n   at CallSite.Target(Closure, CallSite, Object, Object)\r\nClientConnectionId:03d394cf-1bf9-49e6-a674-235a61c766ab\r\nError Number:52201,State:1,Class:16\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)"
+      ],
+      "SessionStates": [
+        "0:0",
+        "0:0"
+      ],
+      "ConflictHasNoFinance": true,
+      "ExplicitNewPreviewCheckout": "Paid after caller explicitly requested new preview"
+    },
+    {
+      "Id": "T15 policy-recipe concurrency Policy checkout first",
+      "Database": "CoffeeManager_Test_G04_20261024_145818_ef970099_demo",
+      "Procedure": "\n    Run-TestSql $c \"UPDATE dbo.NGUYENVATLIEU SET SoLuongTon=10000;EXEC dbo.G04New '$code',@customer='KH001';INSERT dbo.G04Frozen SELECT h.MaHD,h.Revision,p.PreviewToken,p.Payable,p.PolicyRevision,p.Discount,p.Points,k.DiemTichLuy FROM dbo.HOADON h CROSS APPLY dbo.fn_CheckoutPreview(h.MaHD) p JOIN dbo.KHACHHANG k ON k.MaKH=h.MaKH WHERE h.MaHD='$code'; INSERT dbo.G04RecipeExpected SELECT '$code',r.MaNVL,r.DinhMuc,r.DinhMuc+0.0010,n.SoLuongTon FROM dbo.CONGTHUC r JOIN dbo.NGUYENVATLIEU n ON n.MaNVL=r.MaNVL WHERE r.MaSP='SP001';\"\n    $checkout=$actor+\"DECLARE @r binary(8),@t binary(32),@amount decimal(18,0),@pay dbo.DanhSachThanhToan;SELECT @r=Rev,@t=Token,@amount=Amount FROM dbo.G04Frozen WHERE Code='$code';INSERT @pay VALUES('PT001',@amount,NULL);EXEC dbo.sp_ThanhToanHoaDon @a,@s,'$code',@r,@id,@t,@pay;\"\n    if($writeFirst) {\n     if($kind -eq 'Policy'){Run-TestSql $c \"CREATE TRIGGER dbo.G04Barrier ON dbo.LoyaltyPolicyState AFTER UPDATE AS BEGIN SET CONTEXT_INFO 0x7F01;WAITFOR DELAY '00:00:02';END;\";$writer=$policy;$expected=@(0,52201)}\n     else{Run-TestSql $c \"CREATE TRIGGER dbo.G04Barrier ON dbo.SANPHAM AFTER UPDATE AS BEGIN IF EXISTS(SELECT 1 FROM inserted WHERE MaSP='SP001') BEGIN SET CONTEXT_INFO 0x7F01;WAITFOR DELAY '00:00:02';END;END;\";$writer=$recipe;$expected=@(0,0)}\n     try{OrderedPair $writer $checkout $(if ($kind -eq 'Policy') {'CafeManager:LoyaltyPolicy'} else {'CafeManager:Recipes'}) $expected}finally{Run-TestSql $c 'DROP TRIGGER dbo.G04Barrier;'}\n    }else{\n     Run-TestSql $c \"CREATE TRIGGER dbo.G04Barrier ON dbo.HOADON AFTER UPDATE AS BEGIN IF EXISTS(SELECT 1 FROM inserted WHERE MaHD='$code' AND TrangThai=N'Chua thanh toan') BEGIN SET CONTEXT_INFO 0x7F02;WAITFOR DELAY '00:00:02';END;END;\"\n     $writer=if($kind -eq 'Policy'){$policy}else{$recipe}\n     try{OrderedPair $checkout $writer 'CafeManager:SalesOrder:' @(0,0)}finally{Run-TestSql $c 'DROP TRIGGER dbo.G04Barrier;'}\n    }\n    if($kind -eq 'Policy' -and $writeFirst) {\n     Run-TestSql $c \"IF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD='$code' AND TrangThai=N'Chua thanh toan') OR EXISTS(SELECT 1 FROM dbo.CHITIET_THANHTOAN WHERE MaHD='$code') OR EXISTS(SELECT 1 FROM dbo.TIEUHAO_HOADON WHERE MaHD='$code') OR EXISTS(SELECT 1 FROM dbo.HoaDonUuDaiSnapshot WHERE MaHD='$code') OR EXISTS(SELECT 1 FROM dbo.G03OperationReceipt WHERE EntityCode='$code' AND Operation='SalesCheckout') THROW 52990,'Policy-first rejection leaked',1;\"\n     $script:evidence['ConflictHasNoFinance']=$true;Run-TestSql $c \"EXEC dbo.G04Pay '$code';\";$script:evidence['ExplicitNewPreviewCheckout']='Paid after caller explicitly requested new preview'\n    }\n    if($kind -eq 'Policy' -and -not $writeFirst){Run-TestSql $c \"IF EXISTS(SELECT 1 FROM dbo.HoaDonUuDaiSnapshot s JOIN dbo.G04Frozen f ON f.Code=s.MaHD WHERE s.MaHD='$code' AND (s.PolicyRevision<>f.PolicyRev OR s.Discount<>f.Discount)) THROW 52990,'Policy changed committed snapshot',1;\"}\n    if($kind -eq 'Recipe'){\n     $qty=if($writeFirst){'NewQty'}else{'OldQty'}\n     Run-TestSql $c \"IF EXISTS(SELECT 1 FROM dbo.G04RecipeExpected e LEFT JOIN dbo.TIEUHAO_HOADON x ON x.MaHD=e.Code AND x.MaNVL=e.MaNVL JOIN dbo.NGUYENVATLIEU n ON n.MaNVL=e.MaNVL WHERE e.Code='$code' AND (x.MaHD IS NULL OR x.SoLuong<>e.$qty OR n.SoLuongTon<>e.BeforeStock-e.$qty)) THROW 52990,'Recipe snapshot or stock order mismatch',1;\"\n     $script:evidence['ConsumptionUsed']=$qty\n    }\n    Run-TestSql $c \"IF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD='$code' AND TrangThai=N'Da thanh toan') OR (SELECT COUNT(*) FROM dbo.CHITIET_THANHTOAN WHERE MaHD='$code')<>1 OR (SELECT COUNT(*) FROM dbo.LICHSU_DIEM WHERE MaHD='$code')<>1 OR (SELECT COUNT(*) FROM dbo.G03OperationReceipt WHERE EntityCode='$code' AND Operation='SalesCheckout')<>1 THROW 52990,'Checkout not exactly once',1;IF (SELECT DiemTichLuy FROM dbo.KHACHHANG WHERE MaKH='KH001')<>(SELECT InitialBalance FROM dbo.G04Frozen WHERE Code='$code')+(SELECT SUM(SoDiem) FROM dbo.LICHSU_DIEM WHERE MaHD='$code') THROW 52990,'Lost customer points',1;\"\n   ",
+      "Status": "PASS",
+      "BarrierObserved": true,
+      "Expected": [
+        0,
+        0
+      ],
+      "Actual": [
+        0,
+        0
+      ],
+      "Exceptions": [],
+      "SessionStates": [
+        "0:0",
+        "0:0"
+      ]
+    },
+    {
+      "Id": "T15 policy-recipe concurrency Recipe writer first",
+      "Database": "CoffeeManager_Test_G04_20261024_145818_ef970099_demo",
+      "Procedure": "\n    Run-TestSql $c \"UPDATE dbo.NGUYENVATLIEU SET SoLuongTon=10000;EXEC dbo.G04New '$code',@customer='KH001';INSERT dbo.G04Frozen SELECT h.MaHD,h.Revision,p.PreviewToken,p.Payable,p.PolicyRevision,p.Discount,p.Points,k.DiemTichLuy FROM dbo.HOADON h CROSS APPLY dbo.fn_CheckoutPreview(h.MaHD) p JOIN dbo.KHACHHANG k ON k.MaKH=h.MaKH WHERE h.MaHD='$code'; INSERT dbo.G04RecipeExpected SELECT '$code',r.MaNVL,r.DinhMuc,r.DinhMuc+0.0010,n.SoLuongTon FROM dbo.CONGTHUC r JOIN dbo.NGUYENVATLIEU n ON n.MaNVL=r.MaNVL WHERE r.MaSP='SP001';\"\n    $checkout=$actor+\"DECLARE @r binary(8),@t binary(32),@amount decimal(18,0),@pay dbo.DanhSachThanhToan;SELECT @r=Rev,@t=Token,@amount=Amount FROM dbo.G04Frozen WHERE Code='$code';INSERT @pay VALUES('PT001',@amount,NULL);EXEC dbo.sp_ThanhToanHoaDon @a,@s,'$code',@r,@id,@t,@pay;\"\n    if($writeFirst) {\n     if($kind -eq 'Policy'){Run-TestSql $c \"CREATE TRIGGER dbo.G04Barrier ON dbo.LoyaltyPolicyState AFTER UPDATE AS BEGIN SET CONTEXT_INFO 0x7F01;WAITFOR DELAY '00:00:02';END;\";$writer=$policy;$expected=@(0,52201)}\n     else{Run-TestSql $c \"CREATE TRIGGER dbo.G04Barrier ON dbo.SANPHAM AFTER UPDATE AS BEGIN IF EXISTS(SELECT 1 FROM inserted WHERE MaSP='SP001') BEGIN SET CONTEXT_INFO 0x7F01;WAITFOR DELAY '00:00:02';END;END;\";$writer=$recipe;$expected=@(0,0)}\n     try{OrderedPair $writer $checkout $(if ($kind -eq 'Policy') {'CafeManager:LoyaltyPolicy'} else {'CafeManager:Recipes'}) $expected}finally{Run-TestSql $c 'DROP TRIGGER dbo.G04Barrier;'}\n    }else{\n     Run-TestSql $c \"CREATE TRIGGER dbo.G04Barrier ON dbo.HOADON AFTER UPDATE AS BEGIN IF EXISTS(SELECT 1 FROM inserted WHERE MaHD='$code' AND TrangThai=N'Chua thanh toan') BEGIN SET CONTEXT_INFO 0x7F02;WAITFOR DELAY '00:00:02';END;END;\"\n     $writer=if($kind -eq 'Policy'){$policy}else{$recipe}\n     try{OrderedPair $checkout $writer 'CafeManager:SalesOrder:' @(0,0)}finally{Run-TestSql $c 'DROP TRIGGER dbo.G04Barrier;'}\n    }\n    if($kind -eq 'Policy' -and $writeFirst) {\n     Run-TestSql $c \"IF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD='$code' AND TrangThai=N'Chua thanh toan') OR EXISTS(SELECT 1 FROM dbo.CHITIET_THANHTOAN WHERE MaHD='$code') OR EXISTS(SELECT 1 FROM dbo.TIEUHAO_HOADON WHERE MaHD='$code') OR EXISTS(SELECT 1 FROM dbo.HoaDonUuDaiSnapshot WHERE MaHD='$code') OR EXISTS(SELECT 1 FROM dbo.G03OperationReceipt WHERE EntityCode='$code' AND Operation='SalesCheckout') THROW 52990,'Policy-first rejection leaked',1;\"\n     $script:evidence['ConflictHasNoFinance']=$true;Run-TestSql $c \"EXEC dbo.G04Pay '$code';\";$script:evidence['ExplicitNewPreviewCheckout']='Paid after caller explicitly requested new preview'\n    }\n    if($kind -eq 'Policy' -and -not $writeFirst){Run-TestSql $c \"IF EXISTS(SELECT 1 FROM dbo.HoaDonUuDaiSnapshot s JOIN dbo.G04Frozen f ON f.Code=s.MaHD WHERE s.MaHD='$code' AND (s.PolicyRevision<>f.PolicyRev OR s.Discount<>f.Discount)) THROW 52990,'Policy changed committed snapshot',1;\"}\n    if($kind -eq 'Recipe'){\n     $qty=if($writeFirst){'NewQty'}else{'OldQty'}\n     Run-TestSql $c \"IF EXISTS(SELECT 1 FROM dbo.G04RecipeExpected e LEFT JOIN dbo.TIEUHAO_HOADON x ON x.MaHD=e.Code AND x.MaNVL=e.MaNVL JOIN dbo.NGUYENVATLIEU n ON n.MaNVL=e.MaNVL WHERE e.Code='$code' AND (x.MaHD IS NULL OR x.SoLuong<>e.$qty OR n.SoLuongTon<>e.BeforeStock-e.$qty)) THROW 52990,'Recipe snapshot or stock order mismatch',1;\"\n     $script:evidence['ConsumptionUsed']=$qty\n    }\n    Run-TestSql $c \"IF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD='$code' AND TrangThai=N'Da thanh toan') OR (SELECT COUNT(*) FROM dbo.CHITIET_THANHTOAN WHERE MaHD='$code')<>1 OR (SELECT COUNT(*) FROM dbo.LICHSU_DIEM WHERE MaHD='$code')<>1 OR (SELECT COUNT(*) FROM dbo.G03OperationReceipt WHERE EntityCode='$code' AND Operation='SalesCheckout')<>1 THROW 52990,'Checkout not exactly once',1;IF (SELECT DiemTichLuy FROM dbo.KHACHHANG WHERE MaKH='KH001')<>(SELECT InitialBalance FROM dbo.G04Frozen WHERE Code='$code')+(SELECT SUM(SoDiem) FROM dbo.LICHSU_DIEM WHERE MaHD='$code') THROW 52990,'Lost customer points',1;\"\n   ",
+      "Status": "PASS",
+      "BarrierObserved": true,
+      "Expected": [
+        0,
+        0
+      ],
+      "Actual": [
+        0,
+        0
+      ],
+      "Exceptions": [],
+      "SessionStates": [
+        "0:0",
+        "0:0"
+      ],
+      "ConsumptionUsed": "NewQty"
+    },
+    {
+      "Id": "T15 policy-recipe concurrency Recipe checkout first",
+      "Database": "CoffeeManager_Test_G04_20261024_145818_ef970099_demo",
+      "Procedure": "\n    Run-TestSql $c \"UPDATE dbo.NGUYENVATLIEU SET SoLuongTon=10000;EXEC dbo.G04New '$code',@customer='KH001';INSERT dbo.G04Frozen SELECT h.MaHD,h.Revision,p.PreviewToken,p.Payable,p.PolicyRevision,p.Discount,p.Points,k.DiemTichLuy FROM dbo.HOADON h CROSS APPLY dbo.fn_CheckoutPreview(h.MaHD) p JOIN dbo.KHACHHANG k ON k.MaKH=h.MaKH WHERE h.MaHD='$code'; INSERT dbo.G04RecipeExpected SELECT '$code',r.MaNVL,r.DinhMuc,r.DinhMuc+0.0010,n.SoLuongTon FROM dbo.CONGTHUC r JOIN dbo.NGUYENVATLIEU n ON n.MaNVL=r.MaNVL WHERE r.MaSP='SP001';\"\n    $checkout=$actor+\"DECLARE @r binary(8),@t binary(32),@amount decimal(18,0),@pay dbo.DanhSachThanhToan;SELECT @r=Rev,@t=Token,@amount=Amount FROM dbo.G04Frozen WHERE Code='$code';INSERT @pay VALUES('PT001',@amount,NULL);EXEC dbo.sp_ThanhToanHoaDon @a,@s,'$code',@r,@id,@t,@pay;\"\n    if($writeFirst) {\n     if($kind -eq 'Policy'){Run-TestSql $c \"CREATE TRIGGER dbo.G04Barrier ON dbo.LoyaltyPolicyState AFTER UPDATE AS BEGIN SET CONTEXT_INFO 0x7F01;WAITFOR DELAY '00:00:02';END;\";$writer=$policy;$expected=@(0,52201)}\n     else{Run-TestSql $c \"CREATE TRIGGER dbo.G04Barrier ON dbo.SANPHAM AFTER UPDATE AS BEGIN IF EXISTS(SELECT 1 FROM inserted WHERE MaSP='SP001') BEGIN SET CONTEXT_INFO 0x7F01;WAITFOR DELAY '00:00:02';END;END;\";$writer=$recipe;$expected=@(0,0)}\n     try{OrderedPair $writer $checkout $(if ($kind -eq 'Policy') {'CafeManager:LoyaltyPolicy'} else {'CafeManager:Recipes'}) $expected}finally{Run-TestSql $c 'DROP TRIGGER dbo.G04Barrier;'}\n    }else{\n     Run-TestSql $c \"CREATE TRIGGER dbo.G04Barrier ON dbo.HOADON AFTER UPDATE AS BEGIN IF EXISTS(SELECT 1 FROM inserted WHERE MaHD='$code' AND TrangThai=N'Chua thanh toan') BEGIN SET CONTEXT_INFO 0x7F02;WAITFOR DELAY '00:00:02';END;END;\"\n     $writer=if($kind -eq 'Policy'){$policy}else{$recipe}\n     try{OrderedPair $checkout $writer 'CafeManager:SalesOrder:' @(0,0)}finally{Run-TestSql $c 'DROP TRIGGER dbo.G04Barrier;'}\n    }\n    if($kind -eq 'Policy' -and $writeFirst) {\n     Run-TestSql $c \"IF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD='$code' AND TrangThai=N'Chua thanh toan') OR EXISTS(SELECT 1 FROM dbo.CHITIET_THANHTOAN WHERE MaHD='$code') OR EXISTS(SELECT 1 FROM dbo.TIEUHAO_HOADON WHERE MaHD='$code') OR EXISTS(SELECT 1 FROM dbo.HoaDonUuDaiSnapshot WHERE MaHD='$code') OR EXISTS(SELECT 1 FROM dbo.G03OperationReceipt WHERE EntityCode='$code' AND Operation='SalesCheckout') THROW 52990,'Policy-first rejection leaked',1;\"\n     $script:evidence['ConflictHasNoFinance']=$true;Run-TestSql $c \"EXEC dbo.G04Pay '$code';\";$script:evidence['ExplicitNewPreviewCheckout']='Paid after caller explicitly requested new preview'\n    }\n    if($kind -eq 'Policy' -and -not $writeFirst){Run-TestSql $c \"IF EXISTS(SELECT 1 FROM dbo.HoaDonUuDaiSnapshot s JOIN dbo.G04Frozen f ON f.Code=s.MaHD WHERE s.MaHD='$code' AND (s.PolicyRevision<>f.PolicyRev OR s.Discount<>f.Discount)) THROW 52990,'Policy changed committed snapshot',1;\"}\n    if($kind -eq 'Recipe'){\n     $qty=if($writeFirst){'NewQty'}else{'OldQty'}\n     Run-TestSql $c \"IF EXISTS(SELECT 1 FROM dbo.G04RecipeExpected e LEFT JOIN dbo.TIEUHAO_HOADON x ON x.MaHD=e.Code AND x.MaNVL=e.MaNVL JOIN dbo.NGUYENVATLIEU n ON n.MaNVL=e.MaNVL WHERE e.Code='$code' AND (x.MaHD IS NULL OR x.SoLuong<>e.$qty OR n.SoLuongTon<>e.BeforeStock-e.$qty)) THROW 52990,'Recipe snapshot or stock order mismatch',1;\"\n     $script:evidence['ConsumptionUsed']=$qty\n    }\n    Run-TestSql $c \"IF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD='$code' AND TrangThai=N'Da thanh toan') OR (SELECT COUNT(*) FROM dbo.CHITIET_THANHTOAN WHERE MaHD='$code')<>1 OR (SELECT COUNT(*) FROM dbo.LICHSU_DIEM WHERE MaHD='$code')<>1 OR (SELECT COUNT(*) FROM dbo.G03OperationReceipt WHERE EntityCode='$code' AND Operation='SalesCheckout')<>1 THROW 52990,'Checkout not exactly once',1;IF (SELECT DiemTichLuy FROM dbo.KHACHHANG WHERE MaKH='KH001')<>(SELECT InitialBalance FROM dbo.G04Frozen WHERE Code='$code')+(SELECT SUM(SoDiem) FROM dbo.LICHSU_DIEM WHERE MaHD='$code') THROW 52990,'Lost customer points',1;\"\n   ",
+      "Status": "PASS",
+      "BarrierObserved": true,
+      "Expected": [
+        0,
+        0
+      ],
+      "Actual": [
+        0,
+        0
+      ],
+      "Exceptions": [],
+      "SessionStates": [
+        "0:0",
+        "0:0"
+      ],
+      "ConsumptionUsed": "OldQty"
+    }
+  ],
+  "Status": "Succeeded"
+}

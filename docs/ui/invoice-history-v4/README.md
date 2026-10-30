@@ -1,0 +1,1 @@
+Bản V4 thay V3: đã bỏ dòng tổng kết số lượng kết quả và khoảng ngày phía trên bảng. Giữ nút kính lúp cùng kiểu nút làm mới, cụm khoảng ngày và Chi tiết / In. Đây là bản tham chiếu HTML, không ghi dữ liệu thật. Quy tắc bỏ dòng tổng kết này áp dụng cho các thiết kế sau.

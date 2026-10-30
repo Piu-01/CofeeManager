@@ -1,0 +1,181 @@
+{
+  "Failed": 0,
+  "Results": [
+    {
+      "Name": "ED01 one native top-level / child in main",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED02 whole background disabled",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED03 only top enabled",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED08 repeated root opener rejected",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED12 nested bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Main": "{Width=1280, Height=720}",
+        "Child": "{Width=400, Height=240}",
+        "Dpi": 120
+      }
+    },
+    {
+      "Name": "ED12 nested bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Main": "{Width=1366, Height=768}",
+        "Child": "{Width=400, Height=240}",
+        "Dpi": 120
+      }
+    },
+    {
+      "Name": "ED12 nested bounds {Width=800, Height=600}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Main": "{Width=800, Height=600}",
+        "Child": "{Width=400, Height=240}",
+        "Dpi": 120
+      }
+    },
+    {
+      "Name": "ED03 typed OK result once",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED03 parent input/focus restored",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED04 cancel closes parent",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED02 root enabled and focus restored",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED04 discard confirmation is embedded",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED04 reject discard keeps draft",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED04 accept discard completes",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED05 busy cannot close",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED05 abort releases nested tasks",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED05 disposed owner cannot open orphan",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED13 enter selects existing text",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED13 first mouse-up corrects native caret",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED13 subsequent click keeps caret",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED13 typing replacement no manual delete",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED13 replacement does not reselect on TextChanged",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED13 reentry selects new value",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED13 multiline Vietnamese selected",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED13 readonly unchanged",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED13 masked input",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED13 quantity internal editor",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED13 editable combo",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED13 list-only selection preserved",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED13 dynamic input covered",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED13 repeated registration keeps normal caret",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ED11 twenty dialog cycles release forms",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Dpi": 120,
+      "Scope": "Real WinForms; component calls/PerformClick/reflection, no physical input, no visual QA, no SQL"
+    }
+  ]
+}

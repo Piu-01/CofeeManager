@@ -1,0 +1,16 @@
+[
+  {
+    "Phase": "before",
+    "Top": 0,
+    "Height": 38,
+    "ParentHeight": 58,
+    "Centered": false
+  },
+  {
+    "Phase": "after",
+    "Top": 10,
+    "Height": 38,
+    "ParentHeight": 58,
+    "Centered": true
+  }
+]

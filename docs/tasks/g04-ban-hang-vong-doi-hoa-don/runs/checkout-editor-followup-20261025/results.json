@@ -1,0 +1,28 @@
+{
+  "Scope": "Frozen actual DataGridView editing control and production key handler invoked as components, not physical key input",
+  "Results": [
+    {
+      "Name": "Editable amount preview and native editor palette",
+      "Outcome": "FAIL",
+      "Error": "System.InvalidOperationException: editor.BackColor==OrbitManagementTheme.Input\u0026\u0026editor.ForeColor==OrbitManagementTheme.Text | {\u0022Confirm\u0022:true,\u0022Allocated\u0022:\u002281.000 \\u20AB\u0022,\u0022State\u0022:\u0022\\u0110\\u1EE7 ti\\u1EC1n thanh to\\u00E1n \\u00B7 Ti\\u1EC1n th\\u1ED1i 0 \\u20AB\u0022,\u0022Editing\u0022:true,\u0022Cell\u0022:\u0022Amount\u0022,\u0022EditorText\u0022:\u002281.000\u0022}\r\n   at Program.\u003C\u003Ec__DisplayClass0_0.\u003CMain\u003Eg__Check|1(Boolean ok, String expression) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g04-ban-hang-vong-doi-hoa-don\\runs\\checkout-editor-followup-20261025\\Program.cs:line 24\r\n   at Program.\u003C\u003Ec__DisplayClass0_1.\u003CMain\u003Eb__5() in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g04-ban-hang-vong-doi-hoa-don\\runs\\checkout-editor-followup-20261025\\Program.cs:line 29\r\n   at Program.\u003C\u003Ec__DisplayClass0_0.\u003CMain\u003Eg__Test|2(String name, Action action) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g04-ban-hang-vong-doi-hoa-don\\runs\\checkout-editor-followup-20261025\\Program.cs:line 25"
+    },
+    {
+      "Name": "Amount edit commits correct allocation",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Method combo binds code, bank disables tender",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Reference edit length rejected by live validation",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "Production Enter handler ends edit without checkout",
+      "Outcome": "FAIL",
+      "Error": "System.InvalidOperationException: consumed\u0026\u0026!grid.IsCurrentCellInEditMode | {\u0022Confirm\u0022:true,\u0022Allocated\u0022:\u002281.000 \\u20AB\u0022,\u0022State\u0022:\u0022Ph\\u00E2n b\\u1ED5 h\\u1EE3p l\\u1EC7 \\u00B7 Kh\\u00F4ng c\\u00F3 ph\\u1EA7n ti\\u1EC1n m\\u1EB7t.\u0022,\u0022Editing\u0022:true,\u0022Cell\u0022:\u0022Amount\u0022,\u0022EditorText\u0022:\u002281.000\u0022}\r\n   at Program.\u003C\u003Ec__DisplayClass0_0.\u003CMain\u003Eg__Check|1(Boolean ok, String expression) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g04-ban-hang-vong-doi-hoa-don\\runs\\checkout-editor-followup-20261025\\Program.cs:line 24\r\n   at Program.\u003C\u003Ec__DisplayClass0_1.\u003CMain\u003Eb__9() in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g04-ban-hang-vong-doi-hoa-don\\runs\\checkout-editor-followup-20261025\\Program.cs:line 33\r\n   at Program.\u003C\u003Ec__DisplayClass0_0.\u003CMain\u003Eg__Test|2(String name, Action action) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g04-ban-hang-vong-doi-hoa-don\\runs\\checkout-editor-followup-20261025\\Program.cs:line 25"
+    }
+  ],
+  "Failed": 2
+}

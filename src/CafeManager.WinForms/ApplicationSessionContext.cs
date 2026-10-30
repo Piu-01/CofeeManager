@@ -11,16 +11,10 @@ internal sealed class ApplicationSessionContext(AuthService? auth, PermissionSer
     private LoginForm? login;
     private MainForm? main;
     private SessionContext? session;
-#if DEBUG
-    internal Func<CancellationToken, Task<SessionContext>>? TemporaryTestLogin { get; set; }
-#endif
     public void Start() => ShowLogin();
     private void ShowLogin()
     {
         login = new LoginForm(auth, configurationError);
-#if DEBUG
-        if (TemporaryTestLogin is not null) login.ConfigureTemporaryTestLogin(TemporaryTestLogin);
-#endif
         login.FormClosed += (_, _) => { if (main is null) ExitThread(); };
         login.LoggedIn += LoggedIn;
         login.Show();

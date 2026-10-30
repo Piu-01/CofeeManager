@@ -1,0 +1,196 @@
+[
+  {
+    "Part": "T19-K02.Amount.0",
+    "Result": "FAIL",
+    "Expected": [
+      52601
+    ],
+    "Observed": [
+      102,
+      137
+    ],
+    "Before": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "After": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "Transaction": "0:1",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Incorrect syntax near '§'.\r\nMust declare the scalar variable \"@actor\".\""
+  },
+  {
+    "Part": "T19-K02.Amount.-1",
+    "Result": "FAIL",
+    "Expected": [
+      52601
+    ],
+    "Observed": [
+      102,
+      137
+    ],
+    "Before": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "After": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "Transaction": "0:1",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Incorrect syntax near '§'.\r\nMust declare the scalar variable \"@actor\".\""
+  },
+  {
+    "Part": "T19-K02.Amount.0.5",
+    "Result": "FAIL",
+    "Expected": [
+      52601
+    ],
+    "Observed": [
+      102,
+      137
+    ],
+    "Before": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "After": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "Transaction": "0:1",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Incorrect syntax near '§'.\r\nMust declare the scalar variable \"@actor\".\""
+  },
+  {
+    "Part": "T19-K02.Amount.1000000000000000000",
+    "Result": "FAIL",
+    "Expected": [
+      52601
+    ],
+    "Observed": [
+      102,
+      137
+    ],
+    "Before": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "After": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "Transaction": "0:1",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Incorrect syntax near '§'.\r\nMust declare the scalar variable \"@actor\".\""
+  },
+  {
+    "Part": "T19-K02.Note201",
+    "Result": "FAIL",
+    "Expected": [
+      52601
+    ],
+    "Observed": [
+      102,
+      137
+    ],
+    "Before": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "After": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "Transaction": "0:1",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Incorrect syntax near '§'.\r\nMust declare the scalar variable \"@actor\".\""
+  },
+  {
+    "Part": "T19-K02.AssetFK",
+    "Result": "FAIL",
+    "Expected": [
+      52602
+    ],
+    "Observed": [
+      102,
+      137
+    ],
+    "Before": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "After": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "Transaction": "0:1",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Incorrect syntax near '§'.\r\nMust declare the scalar variable \"@actor\".\""
+  },
+  {
+    "Part": "T19-K02.CategoryFK",
+    "Result": "FAIL",
+    "Expected": [
+      52602
+    ],
+    "Observed": [
+      102,
+      137
+    ],
+    "Before": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "After": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "Transaction": "0:1",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Incorrect syntax near '§'.\r\nMust declare the scalar variable \"@actor\".\""
+  },
+  {
+    "Part": "T19-K05.System.TC005",
+    "Result": "FAIL",
+    "Expected": [
+      52602
+    ],
+    "Observed": [
+      102,
+      137
+    ],
+    "Before": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "After": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "Transaction": "0:1",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Incorrect syntax near '§'.\r\nMust declare the scalar variable \"@actor\".\""
+  },
+  {
+    "Part": "T19-K05.System.TC011",
+    "Result": "FAIL",
+    "Expected": [
+      52602
+    ],
+    "Observed": [
+      102,
+      137
+    ],
+    "Before": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "After": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "Transaction": "0:1",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Incorrect syntax near '§'.\r\nMust declare the scalar variable \"@actor\".\""
+  },
+  {
+    "Part": "T19-K05.System.TC012",
+    "Result": "FAIL",
+    "Expected": [
+      52602
+    ],
+    "Observed": [
+      102,
+      137
+    ],
+    "Before": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "After": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "Transaction": "0:1",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Incorrect syntax near '§'.\r\nMust declare the scalar variable \"@actor\".\""
+  },
+  {
+    "Part": "T19-K05.Role.CASH",
+    "Result": "FAIL",
+    "Expected": [
+      51605
+    ],
+    "Observed": [
+      102,
+      137
+    ],
+    "Before": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "After": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "Transaction": "0:1",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Incorrect syntax near '¨'.\r\nMust declare the scalar variable \"@actor\".\""
+  },
+  {
+    "Part": "T19-K05.Role.STORE",
+    "Result": "FAIL",
+    "Expected": [
+      51605
+    ],
+    "Observed": [
+      102,
+      137
+    ],
+    "Before": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "After": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "Transaction": "0:1",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Incorrect syntax near '©'.\r\nMust declare the scalar variable \"@actor\".\""
+  },
+  {
+    "Part": "T19-K05.InternalHelper",
+    "Result": "FAIL",
+    "Expected": [
+      229
+    ],
+    "Observed": [
+      102
+    ],
+    "Before": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "After": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "Transaction": "0:1",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Incorrect syntax near '§'.\""
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "RunId": "20261025_141901_db21cda5",
+  "Server": "localhost",
+  "Database": "CoffeeManager_Test_G04_20261025_141901_db21cda5_checkout",
+  "Marker": "20261025_141901_db21cda5",
+  "Created": true,
+  "Cleaned": true,
+  "State": "Completed; isolated checkout DB and fixture actor removed",
+  "Purpose": "Approved new Checkout UI acceptance wave",
+  "RetainReason": "None",
+  "ReviewBy": "2026-10-26",
+  "ProcessIds": [],
+  "SchemaVersion": 16
+}

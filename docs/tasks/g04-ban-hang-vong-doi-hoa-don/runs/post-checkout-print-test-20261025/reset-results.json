@@ -1,0 +1,38 @@
+{
+  "Scope": "Production POS reset component and print content; no modal selection or physical print/SQL",
+  "Results": [
+    {
+      "Name": "PC06 POS has no Xem/In action",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "PC07 fixture holds draft before reset",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "PC01 Reset clears paid order and all drafts even while busy",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "PC01 Empty order panel",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "PC07 New draft actions enabled after caller completes",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "PC03 First print has no IN LAI",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "PC06 History print is marked IN LAI",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "PC03 Invoice content uses amount81000 and Vietnamese note",
+      "Outcome": "PASS"
+    }
+  ],
+  "Failed": 0
+}

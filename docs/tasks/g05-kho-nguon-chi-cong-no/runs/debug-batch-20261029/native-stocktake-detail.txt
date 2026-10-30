@@ -1,0 +1,410 @@
+Window: "CoffeeManager", App: CafeManager.WinForms.exe.
+	0 window CoffeeManager Secondary Actions: Raise
+		1547 window Kiểm kê — KKTEST0001 Secondary Actions: Raise
+			1548 pane
+				1549 text Kiểm kê — KKTEST0001
+				1550 pane Kiểm kê — KKTEST0001
+					1551 text Chưa đếm để trống. Lệch tồn cần lý do. Tạm dừng phát sinh kho trước khi chốt; không giữ khóa khi đếm.
+					1552 data grid Chưa đếm để trống. Lệch tồn cần lý do. Tạm dừng phát sinh kho trước khi chốt; không giữ khóa khi đếm.
+						1553 custom Top Row
+							1554 header Top Left Header Cell ID: 4248197359
+							1555 header MÃ ID: 4222585900
+							1556 header NGUYÊN LIỆU ID: 4225181251
+							1557 header ĐƠN VỊ ID: 4258920811
+							1558 header TỒN SNAPSHOT ID: 4227773042
+							1559 header THỰC ĐẾM ID: 4225505234
+							1560 header LÝ DO LỆCH ID: 4263132595
+				1561 text KKTEST0001 · Snapshot · Dữ liệu cũ thiếu metadata snapshot; chỉ tham khảo
+				1562 pane KKTEST0001 · Snapshot · Dữ liệu cũ thiếu metadata snapshot; chỉ tham khảo
+					1563 pane KKTEST0001 · Snapshot · Dữ liệu cũ thiếu metadata snapshot; chỉ tham khảo
+						1564 button Snapshot mới
+						1565 button (disabled) Điền bằng hệ thống
+						1566 button Tải lại phiếu
+						1567 button (disabled) Lưu số đếm
+						1568 button (disabled) Chốt kiểm kê
+						1569 button Quay lại
+			1570 title bar (settable, string) Value: Kiểm kê — KKTEST0001
+				1571 menu bar System ID: MenuBar
+					1572 menu item System
+				1573 button Close
+		1 pane
+			2 pane
+				3 text CoffeeManager
+				4 text KHÔNG GIAN QUẢN LÝ
+				5 text G05 fixture ADMIN
+				6 text Quản trị viên · ADMIN
+				7 button Trang phiên
+				8 button Danh mục nền
+				9 button Bán hàng
+				10 button Lịch sử hóa đơn
+				11 button Giao hàng
+				12 button Khách hàng
+				13 button Bàn / Khu vực
+				14 button Menu / Công thức
+				15 button Nguyên liệu / Tồn
+				16 button Ưu đãi / Điểm
+				17 button Thu chi
+				18 button Kho
+				19 button Công nợ
+				20 button Thông tin hệ thống
+				21 button Đăng xuất ID: logout
+				22 text Phiên đang hoạt động.
+				23 scroll bar (settable, float) Vertical Value: 45 ID: NonClientVerticalScrollBar
+					24 button Line up ID: UpButton
+					25 button Page up ID: UpPageButton
+					26 thumb Position ID: ScrollbarThumb
+					27 button Page down ID: DownPageButton
+					28 button Line down ID: DownButton
+			29 pane
+				30 text Quản lý / Kho
+				31 text G05 fixture ADMIN · ADMIN
+			32 pane G05 fixture ADMIN · ADMIN
+				623 pane G05 fixture ADMIN · ADMIN ID: 330170
+					624 tab
+						1214 pane Kiểm kê
+							1215 pane ID: 723452
+								1216 pane ID: 199298
+									1217 text INVENTORY WORKSPACE
+									1218 text Kiểm kê
+									1219 text Snapshot và số đếm; chốt hôm nay khi kho còn khớp.
+									1220 pane Snapshot và số đếm; chốt hôm nay khi kho còn khớp.
+										1221 button Lấy số liệu tồn
+									1222 pane
+										1223 pane ID: 133758
+											1224 edit (settable, string) Description: Tìm tên hoặc mã nguyên liệu…
+										1225 pane
+											1226 button Tìm / Tải lại
+											1227 button Xem chi tiết
+										1228 pane
+											1229 data grid
+												1230 scroll bar (settable, float) Vertical Value: 0
+													1231 button Line up
+													1232 thumb Position
+													1233 button Page down
+													1234 button Line down
+												1235 custom Top Row
+													1236 header Top Left Header Cell ID: 4253187841
+													1237 header MÃ ID: 4220353298
+													1238 header NGÀY KIỂM ID: 4263266291
+													1239 header ĐÃ ĐIỀU CHỈNH ID: 4217155417
+													1240 header THỜI ĐIỂM SNAPSHOT ID: 4221693829
+												1241 custom Row 1
+													1242 header Row 1 ID: 4242378550
+													1243 item MÃ Row 1 Value: KKTEST0001 ID: 4214050248
+													1244 item NGÀY KIỂM Row 1 Value: 29/10/2026 00:00 ID: 4248435508
+													1245 item ĐÃ ĐIỀU CHỈNH Row 1 Value: False ID: 4225681838
+													1246 item THỜI ĐIỂM SNAPSHOT Row 1 Value: (null) ID: 4265428445
+												1247 custom Row 2
+													1248 header Row 2 ID: 4251553599
+													1249 item MÃ Row 2 Value: KKDEMO0001 ID: 4266217011
+													1250 item NGÀY KIỂM Row 2 Value: 29/10/2026 00:00 ID: 4255514775
+													1251 item ĐÃ ĐIỀU CHỈNH Row 2 Value: False ID: 4250603437
+													1252 item THỜI ĐIỂM SNAPSHOT Row 2 Value: (null) ID: 4253864916
+												1253 custom Row 3
+													1254 header Row 3 ID: 4243474195
+													1255 item MÃ Row 3 Value: KK00000062 ID: 4228293634
+													1256 item NGÀY KIỂM Row 3 Value: 29/10/2026 00:00 ID: 4232272932
+													1257 item ĐÃ ĐIỀU CHỈNH Row 3 Value: False ID: 4216894936
+													1258 item THỜI ĐIỂM SNAPSHOT Row 3 Value: 29/10/2026 13:49 ID: 4218307587
+												1259 custom Row 4
+													1260 header Row 4 ID: 426974559
+													1261 item MÃ Row 4 Value: KK00000061 ID: 4223560410
+													1262 item NGÀY KIỂM Row 4 Value: 29/10/2026 00:00 ID: 4237849878
+													1263 item ĐÃ ĐIỀU CHỈNH Row 4 Value: False ID: 4222286369
+													1264 item THỜI ĐIỂM SNAPSHOT Row 4 Value: 29/10/2026 13:49 ID: 4221287349
+												1265 custom Row 5
+													1266 header Row 5 ID: 4240792315
+													1267 item MÃ Row 5 Value: KK00000060 ID: 4260538059
+													1268 item NGÀY KIỂM Row 5 Value: 29/10/2026 00:00 ID: 4248797270
+													1269 item ĐÃ ĐIỀU CHỈNH Row 5 Value: False ID: 4230384746
+													1270 item THỜI ĐIỂM SNAPSHOT Row 5 Value: 29/10/2026 13:49 ID: 4259457380
+												1271 custom Row 6
+													1272 header Row 6 ID: 4249076595
+													1273 item MÃ Row 6 Value: KK00000059 ID: 4234015960
+													1274 item NGÀY KIỂM Row 6 Value: 29/10/2026 00:00 ID: 4239554304
+													1275 item ĐÃ ĐIỀU CHỈNH Row 6 Value: False ID: 4244443908
+													1276 item THỜI ĐIỂM SNAPSHOT Row 6 Value: 29/10/2026 13:49 ID: 4240899898
+												1277 custom Row 7
+													1278 header Row 7 ID: 4266978687
+													1279 item MÃ Row 7 Value: KK00000058 ID: 4265416563
+													1280 item NGÀY KIỂM Row 7 Value: 29/10/2026 00:00 ID: 4245108956
+													1281 item ĐÃ ĐIỀU CHỈNH Row 7 Value: False ID: 4249545522
+													1282 item THỜI ĐIỂM SNAPSHOT Row 7 Value: 29/10/2026 13:49 ID: 4240112016
+												1283 custom Row 8
+													1284 header Row 8 ID: 42935561
+													1285 item MÃ Row 8 Value: KK00000057 ID: 4212162301
+													1286 item NGÀY KIỂM Row 8 Value: 29/10/2026 00:00 ID: 4223892197
+													1287 item ĐÃ ĐIỀU CHỈNH Row 8 Value: False ID: 4242163110
+													1288 item THỜI ĐIỂM SNAPSHOT Row 8 Value: 29/10/2026 13:49 ID: 4211249521
+												1289 custom Row 9
+													1290 header Row 9 ID: 4222121005
+													1291 item MÃ Row 9 Value: KK00000056 ID: 4219137610
+													1292 item NGÀY KIỂM Row 9 Value: 29/10/2026 00:00 ID: 4247462341
+													1293 item ĐÃ ĐIỀU CHỈNH Row 9 Value: False ID: 4213030657
+													1294 item THỜI ĐIỂM SNAPSHOT Row 9 Value: 29/10/2026 13:49 ID: 4235180823
+												1295 custom Row 10
+													1296 header Row 10 ID: 4239979187
+													1297 item MÃ Row 10 Value: KK00000055 ID: 4249967386
+													1298 item NGÀY KIỂM Row 10 Value: 29/10/2026 00:00 ID: 4245596245
+													1299 item ĐÃ ĐIỀU CHỈNH Row 10 Value: False ID: 4255880279
+													1300 item THỜI ĐIỂM SNAPSHOT Row 10 Value: 29/10/2026 13:49 ID: 4255354988
+												1301 custom Row 11
+													1302 header Row 11 ID: 4226860950
+													1303 item MÃ Row 11 Value: KK00000054 ID: 4213648032
+													1304 item NGÀY KIỂM Row 11 Value: 29/10/2026 00:00 ID: 4243206688
+													1305 item ĐÃ ĐIỀU CHỈNH Row 11 Value: False ID: 4224816040
+													1306 item THỜI ĐIỂM SNAPSHOT Row 11 Value: 29/10/2026 13:49 ID: 4254173065
+												1307 custom Row 12
+													1308 header Row 12 ID: 4228442623
+													1309 item MÃ Row 12 Value: KK00000053 ID: 4234209789
+													1310 item NGÀY KIỂM Row 12 Value: 29/10/2026 00:00 ID: 4242074080
+													1311 item ĐÃ ĐIỀU CHỈNH Row 12 Value: False ID: 4210092134
+													1312 item THỜI ĐIỂM SNAPSHOT Row 12 Value: 29/10/2026 13:49 ID: 4264088890
+												1313 custom Row 13
+													1314 header Row 13 ID: 4226495306
+													1315 item MÃ Row 13 Value: KK00000052 ID: 428894660
+													1316 item NGÀY KIỂM Row 13 Value: 29/10/2026 00:00 ID: 4248521727
+													1317 item ĐÃ ĐIỀU CHỈNH Row 13 Value: False ID: 4226802677
+													1318 item THỜI ĐIỂM SNAPSHOT Row 13 Value: 29/10/2026 13:49 ID: 4212890486
+												1319 custom Row 14
+													1320 header Row 14 ID: 4231008639
+													1321 item MÃ Row 14 Value: KK00000051 ID: 42459127
+													1322 item NGÀY KIỂM Row 14 Value: 29/10/2026 00:00 ID: 425968662
+													1323 item ĐÃ ĐIỀU CHỈNH Row 14 Value: False ID: 4210483749
+													1324 item THỜI ĐIỂM SNAPSHOT Row 14 Value: 29/10/2026 13:49 ID: 422071018
+												1325 custom Row 15
+													1326 header Row 15 ID: 4214457817
+													1327 item MÃ Row 15 Value: KK00000050 ID: 4253733896
+													1328 item NGÀY KIỂM Row 15 Value: 29/10/2026 00:00 ID: 4227452016
+													1329 item ĐÃ ĐIỀU CHỈNH Row 15 Value: False ID: 4221331897
+													1330 item THỜI ĐIỂM SNAPSHOT Row 15 Value: 29/10/2026 13:49 ID: 428879214
+												1331 custom Row 16
+													1332 header Row 16 ID: 4224192321
+													1333 item MÃ Row 16 Value: KK00000049 ID: 4246064729
+													1334 item NGÀY KIỂM Row 16 Value: 29/10/2026 00:00 ID: 4261970567
+													1335 item ĐÃ ĐIỀU CHỈNH Row 16 Value: False ID: 42311011
+													1336 item THỜI ĐIỂM SNAPSHOT Row 16 Value: 29/10/2026 13:49 ID: 424043150
+												1337 custom Row 17
+													1338 header Row 17 ID: 4212203731
+													1339 item MÃ Row 17 Value: KK00000048 ID: 4224430779
+													1340 item NGÀY KIỂM Row 17 Value: 29/10/2026 00:00 ID: 4249164677
+													1341 item ĐÃ ĐIỀU CHỈNH Row 17 Value: False ID: 4235161029
+													1342 item THỜI ĐIỂM SNAPSHOT Row 17 Value: 29/10/2026 13:49 ID: 4254440194
+												1343 custom Row 18
+													1344 header Row 18 ID: 426478423
+													1345 item MÃ Row 18 Value: KK00000047 ID: 4217110641
+													1346 item NGÀY KIỂM Row 18 Value: 29/10/2026 00:00 ID: 4221111747
+													1347 item ĐÃ ĐIỀU CHỈNH Row 18 Value: False ID: 426017264
+													1348 item THỜI ĐIỂM SNAPSHOT Row 18 Value: 29/10/2026 13:49 ID: 4211115572
+												1349 custom Row 19
+													1350 header Row 19 ID: 4266592456
+													1351 item MÃ Row 19 Value: KK00000046 ID: 4260395565
+													1352 item NGÀY KIỂM Row 19 Value: 29/10/2026 00:00 ID: 4246944844
+													1353 item ĐÃ ĐIỀU CHỈNH Row 19 Value: False ID: 426303207
+													1354 item THỜI ĐIỂM SNAPSHOT Row 19 Value: 29/10/2026 13:49 ID: 4214832832
+												1355 custom Row 20
+													1356 header Row 20 ID: 4223720656
+													1357 item MÃ Row 20 Value: KK00000045 ID: 4239933072
+													1358 item NGÀY KIỂM Row 20 Value: 29/10/2026 00:00 ID: 4249367898
+													1359 item ĐÃ ĐIỀU CHỈNH Row 20 Value: False ID: 4237802908
+													1360 item THỜI ĐIỂM SNAPSHOT Row 20 Value: 29/10/2026 13:49 ID: 4221675758
+												1361 custom Row 21
+													1362 header Row 21 ID: 4239324488
+													1363 item MÃ Row 21 Value: KK00000044 ID: 4241456302
+													1364 item NGÀY KIỂM Row 21 Value: 29/10/2026 00:00 ID: 422061015
+													1365 item ĐÃ ĐIỀU CHỈNH Row 21 Value: False ID: 4226793200
+													1366 item THỜI ĐIỂM SNAPSHOT Row 21 Value: 29/10/2026 13:49 ID: 4212767289
+												1367 custom Row 22
+													1368 header Row 22 ID: 4210188219
+													1369 item MÃ Row 22 Value: KK00000043 ID: 4265337991
+													1370 item NGÀY KIỂM Row 22 Value: 29/10/2026 00:00 ID: 4244087516
+													1371 item ĐÃ ĐIỀU CHỈNH Row 22 Value: False ID: 4236266806
+													1372 item THỜI ĐIỂM SNAPSHOT Row 22 Value: 29/10/2026 13:49 ID: 421706442
+												1373 custom Row 23
+													1374 header Row 23 ID: 4219953379
+													1375 item MÃ Row 23 Value: KK00000042 ID: 4258067341
+													1376 item NGÀY KIỂM Row 23 Value: 29/10/2026 00:00 ID: 4216677941
+													1377 item ĐÃ ĐIỀU CHỈNH Row 23 Value: False ID: 4215486641
+													1378 item THỜI ĐIỂM SNAPSHOT Row 23 Value: 29/10/2026 13:49 ID: 4267108605
+												1379 custom Row 24
+													1380 header Row 24 ID: 4267065130
+													1381 item MÃ Row 24 Value: KK00000041 ID: 4266540324
+													1382 item NGÀY KIỂM Row 24 Value: 29/10/2026 00:00 ID: 4259717849
+													1383 item ĐÃ ĐIỀU CHỈNH Row 24 Value: False ID: 4238134544
+													1384 item THỜI ĐIỂM SNAPSHOT Row 24 Value: 29/10/2026 13:49 ID: 4225987034
+												1385 custom Row 25
+													1386 header Row 25 ID: 4229732649
+													1387 item MÃ Row 25 Value: KK00000040 ID: 4250980124
+													1388 item NGÀY KIỂM Row 25 Value: 29/10/2026 00:00 ID: 4258761845
+													1389 item ĐÃ ĐIỀU CHỈNH Row 25 Value: False ID: 4225706488
+													1390 item THỜI ĐIỂM SNAPSHOT Row 25 Value: 29/10/2026 13:49 ID: 4265748892
+												1391 custom Row 26
+													1392 header Row 26 ID: 4238600235
+													1393 item MÃ Row 26 Value: KK00000039 ID: 4232041016
+													1394 item NGÀY KIỂM Row 26 Value: 29/10/2026 00:00 ID: 4213880033
+													1395 item ĐÃ ĐIỀU CHỈNH Row 26 Value: False ID: 4246222713
+													1396 item THỜI ĐIỂM SNAPSHOT Row 26 Value: 29/10/2026 13:49 ID: 4264024364
+												1397 custom Row 27
+													1398 header Row 27 ID: 4215590570
+													1399 item MÃ Row 27 Value: KK00000038 ID: 421350826
+													1400 item NGÀY KIỂM Row 27 Value: 29/10/2026 00:00 ID: 4217560745
+													1401 item ĐÃ ĐIỀU CHỈNH Row 27 Value: False ID: 4226963094
+													1402 item THỜI ĐIỂM SNAPSHOT Row 27 Value: 29/10/2026 13:49 ID: 4214975910
+												1403 custom Row 28
+													1404 header Row 28 ID: 4247900880
+													1405 item MÃ Row 28 Value: KK00000037 ID: 4218731668
+													1406 item NGÀY KIỂM Row 28 Value: 29/10/2026 00:00 ID: 4242185093
+													1407 item ĐÃ ĐIỀU CHỈNH Row 28 Value: False ID: 4211535297
+													1408 item THỜI ĐIỂM SNAPSHOT Row 28 Value: 29/10/2026 13:49 ID: 4215741138
+												1409 custom Row 29
+													1410 header Row 29 ID: 4243006710
+													1411 item MÃ Row 29 Value: KK00000036 ID: 4222216327
+													1412 item NGÀY KIỂM Row 29 Value: 29/10/2026 00:00 ID: 4220376799
+													1413 item ĐÃ ĐIỀU CHỈNH Row 29 Value: False ID: 4263571803
+													1414 item THỜI ĐIỂM SNAPSHOT Row 29 Value: 29/10/2026 13:49 ID: 4221127083
+												1415 custom Row 30
+													1416 header Row 30 ID: 4213707303
+													1417 item MÃ Row 30 Value: KK00000035 ID: 4243977222
+													1418 item NGÀY KIỂM Row 30 Value: 29/10/2026 00:00 ID: 4234832979
+													1419 item ĐÃ ĐIỀU CHỈNH Row 30 Value: False ID: 4250175544
+													1420 item THỜI ĐIỂM SNAPSHOT Row 30 Value: 29/10/2026 13:49 ID: 4248302299
+												1421 custom Row 31
+													1422 header Row 31 ID: 4242915997
+													1423 item MÃ Row 31 Value: KK00000034 ID: 4221037059
+													1424 item NGÀY KIỂM Row 31 Value: 29/10/2026 00:00 ID: 425046313
+													1425 item ĐÃ ĐIỀU CHỈNH Row 31 Value: False ID: 4265602072
+													1426 item THỜI ĐIỂM SNAPSHOT Row 31 Value: 29/10/2026 13:49 ID: 4247520571
+												1427 custom Row 32
+													1428 header Row 32 ID: 4245021762
+													1429 item MÃ Row 32 Value: KK00000033 ID: 4248411999
+													1430 item NGÀY KIỂM Row 32 Value: 29/10/2026 00:00 ID: 4225376220
+													1431 item ĐÃ ĐIỀU CHỈNH Row 32 Value: False ID: 4261455406
+													1432 item THỜI ĐIỂM SNAPSHOT Row 32 Value: 29/10/2026 13:49 ID: 4260722774
+												1433 custom Row 33
+													1434 header Row 33 ID: 4261601583
+													1435 item MÃ Row 33 Value: KK00000032 ID: 4262623085
+													1436 item NGÀY KIỂM Row 33 Value: 29/10/2026 00:00 ID: 428793749
+													1437 item ĐÃ ĐIỀU CHỈNH Row 33 Value: False ID: 4247209883
+													1438 item THỜI ĐIỂM SNAPSHOT Row 33 Value: 29/10/2026 13:49 ID: 429748710
+												1439 custom Row 34
+													1440 header Row 34 ID: 4236919344
+													1441 item MÃ Row 34 Value: KK00000031 ID: 4210189424
+													1442 item NGÀY KIỂM Row 34 Value: 29/10/2026 00:00 ID: 4265353648
+													1443 item ĐÃ ĐIỀU CHỈNH Row 34 Value: False ID: 4244291058
+													1444 item THỜI ĐIỂM SNAPSHOT Row 34 Value: 29/10/2026 13:49 ID: 4238912853
+												1445 custom Row 35
+													1446 header Row 35 ID: 4266712380
+													1447 item MÃ Row 35 Value: KK00000030 ID: 4261954583
+													1448 item NGÀY KIỂM Row 35 Value: 29/10/2026 00:00 ID: 42103221
+													1449 item ĐÃ ĐIỀU CHỈNH Row 35 Value: False ID: 421341877
+													1450 item THỜI ĐIỂM SNAPSHOT Row 35 Value: 29/10/2026 13:49 ID: 4217444412
+												1451 custom Row 36
+													1452 header Row 36 ID: 4262424576
+													1453 item MÃ Row 36 Value: KK00000029 ID: 426213127
+													1454 item NGÀY KIỂM Row 36 Value: 29/10/2026 00:00 ID: 4213661791
+													1455 item ĐÃ ĐIỀU CHỈNH Row 36 Value: False ID: 4243385558
+													1456 item THỜI ĐIỂM SNAPSHOT Row 36 Value: 29/10/2026 13:49 ID: 4227141350
+												1457 custom Row 37
+													1458 header Row 37 ID: 4223485524
+													1459 item MÃ Row 37 Value: KK00000028 ID: 4236876368
+													1460 item NGÀY KIỂM Row 37 Value: 29/10/2026 00:00 ID: 429630743
+													1461 item ĐÃ ĐIỀU CHỈNH Row 37 Value: False ID: 4258090807
+													1462 item THỜI ĐIỂM SNAPSHOT Row 37 Value: 29/10/2026 13:49 ID: 4216982989
+												1463 custom Row 38
+													1464 header Row 38 ID: 4251552964
+													1465 item MÃ Row 38 Value: KK00000027 ID: 4266208757
+													1466 item NGÀY KIỂM Row 38 Value: 29/10/2026 00:00 ID: 4255407481
+													1467 item ĐÃ ĐIỀU CHỈNH Row 38 Value: False ID: 4249208617
+													1468 item THỜI ĐIỂM SNAPSHOT Row 38 Value: 29/10/2026 13:49 ID: 4235732251
+												1469 custom Row 39
+													1470 header Row 39 ID: 4266061576
+													1471 item MÃ Row 39 Value: KK00000026 ID: 4253494120
+													1472 item NGÀY KIỂM Row 39 Value: 29/10/2026 00:00 ID: 4224334925
+													1473 item ĐÃ ĐIỀU CHỈNH Row 39 Value: False ID: 4247918575
+													1474 item THỜI ĐIỂM SNAPSHOT Row 39 Value: 29/10/2026 13:49 ID: 4218961705
+												1475 custom Row 40
+													1476 header Row 40 ID: 4250411658
+													1477 item MÃ Row 40 Value: KK00000025 ID: 4251371786
+													1478 item NGÀY KIỂM Row 40 Value: 29/10/2026 00:00 ID: 4263853454
+													1479 item ĐÃ ĐIỀU CHỈNH Row 40 Value: False ID: 4224788539
+													1480 item THỜI ĐIỂM SNAPSHOT Row 40 Value: 29/10/2026 13:49 ID: 4253815554
+												1481 custom Row 41
+													1482 header Row 41 ID: 4235132134
+													1483 item MÃ Row 41 Value: KK00000024 ID: 4254064559
+													1484 item NGÀY KIỂM Row 41 Value: 29/10/2026 00:00 ID: 4231750630
+													1485 item ĐÃ ĐIỀU CHỈNH Row 41 Value: False ID: 4210105006
+													1486 item THỜI ĐIỂM SNAPSHOT Row 41 Value: 29/10/2026 13:49 ID: 4264256224
+												1487 custom Row 42
+													1488 header Row 42 ID: 4254774884
+													1489 item MÃ Row 42 Value: KK00000023 ID: 4240984855
+													1490 item NGÀY KIỂM Row 42 Value: 29/10/2026 00:00 ID: 4263041070
+													1491 item ĐÃ ĐIỀU CHỈNH Row 42 Value: False ID: 4214227548
+													1492 item THỜI ĐIỂM SNAPSHOT Row 42 Value: 29/10/2026 13:49 ID: 4250740397
+												1493 custom Row 43
+													1494 header Row 43 ID: 4252301439
+													1495 item MÃ Row 43 Value: KK00000022 ID: 428830069
+													1496 item NGÀY KIỂM Row 43 Value: 29/10/2026 00:00 ID: 4247682033
+													1497 item ĐÃ ĐIỀU CHỈNH Row 43 Value: False ID: 4215886661
+													1498 item THỜI ĐIỂM SNAPSHOT Row 43 Value: 29/10/2026 13:49 ID: 425200002
+												1499 custom Row 44
+													1500 header Row 44 ID: 426385248
+													1501 item MÃ Row 44 Value: KK00000021 ID: 4215899370
+													1502 item NGÀY KIỂM Row 44 Value: 29/10/2026 00:00 ID: 425365225
+													1503 item ĐÃ ĐIỀU CHỈNH Row 44 Value: False ID: 422639067
+													1504 item THỜI ĐIỂM SNAPSHOT Row 44 Value: 29/10/2026 13:49 ID: 4234307883
+												1505 custom Row 45
+													1506 header Row 45 ID: 4226669923
+													1507 item MÃ Row 45 Value: KK00000020 ID: 4211164681
+													1508 item NGÀY KIỂM Row 45 Value: 29/10/2026 00:00 ID: 4210923136
+													1509 item ĐÃ ĐIỀU CHỈNH Row 45 Value: False ID: 427783042
+													1510 item THỜI ĐIỂM SNAPSHOT Row 45 Value: 29/10/2026 13:49 ID: 4234070687
+												1511 custom Row 46
+													1512 header Row 46 ID: 4253692816
+													1513 item MÃ Row 46 Value: KK00000019 ID: 4226917972
+													1514 item NGÀY KIỂM Row 46 Value: 29/10/2026 00:00 ID: 4214389327
+													1515 item ĐÃ ĐIỀU CHỈNH Row 46 Value: False ID: 4252843530
+													1516 item THỜI ĐIỂM SNAPSHOT Row 46 Value: 29/10/2026 13:49 ID: 4215877259
+												1517 custom Row 47
+													1518 header Row 47 ID: 4266011170
+													1519 item MÃ Row 47 Value: KK00000018 ID: 4252838845
+													1520 item NGÀY KIỂM Row 47 Value: 29/10/2026 00:00 ID: 4215816353
+													1521 item ĐÃ ĐIỀU CHỈNH Row 47 Value: False ID: 424286006
+													1522 item THỜI ĐIỂM SNAPSHOT Row 47 Value: 29/10/2026 13:49 ID: 4255718087
+												1523 custom Row 48
+													1524 header Row 48 ID: 4221115906
+													1525 item MÃ Row 48 Value: KK00000017 ID: 426071334
+													1526 item NGÀY KIỂM Row 48 Value: 29/10/2026 00:00 ID: 4211818480
+													1527 item ĐÃ ĐIỀU CHỈNH Row 48 Value: False ID: 4219422520
+													1528 item THỜI ĐIỂM SNAPSHOT Row 48 Value: 29/10/2026 13:49 ID: 4251166175
+												1529 custom Row 49
+													1530 header Row 49 ID: 4257149004
+													1531 item MÃ Row 49 Value: KK00000016 ID: 424739552
+													1532 item NGÀY KIỂM Row 49 Value: 29/10/2026 00:00 ID: 4261614182
+													1533 item ĐÃ ĐIỀU CHỈNH Row 49 Value: False ID: 4262786866
+													1534 item THỜI ĐIỂM SNAPSHOT Row 49 Value: 29/10/2026 13:49 ID: 4210922891
+												1535 custom Row 50
+													1536 header Row 50 ID: 4234029256
+													1537 item MÃ Row 50 Value: KK00000015 ID: 4239727150
+													1538 item NGÀY KIỂM Row 50 Value: 29/10/2026 00:00 ID: 4246690908
+													1539 item ĐÃ ĐIỀU CHỈNH Row 50 Value: False ID: 423002037
+													1540 item THỜI ĐIỂM SNAPSHOT Row 50 Value: 29/10/2026 13:49 ID: 4239026485
+										1541 pane ID: 133740
+											1542 text Hiển thị 1–50 / 64 phiếu
+											1543 button (disabled) Trang trước
+											1544 text 1 / 2
+											1545 button Trang sau
+									1546 text 64 phiếu — Trang 1
+						737 tab item (selectable) Tồn kho
+						738 tab item (selectable) Nhập hàng
+						739 tab item (selectable) Xuất kho
+						740 tab item (selectable) Kiểm kê
+		39 title bar (settable, string) Value: CoffeeManager
+			40 menu bar System ID: MenuBar
+				46 menu item System
+			42 button Minimize
+			43 button Maximize
+			44 button Close
+
+The focused UI element is 1224 edit (settable, string) Description: Tìm tên hoặc mã nguyên liệu….
+
+Focused element: 1224 edit (settable, string) Description: Tìm tên hoặc mã nguyên liệu…

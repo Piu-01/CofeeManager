@@ -1,0 +1,6 @@
+[
+  {
+    "Result": "FAIL",
+    "Error": "System.InvalidOperationException: Wrong marker\r\n   at Program.\u003C\u003Ec__DisplayClass1_0.\u003C\u003CMain\u003Eb__1\u003Ed.MoveNext() in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g05-kho-nguon-chi-cong-no\\runs\\b05-20261029\\dialogs\\Program.cs:line 33"
+  }
+]

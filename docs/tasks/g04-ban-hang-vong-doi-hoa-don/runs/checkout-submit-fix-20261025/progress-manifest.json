@@ -1,0 +1,16 @@
+{
+  "SourceFiles": 207,
+  "ChangedDuringTests": 0,
+  "ChangedSinceUI04": [
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Modules\\Sales\\CheckoutDialog.cs",
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\UI\\OrbitField.cs",
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\UI\\StarDustOverlay.cs"
+  ],
+  "DebugSHA256": "9A2C22FFBA85D689CFF4DDCA9DD1B6B26C9EB9C93AB8AF2316A789244BB6E711",
+  "Component": 32,
+  "LayoutBinding": 60,
+  "FullConfirmSql": "PENDING manual actual handler; not inferred from component",
+  "SQLWritesByAgent": "None in this fix wave",
+  "DPI": 120,
+  "Visual": "SKIPPED/user"
+}

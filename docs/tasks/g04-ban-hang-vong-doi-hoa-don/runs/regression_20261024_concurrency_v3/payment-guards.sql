@@ -1,0 +1,16 @@
+DECLARE @before nvarchar(max),@after nvarchar(max); EXEC dbo.G04State @before OUTPUT;
+EXEC dbo.G04Expect N'UPDATE dbo.CHITIET_THANHTOAN SET SoTien=SoTien+1 WHERE MaHD=''HD92000402'';',51002;
+EXEC dbo.G04Expect N'DELETE dbo.CHITIET_THANHTOAN WHERE MaHD=''HD92000402'';',51002;
+EXEC dbo.G04Expect N'INSERT dbo.CHITIET_THANHTOAN(MaHD,MaPT,SoTien) VALUES(''HD92000402'',''PT001'',1);',51002;
+EXEC dbo.G04State @after OUTPUT; IF @before<>@after THROW 52990,'Paid guard changed state',1;
+EXEC dbo.G04New 'HD92000501';
+EXEC dbo.G04State @before OUTPUT;
+EXEC dbo.G04Expect N'INSERT dbo.CHITIET_THANHTOAN(MaHD,MaPT,SoTien) VALUES(''HD92000501'',''PT001'',25001);',51003;
+EXEC dbo.G04State @after OUTPUT; IF @before<>@after THROW 52990,'Overpayment changed state',1;
+EXEC dbo.G04New 'HD92000502'; EXEC dbo.G04New 'HD92000503';
+INSERT dbo.CHITIET_THANHTOAN(MaHD,MaPT,SoTien) VALUES('HD92000502','PT001',10000),('HD92000503','PT001',10000);
+IF (SELECT SUM(SoTien) FROM dbo.CHITIET_THANHTOAN WHERE MaHD IN('HD92000502','HD92000503'))<>20000 THROW 52990,'Multiorder trigger lost row',1;
+EXEC dbo.G04State @before OUTPUT;
+EXEC dbo.G04Expect N'INSERT dbo.CHITIET_THANHTOAN(MaHD,MaPT,SoTien) VALUES(''HD92000502'',''PT001'',1),(''HD92000402'',''PT001'',1);',51002;
+EXEC dbo.G04State @after OUTPUT; IF @before<>@after THROW 52990,'Mixed paid batch partially committed',1;
+IF @@TRANCOUNT<>0 OR XACT_STATE()<>0 THROW 52990,'Guard transaction leaked',1;

@@ -37,16 +37,16 @@ internal sealed class PromotionList : OrbitRecordListControl
         var start=new OrbitDateField{Value=(row?.StartDate??DateOnly.FromDateTime(DateTime.Today)).ToDateTime(TimeOnly.MinValue)};
         var end=new OrbitDateField{Value=(row?.EndDate??DateOnly.FromDateTime(DateTime.Today)).ToDateTime(TimeOnly.MinValue)};
         dialog.AddField("Ngày bắt đầu",start);dialog.AddField("Ngày kết thúc (bao gồm ngày này)",end);var discount=dialog.AddText("Tỷ lệ giảm0–100%",row?.Discount.ToString()??"0");
-        dialog.CaptureWrite=()=>{if(!int.TryParse(discount.Text,out var percent))throw new ArgumentException("Tỷ lệ phải nguyên0–100.");var request=LoyaltyService.Normalize(new PromotionRequest(code.Text,name.Text,DateOnly.FromDateTime(start.Value),DateOnly.FromDateTime(end.Value),percent),create);return id=>service.SavePromotionAsync(session,request,row?.Revision,id);};if(dialog.ShowDialog(this)==DialogResult.OK)await Reload();
+        dialog.CaptureWrite=()=>{if(!int.TryParse(discount.Text,out var percent))throw new ArgumentException("Tỷ lệ phải nguyên0–100.");var request=LoyaltyService.Normalize(new PromotionRequest(code.Text,name.Text,DateOnly.FromDateTime(start.Value),DateOnly.FromDateTime(end.Value),percent),create);return id=>service.SavePromotionAsync(session,request,row?.Revision,id);};if(await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this)==DialogResult.OK)await Reload();
     }
-    private async Task Delete(){if(Selected is not PromotionRow row)return;using var dialog=new OperationEditorDialog("Xóa khuyến mãi",id=>service.ReconcileAsync(session,id));dialog.AddNote($"{row.Code} · {row.Name}; có hóa đơn tham chiếu thì không xóa được.");dialog.Confirmation=$"Xóa {row.Code}?";dialog.CaptureWrite=()=>id=>service.DeletePromotionAsync(session,row,id);if(dialog.ShowDialog(this)==DialogResult.OK)await Reload();}
-    private Task Preview()
+    private async Task Delete(){if(Selected is not PromotionRow row)return;using var dialog=new OperationEditorDialog("Xóa khuyến mãi",id=>service.ReconcileAsync(session,id));dialog.AddNote($"{row.Code} · {row.Name}; có hóa đơn tham chiếu thì không xóa được.");dialog.Confirmation=$"Xóa {row.Code}?";dialog.CaptureWrite=()=>id=>service.DeletePromotionAsync(session,row,id);if(await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this)==DialogResult.OK)await Reload();}
+    private async Task Preview()
     {
         using var dialog=new OperationEditorDialog("Preview ưu đãi từ SQL",id=>service.ReconcileAsync(session,id));dialog.SetReadOnly();
         var money=dialog.AddText("Tiền món nguyên VND","0");var ship=dialog.AddText("Phí ship nguyên VND","0");
         var date=new OrbitDateField();dialog.AddField("Ngày lập cần preview",date);
         CustomerRow? customer=null;var customerButton=new OrbitButton{Text="Khách vãng lai · Chọn khách",AutoSize=true};dialog.AddField("Khách hàng",customerButton);
-        customerButton.Click+=(_,_)=>{using var picker=new CustomerPickerDialog(customers,session,true);if(picker.ShowDialog(dialog)==DialogResult.OK){customer=picker.SelectedCustomer;customerButton.Text=customer is null?"Khách vãng lai":customer.Name+" · "+customer.Code;}};
+        customerButton.Click+=async(_,_)=>{using var picker=new CustomerPickerDialog(customers,session,true);if(await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(picker, dialog)==DialogResult.OK){customer=picker.SelectedCustomer;customerButton.Text=customer is null?"Khách vãng lai":customer.Name+" · "+customer.Code;}};
         var usePromotion=new CheckBox{Text="Dùng chương trình đang chọn: "+((Selected as PromotionRow)?.Code??"không có"),AutoSize=true,Checked=Selected is PromotionRow};dialog.AddField("Nguồn ưu đãi",usePromotion);
         var preview=new OrbitButton{Text="Xem preview SQL",AutoSize=true};dialog.AddField("Kiểm tra số tiền",preview);
         var result=new Label{AutoSize=true,MaximumSize=new Size(520,0)};dialog.AddField("Kết quả",result);
@@ -54,7 +54,7 @@ internal sealed class PromotionList : OrbitRecordListControl
         void InvalidatePreview(){version++;result.Text="Cần tải preview mới.";}
         money.TextChanged+=(_,_)=>InvalidatePreview();ship.TextChanged+=(_,_)=>InvalidatePreview();date.ValueChanged+=(_,_)=>InvalidatePreview();usePromotion.CheckedChanged+=(_,_)=>InvalidatePreview();customerButton.Click+=(_,_)=>InvalidatePreview();
         preview.Click+=async(_,_)=>{if(!preview.Enabled)return;preview.Enabled=false;var current=++version;result.Text="Đang tải…";try{var response=await service.DiscountAsync(session,new(LoyaltyControl.ReadMoney(money),LoyaltyControl.ReadMoney(ship),DateOnly.FromDateTime(date.Value),customer?.Code,usePromotion.Checked?promotion:null));if(!dialog.IsDisposed&&current==version)result.Text=$"Nguồn {response.Source} · {response.PercentDiscount}%\nGiảm {response.Discount.ToString("N0",CultureInfo.GetCultureInfo("vi-VN"))} ₫\nPhải trả {response.Payable.ToString("N0",CultureInfo.GetCultureInfo("vi-VN"))} ₫\nĐọc SQL {response.ReadAt:HH:mm:ss}; chưa là kết quả checkout.";}catch(Exception ex)when(ex is UserOperationException or UnauthorizedAccessException or ArgumentException or OperationCanceledException){if(!dialog.IsDisposed&&current==version)result.Text="Chưa có preview hợp lệ · "+ex.Message;}finally{if(!preview.IsDisposed)preview.Enabled=true;}};
-        dialog.ShowDialog(this);version++;return Task.CompletedTask;
+        await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this);version++;
     }
 }
 internal sealed class PolicyList : OrbitRecordListControl
@@ -72,7 +72,7 @@ internal sealed class PolicyList : OrbitRecordListControl
         var changed=0;grid.CellValueChanged+=(_,_)=>{changed++;preview=null;info.Text="Cần preview lại.";};grid.UserDeletedRow+=(_,_)=>{changed++;preview=null;};
         view.Click+=async(_,_)=>{if(!view.Enabled)return;view.Enabled=false;try{captured=ReadRows();var current=changed;var response=await service.PolicyPreviewAsync(session,captured);if(!dialog.IsDisposed&&current==changed){preview=response;info.Text=$"Hạng khách sẽ được tính lại theo chính sách mới. {response.AffectedCustomers} khách đổi hạng tại thời điểm preview.\nCũ: {string.Join("; ",old.Select(x=>$"{x.Code}: {x.MinimumPoints}/{x.Discount}%"))}\nMới: {string.Join("; ",captured.Select(x=>$"{x.Code}: {x.MinimumPoints}/{x.Discount}%"))}";}}catch(Exception ex)when(ex is UserOperationException or UnauthorizedAccessException or ArgumentException or OperationCanceledException){if(!dialog.IsDisposed)info.Text=ex.Message;}finally{if(!view.IsDisposed)view.Enabled=true;}};
         dialog.CaptureWrite=()=>{var rows=ReadRows();if(preview is null||captured is null||!rows.SequenceEqual(captured))throw new ArgumentException("Cần xem preview SQL cho nội dung hiện tại.");var snapshot=preview;var payload=rows.ToArray();dialog.Confirmation="Thay chính sách và tính lại hạng toàn bộ khách trong một transaction? Điểm và lịch sử hóa đơn giữ nguyên.";return id=>service.PolicySaveAsync(session,payload,snapshot,id);};
-        if(dialog.ShowDialog(this)==DialogResult.OK)await Reload();
+        if(await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this)==DialogResult.OK)await Reload();
     }
 }
 internal sealed class PointList : OrbitRecordListControl
@@ -83,7 +83,7 @@ internal sealed class PointList : OrbitRecordListControl
         this.service=service;this.customers=customers;this.session=session;
         EmptyHint=()=>customer is null?"Chọn khách hàng để xem lịch sử điểm.":null;
         Configure("Lịch sử điểm (chỉ đọc)",session,async(_,skip,t)=>customer is null?new List<PointHistory>():await service.HistoryAsync(session,customer.Code,skip,t),("Id","Mã GD"),("OccurredAt","Thời điểm"),("Direction","Loại"),("Points","Điểm"),("Reason","Lý do"),("OrderCode","Hóa đơn"));Search.Visible=false;Grid.Columns["OccurredAt"]!.DefaultCellStyle.Format="dd/MM/yyyy HH:mm";
-        AddAction("Chọn khách",async()=>{using var picker=new CustomerPickerDialog(customers,session);if(picker.ShowDialog(this)==DialogResult.OK){customer=picker.SelectedCustomer;SetSelectionCaption(customer is null?null:$"{customer.Code} · {customer.Name} · {customer.Points} điểm · {customer.Tier}");await ResetAndReload();State.Text=customer is null?"Chọn khách để xem điểm.":$"{customer.Code} · {customer.Name} · điểm {customer.Points} · hạng {customer.Tier}";}});AddAction("Điều chỉnh điểm",Adjust);
+        AddAction("Chọn khách",async()=>{using var picker=new CustomerPickerDialog(customers,session);if(await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(picker, this)==DialogResult.OK){customer=picker.SelectedCustomer;SetSelectionCaption(customer is null?null:$"{customer.Code} · {customer.Name} · {customer.Points} điểm · {customer.Tier}");await ResetAndReload();State.Text=customer is null?"Chọn khách để xem điểm.":$"{customer.Code} · {customer.Name} · điểm {customer.Points} · hạng {customer.Tier}";}});AddAction("Điều chỉnh điểm",Adjust);
     }
     private async Task Adjust()
     {
@@ -96,9 +96,12 @@ internal sealed class PointList : OrbitRecordListControl
         PointAdjustmentRequest Read(){if(!int.TryParse(points.Text,out var value))throw new ArgumentException("Điểm phải nguyên dương.");return LoyaltyService.Normalize(new PointAdjustmentRequest(current.Code,direction.SelectedIndex==0?"Cong":"Tru",value,reason.Text));}
         var view=new OrbitButton{Text="Xem lại số dư từ SQL",AutoSize=true};dialog.AddField("Preview trước khi ghi",view);var info=new Label{AutoSize=true};dialog.AddField("Kết quả dự kiến",info);
         view.Click+=async(_,_)=>{if(!view.Enabled)return;view.Enabled=false;try{captured=Read();var version=changed;var response=await service.PointPreviewAsync(session,captured);if(!dialog.IsDisposed&&version==changed){preview=response;info.Text=$"Sau điều chỉnh: {response.Balance} điểm · hạng {response.Tier}.";}}catch(Exception ex)when(ex is UserOperationException or UnauthorizedAccessException or ArgumentException or OperationCanceledException){if(!dialog.IsDisposed)info.Text=ex.Message;}finally{if(!view.IsDisposed)view.Enabled=true;}};
-        dialog.CaptureWrite=()=>{var request=Read();if(preview is null||captured!=request)throw new ArgumentException("Cần preview SQL cho nội dung hiện tại.");var snapshot=preview;dialog.Confirmation=$"{direction.Text} {request.Points} điểm cho {current.Code}? Lý do: {request.Reason}. Lịch sử không thể sửa/xóa.";return id=>service.AdjustAsync(session,request,snapshot,id);};if(dialog.ShowDialog(this)==DialogResult.OK){customer=await customers.GetAsync(session,current.Code);await Reload();}
+        dialog.CaptureWrite=()=>{var request=Read();if(preview is null||captured!=request)throw new ArgumentException("Cần preview SQL cho nội dung hiện tại.");var snapshot=preview;dialog.Confirmation=$"{direction.Text} {request.Points} điểm cho {current.Code}? Lý do: {request.Reason}. Lịch sử không thể sửa/xóa.";return id=>service.AdjustAsync(session,request,snapshot,id);};if(await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this)==DialogResult.OK){customer=await customers.GetAsync(session,current.Code);await Reload();}
     }
 }
+
+
+
 
 
 

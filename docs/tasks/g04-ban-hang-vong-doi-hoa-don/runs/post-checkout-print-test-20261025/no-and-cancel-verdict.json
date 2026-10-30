@@ -1,0 +1,45 @@
+{
+  "Branches": "User confirms No and Yes/Cancel reset POS",
+  "Invoices": [
+    {
+      "MaHD": "HD20250417",
+      "TrangThai": "Da thanh toan",
+      "ThanhTien": 81000
+    },
+    {
+      "MaHD": "HD20250418",
+      "TrangThai": "Chua thanh toan",
+      "ThanhTien": 81000
+    }
+  ],
+  "Payments": [
+    {
+      "MaHD": "HD20250417",
+      "MaPT": "PT001",
+      "SoTien": 81000
+    }
+  ],
+  "StockDelta": [
+    {
+      "Material": "NVL01",
+      "Before": 96.632,
+      "After": 96.614,
+      "Consumed": 0.018,
+      "SnapshotSum": 0.018
+    },
+    {
+      "Material": "NVL03",
+      "Before": 72.645,
+      "After": 72.635,
+      "Consumed": 0.010,
+      "SnapshotSum": 0.01
+    }
+  ],
+  "TotalOrdersBefore": 20,
+  "TotalOrdersAfter": 20,
+  "NoEmptyInvoice": true,
+  "PointsEntriesForAnonymousOrders": 0,
+  "PaidOnceAndAffectedStockMatches": false,
+  "BaselineLimitation": "Original FOR JSON ExecuteScalar snapshot truncated at2033chars; original retained. Complete entries for NVL01/NVL03 and TotalOrders20 available; no claim for all material/point baselines.",
+  "SourceChanged": 0
+}

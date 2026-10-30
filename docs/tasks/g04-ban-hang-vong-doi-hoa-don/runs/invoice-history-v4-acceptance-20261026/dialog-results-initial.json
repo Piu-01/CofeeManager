@@ -1,0 +1,562 @@
+{
+  "Failed": 0,
+  "Database": "CoffeeManager_Test_G04_20261025_181739_98e5df59_checkout",
+  "Scope": "Frozen product DLL; real AuthService/runtime SQL; component calls, no physical input/visual QA/checkout commit",
+  "Results": [
+    {
+      "Name": "ND11 actual MainForm menu ADMIN",
+      "Outcome": "PASS",
+      "Actual": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "Name": "ND11 actual MainForm menu CASH",
+      "Outcome": "PASS",
+      "Actual": [
+        3,
+        6,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "Name": "ND11 actual MainForm menu STORE",
+      "Outcome": "PASS",
+      "Actual": [
+        3,
+        4
+      ]
+    },
+    {
+      "Name": "OrderLine native owner/modal",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "OrderLine bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=600, Height=375}"
+      }
+    },
+    {
+      "Name": "OrderLine bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=600, Height=375}"
+      }
+    },
+    {
+      "Name": "OrderLine closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Header Mang di native owner/modal",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Header Mang di bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=700, Height=750}"
+      }
+    },
+    {
+      "Name": "Header Mang di bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=700, Height=750}"
+      }
+    },
+    {
+      "Name": "Header typed result Mang di",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Header Mang di closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Header Tai quan native owner/modal",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Header Tai quan bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=700, Height=750}"
+      }
+    },
+    {
+      "Name": "Header Tai quan bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=700, Height=750}"
+      }
+    },
+    {
+      "Name": "Header typed result Tai quan",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Header Tai quan closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Header Giao hang native owner/modal",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Header Giao hang bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=700, Height=750}"
+      }
+    },
+    {
+      "Name": "Header Giao hang bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=700, Height=750}"
+      }
+    },
+    {
+      "Name": "ND07 UI06 recipient",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ND07 UI06 phone",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ND07 UI06 address",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Header typed result Giao hang",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Header Giao hang closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "OpenOrders native owner/modal",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "OpenOrders bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=1225, Height=700}"
+      }
+    },
+    {
+      "Name": "OpenOrders bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=1225, Height=700}"
+      }
+    },
+    {
+      "Name": "ND08 open orders loaded",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "OpenOrders closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Invoice paid native owner/modal",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Invoice paid bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=1125, Height=775}"
+      }
+    },
+    {
+      "Name": "Invoice paid bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=1125, Height=775}"
+      }
+    },
+    {
+      "Name": "ND06 paid POS disabled",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Invoice paid closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Delivery native owner/modal",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Delivery bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=950, Height=700}"
+      }
+    },
+    {
+      "Name": "Delivery bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=950, Height=700}"
+      }
+    },
+    {
+      "Name": "Delivery closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Checkout native owner/modal",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Checkout bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=1150, Height=750}"
+      }
+    },
+    {
+      "Name": "Checkout bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=1150, Height=750}"
+      }
+    },
+    {
+      "Name": "ND09 tendered invalid 80000",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ND09 tendered invalid abc",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ND09 tendered invalid 999999999999999999999999999999",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ND09 valid tendered enabled",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Checkout closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CustomerPicker native owner/modal",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CustomerPicker bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=1125, Height=680}"
+      }
+    },
+    {
+      "Name": "CustomerPicker bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=1125, Height=680}"
+      }
+    },
+    {
+      "Name": "CustomerPicker closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Catalog ProductCategory native owner/modal",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Catalog ProductCategory bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=900, Height=438}"
+      }
+    },
+    {
+      "Name": "Catalog ProductCategory bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=900, Height=438}"
+      }
+    },
+    {
+      "Name": "Catalog ProductCategory closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Catalog Supplier native owner/modal",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Catalog Supplier bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=900, Height=480}"
+      }
+    },
+    {
+      "Name": "Catalog Supplier bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=900, Height=480}"
+      }
+    },
+    {
+      "Name": "Catalog Supplier closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Catalog PaymentMethod native owner/modal",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Catalog PaymentMethod bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=900, Height=459}"
+      }
+    },
+    {
+      "Name": "Catalog PaymentMethod bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=900, Height=459}"
+      }
+    },
+    {
+      "Name": "Catalog PaymentMethod closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Catalog DeliveryPartner native owner/modal",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Catalog DeliveryPartner bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=900, Height=480}"
+      }
+    },
+    {
+      "Name": "Catalog DeliveryPartner bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=900, Height=480}"
+      }
+    },
+    {
+      "Name": "Catalog DeliveryPartner closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Catalog ExpenseCategory native owner/modal",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Catalog ExpenseCategory bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=900, Height=485}"
+      }
+    },
+    {
+      "Name": "Catalog ExpenseCategory bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=900, Height=485}"
+      }
+    },
+    {
+      "Name": "Catalog ExpenseCategory closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Catalog Position native owner/modal",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Catalog Position bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=900, Height=546}"
+      }
+    },
+    {
+      "Name": "Catalog Position bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=900, Height=546}"
+      }
+    },
+    {
+      "Name": "Catalog Position closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Catalog Shift native owner/modal",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Catalog Shift bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=900, Height=540}"
+      }
+    },
+    {
+      "Name": "Catalog Shift bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=900, Height=540}"
+      }
+    },
+    {
+      "Name": "Catalog Shift closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ND03 production picker preserves parent input",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Invoice preview native owner/modal",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Invoice preview bounds {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=1125, Height=812}"
+      }
+    },
+    {
+      "Name": "Invoice preview bounds {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "Dpi": 120,
+        "Size": "{Width=1125, Height=812}"
+      }
+    },
+    {
+      "Name": "Invoice preview closes to idle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ND11 no orphan forms after inventory",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ND06 read/bounds/validation did not change financial data",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Fixture actors removed",
+      "Outcome": "PASS",
+      "Actual": null
+    }
+  ]
+}

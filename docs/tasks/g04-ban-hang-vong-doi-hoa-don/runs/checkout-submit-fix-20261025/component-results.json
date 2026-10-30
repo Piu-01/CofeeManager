@@ -1,0 +1,166 @@
+{
+  "Scope": "Real frozen CheckoutDialog component; direct binding/state inspection, not mouse/keyboard, no SQL writes",
+  "Results": [
+    {
+      "Name": "C01 initial invoice values",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "C01 tender100000/change19000",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "C02 tender80000 disabled/short1000",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "C02 invalid tender abc",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "C02 invalid tender 999999999999999999999999999999",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "C02 invalid tender -1",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "C02 invalid tender 1,5",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "C02 invalid method ",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "C02 invalid method PT010",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "C02 invalid method XXXXX",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "C02 invalid allocation 80000",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "C02 invalid allocation 82000",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "C02 invalid allocation -1",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "C02 invalid allocation 1,5",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "C02 invalid allocation 999999999999999999999999999999",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "C02 invalid allocation abc",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "C02 reference over100",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "C05 mixed payment cash31000/bank50000",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "C05 bank only ignores invalid tender",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "C04 add/delete binding",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "C07 busy/unknown controls",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "C09 Payment grid editable",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "C08 reachable footer {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "C08 reachable footer {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "C08 reachable footer {Width=740, Height=700}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "C08 actual125dpi",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "C05 zero payable",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "C09 existing grid Menu",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "C09 existing grid Inventory",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "C09 existing grid Catalogs",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "C09 existing dialog layout",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "C10 repeated construction/disposal",
+      "Outcome": "PASS",
+      "Actual": null
+    }
+  ],
+  "Failed": 0
+}

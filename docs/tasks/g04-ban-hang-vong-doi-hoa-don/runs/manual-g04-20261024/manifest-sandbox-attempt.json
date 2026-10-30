@@ -1,0 +1,14 @@
+{
+  "RunId": "20261024_152722_a1304b39",
+  "Server": "localhost",
+  "Database": "CoffeeManager_Test_G04_20261024_152722_a1304b39_manual",
+  "Marker": "20261024_152722_a1304b39",
+  "Created": false,
+  "Cleaned": false,
+  "State": "Preparing",
+  "Purpose": "G04 user-operated functional GUI tests",
+  "RetainReason": "Active guided manual test session",
+  "ReviewBy": "2026-10-25",
+  "ProcessIds": [],
+  "SchemaVersion": 16
+}

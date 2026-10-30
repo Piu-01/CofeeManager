@@ -1,0 +1,786 @@
+[
+  {
+    "Dialog": "FinanceEntryDialog",
+    "State": "Loaded",
+    "Result": "PASS",
+    "Dpi": 120,
+    "Client": {
+      "IsEmpty": false,
+      "Width": 682,
+      "Height": 467
+    },
+    "InsideWorkingArea": true,
+    "Buttons": [
+      {
+        "Text": "Ghi phi\u1EBFu",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 99,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Dialog": "FinanceEntryDialog",
+    "State": "Resized",
+    "Result": "PASS",
+    "Dpi": 120,
+    "Client": {
+      "IsEmpty": false,
+      "Width": 640,
+      "Height": 420
+    },
+    "InsideWorkingArea": true,
+    "Buttons": [
+      {
+        "Text": "Ghi phi\u1EBFu",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 99,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Dialog": "FinanceEntryDialog",
+    "State": "ReconcileVisible",
+    "Result": "PASS",
+    "Dpi": 120,
+    "Client": {
+      "IsEmpty": false,
+      "Width": 640,
+      "Height": 420
+    },
+    "InsideWorkingArea": true,
+    "Buttons": [
+      {
+        "Text": "Ki\u1EC3m tra k\u1EBFt qu\u1EA3",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 145,
+        "Height": 50
+      },
+      {
+        "Text": "Ghi phi\u1EBFu",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 99,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Dialog": "FinanceDetailDialog",
+    "State": "Loaded",
+    "Result": "PASS",
+    "Dpi": 120,
+    "Client": {
+      "IsEmpty": false,
+      "Width": 682,
+      "Height": 490
+    },
+    "InsideWorkingArea": true,
+    "Buttons": [
+      {
+        "Text": "\u0110\u00F3ng",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 72,
+        "Height": 50
+      },
+      {
+        "Text": "C\u00F4ng n\u1EE3 ngu\u1ED3n",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 138,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Dialog": "FinanceDetailDialog",
+    "State": "Resized",
+    "Result": "PASS",
+    "Dpi": 120,
+    "Client": {
+      "IsEmpty": false,
+      "Width": 640,
+      "Height": 420
+    },
+    "InsideWorkingArea": true,
+    "Buttons": [
+      {
+        "Text": "\u0110\u00F3ng",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 72,
+        "Height": 50
+      },
+      {
+        "Text": "C\u00F4ng n\u1EE3 ngu\u1ED3n",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 138,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Dialog": "PurchaseEditorDialog",
+    "State": "Loaded",
+    "Result": "PASS",
+    "Dpi": 120,
+    "Client": {
+      "IsEmpty": false,
+      "Width": 1057,
+      "Height": 671
+    },
+    "InsideWorkingArea": true,
+    "Buttons": [
+      {
+        "Text": "T\u00EDnh t\u1ED5ng",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 99,
+        "Height": 50
+      },
+      {
+        "Text": "Ch\u1ED1t nh\u1EADp kho",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 131,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Dialog": "PurchaseEditorDialog",
+    "State": "Resized",
+    "Result": "PASS",
+    "Dpi": 120,
+    "Client": {
+      "IsEmpty": false,
+      "Width": 640,
+      "Height": 420
+    },
+    "InsideWorkingArea": true,
+    "Buttons": [
+      {
+        "Text": "T\u00EDnh t\u1ED5ng",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 99,
+        "Height": 50
+      },
+      {
+        "Text": "Ch\u1ED1t nh\u1EADp kho",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 131,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Dialog": "PurchaseEditorDialog",
+    "State": "ReconcileVisible",
+    "Result": "PASS",
+    "Dpi": 120,
+    "Client": {
+      "IsEmpty": false,
+      "Width": 640,
+      "Height": 420
+    },
+    "InsideWorkingArea": true,
+    "Buttons": [
+      {
+        "Text": "Ki\u1EC3m tra k\u1EBFt qu\u1EA3",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 145,
+        "Height": 50
+      },
+      {
+        "Text": "T\u00EDnh t\u1ED5ng",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 99,
+        "Height": 50
+      },
+      {
+        "Text": "Ch\u1ED1t nh\u1EADp kho",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 131,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Dialog": "PurchaseDetailDialog",
+    "State": "Loaded",
+    "Result": "PASS",
+    "Dpi": 120,
+    "Client": {
+      "IsEmpty": false,
+      "Width": 1057,
+      "Height": 671
+    },
+    "InsideWorkingArea": true,
+    "Buttons": [
+      {
+        "Text": "\u0110\u00F3ng",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 72,
+        "Height": 50
+      },
+      {
+        "Text": "C\u00F4ng n\u1EE3 ngu\u1ED3n",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 138,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Dialog": "PurchaseDetailDialog",
+    "State": "Resized",
+    "Result": "PASS",
+    "Dpi": 120,
+    "Client": {
+      "IsEmpty": false,
+      "Width": 640,
+      "Height": 420
+    },
+    "InsideWorkingArea": true,
+    "Buttons": [
+      {
+        "Text": "\u0110\u00F3ng",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 72,
+        "Height": 50
+      },
+      {
+        "Text": "C\u00F4ng n\u1EE3 ngu\u1ED3n",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 138,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Dialog": "StockIssueEditorDialog",
+    "State": "Loaded",
+    "Result": "PASS",
+    "Dpi": 120,
+    "Client": {
+      "IsEmpty": false,
+      "Width": 1057,
+      "Height": 671
+    },
+    "InsideWorkingArea": true,
+    "Buttons": [
+      {
+        "Text": "Ch\u1ED1t xu\u1EA5t",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 99,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Dialog": "StockIssueEditorDialog",
+    "State": "Resized",
+    "Result": "PASS",
+    "Dpi": 120,
+    "Client": {
+      "IsEmpty": false,
+      "Width": 640,
+      "Height": 420
+    },
+    "InsideWorkingArea": true,
+    "Buttons": [
+      {
+        "Text": "Ch\u1ED1t xu\u1EA5t",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 99,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Dialog": "StockIssueEditorDialog",
+    "State": "ReconcileVisible",
+    "Result": "PASS",
+    "Dpi": 120,
+    "Client": {
+      "IsEmpty": false,
+      "Width": 640,
+      "Height": 420
+    },
+    "InsideWorkingArea": true,
+    "Buttons": [
+      {
+        "Text": "Ki\u1EC3m tra k\u1EBFt qu\u1EA3",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 145,
+        "Height": 50
+      },
+      {
+        "Text": "Ch\u1ED1t xu\u1EA5t",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 99,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Dialog": "StockIssueDetailDialog",
+    "State": "Loaded",
+    "Result": "PASS",
+    "Dpi": 120,
+    "Client": {
+      "IsEmpty": false,
+      "Width": 1057,
+      "Height": 671
+    },
+    "InsideWorkingArea": true,
+    "Buttons": [
+      {
+        "Text": "\u0110\u00F3ng",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 72,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Dialog": "StockIssueDetailDialog",
+    "State": "Resized",
+    "Result": "PASS",
+    "Dpi": 120,
+    "Client": {
+      "IsEmpty": false,
+      "Width": 640,
+      "Height": 420
+    },
+    "InsideWorkingArea": true,
+    "Buttons": [
+      {
+        "Text": "\u0110\u00F3ng",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 72,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Dialog": "StocktakeEditorDialog",
+    "State": "Loaded",
+    "Result": "PASS",
+    "Dpi": 120,
+    "Client": {
+      "IsEmpty": false,
+      "Width": 1057,
+      "Height": 671
+    },
+    "InsideWorkingArea": true,
+    "Buttons": [
+      {
+        "Text": "L\u1EA5y snapshot",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 120,
+        "Height": 50
+      },
+      {
+        "Text": "\u0110i\u1EC1n b\u1EB1ng h\u1EC7 th\u1ED1ng",
+        "Enabled": false,
+        "Accessible": true,
+        "Width": 168,
+        "Height": 50
+      },
+      {
+        "Text": "T\u1EA3i l\u1EA1i phi\u1EBFu",
+        "Enabled": false,
+        "Accessible": true,
+        "Width": 116,
+        "Height": 50
+      },
+      {
+        "Text": "L\u01B0u s\u1ED1 \u0111\u1EBFm",
+        "Enabled": false,
+        "Accessible": true,
+        "Width": 112,
+        "Height": 50
+      },
+      {
+        "Text": "Ch\u1ED1t ki\u1EC3m k\u00EA",
+        "Enabled": false,
+        "Accessible": true,
+        "Width": 121,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Dialog": "StocktakeEditorDialog",
+    "State": "Resized",
+    "Result": "PASS",
+    "Dpi": 120,
+    "Client": {
+      "IsEmpty": false,
+      "Width": 640,
+      "Height": 420
+    },
+    "InsideWorkingArea": true,
+    "Buttons": [
+      {
+        "Text": "L\u1EA5y snapshot",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 120,
+        "Height": 50
+      },
+      {
+        "Text": "\u0110i\u1EC1n b\u1EB1ng h\u1EC7 th\u1ED1ng",
+        "Enabled": false,
+        "Accessible": true,
+        "Width": 168,
+        "Height": 50
+      },
+      {
+        "Text": "T\u1EA3i l\u1EA1i phi\u1EBFu",
+        "Enabled": false,
+        "Accessible": true,
+        "Width": 116,
+        "Height": 50
+      },
+      {
+        "Text": "L\u01B0u s\u1ED1 \u0111\u1EBFm",
+        "Enabled": false,
+        "Accessible": true,
+        "Width": 112,
+        "Height": 50
+      },
+      {
+        "Text": "Ch\u1ED1t ki\u1EC3m k\u00EA",
+        "Enabled": false,
+        "Accessible": true,
+        "Width": 121,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Dialog": "StocktakeEditorDialog",
+    "State": "ReconcileVisible",
+    "Result": "PASS",
+    "Dpi": 120,
+    "Client": {
+      "IsEmpty": false,
+      "Width": 640,
+      "Height": 420
+    },
+    "InsideWorkingArea": true,
+    "Buttons": [
+      {
+        "Text": "L\u1EA5y snapshot",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 120,
+        "Height": 50
+      },
+      {
+        "Text": "\u0110i\u1EC1n b\u1EB1ng h\u1EC7 th\u1ED1ng",
+        "Enabled": false,
+        "Accessible": true,
+        "Width": 168,
+        "Height": 50
+      },
+      {
+        "Text": "T\u1EA3i l\u1EA1i phi\u1EBFu",
+        "Enabled": false,
+        "Accessible": true,
+        "Width": 116,
+        "Height": 50
+      },
+      {
+        "Text": "L\u01B0u s\u1ED1 \u0111\u1EBFm",
+        "Enabled": false,
+        "Accessible": true,
+        "Width": 112,
+        "Height": 50
+      },
+      {
+        "Text": "Ch\u1ED1t ki\u1EC3m k\u00EA",
+        "Enabled": false,
+        "Accessible": true,
+        "Width": 121,
+        "Height": 50
+      },
+      {
+        "Text": "Ki\u1EC3m tra k\u1EBFt qu\u1EA3",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 145,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Dialog": "SupplierDebtDetailDialog",
+    "State": "Loaded",
+    "Result": "PASS",
+    "Dpi": 120,
+    "Client": {
+      "IsEmpty": false,
+      "Width": 1057,
+      "Height": 671
+    },
+    "InsideWorkingArea": true,
+    "Buttons": [
+      {
+        "Text": "Phi\u1EBFu nh\u1EADp ngu\u1ED3n",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 155,
+        "Height": 50
+      },
+      {
+        "Text": "Phi\u1EBFu chi",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 95,
+        "Height": 50
+      },
+      {
+        "Text": "\u0110\u00F3ng",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 72,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Dialog": "SupplierDebtDetailDialog",
+    "State": "Resized",
+    "Result": "PASS",
+    "Dpi": 120,
+    "Client": {
+      "IsEmpty": false,
+      "Width": 640,
+      "Height": 420
+    },
+    "InsideWorkingArea": true,
+    "Buttons": [
+      {
+        "Text": "Phi\u1EBFu nh\u1EADp ngu\u1ED3n",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 155,
+        "Height": 50
+      },
+      {
+        "Text": "Phi\u1EBFu chi",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 95,
+        "Height": 50
+      },
+      {
+        "Text": "\u0110\u00F3ng",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 72,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Dialog": "DebtPaymentDialog",
+    "State": "Loaded",
+    "Result": "PASS",
+    "Dpi": 120,
+    "Client": {
+      "IsEmpty": false,
+      "Width": 682,
+      "Height": 367
+    },
+    "InsideWorkingArea": true,
+    "Buttons": [
+      {
+        "Text": "Tr\u1EA3 n\u1EE3",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 76,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Dialog": "DebtPaymentDialog",
+    "State": "Resized",
+    "Result": "PASS",
+    "Dpi": 120,
+    "Client": {
+      "IsEmpty": false,
+      "Width": 640,
+      "Height": 420
+    },
+    "InsideWorkingArea": true,
+    "Buttons": [
+      {
+        "Text": "Tr\u1EA3 n\u1EE3",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 76,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  },
+  {
+    "Dialog": "DebtPaymentDialog",
+    "State": "ReconcileVisible",
+    "Result": "PASS",
+    "Dpi": 120,
+    "Client": {
+      "IsEmpty": false,
+      "Width": 640,
+      "Height": 420
+    },
+    "InsideWorkingArea": true,
+    "Buttons": [
+      {
+        "Text": "Ki\u1EC3m tra k\u1EBFt qu\u1EA3",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 145,
+        "Height": 50
+      },
+      {
+        "Text": "Tr\u1EA3 n\u1EE3",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 76,
+        "Height": 50
+      },
+      {
+        "Text": "Quay l\u1EA1i",
+        "Enabled": true,
+        "Accessible": true,
+        "Width": 90,
+        "Height": 50
+      }
+    ]
+  }
+]

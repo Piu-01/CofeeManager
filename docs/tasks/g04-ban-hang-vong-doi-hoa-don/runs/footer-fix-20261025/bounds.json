@@ -1,0 +1,182 @@
+[
+  {
+    "Requested": "{Width=1280, Height=720}",
+    "Actual": "{Width=1280, Height=720}",
+    "Dpi": 120,
+    "Client": "{X=201,Y=230,Width=1262,Height=673}",
+    "Confirm": "{X=1205,Y=823,Width=228,Height=50}",
+    "ConfirmInside": true,
+    "Chain": [
+      {
+        "Type": "OrbitButton",
+        "Bounds": "{X=150,Y=0,Width=228,Height=50}",
+        "Client": "{X=0,Y=0,Width=228,Height=50}",
+        "Preferred": "{Width=228, Height=50}",
+        "AutoSize": false,
+        "Dock": 0,
+        "Visible": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Type": "FlowLayoutPanel",
+        "Bounds": "{X=824,Y=0,Width=378,Height=50}",
+        "Client": "{X=0,Y=0,Width=378,Height=50}",
+        "Preferred": "{Width=378, Height=50}",
+        "AutoSize": true,
+        "Dock": 5,
+        "Visible": true,
+        "Parent": "TableLayoutPanel"
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Bounds": "{X=30,Y=593,Width=1202,Height=50}",
+        "Client": "{X=0,Y=0,Width=1202,Height=50}",
+        "Preferred": "{Width=497, Height=50}",
+        "AutoSize": true,
+        "Dock": 5,
+        "Visible": true,
+        "Parent": "OrbitDialogLayout"
+      },
+      {
+        "Type": "OrbitDialogLayout",
+        "Bounds": "{X=0,Y=0,Width=1262,Height=673}",
+        "Client": "{X=0,Y=0,Width=1262,Height=673}",
+        "Preferred": "{Width=557, Height=263}",
+        "AutoSize": false,
+        "Dock": 5,
+        "Visible": true,
+        "Parent": "CheckoutDialog"
+      },
+      {
+        "Type": "CheckoutDialog",
+        "Bounds": "{X=192,Y=192,Width=1280,Height=720}",
+        "Client": "{X=0,Y=0,Width=1262,Height=673}",
+        "Preferred": "{Width=700, Height=475}",
+        "AutoSize": false,
+        "Dock": 0,
+        "Visible": true,
+        "Parent": null
+      }
+    ]
+  },
+  {
+    "Requested": "{Width=1366, Height=768}",
+    "Actual": "{Width=1366, Height=768}",
+    "Dpi": 120,
+    "Client": "{X=201,Y=230,Width=1348,Height=721}",
+    "Confirm": "{X=1291,Y=871,Width=228,Height=50}",
+    "ConfirmInside": true,
+    "Chain": [
+      {
+        "Type": "OrbitButton",
+        "Bounds": "{X=150,Y=0,Width=228,Height=50}",
+        "Client": "{X=0,Y=0,Width=228,Height=50}",
+        "Preferred": "{Width=228, Height=50}",
+        "AutoSize": false,
+        "Dock": 0,
+        "Visible": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Type": "FlowLayoutPanel",
+        "Bounds": "{X=910,Y=0,Width=378,Height=50}",
+        "Client": "{X=0,Y=0,Width=378,Height=50}",
+        "Preferred": "{Width=378, Height=50}",
+        "AutoSize": true,
+        "Dock": 5,
+        "Visible": true,
+        "Parent": "TableLayoutPanel"
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Bounds": "{X=30,Y=641,Width=1288,Height=50}",
+        "Client": "{X=0,Y=0,Width=1288,Height=50}",
+        "Preferred": "{Width=497, Height=50}",
+        "AutoSize": true,
+        "Dock": 5,
+        "Visible": true,
+        "Parent": "OrbitDialogLayout"
+      },
+      {
+        "Type": "OrbitDialogLayout",
+        "Bounds": "{X=0,Y=0,Width=1348,Height=721}",
+        "Client": "{X=0,Y=0,Width=1348,Height=721}",
+        "Preferred": "{Width=557, Height=263}",
+        "AutoSize": false,
+        "Dock": 5,
+        "Visible": true,
+        "Parent": "CheckoutDialog"
+      },
+      {
+        "Type": "CheckoutDialog",
+        "Bounds": "{X=192,Y=192,Width=1366,Height=768}",
+        "Client": "{X=0,Y=0,Width=1348,Height=721}",
+        "Preferred": "{Width=700, Height=475}",
+        "AutoSize": false,
+        "Dock": 0,
+        "Visible": true,
+        "Parent": null
+      }
+    ]
+  },
+  {
+    "Requested": "{Width=740, Height=700}",
+    "Actual": "{Width=740, Height=700}",
+    "Dpi": 120,
+    "Client": "{X=201,Y=230,Width=722,Height=653}",
+    "Confirm": "{X=665,Y=803,Width=228,Height=50}",
+    "ConfirmInside": true,
+    "Chain": [
+      {
+        "Type": "OrbitButton",
+        "Bounds": "{X=150,Y=0,Width=228,Height=50}",
+        "Client": "{X=0,Y=0,Width=228,Height=50}",
+        "Preferred": "{Width=228, Height=50}",
+        "AutoSize": false,
+        "Dock": 0,
+        "Visible": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Type": "FlowLayoutPanel",
+        "Bounds": "{X=284,Y=0,Width=378,Height=50}",
+        "Client": "{X=0,Y=0,Width=378,Height=50}",
+        "Preferred": "{Width=378, Height=50}",
+        "AutoSize": true,
+        "Dock": 5,
+        "Visible": true,
+        "Parent": "TableLayoutPanel"
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Bounds": "{X=30,Y=573,Width=662,Height=50}",
+        "Client": "{X=0,Y=0,Width=662,Height=50}",
+        "Preferred": "{Width=497, Height=50}",
+        "AutoSize": true,
+        "Dock": 5,
+        "Visible": true,
+        "Parent": "OrbitDialogLayout"
+      },
+      {
+        "Type": "OrbitDialogLayout",
+        "Bounds": "{X=0,Y=0,Width=722,Height=653}",
+        "Client": "{X=0,Y=0,Width=722,Height=653}",
+        "Preferred": "{Width=557, Height=263}",
+        "AutoSize": false,
+        "Dock": 5,
+        "Visible": true,
+        "Parent": "CheckoutDialog"
+      },
+      {
+        "Type": "CheckoutDialog",
+        "Bounds": "{X=192,Y=192,Width=740,Height=700}",
+        "Client": "{X=0,Y=0,Width=722,Height=653}",
+        "Preferred": "{Width=700, Height=475}",
+        "AutoSize": false,
+        "Dock": 0,
+        "Visible": true,
+        "Parent": null
+      }
+    ]
+  }
+]

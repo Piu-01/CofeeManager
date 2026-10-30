@@ -1,0 +1,383 @@
+[
+  {
+    "Phase": "Initial",
+    "Dpi": 120,
+    "Form": "{Width=1150, Height=750}",
+    "Grid": {
+      "Type": "OrbitDataGridView",
+      "Text": "",
+      "Bounds": "{X=253,Y=466,Width=685,Height=108}",
+      "ClippedBy": [],
+      "Parents": [
+        {
+          "Type": "Panel",
+          "Bounds": "{X=252,Y=465,Width=687,Height=110}",
+          "AutoSize": false
+        },
+        {
+          "Type": "TableLayoutPanel",
+          "Bounds": "{X=232,Y=385,Width=727,Height=423}",
+          "AutoSize": true
+        },
+        {
+          "Type": "TableLayoutPanel",
+          "Bounds": "{X=231,Y=384,Width=1072,Height=425}",
+          "AutoSize": true
+        },
+        {
+          "Type": "Panel",
+          "Bounds": "{X=231,Y=384,Width=1072,Height=444}",
+          "AutoSize": false
+        },
+        {
+          "Type": "OrbitDialogLayout",
+          "Bounds": "{X=201,Y=230,Width=1132,Height=703}",
+          "AutoSize": false
+        },
+        {
+          "Type": "CheckoutDialog",
+          "Bounds": "{X=201,Y=230,Width=1132,Height=703}",
+          "AutoSize": false
+        }
+      ],
+      "Back": "FF3C3146",
+      "Fore": "FFFFF4E7"
+    },
+    "Tender": {
+      "Type": "TextBox",
+      "Text": "81.000",
+      "Bounds": "{X=284,Y=639,Width=623,Height=24}",
+      "ClippedBy": [],
+      "Parents": [
+        {
+          "Type": "OrbitField",
+          "Bounds": "{X=272,Y=627,Width=647,Height=50}",
+          "AutoSize": false
+        },
+        {
+          "Type": "OrbitDialogField",
+          "Bounds": "{X=272,Y=597,Width=647,Height=80}",
+          "AutoSize": true
+        },
+        {
+          "Type": "TableLayoutPanel",
+          "Bounds": "{X=252,Y=587,Width=687,Height=117}",
+          "AutoSize": true
+        },
+        {
+          "Type": "TableLayoutPanel",
+          "Bounds": "{X=232,Y=385,Width=727,Height=423}",
+          "AutoSize": true
+        },
+        {
+          "Type": "TableLayoutPanel",
+          "Bounds": "{X=231,Y=384,Width=1072,Height=425}",
+          "AutoSize": true
+        },
+        {
+          "Type": "Panel",
+          "Bounds": "{X=231,Y=384,Width=1072,Height=444}",
+          "AutoSize": false
+        },
+        {
+          "Type": "OrbitDialogLayout",
+          "Bounds": "{X=201,Y=230,Width=1132,Height=703}",
+          "AutoSize": false
+        },
+        {
+          "Type": "CheckoutDialog",
+          "Bounds": "{X=201,Y=230,Width=1132,Height=703}",
+          "AutoSize": false
+        }
+      ],
+      "Back": "FF17131D",
+      "Fore": "FFFFF4E7"
+    },
+    "Notice": {
+      "Type": "OrbitNotice",
+      "Text": "\u0110\u1EE7 ti\u1EC1n thanh to\u00E1n \u00B7 Ti\u1EC1n th\u1ED1i 0 \u20AB",
+      "Bounds": "{X=252,Y=714,Width=687,Height=74}",
+      "ClippedBy": [],
+      "Parents": [
+        {
+          "Type": "TableLayoutPanel",
+          "Bounds": "{X=232,Y=385,Width=727,Height=423}",
+          "AutoSize": true
+        },
+        {
+          "Type": "TableLayoutPanel",
+          "Bounds": "{X=231,Y=384,Width=1072,Height=425}",
+          "AutoSize": true
+        },
+        {
+          "Type": "Panel",
+          "Bounds": "{X=231,Y=384,Width=1072,Height=444}",
+          "AutoSize": false
+        },
+        {
+          "Type": "OrbitDialogLayout",
+          "Bounds": "{X=201,Y=230,Width=1132,Height=703}",
+          "AutoSize": false
+        },
+        {
+          "Type": "CheckoutDialog",
+          "Bounds": "{X=201,Y=230,Width=1132,Height=703}",
+          "AutoSize": false
+        }
+      ],
+      "Back": "FF2E3136",
+      "Fore": "FFADE1BF"
+    },
+    "Payable": {
+      "Type": "Label",
+      "Text": "81.000 \u20AB",
+      "Bounds": "{X=979,Y=622,Width=303,Height=45}",
+      "ClippedBy": [],
+      "Parents": [
+        {
+          "Type": "OrbitSummaryPanel",
+          "Bounds": "{X=959,Y=385,Width=343,Height=423}",
+          "AutoSize": true
+        },
+        {
+          "Type": "TableLayoutPanel",
+          "Bounds": "{X=231,Y=384,Width=1072,Height=425}",
+          "AutoSize": true
+        },
+        {
+          "Type": "Panel",
+          "Bounds": "{X=231,Y=384,Width=1072,Height=444}",
+          "AutoSize": false
+        },
+        {
+          "Type": "OrbitDialogLayout",
+          "Bounds": "{X=201,Y=230,Width=1132,Height=703}",
+          "AutoSize": false
+        },
+        {
+          "Type": "CheckoutDialog",
+          "Bounds": "{X=201,Y=230,Width=1132,Height=703}",
+          "AutoSize": false
+        }
+      ],
+      "Back": "FF100E15",
+      "Fore": "FFFFD09A"
+    },
+    "Editor": null
+  },
+  {
+    "Phase": "After method focus/blank selection",
+    "Dpi": 120,
+    "Form": "{Width=1150, Height=750}",
+    "Grid": {
+      "Type": "OrbitDataGridView",
+      "Text": "",
+      "Bounds": "{X=253,Y=466,Width=685,Height=108}",
+      "ClippedBy": [],
+      "Parents": [
+        {
+          "Type": "Panel",
+          "Bounds": "{X=252,Y=465,Width=687,Height=110}",
+          "AutoSize": false
+        },
+        {
+          "Type": "TableLayoutPanel",
+          "Bounds": "{X=232,Y=385,Width=727,Height=423}",
+          "AutoSize": true
+        },
+        {
+          "Type": "TableLayoutPanel",
+          "Bounds": "{X=231,Y=384,Width=1072,Height=425}",
+          "AutoSize": true
+        },
+        {
+          "Type": "Panel",
+          "Bounds": "{X=231,Y=384,Width=1072,Height=444}",
+          "AutoSize": false
+        },
+        {
+          "Type": "OrbitDialogLayout",
+          "Bounds": "{X=201,Y=230,Width=1132,Height=703}",
+          "AutoSize": false
+        },
+        {
+          "Type": "CheckoutDialog",
+          "Bounds": "{X=201,Y=230,Width=1132,Height=703}",
+          "AutoSize": false
+        }
+      ],
+      "Back": "FF3C3146",
+      "Fore": "FFFFF4E7"
+    },
+    "Tender": {
+      "Type": "TextBox",
+      "Text": "81.000",
+      "Bounds": "{X=284,Y=639,Width=623,Height=24}",
+      "ClippedBy": [],
+      "Parents": [
+        {
+          "Type": "OrbitField",
+          "Bounds": "{X=272,Y=627,Width=647,Height=50}",
+          "AutoSize": false
+        },
+        {
+          "Type": "OrbitDialogField",
+          "Bounds": "{X=272,Y=597,Width=647,Height=80}",
+          "AutoSize": true
+        },
+        {
+          "Type": "TableLayoutPanel",
+          "Bounds": "{X=252,Y=587,Width=687,Height=117}",
+          "AutoSize": true
+        },
+        {
+          "Type": "TableLayoutPanel",
+          "Bounds": "{X=232,Y=385,Width=727,Height=423}",
+          "AutoSize": true
+        },
+        {
+          "Type": "TableLayoutPanel",
+          "Bounds": "{X=231,Y=384,Width=1072,Height=425}",
+          "AutoSize": true
+        },
+        {
+          "Type": "Panel",
+          "Bounds": "{X=231,Y=384,Width=1072,Height=444}",
+          "AutoSize": false
+        },
+        {
+          "Type": "OrbitDialogLayout",
+          "Bounds": "{X=201,Y=230,Width=1132,Height=703}",
+          "AutoSize": false
+        },
+        {
+          "Type": "CheckoutDialog",
+          "Bounds": "{X=201,Y=230,Width=1132,Height=703}",
+          "AutoSize": false
+        }
+      ],
+      "Back": "FF17131D",
+      "Fore": "FFFFF4E7"
+    },
+    "Notice": {
+      "Type": "OrbitNotice",
+      "Text": "Ch\u1ECDn ph\u01B0\u01A1ng th\u1EE9c thanh to\u00E1n.",
+      "Bounds": "{X=252,Y=714,Width=687,Height=74}",
+      "ClippedBy": [],
+      "Parents": [
+        {
+          "Type": "TableLayoutPanel",
+          "Bounds": "{X=232,Y=385,Width=727,Height=423}",
+          "AutoSize": true
+        },
+        {
+          "Type": "TableLayoutPanel",
+          "Bounds": "{X=231,Y=384,Width=1072,Height=425}",
+          "AutoSize": true
+        },
+        {
+          "Type": "Panel",
+          "Bounds": "{X=231,Y=384,Width=1072,Height=444}",
+          "AutoSize": false
+        },
+        {
+          "Type": "OrbitDialogLayout",
+          "Bounds": "{X=201,Y=230,Width=1132,Height=703}",
+          "AutoSize": false
+        },
+        {
+          "Type": "CheckoutDialog",
+          "Bounds": "{X=201,Y=230,Width=1132,Height=703}",
+          "AutoSize": false
+        }
+      ],
+      "Back": "FF382B35",
+      "Fore": "FFFFB4B4"
+    },
+    "Payable": {
+      "Type": "Label",
+      "Text": "81.000 \u20AB",
+      "Bounds": "{X=979,Y=622,Width=303,Height=45}",
+      "ClippedBy": [],
+      "Parents": [
+        {
+          "Type": "OrbitSummaryPanel",
+          "Bounds": "{X=959,Y=385,Width=343,Height=423}",
+          "AutoSize": true
+        },
+        {
+          "Type": "TableLayoutPanel",
+          "Bounds": "{X=231,Y=384,Width=1072,Height=425}",
+          "AutoSize": true
+        },
+        {
+          "Type": "Panel",
+          "Bounds": "{X=231,Y=384,Width=1072,Height=444}",
+          "AutoSize": false
+        },
+        {
+          "Type": "OrbitDialogLayout",
+          "Bounds": "{X=201,Y=230,Width=1132,Height=703}",
+          "AutoSize": false
+        },
+        {
+          "Type": "CheckoutDialog",
+          "Bounds": "{X=201,Y=230,Width=1132,Height=703}",
+          "AutoSize": false
+        }
+      ],
+      "Back": "FF100E15",
+      "Fore": "FFFFD09A"
+    },
+    "Editor": {
+      "Type": "DataGridViewComboBoxEditingControl",
+      "Text": "Ch\u1ECDn ph\u01B0\u01A1ng th\u1EE9c",
+      "Bounds": "{X=317,Y=516,Width=236,Height=38}",
+      "ClippedBy": [],
+      "Parents": [
+        {
+          "Type": "DataGridViewEditingPanel",
+          "Bounds": "{X=317,Y=516,Width=236,Height=58}",
+          "AutoSize": false
+        },
+        {
+          "Type": "OrbitDataGridView",
+          "Bounds": "{X=253,Y=466,Width=685,Height=108}",
+          "AutoSize": false
+        },
+        {
+          "Type": "Panel",
+          "Bounds": "{X=252,Y=465,Width=687,Height=110}",
+          "AutoSize": false
+        },
+        {
+          "Type": "TableLayoutPanel",
+          "Bounds": "{X=232,Y=385,Width=727,Height=423}",
+          "AutoSize": true
+        },
+        {
+          "Type": "TableLayoutPanel",
+          "Bounds": "{X=231,Y=384,Width=1072,Height=425}",
+          "AutoSize": true
+        },
+        {
+          "Type": "Panel",
+          "Bounds": "{X=231,Y=384,Width=1072,Height=444}",
+          "AutoSize": false
+        },
+        {
+          "Type": "OrbitDialogLayout",
+          "Bounds": "{X=201,Y=230,Width=1132,Height=703}",
+          "AutoSize": false
+        },
+        {
+          "Type": "CheckoutDialog",
+          "Bounds": "{X=201,Y=230,Width=1132,Height=703}",
+          "AutoSize": false
+        }
+      ],
+      "Back": "FF17131D",
+      "Fore": "FFFFF4E7"
+    }
+  }
+]

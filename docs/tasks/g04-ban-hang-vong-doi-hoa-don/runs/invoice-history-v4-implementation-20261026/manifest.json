@@ -1,0 +1,10 @@
+{
+  "Run": "invoice-history-v4-implementation-20261026",
+  "DebugBuildExit": 0,
+  "ReleaseBuildExit": 0,
+  "SourceCount": 142,
+  "SqlChanges": false,
+  "Acceptance": "NOT RUN - awaiting separate test approval",
+  "TechnicalSmoke": "28/28 at DeviceDpi120",
+  "VisualAcceptance": "SKIPPED - user assigned"
+}

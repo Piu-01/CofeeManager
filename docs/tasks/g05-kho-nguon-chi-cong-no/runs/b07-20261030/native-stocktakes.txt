@@ -1,0 +1,84 @@
+Window: "CoffeeManager", App: CafeManager.WinForms.exe.
+	0 window CoffeeManager Secondary Actions: Raise
+		39 pane
+			40 pane
+				41 text CoffeeManager
+				42 text KHÔNG GIAN QUẢN LÝ
+				43 text G05 fixture ADMIN
+				44 text Quản trị viên · ADMIN
+				45 button Trang phiên
+				46 button Danh mục nền
+				47 button Bán hàng
+				48 button Lịch sử hóa đơn
+				49 button Giao hàng
+				50 button Khách hàng
+				51 button Bàn / Khu vực
+				52 button Menu / Công thức
+				53 button Nguyên liệu / Tồn
+				54 button Ưu đãi / Điểm
+				55 button Thu chi
+				56 button Kho
+				57 button Công nợ
+				58 button Thông tin hệ thống
+				59 button Đăng xuất ID: logout
+				60 text Phiên đang hoạt động.
+				61 scroll bar (settable, float) Vertical Value: 45 ID: NonClientVerticalScrollBar
+					62 button Line up ID: UpButton
+					63 button Page up ID: UpPageButton
+					64 thumb Position ID: ScrollbarThumb
+					65 button Page down ID: DownPageButton
+					66 button Line down ID: DownButton
+			67 pane
+				68 text Quản lý / Kho
+				69 text G05 fixture ADMIN · ADMIN
+			70 pane G05 fixture ADMIN · ADMIN
+				71 pane G05 fixture ADMIN · ADMIN ID: 265188
+					72 tab
+						315 pane Kiểm kê
+							316 pane ID: 2099616
+								317 pane ID: 51710494
+									318 text INVENTORY WORKSPACE
+									319 text Kiểm kê
+									320 text Snapshot và số đếm; chốt hôm nay khi kho còn khớp.
+									321 pane Snapshot và số đếm; chốt hôm nay khi kho còn khớp.
+										322 button Lấy số liệu tồn
+									323 pane
+										324 pane ID: 1379172
+											325 edit (settable, string) Description: Tìm tên hoặc mã nguyên liệu…
+										326 pane
+											327 button Tìm / Tải lại
+											328 button Xem chi tiết
+										329 pane
+											330 data grid
+												331 custom Top Row
+													332 header Top Left Header Cell ID: 4256360005
+													333 header MÃ ID: 4261591435
+													334 header NGÀY KIỂM ID: 4262491155
+													335 header ĐÃ ĐIỀU CHỈNH ID: 427078658
+													336 header THỜI ĐIỂM SNAPSHOT ID: 4224913697
+												337 custom Row 1
+													338 header Row 1 ID: 4249665349
+													339 item MÃ Row 1 Value: KKDEMO0001 ID: 4241669765
+													340 item NGÀY KIỂM Row 1 Value: 30/10/2026 00:00 ID: 424836036
+													341 item ĐÃ ĐIỀU CHỈNH Row 1 Value: False ID: 4262868476
+													342 item THỜI ĐIỂM SNAPSHOT Row 1 Value: (null) ID: 4211983829
+										343 pane ID: 1051550
+											344 text Hiển thị 1–1 / 1 phiếu
+											345 button (disabled) Trang trước
+											346 text 1 / 1
+											347 button (disabled) Trang sau
+									348 text 1 phiếu — Trang 1
+						188 tab item (selectable) Tồn kho
+						189 tab item (selectable) Nhập hàng
+						190 tab item (selectable) Xuất kho
+						191 tab item (selectable) Kiểm kê
+		192 title bar (settable, string) Value: CoffeeManager
+			193 menu bar System ID: MenuBar
+				194 menu item System
+			195 button Minimize
+			196 button Maximize
+			197 button Close
+
+The focused UI element is 325 edit (settable, string) Description: Tìm tên hoặc mã nguyên liệu….
+
+Focused element: 325 edit (settable, string) Description: Tìm tên hoặc mã nguyên liệu…

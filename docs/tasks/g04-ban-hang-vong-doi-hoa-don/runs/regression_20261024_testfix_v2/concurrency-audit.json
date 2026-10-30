@@ -1,0 +1,37 @@
+[
+  {
+    "Id": "T14-K09 concurrent same table",
+    "RunnerStatus": "PASS",
+    "Expected": "0,52104",
+    "Actual": "0,52104",
+    "AuditedStatus": "PASS"
+  },
+  {
+    "Id": "T14-K10 concurrent same revision",
+    "RunnerStatus": "PASS",
+    "Expected": "0,52103",
+    "Actual": "0,52103",
+    "AuditedStatus": "PASS"
+  },
+  {
+    "Id": "T15-K10 concurrent same invoice",
+    "RunnerStatus": "PASS",
+    "Expected": "0,52102",
+    "Actual": "0,52102",
+    "AuditedStatus": "PASS"
+  },
+  {
+    "Id": "T15-K11 competing last stock",
+    "RunnerStatus": "PASS",
+    "Expected": "0,52203",
+    "Actual": "0,1205",
+    "AuditedStatus": "FAIL"
+  },
+  {
+    "Id": "T18-K05 concurrent delivery same revision",
+    "RunnerStatus": "PASS",
+    "Expected": "0,52103",
+    "Actual": "102,102",
+    "AuditedStatus": "FAIL"
+  }
+]

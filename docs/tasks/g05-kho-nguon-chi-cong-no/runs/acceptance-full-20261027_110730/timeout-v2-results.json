@@ -1,0 +1,15 @@
+{
+  "Part": "T19.Timeout.AfterCommit=False",
+  "Result": "PASS",
+  "AfterCommit": false,
+  "Session": 84,
+  "ClientState": "Open",
+  "SqlErrors": [
+    -2,
+    0
+  ],
+  "Transaction": "0:0",
+  "ReceiptCount": 0,
+  "SnapshotUnchanged": true,
+  "ReplayUnchanged": null
+}

@@ -1,0 +1,11 @@
+IF DB_NAME() NOT LIKE 'CoffeeManager_Test_G05_%' OR OBJECT_ID('dbo.G05TestMarker') IS NULL THROW 53900,N'Chỉ dùng fixture G05.',1;
+DECLARE @actor int=(SELECT MIN(MaTK) FROM dbo.TAIKHOAN WHERE MaVT='ADMIN' AND HoatDong=1),@stamp binary(8),@id uniqueidentifier=NEWID(),@code varchar(10),@ok bit;
+SELECT @stamp=SecurityStamp FROM dbo.TAIKHOAN WHERE MaTK=@actor;
+IF @actor IS NULL THROW 53900,N'Thiếu actor fixture.',1;
+DECLARE @lines dbo.StockIssueLinesInput;INSERT @lines VALUES('NVL01',0.1);
+DECLARE @before decimal(18,4)=(SELECT SoLuongTon FROM dbo.NGUYENVATLIEU WHERE MaNVL='NVL01');
+EXEC dbo.sp_LapPhieuXuat @actor,@stamp,@id,'20261026',N'Huy do hong',N'G05 fixture',@lines;
+EXEC dbo.sp_LapPhieuXuat @actor,@stamp,@id,'20261026',N'Huy do hong',N'G05 fixture',@lines;
+SELECT @code=EntityCode FROM dbo.G03OperationReceipt WHERE RequestId=@id;
+SET @ok=CASE WHEN (SELECT SoLuongTon FROM dbo.NGUYENVATLIEU WHERE MaNVL='NVL01')=@before-0.1 AND EXISTS(SELECT 1 FROM dbo.PHIEUXUAT WHERE MaPX=@code AND DaChot=1) THEN 1 ELSE 0 END;
+EXEC dbo.sp_G05Assert 'T21-K07.SQL-replay',@ok,N'PX -0.1 exactly once, closed.';

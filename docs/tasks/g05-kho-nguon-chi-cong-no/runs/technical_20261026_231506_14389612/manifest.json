@@ -1,0 +1,27 @@
+{
+  "RunId": "20261026_231506_14389612",
+  "Kind": "Technical migration/dependency smoke only; not acceptance",
+  "Server": "localhost",
+  "ThroughVersion": 21,
+  "Operator": "LAPTOP-79UNRIRC\\Lenovo",
+  "Created": [
+    {
+      "Database": "CoffeeManager_Test_G05_20261026_231506_14389612_clean",
+      "Mode": "clean",
+      "Marker": "20261026_231506_14389612"
+    },
+    {
+      "Database": "CoffeeManager_Test_G05_20261026_231506_14389612_demo",
+      "Mode": "demo",
+      "Marker": "20261026_231506_14389612"
+    }
+  ],
+  "Cleaned": [
+    "CoffeeManager_Test_G05_20261026_231506_14389612_clean",
+    "CoffeeManager_Test_G05_20261026_231506_14389612_demo"
+  ],
+  "Retained": [],
+  "Status": "Failed",
+  "Error": "System.Management.Automation.RuntimeException: Typed dependency smoke failed; see typed-smoke.json",
+  "SourceUnchanged": true
+}

@@ -1,0 +1,192 @@
+[
+  {
+    "Direct": false,
+    "Dpi": 120,
+    "Workspace": {
+      "IsEmpty": false,
+      "Width": 1092,
+      "Height": 617
+    },
+    "Primary": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 1059,
+        "Y": 52
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 0,
+        "Height": 55
+      },
+      "X": 1059,
+      "Y": 52,
+      "Width": 0,
+      "Height": 55,
+      "Left": 1059,
+      "Top": 52,
+      "Right": 1059,
+      "Bottom": 107,
+      "IsEmpty": false
+    },
+    "Add": {
+      "Location": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 0,
+        "Height": 55
+      },
+      "X": 0,
+      "Y": 0,
+      "Width": 0,
+      "Height": 55,
+      "Left": 0,
+      "Top": 0,
+      "Right": 0,
+      "Bottom": 55,
+      "IsEmpty": false
+    },
+    "AddVisible": true,
+    "Actions": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 1006,
+        "Y": 98
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 0,
+        "Height": 41
+      },
+      "X": 1006,
+      "Y": 98,
+      "Width": 0,
+      "Height": 41,
+      "Left": 1006,
+      "Top": 98,
+      "Right": 1006,
+      "Bottom": 139,
+      "IsEmpty": false
+    },
+    "Refresh": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 3,
+        "Y": 3
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 75,
+        "Height": 23
+      },
+      "X": 3,
+      "Y": 3,
+      "Width": 75,
+      "Height": 23,
+      "Left": 3,
+      "Top": 3,
+      "Right": 78,
+      "Bottom": 26,
+      "IsEmpty": false
+    },
+    "RefreshVisible": true
+  },
+  {
+    "Direct": true,
+    "Dpi": 120,
+    "Workspace": {
+      "IsEmpty": false,
+      "Width": 1092,
+      "Height": 617
+    },
+    "Primary": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 918,
+        "Y": 52
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 141,
+        "Height": 55
+      },
+      "X": 918,
+      "Y": 52,
+      "Width": 141,
+      "Height": 55,
+      "Left": 918,
+      "Top": 52,
+      "Right": 1059,
+      "Bottom": 107,
+      "IsEmpty": false
+    },
+    "Add": {
+      "Location": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 141,
+        "Height": 35
+      },
+      "X": 0,
+      "Y": 0,
+      "Width": 141,
+      "Height": 35,
+      "Left": 0,
+      "Top": 0,
+      "Right": 141,
+      "Bottom": 35,
+      "IsEmpty": false
+    },
+    "AddVisible": true,
+    "Actions": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 888,
+        "Y": 98
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 118,
+        "Height": 41
+      },
+      "X": 888,
+      "Y": 98,
+      "Width": 118,
+      "Height": 41,
+      "Left": 888,
+      "Top": 98,
+      "Right": 1006,
+      "Bottom": 139,
+      "IsEmpty": false
+    },
+    "Refresh": {
+      "Location": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 118,
+        "Height": 35
+      },
+      "X": 0,
+      "Y": 0,
+      "Width": 118,
+      "Height": 35,
+      "Left": 0,
+      "Top": 0,
+      "Right": 118,
+      "Bottom": 35,
+      "IsEmpty": false
+    },
+    "RefreshVisible": true
+  }
+]

@@ -1,0 +1,1358 @@
+[
+  {
+    "Part": "T19-K02.Amount.0",
+    "Result": "PASS",
+    "Expected": [
+      52601
+    ],
+    "Observed": [
+      52601
+    ],
+    "Before": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "After": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Ngày, số tiền nguyên VND, danh mục hoặc ghi chú không hợp lệ.\""
+  },
+  {
+    "Part": "T19-K02.Amount.-1",
+    "Result": "PASS",
+    "Expected": [
+      52601
+    ],
+    "Observed": [
+      52601
+    ],
+    "Before": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "After": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Ngày, số tiền nguyên VND, danh mục hoặc ghi chú không hợp lệ.\""
+  },
+  {
+    "Part": "T19-K02.Amount.0.5",
+    "Result": "PASS",
+    "Expected": [
+      52601
+    ],
+    "Observed": [
+      52601
+    ],
+    "Before": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "After": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Ngày, số tiền nguyên VND, danh mục hoặc ghi chú không hợp lệ.\""
+  },
+  {
+    "Part": "T19-K02.Amount.1000000000000000000",
+    "Result": "PASS",
+    "Expected": [
+      52601
+    ],
+    "Observed": [
+      52601
+    ],
+    "Before": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "After": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Ngày, số tiền nguyên VND, danh mục hoặc ghi chú không hợp lệ.\""
+  },
+  {
+    "Part": "T19-K02.Note201",
+    "Result": "PASS",
+    "Expected": [
+      52601
+    ],
+    "Observed": [
+      52601
+    ],
+    "Before": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "After": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Ngày, số tiền nguyên VND, danh mục hoặc ghi chú không hợp lệ.\""
+  },
+  {
+    "Part": "T19-K02.AssetFK",
+    "Result": "PASS",
+    "Expected": [
+      52602
+    ],
+    "Observed": [
+      52602
+    ],
+    "Before": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "After": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Danh mục ghi tay hoặc tài sản không hợp lệ.\""
+  },
+  {
+    "Part": "T19-K02.CategoryFK",
+    "Result": "PASS",
+    "Expected": [
+      52602
+    ],
+    "Observed": [
+      52602
+    ],
+    "Before": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "After": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Danh mục ghi tay hoặc tài sản không hợp lệ.\""
+  },
+  {
+    "Part": "T19-K05.System.TC005",
+    "Result": "PASS",
+    "Expected": [
+      52602
+    ],
+    "Observed": [
+      52602
+    ],
+    "Before": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "After": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Danh mục ghi tay hoặc tài sản không hợp lệ.\""
+  },
+  {
+    "Part": "T19-K05.System.TC011",
+    "Result": "PASS",
+    "Expected": [
+      52602
+    ],
+    "Observed": [
+      52602
+    ],
+    "Before": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "After": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Danh mục ghi tay hoặc tài sản không hợp lệ.\""
+  },
+  {
+    "Part": "T19-K05.System.TC012",
+    "Result": "PASS",
+    "Expected": [
+      52602
+    ],
+    "Observed": [
+      52602
+    ],
+    "Before": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "After": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Danh mục ghi tay hoặc tài sản không hợp lệ.\""
+  },
+  {
+    "Part": "T19-K05.Role.CASH",
+    "Result": "PASS",
+    "Expected": [
+      51605
+    ],
+    "Observed": [
+      51605
+    ],
+    "Before": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "After": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Bạn không có quyền thực hiện thao tác này.\""
+  },
+  {
+    "Part": "T19-K05.Role.STORE",
+    "Result": "PASS",
+    "Expected": [
+      51605
+    ],
+    "Observed": [
+      51605
+    ],
+    "Before": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "After": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Bạn không có quyền thực hiện thao tác này.\""
+  },
+  {
+    "Part": "T19-K05.InternalHelper",
+    "Result": "PASS",
+    "Expected": [
+      229
+    ],
+    "Observed": [
+      229
+    ],
+    "Before": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "After": "72072F51914BE1F1E60696B458D2E3E7684539FEEB3A175F5F1A33B451AA243C",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"The EXECUTE permission was denied on the object 'sp_FinanceNextCode', database 'CoffeeManager_Test_G05_20261027_110753_fb67dcbb_demo', schema 'dbo'.\""
+  },
+  {
+    "Part": "T19-K07.Update",
+    "Result": "PASS",
+    "Expected": [
+      52602
+    ],
+    "Observed": [
+      52602
+    ],
+    "Before": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "After": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Phiếu đã xác nhận không được sửa hoặc xóa.\""
+  },
+  {
+    "Part": "T19-K07.Delete",
+    "Result": "PASS",
+    "Expected": [
+      52602
+    ],
+    "Observed": [
+      52602
+    ],
+    "Before": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "After": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Phiếu đã xác nhận không được sửa hoặc xóa.\""
+  },
+  {
+    "Part": "T19-K07.CategoryType",
+    "Result": "PASS",
+    "Expected": [
+      52602
+    ],
+    "Observed": [
+      52602
+    ],
+    "Before": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "After": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Không đổi loại danh mục đã có lịch sử thu chi.\""
+  },
+  {
+    "Part": "T19-K05.RawDml",
+    "Result": "PASS",
+    "Expected": [
+      229
+    ],
+    "Observed": [
+      229
+    ],
+    "Before": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "After": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"The SELECT permission was denied on the object 'PHIEUTHUCHI', database 'CoffeeManager_Test_G05_20261027_110753_fb67dcbb_demo', schema 'dbo'.\""
+  },
+  {
+    "Part": "T20-K02.Input",
+    "Result": "PASS",
+    "Expected": [
+      52701,
+      52705
+    ],
+    "Observed": [
+      52701
+    ],
+    "Before": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "After": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Dòng nhập không hợp lệ hoặc trùng nguyên liệu.\""
+  },
+  {
+    "Part": "T20-K02.Input",
+    "Result": "PASS",
+    "Expected": [
+      52701,
+      52705
+    ],
+    "Observed": [
+      52701
+    ],
+    "Before": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "After": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Dòng nhập không hợp lệ hoặc trùng nguyên liệu.\""
+  },
+  {
+    "Part": "T20-K02.Input",
+    "Result": "PASS",
+    "Expected": [
+      52701,
+      52705
+    ],
+    "Observed": [
+      52701
+    ],
+    "Before": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "After": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Dòng nhập không hợp lệ hoặc trùng nguyên liệu.\""
+  },
+  {
+    "Part": "T20-K02.Input",
+    "Result": "PASS",
+    "Expected": [
+      52701,
+      52705
+    ],
+    "Observed": [
+      52701
+    ],
+    "Before": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "After": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Dòng nhập không hợp lệ hoặc trùng nguyên liệu.\""
+  },
+  {
+    "Part": "T20-K02.Input",
+    "Result": "PASS",
+    "Expected": [
+      52701,
+      52705
+    ],
+    "Observed": [
+      52701
+    ],
+    "Before": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "After": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Dòng nhập không hợp lệ hoặc trùng nguyên liệu.\""
+  },
+  {
+    "Part": "T20-K02.Input",
+    "Result": "PASS",
+    "Expected": [
+      52701,
+      52705
+    ],
+    "Observed": [
+      52701
+    ],
+    "Before": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "After": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Dòng nhập không hợp lệ hoặc trùng nguyên liệu.\""
+  },
+  {
+    "Part": "T20-K02.Input",
+    "Result": "PASS",
+    "Expected": [
+      52701,
+      52705
+    ],
+    "Observed": [
+      52701
+    ],
+    "Before": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "After": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Dòng nhập không hợp lệ hoặc trùng nguyên liệu.\""
+  },
+  {
+    "Part": "T20-K02.Input",
+    "Result": "PASS",
+    "Expected": [
+      52701,
+      52705
+    ],
+    "Observed": [
+      52701
+    ],
+    "Before": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "After": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Dòng nhập không hợp lệ hoặc trùng nguyên liệu.\""
+  },
+  {
+    "Part": "T20-K02.Input",
+    "Result": "PASS",
+    "Expected": [
+      52701,
+      52705
+    ],
+    "Observed": [
+      52701
+    ],
+    "Before": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "After": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Dòng nhập không hợp lệ hoặc trùng nguyên liệu.\""
+  },
+  {
+    "Part": "T20-K02.Supplier",
+    "Result": "PASS",
+    "Expected": [
+      52701
+    ],
+    "Observed": [
+      52701
+    ],
+    "Before": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "After": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Nhà cung cấp không tồn tại.\""
+  },
+  {
+    "Part": "T20-K06.Immediate.-1",
+    "Result": "PASS",
+    "Expected": [
+      52701,
+      52703
+    ],
+    "Observed": [
+      52701
+    ],
+    "Before": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "After": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Thông tin nhập không hợp lệ.\""
+  },
+  {
+    "Part": "T20-K06.Immediate.10001",
+    "Result": "PASS",
+    "Expected": [
+      52701,
+      52703
+    ],
+    "Observed": [
+      52703
+    ],
+    "Before": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "After": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Preview hoặc phần trả ngay không hợp lệ.\""
+  },
+  {
+    "Part": "T20-K06.Immediate.0.5",
+    "Result": "PASS",
+    "Expected": [
+      52701,
+      52703
+    ],
+    "Observed": [
+      52701
+    ],
+    "Before": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "After": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Thông tin nhập không hợp lệ.\""
+  },
+  {
+    "Part": "T20-K11.CASH",
+    "Result": "PASS",
+    "Expected": [
+      51605
+    ],
+    "Observed": [
+      51605
+    ],
+    "Before": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "After": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Bạn không có quyền thực hiện thao tác này.\""
+  },
+  {
+    "Part": "T20-K11.STORE-money",
+    "Result": "PASS",
+    "Expected": [
+      51605
+    ],
+    "Observed": [
+      51605
+    ],
+    "Before": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "After": "DCF4F7675DA5D976D38672D888B769499A8FC24539EF9C4048334D67693F1D6D",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Chỉ quản lý được ghi chi trả ngay.\""
+  },
+  {
+    "Part": "T20-K11.STORE-zero",
+    "Result": "PASS",
+    "Actual": "PN20250504"
+  },
+  {
+    "Part": "T20-K04.Zero",
+    "Result": "PASS",
+    "Actual": "PN20250505"
+  },
+  {
+    "Part": "T20-K04.Full",
+    "Result": "PASS",
+    "Actual": "PN20250506"
+  },
+  {
+    "Part": "T20-K05.Partial",
+    "Result": "PASS",
+    "Actual": "PN20250507"
+  },
+  {
+    "Part": "T20-K01.RoundEachHalf",
+    "Result": "PASS",
+    "Actual": "PN20250508"
+  },
+  {
+    "Part": "T20-K08.Closed",
+    "Result": "PASS",
+    "Expected": [
+      52702,
+      51015,
+      51016
+    ],
+    "Observed": [
+      52702
+    ],
+    "Before": "F61497A5B6DE6C416EDE43888B8C8F313EC73025708A1FC83C79D6795DAF9417",
+    "After": "F61497A5B6DE6C416EDE43888B8C8F313EC73025708A1FC83C79D6795DAF9417",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Phiếu nhập đã chốt không sửa/xóa.\""
+  },
+  {
+    "Part": "T20-K08.Closed",
+    "Result": "PASS",
+    "Expected": [
+      52702,
+      51015,
+      51016
+    ],
+    "Observed": [
+      52702
+    ],
+    "Before": "F61497A5B6DE6C416EDE43888B8C8F313EC73025708A1FC83C79D6795DAF9417",
+    "After": "F61497A5B6DE6C416EDE43888B8C8F313EC73025708A1FC83C79D6795DAF9417",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Phiếu nhập đã chốt không sửa/xóa.\""
+  },
+  {
+    "Part": "T20-K08.Closed",
+    "Result": "PASS",
+    "Expected": [
+      52702,
+      51015,
+      51016
+    ],
+    "Observed": [
+      51016
+    ],
+    "Before": "F61497A5B6DE6C416EDE43888B8C8F313EC73025708A1FC83C79D6795DAF9417",
+    "After": "F61497A5B6DE6C416EDE43888B8C8F313EC73025708A1FC83C79D6795DAF9417",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Khong duoc giam gia tri phieu nhap duoi cong no.\""
+  },
+  {
+    "Part": "T20-K08.Closed",
+    "Result": "PASS",
+    "Expected": [
+      52702,
+      51015,
+      51016
+    ],
+    "Observed": [
+      52702
+    ],
+    "Before": "F61497A5B6DE6C416EDE43888B8C8F313EC73025708A1FC83C79D6795DAF9417",
+    "After": "F61497A5B6DE6C416EDE43888B8C8F313EC73025708A1FC83C79D6795DAF9417",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Phiếu nhập đã chốt không sửa/xóa.\""
+  },
+  {
+    "Part": "T21-K03.Input",
+    "Result": "PASS",
+    "Expected": [
+      52801,
+      52803
+    ],
+    "Observed": [
+      52801
+    ],
+    "Before": "F61497A5B6DE6C416EDE43888B8C8F313EC73025708A1FC83C79D6795DAF9417",
+    "After": "F61497A5B6DE6C416EDE43888B8C8F313EC73025708A1FC83C79D6795DAF9417",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Dòng xuất không hợp lệ hoặc trùng.\""
+  },
+  {
+    "Part": "T21-K03.Input",
+    "Result": "PASS",
+    "Expected": [
+      52801,
+      52803
+    ],
+    "Observed": [
+      52801
+    ],
+    "Before": "F61497A5B6DE6C416EDE43888B8C8F313EC73025708A1FC83C79D6795DAF9417",
+    "After": "F61497A5B6DE6C416EDE43888B8C8F313EC73025708A1FC83C79D6795DAF9417",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Dòng xuất không hợp lệ hoặc trùng.\""
+  },
+  {
+    "Part": "T21-K03.Input",
+    "Result": "PASS",
+    "Expected": [
+      52801,
+      52803
+    ],
+    "Observed": [
+      52801
+    ],
+    "Before": "F61497A5B6DE6C416EDE43888B8C8F313EC73025708A1FC83C79D6795DAF9417",
+    "After": "F61497A5B6DE6C416EDE43888B8C8F313EC73025708A1FC83C79D6795DAF9417",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Dòng xuất không hợp lệ hoặc trùng.\""
+  },
+  {
+    "Part": "T21-K03.Input",
+    "Result": "PASS",
+    "Expected": [
+      52801,
+      52803
+    ],
+    "Observed": [
+      52803
+    ],
+    "Before": "F61497A5B6DE6C416EDE43888B8C8F313EC73025708A1FC83C79D6795DAF9417",
+    "After": "F61497A5B6DE6C416EDE43888B8C8F313EC73025708A1FC83C79D6795DAF9417",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Không đủ nguyên liệu; toàn phiếu chưa chốt.\""
+  },
+  {
+    "Part": "T21-K03.Input",
+    "Result": "PASS",
+    "Expected": [
+      52801,
+      52803
+    ],
+    "Observed": [
+      52801
+    ],
+    "Before": "F61497A5B6DE6C416EDE43888B8C8F313EC73025708A1FC83C79D6795DAF9417",
+    "After": "F61497A5B6DE6C416EDE43888B8C8F313EC73025708A1FC83C79D6795DAF9417",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Dòng xuất không hợp lệ hoặc trùng.\""
+  },
+  {
+    "Part": "T21-K02.Kind",
+    "Result": "PASS",
+    "Expected": [
+      52801
+    ],
+    "Observed": [
+      52801
+    ],
+    "Before": "F61497A5B6DE6C416EDE43888B8C8F313EC73025708A1FC83C79D6795DAF9417",
+    "After": "F61497A5B6DE6C416EDE43888B8C8F313EC73025708A1FC83C79D6795DAF9417",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Loại xuất, ngày hoặc lý do không hợp lệ.\""
+  },
+  {
+    "Part": "T21-K05.PartialRollback",
+    "Result": "PASS",
+    "Expected": [
+      52803
+    ],
+    "Observed": [
+      52803
+    ],
+    "Before": "F61497A5B6DE6C416EDE43888B8C8F313EC73025708A1FC83C79D6795DAF9417",
+    "After": "F61497A5B6DE6C416EDE43888B8C8F313EC73025708A1FC83C79D6795DAF9417",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Không đủ nguyên liệu; toàn phiếu chưa chốt.\""
+  },
+  {
+    "Part": "T21-K10.CASH",
+    "Result": "PASS",
+    "Expected": [
+      51605
+    ],
+    "Observed": [
+      51605
+    ],
+    "Before": "F61497A5B6DE6C416EDE43888B8C8F313EC73025708A1FC83C79D6795DAF9417",
+    "After": "F61497A5B6DE6C416EDE43888B8C8F313EC73025708A1FC83C79D6795DAF9417",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Bạn không có quyền thực hiện thao tác này.\""
+  },
+  {
+    "Part": "T21-K10.STORE",
+    "Result": "PASS",
+    "Actual": "PX20250507"
+  },
+  {
+    "Part": "T21-K07.Closed",
+    "Result": "PASS",
+    "Expected": [
+      52802
+    ],
+    "Observed": [
+      52802
+    ],
+    "Before": "94DF274C2FAC66D597B87A9F1E152EB84A46EEA6C27A76E63CDC9051B4E4717C",
+    "After": "94DF274C2FAC66D597B87A9F1E152EB84A46EEA6C27A76E63CDC9051B4E4717C",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Phiếu xuất đã chốt bất biến.\""
+  },
+  {
+    "Part": "T21-K07.Closed",
+    "Result": "PASS",
+    "Expected": [
+      52802
+    ],
+    "Observed": [
+      52802
+    ],
+    "Before": "94DF274C2FAC66D597B87A9F1E152EB84A46EEA6C27A76E63CDC9051B4E4717C",
+    "After": "94DF274C2FAC66D597B87A9F1E152EB84A46EEA6C27A76E63CDC9051B4E4717C",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Chi tiết xuất đã chốt chỉ đọc.\""
+  },
+  {
+    "Part": "T21-K07.Closed",
+    "Result": "PASS",
+    "Expected": [
+      52802
+    ],
+    "Observed": [
+      52802
+    ],
+    "Before": "94DF274C2FAC66D597B87A9F1E152EB84A46EEA6C27A76E63CDC9051B4E4717C",
+    "After": "94DF274C2FAC66D597B87A9F1E152EB84A46EEA6C27A76E63CDC9051B4E4717C",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Chi tiết xuất đã chốt chỉ đọc.\""
+  },
+  {
+    "Part": "T21-K04.ExactStockZero",
+    "Result": "PASS",
+    "Actual": "NVL82=0"
+  },
+  {
+    "Part": "T22-K01.UncountedNull",
+    "Result": "PASS",
+    "Actual": "KK00000002"
+  },
+  {
+    "Part": "T22-K02.InputScope",
+    "Result": "PASS",
+    "Expected": [
+      52901
+    ],
+    "Observed": [
+      52901
+    ],
+    "Before": "5A01CAC54C91941E0878303AA6F50B98F46413FF10799F95289495F4EEC0E151",
+    "After": "5A01CAC54C91941E0878303AA6F50B98F46413FF10799F95289495F4EEC0E151",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Số đếm hoặc phạm vi sai.\""
+  },
+  {
+    "Part": "T22-K02.InputScope",
+    "Result": "PASS",
+    "Expected": [
+      52901
+    ],
+    "Observed": [
+      52901
+    ],
+    "Before": "5A01CAC54C91941E0878303AA6F50B98F46413FF10799F95289495F4EEC0E151",
+    "After": "5A01CAC54C91941E0878303AA6F50B98F46413FF10799F95289495F4EEC0E151",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Số đếm hoặc phạm vi sai.\""
+  },
+  {
+    "Part": "T22-K02.InputScope",
+    "Result": "PASS",
+    "Expected": [
+      52901
+    ],
+    "Observed": [
+      52901
+    ],
+    "Before": "5A01CAC54C91941E0878303AA6F50B98F46413FF10799F95289495F4EEC0E151",
+    "After": "5A01CAC54C91941E0878303AA6F50B98F46413FF10799F95289495F4EEC0E151",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Số đếm hoặc phạm vi sai.\""
+  },
+  {
+    "Part": "T22-K02.InputScope",
+    "Result": "PASS",
+    "Expected": [
+      52901
+    ],
+    "Observed": [
+      52901
+    ],
+    "Before": "5A01CAC54C91941E0878303AA6F50B98F46413FF10799F95289495F4EEC0E151",
+    "After": "5A01CAC54C91941E0878303AA6F50B98F46413FF10799F95289495F4EEC0E151",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Số đếm hoặc phạm vi sai.\""
+  },
+  {
+    "Part": "T22-K03.ReasonRequired",
+    "Result": "PASS",
+    "Expected": [
+      52901
+    ],
+    "Observed": [
+      52901
+    ],
+    "Before": "36059F166538FD830635845CF140C0CC4AEC836F9D8B4097E727DE0AD0B02883",
+    "After": "36059F166538FD830635845CF140C0CC4AEC836F9D8B4097E727DE0AD0B02883",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Cần đủ số đếm và lý do chênh lệch.\""
+  },
+  {
+    "Part": "T22-K04.EqualValid",
+    "Result": "PASS",
+    "Actual": "KK00000002"
+  },
+  {
+    "Part": "T22-K05.Immutable",
+    "Result": "PASS",
+    "Expected": [
+      52902,
+      51115
+    ],
+    "Observed": [
+      52902
+    ],
+    "Before": "93B3171579346C17D9350CBA86CA20E9C4A37E8DDF2424E1E454D34CF65C83BE",
+    "After": "93B3171579346C17D9350CBA86CA20E9C4A37E8DDF2424E1E454D34CF65C83BE",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Phiếu kiểm kê đã chốt không sửa/xóa/reset.\""
+  },
+  {
+    "Part": "T22-K05.Immutable",
+    "Result": "PASS",
+    "Expected": [
+      52902,
+      51115
+    ],
+    "Observed": [
+      52902
+    ],
+    "Before": "93B3171579346C17D9350CBA86CA20E9C4A37E8DDF2424E1E454D34CF65C83BE",
+    "After": "93B3171579346C17D9350CBA86CA20E9C4A37E8DDF2424E1E454D34CF65C83BE",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Phiếu kiểm kê đã chốt không sửa/xóa/reset.\""
+  },
+  {
+    "Part": "T22-K05.Immutable",
+    "Result": "PASS",
+    "Expected": [
+      52902,
+      51115
+    ],
+    "Observed": [
+      51115
+    ],
+    "Before": "93B3171579346C17D9350CBA86CA20E9C4A37E8DDF2424E1E454D34CF65C83BE",
+    "After": "93B3171579346C17D9350CBA86CA20E9C4A37E8DDF2424E1E454D34CF65C83BE",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Khong sua chi tiet kiem ke da chot.\""
+  },
+  {
+    "Part": "T22-K05.Immutable",
+    "Result": "PASS",
+    "Expected": [
+      52902,
+      51115
+    ],
+    "Observed": [
+      51115
+    ],
+    "Before": "93B3171579346C17D9350CBA86CA20E9C4A37E8DDF2424E1E454D34CF65C83BE",
+    "After": "93B3171579346C17D9350CBA86CA20E9C4A37E8DDF2424E1E454D34CF65C83BE",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Khong sua chi tiet kiem ke da chot.\""
+  },
+  {
+    "Part": "T22-K05.ChotAgain",
+    "Result": "PASS",
+    "Expected": [
+      52902
+    ],
+    "Observed": [
+      52902
+    ],
+    "Before": "93B3171579346C17D9350CBA86CA20E9C4A37E8DDF2424E1E454D34CF65C83BE",
+    "After": "93B3171579346C17D9350CBA86CA20E9C4A37E8DDF2424E1E454D34CF65C83BE",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Chỉ chốt phiếu hôm nay, chưa chốt và đúng revision.\""
+  },
+  {
+    "Part": "T22-K07.ABA",
+    "Result": "PASS",
+    "Expected": [
+      52903
+    ],
+    "Observed": [
+      52903
+    ],
+    "Before": "11A6BD95AE0C27BF08425FDE51F5DA12045D2BFDFFF0F8D36226D02CA5B5F42C",
+    "After": "11A6BD95AE0C27BF08425FDE51F5DA12045D2BFDFFF0F8D36226D02CA5B5F42C",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Kho đã thay đổi sau snapshot; lấy số liệu và xác nhận đếm lại.\""
+  },
+  {
+    "Part": "T22-K08.MultiRollback",
+    "Result": "PASS",
+    "Expected": [
+      52903
+    ],
+    "Observed": [
+      52903
+    ],
+    "Before": "72ECDBB94668AC52DD84ADB49B5719BB67C10069651EFBC0EF9FB1930BCA3202",
+    "After": "72ECDBB94668AC52DD84ADB49B5719BB67C10069651EFBC0EF9FB1930BCA3202",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Kho đã thay đổi sau snapshot; lấy số liệu và xác nhận đếm lại.\""
+  },
+  {
+    "Part": "T22-K06.Date",
+    "Result": "PASS",
+    "Expected": [
+      52902
+    ],
+    "Observed": [
+      52902
+    ],
+    "Before": "4F25326865FC0BCDBF7A9B2714B581905BD1460BF27B4E8CF23B36AD6C42B406",
+    "After": "4F25326865FC0BCDBF7A9B2714B581905BD1460BF27B4E8CF23B36AD6C42B406",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Chỉ chốt phiếu hôm nay, chưa chốt và đúng revision.\""
+  },
+  {
+    "Part": "T22-K06.Date",
+    "Result": "PASS",
+    "Expected": [
+      52902
+    ],
+    "Observed": [
+      52902
+    ],
+    "Before": "DB6D4DA94D7554C800F41D21D528067B445E742C0A9F47E6D9BDA2D7ED34C894",
+    "After": "DB6D4DA94D7554C800F41D21D528067B445E742C0A9F47E6D9BDA2D7ED34C894",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Chỉ chốt phiếu hôm nay, chưa chốt và đúng revision.\""
+  },
+  {
+    "Part": "T22-K06.Empty",
+    "Result": "PASS",
+    "Expected": [
+      52901
+    ],
+    "Observed": [
+      52901
+    ],
+    "Before": "2F9BD88026A89639831CB10363D72B4008840CBF71398A91109ECD4B2EB8FA77",
+    "After": "2F9BD88026A89639831CB10363D72B4008840CBF71398A91109ECD4B2EB8FA77",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Cần đủ số đếm và lý do chênh lệch.\""
+  },
+  {
+    "Part": "T22-K11.CASH",
+    "Result": "PASS",
+    "Expected": [
+      51605
+    ],
+    "Observed": [
+      51605
+    ],
+    "Before": "2F9BD88026A89639831CB10363D72B4008840CBF71398A91109ECD4B2EB8FA77",
+    "After": "2F9BD88026A89639831CB10363D72B4008840CBF71398A91109ECD4B2EB8FA77",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Bạn không có quyền thực hiện thao tác này.\""
+  },
+  {
+    "Part": "T22-K11.STORE-create",
+    "Result": "PASS",
+    "Actual": "KK00000005"
+  },
+  {
+    "Part": "T23-K04.Amount",
+    "Result": "PASS",
+    "Expected": [
+      53001,
+      53003
+    ],
+    "Observed": [
+      53001
+    ],
+    "Before": "E6B6B2026BE3DC5DF47B4CAFE48ACF45E962CD4260919AFB6B01EB95D47A72E4",
+    "After": "E6B6B2026BE3DC5DF47B4CAFE48ACF45E962CD4260919AFB6B01EB95D47A72E4",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Thông tin trả nợ không hợp lệ.\""
+  },
+  {
+    "Part": "T23-K04.Amount",
+    "Result": "PASS",
+    "Expected": [
+      53001,
+      53003
+    ],
+    "Observed": [
+      53001
+    ],
+    "Before": "E6B6B2026BE3DC5DF47B4CAFE48ACF45E962CD4260919AFB6B01EB95D47A72E4",
+    "After": "E6B6B2026BE3DC5DF47B4CAFE48ACF45E962CD4260919AFB6B01EB95D47A72E4",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Thông tin trả nợ không hợp lệ.\""
+  },
+  {
+    "Part": "T23-K04.Amount",
+    "Result": "PASS",
+    "Expected": [
+      53001,
+      53003
+    ],
+    "Observed": [
+      53001
+    ],
+    "Before": "E6B6B2026BE3DC5DF47B4CAFE48ACF45E962CD4260919AFB6B01EB95D47A72E4",
+    "After": "E6B6B2026BE3DC5DF47B4CAFE48ACF45E962CD4260919AFB6B01EB95D47A72E4",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Thông tin trả nợ không hợp lệ.\""
+  },
+  {
+    "Part": "T23-K04.Amount",
+    "Result": "PASS",
+    "Expected": [
+      53001,
+      53003
+    ],
+    "Observed": [
+      53003
+    ],
+    "Before": "E6B6B2026BE3DC5DF47B4CAFE48ACF45E962CD4260919AFB6B01EB95D47A72E4",
+    "After": "E6B6B2026BE3DC5DF47B4CAFE48ACF45E962CD4260919AFB6B01EB95D47A72E4",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Số trả vượt còn nợ; tải lại số dư và sửa số tiền.\""
+  },
+  {
+    "Part": "T23-K04.Amount",
+    "Result": "PASS",
+    "Expected": [
+      53001,
+      53003
+    ],
+    "Observed": [
+      53001
+    ],
+    "Before": "E6B6B2026BE3DC5DF47B4CAFE48ACF45E962CD4260919AFB6B01EB95D47A72E4",
+    "After": "E6B6B2026BE3DC5DF47B4CAFE48ACF45E962CD4260919AFB6B01EB95D47A72E4",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Thông tin trả nợ không hợp lệ.\""
+  },
+  {
+    "Part": "T23-K04.Method",
+    "Result": "PASS",
+    "Expected": [
+      53001
+    ],
+    "Observed": [
+      53001
+    ],
+    "Before": "E6B6B2026BE3DC5DF47B4CAFE48ACF45E962CD4260919AFB6B01EB95D47A72E4",
+    "After": "E6B6B2026BE3DC5DF47B4CAFE48ACF45E962CD4260919AFB6B01EB95D47A72E4",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Phương thức trả nợ chưa hỗ trợ.\""
+  },
+  {
+    "Part": "T23-K04.Method",
+    "Result": "PASS",
+    "Expected": [
+      53001
+    ],
+    "Observed": [
+      53001
+    ],
+    "Before": "E6B6B2026BE3DC5DF47B4CAFE48ACF45E962CD4260919AFB6B01EB95D47A72E4",
+    "After": "E6B6B2026BE3DC5DF47B4CAFE48ACF45E962CD4260919AFB6B01EB95D47A72E4",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Phương thức trả nợ chưa hỗ trợ.\""
+  },
+  {
+    "Part": "T23-K05.SourceDate",
+    "Result": "PASS",
+    "Expected": [
+      53001
+    ],
+    "Observed": [
+      53001
+    ],
+    "Before": "E6B6B2026BE3DC5DF47B4CAFE48ACF45E962CD4260919AFB6B01EB95D47A72E4",
+    "After": "E6B6B2026BE3DC5DF47B4CAFE48ACF45E962CD4260919AFB6B01EB95D47A72E4",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Ngày trả trước ngày nhập nguồn.\""
+  },
+  {
+    "Part": "T23-K11.Pay.CASH",
+    "Result": "PASS",
+    "Expected": [
+      51605
+    ],
+    "Observed": [
+      51605
+    ],
+    "Before": "E6B6B2026BE3DC5DF47B4CAFE48ACF45E962CD4260919AFB6B01EB95D47A72E4",
+    "After": "E6B6B2026BE3DC5DF47B4CAFE48ACF45E962CD4260919AFB6B01EB95D47A72E4",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Bạn không có quyền thực hiện thao tác này.\""
+  },
+  {
+    "Part": "T23-K11.Pay.STORE",
+    "Result": "PASS",
+    "Expected": [
+      51605
+    ],
+    "Observed": [
+      51605
+    ],
+    "Before": "E6B6B2026BE3DC5DF47B4CAFE48ACF45E962CD4260919AFB6B01EB95D47A72E4",
+    "After": "E6B6B2026BE3DC5DF47B4CAFE48ACF45E962CD4260919AFB6B01EB95D47A72E4",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Bạn không có quyền thực hiện thao tác này.\""
+  },
+  {
+    "Part": "T23-K11.CASH-read",
+    "Result": "PASS",
+    "Expected": [
+      51605
+    ],
+    "Observed": [
+      51605
+    ],
+    "Before": "E6B6B2026BE3DC5DF47B4CAFE48ACF45E962CD4260919AFB6B01EB95D47A72E4",
+    "After": "E6B6B2026BE3DC5DF47B4CAFE48ACF45E962CD4260919AFB6B01EB95D47A72E4",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Bạn không có quyền thực hiện thao tác này.\""
+  },
+  {
+    "Part": "T23-K11.STORE-read",
+    "Result": "PASS",
+    "Actual": 1
+  },
+  {
+    "Part": "T23-K03.Partial",
+    "Result": "PASS",
+    "Actual": 5000.0
+  },
+  {
+    "Part": "T23-K08.Immutable",
+    "Result": "PASS",
+    "Expected": [
+      52702,
+      51017,
+      52602
+    ],
+    "Observed": [
+      52702
+    ],
+    "Before": "90FB8526DD0FEA68D64D1D6F4A88E4BD25D761FE426AB0627A322B7A4C9F3294",
+    "After": "90FB8526DD0FEA68D64D1D6F4A88E4BD25D761FE426AB0627A322B7A4C9F3294",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Nguồn nợ đã chốt bất biến hoặc nợ vượt tổng nhập.\""
+  },
+  {
+    "Part": "T23-K08.Immutable",
+    "Result": "PASS",
+    "Expected": [
+      52702,
+      51017,
+      52602
+    ],
+    "Observed": [
+      51017
+    ],
+    "Before": "90FB8526DD0FEA68D64D1D6F4A88E4BD25D761FE426AB0627A322B7A4C9F3294",
+    "After": "90FB8526DD0FEA68D64D1D6F4A88E4BD25D761FE426AB0627A322B7A4C9F3294",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Lịch sử trả nợ không sửa/xóa.\""
+  },
+  {
+    "Part": "T23-K08.Immutable",
+    "Result": "PASS",
+    "Expected": [
+      52702,
+      51017,
+      52602
+    ],
+    "Observed": [
+      52602
+    ],
+    "Before": "90FB8526DD0FEA68D64D1D6F4A88E4BD25D761FE426AB0627A322B7A4C9F3294",
+    "After": "90FB8526DD0FEA68D64D1D6F4A88E4BD25D761FE426AB0627A322B7A4C9F3294",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Phiếu đã xác nhận không được sửa hoặc xóa.\""
+  },
+  {
+    "Part": "T23-K08.Immutable",
+    "Result": "PASS",
+    "Expected": [
+      52702,
+      51017,
+      52602
+    ],
+    "Observed": [
+      52702
+    ],
+    "Before": "90FB8526DD0FEA68D64D1D6F4A88E4BD25D761FE426AB0627A322B7A4C9F3294",
+    "After": "90FB8526DD0FEA68D64D1D6F4A88E4BD25D761FE426AB0627A322B7A4C9F3294",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Phiếu nhập đã chốt không sửa/xóa.\""
+  },
+  {
+    "Part": "T23-K09.AsOf",
+    "Result": "PASS",
+    "Actual": [
+      {
+        "Paid": 1000.0,
+        "Remaining": 7000.0
+      }
+    ]
+  },
+  {
+    "Part": "T23-K09.BeforeSource",
+    "Result": "PASS",
+    "Actual": 0
+  },
+  {
+    "Part": "T23-K09.MaxDate",
+    "Result": "PASS",
+    "Actual": 1
+  },
+  {
+    "Part": "T23-K10.ImmediateNotHistory",
+    "Result": "PASS",
+    "Actual": "CN20250413"
+  },
+  {
+    "Part": "T23-K03.PaidOff",
+    "Result": "PASS",
+    "Actual": "CN20250413"
+  },
+  {
+    "Part": "T19-K03.PN-FK",
+    "Result": "PASS",
+    "Expected": [
+      547
+    ],
+    "Observed": [
+      547,
+      3621
+    ],
+    "Before": "DDA089AA0C0BAADEF83263B08CAD90591F37F9DCF60DDB21CE8ED604672FB03B",
+    "After": "DDA089AA0C0BAADEF83263B08CAD90591F37F9DCF60DDB21CE8ED604672FB03B",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_FinancePN\". The conflict occurred in database \"CoffeeManager_Test_G05_20261027_110753_fb67dcbb_demo\", table \"dbo.PHIEUNHAP\", column 'MaPN'.\r\nThe statement has been terminated.\""
+  },
+  {
+    "Part": "T19-K03.BL-FK",
+    "Result": "PASS",
+    "Expected": [
+      547
+    ],
+    "Observed": [
+      547,
+      3621
+    ],
+    "Before": "DDA089AA0C0BAADEF83263B08CAD90591F37F9DCF60DDB21CE8ED604672FB03B",
+    "After": "DDA089AA0C0BAADEF83263B08CAD90591F37F9DCF60DDB21CE8ED604672FB03B",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_FinanceBL\". The conflict occurred in database \"CoffeeManager_Test_G05_20261027_110753_fb67dcbb_demo\", table \"dbo.BANGLUONG\", column 'MaBL'.\r\nThe statement has been terminated.\""
+  },
+  {
+    "Part": "T19-K03.PN-unique",
+    "Result": "PASS",
+    "Expected": [
+      2601,
+      2627
+    ],
+    "Observed": [
+      2601,
+      3621
+    ],
+    "Before": "DDA089AA0C0BAADEF83263B08CAD90591F37F9DCF60DDB21CE8ED604672FB03B",
+    "After": "DDA089AA0C0BAADEF83263B08CAD90591F37F9DCF60DDB21CE8ED604672FB03B",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Cannot insert duplicate key row in object 'dbo.PHIEUTHUCHI' with unique index 'UX_FinancePN'. The duplicate key value is (PN20250507).\r\nThe statement has been terminated.\""
+  },
+  {
+    "Part": "T19-K03.BL-unique",
+    "Result": "PASS",
+    "Expected": [
+      2601,
+      2627
+    ],
+    "Observed": [
+      2601,
+      3621
+    ],
+    "Before": "F01FAA8F036E8E26C9CF1EE38E05B7A1C56B4B12CE7729C5DC2582C8FFCC7E7D",
+    "After": "F01FAA8F036E8E26C9CF1EE38E05B7A1C56B4B12CE7729C5DC2582C8FFCC7E7D",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Cannot insert duplicate key row in object 'dbo.PHIEUTHUCHI' with unique index 'UX_FinanceBL'. The duplicate key value is (3).\r\nThe statement has been terminated.\""
+  },
+  {
+    "Part": "T19-K04.SourceType",
+    "Result": "PASS",
+    "Expected": [
+      52602
+    ],
+    "Observed": [
+      52602
+    ],
+    "Before": "F01FAA8F036E8E26C9CF1EE38E05B7A1C56B4B12CE7729C5DC2582C8FFCC7E7D",
+    "After": "F01FAA8F036E8E26C9CF1EE38E05B7A1C56B4B12CE7729C5DC2582C8FFCC7E7D",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Nguồn hoặc loại phiếu thu chi không hợp lệ.\""
+  },
+  {
+    "Part": "T19-K06.FaultAfterWrite",
+    "Result": "PASS",
+    "Expected": [
+      53901
+    ],
+    "Observed": [
+      53901
+    ],
+    "Before": "F01FAA8F036E8E26C9CF1EE38E05B7A1C56B4B12CE7729C5DC2582C8FFCC7E7D",
+    "After": "F01FAA8F036E8E26C9CF1EE38E05B7A1C56B4B12CE7729C5DC2582C8FFCC7E7D",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Fault after finance insert, rows=1\""
+  },
+  {
+    "Part": "T20-K03.FaultAfterStockExpense",
+    "Result": "PASS",
+    "Expected": [
+      53901
+    ],
+    "Observed": [
+      53901
+    ],
+    "Before": "F01FAA8F036E8E26C9CF1EE38E05B7A1C56B4B12CE7729C5DC2582C8FFCC7E7D",
+    "After": "F01FAA8F036E8E26C9CF1EE38E05B7A1C56B4B12CE7729C5DC2582C8FFCC7E7D",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Fault after finance insert, rows=1\""
+  },
+  {
+    "Part": "T23-K04.FaultAfterExpenseLink",
+    "Result": "PASS",
+    "Expected": [
+      53901
+    ],
+    "Observed": [
+      53901
+    ],
+    "Before": "F01FAA8F036E8E26C9CF1EE38E05B7A1C56B4B12CE7729C5DC2582C8FFCC7E7D",
+    "After": "F01FAA8F036E8E26C9CF1EE38E05B7A1C56B4B12CE7729C5DC2582C8FFCC7E7D",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Fault after expense and debt link\""
+  },
+  {
+    "Part": "T20-K07.ReplayMismatch",
+    "Result": "PASS",
+    "Expected": [
+      51608
+    ],
+    "Observed": [
+      51608
+    ],
+    "Before": "8D662B9EBFFAEEC15CA7D202AEF526795A47D53F4798612055C45B047FF5ABA8",
+    "After": "8D662B9EBFFAEEC15CA7D202AEF526795A47D53F4798612055C45B047FF5ABA8",
+    "Transaction": "0:0",
+    "Message": "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Mã yêu cầu đã dùng với nội dung hoặc tài khoản khác.\""
+  }
+]

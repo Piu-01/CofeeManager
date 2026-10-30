@@ -1,0 +1,19 @@
+{
+  "State": "Implemented; awaiting separate functional test approval",
+  "ProductFiles": 208,
+  "Changed": [
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Program.cs",
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Forms\\InvoicePrintPreviewForm.cs",
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Modules\\Sales\\SalesControl.cs"
+  ],
+  "Added": [
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Printing\\InvoicePrinting.cs"
+  ],
+  "DebugHash": "A8AD64781F337700FF9E60154CFB405892D8AF3A3B44ABD662DB5DABBA391BEA",
+  "DebugBuild": "0 warnings/0 errors",
+  "ReleaseBuild": "0 warnings/0 errors",
+  "FunctionalTests": "NOT RUN",
+  "SQLWrites": "None",
+  "PrintJobs": "None",
+  "G04": "34 PASS /0 FAIL /22 BLOCKED; unchanged by build"
+}

@@ -1,0 +1,13 @@
+{
+  "SourceFiles": 210,
+  "ChangedSourceFiles": 0,
+  "NativeDialogChecks": 87,
+  "NativeOwnerChecks": 18,
+  "FixtureIssue": "ND-TEST-01: second Close submitted before first guard finished; raw failure retained, synchronized follow-up passes",
+  "ExpectedChanged": false,
+  "ProductModifiedDuringTest": false,
+  "NativeStatus": "User accepts native style; nestedF3 discard and475 checkoutNo pass; SQL paidonce/stockmatch/pointsunchanged; next476 printCancel",
+  "CreatedDatabase": false,
+  "ReviewBy": "2026-10-27",
+  "UnitPassed": 18
+}

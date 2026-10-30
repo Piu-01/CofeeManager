@@ -1,0 +1,19 @@
+{
+  "Database": "CoffeeManager_Test_G04_20261024_152759_12204643_manual",
+  "Order": {
+    "MaHD": "HD20250411",
+    "TrangThai": "Chua thanh toan",
+    "TongTien": 81000,
+    "GiamGia": 0,
+    "PhiShip": 0,
+    "PaymentCount": 0
+  },
+  "Lines": {
+    "MaSP": "SP001",
+    "SoLuong": 1,
+    "GiaBan": 81000,
+    "GhiChu": "G04 ít đá, không đường."
+  },
+  "UserObserved": "All add/update/delete steps and intermediate totals correct",
+  "Scope": "Final DB state verified; intermediate UI totals reported by user"
+}
