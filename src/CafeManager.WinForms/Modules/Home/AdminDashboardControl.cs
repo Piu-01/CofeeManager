@@ -1,0 +1,367 @@
+using System.Globalization;
+using CafeManager.Business.Security;
+using CafeManager.Business.Services;
+using CafeManager.Models.Dtos.Reports;
+using CafeManager.WinForms.Modules.Reports;
+using CafeManager.WinForms.Theme;
+using CafeManager.WinForms.UI;
+
+namespace CafeManager.WinForms.Modules.Home;
+
+public sealed class AdminDashboardControl : UserControl
+{
+    private readonly ReportService service;
+    private readonly SessionContext session;
+    private readonly ReportSourceNavigation? navigation;
+    private readonly CancellationTokenSource lifetime = new();
+    private readonly TableLayoutPanel metrics = Column(), charts = Column(), bottom = Column();
+    private readonly TableLayoutPanel products = Column(OrbitManagementTheme.Surface);
+    private readonly List<OrbitSurface> cards = [], chartCards = [], bottomCards = [];
+    private readonly Dictionary<string,Label> values = [], changes = [];
+    private readonly Dictionary<string,AlertRow> alerts = [];
+    private readonly List<OrbitButton> detailButtons = [];
+    private readonly DashboardTrendChart trend = new() { Dock = DockStyle.Top };
+    private readonly DashboardChannelChart channels = new() { Dock = DockStyle.Top };
+    private readonly OrbitButton today = new() { Text = L.T("Hôm nay") }, monthly = new() { Text = L.T("Tháng này") }, refresh = new() { Text = L.T("Tải lại") };
+    private readonly Label periodLabel = TextLabel(L.T("Kỳ thống kê: —"), OrbitManagementTheme.Body);
+    private readonly Label comparison = TextLabel(L.T("So sánh cùng mốc giờ SQL Server."), OrbitManagementTheme.Small);
+    private readonly Label state = TextLabel(L.T("Đang chuẩn bị tổng quan…"), OrbitManagementTheme.Body);
+    private readonly Label updated = TextLabel(L.T("Chưa cập nhật số liệu."), OrbitManagementTheme.Small);
+    private IReadOnlyDictionary<string,ReportPage> pages = new Dictionary<string,ReportPage>();
+    private IReadOnlyDictionary<string,decimal?> indicators = new Dictionary<string,decimal?>();
+    private (DateTime From,DateTime Until,DateTime? PreviousFrom,DateTime? PreviousUntil)? period;
+    private CancellationTokenSource? pending;
+    private int generation;
+    private bool month, ready, closed, opening;
+    private static readonly CultureInfo Vietnamese = CultureInfo.GetCultureInfo("vi-VN");
+
+    public AdminDashboardControl(ReportService service,SessionContext session,ReportSourceNavigation? navigation = null)
+    {
+        this.service=service;this.session=session;this.navigation=navigation;
+        AutoScaleDimensions=new(96,96);AutoScaleMode=AutoScaleMode.Dpi;Dock=DockStyle.Fill;AppTheme.Apply(this);
+        var scroll=new Panel { Dock=DockStyle.Fill,AutoScroll=true,Padding=new Padding(24),BackColor=OrbitManagementTheme.Background };
+        var page=Column();
+        AddRow(page,TextLabel(L.T("Tổng quan quán"),AppTheme.TitleFont,OrbitManagementTheme.Text));
+        AddRow(page,TextLabel(L.T("Kết quả kinh doanh trong kỳ và những việc cần chú ý ngay."),OrbitManagementTheme.Body));
+        var modes=new FlowLayoutPanel { Dock=DockStyle.Top,AutoSize=true,WrapContents=true,Margin=new Padding(0,8,0,12) };
+        foreach(var button in new[]{today,monthly,refresh})
+        {
+            OrbitManagementTheme.Button(button,ManagementButtonStyle.Secondary,button==refresh?"refresh":"calendar");
+            button.Margin=new Padding(0,0,12,8);button.AccessibleName=button.Text;modes.Controls.Add(button);
+        }
+        AddRow(page,modes);AddRow(page,periodLabel);AddRow(page,comparison);AddRow(page,state);AddRow(page,updated);
+        AddMetric("revenue",L.T("Doanh thu đã thanh toán"),L.T("Sau giảm, gồm phí ship"),OrbitManagementTheme.Caramel);
+        AddMetric("invoices",L.T("Hóa đơn đã thanh toán"),L.T("Số hóa đơn trong kỳ"),OrbitManagementTheme.Lilac);
+        AddMetric("average",L.T("Bình quân mỗi hóa đơn"),L.T("Doanh thu / số hóa đơn đã trả"),OrbitManagementTheme.Caramel);
+        AddMetric("expense",L.T("Thực chi"),L.T("Phiếu chi đã ghi nhận trong kỳ"),OrbitManagementTheme.Lilac);
+        metrics.Margin=new Padding(0,16,0,4);AddRow(page,metrics);
+        chartCards.Add(Section(L.T("Xu hướng doanh thu"),L.T("Chọn điểm hoặc dùng ← → rồi Enter để xem chứng từ."),trend));
+        chartCards.Add(Section(L.T("Cơ cấu doanh thu"),L.T("Theo kênh bán · % có thể lệch nhỏ do làm tròn."),channels));
+        AddRow(page,charts);
+        bottomCards.Add(Section(L.T("Top 5 món bán chạy"),L.T("Xếp theo số ly · Chỉ tính hóa đơn đã thanh toán."),products));
+        var attention=Column(OrbitManagementTheme.Surface);
+        foreach(var item in new[]{
+            ("orders.open",L.T("Đơn đang mở"),"Invoices",L.T("Lịch sử hóa đơn")),
+            ("delivery.pending",L.T("Giao hàng chưa xong"),"Delivery",L.T("Giao hàng")),
+            ("material.zero",L.T("Nguyên liệu hết tồn"),"Materials",L.T("Nguyên liệu / Tồn")),
+            ("debt.current",L.T("Công nợ nhà cung cấp"),"Debt",L.T("Công nợ"))})
+        {
+            var row=new AlertRow(item.Item2,item.Item3,item.Item4);
+            row.Click+=async(_,_)=>await NavigateAsync(item.Item3);
+            alerts.Add(item.Item1,row);AddRow(attention,row);
+        }
+        bottomCards.Add(Section(L.T("Cần chú ý · Hiện tại"),L.T("Số dư và công việc tại lúc đọc, không phụ thuộc kỳ ngày/tháng."),attention));
+        AddRow(page,bottom);
+        var note=TextLabel(L.T("Doanh thu theo ngày thanh toán; thực chi theo ngày lập phiếu chi. Chưa đối soát đối tác; đây không phải lợi nhuận. So sánh dựa trên dữ liệu đã ghi nhận."),OrbitManagementTheme.Small);
+        note.Margin=new Padding(0,8,0,16);AddRow(page,note);
+        page.SizeChanged+=(_,_)=>WrapLabels(page);
+        metrics.SizeChanged+=(_,_)=>Arrange(metrics,cards,true);charts.SizeChanged+=(_,_)=>Arrange(charts,chartCards,false);bottom.SizeChanged+=(_,_)=>Arrange(bottom,bottomCards,false);
+        scroll.Controls.Add(page);Controls.Add(scroll);
+        today.Click+=async(_,_)=>await ChangeModeAsync(false);monthly.Click+=async(_,_)=>await ChangeModeAsync(true);refresh.Click+=async(_,_)=>await ReadAsync();
+        trend.PointSelected+=async index=>
+        {
+            if(!ready||period is not {} bounds)return;
+            var rows=pages["trend.current"].Rows.OfType<SalesReportRow>().ToArray();
+            if(index<0||index>=rows.Length)return;
+            var from=DateTime.Parse(rows[index].Code,CultureInfo.InvariantCulture,DateTimeStyles.RoundtripKind);
+            var end=month?from.AddDays(1):from.AddHours(1);if(end>bounds.Until)end=bounds.Until;
+            await OpenSourcesAsync("trend",L.T("Doanh thu · ")+rows[index].Name,from:from,until:end);
+        };
+        channels.ChannelSelected+=async code=>await OpenSourcesAsync("channel",L.T("Kênh · ")+Models.States.SalesStates.Label(code),channel:code);
+        Load+=async(_,_)=>{if(Visible&&pending is null&&!ready)await ReadAsync();};
+        VisibleChanged+=async(_,_)=>
+        {
+            if(Visible&&IsHandleCreated&&pending is not {IsCancellationRequested:false})await ReadAsync();
+            else if(!Visible){++generation;pending?.Cancel();}
+        };
+        ClearSnapshot();SelectMode();Arrange(metrics,cards,true);Arrange(charts,chartCards,false);Arrange(bottom,bottomCards,false);
+    }
+
+    private static TableLayoutPanel Column(Color? background=null)
+    {
+        var panel=new TableLayoutPanel { Dock=DockStyle.Top,AutoSize=true,AutoSizeMode=AutoSizeMode.GrowAndShrink,ColumnCount=1,RowCount=0,Margin=Padding.Empty,BackColor=background??OrbitManagementTheme.Background };
+        panel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent,100));return panel;
+    }
+    private static Label TextLabel(string text,Font font,Color? color=null)=>new()
+    { Text=text,Font=font,ForeColor=color??OrbitManagementTheme.Muted,BackColor=Color.Transparent,AutoSize=true,Dock=DockStyle.Top,Margin=new Padding(0,0,0,8),UseMnemonic=false };
+    private static void AddRow(TableLayoutPanel panel,Control control)
+    { panel.RowStyles.Add(new RowStyle(SizeType.AutoSize));panel.Controls.Add(control,0,panel.RowCount++); }
+    private static void WrapLabels(TableLayoutPanel panel)
+    {
+        var width=Math.Max(1,panel.ClientSize.Width-panel.Padding.Horizontal);
+        foreach(var label in panel.Controls.OfType<Label>())
+        {
+            var target=Math.Max(1,width-label.Margin.Horizontal);
+            if(label.MaximumSize.Width!=target)label.MaximumSize=new(target,0);
+        }
+    }
+    private static OrbitSurface Section(string caption,string description,Control content)
+    {
+        var surface=new OrbitSurface { Dock=DockStyle.Fill,AutoSize=true,AutoSizeMode=AutoSizeMode.GrowAndShrink,Padding=new Padding(20),Margin=new Padding(0,0,12,12),AccessibleName=caption };
+        var body=Column(OrbitManagementTheme.Surface);
+        AddRow(body,TextLabel(caption,OrbitManagementTheme.CardTitle,OrbitManagementTheme.Text));AddRow(body,TextLabel(description,OrbitManagementTheme.Small));AddRow(body,content);
+        body.SizeChanged+=(_,_)=>WrapLabels(body);surface.Controls.Add(body);return surface;
+    }
+    private void AddMetric(string key,string caption,string description,Color accent)
+    {
+        var body=Column(OrbitManagementTheme.Surface);
+        var value=TextLabel("—",OrbitManagementTheme.Title,accent);value.Tag=caption;values.Add(key,value);AddRow(body,value);
+        var delta=TextLabel("—",OrbitManagementTheme.Small);changes.Add(key,delta);AddRow(body,delta);
+        var button=new OrbitButton { Text=L.T("Xem chi tiết"),Dock=DockStyle.Top,AccessibleName=L.T("Xem chi tiết ")+caption.ToLowerInvariant() };
+        OrbitManagementTheme.Button(button,ManagementButtonStyle.Secondary,"list");button.Click+=async(_,_)=>await OpenSourcesAsync(key,caption);
+        detailButtons.Add(button);AddRow(body,button);body.SizeChanged+=(_,_)=>WrapLabels(body);
+        cards.Add(Section(caption,description,body));
+    }
+    private void Arrange(TableLayoutPanel panel,List<OrbitSurface> surfaces,bool kpi)
+    {
+        if(closed||panel.IsDisposed)return;
+        var width=panel.ClientSize.Width*96F/DeviceDpi;
+        var count=kpi?(width>=1080?4:width>=530?2:1):(width>=760?2:1);
+        if(panel.ColumnCount==count&&panel.Controls.Count==surfaces.Count)return;
+        panel.SuspendLayout();panel.Controls.Clear();panel.ColumnStyles.Clear();panel.RowStyles.Clear();panel.ColumnCount=count;panel.RowCount=(surfaces.Count+count-1)/count;
+        for(var i=0;i<count;i++)panel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent,100F/count));
+        for(var i=0;i<panel.RowCount;i++)panel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+        for(var i=0;i<surfaces.Count;i++)panel.Controls.Add(surfaces[i],i%count,i/count);
+        panel.ResumeLayout(true);
+    }
+    private static string Money(decimal value)=>value.ToString("#,##0",Vietnamese)+" ₫";
+    private static string Number(decimal value)=>value.ToString("#,##0",Vietnamese);
+    private decimal? Indicator(string key)=>indicators.TryGetValue(key,out var value)?value:null;
+    private void SetValue(string key,decimal? value,bool money=true)
+    {
+        var label=values[key];label.Text=value.HasValue?(money?Money(value.Value):Number(value.Value)):"—";
+        label.AccessibleName=label.Tag+": "+label.Text;
+    }
+    private void Delta(string key,decimal? current,decimal? previous,bool money=true)
+    {
+        var label=changes[key];var change=Indicator("change."+key);var difference=Indicator("difference."+key);
+        label.ForeColor=OrbitManagementTheme.Muted;
+        if(period?.PreviousFrom is null)label.Text=L.T("Không có mốc so sánh tương ứng.");
+        else if(!current.HasValue||!previous.HasValue)label.Text=key=="average"&&!current.HasValue?L.T("Chưa có hóa đơn đã thanh toán trong kỳ."):L.T("Chưa đủ cơ sở so sánh.");
+        else if(previous==0&&current>0)label.Text=L.T("Mới phát sinh · Kỳ trước 0");
+        else if(change==0&&difference==0)label.Text=L.T("Không thay đổi so với kỳ trước.");
+        else if(change.HasValue&&difference.HasValue)
+        {
+            var prefix=difference>0?"↑ ":difference<0?"↓ ":"";
+            label.Text=prefix+Math.Abs(change.Value).ToString("0.#",Vietnamese)+"% · "+(difference>=0?"+":"−")+(money?Money(Math.Abs(difference.Value)):Number(Math.Abs(difference.Value)));
+            if(key!="expense")label.ForeColor=difference>=0?AppTheme.Success:AppTheme.Error;
+        }
+        else label.Text=L.T("Chưa đủ cơ sở so sánh.");
+        if(previous.HasValue)label.Text+=L.T("\r\nKỳ trước: ")+(money?Money(previous.Value):Number(previous.Value));
+        label.AccessibleName=label.Text;
+    }
+    private void ClearSnapshot()
+        => UpdateSnapshot(ClearSnapshotCore);
+    private void ClearSnapshotCore()
+    {
+        ready=false;period=null;pages=new Dictionary<string,ReportPage>();indicators=new Dictionary<string,decimal?>();
+        foreach(var key in values.Keys){SetValue(key,null);changes[key].Text=changes[key].AccessibleName="—";}
+        trend.SetData([],[]);channels.SetData([],0,indicators);trend.Enabled=channels.Enabled=false;
+        while(products.Controls.Count>0)products.Controls[0].Dispose();products.RowStyles.Clear();products.RowCount=0;
+        AddRow(products,TextLabel(L.T("Chưa có số liệu."),OrbitManagementTheme.Body));
+        foreach(var item in alerts)item.Value.SetValue("—");
+        foreach(var button in detailButtons)button.Enabled=false;
+        periodLabel.Text=L.T("Kỳ thống kê: —");comparison.Text=L.T("So sánh cùng mốc giờ SQL Server.");
+    }
+    private void SelectMode()
+    { today.NavigationSelected=!month;monthly.NavigationSelected=month;today.Invalidate();monthly.Invalidate(); }
+    private async Task ChangeModeAsync(bool value)
+    { if(closed||session.IsRevoked||month==value)return;month=value;SelectMode();await ReadAsync(replace:true); }
+    private async Task ReadAsync(bool replace=false)
+    {
+        if(closed||session.IsRevoked||(!replace&&pending is {IsCancellationRequested:false}))return;
+        pending?.Cancel();var current=++generation;var request=CancellationTokenSource.CreateLinkedTokenSource(lifetime.Token,session.Token);pending=request;
+        UpdateSnapshot(()=>{if(!ready||replace)ClearSnapshotCore();refresh.Enabled=false;state.Text=L.T("Đang tải tổng quan…");state.ForeColor=OrbitManagementTheme.Muted;updated.Text=L.T("Đang đọc dữ liệu SQL Server…");});
+        var queryTiming=Diagnostics.UiTiming.Start();
+        bool IsCurrent()=>!closed&&!IsDisposed&&Visible&&current==generation&&!session.IsRevoked;
+        try
+        {
+            var result=await service.ReadDashboardAnalyticsAsync(session,month,request.Token);
+            Diagnostics.UiTiming.Log("dashboard","query",queryTiming,month?"month":"today");
+            if(!IsCurrent()||request.IsCancellationRequested)return;
+            var renderTiming=Diagnostics.UiTiming.Start();
+            pages=result.Pages;indicators=result.Indicators;period=result.Period;Render();
+            Diagnostics.UiTiming.Log("dashboard","render",renderTiming,$"pages={pages.Count}");
+        }
+        catch(OperationCanceledException) when(request.IsCancellationRequested)
+        { if(IsCurrent())UpdateSnapshot(()=>{ClearSnapshotCore();state.Text=L.T("Đã dừng tải. Chọn Tải lại để tiếp tục.");updated.Text=L.T("Chưa cập nhật số liệu.");}); }
+        catch(UserOperationException error)
+        { if(IsCurrent())UpdateSnapshot(()=>{ClearSnapshotCore();state.Text=L.T("Chưa cập nhật · ")+error.Message;state.ForeColor=AppTheme.Error;updated.Text=L.T("Chọn Tải lại để thử lại.");}); }
+        finally
+        {
+            if(ReferenceEquals(pending,request)){pending=null;if(!closed&&!IsDisposed)refresh.Enabled=!session.IsRevoked;}
+            request.Dispose();
+        }
+    }
+    private void Render()
+        => UpdateSnapshot(()=>
+        {
+            RenderCore();ready=true;
+            foreach(var button in detailButtons)button.Enabled=navigation is not null;
+            trend.Enabled=channels.Enabled=navigation is not null;
+            state.Text=L.T("Đã cập nhật số liệu.");state.ForeColor=AppTheme.Success;
+        });
+    private void RenderCore()
+    {
+        var bounds=period!.Value;var revenue=pages["trend.current"].Totals.Amount;
+        decimal? previous=pages.TryGetValue("trend.previous",out var prior)?prior.Totals.Amount:null;
+        SetValue("revenue",revenue);Delta("revenue",revenue,previous);
+        SetValue("invoices",Indicator("invoice-count.current"),false);Delta("invoices",Indicator("invoice-count.current"),Indicator("invoice-count.previous"),false);
+        SetValue("average",Indicator("average.current"));Delta("average",Indicator("average.current"),Indicator("average.previous"));
+        SetValue("expense",Indicator("expense.current"));Delta("expense",Indicator("expense.current"),Indicator("expense.previous"));
+        periodLabel.Text=(month?L.T("Tháng này"):L.T("Hôm nay"))+" · "+bounds.From.ToString("dd/MM/yyyy HH:mm:ss",Vietnamese)+" → "+bounds.Until.ToString("dd/MM/yyyy HH:mm:ss",Vietnamese)+L.T(" (không gồm mốc cuối)");
+        comparison.Text=bounds.PreviousFrom.HasValue?L.T("So sánh: ")+bounds.PreviousFrom.Value.ToString("dd/MM/yyyy HH:mm:ss",Vietnamese)+" → "+bounds.PreviousUntil!.Value.ToString("dd/MM/yyyy HH:mm:ss",Vietnamese):L.T("Tháng trước không có ngày tương ứng; không hiển thị % so sánh.");
+        updated.Text=L.T("Đọc lúc ")+pages["trend.current"].Metadata.ReadAt.ToString("HH:mm:ss · dd/MM/yyyy",Vietnamese)+L.T(" theo SQL Server.");
+        trend.SetData(pages["trend.current"].Rows.OfType<SalesReportRow>().ToArray(),prior?.Rows.OfType<SalesReportRow>().ToArray()??[]);
+        channels.SetData(pages["channels"].Rows.OfType<SalesReportRow>().ToArray(),revenue,indicators);
+        while(products.Controls.Count>0)products.Controls[0].Dispose();products.RowStyles.Clear();products.RowCount=0;
+        AddRow(products,TextLabel(L.T("Tổng toàn kỳ: ")+Number(Indicator("quantity.total")??0)+L.T(" ly"),OrbitManagementTheme.Body,OrbitManagementTheme.Text));
+        var ranked=pages["products"].Rows.OfType<ProductReportRow>().ToArray();var maximum=ranked.Select(r=>r.Quantity).DefaultIfEmpty(0).Max();
+        foreach(var row in ranked)
+        {
+            var button=new OrbitButton { Text=row.Name+" · "+Number(row.Quantity)+L.T(" ly"),Dock=DockStyle.Top,AccessibleName=row.Name+": "+Number(row.Quantity)+L.T(" ly · Xem hóa đơn nguồn") };
+            OrbitManagementTheme.Button(button,ManagementButtonStyle.Secondary,"list");button.Enabled=navigation is not null;
+            button.Click+=async(_,_)=>await OpenSourcesAsync("product",L.T("Món · ")+row.Name,product:row.Code);AddRow(products,button);
+            var track=new Bar(row.Quantity,maximum) { Margin=new Padding(0,4,0,12) };
+            AddRow(products,track);
+        }
+        if(ranked.Length==0)AddRow(products,TextLabel(L.T("Chưa có món bán trong kỳ."),OrbitManagementTheme.Body));
+        foreach(var item in alerts)
+        {
+            var amount=Indicator(item.Key);
+            item.Value.SetValue(amount.HasValue?(item.Key=="debt.current"?Money(amount.Value):Number(amount.Value)):"—");
+        }
+    }
+    // Gom các đổi Text/row trong cả cây card trước khi WinForms đo lại AutoSize.
+    // Không giữ layout đang treo qua await; luôn resume kể cả render phát sinh lỗi.
+    private void UpdateSnapshot(Action update)
+    {
+        if(closed||IsDisposed)return;
+        var controls=new List<Control>();
+        void SuspendTree(Control control)
+        {
+            if(control.IsDisposed)return;
+            control.SuspendLayout();controls.Add(control);
+            foreach(Control child in control.Controls)SuspendTree(child);
+        }
+        SuspendTree(this);
+        try { update(); }
+        finally
+        {
+            for(var i=controls.Count-1;i>=0;i--)
+                if(!controls[i].IsDisposed)controls[i].ResumeLayout(true);
+        }
+    }
+    private async Task NavigateAsync(string target)
+    {
+        if(session.IsRevoked||FindForm() is not Forms.MainForm main)return;
+        await main.OpenWorkspaceAsync(target);
+    }
+    private async Task OpenSourcesAsync(string kind,string caption,bool current=false,DateTime? from=null,DateTime? until=null,string? channel=null,string? product=null)
+    {
+        if(!ready||opening||session.IsRevoked||navigation is null||period is not {} bounds||FindForm() is not Forms.MainForm main||main.Dialogs.IsOpen)return;
+        DateTime? start=current?null:from??bounds.From;DateTime? end=current?null:until??bounds.Until;
+        var description=current?L.T("Hiện tại · Danh sách đọc lại khi mở/tải lại; số dư có thể thay đổi."):L.F("Từ {0} đến trước {1} · Giữ kỳ đã chọn.", string.Format(global::System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:dd/MM/yyyy HH:mm:ss}", start), string.Format(global::System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:dd/MM/yyyy HH:mm:ss}", end));
+        opening=true;
+        try
+        {
+            using var dialog=new ReportSourceDialog(session,caption,description,(skip,token)=>service.DashboardAnalyticsSourcesAsync(session,kind,start,end,channel,product,skip,token),navigation);
+            await OrbitDialogHost.ShowAsync(dialog,this);
+        }
+        finally { opening=false; }
+    }
+    // Thanh tỉ lệ vẽ trực tiếp; không phát layout lặp như panel lồng + handler SizeChanged.
+    private sealed class Bar : Control
+    {
+        private readonly float ratio;
+        public Bar(decimal quantity,decimal maximum)
+        {
+            ratio=maximum>0?(float)Math.Clamp(quantity/maximum,0m,1m):0F;
+            SetStyle(ControlStyles.UserPaint|ControlStyles.AllPaintingInWmPaint|ControlStyles.OptimizedDoubleBuffer|ControlStyles.ResizeRedraw,true);
+            Dock=DockStyle.Top;BackColor=OrbitManagementTheme.Border;Height=OrbitManagementTheme.Px(this,4);
+        }
+        public override Size GetPreferredSize(Size proposedSize)=>new(proposedSize.Width,Height);
+        protected override void OnDpiChangedAfterParent(EventArgs e){base.OnDpiChangedAfterParent(e);Height=OrbitManagementTheme.Px(this,4);}
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            using(var back=new SolidBrush(OrbitManagementTheme.Border))e.Graphics.FillRectangle(back,ClientRectangle);
+            var width=(int)(ClientSize.Width*ratio);
+            if(width<=0)return;
+            using var fill=new SolidBrush(OrbitManagementTheme.Caramel);e.Graphics.FillRectangle(fill,0,0,width,ClientSize.Height);
+        }
+    }
+    // Hàng số liệu dạng "nhãn — giá trị ›"; bấm hoặc Enter/Space mở workspace đích.
+    private sealed class AlertRow : Control
+    {
+        private readonly string caption;
+        private readonly string target;
+        private readonly string targetLabel;
+        private string value = "—";
+        private bool hovered;
+        public AlertRow(string caption,string target,string targetLabel)
+        {
+            this.caption=caption;this.target=target;this.targetLabel=targetLabel;
+            SetStyle(ControlStyles.UserPaint|ControlStyles.AllPaintingInWmPaint|ControlStyles.OptimizedDoubleBuffer|ControlStyles.ResizeRedraw|ControlStyles.Selectable,true);
+            Dock=DockStyle.Top;Cursor=Cursors.Hand;TabStop=true;AccessibleRole=AccessibleRole.PushButton;Margin=Padding.Empty;
+            Height=OrbitManagementTheme.Px(this,52);
+        }
+        public override Size GetPreferredSize(Size proposedSize)=>new(proposedSize.Width,Height);
+        public void SetValue(string text)
+        {
+            value=text;AccessibleName=caption+": "+text+L.T(" · Mở ")+targetLabel;Invalidate();
+        }
+        protected override void OnDpiChangedAfterParent(EventArgs e){base.OnDpiChangedAfterParent(e);Height=OrbitManagementTheme.Px(this,52);Invalidate();}
+        protected override void OnMouseEnter(EventArgs e){hovered=true;Invalidate();base.OnMouseEnter(e);}
+        protected override void OnMouseLeave(EventArgs e){hovered=false;Invalidate();base.OnMouseLeave(e);}
+        protected override void OnGotFocus(EventArgs e){Invalidate();base.OnGotFocus(e);}
+        protected override void OnLostFocus(EventArgs e){Invalidate();base.OnLostFocus(e);}
+        protected override void OnKeyDown(KeyEventArgs e)
+        {
+            if(e.KeyCode is Keys.Enter or Keys.Space){e.Handled=e.SuppressKeyPress=true;OnClick(EventArgs.Empty);return;}
+            base.OnKeyDown(e);
+        }
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            var g=e.Graphics;var pad=OrbitManagementTheme.Px(this,14);
+            var background=hovered?Blend(OrbitManagementTheme.Surface,OrbitManagementTheme.Border,0.35f):OrbitManagementTheme.Surface;
+            using(var brush=new SolidBrush(background))g.FillRectangle(brush,ClientRectangle);
+            var font=OrbitManagementTheme.DrawingFont(this,OrbitManagementTheme.Body);
+            var chevronWidth=OrbitManagementTheme.Px(this,18);
+            var valueSize=TextRenderer.MeasureText(g,value,font,Size.Empty,TextFormatFlags.NoPadding);
+            var valueRect=new Rectangle(ClientSize.Width-pad-chevronWidth-valueSize.Width,0,valueSize.Width,ClientSize.Height);
+            TextRenderer.DrawText(g,value,font,valueRect,OrbitManagementTheme.Text,TextFormatFlags.Right|TextFormatFlags.VerticalCenter|TextFormatFlags.NoPadding);
+            TextRenderer.DrawText(g,"›",font,new Rectangle(ClientSize.Width-pad-chevronWidth,0,chevronWidth,ClientSize.Height),OrbitManagementTheme.Muted,TextFormatFlags.Right|TextFormatFlags.VerticalCenter|TextFormatFlags.NoPadding);
+            var captionRect=new Rectangle(pad,0,Math.Max(1,valueRect.Left-pad-OrbitManagementTheme.Px(this,10)),ClientSize.Height);
+            TextRenderer.DrawText(g,caption,font,captionRect,OrbitManagementTheme.Text,TextFormatFlags.Left|TextFormatFlags.VerticalCenter|TextFormatFlags.EndEllipsis);
+            using(var pen=new Pen(OrbitManagementTheme.Border))g.DrawLine(pen,pad,ClientSize.Height-1,ClientSize.Width-pad,ClientSize.Height-1);
+            if(Focused){using var focus=new Pen(Color.FromArgb(150,OrbitManagementTheme.Lilac));g.DrawRectangle(focus,0,0,ClientSize.Width-1,ClientSize.Height-2);}
+        }
+        private static Color Blend(Color from,Color to,float amount)=>Color.FromArgb(
+            (int)(from.R+(to.R-from.R)*amount),(int)(from.G+(to.G-from.G)*amount),(int)(from.B+(to.B-from.B)*amount));
+    }
+    protected override void Dispose(bool disposing)
+    {
+        if(disposing&&!closed){closed=true;++generation;pending?.Cancel();lifetime.Cancel();lifetime.Dispose();}
+        base.Dispose(disposing);
+    }
+}

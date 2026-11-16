@@ -10,19 +10,19 @@ public sealed class LoyaltyService(LoyaltyRepository repository,PermissionServic
 {
     public static PromotionRequest Normalize(PromotionRequest r,bool creating=true)
     {
-        var code=MaterialService.Required(r.Code,10,"Mã").ToUpperInvariant();if(creating&&!Regex.IsMatch(code,"^KM[0-9]{8}$"))throw new ArgumentException("Mã KM và8chữ số.");
-        if(r.EndDate<r.StartDate||r.Discount<0||r.Discount>100)throw new ArgumentException("Ngày/khoảng giảm không hợp lệ.");return r with{Code=code,Name=MaterialService.Required(r.Name,100,"Tên chương trình")};
+        var code=MaterialService.Required(r.Code,10,L.T("Mã")).ToUpperInvariant();if(creating&&!Regex.IsMatch(code,"^KM[0-9]{8}$"))throw new ArgumentException(L.T("Mã KM và8chữ số."));
+        if(r.EndDate<r.StartDate||r.Discount<0||r.Discount>100)throw new ArgumentException(L.T("Ngày/khoảng giảm không hợp lệ."));return r with{Code=code,Name=MaterialService.Required(r.Name,100,L.T("Tên chương trình"))};
     }
     public static IReadOnlyList<TierInput> NormalizeTiers(IReadOnlyList<TierInput> tiers)
     {
-        var rows=tiers.Select(t=>t with{Code=MaterialService.Required(t.Code,5,"Mã hạng").ToUpperInvariant()}).ToArray();
-        if(rows.Length==0||rows.Min(t=>t.MinimumPoints)!=0||rows.Select(t=>t.Code).Distinct().Count()!=rows.Length||rows.Select(t=>t.MinimumPoints).Distinct().Count()!=rows.Length||rows.Any(t=>!Regex.IsMatch(t.Code,"^[A-Z0-9]{1,5}$")||t.MinimumPoints<0||t.Discount<0||t.Discount>100))throw new ArgumentException("Hạng cần mã/ngưỡng duy nhất, có ngưỡng0 và tỷ lệ0..100.");return rows;
+        var rows=tiers.Select(t=>t with{Code=MaterialService.Required(t.Code,5,L.T("Mã hạng")).ToUpperInvariant()}).ToArray();
+        if(rows.Length==0||rows.Min(t=>t.MinimumPoints)!=0||rows.Select(t=>t.Code).Distinct().Count()!=rows.Length||rows.Select(t=>t.MinimumPoints).Distinct().Count()!=rows.Length||rows.Any(t=>!Regex.IsMatch(t.Code,"^[A-Z0-9]{1,5}$")||t.MinimumPoints<0||t.Discount<0||t.Discount>100))throw new ArgumentException(L.T("Hạng cần mã/ngưỡng duy nhất, có ngưỡng0 và tỷ lệ0..100."));return rows;
     }
     public static PointAdjustmentRequest Normalize(PointAdjustmentRequest r)
     {
-        if(r.Points<=0||r.Direction is not ("Cong" or "Tru"))throw new ArgumentException("Số điểm dương và loại Cộng/Trừ hợp lệ.");return r with{Code=MaterialService.Required(r.Code,5,"Mã khách"),Reason=MaterialService.Required(r.Reason,100,"Lý do")};
+        if(r.Points<=0||r.Direction is not ("Cong" or "Tru"))throw new ArgumentException(L.T("Số điểm dương và loại Cộng/Trừ hợp lệ."));return r with{Code=MaterialService.Required(r.Code,5,L.T("Mã khách")),Reason=MaterialService.Required(r.Reason,100,L.T("Lý do"))};
     }
-    public static void Money(decimal amount){if(amount<0||amount>999999999999999999m||decimal.Round(amount)!=amount)throw new ArgumentException("Tiền nguyên VND không âm, tối đa18chữ số.");}
+    public static void Money(decimal amount){if(amount<0||amount>999999999999999999m||decimal.Round(amount)!=amount)throw new ArgumentException(L.T("Tiền nguyên VND không âm, tối đa18chữ số."));}
     private async Task<T> Run<T>(SessionContext s,bool admin,Func<CancellationToken,Task<T>> f,CancellationToken t)
     {
         using var linked=CancellationTokenSource.CreateLinkedTokenSource(s.Token,t);await permissions.DemandAsync(s,admin?AppPermission.CatalogAdmin:AppPermission.Sales,linked.Token);

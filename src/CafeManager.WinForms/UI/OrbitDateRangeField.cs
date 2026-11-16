@@ -13,7 +13,7 @@ public sealed class OrbitDateRangeField : UserControl
     {
         From = from; To = to; AutoScaleMode = AutoScaleMode.Dpi; AutoScaleDimensions = new SizeF(96, 96);
         BackColor = OrbitManagementTheme.Input; TabStop = false; DoubleBuffered = true;
-        From.SetInputName("Từ ngày, dd/MM/yyyy"); To.SetInputName("Đến ngày, dd/MM/yyyy");
+        From.SetInputName(L.T("Từ ngày, dd/MM/yyyy")); To.SetInputName(L.T("Đến ngày, dd/MM/yyyy"));
         foreach (var date in new[] { From, To })
         {
             date.MinimumSize = Size.Empty; OrbitManagementTheme.DialogInput(date); date.ApplyManagementTheme(borderless: true);

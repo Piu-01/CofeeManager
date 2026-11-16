@@ -9,7 +9,7 @@ public sealed class PaymentMethodService(PaymentMethodRepository repository, Per
 {
     public async Task<List<NameLookup>> SupportedAsync(SessionContext session, PaymentPurpose purpose, CancellationToken token = default)
     {
-        if (!Enum.IsDefined(purpose)) throw new ArgumentException("Mục đích phương thức không hợp lệ.");
+        if (!Enum.IsDefined(purpose)) throw new ArgumentException(L.T("Mục đích phương thức không hợp lệ."));
         using var linked = CancellationTokenSource.CreateLinkedTokenSource(session.Token, token);
         await permissions.DemandAsync(session, purpose == PaymentPurpose.Checkout ? AppPermission.Sales : AppPermission.Inventory, linked.Token);
         try { var result = await repository.SupportedAsync(session.Identity, purpose, linked.Token); session.EnsureCurrent(); return result; }
@@ -18,11 +18,11 @@ public sealed class PaymentMethodService(PaymentMethodRepository repository, Per
     public async Task ValidateMethodAsync(SessionContext session, PaymentPurpose purpose, string code, CancellationToken token = default)
     {
         if (!(await SupportedAsync(session, purpose, token)).Any(p => p.Code == code))
-            throw new ArgumentException("Phương thức không được hỗ trợ cho thao tác này; PT010 nằm ngoài phạm vi.");
+            throw new ArgumentException(L.T("Phương thức không được hỗ trợ cho thao tác này; PT010 nằm ngoài phạm vi."));
     }
     public async Task<CatalogWriteResult> SetSupportAsync(SessionContext session, string code, bool supported, byte[] revision, CancellationToken token = default)
     {
-        if (code == "PT010" && supported) throw new ArgumentException("PT010 không được hỗ trợ.");
+        if (code == "PT010" && supported) throw new ArgumentException(L.T("PT010 không được hỗ trợ."));
         using var linked = CancellationTokenSource.CreateLinkedTokenSource(session.Token, token);
         await permissions.DemandAsync(session, AppPermission.CatalogAdmin, linked.Token);
         try { var result = await repository.SetSupportAsync(session.Identity, code, supported, revision, linked.Token); session.EnsureCurrent(); return result; }

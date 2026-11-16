@@ -21,7 +21,7 @@ public partial class CatalogsControl : UserControl, IUnsavedChanges
     private CatalogEditorDialog? editor;
     private readonly OrbitEmptyState emptyState = new()
     {
-        AccessibleName = "Danh mục không có dữ liệu", Visible = false
+        AccessibleName = L.T("Danh mục không có dữ liệu"), Visible = false
     };
     private CatalogKind Kind => (CatalogKind)Math.Max(0, tabs.SelectedIndex);
     public bool HasUnsavedChanges => editor?.HasUnsavedChanges == true;
@@ -57,7 +57,7 @@ public partial class CatalogsControl : UserControl, IUnsavedChanges
         if (service is null || session is null || IsWriting || loading is not null) return;
         var version = ++generation; var kind = Kind;
         using var request = CancellationTokenSource.CreateLinkedTokenSource(lifetime.Token, session.Token);
-        loading = request; UpdateActions(); OperationStatePresenter.Show(statusLabel, ModuleState.Loading, "Danh mục.");
+        loading = request; UpdateActions(); OperationStatePresenter.Show(statusLabel, ModuleState.Loading, L.T("Danh mục."));
         ShowEmptyState(false);
         try
         {
@@ -74,9 +74,9 @@ public partial class CatalogsControl : UserControl, IUnsavedChanges
             allowanceColumn.Visible = factorColumn.Visible = kind == CatalogKind.Position;
             startColumn.Visible = endColumn.Visible = kind == CatalogKind.Shift;
             typeColumn.Visible = kind == CatalogKind.ExpenseCategory; supportedColumn.Visible = kind == CatalogKind.PaymentMethod;
-            OperationStatePresenter.Show(statusLabel, rows.Count == 0 ? ModuleState.Empty : ModuleState.Saved, $"Trang {skip / 50 + 1} · {rows.Count} dòng · {DateTime.Now:HH:mm}.");
+            OperationStatePresenter.Show(statusLabel, rows.Count == 0 ? ModuleState.Empty : ModuleState.Saved, L.F("Trang {0} · {1} dòng · {2}.", skip / 50 + 1, rows.Count, string.Format(global::System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:HH:mm}", DateTime.Now)));
             rowCount=rows.Count;dataSkip=skip;
-            var noun=kind switch{CatalogKind.ProductCategory=>"danh mục sản phẩm",CatalogKind.Supplier=>"nhà cung cấp",CatalogKind.PaymentMethod=>"phương thức",CatalogKind.DeliveryPartner=>"đối tác",CatalogKind.ExpenseCategory=>"loại thu / chi",CatalogKind.Position=>"chức vụ",_=>"ca làm"};
+            var noun=kind switch{CatalogKind.ProductCategory=>L.T("danh mục sản phẩm"),CatalogKind.Supplier=>L.T("nhà cung cấp"),CatalogKind.PaymentMethod=>L.T("phương thức"),CatalogKind.DeliveryPartner=>L.T("đối tác"),CatalogKind.ExpenseCategory=>L.T("loại thu / chi"),CatalogKind.Position=>L.T("chức vụ"),_=>L.T("ca làm")};
             management.Pagination.SetServerPage(skip/50,rows.Count,50,noun);
             ShowEmptyState(rows.Count == 0);
         }
@@ -93,9 +93,9 @@ public partial class CatalogsControl : UserControl, IUnsavedChanges
     {
         if (visible)
         {
-            emptyState.Text = skip > 0 ? "Không còn dữ liệu ở trang này.\r\nChọn Trước để quay lại."
-                : string.IsNullOrWhiteSpace(searchInput.Text) ? "Chưa có danh mục.\r\nChọn Thêm để tạo bản ghi đầu tiên."
-                : "Không tìm thấy danh mục.\r\nThay đổi tên tìm kiếm rồi thử lại.";
+            emptyState.Text = skip > 0 ? L.T("Không còn dữ liệu ở trang này.\r\nChọn Trước để quay lại.")
+                : string.IsNullOrWhiteSpace(searchInput.Text) ? L.T("Chưa có danh mục.\r\nChọn Thêm để tạo bản ghi đầu tiên.")
+                : L.T("Không tìm thấy danh mục.\r\nThay đổi tên tìm kiếm rồi thử lại.");
             PositionEmpty();
             emptyState.BringToFront();
         }
@@ -111,7 +111,7 @@ public partial class CatalogsControl : UserControl, IUnsavedChanges
             try
             {
                 var row = await service.GetAsync(session, Kind, unknownDelete.Code);
-                statusLabel.Text = row is null ? "Đối chiếu: bản ghi không còn trong DB." : "Đối chiếu: bản ghi vẫn tồn tại. Tải lại trước khi xóa.";
+                statusLabel.Text = row is null ? L.T("Đối chiếu: bản ghi không còn trong DB.") : L.T("Đối chiếu: bản ghi vẫn tồn tại. Tải lại trước khi xóa.");
                 unknownDelete = null;
             }
             catch (UserOperationException ex) { statusLabel.Text = ex.Message; }
@@ -137,10 +137,10 @@ public partial class CatalogsControl : UserControl, IUnsavedChanges
     private async void Delete_Click(object? sender, EventArgs e)
     {
         if (service is null || session is null || IsWriting || loading is not null || grid.CurrentRow?.DataBoundItem is not CatalogRow row) return;
-        if (await OrbitConfirmationDialog.ShowAsync(this, $"Xóa {row.Code} · {row.Name}? Danh mục có lịch sử hoặc mã hệ thống sẽ bị từ chối.", "Xóa danh mục", MessageBoxButtons.YesNo) != DialogResult.Yes) return;
+        if (await OrbitConfirmationDialog.ShowAsync(this, L.F("Xóa {0} · {1}? Danh mục có lịch sử hoặc mã hệ thống sẽ bị từ chối.", row.Code, row.Name), L.T("Xóa danh mục"), MessageBoxButtons.YesNo) != DialogResult.Yes) return;
         writing = true; UpdateActions();
         var deleted = false;
-        try { await service.DeleteAsync(session, Kind, row); deleted = true; statusLabel.Text = "Đã xóa danh mục."; }
+        try { await service.DeleteAsync(session, Kind, row); deleted = true; statusLabel.Text = L.T("Đã xóa danh mục."); }
         catch (UserOperationException ex) { if (ex.Error.RequiresReconciliation) unknownDelete = row; OperationStatePresenter.Show(statusLabel, ex.Error.RequiresReconciliation ? ModuleState.Unknown : ex.Error.Number == 51503 ? ModuleState.Conflict : ModuleState.Error, ex.Message); }
         catch (CafeManager.DataAccess.DataAccessException ex) { statusLabel.Text = ex.Error.Message; }
         catch (Exception ex) when (ex is UnauthorizedAccessException or ArgumentException) { statusLabel.Text = ex.Message; }
@@ -150,6 +150,8 @@ public partial class CatalogsControl : UserControl, IUnsavedChanges
     }
     private void Grid_CellFormatting(object? sender, DataGridViewCellFormattingEventArgs e)
     {
+        if (grid.Columns[e.ColumnIndex].DataPropertyName == "Type" && e.Value is not null)
+        { e.Value = CafeManager.Models.States.FinanceStates.TypeLabel(e.Value.ToString()!); e.FormattingApplied = true; }
         if (grid.Columns[e.ColumnIndex] == allowanceColumn && e.Value is decimal money) { e.Value = money.ToString("N0", global::System.Globalization.CultureInfo.GetCultureInfo("vi-VN")) + " ₫"; e.FormattingApplied = true; }
         if ((grid.Columns[e.ColumnIndex] == startColumn || grid.Columns[e.ColumnIndex] == endColumn) && e.Value is TimeSpan time) { e.Value = time.ToString(@"hh\:mm"); e.FormattingApplied = true; }
     }

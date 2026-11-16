@@ -32,11 +32,11 @@ public partial class StartupForm : Form
     public StartupForm(TableStatusService? service, string? configurationError, Business.Security.SessionContext? session = null) : this()
     {
         this.service = service; this.session = session;
-        statusLabel.Text = configurationError ?? "Sẵn sàng tải trạng thái bàn (mẫu nền G01, chưa đăng nhập).";
+        statusLabel.Text = configurationError ?? L.T("Sẵn sàng tải trạng thái bàn (mẫu nền G01, chưa đăng nhập).");
         loadButton.Enabled = service is not null && session is not null;
         SetContentState(service is null
-            ? "Chưa kết nối dữ liệu\r\n\r\nThiết lập kết nối bằng tài khoản ứng dụng riêng để xem danh sách bàn."
-            : "Chưa tải dữ liệu\r\n\r\nChọn khu vực hoặc để trống, rồi nhấn Tải trạng thái bàn.");
+            ? L.T("Chưa kết nối dữ liệu\r\n\r\nThiết lập kết nối bằng tài khoản ứng dụng riêng để xem danh sách bàn.")
+            : L.T("Chưa tải dữ liệu\r\n\r\nChọn khu vực hoặc để trống, rồi nhấn Tải trạng thái bàn."));
     }
 
     private void UpdateButtonAppearance()
@@ -64,8 +64,8 @@ public partial class StartupForm : Form
 
     private void ShowCanceledLoad()
     {
-        statusLabel.Text = "Đã hủy tải; dữ liệu cũ chưa cập nhật.";
-        SetContentState("Đã hủy tải\r\n\r\nNhấn Tải trạng thái bàn khi bạn muốn thử lại.");
+        statusLabel.Text = L.T("Đã hủy tải; dữ liệu cũ chưa cập nhật.");
+        SetContentState(L.T("Đã hủy tải\r\n\r\nNhấn Tải trạng thái bàn khi bạn muốn thử lại."));
     }
 
     private async void LoadButton_Click(object? sender, EventArgs e)
@@ -73,7 +73,7 @@ public partial class StartupForm : Form
         if (service is null || session is null) return;
         if (areaInput.Text.Trim().Length > 5)
         {
-            validation.SetError(areaInput, "Mã khu vực tối đa 5 ký tự.");
+            validation.SetError(areaInput, L.T("Mã khu vực tối đa 5 ký tự."));
             areaInput.Focus();
             return;
         }
@@ -84,8 +84,8 @@ public partial class StartupForm : Form
         var version = ++requestVersion;
         loadButton.Enabled = false;
         cancelButton.Enabled = true;
-        statusLabel.Text = "Đang tải…";
-        SetContentState("Đang tải danh sách bàn…\r\n\r\nBạn có thể hủy tải; dữ liệu cũ được giữ nguyên.");
+        statusLabel.Text = L.T("Đang tải…");
+        SetContentState(L.T("Đang tải danh sách bàn…\r\n\r\nBạn có thể hủy tải; dữ liệu cũ được giữ nguyên."));
         try
         {
             var result = await service.LoadAsync(session, areaInput.Text, cancellation.Token);
@@ -97,20 +97,20 @@ public partial class StartupForm : Form
             }
             if (result.Error is { } error)
             {
-                statusLabel.Text = $"Chưa cập nhật: {error.Message} (mã {error.Number}).";
-                SetContentState("Chưa tải được dữ liệu\r\n\r\nKiểm tra thông báo kết nối và thử tải lại.");
+                statusLabel.Text = L.F("Chưa cập nhật: {0} (mã {1}).", error.Message, error.Number);
+                SetContentState(L.T("Chưa tải được dữ liệu\r\n\r\nKiểm tra thông báo kết nối và thử tải lại."));
                 return;
             }
             if (result.Rows is not { } rows)
             {
-                statusLabel.Text = "Chưa cập nhật: phản hồi dữ liệu không hợp lệ; thử tải lại.";
-                SetContentState("Phản hồi dữ liệu không hợp lệ\r\n\r\nThử tải lại để cập nhật danh sách bàn.");
+                statusLabel.Text = L.T("Chưa cập nhật: phản hồi dữ liệu không hợp lệ; thử tải lại.");
+                SetContentState(L.T("Phản hồi dữ liệu không hợp lệ\r\n\r\nThử tải lại để cập nhật danh sách bàn."));
                 return;
             }
             tableGrid.DataSource = rows.ToList();
-            statusLabel.Text = rows.Count == 0 ? "Không có bàn trong khu vực đã chọn." : $"Đã tải {rows.Count} bàn lúc {DateTime.Now:HH:mm}.";
-            contentHeading.Text = rows.Count == 0 ? "Danh sách bàn" : $"Danh sách bàn · {rows.Count} bàn";
-            SetContentState("Không có bàn trong khu vực này\r\n\r\nThử mã khu vực khác hoặc để trống để xem tất cả.");
+            statusLabel.Text = rows.Count == 0 ? L.T("Không có bàn trong khu vực đã chọn.") : L.F("Đã tải {0} bàn lúc {1}.", rows.Count, string.Format(global::System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:HH:mm}", DateTime.Now));
+            contentHeading.Text = rows.Count == 0 ? L.T("Danh sách bàn") : L.F("Danh sách bàn · {0} bàn", rows.Count);
+            SetContentState(L.T("Không có bàn trong khu vực này\r\n\r\nThử mã khu vực khác hoặc để trống để xem tất cả."));
         }
         catch (OperationCanceledException) when (cancellation.IsCancellationRequested)
         {
@@ -123,8 +123,8 @@ public partial class StartupForm : Form
         {
             if (!IsDisposed && !Disposing && version == requestVersion)
             {
-                validation.SetError(areaInput, "Mã khu vực cần tối đa 5 ký tự ASCII.");
-                statusLabel.Text = "Kiểm tra mã khu vực; dữ liệu cũ chưa cập nhật.";
+                validation.SetError(areaInput, L.T("Mã khu vực cần tối đa 5 ký tự ASCII."));
+                statusLabel.Text = L.T("Kiểm tra mã khu vực; dữ liệu cũ chưa cập nhật.");
             }
         }
         finally

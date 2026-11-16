@@ -5,6 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
+    <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
@@ -16,5 +17,6 @@
     <ProjectReference Include="../../src/CafeManager.DataAccess/CafeManager.DataAccess.csproj" />
     <ProjectReference Include="../../src/CafeManager.Business/CafeManager.Business.csproj" />
     <ProjectReference Include="../../src/CafeManager.Models/CafeManager.Models.csproj" />
+    <ProjectReference Include="../../src/CafeManager.WinForms/CafeManager.WinForms.csproj" />
   </ItemGroup>
 </Project>

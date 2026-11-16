@@ -14,16 +14,16 @@ internal sealed partial class CheckoutDialog
     {
         var heading = new TableLayoutPanel { Dock = DockStyle.Fill, AutoSize = true, ColumnCount = 1, RowCount = 3, Margin = new Padding(0, 0, 0, 12) };
         heading.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
-        heading.Controls.Add(new Label { Text = "THANH TOÁN", AutoSize = true, Font = OrbitManagementTheme.Header, ForeColor = OrbitManagementTheme.Caramel, Margin = new Padding(0, 0, 0, 8) }, 0, 0);
-        heading.Controls.Add(new Label { Text = "Xác nhận thanh toán", AutoSize = true, Font = OrbitManagementTheme.Title, ForeColor = OrbitManagementTheme.Text, Margin = new Padding(0, 0, 0, 8) }, 0, 1);
+        heading.Controls.Add(new Label { Text = L.T("THANH TOÁN"), AutoSize = true, Font = OrbitManagementTheme.Header, ForeColor = OrbitManagementTheme.Caramel, Margin = new Padding(0, 0, 0, 8) }, 0, 0);
+        heading.Controls.Add(new Label { Text = L.T("Xác nhận thanh toán"), AutoSize = true, Font = OrbitManagementTheme.Title, ForeColor = OrbitManagementTheme.Text, Margin = new Padding(0, 0, 0, 8) }, 0, 1);
         var metadata = new FlowLayoutPanel { AutoSize = true, Dock = DockStyle.Fill, Margin = Padding.Empty, WrapContents = false };
-        metadata.Controls.Add(new Label { Text = $"Hóa đơn {order.Header.Code}", AutoSize = true, Font = OrbitManagementTheme.Table, ForeColor = OrbitManagementTheme.Muted, Margin = new Padding(0, 3, 12, 0) });
+        metadata.Controls.Add(new Label { Text = L.F("Hóa đơn {0}", order.Header.Code), AutoSize = true, Font = OrbitManagementTheme.Table, ForeColor = OrbitManagementTheme.Muted, Margin = new Padding(0, 3, 12, 0) });
         metadata.Controls.Add(new Label { Text = SalesStates.Label(order.Header.Channel), AutoSize = true, Font = OrbitManagementTheme.Small, ForeColor = OrbitManagementTheme.Caramel, BackColor = OrbitManagementTheme.Selected, Padding = new Padding(8, 3, 8, 3), Margin = Padding.Empty });
         heading.Controls.Add(metadata, 0, 2);
 
         var toolbar = new TableLayoutPanel { AutoSize = true, Dock = DockStyle.Fill, ColumnCount = 2, RowCount = 1, Margin = new Padding(0, 0, 0, 8) };
         toolbar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100)); toolbar.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
-        toolbar.Controls.Add(new Label { Text = "Phương thức thanh toán", AutoSize = true, Anchor = AnchorStyles.Left, Font = OrbitManagementTheme.Body, ForeColor = OrbitManagementTheme.Text }, 0, 0);
+        toolbar.Controls.Add(new Label { Text = L.T("Phương thức thanh toán"), AutoSize = true, Anchor = AnchorStyles.Left, Font = OrbitManagementTheme.Body, ForeColor = OrbitManagementTheme.Text }, 0, 0);
         var rowActions = SalesUi.Bar(add, remove); rowActions.WrapContents = false; rowActions.Margin = Padding.Empty; rowActions.Padding = Padding.Empty;
         toolbar.Controls.Add(rowActions, 1, 0);
         foreach (var button in new[] { add, remove }) OrbitManagementTheme.Button((OrbitButton)button, ManagementButtonStyle.Secondary, button == add ? "plus" : "trash");
@@ -34,7 +34,7 @@ internal sealed partial class CheckoutDialog
         var cashCard = new TableLayoutPanel { AutoSize = true, Dock = DockStyle.Fill, ColumnCount = 1, RowCount = 2, Margin = new Padding(0, 10, 0, 0), BackColor = OrbitManagementTheme.Selected };
         cashCard.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
         tendered.TextAlign = HorizontalAlignment.Right;
-        cashCard.Controls.Add(new OrbitDialogField("Tiền mặt khách đưa (VND)", tendered) { Margin = new Padding(16, 8, 16, 0) }, 0, 0);
+        cashCard.Controls.Add(new OrbitDialogField(L.T("Tiền mặt khách đưa (VND)"), tendered) { Margin = new Padding(16, 8, 16, 0) }, 0, 0);
         cashHint.Font = OrbitManagementTheme.Small; cashHint.ForeColor = OrbitManagementTheme.Muted;
         cashCard.Controls.Add(cashHint, 0, 1);
 
@@ -55,12 +55,12 @@ internal sealed partial class CheckoutDialog
         grid.DataBindingComplete += (_, _) => SizePaymentRows(); grid.DpiChangedAfterParent += (_, _) => SizePaymentRows();
         grid.SizeChanged += (_, _) => SizePaymentRows();
 
-        var summary = new OrbitSummaryPanel("Tổng kết hóa đơn");
-        totalValue = summary.AddValue("Tiền món"); discountValue = summary.AddValue("Ưu đãi");
+        var summary = new OrbitSummaryPanel(L.T("Tổng kết hóa đơn"));
+        totalValue = summary.AddValue(L.T("Tiền món")); discountValue = summary.AddValue(L.T("Ưu đãi"));
         discountSource = summary.AddNote();
         shipValue = summary.AddValue("Ship"); summary.AddDivider();
-        payableValue = summary.AddValue("Phải thanh toán", prominent: true); summary.AddDivider();
-        allocatedValue = summary.AddValue("Tổng số thu"); receivedValue = summary.AddValue("Khách đưa"); differenceValue = summary.AddValue("Tiền thối / thiếu");
+        payableValue = summary.AddValue(L.T("Phải thanh toán"), prominent: true); summary.AddDivider();
+        allocatedValue = summary.AddValue(L.T("Tổng số thu")); receivedValue = summary.AddValue(L.T("Khách đưa")); differenceValue = summary.AddValue(L.T("Tiền thối / thiếu"));
         var body = new TableLayoutPanel { AutoSize = true, Dock = DockStyle.Top, ColumnCount = 2, RowCount = 1, Margin = Padding.Empty, Padding = new Padding(1), BackColor = OrbitManagementTheme.Border };
         body.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 68)); body.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 32));
         body.RowStyles.Add(new RowStyle(SizeType.AutoSize)); body.Controls.Add(input, 0, 0); body.Controls.Add(summary, 1, 0);

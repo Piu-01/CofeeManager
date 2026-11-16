@@ -14,12 +14,12 @@ public sealed class BootstrapService(SetupRepository setup, AuthRepository auth,
     {
         var username = PasswordService.Username(request.Username);
         if (request.Password.Length is < 8 or > 128 || request.Password != request.Confirmation)
-            throw new ArgumentException("Mật khẩu cần 8–128 ký tự và xác nhận khớp; không bỏ dấu cách.");
+            throw new ArgumentException(L.T("Mật khẩu cần 8–128 ký tự và xác nhận khớp; không bỏ dấu cách."));
         if (request.Mode == "NewEmployee" && (string.IsNullOrWhiteSpace(request.EmployeeName) || request.EmployeeName.Trim().Length > 50))
-            throw new ArgumentException("Tên nhân viên bắt buộc, tối đa 50 ký tự.");
+            throw new ArgumentException(L.T("Tên nhân viên bắt buộc, tối đa 50 ký tự."));
         var phone = string.IsNullOrWhiteSpace(request.Phone) ? null : request.Phone.Trim(' ');
         if (phone is { Length: > 0 } && (phone.Length > 15 || phone.Any(c => c is < '0' or > '9')))
-            throw new ArgumentException("Số điện thoại gồm tối đa 15 chữ số.");
+            throw new ArgumentException(L.T("Số điện thoại gồm tối đa 15 chữ số."));
         var normalized = new BootstrapRequest { Mode = request.Mode, Username = username,
             Password = request.Password, Confirmation = request.Confirmation, EmployeeCode = request.EmployeeCode,
             EmployeeName = request.EmployeeName?.Trim(), Phone = phone,
@@ -31,7 +31,7 @@ public sealed class BootstrapService(SetupRepository setup, AuthRepository auth,
         var account = await auth.ReadCredentialAsync(PasswordService.Username(request.Username).ToLowerInvariant(), true, token);
         if (account is null || !account.Identity.Active || !account.Identity.Employed || account.Identity.Role != "ADMIN"
             || passwords.Verify(account.Hash, request.Password) == PasswordVerificationResult.Failed)
-            throw new UnauthorizedAccessException("Không xác nhận được admin hiện tại; cần quy trình khôi phục riêng nếu bị khóa.");
+            throw new UnauthorizedAccessException(L.T("Không xác nhận được admin hiện tại; cần quy trình khôi phục riêng nếu bị khóa."));
         await setup.ConfirmLegacyAsync(account, token);
     }
 }

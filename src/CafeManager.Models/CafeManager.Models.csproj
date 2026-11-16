@@ -4,4 +4,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Localization/Translations/en.json" LogicalName="CafeManager.Localization.en.json" />
+  </ItemGroup>
 </Project>

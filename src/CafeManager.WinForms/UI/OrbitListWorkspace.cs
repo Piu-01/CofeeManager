@@ -9,7 +9,7 @@ public sealed class OrbitListWorkspace : UserControl
     public Label Title { get; } = Label("", OrbitManagementTheme.Title, OrbitManagementTheme.Text);
     public Label Description { get; } = Label("", OrbitManagementTheme.Table, OrbitManagementTheme.Muted);
     public Label Count { get; } = Label("", OrbitManagementTheme.Small, OrbitManagementTheme.Text);
-    public Label Status { get; } = Label("Sẵn sàng", OrbitManagementTheme.Small, OrbitManagementTheme.Caramel);
+    public Label Status { get; } = Label(L.T("Sẵn sàng"), OrbitManagementTheme.Small, OrbitManagementTheme.Caramel);
     public Panel PrimaryActions { get; } = new();
     public Panel Filters { get; } = new();
     public Panel SearchActions { get; } = new();

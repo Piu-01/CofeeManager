@@ -23,7 +23,7 @@ public sealed class DeliveryService(DeliveryRepository repository, PermissionSer
     public Task<SalesWriteResult> ChangeAsync(SessionContext s, DeliveryRequest r, CancellationToken t = default)
     {
         SalesService.Revision(r.Revision);
-        if (r.TargetStatus != Next(r.ExpectedStatus) || r.RequestId == Guid.Empty) throw new ArgumentException("Chỉ chuyển một bước kế tiếp.");
+        if (r.TargetStatus != Next(r.ExpectedStatus) || r.RequestId == Guid.Empty) throw new ArgumentException(L.T("Chỉ chuyển một bước kế tiếp."));
         return Run(s, ct => repository.ChangeAsync(s.Identity, r, ct), t);
     }
 }

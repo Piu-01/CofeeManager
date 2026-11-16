@@ -1,21 +1,30 @@
 using CafeManager.Business.Security;
 using CafeManager.Business.Services;
 using CafeManager.Models.Dtos.Sales;
+using CafeManager.WinForms.Forms;
+using CafeManager.WinForms.Printing.FastReport;
 
 namespace CafeManager.WinForms.Printing;
 
-// Dùng cùng đường kiểm quyền/chọn máy in cho POS và lịch sử hóa đơn.
+// In hóa đơn đi qua PDF FastReport + preview WebView2; quyền in vẫn do BLL kiểm trước khi mở preview.
 internal static class InvoicePrinting
 {
-    internal static async Task<bool> PrintAsync(Control owner, InvoiceDetailDto detail,
+    internal static async Task<bool> PreviewAsync(Control owner, InvoiceDetailDto detail,
         InvoiceService service, SessionContext session, bool reprint = true)
     {
         await service.DemandPrintAsync(session);
         if (owner.IsDisposed) return false;
-        using var document = new InvoicePrintDocument(detail, reprint);
-        using var dialog = new PrintDialog { Document = document, UseEXDialog = true };
-        if (dialog.ShowDialog(UI.OrbitDialogHost.NativeOwner(owner)) != DialogResult.OK) return false;
-        document.Print();
+        PrintOutput.CleanupOld();
+        var code = detail.Order.Header.Code;
+        var path = await Task.Run(() => InvoicePdfReport.Write(detail, reprint, InvoicePaper.A4));
+        if (owner.IsDisposed)
+        {
+            PrintOutput.TryDelete(path);
+            return false;
+        }
+        using var dialog = new PdfPreviewForm(path, L.T("Hóa đơn ") + code,
+            paper => InvoicePdfReport.Write(detail, reprint, paper));
+        await UI.OrbitDialogHost.ShowAsync(dialog, owner);
         return true;
     }
 }

@@ -8,11 +8,11 @@ public sealed class StocktakeService(StocktakeRepository repository,PermissionSe
 {
     public static void Validate(StocktakeRequest r)
     {
-        if(r.RequestId==Guid.Empty||r.Operation is not("StocktakeCreate" or "StocktakeSave" or "StocktakeCommit"))throw new ArgumentException("Yêu cầu kiểm kê không hợp lệ.");
-        if(r.Operation=="StocktakeCreate"){if(r.Scope.Count==0||r.Scope.Distinct(StringComparer.OrdinalIgnoreCase).Count()!=r.Scope.Count)throw new ArgumentException("Chọn nguyên liệu, không lặp mã.");}
-        else if(string.IsNullOrWhiteSpace(r.Code)||r.Revision?.Length!=8)throw new ArgumentException("Thiếu mã hoặc phiên bản phiếu.");
-        if(r.Counts.Select(l=>l.Code).Distinct(StringComparer.OrdinalIgnoreCase).Count()!=r.Counts.Count)throw new ArgumentException("Trùng nguyên liệu kiểm kê.");
-        foreach(var l in r.Counts){if(l.Quantity.HasValue)MaterialService.Quantity(l.Quantity.Value);if(l.Reason?.Length>100)throw new ArgumentException("Lý do tối đa100 ký tự.");}
+        if(r.RequestId==Guid.Empty||r.Operation is not("StocktakeCreate" or "StocktakeSave" or "StocktakeCommit"))throw new ArgumentException(L.T("Yêu cầu kiểm kê không hợp lệ."));
+        if(r.Operation=="StocktakeCreate"){if(r.Scope.Count==0||r.Scope.Distinct(StringComparer.OrdinalIgnoreCase).Count()!=r.Scope.Count)throw new ArgumentException(L.T("Chọn nguyên liệu, không lặp mã."));}
+        else if(string.IsNullOrWhiteSpace(r.Code)||r.Revision?.Length!=8)throw new ArgumentException(L.T("Thiếu mã hoặc phiên bản phiếu."));
+        if(r.Counts.Select(l=>l.Code).Distinct(StringComparer.OrdinalIgnoreCase).Count()!=r.Counts.Count)throw new ArgumentException(L.T("Trùng nguyên liệu kiểm kê."));
+        foreach(var l in r.Counts){if(l.Quantity.HasValue)MaterialService.Quantity(l.Quantity.Value);if(l.Reason?.Length>100)throw new ArgumentException(L.T("Lý do tối đa100 ký tự."));}
     }
     private async Task<T> Run<T>(SessionContext s,Func<CancellationToken,Task<T>> action,CancellationToken t)
     {

@@ -6,8 +6,17 @@ public sealed class InventoryControl : UserControl
 {
     public InventoryControl(MaterialService materials,PurchaseService purchases,StockIssueService issues,StocktakeService stocktakes,SessionContext session,IPendingOperationStore pending,DocumentLinks links)
     {
+        SuspendLayout();
         Dock=DockStyle.Fill;AutoScaleDimensions=new SizeF(96,96);AutoScaleMode=AutoScaleMode.Dpi;
-        var tabs=new TabControl{Dock=DockStyle.Fill};var stock=new TabPage("Tồn kho");stock.Controls.Add(new MaterialsControl(materials,session));var receipts=new TabPage("Nhập hàng");receipts.Controls.Add(new PurchasesControl(purchases,session,pending,links));var exports=new TabPage("Xuất kho");exports.Controls.Add(new StockIssuesControl(issues,purchases,session,pending));var counts=new TabPage("Kiểm kê");counts.Controls.Add(new StocktakesControl(stocktakes,purchases,session,pending));tabs.TabPages.AddRange([stock,receipts,exports,counts]);Controls.Add(tabs);AppTheme.Apply(this);
+        AppTheme.Apply(this);
+        var tabs=new OrbitTabControl{Dock=DockStyle.Fill,FlatManagementTabs=true};
+        // Cấu hình chrome trước khi tạo handle; chỉ trang đang chọn mới tạo control/query.
+        AppTheme.Apply(tabs);
+        tabs.AddLazyPage(L.T("Tồn kho"),()=>new MaterialsControl(materials,session));
+        tabs.AddLazyPage(L.T("Nhập hàng"),()=>new PurchasesControl(purchases,session,pending,links));
+        tabs.AddLazyPage(L.T("Xuất kho"),()=>new StockIssuesControl(issues,purchases,session,pending));
+        tabs.AddLazyPage(L.T("Kiểm kê"),()=>new StocktakesControl(stocktakes,purchases,session,pending));
+        Controls.Add(tabs);ResumeLayout(true);
     }
 }
 

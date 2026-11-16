@@ -8,12 +8,12 @@ public sealed class PurchaseService(PurchaseRepository repository,PermissionServ
 {
     public static void ValidateLines(IReadOnlyList<PurchaseLine> lines)
     {
-        if(lines.Count==0||lines.Select(l=>l.Code).Distinct(StringComparer.OrdinalIgnoreCase).Count()!=lines.Count)throw new ArgumentException("Cần ít nhất một nguyên liệu; mỗi mã một dòng.");
+        if(lines.Count==0||lines.Select(l=>l.Code).Distinct(StringComparer.OrdinalIgnoreCase).Count()!=lines.Count)throw new ArgumentException(L.T("Cần ít nhất một nguyên liệu; mỗi mã một dòng."));
         foreach(var line in lines)
         {
             MaterialService.Quantity(line.Quantity);
-            if(line.Quantity<=0||line.Price<=0||line.Price>999999999999999999m||decimal.Truncate(line.Price)!=line.Price)throw new ArgumentException("Lượng và giá phải dương; giá nguyên VND, lượng tối đa4 số lẻ.");
-            MaterialService.Required(line.Code,5,"Nguyên liệu");
+            if(line.Quantity<=0||line.Price<=0||line.Price>999999999999999999m||decimal.Truncate(line.Price)!=line.Price)throw new ArgumentException(L.T("Lượng và giá phải dương; giá nguyên VND, lượng tối đa4 số lẻ."));
+            MaterialService.Required(line.Code,5,L.T("Nguyên liệu"));
         }
     }
     private async Task<T> Run<T>(SessionContext s,Func<CancellationToken,Task<T>> action,CancellationToken t)
@@ -28,7 +28,7 @@ public sealed class PurchaseService(PurchaseRepository repository,PermissionServ
     public Task<string> CreateAsync(SessionContext s,PurchaseRequest r,CancellationToken t=default)
     {
         ValidateLines(r.Lines);
-        if(r.RequestId==Guid.Empty||r.Immediate<0||r.Immediate>r.ExpectedTotal||decimal.Truncate(r.Immediate)!=r.Immediate)throw new ArgumentException("Phần trả ngay không hợp lệ.");
+        if(r.RequestId==Guid.Empty||r.Immediate<0||r.Immediate>r.ExpectedTotal||decimal.Truncate(r.Immediate)!=r.Immediate)throw new ArgumentException(L.T("Phần trả ngay không hợp lệ."));
         return Run(s,async ct=>{if(r.Immediate>0)await permissions.DemandAsync(s,AppPermission.Finance,ct);return await repository.CreateAsync(s.Identity,r,ct);},t);
     }
     public Task<string?> ReconcileAsync(SessionContext s,Guid id,CancellationToken t=default)=>Run(s,ct=>repository.ReceiptAsync(s.Identity,id,ct),t);

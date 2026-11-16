@@ -15,7 +15,7 @@ public sealed class CatalogService(CatalogRepository repository, PermissionServi
         ProductCategoryRequest => CatalogKind.ProductCategory, SupplierRequest => CatalogKind.Supplier,
         PaymentMethodRequest => CatalogKind.PaymentMethod, DeliveryPartnerRequest => CatalogKind.DeliveryPartner,
         ExpenseCategoryRequest => CatalogKind.ExpenseCategory, PositionRequest => CatalogKind.Position,
-        ShiftRequest => CatalogKind.Shift, _ => throw new ArgumentException("Loại danh mục không hợp lệ.")
+        ShiftRequest => CatalogKind.Shift, _ => throw new ArgumentException(L.T("Loại danh mục không hợp lệ."))
     };
     public static CatalogRequest Normalize(CatalogRequest request, bool creating)
     {
@@ -23,38 +23,38 @@ public sealed class CatalogService(CatalogRepository repository, PermissionServi
         var name = request.Name?.Trim() ?? ""; var code = request.Code?.Trim(' ').ToUpperInvariant() ?? "";
         var max = kind == CatalogKind.Supplier ? 100 : kind == CatalogKind.Shift ? 30 : 50;
         if (name.Length == 0 || name.Length > max || request.Name?.Any(char.IsControl) == true)
-            throw new ArgumentException($"Tên bắt buộc, tối đa {max} ký tự; không chứa ký tự điều khiển.", "Name");
+            throw new ArgumentException(L.F("Tên bắt buộc, tối đa {0} ký tự; không chứa ký tự điều khiển.", max), "Name");
         if (creating && kind != CatalogKind.ProductCategory)
         {
             var pattern = kind switch { CatalogKind.Supplier => "NCC[0-9]{2}", CatalogKind.PaymentMethod => "PT[0-9]{3}",
                 CatalogKind.DeliveryPartner => "DT[0-9]{3}", CatalogKind.ExpenseCategory => "TC[0-9]{3}", CatalogKind.Position => "CV[0-9]{3}", _ => "CA[0-9]{3}" };
             if (!Regex.IsMatch(code, "\\A" + pattern + "\\z") || code.EndsWith(kind == CatalogKind.Supplier ? "00" : "000", StringComparison.Ordinal))
-                throw new ArgumentException("Mã phải đúng prefix và phạm vi số (NCC01–99; PT/DT/TC/CV/CA001–999).", "Code");
+                throw new ArgumentException(L.T("Mã phải đúng prefix và phạm vi số (NCC01–99; PT/DT/TC/CV/CA001–999)."), "Code");
         }
         else if (!creating && (code.Length is < 1 or > 5 || code.Any(c => c > 127 || char.IsControl(c))))
-            throw new ArgumentException("Mã danh mục không hợp lệ.", "Code");
+            throw new ArgumentException(L.T("Mã danh mục không hợp lệ."), "Code");
         var normalized = request with { Name = name, Code = code };
         switch (normalized)
         {
-            case ProductCategoryRequest p when creating && p.RequestId == Guid.Empty: throw new ArgumentException("Cần mã yêu cầu tạo danh mục.");
+            case ProductCategoryRequest p when creating && p.RequestId == Guid.Empty: throw new ArgumentException(L.T("Cần mã yêu cầu tạo danh mục."));
             case SupplierRequest s:
                 var phone = s.Phone?.Trim(' ') ?? "";
-                if (phone.Length is < 1 or > 15 || phone.Any(c => c is < '0' or > '9')) throw new ArgumentException("SDT bắt buộc, 1–15 chữ số ASCII.", "Phone");
+                if (phone.Length is < 1 or > 15 || phone.Any(c => c is < '0' or > '9')) throw new ArgumentException(L.T("SDT bắt buộc, 1–15 chữ số ASCII."), "Phone");
                 normalized = s with { Phone = phone }; break;
             case DeliveryPartnerRequest d: Number(d.Ratio, 0, 100, 2, "Ratio"); break;
             case PositionRequest p: Number(p.Allowance, 0, 999999999999999999m, 0, "Allowance"); Number(p.Factor, 1, 999.99m, 2, "Factor"); break;
             case ShiftRequest s:
                 if (s.StartTime < TimeSpan.Zero || s.EndTime < TimeSpan.Zero || s.StartTime >= TimeSpan.FromDays(1) || s.EndTime >= TimeSpan.FromDays(1)
                     || s.StartTime.Ticks % TimeSpan.TicksPerMinute != 0 || s.EndTime.Ticks % TimeSpan.TicksPerMinute != 0 || s.StartTime == s.EndTime)
-                    throw new ArgumentException("Giờ ca theo phút, trong 00:00–23:59; giờ bắt đầu và kết thúc phải khác nhau.", "StartTime");
+                    throw new ArgumentException(L.T("Giờ ca theo phút, trong 00:00–23:59; giờ bắt đầu và kết thúc phải khác nhau."), "StartTime");
                 break;
             case ExpenseCategoryRequest e:
-                if (!Enum.IsDefined(e.Type)) throw new ArgumentException("Loại phải là Thu hoặc Chi.", "Type");
-                if (IsSystemExpense(code) && (creating || e.Type != ExpenseType.Chi)) throw new ArgumentException("Mã Chi hệ thống chỉ được sửa tên.", "Type");
+                if (!Enum.IsDefined(e.Type)) throw new ArgumentException(L.T("Loại phải là Thu hoặc Chi."), "Type");
+                if (IsSystemExpense(code) && (creating || e.Type != ExpenseType.Chi)) throw new ArgumentException(L.T("Mã Chi hệ thống chỉ được sửa tên."), "Type");
                 break;
             case PaymentMethodRequest p:
-                if (creating && (p.Code == "PT010" || p.Supported)) throw new ArgumentException("Phương thức mới chưa hỗ trợ; lưu rồi xác nhận riêng. PT010 được dành riêng.", "Supported");
-                if (p.Code == "PT010" && p.Supported) throw new ArgumentException("PT010 không được hỗ trợ.", "Supported");
+                if (creating && (p.Code == "PT010" || p.Supported)) throw new ArgumentException(L.T("Phương thức mới chưa hỗ trợ; lưu rồi xác nhận riêng. PT010 được dành riêng."), "Supported");
+                if (p.Code == "PT010" && p.Supported) throw new ArgumentException(L.T("PT010 không được hỗ trợ."), "Supported");
                 break;
         }
         return normalized;
@@ -62,7 +62,7 @@ public sealed class CatalogService(CatalogRepository repository, PermissionServi
     private static void Number(decimal value, decimal min, decimal max, int scale, string field)
     {
         if (value < min || value > max || decimal.Round(value, scale) != value)
-            throw new ArgumentException($"Giá trị từ {min} đến {max}, tối đa {scale} chữ số thập phân; không tự làm tròn.", field);
+            throw new ArgumentException(L.F("Giá trị từ {0} đến {1}, tối đa {2} chữ số thập phân; không tự làm tròn.", min, max, scale), field);
     }
     private async Task<T> Run<T>(SessionContext session, Func<CancellationToken, Task<T>> operation, CancellationToken token)
     {
@@ -73,7 +73,7 @@ public sealed class CatalogService(CatalogRepository repository, PermissionServi
     }
     public Task<List<CatalogRow>> ListAsync(SessionContext session, CatalogKind kind, string search, int skip, CancellationToken token = default)
     {
-        if (!Enum.IsDefined(kind) || search.Length > 100 || skip < 0) throw new ArgumentException("Bộ lọc hoặc trang không hợp lệ.");
+        if (!Enum.IsDefined(kind) || search.Length > 100 || skip < 0) throw new ArgumentException(L.T("Bộ lọc hoặc trang không hợp lệ."));
         return Run(session, ct => repository.ListAsync(session.Identity, kind, search, skip, ct), token);
     }
     public Task<CatalogRow?> GetAsync(SessionContext session, CatalogKind kind, string code, CancellationToken token = default) =>
@@ -96,7 +96,7 @@ public sealed class CatalogService(CatalogRepository repository, PermissionServi
     }
     public Task<CatalogWriteResult> DeleteAsync(SessionContext session, CatalogKind kind, CatalogRow row, CancellationToken token = default)
     {
-        if (kind == CatalogKind.ExpenseCategory && IsSystemExpense(row.Code)) throw new ArgumentException("Không được xóa mã Chi hệ thống.");
+        if (kind == CatalogKind.ExpenseCategory && IsSystemExpense(row.Code)) throw new ArgumentException(L.T("Không được xóa mã Chi hệ thống."));
         return Run(session, ct => repository.DeleteAsync(session.Identity, kind, row.Code, row.Revision, ct), token);
     }
     private async Task<T> Lookup<T>(SessionContext session, AppPermission permission, Func<CancellationToken, Task<T>> read, CancellationToken token)

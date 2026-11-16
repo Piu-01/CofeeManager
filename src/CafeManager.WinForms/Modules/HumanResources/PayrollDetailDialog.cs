@@ -1,0 +1,18 @@
+using CafeManager.Models.Dtos.HumanResources;
+using CafeManager.WinForms.Forms;
+using CafeManager.WinForms.UI;
+namespace CafeManager.WinForms.Modules.HumanResources;
+
+public sealed class PayrollDetailDialog : OrbitDialogForm
+{
+    public PayrollDetailDialog(PayrollRow row, DocumentLinks links)
+    {
+        Text = L.T("Bảng lương — ") + row.Id; Tag = "Payroll:" + row.Id; AutoScaleDimensions = new(96, 96); AutoScaleMode = AutoScaleMode.Dpi; ClientSize = new(780, 560);
+        var text = new TextBox { ReadOnly = true, Multiline = true, ScrollBars = ScrollBars.Vertical, Dock = DockStyle.Fill,
+            Text = L.F("BL{0} · {1} · {2}\r\nKỳ {3}/{4} · Chốt {5}\r\n{6} · Thực lĩnh {7} ₫\r\nPhiếu chi {8}\r\n\r\n", row.Id, row.Employee, row.EmployeeName, string.Format(global::System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:00}", row.Month), row.Year, string.Format(global::System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:dd/MM/yyyy HH:mm:ss}", row.CommittedAt), row.StatusText, string.Format(global::System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:N0}", row.Amount), row.ExpenseCode) + (row.Snapshot is null ? L.T("Dữ liệu cũ: chưa đủ snapshot. Không suy hợp đồng/giờ duyệt từ hồ sơ hiện tại; không chi mới trước đối soát.") : Describe(row.Snapshot) + L.T("\r\n\r\nCông snapshot:\r\n") + string.Join("\r\n", row.Snapshot.Attendance.Select(a => $"{a.WorkDate:dd/MM/yyyy} · {a.Shift} · {a.ClockIn:dd/MM/yyyy HH:mm:ss} → {a.ClockOut:dd/MM/yyyy HH:mm:ss} · {a.Status}"))) };
+        var actions = new FlowLayoutPanel(); var close = new OrbitButton { Text = L.T("Đóng") }; close.Click += (_, _) => Close(); actions.Controls.Add(close);
+        if (row.ExpenseCode is { } code) { var expense = new OrbitButton { Text = L.T("Phiếu chi lương") }; expense.Click += async (_, _) => await links.ShowFinanceAsync(this, code); actions.Controls.Add(expense); }
+        var layout = new OrbitDialogLayout(this, text, new Label(), actions); Controls.Add(layout); layout.EnableResponsiveActions(this);
+    }
+    internal static string Describe(PayrollSnapshot s) => L.F("{0} · {1} · {2}\r\nTổng công {3} giờ ({4} giây); thường {5}, tăng ca {6}.\r\nLương cơ bản {7} + ({8} giờ × {9}) + tăng ca {10} + phụ cấp {11} + thưởng {12} − khấu trừ {13}\r\nThực lĩnh SQL: {14} ₫. Chốt chưa đồng nghĩa đã chi.", s.EmployeeName, s.Contract, (s.Employed ? L.T("Đang làm") : L.T("Đã nghỉ — dùng mức lương hồ sơ hiện tại")), string.Format(global::System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:N2}", s.TotalHours), s.TotalSeconds, string.Format(global::System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:N2}", s.RegularHours), string.Format(global::System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:N2}", s.OvertimeHours), string.Format(global::System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:N0}", s.BasePay), string.Format(global::System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:N2}", s.PaidHours), string.Format(global::System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:N0}", s.HourlyPayRate), string.Format(global::System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:N0}", s.OvertimePay), string.Format(global::System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:N0}", s.Allowance), string.Format(global::System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:N0}", s.Bonus), string.Format(global::System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:N0}", s.Deduction), string.Format(global::System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:N0}", s.Amount));
+}

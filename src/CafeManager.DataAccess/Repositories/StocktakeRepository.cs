@@ -16,7 +16,7 @@ public sealed class StocktakeRepository(ConnectionFactory factory)
         List<SqlParameter> p=[..CatalogRepository.Actor(a),AuthRepository.Parameter("@RequestId",SqlDbType.UniqueIdentifier,r.RequestId)];
         if(r.Operation=="StocktakeCreate")p.Add(new("@Scope",SqlDbType.Structured){TypeName="dbo.StocktakeScope",Value=scope});
         else{p.Add(AuthRepository.Parameter("@Code",SqlDbType.VarChar,r.Code,-1));p.Add(AuthRepository.Parameter("@ExpectedRevision",SqlDbType.Binary,r.Revision,8));if(r.Operation=="StocktakeSave")p.Add(new("@Counts",SqlDbType.Structured){TypeName="dbo.StocktakeCounts",Value=counts});}
-        var procedure=r.Operation switch{"StocktakeCreate"=>"sp_StocktakeCreate","StocktakeSave"=>"sp_StocktakeSaveCounts","StocktakeCommit"=>"sp_ChotKiemKe",_=>throw new ArgumentException("Thao tác kiểm kê sai.")};
+        var procedure=r.Operation switch{"StocktakeCreate"=>"sp_StocktakeCreate","StocktakeSave"=>"sp_StocktakeSaveCounts","StocktakeCommit"=>"sp_ChotKiemKe",_=>throw new ArgumentException(L.T("Thao tác kiểm kê sai."))};
         return(await executor.ReadAsync(procedure,p.ToArray(),row=>row.GetString(0).TrimEnd(),t,true)).Single();
     }
     public async Task<string?> ReceiptAsync(AccountIdentity a,Guid id,CancellationToken t)=>(await executor.ReadAsync("sp_StocktakeReceipt",[..CatalogRepository.Actor(a),AuthRepository.Parameter("@RequestId",SqlDbType.UniqueIdentifier,id)],r=>r.GetString(0).TrimEnd(),t)).SingleOrDefault();

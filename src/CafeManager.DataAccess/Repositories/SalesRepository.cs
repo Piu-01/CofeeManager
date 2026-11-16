@@ -30,7 +30,7 @@ public sealed partial class SalesRepository(ConnectionFactory factory)
         catch (OperationCanceledException) when (writing && sent)
         {
             throw new DataAccessException(new(DataErrorKind.Cancelled, 0,
-                "Đã dừng chờ ghi. Đối chiếu hóa đơn trước khi tiếp tục.", true));
+                L.T("Đã dừng chờ ghi. Đối chiếu hóa đơn trước khi tiếp tục."), true));
         }
     }
     internal static string Text(SqlDataReader r, int i) => r.GetString(i).TrimEnd();
@@ -57,16 +57,22 @@ public sealed partial class SalesRepository(ConnectionFactory factory)
         [.. Actor(a), P("@Code", SqlDbType.VarChar, code, -1), P("@RequestId", SqlDbType.UniqueIdentifier, id), .. values],
         async (r, ct) =>
         {
-            if (!await r.ReadAsync(ct)) throw new InvalidDataException("SQL không trả receipt sau ghi.");
+            if (!await r.ReadAsync(ct)) throw new InvalidDataException(L.T("SQL không trả receipt sau ghi."));
             return new SalesWriteResult(Text(r, 0), (byte[])r[1]);
         }, t, true);
     public Task<string> AllocateCodeAsync(CancellationToken t) => Call("sp_CapMa",
         [P("@Loai", SqlDbType.VarChar, "HOADON", 20)], async (r, ct) =>
-        { if (!await r.ReadAsync(ct)) throw new InvalidDataException("Không cấp được mã."); return Text(r, 1); }, t);
+        { if (!await r.ReadAsync(ct)) throw new InvalidDataException(L.T("Không cấp được mã.")); return Text(r, 1); }, t);
     public Task<SalesWriteResult> CreateAsync(AccountIdentity a, CreateOrderRequest request, CancellationToken t) =>
         Write(a, "sp_TaoHoaDon", request.Code, request.RequestId,
         [.. Header(request.Header), P("@Product", SqlDbType.VarChar, request.Product, -1),
             P("@Quantity", SqlDbType.BigInt, request.Quantity), P("@Note", SqlDbType.NVarChar, request.Note, -1)], t);
+    public async Task<SalesWriteResult> CreateDraftAsync(AccountIdentity a, CreateDraftOrderRequest request, CancellationToken t)
+    {
+        using var table = SalesDraftTableBuilder.Build(request.Lines);
+        return await Write(a, "sp_TaoHoaDonTuNhap", request.Code, request.RequestId,
+        [.. Header(request.Header), SalesDraftTableBuilder.Parameter(table)], t);
+    }
     public Task<SalesWriteResult> LineAsync(AccountIdentity a, OrderLineRequest request, CancellationToken t) =>
         Write(a, "sp_SuaDongHoaDon", request.Code, request.RequestId,
         [P("@ExpectedRevision", SqlDbType.Binary, request.Revision, 8), P("@Action", SqlDbType.VarChar, request.Action, 10),
@@ -84,7 +90,8 @@ public sealed partial class SalesRepository(ConnectionFactory factory)
             Optional(r, 5), Optional(r, 6), Text(r, 7), Optional(r, 8), Optional(r, 9), Optional(r, 10), Optional(r, 11),
             r.IsDBNull(12) ? null : r.GetDateTime(12), r.GetDecimal(13), r.GetDecimal(14), r.GetDecimal(15), r.GetDecimal(16),
             r.GetDecimal(17), r.GetDecimal(18), Text(r, 19), (byte[])r[20], r.GetBoolean(21), Optional(r, 22),
-            r.IsDBNull(23) ? null : r.GetInt32(23), r.GetDateTime(24));
+            r.IsDBNull(23) ? null : r.GetInt32(23), r.GetDateTime(24),
+            r.IsDBNull(25) ? null : r.GetInt32(25), r.IsDBNull(26) ? null : (byte[])r[26]);
         await r.NextResultAsync(t);
         var lines = await Rows(r, x => new SalesLine(x.GetInt32(0), Text(x, 1), Text(x, 2), x.GetInt32(3),
             x.GetDecimal(4), Optional(x, 5), x.GetDecimal(6)), t);
@@ -103,6 +110,9 @@ public sealed partial class SalesRepository(ConnectionFactory factory)
         Call("sp_SalesMenu", [.. Actor(a), P("@Search", SqlDbType.NVarChar, search, 100),
             P("@Category", SqlDbType.VarChar, category, 5), P("@Skip", SqlDbType.Int, skip)],
             (r, ct) => Rows(r, x => new SalesMenuItem(Text(x, 0), Text(x, 1), x.GetDecimal(2), Text(x, 3), x.GetBoolean(4)), ct), t);
+    public Task<List<string>> NoteSuggestionsAsync(AccountIdentity a, string search, CancellationToken t) =>
+        Call("sp_SalesNoteSuggestions", [.. Actor(a), P("@Search", SqlDbType.NVarChar, search, 100), P("@Take", SqlDbType.Int, 30)],
+            (r, ct) => Rows(r, x => Text(x, 0), ct), t);
     public Task<List<SalesLookup>> CategoriesAsync(AccountIdentity a, CancellationToken t) =>
         Call("sp_SalesCategories", Actor(a), (r, ct) => Rows(r, x => new SalesLookup(Text(x, 0), Text(x, 1)), ct), t);
     public Task<List<SalesLookup>> PartnersAsync(AccountIdentity a, CancellationToken t) =>

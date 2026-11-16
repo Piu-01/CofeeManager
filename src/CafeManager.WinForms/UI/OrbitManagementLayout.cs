@@ -72,10 +72,10 @@ public sealed class OrbitManagementLayout : TableLayoutPanel
             if (child is DataGridView grid) grid.AlternatingRowsDefaultCellStyle.BackColor=AppTheme.Surface;
         }
     }
-    public static void Button(Button button, string icon = "", bool primary = false)
+    public static void Button(Button button, string icon = "", bool primary = false, bool wide = false)
     {
         button.AutoSize = false; button.Padding = Padding.Empty; button.Margin = new Padding(4, 2, 4, 2);
-        var wide = button.Text.Length > 5 || button.Text is "Mở sổ" or "Sơ đồ";
+        wide |= TextRenderer.MeasureText(button.Text, button.Font).Width + (icon.Length > 0 ? 32 : 16) > 88 * button.DeviceDpi / 96F;
         buttonSizes.Remove(button); buttonSizes.Add(button,new ButtonSize(primary ? 200 : wide ? 160 : 88,primary ? 40 : 36));
         NormalizeButton(button);
         button.HandleCreated+=(_,_)=>NormalizeButton(button);

@@ -11,14 +11,14 @@ public sealed class ProductService(ProductRepository repository,PermissionServic
 {
     public static ProductRequest Normalize(ProductRequest r)
     {
-        var code=MaterialService.Required(r.Code,5,"Mã").ToUpperInvariant();
-        if(!Regex.IsMatch(code,"^SP[0-9]{3}$")||code=="SP000") throw new ArgumentException("Mã SP001–SP999.");
-        if(r.Price<=0||r.Price>999999999999999999m||decimal.Round(r.Price)!=r.Price) throw new ArgumentException("Giá phải là số nguyên VND dương.");
-        if(r.Status is not ("Dang ban" or "Ngung ban")) throw new ArgumentException("Trạng thái không hợp lệ.");
-        var lines=r.Recipe.Select(x=>new RecipeInput(MaterialService.Required(x.Code,5,"Nguyên liệu").ToUpperInvariant(),x.Quantity)).ToArray();
-        foreach(var line in lines) { MaterialService.Quantity(line.Quantity); if(line.Quantity==0) throw new ArgumentException("Định mức phải dương."); }
-        if(lines.Select(x=>x.Code).Distinct().Count()!=lines.Length) throw new ArgumentException("Nguyên liệu công thức bị trùng.");
-        return r with {Code=code,Name=MaterialService.Required(r.Name,50,"Tên"),Category=MaterialService.Required(r.Category,5,"Danh mục"),Recipe=lines};
+        var code=MaterialService.Required(r.Code,5,L.T("Mã")).ToUpperInvariant();
+        if(!Regex.IsMatch(code,"^SP[0-9]{3}$")||code=="SP000") throw new ArgumentException(L.T("Mã SP001–SP999."));
+        if(r.Price<=0||r.Price>999999999999999999m||decimal.Round(r.Price)!=r.Price) throw new ArgumentException(L.T("Giá phải là số nguyên VND dương."));
+        if(r.Status is not ("Dang ban" or "Ngung ban")) throw new ArgumentException(L.T("Trạng thái không hợp lệ."));
+        var lines=r.Recipe.Select(x=>new RecipeInput(MaterialService.Required(x.Code,5,L.T("Nguyên liệu")).ToUpperInvariant(),x.Quantity)).ToArray();
+        foreach(var line in lines) { MaterialService.Quantity(line.Quantity); if(line.Quantity==0) throw new ArgumentException(L.T("Định mức phải dương.")); }
+        if(lines.Select(x=>x.Code).Distinct().Count()!=lines.Length) throw new ArgumentException(L.T("Nguyên liệu công thức bị trùng."));
+        return r with {Code=code,Name=MaterialService.Required(r.Name,50,L.T("Tên")),Category=MaterialService.Required(r.Category,5,L.T("Danh mục")),Recipe=lines};
     }
     private async Task<T> Run<T>(SessionContext s,AppPermission p,Func<CancellationToken,Task<T>> work,CancellationToken t)
     {

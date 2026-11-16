@@ -11,6 +11,15 @@ public class OrbitSurface : UserControl
         SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw, true);
         BackColor = OrbitManagementTheme.Surface; ForeColor = OrbitManagementTheme.Text;
     }
+    protected override void OnPaintBackground(PaintEventArgs e)
+    {
+        using var outside = new SolidBrush(Parent?.BackColor ?? OrbitManagementTheme.Background); e.Graphics.FillRectangle(outside, ClientRectangle);
+        if (Width < 2 || Height < 2) return;
+        var scale = DeviceDpi / 96F;
+        e.Graphics.SmoothingMode = global::System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+        using var path = OrbitManagementTheme.Round(new RectangleF(scale, scale, Width - 2 * scale, Height - 2 * scale), 10 * scale);
+        using var fill = new SolidBrush(BackColor); e.Graphics.FillPath(fill, path);
+    }
     protected override void OnPaint(PaintEventArgs e)
     {
         base.OnPaint(e); if (Width < 2 || Height < 2) return;

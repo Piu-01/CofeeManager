@@ -114,6 +114,7 @@ public static class OrbitManagementTheme
         switch (name)
         {
             case "plus": graphics.DrawLine(pen, 12, 5, 12, 19); graphics.DrawLine(pen, 5, 12, 19, 12); break;
+            case "minus": graphics.DrawLine(pen, 5, 12, 19, 12); break;
             case "check": graphics.DrawLines(pen, [new PointF(5, 12), new(10, 17), new(20, 7)]); break;
             case "search": graphics.DrawEllipse(pen, 3, 3, 13, 13); graphics.DrawLine(pen, 15, 15, 21, 21); break;
             case "printer": graphics.DrawRectangle(pen, 7, 3, 10, 5); graphics.DrawLines(pen, [new PointF(7, 17), new(3, 17), new(3, 8), new(21, 8), new(21, 17), new(17, 17)]); graphics.DrawRectangle(pen, 7, 13, 10, 8); graphics.DrawLine(pen, 17, 11, 18, 11); break;

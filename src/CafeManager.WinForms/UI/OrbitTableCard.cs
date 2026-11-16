@@ -14,6 +14,8 @@ public sealed class OrbitTableCard : OrbitButton
     public string Status { get; set; } = "";
     [System.ComponentModel.DefaultValue("")]
     public string OrderCode { get; set; } = "";
+    [System.ComponentModel.DefaultValue(false)]
+    public bool Retained { get; set; }
     private bool selected;
     [System.ComponentModel.DefaultValue(false)]
     public bool Selected { get => selected; set { if (selected == value) return; selected = value; Invalidate(); } }
@@ -23,6 +25,7 @@ public sealed class OrbitTableCard : OrbitButton
         var g = e.Graphics; var scale = DeviceDpi / 96F; int P(float n) => (int)Math.Round(n * scale);
         g.Clear(Parent?.BackColor ?? OrbitManagementTheme.Surface); g.SmoothingMode = SmoothingMode.AntiAlias;
         var busy = Status != "Trong"; var bounds = new RectangleF(scale, (1 + PressAmount) * scale, Width - 2 * scale, Height - 3 * scale);
+        var statusText = Retained ? L.T("Đã trả · giữ bàn") : Status switch { "Cho thanh toan" => L.T("Chờ thanh toán"), "Trong" => L.T("Trống"), _ => L.T("Đang dùng") };
         using var path = OrbitManagementTheme.Round(bounds, 12 * scale);
         using var fill = new LinearGradientBrush(bounds, selected || busy ? Color.FromArgb(51, 40, 35) : Color.FromArgb(37, 30, 46), OrbitManagementTheme.Surface, 110F); g.FillPath(fill, path);
         using var border = new Pen(selected ? OrbitManagementTheme.Caramel : busy ? Color.FromArgb(121, 92, 67) : HoverAmount > 0 ? OrbitManagementTheme.Lilac : OrbitManagementTheme.Border, scale); g.DrawPath(border, path);
@@ -32,8 +35,8 @@ public sealed class OrbitTableCard : OrbitButton
         TextRenderer.DrawText(g, Caption, OrbitManagementTheme.DrawingFont(this, OrbitManagementTheme.CardTitle), new Rectangle(P(17), P(49), Width - P(34), P(28)), OrbitManagementTheme.Text, TextFormatFlags.Left | TextFormatFlags.VerticalCenter | TextFormatFlags.EndEllipsis | TextFormatFlags.NoPrefix);
         var ink = busy ? OrbitManagementTheme.Caramel : Color.FromArgb(177, 201, 164);
         using var dot = new SolidBrush(ink); g.FillEllipse(dot, 18 * scale, 95 * scale, 4 * scale, 4 * scale);
-        TextRenderer.DrawText(g, busy ? "Đang phục vụ" : "Trống", OrbitManagementTheme.DrawingFont(this, OrbitManagementTheme.Table), new Rectangle(P(28), P(85), Width - P(45), P(23)), ink, TextFormatFlags.Left | TextFormatFlags.VerticalCenter | TextFormatFlags.NoPrefix);
-        TextRenderer.DrawText(g, OrderCode.Length == 0 ? "Chưa có đơn" : OrderCode, OrbitManagementTheme.DrawingFont(this, OrbitManagementTheme.Small), new Rectangle(P(17), P(108), Width - P(34), P(20)), OrbitManagementTheme.Muted, TextFormatFlags.Left | TextFormatFlags.VerticalCenter | TextFormatFlags.EndEllipsis | TextFormatFlags.NoPrefix);
+        TextRenderer.DrawText(g, statusText, OrbitManagementTheme.DrawingFont(this, OrbitManagementTheme.Table), new Rectangle(P(28), P(85), Width - P(45), P(23)), ink, TextFormatFlags.Left | TextFormatFlags.VerticalCenter | TextFormatFlags.NoPrefix);
+        TextRenderer.DrawText(g, OrderCode.Length == 0 ? L.T("Chưa có đơn") : OrderCode, OrbitManagementTheme.DrawingFont(this, OrbitManagementTheme.Small), new Rectangle(P(17), P(108), Width - P(34), P(20)), OrbitManagementTheme.Muted, TextFormatFlags.Left | TextFormatFlags.VerticalCenter | TextFormatFlags.EndEllipsis | TextFormatFlags.NoPrefix);
         if (Focused && ShowFocusCues) ControlPaint.DrawFocusRectangle(g, Rectangle.Inflate(Rectangle.Round(bounds), -P(5), -P(5)), OrbitManagementTheme.Lilac, OrbitManagementTheme.Surface);
     }
 }

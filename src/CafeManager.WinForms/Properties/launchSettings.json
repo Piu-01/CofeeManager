@@ -3,7 +3,8 @@
     "CoffeeManager.Development": {
       "commandName": "Project",
       "environmentVariables": {
-        "CAFEMANAGER_USE_DEVELOPMENT": "1"
+        "CAFEMANAGER_USE_DEVELOPMENT": "1",
+        "CAFEMANAGER_DEV_QUICK_LOGIN": "1"
       }
     }
   }

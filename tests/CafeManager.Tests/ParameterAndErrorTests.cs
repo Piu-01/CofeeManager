@@ -43,6 +43,50 @@ public sealed class ParameterAndErrorTests
     }
 
     [Theory]
+    [InlineData(258, false, DataErrorKind.Connection, false, "kết nối")]
+    [InlineData(258, true, DataErrorKind.Connection, true, "kết nối")]
+    [InlineData(-2146893019, false, DataErrorKind.Connection, false, "chứng chỉ")]
+    [InlineData(-2146893019, true, DataErrorKind.Connection, true, "chứng chỉ")]
+    [InlineData(53, false, DataErrorKind.Connection, false, "kết nối")]
+    [InlineData(53, true, DataErrorKind.Connection, true, "kết nối")]
+    [InlineData(18456, false, DataErrorKind.Connection, false, "kết nối")]
+    [InlineData(18456, true, DataErrorKind.Connection, true, "kết nối")]
+    [InlineData(-2, false, DataErrorKind.Timeout, false, "quá thời gian")]
+    [InlineData(-2, true, DataErrorKind.Timeout, true, "đối chiếu")]
+    [InlineData(52905, false, DataErrorKind.Unknown, false, "mã hỗ trợ")]
+    [InlineData(52905, true, DataErrorKind.Unknown, true, "mã hỗ trợ")]
+    [InlineData(229, true, DataErrorKind.Permission, false, "quyền")]
+    [InlineData(1205, true, DataErrorKind.BusinessRule, false, "rollback")]
+    public void ConnectionFailuresKeepActionableMessagesAndWriteReconciliation(
+        int number, bool writing, DataErrorKind kind, bool reconcile, string action)
+    {
+        var error = SqlErrorMapper.MapNumber(number, writing);
+
+        Assert.Equal(number, error.Number);
+        Assert.Equal(kind, error.Kind);
+        Assert.Equal(reconcile, error.RequiresReconciliation);
+        Assert.Contains(action, error.Message);
+        Assert.False(error.Message.Contains("TrustServerCertificate", StringComparison.OrdinalIgnoreCase));
+    }
+
+    [Theory]
+    [Trait("Case", "G04-POS-04")]
+    [InlineData(2812, false, false)]
+    [InlineData(2812, true, false)]
+    [InlineData(2715, true, false)]
+    [InlineData(208, false, false)]
+    [InlineData(208, true, true)]
+    public void MissingSchemaObjectsPointToMigrationInsteadOfUnknownResult(int number, bool writing, bool reconcile)
+    {
+        var error = SqlErrorMapper.MapNumber(number, writing);
+
+        Assert.Equal(DataErrorKind.Schema, error.Kind);
+        Assert.Equal(reconcile, error.RequiresReconciliation);
+        Assert.Contains("migration", error.Message);
+        Assert.Contains("triển khai", error.Message);
+    }
+
+    [Theory]
     [Trait("Case", "T05-K10")]
     [InlineData("master")][InlineData("tempdb")][InlineData("QuanLyCafe_ERP_V2")]
     [InlineData("CoffeeManager_Test_T05_wrong")]

@@ -12,8 +12,8 @@ public partial class OperationEditorDialog
         fields = new TableLayoutPanel { Dock = DockStyle.Fill, AutoScroll = true, ColumnCount = 1, RowCount = 0, Padding = new Padding(0, 4, 0, 16) };
         fields.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
         status = new Label();
-        save = new UI.OrbitButton { Text = "Lưu", AutoSize = true }; check = new UI.OrbitButton { Text = "Đối chiếu", AutoSize = true, Enabled = false };
-        cancel = new UI.OrbitButton { Text = "Hủy", AutoSize = true };
+        save = new UI.OrbitButton { Text = L.T("Lưu"), IsPrimary = true, AutoSize = true }; check = new UI.OrbitButton { Text = L.T("Đối chiếu"), AutoSize = true, Enabled = false };
+        cancel = new UI.OrbitButton { Text = L.T("Hủy"), AutoSize = true };
         var footer = new FlowLayoutPanel();
         footer.Controls.AddRange([save, check, cancel]);
         layout = new UI.OrbitDialogLayout(this, fields, status, footer); Controls.Add(layout);

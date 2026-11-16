@@ -9,9 +9,16 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
+    <InternalsVisibleTo Include="CafeManager.Tests" />
     <EmbeddedResource Include="Resources/Orbit/*.png" />
     <None Update="Resources/Orbit/LUCIDE-LICENSE.txt" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
     <None Update="Resources/Orbit/PRODUCT-ART-LICENSE.txt" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <None Update="Resources/Licenses/*.txt" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FastReport.OpenSource" Version="2027.1.0" />
+    <PackageReference Include="FastReport.OpenSource.Export.PdfSimple" Version="2027.1.0" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.4314.35" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="../CafeManager.Models/CafeManager.Models.csproj" />

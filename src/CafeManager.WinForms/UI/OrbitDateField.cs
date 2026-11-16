@@ -7,8 +7,8 @@ namespace CafeManager.WinForms.UI;
 // Giữ TextBox và MonthCalendar native cho nhập tiếng Việt, bàn phím và accessibility.
 public sealed class OrbitDateField : UserControl
 {
-    private readonly TextBox input = new() { Dock = DockStyle.Fill, BorderStyle = BorderStyle.FixedSingle, PlaceholderText = "dd/MM/yyyy", AccessibleName = "Ngày, định dạng dd/MM/yyyy" };
-    private readonly CalendarButton open = new() { Dock = DockStyle.Right, AccessibleName = "Mở lịch chọn ngày" };
+    private readonly TextBox input = new() { Dock = DockStyle.Fill, BorderStyle = BorderStyle.FixedSingle, PlaceholderText = "dd/MM/yyyy", AccessibleName = L.T("Ngày, định dạng dd/MM/yyyy") };
+    private readonly CalendarButton open = new() { Dock = DockStyle.Right, AccessibleName = L.T("Mở lịch chọn ngày") };
     private readonly OrbitCalendar calendar = new();
     private readonly ToolStripDropDown popup;
     private readonly ToolStripControlHost calendarHost;
@@ -22,7 +22,7 @@ public sealed class OrbitDateField : UserControl
         {
             if (!DateTime.TryParseExact(input.Text.Trim(), "dd/MM/yyyy", CultureInfo.GetCultureInfo("vi-VN"), DateTimeStyles.None, out var date)
                 || date < calendar.MinDate || date > calendar.MaxDate)
-                throw new ArgumentException("Ngày không hợp lệ. Nhập dd/MM/yyyy trong khoảng 01/01/1753–31/12/9998.");
+                throw new ArgumentException(L.T("Ngày không hợp lệ. Nhập dd/MM/yyyy trong khoảng 01/01/1753–31/12/9998."));
             return date.Date;
         }
         set
@@ -42,7 +42,7 @@ public sealed class OrbitDateField : UserControl
         calendarHost = new ToolStripControlHost(calendar) { Margin = Padding.Empty, Padding = Padding.Empty, AutoSize = false };
         popup = new ToolStripDropDown { Padding = new Padding(1), BackColor = AppTheme.Border, AutoClose = true, AutoSize = false };
         popup.Items.Add(calendarHost);
-        tooltip.SetToolTip(open, "Chọn ngày (Alt + ↓)");
+        tooltip.SetToolTip(open, L.T("Chọn ngày (Alt + ↓)"));
         popup.Opened += (_, _) => SizeAndPositionCalendar();
         popup.Closed += (_, _) => { if (!IsDisposed && input.CanFocus) input.Focus(); };
         open.Click += (_, _) => OpenCalendar();
@@ -124,7 +124,7 @@ public sealed class OrbitDateField : UserControl
             BackColor = AppTheme.Surface; ForeColor = AppTheme.Text;
             TitleBackColor = AppTheme.Selected; TitleForeColor = AppTheme.Text;
             TrailingForeColor = AppTheme.Muted; Font = AppTheme.BodyFont;
-            AccessibleName = "Lịch chọn một ngày";
+            AccessibleName = L.T("Lịch chọn một ngày");
         }
 
         protected override void OnHandleCreated(EventArgs e)

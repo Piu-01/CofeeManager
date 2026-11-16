@@ -28,16 +28,26 @@ public sealed class OrbitDialogHost : IDisposable
         }
         for (var form = owner.FindForm()?.Owner; form is not null; form = form.Owner)
             if (form is MainForm root) return root;
-        throw new InvalidOperationException("Hộp nghiệp vụ cần có cửa sổ cha CoffeeManager.");
+        throw new InvalidOperationException(L.T("Hộp nghiệp vụ cần có cửa sổ cha CoffeeManager."));
     }
     public static Task<DialogResult> ShowAsync(OrbitDialogForm dialog, Control owner) => owner.IsDisposed || owner.Disposing
         ? Task.FromResult(DialogResult.Cancel) : FindMainForm(owner).Dialogs.OpenAsync(dialog, owner);
     public static IWin32Window NativeOwner(Control owner) => owner.FindForm() ?? FindMainForm(owner);
 
+    // Login thuộc vòng đời app, chưa có MainForm để dùng stack hộp nghiệp vụ.
+    internal static DialogResult ShowLoginDialog(OrbitDialogForm dialog, LoginForm owner)
+    {
+        if (owner.IsDisposed || owner.Disposing) return DialogResult.Cancel;
+        dialog.ShowInTaskbar = false; dialog.MinimizeBox = dialog.MaximizeBox = false;
+        dialog.StartPosition = FormStartPosition.CenterParent;
+        OrbitField.ApplyInputBehavior(dialog);
+        return dialog.ShowDialog(owner);
+    }
+
     private Task<DialogResult> OpenAsync(OrbitDialogForm dialog, Control owner)
     {
         if (aborting || disposed || main.IsDisposed || main.Disposing || owner.IsDisposed) return Task.FromResult(DialogResult.Cancel);
-        if (dialog.DialogHost is not null) throw new InvalidOperationException("Hộp đã được mở.");
+        if (dialog.DialogHost is not null) throw new InvalidOperationException(L.T("Hộp đã được mở."));
         var parent = owner.FindForm() ?? main;
         if (stack.Count > 0 && parent != stack[^1].Dialog) return Task.FromResult(DialogResult.Cancel);
         var entry = new Entry(dialog, parent, FocusedDescendant(parent));

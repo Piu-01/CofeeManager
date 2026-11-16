@@ -4,7 +4,7 @@ namespace CafeManager.WinForms.UI;
 
 public sealed class OrbitSearchBox : UserControl
 {
-    public TextBox Input { get; } = new() { BorderStyle = BorderStyle.None, PlaceholderText = "Tìm tên hoặc mã nguyên liệu…", BackColor = OrbitManagementTheme.Input, ForeColor = OrbitManagementTheme.Text, Font = OrbitManagementTheme.Table };
+    public TextBox Input { get; } = new() { BorderStyle = BorderStyle.None, PlaceholderText = L.T("Tìm tên hoặc mã nguyên liệu…"), BackColor = OrbitManagementTheme.Input, ForeColor = OrbitManagementTheme.Text, Font = OrbitManagementTheme.Table };
     public OrbitSearchBox()
     {
         SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw, true);

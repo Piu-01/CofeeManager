@@ -41,7 +41,7 @@ internal sealed class SqlProcedureExecutor(ConnectionFactory factory, DataOperat
         {
             var error = new CafeManager.Models.Errors.DataError(
                 CafeManager.Models.Errors.DataErrorKind.Cancelled, 0,
-                "Đã dừng chờ ghi; đối chiếu mã nguồn trước khi gửi lại.", RequiresReconciliation: true);
+                L.T("Đã dừng chờ ghi; đối chiếu mã nguồn trước khi gửi lại."), RequiresReconciliation: true);
             log?.Failure(procedure, sourceCode, correlation, error);
             throw new DataAccessException(error);
         }

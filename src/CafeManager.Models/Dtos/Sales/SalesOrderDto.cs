@@ -4,9 +4,13 @@ public sealed record SalesOrderHeader(string Code, DateTime Created, string Empl
     string? TableCode, string? Partner, string? Promotion, string Channel, string? Recipient, string? Phone,
     string? Address, string? Delivery, DateTime? PaidAt, decimal PartnerPercent, decimal PartnerFee,
     decimal Total, decimal Ship, decimal Discount, decimal Payable, string Status, byte[] Revision,
-    bool PreviewValid, string? PreviewSource, int? PreviewPercent, DateTime ReadAt)
+    bool PreviewValid, string? PreviewSource, int? PreviewPercent, DateTime ReadAt,
+    int? SessionCode, byte[]? SessionRevision)
 {
-    public bool IsOpen => Status == "Chua thanh toan";
+    public bool CanEdit => Status == "Chua thanh toan";
+    // Còn mở = còn thu/hủy: đơn chờ thanh toán vẫn thu hoặc hủy được nhưng không sửa món.
+    public bool IsPayable => Status is "Chua thanh toan" or "Cho thanh toan";
+    public bool IsOpen => IsPayable;
 }
 public sealed record SalesLine(int LineId, string Product, string Name, int Quantity, decimal Price,
     string? Note, decimal Amount);

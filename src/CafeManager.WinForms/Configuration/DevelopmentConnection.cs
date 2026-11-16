@@ -20,7 +20,10 @@ public static class DevelopmentConnection
             var builder = new SqlConnectionStringBuilder(value);
             if (builder.DataSource != "localhost" || builder.InitialCatalog != Database || builder.IntegratedSecurity)
                 throw new InvalidDataException("Invalid development target.");
-            return value;
+            // Dev runtime dùng connection pool. Đo 15/11/2026: Pooling=False tốn ~334 ms mở kết nối
+            // mỗi lượt gọi DB; harness cần EXECUTE AS USER thì tự đặt qua CAFEMANAGER_APP_CONNECTION.
+            builder.Pooling = true;
+            return builder.ConnectionString;
         }
         finally { CryptographicOperations.ZeroMemory(bytes); }
     }
@@ -28,7 +31,7 @@ public static class DevelopmentConnection
     public static void Write(string value)
     {
         Directory.CreateDirectory(DirectoryPath);
-        var bytes = Encoding.UTF8.GetBytes(value);
+        var bytes = Encoding.UTF8.GetBytes(new SqlConnectionStringBuilder(value) { Pooling = true }.ConnectionString);
         try { File.WriteAllBytes(FilePath, ProtectedData.Protect(bytes, Entropy, DataProtectionScope.CurrentUser)); }
         finally { CryptographicOperations.ZeroMemory(bytes); }
     }

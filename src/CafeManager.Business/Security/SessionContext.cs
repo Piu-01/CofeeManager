@@ -11,7 +11,7 @@ public sealed class SessionContext : IDisposable
     public bool IsRevoked { get; private set; }
     public event Action? Revoked;
     public CancellationToken Token { get; }
-    public void EnsureCurrent() { if (IsRevoked) throw new UnauthorizedAccessException("Phiên đã kết thúc; đăng nhập lại."); }
+    public void EnsureCurrent() { if (IsRevoked) throw new UnauthorizedAccessException(L.T("Phiên đã kết thúc; đăng nhập lại.")); }
     public void Revoke() { if (!IsRevoked) { IsRevoked = true; cancellation.Cancel(); Revoked?.Invoke(); } }
     public void Dispose() { Revoke(); cancellation.Dispose(); }
 }

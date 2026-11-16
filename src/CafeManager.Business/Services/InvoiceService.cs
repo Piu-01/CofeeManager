@@ -17,7 +17,7 @@ public sealed class InvoiceService(InvoiceRepository repository, PermissionServi
     }
     public Task<List<SalesOrderRow>> ListAsync(SessionContext s, InvoiceFilter filter, CancellationToken t = default)
     {
-        if (filter.DateBasis is not ("Created" or "Paid") || filter.To < filter.From || filter.Skip < 0) throw new ArgumentException("Khoảng ngày/trang không hợp lệ.");
+        if (filter.DateBasis is not ("Created" or "Paid") || filter.To < filter.From || filter.Skip < 0) throw new ArgumentException(L.T("Khoảng ngày/trang không hợp lệ."));
         filter = filter with { Search = SalesService.Optional(filter.Search, 100) ?? "", Customer = SalesService.Optional(filter.Customer, 5) };
         return Run(s, ct => repository.ListAsync(s.Identity, filter, ct), t);
     }

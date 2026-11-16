@@ -4,8 +4,8 @@ namespace CafeManager.WinForms.UI;
 
 public sealed class OrbitPagination : UserControl
 {
-    public OrbitButton Previous { get; } = new() { AccessibleName = "Trang trước" };
-    public OrbitButton Next { get; } = new() { AccessibleName = "Trang sau" };
+    public OrbitButton Previous { get; } = new() { AccessibleName = L.T("Trang trước") };
+    public OrbitButton Next { get; } = new() { AccessibleName = L.T("Trang sau") };
     public Label Range { get; } = new() { AutoSize = false, Font = OrbitManagementTheme.Small, ForeColor = OrbitManagementTheme.Muted, TextAlign = ContentAlignment.MiddleLeft };
     private readonly Label indicator = new() { Text = "1 / 1", Font = OrbitManagementTheme.Small, ForeColor = OrbitManagementTheme.Muted, TextAlign = ContentAlignment.MiddleCenter };
     public OrbitPagination()
@@ -15,14 +15,14 @@ public sealed class OrbitPagination : UserControl
         Controls.AddRange([Range, Previous, indicator, Next]);
     }
     public void SetPage(int page, int pageSize, int total)
-        => SetKnownPage(page, pageSize, total, "nguyên liệu", includeNoun: false);
+        => SetKnownPage(page, pageSize, total, L.T("nguyên liệu"), includeNoun: false);
     public void SetPage(int page, int pageSize, int total, string noun)
         => SetKnownPage(page, pageSize, total, noun, includeNoun: true);
     private void SetKnownPage(int page, int pageSize, int total, string noun, bool includeNoun)
     {
         var pages = Math.Max(1, (int)(((long)total + pageSize - 1) / pageSize));
         indicator.Text = $"{page + 1} / {pages}";
-        Range.Text = total == 0 ? $"0 {noun}" : $"Hiển thị {(long)page * pageSize + 1}–{Math.Min(((long)page + 1) * pageSize, total)} / {total}" + (includeNoun ? $" {noun}" : "");
+        Range.Text = total == 0 ? $"0 {noun}" : L.F("Hiển thị {0}–{1} / {2}", (long)page * pageSize + 1, Math.Min(((long)page + 1) * pageSize, total), total) + (includeNoun ? $" {noun}" : "");
         Previous.Enabled = page > 0; Next.Enabled = page + 1 < pages;
         PerformLayout();
     }
@@ -31,7 +31,7 @@ public sealed class OrbitPagination : UserControl
     {
         var endKnown = rowCount < pageSize || !paginated;
         indicator.Text = endKnown ? $"{page + 1} / {page + 1}" : $"{page + 1} / …";
-        Range.Text = rowCount == 0 ? $"0 {noun}" : $"Hiển thị {page * pageSize + 1}–{page * pageSize + rowCount}" + (endKnown ? $" / {page * pageSize + rowCount} {noun}" : $" {noun}");
+        Range.Text = rowCount == 0 ? $"0 {noun}" : L.F("Hiển thị {0}–{1}", page * pageSize + 1, page * pageSize + rowCount) + (endKnown ? $" / {page * pageSize + rowCount} {noun}" : $" {noun}");
         Previous.Enabled = paginated && page > 0; Next.Enabled = paginated && !endKnown;
         PerformLayout();
     }

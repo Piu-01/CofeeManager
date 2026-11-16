@@ -12,7 +12,7 @@ public sealed class ConnectionFactory
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(commandTimeoutSeconds);
         var builder = new SqlConnectionStringBuilder(connectionString);
         if (string.IsNullOrWhiteSpace(builder.InitialCatalog))
-            throw new ArgumentException("Cần chọn database ứng dụng.", nameof(connectionString));
+            throw new ArgumentException(L.T("Cần chọn database ứng dụng."), nameof(connectionString));
         this.connectionString = builder.ConnectionString;
         CommandTimeoutSeconds = commandTimeoutSeconds;
     }

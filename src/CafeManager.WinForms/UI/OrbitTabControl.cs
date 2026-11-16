@@ -4,8 +4,60 @@ namespace CafeManager.WinForms.UI;
 
 public class OrbitTabControl : TabControl
 {
+    private readonly Dictionary<TabPage, Func<Control>> pendingPages = [];
+    private bool creatingPage;
+
     [System.ComponentModel.DefaultValue(false)]
     public bool FlatManagementTabs { get; set; }
+
+    // Chỉ caller dùng AddLazyPage mới tạo nội dung theo nhu cầu; giữ mọi nhãn tab.
+    public void AddLazyPage(string caption, Func<Control> create)
+    {
+        var page = new TabPage(caption)
+        {
+            UseVisualStyleBackColor = false, BackColor = AppTheme.Background,
+            ForeColor = AppTheme.Text, Padding = new Padding(0)
+        };
+        pendingPages.Add(page, create); TabPages.Add(page);
+    }
+
+    protected override void OnCreateControl()
+    {
+        base.OnCreateControl(); EnsureSelectedPage();
+    }
+
+    protected override void OnSelectedIndexChanged(EventArgs e)
+    {
+        base.OnSelectedIndexChanged(e); EnsureSelectedPage();
+    }
+
+    protected override void OnVisibleChanged(EventArgs e)
+    {
+        base.OnVisibleChanged(e); EnsureSelectedPage();
+    }
+
+    private void EnsureSelectedPage()
+    {
+        if (creatingPage || Disposing || IsDisposed || !IsHandleCreated || !Visible
+            || SelectedTab is not { } page || !pendingPages.TryGetValue(page, out var create)) return;
+        creatingPage = true; page.SuspendLayout();
+        try
+        {
+            var control = create();
+            // Trang con đã tự dùng control Orbit; không áp AppTheme (theme cũ) lên cây này vì
+            // nó ghi đè BorderStyle/BackColor của input bên trong (ô vuông trong thanh tìm kiếm).
+            control.SuspendLayout();
+            try { control.Dock = DockStyle.Fill; }
+            finally { control.ResumeLayout(false); }
+            page.Controls.Add(control); pendingPages.Remove(page);
+        }
+        finally { page.ResumeLayout(true); creatingPage = false; }
+    }
+
+    protected override void Dispose(bool disposing)
+    {
+        if (disposing) pendingPages.Clear(); base.Dispose(disposing);
+    }
 
     protected override void OnDrawItem(DrawItemEventArgs e)
     {

@@ -19,7 +19,7 @@ public partial class MaterialsControl
         AutoScaleDimensions = new SizeF(96, 96); AutoScaleMode = AutoScaleMode.Dpi;
         BackColor = OrbitManagementTheme.Background;
         grid = new OrbitDataGridView { Dock = DockStyle.Fill };
-        foreach (var column in new[] { ("Code", "MÃ"), ("Name", "NGUYÊN LIỆU"), ("Unit", "ĐƠN VỊ"), ("Quantity", "TỒN HIỆN TẠI") })
+        foreach (var column in new[] { ("Code", L.T("MÃ")), ("Name", L.T("NGUYÊN LIỆU")), ("Unit", L.T("ĐƠN VỊ")), ("Quantity", L.T("TỒN HIỆN TẠI")) })
             grid.Columns.Add(new DataGridViewTextBoxColumn { Name = column.Item1, DataPropertyName = column.Item1, HeaderText = column.Item2 });
         grid.Columns["Code"].DefaultCellStyle.Font = OrbitManagementTheme.Code;
         grid.Columns["Code"].DefaultCellStyle.ForeColor = OrbitManagementTheme.Muted;
@@ -30,17 +30,17 @@ public partial class MaterialsControl
         grid.Columns["Quantity"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
         var searchBox = new OrbitSearchBox(); search = searchBox.Input;
         workspace = new OrbitListWorkspace(searchBox); state = workspace.Status;
-        workspace.Title.Text = "Nguyên liệu & tồn kho"; workspace.Description.Text = "Tra cứu nguyên liệu, đơn vị và số lượng tồn.";
-        add = new OrbitButton { Text = "Thêm nguyên liệu" }; edit = new OrbitButton { Text = "Sửa" };
-        remove = new OrbitButton { Text = "Xóa" }; open = new OrbitButton { Text = "Mở sổ" };
-        var refresh = new OrbitButton { AccessibleName = "Tải lại danh sách" };
+        workspace.Title.Text = L.T("Nguyên liệu & tồn kho"); workspace.Description.Text = L.T("Tra cứu nguyên liệu, đơn vị và số lượng tồn.");
+        add = new OrbitButton { Text = L.T("Thêm nguyên liệu") }; edit = new OrbitButton { Text = L.T("Sửa") };
+        remove = new OrbitButton { Text = L.T("Xóa") }; open = new OrbitButton { Text = L.T("Mở sổ") };
+        var refresh = new OrbitButton { AccessibleName = L.T("Tải lại danh sách") };
         OrbitManagementTheme.Button(add, ManagementButtonStyle.Primary, "plus");
         OrbitManagementTheme.Button(open, ManagementButtonStyle.Action, "notebook");
         OrbitManagementTheme.Button(edit, ManagementButtonStyle.Action, "pencil");
         OrbitManagementTheme.Button(remove, ManagementButtonStyle.Danger, "trash");
-        OrbitManagementTheme.Button(refresh, ManagementButtonStyle.Icon, "refresh"); hints.SetToolTip(refresh, "Tải lại danh sách");
+        OrbitManagementTheme.Button(refresh, ManagementButtonStyle.Icon, "refresh"); hints.SetToolTip(refresh, L.T("Tải lại danh sách"));
         var filterBox = new OrbitFilterBox { Size = new Size(124, 40) }; unitFilter = filterBox.Input;
-        unitFilter.Items.Add("Tất cả đơn vị"); unitFilter.SelectedIndex = 0;
+        unitFilter.Items.Add(L.T("Tất cả đơn vị")); unitFilter.SelectedIndex = 0;
         workspace.PrimaryActions.Controls.Add(add); workspace.Filters.Controls.AddRange([filterBox, refresh]);
         workspace.RowActions.Controls.AddRange([open, edit, remove]);
         previous = workspace.Pagination.Previous; next = workspace.Pagination.Next;

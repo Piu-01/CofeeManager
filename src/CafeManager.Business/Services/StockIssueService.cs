@@ -8,9 +8,9 @@ public sealed class StockIssueService(StockIssueRepository repository,Permission
 {
     public static StockIssueRequest Normalize(StockIssueRequest r)
     {
-        if(r.RequestId==Guid.Empty||r.Kind is not("Huy do hong" or "Tra hang")||r.Lines.Count==0||r.Lines.Select(l=>l.Code).Distinct(StringComparer.OrdinalIgnoreCase).Count()!=r.Lines.Count)throw new ArgumentException("Loại xuất hoặc dòng xuất không hợp lệ.");
-        foreach(var line in r.Lines){MaterialService.Quantity(line.Quantity);if(line.Quantity==0)throw new ArgumentException("Lượng xuất phải dương.");MaterialService.Required(line.Code,5,"Nguyên liệu");}
-        return r with{Reason=MaterialService.Required(r.Reason,200,"Lý do")};
+        if(r.RequestId==Guid.Empty||r.Kind is not("Huy do hong" or "Tra hang")||r.Lines.Count==0||r.Lines.Select(l=>l.Code).Distinct(StringComparer.OrdinalIgnoreCase).Count()!=r.Lines.Count)throw new ArgumentException(L.T("Loại xuất hoặc dòng xuất không hợp lệ."));
+        foreach(var line in r.Lines){MaterialService.Quantity(line.Quantity);if(line.Quantity==0)throw new ArgumentException(L.T("Lượng xuất phải dương."));MaterialService.Required(line.Code,5,L.T("Nguyên liệu"));}
+        return r with{Reason=MaterialService.Required(r.Reason,200,L.T("Lý do"))};
     }
     private async Task<T> Run<T>(SessionContext s,Func<CancellationToken,Task<T>> action,CancellationToken t)
     {

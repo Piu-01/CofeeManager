@@ -50,8 +50,8 @@ partial class CatalogEditorDialog
         fields.RowStyles.Add(new RowStyle(SizeType.AutoSize));
         fields.RowStyles.Add(new RowStyle(SizeType.AutoSize));
         fields.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-        codeLabel.Text = "&Mã"; nameLabel.Text = "&Tên"; phoneLabel.Text = "&SDT"; ratioLabel.Text = "Chiết khấu (%)";
-        allowanceLabel.Text = "Phụ cấp (₫)"; factorLabel.Text = "Hệ số tăng ca"; typeLabel.Text = "Loại Thu / Chi"; startLabel.Text = "Bắt đầu"; endLabel.Text = "Kết thúc";
+        codeLabel.Text = L.T("&Mã"); nameLabel.Text = L.T("&Tên"); phoneLabel.Text = L.T("&SDT"); ratioLabel.Text = L.T("Chiết khấu (%)");
+        allowanceLabel.Text = L.T("Phụ cấp (₫)"); factorLabel.Text = L.T("Hệ số tăng ca"); typeLabel.Text = L.T("Loại Thu / Chi"); startLabel.Text = L.T("Bắt đầu"); endLabel.Text = L.T("Kết thúc");
         codeLabel.AutoSize = true;
         nameLabel.AutoSize = true;
         phoneLabel.AutoSize = true;
@@ -72,9 +72,9 @@ partial class CatalogEditorDialog
         endInput.Dock = DockStyle.Top;
         codeInput.MaxLength = 5; nameInput.MaxLength = 100; phoneInput.MaxLength = 15;
         ratioInput.Text = "0"; allowanceInput.Text = "0"; factorInput.Text = "1,5";
-        typeInput.DropDownStyle = ComboBoxStyle.DropDownList; typeInput.Items.AddRange(new object[] { "Thu", "Chi" }); typeInput.SelectedIndex = 0;
+        typeInput.DropDownStyle = ComboBoxStyle.DropDownList; typeInput.Items.AddRange(new object[] { L.T("Thu"), L.T("Chi") }); typeInput.SelectedIndex = 0;
         startInput.Value = new DateTime(2026, 1, 1, 6, 0, 0); endInput.Value = new DateTime(2026, 1, 1, 14, 0, 0);
-        supportedInput.Text = "Cho phép ghi nhận thủ công đã xác nhận bên ngoài"; supportedInput.AutoSize = true;
+        supportedInput.Text = L.T("Cho phép ghi nhận thủ công đã xác nhận bên ngoài"); supportedInput.AutoSize = true;
         codeInput.TabIndex = 0; nameInput.TabIndex = 1; phoneInput.TabIndex = 2; ratioInput.TabIndex = 3; allowanceInput.TabIndex = 4;
         factorInput.TabIndex = 5; typeInput.TabIndex = 6; startInput.TabIndex = 7; endInput.TabIndex = 8; supportedInput.TabIndex = 9;
         fields.Controls.Add(codeLabel, 0, 0); fields.Controls.Add(codeInput, 1, 0); fields.Controls.Add(nameLabel, 0, 1); fields.Controls.Add(nameInput, 1, 1);
@@ -83,7 +83,7 @@ partial class CatalogEditorDialog
         fields.Controls.Add(typeLabel, 0, 6); fields.Controls.Add(typeInput, 1, 6); fields.Controls.Add(startLabel, 0, 7); fields.Controls.Add(startInput, 1, 7);
         fields.Controls.Add(endLabel, 0, 8); fields.Controls.Add(endInput, 1, 8); fields.Controls.Add(supportedInput, 0, 9); fields.SetColumnSpan(supportedInput, 2);
         actions.Dock = DockStyle.Fill; actions.AutoSize = true; actions.WrapContents = true;
-        saveButton.Text = "&Lưu"; cancelButton.Text = "&Hủy"; reloadButton.Text = "Kiểm tra / tải lại";
+        ((CafeManager.WinForms.UI.OrbitButton)saveButton).IsPrimary = true; saveButton.Text = L.T("&Lưu"); cancelButton.Text = L.T("&Hủy"); reloadButton.Text = L.T("Kiểm tra / tải lại");
         saveButton.AutoSize = true;
         cancelButton.AutoSize = true;
         reloadButton.AutoSize = true;
@@ -92,7 +92,7 @@ partial class CatalogEditorDialog
         actions.Controls.Add(saveButton); actions.Controls.Add(reloadButton); actions.Controls.Add(cancelButton);
         layout = new CafeManager.WinForms.UI.OrbitDialogLayout(this, fields, statusLabel, actions); errors.ContainerControl = this;
         AutoScaleDimensions = new SizeF(96F, 96F); AutoScaleMode = AutoScaleMode.Dpi; ClientSize = new Size(720, 600); MinimumSize = new Size(400, 360);
-        StartPosition = FormStartPosition.CenterParent; Text = "Danh mục"; Controls.Add(layout); CancelButton = cancelButton;
+        StartPosition = FormStartPosition.CenterParent; Text = L.T("Danh mục"); Controls.Add(layout); CancelButton = cancelButton;
         actions.ResumeLayout(false); actions.PerformLayout(); fields.ResumeLayout(false); fields.PerformLayout(); ResumeLayout(false);
     }
 }

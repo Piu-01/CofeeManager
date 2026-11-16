@@ -124,7 +124,7 @@ partial class StartupForm
         titleLabel.Name = "titleLabel";
         titleLabel.Size = new Size(454, 40);
         titleLabel.TabIndex = 0;
-        titleLabel.Text = "CoffeeManager · Trạng thái bàn";
+        titleLabel.Text = L.T("CoffeeManager · Trạng thái bàn");
         // 
         // subtitleLabel
         // 
@@ -135,7 +135,7 @@ partial class StartupForm
         subtitleLabel.Name = "subtitleLabel";
         subtitleLabel.Size = new Size(505, 23);
         subtitleLabel.TabIndex = 1;
-        subtitleLabel.Text = "NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập";
+        subtitleLabel.Text = L.T("NỀN KỸ THUẬT G01  ·  Mẫu kiểm chứng kết nối, chưa đăng nhập");
         // 
         // toolbar
         // 
@@ -176,7 +176,7 @@ partial class StartupForm
         areaLabel.Name = "areaLabel";
         areaLabel.Size = new Size(263, 23);
         areaLabel.TabIndex = 0;
-        areaLabel.Text = "&Mã khu vực · trống để xem tất cả";
+        areaLabel.Text = L.T("&Mã khu vực · trống để xem tất cả");
         // 
         // inputPanel
         // 
@@ -192,7 +192,7 @@ partial class StartupForm
         // 
         // areaInput
         // 
-        areaInput.AccessibleName = "Mã khu vực";
+        areaInput.AccessibleName = L.T("Mã khu vực");
         areaInput.BackColor = CafeManager.WinForms.Theme.AppTheme.Background;
         areaInput.BorderStyle = BorderStyle.None;
         areaInput.Dock = DockStyle.Top;
@@ -200,7 +200,7 @@ partial class StartupForm
         areaInput.Location = new Point(12, 10);
         areaInput.Margin = new Padding(4);
         areaInput.Name = "areaInput";
-        areaInput.PlaceholderText = "Ví dụ: KV001";
+        areaInput.PlaceholderText = L.T("Ví dụ: KV001");
         areaInput.Size = new Size(251, 23);
         areaInput.TabIndex = 0;
         // 
@@ -216,7 +216,7 @@ partial class StartupForm
         loadButton.Name = "loadButton";
         loadButton.Size = new Size(238, 50);
         loadButton.TabIndex = 1;
-        loadButton.Text = "&Tải trạng thái bàn";
+        loadButton.Text = L.T("&Tải trạng thái bàn");
         loadButton.UseVisualStyleBackColor = false;
         loadButton.Click += LoadButton_Click;
         // 
@@ -232,7 +232,7 @@ partial class StartupForm
         cancelButton.Name = "cancelButton";
         cancelButton.Size = new Size(138, 50);
         cancelButton.TabIndex = 2;
-        cancelButton.Text = "&Hủy tải";
+        cancelButton.Text = L.T("&Hủy tải");
         cancelButton.UseVisualStyleBackColor = false;
         cancelButton.Click += CancelButton_Click;
         // 
@@ -247,7 +247,7 @@ partial class StartupForm
         statusLabel.Padding = new Padding(20, 15, 20, 15);
         statusLabel.Size = new Size(1190, 53);
         statusLabel.TabIndex = 2;
-        statusLabel.Text = "Sẵn sàng · Chọn khu vực rồi tải trạng thái bàn.";
+        statusLabel.Text = L.T("Sẵn sàng · Chọn khu vực rồi tải trạng thái bàn.");
         // 
         // contentPanel
         // 
@@ -263,7 +263,7 @@ partial class StartupForm
         // 
         // gridPanel
         // 
-        gridPanel.AccessibleName = "Nội dung danh sách bàn";
+        gridPanel.AccessibleName = L.T("Nội dung danh sách bàn");
         gridPanel.AutoScroll = true;
         gridPanel.Controls.Add(tableGrid);
         gridPanel.Controls.Add(emptyStateLabel);
@@ -321,7 +321,7 @@ partial class StartupForm
         // tableCodeColumn
         // 
         tableCodeColumn.DataPropertyName = "MaBan";
-        tableCodeColumn.HeaderText = "Mã bàn";
+        tableCodeColumn.HeaderText = L.T("Mã bàn");
         tableCodeColumn.MinimumWidth = 6;
         tableCodeColumn.Name = "tableCodeColumn";
         tableCodeColumn.ReadOnly = true;
@@ -329,7 +329,7 @@ partial class StartupForm
         // tableNameColumn
         // 
         tableNameColumn.DataPropertyName = "TenBan";
-        tableNameColumn.HeaderText = "Tên bàn";
+        tableNameColumn.HeaderText = L.T("Tên bàn");
         tableNameColumn.MinimumWidth = 6;
         tableNameColumn.Name = "tableNameColumn";
         tableNameColumn.ReadOnly = true;
@@ -337,7 +337,7 @@ partial class StartupForm
         // areaCodeColumn
         // 
         areaCodeColumn.DataPropertyName = "MaKV";
-        areaCodeColumn.HeaderText = "Khu vực";
+        areaCodeColumn.HeaderText = L.T("Khu vực");
         areaCodeColumn.MinimumWidth = 6;
         areaCodeColumn.Name = "areaCodeColumn";
         areaCodeColumn.ReadOnly = true;
@@ -345,7 +345,7 @@ partial class StartupForm
         // statusColumn
         // 
         statusColumn.DataPropertyName = "TrangThai";
-        statusColumn.HeaderText = "Trạng thái";
+        statusColumn.HeaderText = L.T("Trạng thái");
         statusColumn.MinimumWidth = 6;
         statusColumn.Name = "statusColumn";
         statusColumn.ReadOnly = true;
@@ -353,14 +353,14 @@ partial class StartupForm
         // invoiceCodeColumn
         // 
         invoiceCodeColumn.DataPropertyName = "MaHD";
-        invoiceCodeColumn.HeaderText = "Hóa đơn mở";
+        invoiceCodeColumn.HeaderText = L.T("Hóa đơn mở");
         invoiceCodeColumn.MinimumWidth = 6;
         invoiceCodeColumn.Name = "invoiceCodeColumn";
         invoiceCodeColumn.ReadOnly = true;
         // 
         // emptyStateLabel
         // 
-        emptyStateLabel.AccessibleName = "Trạng thái danh sách bàn";
+        emptyStateLabel.AccessibleName = L.T("Trạng thái danh sách bàn");
         emptyStateLabel.Dock = DockStyle.Top;
         emptyStateLabel.Font = new Font("Segoe UI", 12F);
         emptyStateLabel.ForeColor = CafeManager.WinForms.Theme.AppTheme.Primary;
@@ -370,7 +370,7 @@ partial class StartupForm
         emptyStateLabel.Padding = new Padding(15);
         emptyStateLabel.Size = new Size(1150, 29);
         emptyStateLabel.TabIndex = 4;
-        emptyStateLabel.Text = "Chưa tải dữ liệu\r\n\r\nChọn khu vực hoặc để trống, rồi nhấn Tải trạng thái bàn.";
+        emptyStateLabel.Text = L.T("Chưa tải dữ liệu\r\n\r\nChọn khu vực hoặc để trống, rồi nhấn Tải trạng thái bàn.");
         emptyStateLabel.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // contentHeading
@@ -383,7 +383,7 @@ partial class StartupForm
         contentHeading.Padding = new Padding(20, 15, 20, 10);
         contentHeading.Size = new Size(1190, 65);
         contentHeading.TabIndex = 1;
-        contentHeading.Text = "Danh sách bàn";
+        contentHeading.Text = L.T("Danh sách bàn");
         // 
         // StartupForm
         // 

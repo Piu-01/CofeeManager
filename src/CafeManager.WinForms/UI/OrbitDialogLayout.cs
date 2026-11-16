@@ -45,7 +45,7 @@ public sealed class OrbitDialogLayout : TableLayoutPanel
 
     private static void StyleButton(OrbitButton button)
     {
-        var primary = button.Text.Replace("&", "") is "Lưu" or "Xác nhận";
+        var primary = button.IsPrimary;
         OrbitManagementTheme.Button(button, primary ? ManagementButtonStyle.Primary : ManagementButtonStyle.Secondary, "");
         button.UseMnemonic = true; button.Margin = new Padding(8, 0, 0, 0);
     }

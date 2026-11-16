@@ -20,7 +20,7 @@ public partial class OperationEditorDialog : CafeManager.WinForms.Forms.OrbitDia
     public OperationEditorDialog() { InitializeComponent(); }
     public OperationEditorDialog(string title, Func<Guid, Task<OperationReceipt?>> reconcile) : this()
     { Text = title; this.reconcile = reconcile; }
-    public void SetReadOnly() { save.Visible = check.Visible = false; cancel.Text = "Đóng"; }
+    public void SetReadOnly() { save.Visible = check.Visible = false; cancel.Text = L.T("Đóng"); }
     public void MarkDirty() => dirty = true;
     public TextBox AddText(string label, string value = "", bool readOnly = false)
     {
@@ -50,7 +50,7 @@ public partial class OperationEditorDialog : CafeManager.WinForms.Forms.OrbitDia
         errors.Clear();
         try
         {
-            pendingWrite ??= CaptureWrite?.Invoke() ?? throw new InvalidOperationException("Chưa cấu hình thao tác.");
+            pendingWrite ??= CaptureWrite?.Invoke() ?? throw new InvalidOperationException(L.T("Chưa cấu hình thao tác."));
             if (Confirmation is not null && await OrbitConfirmationDialog.ShowAsync(this, Confirmation, Text, MessageBoxButtons.OKCancel) != DialogResult.OK) { pendingWrite = null; return; }
             await WriteAsync();
         }
@@ -64,10 +64,10 @@ public partial class OperationEditorDialog : CafeManager.WinForms.Forms.OrbitDia
         catch (UserOperationException ex)
         {
             if (IsDisposed) return;
-            unknown = ex.Error.RequiresReconciliation; status.Text = ex.Message + (unknown ? $" Yêu cầu {requestId}." : "");
+            unknown = ex.Error.RequiresReconciliation; status.Text = ex.Message + (unknown ? L.F(" Yêu cầu {0}.", requestId) : "");
             if (!unknown) pendingWrite = null;
         }
-        catch (OperationCanceledException) { if (!IsDisposed) { unknown = true; status.Text = $"Chưa xác định kết quả. Yêu cầu {requestId}."; } }
+        catch (OperationCanceledException) { if (!IsDisposed) { unknown = true; status.Text = L.F("Chưa xác định kết quả. Yêu cầu {0}.", requestId); } }
         catch (UnauthorizedAccessException ex) { if (!IsDisposed) status.Text = ex.Message; }
         finally { if (!IsDisposed) SetBusy(false); }
     }
@@ -80,9 +80,9 @@ public partial class OperationEditorDialog : CafeManager.WinForms.Forms.OrbitDia
             var receipt = await reconcile(requestId);
             if (IsDisposed) return;
             if (receipt is not null) { ResultCode = receipt.Code; saved = true; DialogResult = DialogResult.OK; Close(); }
-            else if (await OrbitConfirmationDialog.ShowAsync(this, "Chưa thấy kết quả; yêu cầu cũ có thể còn chạy. Gửi lại cùng mã và nội dung để SQL đối chiếu?", "Đối chiếu", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            else if (await OrbitConfirmationDialog.ShowAsync(this, L.T("Chưa thấy kết quả; yêu cầu cũ có thể còn chạy. Gửi lại cùng mã và nội dung để SQL đối chiếu?"), L.T("Đối chiếu"), MessageBoxButtons.OKCancel) == DialogResult.OK)
             { unknown = false; await WriteAsync(); }
-            else status.Text = $"Chưa có kết quả xác nhận. Yêu cầu {requestId}.";
+            else status.Text = L.F("Chưa có kết quả xác nhận. Yêu cầu {0}.", requestId);
         }
         catch (Exception ex) when (ex is UserOperationException or UnauthorizedAccessException or OperationCanceledException) { if (!IsDisposed) status.Text = ex.Message; }
         finally { if (!IsDisposed) SetBusy(false); }
@@ -98,8 +98,8 @@ public partial class OperationEditorDialog : CafeManager.WinForms.Forms.OrbitDia
     }
     protected override async Task<bool> CanCloseAsync()
     {
-        if (!saved && (writing || unknown)) { status.Text = "Hoàn tất ghi hoặc đối chiếu kết quả trước khi đóng."; return false; }
-        return saved || !dirty || await OrbitConfirmationDialog.ShowAsync(this, "Bỏ nháp và đóng?", Text, MessageBoxButtons.OKCancel) == DialogResult.OK;
+        if (!saved && (writing || unknown)) { status.Text = L.T("Hoàn tất ghi hoặc đối chiếu kết quả trước khi đóng."); return false; }
+        return saved || !dirty || await OrbitConfirmationDialog.ShowAsync(this, L.T("Bỏ nháp và đóng?"), Text, MessageBoxButtons.OKCancel) == DialogResult.OK;
     }
     protected override void Dispose(bool disposing) { if (disposing) errors.Dispose(); base.Dispose(disposing); }
     private static IEnumerable<Control> Descendants(Control parent) { foreach (Control child in parent.Controls) { yield return child; foreach (var nested in Descendants(child)) yield return nested; } }

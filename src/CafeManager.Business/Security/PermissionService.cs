@@ -2,7 +2,7 @@ using CafeManager.DataAccess.Repositories;
 
 namespace CafeManager.Business.Security;
 
-public enum AppPermission { MaterialRead, MaterialManage, MaterialOpen, CatalogAdmin, Sales, Customers, Inventory, DebtRead, DebtPay, Finance, FinancialReports, RecipeRead, MenuRead, SystemInfo }
+public enum AppPermission { MaterialRead, MaterialManage, MaterialOpen, CatalogAdmin, Sales, Customers, Inventory, DebtRead, DebtPay, Finance, FinancialReports, RecipeRead, MenuRead, SystemInfo, EmployeeManage, AttendanceManage, PayrollManage }
 
 public sealed class PermissionService(AuthRepository repository)
 {
@@ -22,8 +22,8 @@ public sealed class PermissionService(AuthRepository repository)
             || !identity.SecurityStamp.SequenceEqual(session.Identity.SecurityStamp))
         {
             session.Revoke();
-            throw new UnauthorizedAccessException("Tài khoản hoặc quyền đã thay đổi; đăng nhập lại.");
+            throw new UnauthorizedAccessException(L.T("Tài khoản hoặc quyền đã thay đổi; đăng nhập lại."));
         }
-        if (!Allows(identity.Role, permission)) throw new UnauthorizedAccessException("Bạn không có quyền thao tác này.");
+        if (!Allows(identity.Role, permission)) throw new UnauthorizedAccessException(L.T("Bạn không có quyền thao tác này."));
     }
 }

@@ -14,11 +14,11 @@ internal sealed class ProductCardControl : OrbitSurface
     {
         Width = 220; Height = 105; Margin = new Padding(6); TabStop = false;
         name = new Label { Text = item.Name, Font = OrbitManagementTheme.Table, ForeColor = OrbitManagementTheme.Text, AutoEllipsis = true, UseMnemonic = false, AccessibleName = item.Name };
-        price = new Label { Text = item.CanAdd ? SalesUi.Money(item.Price) : "Ngừng / thiếu công thức", Font = OrbitManagementTheme.Table, ForeColor = item.CanAdd ? OrbitManagementTheme.Caramel : OrbitManagementTheme.Muted, AutoEllipsis = true, UseMnemonic = false };
-        image = new PictureBox { SizeMode = PictureBoxSizeMode.Zoom, AccessibleName = "Ảnh minh họa schematic, không phải ảnh thật món", TabStop = false };
+        price = new Label { Text = item.CanAdd ? SalesUi.Money(item.Price) : L.T("Ngừng / thiếu công thức"), Font = OrbitManagementTheme.Table, ForeColor = item.CanAdd ? OrbitManagementTheme.Caramel : OrbitManagementTheme.Muted, AutoEllipsis = true, UseMnemonic = false };
+        image = new PictureBox { SizeMode = PictureBoxSizeMode.Zoom, AccessibleName = L.T("Ảnh minh họa schematic, không phải ảnh thật món"), TabStop = false };
         using var stream = typeof(ProductCardControl).Assembly.GetManifestResourceStream("CafeManager.WinForms.Resources.Orbit.ceramic-coffee.png");
         if (stream is not null) { using var source = Image.FromStream(stream); illustration = new Bitmap(source); image.Image = illustration; }
-        var add = new OrbitButton { AccessibleName = "Thêm " + item.Name, Enabled = item.CanAdd, MinimumSize = Size.Empty };
+        var add = new OrbitButton { AccessibleName = L.T("Thêm ") + item.Name, Enabled = item.CanAdd, MinimumSize = Size.Empty };
         OrbitManagementTheme.Button(add, ManagementButtonStyle.Segment, "plus");
         add.Click += click; Add = add;
         Controls.AddRange([image, name, price, Add]);

@@ -38,7 +38,7 @@ public partial class CatalogEditorDialog : CafeManager.WinForms.Forms.OrbitDialo
     public CatalogEditorDialog(CatalogService service, SessionContext session, CatalogKind kind, CatalogRow? row) : this()
     {
         this.service = service; this.session = session; this.kind = kind; original = row;
-        Text = row is null ? "Thêm danh mục" : $"Sửa danh mục · {row.Code}";
+        Text = row is null ? L.T("Thêm danh mục") : L.F("Sửa danh mục · {0}", row.Code);
         codeInput.Text = row?.Code ?? ""; nameInput.Text = row?.Name ?? "";
         codeInput.ReadOnly = row is not null || kind == CatalogKind.ProductCategory;
         nameInput.MaxLength = kind == CatalogKind.Supplier ? 100 : kind == CatalogKind.Shift ? 30 : 50;
@@ -62,7 +62,7 @@ public partial class CatalogEditorDialog : CafeManager.WinForms.Forms.OrbitDialo
             case DeliveryPartnerRow d: ratioInput.Text = d.Ratio.ToString(CultureInfo.GetCultureInfo("vi-VN")); break;
             case PositionRow p: allowanceInput.Text = p.Allowance.ToString(CultureInfo.GetCultureInfo("vi-VN")); factorInput.Text = p.Factor.ToString(CultureInfo.GetCultureInfo("vi-VN")); break;
             case ShiftRow s: startInput.Value = DateTime.Today.Add(s.StartTime); endInput.Value = DateTime.Today.Add(s.EndTime); break;
-            case ExpenseCategoryRow e: typeInput.SelectedItem = e.Type.ToString(); typeInput.Enabled = !CatalogService.IsSystemExpense(e.Code); break;
+            case ExpenseCategoryRow e: typeInput.SelectedIndex = e.Type == ExpenseType.Thu ? 0 : 1; typeInput.Enabled = !CatalogService.IsSystemExpense(e.Code); break;
             case PaymentMethodRow p: supportedInput.Checked = p.Supported; break;
         }
         initial = Snapshot();
@@ -73,7 +73,7 @@ public partial class CatalogEditorDialog : CafeManager.WinForms.Forms.OrbitDialo
     private decimal Amount(TextBox input, string field)
     {
         if (!decimal.TryParse(input.Text, NumberStyles.AllowDecimalPoint | NumberStyles.AllowLeadingSign | NumberStyles.AllowLeadingWhite | NumberStyles.AllowTrailingWhite,
-            CultureInfo.GetCultureInfo("vi-VN"), out var value)) throw new ArgumentException("Nhập số hợp lệ (dấu phẩy thập phân, không dấu phân nhóm).", field);
+            CultureInfo.GetCultureInfo("vi-VN"), out var value)) throw new ArgumentException(L.T("Nhập số hợp lệ (dấu phẩy thập phân, không dấu phân nhóm)."), field);
         return value;
     }
     private CatalogRequest Request() => kind switch
@@ -82,7 +82,7 @@ public partial class CatalogEditorDialog : CafeManager.WinForms.Forms.OrbitDialo
         CatalogKind.Supplier => new SupplierRequest(codeInput.Text, nameInput.Text, phoneInput.Text),
         CatalogKind.PaymentMethod => new PaymentMethodRequest(codeInput.Text, nameInput.Text, supportedInput.Checked),
         CatalogKind.DeliveryPartner => new DeliveryPartnerRequest(codeInput.Text, nameInput.Text, Amount(ratioInput, "Ratio")),
-        CatalogKind.ExpenseCategory => new ExpenseCategoryRequest(codeInput.Text, nameInput.Text, Enum.Parse<ExpenseType>(typeInput.Text)),
+        CatalogKind.ExpenseCategory => new ExpenseCategoryRequest(codeInput.Text, nameInput.Text, typeInput.SelectedIndex == 0 ? ExpenseType.Thu : ExpenseType.Chi),
         CatalogKind.Position => new PositionRequest(codeInput.Text, nameInput.Text, Amount(allowanceInput, "Allowance"), Amount(factorInput, "Factor")),
         _ => new ShiftRequest(codeInput.Text, nameInput.Text, new TimeSpan(startInput.Value.Hour, startInput.Value.Minute, 0), new TimeSpan(endInput.Value.Hour, endInput.Value.Minute, 0))
     };
@@ -98,7 +98,7 @@ public partial class CatalogEditorDialog : CafeManager.WinForms.Forms.OrbitDialo
         errors.Clear(); CatalogRequest request;
         try { request = CatalogService.Normalize(Request(), original is null); }
         catch (ArgumentException ex) { Validation(ex); return; }
-        Busy(true); OperationStatePresenter.Show(statusLabel, ModuleState.Loading, "Đang lưu danh mục.");
+        Busy(true); OperationStatePresenter.Show(statusLabel, ModuleState.Loading, L.T("Đang lưu danh mục."));
         try
         {
             await service.SaveAsync(session, request, original?.Revision);
@@ -111,11 +111,11 @@ public partial class CatalogEditorDialog : CafeManager.WinForms.Forms.OrbitDialo
             if (IsDisposed) return;
             if (ex.Error.RequiresReconciliation) unknown = request;
             OperationStatePresenter.Show(statusLabel, ex.Error.RequiresReconciliation ? ModuleState.Unknown : ex.Error.Number == 51503 ? ModuleState.Conflict : ModuleState.Error,
-                ex.Message + (unknown is null ? "" : " Chọn Kiểm tra / tải lại; không gửi lại."));
+                ex.Message + (unknown is null ? "" : L.T(" Chọn Kiểm tra / tải lại; không gửi lại.")));
         }
         catch (CafeManager.DataAccess.DataAccessException ex) { OperationStatePresenter.Show(statusLabel, ModuleState.Error, ex.Error.Message); }
         catch (UnauthorizedAccessException ex) { statusLabel.Text = ex.Message; }
-        catch (OperationCanceledException) when (session.IsRevoked) { statusLabel.Text = "Phiên đã kết thúc."; }
+        catch (OperationCanceledException) when (session.IsRevoked) { statusLabel.Text = L.T("Phiên đã kết thúc."); }
         finally { Busy(false); }
     }
     private void Validation(ArgumentException ex)
@@ -148,31 +148,31 @@ public partial class CatalogEditorDialog : CafeManager.WinForms.Forms.OrbitDialo
                 if (row is not null && Matches(unknown, row)) { unknown = null; saved = true; writing = false; DialogResult = DialogResult.OK; Close(); return; }
                 if (row is null && original is null)
                 {
-                    unknown = null; statusLabel.Text = "Chưa có bản ghi/receipt đã commit. Có thể thử lại đúng mã yêu cầu cũ."; return;
+                    unknown = null; statusLabel.Text = L.T("Chưa có bản ghi/receipt đã commit. Có thể thử lại đúng mã yêu cầu cũ."); return;
                 }
-                statusLabel.Text = "Dữ liệu DB khác nháp. Đối chiếu đã xong; chọn Hủy để rời hoặc tải lại bản hiện tại.";
+                statusLabel.Text = L.T("Dữ liệu DB khác nháp. Đối chiếu đã xong; chọn Hủy để rời hoặc tải lại bản hiện tại.");
                 unknown = null; return;
             }
-            if (original is not null && await OrbitConfirmationDialog.ShowAsync(this, "Bỏ nháp và tải lại dữ liệu hiện tại?", "Tải lại", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (original is not null && await OrbitConfirmationDialog.ShowAsync(this, L.T("Bỏ nháp và tải lại dữ liệu hiện tại?"), L.T("Tải lại"), MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 var row = await service.GetAsync(session, kind, original.Code);
                 if (IsDisposed) return;
-                if (row is null) { statusLabel.Text = "Bản ghi đã bị xóa. Chọn Hủy để rời."; saveButton.Visible = false; }
-                else { Populate(row); errors.Clear(); statusLabel.Text = "Đã tải bản hiện tại; nháp cũ đã bỏ."; }
+                if (row is null) { statusLabel.Text = L.T("Bản ghi đã bị xóa. Chọn Hủy để rời."); saveButton.Visible = false; }
+                else { Populate(row); errors.Clear(); statusLabel.Text = L.T("Đã tải bản hiện tại; nháp cũ đã bỏ."); }
             }
         }
         catch (UserOperationException ex) { statusLabel.Text = ex.Message; }
         catch (CafeManager.DataAccess.DataAccessException ex) { statusLabel.Text = ex.Error.Message; }
         catch (UnauthorizedAccessException ex) { statusLabel.Text = ex.Message; }
-        catch (OperationCanceledException) when (session.IsRevoked) { statusLabel.Text = "Phiên đã kết thúc."; }
+        catch (OperationCanceledException) when (session.IsRevoked) { statusLabel.Text = L.T("Phiên đã kết thúc."); }
         finally { Busy(false); }
     }
     protected override async Task<bool> CanCloseAsync()
     {
         if (session?.IsRevoked == true) return true;
-        if (IsWriting) { statusLabel.Text = "Chờ/đối chiếu kết quả ghi trước khi đóng."; return false; }
+        if (IsWriting) { statusLabel.Text = L.T("Chờ/đối chiếu kết quả ghi trước khi đóng."); return false; }
         if (saved || !HasUnsavedChanges) return true;
-        if (await OrbitConfirmationDialog.ShowAsync(this, "Bỏ nháp danh mục?", "Chưa lưu", MessageBoxButtons.YesNo) != DialogResult.Yes) return false;
+        if (await OrbitConfirmationDialog.ShowAsync(this, L.T("Bỏ nháp danh mục?"), L.T("Chưa lưu"), MessageBoxButtons.YesNo) != DialogResult.Yes) return false;
         DiscardChanges(); return true;
     }
     protected override void OnShown(EventArgs e) { base.OnShown(e); layout.FitToContent(this); }

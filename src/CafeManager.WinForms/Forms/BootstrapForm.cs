@@ -47,12 +47,12 @@ public partial class BootstrapForm : Form
         UI.OrbitFieldLayout.Attach(layout);
         Controls.Add(new UI.OrbitContentHost(shell, 720));
         UpdateMode();
-            if (state == "Completed") { statusLabel.Text = "Thiết lập đã hoàn tất. Đóng setup và chạy app bằng tài khoản runtime."; return; }
+            if (state == "Completed") { statusLabel.Text = L.T("Thiết lập đã hoàn tất. Đóng setup và chạy app bằng tài khoản runtime."); return; }
             candidates = await service.CandidatesAsync(lifetime.Token);
             if (IsDisposed) return;
             candidateInput.DataSource = candidates.Where(c => c.Eligible).ToList();
             candidateInput.DisplayMember = nameof(SetupCandidate.EmployeeName);
-            statusLabel.Text = state == "LegacyReview" ? "Xác nhận admin hiện tại bằng username/password; không reset mật khẩu." : "Chọn tạo admin mới hoặc kích hoạt đúng một ứng viên.";
+            statusLabel.Text = state == "LegacyReview" ? L.T("Xác nhận admin hiện tại bằng username/password; không reset mật khẩu.") : L.T("Chọn tạo admin mới hoặc kích hoạt đúng một ứng viên.");
             completeButton.Enabled = true;
         }
         catch (OperationCanceledException) when (lifetime.IsCancellationRequested) { }
@@ -69,7 +69,7 @@ public partial class BootstrapForm : Form
             else
             {
                 var candidate = modeInput.SelectedIndex == 1 ? candidateInput.SelectedItem as SetupCandidate : null;
-                if (modeInput.SelectedIndex == 1 && candidate is null) throw new ArgumentException("Cần chọn nhân viên hợp lệ.");
+                if (modeInput.SelectedIndex == 1 && candidate is null) throw new ArgumentException(L.T("Cần chọn nhân viên hợp lệ."));
                 await service.CompleteAsync(new BootstrapRequest
                 {
                     Mode = candidate is null ? "NewEmployee" : candidate.AccountId is null ? "ExistingEmployee" : "ActivateDemo",
@@ -80,7 +80,7 @@ public partial class BootstrapForm : Form
                 }, lifetime.Token);
             }
             passwordInput.Clear(); confirmationInput.Clear();
-            MessageBox.Show(this, "Thiết lập đã hoàn tất. Đóng process setup; chạy ứng dụng bằng tài khoản runtime. Người cài thu hồi quyền setup.", "CoffeeManager");
+            MessageBox.Show(this, L.T("Thiết lập đã hoàn tất. Đóng process setup; chạy ứng dụng bằng tài khoản runtime. Người cài thu hồi quyền setup."), "CoffeeManager");
             busy = false; Close();
         }
         catch (OperationCanceledException) when (lifetime.IsCancellationRequested) { }
@@ -98,7 +98,7 @@ public partial class BootstrapForm : Form
     }
     protected override void OnFormClosing(FormClosingEventArgs e)
     {
-        if (busy) { e.Cancel = true; statusLabel.Text = "Đang chờ kết quả thiết lập; cần đối chiếu trước khi đóng."; }
+        if (busy) { e.Cancel = true; statusLabel.Text = L.T("Đang chờ kết quả thiết lập; cần đối chiếu trước khi đóng."); }
         base.OnFormClosing(e);
         if (!e.Cancel) { lifetime.Cancel(); passwordInput.Clear(); confirmationInput.Clear(); }
     }

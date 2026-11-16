@@ -17,7 +17,7 @@ internal static class PaymentTableBuilder
             foreach (var row in allocations)
             {
                 var method = SqlParameters.Text("MaPT", SqlDbType.Char, 5, row.MaPT, required: true).Value;
-                if (row.SoTien <= 0) throw new ArgumentOutOfRangeException(nameof(allocations), "Phân bổ phải lớn hơn 0.");
+                if (row.SoTien <= 0) throw new ArgumentOutOfRangeException(nameof(allocations), L.T("Phân bổ phải lớn hơn 0."));
                 var amount = SqlParameters.Decimal("SoTien", row.SoTien).Value;
                 var reference = SqlParameters.Text("MaThamChieu", SqlDbType.NVarChar, 100, row.MaThamChieu).Value;
                 table.Rows.Add(method, amount, reference);

@@ -9,8 +9,8 @@ public sealed class SupplierDebtService(SupplierDebtRepository repository,Permis
 {
     public static SupplierDebtRequest Normalize(SupplierDebtRequest r)
     {
-        if(r.RequestId==Guid.Empty||r.Amount<=0||r.Amount>999999999999999999m||decimal.Truncate(r.Amount)!=r.Amount)throw new ArgumentException("Số trả phải là nguyên VND dương, tối đa18 chữ số.","Amount");
-        var code=MaterialService.Required(r.Code,10,"Code");var method=MaterialService.Required(r.Method,5,"Method");if(method=="PT010")throw new ArgumentException("Không hỗ trợ đổi điểm.","Method");return r with{Code=code,Method=method};
+        if(r.RequestId==Guid.Empty||r.Amount<=0||r.Amount>999999999999999999m||decimal.Truncate(r.Amount)!=r.Amount)throw new ArgumentException(L.T("Số trả phải là nguyên VND dương, tối đa18 chữ số."),"Amount");
+        var code=MaterialService.Required(r.Code,10,"Code");var method=MaterialService.Required(r.Method,5,"Method");if(method=="PT010")throw new ArgumentException(L.T("Không hỗ trợ đổi điểm."),"Method");return r with{Code=code,Method=method};
     }
     private async Task<T> Run<T>(SessionContext s,AppPermission permission,Func<CancellationToken,Task<T>> action,CancellationToken t)
     {

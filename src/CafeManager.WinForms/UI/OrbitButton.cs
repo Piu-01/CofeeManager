@@ -6,6 +6,8 @@ namespace CafeManager.WinForms.UI;
 
 public class OrbitButton : Button
 {
+    [System.ComponentModel.DefaultValue(false)]
+    public bool IsPrimary { get; set; }
     [System.ComponentModel.DefaultValue(null)]
     public ManagementButtonStyle? ManagementStyle { get; set; }
     [System.ComponentModel.DefaultValue("")]

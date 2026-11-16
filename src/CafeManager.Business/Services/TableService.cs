@@ -10,9 +10,9 @@ public sealed class TableService(TableRepository repository,PermissionService pe
 {
     public static TableRequest Normalize(TableRequest r,bool area)
     {
-        var code=MaterialService.Required(r.Code,5,"Mã").ToUpperInvariant();
-        if(!Regex.IsMatch(code,area?"^KV[0-9]{3}$":"^B[0-9]{4}$")||code==(area?"KV000":"B0000"))throw new ArgumentException("Mã bàn/khu vực không hợp lệ.");
-        return new(code,MaterialService.Required(r.Name,50,"Tên"),area?null:MaterialService.Required(r.Area,5,"Khu vực"));
+        var code=MaterialService.Required(r.Code,5,L.T("Mã")).ToUpperInvariant();
+        if(!Regex.IsMatch(code,area?"^KV[0-9]{3}$":"^B[0-9]{4}$")||code==(area?"KV000":"B0000"))throw new ArgumentException(L.T("Mã bàn/khu vực không hợp lệ."));
+        return new(code,MaterialService.Required(r.Name,50,L.T("Tên")),area?null:MaterialService.Required(r.Area,5,L.T("Khu vực")));
     }
     private async Task<T> Run<T>(SessionContext s,bool write,Func<CancellationToken,Task<T>> f,CancellationToken t)
     {
@@ -24,5 +24,13 @@ public sealed class TableService(TableRepository repository,PermissionService pe
     public Task<TableRow?> SelectAsync(SessionContext s,string code,CancellationToken t=default)=>Run(s,false,ct=>repository.SelectAsync(s.Identity,code,ct),t);
     public Task<OperationResult> SaveAsync(SessionContext s,bool area,TableRequest r,byte[]? revision,Guid id,CancellationToken t=default){var request=Normalize(r,area);return Run(s,true,ct=>repository.WriteAsync(s.Identity,area,revision is null?"Create":"Update",request,revision,id,ct),t);}
     public Task<OperationResult> DeleteAsync(SessionContext s,bool area,TableRequest r,byte[] revision,Guid id,CancellationToken t=default)=>Run(s,true,ct=>repository.WriteAsync(s.Identity,area,"Delete",r,revision,id,ct),t);
+    // Trả bàn dùng quyền vận hành bán hàng (CASH/ADMIN); SQL chặn khi còn đơn chưa chốt.
+    public Task<OperationResult> CloseSessionAsync(SessionContext s,CloseSessionRequest r,CancellationToken t=default)
+    {
+        if(r.SessionCode<=0)throw new ArgumentException(L.T("Phiên bàn không hợp lệ."));
+        if(r.Revision is not { Length:8 })throw new ArgumentException(L.T("Phiên bàn đã thay đổi ở phiên khác. Tải lại trước khi tiếp tục."));
+        if(r.RequestId==Guid.Empty)throw new ArgumentException(L.T("Mã yêu cầu bắt buộc."));
+        return Run(s,false,ct=>repository.CloseSessionAsync(s.Identity,r,ct),t);
+    }
     public Task<OperationReceipt?> ReconcileAsync(SessionContext s,Guid id,CancellationToken t=default)=>Run(s,false,ct=>repository.ReceiptAsync(s.Identity,id,ct),t);
 }

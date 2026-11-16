@@ -12,7 +12,7 @@ public sealed partial class SalesRepository
         Call("sp_SalesCheckoutPreview", [.. Actor(a), P("@Code", SqlDbType.VarChar, code, -1), P("@ExpectedRevision", SqlDbType.Binary, revision, 8)],
             async (r, ct) =>
             {
-                if (!await r.ReadAsync(ct)) throw new InvalidDataException("Thiếu preview SQL.");
+                if (!await r.ReadAsync(ct)) throw new InvalidDataException(L.T("Thiếu preview SQL."));
                 return new CheckoutPreview(Text(r, 0), (byte[])r[1], r.GetDecimal(2), r.GetDecimal(3), r.GetDecimal(4),
                     r.GetDecimal(5), Text(r, 6), r.GetInt32(7), r.GetDecimal(8), r.GetDecimal(9), r.GetInt64(10), (byte[])r[11]);
             }, t);

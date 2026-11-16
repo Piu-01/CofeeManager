@@ -6,8 +6,8 @@ namespace CafeManager.WinForms.UI;
 // Adapter giờ/phút: giữ DateTime typed cho request hiện có, không tính nghiệp vụ.
 public sealed class OrbitTimeInput : UserControl
 {
-    private readonly NumericUpDown hour = new ClockPart { Maximum = 23, BorderStyle = BorderStyle.None, TextAlign = HorizontalAlignment.Center, AccessibleName = "Giờ" };
-    private readonly NumericUpDown minute = new ClockPart { Maximum = 59, BorderStyle = BorderStyle.None, TextAlign = HorizontalAlignment.Center, AccessibleName = "Phút" };
+    private readonly NumericUpDown hour = new ClockPart { Maximum = 23, BorderStyle = BorderStyle.None, TextAlign = HorizontalAlignment.Center, AccessibleName = L.T("Giờ") };
+    private readonly NumericUpDown minute = new ClockPart { Maximum = 59, BorderStyle = BorderStyle.None, TextAlign = HorizontalAlignment.Center, AccessibleName = L.T("Phút") };
     private readonly Label separator = new() { Text = ":", TextAlign = ContentAlignment.MiddleCenter, AutoSize = false };
     private DateTime date = DateTime.Today;
     private bool setting;

@@ -46,7 +46,7 @@ internal sealed class StarDustOverlay : Form
         catch (Exception ex) when (ex is InvalidOperationException or System.ComponentModel.Win32Exception)
         {
             // Hiệu ứng phụ không được ngắt luồng chốt hoặc tạo một lần gửi lại.
-            HideParticles(); Trace.TraceWarning("Không hiển thị được hiệu ứng thanh toán: {0}", ex.Message);
+            HideParticles(); Trace.TraceWarning(L.T("Không hiển thị được hiệu ứng thanh toán: {0}"), ex.Message);
         }
     }
     private void Reposition(object? sender, EventArgs e) { if (!owner.Visible) HideParticles(); else if (Visible) Bounds = owner.RectangleToScreen(owner.ClientRectangle); }
