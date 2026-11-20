@@ -32,7 +32,9 @@ internal sealed class TableList : OrbitRecordListControl
         listView.Click+=(_,_)=>{map.Visible=false;Grid.Visible=true;Grid.BringToFront();listView.NavigationSelected=true;mapView.NavigationSelected=false;listView.Invalidate();mapView.Invalidate();};mapView.Click+=(_,_)=>{Grid.Visible=false;map.Visible=true;map.BringToFront();listView.NavigationSelected=false;mapView.NavigationSelected=true;listView.Invalidate();mapView.Invalidate();};
         filter.SelectedValueChanged+=async(_,_)=>{if(filter.DataSource is not null)await ResetAndReload();};
         map.SizeChanged+=(_,_)=>ArrangeCards();
-        AddAction("Chọn bàn",SelectCurrent);AddAction("Trả bàn",CloseTable,needsRow:true);AddAction("Thêm",()=>Edit(true),session.Identity.Role=="ADMIN");AddAction("Sửa",()=>Edit(false),session.Identity.Role=="ADMIN");AddAction("Xóa",Delete,session.Identity.Role=="ADMIN");
+        AddAction("Thêm",()=>Edit(null),session.Identity.Role=="ADMIN");
+        // Sửa/xóa trực tiếp trên dòng (ADMIN): double-click mở Sửa, icon thùng rác mở Xóa.
+        if(session.Identity.Role=="ADMIN"){AddRowDeleteColumn();RowDeleteRequested=item=>_=RunRow(()=>Delete((TableRow)item));RowActivated=item=>_=RunRow(()=>Edit((TableRow)item));}
         Grid.DataBindingComplete+=(_,_)=>
         {
             foreach(Control control in map.Controls.Cast<Control>().ToArray())control.Dispose();map.Controls.Clear();
@@ -54,37 +56,32 @@ internal sealed class TableList : OrbitRecordListControl
         foreach(Control card in map.Controls){card.Margin=new Padding(gap/2);card.Size=new Size(Math.Max(1,width/columns-gap),Theme.OrbitManagementTheme.Px(this,142));}
     }
     private async Task<List<AreaRow>> AllAreas(){var all=new List<AreaRow>();for(var skip=0;;skip+=50){var page=await service.AreasAsync(session,"",skip);all.AddRange(page);if(page.Count<50)return all;}}
-    private Task SelectCurrent()=>Selected is TableRow row?SelectCode(row.Code):Task.CompletedTask;
-    private async Task CloseTable()
+    private async Task RunRow(Func<Task> action)
     {
-        if(Selected is not TableRow row||row.SessionCode is not int sessionCode||row.SessionRevision is not {Length:8} revision)return;
-        if(await CafeManager.WinForms.Forms.OrbitConfirmationDialog.ShowAsync(this,L.F("Trả bàn {0}? Bàn sẽ trống cho khách mới.",row.Name),L.T("Trả bàn"),MessageBoxButtons.OKCancel)!=DialogResult.OK)return;
-        await service.CloseSessionAsync(session,new(sessionCode,revision,Guid.NewGuid()));
-        await Reload();
-        State.Text=L.F("Đã trả bàn phiên {0}.",sessionCode);
+        try{await action();}catch(Exception ex)when(ex is UserOperationException or UnauthorizedAccessException or ArgumentException){if(!IsDisposed)State.Text=ex.Message;}
     }
-    protected override bool IsActionAvailable(string command)=>command!="Trả bàn"||Selected is TableRow{SessionCode:not null};
     private async Task SelectCode(string code)
     {
         var row=await service.SelectAsync(session,code);if(IsDisposed)return;
         if(row is null){State.Text=L.T("Bàn đã được xóa; tải lại.");return;}
         if(FindForm() is MainForm main)await main.OpenSalesTableAsync(row.Code);
     }
-    private async Task Edit(bool create)
+    private async Task Edit(TableRow? row)
     {
-        if(!create&&Selected is not TableRow)return;var row=create?null:(TableRow)Selected!;
-        var areas=await AllAreas();using var dialog=new OperationEditorDialog(create?L.T("Thêm bàn"):L.T("Sửa bàn"),id=>service.ReconcileAsync(session,id));
-        var code=dialog.AddText(L.T("Mã B0001–B9999"),row?.Code??"",!create);var name=dialog.AddText(L.T("Tên bàn"),row?.Name??"");var area=new ComboBox{DropDownStyle=ComboBoxStyle.DropDownList,DisplayMember="Name",ValueMember="Code",DataSource=areas};if(row is not null)area.SelectedValue=row.Area;dialog.AddField(L.T("Khu vực"),area);
+        var areas=await AllAreas();using var dialog=new OperationEditorDialog(row is null?L.T("Thêm bàn"):L.T("Sửa bàn"),id=>service.ReconcileAsync(session,id));
+        var code=dialog.AddText(L.T("Mã B0001–B9999"),row?.Code??"",row is not null);var name=dialog.AddText(L.T("Tên bàn"),row?.Name??"");var area=new ComboBox{DropDownStyle=ComboBoxStyle.DropDownList,DisplayMember="Name",ValueMember="Code",DataSource=areas};if(row is not null)area.SelectedValue=row.Area;dialog.AddField(L.T("Khu vực"),area);
         dialog.CaptureWrite=()=>{var request=TableService.Normalize(new(code.Text,name.Text,area.SelectedValue as string),false);return id=>service.SaveAsync(session,false,request,row?.Revision,id);};if(await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this)==DialogResult.OK)await Reload();
     }
-    private async Task Delete(){if(Selected is not TableRow row)return;using var dialog=new OperationEditorDialog(L.T("Xóa bàn"),id=>service.ReconcileAsync(session,id));dialog.AddNote(L.F("{0} · {1}. Có lịch sử hóa đơn thì không xóa được.", row.Code, row.Name));dialog.Confirmation=L.F("Xóa bàn {0}?", row.Code);dialog.CaptureWrite=()=>id=>service.DeleteAsync(session,false,new(row.Code,row.Name,row.Area),row.Revision,id);if(await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this)==DialogResult.OK)await Reload();}
+    private async Task Delete(TableRow row){using var dialog=new OperationEditorDialog(L.T("Xóa bàn"),id=>service.ReconcileAsync(session,id));dialog.AddNote(L.F("{0} · {1}. Có lịch sử hóa đơn thì không xóa được.", row.Code, row.Name));dialog.Confirmation=L.F("Xóa bàn {0}?", row.Code);dialog.CaptureWrite=()=>id=>service.DeleteAsync(session,false,new(row.Code,row.Name,row.Area),row.Revision,id);if(await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this)==DialogResult.OK)await Reload();}
 }
 internal sealed class AreaList : OrbitRecordListControl
 {
     private readonly TableService service;private readonly SessionContext session;
-    public AreaList(TableService service,SessionContext session){this.service=service;this.session=session;Configure("Khu vực",session,async(q,skip,t)=>await service.AreasAsync(session,q,skip,t),("Code",L.T("Mã")),("Name",L.T("Khu vực")));AddAction("Thêm",()=>Edit(true));AddAction("Sửa",()=>Edit(false));AddAction("Xóa",Delete);}
-    private async Task Edit(bool create){if(!create&&Selected is not AreaRow)return;var row=create?null:(AreaRow)Selected!;using var dialog=new OperationEditorDialog(create?L.T("Thêm khu vực"):L.T("Sửa khu vực"),id=>service.ReconcileAsync(session,id));var code=dialog.AddText(L.T("Mã KV001–KV999"),row?.Code??"",!create);var name=dialog.AddText(L.T("Tên khu vực"),row?.Name??"");dialog.CaptureWrite=()=>{var request=TableService.Normalize(new(code.Text,name.Text,null),true);return id=>service.SaveAsync(session,true,request,row?.Revision,id);};if(await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this)==DialogResult.OK)await Reload();}
-    private async Task Delete(){if(Selected is not AreaRow row)return;using var dialog=new OperationEditorDialog(L.T("Xóa khu vực"),id=>service.ReconcileAsync(session,id));dialog.AddNote(L.F("Xóa {0} · {1}; khu vực có bàn sẽ bị chặn.", row.Code, row.Name));dialog.Confirmation=L.F("Xóa {0}?", row.Code);dialog.CaptureWrite=()=>id=>service.DeleteAsync(session,true,new(row.Code,row.Name,null),row.Revision,id);if(await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this)==DialogResult.OK)await Reload();}
+    public AreaList(TableService service,SessionContext session){this.service=service;this.session=session;Configure("Khu vực",session,async(q,skip,t)=>await service.AreasAsync(session,q,skip,t),("Code",L.T("Mã")),("Name",L.T("Khu vực")));AddAction("Thêm",()=>Edit(null));
+        if(session.Identity.Role=="ADMIN"){AddRowDeleteColumn();RowDeleteRequested=item=>_=RunRow(()=>Delete((AreaRow)item));RowActivated=item=>_=RunRow(()=>Edit((AreaRow)item));}}
+    private async Task RunRow(Func<Task> action){try{await action();}catch(Exception ex)when(ex is UserOperationException or UnauthorizedAccessException or ArgumentException){if(!IsDisposed)State.Text=ex.Message;}}
+    private async Task Edit(AreaRow? row){using var dialog=new OperationEditorDialog(row is null?L.T("Thêm khu vực"):L.T("Sửa khu vực"),id=>service.ReconcileAsync(session,id));var code=dialog.AddText(L.T("Mã KV001–KV999"),row?.Code??"",row is not null);var name=dialog.AddText(L.T("Tên khu vực"),row?.Name??"");dialog.CaptureWrite=()=>{var request=TableService.Normalize(new(code.Text,name.Text,null),true);return id=>service.SaveAsync(session,true,request,row?.Revision,id);};if(await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this)==DialogResult.OK)await Reload();}
+    private async Task Delete(AreaRow row){using var dialog=new OperationEditorDialog(L.T("Xóa khu vực"),id=>service.ReconcileAsync(session,id));dialog.AddNote(L.F("Xóa {0} · {1}; khu vực có bàn sẽ bị chặn.", row.Code, row.Name));dialog.Confirmation=L.F("Xóa {0}?", row.Code);dialog.CaptureWrite=()=>id=>service.DeleteAsync(session,true,new(row.Code,row.Name,null),row.Revision,id);if(await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this)==DialogResult.OK)await Reload();}
 }
 
 

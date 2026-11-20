@@ -67,12 +67,6 @@ public sealed partial class SalesRepository(ConnectionFactory factory)
         Write(a, "sp_TaoHoaDon", request.Code, request.RequestId,
         [.. Header(request.Header), P("@Product", SqlDbType.VarChar, request.Product, -1),
             P("@Quantity", SqlDbType.BigInt, request.Quantity), P("@Note", SqlDbType.NVarChar, request.Note, -1)], t);
-    public async Task<SalesWriteResult> CreateDraftAsync(AccountIdentity a, CreateDraftOrderRequest request, CancellationToken t)
-    {
-        using var table = SalesDraftTableBuilder.Build(request.Lines);
-        return await Write(a, "sp_TaoHoaDonTuNhap", request.Code, request.RequestId,
-        [.. Header(request.Header), SalesDraftTableBuilder.Parameter(table)], t);
-    }
     public Task<SalesWriteResult> LineAsync(AccountIdentity a, OrderLineRequest request, CancellationToken t) =>
         Write(a, "sp_SuaDongHoaDon", request.Code, request.RequestId,
         [P("@ExpectedRevision", SqlDbType.Binary, request.Revision, 8), P("@Action", SqlDbType.VarChar, request.Action, 10),

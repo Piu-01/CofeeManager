@@ -15,9 +15,13 @@ public class OrbitRecordListControl : UserControl
     protected bool Paginated = true;
     protected Func<string?>? EmptyHint;
     protected Func<IList, int>? TotalCountSelector;
+    // Thao tác trực tiếp trên dòng do từng màn đăng ký; hạ tầng click/paint dùng chung.
+    protected Action<object>? RowDeleteRequested;
+    protected Action<object>? RowActivated;
     protected SessionContext? Session;
     protected object? Selected => Grid.CurrentRow?.DataBoundItem;
     internal OrbitListWorkspace PageWorkspace => Workspace;
+    private bool rowDeleteColumnAdded;
     private readonly OrbitSearchBox searchBox = new() { Dock = DockStyle.Fill };
     private readonly Panel searchHost = new() { BackColor = OrbitManagementTheme.Surface };
     private readonly Label selectionCaption = new() { Text = L.T("Chưa chọn khách hàng"), Font = OrbitManagementTheme.Table, ForeColor = OrbitManagementTheme.Muted, AutoEllipsis = true, TextAlign = ContentAlignment.MiddleLeft };
@@ -52,6 +56,8 @@ public class OrbitRecordListControl : UserControl
         Search.PlaceholderText = L.T("Tìm mã hoặc tên…");
         Search.KeyDown += async (_, e) => { if (e.KeyCode == Keys.Enter) { e.SuppressKeyPress = true; if (!busy || committedSearchOnly) await SubmitSearch(); } };
         Grid.SelectionChanged += (_, _) => UpdateActions();
+        Grid.CellMouseClick += (_, e) => DispatchRowAction(e.RowIndex, e.ColumnIndex);
+        Grid.CellDoubleClick += (_, e) => DispatchRowActivated(e.RowIndex, e.ColumnIndex);
         Grid.CellFormatting += (_, e) =>
         {
             if (e.Value is not string value || e.ColumnIndex < 0 || Grid.Columns[e.ColumnIndex].DataPropertyName is not ("Status" or "Direction")) return;
@@ -97,6 +103,28 @@ public class OrbitRecordListControl : UserControl
         if (control is ComboBox combo) presented = new OrbitFilterBox(combo) { LogicalWidth = logicalWidth, Plain = plain };
         else { control.Font = OrbitManagementTheme.Table; control.ForeColor = OrbitManagementTheme.Muted; control.BackColor = OrbitManagementTheme.Surface; control.AutoSize = false; control.Size = new Size(OrbitManagementTheme.Px(this, logicalWidth), OrbitManagementTheme.Px(this, 40)); }
         Workspace.Filters.Controls.Add(presented); if (refresh.Parent == Workspace.Filters) Workspace.Filters.Controls.SetChildIndex(refresh, Workspace.Filters.Controls.Count - 1);
+    }
+    // Cột icon thùng rác cuối lưới; dùng cùng khung paint/click của OrbitDataGridView.
+    protected void AddRowDeleteColumn()
+    {
+        if (rowDeleteColumnAdded) return;
+        rowDeleteColumnAdded = true;
+        Grid.Columns.Add(new DataGridViewTextBoxColumn { Name = "Delete", HeaderText = "", DataPropertyName = "" });
+    }
+    private void DispatchRowAction(int rowIndex, int columnIndex)
+    {
+        if (rowIndex < 0 || columnIndex < 0 || Grid.Columns[columnIndex].Name != "Delete") return;
+        if (busy || !Grid.Enabled || RowDeleteRequested is not { } handler) return;
+        if (Grid.Rows[rowIndex].DataBoundItem is not { } item) return;
+        Grid.CurrentCell = Grid.Rows[rowIndex].Cells[0];
+        handler(item);
+    }
+    private void DispatchRowActivated(int rowIndex, int columnIndex)
+    {
+        if (rowIndex < 0 || columnIndex < 0 || Grid.Columns[columnIndex].Name == "Delete") return;
+        if (busy || !Grid.Enabled || RowActivated is not { } handler) return;
+        if (Grid.Rows[rowIndex].DataBoundItem is not { } item) return;
+        handler(item);
     }
     protected void UseStackedSearch(string itemNoun, string? emptyDescription = null)
     {

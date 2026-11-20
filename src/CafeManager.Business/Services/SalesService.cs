@@ -50,24 +50,6 @@ public sealed partial class SalesService(SalesRepository repository, PermissionS
         r = r with { Code = Code(r.Code, 10), Header = Normalize(r.Header), Product = Code(r.Product, 5), Note = Optional(r.Note, 100) };
         return Run(s, ct => repository.CreateAsync(s.Identity, r, ct), t);
     }
-    public Task<SalesWriteResult> CreateDraftAsync(SessionContext s, CreateDraftOrderRequest r, CancellationToken t = default)
-    {
-        if (r.RequestId == Guid.Empty) throw new ArgumentException(L.T("Mã yêu cầu bắt buộc."));
-        if (r.Lines is null || r.Lines.Count is < 1 or > 200) throw new ArgumentException(L.T("Đơn nháp cần từ 1 đến 200 dòng món."));
-        LoyaltyService.Money(r.Header.Ship);
-        r = r with
-        {
-            Code = Code(r.Code, 10),
-            Header = Normalize(r.Header),
-            Lines = r.Lines.Select(l =>
-            {
-                if (l.Quantity < 1) throw new ArgumentException(L.T("Số lượng phải dương."));
-                LoyaltyService.Money(l.Price);
-                return l with { Product = Code(l.Product, 5), Note = Optional(l.Note, 100) };
-            }).ToArray()
-        };
-        return Run(s, ct => repository.CreateDraftAsync(s.Identity, r, ct), t);
-    }
     public Task<SalesWriteResult> LineAsync(SessionContext s, OrderLineRequest r, CancellationToken t = default)
     {
         Revision(r.Revision);

@@ -3,14 +3,132 @@ Trạng thái24/10/2026: hai vấn đề bổ sung đã xử lý theo duyệt, s
 
 # G04 — Bán hàng và vòng đời hóa đơn
 
-## Bổ sung đề xuất30/10/2026 — Bán hàng gọn
+## Bổ sung 16/11/2026 — Đơn "Chờ thanh toán" và phiên bàn (requirements đã duyệt; T33–T35 đã triển khai, chạy đợt test 17/11/2026 và bổ sung 18/11/2026, đủ điều kiện nghiệm thu)
+
+Theo yêu cầu người dùng ngày 16/11/2026 về luồng đặt đơn tại quán: thêm mốc "chưa thanh
+toán nhưng khóa sửa đơn" và để bàn bận theo phiên bàn thay vì trống ngay khi thu tiền.
+Hướng đã thống nhất theo vận hành F&B phổ biến: **khóa đơn khi "yêu cầu thanh toán/in tạm
+tính"** (không khóa theo mốc đã ra món, vì khách vẫn gọi thêm) và **trả bàn là hành động
+của nhân viên**. Phạm vi, quy tắc chuyển trạng thái, task T33–T35 và tiêu chí nghiệm thu
+tại [requirements-cho-thanh-toan-phien-ban.md](requirements-cho-thanh-toan-phien-ban.md).
+Giữ nguyên 56 ID T14–T18; bộ plan [T33](t33-cho-thanh-toan/plan.md),
+[T34](t34-phien-ban/plan.md), [T35](t35-tuong-thich-tai-lieu/plan.md) đã được duyệt một
+lần; T33 (schema032), T34 (schema034 + sửa035) và phần rà soát/tài liệu T35 đã triển khai;
+đợt test 17/11/2026 có 5/5 SQL subset PASS, unit Sales 23/23; bug
+[T34-01](t34-phien-ban/bug-report.md) đã sửa bằng migration 035 và regression typed/native
+PASS; ngày 18/11/2026 chạy nốt TS04 (concurrency) và UI chức năng 125% nên T33–T35
+**đủ điều kiện nghiệm thu**, các mục NOT RUN ghi tại test-results từng task.
+
+## Bổ sung 10/11/2026 — Nháp thật cho đơn mới POS (G04-POS-02) — ĐÃ THAY THẾ 19/11/2026
+
+> **Bỏ nháp bộ nhớ ngày 19/11/2026** theo yêu cầu người dùng: POS trở lại hợp đồng gốc
+> T14 (món đầu tạo hóa đơn một giao dịch), tự mở đơn mới khi vào tab và sau khi kết thúc
+> thanh toán/trả bàn/hủy (ưu tiên bàn trống); rời màn chỉ hỏi khi có header F3/ghi chú
+> đang mở. Hướng thay thế và bằng chứng điều tra:
+> [audit bỏ nháp](t14-tao-sua-don/audit-bo-nhap-pos.md); hành vi đích ở UX §7.6.
+> Nội dung dưới đây giữ làm lịch sử.
+
+Nguồn: [báo cáo lỗi G04-POS-02](t14-tao-sua-don/bug-report.md#g04-pos-02--rời-đơn-đang-dở-không-hỏi-giữkhông-giữ-mọi-thao-tác-đang-ghi-sql-ngay);
+người dùng chốt hướng **nháp thật (chưa ghi SQL)** ngày 10/11/2026 và chốt tiếp
+ngày 10/11/2026: **phạm vi A — chỉ đơn mới**; xung đột flush giữ nháp và cho chọn
+hướng. Mục này bổ sung phạm vi cho T14 (tạo đơn) và phần POS của T16; **giữ nguyên
+56 ID T14–T18 và checklist gốc**, không thay lịch sử test. Plan chi tiết tại
+[pos-draft-plan.md](t14-tao-sua-don/pos-draft-plan.md), chờ duyệt trước khi code.
+
+**Mục tiêu**
+
+- Mọi thao tác món trên POS (thêm, đổi số lượng, ghi chú, xóa dòng) **của đơn mới**
+  tại quán, mang đi, giao hàng chỉ nằm trong bộ nhớ cho tới khi người dùng chọn
+  **Giữ** hoặc **Thanh toán**.
+- Rời đơn nháp (Đơn mới, F4 mở đơn khác, chọn bàn khác, rời màn POS,
+  đóng app/đăng xuất) phải hỏi **Giữ / Không giữ / Ở lại**: Giữ ghi SQL; Không giữ
+  bỏ nháp và **không ghi gì**.
+- **Cập nhật 16/11/2026 (G04-POS-07):** đổi kênh (Tại quán/Mang đi/Giao hàng) khi
+  chỉ có nháp chưa ghi SQL **không** hỏi Giữ/Không giữ và không ghi SQL; POS giữ dòng
+  món/khách/ưu đãi, cập nhật kênh tại chỗ, tự bỏ bàn khi rời Tại quán, xóa thông tin
+  giao sau xác nhận khi rời Giao hàng. Xung đột bàn 52104 chỉ áp dụng cho thao tác ghi
+  thật sự dùng bàn.
+- Hết tình trạng "tự lưu" ngoài ý muốn và không tạo đơn rỗng/đơn dở trong DB khi
+  người dùng chưa chốt.
+
+**Phạm vi (đã chốt A — chỉ đơn mới)**
+
+- Đơn **chưa có trong SQL** dùng nháp trong bộ nhớ: header (kênh, bàn, khách/ưu đãi,
+  giao hàng) + dòng món (mã, tên, đơn giá snapshot lúc thêm, số lượng, ghi chú).
+  Không cấp mã hóa đơn, không gọi SQL tạo header/dòng khi thêm/sửa/xóa món.
+- **Đơn đã lưu giữ nguyên hiện trạng** (autosave từng dòng như G04 hiện tại); rời
+  đơn đã lưu không hỏi Giữ/Không giữ vì dữ liệu đã ở SQL. Đây là giới hạn đã biết
+  của phạm vi A: tình huống thêm món vào bàn đã có đơn chưa được chuyển sang nháp;
+  muốn vậy phải mở rộng phạm vi B bằng requirements/plan riêng.
+- Panel đơn hiển thị **Tạm tính** cộng từ nháp; không hiện "Phải thanh toán" hay
+  tổng 0 giả. Preview ưu đãi/khách chính thức chỉ chạy sau khi đã ghi SQL.
+- **Giữ**: ghi toàn bộ nháp (header + toàn bộ dòng) vào SQL một lần, nguyên tử, có
+  RequestId/receipt chống gửi lặp và đối chiếu timeout; thành công tải lại đơn từ
+  SQL. Đơn giá dòng gửi kèm snapshot; SQL từ chối nếu giá hiện hành đã khác snapshot.
+- **Không giữ**: xóa nháp, không gọi SQL, giữ nguyên dữ liệu DB trước đó.
+- **Thanh toán**: Giữ (flush) → preview → checkout như hiện tại; flush lỗi thì ở lại
+  với nháp, không mở checkout.
+- **Xung đột**: trong lúc nháp bàn vẫn trống trong SQL; flush gặp đơn mở của phiên
+  khác (52104) thì giữ nháp, báo rõ, không ghi bán phần, không tự gộp đơn; người dùng
+  chọn **mở đơn hiện có / chọn bàn khác / bỏ nháp / ở lại**.
+- Contract SQL mới: procedure batch nhận TVP dòng món, khóa bàn/đơn trong một
+  transaction; DAL/BLL/Models/request/receipt tương ứng. Không sửa procedure
+  `sp_TaoHoaDon`/`sp_SuaDongHoaDon` đang phục vụ đơn đã lưu.
+- Cập nhật `docs/UX_QuanLiQuanCafe.md` (dòng 62, 158, 283) và contract T14 theo hướng
+  "nháp thật"; giữ nguyên ID/ca gốc, bổ sung ca nháp.
+
+**Không làm**
+
+- Không gộp/tách đơn, không hoàn tiền, không đặt bàn, không offline/multi-branch.
+- Không tự động lưu nền, không khôi phục nháp sau crash/đóng app; không cho F4 thấy
+  nháp của phiên khác.
+- Không đổi nghiệp vụ checkout/hủy/in hoặc bất biến tiền/kho/điểm ngoài bước flush.
+- Không đổi hợp đồng autosave/revision của đơn đã lưu (phạm vi B ngoài lần này).
+
+**Giả định**
+
+- Đơn giá lấy từ menu DB tại lúc thêm món và giữ snapshot trong nháp; SQL dùng giá
+  hiện hành và từ chối flush nếu lệch snapshot để không ghi giá cũ ngoài ý muốn.
+- Nháp không chiếm bàn trong DB; hai phiên có thể cùng nháp một bàn, xung đột xử lý
+  tại flush như trên.
+- Mất nháp khi crash/đóng app là chấp nhận; phải cảnh báo khi rời/đóng.
+
+**Đã chốt ngày 10/11/2026**
+
+- Phạm vi **A — chỉ đơn mới** (đơn đã lưu giữ autosave hiện tại).
+- Xung đột flush: giữ nháp và cho chọn mở đơn hiện có / chọn bàn khác / bỏ nháp /
+  ở lại; không tự gộp, không ghi bán phần.
+
+**Tiêu chí hoàn thành**
+
+- Requirements và plan chi tiết được duyệt; migration 030 + procedure batch chạy được
+  trên schema hiện tại và bảo toàn dữ liệu cũ.
+- Test trên SQL Server thật/DB test riêng: Không giữ không ghi gì; Giữ ghi đúng một lần
+  nguyên tử; thanh toán flush đúng tiền/kho/điểm; hai phiên cùng bàn không ghi bán
+  phần; timeout/reconcile không nhân dòng; rời POS/đóng app có cảnh báo; regression
+  G04-POS-01, đơn đã lưu và checkout.
+- Cập nhật UX/contract T14; hình thức do người dùng tự kiểm theo phân công.
+
+**Trạng thái 11/11/2026**
+
+- Đã duyệt plan và triển khai: migration `030_draft_order_flush.sql` (TVP
+  `SalesDraftLines` + `sp_TaoHoaDonTuNhap`), Models/DAL/BLL, nháp/Tạm tính trong POS,
+  hộp Giữ/Không giữ/Ở lại cho mọi đường rời màn, hộp xung đột 52104.
+- Build Debug/Release 0 error; migration030 áp thành công trên DB test riêng
+  `CoffeeManager_Test_G04_20261111_draftflush` (clone từ DB test schema029). Ca
+  DK01–DK10 **chưa chạy** — chờ duyệt đợt test riêng. Hình thức SKIPPED theo phân công.
+
+## Bổ sung đã duyệt30/10/2026 — Bán hàng gọn
 
 User gửi Orbit_BanHang_Gon.zip yêu cầu chỉnh trang Bán hàng. Phạm vi/plan tại
 [T16 POS gọn](t16-pos-huy-don/sales-compact-ui-plan.md): mở rộng menu/card ngang,
 cột đơn gọn, tách actions/header và giữ tổng Phải thanh toán, breakdown ở F8.
 Tái dùng theme/control, giữ native dialog và nghiệp vụ tạo/sửa/chốt/in/reset.
 ZIP checkout đi kèm là tham chiếu, không tự mở rộng redesign hộp thanh toán.
-Chờ duyệt bổ sung phạm vi/plan trước code; không thay checklist/SQL/role.
+Phạm vi/plan đã được user duyệt bằng “duyệt”, đã triển khai.123/123bounds kỹ thuật
+tại125%; Debug/Release0error,1warning ngoàiPOS ở AttendanceControl. Chờ duyệt
+[đợt test riêng](t16-pos-huy-don/sales-compact-ui-test-plan.md); không thay
+checklist/SQL/role hoặc gán kết quả cũ cho binary mới.
 
 ## Bổ sung đã duyệt26/10/2026 — đồng bộ UI Giao hàng
 

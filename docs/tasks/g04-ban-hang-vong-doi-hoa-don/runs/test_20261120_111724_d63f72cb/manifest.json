@@ -1,0 +1,18 @@
+﻿{
+    "RunId":  "20261120_111724_d63f72cb",
+    "Database":  "CoffeeManager_Test_G04_20261120_111724_d63f72cb_demo",
+    "Server":  "localhost",
+    "Mode":  "clean seed + migrations 001-036",
+    "SourceCommit":  "5673f51119e3c42285a09b905cb86f22c1e1d2e3",
+    "Status":  "Succeeded",
+    "Fixtures":  [
+                     {
+                         "File":  "acceptance-pending-payment.sql",
+                         "Status":  "PASS"
+                     },
+                     {
+                         "File":  "acceptance-pending-add-items.sql",
+                         "Status":  "PASS"
+                     }
+                 ]
+}

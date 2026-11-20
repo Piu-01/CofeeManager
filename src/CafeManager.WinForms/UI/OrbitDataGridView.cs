@@ -155,6 +155,15 @@ public sealed class OrbitDataGridView : DataGridView
                 continue;
             }
             col.HeaderCell.Style.Padding = new Padding(OrbitManagementTheme.Px(this, col.Name is "Unit" or "Quantity" ? 4 : 13), 0, OrbitManagementTheme.Px(this, col.Name is "Unit" or "Quantity" ? 4 : 13), 0);
+            // Cột thao tác xóa theo dòng (Bàn/Khu vực): icon hẹp, không tiêu đề, không giãn.
+            if (property == "Delete")
+            {
+                col.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                col.MinimumWidth = col.Width = OrbitManagementTheme.Px(this, 44);
+                col.DefaultCellStyle.Alignment = col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                col.DefaultCellStyle.Padding = col.HeaderCell.Style.Padding = new Padding(0);
+                continue;
+            }
             var stretch = property == (profile == OrbitGridProfile.Ranks ? "Code" : profile == OrbitGridProfile.Points ? "Reason" : "Name");
             col.AutoSizeMode = stretch ? DataGridViewAutoSizeColumnMode.Fill : DataGridViewAutoSizeColumnMode.None;
             col.MinimumWidth = OrbitManagementTheme.Px(this, stretch ? 110 : 45);
@@ -332,6 +341,13 @@ public sealed class OrbitDataGridView : DataGridView
                 using var checkPen = new Pen(check ? Color.FromArgb(80, 56, 40) : OrbitManagementTheme.Muted);
                 e.Graphics.DrawRectangle(checkPen, box);
                 if (check) e.Graphics.DrawLines(checkPen, [new Point(box.Left + 3, box.Top + size/2), new(box.Left + size/2 - 1, box.Bottom - 3), new(box.Right - 2, box.Top + 3)]);
+            }
+            else if (property == "Delete")
+            {
+                e.Graphics!.SmoothingMode = global::System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                var icon = OrbitManagementTheme.Px(this, 16);
+                var iconBounds = new Rectangle(e.CellBounds.Left + (e.CellBounds.Width - icon) / 2, e.CellBounds.Top + (e.CellBounds.Height - icon) / 2, icon, icon);
+                OrbitManagementTheme.DrawIcon(e.Graphics, iconBounds, "trash", hovered == e.RowIndex ? AppTheme.Error : OrbitManagementTheme.Muted);
             }
             else if ((profile == OrbitGridProfile.Menu && property == "Status") || (profile == OrbitGridProfile.Customers && property == "Tier")
                 || (profile == OrbitGridProfile.OpenOrders && property == "Channel")

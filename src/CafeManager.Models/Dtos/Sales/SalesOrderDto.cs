@@ -8,9 +8,14 @@ public sealed record SalesOrderHeader(string Code, DateTime Created, string Empl
     int? SessionCode, byte[]? SessionRevision)
 {
     public bool CanEdit => Status == "Chua thanh toan";
-    // Còn mở = còn thu/hủy: đơn chờ thanh toán vẫn thu hoặc hủy được nhưng không sửa món.
+    // Đơn đã "In tạm": món đã ra quầy nên chỉ nối thêm/tăng số lượng, không xóa hay sửa ghi chú.
+    public bool IsPending => Status == "Cho thanh toan";
+    // Còn mở = còn thu/hủy: đơn chờ thanh toán vẫn thu hoặc hủy được.
     public bool IsPayable => Status is "Chua thanh toan" or "Cho thanh toan";
     public bool IsOpen => IsPayable;
+    public bool CanAddLine => IsPayable;
+    // F3 (khách/ưu đãi/ship) chốt ở bước thu tiền, còn sửa được cả khi đã In tạm.
+    public bool CanEditHeader => IsPayable;
 }
 public sealed record SalesLine(int LineId, string Product, string Name, int Quantity, decimal Price,
     string? Note, decimal Amount);

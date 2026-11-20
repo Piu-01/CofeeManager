@@ -59,7 +59,7 @@ flowchart TD
 
 Thanh đầu cửa sổ: tên quán, tiêu đề màn hình, tên người đăng nhập/vai trò, ngày nghiệp vụ, trạng thái kết nối và Đăng xuất. Không đưa mã connection string hoặc thông báo SQL lên thanh này.
 
-Điều hướng chỉ đổi vùng nội dung; không reset bộ lọc của màn hình khi quay lại trong cùng phiên. Màn hình có nháp chưa ghi hiển thị xác nhận **Ở lại / Bỏ nháp và rời**. Nháp không được ghi DB tự động. Đơn mở đã lưu là dữ liệu DB; rời POS không hủy đơn. Đăng xuất xóa session và ngữ cảnh khách/đơn khỏi UI sau khi xử lý nháp.
+Điều hướng chỉ đổi vùng nội dung; không reset bộ lọc của màn hình khi quay lại trong cùng phiên. Màn hình có input chưa ghi hiển thị xác nhận **Ở lại / Bỏ và rời**. Input không được ghi DB tự động. Đơn mở đã lưu là dữ liệu DB; rời POS không hủy đơn. Đăng xuất xóa session và ngữ cảnh khách/đơn khỏi UI sau khi xử lý input chưa ghi. POS chỉ hỏi khi có input thật chưa ghi (header đang sửa qua F3 hoặc ghi chú dòng đang mở); bàn/kênh đã chọn cho đơn chưa tạo không tính là input nên rời màn không hỏi (bỏ nháp 19/11/2026, xem §7.6).
 
 ## 4. Danh mục màn hình và ưu tiên
 
@@ -116,6 +116,8 @@ Control có AccessibleName, trạng thái không chỉ màu, thứ tự tab đú
 
 ## 6. Luồng đăng nhập và phiên làm việc
 
+Ngoại lệ development được người dùng duyệt09/11/2026: Debug profile development có ba nút ADMIN/CASH/STORE và hộp cấu hình credential local một lần, theo [hồ sơ riêng](tasks/dev-role-quick-login/README.md). Nút vẫn gọi xác thực thật, kiểm đúng role, dùng chung pending/cancel và logout; lưu cấu hình không tự mở MainForm. Bản sử dụng/Release không bật tiện ích và T32 phải gỡ toàn bộ source/hooks/cờ dev mới trước bàn giao. Các luồng đăng nhập thường bên dưới giữ nguyên.
+
 1. Mở app → kiểm tra cấu hình kết nối → nếu thiếu mở thiết lập lần đầu. Không yêu cầu người dùng thường nhập server mỗi lần.
 2. Login có Tên đăng nhập, Mật khẩu, Hiện mật khẩu, Đăng nhập. Chưa tự thêm ghi nhớ mật khẩu hoặc tự đăng nhập.
 3. Khi gửi, khóa nút và báo **Đang đăng nhập…**; giữ form, không mở MainForm trước khi xác thực xong.
@@ -137,7 +139,16 @@ Cài mới không seed: người cài có bước thiết lập DB và tạo ADM
 
 Ở màn nhỏ, bảng bàn thu gọn thành panel chọn; vùng đơn và nút thanh toán vẫn nhìn thấy. Danh sách món có thể là grid chuẩn thay card ảnh để giảm công sức; ảnh không là điều kiện bán hàng.
 
-Bàn có nhãn **Trống / Có đơn mở**, không hiển thị “Đã đặt” vì chưa có đặt bàn. Chọn bàn có đơn mở thì mở đơn đó, không hỏi tạo thêm. Đổi khu vực không đổi đơn đang thao tác. Có nút Làm mới bàn; tải thất bại giữ dữ liệu cũ với nhãn **Chưa cập nhật**, không giả bàn trống.
+Bàn có nhãn **Trống / Đang dùng / Chờ thanh toán / Đã trả · giữ bàn**, không hiển thị “Đã đặt” vì chưa có đặt bàn. Chọn bàn có đơn mở thì mở đơn đó, không hỏi tạo thêm; chọn bàn “Đã trả · giữ bàn” thì mở ngữ cảnh đơn mới trong cùng phiên, bàn không bị coi là trống cho khách khác. Đổi khu vực không đổi đơn đang thao tác. Có nút Làm mới bàn; tải thất bại giữ dữ liệu cũ với nhãn **Chưa cập nhật**, không giả bàn trống.
+
+**Rơi gọn thao tác bàn (20/11/2026):** màn Bàn/Khu vực bỏ các nút Chọn bàn, Trả bàn,
+Sửa, Xóa trên toolbar. Bấm card Sơ đồ hoặc dòng Danh sách vẫn mở POS đúng bàn như cũ;
+ADMIN double-click dòng ở chế độ Danh sách để mở hộp Sửa, bấm icon thùng rác cuối dòng
+để mở luồng Xóa (có xác nhận, chặn khi còn lịch sử). Ở POS không còn nút **Chọn bàn**:
+chọn bàn trong ô chọn bàn là mở bàn/đơn ngay, tự chuyển kênh sang Tại quán khi cần, vẫn
+hỏi xác nhận nếu đang có nháp chưa lưu; các lần gán bàn bằng code (Đơn mới, đổi kênh,
+tải lại, sau trả bàn) không kích hoạt tự mở. Nhân viên vẫn trả bàn bằng nút **Trả bàn**
+trên POS hoặc hộp “Trả bàn ngay?” sau thanh toán như T34.
 
 ### 7.2. Tại quán
 
@@ -153,9 +164,54 @@ flowchart TD
     G --> H["Mở Thanh toán"]
 ```
 
-Chọn bàn trống chỉ chọn ngữ cảnh; chưa tạo hóa đơn rỗng ngay. Thêm món đầu tiên gọi nghiệp vụ tạo header và dòng đầu theo hợp đồng T14; nếu hợp đồng tách hai lệnh, phải có cơ chế dọn header rỗng hợp lệ và không để bàn chiếm giả. Đây là yêu cầu cần chốt ở T14, không giả định schema hiện tại đã hỗ trợ thao tác gộp.
+Chọn bàn trống chỉ chọn ngữ cảnh; chưa tạo hóa đơn rỗng ngay. Thêm món đầu tiên gọi nghiệp vụ tạo header và dòng đầu theo hợp đồng T14 (`sp_TaoHoaDon`, một giao dịch); không có header rỗng tồn tại sau lỗi.
 
-Mỗi dòng: tên, số lượng, giá snapshot, ghi chú, thành tiền; nút sửa/xóa theo dòng. Thêm cùng món/cùng giá/cùng ghi chú có thể tăng số lượng bằng thao tác sửa rõ ràng; khác ghi chú hoặc giá thì giữ dòng riêng. Dialog sửa ghi chú/số lượng không đổi giá snapshot. Không cho thu ngân nhập giá tùy ý.
+**Tự mở đơn mới (19/11/2026):** vào tab Bán hàng (lần đầu, quay lại qua điều hướng hoặc đổi khu vực) và sau mỗi kết thúc thanh toán/trả bàn/hủy đơn, POS tự mở ngữ cảnh **đơn mới**: ưu tiên bàn **Trống** đầu tiên (Đã trả · giữ bàn đứng sau), không có bàn trống thì thông báo chọn Mang đi/Giao hàng hoặc xử lý đơn đang mở. Chỉ header F3 và ghi chú dòng đang mở là input chưa ghi; bàn/kênh đã chọn cho đơn chưa tạo không làm hiện hộp khi rời màn. Xóa dòng cuối của đơn đã lưu giữ header mở (không tự hủy, không tự tạo đơn khác); UI báo thêm món hoặc Hủy đơn mở.
+
+**Phiên bàn (T34):** lần lưu đơn đầu tiên mở phiên cho bàn; bàn thuộc phiên chứ không
+thuộc từng hóa đơn. Khách đã trả tiền nhưng còn ngồi thì bàn vẫn bận và hiện
+“Đã trả · giữ bàn”; thêm món tạo hóa đơn mới trong cùng phiên, không gộp tiền vào
+hóa đơn cũ. Bàn chỉ trống khi nhân viên bấm **Trả bàn** và phiên không còn đơn
+`Chưa thanh toán`/`Chờ thanh toán` (SQL trả lỗi nếu còn, UI báo và tải lại bàn).
+Không tự trả bàn theo giờ, theo lúc thu tiền hay lúc hủy đơn. Đơn cũ không có phiên
+vẫn làm bàn bận như trước; không backfill phiên.
+
+Mỗi dòng: tên món (kèm ghi chú chữ nhỏ ngay dưới tên nếu có), số lượng `− n +`, giá
+snapshot; cột cuối là thùng rác xóa dòng ngay, không hỏi xác nhận. Bấm `+` trên card
+món thêm một đơn vị; cùng món/cùng giá/cùng ghi chú thì tăng số lượng dòng cũ, khác
+ghi chú hoặc giá snapshot thì giữ dòng riêng. Bấm một lần vào tên món hoặc dòng ghi
+chú bên dưới mở ô ghi chú ngay dưới nội dung dòng (Enter/nút lưu để ghi, Esc/nút hủy
+để bỏ); rê chuột vào tên/ghi chú đổi màu chữ và con trỏ tay để báo bấm được, không vẽ
+thêm icon; không mở cửa sổ con khi thêm món. Trong lúc sửa ghi chú, danh sách gợi ý
+gồm mục cố định của quán và ghi chú đã dùng gần đây đọc từ SQL hiện ngay dưới ô, lọc
+theo nội dung đang gõ; ↑/↓ chọn, Enter nhận gợi ý và lưu, Esc đóng danh sách trước
+(lần Esc sau mới hủy editor).
+Hủy cả hóa đơn vẫn hỏi xác nhận. Dialog sửa ghi chú/số lượng không đổi giá snapshot.
+Không cho thu ngân nhập giá tùy ý.
+
+**Bán hàng gọn30/10/2026, cập nhật10/11/2026:** menu rộng với card ngang, panel
+đơn gọn; F3 và Hủy đơn mở ở header, F8 và Kiểm tra kết quả ở chân panel; bỏ hàng nút
+sửa/xóa riêng để grid cao hơn. Thêm món trực tiếp trên card, số lượng `− n +` và
+thùng rác ngay trên dòng, ghi chú hiển thị/sửa inline dưới tên món, cột
+Món/SL/Đơn giá/thùng rác khớp header. Đơn đầu tại quán cần bàn đã chọn, mang đi tạo
+ngay, giao hàng vẫn mở F3 một lần để nhập tên/SĐT/địa chỉ. POS chỉ hiển thị tổng
+Phải thanh toán từ SQL; tiền món/nguồn giảm/tỷ lệ/ship vẫn đầy đủ khi mở F8. Người
+dùng chốt31/10: bảng POS chỉ hiện cột Đơn giá (giá snapshot một món), cột số lượng
+riêng; ẩn tiền dòng, bỏ tiền tố ĐG và cách vẽ hai dòng để gọn bảng. Không cho nhập
+giá. Chưa có preview hợp lệ/unknown không hiện0giả; tổng và trạng thái gửi lặp
+vẫn theo contract. Món/Đơn là nhánh responsive khi hẹp, giữ draft/selection, không
+ghi từ resize. Triển khai/smoke chưa thay nghiệm thu chức năng hoặc hình thức người dùng.
+
+**Chờ thanh toán (16/11/2026, sửa20/11/2026):** thu ngân bấm **In tạm** (nổi bật ngang
+F8); đơn sang **Chờ thanh toán** và mở xem trước **ngay, không hỏi xác nhận**. Khi
+khách gọi thêm, nhân viên bấm món/tăng số lượng để **nối vào cùng hóa đơn** — cùng
+bill, cùng mã, ưu đãi tính lại trên toàn đơn; thêm lại món cũ gộp về một dòng (SL 1
+→ 2). Đã in tạm thì **không xóa dòng, không giảm số lượng, không sửa ghi chú**; F3
+khách/ưu đãi/ship vẫn sửa được vì tiền chốt ở bước thu. Nút **In lại** in lại tạm tính
+sau khi nối món. Không còn nút **Mở lại đơn**; vẫn **Thanh toán**, **Hủy đơn**, **Trả
+bàn** theo T33–T34. Bàn vẫn bận và hiện “Chờ thanh toán”, không nhận đơn mới cho tới
+khi đơn được thu/hủy. Lỗi in chỉ báo, đơn đã lưu vẫn giữ. F8 vẫn là đường thanh toán
+duy nhất, Enter không tự chốt tiền.
 
 Thao tác ghi đang chạy khóa dòng liên quan và nút Thanh toán; không phát lệnh sửa chồng nhau. SQL trả DTO mới thì cập nhật tổng. Version xung đột: **“Đơn đã thay đổi ở phiên khác. Tải lại trước khi tiếp tục.”** Giữ bản nhập chưa gửi để người dùng tham khảo, không ghi đè tự động.
 
@@ -180,6 +236,31 @@ Khách đổi/ưu đãi đổi → tải preview → cập nhật tổng; không
 Rời đơn lưu không hủy; chọn đơn khác sau khi kết thúc ghi đang chạy. Hủy có dialog mã đơn, bàn, tổng, cảnh báo không hoàn tiền vì chỉ đơn chưa thanh toán; yêu cầu lý do nếu contract hỗ trợ lưu, không hỏi rồi làm mất lý do. Nếu schema chưa lưu lý do, ghi rõ cần bổ sung ở T16 hoặc chỉ dùng xác nhận.
 
 Đơn đã pha rồi hủy: hướng dẫn ADMIN/STORE lập xuất hủy lượng thực dùng qua UX12; không tự cộng tồn hay ghi tiêu hao bán. Đơn đã trả chỉ xem/in/chuyển tiến độ giao, không hiện nút Hủy tài chính.
+
+### 7.6. Đơn mới POS không còn nháp bộ nhớ (bỏ nháp 19/11/2026)
+
+**Bỏ toàn bộ cơ chế nháp G04-POS-02/G04-POS-07 duyệt 10–16/11/2026** theo yêu cầu người
+dùng: sửa lại đúng hợp đồng gốc T14 — món đầu tiên tạo hóa đơn trong một giao dịch,
+không có trạng thái "Nháp/Tạm tính" từ bộ nhớ và không có hộp **Giữ / Không giữ / Ở lại**.
+
+Đơn mới chỉ khác đơn đã lưu ở chỗ header chưa có mã: bàn (Tại quán), kênh và thông tin
+khách/ưu đãi/giao hàng chọn trước được giữ như ngữ cảnh UI, không cấp mã và không ghi
+SQL. Panel đơn hiện trạng thái **Trống** và Phải thanh toán **—**. Món đầu tiên gọi
+`sp_TaoHoaDon` (một giao dịch: header + dòng đầu, bàn/phiên, preview SQL) rồi tải lại
+đơn từ SQL; các thao tác sau autosave từng lệnh như mọi đơn đã lưu.
+
+Rời màn chỉ hỏi khi có input thật chưa ghi: header đang sửa (F3) hoặc ghi chú dòng
+đang mở. Chọn bàn/kênh cho đơn chưa tạo không phải input nên rời màn không hỏi; đơn
+đã lưu còn nguyên như trước. Đổi kênh (Tại quán/Mang đi/Giao hàng) khi chưa có đơn ghi
+SQL thì cập nhật ngữ cảnh tại chỗ; rời Giao hàng xóa người nhận/SĐT/địa chỉ/phí ship
+sau xác nhận nếu đã nhập; vào Tại quán chọn bàn trống đầu tiên, hết bàn trống thì giữ
+kênh cũ và yêu cầu xử lý đơn đang mở hoặc chọn Mang đi/Giao hàng.
+
+Xung đột bàn 52104 chỉ xảy ra ở lần ghi thật: hộp **Mở đơn hiện có / Chọn bàn khác**;
+không merge món của request thất bại và không ghi một phần. Xóa dòng cuối của đơn đã
+lưu giữ header mở (UI báo thêm món hoặc Hủy đơn mở), không tự hủy. Migration030,
+TVP `SalesDraftLines` và `sp_TaoHoaDonTuNhap` đã áp trên DB vẫn giữ làm lịch sử
+migration nhưng không còn được app gọi.
 
 ## 8. Thanh toán — luồng trọng tâm
 
@@ -218,16 +299,24 @@ Trong khi gửi, không đóng dialog và không bắt đầu thanh toán khác 
 | Món ngừng bán/thiếu công thức | Chỉ rõ món | ADMIN xử lý hoặc bỏ món |
 | Đơn đã chốt ở phiên khác | Tải kết quả thực | Xem/in, không thu lần hai |
 | Mất kết nối/timeout | “Chưa xác định kết quả. Đang kiểm tra hóa đơn …” | Nút Kiểm tra lại; chặn xác nhận mới |
-| In lỗi sau thành công | “Đã thanh toán. Chưa in được hóa đơn.” | POS về nháp mới; in lại tại Lịch sử hóa đơn, không gọi checkout |
+| In lỗi sau thành công | “Đã thanh toán. Chưa in được hóa đơn.” | POS tự mở đơn mới; in lại tại Lịch sử hóa đơn, không gọi checkout |
+| Trả bàn sau thu/hủy | Thu/hủy thành công rồi mới hỏi “Trả bàn ngay?” (Yes/No, mặc định Yes) | Yes đóng phiên; No giữ bàn “Đã trả · giữ bàn”; lỗi trả bàn không rollback tiền |
+| Trả bàn khi còn đơn | “Bàn còn đơn chưa chốt; thu hoặc hủy trước khi trả bàn.” | Tải lại bàn, giữ đơn hiện tại |
 
 Kết quả thành công: chỉ sau SQL xác nhận đã chốt mới hỏi “Bạn có muốn in hóa đơn không?” (Có/Không).
-Có mở hộp chọn máy in; Không bỏ qua. Sau gửi in, hủy hoặc lỗi in, POS đều trở về
-nháp đơn mới trống tương đương Đơn mới; không tự lưu hóa đơn rỗng. Giữ thông báo
+Có mở hộp chọn máy in; Không bỏ qua. Sau gửi in, hủy hoặc lỗi in, POS đều tự mở
+đơn mới (bàn trống đầu tiên nếu còn, ngược lại thông báo chọn Mang đi/Giao hàng);
+không tự lưu hóa đơn rỗng. Giữ thông báo
 mã đơn, tiền thu/thối và điểm nếu đọc được ở status. POS không còn nút Xem/In;
 tra cứu/in lại qua Lịch sử hóa đơn. Lần in từ câu hỏi này không gắn nhãn IN LẠI;
 in từ lịch sử có nhãn. Hủy Checkout, lỗi trước commit hoặc còn unknown giữ đơn và
-input, không hỏi in/xóa nháp. Chỉ sau SQL xác nhận commit mới làm trống bàn và
-kết thúc đơn ở POS. In không phải điều kiện thanh toán thành công.
+input, không hỏi in/reset đơn. Tiền đã chốt thì POS kết thúc đơn, nhưng bàn **không**
+tự trống: sau bước in, UI hỏi **Trả bàn ngay?** (Yes/No, mặc định Yes). Yes gọi
+`sp_TraBan` với revision phiên vừa đọc; No để bàn “Đã trả · giữ bàn” cho khách ngồi
+tiếp. Lỗi trả bàn chỉ hiện “Đã thu; chưa trả bàn được” kèm lý do và cho bấm lại,
+không rollback tiền, không tự retry. Hủy đơn dùng cùng cơ chế hỏi trả bàn; chỉ khi
+phiên không còn đơn mở thì bàn mới thành **Trống**. In không phải điều kiện thanh
+toán thành công.
 
 ## 9. Lịch sử hóa đơn, in và giao hàng
 
@@ -369,7 +458,7 @@ Thông báo thành công thường không cần modal. Giao dịch tiền/kho c�
 
 | Đối tượng | Trước ghi/chốt | Sau ghi/chốt | Nơi xem lại |
 |---|---|---|---|
-| Hóa đơn | Đơn mở lưu DB, cho sửa theo SQL | Đã trả/đã hủy, khóa tài chính | Lịch sử/chi tiết |
+| Hóa đơn | Đơn mở lưu DB: Chưa thanh toán sửa được, Chờ thanh toán khóa sửa nhưng còn thu/hủy | Đã trả/đã hủy, khóa tài chính | Lịch sử/chi tiết, lọc theo Chờ thanh toán |
 | Nhập/xuất | Nháp local, không đổi kho | Chứng từ chốt, chỉ đọc | Danh sách kho |
 | Kiểm kê | Snapshot và số đếm theo contract | Đã điều chỉnh, khóa header/chi tiết | Chi tiết kiểm kê |
 | Trả nợ | Dialog chưa ghi | Lịch sử trả + chi liên kết | Nợ nguồn/thu chi |

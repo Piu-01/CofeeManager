@@ -23,7 +23,6 @@ internal sealed class OrderPanel : OrbitSurface
     private SalesOrderDto? current;
     private SalesLine? editingLine;
     private int editingRow = -1;
-    private decimal? draftTotal;
     private bool interactive, unknown, suppressSuggestions;
     internal bool HasPendingNote => editingLine is not null;
     internal void SetInteractive(bool value) { interactive = value; noteEditor.Enabled = value; if (!value) suggestions.Reset(); }
@@ -48,25 +47,14 @@ internal sealed class OrderPanel : OrbitSurface
     {
         CancelNoteEdit();
         var selectedId = (Lines.CurrentRow?.DataBoundItem as SalesLine)?.LineId;
-        current = order; draftTotal = null; Lines.DataSource = order?.Lines.ToList();
+        current = order; Lines.DataSource = order?.Lines.ToList();
         if (selectedId is { } id)
             foreach (DataGridViewRow row in Lines.Rows) if (row.DataBoundItem is SalesLine line && line.LineId == id) { Lines.CurrentCell = row.Cells["Name"]; break; }
         Caption.Text = order?.Header.Code ?? L.T("Chưa tạo đơn");
-        status.Text = order is null ? L.T("Nháp") : SalesStates.Label(order.Header.Status);
-        status.ForeColor = order?.Header.Status == "Huy" ? AppTheme.Error : order?.Header.Status == "Da thanh toan" ? OrbitManagementTheme.Lilac : OrbitManagementTheme.Caramel;
+        status.Text = order is null ? L.T("Trống") : SalesStates.Label(order.Header.Status);
+        status.ForeColor = order is null ? OrbitManagementTheme.Muted
+            : order.Header.Status == "Huy" ? AppTheme.Error : order.Header.Status == "Da thanh toan" ? OrbitManagementTheme.Lilac : OrbitManagementTheme.Caramel;
         context.Text = order is null ? L.T("Thêm món đầu tiên để lưu đơn") : L.F("{0} · Bàn {1} · Khách {2}", SalesStates.Label(order.Header.Channel), order.Header.TableCode ?? "—", order.Header.Customer ?? L.T("Vãng lai"));
-        UpdateTotal();
-    }
-    internal void ShowDraft(IReadOnlyList<SalesLine> lines, string caption, string contextText, decimal subtotal)
-    {
-        CancelNoteEdit();
-        var selectedId = (Lines.CurrentRow?.DataBoundItem as SalesLine)?.LineId;
-        current = null; draftTotal = subtotal; Lines.DataSource = lines.ToList();
-        if (selectedId is { } id)
-            foreach (DataGridViewRow row in Lines.Rows) if (row.DataBoundItem is SalesLine line && line.LineId == id) { Lines.CurrentCell = row.Cells["Name"]; break; }
-        Caption.Text = caption;
-        status.Text = L.T("Nháp"); status.ForeColor = OrbitManagementTheme.Caramel;
-        context.Text = contextText;
         UpdateTotal();
     }
     internal void SetResultUnknown(bool value) { unknown = value; UpdateTotal(); }
@@ -228,13 +216,6 @@ internal sealed class OrderPanel : OrbitSurface
     private static string Property(DataGridViewColumn column) => column.DataPropertyName.Length > 0 ? column.DataPropertyName : column.Name;
     private void UpdateTotal()
     {
-        if (draftTotal is { } temp)
-        {
-            Totals.Text = unknown ? "—" : SalesUi.Money(temp);
-            totalCaption.Text = unknown ? L.T("Chưa xác minh tổng") : L.T("Tạm tính");
-            PerformLayout();
-            return;
-        }
         var valid = current is not null && !unknown && (!current.Header.IsOpen || current.Header.PreviewValid);
         Totals.Text = valid ? SalesUi.Money(current!.Header.Payable) : "—";
         totalCaption.Text = current is null || valid ? L.T("Phải thanh toán") : L.T("Chưa xác minh tổng");
@@ -252,17 +233,17 @@ internal sealed class OrderPanel : OrbitSurface
         var headerButtons = HeaderActions.Controls.Cast<Control>().ToArray();
         if (headerButtons.Length > 0)
         {
-            var firstWidth = Math.Min(inner, Math.Max(1, headerButtons[0].GetPreferredSize(Size.Empty).Width));
-            headerButtons[0].SetBounds(0, 0, firstWidth, P(26));
-            if (headerButtons.Length > 1)
+            // Nút đầu sát trái; các nút còn lại (Trả bàn, Hủy đơn mở…) dồn sát phải,
+            // xếp từ phải sang trái để nút giữa không bị bỏ sót như thiết kế 2 nút cũ.
+            var headerGap = P(8); var right = inner;
+            for (var i = headerButtons.Length - 1; i >= 1; i--)
             {
-                var last = headerButtons[^1];
-                var headerGap = P(8);
-                var lastWidth = Math.Min(inner, Math.Max(1, last.GetPreferredSize(Size.Empty).Width));
-                if (firstWidth + headerGap + lastWidth > inner) firstWidth = Math.Max(1, inner - headerGap - lastWidth);
-                headerButtons[0].SetBounds(0, 0, firstWidth, P(26));
-                last.SetBounds(Math.Max(0, inner - lastWidth), 0, lastWidth, P(26));
+                var width = Math.Min(inner, Math.Max(1, headerButtons[i].GetPreferredSize(Size.Empty).Width));
+                right = Math.Max(0, right - width);
+                headerButtons[i].SetBounds(right, 0, width, P(26));
+                right = Math.Max(0, right - headerGap);
             }
+            headerButtons[0].SetBounds(0, 0, Math.Max(1, right), P(26));
         }
         // Nút thanh toán chính (index 1) cao hơn; các nút phụ xếp dọc, chiều cao panel tính theo số nút.
         var paymentButtons = PaymentActions.Controls.Cast<Control>().ToArray();

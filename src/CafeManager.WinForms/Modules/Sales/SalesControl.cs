@@ -32,7 +32,7 @@ public sealed class SalesControl : UserControl, IUnsavedChanges, IAsyncLeaveConf
     private readonly OrbitSectionTabs categoryTabs = new() { Underline = true, Wrap = true, Dock = DockStyle.None, BackColor = OrbitManagementTheme.Surface };
     private readonly Panel topActions = new(), menuTools = new(), menuFooter = new();
     private readonly OrbitFilterBox areaField, tableField, channelField;
-    private readonly Button selectTable, find, previous, next;
+    private readonly Button find, previous, next;
     private readonly ToolTip tips = new();
     private List<TableRow> tableRows = [];
     private int? currentSession;
@@ -43,26 +43,24 @@ public sealed class SalesControl : UserControl, IUnsavedChanges, IAsyncLeaveConf
     private readonly TabControl compactTabs = new() { Dock = DockStyle.Fill };
     private readonly TableLayoutPanel workspace = new() { ColumnCount = 3, RowCount = 1, Margin = Padding.Empty, Padding = Padding.Empty };
     private readonly Panel menuPanel = new() { Dock = DockStyle.Fill };
-    private readonly Button requestPay, pay, reopen, header, cancel, closeTable, reconcile;
+    private readonly Button printTemp, pay, header, cancel, closeTable, reconcile;
     private readonly List<Button> actions = [];
     private readonly CancellationTokenSource lifetime = new();
     private SalesOrderDto? order;
-    private OrderHeaderInput? draft;
+    // Header của đơn sẽ tạo ở lần thêm món đầu; không phải nháp dòng món, rời màn không hỏi.
+    private OrderHeaderInput? context;
     private OrderHeaderInput? headerDraft;
-    private readonly List<SalesDraftLine> draftLines = [];
-    private int nextDraftKey;
     private Guid pendingId;
     private string? pendingCode, pendingOperation;
     private IReadOnlyList<string> noteHistory = [];
-    private bool busy, unknown, initialized, changingLayout, disposed, layoutReady;
+    private bool busy, unknown, initialized, changingLayout, disposed, layoutReady, suppressChannel, suppressTableOpen, openingTable;
     private int menuGeneration, menuPage;
-    public bool HasUnsavedChanges => headerDraft is not null || order is null && (draft is not null || draftLines.Count > 0) || orderPanel.HasPendingNote;
+    public bool HasUnsavedChanges => headerDraft is not null || orderPanel.HasPendingNote;
     public bool IsWriting => busy || unknown;
     public void DiscardChanges()
     {
-        draft = null; headerDraft = null; draftLines.Clear(); orderPanel.CancelNoteEdit();
-        // Bỏ nháp phải làm sạch panel, nếu không lưới giữ dòng cũ nhưng đã khóa thao tác.
-        // Đơn đã lưu vẫn giữ lưới của đơn.
+        context = null; headerDraft = null; orderPanel.CancelNoteEdit();
+        // Không còn nháp dòng món; chỉ cần làm sạch panel khi chưa có đơn đã lưu.
         if (order is null && !disposed) { orderPanel.ShowOrder(null); UpdateTableStatus(); }
     }
     public SalesControl(SalesService service, TableService tables, CustomerService customers, LoyaltyService loyalty, SessionContext session, InvoiceService? invoices = null)
@@ -77,11 +75,11 @@ public sealed class SalesControl : UserControl, IUnsavedChanges, IAsyncLeaveConf
             OrbitManagementTheme.Button(b, style, icon); actions.Add(b); return b;
         }
         var newOrder = Action(L.T("Đơn mới"), NewOrder, ManagementButtonStyle.Primary, "plus"); var open = Action(L.T("F4 · Đơn mở"), OpenOrders, icon: "book");
-        selectTable = Action(L.T("Chọn bàn"), SelectTable, icon: "pin"); var reload = Action(L.T("Làm mới"), ReloadAll, icon: "refresh");
+        var reload = Action(L.T("Làm mới"), ReloadAll, icon: "refresh");
         channelField = new OrbitFilterBox(channel) { LogicalWidth = 110 };
         areaField = new OrbitFilterBox(area) { LogicalWidth = 125 }; tableField = new OrbitFilterBox(table) { LogicalWidth = 180 };
         topActions.Controls.AddRange([channelField, newOrder, open, reload]);
-        tableHost.Controls.AddRange([tableCaption, areaField, tableField, selectTable, tableStatus]);
+        tableHost.Controls.AddRange([tableCaption, areaField, tableField, tableStatus]);
         search.PlaceholderText = L.T("F2 · Tìm món theo tên…"); search.AccessibleName = L.T("Tìm món bán hàng");
         channel.AccessibleName = L.T("Loại đơn"); area.AccessibleName = L.T("Khu vực"); table.AccessibleName = L.T("Bàn");
         find = Action(L.T("Tìm món"), async () => { menuPage = 0; await LoadMenu(); }, icon: "search");
@@ -96,14 +94,13 @@ public sealed class SalesControl : UserControl, IUnsavedChanges, IAsyncLeaveConf
         workspace.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
         menuPanel.Margin = orderPanel.Margin = Padding.Empty;
         workspace.Controls.Add(menuPanel, 0, 0); workspace.Controls.Add(orderPanel, 2, 0);
-        requestPay = Action(L.T("Yêu cầu thanh toán"), RequestPayment, ManagementButtonStyle.Segment, "ticket");
+        printTemp = Action(L.T("In tạm"), PrintTemp, ManagementButtonStyle.Primary, "ticket");
         pay = Action(L.T("F8 · Thanh toán"), Checkout, ManagementButtonStyle.Primary, "receipt"); header = Action(L.T("F3 · Khách / Ưu đãi"), EditHeader, ManagementButtonStyle.Segment, "user");
-        reopen = Action(L.T("Mở lại đơn"), ReopenOrder, ManagementButtonStyle.Segment, "refresh");
         cancel = Action(L.T("Hủy đơn mở"), CancelOrder, ManagementButtonStyle.Danger, "trash");
         closeTable = Action(L.T("Trả bàn"), CloseTable, ManagementButtonStyle.Segment, "armchair");
         reconcile = SalesUi.Button(L.T("Kiểm tra kết quả"), async (_, _) => await Guard(Reconcile));
         reconcile.MinimumSize = Size.Empty; OrbitManagementTheme.Button((OrbitButton)reconcile, ManagementButtonStyle.Action, "history");
-        orderPanel.HeaderActions.Controls.AddRange([header, closeTable, cancel]); orderPanel.PaymentActions.Controls.AddRange([requestPay, pay, reopen, reconcile]);
+        orderPanel.HeaderActions.Controls.AddRange([header, closeTable, cancel]); orderPanel.PaymentActions.Controls.AddRange([printTemp, pay, reconcile]);
         Controls.AddRange([workspace, tableHost, eyebrow, title, topActions, state]);
         compactTabs.TabPages.Add(L.T("Món")); compactTabs.TabPages.Add(L.T("Đơn")); compactTabs.Visible = false; Controls.Add(compactTabs); compactTabs.BringToFront();
         BackColor = OrbitManagementTheme.Background; Font = OrbitManagementTheme.Body;
@@ -114,6 +111,9 @@ public sealed class SalesControl : UserControl, IUnsavedChanges, IAsyncLeaveConf
         orderPanel.DeleteRequested += line => _ = Guard(() => DeleteLine(line));
         orderPanel.NoteSaveRequested += (line, note) => _ = Guard(() => SaveNote(line, note));
         table.SelectedValueChanged += (_, _) => UpdateTableStatus();
+        // Chọn bàn trong ô chọn bàn là mở bàn luôn (không còn nút "Chọn bàn");
+        // gán bàn bằng code dùng SetTableSelection để không tự mở trùng.
+        table.SelectedValueChanged += async (_, _) => await Guard(OpenSelectedTableAsync);
         // Tab phân loại lọc ngay khi bấm; bỏ qua lúc dựng lại tab hoặc đang bận.
         categoryTabs.SelectedIndexChanged += async (_, _) =>
         {
@@ -126,14 +126,13 @@ public sealed class SalesControl : UserControl, IUnsavedChanges, IAsyncLeaveConf
         area.SelectedValueChanged += async (_, _) => { if (initialized && !busy && !unknown) await Guard(LoadTables); };
         channel.SelectedValueChanged += async (_, _) =>
         {
+            if (suppressChannel) return;
             UpdateTableStatus();
             if (busy || unknown || order is not null || channel.SelectedValue is not string target) return;
-            if (draft is null && draftLines.Count == 0) return;
-            var previous = draft?.Channel ?? target;
+            var previous = context?.Channel ?? target;
             if (target == previous) return;
-            // Nháp chưa có trong SQL nên đổi kênh chỉ đổi ngữ cảnh tại chỗ: giữ dòng món,
-            // không ghi SQL và không hỏi Giữ/Không giữ. Nhờ vậy không phát sinh xung đột bàn.
-            var header = draft ?? new OrderHeaderInput(previous, previous == "Tai quan" ? table.SelectedValue as string : null);
+            // Đơn mới chưa có trong SQL: đổi kênh chỉ đổi ngữ cảnh, không ghi DB.
+            var header = context ?? new OrderHeaderInput(previous, previous == "Tai quan" ? table.SelectedValue as string : null);
             var clearsDelivery = target != "Giao hang" && (header.Partner is not null || header.Recipient is not null
                 || header.Phone is not null || header.Address is not null || header.Ship != 0);
             if (clearsDelivery && await CafeManager.WinForms.Forms.OrbitConfirmationDialog.ShowAsync(this,
@@ -165,19 +164,17 @@ public sealed class SalesControl : UserControl, IUnsavedChanges, IAsyncLeaveConf
                 targetTable = free.Code;
             }
             orderPanel.CancelNoteEdit();
-            if (targetTable is null) table.SelectedIndex = -1; else table.SelectedValue = targetTable;
-            draft = header with
+            SetTableSelection(targetTable);
+            context = header with
             {
                 Channel = target, TableCode = targetTable,
                 Partner = null, Recipient = null, Phone = null, Address = null, Ship = 0
             };
-            ShowDraft(); SetBusy(false);
+            orderPanel.ShowOrder(null); UpdateTableStatus(); SetBusy(false);
             var tableName = targetTable is null ? null : tableRows.FirstOrDefault(x => x.Code == targetTable)?.Name;
-            state.Text = draftLines.Count == 0
-                ? L.F("Đã chọn {0}. Thêm món đầu mới tạo đơn.", Models.States.SalesStates.Label(target))
-                : target == "Tai quan"
-                    ? L.F("Nháp đã chuyển sang Tại quán · {0}; chưa ghi SQL.", tableName ?? "—")
-                    : L.F("Nháp đã chuyển sang {0}; chưa ghi SQL.", Models.States.SalesStates.Label(target));
+            state.Text = target == "Tai quan"
+                ? L.F("Đã chọn {0} cho đơn mới. Thêm món đầu để tạo đơn.", tableName ?? "—")
+                : L.F("Đã chuyển sang {0}. Thêm món đầu để tạo đơn.", Models.States.SalesStates.Label(target));
         };
         search.KeyDown += async (_, e) => { if (e.KeyCode == Keys.Enter) { e.SuppressKeyPress = true; menuPage = 0; await Guard(LoadMenu); } };
         Load += async (_, _) => { if (!initialized) { initialized = true; await Guard(ReloadAll); } };
@@ -200,17 +197,18 @@ public sealed class SalesControl : UserControl, IUnsavedChanges, IAsyncLeaveConf
         channel.Enabled = area.Enabled = table.Enabled = search.Enabled = products.Enabled = !busy && !unknown;
         categoryTabs.Enabled = !busy && !unknown;
         channel.Enabled = !busy && !unknown && order is null;
-        products.Enabled = !busy && !unknown && (order is null || order.Header.CanEdit);
-        requestPay.Enabled = !busy && !unknown && order?.Header.CanEdit == true && !HasUnsavedChanges
+        products.Enabled = !busy && !unknown && (order is null || order.Header.CanAddLine);
+        // Đơn đã In tạm thì cùng nút này thành "In lại"; chưa in thì in tạm tính và lưu đơn Chờ thanh toán.
+        printTemp.Text = L.T(order?.Header.IsPending == true ? "In lại" : "In tạm");
+        printTemp.Enabled = !busy && !unknown && order is not null && !HasUnsavedChanges && order.Lines.Count > 0
+            && (order.Header.IsPending || order.Header.CanEdit && order.Header.PreviewValid);
+        pay.Enabled = !busy && !unknown && order?.Header.IsPayable == true && !HasUnsavedChanges
             && order.Lines.Count > 0 && order.Header.PreviewValid;
-        pay.Enabled = !busy && !unknown && ((order?.Header.IsPayable == true && !HasUnsavedChanges && order.Lines.Count > 0 && order.Header.PreviewValid)
-            || (order is null && draftLines.Count > 0 && !orderPanel.HasPendingNote));
-        reopen.Enabled = !busy && !unknown && order?.Header.Status == "Cho thanh toan" && session.Identity.Role == "ADMIN";
         cancel.Enabled = !busy && !unknown && order?.Header.IsPayable == true;
         closeTable.Enabled = !busy && !unknown && currentSession is not null && currentSessionRevision is { Length: 8 }
-            && order?.Header.IsPayable != true && draftLines.Count == 0 && !HasUnsavedChanges;
-        header.Enabled = !busy && !unknown && (order is null || order.Header.CanEdit);
-        orderPanel.SetInteractive(!busy && !unknown && (order?.Header.CanEdit == true || order is null && draftLines.Count > 0));
+            && order?.Header.IsPayable != true && !HasUnsavedChanges;
+        header.Enabled = !busy && !unknown && (order is null || order.Header.CanEditHeader);
+        orderPanel.SetInteractive(!busy && !unknown && order?.Header.CanEdit == true);
         reconcile.Enabled = !busy && unknown;
         orderPanel.SetResultUnknown(unknown);
     }
@@ -228,9 +226,12 @@ public sealed class SalesControl : UserControl, IUnsavedChanges, IAsyncLeaveConf
             BuildCategoryTabs(categories);
             await LoadTables(); await LoadMenu();
             await LoadNoteHistory();
-            if (order is not null) await LoadOrder(order.Header.Code);
-            else if (draftLines.Count > 0) ShowDraft();
-            if (!disposed) state.Text = L.T("Đã tải từ SQL · ") + DateTime.Now.ToString("HH:mm");
+            if (order is not null)
+            {
+                await LoadOrder(order.Header.Code);
+                if (!disposed) state.Text = L.T("Đã tải từ SQL · ") + DateTime.Now.ToString("HH:mm");
+            }
+            else if (!disposed) state.Text = await StartNewOrderAsync(false);
         }
         finally { if (!disposed) SetBusy(false); }
     }
@@ -258,7 +259,7 @@ public sealed class SalesControl : UserControl, IUnsavedChanges, IAsyncLeaveConf
         if (disposed) return;
         tableRows = rows;
         table.DataSource = rows.Select(x => new SalesLookup(x.Code, $"{x.Name} · {(x.Retained ? L.T("Đã trả · giữ bàn") : x.OrderCode is null ? L.T("Trống") : x.OrderCode)}")).ToList();
-        if (selected is not null) table.SelectedValue = selected;
+        if (selected is not null) SetTableSelection(selected);
         UpdateTableStatus();
     }
     private async Task LoadMenu()
@@ -329,7 +330,7 @@ public sealed class SalesControl : UserControl, IUnsavedChanges, IAsyncLeaveConf
             topActions.SetBounds(wrapHeader ? left : left + width - toolbarWidth, wrapHeader ? P(80) : P(30), Math.Min(width, toolbarWidth), toolbarY + P(40));
             var tableTop = wrapHeader ? topActions.Bottom + P(12) : P(80);
             var tableX = P(14); var tableY = P(10); tableCaption.SetBounds(tableX, P(12), P(90), P(32)); tableX += P(96);
-            foreach (Control control in new Control[] { areaField, tableField, selectTable })
+            foreach (Control control in new Control[] { areaField, tableField })
             {
                 var w = control is OrbitFilterBox filter ? P(filter.LogicalWidth) : control.GetPreferredSize(Size.Empty).Width;
                 if (tableX > P(14) && tableX + w > width - P(14)) { tableX = P(14); tableY += P(44); }
@@ -367,7 +368,7 @@ public sealed class SalesControl : UserControl, IUnsavedChanges, IAsyncLeaveConf
     public async Task OpenOrderAsync(string code)
     {
         if (busy || unknown) return;
-        if (!await ConfirmDraftAsync(this, L.T("mở đơn khác"))) return;
+        if (!await ConfirmInputAsync(this, L.T("mở đơn khác"))) return;
         await Guard(async () => { SetBusy(true); try { await LoadOrder(code); DiscardChanges(); } finally { if (!disposed) SetBusy(false); } });
     }
     private async Task LoadOrder(string code)
@@ -384,164 +385,140 @@ public sealed class SalesControl : UserControl, IUnsavedChanges, IAsyncLeaveConf
         var current = tableRows.FirstOrDefault(x => x.Code == table.SelectedValue as string);
         return current is { OrderCode: null } ? current : tableRows.FirstOrDefault(x => x.OrderCode is null);
     }
-    private async Task NewOrder()
+    // Bắt đầu ngữ cảnh đơn mới: tự chọn bàn trống khi Tại quán; không ghi SQL, không tạo hóa đơn rỗng.
+    private async Task<string> StartNewOrderAsync(bool notifyNoTable)
     {
-        if (!await BeginNewOrder() || channel.SelectedValue as string != "Tai quan") return;
+        order = null; headerDraft = null; context = null; orderPanel.CancelNoteEdit(); orderPanel.ShowOrder(null);
+        var target = channel.SelectedValue as string ?? "Tai quan";
+        if (target != "Tai quan")
+        {
+            SetTableSelection(null); context = new(target, null);
+            UpdateTableStatus(); SetBusy(false);
+            return L.F("Bắt đầu đơn {0} mới. Thêm món đầu để tạo đơn.", Models.States.SalesStates.Label(target));
+        }
         if (tableRows.Count == 0)
         {
-            state.Text = L.T("Chưa có dữ liệu bàn. Bấm Làm mới rồi thử lại.");
-            return;
-        }
-        var current = tableRows.FirstOrDefault(x => x.Code == table.SelectedValue as string);
-        if (current is { OrderCode: null })
-        {
-            state.Text = L.F("Đang chọn {0} (trống). Thêm món đầu để tạo đơn.", current.Name);
-            return;
+            SetTableSelection(null); context = new("Tai quan", null);
+            UpdateTableStatus(); SetBusy(false);
+            return L.T("Chưa có dữ liệu bàn. Bấm Làm mới rồi thử lại.");
         }
         var free = TableForNewOrder();
         if (free is null)
         {
-            table.SelectedIndex = -1;
-            state.Text = L.T("Không còn bàn trống. Chọn Mang đi/Giao hàng hoặc xử lý đơn đang mở.");
-            await CafeManager.WinForms.Forms.OrbitConfirmationDialog.ShowAsync(this,
+            SetTableSelection(null); context = new("Tai quan", null);
+            UpdateTableStatus(); SetBusy(false);
+            if (notifyNoTable) await CafeManager.WinForms.Forms.OrbitConfirmationDialog.ShowAsync(this,
                 L.T("Không còn bàn trống để tạo đơn mới. Hãy xử lý đơn đang mở hoặc chọn đơn Mang đi/Giao hàng."),
                 L.T("Hết bàn trống"), MessageBoxButtons.OK, L.T("Đã hiểu"));
-            return;
+            return L.T("Không còn bàn trống. Chọn Mang đi/Giao hàng hoặc xử lý đơn đang mở.");
         }
-        table.SelectedValue = free.Code;
-        state.Text = L.F("Đã chuyển sang {0} (trống). Thêm món đầu để tạo đơn.", free.Name);
+        SetTableSelection(free.Code); context = new("Tai quan", free.Code);
+        UpdateTableStatus(); SetBusy(false);
+        return L.F("Đã chọn {0} (trống). Thêm món đầu để tạo đơn.", free.Name);
     }
-    private async Task<bool> BeginNewOrder()
+    private async Task NewOrder()
+    {
+        if (!await ConfirmInputAsync(this, L.T("tạo đơn khác"))) return;
+        state.Text = await StartNewOrderAsync(true);
+    }
+    // Chỉ hỏi khi có input thật chưa ghi: header F3 của đơn đã lưu hoặc ghi chú đang mở.
+    private async Task<bool> ConfirmInputAsync(Control owner, string action)
     {
         if (busy || unknown) return false;
-        if (!await ConfirmDraftAsync(this, L.T("tạo đơn khác"))) return false;
-        ResetDraft(); SetBusy(false); return true;
-    }
-    private void ResetDraft()
-    {
-        order = null; DiscardChanges(); orderPanel.ShowOrder(null); UpdateTableStatus();
-    }
-    private SalesDraftLine? FindDraftLine(SalesLine line) => draftLines.FirstOrDefault(x => x.Key == line.LineId);
-    private void AddDraftLine(SalesMenuItem item)
-    {
-        var existing = draftLines.FirstOrDefault(x => x.Product == item.Code && x.Price == item.Price && string.IsNullOrWhiteSpace(x.Note));
-        if (existing is not null) { existing.Quantity++; return; }
-        draftLines.Add(new SalesDraftLine { Key = ++nextDraftKey, Product = item.Code, Name = item.Name, Price = item.Price, Quantity = 1 });
-    }
-    private List<SalesLine> DraftRows() => draftLines
-        .Select(x => new SalesLine(x.Key, x.Product, x.Name, x.Quantity, x.Price, x.Note, x.Amount)).ToList();
-    private void ShowDraft()
-    {
-        var header = draft ?? CurrentHeader();
-        orderPanel.ShowDraft(DraftRows(), L.T("Đơn nháp"),
-            L.F("{0} · Bàn {1} · Khách {2}", Models.States.SalesStates.Label(header.Channel), header.TableCode ?? "—", header.Customer ?? L.T("Vãng lai")),
-            draftLines.Sum(x => x.Amount));
-    }
-    private async Task<bool> ConfirmDraftAsync(Control owner, string action)
-    {
-        if (busy || unknown) return false;
-        if (order is null && draftLines.Count > 0)
-        {
-            var decision = await PosDraftDecisionDialog.ShowAsync(owner,
-                L.F("Đơn nháp chưa ghi SQL. Giữ đơn rồi {0}, hay bỏ nháp?", action), L.T("Giữ đơn nháp?"));
-            if (decision == DraftDecision.Stay) return false;
-            if (decision == DraftDecision.Discard) { DiscardChanges(); return true; }
-            return await FlushDraftAsync();
-        }
         if (!HasUnsavedChanges) return true;
-        var message = order is null ? L.T("Bỏ thông tin nháp để tiếp tục?") : L.T("Bỏ input chưa ghi để tiếp tục?");
-        if (await CafeManager.WinForms.Forms.OrbitConfirmationDialog.ShowAsync(owner, message, L.T("Nháp chưa lưu"), MessageBoxButtons.OKCancel) != DialogResult.OK) return false;
+        if (await CafeManager.WinForms.Forms.OrbitConfirmationDialog.ShowAsync(owner,
+            L.T("Bỏ input chưa ghi để tiếp tục?"), L.T("Dữ liệu chưa lưu"), MessageBoxButtons.OKCancel) != DialogResult.OK) return false;
         DiscardChanges(); return true;
     }
-    public Task<bool> ConfirmLeaveAsync(Control owner) => ConfirmDraftAsync(owner, L.T("rời màn Bán hàng"));
-    private async Task<bool> FlushDraftAsync()
+    public Task<bool> ConfirmLeaveAsync(Control owner) => ConfirmInputAsync(owner, L.T("rời màn Bán hàng"));
+    // Món đầu tiên tạo header + dòng đầu trong một transaction (contract T14); chỉ gọi khi bàn đang trống.
+    private async Task CreateFirstLine(OrderHeaderInput input, SalesMenuItem item)
     {
-        if (busy || unknown || order is not null || draftLines.Count == 0) return false;
-        OrderHeaderInput input;
-        try { input = SalesService.Normalize(draft ?? CurrentHeader()); }
-        catch (Exception ex) when (ex is ArgumentException or UserOperationException) { state.Text = ex.Message; return false; }
-        SetBusy(true);
         pendingId = Guid.NewGuid(); pendingCode = null; pendingOperation = "SalesCreate";
-        var committed = false;
+        SetBusy(true); var committed = false;
         try
         {
             var code = await service.AllocateAsync(session, lifetime.Token); pendingCode = code;
-            var lines = draftLines.Select(x => new SalesDraftLineInput(x.Product, x.Quantity, x.Note, x.Price)).ToArray();
-            await service.CreateDraftAsync(session, new(code, pendingId, input, lines), lifetime.Token);
-            committed = true;
-            draftLines.Clear(); draft = null; headerDraft = null; orderPanel.CancelNoteEdit();
-            await LoadOrder(code); if (disposed) return false;
+            await service.CreateAsync(session, new(code, pendingId, input, item.Code, 1, null), lifetime.Token);
+            committed = true; context = input;
+            await LoadOrder(code); if (disposed) return;
             await LoadTables();
-            if (!disposed) state.Text = L.F("Đã lưu đơn {0} và tải lại từ SQL.", code);
-            return true;
+            if (!disposed) state.Text = L.F("Đã tạo đơn {0} và tải lại từ SQL.", code);
         }
         catch (UserOperationException ex)
         {
             unknown = committed || ex.Error.RequiresReconciliation;
-            if (!disposed)
-            {
-                state.Text = ex.Message + (unknown ? L.F(" · {0} · Kiểm tra kết quả", pendingCode ?? "") : "");
-                if (!unknown && ex.Error.Number == 52104 && draft?.Channel == "Tai quan") await HandleDraftConflictAsync();
-            }
-            return false;
+            if (disposed) return;
+            state.Text = ex.Message + (unknown ? L.F(" · {0} · Kiểm tra kết quả", pendingCode ?? "") : "");
+            if (!unknown && ex.Error.Number == 52104) await HandleOccupiedTableAsync(input.TableCode);
         }
         catch (OperationCanceledException)
         {
             unknown = true;
             if (!disposed) state.Text = L.F("Chưa xác định kết quả {0}; kiểm tra lại.", pendingCode ?? "");
-            return false;
         }
         finally { if (!disposed) SetBusy(false); }
     }
-    private async Task HandleDraftConflictAsync()
+    private async Task HandleOccupiedTableAsync(string? tableCode)
     {
-        var tableCode = draft?.TableCode;
-        var choice = await PosDraftConflictDialog.ShowAsync(this,
-            L.F("Bàn {0} vừa có đơn ở phiên khác. Nháp vẫn được giữ; chọn cách xử lý.", tableCode ?? "—"), L.T("Bàn đã có đơn"));
-        if (choice == DraftConflictChoice.OpenExisting)
+        await LoadTables();
+        var row = tableRows.FirstOrDefault(x => x.Code == tableCode && x.OrderCode is not null)
+            ?? tableRows.FirstOrDefault(x => x.OrderCode is not null);
+        if (row?.OrderCode is not { } code)
         {
-            await LoadTables();
-            var row = tableRows.FirstOrDefault(x => x.Code == tableCode && x.OrderCode is not null)
-                ?? tableRows.FirstOrDefault(x => x.OrderCode is not null);
-            if (row?.OrderCode is { } code) { DiscardChanges(); await LoadOrder(code); }
-            else if (!disposed) state.Text = L.T("Không tải được đơn hiện có; nháp vẫn được giữ.");
+            if (!disposed) state.Text = L.T("Bàn đang có đơn. Chọn bàn trống khác hoặc chọn bàn đang có đơn trong ô chọn bàn để mở đơn hiện có.");
+            return;
         }
-        else if (choice == DraftConflictChoice.ChangeTable)
+        var name = tableRows.FirstOrDefault(x => x.Code == tableCode)?.Name ?? tableCode ?? "—";
+        if (await CafeManager.WinForms.Forms.OrbitConfirmationDialog.ShowAsync(this,
+            L.F("Bàn {0} vừa có đơn ở phiên khác. Mở đơn hiện có?", name), L.T("Bàn đã có đơn"), MessageBoxButtons.YesNo) == DialogResult.Yes)
         {
-            await LoadTables();
-            if (!disposed) state.Text = L.T("Chọn bàn trống khác rồi bấm Chọn bàn; nháp được giữ.");
+            DiscardChanges(); await LoadOrder(code);
+            if (!disposed) state.Text = L.F("Đã mở đơn {0}.", code);
         }
-        else if (choice == DraftConflictChoice.Discard)
-        {
-            DiscardChanges(); orderPanel.ShowOrder(null); UpdateTableStatus();
-            if (!disposed) state.Text = L.T("Đã bỏ nháp; không ghi SQL.");
-        }
+        else if (!disposed)
+            state.Text = L.T("Đã giữ nguyên bàn đang chọn. Chọn bàn trống khác hoặc chọn bàn đang có đơn trong ô chọn bàn để mở đơn hiện có.");
     }
-    private async Task SelectTable()
+    // Gán bàn bằng code (tải lại, Đơn mới, đổi kênh, mở đơn) không kích hoạt tự mở bàn.
+    private void SetTableSelection(string? code)
     {
-        if (busy || unknown || table.SelectedValue is not string code) return;
-        await OpenTableAsync(code);
+        suppressTableOpen = true;
+        try { if (code is null) table.SelectedIndex = -1; else table.SelectedValue = code; }
+        finally { suppressTableOpen = false; }
+    }
+    // Người dùng chọn bàn trong ô chọn bàn: mở bàn/đơn ngay, thay cho nút "Chọn bàn" cũ.
+    private async Task OpenSelectedTableAsync()
+    {
+        if (suppressTableOpen || openingTable || !initialized || busy || unknown || disposed) return;
+        if (table.SelectedValue is not string code || string.IsNullOrWhiteSpace(code)) return;
+        // Bàn đang mở sẵn: chỉ cập nhật trạng thái, không mở lại đơn.
+        if (order?.Header.TableCode == code) return;
+        if (order is null && context is { Channel: "Tai quan" } open && open.TableCode == code) return;
+        openingTable = true;
+        table.Enabled = area.Enabled = false;
+        try { await OpenTableAsync(code); }
+        finally
+        {
+            openingTable = false;
+            if (!disposed) table.Enabled = area.Enabled = !busy && !unknown;
+        }
     }
     public async Task OpenTableAsync(string code)
     {
         if (busy || unknown) return;
         var current = await tables.SelectAsync(session, code, lifetime.Token); if (disposed || current is null) return;
         if (current.OrderCode is not null) { await OpenOrderAsync(current.OrderCode); return; }
-        if (draftLines.Count > 0 && draft?.Channel == "Tai quan")
-        {
-            channel.SelectedValue = "Tai quan"; table.SelectedValue = code;
-            draft = (draft ?? new("Tai quan", code)) with { TableCode = code };
-            ShowDraft(); SetBusy(false);
-            state.Text = L.F("Đã chuyển nháp sang {0}; chưa ghi SQL.", current.Name);
-            return;
-        }
-        if (!await BeginNewOrder()) return;
-        channel.SelectedValue = "Tai quan"; table.SelectedValue = code; draft = new("Tai quan", code);
+        if (!await ConfirmInputAsync(this, L.T("chọn bàn khác"))) return;
+        order = null; headerDraft = null; orderPanel.CancelNoteEdit();
+        suppressChannel = true;
+        try { channel.SelectedValue = "Tai quan"; } finally { suppressChannel = false; }
+        SetTableSelection(code); context = new("Tai quan", code);
+        orderPanel.ShowOrder(null); UpdateTableStatus(); SetBusy(false);
         state.Text = current.Retained
             ? L.T("Bàn đang giữ · khách đã trả. Thêm món sẽ tạo hóa đơn mới trong cùng phiên; trả bàn khi khách về.")
-            : L.F("Đã chọn {0}. Thêm món đầu mới tạo đơn.", current.Name);
+            : L.F("Đã chọn {0}. Thêm món đầu để tạo đơn.", current.Name);
     }
-    private OrderHeaderInput CurrentHeader() => order is null ? draft ?? new(channel.SelectedValue as string ?? "Mang di", (channel.SelectedValue as string) == "Tai quan" ? table.SelectedValue as string : null) :
+    private OrderHeaderInput CurrentHeader() => order is null ? context ?? new(channel.SelectedValue as string ?? "Mang di", (channel.SelectedValue as string) == "Tai quan" ? table.SelectedValue as string : null) :
         new(order.Header.Channel, order.Header.TableCode, order.Header.Customer, order.Header.Promotion, order.Header.Partner, order.Header.Recipient, order.Header.Phone, order.Header.Address, order.Header.Ship);
     private async Task EditHeader()
     {
@@ -550,9 +527,9 @@ public sealed class SalesControl : UserControl, IUnsavedChanges, IAsyncLeaveConf
         if (await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this) != DialogResult.OK || dialog.Result is null) return;
         if (order is null)
         {
-            draft = dialog.Result;
-            if (draftLines.Count > 0) { ShowDraft(); SetBusy(false); }
-            state.Text = L.T("Thông tin còn là nháp; thêm món rồi chọn Giữ để lưu.");
+            context = dialog.Result;
+            orderPanel.ShowOrder(null); UpdateTableStatus(); SetBusy(false);
+            state.Text = L.T("Đã nhập thông tin đơn mới; thêm món đầu để tạo đơn.");
             return;
         }
         var h = order.Header; var input = dialog.Result; headerDraft = input;
@@ -560,24 +537,35 @@ public sealed class SalesControl : UserControl, IUnsavedChanges, IAsyncLeaveConf
     }
     private async Task AddProduct(SalesMenuItem item)
     {
-        if (busy || unknown || !item.CanAdd || order is not null && !order.Header.CanEdit) return;
+        if (busy || unknown || !item.CanAdd || order is not null && !order.Header.CanAddLine) return;
         if (order is null)
         {
             var input = CurrentHeader();
-            if (input.Channel == "Tai quan" && input.TableCode is null)
+            if (input.Channel == "Tai quan")
             {
-                state.Text = L.T("Chọn bàn trước khi thêm món cho đơn tại quán.");
-                return;
+                if (input.TableCode is null)
+                {
+                    state.Text = L.T("Chọn bàn trước khi thêm món cho đơn tại quán.");
+                    return;
+                }
+                var row = tableRows.FirstOrDefault(x => x.Code == input.TableCode);
+                if (row is null || row.OrderCode is not null)
+                {
+                    state.Text = row is null
+                        ? L.T("Chưa có dữ liệu bàn. Bấm Làm mới rồi thử lại.")
+                        : L.F("Bàn {0} đang có đơn. Chọn bàn trống khác hoặc chọn bàn đang có đơn trong ô chọn bàn để mở đơn hiện có.", row.Name);
+                    return;
+                }
             }
             if (input.Channel == "Giao hang" && (input.Recipient is null || input.Phone is null || input.Address is null))
             {
-                await EditHeader(); if (draft is null) return;
+                await EditHeader(); if (disposed) return;
                 input = CurrentHeader();
+                // Người dùng có thể đã hủy hộp F3; không tạo đơn giao hàng thiếu người nhận/SĐT/địa chỉ.
+                if (input.Channel == "Giao hang" && (input.Recipient is null || input.Phone is null || input.Address is null)) return;
             }
-            draft = input;
-            AddDraftLine(item);
-            ShowDraft(); SetBusy(false);
-            state.Text = L.T("Đã thêm vào nháp; chưa ghi SQL. Chọn Giữ hoặc Thanh toán để lưu.");
+            context = input;
+            await CreateFirstLine(input, item);
             return;
         }
         var h = order.Header;
@@ -589,14 +577,7 @@ public sealed class SalesControl : UserControl, IUnsavedChanges, IAsyncLeaveConf
     }
     private async Task ChangeQuantity(SalesLine line, int delta)
     {
-        if (busy || unknown) return;
-        if (order is null)
-        {
-            if (FindDraftLine(line) is not { } draftLine) return;
-            if (draftLine.Quantity + delta < 1) { state.Text = L.T("Số lượng tối thiểu là 1. Dùng thùng rác để xóa dòng."); return; }
-            draftLine.Quantity += delta; ShowDraft(); SetBusy(false);
-            return;
-        }
+        if (busy || unknown || order is null) return;
         if (order.Header.CanEdit != true) return;
         var quantity = line.Quantity + delta;
         if (quantity < 1)
@@ -629,12 +610,7 @@ public sealed class SalesControl : UserControl, IUnsavedChanges, IAsyncLeaveConf
     }
     private async Task SaveNote(SalesLine line, string? note)
     {
-        if (busy || unknown) return;
-        if (order is null)
-        {
-            if (FindDraftLine(line) is { } draftLine) { draftLine.Note = string.IsNullOrWhiteSpace(note) ? null : note.Trim(); RememberNote(draftLine.Note); ShowDraft(); SetBusy(false); }
-            return;
-        }
+        if (busy || unknown || order is null) return;
         if (order.Header.CanEdit != true) return;
         var h = order.Header;
         await Write(h.Code, "SalesLine", id => service.LineAsync(session, new(h.Code, h.Revision, id, "Update", line.LineId, Quantity: line.Quantity, Note: note), lifetime.Token));
@@ -642,19 +618,13 @@ public sealed class SalesControl : UserControl, IUnsavedChanges, IAsyncLeaveConf
     }
     private async Task DeleteLine(SalesLine line)
     {
-        if (busy || unknown) return;
-        if (order is null)
-        {
-            if (draftLines.RemoveAll(x => x.Key == line.LineId) > 0)
-            {
-                if (draftLines.Count > 0) ShowDraft(); else orderPanel.ShowOrder(null);
-                SetBusy(false);
-            }
-            return;
-        }
+        if (busy || unknown || order is null) return;
         if (order.Header.CanEdit != true) return;
         var h = order.Header;
         await Write(h.Code, "SalesLine", id => service.LineAsync(session, new(h.Code, h.Revision, id, "Delete", line.LineId), lifetime.Token));
+        // SQL giữ header mở khi xóa dòng cuối (plan T14); UI phải nói rõ để người dùng thêm món hoặc hủy.
+        if (!disposed && !unknown && order is not null && order.Lines.Count == 0)
+            state.Text = L.T("Đơn đã hết món. Thêm món hoặc Hủy đơn mở.");
     }
     private async Task Write(string code, string operation, Func<Guid, Task<SalesWriteResult>> send)
     {
@@ -686,18 +656,19 @@ public sealed class SalesControl : UserControl, IUnsavedChanges, IAsyncLeaveConf
         using var dialog = new OpenOrdersDialog(service, session);
         if (await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this) == DialogResult.OK && dialog.SelectedCode is not null) await OpenOrderAsync(dialog.SelectedCode);
     }
-    // Chốt "Chờ thanh toán": khóa sửa món nhưng vẫn thu/hủy được; in tạm tính chỉ là phụ trợ sau commit.
-    private async Task RequestPayment()
+    // "In tạm": lưu đơn sang Chờ thanh toán rồi mở xem trước ngay, không hỏi xác nhận.
+    // Đơn Chờ vẫn nối thêm món/tăng số lượng và sửa F3; chỉ khóa xóa/giảm/đổi ghi chú.
+    private async Task PrintTemp()
     {
-        if (busy || unknown || order?.Header.CanEdit != true) return;
+        if (busy || unknown || order is null) return;
+        if (order.Header.IsPending) { await ReprintPending(); return; }
+        if (order.Header.CanEdit != true) return;
         var h = order.Header;
-        if (HasUnsavedChanges) { state.Text = L.T("Lưu hoặc bỏ ghi chú đang nhập trước khi chốt đơn."); return; }
-        if (order.Lines.Count == 0) { state.Text = L.T("Đơn cần có món trước khi yêu cầu thanh toán."); return; }
-        if (await CafeManager.WinForms.Forms.OrbitConfirmationDialog.ShowAsync(this,
-            L.F("Chốt đơn {0} để chờ thanh toán? Sau bước này không sửa món, chỉ thu hoặc hủy; quản lý có thể mở lại.", h.Code),
-            L.T("Yêu cầu thanh toán"), MessageBoxButtons.OKCancel) != DialogResult.OK) return;
+        if (HasUnsavedChanges) { state.Text = L.T("Lưu hoặc bỏ ghi chú đang nhập trước khi in tạm."); return; }
+        if (order.Lines.Count == 0 || !h.PreviewValid) { state.Text = L.T("Đơn cần có món hợp lệ trước khi in tạm."); return; }
         pendingId = Guid.NewGuid(); pendingCode = h.Code; pendingOperation = "SalesRequestPay";
-        var committed = false; var message = L.F("Đơn {0} đang chờ thanh toán; đã khóa sửa món.", h.Code);
+        var committed = false;
+        var message = L.F("Đơn {0} đã in tạm; khách gọi thêm thì bấm thêm món để nối vào đơn, F3 để đổi ưu đãi.", h.Code);
         SetBusy(true);
         try
         {
@@ -720,42 +691,47 @@ public sealed class SalesControl : UserControl, IUnsavedChanges, IAsyncLeaveConf
         finally { if (!disposed) SetBusy(false); }
         if (disposed) return;
         state.Text = message;
+        await PrintPending(h.Code, message, reprint: false);
+    }
+    // Đơn đã Chờ (đã in tạm) vẫn in lại được sau khi nối thêm món; chỉ đọc, không đổi trạng thái.
+    private async Task ReprintPending()
+    {
+        var code = order!.Header.Code;
+        await PrintPending(code, L.F("Đơn {0}", code), reprint: true);
+    }
+    private async Task PrintPending(string code, string prefix, bool reprint)
+    {
         try
         {
-            if (await CafeManager.WinForms.Forms.OrbitConfirmationDialog.ShowAsync(this,
-                L.F("Đơn {0} đã chuyển sang chờ thanh toán. In tạm tính?", h.Code), L.T("In tạm tính"), MessageBoxButtons.YesNo) != DialogResult.Yes) return;
-            var detail = invoices is null ? null : await invoices.DetailAsync(session, h.Code, lifetime.Token);
+            var detail = invoices is null ? null : await invoices.DetailAsync(session, code, lifetime.Token);
             if (disposed) return;
             if (invoices is null || detail is null) throw new InvalidOperationException(L.T("Chưa tải được dữ liệu hóa đơn để in."));
-            state.Text = message + (await InvoicePrinting.PreviewAsync(this, detail, invoices, session, reprint: false)
+            state.Text = prefix + (await InvoicePrinting.PreviewAsync(this, detail, invoices, session, reprint)
                 ? L.T(" · Đã mở xem trước tạm tính.") : L.T(" · Đã đóng xem trước tạm tính."));
         }
         catch (Exception ex) when (ex is global::System.ComponentModel.Win32Exception
             or InvalidOperationException or IOException or UnauthorizedAccessException or UserOperationException or OperationCanceledException)
         {
             // Đã đổi trạng thái thành công; lỗi in không được làm mất trạng thái đã ghi.
-            if (!disposed) state.Text = message + L.T(" · Chưa in được tạm tính. ") + ex.Message;
+            if (!disposed) state.Text = prefix + L.T(" · Chưa in được tạm tính. ") + ex.Message;
         }
-    }
-    private async Task ReopenOrder()
-    {
-        if (busy || unknown || order?.Header.Status != "Cho thanh toan") return;
-        var h = order.Header;
-        if (await CafeManager.WinForms.Forms.OrbitConfirmationDialog.ShowAsync(this,
-            L.F("Mở lại đơn {0} để sửa món và ưu đãi? Chỉ quản lý được mở lại đơn chờ thanh toán.", h.Code),
-            L.T("Mở lại đơn"), MessageBoxButtons.OKCancel) != DialogResult.OK) return;
-        await Write(h.Code, "SalesReopen", id => service.ReopenAsync(session, new(h.Code, h.Revision, id), lifetime.Token));
     }
     private async Task CancelOrder()
     {
         if (order?.Header.IsPayable != true || busy || unknown) return; var h = order.Header;
         if (await CafeManager.WinForms.Forms.OrbitConfirmationDialog.ShowAsync(this, L.F("Hủy đơn mở {0}, bàn {1}, {2}? Không hoàn tiền/kho. Nếu đã pha, nhờ quản lý/kho lập xuất hủy ở phân hệ kho khi có chức năng T21.", h.Code, h.TableCode ?? "—", SalesUi.Money(h.Payable)), L.T("Hủy đơn mở"), MessageBoxButtons.OKCancel) != DialogResult.OK) return;
         await Write(h.Code, "SalesCancel", id => service.CancelAsync(session, h, id, lifetime.Token));
-        if (disposed || unknown || order?.Header.SessionCode is not int sessionCode || order.Header.SessionRevision is not { Length: 8 } revision) return;
-        if (!await AskCloseTableAsync()) return;
-        var note = await CloseSessionNowAsync(sessionCode, revision, L.T("Đã hủy đơn; chưa trả bàn được. "));
-        if (!disposed) state.Text += note;
+        if (disposed || unknown) return;
+        if (order?.Header.SessionCode is not int sessionCode || order.Header.SessionRevision is not { Length: 8 } revision)
+        {
+            await LoadTables(); await StartNewOrderAsync(false);
+            return;
+        }
+        var note = await AskCloseTableAsync()
+            ? await CloseSessionNowAsync(sessionCode, revision, L.T("Đã hủy đơn; chưa trả bàn được. ")) : "";
+        if (!disposed && note.Length > 0) state.Text += note;
         await LoadTables();
+        if (!disposed) await StartNewOrderAsync(false);
     }
     // Trả bàn là hành động thủ công: chỉ đóng phiên khi không còn đơn Chưa/Chờ (SQL kiểm tra lần cuối).
     private async Task CloseTable()
@@ -782,7 +758,9 @@ public sealed class SalesControl : UserControl, IUnsavedChanges, IAsyncLeaveConf
             return;
         }
         finally { if (!disposed) SetBusy(false); }
-        ResetDraft(); await LoadTables();
+        order = null; headerDraft = null; context = null; orderPanel.CancelNoteEdit(); orderPanel.ShowOrder(null);
+        await LoadTables();
+        await StartNewOrderAsync(false);
         if (!disposed) state.Text = L.F("Đã trả bàn phiên {0}.", sessionCode);
     }
     private async Task<bool> AskCloseTableAsync() => await CafeManager.WinForms.Forms.OrbitConfirmationDialog.ShowAsync(this,
@@ -800,8 +778,6 @@ public sealed class SalesControl : UserControl, IUnsavedChanges, IAsyncLeaveConf
     private async Task Checkout()
     {
         if (busy || unknown) return;
-        // Thanh toán yêu cầu đơn đã có trong SQL: đơn nháp phải lưu trước, lỗi thì giữ nháp.
-        if (order is null && draftLines.Count > 0 && !await FlushDraftAsync()) return;
         if (HasUnsavedChanges || order?.Header.IsPayable != true) return; SetBusy(true);
         try
         {
@@ -844,14 +820,18 @@ public sealed class SalesControl : UserControl, IUnsavedChanges, IAsyncLeaveConf
         finally
         {
             // Chỉ vào đây sau kết quả đã chốt; lỗi/hủy in không giữ đơn đã trả trên POS.
-            if (!disposed) ResetDraft();
+            if (!disposed)
+            {
+                order = null; headerDraft = null; context = null;
+                orderPanel.CancelNoteEdit(); orderPanel.ShowOrder(null); UpdateTableStatus();
+            }
         }
         // Đã thu tiền xong mới hỏi trả bàn; lỗi trả bàn không làm mất kết quả thanh toán.
         if (!disposed && paid.Header.SessionCode is int closedSession && paid.Header.SessionRevision is { Length: 8 } closedRevision
             && await AskCloseTableAsync())
             message += await CloseSessionNowAsync(closedSession, closedRevision, L.T("Đã thu tiền; chưa trả bàn được. "));
         if (disposed) return;
-        try { await LoadTables(); }
+        try { await LoadTables(); if (!disposed) await StartNewOrderAsync(false); }
         catch (Exception ex) when (ex is UserOperationException or UnauthorizedAccessException or OperationCanceledException)
         { message += L.T(" · Chưa tải lại được bàn. ") + ex.Message; }
         if (!disposed) state.Text = message + L.T(" Tra cứu hoặc in lại tại Lịch sử hóa đơn.");
