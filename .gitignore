@@ -30,3 +30,11 @@ appsettings.*.local.json
 /test-data/local/
 /TestResults/
 *.log
+
+# Build output sinh ra trong các đợt test dưới docs (giữ trên đĩa, không commit)
+docs/tasks/**/runs/**/[Dd]ebug/
+docs/tasks/**/runs/**/[Rr]elease/
+docs/tasks/**/runs/**/*[Bb]in/
+docs/tasks/**/runs/**/frozen/
+docs/tasks/**/runs/**/publish/
+/build/
