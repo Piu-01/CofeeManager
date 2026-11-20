@@ -1,0 +1,19 @@
+{
+  "RunId": "20261110_094901_ff92cc76",
+  "Created": [
+    {
+      "Database": "CoffeeManager_Test_LOC_20261110_094901_ff92cc76_vi",
+      "Language": "vi"
+    },
+    {
+      "Database": "CoffeeManager_Test_LOC_20261110_094901_ff92cc76_en",
+      "Language": "en"
+    },
+    {
+      "Database": "CoffeeManager_Test_LOC_20261110_094901_ff92cc76_clean",
+      "Language": "clean"
+    }
+  ],
+  "Status": "Tested; three UI bugs recorded; owned test databases removed",
+  "Purpose": "Approved VI/EN acceptance; isolated databases only"
+}

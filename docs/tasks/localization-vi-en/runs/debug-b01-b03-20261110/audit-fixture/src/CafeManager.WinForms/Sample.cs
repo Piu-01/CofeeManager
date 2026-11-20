@@ -1,0 +1,1 @@
+class Sample { string Text = "SL"; string Print = "In…"; }

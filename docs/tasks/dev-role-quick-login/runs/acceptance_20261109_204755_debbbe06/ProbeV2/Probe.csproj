@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>WinExe</OutputType><TargetFramework>net10.0-windows</TargetFramework><UseWindowsForms>true</UseWindowsForms><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings><ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode></PropertyGroup>
+  <ItemGroup>
+    <Reference Include="../../../../../../artifacts/dev-role-quick-login/bin/Debug/net10.0-windows/*.dll" Exclude="../../../../../../artifacts/dev-role-quick-login/bin/Debug/net10.0-windows/Microsoft.Data.SqlClient.dll" /><PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.3" />
+    <None Include="../../../../../../artifacts/dev-role-quick-login/bin/Debug/net10.0-windows/runtimes/**/*" Link="runtimes/%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>
+

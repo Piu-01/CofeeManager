@@ -1,5 +1,7 @@
 # Đã gỡ tiện ích bỏ qua đăng nhập
 
+**Bổ sung09/11/2026:** Người dùng đã duyệt tiện ích [đăng nhập nhanh theo role DEV](../dev-role-quick-login/README.md) dùng xác thực thật và credential DPAPI local. Đây là tiện ích mới, không khôi phục bypass đã gỡ24/10. Trước bàn giao T32 phải gỡ cả tiện ích mới theo checklist ở hồ sơ đó; lịch sử bên dưới giữ nguyên.
+
 Theo yêu cầu trực tiếp của người dùng ngày24/10/2026, tiện ích được gỡ sớm,
 không đợi cuối G08. App chỉ vào phiên bằng đăng nhập thường.
 

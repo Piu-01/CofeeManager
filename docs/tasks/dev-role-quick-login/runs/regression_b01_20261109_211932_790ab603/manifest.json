@@ -1,0 +1,28 @@
+{
+  "Approval": "DQ-B01 fix and regression approved by user 2026-11-09",
+  "Audit": {
+    "SourceUnchanged": true,
+    "Changes": [],
+    "HarnessUnchanged": true
+  },
+  "Sdk": "10.0.401",
+  "DeviceDpi": 120,
+  "Bug": "DQ-B01 closed in regression scope",
+  "Schema": 27,
+  "UnitPass": 142,
+  "SqlServer": "localhost 17.0.1000.7",
+  "RunId": "20261109_211932_790ab603",
+  "Status": "RegressionPassedWithNativeLimitations",
+  "HarnessFail": 0,
+  "Resources": {
+    "FixtureProcessCount": 0,
+    "InstallMarker": "20261109_211954_5e6b3d68",
+    "Database": "CoffeeManager_Test_G08_20261109_211932_790ab603_demo",
+    "CredentialRemaining": false,
+    "Remaining": 0,
+    "Created": 1,
+    "Cleaned": 1
+  },
+  "HarnessPass": 57,
+  "Native": "Not rerun; prior geometry/focus limitation retained"
+}

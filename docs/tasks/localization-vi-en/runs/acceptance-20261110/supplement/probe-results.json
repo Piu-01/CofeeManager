@@ -1,0 +1,370 @@
+[
+  {
+    "Id": "checkout-two-sessions",
+    "Language": "vi",
+    "Expected": "Concurrent same request creates one payment/consumption/points credit; Vietnamese note preserved",
+    "Status": "PASS",
+    "Actual": {
+      "Code": "HD20250413",
+      "PaymentRows": 1,
+      "StockDelta": -0.0180,
+      "PointsDelta": 25,
+      "ExpectedPoints": 25,
+      "NotePreserved": true
+    }
+  },
+  {
+    "Id": "db-name-matches-state",
+    "Language": "vi",
+    "Expected": "Customer Name Trong is never translated",
+    "Status": "PASS",
+    "Actual": {
+      "Actual": "Trong"
+    }
+  },
+  {
+    "Id": "layout.scroll-reachability.1280",
+    "Language": "vi",
+    "Expected": "Scrollable Home/sidebar buttons can be brought into WorkingArea; no screenshot/visual judgment",
+    "Status": "PASS",
+    "Actual": {
+      "Count": 30,
+      "OutsideBeforeScroll": [
+        "Ca phe den \u00B7 4 ly"
+      ],
+      "OutsideAfterScroll": [],
+      "Dpi": 120
+    }
+  },
+  {
+    "Id": "layout.scroll-reachability.1366",
+    "Language": "vi",
+    "Expected": "Scrollable Home/sidebar buttons can be brought into WorkingArea; no screenshot/visual judgment",
+    "Status": "PASS",
+    "Actual": {
+      "Count": 30,
+      "OutsideBeforeScroll": [
+        "H\u00F4m nay",
+        "Ca phe den \u00B7 4 ly"
+      ],
+      "OutsideAfterScroll": [],
+      "Dpi": 120
+    }
+  },
+  {
+    "Id": "system.access.ADMIN",
+    "Language": "vi",
+    "Expected": "System language setting accessible for role",
+    "Status": "PASS",
+    "Actual": {
+      "Role": "ADMIN",
+      "Visible": true
+    }
+  },
+  {
+    "Id": "preference.defer.CoffeeManager",
+    "Language": "vi",
+    "Expected": "Save preference, Later keeps session language; native modal owner is MainForm",
+    "Status": "PASS",
+    "Actual": {
+      "ModalFound": true,
+      "OwnerCorrect": true,
+      "Current": "Vietnamese",
+      "Saved": "English"
+    }
+  },
+  {
+    "Id": "system.access.CASH",
+    "Language": "vi",
+    "Expected": "System language setting accessible for role",
+    "Status": "PASS",
+    "Actual": {
+      "Role": "CASH",
+      "Visible": true
+    }
+  },
+  {
+    "Id": "preference.defer.CoffeeManager",
+    "Language": "vi",
+    "Expected": "Save preference, Later keeps session language; native modal owner is MainForm",
+    "Status": "PASS",
+    "Actual": {
+      "ModalFound": true,
+      "OwnerCorrect": true,
+      "Current": "Vietnamese",
+      "Saved": "English"
+    }
+  },
+  {
+    "Id": "system.access.STORE",
+    "Language": "vi",
+    "Expected": "System language setting accessible for role",
+    "Status": "PASS",
+    "Actual": {
+      "Role": "STORE",
+      "Visible": true
+    }
+  },
+  {
+    "Id": "preference.defer.CoffeeManager",
+    "Language": "vi",
+    "Expected": "Save preference, Later keeps session language; native modal owner is MainForm",
+    "Status": "PASS",
+    "Actual": {
+      "ModalFound": true,
+      "OwnerCorrect": true,
+      "Current": "Vietnamese",
+      "Saved": "English"
+    }
+  },
+  {
+    "Id": "checkout-two-sessions",
+    "Language": "en",
+    "Expected": "Concurrent same request creates one payment/consumption/points credit; Vietnamese note preserved",
+    "Status": "PASS",
+    "Actual": {
+      "Code": "HD20250413",
+      "PaymentRows": 1,
+      "StockDelta": -0.0180,
+      "PointsDelta": 25,
+      "ExpectedPoints": 25,
+      "NotePreserved": true
+    }
+  },
+  {
+    "Id": "db-name-matches-state",
+    "Language": "en",
+    "Expected": "Customer Name Trong is never translated",
+    "Status": "PASS",
+    "Actual": {
+      "Actual": "Trong"
+    }
+  },
+  {
+    "Id": "layout.scroll-reachability.1280",
+    "Language": "en",
+    "Expected": "Scrollable Home/sidebar buttons can be brought into WorkingArea; no screenshot/visual judgment",
+    "Status": "PASS",
+    "Actual": {
+      "Count": 30,
+      "OutsideBeforeScroll": [
+        "Ca phe den \u00B7 4 cups"
+      ],
+      "OutsideAfterScroll": [],
+      "Dpi": 120
+    }
+  },
+  {
+    "Id": "layout.scroll-reachability.1366",
+    "Language": "en",
+    "Expected": "Scrollable Home/sidebar buttons can be brought into WorkingArea; no screenshot/visual judgment",
+    "Status": "PASS",
+    "Actual": {
+      "Count": 30,
+      "OutsideBeforeScroll": [
+        "Today",
+        "Ca phe den \u00B7 4 cups"
+      ],
+      "OutsideAfterScroll": [],
+      "Dpi": 120
+    }
+  },
+  {
+    "Id": "system.access.ADMIN",
+    "Language": "en",
+    "Expected": "System language setting accessible for role",
+    "Status": "PASS",
+    "Actual": {
+      "Role": "ADMIN",
+      "Visible": true
+    }
+  },
+  {
+    "Id": "preference.defer.CoffeeManager",
+    "Language": "en",
+    "Expected": "Save preference, Later keeps session language; native modal owner is MainForm",
+    "Status": "PASS",
+    "Actual": {
+      "ModalFound": true,
+      "OwnerCorrect": true,
+      "Current": "English",
+      "Saved": "Vietnamese"
+    }
+  },
+  {
+    "Id": "system.access.CASH",
+    "Language": "en",
+    "Expected": "System language setting accessible for role",
+    "Status": "PASS",
+    "Actual": {
+      "Role": "CASH",
+      "Visible": true
+    }
+  },
+  {
+    "Id": "preference.defer.CoffeeManager",
+    "Language": "en",
+    "Expected": "Save preference, Later keeps session language; native modal owner is MainForm",
+    "Status": "PASS",
+    "Actual": {
+      "ModalFound": true,
+      "OwnerCorrect": true,
+      "Current": "English",
+      "Saved": "Vietnamese"
+    }
+  },
+  {
+    "Id": "system.access.STORE",
+    "Language": "en",
+    "Expected": "System language setting accessible for role",
+    "Status": "PASS",
+    "Actual": {
+      "Role": "STORE",
+      "Visible": true
+    }
+  },
+  {
+    "Id": "preference.defer.CoffeeManager",
+    "Language": "en",
+    "Expected": "Save preference, Later keeps session language; native modal owner is MainForm",
+    "Status": "PASS",
+    "Actual": {
+      "ModalFound": true,
+      "OwnerCorrect": true,
+      "Current": "English",
+      "Saved": "Vietnamese"
+    }
+  },
+  {
+    "Id": "bootstrap.clean-loaded.text",
+    "Language": "Vietnamese",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager \u00B7 Thi\u1EBFt l\u1EADp qu\u1EA3n tr\u1ECB",
+        "Thi\u1EBFt l\u1EADp qu\u1EA3n tr\u1ECB",
+        "CoffeeManager \u00B7 Thi\u1EBFt l\u1EADp ban \u0111\u1EA7u",
+        "C\u00E1ch thi\u1EBFt l\u1EADp",
+        "\u1EE8ng vi\u00EAn",
+        "T\u00EAn nh\u00E2n vi\u00EAn m\u1EDBi",
+        "SDT (t\u00F9y ch\u1ECDn)",
+        "T\u00EAn \u0111\u0103ng nh\u1EADp",
+        "M\u1EADt kh\u1EA9u",
+        "X\u00E1c nh\u1EADn m\u1EADt kh\u1EA9u",
+        "Ho\u00E0n t\u1EA5t thi\u1EBFt l\u1EADp",
+        ""
+      ],
+      "Banned": [
+        "CoffeeManager \u00B7 Thi\u1EBFt l\u1EADp qu\u1EA3n tr\u1ECB",
+        "Thi\u1EBFt l\u1EADp qu\u1EA3n tr\u1ECB",
+        "CoffeeManager \u00B7 Thi\u1EBFt l\u1EADp ban \u0111\u1EA7u",
+        "C\u00E1ch thi\u1EBFt l\u1EADp",
+        "\u1EE8ng vi\u00EAn",
+        "T\u00EAn nh\u00E2n vi\u00EAn m\u1EDBi",
+        "SDT (t\u00F9y ch\u1ECDn)",
+        "T\u00EAn \u0111\u0103ng nh\u1EADp",
+        "M\u1EADt kh\u1EA9u",
+        "X\u00E1c nh\u1EADn m\u1EADt kh\u1EA9u",
+        "Ho\u00E0n t\u1EA5t thi\u1EBFt l\u1EADp"
+      ],
+      "BoundControls": []
+    }
+  },
+  {
+    "Id": "bootstrap.validation.text",
+    "Language": "Vietnamese",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager \u00B7 Thi\u1EBFt l\u1EADp qu\u1EA3n tr\u1ECB",
+        "Thi\u1EBFt l\u1EADp qu\u1EA3n tr\u1ECB",
+        "CoffeeManager \u00B7 Thi\u1EBFt l\u1EADp ban \u0111\u1EA7u",
+        "C\u00E1ch thi\u1EBFt l\u1EADp",
+        "\u1EE8ng vi\u00EAn",
+        "T\u00EAn nh\u00E2n vi\u00EAn m\u1EDBi",
+        "SDT (t\u00F9y ch\u1ECDn)",
+        "T\u00EAn \u0111\u0103ng nh\u1EADp",
+        "M\u1EADt kh\u1EA9u",
+        "X\u00E1c nh\u1EADn m\u1EADt kh\u1EA9u",
+        "Ho\u00E0n t\u1EA5t thi\u1EBFt l\u1EADp",
+        "Ch\u1ECDn t\u1EA1o admin m\u1EDBi ho\u1EB7c k\u00EDch ho\u1EA1t \u0111\u00FAng m\u1ED9t \u1EE9ng vi\u00EAn."
+      ],
+      "Banned": [
+        "CoffeeManager \u00B7 Thi\u1EBFt l\u1EADp qu\u1EA3n tr\u1ECB",
+        "Thi\u1EBFt l\u1EADp qu\u1EA3n tr\u1ECB",
+        "CoffeeManager \u00B7 Thi\u1EBFt l\u1EADp ban \u0111\u1EA7u",
+        "C\u00E1ch thi\u1EBFt l\u1EADp",
+        "\u1EE8ng vi\u00EAn",
+        "T\u00EAn nh\u00E2n vi\u00EAn m\u1EDBi",
+        "SDT (t\u00F9y ch\u1ECDn)",
+        "T\u00EAn \u0111\u0103ng nh\u1EADp",
+        "M\u1EADt kh\u1EA9u",
+        "X\u00E1c nh\u1EADn m\u1EADt kh\u1EA9u",
+        "Ho\u00E0n t\u1EA5t thi\u1EBFt l\u1EADp",
+        "Ch\u1ECDn t\u1EA1o admin m\u1EDBi ho\u1EB7c k\u00EDch ho\u1EA1t \u0111\u00FAng m\u1ED9t \u1EE9ng vi\u00EAn."
+      ],
+      "BoundControls": []
+    }
+  },
+  {
+    "Id": "bootstrap.clean-loaded.text",
+    "Language": "English",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager \u00B7 Administrator setup",
+        "Administrator setup",
+        "CoffeeManager \u00B7 Initial setup",
+        "Setup instructions",
+        "Candidate",
+        "New employee name",
+        "Phone (optional)",
+        "Username",
+        "Password",
+        "Confirm password",
+        "Complete setup",
+        ""
+      ],
+      "Banned": [],
+      "BoundControls": []
+    }
+  },
+  {
+    "Id": "bootstrap.validation.text",
+    "Language": "English",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager \u00B7 Administrator setup",
+        "Administrator setup",
+        "CoffeeManager \u00B7 Initial setup",
+        "Setup instructions",
+        "Candidate",
+        "New employee name",
+        "Phone (optional)",
+        "Username",
+        "Password",
+        "Confirm password",
+        "Complete setup",
+        ""
+      ],
+      "Banned": [],
+      "BoundControls": []
+    }
+  },
+  {
+    "Id": "modal-owner-result-once",
+    "Language": "both",
+    "Expected": "Native modal has owner and cancellation returns No once",
+    "Status": "PASS",
+    "Actual": {
+      "Seen": true,
+      "OwnerAndModalCorrect": true,
+      "Result": "No"
+    }
+  }
+]

@@ -1,0 +1,6253 @@
+[
+  {
+    "Id": "auth-bootstrap-runtime",
+    "Language": "vi",
+    "Expected": "Bootstrap \u002B real admin login \u002B runtime permission",
+    "Status": "PASS",
+    "Actual": {
+      "Bootstrap": {
+        "State": "Completed",
+        "Role": "ADMIN",
+        "Runtime": "DB user WITHOUT LOGIN/CafeManagerApp; kh\u00F4ng thay ki\u1EC3m identity k\u1EBFt n\u1ED1i th\u1EADt"
+      },
+      "SchemaVersion": 27,
+      "E2ESubcases": [
+        {
+          "Id": "T31-K02.sql-purchase-debt",
+          "Expected": "Nh\u1EADp10\u00D71000, tr\u1EA3 ngay2000, tr\u1EA3 n\u1EE33000\u002B5000; t\u1ED3n\u002B10, c\u00F2n0; receipts \u0111\u00FAng",
+          "Actual": {
+            "Purchase": "PN20250502",
+            "Debt": "CN20250405",
+            "Payments": [
+              "TC20250506",
+              "TC20250507"
+            ],
+            "Remaining": 0
+          },
+          "Status": "PASS"
+        },
+        {
+          "Id": "T31-K01.sql-two-lines-two-payments",
+          "Expected": "SP0012d\u00F2ng kh\u00E1c ghi ch\u00FA:50000;TT20000\u002B30000;t\u1ED3nNVL01\u2212.036,NVL03\u2212.020;replaykh\u00F4ngthu2l\u1EA7n",
+          "Actual": {
+            "Code": "HD20250411",
+            "Total": 50000,
+            "Payments": 2,
+            "Native": "NOT RUN:\u01B0u\u0111\u00E3i/\u0111i\u1EC3m/in/b\u00E0nquaUI ki\u1EC3m ri\u00EAng"
+          },
+          "Status": "PASS"
+        },
+        {
+          "Id": "T31-K03.sql-stale-stocktake",
+          "Expected": "Xu\u1EA5th\u1EE7y1;snapshotc\u0169b\u1ECBch\u1EB7n;snapshotm\u1EDBi\u0111\u1EBFmgi\u1EA3m1/ch\u1ED1tm\u1ED9tl\u1EA7n",
+          "Actual": {
+            "Stale": "KK00000001",
+            "Committed": "KK00000002",
+            "Inventory": 103.7040
+          },
+          "Status": "PASS"
+        },
+        {
+          "Id": "T31-K04.sql-overnight-payroll",
+          "Expected": "Nh\u00E2nvi\u00EAnm\u1EDBi35000/h,ca22h\u21926h=8h,th\u1EF1cl\u0129nh280000;ch\u1ED1t/chireplaym\u1ED9tngu\u1ED3n",
+          "Actual": {
+            "Employee": "NV011",
+            "Payroll": "3",
+            "Expense": "3",
+            "Amount": 280000.00
+          },
+          "Status": "PASS"
+        },
+        {
+          "Id": "T31-K05.sql-delivery-finance",
+          "Expected": "Giao\u0111\u00E3tr\u1EA3:Chogiao\u2192\u0110anggiao\u2192\u0110\u00E3giao;ti\u1EC1n/kho/\u0111i\u1EC3mkh\u00F4ng\u0111\u1ED5i",
+          "Actual": {
+            "Code": "HD20250412",
+            "Delivery": "Da giao",
+            "FinanceUnchanged": true,
+            "Limitation": "Ch\u1EC9 l\u01B0u tr\u1EA1ng th\u00E1i hi\u1EC7n t\u1EA1i, kh\u00F4ng timeline"
+          },
+          "Status": "PASS"
+        },
+        {
+          "Id": "T31-K07.sql-session-roles",
+          "Expected": "CASH/STORE login th\u1EADt; Finance b\u1ECB ch\u1EB7n; kh\u00F3a fixture thu h\u1ED3i phi\u00EAn c\u0169",
+          "Actual": {
+            "Outcomes": [
+              "CASH:finance denied",
+              "CASH:revoked",
+              "STORE:finance denied",
+              "STORE:revoked"
+            ],
+            "NativeLogout": "NOT RUN; operator lock fixture kh\u00F4ng thay handler logout/\u0111\u1ED5i role/ngh\u1EC9 vi\u1EC7c"
+          },
+          "Status": "PASS"
+        },
+        {
+          "Id": "T31-K09.transaction-state",
+          "Expected": "@@TRANCOUNT/XACT_STATE=0:0 sau c\u00E1c lu\u1ED3ng",
+          "Actual": {
+            "State": "0:0"
+          },
+          "Status": "PASS"
+        }
+      ],
+      "E2ENative": "NOT RUN: SQL subcases kh\u00F4ng thay native E2E, \u01B0u \u0111\u00E3i/\u0111i\u1EC3m/report/print/fault ki\u1EC3m theo guide",
+      "E2EFailed": 0
+    }
+  },
+  {
+    "Id": "actual-dpi",
+    "Language": "vi",
+    "Expected": "Native DPI remains 125% (120), no OS Scale changes",
+    "Status": "PASS",
+    "Actual": {
+      "DeviceDpi": 120,
+      "WorkingArea": "{X=0,Y=0,Width=1920,Height=1020}"
+    }
+  },
+  {
+    "Id": "module.Home.text",
+    "Language": "vi",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "Trang phi\u00EAn",
+        "B\u00E1n h\u00E0ng",
+        "B\u00E1n h\u00E0ng",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "Giao h\u00E0ng",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "Kh\u00E1ch h\u00E0ng",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu \u0026 kho",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "Kho",
+        "T\u00E0i ch\u00EDnh \u0026 b\u00E1o c\u00E1o",
+        "Thu chi",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "B\u00E1o c\u00E1o",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Nguyen Van An",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / Trang phi\u00EAn",
+        "Nguyen Van An \u00B7 ADMIN",
+        "T\u1ED5ng quan qu\u00E1n",
+        "K\u1EBFt qu\u1EA3 kinh doanh trong k\u1EF3 v\u00E0 nh\u1EEFng vi\u1EC7c c\u1EA7n ch\u00FA \u00FD ngay.",
+        "H\u00F4m nay",
+        "Th\u00E1ng n\u00E0y",
+        "T\u1EA3i l\u1EA1i",
+        "H\u00F4m nay \u00B7 10/11/2026 00:00:00 \u2192 10/11/2026 09:56:34 (kh\u00F4ng g\u1ED3m m\u1ED1c cu\u1ED1i)",
+        "So s\u00E1nh: 09/11/2026 00:00:00 \u2192 09/11/2026 09:56:34",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt s\u1ED1 li\u1EC7u.",
+        "\u0110\u1ECDc l\u00FAc 09:56:34 \u00B7 10/11/2026 theo SQL Server.",
+        "Doanh thu \u0111\u00E3 thanh to\u00E1n",
+        "Sau gi\u1EA3m, g\u1ED3m ph\u00ED ship",
+        "80.000 \u20AB",
+        "M\u1EDBi ph\u00E1t sinh \u00B7 K\u1EF3 tr\u01B0\u1EDBc 0\r\nK\u1EF3 tr\u01B0\u1EDBc: 0 \u20AB",
+        "Xem chi ti\u1EBFt",
+        "H\u00F3a \u0111\u01A1n \u0111\u00E3 thanh to\u00E1n",
+        "S\u1ED1 h\u00F3a \u0111\u01A1n trong k\u1EF3",
+        "2",
+        "M\u1EDBi ph\u00E1t sinh \u00B7 K\u1EF3 tr\u01B0\u1EDBc 0\r\nK\u1EF3 tr\u01B0\u1EDBc: 0",
+        "Xem chi ti\u1EBFt",
+        "B\u00ECnh qu\u00E2n m\u1ED7i h\u00F3a \u0111\u01A1n",
+        "Doanh thu / s\u1ED1 h\u00F3a \u0111\u01A1n \u0111\u00E3 tr\u1EA3",
+        "40.000 \u20AB",
+        "Ch\u01B0a \u0111\u1EE7 c\u01A1 s\u1EDF so s\u00E1nh.",
+        "Xem chi ti\u1EBFt",
+        "Th\u1EF1c chi",
+        "Phi\u1EBFu chi \u0111\u00E3 ghi nh\u1EADn trong k\u1EF3",
+        "290.000 \u20AB",
+        "M\u1EDBi ph\u00E1t sinh \u00B7 K\u1EF3 tr\u01B0\u1EDBc 0\r\nK\u1EF3 tr\u01B0\u1EDBc: 0 \u20AB",
+        "Xem chi ti\u1EBFt",
+        "Xu h\u01B0\u1EDBng doanh thu",
+        "Ch\u1ECDn \u0111i\u1EC3m ho\u1EB7c d\u00F9ng \u2190 \u2192 r\u1ED3i Enter \u0111\u1EC3 xem ch\u1EE9ng t\u1EEB.",
+        "C\u01A1 c\u1EA5u doanh thu",
+        "Theo k\u00EAnh b\u00E1n \u00B7 % c\u00F3 th\u1EC3 l\u1EC7ch nh\u1ECF do l\u00E0m tr\u00F2n.",
+        "Top 5 m\u00F3n b\u00E1n ch\u1EA1y",
+        "X\u1EBFp theo s\u1ED1 ly \u00B7 Ch\u1EC9 t\u00EDnh h\u00F3a \u0111\u01A1n \u0111\u00E3 thanh to\u00E1n.",
+        "T\u1ED5ng to\u00E0n k\u1EF3: 3 ly",
+        "Ca phe den \u00B7 3 ly",
+        "C\u1EA7n ch\u00FA \u00FD \u00B7 Hi\u1EC7n t\u1EA1i",
+        "S\u1ED1 d\u01B0 v\u00E0 c\u00F4ng vi\u1EC7c t\u1EA1i l\u00FAc \u0111\u1ECDc, kh\u00F4ng ph\u1EE5 thu\u1ED9c k\u1EF3 ng\u00E0y/th\u00E1ng.",
+        "\u0110\u01A1n \u0111ang m\u1EDF: 1",
+        "Giao h\u00E0ng ch\u01B0a xong: 0",
+        "Nguy\u00EAn li\u1EC7u h\u1EBFt t\u1ED3n: 0",
+        "C\u00F4ng n\u1EE3 nh\u00E0 cung c\u1EA5p: 5.500.000 \u20AB",
+        "Doanh thu theo ng\u00E0y thanh to\u00E1n; th\u1EF1c chi theo ng\u00E0y l\u1EADp phi\u1EBFu chi. Ch\u01B0a \u0111\u1ED1i so\u00E1t \u0111\u1ED1i t\u00E1c; \u0111\u00E2y kh\u00F4ng ph\u1EA3i l\u1EE3i nhu\u1EADn. So s\u00E1nh d\u1EF1a tr\u00EAn d\u1EEF li\u1EC7u \u0111\u00E3 ghi nh\u1EADn."
+      ],
+      "Banned": [
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / Trang phi\u00EAn",
+        "T\u1ED5ng quan qu\u00E1n",
+        "K\u1EBFt qu\u1EA3 kinh doanh trong k\u1EF3 v\u00E0 nh\u1EEFng vi\u1EC7c c\u1EA7n ch\u00FA \u00FD ngay.",
+        "T\u1EA3i l\u1EA1i",
+        "H\u00F4m nay \u00B7 10/11/2026 00:00:00 \u2192 10/11/2026 09:56:34 (kh\u00F4ng g\u1ED3m m\u1ED1c cu\u1ED1i)",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt s\u1ED1 li\u1EC7u.",
+        "\u0110\u1ECDc l\u00FAc 09:56:34 \u00B7 10/11/2026 theo SQL Server.",
+        "Doanh thu \u0111\u00E3 thanh to\u00E1n",
+        "Sau gi\u1EA3m, g\u1ED3m ph\u00ED ship",
+        "M\u1EDBi ph\u00E1t sinh \u00B7 K\u1EF3 tr\u01B0\u1EDBc 0\r\nK\u1EF3 tr\u01B0\u1EDBc: 0 \u20AB",
+        "Xem chi ti\u1EBFt",
+        "H\u00F3a \u0111\u01A1n \u0111\u00E3 thanh to\u00E1n",
+        "S\u1ED1 h\u00F3a \u0111\u01A1n trong k\u1EF3",
+        "M\u1EDBi ph\u00E1t sinh \u00B7 K\u1EF3 tr\u01B0\u1EDBc 0\r\nK\u1EF3 tr\u01B0\u1EDBc: 0",
+        "B\u00ECnh qu\u00E2n m\u1ED7i h\u00F3a \u0111\u01A1n",
+        "Doanh thu / s\u1ED1 h\u00F3a \u0111\u01A1n \u0111\u00E3 tr\u1EA3",
+        "Ch\u01B0a \u0111\u1EE7 c\u01A1 s\u1EDF so s\u00E1nh.",
+        "Th\u1EF1c chi",
+        "Phi\u1EBFu chi \u0111\u00E3 ghi nh\u1EADn trong k\u1EF3",
+        "Xu h\u01B0\u1EDBng doanh thu",
+        "Ch\u1ECDn \u0111i\u1EC3m ho\u1EB7c d\u00F9ng \u2190 \u2192 r\u1ED3i Enter \u0111\u1EC3 xem ch\u1EE9ng t\u1EEB.",
+        "C\u01A1 c\u1EA5u doanh thu",
+        "Theo k\u00EAnh b\u00E1n \u00B7 % c\u00F3 th\u1EC3 l\u1EC7ch nh\u1ECF do l\u00E0m tr\u00F2n.",
+        "Top 5 m\u00F3n b\u00E1n ch\u1EA1y",
+        "X\u1EBFp theo s\u1ED1 ly \u00B7 Ch\u1EC9 t\u00EDnh h\u00F3a \u0111\u01A1n \u0111\u00E3 thanh to\u00E1n.",
+        "T\u1ED5ng to\u00E0n k\u1EF3: 3 ly",
+        "C\u1EA7n ch\u00FA \u00FD \u00B7 Hi\u1EC7n t\u1EA1i",
+        "S\u1ED1 d\u01B0 v\u00E0 c\u00F4ng vi\u1EC7c t\u1EA1i l\u00FAc \u0111\u1ECDc, kh\u00F4ng ph\u1EE5 thu\u1ED9c k\u1EF3 ng\u00E0y/th\u00E1ng.",
+        "\u0110\u01A1n \u0111ang m\u1EDF: 1",
+        "Nguy\u00EAn li\u1EC7u h\u1EBFt t\u1ED3n: 0",
+        "C\u00F4ng n\u1EE3 nh\u00E0 cung c\u1EA5p: 5.500.000 \u20AB",
+        "Doanh thu theo ng\u00E0y thanh to\u00E1n; th\u1EF1c chi theo ng\u00E0y l\u1EADp phi\u1EBFu chi. Ch\u01B0a \u0111\u1ED1i so\u00E1t \u0111\u1ED1i t\u00E1c; \u0111\u00E2y kh\u00F4ng ph\u1EA3i l\u1EE3i nhu\u1EADn. So s\u00E1nh d\u1EF1a tr\u00EAn d\u1EEF li\u1EC7u \u0111\u00E3 ghi nh\u1EADn."
+      ],
+      "BoundControls": []
+    }
+  },
+  {
+    "Id": "module.Catalogs.text",
+    "Language": "vi",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "Trang phi\u00EAn",
+        "B\u00E1n h\u00E0ng",
+        "B\u00E1n h\u00E0ng",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "Giao h\u00E0ng",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "Kh\u00E1ch h\u00E0ng",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu \u0026 kho",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "Kho",
+        "T\u00E0i ch\u00EDnh \u0026 b\u00E1o c\u00E1o",
+        "Thu chi",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "B\u00E1o c\u00E1o",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Nguyen Van An",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / Danh m\u1EE5c n\u1EC1n",
+        "Nguyen Van An \u00B7 ADMIN",
+        "REFERENCE WORKSPACE",
+        "Danh m\u1EE5c n\u1EC1n",
+        "D\u1EEF li\u1EC7u tham chi\u1EBFu \u00B7 CoffeeManager",
+        "Th\u00EAm",
+        "S\u1EA3n ph\u1EA9m",
+        "Nh\u00E0 cung c\u1EA5p",
+        "Ph\u01B0\u01A1ng th\u1EE9c",
+        "\u0110\u1ED1i t\u00E1c",
+        "Thu / chi",
+        "Ch\u1EE9c v\u1EE5",
+        "Ca l\u00E0m",
+        "",
+        "T\u1EA3i / \u0111\u1ED1i chi\u1EBFu",
+        "S\u1EEDa",
+        "X\u00F3a",
+        "M\u00C3",
+        "T\u00CAN",
+        "Hi\u1EC3n th\u1ECB 1\u201310 / 10 danh m\u1EE5c s\u1EA3n ph\u1EA9m",
+        "",
+        "1 / 1",
+        "",
+        "\u0110\u00E3 l\u01B0u \u00B7 Trang 1 \u00B7 10 d\u00F2ng \u00B7 09:56."
+      ],
+      "Banned": [
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / Danh m\u1EE5c n\u1EC1n",
+        "D\u1EEF li\u1EC7u tham chi\u1EBFu \u00B7 CoffeeManager",
+        "S\u1EA3n ph\u1EA9m",
+        "Nh\u00E0 cung c\u1EA5p",
+        "Ph\u01B0\u01A1ng th\u1EE9c",
+        "\u0110\u1ED1i t\u00E1c",
+        "Ch\u1EE9c v\u1EE5",
+        "T\u1EA3i / \u0111\u1ED1i chi\u1EBFu",
+        "S\u1EEDa",
+        "Hi\u1EC3n th\u1ECB 1\u201310 / 10 danh m\u1EE5c s\u1EA3n ph\u1EA9m",
+        "\u0110\u00E3 l\u01B0u \u00B7 Trang 1 \u00B7 10 d\u00F2ng \u00B7 09:56."
+      ],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.SystemInfo.text",
+    "Language": "vi",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "Trang phi\u00EAn",
+        "B\u00E1n h\u00E0ng",
+        "B\u00E1n h\u00E0ng",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "Giao h\u00E0ng",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "Kh\u00E1ch h\u00E0ng",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu \u0026 kho",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "Kho",
+        "T\u00E0i ch\u00EDnh \u0026 b\u00E1o c\u00E1o",
+        "Thu chi",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "B\u00E1o c\u00E1o",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Nguyen Van An",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Nguyen Van An \u00B7 ADMIN",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "CoffeeManager \u00B7 .NET 10\r\nCh\u01B0a t\u1EA3i th\u00F4ng tin schema.",
+        "Ng\u00F4n ng\u1EEF",
+        "\u00C1p d\u1EE5ng"
+      ],
+      "Banned": [
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "CoffeeManager \u00B7 .NET 10\r\nCh\u01B0a t\u1EA3i th\u00F4ng tin schema.",
+        "Ng\u00F4n ng\u1EEF",
+        "\u00C1p d\u1EE5ng"
+      ],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Materials.text",
+    "Language": "vi",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "Trang phi\u00EAn",
+        "B\u00E1n h\u00E0ng",
+        "B\u00E1n h\u00E0ng",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "Giao h\u00E0ng",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "Kh\u00E1ch h\u00E0ng",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu \u0026 kho",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "Kho",
+        "T\u00E0i ch\u00EDnh \u0026 b\u00E1o c\u00E1o",
+        "Thu chi",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "B\u00E1o c\u00E1o",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Nguyen Van An",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Kho nguy\u00EAn li\u1EC7u  /  T\u1ED3n hi\u1EC7n t\u1EA1i",
+        "Nguyen Van An \u00B7 ADMIN",
+        "INVENTORY WORKSPACE",
+        "Nguy\u00EAn li\u1EC7u \u0026 t\u1ED3n kho",
+        "Tra c\u1EE9u nguy\u00EAn li\u1EC7u, \u0111\u01A1n v\u1ECB v\u00E0 s\u1ED1 l\u01B0\u1EE3ng t\u1ED3n.",
+        "Th\u00EAm nguy\u00EAn li\u1EC7u",
+        "",
+        "M\u1EDF s\u1ED5",
+        "S\u1EEDa",
+        "X\u00F3a",
+        "M\u00C3",
+        "NGUY\u00CAN LI\u1EC6U",
+        "\u0110\u01A0N V\u1ECA",
+        "T\u1ED2N HI\u1EC6N T\u1EA0I",
+        "Hi\u1EC3n th\u1ECB 1\u201312 / 12",
+        "",
+        "1 / 1",
+        "",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:56:41"
+      ],
+      "Banned": [
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Kho nguy\u00EAn li\u1EC7u  /  T\u1ED3n hi\u1EC7n t\u1EA1i",
+        "Nguy\u00EAn li\u1EC7u \u0026 t\u1ED3n kho",
+        "Tra c\u1EE9u nguy\u00EAn li\u1EC7u, \u0111\u01A1n v\u1ECB v\u00E0 s\u1ED1 l\u01B0\u1EE3ng t\u1ED3n.",
+        "Th\u00EAm nguy\u00EAn li\u1EC7u",
+        "M\u1EDF s\u1ED5",
+        "S\u1EEDa",
+        "NGUY\u00CAN LI\u1EC6U",
+        "\u0110\u01A0N V\u1ECA",
+        "T\u1ED2N HI\u1EC6N T\u1EA0I",
+        "Hi\u1EC3n th\u1ECB 1\u201312 / 12",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:56:41"
+      ],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Products.text",
+    "Language": "vi",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "Trang phi\u00EAn",
+        "B\u00E1n h\u00E0ng",
+        "B\u00E1n h\u00E0ng",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "Giao h\u00E0ng",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "Kh\u00E1ch h\u00E0ng",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu \u0026 kho",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "Kho",
+        "T\u00E0i ch\u00EDnh \u0026 b\u00E1o c\u00E1o",
+        "Thu chi",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "B\u00E1o c\u00E1o",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Nguyen Van An",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / Menu / C\u00F4ng th\u1EE9c",
+        "Nguyen Van An \u00B7 ADMIN",
+        "MENU WORKSPACE",
+        "Menu \u0026 c\u00F4ng th\u1EE9c",
+        "Qu\u1EA3n l\u00FD s\u1EA3n ph\u1EA9m v\u00E0 c\u00F4ng th\u1EE9c pha ch\u1EBF.",
+        "Th\u00EAm s\u1EA3n ph\u1EA9m",
+        "Ch\u1EC9 \u0111ang b\u00E1n",
+        "",
+        "C\u00F4ng th\u1EE9c",
+        "S\u1EEDa",
+        "X\u00F3a",
+        "M\u00C3",
+        "S\u1EA2N PH\u1EA8M",
+        "DANH M\u1EE4C",
+        "GI\u00C1 B\u00C1N",
+        "TR\u1EA0NG TH\u00C1I",
+        "Hi\u1EC3n th\u1ECB 1\u201310 / 10 s\u1EA3n ph\u1EA9m",
+        "",
+        "1 / 1",
+        "",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:56:41"
+      ],
+      "Banned": [
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / Menu / C\u00F4ng th\u1EE9c",
+        "Menu \u0026 c\u00F4ng th\u1EE9c",
+        "Qu\u1EA3n l\u00FD s\u1EA3n ph\u1EA9m v\u00E0 c\u00F4ng th\u1EE9c pha ch\u1EBF.",
+        "Th\u00EAm s\u1EA3n ph\u1EA9m",
+        "Ch\u1EC9 \u0111ang b\u00E1n",
+        "C\u00F4ng th\u1EE9c",
+        "S\u1EEDa",
+        "S\u1EA2N PH\u1EA8M",
+        "DANH M\u1EE4C",
+        "TR\u1EA0NG TH\u00C1I",
+        "Hi\u1EC3n th\u1ECB 1\u201310 / 10 s\u1EA3n ph\u1EA9m",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:56:41"
+      ],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Tables.text",
+    "Language": "vi",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "Trang phi\u00EAn",
+        "B\u00E1n h\u00E0ng",
+        "B\u00E1n h\u00E0ng",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "Giao h\u00E0ng",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "Kh\u00E1ch h\u00E0ng",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu \u0026 kho",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "Kho",
+        "T\u00E0i ch\u00EDnh \u0026 b\u00E1o c\u00E1o",
+        "Thu chi",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "B\u00E1o c\u00E1o",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Nguyen Van An",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / B\u00E0n / Khu v\u1EF1c",
+        "Nguyen Van An \u00B7 ADMIN",
+        "SPACE WORKSPACE",
+        "B\u00E0n \u0026 khu v\u1EF1c",
+        "Theo d\u00F5i tr\u1EA1ng th\u00E1i b\u00E0n v\u00E0 qu\u1EA3n l\u00FD khu v\u1EF1c.",
+        "Th\u00EAm b\u00E0n",
+        "B\u00E0n / S\u01A1 \u0111\u1ED3",
+        "Khu v\u1EF1c",
+        "Danh s\u00E1ch",
+        "S\u01A1 \u0111\u1ED3",
+        "",
+        "Ch\u1ECDn b\u00E0n",
+        "S\u1EEDa",
+        "X\u00F3a",
+        "B0001 \u00B7 Ban 01 \u00B7 Trong",
+        "B0002 \u00B7 Ban 02 \u00B7 Trong",
+        "B0003 \u00B7 Ban 03 \u00B7 Dang phuc vu",
+        "B0004 \u00B7 Ban 04 \u00B7 Trong",
+        "B0005 \u00B7 Ban 05 \u00B7 Trong",
+        "B0006 \u00B7 Ban 06 \u00B7 Trong",
+        "B0007 \u00B7 Ban 07 \u00B7 Trong",
+        "B0008 \u00B7 Ban 08 \u00B7 Trong",
+        "B0009 \u00B7 Ban 09 \u00B7 Trong",
+        "B0010 \u00B7 Ban 10 \u00B7 Trong",
+        "Hi\u1EC3n th\u1ECB 1\u201310 / 10 b\u00E0n",
+        "",
+        "1 / 1",
+        "",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:56:42"
+      ],
+      "Banned": [
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / B\u00E0n / Khu v\u1EF1c",
+        "B\u00E0n \u0026 khu v\u1EF1c",
+        "Theo d\u00F5i tr\u1EA1ng th\u00E1i b\u00E0n v\u00E0 qu\u1EA3n l\u00FD khu v\u1EF1c.",
+        "B\u00E0n / S\u01A1 \u0111\u1ED3",
+        "Khu v\u1EF1c",
+        "S\u01A1 \u0111\u1ED3",
+        "Ch\u1ECDn b\u00E0n",
+        "S\u1EEDa",
+        "Hi\u1EC3n th\u1ECB 1\u201310 / 10 b\u00E0n",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:56:42"
+      ],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 2
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Customers.text",
+    "Language": "vi",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "Trang phi\u00EAn",
+        "B\u00E1n h\u00E0ng",
+        "B\u00E1n h\u00E0ng",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "Giao h\u00E0ng",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "Kh\u00E1ch h\u00E0ng",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu \u0026 kho",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "Kho",
+        "T\u00E0i ch\u00EDnh \u0026 b\u00E1o c\u00E1o",
+        "Thu chi",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "B\u00E1o c\u00E1o",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Nguyen Van An",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / Kh\u00E1ch h\u00E0ng",
+        "Nguyen Van An \u00B7 ADMIN",
+        "CUSTOMER WORKSPACE",
+        "Kh\u00E1ch h\u00E0ng",
+        "Qu\u1EA3n l\u00FD kh\u00E1ch h\u00E0ng, \u0111i\u1EC3m t\u00EDch l\u0169y v\u00E0 h\u1EA1ng th\u00E0nh vi\u00EAn.",
+        "Th\u00EAm kh\u00E1ch h\u00E0ng",
+        "",
+        "M\u1EDF s\u1ED5 \u0111i\u1EC3m",
+        "H\u00F3a \u0111\u01A1n",
+        "S\u1EEDa",
+        "X\u00F3a",
+        "M\u00C3",
+        "KH\u00C1CH H\u00C0NG",
+        "SDT",
+        "\u0110I\u1EC2M",
+        "H\u1EA0NG",
+        "\u01AFU \u0110\u00C3I %",
+        "Hi\u1EC3n th\u1ECB 1\u201310 / 10 kh\u00E1ch h\u00E0ng",
+        "",
+        "1 / 1",
+        "",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:56:42"
+      ],
+      "Banned": [
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / Kh\u00E1ch h\u00E0ng",
+        "Qu\u1EA3n l\u00FD kh\u00E1ch h\u00E0ng, \u0111i\u1EC3m t\u00EDch l\u0169y v\u00E0 h\u1EA1ng th\u00E0nh vi\u00EAn.",
+        "M\u1EDF s\u1ED5 \u0111i\u1EC3m",
+        "H\u00F3a \u0111\u01A1n",
+        "S\u1EEDa",
+        "\u0110I\u1EC2M",
+        "H\u1EA0NG",
+        "\u01AFU \u0110\u00C3I %",
+        "Hi\u1EC3n th\u1ECB 1\u201310 / 10 kh\u00E1ch h\u00E0ng",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:56:42"
+      ],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 2
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Loyalty.text",
+    "Language": "vi",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "Trang phi\u00EAn",
+        "B\u00E1n h\u00E0ng",
+        "B\u00E1n h\u00E0ng",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "Giao h\u00E0ng",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "Kh\u00E1ch h\u00E0ng",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu \u0026 kho",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "Kho",
+        "T\u00E0i ch\u00EDnh \u0026 b\u00E1o c\u00E1o",
+        "Thu chi",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "B\u00E1o c\u00E1o",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Nguyen Van An",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / \u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Nguyen Van An \u00B7 ADMIN",
+        "PROMOTION WORKSPACE",
+        "Khuy\u1EBFn m\u00E3i",
+        "Qu\u1EA3n l\u00FD ch\u01B0\u01A1ng tr\u00ECnh khuy\u1EBFn m\u00E3i v\u00E0 xem tr\u01B0\u1EDBc \u01B0u \u0111\u00E3i.",
+        "Th\u00EAm khuy\u1EBFn m\u00E3i",
+        "Khuy\u1EBFn m\u00E3i",
+        "H\u1EA1ng th\u00E0nh vi\u00EAn",
+        "\u0110i\u1EC3m kh\u00E1ch h\u00E0ng",
+        "",
+        "Preview \u01B0u \u0111\u00E3i",
+        "S\u1EEDa",
+        "X\u00F3a",
+        "M\u00C3",
+        "CH\u01AF\u01A0NG TR\u00CCNH",
+        "T\u1EEA NG\u00C0Y",
+        "\u0110\u1EBEN NG\u00C0Y",
+        "GI\u1EA2M %",
+        "Hi\u1EC3n th\u1ECB 1\u201311 / 11 ch\u01B0\u01A1ng tr\u00ECnh",
+        "",
+        "1 / 1",
+        "",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:56:43"
+      ],
+      "Banned": [
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / \u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Khuy\u1EBFn m\u00E3i",
+        "Qu\u1EA3n l\u00FD ch\u01B0\u01A1ng tr\u00ECnh khuy\u1EBFn m\u00E3i v\u00E0 xem tr\u01B0\u1EDBc \u01B0u \u0111\u00E3i.",
+        "Th\u00EAm khuy\u1EBFn m\u00E3i",
+        "H\u1EA1ng th\u00E0nh vi\u00EAn",
+        "\u0110i\u1EC3m kh\u00E1ch h\u00E0ng",
+        "Preview \u01B0u \u0111\u00E3i",
+        "S\u1EEDa",
+        "T\u1EEA NG\u00C0Y",
+        "\u0110\u1EBEN NG\u00C0Y",
+        "GI\u1EA2M %",
+        "Hi\u1EC3n th\u1ECB 1\u201311 / 11 ch\u01B0\u01A1ng tr\u00ECnh",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:56:43"
+      ],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 3
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 2
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Sales.text",
+    "Language": "vi",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "Trang phi\u00EAn",
+        "B\u00E1n h\u00E0ng",
+        "B\u00E1n h\u00E0ng",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "Giao h\u00E0ng",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "Kh\u00E1ch h\u00E0ng",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu \u0026 kho",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "Kho",
+        "T\u00E0i ch\u00EDnh \u0026 b\u00E1o c\u00E1o",
+        "Thu chi",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "B\u00E1o c\u00E1o",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Nguyen Van An",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / B\u00E1n h\u00E0ng",
+        "Nguyen Van An \u00B7 ADMIN",
+        "\u0110\u00E3 t\u1EA3i t\u1EEB SQL \u00B7 09:56",
+        "Khu v\u1EF1c / B\u00E0n",
+        "Ch\u1ECDn b\u00E0n",
+        "Ban 01 \u00B7 Tr\u1ED1ng",
+        "Ca phe den",
+        "25.000 \u20AB",
+        "",
+        "Ca phe sua",
+        "30.000 \u20AB",
+        "",
+        "Bac xiu",
+        "32.000 \u20AB",
+        "",
+        "Cappuccino",
+        "55.000 \u20AB",
+        "",
+        "Tra sua tran chau",
+        "45.000 \u20AB",
+        "",
+        "Tra xanh",
+        "40.000 \u20AB",
+        "",
+        "Sinh to bo",
+        "55.000 \u20AB",
+        "",
+        "Sinh to xoai",
+        "50.000 \u20AB",
+        "",
+        "Banh tiramisu",
+        "65.000 \u20AB",
+        "",
+        "Banh croissant",
+        "35.000 \u20AB",
+        "",
+        "T\u00ECm m\u00F3n",
+        "Th\u1EF1c \u0111\u01A1n",
+        "",
+        "",
+        "M\u00D3N",
+        "SL",
+        "\u0110\u01A0N GI\u00C1",
+        "",
+        "Ch\u01B0a t\u1EA1o \u0111\u01A1n",
+        "Th\u00EAm m\u00F3n \u0111\u1EA7u ti\u00EAn \u0111\u1EC3 l\u01B0u \u0111\u01A1n",
+        "Nh\u00E1p",
+        "F3 \u00B7 Kh\u00E1ch / \u01AFu \u0111\u00E3i",
+        "H\u1EE7y \u0111\u01A1n m\u1EDF",
+        "Ph\u1EA3i thanh to\u00E1n",
+        "\u2014",
+        "F8 \u00B7 Thanh to\u00E1n",
+        "Ki\u1EC3m tra k\u1EBFt qu\u1EA3",
+        "SALES WORKSPACE",
+        "B\u00E1n h\u00E0ng",
+        "\u0110\u01A1n m\u1EDBi",
+        "F4 \u00B7 \u0110\u01A1n m\u1EDF",
+        "L\u00E0m m\u1EDBi"
+      ],
+      "Banned": [
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / B\u00E1n h\u00E0ng",
+        "\u0110\u00E3 t\u1EA3i t\u1EEB SQL \u00B7 09:56",
+        "Khu v\u1EF1c / B\u00E0n",
+        "Ch\u1ECDn b\u00E0n",
+        "Ban 01 \u00B7 Tr\u1ED1ng",
+        "Th\u1EF1c \u0111\u01A1n",
+        "SL",
+        "\u0110\u01A0N GI\u00C1",
+        "Ch\u01B0a t\u1EA1o \u0111\u01A1n",
+        "Th\u00EAm m\u00F3n \u0111\u1EA7u ti\u00EAn \u0111\u1EC3 l\u01B0u \u0111\u01A1n",
+        "F3 \u00B7 Kh\u00E1ch / \u01AFu \u0111\u00E3i",
+        "H\u1EE7y \u0111\u01A1n m\u1EDF",
+        "Ph\u1EA3i thanh to\u00E1n",
+        "Ki\u1EC3m tra k\u1EBFt qu\u1EA3",
+        "\u0110\u01A1n m\u1EDBi",
+        "F4 \u00B7 \u0110\u01A1n m\u1EDF",
+        "L\u00E0m m\u1EDBi"
+      ],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 3
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 2
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Invoices.text",
+    "Language": "vi",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "Trang phi\u00EAn",
+        "B\u00E1n h\u00E0ng",
+        "B\u00E1n h\u00E0ng",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "Giao h\u00E0ng",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "Kh\u00E1ch h\u00E0ng",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu \u0026 kho",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "Kho",
+        "T\u00E0i ch\u00EDnh \u0026 b\u00E1o c\u00E1o",
+        "Thu chi",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "B\u00E1o c\u00E1o",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Nguyen Van An",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "Nguyen Van An \u00B7 ADMIN",
+        "INVOICE WORKSPACE",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "Tra c\u1EE9u h\u00F3a \u0111\u01A1n theo th\u1EDDi gian, tr\u1EA1ng th\u00E1i v\u00E0 k\u00EAnh b\u00E1n.",
+        "",
+        "",
+        "L\u1ECDc theo",
+        "",
+        "\u2192",
+        "",
+        "Chi ti\u1EBFt / In",
+        "H\u00D3A \u0110\u01A0N",
+        "NG\u00C0Y L\u1EACP",
+        "K\u00CANH",
+        "KH\u00C1CH",
+        "PH\u1EA2I TR\u1EA2",
+        "TR\u1EA0NG TH\u00C1I",
+        "Hi\u1EC3n th\u1ECB 1\u20132 / 2 h\u00F3a \u0111\u01A1n",
+        "",
+        "1 / 1",
+        "",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:56:45"
+      ],
+      "Banned": [
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "Tra c\u1EE9u h\u00F3a \u0111\u01A1n theo th\u1EDDi gian, tr\u1EA1ng th\u00E1i v\u00E0 k\u00EAnh b\u00E1n.",
+        "L\u1ECDc theo",
+        "Chi ti\u1EBFt / In",
+        "H\u00D3A \u0110\u01A0N",
+        "NG\u00C0Y L\u1EACP",
+        "PH\u1EA2I TR\u1EA2",
+        "TR\u1EA0NG TH\u00C1I",
+        "Hi\u1EC3n th\u1ECB 1\u20132 / 2 h\u00F3a \u0111\u01A1n",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:56:45"
+      ],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 2,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 3
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 2
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Delivery.text",
+    "Language": "vi",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "Trang phi\u00EAn",
+        "B\u00E1n h\u00E0ng",
+        "B\u00E1n h\u00E0ng",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "Giao h\u00E0ng",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "Kh\u00E1ch h\u00E0ng",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu \u0026 kho",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "Kho",
+        "T\u00E0i ch\u00EDnh \u0026 b\u00E1o c\u00E1o",
+        "Thu chi",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "B\u00E1o c\u00E1o",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Nguyen Van An",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / Giao h\u00E0ng",
+        "Nguyen Van An \u00B7 ADMIN",
+        "DELIVERY WORKSPACE",
+        "Giao h\u00E0ng",
+        "Tra c\u1EE9u v\u00E0 chuy\u1EC3n ti\u1EBFn \u0111\u1ED9 giao h\u00E0ng \u00B7 Ch\u1EC9 l\u01B0u tr\u1EA1ng th\u00E1i hi\u1EC7n t\u1EA1i.",
+        "",
+        "",
+        "L\u1ECDc theo",
+        "Chi ti\u1EBFt / B\u01B0\u1EDBc ti\u1EBFp",
+        "Ki\u1EC3m tra k\u1EBFt qu\u1EA3",
+        "H\u00D3A \u0110\u01A0N",
+        "NG\u01AF\u1EDCI NH\u1EACN",
+        "\u0110I\u1EC6N THO\u1EA0I",
+        "\u0110\u1ECAA CH\u1EC8",
+        "TI\u1EBEN \u0110\u1ED8 GIAO",
+        "THANH TO\u00C1N",
+        "Hi\u1EC3n th\u1ECB 1\u20133 / 3 \u0111\u01A1n giao",
+        "",
+        "1 / 1",
+        "",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:56:45"
+      ],
+      "Banned": [
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / Giao h\u00E0ng",
+        "Tra c\u1EE9u v\u00E0 chuy\u1EC3n ti\u1EBFn \u0111\u1ED9 giao h\u00E0ng \u00B7 Ch\u1EC9 l\u01B0u tr\u1EA1ng th\u00E1i hi\u1EC7n t\u1EA1i.",
+        "L\u1ECDc theo",
+        "Chi ti\u1EBFt / B\u01B0\u1EDBc ti\u1EBFp",
+        "Ki\u1EC3m tra k\u1EBFt qu\u1EA3",
+        "H\u00D3A \u0110\u01A0N",
+        "NG\u01AF\u1EDCI NH\u1EACN",
+        "\u0110I\u1EC6N THO\u1EA0I",
+        "\u0110\u1ECAA CH\u1EC8",
+        "TI\u1EBEN \u0110\u1ED8 GIAO",
+        "Hi\u1EC3n th\u1ECB 1\u20133 / 3 \u0111\u01A1n giao",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:56:45"
+      ],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 3,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 2,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 3
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 2
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Finance.text",
+    "Language": "vi",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "Trang phi\u00EAn",
+        "B\u00E1n h\u00E0ng",
+        "B\u00E1n h\u00E0ng",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "Giao h\u00E0ng",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "Kh\u00E1ch h\u00E0ng",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu \u0026 kho",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "Kho",
+        "T\u00E0i ch\u00EDnh \u0026 b\u00E1o c\u00E1o",
+        "Thu chi",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "B\u00E1o c\u00E1o",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Nguyen Van An",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / Thu chi",
+        "Nguyen Van An \u00B7 ADMIN",
+        "T\u00C0I CH\u00CDNH",
+        "Thu chi",
+        "Ghi tay v\u00E0 ngu\u1ED3n chi t\u1EEB nghi\u1EC7p v\u1EE5; phi\u1EBFu \u0111\u00E3 ghi ch\u1EC9 \u0111\u1ECDc.",
+        "Ghi phi\u1EBFu",
+        "T\u00ECm / T\u1EA3i l\u1EA1i",
+        "Xem chi ti\u1EBFt",
+        "M\u00C3",
+        "NG\u00C0Y",
+        "LO\u1EA0I",
+        "DANH M\u1EE4C",
+        "S\u1ED0 TI\u1EC0N",
+        "GHI CH\u00DA",
+        "Hi\u1EC3n th\u1ECB 1\u20134 / 4 phi\u1EBFu",
+        "",
+        "1 / 1",
+        "",
+        "4 phi\u1EBFu \u00B7 Thu 0 \u20AB \u00B7 Chi 290.000 \u20AB \u00B7 Trang 1"
+      ],
+      "Banned": [
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / Thu chi",
+        "Ghi tay v\u00E0 ngu\u1ED3n chi t\u1EEB nghi\u1EC7p v\u1EE5; phi\u1EBFu \u0111\u00E3 ghi ch\u1EC9 \u0111\u1ECDc.",
+        "Ghi phi\u1EBFu",
+        "T\u00ECm / T\u1EA3i l\u1EA1i",
+        "Xem chi ti\u1EBFt",
+        "LO\u1EA0I",
+        "DANH M\u1EE4C",
+        "S\u1ED0 TI\u1EC0N",
+        "Hi\u1EC3n th\u1ECB 1\u20134 / 4 phi\u1EBFu",
+        "4 phi\u1EBFu \u00B7 Thu 0 \u20AB \u00B7 Chi 290.000 \u20AB \u00B7 Trang 1"
+      ],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 4,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 3,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 2,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 3
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 2
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Inventory.text",
+    "Language": "vi",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "Trang phi\u00EAn",
+        "B\u00E1n h\u00E0ng",
+        "B\u00E1n h\u00E0ng",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "Giao h\u00E0ng",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "Kh\u00E1ch h\u00E0ng",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu \u0026 kho",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "Kho",
+        "T\u00E0i ch\u00EDnh \u0026 b\u00E1o c\u00E1o",
+        "Thu chi",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "B\u00E1o c\u00E1o",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Nguyen Van An",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / Kho",
+        "Nguyen Van An \u00B7 ADMIN",
+        "T\u1ED3n kho",
+        "INVENTORY WORKSPACE",
+        "Nguy\u00EAn li\u1EC7u \u0026 t\u1ED3n kho",
+        "Tra c\u1EE9u nguy\u00EAn li\u1EC7u, \u0111\u01A1n v\u1ECB v\u00E0 s\u1ED1 l\u01B0\u1EE3ng t\u1ED3n.",
+        "Th\u00EAm nguy\u00EAn li\u1EC7u",
+        "",
+        "M\u1EDF s\u1ED5",
+        "S\u1EEDa",
+        "X\u00F3a",
+        "M\u00C3",
+        "NGUY\u00CAN LI\u1EC6U",
+        "\u0110\u01A0N V\u1ECA",
+        "T\u1ED2N HI\u1EC6N T\u1EA0I",
+        "Hi\u1EC3n th\u1ECB 1\u201312 / 12",
+        "",
+        "1 / 1",
+        "",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:56:46"
+      ],
+      "Banned": [
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / Kho",
+        "T\u1ED3n kho",
+        "Nguy\u00EAn li\u1EC7u \u0026 t\u1ED3n kho",
+        "Tra c\u1EE9u nguy\u00EAn li\u1EC7u, \u0111\u01A1n v\u1ECB v\u00E0 s\u1ED1 l\u01B0\u1EE3ng t\u1ED3n.",
+        "Th\u00EAm nguy\u00EAn li\u1EC7u",
+        "M\u1EDF s\u1ED5",
+        "S\u1EEDa",
+        "NGUY\u00CAN LI\u1EC6U",
+        "\u0110\u01A0N V\u1ECA",
+        "T\u1ED2N HI\u1EC6N T\u1EA0I",
+        "Hi\u1EC3n th\u1ECB 1\u201312 / 12",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:56:46"
+      ],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 4,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 3,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 2,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 3
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 2
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Inventory.tab0.text",
+    "Language": "vi",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "T\u1ED3n kho",
+        "INVENTORY WORKSPACE",
+        "Nguy\u00EAn li\u1EC7u \u0026 t\u1ED3n kho",
+        "Tra c\u1EE9u nguy\u00EAn li\u1EC7u, \u0111\u01A1n v\u1ECB v\u00E0 s\u1ED1 l\u01B0\u1EE3ng t\u1ED3n.",
+        "Th\u00EAm nguy\u00EAn li\u1EC7u",
+        "",
+        "M\u1EDF s\u1ED5",
+        "S\u1EEDa",
+        "X\u00F3a",
+        "M\u00C3",
+        "NGUY\u00CAN LI\u1EC6U",
+        "\u0110\u01A0N V\u1ECA",
+        "T\u1ED2N HI\u1EC6N T\u1EA0I",
+        "Hi\u1EC3n th\u1ECB 1\u201312 / 12",
+        "",
+        "1 / 1",
+        "",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:56:46"
+      ],
+      "Banned": [
+        "T\u1ED3n kho",
+        "Nguy\u00EAn li\u1EC7u \u0026 t\u1ED3n kho",
+        "Tra c\u1EE9u nguy\u00EAn li\u1EC7u, \u0111\u01A1n v\u1ECB v\u00E0 s\u1ED1 l\u01B0\u1EE3ng t\u1ED3n.",
+        "Th\u00EAm nguy\u00EAn li\u1EC7u",
+        "M\u1EDF s\u1ED5",
+        "S\u1EEDa",
+        "NGUY\u00CAN LI\u1EC6U",
+        "\u0110\u01A0N V\u1ECA",
+        "T\u1ED2N HI\u1EC6N T\u1EA0I",
+        "Hi\u1EC3n th\u1ECB 1\u201312 / 12",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:56:46"
+      ],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Inventory.tab1.text",
+    "Language": "vi",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "Nh\u1EADp h\u00E0ng",
+        "INVENTORY WORKSPACE",
+        "Nh\u1EADp h\u00E0ng",
+        "Nh\u00E1p kh\u00F4ng ghi kho; ch\u1ED1t t\u1EA1o kho/chi/n\u1EE3 nguy\u00EAn t\u1EED.",
+        "L\u1EADp phi\u1EBFu nh\u1EADp",
+        "T\u00ECm / T\u1EA3i l\u1EA1i",
+        "Xem chi ti\u1EBFt",
+        "M\u00C3",
+        "NG\u00C0Y NH\u1EACP",
+        "NH\u00C0 CUNG C\u1EA4P",
+        "T\u1ED4NG",
+        "TR\u1EA2 NGAY",
+        "N\u1EE2 G\u1ED0C",
+        "Hi\u1EC3n th\u1ECB 1\u201311 / 11 phi\u1EBFu",
+        "",
+        "1 / 1",
+        "",
+        "11 phi\u1EBFu \u2014 Trang 1"
+      ],
+      "Banned": [
+        "Nh\u1EADp h\u00E0ng",
+        "Nh\u00E1p kh\u00F4ng ghi kho; ch\u1ED1t t\u1EA1o kho/chi/n\u1EE3 nguy\u00EAn t\u1EED.",
+        "L\u1EADp phi\u1EBFu nh\u1EADp",
+        "T\u00ECm / T\u1EA3i l\u1EA1i",
+        "Xem chi ti\u1EBFt",
+        "NG\u00C0Y NH\u1EACP",
+        "NH\u00C0 CUNG C\u1EA4P",
+        "T\u1ED4NG",
+        "TR\u1EA2 NGAY",
+        "N\u1EE2 G\u1ED0C",
+        "Hi\u1EC3n th\u1ECB 1\u201311 / 11 phi\u1EBFu",
+        "11 phi\u1EBFu \u2014 Trang 1"
+      ],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 6
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Inventory.tab2.text",
+    "Language": "vi",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "Xu\u1EA5t kho",
+        "INVENTORY WORKSPACE",
+        "Xu\u1EA5t nguy\u00EAn li\u1EC7u",
+        "H\u1EE7y do h\u1ECFng / Tr\u1EA3 h\u00E0ng; ch\u01B0a t\u1EF1 ho\u00E0n ti\u1EC1n ho\u1EB7c c\u1EA5n n\u1EE3.",
+        "L\u1EADp phi\u1EBFu xu\u1EA5t",
+        "T\u00ECm / T\u1EA3i l\u1EA1i",
+        "Xem chi ti\u1EBFt",
+        "M\u00C3",
+        "NG\u00C0Y XU\u1EA4T",
+        "LO\u1EA0I",
+        "L\u00DD DO",
+        "Hi\u1EC3n th\u1ECB 1\u201312 / 12 phi\u1EBFu",
+        "",
+        "1 / 1",
+        "",
+        "12 phi\u1EBFu \u2014 Trang 1"
+      ],
+      "Banned": [
+        "Xu\u1EA5t kho",
+        "Xu\u1EA5t nguy\u00EAn li\u1EC7u",
+        "H\u1EE7y do h\u1ECFng / Tr\u1EA3 h\u00E0ng; ch\u01B0a t\u1EF1 ho\u00E0n ti\u1EC1n ho\u1EB7c c\u1EA5n n\u1EE3.",
+        "L\u1EADp phi\u1EBFu xu\u1EA5t",
+        "T\u00ECm / T\u1EA3i l\u1EA1i",
+        "Xem chi ti\u1EBFt",
+        "NG\u00C0Y XU\u1EA4T",
+        "LO\u1EA0I",
+        "Hi\u1EC3n th\u1ECB 1\u201312 / 12 phi\u1EBFu",
+        "12 phi\u1EBFu \u2014 Trang 1"
+      ],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Inventory.tab3.text",
+    "Language": "vi",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "Ki\u1EC3m k\u00EA",
+        "INVENTORY WORKSPACE",
+        "Ki\u1EC3m k\u00EA",
+        "Snapshot v\u00E0 s\u1ED1 \u0111\u1EBFm; ch\u1ED1t h\u00F4m nay khi kho c\u00F2n kh\u1EDBp.",
+        "L\u1EA5y s\u1ED1 li\u1EC7u t\u1ED3n",
+        "T\u00ECm / T\u1EA3i l\u1EA1i",
+        "Xem chi ti\u1EBFt",
+        "M\u00C3",
+        "NG\u00C0Y KI\u1EC2M",
+        "\u0110\u00C3 \u0110I\u1EC0U CH\u1EC8NH",
+        "TH\u1EDCI \u0110I\u1EC2M SNAPSHOT",
+        "Hi\u1EC3n th\u1ECB 1\u20133 / 3 phi\u1EBFu",
+        "",
+        "1 / 1",
+        "",
+        "3 phi\u1EBFu \u2014 Trang 1"
+      ],
+      "Banned": [
+        "Ki\u1EC3m k\u00EA",
+        "Snapshot v\u00E0 s\u1ED1 \u0111\u1EBFm; ch\u1ED1t h\u00F4m nay khi kho c\u00F2n kh\u1EDBp.",
+        "L\u1EA5y s\u1ED1 li\u1EC7u t\u1ED3n",
+        "T\u00ECm / T\u1EA3i l\u1EA1i",
+        "Xem chi ti\u1EBFt",
+        "NG\u00C0Y KI\u1EC2M",
+        "\u0110\u00C3 \u0110I\u1EC0U CH\u1EC8NH",
+        "TH\u1EDCI \u0110I\u1EC2M SNAPSHOT",
+        "Hi\u1EC3n th\u1ECB 1\u20133 / 3 phi\u1EBFu",
+        "3 phi\u1EBFu \u2014 Trang 1"
+      ],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 3,
+          "Columns": 4
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Debt.text",
+    "Language": "vi",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "Trang phi\u00EAn",
+        "B\u00E1n h\u00E0ng",
+        "B\u00E1n h\u00E0ng",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "Giao h\u00E0ng",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "Kh\u00E1ch h\u00E0ng",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu \u0026 kho",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "Kho",
+        "T\u00E0i ch\u00EDnh \u0026 b\u00E1o c\u00E1o",
+        "Thu chi",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "B\u00E1o c\u00E1o",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Nguyen Van An",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / C\u00F4ng n\u1EE3",
+        "Nguyen Van An \u00B7 ADMIN",
+        "C\u00D4NG N\u1EE2",
+        "C\u00F4ng n\u1EE3 nh\u00E0 cung c\u1EA5p",
+        "Kh\u00F4ng ch\u1ECDn ng\u00E0y: Hi\u1EC7n t\u1EA1i. Ch\u1ECDn ng\u00E0y: s\u1ED1 d\u01B0 t\u1EA1i ng\u00E0y; tr\u1EA3 n\u1EE3 lu\u00F4n d\u00F9ng s\u1ED1 d\u01B0 hi\u1EC7n t\u1EA1i.",
+        "Tr\u1EA3 n\u1EE3",
+        "T\u1EA1i ng\u00E0y (t\u00EDch \u0111\u1EC3 ch\u1ECDn)",
+        "T\u00ECm / T\u1EA3i l\u1EA1i",
+        "Xem l\u1ECBch s\u1EED",
+        "M\u00C3 N\u1EE2",
+        "NCC",
+        "PHI\u1EBEU NH\u1EACP",
+        "N\u1EE2 G\u1ED0C",
+        "\u0110\u00C3 TR\u1EA2",
+        "C\u00D2N N\u1EE2",
+        "H\u1EA0N",
+        "TR\u1EA0NG TH\u00C1I",
+        "Hi\u1EC3n th\u1ECB 1\u201310 / 10 ngu\u1ED3n n\u1EE3",
+        "",
+        "1 / 1",
+        "",
+        "Hi\u1EC7n t\u1EA1i \u2014 10 ngu\u1ED3n \u2014 Trang 1"
+      ],
+      "Banned": [
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / C\u00F4ng n\u1EE3",
+        "C\u00D4NG N\u1EE2",
+        "C\u00F4ng n\u1EE3 nh\u00E0 cung c\u1EA5p",
+        "Kh\u00F4ng ch\u1ECDn ng\u00E0y: Hi\u1EC7n t\u1EA1i. Ch\u1ECDn ng\u00E0y: s\u1ED1 d\u01B0 t\u1EA1i ng\u00E0y; tr\u1EA3 n\u1EE3 lu\u00F4n d\u00F9ng s\u1ED1 d\u01B0 hi\u1EC7n t\u1EA1i.",
+        "Tr\u1EA3 n\u1EE3",
+        "T\u1EA1i ng\u00E0y (t\u00EDch \u0111\u1EC3 ch\u1ECDn)",
+        "T\u00ECm / T\u1EA3i l\u1EA1i",
+        "Xem l\u1ECBch s\u1EED",
+        "M\u00C3 N\u1EE2",
+        "PHI\u1EBEU NH\u1EACP",
+        "N\u1EE2 G\u1ED0C",
+        "\u0110\u00C3 TR\u1EA2",
+        "C\u00D2N N\u1EE2",
+        "H\u1EA0N",
+        "TR\u1EA0NG TH\u00C1I",
+        "Hi\u1EC3n th\u1ECB 1\u201310 / 10 ngu\u1ED3n n\u1EE3",
+        "Hi\u1EC7n t\u1EA1i \u2014 10 ngu\u1ED3n \u2014 Trang 1"
+      ],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 8
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 3,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 4,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 3,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 2,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 3
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 2
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.HumanResources.text",
+    "Language": "vi",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "Trang phi\u00EAn",
+        "B\u00E1n h\u00E0ng",
+        "B\u00E1n h\u00E0ng",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "Giao h\u00E0ng",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "Kh\u00E1ch h\u00E0ng",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu \u0026 kho",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "Kho",
+        "T\u00E0i ch\u00EDnh \u0026 b\u00E1o c\u00E1o",
+        "Thu chi",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "B\u00E1o c\u00E1o",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Nguyen Van An",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / Nh\u00E2n s\u1EF1",
+        "Nguyen Van An \u00B7 ADMIN",
+        "Nh\u00E2n vi\u00EAn",
+        "REFERENCE WORKSPACE",
+        "Nh\u00E2n vi\u00EAn",
+        "Tra c\u1EE9u v\u00E0 qu\u1EA3n l\u00FD d\u1EEF li\u1EC7u hi\u1EC7n t\u1EA1i.",
+        "Th\u00EAm",
+        "",
+        "",
+        "Ngh\u1EC9 / \u0110i l\u00E0m l\u1EA1i",
+        "Y\u00EAu c\u1EA7u ch\u1EDD",
+        "S\u1EEDa",
+        "X\u00F3a",
+        "M\u00C3 NV",
+        "NH\u00C2N VI\u00CAN",
+        "SDT",
+        "H\u1EE2P \u0110\u1ED2NG",
+        "L\u01AF\u01A0NG TH\u00C1NG",
+        "L\u01AF\u01A0NG GI\u1EDC",
+        "CH\u1EE8C V\u1EE4",
+        "L\u00C0M VI\u1EC6C",
+        "Hi\u1EC3n th\u1ECB 1\u201313 / 13 nh\u00E2n vi\u00EAn",
+        "",
+        "1 / 1",
+        "",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:56:49"
+      ],
+      "Banned": [
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / Nh\u00E2n s\u1EF1",
+        "Tra c\u1EE9u v\u00E0 qu\u1EA3n l\u00FD d\u1EEF li\u1EC7u hi\u1EC7n t\u1EA1i.",
+        "Ngh\u1EC9 / \u0110i l\u00E0m l\u1EA1i",
+        "Y\u00EAu c\u1EA7u ch\u1EDD",
+        "S\u1EEDa",
+        "H\u1EE2P \u0110\u1ED2NG",
+        "L\u01AF\u01A0NG GI\u1EDC",
+        "CH\u1EE8C V\u1EE4",
+        "L\u00C0M VI\u1EC6C",
+        "Hi\u1EC3n th\u1ECB 1\u201313 / 13 nh\u00E2n vi\u00EAn",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:56:49"
+      ],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 13,
+          "Columns": 8
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 8
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 3,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 4,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 3,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 2,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 3
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 2
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.HumanResources.tab0.text",
+    "Language": "vi",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "Nh\u00E2n vi\u00EAn",
+        "REFERENCE WORKSPACE",
+        "Nh\u00E2n vi\u00EAn",
+        "Tra c\u1EE9u v\u00E0 qu\u1EA3n l\u00FD d\u1EEF li\u1EC7u hi\u1EC7n t\u1EA1i.",
+        "Th\u00EAm",
+        "",
+        "",
+        "Ngh\u1EC9 / \u0110i l\u00E0m l\u1EA1i",
+        "Y\u00EAu c\u1EA7u ch\u1EDD",
+        "S\u1EEDa",
+        "X\u00F3a",
+        "M\u00C3 NV",
+        "NH\u00C2N VI\u00CAN",
+        "SDT",
+        "H\u1EE2P \u0110\u1ED2NG",
+        "L\u01AF\u01A0NG TH\u00C1NG",
+        "L\u01AF\u01A0NG GI\u1EDC",
+        "CH\u1EE8C V\u1EE4",
+        "L\u00C0M VI\u1EC6C",
+        "Hi\u1EC3n th\u1ECB 1\u201313 / 13 nh\u00E2n vi\u00EAn",
+        "",
+        "1 / 1",
+        "",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:56:49"
+      ],
+      "Banned": [
+        "Tra c\u1EE9u v\u00E0 qu\u1EA3n l\u00FD d\u1EEF li\u1EC7u hi\u1EC7n t\u1EA1i.",
+        "Ngh\u1EC9 / \u0110i l\u00E0m l\u1EA1i",
+        "Y\u00EAu c\u1EA7u ch\u1EDD",
+        "S\u1EEDa",
+        "H\u1EE2P \u0110\u1ED2NG",
+        "L\u01AF\u01A0NG GI\u1EDC",
+        "CH\u1EE8C V\u1EE4",
+        "L\u00C0M VI\u1EC6C",
+        "Hi\u1EC3n th\u1ECB 1\u201313 / 13 nh\u00E2n vi\u00EAn",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:56:49"
+      ],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 13,
+          "Columns": 8
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.HumanResources.tab1.text",
+    "Language": "vi",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "T\u00E0i kho\u1EA3n",
+        "REFERENCE WORKSPACE",
+        "T\u00E0i kho\u1EA3n nh\u00E2n vi\u00EAn",
+        "Tra c\u1EE9u v\u00E0 qu\u1EA3n l\u00FD d\u1EEF li\u1EC7u hi\u1EC7n t\u1EA1i.",
+        "",
+        "",
+        "C\u1EA5p t\u00E0i kho\u1EA3n",
+        "\u0110\u1ED5i quy\u1EC1n / kh\u00F3a",
+        "Reset m\u1EADt kh\u1EA9u",
+        "Y\u00EAu c\u1EA7u ch\u1EDD",
+        "M\u00C3 NV",
+        "NH\u00C2N VI\u00CAN",
+        "\u0110\u0102NG NH\u1EACP",
+        "VAI TR\u00D2",
+        "T\u00C0I KHO\u1EA2N",
+        "L\u00C0M VI\u1EC6C",
+        "Hi\u1EC3n th\u1ECB 1\u201313 / 13 nh\u00E2n vi\u00EAn",
+        "",
+        "1 / 1",
+        "",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:56:50"
+      ],
+      "Banned": [
+        "T\u00E0i kho\u1EA3n",
+        "T\u00E0i kho\u1EA3n nh\u00E2n vi\u00EAn",
+        "Tra c\u1EE9u v\u00E0 qu\u1EA3n l\u00FD d\u1EEF li\u1EC7u hi\u1EC7n t\u1EA1i.",
+        "C\u1EA5p t\u00E0i kho\u1EA3n",
+        "\u0110\u1ED5i quy\u1EC1n / kh\u00F3a",
+        "Reset m\u1EADt kh\u1EA9u",
+        "Y\u00EAu c\u1EA7u ch\u1EDD",
+        "\u0110\u0102NG NH\u1EACP",
+        "T\u00C0I KHO\u1EA2N",
+        "L\u00C0M VI\u1EC6C",
+        "Hi\u1EC3n th\u1ECB 1\u201313 / 13 nh\u00E2n vi\u00EAn",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:56:50"
+      ],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 13,
+          "Columns": 8
+        },
+        {
+          "Name": "",
+          "Rows": 13,
+          "Columns": 6
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.HumanResources.tab2.text",
+    "Language": "vi",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "Ch\u1EA5m c\u00F4ng",
+        "REFERENCE WORKSPACE",
+        "Ch\u1EA5m c\u00F4ng",
+        "Tra c\u1EE9u v\u00E0 qu\u1EA3n l\u00FD d\u1EEF li\u1EC7u hi\u1EC7n t\u1EA1i.",
+        "Th\u00EAm",
+        "",
+        "",
+        "S\u1EEDa",
+        "M\u00C3 NV",
+        "NH\u00C2N VI\u00CAN",
+        "NG\u00C0Y L\u00C0M",
+        "CA",
+        "V\u00C0O",
+        "RA",
+        "GI\u1EDC",
+        "TR\u1EA0NG TH\u00C1I",
+        "K\u1EF2 L\u01AF\u01A0NG",
+        "Hi\u1EC3n th\u1ECB 1\u20131 / 1 d\u00F2ng c\u00F4ng",
+        "",
+        "1 / 1",
+        "",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:56:51"
+      ],
+      "Banned": [
+        "Ch\u1EA5m c\u00F4ng",
+        "Tra c\u1EE9u v\u00E0 qu\u1EA3n l\u00FD d\u1EEF li\u1EC7u hi\u1EC7n t\u1EA1i.",
+        "S\u1EEDa",
+        "GI\u1EDC",
+        "TR\u1EA0NG TH\u00C1I",
+        "K\u1EF2 L\u01AF\u01A0NG",
+        "Hi\u1EC3n th\u1ECB 1\u20131 / 1 d\u00F2ng c\u00F4ng",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:56:51"
+      ],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 13,
+          "Columns": 8
+        },
+        {
+          "Name": "",
+          "Rows": 13,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 1,
+          "Columns": 9
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.HumanResources.tab3.text",
+    "Language": "vi",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "B\u1EA3ng l\u01B0\u01A1ng",
+        "REFERENCE WORKSPACE",
+        "B\u1EA3ng l\u01B0\u01A1ng",
+        "Tra c\u1EE9u v\u00E0 qu\u1EA3n l\u00FD d\u1EEF li\u1EC7u hi\u1EC7n t\u1EA1i.",
+        "Th\u00EAm",
+        "",
+        "",
+        "Chi ti\u1EBFt",
+        "Chi l\u01B0\u01A1ng",
+        "\u0110\u1ED1i chi\u1EBFu ch\u1ED1t",
+        "\u0110\u1ED1i chi\u1EBFu chi",
+        "M\u00C3 BL",
+        "M\u00C3 NV",
+        "NH\u00C2N VI\u00CAN",
+        "TH\u00C1NG",
+        "N\u0102M",
+        "TH\u1EF0C L\u0128NH",
+        "TR\u1EA0NG TH\u00C1I",
+        "PHI\u1EBEU CHI",
+        "Hi\u1EC3n th\u1ECB 1\u20131 / 1 b\u1EA3ng l\u01B0\u01A1ng",
+        "",
+        "1 / 1",
+        "",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:56:51"
+      ],
+      "Banned": [
+        "B\u1EA3ng l\u01B0\u01A1ng",
+        "Tra c\u1EE9u v\u00E0 qu\u1EA3n l\u00FD d\u1EEF li\u1EC7u hi\u1EC7n t\u1EA1i.",
+        "Chi ti\u1EBFt",
+        "\u0110\u1ED1i chi\u1EBFu ch\u1ED1t",
+        "\u0110\u1ED1i chi\u1EBFu chi",
+        "TH\u1EF0C L\u0128NH",
+        "TR\u1EA0NG TH\u00C1I",
+        "PHI\u1EBEU CHI",
+        "Hi\u1EC3n th\u1ECB 1\u20131 / 1 b\u1EA3ng l\u01B0\u01A1ng",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:56:51"
+      ],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 13,
+          "Columns": 8
+        },
+        {
+          "Name": "",
+          "Rows": 13,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 1,
+          "Columns": 9
+        },
+        {
+          "Name": "",
+          "Rows": 1,
+          "Columns": 8
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Assets.text",
+    "Language": "vi",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "Trang phi\u00EAn",
+        "B\u00E1n h\u00E0ng",
+        "B\u00E1n h\u00E0ng",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "Giao h\u00E0ng",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "Kh\u00E1ch h\u00E0ng",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu \u0026 kho",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "Kho",
+        "T\u00E0i ch\u00EDnh \u0026 b\u00E1o c\u00E1o",
+        "Thu chi",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "B\u00E1o c\u00E1o",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Nguyen Van An",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / T\u00E0i s\u1EA3n",
+        "Nguyen Van An \u00B7 ADMIN",
+        "REFERENCE WORKSPACE",
+        "T\u00E0i s\u1EA3n",
+        "H\u1ED3 s\u01A1 t\u00E0i s\u1EA3n v\u00E0 kh\u1EA5u hao tham kh\u1EA3o \u00B7 L\u01B0u h\u1ED3 s\u01A1 kh\u00F4ng t\u1EF1 ghi chi ti\u1EC1n.",
+        "Th\u00EAm",
+        "",
+        "",
+        "Y\u00EAu c\u1EA7u ch\u1EDD",
+        "Chi ti\u1EBFt",
+        "S\u1EEDa",
+        "X\u00F3a",
+        "M\u00C3",
+        "T\u00C0I S\u1EA2N",
+        "NG\u00C0Y MUA",
+        "NGUY\u00CAN GI\u00C1",
+        "TH\u00C1NG KH",
+        "Hi\u1EC3n th\u1ECB 1\u201310 / 10 t\u00E0i s\u1EA3n",
+        "",
+        "1 / 1",
+        "",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:56:51"
+      ],
+      "Banned": [
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / T\u00E0i s\u1EA3n",
+        "H\u1ED3 s\u01A1 t\u00E0i s\u1EA3n v\u00E0 kh\u1EA5u hao tham kh\u1EA3o \u00B7 L\u01B0u h\u1ED3 s\u01A1 kh\u00F4ng t\u1EF1 ghi chi ti\u1EC1n.",
+        "Y\u00EAu c\u1EA7u ch\u1EDD",
+        "Chi ti\u1EBFt",
+        "S\u1EEDa",
+        "T\u00C0I S\u1EA2N",
+        "Hi\u1EC3n th\u1ECB 1\u201310 / 10 t\u00E0i s\u1EA3n",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:56:51"
+      ],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 13,
+          "Columns": 8
+        },
+        {
+          "Name": "",
+          "Rows": 13,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 1,
+          "Columns": 9
+        },
+        {
+          "Name": "",
+          "Rows": 1,
+          "Columns": 8
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 8
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 3,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 4,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 3,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 2,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 3
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 2
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Reports.text",
+    "Language": "vi",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "Trang phi\u00EAn",
+        "B\u00E1n h\u00E0ng",
+        "B\u00E1n h\u00E0ng",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "Giao h\u00E0ng",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "Kh\u00E1ch h\u00E0ng",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu \u0026 kho",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "Kho",
+        "T\u00E0i ch\u00EDnh \u0026 b\u00E1o c\u00E1o",
+        "Thu chi",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "B\u00E1o c\u00E1o",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Nguyen Van An",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / B\u00E1o c\u00E1o",
+        "Nguyen Van An \u00B7 ADMIN",
+        "INVENTORY WORKSPACE",
+        "B\u00E1o c\u00E1o",
+        "Ch\u1ECDn lo\u1EA1i v\u00E0 b\u1ED9 l\u1ECDc, sau \u0111\u00F3 Xem b\u00E1o c\u00E1o \u00B7 S\u1ED1 li\u1EC7u theo ngu\u1ED3n SQL \u0111\u00E3 ghi.",
+        "Xem b\u00E1o c\u00E1o",
+        "",
+        "\u2192",
+        "",
+        "Ch\u1EE9ng t\u1EEB ngu\u1ED3n",
+        "",
+        "",
+        "",
+        "1 / 1",
+        "",
+        "Ch\u1ECDn Xem b\u00E1o c\u00E1o \u0111\u1EC3 t\u1EA3i s\u1ED1 li\u1EC7u."
+      ],
+      "Banned": [
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD",
+        "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+        "B\u00E0n / Khu v\u1EF1c",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+        "Menu / C\u00F4ng th\u1EE9c",
+        "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+        "C\u00F4ng n\u1EE3",
+        "T\u00E0i s\u1EA3n",
+        "Qu\u1EA3n tr\u1ECB",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Qu\u1EA3n tr\u1ECB vi\u00EAn \u00B7 ADMIN",
+        "\u0110\u0103ng xu\u1EA5t",
+        "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "Qu\u1EA3n l\u00FD / B\u00E1o c\u00E1o",
+        "Ch\u1ECDn lo\u1EA1i v\u00E0 b\u1ED9 l\u1ECDc, sau \u0111\u00F3 Xem b\u00E1o c\u00E1o \u00B7 S\u1ED1 li\u1EC7u theo ngu\u1ED3n SQL \u0111\u00E3 ghi.",
+        "Ch\u1EE9ng t\u1EEB ngu\u1ED3n",
+        "Ch\u1ECDn Xem b\u00E1o c\u00E1o \u0111\u1EC3 t\u1EA3i s\u1ED1 li\u1EC7u."
+      ],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 0
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 13,
+          "Columns": 8
+        },
+        {
+          "Name": "",
+          "Rows": 13,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 1,
+          "Columns": 9
+        },
+        {
+          "Name": "",
+          "Rows": 1,
+          "Columns": 8
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 8
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 3,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 4,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 3,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 2,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 3
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 2
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "layout.home.1280",
+    "Language": "vi",
+    "Expected": "Visible Home buttons intersect WorkingArea at actual 125%",
+    "Status": "FAIL",
+    "Actual": {
+      "Size": "{Width=1280, Height=720}",
+      "Dpi": 120,
+      "Unreachable": [
+        "B\u00E1o c\u00E1o",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Ca phe den \u00B7 3 ly",
+        "\u0110\u01A1n \u0111ang m\u1EDF: 1",
+        "Giao h\u00E0ng ch\u01B0a xong: 0",
+        "Nguy\u00EAn li\u1EC7u h\u1EBFt t\u1ED3n: 0",
+        "C\u00F4ng n\u1EE3 nh\u00E0 cung c\u1EA5p: 5.500.000 \u20AB"
+      ]
+    }
+  },
+  {
+    "Id": "layout.home.1366",
+    "Language": "vi",
+    "Expected": "Visible Home buttons intersect WorkingArea at actual 125%",
+    "Status": "FAIL",
+    "Actual": {
+      "Size": "{Width=1366, Height=768}",
+      "Dpi": 120,
+      "Unreachable": [
+        "B\u00E1o c\u00E1o",
+        "Nh\u00E2n s\u1EF1",
+        "Danh m\u1EE5c n\u1EC1n",
+        "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+        "Ca phe den \u00B7 3 ly",
+        "\u0110\u01A1n \u0111ang m\u1EDF: 1",
+        "Giao h\u00E0ng ch\u01B0a xong: 0",
+        "Nguy\u00EAn li\u1EC7u h\u1EBFt t\u1ED3n: 0",
+        "C\u00F4ng n\u1EE3 nh\u00E0 cung c\u1EA5p: 5.500.000 \u20AB"
+      ]
+    }
+  },
+  {
+    "Id": "report.SalesDay",
+    "Language": "vi",
+    "Expected": "Typed report loads",
+    "Status": "PASS",
+    "Actual": {
+      "Rows": 1,
+      "Metadata": {
+        "Kind": 0,
+        "From": "2026-11-03",
+        "To": "2026-11-10",
+        "ReadAt": "2026-11-10T09:57:01.2461292",
+        "TotalCount": 1,
+        "DateBasis": "Ng\u00E0y thanh to\u00E1n h\u00F3a \u0111\u01A1n",
+        "Note": "",
+        "Complete": true
+      }
+    }
+  },
+  {
+    "Id": "report.SalesChannel",
+    "Language": "vi",
+    "Expected": "Typed report loads",
+    "Status": "PASS",
+    "Actual": {
+      "Rows": 2,
+      "Metadata": {
+        "Kind": 1,
+        "From": "2026-11-03",
+        "To": "2026-11-10",
+        "ReadAt": "2026-11-10T09:57:01.3965652",
+        "TotalCount": 2,
+        "DateBasis": "Ng\u00E0y thanh to\u00E1n h\u00F3a \u0111\u01A1n",
+        "Note": "",
+        "Complete": true
+      }
+    }
+  },
+  {
+    "Id": "report.Products",
+    "Language": "vi",
+    "Expected": "Typed report loads",
+    "Status": "PASS",
+    "Actual": {
+      "Rows": 1,
+      "Metadata": {
+        "Kind": 2,
+        "From": "2026-11-03",
+        "To": "2026-11-10",
+        "ReadAt": "2026-11-10T09:57:01.4317417",
+        "TotalCount": 1,
+        "DateBasis": "Ng\u00E0y thanh to\u00E1n h\u00F3a \u0111\u01A1n",
+        "Note": "Ti\u1EC1n m\u00F3n theo gi\u00E1 snapshot, tr\u01B0\u1EDBc gi\u1EA3m to\u00E0n bill; t\u00EAn m\u00F3n l\u00E0 t\u00EAn hi\u1EC7n t\u1EA1i.",
+        "Complete": true
+      }
+    }
+  },
+  {
+    "Id": "report.Payments",
+    "Language": "vi",
+    "Expected": "Typed report loads",
+    "Status": "PASS",
+    "Actual": {
+      "Rows": 2,
+      "Metadata": {
+        "Kind": 3,
+        "From": "2026-11-03",
+        "To": "2026-11-10",
+        "ReadAt": "2026-11-10T09:57:01.4867555",
+        "TotalCount": 2,
+        "DateBasis": "Ng\u00E0y thanh to\u00E1n h\u00F3a \u0111\u01A1n",
+        "Note": "",
+        "Complete": true
+      }
+    }
+  },
+  {
+    "Id": "report.Inventory",
+    "Language": "vi",
+    "Expected": "Typed report loads",
+    "Status": "PASS",
+    "Actual": {
+      "Rows": 12,
+      "Metadata": {
+        "Kind": 4,
+        "From": "2026-11-03",
+        "To": "2026-11-10",
+        "ReadAt": "2026-11-10T09:57:01.5435978",
+        "TotalCount": 12,
+        "DateBasis": "Th\u1EDDi \u0111i\u1EC3m ghi kho sau m\u1ED1c m\u1EDF s\u1ED5; ng\u00E0y ngu\u1ED3n ch\u1EE9ng t\u1EEB hi\u1EC3n th\u1ECB ri\u00EAng",
+        "Note": "Kh\u00F4ng d\u1EF1ng t\u1ED3n tr\u01B0\u1EDBc m\u1EDF s\u1ED5. Closing t\u1EA1i ng\u00E0y \u0111\u1EBFn kh\u00E1c Current \u0111\u1ECDc hi\u1EC7n t\u1EA1i; kh\u00F4ng c\u1ED9ng l\u1EA1i l\u1ECBch s\u1EED legacy \u0111\u00E3 n\u1EB1m trong m\u1ED1c.",
+        "Complete": false
+      }
+    }
+  },
+  {
+    "Id": "report.Debts",
+    "Language": "vi",
+    "Expected": "Typed report loads",
+    "Status": "PASS",
+    "Actual": {
+      "Rows": 10,
+      "Metadata": {
+        "Kind": 5,
+        "From": "2026-11-03",
+        "To": "2026-11-10",
+        "ReadAt": "2026-11-10T09:57:01.6197011",
+        "TotalCount": 10,
+        "DateBasis": "C\u00F4ng n\u1EE3 t\u1EA1i cu\u1ED1i ng\u00E0y \u0111\u1EBFn; ng\u00E0y ngu\u1ED3n nh\u1EADp v\u00E0 ng\u00E0y phi\u1EBFu chi tr\u1EA3 n\u1EE3",
+        "Note": "",
+        "Complete": true
+      }
+    }
+  },
+  {
+    "Id": "report.CashFlow",
+    "Language": "vi",
+    "Expected": "Typed report loads",
+    "Status": "PASS",
+    "Actual": {
+      "Rows": 4,
+      "Metadata": {
+        "Kind": 6,
+        "From": "2026-11-03",
+        "To": "2026-11-10",
+        "ReadAt": "2026-11-10T09:57:01.6702923",
+        "TotalCount": 4,
+        "DateBasis": "Thu b\u00E1n: ng\u00E0y thanh to\u00E1n; thu/chi kh\u00E1c: ng\u00E0y phi\u1EBFu",
+        "Note": "D\u00F2ng ti\u1EC1n qu\u1EA3n tr\u1ECB, \u0111\u1ED1i t\u00E1c ch\u01B0a \u0111\u1ED1i so\u00E1t; kh\u00F4ng ph\u1EA3i s\u1ED1 d\u01B0 ng\u00E2n h\u00E0ng ho\u1EB7c l\u1EE3i nhu\u1EADn ch\u00EDnh x\u00E1c. D\u1EEF li\u1EC7u LegacyUnknown ch\u01B0a \u0111\u1EE7 li\u00EAn k\u1EBFt ngu\u1ED3n.",
+        "Complete": true
+      }
+    }
+  },
+  {
+    "Id": "report.Labor",
+    "Language": "vi",
+    "Expected": "Typed report loads",
+    "Status": "PASS",
+    "Actual": {
+      "Rows": 1,
+      "Metadata": {
+        "Kind": 7,
+        "From": "2026-11-03",
+        "To": "2026-11-10",
+        "ReadAt": "2026-11-10T09:57:01.7368317",
+        "TotalCount": 1,
+        "DateBasis": "Gi\u1EDD: NgayLam; l\u01B0\u01A1ng ch\u1ED1t: NgayChot; th\u1EF1c chi: ng\u00E0y phi\u1EBFu",
+        "Note": "K\u1EF3 c\u00F4ng, k\u1EF3 b\u1EA3ng l\u01B0\u01A1ng v\u00E0 th\u1EDDi \u0111i\u1EC3m ch\u1ED1t/chi l\u00E0 c\u00E1c ngu\u1ED3n \u0111\u1ED9c l\u1EADp. Gi\u1EDD t\u0103ng ca theo snapshot New; LegacyUnknown kh\u00F4ng suy t\u1EEB h\u1ED3 s\u01A1 hi\u1EC7n t\u1EA1i.",
+        "Complete": true
+      }
+    }
+  },
+  {
+    "Id": "report.Assets",
+    "Language": "vi",
+    "Expected": "Typed report loads",
+    "Status": "PASS",
+    "Actual": {
+      "Rows": 10,
+      "Metadata": {
+        "Kind": 8,
+        "From": "2026-11-03",
+        "To": "2026-11-10",
+        "ReadAt": "2026-11-10T09:57:01.8344261",
+        "TotalCount": 10,
+        "DateBasis": "Th\u00E1ng mua v\u00E0 k\u1EF3 kh\u1EA5u hao; chi theo ng\u00E0y phi\u1EBFu",
+        "Note": "Kh\u1EA5u hao THAM KH\u1EA2O theo h\u1ED3 s\u01A1 hi\u1EC7n t\u1EA1i, kh\u00F4ng t\u1EF1 ghi phi\u1EBFu chi ho\u1EB7c t\u00EDnh nh\u01B0 gi\u00E1 v\u1ED1n/d\u00F2ng ti\u1EC1n.",
+        "Complete": true
+      }
+    }
+  },
+  {
+    "Id": "print-content",
+    "Language": "vi",
+    "Expected": "Invoice content keeps amounts/snapshots; EN-owned lines translated",
+    "Status": "PASS",
+    "Actual": {
+      "DocumentName": "H\u00F3a \u0111\u01A1n HD20250412",
+      "Lines": [
+        "10/11/2026 09:56 \u00B7 Giao h\u00E0ng \u00B7 B\u00E0n \u2014",
+        "\u0110\u00E3 thanh to\u00E1n",
+        "T\u00EAn hi\u1EC3n th\u1ECB theo danh m\u1EE5c hi\u1EC7n t\u1EA1i; gi\u00E1/s\u1ED1 l\u01B0\u1EE3ng theo snapshot.",
+        "M\u00D3N \u00B7 S\u1ED0 L\u01AF\u1EE2NG \u00D7 GI\u00C1 = TI\u1EC0N D\u00D2NG TR\u01AF\u1EDAC GI\u1EA2M",
+        "SP001 \u00B7 Ca phe den\n1 \u00D7 25.000 \u20AB = 25.000 \u20AB",
+        "Ti\u1EC1n m\u00F3n: 25.000 \u20AB",
+        "Gi\u1EA3m: 0 \u20AB (Kh\u00F4ng \u01B0u \u0111\u00E3i 0%)",
+        "Ship: 5.000 \u20AB",
+        "PH\u1EA2I TR\u1EA2: 30.000 \u20AB",
+        "Tien mat: 30.000 \u20AB",
+        "Thanh to\u00E1n: 10/11/2026 09:56",
+        "Kh\u00F4ng ph\u1EA3i h\u00F3a \u0111\u01A1n VAT. In l\u1EA1i kh\u00F4ng d\u1EF1ng ti\u1EC1n \u0111\u01B0a/th\u1ED1i ch\u01B0a l\u01B0u."
+      ]
+    }
+  },
+  {
+    "Id": "invoice-preview.text",
+    "Language": "vi",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "Xem tr\u01B0\u1EDBc / In l\u1EA1i \u00B7 HD20250412",
+        "In\u2026",
+        ""
+      ],
+      "Banned": [
+        "Xem tr\u01B0\u1EDBc / In l\u1EA1i \u00B7 HD20250412",
+        "In\u2026"
+      ],
+      "BoundControls": []
+    }
+  },
+  {
+    "Id": "customer-picker.text",
+    "Language": "vi",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "Ch\u1ECDn kh\u00E1ch h\u00E0ng",
+        "Ch\u1ECDn kh\u00E1ch h\u00E0ng",
+        "",
+        "Ch\u1ECDn kh\u00E1ch",
+        "Kh\u00E1ch v\u00E3ng lai",
+        "\u0110\u00F3ng",
+        "M\u00C3",
+        "KH\u00C1CH H\u00C0NG",
+        "SDT",
+        "\u0110I\u1EC2M",
+        "H\u1EA0NG",
+        "\u01AFU \u0110\u00C3I %",
+        "Hi\u1EC3n th\u1ECB 1\u201310 / 10 kh\u00E1ch h\u00E0ng",
+        "",
+        "1 / 1",
+        "",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:57:04"
+      ],
+      "Banned": [
+        "Ch\u1ECDn kh\u00E1ch h\u00E0ng",
+        "Ch\u1ECDn kh\u00E1ch",
+        "\u0110\u00F3ng",
+        "\u0110I\u1EC2M",
+        "H\u1EA0NG",
+        "\u01AFU \u0110\u00C3I %",
+        "Hi\u1EC3n th\u1ECB 1\u201310 / 10 kh\u00E1ch h\u00E0ng",
+        "\u0110\u00E3 c\u1EADp nh\u1EADt 09:57:04"
+      ],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 6
+        }
+      ]
+    }
+  },
+  {
+    "Id": "expense-combo-code",
+    "Language": "vi",
+    "Expected": "Localized expense label still creates ExpenseType.Chi",
+    "Status": "PASS",
+    "Actual": {
+      "Label": "Chi"
+    }
+  },
+  {
+    "Id": "auth-bootstrap-runtime",
+    "Language": "en",
+    "Expected": "Bootstrap \u002B real admin login \u002B runtime permission",
+    "Status": "PASS",
+    "Actual": {
+      "Bootstrap": {
+        "State": "Completed",
+        "Role": "ADMIN",
+        "Runtime": "DB user WITHOUT LOGIN/CafeManagerApp; kh\u00F4ng thay ki\u1EC3m identity k\u1EBFt n\u1ED1i th\u1EADt"
+      },
+      "SchemaVersion": 27,
+      "E2ESubcases": [
+        {
+          "Id": "T31-K02.sql-purchase-debt",
+          "Expected": "Nh\u1EADp10\u00D71000, tr\u1EA3 ngay2000, tr\u1EA3 n\u1EE33000\u002B5000; t\u1ED3n\u002B10, c\u00F2n0; receipts \u0111\u00FAng",
+          "Actual": {
+            "Purchase": "PN20250502",
+            "Debt": "CN20250405",
+            "Payments": [
+              "TC20250506",
+              "TC20250507"
+            ],
+            "Remaining": 0
+          },
+          "Status": "PASS"
+        },
+        {
+          "Id": "T31-K01.sql-two-lines-two-payments",
+          "Expected": "SP0012d\u00F2ng kh\u00E1c ghi ch\u00FA:50000;TT20000\u002B30000;t\u1ED3nNVL01\u2212.036,NVL03\u2212.020;replaykh\u00F4ngthu2l\u1EA7n",
+          "Actual": {
+            "Code": "HD20250411",
+            "Total": 50000,
+            "Payments": 2,
+            "Native": "NOT RUN:\u01B0u\u0111\u00E3i/\u0111i\u1EC3m/in/b\u00E0nquaUI ki\u1EC3m ri\u00EAng"
+          },
+          "Status": "PASS"
+        },
+        {
+          "Id": "T31-K03.sql-stale-stocktake",
+          "Expected": "Xu\u1EA5th\u1EE7y1;snapshotc\u0169b\u1ECBch\u1EB7n;snapshotm\u1EDBi\u0111\u1EBFmgi\u1EA3m1/ch\u1ED1tm\u1ED9tl\u1EA7n",
+          "Actual": {
+            "Stale": "KK00000001",
+            "Committed": "KK00000002",
+            "Inventory": 103.7040
+          },
+          "Status": "PASS"
+        },
+        {
+          "Id": "T31-K04.sql-overnight-payroll",
+          "Expected": "Nh\u00E2nvi\u00EAnm\u1EDBi35000/h,ca22h\u21926h=8h,th\u1EF1cl\u0129nh280000;ch\u1ED1t/chireplaym\u1ED9tngu\u1ED3n",
+          "Actual": {
+            "Employee": "NV011",
+            "Payroll": "3",
+            "Expense": "3",
+            "Amount": 280000.00
+          },
+          "Status": "PASS"
+        },
+        {
+          "Id": "T31-K05.sql-delivery-finance",
+          "Expected": "Giao\u0111\u00E3tr\u1EA3:Chogiao\u2192\u0110anggiao\u2192\u0110\u00E3giao;ti\u1EC1n/kho/\u0111i\u1EC3mkh\u00F4ng\u0111\u1ED5i",
+          "Actual": {
+            "Code": "HD20250412",
+            "Delivery": "Da giao",
+            "FinanceUnchanged": true,
+            "Limitation": "Ch\u1EC9 l\u01B0u tr\u1EA1ng th\u00E1i hi\u1EC7n t\u1EA1i, kh\u00F4ng timeline"
+          },
+          "Status": "PASS"
+        },
+        {
+          "Id": "T31-K07.sql-session-roles",
+          "Expected": "CASH/STORE login th\u1EADt; Finance b\u1ECB ch\u1EB7n; kh\u00F3a fixture thu h\u1ED3i phi\u00EAn c\u0169",
+          "Actual": {
+            "Outcomes": [
+              "CASH:finance denied",
+              "CASH:revoked",
+              "STORE:finance denied",
+              "STORE:revoked"
+            ],
+            "NativeLogout": "NOT RUN; operator lock fixture kh\u00F4ng thay handler logout/\u0111\u1ED5i role/ngh\u1EC9 vi\u1EC7c"
+          },
+          "Status": "PASS"
+        },
+        {
+          "Id": "T31-K09.transaction-state",
+          "Expected": "@@TRANCOUNT/XACT_STATE=0:0 sau c\u00E1c lu\u1ED3ng",
+          "Actual": {
+            "State": "0:0"
+          },
+          "Status": "PASS"
+        }
+      ],
+      "E2ENative": "NOT RUN: SQL subcases kh\u00F4ng thay native E2E, \u01B0u \u0111\u00E3i/\u0111i\u1EC3m/report/print/fault ki\u1EC3m theo guide",
+      "E2EFailed": 0
+    }
+  },
+  {
+    "Id": "actual-dpi",
+    "Language": "en",
+    "Expected": "Native DPI remains 125% (120), no OS Scale changes",
+    "Status": "PASS",
+    "Actual": {
+      "DeviceDpi": 120,
+      "WorkingArea": "{X=0,Y=0,Width=1920,Height=1020}"
+    }
+  },
+  {
+    "Id": "module.Home.text",
+    "Language": "en",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "MANAGEMENT WORKSPACE",
+        "Session home",
+        "Sales",
+        "Sales",
+        "Invoice history",
+        "Delivery",
+        "Tables / Areas",
+        "Customers \u0026 offers",
+        "Customers",
+        "Offers / Points",
+        "Menu \u0026 inventory",
+        "Menu / Recipes",
+        "Ingredients / Stock",
+        "Inventory",
+        "Finance \u0026 reports",
+        "Income \u0026 expenses",
+        "Debts",
+        "Assets",
+        "Reports",
+        "Administration",
+        "Human resources",
+        "Reference data",
+        "System information",
+        "Nguyen Van An",
+        "Administrator \u00B7 ADMIN",
+        "Sign out",
+        "Session active.",
+        "Management / Session home",
+        "Nguyen Van An \u00B7 ADMIN",
+        "Shop dashboard",
+        "Period performance and items needing attention.",
+        "Today",
+        "This month",
+        "Reload",
+        "Today \u00B7 10/11/2026 00:00:00 \u2192 10/11/2026 09:57:21 (end exclusive)",
+        "Comparison: 09/11/2026 00:00:00 \u2192 09/11/2026 09:57:21",
+        "Figures updated.",
+        "Read at 09:57:21 \u00B7 10/11/2026 by SQL Server time.",
+        "Paid revenue",
+        "After discounts, including delivery fees",
+        "80.000 \u20AB",
+        "New activity \u00B7 Previous period 0\nPrevious period: 0 \u20AB",
+        "View details",
+        "Paid invoices",
+        "Invoice count in period",
+        "2",
+        "New activity \u00B7 Previous period 0\nPrevious period: 0",
+        "View details",
+        "Average per invoice",
+        "Revenue / paid invoice count",
+        "40.000 \u20AB",
+        "Insufficient basis for comparison.",
+        "View details",
+        "Actual expenses",
+        "Expense entries recorded in period",
+        "290.000 \u20AB",
+        "New activity \u00B7 Previous period 0\nPrevious period: 0 \u20AB",
+        "View details",
+        "Revenue trend",
+        "Select a point or use \u2190 \u2192 then Enter to view documents.",
+        "Revenue breakdown",
+        "By sales channel \u00B7 Percentages may differ slightly due to rounding.",
+        "Top 5 bestsellers",
+        "Ranked by cups sold \u00B7 Paid invoices only.",
+        "Period total: 3 cups",
+        "Ca phe den \u00B7 3 cups",
+        "Needs attention \u00B7 Current",
+        "Balances and tasks at read time, independent of the daily/monthly period.",
+        "Open orders: 1",
+        "Pending deliveries: 0",
+        "Out-of-stock ingredients: 0",
+        "Supplier debts: 5.500.000 \u20AB",
+        "Revenue uses payment dates; actual expenses use expense entry dates. Partners are not reconciled; these figures are not profit. Comparisons use recorded data."
+      ],
+      "Banned": [],
+      "BoundControls": []
+    }
+  },
+  {
+    "Id": "module.Catalogs.text",
+    "Language": "en",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "MANAGEMENT WORKSPACE",
+        "Session home",
+        "Sales",
+        "Sales",
+        "Invoice history",
+        "Delivery",
+        "Tables / Areas",
+        "Customers \u0026 offers",
+        "Customers",
+        "Offers / Points",
+        "Menu \u0026 inventory",
+        "Menu / Recipes",
+        "Ingredients / Stock",
+        "Inventory",
+        "Finance \u0026 reports",
+        "Income \u0026 expenses",
+        "Debts",
+        "Assets",
+        "Reports",
+        "Administration",
+        "Human resources",
+        "Reference data",
+        "System information",
+        "Nguyen Van An",
+        "Administrator \u00B7 ADMIN",
+        "Sign out",
+        "Session active.",
+        "Management / Reference data",
+        "Nguyen Van An \u00B7 ADMIN",
+        "REFERENCE WORKSPACE",
+        "Reference data",
+        "Reference data \u00B7 CoffeeManager",
+        "Add",
+        "Product",
+        "Supplier",
+        "Method",
+        "Partner",
+        "Income / Expenses",
+        "Position",
+        "Shift",
+        "",
+        "Load / Reconcile",
+        "Edit",
+        "Delete",
+        "CODE",
+        "NAME",
+        "Showing 1\u201310 / 10 product categories",
+        "",
+        "1 / 1",
+        "",
+        "Saved \u00B7 Page 1 \u00B7 10 rows \u00B7 09:57."
+      ],
+      "Banned": [],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.SystemInfo.text",
+    "Language": "en",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "MANAGEMENT WORKSPACE",
+        "Session home",
+        "Sales",
+        "Sales",
+        "Invoice history",
+        "Delivery",
+        "Tables / Areas",
+        "Customers \u0026 offers",
+        "Customers",
+        "Offers / Points",
+        "Menu \u0026 inventory",
+        "Menu / Recipes",
+        "Ingredients / Stock",
+        "Inventory",
+        "Finance \u0026 reports",
+        "Income \u0026 expenses",
+        "Debts",
+        "Assets",
+        "Reports",
+        "Administration",
+        "Human resources",
+        "Reference data",
+        "System information",
+        "Nguyen Van An",
+        "Administrator \u00B7 ADMIN",
+        "Sign out",
+        "Session active.",
+        "Management / System information",
+        "Nguyen Van An \u00B7 ADMIN",
+        "System information",
+        "CoffeeManager \u00B7 .NET 10\nSchema information not loaded.",
+        "Language",
+        "Apply"
+      ],
+      "Banned": [],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Materials.text",
+    "Language": "en",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "MANAGEMENT WORKSPACE",
+        "Session home",
+        "Sales",
+        "Sales",
+        "Invoice history",
+        "Delivery",
+        "Tables / Areas",
+        "Customers \u0026 offers",
+        "Customers",
+        "Offers / Points",
+        "Menu \u0026 inventory",
+        "Menu / Recipes",
+        "Ingredients / Stock",
+        "Inventory",
+        "Finance \u0026 reports",
+        "Income \u0026 expenses",
+        "Debts",
+        "Assets",
+        "Reports",
+        "Administration",
+        "Human resources",
+        "Reference data",
+        "System information",
+        "Nguyen Van An",
+        "Administrator \u00B7 ADMIN",
+        "Sign out",
+        "Session active.",
+        "Ingredient inventory  /  Current stock",
+        "Nguyen Van An \u00B7 ADMIN",
+        "INVENTORY WORKSPACE",
+        "Ingredients \u0026 stock",
+        "Look up ingredients, units and stock quantities.",
+        "Add ingredient",
+        "",
+        "Opening balance",
+        "Edit",
+        "Delete",
+        "CODE",
+        "INGREDIENT",
+        "UNIT",
+        "CURRENT STOCK",
+        "Showing 1\u201312 / 12",
+        "",
+        "1 / 1",
+        "",
+        "Updated 09:57:27"
+      ],
+      "Banned": [],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Products.text",
+    "Language": "en",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "MANAGEMENT WORKSPACE",
+        "Session home",
+        "Sales",
+        "Sales",
+        "Invoice history",
+        "Delivery",
+        "Tables / Areas",
+        "Customers \u0026 offers",
+        "Customers",
+        "Offers / Points",
+        "Menu \u0026 inventory",
+        "Menu / Recipes",
+        "Ingredients / Stock",
+        "Inventory",
+        "Finance \u0026 reports",
+        "Income \u0026 expenses",
+        "Debts",
+        "Assets",
+        "Reports",
+        "Administration",
+        "Human resources",
+        "Reference data",
+        "System information",
+        "Nguyen Van An",
+        "Administrator \u00B7 ADMIN",
+        "Sign out",
+        "Session active.",
+        "Management / Menu / Recipes",
+        "Nguyen Van An \u00B7 ADMIN",
+        "MENU WORKSPACE",
+        "Menu \u0026 recipes",
+        "Manage products and drink recipes.",
+        "Add product",
+        "Active products only",
+        "",
+        "Recipe",
+        "Edit",
+        "Delete",
+        "CODE",
+        "PRODUCT",
+        "CATEGORY",
+        "SELLING PRICE",
+        "STATUS",
+        "Showing 1\u201310 / 10 products",
+        "",
+        "1 / 1",
+        "",
+        "Updated 09:57:27"
+      ],
+      "Banned": [],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Tables.text",
+    "Language": "en",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "MANAGEMENT WORKSPACE",
+        "Session home",
+        "Sales",
+        "Sales",
+        "Invoice history",
+        "Delivery",
+        "Tables / Areas",
+        "Customers \u0026 offers",
+        "Customers",
+        "Offers / Points",
+        "Menu \u0026 inventory",
+        "Menu / Recipes",
+        "Ingredients / Stock",
+        "Inventory",
+        "Finance \u0026 reports",
+        "Income \u0026 expenses",
+        "Debts",
+        "Assets",
+        "Reports",
+        "Administration",
+        "Human resources",
+        "Reference data",
+        "System information",
+        "Nguyen Van An",
+        "Administrator \u00B7 ADMIN",
+        "Sign out",
+        "Session active.",
+        "Management / Tables / Areas",
+        "Nguyen Van An \u00B7 ADMIN",
+        "SPACE WORKSPACE",
+        "Tables \u0026 areas",
+        "Monitor table status and manage areas.",
+        "Add table",
+        "Tables / Floor plan",
+        "Area",
+        "List",
+        "Floor plan",
+        "",
+        "Select table",
+        "Edit",
+        "Delete",
+        "B0001 \u00B7 Ban 01 \u00B7 Trong",
+        "B0002 \u00B7 Ban 02 \u00B7 Trong",
+        "B0003 \u00B7 Ban 03 \u00B7 Dang phuc vu",
+        "B0004 \u00B7 Ban 04 \u00B7 Trong",
+        "B0005 \u00B7 Ban 05 \u00B7 Trong",
+        "B0006 \u00B7 Ban 06 \u00B7 Trong",
+        "B0007 \u00B7 Ban 07 \u00B7 Trong",
+        "B0008 \u00B7 Ban 08 \u00B7 Trong",
+        "B0009 \u00B7 Ban 09 \u00B7 Trong",
+        "B0010 \u00B7 Ban 10 \u00B7 Trong",
+        "Showing 1\u201310 / 10 tables",
+        "",
+        "1 / 1",
+        "",
+        "Updated 09:57:28"
+      ],
+      "Banned": [],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 2
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Customers.text",
+    "Language": "en",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "MANAGEMENT WORKSPACE",
+        "Session home",
+        "Sales",
+        "Sales",
+        "Invoice history",
+        "Delivery",
+        "Tables / Areas",
+        "Customers \u0026 offers",
+        "Customers",
+        "Offers / Points",
+        "Menu \u0026 inventory",
+        "Menu / Recipes",
+        "Ingredients / Stock",
+        "Inventory",
+        "Finance \u0026 reports",
+        "Income \u0026 expenses",
+        "Debts",
+        "Assets",
+        "Reports",
+        "Administration",
+        "Human resources",
+        "Reference data",
+        "System information",
+        "Nguyen Van An",
+        "Administrator \u00B7 ADMIN",
+        "Sign out",
+        "Session active.",
+        "Management / Customers",
+        "Nguyen Van An \u00B7 ADMIN",
+        "CUSTOMER WORKSPACE",
+        "Customers",
+        "Manage customers, reward points and membership tiers.",
+        "Add customer",
+        "",
+        "Open points balance",
+        "Invoice",
+        "Edit",
+        "Delete",
+        "CODE",
+        "CUSTOMERS",
+        "PHONE",
+        "POINTS",
+        "TIER",
+        "DISCOUNT %",
+        "Showing 1\u201310 / 10 customers",
+        "",
+        "1 / 1",
+        "",
+        "Updated 09:57:28"
+      ],
+      "Banned": [],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 2
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Loyalty.text",
+    "Language": "en",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "MANAGEMENT WORKSPACE",
+        "Session home",
+        "Sales",
+        "Sales",
+        "Invoice history",
+        "Delivery",
+        "Tables / Areas",
+        "Customers \u0026 offers",
+        "Customers",
+        "Offers / Points",
+        "Menu \u0026 inventory",
+        "Menu / Recipes",
+        "Ingredients / Stock",
+        "Inventory",
+        "Finance \u0026 reports",
+        "Income \u0026 expenses",
+        "Debts",
+        "Assets",
+        "Reports",
+        "Administration",
+        "Human resources",
+        "Reference data",
+        "System information",
+        "Nguyen Van An",
+        "Administrator \u00B7 ADMIN",
+        "Sign out",
+        "Session active.",
+        "Management / Offers / Points",
+        "Nguyen Van An \u00B7 ADMIN",
+        "PROMOTION WORKSPACE",
+        "Promotion",
+        "Manage promotions and preview offers.",
+        "Add promotion",
+        "Promotion",
+        "Membership tier",
+        "Customer points",
+        "",
+        "Offer preview",
+        "Edit",
+        "Delete",
+        "CODE",
+        "PROMOTION",
+        "FROM DATE",
+        "TO DATE",
+        "DISCOUNT %",
+        "Showing 1\u201311 / 11 promotions",
+        "",
+        "1 / 1",
+        "",
+        "Updated 09:57:29"
+      ],
+      "Banned": [],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 3
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 2
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Sales.text",
+    "Language": "en",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "FAIL",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "MANAGEMENT WORKSPACE",
+        "Session home",
+        "Sales",
+        "Sales",
+        "Invoice history",
+        "Delivery",
+        "Tables / Areas",
+        "Customers \u0026 offers",
+        "Customers",
+        "Offers / Points",
+        "Menu \u0026 inventory",
+        "Menu / Recipes",
+        "Ingredients / Stock",
+        "Inventory",
+        "Finance \u0026 reports",
+        "Income \u0026 expenses",
+        "Debts",
+        "Assets",
+        "Reports",
+        "Administration",
+        "Human resources",
+        "Reference data",
+        "System information",
+        "Nguyen Van An",
+        "Administrator \u00B7 ADMIN",
+        "Sign out",
+        "Session active.",
+        "Management / Sales",
+        "Nguyen Van An \u00B7 ADMIN",
+        "Loaded from SQL \u00B7 09:57",
+        "Areas / Tables",
+        "Select table",
+        "Ban 01 \u00B7 Available",
+        "Ca phe den",
+        "25.000 \u20AB",
+        "",
+        "Ca phe sua",
+        "30.000 \u20AB",
+        "",
+        "Bac xiu",
+        "32.000 \u20AB",
+        "",
+        "Cappuccino",
+        "55.000 \u20AB",
+        "",
+        "Tra sua tran chau",
+        "45.000 \u20AB",
+        "",
+        "Tra xanh",
+        "40.000 \u20AB",
+        "",
+        "Sinh to bo",
+        "55.000 \u20AB",
+        "",
+        "Sinh to xoai",
+        "50.000 \u20AB",
+        "",
+        "Banh tiramisu",
+        "65.000 \u20AB",
+        "",
+        "Banh croissant",
+        "35.000 \u20AB",
+        "",
+        "Find product",
+        "Menu",
+        "",
+        "",
+        "ITEMS",
+        "SL",
+        "UNIT PRICE",
+        "",
+        "Order not created",
+        "Add the first item to save the order",
+        "Draft",
+        "F3 \u00B7 Customer / Offers",
+        "Cancel open order",
+        "Payment due",
+        "\u2014",
+        "F8 \u00B7 Checkout",
+        "Check result",
+        "SALES WORKSPACE",
+        "Sales",
+        "New order",
+        "F4 \u00B7 Open orders",
+        "Refresh"
+      ],
+      "Banned": [
+        "SL"
+      ],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 3
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 2
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Invoices.text",
+    "Language": "en",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "MANAGEMENT WORKSPACE",
+        "Session home",
+        "Sales",
+        "Sales",
+        "Invoice history",
+        "Delivery",
+        "Tables / Areas",
+        "Customers \u0026 offers",
+        "Customers",
+        "Offers / Points",
+        "Menu \u0026 inventory",
+        "Menu / Recipes",
+        "Ingredients / Stock",
+        "Inventory",
+        "Finance \u0026 reports",
+        "Income \u0026 expenses",
+        "Debts",
+        "Assets",
+        "Reports",
+        "Administration",
+        "Human resources",
+        "Reference data",
+        "System information",
+        "Nguyen Van An",
+        "Administrator \u00B7 ADMIN",
+        "Sign out",
+        "Session active.",
+        "Management / Invoice history",
+        "Nguyen Van An \u00B7 ADMIN",
+        "INVOICE WORKSPACE",
+        "Invoice history",
+        "Find invoices by time, status and sales channel.",
+        "",
+        "",
+        "Filter by",
+        "",
+        "\u2192",
+        "",
+        "Details / Print",
+        "INVOICE",
+        "CREATED ON",
+        "CHANNEL",
+        "CUSTOMER",
+        "TOTAL DUE",
+        "STATUS",
+        "Showing 1\u20132 / 2 invoices",
+        "",
+        "1 / 1",
+        "",
+        "Updated 09:57:30"
+      ],
+      "Banned": [],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 2,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 3
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 2
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Delivery.text",
+    "Language": "en",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "MANAGEMENT WORKSPACE",
+        "Session home",
+        "Sales",
+        "Sales",
+        "Invoice history",
+        "Delivery",
+        "Tables / Areas",
+        "Customers \u0026 offers",
+        "Customers",
+        "Offers / Points",
+        "Menu \u0026 inventory",
+        "Menu / Recipes",
+        "Ingredients / Stock",
+        "Inventory",
+        "Finance \u0026 reports",
+        "Income \u0026 expenses",
+        "Debts",
+        "Assets",
+        "Reports",
+        "Administration",
+        "Human resources",
+        "Reference data",
+        "System information",
+        "Nguyen Van An",
+        "Administrator \u00B7 ADMIN",
+        "Sign out",
+        "Session active.",
+        "Management / Delivery",
+        "Nguyen Van An \u00B7 ADMIN",
+        "DELIVERY WORKSPACE",
+        "Delivery",
+        "Look up and advance deliveries \u00B7 Only the current status is stored.",
+        "",
+        "",
+        "Filter by",
+        "Details / Next step",
+        "Check result",
+        "INVOICE",
+        "RECIPIENT",
+        "PHONE",
+        "ADDRESS",
+        "DELIVERY PROGRESS",
+        "CHECKOUT",
+        "Showing 1\u20133 / 3 deliveries",
+        "",
+        "1 / 1",
+        "",
+        "Updated 09:57:31"
+      ],
+      "Banned": [],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 3,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 2,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 3
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 2
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Finance.text",
+    "Language": "en",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "MANAGEMENT WORKSPACE",
+        "Session home",
+        "Sales",
+        "Sales",
+        "Invoice history",
+        "Delivery",
+        "Tables / Areas",
+        "Customers \u0026 offers",
+        "Customers",
+        "Offers / Points",
+        "Menu \u0026 inventory",
+        "Menu / Recipes",
+        "Ingredients / Stock",
+        "Inventory",
+        "Finance \u0026 reports",
+        "Income \u0026 expenses",
+        "Debts",
+        "Assets",
+        "Reports",
+        "Administration",
+        "Human resources",
+        "Reference data",
+        "System information",
+        "Nguyen Van An",
+        "Administrator \u00B7 ADMIN",
+        "Sign out",
+        "Session active.",
+        "Management / Income \u0026 expenses",
+        "Nguyen Van An \u00B7 ADMIN",
+        "FINANCE",
+        "Income \u0026 expenses",
+        "Manual entries and transaction expenses; recorded entries are read-only.",
+        "Record entry",
+        "Search / Reload",
+        "View details",
+        "CODE",
+        "DATE",
+        "TYPE",
+        "CATEGORY",
+        "AMOUNT",
+        "NOTE",
+        "Showing 1\u20134 / 4 entries",
+        "",
+        "1 / 1",
+        "",
+        "4 entries \u00B7 Income 0 \u20AB \u00B7 Expenses 290.000 \u20AB \u00B7 Page 1"
+      ],
+      "Banned": [],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 4,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 3,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 2,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 3
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 2
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Inventory.text",
+    "Language": "en",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "MANAGEMENT WORKSPACE",
+        "Session home",
+        "Sales",
+        "Sales",
+        "Invoice history",
+        "Delivery",
+        "Tables / Areas",
+        "Customers \u0026 offers",
+        "Customers",
+        "Offers / Points",
+        "Menu \u0026 inventory",
+        "Menu / Recipes",
+        "Ingredients / Stock",
+        "Inventory",
+        "Finance \u0026 reports",
+        "Income \u0026 expenses",
+        "Debts",
+        "Assets",
+        "Reports",
+        "Administration",
+        "Human resources",
+        "Reference data",
+        "System information",
+        "Nguyen Van An",
+        "Administrator \u00B7 ADMIN",
+        "Sign out",
+        "Session active.",
+        "Management / Inventory",
+        "Nguyen Van An \u00B7 ADMIN",
+        "Stock",
+        "INVENTORY WORKSPACE",
+        "Ingredients \u0026 stock",
+        "Look up ingredients, units and stock quantities.",
+        "Add ingredient",
+        "",
+        "Opening balance",
+        "Edit",
+        "Delete",
+        "CODE",
+        "INGREDIENT",
+        "UNIT",
+        "CURRENT STOCK",
+        "Showing 1\u201312 / 12",
+        "",
+        "1 / 1",
+        "",
+        "Updated 09:57:32"
+      ],
+      "Banned": [],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 4,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 3,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 2,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 3
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 2
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Inventory.tab0.text",
+    "Language": "en",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "Stock",
+        "INVENTORY WORKSPACE",
+        "Ingredients \u0026 stock",
+        "Look up ingredients, units and stock quantities.",
+        "Add ingredient",
+        "",
+        "Opening balance",
+        "Edit",
+        "Delete",
+        "CODE",
+        "INGREDIENT",
+        "UNIT",
+        "CURRENT STOCK",
+        "Showing 1\u201312 / 12",
+        "",
+        "1 / 1",
+        "",
+        "Updated 09:57:32"
+      ],
+      "Banned": [],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Inventory.tab1.text",
+    "Language": "en",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "Purchases",
+        "INVENTORY WORKSPACE",
+        "Purchases",
+        "Drafts do not affect stock; finalization records stock/expenses/debt atomically.",
+        "Create purchase",
+        "Search / Reload",
+        "View details",
+        "CODE",
+        "PURCHASE DATE",
+        "SUPPLIER",
+        "TOTAL",
+        "PAID NOW",
+        "ORIGINAL DEBT",
+        "Showing 1\u201311 / 11 entries",
+        "",
+        "1 / 1",
+        "",
+        "11 entries \u2014 Page 1"
+      ],
+      "Banned": [],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 6
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Inventory.tab2.text",
+    "Language": "en",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "Stock issues",
+        "INVENTORY WORKSPACE",
+        "Issue ingredients",
+        "Damage / Supplier return; no automatic refund or debt offset.",
+        "Create stock issue",
+        "Search / Reload",
+        "View details",
+        "CODE",
+        "ISSUE DATE",
+        "TYPE",
+        "REASON",
+        "Showing 1\u201312 / 12 entries",
+        "",
+        "1 / 1",
+        "",
+        "12 entries \u2014 Page 1"
+      ],
+      "Banned": [],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Inventory.tab3.text",
+    "Language": "en",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "Stocktake",
+        "INVENTORY WORKSPACE",
+        "Stocktake",
+        "Snapshot and counts; finalize today while stock still matches.",
+        "Load stock figures",
+        "Search / Reload",
+        "View details",
+        "CODE",
+        "STOCKTAKE DATE",
+        "ADJUSTED",
+        "SNAPSHOT TIME",
+        "Showing 1\u20133 / 3 entries",
+        "",
+        "1 / 1",
+        "",
+        "3 entries \u2014 Page 1"
+      ],
+      "Banned": [],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 3,
+          "Columns": 4
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Debt.text",
+    "Language": "en",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "MANAGEMENT WORKSPACE",
+        "Session home",
+        "Sales",
+        "Sales",
+        "Invoice history",
+        "Delivery",
+        "Tables / Areas",
+        "Customers \u0026 offers",
+        "Customers",
+        "Offers / Points",
+        "Menu \u0026 inventory",
+        "Menu / Recipes",
+        "Ingredients / Stock",
+        "Inventory",
+        "Finance \u0026 reports",
+        "Income \u0026 expenses",
+        "Debts",
+        "Assets",
+        "Reports",
+        "Administration",
+        "Human resources",
+        "Reference data",
+        "System information",
+        "Nguyen Van An",
+        "Administrator \u00B7 ADMIN",
+        "Sign out",
+        "Session active.",
+        "Management / Debts",
+        "Nguyen Van An \u00B7 ADMIN",
+        "DEBTS",
+        "Supplier debts",
+        "No date: current balance. Selected date: balance as of that date; payments always use the current balance.",
+        "Pay debt",
+        "As of date (check to select)",
+        "Search / Reload",
+        "View history",
+        "DEBT ID",
+        "SUPPLIER",
+        "PURCHASE",
+        "ORIGINAL DEBT",
+        "PAID",
+        "OUTSTANDING",
+        "DUE",
+        "STATUS",
+        "Showing 1\u201310 / 10 debt sources",
+        "",
+        "1 / 1",
+        "",
+        "Current \u2014 10 sources \u2014 Page 1"
+      ],
+      "Banned": [],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 8
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 3,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 4,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 3,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 2,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 3
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 2
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.HumanResources.text",
+    "Language": "en",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "MANAGEMENT WORKSPACE",
+        "Session home",
+        "Sales",
+        "Sales",
+        "Invoice history",
+        "Delivery",
+        "Tables / Areas",
+        "Customers \u0026 offers",
+        "Customers",
+        "Offers / Points",
+        "Menu \u0026 inventory",
+        "Menu / Recipes",
+        "Ingredients / Stock",
+        "Inventory",
+        "Finance \u0026 reports",
+        "Income \u0026 expenses",
+        "Debts",
+        "Assets",
+        "Reports",
+        "Administration",
+        "Human resources",
+        "Reference data",
+        "System information",
+        "Nguyen Van An",
+        "Administrator \u00B7 ADMIN",
+        "Sign out",
+        "Session active.",
+        "Management / Human resources",
+        "Nguyen Van An \u00B7 ADMIN",
+        "Employee",
+        "REFERENCE WORKSPACE",
+        "Employee",
+        "Look up and manage current data.",
+        "Add",
+        "",
+        "",
+        "Leave / Reinstate",
+        "Pending requests",
+        "Edit",
+        "Delete",
+        "EMPLOYEE ID",
+        "EMPLOYEE",
+        "PHONE",
+        "CONTRACT",
+        "MONTHLY SALARY",
+        "HOURLY RATE",
+        "POSITION",
+        "EMPLOYMENT",
+        "Showing 1\u201313 / 13 employees",
+        "",
+        "1 / 1",
+        "",
+        "Updated 09:57:35"
+      ],
+      "Banned": [],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 13,
+          "Columns": 8
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 8
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 3,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 4,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 3,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 2,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 3
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 2
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.HumanResources.tab0.text",
+    "Language": "en",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "Employee",
+        "REFERENCE WORKSPACE",
+        "Employee",
+        "Look up and manage current data.",
+        "Add",
+        "",
+        "",
+        "Leave / Reinstate",
+        "Pending requests",
+        "Edit",
+        "Delete",
+        "EMPLOYEE ID",
+        "EMPLOYEE",
+        "PHONE",
+        "CONTRACT",
+        "MONTHLY SALARY",
+        "HOURLY RATE",
+        "POSITION",
+        "EMPLOYMENT",
+        "Showing 1\u201313 / 13 employees",
+        "",
+        "1 / 1",
+        "",
+        "Updated 09:57:35"
+      ],
+      "Banned": [],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 13,
+          "Columns": 8
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.HumanResources.tab1.text",
+    "Language": "en",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "Account",
+        "REFERENCE WORKSPACE",
+        "Employee accounts",
+        "Look up and manage current data.",
+        "",
+        "",
+        "Create account",
+        "Change role / lock",
+        "Reset password",
+        "Pending requests",
+        "EMPLOYEE ID",
+        "EMPLOYEE",
+        "SIGN IN",
+        "ROLE",
+        "ACCOUNT",
+        "EMPLOYMENT",
+        "Showing 1\u201313 / 13 employees",
+        "",
+        "1 / 1",
+        "",
+        "Updated 09:57:36"
+      ],
+      "Banned": [],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 13,
+          "Columns": 8
+        },
+        {
+          "Name": "",
+          "Rows": 13,
+          "Columns": 6
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.HumanResources.tab2.text",
+    "Language": "en",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "Attendance",
+        "REFERENCE WORKSPACE",
+        "Attendance",
+        "Look up and manage current data.",
+        "Add",
+        "",
+        "",
+        "Edit",
+        "EMPLOYEE ID",
+        "EMPLOYEE",
+        "WORK DATE",
+        "SHIFT",
+        "IN",
+        "OUT",
+        "TIME",
+        "STATUS",
+        "PAYROLL PERIOD",
+        "Showing 1\u20131 / 1 attendance rows",
+        "",
+        "1 / 1",
+        "",
+        "Updated 09:57:36"
+      ],
+      "Banned": [],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 13,
+          "Columns": 8
+        },
+        {
+          "Name": "",
+          "Rows": 13,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 1,
+          "Columns": 9
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.HumanResources.tab3.text",
+    "Language": "en",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "Payroll",
+        "REFERENCE WORKSPACE",
+        "Payroll",
+        "Look up and manage current data.",
+        "Add",
+        "",
+        "",
+        "Details",
+        "Pay payroll",
+        "Reconcile finalization",
+        "Reconcile payment",
+        "PAYROLL ID",
+        "EMPLOYEE ID",
+        "EMPLOYEE",
+        "MONTH",
+        "YEAR",
+        "NET PAY",
+        "STATUS",
+        "EXPENSE ENTRY",
+        "Showing 1\u20131 / 1 payroll records",
+        "",
+        "1 / 1",
+        "",
+        "Updated 09:57:37"
+      ],
+      "Banned": [],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 13,
+          "Columns": 8
+        },
+        {
+          "Name": "",
+          "Rows": 13,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 1,
+          "Columns": 9
+        },
+        {
+          "Name": "",
+          "Rows": 1,
+          "Columns": 8
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Assets.text",
+    "Language": "en",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "MANAGEMENT WORKSPACE",
+        "Session home",
+        "Sales",
+        "Sales",
+        "Invoice history",
+        "Delivery",
+        "Tables / Areas",
+        "Customers \u0026 offers",
+        "Customers",
+        "Offers / Points",
+        "Menu \u0026 inventory",
+        "Menu / Recipes",
+        "Ingredients / Stock",
+        "Inventory",
+        "Finance \u0026 reports",
+        "Income \u0026 expenses",
+        "Debts",
+        "Assets",
+        "Reports",
+        "Administration",
+        "Human resources",
+        "Reference data",
+        "System information",
+        "Nguyen Van An",
+        "Administrator \u00B7 ADMIN",
+        "Sign out",
+        "Session active.",
+        "Management / Assets",
+        "Nguyen Van An \u00B7 ADMIN",
+        "REFERENCE WORKSPACE",
+        "Assets",
+        "Asset records and estimated depreciation \u00B7 Saving a record does not record a cash expense.",
+        "Add",
+        "",
+        "",
+        "Pending requests",
+        "Details",
+        "Edit",
+        "Delete",
+        "CODE",
+        "ASSETS",
+        "PURCHASE DATE",
+        "ACQUISITION COST",
+        "DEPRECIATION MONTHS",
+        "Showing 1\u201310 / 10 assets",
+        "",
+        "1 / 1",
+        "",
+        "Updated 09:57:37"
+      ],
+      "Banned": [],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 13,
+          "Columns": 8
+        },
+        {
+          "Name": "",
+          "Rows": 13,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 1,
+          "Columns": 9
+        },
+        {
+          "Name": "",
+          "Rows": 1,
+          "Columns": 8
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 8
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 3,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 4,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 3,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 2,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 3
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 2
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "module.Reports.text",
+    "Language": "en",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager",
+        "CoffeeManager",
+        "MANAGEMENT WORKSPACE",
+        "Session home",
+        "Sales",
+        "Sales",
+        "Invoice history",
+        "Delivery",
+        "Tables / Areas",
+        "Customers \u0026 offers",
+        "Customers",
+        "Offers / Points",
+        "Menu \u0026 inventory",
+        "Menu / Recipes",
+        "Ingredients / Stock",
+        "Inventory",
+        "Finance \u0026 reports",
+        "Income \u0026 expenses",
+        "Debts",
+        "Assets",
+        "Reports",
+        "Administration",
+        "Human resources",
+        "Reference data",
+        "System information",
+        "Nguyen Van An",
+        "Administrator \u00B7 ADMIN",
+        "Sign out",
+        "Session active.",
+        "Management / Reports",
+        "Nguyen Van An \u00B7 ADMIN",
+        "INVENTORY WORKSPACE",
+        "Reports",
+        "Select report type and filters, then View report \u00B7 Figures come from recorded SQL sources.",
+        "View report",
+        "",
+        "\u2192",
+        "",
+        "Source document",
+        "",
+        "",
+        "",
+        "1 / 1",
+        "",
+        "Select View report to load figures."
+      ],
+      "Banned": [],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 0
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 13,
+          "Columns": 8
+        },
+        {
+          "Name": "",
+          "Rows": 13,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 1,
+          "Columns": 9
+        },
+        {
+          "Name": "",
+          "Rows": 1,
+          "Columns": 8
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 8
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 3,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 4,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 3,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 2,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 11,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 3
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 6
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 0,
+          "Columns": 2
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 5
+        },
+        {
+          "Name": "",
+          "Rows": 12,
+          "Columns": 4
+        },
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 10
+        }
+      ]
+    }
+  },
+  {
+    "Id": "layout.home.1280",
+    "Language": "en",
+    "Expected": "Visible Home buttons intersect WorkingArea at actual 125%",
+    "Status": "FAIL",
+    "Actual": {
+      "Size": "{Width=1280, Height=720}",
+      "Dpi": 120,
+      "Unreachable": [
+        "Reports",
+        "Human resources",
+        "Reference data",
+        "System information",
+        "Ca phe den \u00B7 3 cups",
+        "Open orders: 1",
+        "Pending deliveries: 0",
+        "Out-of-stock ingredients: 0",
+        "Supplier debts: 5.500.000 \u20AB"
+      ]
+    }
+  },
+  {
+    "Id": "layout.home.1366",
+    "Language": "en",
+    "Expected": "Visible Home buttons intersect WorkingArea at actual 125%",
+    "Status": "FAIL",
+    "Actual": {
+      "Size": "{Width=1366, Height=768}",
+      "Dpi": 120,
+      "Unreachable": [
+        "Reports",
+        "Human resources",
+        "Reference data",
+        "System information",
+        "Ca phe den \u00B7 3 cups",
+        "Open orders: 1",
+        "Pending deliveries: 0",
+        "Out-of-stock ingredients: 0",
+        "Supplier debts: 5.500.000 \u20AB"
+      ]
+    }
+  },
+  {
+    "Id": "report.SalesDay",
+    "Language": "en",
+    "Expected": "Typed report loads",
+    "Status": "PASS",
+    "Actual": {
+      "Rows": 1,
+      "Metadata": {
+        "Kind": 0,
+        "From": "2026-11-03",
+        "To": "2026-11-10",
+        "ReadAt": "2026-11-10T09:57:47.2541033",
+        "TotalCount": 1,
+        "DateBasis": "Ng\u00E0y thanh to\u00E1n h\u00F3a \u0111\u01A1n",
+        "Note": "",
+        "Complete": true
+      }
+    }
+  },
+  {
+    "Id": "report.SalesChannel",
+    "Language": "en",
+    "Expected": "Typed report loads",
+    "Status": "PASS",
+    "Actual": {
+      "Rows": 2,
+      "Metadata": {
+        "Kind": 1,
+        "From": "2026-11-03",
+        "To": "2026-11-10",
+        "ReadAt": "2026-11-10T09:57:47.340481",
+        "TotalCount": 2,
+        "DateBasis": "Ng\u00E0y thanh to\u00E1n h\u00F3a \u0111\u01A1n",
+        "Note": "",
+        "Complete": true
+      }
+    }
+  },
+  {
+    "Id": "report.Products",
+    "Language": "en",
+    "Expected": "Typed report loads",
+    "Status": "PASS",
+    "Actual": {
+      "Rows": 1,
+      "Metadata": {
+        "Kind": 2,
+        "From": "2026-11-03",
+        "To": "2026-11-10",
+        "ReadAt": "2026-11-10T09:57:47.3949378",
+        "TotalCount": 1,
+        "DateBasis": "Ng\u00E0y thanh to\u00E1n h\u00F3a \u0111\u01A1n",
+        "Note": "Ti\u1EC1n m\u00F3n theo gi\u00E1 snapshot, tr\u01B0\u1EDBc gi\u1EA3m to\u00E0n bill; t\u00EAn m\u00F3n l\u00E0 t\u00EAn hi\u1EC7n t\u1EA1i.",
+        "Complete": true
+      }
+    }
+  },
+  {
+    "Id": "report.Payments",
+    "Language": "en",
+    "Expected": "Typed report loads",
+    "Status": "PASS",
+    "Actual": {
+      "Rows": 2,
+      "Metadata": {
+        "Kind": 3,
+        "From": "2026-11-03",
+        "To": "2026-11-10",
+        "ReadAt": "2026-11-10T09:57:47.4540952",
+        "TotalCount": 2,
+        "DateBasis": "Ng\u00E0y thanh to\u00E1n h\u00F3a \u0111\u01A1n",
+        "Note": "",
+        "Complete": true
+      }
+    }
+  },
+  {
+    "Id": "report.Inventory",
+    "Language": "en",
+    "Expected": "Typed report loads",
+    "Status": "PASS",
+    "Actual": {
+      "Rows": 12,
+      "Metadata": {
+        "Kind": 4,
+        "From": "2026-11-03",
+        "To": "2026-11-10",
+        "ReadAt": "2026-11-10T09:57:47.5115767",
+        "TotalCount": 12,
+        "DateBasis": "Th\u1EDDi \u0111i\u1EC3m ghi kho sau m\u1ED1c m\u1EDF s\u1ED5; ng\u00E0y ngu\u1ED3n ch\u1EE9ng t\u1EEB hi\u1EC3n th\u1ECB ri\u00EAng",
+        "Note": "Kh\u00F4ng d\u1EF1ng t\u1ED3n tr\u01B0\u1EDBc m\u1EDF s\u1ED5. Closing t\u1EA1i ng\u00E0y \u0111\u1EBFn kh\u00E1c Current \u0111\u1ECDc hi\u1EC7n t\u1EA1i; kh\u00F4ng c\u1ED9ng l\u1EA1i l\u1ECBch s\u1EED legacy \u0111\u00E3 n\u1EB1m trong m\u1ED1c.",
+        "Complete": false
+      }
+    }
+  },
+  {
+    "Id": "report.Debts",
+    "Language": "en",
+    "Expected": "Typed report loads",
+    "Status": "PASS",
+    "Actual": {
+      "Rows": 10,
+      "Metadata": {
+        "Kind": 5,
+        "From": "2026-11-03",
+        "To": "2026-11-10",
+        "ReadAt": "2026-11-10T09:57:47.587595",
+        "TotalCount": 10,
+        "DateBasis": "C\u00F4ng n\u1EE3 t\u1EA1i cu\u1ED1i ng\u00E0y \u0111\u1EBFn; ng\u00E0y ngu\u1ED3n nh\u1EADp v\u00E0 ng\u00E0y phi\u1EBFu chi tr\u1EA3 n\u1EE3",
+        "Note": "",
+        "Complete": true
+      }
+    }
+  },
+  {
+    "Id": "report.CashFlow",
+    "Language": "en",
+    "Expected": "Typed report loads",
+    "Status": "PASS",
+    "Actual": {
+      "Rows": 4,
+      "Metadata": {
+        "Kind": 6,
+        "From": "2026-11-03",
+        "To": "2026-11-10",
+        "ReadAt": "2026-11-10T09:57:47.6617782",
+        "TotalCount": 4,
+        "DateBasis": "Thu b\u00E1n: ng\u00E0y thanh to\u00E1n; thu/chi kh\u00E1c: ng\u00E0y phi\u1EBFu",
+        "Note": "D\u00F2ng ti\u1EC1n qu\u1EA3n tr\u1ECB, \u0111\u1ED1i t\u00E1c ch\u01B0a \u0111\u1ED1i so\u00E1t; kh\u00F4ng ph\u1EA3i s\u1ED1 d\u01B0 ng\u00E2n h\u00E0ng ho\u1EB7c l\u1EE3i nhu\u1EADn ch\u00EDnh x\u00E1c. D\u1EEF li\u1EC7u LegacyUnknown ch\u01B0a \u0111\u1EE7 li\u00EAn k\u1EBFt ngu\u1ED3n.",
+        "Complete": true
+      }
+    }
+  },
+  {
+    "Id": "report.Labor",
+    "Language": "en",
+    "Expected": "Typed report loads",
+    "Status": "PASS",
+    "Actual": {
+      "Rows": 1,
+      "Metadata": {
+        "Kind": 7,
+        "From": "2026-11-03",
+        "To": "2026-11-10",
+        "ReadAt": "2026-11-10T09:57:47.7392573",
+        "TotalCount": 1,
+        "DateBasis": "Gi\u1EDD: NgayLam; l\u01B0\u01A1ng ch\u1ED1t: NgayChot; th\u1EF1c chi: ng\u00E0y phi\u1EBFu",
+        "Note": "K\u1EF3 c\u00F4ng, k\u1EF3 b\u1EA3ng l\u01B0\u01A1ng v\u00E0 th\u1EDDi \u0111i\u1EC3m ch\u1ED1t/chi l\u00E0 c\u00E1c ngu\u1ED3n \u0111\u1ED9c l\u1EADp. Gi\u1EDD t\u0103ng ca theo snapshot New; LegacyUnknown kh\u00F4ng suy t\u1EEB h\u1ED3 s\u01A1 hi\u1EC7n t\u1EA1i.",
+        "Complete": true
+      }
+    }
+  },
+  {
+    "Id": "report.Assets",
+    "Language": "en",
+    "Expected": "Typed report loads",
+    "Status": "PASS",
+    "Actual": {
+      "Rows": 10,
+      "Metadata": {
+        "Kind": 8,
+        "From": "2026-11-03",
+        "To": "2026-11-10",
+        "ReadAt": "2026-11-10T09:57:47.820581",
+        "TotalCount": 10,
+        "DateBasis": "Th\u00E1ng mua v\u00E0 k\u1EF3 kh\u1EA5u hao; chi theo ng\u00E0y phi\u1EBFu",
+        "Note": "Kh\u1EA5u hao THAM KH\u1EA2O theo h\u1ED3 s\u01A1 hi\u1EC7n t\u1EA1i, kh\u00F4ng t\u1EF1 ghi phi\u1EBFu chi ho\u1EB7c t\u00EDnh nh\u01B0 gi\u00E1 v\u1ED1n/d\u00F2ng ti\u1EC1n.",
+        "Complete": true
+      }
+    }
+  },
+  {
+    "Id": "print-content",
+    "Language": "en",
+    "Expected": "Invoice content keeps amounts/snapshots; EN-owned lines translated",
+    "Status": "PASS",
+    "Actual": {
+      "DocumentName": "Invoice HD20250412",
+      "Lines": [
+        "10/11/2026 09:57 \u00B7 Delivery \u00B7 Table \u2014",
+        "Paid",
+        "Names use current categories; prices/quantities use snapshots.",
+        "ITEM \u00B7 QUANTITY \u00D7 PRICE = LINE AMOUNT BEFORE DISCOUNT",
+        "SP001 \u00B7 Ca phe den\n1 \u00D7 25.000 \u20AB = 25.000 \u20AB",
+        "Items: 25.000 \u20AB",
+        "Discount: 0 \u20AB (No offer 0%)",
+        "Ship: 5.000 \u20AB",
+        "TOTAL DUE: 30.000 \u20AB",
+        "Tien mat: 30.000 \u20AB",
+        "Payment: 10/11/2026 09:57",
+        "Not a VAT invoice. Reprints cannot reconstruct unrecorded cash tendered/change."
+      ]
+    }
+  },
+  {
+    "Id": "invoice-preview.text",
+    "Language": "en",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "FAIL",
+    "Actual": {
+      "Texts": [
+        "Preview / Reprint \u00B7 HD20250412",
+        "In\u2026",
+        ""
+      ],
+      "Banned": [
+        "In\u2026"
+      ],
+      "BoundControls": []
+    }
+  },
+  {
+    "Id": "customer-picker.text",
+    "Language": "en",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "Select customer",
+        "Select customer",
+        "",
+        "Select customer",
+        "Walk-in customer",
+        "Close",
+        "CODE",
+        "CUSTOMERS",
+        "PHONE",
+        "POINTS",
+        "TIER",
+        "DISCOUNT %",
+        "Showing 1\u201310 / 10 customers",
+        "",
+        "1 / 1",
+        "",
+        "Updated 09:57:50"
+      ],
+      "Banned": [],
+      "BoundControls": [
+        {
+          "Name": "",
+          "Rows": 10,
+          "Columns": 6
+        }
+      ]
+    }
+  },
+  {
+    "Id": "expense-combo-code",
+    "Language": "en",
+    "Expected": "Localized expense label still creates ExpenseType.Chi",
+    "Status": "PASS",
+    "Actual": {
+      "Label": "Expense"
+    }
+  },
+  {
+    "Id": "bootstrap-initial.text",
+    "Language": "Vietnamese",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager \u00B7 Thi\u1EBFt l\u1EADp qu\u1EA3n tr\u1ECB",
+        "Thi\u1EBFt l\u1EADp qu\u1EA3n tr\u1ECB",
+        "CoffeeManager \u00B7 Thi\u1EBFt l\u1EADp ban \u0111\u1EA7u",
+        "C\u00E1ch thi\u1EBFt l\u1EADp",
+        "\u1EE8ng vi\u00EAn",
+        "T\u00EAn nh\u00E2n vi\u00EAn m\u1EDBi",
+        "SDT (t\u00F9y ch\u1ECDn)",
+        "T\u00EAn \u0111\u0103ng nh\u1EADp",
+        "M\u1EADt kh\u1EA9u",
+        "X\u00E1c nh\u1EADn m\u1EADt kh\u1EA9u",
+        "Ho\u00E0n t\u1EA5t thi\u1EBFt l\u1EADp",
+        ""
+      ],
+      "Banned": [
+        "CoffeeManager \u00B7 Thi\u1EBFt l\u1EADp qu\u1EA3n tr\u1ECB",
+        "Thi\u1EBFt l\u1EADp qu\u1EA3n tr\u1ECB",
+        "CoffeeManager \u00B7 Thi\u1EBFt l\u1EADp ban \u0111\u1EA7u",
+        "C\u00E1ch thi\u1EBFt l\u1EADp",
+        "\u1EE8ng vi\u00EAn",
+        "T\u00EAn nh\u00E2n vi\u00EAn m\u1EDBi",
+        "SDT (t\u00F9y ch\u1ECDn)",
+        "T\u00EAn \u0111\u0103ng nh\u1EADp",
+        "M\u1EADt kh\u1EA9u",
+        "X\u00E1c nh\u1EADn m\u1EADt kh\u1EA9u",
+        "Ho\u00E0n t\u1EA5t thi\u1EBFt l\u1EADp"
+      ],
+      "BoundControls": []
+    }
+  },
+  {
+    "Id": "bootstrap-initial.text",
+    "Language": "English",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager \u00B7 Administrator setup",
+        "Administrator setup",
+        "CoffeeManager \u00B7 Initial setup",
+        "Setup instructions",
+        "Candidate",
+        "New employee name",
+        "Phone (optional)",
+        "Username",
+        "Password",
+        "Confirm password",
+        "Complete setup",
+        ""
+      ],
+      "Banned": [],
+      "BoundControls": []
+    }
+  },
+  {
+    "Id": "login-relocalize-config-error",
+    "Language": "Vietnamese\u2192English",
+    "Expected": "Configuration error also switches with login captions",
+    "Status": "PASS",
+    "Actual": {
+      "Actual": "Connection not configured. Configure the application account before loading data.",
+      "Expected": "Connection not configured. Configure the application account before loading data."
+    }
+  },
+  {
+    "Id": "login-keeps-input",
+    "Language": "Vietnamese",
+    "Expected": "Language switch keeps username/password; no login",
+    "Status": "PASS",
+    "Actual": {
+      "UsernamePreserved": true,
+      "PasswordPreserved": true
+    }
+  },
+  {
+    "Id": "login.text",
+    "Language": "English",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager \u00B7 Sign in",
+        "CoffeeManager \u00B7 Sign in",
+        "CAF\u00C9 MANAGEMENT WORKSPACE",
+        "VI",
+        "EN",
+        "\u0026Username",
+        "\u0026Password",
+        "\u0026Show password",
+        "Sign \u0026in",
+        "Connection not configured. Configure the application account before loading data."
+      ],
+      "Banned": [],
+      "BoundControls": []
+    }
+  },
+  {
+    "Id": "login-relocalize-config-error",
+    "Language": "English\u2192Vietnamese",
+    "Expected": "Configuration error also switches with login captions",
+    "Status": "FAIL",
+    "Actual": {
+      "Actual": "Connection not configured. Configure the application account before loading data.",
+      "Expected": "Ch\u01B0a thi\u1EBFt l\u1EADp k\u1EBFt n\u1ED1i. C\u1EA7n c\u1EA5u h\u00ECnh t\u00E0i kho\u1EA3n \u1EE9ng d\u1EE5ng tr\u01B0\u1EDBc khi t\u1EA3i d\u1EEF li\u1EC7u."
+    }
+  },
+  {
+    "Id": "login-keeps-input",
+    "Language": "English",
+    "Expected": "Language switch keeps username/password; no login",
+    "Status": "PASS",
+    "Actual": {
+      "UsernamePreserved": true,
+      "PasswordPreserved": true
+    }
+  },
+  {
+    "Id": "login.text",
+    "Language": "Vietnamese",
+    "Expected": "App-owned captions/headings in selected language",
+    "Status": "PASS",
+    "Actual": {
+      "Texts": [
+        "CoffeeManager \u00B7 \u0110\u0103ng nh\u1EADp",
+        "CoffeeManager \u00B7 \u0110\u0103ng nh\u1EADp",
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD QU\u00C1N C\u00C0 PH\u00CA",
+        "VI",
+        "EN",
+        "\u0026T\u00EAn \u0111\u0103ng nh\u1EADp",
+        "\u0026M\u1EADt kh\u1EA9u",
+        "\u0026Hi\u1EC7n m\u1EADt kh\u1EA9u",
+        "\u0110\u0103ng \u0026nh\u1EADp",
+        "Connection not configured. Configure the application account before loading data."
+      ],
+      "Banned": [
+        "CoffeeManager \u00B7 \u0110\u0103ng nh\u1EADp",
+        "KH\u00D4NG GIAN QU\u1EA2N L\u00DD QU\u00C1N C\u00C0 PH\u00CA",
+        "\u0026T\u00EAn \u0111\u0103ng nh\u1EADp",
+        "\u0026M\u1EADt kh\u1EA9u",
+        "\u0026Hi\u1EC7n m\u1EADt kh\u1EA9u",
+        "\u0110\u0103ng \u0026nh\u1EADp"
+      ],
+      "BoundControls": []
+    }
+  }
+]

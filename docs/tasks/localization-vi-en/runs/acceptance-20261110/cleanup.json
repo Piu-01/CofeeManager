@@ -1,0 +1,32 @@
+[
+  {
+    "BeforeDrop": {
+      "TransactionState": 1,
+      "SchemaVersion": 28,
+      "TransactionCount": 0
+    },
+    "Database": "CoffeeManager_Test_LOC_20261110_094901_ff92cc76_vi",
+    "Removed": true,
+    "OwnershipVerified": true
+  },
+  {
+    "BeforeDrop": {
+      "TransactionState": 1,
+      "SchemaVersion": 28,
+      "TransactionCount": 0
+    },
+    "Database": "CoffeeManager_Test_LOC_20261110_094901_ff92cc76_en",
+    "Removed": true,
+    "OwnershipVerified": true
+  },
+  {
+    "BeforeDrop": {
+      "TransactionState": 1,
+      "SchemaVersion": 28,
+      "TransactionCount": 0
+    },
+    "Database": "CoffeeManager_Test_LOC_20261110_094901_ff92cc76_clean",
+    "Removed": true,
+    "OwnershipVerified": true
+  }
+]

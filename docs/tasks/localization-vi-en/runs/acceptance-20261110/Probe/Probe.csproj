@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType><TargetFramework>net10.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms><ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable>
+    <StartupObject Condition="'$(ProbeEntryPoint)' != ''">$(ProbeEntryPoint)</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(RepoRoot)/src/CafeManager.WinForms/CafeManager.WinForms.csproj" />
+    <Compile Include="$(RepoRoot)/tools/CafeManager.G08Probe/OperationProbe.cs" Link="Existing/OperationProbe.cs" />
+    <Compile Include="$(RepoRoot)/tools/CafeManager.G08Probe/E2EProbe.cs" Link="Existing/E2EProbe.cs" />
+    <Compile Include="$(RepoRoot)/tools/CafeManager.G08Probe/SessionProbe.cs" Link="Existing/SessionProbe.cs" />
+    <Compile Include="$(RepoRoot)/tools/CafeManager.G08Probe/FailureProbe.cs" Link="Existing/FailureProbe.cs" />
+    <Compile Include="$(RepoRoot)/tools/CafeManager.G08Probe/StateSnapshot.cs" Link="Existing/StateSnapshot.cs" />
+  </ItemGroup>
+</Project>

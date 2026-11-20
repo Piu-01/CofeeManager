@@ -1,0 +1,91 @@
+{
+  "Bootstrap": {
+    "State": "Completed",
+    "Role": "ADMIN",
+    "Runtime": "DB user WITHOUT LOGIN/CafeManagerApp; kh\u00F4ng thay ki\u1EC3m identity k\u1EBFt n\u1ED1i th\u1EADt"
+  },
+  "SchemaVersion": 27,
+  "E2ESubcases": [
+    {
+      "Id": "T31-K02.sql-purchase-debt",
+      "Expected": "Nh\u1EADp10\u00D71000, tr\u1EA3 ngay2000, tr\u1EA3 n\u1EE33000\u002B5000; t\u1ED3n\u002B10, c\u00F2n0; receipts \u0111\u00FAng",
+      "Actual": {
+        "Purchase": "PN20250502",
+        "Debt": "CN20250405",
+        "Payments": [
+          "TC20250506",
+          "TC20250507"
+        ],
+        "Remaining": 0
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "T31-K01.sql-two-lines-two-payments",
+      "Expected": "SP0012d\u00F2ng kh\u00E1c ghi ch\u00FA:50000;TT20000\u002B30000;t\u1ED3nNVL01\u2212.036,NVL03\u2212.020;replaykh\u00F4ngthu2l\u1EA7n",
+      "Actual": {
+        "Code": "HD20250411",
+        "Total": 50000,
+        "Payments": 2,
+        "Native": "NOT RUN:\u01B0u\u0111\u00E3i/\u0111i\u1EC3m/in/b\u00E0nquaUI ki\u1EC3m ri\u00EAng"
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "T31-K03.sql-stale-stocktake",
+      "Expected": "Xu\u1EA5th\u1EE7y1;snapshotc\u0169b\u1ECBch\u1EB7n;snapshotm\u1EDBi\u0111\u1EBFmgi\u1EA3m1/ch\u1ED1tm\u1ED9tl\u1EA7n",
+      "Actual": {
+        "Stale": "KK00000001",
+        "Committed": "KK00000002",
+        "Inventory": 103.7040
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "T31-K04.sql-overnight-payroll",
+      "Expected": "Nh\u00E2nvi\u00EAnm\u1EDBi35000/h,ca22h\u21926h=8h,th\u1EF1cl\u0129nh280000;ch\u1ED1t/chireplaym\u1ED9tngu\u1ED3n",
+      "Actual": {
+        "Employee": "NV011",
+        "Payroll": "3",
+        "Expense": "3",
+        "Amount": 280000.00
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "T31-K05.sql-delivery-finance",
+      "Expected": "Giao\u0111\u00E3tr\u1EA3:Chogiao\u2192\u0110anggiao\u2192\u0110\u00E3giao;ti\u1EC1n/kho/\u0111i\u1EC3mkh\u00F4ng\u0111\u1ED5i",
+      "Actual": {
+        "Code": "HD20250412",
+        "Delivery": "Da giao",
+        "FinanceUnchanged": true,
+        "Limitation": "Ch\u1EC9 l\u01B0u tr\u1EA1ng th\u00E1i hi\u1EC7n t\u1EA1i, kh\u00F4ng timeline"
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "T31-K07.sql-session-roles",
+      "Expected": "CASH/STORE login th\u1EADt; Finance b\u1ECB ch\u1EB7n; kh\u00F3a fixture thu h\u1ED3i phi\u00EAn c\u0169",
+      "Actual": {
+        "Outcomes": [
+          "CASH:finance denied",
+          "CASH:revoked",
+          "STORE:finance denied",
+          "STORE:revoked"
+        ],
+        "NativeLogout": "NOT RUN; operator lock fixture kh\u00F4ng thay handler logout/\u0111\u1ED5i role/ngh\u1EC9 vi\u1EC7c"
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "T31-K09.transaction-state",
+      "Expected": "@@TRANCOUNT/XACT_STATE=0:0 sau c\u00E1c lu\u1ED3ng",
+      "Actual": {
+        "State": "0:0"
+      },
+      "Status": "PASS"
+    }
+  ],
+  "E2ENative": "NOT RUN: SQL subcases kh\u00F4ng thay native E2E, \u01B0u \u0111\u00E3i/\u0111i\u1EC3m/report/print/fault ki\u1EC3m theo guide",
+  "E2EFailed": 0
+}

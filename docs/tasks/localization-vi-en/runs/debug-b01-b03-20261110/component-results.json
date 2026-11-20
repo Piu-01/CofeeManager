@@ -1,0 +1,199 @@
+[
+  {
+    "Id": "B03-production-templates",
+    "Status": "PASS",
+    "Actual": {
+      "ExpectedRawTemplates": 3
+    }
+  },
+  {
+    "Id": "B03-0-Vietnamese-English",
+    "Status": "PASS",
+    "Actual": {
+      "Expected": "No valid development configuration for this Windows account.",
+      "Actual": "No valid development configuration for this Windows account.",
+      "InputPreserved": true,
+      "LoginEnabled": false
+    }
+  },
+  {
+    "Id": "B03-0-Vietnamese-Vietnamese",
+    "Status": "PASS",
+    "Actual": {
+      "Expected": "Ch\u01B0a c\u00F3 c\u1EA5u h\u00ECnh development h\u1EE3p l\u1EC7 tr\u00EAn t\u00E0i kho\u1EA3n Windows n\u00E0y.",
+      "Actual": "Ch\u01B0a c\u00F3 c\u1EA5u h\u00ECnh development h\u1EE3p l\u1EC7 tr\u00EAn t\u00E0i kho\u1EA3n Windows n\u00E0y.",
+      "InputPreserved": true,
+      "LoginEnabled": false
+    }
+  },
+  {
+    "Id": "B03-0-English-Vietnamese",
+    "Status": "PASS",
+    "Actual": {
+      "Expected": "Ch\u01B0a c\u00F3 c\u1EA5u h\u00ECnh development h\u1EE3p l\u1EC7 tr\u00EAn t\u00E0i kho\u1EA3n Windows n\u00E0y.",
+      "Actual": "Ch\u01B0a c\u00F3 c\u1EA5u h\u00ECnh development h\u1EE3p l\u1EC7 tr\u00EAn t\u00E0i kho\u1EA3n Windows n\u00E0y.",
+      "InputPreserved": true,
+      "LoginEnabled": false
+    }
+  },
+  {
+    "Id": "B03-0-English-English",
+    "Status": "PASS",
+    "Actual": {
+      "Expected": "No valid development configuration for this Windows account.",
+      "Actual": "No valid development configuration for this Windows account.",
+      "InputPreserved": true,
+      "LoginEnabled": false
+    }
+  },
+  {
+    "Id": "B03-1-Vietnamese-English",
+    "Status": "PASS",
+    "Actual": {
+      "Expected": "Invalid connection configuration; check local settings.",
+      "Actual": "Invalid connection configuration; check local settings.",
+      "InputPreserved": true,
+      "LoginEnabled": false
+    }
+  },
+  {
+    "Id": "B03-1-Vietnamese-Vietnamese",
+    "Status": "PASS",
+    "Actual": {
+      "Expected": "C\u1EA5u h\u00ECnh k\u1EBFt n\u1ED1i ch\u01B0a h\u1EE3p l\u1EC7; ki\u1EC3m tra c\u1EA5u h\u00ECnh local.",
+      "Actual": "C\u1EA5u h\u00ECnh k\u1EBFt n\u1ED1i ch\u01B0a h\u1EE3p l\u1EC7; ki\u1EC3m tra c\u1EA5u h\u00ECnh local.",
+      "InputPreserved": true,
+      "LoginEnabled": false
+    }
+  },
+  {
+    "Id": "B03-1-English-Vietnamese",
+    "Status": "PASS",
+    "Actual": {
+      "Expected": "C\u1EA5u h\u00ECnh k\u1EBFt n\u1ED1i ch\u01B0a h\u1EE3p l\u1EC7; ki\u1EC3m tra c\u1EA5u h\u00ECnh local.",
+      "Actual": "C\u1EA5u h\u00ECnh k\u1EBFt n\u1ED1i ch\u01B0a h\u1EE3p l\u1EC7; ki\u1EC3m tra c\u1EA5u h\u00ECnh local.",
+      "InputPreserved": true,
+      "LoginEnabled": false
+    }
+  },
+  {
+    "Id": "B03-1-English-English",
+    "Status": "PASS",
+    "Actual": {
+      "Expected": "Invalid connection configuration; check local settings.",
+      "Actual": "Invalid connection configuration; check local settings.",
+      "InputPreserved": true,
+      "LoginEnabled": false
+    }
+  },
+  {
+    "Id": "B03-2-Vietnamese-English",
+    "Status": "PASS",
+    "Actual": {
+      "Expected": "Connection not configured. Configure the application account before loading data.",
+      "Actual": "Connection not configured. Configure the application account before loading data.",
+      "InputPreserved": true,
+      "LoginEnabled": false
+    }
+  },
+  {
+    "Id": "B03-2-Vietnamese-Vietnamese",
+    "Status": "PASS",
+    "Actual": {
+      "Expected": "Ch\u01B0a thi\u1EBFt l\u1EADp k\u1EBFt n\u1ED1i. C\u1EA7n c\u1EA5u h\u00ECnh t\u00E0i kho\u1EA3n \u1EE9ng d\u1EE5ng tr\u01B0\u1EDBc khi t\u1EA3i d\u1EEF li\u1EC7u.",
+      "Actual": "Ch\u01B0a thi\u1EBFt l\u1EADp k\u1EBFt n\u1ED1i. C\u1EA7n c\u1EA5u h\u00ECnh t\u00E0i kho\u1EA3n \u1EE9ng d\u1EE5ng tr\u01B0\u1EDBc khi t\u1EA3i d\u1EEF li\u1EC7u.",
+      "InputPreserved": true,
+      "LoginEnabled": false
+    }
+  },
+  {
+    "Id": "B03-2-English-Vietnamese",
+    "Status": "PASS",
+    "Actual": {
+      "Expected": "Ch\u01B0a thi\u1EBFt l\u1EADp k\u1EBFt n\u1ED1i. C\u1EA7n c\u1EA5u h\u00ECnh t\u00E0i kho\u1EA3n \u1EE9ng d\u1EE5ng tr\u01B0\u1EDBc khi t\u1EA3i d\u1EEF li\u1EC7u.",
+      "Actual": "Ch\u01B0a thi\u1EBFt l\u1EADp k\u1EBFt n\u1ED1i. C\u1EA7n c\u1EA5u h\u00ECnh t\u00E0i kho\u1EA3n \u1EE9ng d\u1EE5ng tr\u01B0\u1EDBc khi t\u1EA3i d\u1EEF li\u1EC7u.",
+      "InputPreserved": true,
+      "LoginEnabled": false
+    }
+  },
+  {
+    "Id": "B03-2-English-English",
+    "Status": "PASS",
+    "Actual": {
+      "Expected": "Connection not configured. Configure the application account before loading data.",
+      "Actual": "Connection not configured. Configure the application account before loading data.",
+      "InputPreserved": true,
+      "LoginEnabled": false
+    }
+  },
+  {
+    "Id": "B01-POS-Vietnamese",
+    "Status": "PASS",
+    "Actual": {
+      "Header": "SL",
+      "Quantity": 3,
+      "Dpi": 120
+    }
+  },
+  {
+    "Id": "B01-detail-Vietnamese",
+    "Status": "PASS",
+    "Actual": {
+      "Header": "SL",
+      "Quantity": 3
+    }
+  },
+  {
+    "Id": "B02-preview-Vietnamese",
+    "Status": "PASS",
+    "Actual": {
+      "Button": "In\u2026",
+      "Text": "Xem tr\u01B0\u1EDBc / In l\u1EA1i \u00B7 HD20261110",
+      "ShowInTaskbar": true,
+      "OwnerCorrect": true
+    }
+  },
+  {
+    "Id": "B01-02-data-Vietnamese",
+    "Status": "PASS",
+    "Actual": {
+      "Payable": 81000,
+      "NamesAndNotesPreserved": true
+    }
+  },
+  {
+    "Id": "B01-POS-English",
+    "Status": "PASS",
+    "Actual": {
+      "Header": "QTY",
+      "Quantity": 3,
+      "Dpi": 120
+    }
+  },
+  {
+    "Id": "B01-detail-English",
+    "Status": "PASS",
+    "Actual": {
+      "Header": "QTY",
+      "Quantity": 3
+    }
+  },
+  {
+    "Id": "B02-preview-English",
+    "Status": "PASS",
+    "Actual": {
+      "Button": "Print\u2026",
+      "Text": "Preview / Reprint \u00B7 HD20261110",
+      "ShowInTaskbar": true,
+      "OwnerCorrect": true
+    }
+  },
+  {
+    "Id": "B01-02-data-English",
+    "Status": "PASS",
+    "Actual": {
+      "Payable": 81000,
+      "NamesAndNotesPreserved": true
+    }
+  }
+]

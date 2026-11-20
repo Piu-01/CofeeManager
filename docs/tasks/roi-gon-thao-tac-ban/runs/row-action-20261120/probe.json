@@ -1,0 +1,49 @@
+{
+  "Kind": "Native technical probe: control tree \u002B grid delete column \u002B row click wiring; no visual inspection, no DB calls",
+  "ProbeRows": 2,
+  "ProbeDeleteColumn": true,
+  "ProbeDeleteWidth": 55,
+  "ProbeDeviceDpi": 120,
+  "DeleteRequests": [
+    "B0001"
+  ],
+  "Activations": [
+    "B0002"
+  ],
+  "DeleteOnlyFromIcon": true,
+  "DoubleClickIgnoredOnDeleteCell": true,
+  "TableListFound": true,
+  "TableListActions": [
+    "Th\u00EAm b\u00E0n",
+    "B\u00E0n / S\u01A1 \u0111\u1ED3",
+    "Khu v\u1EF1c",
+    "Danh s\u00E1ch",
+    "S\u01A1 \u0111\u1ED3",
+    "",
+    "",
+    ""
+  ],
+  "RemovedActionsGb": true,
+  "AddKept": true,
+  "TableDeleteColumn": true,
+  "TableDeleteHeader": "",
+  "TableRowDeleteHook": true,
+  "TableRowActivateHook": true,
+  "SalesButtons": [
+    "T\u00ECm m\u00F3n",
+    "",
+    "",
+    "F3 \u00B7 Kh\u00E1ch / \u01AFu \u0111\u00E3i",
+    "Tr\u1EA3 b\u00E0n",
+    "H\u1EE7y \u0111\u01A1n m\u1EDF",
+    "In t\u1EA1m",
+    "F8 \u00B7 Thanh to\u00E1n",
+    "Ki\u1EC3m tra k\u1EBFt qu\u1EA3",
+    "\u0110\u01A1n m\u1EDBi",
+    "F4 \u00B7 \u0110\u01A1n m\u1EDF",
+    "L\u00E0m m\u1EDBi"
+  ],
+  "SalesHasNoSelectTable": true,
+  "SalesKeepsCloseTable": true,
+  "TechnicalSuccess": true
+}

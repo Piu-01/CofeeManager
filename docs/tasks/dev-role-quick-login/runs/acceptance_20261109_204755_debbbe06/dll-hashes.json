@@ -1,0 +1,14 @@
+[
+  {
+    "Path": "artifacts/dev-role-quick-login/bin/Debug/net10.0-windows/CafeManager.WinForms.dll",
+    "Hash": "50A3CA288C1A751EE47B0AE26D2C8EFE4E53AC0048A966A836D80DDC44CEEDC9"
+  },
+  {
+    "Path": "artifacts/dev-role-quick-login/bin/Release/net10.0-windows/CafeManager.WinForms.dll",
+    "Hash": "C3C54C6C97F983542E4A2B92E392283D91ACA240DD736D88A6F1BC154B7FDDE1"
+  },
+  {
+    "Path": "artifacts/dev-role-quick-login/publish/CafeManager.WinForms.dll",
+    "Hash": "C3C54C6C97F983542E4A2B92E392283D91ACA240DD736D88A6F1BC154B7FDDE1"
+  }
+]

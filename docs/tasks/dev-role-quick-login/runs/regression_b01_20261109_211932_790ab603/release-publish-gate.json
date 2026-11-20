@@ -1,0 +1,7 @@
+{
+  "Kind": "regression-publish",
+  "FactoryDisabled": true,
+  "DefaultDevButtonCount": 0,
+  "Hash": "F5E6C6E2736EEFC2EADBAFD30A39109A6A65D18AD61DED0DFE0C40AC04D5D424",
+  "Source": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\dev-role-quick-login\\runs\\regression_b01_20261109_211932_790ab603\\ReleaseGate\\bin\\Release\\net10.0-windows\\CafeManager.WinForms.dll"
+}

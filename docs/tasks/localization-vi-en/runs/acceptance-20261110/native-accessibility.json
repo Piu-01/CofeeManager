@@ -1,0 +1,13 @@
+{
+  "state": {
+    "document_text": "loc.native.fixture",
+    "focused_element": "15 edit (settable, string) Username Value: loc.native.fixture",
+    "selected_text": "loc.native.fixture",
+    "tree": "Window: \"CoffeeManager · Sign in\", App: CafeManager.WinForms.exe.\n\t0 window CoffeeManager · Sign in Secondary Actions: Raise\n\t\t1 pane\n\t\t\t2 pane\n\t\t\t\t3 pane\n\t\t\t\t\t4 text CoffeeManager · Sign in\n\t\t\t\t\t5 text CAFÉ MANAGEMENT WORKSPACE\n\t\t\t\t\t6 pane CAFÉ MANAGEMENT WORKSPACE\n\t\t\t\t\t\t7 button VI\n\t\t\t\t\t\t8 button EN\n\t\t\t\t9 text Username\n\t\t\t\t10 text Password\n\t\t\t\t11 check box Show password\n\t\t\t\t12 button (disabled) Sign in\n\t\t\t\t13 text Connection not configured. Configure the application account before loading data.\n\t\t\t\t14 pane\n\t\t\t\t\t15 edit (settable, string) Username Value: loc.native.fixture\n\t\t\t\t16 pane Username\n\t\t\t\t\t17 edit (settable, string) Password Value: Access denied\n\t\t18 title bar (settable, string) Value: CoffeeManager · Sign in\n\t\t\t19 menu bar System ID: MenuBar\n\t\t\t\t24 menu item System\n\t\t\t21 button Minimize\n\t\t\t22 button Maximize\n\t\t\t23 button Close\n\nSelected text: ```\nloc.native.fixture\n```\n\nNote: Pay special attention to the content selected by the user. If the user asks a question or refers to the content they are looking at on-screen, they might be referring to the selected content (but they might be referring to something else that's visible, too)."
+  },
+  "limitations": [
+    "click: coordinate input geometry is unavailable",
+    "press_key Tab/Shift+Tab: focus unchanged after refresh"
+  ],
+  "screenshotsTaken": false
+}

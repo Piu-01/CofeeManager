@@ -1,0 +1,16 @@
+{
+  "Started": "2026-11-09T21:09:02.7662948+07:00",
+  "Scope": "CoffeeManager_Test_G08_20261109_204755_debbbe06_demo",
+  "ModuleFactories": "Default shell only; full production modules not certified",
+  "Forms": [
+    {
+      "Type": "LoginForm",
+      "Text": "CoffeeManager \u00B7 \u0110\u0103ng nh\u1EADp",
+      "Visible": true,
+      "Enabled": true,
+      "DeviceDpi": 120
+    }
+  ],
+  "StorageCleaned": true,
+  "Ended": "2026-11-09T21:09:56.0237579+07:00"
+}
