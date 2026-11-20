@@ -3,6 +3,20 @@
 C# WinForms .NET 10 và SQL Server, triển khai theo
 [kế hoạch T01–T32](docs/KeHoach_QuanLiQuanCafe.md).
 
+## G08 — công cụ vận hành và bản ứng viên
+
+Đã triển khai công cụ cài sạch/demo, backup/restore test, chuẩn bị nghiệm thu và
+publish Windows x64. **G08 chưa PASS:16PASS/0FAIL/13BLOCKED**; không coi package ứng viên là bản
+bàn giao hoàn tất. Xem [báo cáo G08](docs/tasks/g08-van-hanh-nghiem-thu-ban-giao/report.md)
+và [đợt test đã được duyệt/chạy](docs/tasks/g08-van-hanh-nghiem-thu-ban-giao/test-plan.md).
+
+Hướng dẫn mới: [cài đặt](docs/operations/install.md),
+[backup/restore](docs/operations/backup-restore.md), [quyền](docs/operations/security.md),
+[demo](docs/operations/demo.md) và [package](docs/operations/release.md).
+Source có migrations001–027; version DB development phải kiểm thực tế, không tự
+nâng theo source. Phần development và biên bản cũ dưới đây được giữ làm lịch sử;
+không dùng hướng dẫn migration001–003 cũ để cài bản027.
+
 ## Chạy development bằng Visual Studio — cập nhật 18/10/2026
 
 Máy hiện tại đã có DB cố định `CoffeeManager_Development` trên `localhost`.

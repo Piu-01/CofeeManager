@@ -355,6 +355,8 @@ và Designer round-trip có bằng chứng riêng. Subcase không là tùy chọ
 
 ### 12.1. Trạng thái hiện tại và nguyên tắc kế thừa
 
+**Bổ sung09/11/2026 — đồng bộ development:** người dùng duyệt G07-DEV01, DB localhost/CoffeeManager_Development đã nâng021→024→027 bằng hai script G06/G07; hash dữ liệu mỗi chặng khớp, hai backup COPY_ONLY/CHECKSUM được giữ và VERIFYONLY PASS.16 kiểm đọc bằng runtime thật và native Home ADMIN khớp SQL, hết lỗi thiếu sp_ReportDashboard. Xem `docs/tasks/g07-tai-san-bao-cao-hieu-nang-du-lieu/t28-bao-cao-doi-chieu/development-upgrade-results-20261109.md`. Ghi chú “chưa nâng development” ở các dòng31/10 bên dưới là lịch sử; không thay kết quả nghiệm thu/giới hạn còn lại G06/G07/G08 hoặc325ID.
+
 Bảng này là chỉ mục trạng thái hiện tại tại ngày 18/10/2026. Các dòng tiến độ có
 ngày ở từng task và checkbox cũ là lịch sử, không dùng riêng để suy ra trạng thái
 bản source đang chạy. Biên bản phải chỉ rõ commit hoặc hash source, schema và bản build.
@@ -368,7 +370,9 @@ bản source đang chạy. Biên bản phải chỉ rõ commit hoặc hash sourc
 | G03 / T09–T13 | PASS nghiệm thu theo quyết định người dùng20/10/2026; xem `docs/tasks/g03-du-lieu-phuc-vu-ban-hang/acceptance-decision.md` và report.md | Chấp nhận ngoại lệ kiểm thử; không phải47/47cađãchạyPASS. Giữ kết quả thực tế và phần GUI chưa đủ bằng chứng; tích hợp G04 đích NOT RUN |
 | G04 / T14–T18 | Đã triển khai ngày23/10/2026 theo bộ plan được duyệt; schema016;26/10:40PASS/0FAIL/16BLOCKED trên56ID; T18 đạt8/8ID sau ưu tiên phụ thuộc G05, còn16ca T16/T17 chưa đủ. Xem docs/tasks/g04-ban-hang-vong-doi-hoa-don/report.md | Build/smoke kỹ thuật không thay nghiệm thu56ID; chưa có PASS G04 |
 | G05 / T19–T23 | 27/10: source T19→T23/migrations017–021; đã duyệt và nâng development021, đối chiếu8 nhóm dữ liệu với backup khớp. Đợt test:38PASS/5FAIL/10BLOCKED/2NOTRUN trên55ID;22/22 xUnit,11 ca đồng thời và8 timeout PASS. Hồ sơ `docs/tasks/g05-kho-nguon-chi-cong-no/report.md` | Đang làm;29/10 B01–B04 đã duyệt/sửa, regression PASS theo phạm vi (22unit,16component, mapper/hash/native). B05 footer đã duyệt/sửa (28helper,23checkpoint/9dialog, native nháp/ghi thu chi PASS theo phạm vi); B06 đã duyệt/sửa (54component,22unit,5SQL,native ADMIN nhập/xuất/rollback PASS theo phạm vi; native STORE nhập/trả hàng và ADMIN trả nợ/link chi bổ sung PASS30/10; B07 CTS đã duyệt/sửa và regression30/10 PASS theo phạm vi (22unit,47lifecycle,5CASH-BLL,native logout/relogin ADMIN-CASH/đóng app); Tab và các nhánh UX khác chưa đủ);55ID27/10 giữ lịch sử, chưa chốt tổng mới. G04 còn16ca chưa đủ |
-| G06–G08 / T24–T32 | Chưa triển khai/nghiệm thu | Giữ thứ tự phụ thuộc sau G05 |
+| G06 / T24–T26 | 31/10: G06-B01/B02 đã duyệt/sửa, regression78/78subcase+14unit PASS;33ID:26PASS/0FAIL/7BLOCKED; xem docs/tasks/g06-nhan-su-cong-luong/report.md | Đang làm; native input modal còn blocker; chưa nâng development hoặc commit |
+| G07 / T27–T29 | 31/10: requirements/bộ plan/test/debug G07-B01 đã duyệt; source025–027, regression B01 PASS; test24PASS/0FAIL/9BLOCKED; xem docs/tasks/g07-tai-san-bao-cao-hieu-nang-du-lieu/report.md | Đang làm; G07-B01 đã sửa/regression, native còn BLOCKED; chưa nâng development hoặc commit |
+| G08 / T30–T32 | 02/11: source/package ứng viên đã triển khai; G08-B01 đã duyệt/sửa/regressionPASS (142unit/4DAL-BLL/7native); tổng16PASS/0FAIL/13BLOCKED. Xem docs/tasks/g08-van-hanh-nghiem-thu-ban-giao/report.md | Đang làm; native/modal/fault/gate bàn giao chưa đủ; không nghiệm thu thay nhóm trước, không commit/push |
 
 Không sửa hồi tố kết quả thật hoặc tick lại checklist cũ để khớp bảng. Bug và
 thay đổi mới ghi rõ phiên bản bị ảnh hưởng; chỉ regression phần cần thiết.
@@ -1401,4 +1405,3 @@ Bản bàn giao T32 gồm source, baseline SQL, migrations theo thứ tự, dữ
 - [SQL Server — Sequence](https://learn.microsoft.com/en-us/sql/relational-databases/sequence-numbers/sequence-numbers)
 - [SQL Server — Table-valued parameters](https://learn.microsoft.com/en-us/sql/relational-databases/tables/use-table-valued-parameters-database-engine)
 - [SQL Server — Index design guide](https://learn.microsoft.com/en-us/sql/relational-databases/sql-server-index-design-guide)
-
