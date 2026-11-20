@@ -23,7 +23,7 @@ internal static class Program
         var identity = new AccountIdentity(1, "NV001", "Fixture kỹ thuật", "probe", "ADMIN", true, true, new byte[8]);
         using var session = new SessionContext(identity);
         var service = new SalesService(new SalesRepository(factory), new PermissionService(new AuthRepository(factory)));
-        var header = new SalesOrderHeader("HD99999999", DateTime.Now, "NV001", null, null, null, null, "Mang di", null, null, null, null, null, 0, 0, 81000, 0, 0, 81000, "Chua thanh toan", new byte[8], true, "None", 0, DateTime.Now);
+        var header = new SalesOrderHeader("HD99999999", DateTime.Now, "NV001", null, null, null, null, "Mang di", null, null, null, null, null, 0, 0, 81000, 0, 0, 81000, "Chua thanh toan", new byte[8], true, "None", 0, DateTime.Now, null, null);
         var order = new SalesOrderDto(header, [new(1, "SP001", "Dòng fixture kỹ thuật", 1, 81000, null, 81000)], []);
         var preview = new CheckoutPreview(header.Code, header.Revision, 81000, 0, 0, 81000, "None", 0, 0, 0, 81, new byte[32]);
         var type = typeof(SalesControl).Assembly.GetType("CafeManager.WinForms.Modules.Sales.CheckoutDialog")!;
@@ -40,15 +40,13 @@ internal static class Program
             var inside = dialog.RectangleToScreen(dialog.ClientRectangle).Contains(confirm.RectangleToScreen(confirm.ClientRectangle));
             result["ConfirmWithinClient"] = inside;
             result["TechnicalSuccess"] = grid.Rows.Count == 1 && grid.Columns.Count == 3 && dialog.IsHandleCreated && inside;
+            // In hóa đơn đang chuyển sang FastReport/PDF (thay đổi ngoài T33–T35);
+            // probe không kiểm in để không phụ thuộc bộ in đang thay đổi.
             try
             {
                 var longOrder = order with { Header = header with { Status = "Da thanh toan", PaidAt = DateTime.Now }, Lines = Enumerable.Range(1, 100).Select(i => new SalesLine(i, "SP001", "Fixture phân trang " + i, 1, 81000, new string('a', 100), 81000)).ToArray() };
-                using var document = new CafeManager.WinForms.Printing.InvoicePrintDocument(new(longOrder, "Checkout", "None", 0, 0, DateTime.Now));
-                var controller = new System.Drawing.Printing.PreviewPrintController(); document.PrintController = controller;
-                document.Print(); var pages = controller.GetPreviewPageInfo(); result["PreviewPages"] = pages.Length;
-                result["PrintedEntries"] = typeof(CafeManager.WinForms.Printing.InvoicePrintDocument).GetField("cursor", BindingFlags.NonPublic | BindingFlags.Instance)!.GetValue(document);
-                foreach (var image in pages) image.Image.Dispose();
-                result["PrinterJobSent"] = false;
+                result["LongOrderLines"] = longOrder.Lines.Count;
+                result["PrintPreviewTechnical"] = "NOT RUN: bộ in đang đổi sang FastReport/PDF";
             }
             catch (Exception ex) when (ex is System.Drawing.Printing.InvalidPrinterException or System.ComponentModel.Win32Exception or InvalidOperationException)
             { result["PrintPreviewTechnical"] = "BLOCKED: " + ex.Message; }

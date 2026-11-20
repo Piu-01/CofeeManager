@@ -1,13 +1,15 @@
 [CmdletBinding()]param([switch]$ApprovedAcceptance)
 if(-not $ApprovedAcceptance){throw 'Đợt test G04 phải được người dùng duyệt riêng.'}
-$ThroughVersion=15
+$ThroughVersion=18
+# Mốc v18 (T34-01) cần schema035; v17 (T34) cần schema034; v16 (T33) cần schema032; các mốc cũ giữ nguyên ánh xạ version=schema.
+$SchemaVersion=if($ThroughVersion -ge 18){35}elseif($ThroughVersion -ge 17){34}elseif($ThroughVersion -ge 16){32}else{$ThroughVersion}
 $ErrorActionPreference='Stop'
 $root=[IO.Path]::GetFullPath((Join-Path $PSScriptRoot '../..'))
 . (Join-Path $PSScriptRoot 'DatabaseTestTools.ps1')
 $runId=(Get-Date -Format 'yyyyMMdd_HHmmss')+'_'+[guid]::NewGuid().ToString('N').Substring(0,8)
 $output=Join-Path $root "docs/tasks/g04-ban-hang-vong-doi-hoa-don/runs/acceptance_$runId"
 New-Item -ItemType Directory -Path $output -Force | Out-Null
-$manifest=[ordered]@{RunId=$runId;Kind='Approved acceptance SQL subset + unit; remaining manual/concurrency tracked separately';Server='localhost';ThroughVersion=$ThroughVersion;Operator=[Security.Principal.WindowsIdentity]::GetCurrent().Name;Created=@();Cleaned=@();Retained=@();Status='Running'}
+$manifest=[ordered]@{RunId=$runId;Kind='Approved acceptance SQL subset + unit; remaining manual/concurrency tracked separately';Server='localhost';ThroughVersion=$ThroughVersion;SchemaVersion=$SchemaVersion;Operator=[Security.Principal.WindowsIdentity]::GetCurrent().Name;Created=@();Cleaned=@();Retained=@();Status='Running'}
 function Save-Manifest { $manifest | ConvertTo-Json -Depth 8 | Set-Content (Join-Path $output 'manifest.json') -Encoding utf8 }
 function Source-Snapshot {
  Get-ChildItem (Join-Path $root 'src'),(Join-Path $root 'database'),(Join-Path $root 'tests') -Recurse -File |
@@ -17,7 +19,7 @@ function Source-Snapshot {
 $before=@(Source-Snapshot); $before | Export-Csv (Join-Path $output 'source-before.csv') -NoTypeInformation
 Save-Manifest
 try {
- if($ThroughVersion -eq 15){
+ if($ThroughVersion -ge 15){
   & dotnet build (Join-Path $root 'tools/CafeManager.G04Probe') --no-restore -c Debug -v minimal *> (Join-Path $output 'probe-build.log')
   $manifest['ProbeBuildExitCode']=$LASTEXITCODE
   if($LASTEXITCODE -ne 0){throw 'Probe build failed; no stale binary smoke allowed'}
@@ -38,7 +40,7 @@ try {
     Run-TestSql $connection $seed
    }
    $balances=[string](Read-TestScalar $connection 'SELECT (SELECT MaNVL,SoLuongTon FROM dbo.NGUYENVATLIEU ORDER BY MaNVL FOR JSON PATH)')
-   for($version=1;$version -le $ThroughVersion;$version++) {
+   for($version=1;$version -le $SchemaVersion;$version++) {
     $migration=@(Get-ChildItem (Join-Path $root 'database/migrations') -Filter ('{0:d3}_*.sql' -f $version))
     if($migration.Count -ne 1){throw "Missing/ambiguous migration $version"}
     & (Join-Path $PSScriptRoot 'Apply-Migration.ps1') -Database $name -Version $version -File $migration[0].FullName | ConvertTo-Json -Compress | Add-Content (Join-Path $output "$mode-migrations.jsonl")
@@ -47,13 +49,13 @@ try {
    if($mode -eq 'demo') {
     Run-TestSql $connection ([IO.File]::ReadAllText((Join-Path $root "database/tests/g04/technical-v$ThroughVersion.sql")))
     $manifest['SqlSubsets']=@()
-    foreach($caseFile in @('acceptance-orders.sql','acceptance-checkout.sql','acceptance-delivery.sql')){
+    foreach($caseFile in @('acceptance-orders.sql','acceptance-checkout.sql','acceptance-delivery.sql','acceptance-pending-payment.sql','acceptance-table-sessions.sql')){
      $caseResult=[ordered]@{File=$caseFile;Kind='SQL subcases only; not whole checklist IDs';Status='NOT RUN'}
      try{Run-TestSql $connection ([IO.File]::ReadAllText((Join-Path $root ('database/tests/g04/'+$caseFile))));$caseResult.Status='PASS'}
      catch{$caseResult.Status='FAIL';$caseResult['Error']=$_.Exception.ToString()}
      $manifest.SqlSubsets+=$caseResult;Save-Manifest
     }
-    if($ThroughVersion -eq 15){
+    if($ThroughVersion -ge 15){
      & dotnet run --no-build --project (Join-Path $root 'tools/CafeManager.G04Probe') -- --dal $name (Join-Path $output 'typed-smoke.json') *> (Join-Path $output 'typed-smoke.log')
      if($LASTEXITCODE -ne 0){throw 'Typed dependency smoke failed; inspect typed-smoke.json'}
     }
