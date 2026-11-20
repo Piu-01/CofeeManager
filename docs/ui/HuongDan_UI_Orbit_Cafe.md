@@ -63,6 +63,18 @@ Các thành phần phải cân đối và thẳng hàng giữa các card cùng h
 
 Card có thể nổi lên nhẹ khi hover. Bản tinh chỉnh đã bỏ nghiêng cả card để giữ nội dung cân và dễ đọc; không tự thêm lại xoay/nghiêng làm lệch thành phần.
 
+### 3.1. Variant card ngang cho POS gọn —30/10/2026
+
+Theo mẫu user Orbit_BanHang_Gon và plan bổ sung T16 đã duyệt, POS hiện dùng card
+ngang: ảnh schematic bên trái, tên tối đa2dòng và giá bên phải, ô+ vuông đứng yên
+ở góc dưới. Chiều cao105logical là mục tiêu card này; hai cột nếu đủ chỗ, một
+cột nếu hẹp. Giá/cộng cùng baseline, chỉ+ kích hoạt Add một lần. CanAdd=false
+khóa nút và có chữ Ngừng/thiếu công thức. Dùng Resources/theme chung, không
+hardcode giá/tên/ảnh thật hoặc tạo callback riêng ở ảnh/tên gây Add lặp.
+
+Variant này ưu tiên mẫu POS gọn cho màn Bán hàng, không tự đổi mọi card/danh mục
+khác. Layout và fonts theo WinForms/DPI thực; chưa nghiệm thu hình thức từ PNG.
+
 ## 4. Hiệu ứng hover — lia chuột
 
 Hover phải đủ rõ, bóng và có chiều sâu, không chỉ đổi màu rất nhẹ.

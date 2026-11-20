@@ -64,6 +64,39 @@ hành trước dùng; không tạo lại chỉ vì đang code một module mới
 | OrbitButton |`UI/OrbitButton.cs` |Nút có style/icon từ management theme; reuse icon search/refresh/printer/left/right. Icon action cần tên truy cập/tooltip; không thêm bụi sao mặc định. |
 | OrbitField |`UI/OrbitField.cs` |ApplyInputBehavior/SelectAllOnEntry dùng chung, idempotent cho input động/grid editor; không chép handler SelectAll mỗi màn. |
 | OrbitDialogHost/OrbitDialogForm |`UI/OrbitDialogHost.cs`, `Forms/OrbitDialogForm.cs` |ShowAsync có owner/stack/result, native modal/title/X/no taskbar; không tự tạo cửa sổ nghiệp vụ độc lập hoặc host panel giả. |
+| OrbitSurface |`UI/OrbitSurface.cs` |Khung card bo góc nhỏ dùng chung theo theme/DPI, tô nền ngoài theo parent; caller sở hữu layout/control và đặt children trong viền. Không là cửa sổ/dialog hoặc framework điều hướng. |
+| OrbitBadge |`UI/OrbitBadge.cs` |Nhãn trạng thái có chữ, viền/nền/text theo palette; caller gán Text/ForeColor, không nhúng nghiệp vụ thanh toán vào badge. |
+
+POS gọn30/10, cập nhật10/11 dùng SalesControl + ProductCardControl/OrderPanel hiện
+có. Các helper mới ở trên được dùng cho menu/bàn/card món/panel đơn; không sao chép
+theme riêng. OrbitGridProfile.OrderLines opt-in: readonly, cột `Name` fill,
+`Quantity`, `Price`, `Delete`; bỏ `Note`/`Amount` khỏi hiển thị. Ghi chú vẽ chữ nhỏ
+dưới tên, dòng46 logical khi trống và64 khi có ghi chú; `Quantity` vẽ `− n +`,
+`Delete` vẽ icon thùng rác, click do OrderPanel xử lý. `Price` đo theo giá snapshot,
+căn phải; header/cell cùng padding, header OrderLines28 logical. Editor ghi chú là
+control con của OrderPanel (TextBox + nút lưu/hủy), không mở dialog, không tính tiền
+trong painter.
+
+Cập nhật16/11: mở editor bằng **một** click vào tên món hoặc dòng ghi chú bên dưới
+(cùng ô `Name`). Khi rê chuột vào cột `Name`, chữ đổi màu Caramel và con trỏ thành tay;
+không vẽ icon bút chì; tooltip nhắc “Bấm vào tên món để thêm ghi chú.” Dòng đang sửa
+được nới thêm30 logical và editor đặt ngay dưới phần nội dung của dòng, không đè lên
+tên/số lượng/giá; painter chỉ vẽ nội dung trong chiều cao46/64 logical nên phần dư dành
+cho editor. `LineContentHeight` là nguồn duy nhất cho chiều cao nội dung dùng chung giữa
+painter và OrderPanel. Không đủ chỗ dưới nội dung (lưới thấp, dòng cuối): editor đóng và
+dòng trả lại chiều cao, không để khoảng trống không có ô nhập.
+
+Gợi ý ghi chú (16/11): `NoteSuggestionPanel` là control con nổi của OrderPanel, đặt ngay
+dưới editor (trên editor nếu dưới thiếu chỗ, luôn nằm trong panel). Danh sách gộp mục
+cố định của quán với ghi chú đã dùng đọc qua `sp_SalesNoteSuggestions`; gõ tới đâu lọc
+tới đó, ưu tiên mục bắt đầu bằng từ khóa rồi mới tới mục chứa từ khóa, tối đa6 dòng.
+↑/↓ đổi mục chọn, Enter nhận mục rồi lưu, Esc đóng danh sách trước và lần Esc sau mới
+hủy editor; click chuột vào mục cũng nhận và lưu. Mở editor không tự bung danh sách.
+Lịch sử chỉ là phụ trợ: lỗi đọc không chặn POS, và ghi chú vừa lưu được đưa lên đầu
+danh sách ngay trong phiên.
+OrderPanel nhận DTO, chỉ Payable ở POS; đầy đủ breakdown tại CheckoutDialog.
+Nháp/preview chưa hợp lệ/unknown hiển thị — và nhãn đúng, không tự gán0₫.
+Kích thước order330–345logical, menu nhận phần dư; root/modal luồng cũ giữ nguyên.
 
 `Modules/Sales/InvoicesControl.cs` là ví dụ ghép layout V4 đã triển khai:
 Configure → profile cột/tổng thật → AddFilter → UseStackedSearch → AddAction.

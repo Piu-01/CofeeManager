@@ -1,13 +1,18 @@
 # Orbit Café — UI handoff
 
-## Mẫu Bán hàng gọn —30/10/2026, chờ duyệt triển khai
+## Bán hàng gọn —30/10/2026, đã triển khai/chờ test riêng
 
 Nguồn user Orbit_BanHang_Gon.zip lưu tại sales-compact/ cùng manifest/hash:
 Orbit_BanHang.html, Orbit_BanHang_Laptop.png, README và HTML thanh toán đi kèm.
 Mẫu card ngang2cột, cột đơn gọn và POS chỉ tổng phải trả; chi tiết tiền ở F8.
-Chưa tự thay guide/card chung hoặc code CheckoutDialog từ nội dung ZIP.
+Đã triển khai theo plan user duyệt: variant card ngang105logical, panel đơn
+330–345logical khi đủ rộng, F3header/rowactions/Payable/CTA riêng; nhỏ hơn thì
+Món/Đơn. OrbitSurface/OrbitBadge là helper chung mới, grid OrderLines giữ giá
+snapshot một dòng trong cột Đơn giá, ẩn tiền dòng theo user chốt31/10. Không đổi CheckoutDialog hoặc nghiệp vụ
+từ demoJS. Build/smoke không là nghiệm thu hình thức/chức năng.
 [Phạm vi/plan](../tasks/g04-ban-hang-vong-doi-hoa-don/t16-pos-huy-don/sales-compact-ui-plan.md)
-chờ người dùng duyệt, không là bằng chứng app đã đổi hoặc nghiệm thu.
+đã duyệt; hồ sơ triển khai/test chờ duyệt riêng tại cùng taskT16. Hình thức user
+kiểm, không suy PASS từ mẫu hoặc123bounds checks kỹ thuật.
 
 ## Chuẩn trang danh sách dùng chung — người dùng chốt26/10/2026
 
