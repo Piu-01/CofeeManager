@@ -1,0 +1,26 @@
+digraph G {
+rankdir=LR; graph [bgcolor="white", pad="0.12", nodesep="0.35", ranksep="0.75", splines=polyline, overlap=false];
+"money" [label="Quản lý thu chi và\ncông nợ",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08",style="rounded"];
+"admin" [label="Người quản lý",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08"];
+"store" [label="Nhân viên kho",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08"];
+"catalog" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD BORDER="1" SIDES="TB" CELLPADDING="8">Danh mục nền</TD></TR></TABLE>>,shape="plain",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08"];
+"debt" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD BORDER="1" SIDES="TB" CELLPADDING="8">Hồ sơ công nợ</TD></TR></TABLE>>,shape="plain",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08"];
+"finance" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD BORDER="1" SIDES="TB" CELLPADDING="8">Chứng từ thu chi</TD></TR></TABLE>>,shape="plain",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08"];
+"inventory" [label="Quản lý kho",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08",style="rounded"];
+"people" [label="Quản lý nhân sự, tài\nsản và báo cáo",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08",style="rounded"];
+"admin" -> "money" [label="Yêu cầu thu chi hoặc\ntrả nợ",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"money" -> "admin" [label="Kết quả thu chi và trả\nnợ",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"store" -> "money" [label="Yêu cầu tra cứu công nợ",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"money" -> "store" [label="Số dư và lịch sử công\nnợ",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"catalog" -> "money" [label="Danh mục thu chi và\nphương thức trả",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"debt" -> "money" [label="Công nợ và lịch sử trả\nđã lưu",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"money" -> "debt" [label="Công nợ và lịch sử trả\nđã cập nhật",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"finance" -> "money" [label="Chứng từ thu chi đã lưu",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"money" -> "finance" [label="Chứng từ thu chi đã ghi",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"inventory" -> "money" [label="Nguồn phiếu nhập cần\nghi chi và nợ",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"money" -> "inventory" [label="Liên kết chi và nợ đã\ntạo",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"people" -> "money" [label="Nguồn chi lương đã chốt",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"money" -> "people" [label="Liên kết phiếu chi\nlương",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+{rank=min; admin; store;}
+{rank=max; catalog; debt; finance;}
+}

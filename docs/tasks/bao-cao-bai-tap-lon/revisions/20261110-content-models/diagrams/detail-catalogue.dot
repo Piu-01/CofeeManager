@@ -1,0 +1,30 @@
+digraph G {
+rankdir=LR; graph [bgcolor="white", pad="0.12", nodesep="0.35", ranksep="0.75", splines=polyline, overlap=false];
+"catalogue_0" [label="Cập nhật danh mục và\nchính sách",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08",style="rounded"];
+"catalogue_1" [label="Tra cứu và cập nhật\nkhách hàng",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08",style="rounded"];
+"catalogue_2" [label="Ghi điều chỉnh điểm",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08",style="rounded"];
+"admin" [label="Người quản lý",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08"];
+"cash" [label="Nhân viên thu ngân",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08"];
+"store" [label="Nhân viên kho",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08"];
+"catalog" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD BORDER="1" SIDES="TB" CELLPADDING="8">Danh mục nền</TD></TR></TABLE>>,shape="plain",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08"];
+"customer" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD BORDER="1" SIDES="TB" CELLPADDING="8">Hồ sơ khách hàng và<BR/>điểm</TD></TR></TABLE>>,shape="plain",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08"];
+"stock" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD BORDER="1" SIDES="TB" CELLPADDING="8">Hồ sơ kho</TD></TR></TABLE>>,shape="plain",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08"];
+"admin" -> "catalogue_0" [label="Yêu cầu cập nhật dữ\nliệu nền",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"catalogue_0" -> "admin" [label="Kết quả cập nhật dữ\nliệu nền",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"cash" -> "catalogue_1" [label="Yêu cầu tìm hoặc thêm\nkhách",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"catalogue_1" -> "cash" [label="Kết quả tìm hoặc thêm\nkhách",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"store" -> "catalogue_0" [label="Yêu cầu tra cứu danh\nmục",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"catalogue_0" -> "store" [label="Danh mục được phép xem",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"catalog" -> "catalogue_0" [label="Danh mục hiện có",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"catalogue_0" -> "catalog" [label="Danh mục đã cập nhật",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"customer" -> "catalogue_1" [label="Hồ sơ khách hàng và\nđiểm hiện có",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"catalogue_1" -> "customer" [label="Hồ sơ khách hàng đã cập\nnhật",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"catalogue_2" -> "customer" [label="Lịch sử điều chỉnh điểm",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"stock" -> "catalogue_0" [label="Nguyên liệu dùng trong\ncông thức",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"catalogue_1" -> "catalogue_2" [label="Khách hàng cần điều\nchỉnh điểm",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9",weight="3"];
+"catalogue_0" -> "catalogue_1" [label="Yêu cầu cập nhật hồ sơ\nkhách hàng",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9",weight="3"];
+"catalogue_0" -> "catalogue_2" [label="Yêu cầu điều chỉnh điểm\nđã kiểm quyền",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9",weight="3"];
+{rank=same; catalogue_0; catalogue_1; catalogue_2;}
+{rank=min; admin; cash; store;}
+{rank=max; stock; catalog; customer;}
+}

@@ -1,0 +1,146 @@
+[
+  {
+    "path": "docs\\KeHoach_QuanLiQuanCafe.md",
+    "sha256": "14c82d76ed34827055e487c97e8d43e60c4a0db43042345ced10b190d41ad6d2"
+  },
+  {
+    "path": "docs\\UX_QuanLiQuanCafe.md",
+    "sha256": "db07e86c9daabf56489a594fee470db6ae243ea914e8c26b0665837cee7c2c17"
+  },
+  {
+    "path": "database\\DB_Schema.sql",
+    "sha256": "53351d5ca521464558de6fc4aa1f839cc45cbbd091fddb4ec005643f2d6ee151"
+  },
+  {
+    "path": "database\\Insert_Data.sql",
+    "sha256": "fbc1cab2233d8b3b588f6c3de61db9a8adcd40cfe19997531eb91354baddf706"
+  },
+  {
+    "path": "database\\migrations\\001_contract_and_code_generation.sql",
+    "sha256": "0c4300bb58ce9e29a3a8e2b814aeb1f259f51f2dc0251142cd6479d23d44036c"
+  },
+  {
+    "path": "database\\migrations\\002_auth_and_bootstrap.sql",
+    "sha256": "04d8daa716626f613d4fedf8d84f8f15e53e5db74d88b5b572947ba8ac84b342"
+  },
+  {
+    "path": "database\\migrations\\003_reference_catalogs.sql",
+    "sha256": "6054f75f7285190879ed60eaba8a5d985dbd56dd16712049ed11005a7d0ea49d"
+  },
+  {
+    "path": "database\\migrations\\004_inventory_materials.sql",
+    "sha256": "e5762ebd24d3fc55c0e9a597ac5d1e4213df6d269fea6ca04868caf66534244b"
+  },
+  {
+    "path": "database\\migrations\\005_products_recipes.sql",
+    "sha256": "c75e2fc7baed2344bdf73908a505cec8285c42e3e29bce6b0e51031a7db93aa4"
+  },
+  {
+    "path": "database\\migrations\\006_tables_areas.sql",
+    "sha256": "a46abd3adbd4dd9c62169027e1b2f99fe785d3638d30ca78dafa571ae0a3643a"
+  },
+  {
+    "path": "database\\migrations\\007_customers.sql",
+    "sha256": "513e026dac89748ac1bdd0b63e42e5cbbe3ac7927db4bbb509ab4e3d14f8490b"
+  },
+  {
+    "path": "database\\migrations\\008_promotions_loyalty.sql",
+    "sha256": "64a3ffb2725ad472688bbf83081bfc6b453f5b001abb6b3a3084356fd0aadf72"
+  },
+  {
+    "path": "database\\migrations\\009_promotion_legacy_codes.sql",
+    "sha256": "135b7d68c27c33c256f47588ceda5a47edb5d3a1dcb88a39f70b6c5c8ad2a3cd"
+  },
+  {
+    "path": "database\\migrations\\010_sales_orders.sql",
+    "sha256": "eae63e12156ca72037f7e2139b639343962faf2ccf51ee2e051a406c080b61cf"
+  },
+  {
+    "path": "database\\migrations\\011_checkout.sql",
+    "sha256": "b80e837932d388083a6b284acc91aa4d8f47a5085cf68d03aa4c5d46e58faa73"
+  },
+  {
+    "path": "database\\migrations\\012_sales_cancel.sql",
+    "sha256": "50880283ac139b80640c85e4e56455940c5bb83002052db722f5ab3fac1fad3f"
+  },
+  {
+    "path": "database\\migrations\\013_invoice_queries.sql",
+    "sha256": "ffd3c124ca378a7a36a53917495e1e4baa8c9bfffa28f229c25aa5c38d89bcac"
+  },
+  {
+    "path": "database\\migrations\\014_delivery.sql",
+    "sha256": "e944dede205e11c0665e73f0a016f28cf79c1b725026b8b0c2a6bea0b0265724"
+  },
+  {
+    "path": "database\\migrations\\015_sales_read_normalization.sql",
+    "sha256": "c04393c22722feb9bcf7f72dc6645fc563924942f217456317ab8a2039ae9fe8"
+  },
+  {
+    "path": "database\\migrations\\016_payment_guard_point_locks.sql",
+    "sha256": "e14c5b11b667593a1a48080c0496ef04684eddf0db90e4b78bbfe0917fc307e8"
+  },
+  {
+    "path": "database\\migrations\\017_finance_sources.sql",
+    "sha256": "b35c5c63c3ce60d5f762fbee2a6f928f48cdd30251d953b87123bc09dd9172d2"
+  },
+  {
+    "path": "database\\migrations\\018_purchase_receipts.sql",
+    "sha256": "614f934122fd002175ff663cc8e1a57d3ab097b7d049c740cbc983304002c31c"
+  },
+  {
+    "path": "database\\migrations\\019_stock_issues.sql",
+    "sha256": "da8c1ccc9106d812122dcfb7c7efded4789a7cc600fc8a3cce916960ab147799"
+  },
+  {
+    "path": "database\\migrations\\020_stocktakes.sql",
+    "sha256": "d994932a687e2a41187540bb1b6c1e420ad64046ab2af50d7230ad0749add7d7"
+  },
+  {
+    "path": "database\\migrations\\021_supplier_debts.sql",
+    "sha256": "aca80739993849114c1cc79e6583509a03fb4687ecdcb456e2e66b4d0f00e257"
+  },
+  {
+    "path": "src\\CafeManager.Business\\CafeManager.Business.csproj",
+    "sha256": "16ac6882d6c19df5278e55d69a306cb0f35433187f07db6a92b2e523cfbc9c6c"
+  },
+  {
+    "path": "src\\CafeManager.DataAccess\\CafeManager.DataAccess.csproj",
+    "sha256": "0325172701c7fd6c4b9e7699909c3cf02f3bd9923d4724b330995720370b49c1"
+  },
+  {
+    "path": "src\\CafeManager.Models\\CafeManager.Models.csproj",
+    "sha256": "2fdbb0ccdef922bfda5b379cbc768b7c0c1cfce3b8a8f7dcdacecb06b4e736d7"
+  },
+  {
+    "path": "src\\CafeManager.WinForms\\CafeManager.WinForms.csproj",
+    "sha256": "e324b41a67835c7f373a470de890cb16d4c3b9bb20ae26a139fc10ab73b8eefd"
+  },
+  {
+    "path": "src\\CafeManager.WinForms\\Program.cs",
+    "sha256": "3e27543b1b656c8ceeac9efd8742613031cbe144662ccba88da826a6bc51f5b2"
+  },
+  {
+    "path": "src\\CafeManager.Business\\Services\\SalesService.cs",
+    "sha256": "302f63a2c66ebd05ea4154f57d0b6a4fe970887af72c41c0a1ec975f14996bf4"
+  },
+  {
+    "path": "src\\CafeManager.Business\\Services\\SalesService.Checkout.cs",
+    "sha256": "a127d7cef6d4debdf4e46d144bb05b0bddd52d1d9fcbb2cd611767b329a8dae5"
+  },
+  {
+    "path": "src\\CafeManager.DataAccess\\Repositories\\SalesRepository.cs",
+    "sha256": "3f663cc30bf1d58111517b6013ef36c6012d6f5bfb8a34b150a2019919314867"
+  },
+  {
+    "path": "docs\\tasks\\g05-kho-nguon-chi-cong-no\\report.md",
+    "sha256": "3f984b1506aa574365c9a341b65146b56a18854d7824e7230596c76d53fc58ed"
+  },
+  {
+    "path": "docs\\tasks\\g04-ban-hang-vong-doi-hoa-don\\report.md",
+    "sha256": "6c3664fb10cadf6183b5c3ab4e13199d861186696510b61c5d58a05ae5c1e33d"
+  },
+  {
+    "path": "docs\\tasks\\embedded-dialogs\\native-test-results.md",
+    "sha256": "749cda3bef3c67d04d4f9183f54755ed82932f53ede0b17da3b3b70ef3ee70c3"
+  }
+]

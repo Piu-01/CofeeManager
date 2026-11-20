@@ -1,0 +1,1548 @@
+{
+  "CHUCVU": {
+    "fields": [
+      {
+        "name": "MaCV",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "TenCV",
+        "type": "NVARCHAR(50)",
+        "nullable": false,
+        "tail": "  NOT NULL,"
+      },
+      {
+        "name": "PhuCap",
+        "type": "DECIMAL(18,0)",
+        "nullable": false,
+        "tail": "           NOT NULL DEFAULT 0,"
+      },
+      {
+        "name": "HeSoTangCa",
+        "type": "DECIMAL(5,2)",
+        "nullable": false,
+        "tail": "         NOT NULL DEFAULT 1.5,"
+      }
+    ],
+    "pk": [
+      "MaCV"
+    ],
+    "fk": {},
+    "body": "\n    MaCV         CHAR(5)       NOT NULL,\n    TenCV        NVARCHAR(50)  NOT NULL,\n    PhuCap DECIMAL(18,0)           NOT NULL DEFAULT 0,\n    HeSoTangCa   DECIMAL(5,2)         NOT NULL DEFAULT 1.5,\n\n    CONSTRAINT PK_CHUCVU            PRIMARY KEY (MaCV),\n    CONSTRAINT CHK_CHUCVU_PhuCap    CHECK (PhuCap >= 0),\n    CONSTRAINT CHK_CHUCVU_HeSo      CHECK (HeSoTangCa >= 1.0)"
+  },
+  "CALAMVIEC": {
+    "fields": [
+      {
+        "name": "MaCa",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "TenCa",
+        "type": "NVARCHAR(30)",
+        "nullable": false,
+        "tail": "  NOT NULL,"
+      },
+      {
+        "name": "GioBatDau",
+        "type": "TIME",
+        "nullable": false,
+        "tail": "NOT NULL,"
+      },
+      {
+        "name": "GioKetThuc",
+        "type": "TIME",
+        "nullable": false,
+        "tail": "NOT NULL,"
+      }
+    ],
+    "pk": [
+      "MaCa"
+    ],
+    "fk": {},
+    "body": "\n    MaCa         CHAR(5)       NOT NULL,\n    TenCa        NVARCHAR(30)  NOT NULL,\n    GioBatDau    TIME          NOT NULL,\n    GioKetThuc   TIME          NOT NULL,\n\n    CONSTRAINT PK_CALAMVIEC         PRIMARY KEY (MaCa),\n    CONSTRAINT CHK_CALV_GioHop      CHECK (GioBatDau <> GioKetThuc)"
+  },
+  "NHANVIEN": {
+    "fields": [
+      {
+        "name": "MaNV",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "TenNV",
+        "type": "NVARCHAR(50)",
+        "nullable": false,
+        "tail": "  NOT NULL,"
+      },
+      {
+        "name": "SDT",
+        "type": "VARCHAR(15)",
+        "nullable": true,
+        "tail": "   NULL,"
+      },
+      {
+        "name": "LoaiHopDong",
+        "type": "NVARCHAR(20)",
+        "nullable": false,
+        "tail": "  NOT NULL,"
+      },
+      {
+        "name": "LuongCung",
+        "type": "DECIMAL(18,0)",
+        "nullable": false,
+        "tail": "           NOT NULL DEFAULT 0,"
+      },
+      {
+        "name": "LuongTheoGio",
+        "type": "DECIMAL(18,0)",
+        "nullable": false,
+        "tail": "           NOT NULL DEFAULT 0,"
+      },
+      {
+        "name": "MaCV",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "DangLamViec",
+        "type": "BIT",
+        "nullable": false,
+        "tail": "DEFAULT 1; ALTER TABLE trong baseline"
+      }
+    ],
+    "pk": [
+      "MaNV"
+    ],
+    "fk": {
+      "MaCV": [
+        "CHUCVU",
+        "MaCV"
+      ]
+    },
+    "body": "\n    MaNV         CHAR(5)       NOT NULL,\n    TenNV        NVARCHAR(50)  NOT NULL,\n    SDT          VARCHAR(15)   NULL,\n    LoaiHopDong  NVARCHAR(20)  NOT NULL,\n    LuongCung DECIMAL(18,0)           NOT NULL DEFAULT 0,\n    LuongTheoGio DECIMAL(18,0)           NOT NULL DEFAULT 0,\n    MaCV         CHAR(5)       NOT NULL,\n\n    CONSTRAINT PK_NHANVIEN          PRIMARY KEY (MaNV),\n    CONSTRAINT CHK_NV_LoaiHopDong   CHECK (LoaiHopDong IN ('Full-time', 'Part-time')),\n    CONSTRAINT CHK_NV_LuongCung     CHECK (LuongCung >= 0),\n    CONSTRAINT CHK_NV_LuongGio      CHECK (LuongTheoGio >= 0),\n    CONSTRAINT FK_NV_CHUCVU         FOREIGN KEY (MaCV) REFERENCES CHUCVU(MaCV)"
+  },
+  "CHAMCONG": {
+    "fields": [
+      {
+        "name": "MaNV",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "NgayLam",
+        "type": "DATE",
+        "nullable": false,
+        "tail": "NOT NULL,"
+      },
+      {
+        "name": "MaCa",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "GioVao",
+        "type": "DATETIME2(0)",
+        "nullable": true,
+        "tail": "      NULL,"
+      },
+      {
+        "name": "GioRa",
+        "type": "DATETIME2(0)",
+        "nullable": true,
+        "tail": "      NULL,"
+      },
+      {
+        "name": "TrangThai",
+        "type": "NVARCHAR(30)",
+        "nullable": false,
+        "tail": "  NOT NULL DEFAULT N'Di lam',"
+      }
+    ],
+    "pk": [
+      "MaNV",
+      "NgayLam",
+      "MaCa"
+    ],
+    "fk": {
+      "MaNV": [
+        "NHANVIEN",
+        "MaNV"
+      ],
+      "MaCa": [
+        "CALAMVIEC",
+        "MaCa"
+      ]
+    },
+    "body": "\n    MaNV         CHAR(5)       NOT NULL,\n    NgayLam      DATE          NOT NULL,\n    MaCa         CHAR(5)       NOT NULL,\n    GioVao       DATETIME2(0)      NULL,\n    GioRa        DATETIME2(0)      NULL,\n    TrangThai    NVARCHAR(30)  NOT NULL DEFAULT N'Di lam',\n\n    CONSTRAINT CHK_CC_NgayVao CHECK (GioVao IS NULL OR CONVERT(DATE,GioVao)=NgayLam),\n    CONSTRAINT CHK_CC_Nghi CHECK (TrangThai=N'Di lam' OR (GioVao IS NULL AND GioRa IS NULL)),\n    CONSTRAINT PK_CHAMCONG          PRIMARY KEY (MaNV, NgayLam, MaCa),\n    CONSTRAINT CHK_CC_TrangThai     CHECK (TrangThai IN (N'Di lam', N'Nghi phep', N'Vang')),\n    CONSTRAINT CHK_CC_GioHopLe      CHECK (GioRa IS NULL OR (GioVao IS NOT NULL AND GioRa > GioVao)),\n    CONSTRAINT FK_CC_NHANVIEN       FOREIGN KEY (MaNV) REFERENCES NHANVIEN(MaNV),\n    CONSTRAINT FK_CC_CALAMVIEC      FOREIGN KEY (MaCa) REFERENCES CALAMVIEC(MaCa)"
+  },
+  "DANHMUC_SP": {
+    "fields": [
+      {
+        "name": "MaDM",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "TenDM",
+        "type": "NVARCHAR(50)",
+        "nullable": false,
+        "tail": "  NOT NULL,"
+      }
+    ],
+    "pk": [
+      "MaDM"
+    ],
+    "fk": {},
+    "body": "\n    MaDM         CHAR(5)       NOT NULL,\n    TenDM        NVARCHAR(50)  NOT NULL,\n\n    CONSTRAINT PK_DANHMUC_SP        PRIMARY KEY (MaDM),\n    CONSTRAINT UQ_DANHMUC_SP_Ten    UNIQUE (TenDM)"
+  },
+  "NGUYENVATLIEU": {
+    "fields": [
+      {
+        "name": "MaNVL",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "TenNVL",
+        "type": "NVARCHAR(50)",
+        "nullable": false,
+        "tail": "  NOT NULL,"
+      },
+      {
+        "name": "DonViTinh",
+        "type": "NVARCHAR(20)",
+        "nullable": false,
+        "tail": "  NOT NULL,"
+      },
+      {
+        "name": "SoLuongTon",
+        "type": "DECIMAL(18,4)",
+        "nullable": false,
+        "tail": "         NOT NULL DEFAULT 0,"
+      }
+    ],
+    "pk": [
+      "MaNVL"
+    ],
+    "fk": {},
+    "body": "\n    MaNVL        CHAR(5)       NOT NULL,\n    TenNVL       NVARCHAR(50)  NOT NULL,\n    DonViTinh    NVARCHAR(20)  NOT NULL,\n    SoLuongTon   DECIMAL(18,4)         NOT NULL DEFAULT 0,\n\n    CONSTRAINT PK_NGUYENVATLIEU     PRIMARY KEY (MaNVL),\n    CONSTRAINT CHK_NVL_TonKho       CHECK (SoLuongTon >= 0)"
+  },
+  "NHACUNGCAP": {
+    "fields": [
+      {
+        "name": "MaNCC",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "TenNCC",
+        "type": "NVARCHAR(100)",
+        "nullable": false,
+        "tail": " NOT NULL,"
+      },
+      {
+        "name": "SDT",
+        "type": "VARCHAR(15)",
+        "nullable": false,
+        "tail": "   NOT NULL,"
+      }
+    ],
+    "pk": [
+      "MaNCC"
+    ],
+    "fk": {},
+    "body": "\n    MaNCC        CHAR(5)       NOT NULL,\n    TenNCC       NVARCHAR(100) NOT NULL,\n    SDT          VARCHAR(15)   NOT NULL,\n\n    CONSTRAINT PK_NHACUNGCAP        PRIMARY KEY (MaNCC),\n    CONSTRAINT UQ_NCC_SDT           UNIQUE (SDT)"
+  },
+  "SANPHAM": {
+    "fields": [
+      {
+        "name": "MaSP",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "TenSP",
+        "type": "NVARCHAR(50)",
+        "nullable": false,
+        "tail": "  NOT NULL,"
+      },
+      {
+        "name": "MaDM",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "GiaBan",
+        "type": "DECIMAL(18,0)",
+        "nullable": false,
+        "tail": "           NOT NULL,"
+      },
+      {
+        "name": "TrangThai",
+        "type": "NVARCHAR(20)",
+        "nullable": false,
+        "tail": "  NOT NULL DEFAULT N'Dang ban',"
+      }
+    ],
+    "pk": [
+      "MaSP"
+    ],
+    "fk": {
+      "MaDM": [
+        "DANHMUC_SP",
+        "MaDM"
+      ]
+    },
+    "body": "\n    MaSP         CHAR(5)       NOT NULL,\n    TenSP        NVARCHAR(50)  NOT NULL,\n    MaDM         CHAR(5)       NOT NULL,\n    GiaBan DECIMAL(18,0)           NOT NULL,\n    TrangThai    NVARCHAR(20)  NOT NULL DEFAULT N'Dang ban',\n\n    CONSTRAINT PK_SANPHAM           PRIMARY KEY (MaSP),\n    CONSTRAINT CHK_SP_GiaBan        CHECK (GiaBan > 0),\n    CONSTRAINT CHK_SP_TrangThai     CHECK (TrangThai IN (N'Dang ban', N'Ngung ban')),\n    CONSTRAINT FK_SP_DANHMUC        FOREIGN KEY (MaDM) REFERENCES DANHMUC_SP(MaDM)"
+  },
+  "CONGTHUC": {
+    "fields": [
+      {
+        "name": "MaSP",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "MaNVL",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "DinhMuc",
+        "type": "DECIMAL(18,4)",
+        "nullable": false,
+        "tail": "         NOT NULL,"
+      }
+    ],
+    "pk": [
+      "MaSP",
+      "MaNVL"
+    ],
+    "fk": {
+      "MaSP": [
+        "SANPHAM",
+        "MaSP"
+      ],
+      "MaNVL": [
+        "NGUYENVATLIEU",
+        "MaNVL"
+      ]
+    },
+    "body": "\n    MaSP         CHAR(5)       NOT NULL,\n    MaNVL        CHAR(5)       NOT NULL,\n    DinhMuc      DECIMAL(18,4)         NOT NULL,\n\n    CONSTRAINT PK_CONGTHUC          PRIMARY KEY (MaSP, MaNVL),\n    CONSTRAINT CHK_CT_DinhMuc       CHECK (DinhMuc > 0),\n    CONSTRAINT FK_CT_SANPHAM        FOREIGN KEY (MaSP)  REFERENCES SANPHAM(MaSP),\n    CONSTRAINT FK_CT_NGUYENVATLIEU  FOREIGN KEY (MaNVL) REFERENCES NGUYENVATLIEU(MaNVL)"
+  },
+  "PHIEUNHAP": {
+    "fields": [
+      {
+        "name": "MaPN",
+        "type": "CHAR(10)",
+        "nullable": false,
+        "tail": "      NOT NULL,"
+      },
+      {
+        "name": "NgayNhap",
+        "type": "DATETIME2(0)",
+        "nullable": false,
+        "tail": "      NOT NULL DEFAULT GETDATE(),"
+      },
+      {
+        "name": "MaNV",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "MaNCC",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "TongTien",
+        "type": "DECIMAL(18,0)",
+        "nullable": false,
+        "tail": "           NOT NULL DEFAULT 0,"
+      }
+    ],
+    "pk": [
+      "MaPN"
+    ],
+    "fk": {
+      "MaNV": [
+        "NHANVIEN",
+        "MaNV"
+      ],
+      "MaNCC": [
+        "NHACUNGCAP",
+        "MaNCC"
+      ]
+    },
+    "body": "\n    MaPN         CHAR(10)      NOT NULL,\n    NgayNhap     DATETIME2(0)      NOT NULL DEFAULT GETDATE(),\n    MaNV         CHAR(5)       NOT NULL,\n    MaNCC        CHAR(5)       NOT NULL,\n    TongTien DECIMAL(18,0)           NOT NULL DEFAULT 0,\n\n    CONSTRAINT PK_PHIEUNHAP         PRIMARY KEY (MaPN),\n    CONSTRAINT CHK_PN_TongTien      CHECK (TongTien >= 0),\n    CONSTRAINT FK_PN_NHANVIEN       FOREIGN KEY (MaNV)  REFERENCES NHANVIEN(MaNV),\n    CONSTRAINT FK_PN_NHACUNGCAP     FOREIGN KEY (MaNCC) REFERENCES NHACUNGCAP(MaNCC)"
+  },
+  "CHITIET_PN": {
+    "fields": [
+      {
+        "name": "MaPN",
+        "type": "CHAR(10)",
+        "nullable": false,
+        "tail": "      NOT NULL,"
+      },
+      {
+        "name": "MaNVL",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "SoLuong",
+        "type": "DECIMAL(18,4)",
+        "nullable": false,
+        "tail": "         NOT NULL,"
+      },
+      {
+        "name": "DonGiaNhap",
+        "type": "DECIMAL(18,0)",
+        "nullable": false,
+        "tail": "           NOT NULL,"
+      }
+    ],
+    "pk": [
+      "MaPN",
+      "MaNVL"
+    ],
+    "fk": {
+      "MaPN": [
+        "PHIEUNHAP",
+        "MaPN"
+      ],
+      "MaNVL": [
+        "NGUYENVATLIEU",
+        "MaNVL"
+      ]
+    },
+    "body": "\n    MaPN         CHAR(10)      NOT NULL,\n    MaNVL        CHAR(5)       NOT NULL,\n    SoLuong      DECIMAL(18,4)         NOT NULL,\n    DonGiaNhap DECIMAL(18,0)           NOT NULL,\n\n    CONSTRAINT PK_CHITIET_PN        PRIMARY KEY (MaPN, MaNVL),\n    CONSTRAINT CHK_CTPN_SoLuong     CHECK (SoLuong > 0),\n    CONSTRAINT CHK_CTPN_DonGia      CHECK (DonGiaNhap > 0),\n    CONSTRAINT FK_CTPN_PHIEUNHAP    FOREIGN KEY (MaPN)  REFERENCES PHIEUNHAP(MaPN),\n    CONSTRAINT FK_CTPN_NVL          FOREIGN KEY (MaNVL) REFERENCES NGUYENVATLIEU(MaNVL)"
+  },
+  "PHIEUXUAT": {
+    "fields": [
+      {
+        "name": "MaPX",
+        "type": "CHAR(10)",
+        "nullable": false,
+        "tail": "      NOT NULL,"
+      },
+      {
+        "name": "NgayXuat",
+        "type": "DATETIME2(0)",
+        "nullable": false,
+        "tail": "      NOT NULL DEFAULT GETDATE(),"
+      },
+      {
+        "name": "MaNV",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "LoaiXuat",
+        "type": "NVARCHAR(30)",
+        "nullable": false,
+        "tail": "  NOT NULL,"
+      }
+    ],
+    "pk": [
+      "MaPX"
+    ],
+    "fk": {
+      "MaNV": [
+        "NHANVIEN",
+        "MaNV"
+      ]
+    },
+    "body": "\n    MaPX         CHAR(10)      NOT NULL,\n    NgayXuat     DATETIME2(0)      NOT NULL DEFAULT GETDATE(),\n    MaNV         CHAR(5)       NOT NULL,\n    LoaiXuat     NVARCHAR(30)  NOT NULL,\n\n    CONSTRAINT PK_PHIEUXUAT         PRIMARY KEY (MaPX),\n    CONSTRAINT CHK_PX_LoaiXuat      CHECK (LoaiXuat IN\n        (N'Huy do hong', N'Tra hang')),\n    CONSTRAINT FK_PX_NHANVIEN       FOREIGN KEY (MaNV) REFERENCES NHANVIEN(MaNV)"
+  },
+  "CHITIET_PX": {
+    "fields": [
+      {
+        "name": "MaPX",
+        "type": "CHAR(10)",
+        "nullable": false,
+        "tail": "      NOT NULL,"
+      },
+      {
+        "name": "MaNVL",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "SoLuongXuat",
+        "type": "DECIMAL(18,4)",
+        "nullable": false,
+        "tail": "         NOT NULL,"
+      }
+    ],
+    "pk": [
+      "MaPX",
+      "MaNVL"
+    ],
+    "fk": {
+      "MaPX": [
+        "PHIEUXUAT",
+        "MaPX"
+      ],
+      "MaNVL": [
+        "NGUYENVATLIEU",
+        "MaNVL"
+      ]
+    },
+    "body": "\n    MaPX         CHAR(10)      NOT NULL,\n    MaNVL        CHAR(5)       NOT NULL,\n    SoLuongXuat  DECIMAL(18,4)         NOT NULL,\n\n    CONSTRAINT PK_CHITIET_PX        PRIMARY KEY (MaPX, MaNVL),\n    CONSTRAINT CHK_CTPX_SoLuong     CHECK (SoLuongXuat > 0),\n    CONSTRAINT FK_CTPX_PHIEUXUAT    FOREIGN KEY (MaPX)  REFERENCES PHIEUXUAT(MaPX),\n    CONSTRAINT FK_CTPX_NVL          FOREIGN KEY (MaNVL) REFERENCES NGUYENVATLIEU(MaNVL)"
+  },
+  "PHIEUKIEMKE": {
+    "fields": [
+      {
+        "name": "MaKK",
+        "type": "CHAR(10)",
+        "nullable": false,
+        "tail": "      NOT NULL,"
+      },
+      {
+        "name": "NgayKK",
+        "type": "DATE",
+        "nullable": false,
+        "tail": "NOT NULL,"
+      },
+      {
+        "name": "MaNV",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "DaDieuChinh",
+        "type": "BIT",
+        "nullable": false,
+        "tail": "NOT NULL DEFAULT 0,"
+      }
+    ],
+    "pk": [
+      "MaKK"
+    ],
+    "fk": {
+      "MaNV": [
+        "NHANVIEN",
+        "MaNV"
+      ]
+    },
+    "body": "\n    MaKK         CHAR(10)      NOT NULL,\n    NgayKK       DATE          NOT NULL,\n    MaNV         CHAR(5)       NOT NULL,\n    DaDieuChinh BIT NOT NULL DEFAULT 0,\n\n    CONSTRAINT PK_PHIEUKIEMKE       PRIMARY KEY (MaKK),\n    CONSTRAINT FK_KK_NHANVIEN       FOREIGN KEY (MaNV) REFERENCES NHANVIEN(MaNV)"
+  },
+  "CHITIET_KK": {
+    "fields": [
+      {
+        "name": "MaKK",
+        "type": "CHAR(10)",
+        "nullable": false,
+        "tail": "      NOT NULL,"
+      },
+      {
+        "name": "MaNVL",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "TonHeThong",
+        "type": "DECIMAL(18,4)",
+        "nullable": false,
+        "tail": "         NOT NULL,"
+      },
+      {
+        "name": "TonThucTe",
+        "type": "DECIMAL(18,4)",
+        "nullable": false,
+        "tail": "         NOT NULL,"
+      },
+      {
+        "name": "LyDo",
+        "type": "NVARCHAR(100)",
+        "nullable": true,
+        "tail": " NULL,"
+      }
+    ],
+    "pk": [
+      "MaKK",
+      "MaNVL"
+    ],
+    "fk": {
+      "MaKK": [
+        "PHIEUKIEMKE",
+        "MaKK"
+      ],
+      "MaNVL": [
+        "NGUYENVATLIEU",
+        "MaNVL"
+      ]
+    },
+    "body": "\n    MaKK         CHAR(10)      NOT NULL,\n    MaNVL        CHAR(5)       NOT NULL,\n    TonHeThong   DECIMAL(18,4)         NOT NULL,\n    TonThucTe    DECIMAL(18,4)         NOT NULL,\n    LyDo         NVARCHAR(100) NULL,\n\n    CONSTRAINT PK_CHITIET_KK        PRIMARY KEY (MaKK, MaNVL),\n    CONSTRAINT CHK_CTKK_TonHT       CHECK (TonHeThong >= 0),\n    CONSTRAINT CHK_CTKK_TonTT       CHECK (TonThucTe  >= 0),\n    CONSTRAINT FK_CTKK_KIEMKE       FOREIGN KEY (MaKK)  REFERENCES PHIEUKIEMKE(MaKK),\n    CONSTRAINT FK_CTKK_NVL          FOREIGN KEY (MaNVL) REFERENCES NGUYENVATLIEU(MaNVL)"
+  },
+  "HANGTHANHVIEN": {
+    "fields": [
+      {
+        "name": "MaHang",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "DiemToiThieu",
+        "type": "INT",
+        "nullable": false,
+        "tail": "NOT NULL,"
+      },
+      {
+        "name": "PhanTramGiam",
+        "type": "INT",
+        "nullable": false,
+        "tail": "NOT NULL DEFAULT 0,"
+      }
+    ],
+    "pk": [
+      "MaHang"
+    ],
+    "fk": {},
+    "body": "\n    MaHang       CHAR(5)       NOT NULL,\n    DiemToiThieu INT           NOT NULL,\n    PhanTramGiam INT           NOT NULL DEFAULT 0,\n\n    CONSTRAINT PK_HANGTHANHVIEN         PRIMARY KEY (MaHang),\n    CONSTRAINT CHK_HTV_Diem             CHECK (DiemToiThieu >= 0),\n    CONSTRAINT CHK_HTV_PhanTramGiam     CHECK (PhanTramGiam >= 0 AND PhanTramGiam <= 100)"
+  },
+  "KHACHHANG": {
+    "fields": [
+      {
+        "name": "MaKH",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "TenKH",
+        "type": "NVARCHAR(50)",
+        "nullable": false,
+        "tail": "  NOT NULL,"
+      },
+      {
+        "name": "SDT",
+        "type": "VARCHAR(15)",
+        "nullable": true,
+        "tail": "   NULL,"
+      },
+      {
+        "name": "DiemTichLuy",
+        "type": "INT",
+        "nullable": false,
+        "tail": "NOT NULL DEFAULT 0,"
+      },
+      {
+        "name": "MaHang",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      }
+    ],
+    "pk": [
+      "MaKH"
+    ],
+    "fk": {
+      "MaHang": [
+        "HANGTHANHVIEN",
+        "MaHang"
+      ]
+    },
+    "body": "\n    MaKH         CHAR(5)       NOT NULL,\n    TenKH        NVARCHAR(50)  NOT NULL,\n    SDT          VARCHAR(15)   NULL,\n    DiemTichLuy  INT           NOT NULL DEFAULT 0,\n    MaHang       CHAR(5)       NOT NULL,\n\n    CONSTRAINT PK_KHACHHANG         PRIMARY KEY (MaKH),\n    CONSTRAINT CHK_KH_Diem          CHECK (DiemTichLuy >= 0),\n    CONSTRAINT FK_KH_HANG           FOREIGN KEY (MaHang) REFERENCES HANGTHANHVIEN(MaHang)"
+  },
+  "LICHSU_DIEM": {
+    "fields": [
+      {
+        "name": "MaHD",
+        "type": "CHAR(10)",
+        "nullable": true,
+        "tail": " NULL,"
+      },
+      {
+        "name": "MaGD",
+        "type": "INT",
+        "nullable": false,
+        "tail": "IDENTITY(1,1) NOT NULL,"
+      },
+      {
+        "name": "MaKH",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "NgayGD",
+        "type": "DATETIME2(0)",
+        "nullable": false,
+        "tail": "      NOT NULL DEFAULT GETDATE(),"
+      },
+      {
+        "name": "Loai",
+        "type": "NVARCHAR(10)",
+        "nullable": false,
+        "tail": "  NOT NULL,"
+      },
+      {
+        "name": "SoDiem",
+        "type": "INT",
+        "nullable": false,
+        "tail": "NOT NULL,"
+      },
+      {
+        "name": "LyDo",
+        "type": "NVARCHAR(100)",
+        "nullable": false,
+        "tail": " NOT NULL,"
+      }
+    ],
+    "pk": [
+      "MaGD"
+    ],
+    "fk": {
+      "MaKH": [
+        "KHACHHANG",
+        "MaKH"
+      ],
+      "MaHD": [
+        "HOADON",
+        "MaHD"
+      ]
+    },
+    "body": "\n    MaHD CHAR(10) NULL,\n    MaGD         INT           IDENTITY(1,1) NOT NULL,\n    MaKH         CHAR(5)       NOT NULL,\n    NgayGD       DATETIME2(0)      NOT NULL DEFAULT GETDATE(),\n    Loai         NVARCHAR(10)  NOT NULL,\n    SoDiem       INT           NOT NULL,\n    LyDo         NVARCHAR(100) NOT NULL,\n\n    CONSTRAINT PK_LICHSU_DIEM       PRIMARY KEY (MaGD),\n    CONSTRAINT CHK_LD_Loai          CHECK (Loai IN (N'Cong', N'Tru')),\n    CONSTRAINT CHK_LD_SoDiem        CHECK (SoDiem > 0),\n    CONSTRAINT FK_LD_KHACHHANG      FOREIGN KEY (MaKH) REFERENCES KHACHHANG(MaKH)"
+  },
+  "KHUYENMAI": {
+    "fields": [
+      {
+        "name": "MaKM",
+        "type": "CHAR(10)",
+        "nullable": false,
+        "tail": "      NOT NULL,"
+      },
+      {
+        "name": "TenKM",
+        "type": "NVARCHAR(100)",
+        "nullable": false,
+        "tail": " NOT NULL,"
+      },
+      {
+        "name": "NgayBD",
+        "type": "DATE",
+        "nullable": false,
+        "tail": "NOT NULL,"
+      },
+      {
+        "name": "NgayKT",
+        "type": "DATE",
+        "nullable": false,
+        "tail": "NOT NULL,"
+      },
+      {
+        "name": "PhanTramGiam",
+        "type": "INT",
+        "nullable": false,
+        "tail": "NOT NULL DEFAULT 0,"
+      }
+    ],
+    "pk": [
+      "MaKM"
+    ],
+    "fk": {},
+    "body": "\n    MaKM         CHAR(10)      NOT NULL,\n    TenKM        NVARCHAR(100) NOT NULL,\n    NgayBD       DATE          NOT NULL,\n    NgayKT       DATE          NOT NULL,\n    PhanTramGiam INT           NOT NULL DEFAULT 0,\n\n    CONSTRAINT PK_KHUYENMAI         PRIMARY KEY (MaKM),\n    CONSTRAINT CHK_KM_NgayHopLe     CHECK (NgayKT >= NgayBD),\n    CONSTRAINT CHK_KM_PhanTram      CHECK (PhanTramGiam >= 0 AND PhanTramGiam <= 100)"
+  },
+  "KHUVUC": {
+    "fields": [
+      {
+        "name": "MaKV",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "TenKV",
+        "type": "NVARCHAR(50)",
+        "nullable": false,
+        "tail": "  NOT NULL,"
+      }
+    ],
+    "pk": [
+      "MaKV"
+    ],
+    "fk": {},
+    "body": "\n    MaKV         CHAR(5)       NOT NULL,\n    TenKV        NVARCHAR(50)  NOT NULL,\n\n    CONSTRAINT PK_KHUVUC            PRIMARY KEY (MaKV),\n    CONSTRAINT UQ_KHUVUC_Ten        UNIQUE (TenKV)"
+  },
+  "BAN": {
+    "fields": [
+      {
+        "name": "MaBan",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "TenBan",
+        "type": "NVARCHAR(20)",
+        "nullable": false,
+        "tail": "  NOT NULL,"
+      },
+      {
+        "name": "MaKV",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      }
+    ],
+    "pk": [
+      "MaBan"
+    ],
+    "fk": {
+      "MaKV": [
+        "KHUVUC",
+        "MaKV"
+      ]
+    },
+    "body": "\n    MaBan        CHAR(5)       NOT NULL,\n    TenBan       NVARCHAR(20)  NOT NULL,\n    MaKV         CHAR(5)       NOT NULL,\n\n    CONSTRAINT PK_BAN               PRIMARY KEY (MaBan),\n    CONSTRAINT FK_BAN_KHUVUC        FOREIGN KEY (MaKV) REFERENCES KHUVUC(MaKV)"
+  },
+  "DOITACGIAOHANG": {
+    "fields": [
+      {
+        "name": "MaDT",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "TenDT",
+        "type": "NVARCHAR(50)",
+        "nullable": false,
+        "tail": "  NOT NULL,"
+      },
+      {
+        "name": "ChietKhau",
+        "type": "DECIMAL(5,2)",
+        "nullable": false,
+        "tail": "         NOT NULL DEFAULT 0,"
+      }
+    ],
+    "pk": [
+      "MaDT"
+    ],
+    "fk": {},
+    "body": "\n    MaDT         CHAR(5)       NOT NULL,\n    TenDT        NVARCHAR(50)  NOT NULL,\n    ChietKhau    DECIMAL(5,2)         NOT NULL DEFAULT 0,\n\n    CONSTRAINT PK_DOITACGIAOHANG    PRIMARY KEY (MaDT),\n    CONSTRAINT CHK_DT_ChietKhau     CHECK (ChietKhau >= 0 AND ChietKhau <= 100)"
+  },
+  "PHUONGTHUCTT": {
+    "fields": [
+      {
+        "name": "MaPT",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "TenPT",
+        "type": "NVARCHAR(50)",
+        "nullable": false,
+        "tail": "  NOT NULL,"
+      }
+    ],
+    "pk": [
+      "MaPT"
+    ],
+    "fk": {},
+    "body": "\n    MaPT         CHAR(5)       NOT NULL,\n    TenPT        NVARCHAR(50)  NOT NULL,\n\n    CONSTRAINT PK_PHUONGTHUCTT      PRIMARY KEY (MaPT),\n    CONSTRAINT UQ_PT_Ten            UNIQUE (TenPT)"
+  },
+  "HOADON": {
+    "fields": [
+      {
+        "name": "MaHD",
+        "type": "CHAR(10)",
+        "nullable": false,
+        "tail": "      NOT NULL,"
+      },
+      {
+        "name": "NgayLap",
+        "type": "DATETIME2(0)",
+        "nullable": false,
+        "tail": "      NOT NULL DEFAULT GETDATE(),"
+      },
+      {
+        "name": "MaNV",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "MaKH",
+        "type": "CHAR(5)",
+        "nullable": true,
+        "tail": "       NULL,"
+      },
+      {
+        "name": "MaBan",
+        "type": "CHAR(5)",
+        "nullable": true,
+        "tail": "       NULL,"
+      },
+      {
+        "name": "MaDT",
+        "type": "CHAR(5)",
+        "nullable": true,
+        "tail": "       NULL,"
+      },
+      {
+        "name": "MaKM",
+        "type": "CHAR(10)",
+        "nullable": true,
+        "tail": " NULL,"
+      },
+      {
+        "name": "LoaiDon",
+        "type": "NVARCHAR(20)",
+        "nullable": false,
+        "tail": " NOT NULL DEFAULT N'Tai quan',"
+      },
+      {
+        "name": "TenNguoiNhan",
+        "type": "NVARCHAR(100)",
+        "nullable": true,
+        "tail": " NULL,"
+      },
+      {
+        "name": "SDTNguoiNhan",
+        "type": "VARCHAR(15)",
+        "nullable": true,
+        "tail": " NULL,"
+      },
+      {
+        "name": "DiaChiGiao",
+        "type": "NVARCHAR(250)",
+        "nullable": true,
+        "tail": " NULL,"
+      },
+      {
+        "name": "TrangThaiGiao",
+        "type": "NVARCHAR(20)",
+        "nullable": true,
+        "tail": " NULL,"
+      },
+      {
+        "name": "NgayThanhToan",
+        "type": "DATETIME2(0)",
+        "nullable": true,
+        "tail": " NULL,"
+      },
+      {
+        "name": "PhanTramPhiDoiTac",
+        "type": "DECIMAL(5,2)",
+        "nullable": false,
+        "tail": " NOT NULL DEFAULT 0,"
+      },
+      {
+        "name": "PhiDoiTac",
+        "type": "DECIMAL(18,0)",
+        "nullable": false,
+        "tail": " NOT NULL DEFAULT 0,"
+      },
+      {
+        "name": "TongTien",
+        "type": "DECIMAL(18,0)",
+        "nullable": false,
+        "tail": "           NOT NULL DEFAULT 0,"
+      },
+      {
+        "name": "PhiShip",
+        "type": "DECIMAL(18,0)",
+        "nullable": false,
+        "tail": "           NOT NULL DEFAULT 0,"
+      },
+      {
+        "name": "GiamGia",
+        "type": "DECIMAL(18,0)",
+        "nullable": false,
+        "tail": "           NOT NULL DEFAULT 0,"
+      },
+      {
+        "name": "TrangThai",
+        "type": "NVARCHAR(30)",
+        "nullable": false,
+        "tail": "  NOT NULL DEFAULT N'Chua thanh toan',"
+      },
+      {
+        "name": "ThanhTien",
+        "type": "Computed",
+        "nullable": false,
+        "tail": "Computed"
+      }
+    ],
+    "pk": [
+      "MaHD"
+    ],
+    "fk": {
+      "MaKM": [
+        "KHUYENMAI",
+        "MaKM"
+      ],
+      "MaNV": [
+        "NHANVIEN",
+        "MaNV"
+      ],
+      "MaKH": [
+        "KHACHHANG",
+        "MaKH"
+      ],
+      "MaBan": [
+        "BAN",
+        "MaBan"
+      ],
+      "MaDT": [
+        "DOITACGIAOHANG",
+        "MaDT"
+      ]
+    },
+    "body": "\n    MaHD         CHAR(10)      NOT NULL,\n    NgayLap      DATETIME2(0)      NOT NULL DEFAULT GETDATE(),\n    MaNV         CHAR(5)       NOT NULL,\n    MaKH         CHAR(5)       NULL,\n    MaBan        CHAR(5)       NULL,\n    MaDT         CHAR(5)       NULL,\n    MaKM CHAR(10) NULL,\n    LoaiDon NVARCHAR(20) NOT NULL DEFAULT N'Tai quan',\n    TenNguoiNhan NVARCHAR(100) NULL,\n    SDTNguoiNhan VARCHAR(15) NULL,\n    DiaChiGiao NVARCHAR(250) NULL,\n    TrangThaiGiao NVARCHAR(20) NULL,\n    NgayThanhToan DATETIME2(0) NULL,\n    PhanTramPhiDoiTac DECIMAL(5,2) NOT NULL DEFAULT 0,\n    PhiDoiTac DECIMAL(18,0) NOT NULL DEFAULT 0,\n    TongTien DECIMAL(18,0)           NOT NULL DEFAULT 0,\n    PhiShip DECIMAL(18,0)           NOT NULL DEFAULT 0,\n    GiamGia DECIMAL(18,0)           NOT NULL DEFAULT 0,\n    TrangThai    NVARCHAR(30)  NOT NULL DEFAULT N'Chua thanh toan',\n\n    ThanhTien AS (TongTien + PhiShip - GiamGia) PERSISTED,\n    CONSTRAINT CHK_HD_GiamToiDa CHECK (GiamGia <= TongTien),\n    CONSTRAINT CHK_HD_PhiDT CHECK (PhanTramPhiDoiTac BETWEEN 0 AND 100 AND PhiDoiTac >= 0),\n    CONSTRAINT CHK_HD_LoaiDon CHECK (LoaiDon IN (N'Tai quan', N'Mang di', N'Giao hang')),\n    CONSTRAINT CHK_HD_BanTheoLoai CHECK (\n        (LoaiDon = N'Tai quan' AND MaBan IS NOT NULL AND MaDT IS NULL)\n        OR (LoaiDon=N'Mang di' AND MaBan IS NULL AND MaDT IS NULL)\n        OR (LoaiDon=N'Giao hang' AND MaBan IS NULL)),\n    CONSTRAINT CHK_HD_GiaoHang CHECK (\n        (LoaiDon = N'Giao hang' AND TenNguoiNhan IS NOT NULL AND SDTNguoiNhan IS NOT NULL\n         AND DiaChiGiao IS NOT NULL AND TrangThaiGiao IS NOT NULL)\n        OR (LoaiDon <> N'Giao hang' AND TrangThaiGiao IS NULL)),\n    CONSTRAINT CHK_HD_TrangThaiGiao CHECK (TrangThaiGiao IS NULL OR TrangThaiGiao IN\n        (N'Cho giao', N'Dang giao', N'Da giao', N'Huy giao')),\n    CONSTRAINT CHK_HD_NgayTT CHECK (\n        (TrangThai = N'Da thanh toan' AND NgayThanhToan IS NOT NULL)\n        OR (TrangThai <> N'Da thanh toan' AND NgayThanhToan IS NULL)),\n    CONSTRAINT FK_HD_KHUYENMAI FOREIGN KEY (MaKM) REFERENCES KHUYENMAI(MaKM),\n    CONSTRAINT PK_HOADON            PRIMARY KEY (MaHD),\n    CONSTRAINT CHK_HD_TongTien      CHECK (TongTien >= 0),\n    CONSTRAINT CHK_HD_PhiShip       CHECK (PhiShip  >= 0),\n    CONSTRAINT CHK_HD_GiamGia       CHECK (GiamGia  >= 0),\n    CONSTRAINT CHK_HD_TrangThai     CHECK (TrangThai IN\n        (N'Chua thanh toan', N'Da thanh toan', N'Huy')),\n    CONSTRAINT FK_HD_NHANVIEN       FOREIGN KEY (MaNV)  REFERENCES NHANVIEN(MaNV),\n    CONSTRAINT FK_HD_KHACHHANG      FOREIGN KEY (MaKH)  REFERENCES KHACHHANG(MaKH),\n    CONSTRAINT FK_HD_BAN            FOREIGN KEY (MaBan) REFERENCES BAN(MaBan),\n    CONSTRAINT FK_HD_DOITAC         FOREIGN KEY (MaDT)  REFERENCES DOITACGIAOHANG(MaDT)"
+  },
+  "CHITIET_HD": {
+    "fields": [
+      {
+        "name": "MaHD",
+        "type": "CHAR(10)",
+        "nullable": false,
+        "tail": "      NOT NULL,"
+      },
+      {
+        "name": "MaDong",
+        "type": "INT",
+        "nullable": false,
+        "tail": "IDENTITY(1,1) NOT NULL,"
+      },
+      {
+        "name": "MaSP",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "SoLuong",
+        "type": "INT",
+        "nullable": false,
+        "tail": "NOT NULL,"
+      },
+      {
+        "name": "GiaBan",
+        "type": "DECIMAL(18,0)",
+        "nullable": false,
+        "tail": "           NOT NULL,"
+      },
+      {
+        "name": "GhiChu",
+        "type": "NVARCHAR(100)",
+        "nullable": true,
+        "tail": " NULL,"
+      }
+    ],
+    "pk": [
+      "MaDong"
+    ],
+    "fk": {
+      "MaHD": [
+        "HOADON",
+        "MaHD"
+      ],
+      "MaSP": [
+        "SANPHAM",
+        "MaSP"
+      ]
+    },
+    "body": "\n    MaHD         CHAR(10)      NOT NULL,\n    MaDong INT IDENTITY(1,1) NOT NULL,\n    MaSP         CHAR(5)       NOT NULL,\n    SoLuong      INT           NOT NULL,\n    GiaBan DECIMAL(18,0)           NOT NULL,\n    GhiChu       NVARCHAR(100) NULL,\n\n    CONSTRAINT PK_CHITIET_HD        PRIMARY KEY (MaDong),\n    CONSTRAINT CHK_CTHD_SoLuong     CHECK (SoLuong > 0),\n    CONSTRAINT CHK_CTHD_GiaBan      CHECK (GiaBan  > 0),\n    CONSTRAINT FK_CTHD_HOADON       FOREIGN KEY (MaHD) REFERENCES HOADON(MaHD),\n    CONSTRAINT FK_CTHD_SANPHAM      FOREIGN KEY (MaSP) REFERENCES SANPHAM(MaSP)"
+  },
+  "CHITIET_THANHTOAN": {
+    "fields": [
+      {
+        "name": "MaHD",
+        "type": "CHAR(10)",
+        "nullable": false,
+        "tail": "      NOT NULL,"
+      },
+      {
+        "name": "MaTT",
+        "type": "INT",
+        "nullable": false,
+        "tail": "IDENTITY(1,1) NOT NULL,"
+      },
+      {
+        "name": "MaPT",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "NgayTT",
+        "type": "DATETIME2(0)",
+        "nullable": false,
+        "tail": " NOT NULL DEFAULT SYSDATETIME(),"
+      },
+      {
+        "name": "MaThamChieu",
+        "type": "NVARCHAR(100)",
+        "nullable": true,
+        "tail": " NULL,"
+      },
+      {
+        "name": "SoTien",
+        "type": "DECIMAL(18,0)",
+        "nullable": false,
+        "tail": "           NOT NULL,"
+      }
+    ],
+    "pk": [
+      "MaTT"
+    ],
+    "fk": {
+      "MaHD": [
+        "HOADON",
+        "MaHD"
+      ],
+      "MaPT": [
+        "PHUONGTHUCTT",
+        "MaPT"
+      ]
+    },
+    "body": "\n    MaHD         CHAR(10)      NOT NULL,\n    MaTT INT IDENTITY(1,1) NOT NULL,\n    MaPT         CHAR(5)       NOT NULL,\n    NgayTT DATETIME2(0) NOT NULL DEFAULT SYSDATETIME(),\n    MaThamChieu NVARCHAR(100) NULL,\n    SoTien DECIMAL(18,0)           NOT NULL,\n\n    CONSTRAINT PK_CHITIET_TT        PRIMARY KEY (MaTT),\n    CONSTRAINT CHK_CTTT_SoTien      CHECK (SoTien > 0),\n    CONSTRAINT FK_CTTT_HOADON       FOREIGN KEY (MaHD) REFERENCES HOADON(MaHD),\n    CONSTRAINT FK_CTTT_PHUONGTHUC   FOREIGN KEY (MaPT) REFERENCES PHUONGTHUCTT(MaPT)"
+  },
+  "DANHMUC_THUCHI": {
+    "fields": [
+      {
+        "name": "MaDMTC",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "TenDMTC",
+        "type": "NVARCHAR(50)",
+        "nullable": false,
+        "tail": "  NOT NULL,"
+      },
+      {
+        "name": "Loai",
+        "type": "NVARCHAR(10)",
+        "nullable": false,
+        "tail": "  NOT NULL,"
+      }
+    ],
+    "pk": [
+      "MaDMTC"
+    ],
+    "fk": {},
+    "body": "\n    MaDMTC       CHAR(5)       NOT NULL,\n    TenDMTC      NVARCHAR(50)  NOT NULL,\n    Loai         NVARCHAR(10)  NOT NULL,\n\n    CONSTRAINT PK_DANHMUC_THUCHI    PRIMARY KEY (MaDMTC),\n    CONSTRAINT CHK_DMTC_Loai        CHECK (Loai IN (N'Thu', N'Chi'))"
+  },
+  "TAISAN_CODINH": {
+    "fields": [
+      {
+        "name": "MaTS",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "TenTS",
+        "type": "NVARCHAR(100)",
+        "nullable": false,
+        "tail": " NOT NULL,"
+      },
+      {
+        "name": "NgayMua",
+        "type": "DATE",
+        "nullable": false,
+        "tail": "NOT NULL,"
+      },
+      {
+        "name": "GiaTri",
+        "type": "DECIMAL(18,0)",
+        "nullable": false,
+        "tail": "           NOT NULL,"
+      },
+      {
+        "name": "SoThangKH",
+        "type": "INT",
+        "nullable": false,
+        "tail": "NOT NULL,"
+      }
+    ],
+    "pk": [
+      "MaTS"
+    ],
+    "fk": {},
+    "body": "\n    MaTS         CHAR(5)       NOT NULL,\n    TenTS        NVARCHAR(100) NOT NULL,\n    NgayMua      DATE          NOT NULL,\n    GiaTri DECIMAL(18,0)           NOT NULL,\n    SoThangKH    INT           NOT NULL,\n\n    CONSTRAINT PK_TAISAN_CODINH     PRIMARY KEY (MaTS),\n    CONSTRAINT CHK_TS_GiaTri        CHECK (GiaTri > 0),\n    CONSTRAINT CHK_TS_SoThangKH     CHECK (SoThangKH > 0)"
+  },
+  "PHIEUTHUCHI": {
+    "fields": [
+      {
+        "name": "MaTC",
+        "type": "CHAR(10)",
+        "nullable": false,
+        "tail": "      NOT NULL,"
+      },
+      {
+        "name": "NgayLap",
+        "type": "DATETIME2(0)",
+        "nullable": false,
+        "tail": "      NOT NULL DEFAULT GETDATE(),"
+      },
+      {
+        "name": "MaDMTC",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "MaNV",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": "       NOT NULL,"
+      },
+      {
+        "name": "MaTS",
+        "type": "CHAR(5)",
+        "nullable": true,
+        "tail": "       NULL,"
+      },
+      {
+        "name": "SoTien",
+        "type": "DECIMAL(18,0)",
+        "nullable": false,
+        "tail": "           NOT NULL,"
+      },
+      {
+        "name": "GhiChu",
+        "type": "NVARCHAR(200)",
+        "nullable": true,
+        "tail": " NULL,"
+      }
+    ],
+    "pk": [
+      "MaTC"
+    ],
+    "fk": {
+      "MaDMTC": [
+        "DANHMUC_THUCHI",
+        "MaDMTC"
+      ],
+      "MaNV": [
+        "NHANVIEN",
+        "MaNV"
+      ],
+      "MaTS": [
+        "TAISAN_CODINH",
+        "MaTS"
+      ]
+    },
+    "body": "\n    MaTC         CHAR(10)      NOT NULL,\n    NgayLap      DATETIME2(0)      NOT NULL DEFAULT GETDATE(),\n    MaDMTC       CHAR(5)       NOT NULL,\n    MaNV         CHAR(5)       NOT NULL,\n    MaTS         CHAR(5)       NULL,\n    SoTien DECIMAL(18,0)           NOT NULL,\n    GhiChu       NVARCHAR(200) NULL,\n\n    CONSTRAINT PK_PHIEUTHUCHI       PRIMARY KEY (MaTC),\n    CONSTRAINT CHK_PTC_SoTien       CHECK (SoTien > 0),\n    CONSTRAINT FK_PTC_DANHMUC       FOREIGN KEY (MaDMTC) REFERENCES DANHMUC_THUCHI(MaDMTC),\n    CONSTRAINT FK_PTC_NHANVIEN      FOREIGN KEY (MaNV)   REFERENCES NHANVIEN(MaNV),\n    CONSTRAINT FK_PTC_TAISAN        FOREIGN KEY (MaTS)   REFERENCES TAISAN_CODINH(MaTS)"
+  },
+  "CONGNO_NCC": {
+    "fields": [
+      {
+        "name": "MaCN",
+        "type": "CHAR(10)",
+        "nullable": false,
+        "tail": "      NOT NULL,"
+      },
+      {
+        "name": "MaPN",
+        "type": "CHAR(10)",
+        "nullable": false,
+        "tail": "      NOT NULL,"
+      },
+      {
+        "name": "TienNo",
+        "type": "DECIMAL(18,0)",
+        "nullable": false,
+        "tail": "           NOT NULL,"
+      },
+      {
+        "name": "HanTra",
+        "type": "DATE",
+        "nullable": true,
+        "tail": "NULL,"
+      }
+    ],
+    "pk": [
+      "MaCN"
+    ],
+    "fk": {
+      "MaPN": [
+        "PHIEUNHAP",
+        "MaPN"
+      ]
+    },
+    "body": "\n    MaCN         CHAR(10)      NOT NULL,\n    MaPN         CHAR(10)      NOT NULL,\n    TienNo DECIMAL(18,0)           NOT NULL,\n    HanTra       DATE          NULL,\n\n    CONSTRAINT UQ_CN_MaPN UNIQUE (MaPN),\n    CONSTRAINT PK_CONGNO_NCC        PRIMARY KEY (MaCN),\n    CONSTRAINT CHK_CN_TienNo        CHECK (TienNo > 0),\n    CONSTRAINT FK_CN_PHIEUNHAP      FOREIGN KEY (MaPN)  REFERENCES PHIEUNHAP(MaPN)"
+  },
+  "VAITRO": {
+    "fields": [
+      {
+        "name": "MaVT",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": " NOT NULL CONSTRAINT PK_VAITRO PRIMARY KEY,"
+      },
+      {
+        "name": "TenVT",
+        "type": "NVARCHAR(50)",
+        "nullable": false,
+        "tail": " NOT NULL CONSTRAINT UQ_VT_Ten UNIQUE"
+      }
+    ],
+    "pk": [
+      "MaVT"
+    ],
+    "fk": {},
+    "body": "\n    MaVT CHAR(5) NOT NULL CONSTRAINT PK_VAITRO PRIMARY KEY,\n    TenVT NVARCHAR(50) NOT NULL CONSTRAINT UQ_VT_Ten UNIQUE"
+  },
+  "TAIKHOAN": {
+    "fields": [
+      {
+        "name": "MaTK",
+        "type": "INT",
+        "nullable": false,
+        "tail": "IDENTITY(1,1) NOT NULL CONSTRAINT PK_TAIKHOAN PRIMARY KEY,"
+      },
+      {
+        "name": "MaNV",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": " NOT NULL CONSTRAINT UQ_TK_NV UNIQUE,"
+      },
+      {
+        "name": "TenDangNhap",
+        "type": "VARCHAR(50)",
+        "nullable": false,
+        "tail": " NOT NULL CONSTRAINT UQ_TK_Login UNIQUE,"
+      },
+      {
+        "name": "MatKhauHash",
+        "type": "VARCHAR(255)",
+        "nullable": false,
+        "tail": " NOT NULL,"
+      },
+      {
+        "name": "MaVT",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": " NOT NULL,"
+      },
+      {
+        "name": "HoatDong",
+        "type": "BIT",
+        "nullable": false,
+        "tail": "NOT NULL DEFAULT 0,"
+      }
+    ],
+    "pk": [
+      "MaTK"
+    ],
+    "fk": {
+      "MaNV": [
+        "NHANVIEN",
+        "MaNV"
+      ],
+      "MaVT": [
+        "VAITRO",
+        "MaVT"
+      ]
+    },
+    "body": "\n    MaTK INT IDENTITY(1,1) NOT NULL CONSTRAINT PK_TAIKHOAN PRIMARY KEY,\n    MaNV CHAR(5) NOT NULL CONSTRAINT UQ_TK_NV UNIQUE,\n    TenDangNhap VARCHAR(50) NOT NULL CONSTRAINT UQ_TK_Login UNIQUE,\n    MatKhauHash VARCHAR(255) NOT NULL,\n    MaVT CHAR(5) NOT NULL,\n    HoatDong BIT NOT NULL DEFAULT 0,\n    CONSTRAINT FK_TK_NV FOREIGN KEY (MaNV) REFERENCES NHANVIEN(MaNV),\n    CONSTRAINT FK_TK_VT FOREIGN KEY (MaVT) REFERENCES VAITRO(MaVT)"
+  },
+  "BANGLUONG": {
+    "fields": [
+      {
+        "name": "MaBL",
+        "type": "INT",
+        "nullable": false,
+        "tail": "IDENTITY(1,1) NOT NULL CONSTRAINT PK_BANGLUONG PRIMARY KEY,"
+      },
+      {
+        "name": "MaNV",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": " NOT NULL,"
+      },
+      {
+        "name": "Thang",
+        "type": "TINYINT",
+        "nullable": false,
+        "tail": "NOT NULL CHECK (Thang BETWEEN 1 AND 12),"
+      },
+      {
+        "name": "Nam",
+        "type": "SMALLINT",
+        "nullable": false,
+        "tail": "NOT NULL CHECK (Nam BETWEEN 2000 AND 9999),"
+      },
+      {
+        "name": "NgayChot",
+        "type": "DATETIME2(0)",
+        "nullable": false,
+        "tail": " NOT NULL DEFAULT SYSDATETIME(),"
+      },
+      {
+        "name": "LuongCoBan",
+        "type": "DECIMAL(18,0)",
+        "nullable": false,
+        "tail": " NOT NULL CHECK (LuongCoBan >= 0),"
+      },
+      {
+        "name": "SoGioLam",
+        "type": "DECIMAL(10,2)",
+        "nullable": false,
+        "tail": " NOT NULL DEFAULT 0 CHECK (SoGioLam >= 0),"
+      },
+      {
+        "name": "DonGiaGio",
+        "type": "DECIMAL(18,0)",
+        "nullable": false,
+        "tail": " NOT NULL DEFAULT 0 CHECK (DonGiaGio >= 0),"
+      },
+      {
+        "name": "TienTangCa",
+        "type": "DECIMAL(18,0)",
+        "nullable": false,
+        "tail": " NOT NULL DEFAULT 0 CHECK (TienTangCa >= 0),"
+      },
+      {
+        "name": "PhuCap",
+        "type": "DECIMAL(18,0)",
+        "nullable": false,
+        "tail": " NOT NULL DEFAULT 0 CHECK (PhuCap >= 0),"
+      },
+      {
+        "name": "Thuong",
+        "type": "DECIMAL(18,0)",
+        "nullable": false,
+        "tail": " NOT NULL DEFAULT 0 CHECK (Thuong >= 0),"
+      },
+      {
+        "name": "KhauTru",
+        "type": "DECIMAL(18,0)",
+        "nullable": false,
+        "tail": " NOT NULL DEFAULT 0 CHECK (KhauTru >= 0),"
+      },
+      {
+        "name": "ThucLinh",
+        "type": "Computed",
+        "nullable": false,
+        "tail": "Computed"
+      }
+    ],
+    "pk": [
+      "MaBL"
+    ],
+    "fk": {
+      "MaNV": [
+        "NHANVIEN",
+        "MaNV"
+      ]
+    },
+    "body": "\n    MaBL INT IDENTITY(1,1) NOT NULL CONSTRAINT PK_BANGLUONG PRIMARY KEY,\n    MaNV CHAR(5) NOT NULL,\n    Thang TINYINT NOT NULL CHECK (Thang BETWEEN 1 AND 12),\n    Nam SMALLINT NOT NULL CHECK (Nam BETWEEN 2000 AND 9999),\n    NgayChot DATETIME2(0) NOT NULL DEFAULT SYSDATETIME(),\n    LuongCoBan DECIMAL(18,0) NOT NULL CHECK (LuongCoBan >= 0),\n    SoGioLam DECIMAL(10,2) NOT NULL DEFAULT 0 CHECK (SoGioLam >= 0),\n    DonGiaGio DECIMAL(18,0) NOT NULL DEFAULT 0 CHECK (DonGiaGio >= 0),\n    TienTangCa DECIMAL(18,0) NOT NULL DEFAULT 0 CHECK (TienTangCa >= 0),\n    PhuCap DECIMAL(18,0) NOT NULL DEFAULT 0 CHECK (PhuCap >= 0),\n    Thuong DECIMAL(18,0) NOT NULL DEFAULT 0 CHECK (Thuong >= 0),\n    KhauTru DECIMAL(18,0) NOT NULL DEFAULT 0 CHECK (KhauTru >= 0),\n    ThucLinh AS (LuongCoBan + ROUND(SoGioLam * DonGiaGio, 0)\n                    + TienTangCa + PhuCap + Thuong - KhauTru) PERSISTED,\n    CONSTRAINT CHK_BL_ThucLinh CHECK (LuongCoBan + ROUND(SoGioLam * DonGiaGio,0)\n                    + TienTangCa + PhuCap + Thuong >= KhauTru),\n    CONSTRAINT UQ_BL_Ky UNIQUE (MaNV, Thang, Nam),\n    CONSTRAINT FK_BL_NV FOREIGN KEY (MaNV) REFERENCES NHANVIEN(MaNV)"
+  },
+  "THANHTOAN_CONGNO": {
+    "fields": [
+      {
+        "name": "MaTT",
+        "type": "INT",
+        "nullable": false,
+        "tail": "IDENTITY(1,1) NOT NULL CONSTRAINT PK_TTCN PRIMARY KEY,"
+      },
+      {
+        "name": "MaCN",
+        "type": "CHAR(10)",
+        "nullable": false,
+        "tail": " NOT NULL,"
+      },
+      {
+        "name": "MaTC",
+        "type": "CHAR(10)",
+        "nullable": false,
+        "tail": " NOT NULL CONSTRAINT UQ_TTCN_PhieuChi UNIQUE,"
+      },
+      {
+        "name": "MaPT",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": " NOT NULL,"
+      }
+    ],
+    "pk": [
+      "MaTT"
+    ],
+    "fk": {
+      "MaCN": [
+        "CONGNO_NCC",
+        "MaCN"
+      ],
+      "MaTC": [
+        "PHIEUTHUCHI",
+        "MaTC"
+      ],
+      "MaPT": [
+        "PHUONGTHUCTT",
+        "MaPT"
+      ]
+    },
+    "body": "\n    MaTT INT IDENTITY(1,1) NOT NULL CONSTRAINT PK_TTCN PRIMARY KEY,\n    MaCN CHAR(10) NOT NULL,\n    MaTC CHAR(10) NOT NULL CONSTRAINT UQ_TTCN_PhieuChi UNIQUE,\n    MaPT CHAR(5) NOT NULL,\n    CONSTRAINT FK_TTCN_CN FOREIGN KEY (MaCN) REFERENCES CONGNO_NCC(MaCN),\n    CONSTRAINT FK_TTCN_TC FOREIGN KEY (MaTC) REFERENCES PHIEUTHUCHI(MaTC),\n    CONSTRAINT FK_TTCN_PT FOREIGN KEY (MaPT) REFERENCES PHUONGTHUCTT(MaPT)"
+  },
+  "TIEUHAO_HOADON": {
+    "fields": [
+      {
+        "name": "MaHD",
+        "type": "CHAR(10)",
+        "nullable": false,
+        "tail": " NOT NULL,"
+      },
+      {
+        "name": "MaNVL",
+        "type": "CHAR(5)",
+        "nullable": false,
+        "tail": " NOT NULL,"
+      },
+      {
+        "name": "SoLuong",
+        "type": "DECIMAL(18,4)",
+        "nullable": false,
+        "tail": " NOT NULL CHECK (SoLuong > 0),"
+      }
+    ],
+    "pk": [
+      "MaHD",
+      "MaNVL"
+    ],
+    "fk": {
+      "MaHD": [
+        "HOADON",
+        "MaHD"
+      ],
+      "MaNVL": [
+        "NGUYENVATLIEU",
+        "MaNVL"
+      ]
+    },
+    "body": "\n    MaHD CHAR(10) NOT NULL,\n    MaNVL CHAR(5) NOT NULL,\n    SoLuong DECIMAL(18,4) NOT NULL CHECK (SoLuong > 0),\n    CONSTRAINT PK_TIEUHAO PRIMARY KEY (MaHD, MaNVL),\n    CONSTRAINT FK_TH_HD FOREIGN KEY (MaHD) REFERENCES HOADON(MaHD),\n    CONSTRAINT FK_TH_NVL FOREIGN KEY (MaNVL) REFERENCES NGUYENVATLIEU(MaNVL)"
+  }
+}

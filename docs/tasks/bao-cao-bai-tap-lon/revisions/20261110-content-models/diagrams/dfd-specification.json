@@ -1,0 +1,1157 @@
+{
+  "actors": {
+    "admin": "Người quản lý",
+    "cash": "Nhân viên thu ngân",
+    "store": "Nhân viên kho"
+  },
+  "stores": {
+    "account": "Tài khoản và quyền",
+    "catalog": "Danh mục nền",
+    "customer": "Hồ sơ khách hàng và điểm",
+    "sale": "Hồ sơ bán hàng",
+    "stock": "Hồ sơ kho",
+    "debt": "Hồ sơ công nợ",
+    "finance": "Chứng từ thu chi",
+    "hr": "Hồ sơ nhân sự và tài sản"
+  },
+  "processes": {
+    "auth": "Xác thực và quản lý phiên",
+    "catalogue": "Quản lý dữ liệu nền và khách hàng",
+    "sales": "Bán hàng và thanh toán",
+    "inventory": "Quản lý kho",
+    "money": "Quản lý thu chi và công nợ",
+    "people": "Quản lý nhân sự, tài sản và báo cáo"
+  },
+  "spec": {
+    "auth": {
+      "steps": [
+        "Kiểm tra thông tin đăng nhập",
+        "Xác lập phiên làm việc",
+        "Kiểm tra và kết thúc phiên"
+      ],
+      "flows": [
+        [
+          "admin",
+          "actor",
+          "Thông tin đăng nhập và yêu cầu phiên",
+          "Kết quả xác thực và trạng thái phiên",
+          0,
+          2
+        ],
+        [
+          "cash",
+          "actor",
+          "Thông tin đăng nhập và yêu cầu phiên",
+          "Kết quả xác thực và trạng thái phiên",
+          0,
+          2
+        ],
+        [
+          "store",
+          "actor",
+          "Thông tin đăng nhập và yêu cầu phiên",
+          "Kết quả xác thực và trạng thái phiên",
+          0,
+          2
+        ],
+        [
+          "account",
+          "store",
+          "Hồ sơ xác thực",
+          "",
+          0,
+          2
+        ]
+      ],
+      "links": [
+        [
+          0,
+          1,
+          "Tài khoản đã xác thực"
+        ],
+        [
+          1,
+          2,
+          "Danh tính và quyền trong phiên"
+        ]
+      ]
+    },
+    "catalogue": {
+      "steps": [
+        "Cập nhật danh mục và chính sách",
+        "Tra cứu và cập nhật khách hàng",
+        "Ghi điều chỉnh điểm"
+      ],
+      "flows": [
+        [
+          "admin",
+          "actor",
+          "Yêu cầu cập nhật dữ liệu nền",
+          "Kết quả cập nhật dữ liệu nền",
+          0,
+          0
+        ],
+        [
+          "cash",
+          "actor",
+          "Yêu cầu tìm hoặc thêm khách",
+          "Kết quả tìm hoặc thêm khách",
+          1,
+          1
+        ],
+        [
+          "store",
+          "actor",
+          "Yêu cầu tra cứu danh mục",
+          "Danh mục được phép xem",
+          0,
+          0
+        ],
+        [
+          "catalog",
+          "store",
+          "Danh mục hiện có",
+          "Danh mục đã cập nhật",
+          0,
+          0
+        ],
+        [
+          "customer",
+          "store",
+          "Hồ sơ khách hàng và điểm hiện có",
+          "Hồ sơ khách hàng đã cập nhật",
+          1,
+          1
+        ],
+        [
+          "customer",
+          "store",
+          "",
+          "Lịch sử điều chỉnh điểm",
+          2,
+          2
+        ],
+        [
+          "stock",
+          "store",
+          "Nguyên liệu dùng trong công thức",
+          "",
+          0,
+          0
+        ]
+      ],
+      "links": [
+        [
+          1,
+          2,
+          "Khách hàng cần điều chỉnh điểm"
+        ],
+        [
+          0,
+          1,
+          "Yêu cầu cập nhật hồ sơ khách hàng"
+        ],
+        [
+          0,
+          2,
+          "Yêu cầu điều chỉnh điểm đã kiểm quyền"
+        ]
+      ]
+    },
+    "sales": {
+      "steps": [
+        "Lập và sửa đơn đang mở",
+        "Xác định ưu đãi và số phải trả",
+        "Chốt thanh toán",
+        "Tra cứu, in và theo dõi giao hàng"
+      ],
+      "flows": [
+        [
+          "admin",
+          "actor",
+          "Yêu cầu xử lý đơn bán",
+          "Kết quả xử lý đơn bán",
+          0,
+          3
+        ],
+        [
+          "cash",
+          "actor",
+          "Yêu cầu xử lý đơn bán",
+          "Kết quả xử lý đơn bán",
+          0,
+          3
+        ],
+        [
+          "catalog",
+          "store",
+          "Menu, công thức và chính sách ưu đãi",
+          "",
+          1,
+          1
+        ],
+        [
+          "customer",
+          "store",
+          "Hồ sơ khách hàng và điểm",
+          "Lịch sử điểm từ bán hàng",
+          1,
+          2
+        ],
+        [
+          "sale",
+          "store",
+          "Hóa đơn và tiền thu đã lưu",
+          "Hóa đơn và tiền thu đã cập nhật",
+          0,
+          2
+        ],
+        [
+          "stock",
+          "store",
+          "Tồn nguyên liệu hiện có",
+          "Tiêu hao nguyên liệu đã ghi",
+          2,
+          2
+        ]
+      ],
+      "links": [
+        [
+          0,
+          1,
+          "Đơn hàng cần tính tiền"
+        ],
+        [
+          1,
+          2,
+          "Đơn hàng và phân bổ đã xác nhận"
+        ],
+        [
+          2,
+          3,
+          "Hóa đơn đã chốt"
+        ]
+      ]
+    },
+    "inventory": {
+      "steps": [
+        "Quản lý nguyên liệu và tồn đầu kỳ",
+        "Ghi nhận nhập hàng",
+        "Ghi nhận xuất hàng",
+        "Đối chiếu và chốt kiểm kê"
+      ],
+      "flows": [
+        [
+          "admin",
+          "actor",
+          "Yêu cầu xử lý chứng từ kho",
+          "Kết quả xử lý chứng từ kho",
+          0,
+          3
+        ],
+        [
+          "store",
+          "actor",
+          "Yêu cầu xử lý chứng từ kho",
+          "Kết quả xử lý chứng từ kho",
+          0,
+          3
+        ],
+        [
+          "catalog",
+          "store",
+          "Hồ sơ nhà cung cấp",
+          "",
+          1,
+          1
+        ],
+        [
+          "stock",
+          "store",
+          "Tồn và chứng từ kho đã lưu",
+          "Tồn đầu kỳ đã ghi",
+          0,
+          0
+        ],
+        [
+          "money",
+          "process",
+          "Liên kết chi và nợ đã tạo",
+          "Nguồn phiếu nhập cần ghi chi và nợ",
+          1,
+          1
+        ],
+        [
+          "stock",
+          "store",
+          "",
+          "Phiếu nhập và tồn đã cập nhật",
+          1,
+          1
+        ],
+        [
+          "stock",
+          "store",
+          "",
+          "Phiếu xuất và tồn đã cập nhật",
+          2,
+          2
+        ],
+        [
+          "stock",
+          "store",
+          "",
+          "Kết quả kiểm kê đã chốt",
+          3,
+          3
+        ]
+      ],
+      "links": [
+        [
+          0,
+          1,
+          "Yêu cầu nhập và hồ sơ nguyên liệu"
+        ],
+        [
+          0,
+          2,
+          "Yêu cầu xuất và tồn hiện có"
+        ],
+        [
+          0,
+          3,
+          "Số đếm và tồn hệ thống tại lúc kiểm kê"
+        ]
+      ]
+    },
+    "money": {
+      "steps": [
+        "Ghi nhận thu chi thông thường",
+        "Ghi chi và nợ từ phiếu nhập",
+        "Ghi nhận trả nợ và tra cứu số dư",
+        "Ghi chi lương theo bảng đã chốt"
+      ],
+      "flows": [
+        [
+          "admin",
+          "actor",
+          "Yêu cầu thu chi hoặc trả nợ",
+          "Kết quả thu chi và trả nợ",
+          0,
+          2
+        ],
+        [
+          "store",
+          "actor",
+          "Yêu cầu tra cứu công nợ",
+          "Số dư và lịch sử công nợ",
+          2,
+          2
+        ],
+        [
+          "catalog",
+          "store",
+          "Danh mục thu chi và phương thức trả",
+          "",
+          0,
+          0
+        ],
+        [
+          "debt",
+          "store",
+          "Công nợ và lịch sử trả đã lưu",
+          "Công nợ và lịch sử trả đã cập nhật",
+          2,
+          2
+        ],
+        [
+          "finance",
+          "store",
+          "Chứng từ thu chi đã lưu",
+          "Chứng từ thu chi đã ghi",
+          0,
+          0
+        ],
+        [
+          "inventory",
+          "process",
+          "Nguồn phiếu nhập cần ghi chi và nợ",
+          "Liên kết chi và nợ đã tạo",
+          1,
+          1
+        ],
+        [
+          "people",
+          "process",
+          "Nguồn chi lương đã chốt",
+          "Liên kết phiếu chi lương",
+          3,
+          3
+        ]
+      ],
+      "links": [
+        [
+          1,
+          2,
+          "Khoản nợ phát sinh từ nhập hàng"
+        ],
+        [
+          1,
+          0,
+          "Khoản trả ngay cần ghi chi"
+        ],
+        [
+          2,
+          0,
+          "Khoản trả nợ cần ghi chi"
+        ],
+        [
+          3,
+          0,
+          "Khoản chi lương cần ghi"
+        ]
+      ]
+    },
+    "people": {
+      "steps": [
+        "Quản lý nhân sự, chấm công và lương",
+        "Quản lý hồ sơ tài sản",
+        "Tổng hợp và đối chiếu báo cáo"
+      ],
+      "flows": [
+        [
+          "admin",
+          "actor",
+          "Yêu cầu nhân sự, tài sản và báo cáo",
+          "Hồ sơ và báo cáo theo yêu cầu",
+          0,
+          2
+        ],
+        [
+          "hr",
+          "store",
+          "Hồ sơ nhân sự và tài sản đã lưu",
+          "Hồ sơ nhân sự và lương đã cập nhật",
+          0,
+          0
+        ],
+        [
+          "sale",
+          "store",
+          "Dữ liệu bán hàng đã ghi",
+          "",
+          2,
+          2
+        ],
+        [
+          "stock",
+          "store",
+          "Dữ liệu kho đã ghi",
+          "",
+          2,
+          2
+        ],
+        [
+          "debt",
+          "store",
+          "Dữ liệu công nợ đã ghi",
+          "",
+          2,
+          2
+        ],
+        [
+          "finance",
+          "store",
+          "Dữ liệu thu chi đã ghi",
+          "",
+          2,
+          2
+        ],
+        [
+          "money",
+          "process",
+          "Liên kết phiếu chi lương",
+          "Nguồn chi lương đã chốt",
+          0,
+          0
+        ],
+        [
+          "hr",
+          "store",
+          "",
+          "Hồ sơ tài sản đã cập nhật",
+          1,
+          1
+        ],
+        [
+          "account",
+          "store",
+          "Tài khoản và quyền hiện có",
+          "Tài khoản và quyền đã cập nhật",
+          0,
+          0
+        ]
+      ],
+      "links": [
+        [
+          0,
+          2,
+          "Kết quả nhân sự và lương"
+        ],
+        [
+          1,
+          2,
+          "Thông tin tài sản"
+        ],
+        [
+          0,
+          1,
+          "Yêu cầu quản lý tài sản đã kiểm quyền"
+        ]
+      ]
+    }
+  },
+  "boundary_checks": [
+    {
+      "process": "auth",
+      "detail": false,
+      "inputs": [
+        [
+          "admin",
+          "Thông tin đăng nhập và yêu cầu phiên"
+        ],
+        [
+          "cash",
+          "Thông tin đăng nhập và yêu cầu phiên"
+        ],
+        [
+          "store",
+          "Thông tin đăng nhập và yêu cầu phiên"
+        ],
+        [
+          "account",
+          "Hồ sơ xác thực"
+        ]
+      ],
+      "outputs": [
+        [
+          "admin",
+          "Kết quả xác thực và trạng thái phiên"
+        ],
+        [
+          "cash",
+          "Kết quả xác thực và trạng thái phiên"
+        ],
+        [
+          "store",
+          "Kết quả xác thực và trạng thái phiên"
+        ]
+      ]
+    },
+    {
+      "process": "auth",
+      "detail": true,
+      "inputs": [
+        [
+          "admin",
+          "Thông tin đăng nhập và yêu cầu phiên"
+        ],
+        [
+          "cash",
+          "Thông tin đăng nhập và yêu cầu phiên"
+        ],
+        [
+          "store",
+          "Thông tin đăng nhập và yêu cầu phiên"
+        ],
+        [
+          "account",
+          "Hồ sơ xác thực"
+        ]
+      ],
+      "outputs": [
+        [
+          "admin",
+          "Kết quả xác thực và trạng thái phiên"
+        ],
+        [
+          "cash",
+          "Kết quả xác thực và trạng thái phiên"
+        ],
+        [
+          "store",
+          "Kết quả xác thực và trạng thái phiên"
+        ]
+      ]
+    },
+    {
+      "process": "catalogue",
+      "detail": false,
+      "inputs": [
+        [
+          "admin",
+          "Yêu cầu cập nhật dữ liệu nền"
+        ],
+        [
+          "cash",
+          "Yêu cầu tìm hoặc thêm khách"
+        ],
+        [
+          "store",
+          "Yêu cầu tra cứu danh mục"
+        ],
+        [
+          "catalog",
+          "Danh mục hiện có"
+        ],
+        [
+          "customer",
+          "Hồ sơ khách hàng và điểm hiện có"
+        ],
+        [
+          "stock",
+          "Nguyên liệu dùng trong công thức"
+        ]
+      ],
+      "outputs": [
+        [
+          "admin",
+          "Kết quả cập nhật dữ liệu nền"
+        ],
+        [
+          "cash",
+          "Kết quả tìm hoặc thêm khách"
+        ],
+        [
+          "store",
+          "Danh mục được phép xem"
+        ],
+        [
+          "catalog",
+          "Danh mục đã cập nhật"
+        ],
+        [
+          "customer",
+          "Hồ sơ khách hàng đã cập nhật"
+        ],
+        [
+          "customer",
+          "Lịch sử điều chỉnh điểm"
+        ]
+      ]
+    },
+    {
+      "process": "catalogue",
+      "detail": true,
+      "inputs": [
+        [
+          "admin",
+          "Yêu cầu cập nhật dữ liệu nền"
+        ],
+        [
+          "cash",
+          "Yêu cầu tìm hoặc thêm khách"
+        ],
+        [
+          "store",
+          "Yêu cầu tra cứu danh mục"
+        ],
+        [
+          "catalog",
+          "Danh mục hiện có"
+        ],
+        [
+          "customer",
+          "Hồ sơ khách hàng và điểm hiện có"
+        ],
+        [
+          "stock",
+          "Nguyên liệu dùng trong công thức"
+        ]
+      ],
+      "outputs": [
+        [
+          "admin",
+          "Kết quả cập nhật dữ liệu nền"
+        ],
+        [
+          "cash",
+          "Kết quả tìm hoặc thêm khách"
+        ],
+        [
+          "store",
+          "Danh mục được phép xem"
+        ],
+        [
+          "catalog",
+          "Danh mục đã cập nhật"
+        ],
+        [
+          "customer",
+          "Hồ sơ khách hàng đã cập nhật"
+        ],
+        [
+          "customer",
+          "Lịch sử điều chỉnh điểm"
+        ]
+      ]
+    },
+    {
+      "process": "sales",
+      "detail": false,
+      "inputs": [
+        [
+          "admin",
+          "Yêu cầu xử lý đơn bán"
+        ],
+        [
+          "cash",
+          "Yêu cầu xử lý đơn bán"
+        ],
+        [
+          "catalog",
+          "Menu, công thức và chính sách ưu đãi"
+        ],
+        [
+          "customer",
+          "Hồ sơ khách hàng và điểm"
+        ],
+        [
+          "sale",
+          "Hóa đơn và tiền thu đã lưu"
+        ],
+        [
+          "stock",
+          "Tồn nguyên liệu hiện có"
+        ]
+      ],
+      "outputs": [
+        [
+          "admin",
+          "Kết quả xử lý đơn bán"
+        ],
+        [
+          "cash",
+          "Kết quả xử lý đơn bán"
+        ],
+        [
+          "customer",
+          "Lịch sử điểm từ bán hàng"
+        ],
+        [
+          "sale",
+          "Hóa đơn và tiền thu đã cập nhật"
+        ],
+        [
+          "stock",
+          "Tiêu hao nguyên liệu đã ghi"
+        ]
+      ]
+    },
+    {
+      "process": "sales",
+      "detail": true,
+      "inputs": [
+        [
+          "admin",
+          "Yêu cầu xử lý đơn bán"
+        ],
+        [
+          "cash",
+          "Yêu cầu xử lý đơn bán"
+        ],
+        [
+          "catalog",
+          "Menu, công thức và chính sách ưu đãi"
+        ],
+        [
+          "customer",
+          "Hồ sơ khách hàng và điểm"
+        ],
+        [
+          "sale",
+          "Hóa đơn và tiền thu đã lưu"
+        ],
+        [
+          "stock",
+          "Tồn nguyên liệu hiện có"
+        ]
+      ],
+      "outputs": [
+        [
+          "admin",
+          "Kết quả xử lý đơn bán"
+        ],
+        [
+          "cash",
+          "Kết quả xử lý đơn bán"
+        ],
+        [
+          "customer",
+          "Lịch sử điểm từ bán hàng"
+        ],
+        [
+          "sale",
+          "Hóa đơn và tiền thu đã cập nhật"
+        ],
+        [
+          "stock",
+          "Tiêu hao nguyên liệu đã ghi"
+        ]
+      ]
+    },
+    {
+      "process": "inventory",
+      "detail": false,
+      "inputs": [
+        [
+          "admin",
+          "Yêu cầu xử lý chứng từ kho"
+        ],
+        [
+          "store",
+          "Yêu cầu xử lý chứng từ kho"
+        ],
+        [
+          "catalog",
+          "Hồ sơ nhà cung cấp"
+        ],
+        [
+          "stock",
+          "Tồn và chứng từ kho đã lưu"
+        ],
+        [
+          "money",
+          "Liên kết chi và nợ đã tạo"
+        ]
+      ],
+      "outputs": [
+        [
+          "admin",
+          "Kết quả xử lý chứng từ kho"
+        ],
+        [
+          "store",
+          "Kết quả xử lý chứng từ kho"
+        ],
+        [
+          "stock",
+          "Tồn đầu kỳ đã ghi"
+        ],
+        [
+          "money",
+          "Nguồn phiếu nhập cần ghi chi và nợ"
+        ],
+        [
+          "stock",
+          "Phiếu nhập và tồn đã cập nhật"
+        ],
+        [
+          "stock",
+          "Phiếu xuất và tồn đã cập nhật"
+        ],
+        [
+          "stock",
+          "Kết quả kiểm kê đã chốt"
+        ]
+      ]
+    },
+    {
+      "process": "inventory",
+      "detail": true,
+      "inputs": [
+        [
+          "admin",
+          "Yêu cầu xử lý chứng từ kho"
+        ],
+        [
+          "store",
+          "Yêu cầu xử lý chứng từ kho"
+        ],
+        [
+          "catalog",
+          "Hồ sơ nhà cung cấp"
+        ],
+        [
+          "stock",
+          "Tồn và chứng từ kho đã lưu"
+        ],
+        [
+          "money",
+          "Liên kết chi và nợ đã tạo"
+        ]
+      ],
+      "outputs": [
+        [
+          "admin",
+          "Kết quả xử lý chứng từ kho"
+        ],
+        [
+          "store",
+          "Kết quả xử lý chứng từ kho"
+        ],
+        [
+          "stock",
+          "Tồn đầu kỳ đã ghi"
+        ],
+        [
+          "money",
+          "Nguồn phiếu nhập cần ghi chi và nợ"
+        ],
+        [
+          "stock",
+          "Phiếu nhập và tồn đã cập nhật"
+        ],
+        [
+          "stock",
+          "Phiếu xuất và tồn đã cập nhật"
+        ],
+        [
+          "stock",
+          "Kết quả kiểm kê đã chốt"
+        ]
+      ]
+    },
+    {
+      "process": "money",
+      "detail": false,
+      "inputs": [
+        [
+          "admin",
+          "Yêu cầu thu chi hoặc trả nợ"
+        ],
+        [
+          "store",
+          "Yêu cầu tra cứu công nợ"
+        ],
+        [
+          "catalog",
+          "Danh mục thu chi và phương thức trả"
+        ],
+        [
+          "debt",
+          "Công nợ và lịch sử trả đã lưu"
+        ],
+        [
+          "finance",
+          "Chứng từ thu chi đã lưu"
+        ],
+        [
+          "inventory",
+          "Nguồn phiếu nhập cần ghi chi và nợ"
+        ],
+        [
+          "people",
+          "Nguồn chi lương đã chốt"
+        ]
+      ],
+      "outputs": [
+        [
+          "admin",
+          "Kết quả thu chi và trả nợ"
+        ],
+        [
+          "store",
+          "Số dư và lịch sử công nợ"
+        ],
+        [
+          "debt",
+          "Công nợ và lịch sử trả đã cập nhật"
+        ],
+        [
+          "finance",
+          "Chứng từ thu chi đã ghi"
+        ],
+        [
+          "inventory",
+          "Liên kết chi và nợ đã tạo"
+        ],
+        [
+          "people",
+          "Liên kết phiếu chi lương"
+        ]
+      ]
+    },
+    {
+      "process": "money",
+      "detail": true,
+      "inputs": [
+        [
+          "admin",
+          "Yêu cầu thu chi hoặc trả nợ"
+        ],
+        [
+          "store",
+          "Yêu cầu tra cứu công nợ"
+        ],
+        [
+          "catalog",
+          "Danh mục thu chi và phương thức trả"
+        ],
+        [
+          "debt",
+          "Công nợ và lịch sử trả đã lưu"
+        ],
+        [
+          "finance",
+          "Chứng từ thu chi đã lưu"
+        ],
+        [
+          "inventory",
+          "Nguồn phiếu nhập cần ghi chi và nợ"
+        ],
+        [
+          "people",
+          "Nguồn chi lương đã chốt"
+        ]
+      ],
+      "outputs": [
+        [
+          "admin",
+          "Kết quả thu chi và trả nợ"
+        ],
+        [
+          "store",
+          "Số dư và lịch sử công nợ"
+        ],
+        [
+          "debt",
+          "Công nợ và lịch sử trả đã cập nhật"
+        ],
+        [
+          "finance",
+          "Chứng từ thu chi đã ghi"
+        ],
+        [
+          "inventory",
+          "Liên kết chi và nợ đã tạo"
+        ],
+        [
+          "people",
+          "Liên kết phiếu chi lương"
+        ]
+      ]
+    },
+    {
+      "process": "people",
+      "detail": false,
+      "inputs": [
+        [
+          "admin",
+          "Yêu cầu nhân sự, tài sản và báo cáo"
+        ],
+        [
+          "hr",
+          "Hồ sơ nhân sự và tài sản đã lưu"
+        ],
+        [
+          "sale",
+          "Dữ liệu bán hàng đã ghi"
+        ],
+        [
+          "stock",
+          "Dữ liệu kho đã ghi"
+        ],
+        [
+          "debt",
+          "Dữ liệu công nợ đã ghi"
+        ],
+        [
+          "finance",
+          "Dữ liệu thu chi đã ghi"
+        ],
+        [
+          "money",
+          "Liên kết phiếu chi lương"
+        ],
+        [
+          "account",
+          "Tài khoản và quyền hiện có"
+        ]
+      ],
+      "outputs": [
+        [
+          "admin",
+          "Hồ sơ và báo cáo theo yêu cầu"
+        ],
+        [
+          "hr",
+          "Hồ sơ nhân sự và lương đã cập nhật"
+        ],
+        [
+          "money",
+          "Nguồn chi lương đã chốt"
+        ],
+        [
+          "hr",
+          "Hồ sơ tài sản đã cập nhật"
+        ],
+        [
+          "account",
+          "Tài khoản và quyền đã cập nhật"
+        ]
+      ]
+    },
+    {
+      "process": "people",
+      "detail": true,
+      "inputs": [
+        [
+          "admin",
+          "Yêu cầu nhân sự, tài sản và báo cáo"
+        ],
+        [
+          "hr",
+          "Hồ sơ nhân sự và tài sản đã lưu"
+        ],
+        [
+          "sale",
+          "Dữ liệu bán hàng đã ghi"
+        ],
+        [
+          "stock",
+          "Dữ liệu kho đã ghi"
+        ],
+        [
+          "debt",
+          "Dữ liệu công nợ đã ghi"
+        ],
+        [
+          "finance",
+          "Dữ liệu thu chi đã ghi"
+        ],
+        [
+          "money",
+          "Liên kết phiếu chi lương"
+        ],
+        [
+          "account",
+          "Tài khoản và quyền hiện có"
+        ]
+      ],
+      "outputs": [
+        [
+          "admin",
+          "Hồ sơ và báo cáo theo yêu cầu"
+        ],
+        [
+          "hr",
+          "Hồ sơ nhân sự và lương đã cập nhật"
+        ],
+        [
+          "money",
+          "Nguồn chi lương đã chốt"
+        ],
+        [
+          "hr",
+          "Hồ sơ tài sản đã cập nhật"
+        ],
+        [
+          "account",
+          "Tài khoản và quyền đã cập nhật"
+        ]
+      ]
+    }
+  ],
+  "balanced": true
+}

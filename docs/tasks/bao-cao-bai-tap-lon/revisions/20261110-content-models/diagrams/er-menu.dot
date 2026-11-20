@@ -1,0 +1,29 @@
+digraph G {
+graph [bgcolor="white", pad="0.20", overlap=true, splines=polyline, notranslate=true];
+"category" [label="Danh mục sản phẩm",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08",pos="1.15,9.2!",pin="true"];
+"product" [label="Sản phẩm",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08",pos="1.15,5.75!",pin="true"];
+"material" [label="Nguyên liệu",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08",pos="1.15,1.15!",pin="true"];
+"zone" [label="Khu vực",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08",pos="6.8999999999999995,9.2!",pin="true"];
+"table" [label="Bàn",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08",pos="6.8999999999999995,5.75!",pin="true"];
+"classifies" [label="Phân loại",shape="diamond",fontname="Times New Roman",fontsize="18",color="black",fontcolor="black",penwidth="1.4",margin="0.03",pos="1.15,7.475!",pin="true"];
+"recipe" [label="Pha từ",shape="diamond",fontname="Times New Roman",fontsize="18",color="black",fontcolor="black",penwidth="1.4",margin="0.03",pos="1.15,3.4499999999999997!",pin="true"];
+"contains" [label="Bố trí",shape="diamond",fontname="Times New Roman",fontsize="18",color="black",fontcolor="black",penwidth="1.4",margin="0.03",pos="6.8999999999999995,7.475!",pin="true"];
+"category_attr0" [label=<<U>Mã danh mục</U>>,shape="ellipse",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08",pos="3.3349999999999995,10.12!",pin="true"];
+"product_attr0" [label=<<U>Mã sản phẩm</U>>,shape="ellipse",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08",pos="3.3349999999999995,6.669999999999999!",pin="true"];
+"material_attr0" [label=<<U>Mã nguyên liệu</U>>,shape="ellipse",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08",pos="3.3349999999999995,2.07!",pin="true"];
+"recipe_attr0" [label="Định mức",shape="ellipse",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08",pos="3.565,2.9899999999999998!",pin="true"];
+"zone_attr0" [label=<<U>Mã khu vực</U>>,shape="ellipse",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08",pos="9.084999999999999,10.12!",pin="true"];
+"table_attr0" [label=<<U>Mã bàn</U>>,shape="ellipse",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08",pos="9.084999999999999,6.669999999999999!",pin="true"];
+"category" -> "classifies" [label="",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9",dir="none",taillabel="1",labeldistance="2.2",labelangle="30"];
+"classifies" -> "product" [label="",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9",dir="none",headlabel="N",labeldistance="2.2",labelangle="30"];
+"product" -> "recipe" [label="",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9",dir="none",taillabel="N",labeldistance="2.2",labelangle="30"];
+"recipe" -> "material" [label="",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9",dir="none",headlabel="M",labeldistance="2.2",labelangle="30"];
+"zone" -> "contains" [label="",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9",dir="none",taillabel="1",labeldistance="2.2",labelangle="30"];
+"contains" -> "table" [label="",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9",dir="none",headlabel="N",labeldistance="2.2",labelangle="30"];
+"category" -> "category_attr0" [label="",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9",dir="none",weight="0.2"];
+"product" -> "product_attr0" [label="",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9",dir="none",weight="0.2"];
+"material" -> "material_attr0" [label="",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9",dir="none",weight="0.2"];
+"recipe" -> "recipe_attr0" [label="",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9",dir="none",weight="0.2"];
+"zone" -> "zone_attr0" [label="",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9",dir="none",weight="0.2"];
+"table" -> "table_attr0" [label="",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9",dir="none",weight="0.2"];
+}

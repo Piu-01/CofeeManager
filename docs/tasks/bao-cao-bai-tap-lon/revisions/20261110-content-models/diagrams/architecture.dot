@@ -1,0 +1,17 @@
+digraph G {
+rankdir=TB; graph [bgcolor="white", pad="0.12", nodesep="0.35", ranksep="0.75", splines=polyline, overlap=false];
+"ui" [label="Giao diện WinForms",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08"];
+"business" [label="Xử lý nghiệp vụ C#",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08"];
+"data" [label="Truy cập dữ liệu",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08"];
+"sql" [label="Cơ sở dữ liệu SQL\nServer",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08"];
+"models" [label="Mô hình dữ liệu dùng\nchung",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08"];
+"ui" -> "business" [label="Yêu cầu của người dùng",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"business" -> "ui" [label="Kết quả và lỗi nghiệp\nvụ",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"business" -> "data" [label="Yêu cầu đã kiểm quyền",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"data" -> "business" [label="Dữ liệu đã ánh xạ",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"data" -> "sql" [label="Truy vấn và tham số",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"sql" -> "data" [label="Kết quả thực thi",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"ui" -> "models" [label="Sử dụng kiểu dữ liệu",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9",style="dashed"];
+"business" -> "models" [label="Sử dụng kiểu dữ liệu",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9",style="dashed"];
+"data" -> "models" [label="Sử dụng kiểu dữ liệu",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9",style="dashed"];
+}

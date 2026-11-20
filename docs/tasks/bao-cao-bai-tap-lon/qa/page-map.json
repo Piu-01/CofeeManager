@@ -1,0 +1,307 @@
+[
+  {
+    "pdf_page": 1,
+    "characters": 0,
+    "start": ""
+  },
+  {
+    "pdf_page": 2,
+    "characters": 0,
+    "start": ""
+  },
+  {
+    "pdf_page": 3,
+    "characters": 1156,
+    "start": "LỜI MỞ ĐẦU Một đơn bán trong quán cà phê liên quan đến nhiều thông tin: món được gọi, số tiền phải thu, lượng nguyên liệu đã dùng và quyền l"
+  },
+  {
+    "pdf_page": 4,
+    "characters": 1826,
+    "start": "NHẬN XÉT CỦA GIẢNG VIÊN ................................................................................................................... "
+  },
+  {
+    "pdf_page": 5,
+    "characters": 3086,
+    "start": "MỤC LỤC CHƯƠNG 1 TỔNG QUAN VỀ CƠ SỞ KHẢO SÁT ................................................1 1.1 Giới thiệu về cơ sở nơi khảo sát ........"
+  },
+  {
+    "pdf_page": 6,
+    "characters": 604,
+    "start": "4.2.1 Thiết kế giao diện chính ................................................................... 43 4.2.2 Thiết kế giao diện cập nhật dữ l"
+  },
+  {
+    "pdf_page": 7,
+    "characters": 3054,
+    "start": "DANH MỤC BẢNG BIỂU Bảng 3.1. Vai trò và giới hạn thao tác ......................................................................... 4 Bảng 3"
+  },
+  {
+    "pdf_page": 8,
+    "characters": 1308,
+    "start": "Bảng 4.27. Công nợ nhà cung cấp — CONGNO_NCC ........................................... 28 Bảng 4.28. Lịch sử trả nợ — THANHTOAN_CONGNO ..."
+  },
+  {
+    "pdf_page": 9,
+    "characters": 2310,
+    "start": "DANH MỤC HÌNH VÀ SƠ ĐỒ Hình 3.1. Sơ đồ phân cấp chức năng CoffeeManager .................................................7 Hình 3.2. DFD mức"
+  },
+  {
+    "pdf_page": 10,
+    "characters": 495,
+    "start": "DANH MỤC TỪ VIẾT TẮT Ký hiệu Diễn giải BFD Business Function Diagram — sơ đồ phân cấp chức năng DFD Data Flow Diagram — biểu đồ luồng dữ liệ"
+  },
+  {
+    "pdf_page": 11,
+    "characters": 2601,
+    "start": "1 CHƯƠNG 1 TỔNG QUAN VỀ CƠ SỞ KHẢO SÁT 1.1 Giới thiệu về cơ sở nơi khảo sát Cơ sở được lựa chọn cho đề tài là Ther Thẩn Cafe, tại 49 Đường 4"
+  },
+  {
+    "pdf_page": 12,
+    "characters": 2682,
+    "start": "2 CHƯƠNG 2 CƠ SỞ LÝ THUYẾT 2.1 Phân tích chức năng của hệ thống Phân tích chức năng bắt đầu từ phạm vi công việc cần hỗ trợ rồi chia thành c"
+  },
+  {
+    "pdf_page": 13,
+    "characters": 2372,
+    "start": "3 2.4 Phụ thuộc hàm và chuẩn hóa Phụ thuộc hàm X → Y biểu thị việc một giá trị của X xác định một giá trị của Y trong mọi trạng thái hợp lệ "
+  },
+  {
+    "pdf_page": 14,
+    "characters": 2123,
+    "start": "4 CHƯƠNG 3 PHÂN TÍCH HỆ THỐNG 3.1 Mô tả bài toán 3.1.1 Phạm vi và người sử dụng CoffeeManager được xây dựng để quản lý một quán cà phê với m"
+  },
+  {
+    "pdf_page": 15,
+    "characters": 2786,
+    "start": "5 Mỗi lần thêm món lấy giá hợp lệ và lưu trên dòng. Sửa số lượng của dòng không lấy lại giá menu mới. MaDong xác định dòng cần sửa hoặc xóa."
+  },
+  {
+    "pdf_page": 16,
+    "characters": 1947,
+    "start": "6 Xuất kho chỉ nhận loại hủy đồ hỏng hoặc trả hàng. Không đủ một nguyên liệu thì giao dịch bị từ chối toàn bộ. Xuất trả hàng chưa tự tạo hoà"
+  },
+  {
+    "pdf_page": 17,
+    "characters": 725,
+    "start": "7 Hình 3.1. Sơ đồ phân cấp chức năng CoffeeManager Nhóm bán hàng được ưu tiên làm rõ do liên quan đồng thời tiền, kho và điểm. Nhóm kho chuy"
+  },
+  {
+    "pdf_page": 18,
+    "characters": 1203,
+    "start": "8 Bảng 3.2. Xác định tiến trình tác nhân và hồ sơ Mã / tiến trình Tác nhân Đầu vào → đầu ra Hồ sơ P1 Xác thực và phiên A1, A2, A3 Đăng nhập/"
+  },
+  {
+    "pdf_page": 19,
+    "characters": 1548,
+    "start": "9 Mã Nội dung Bảng đại diện D5 Kho NGUYENVATLIEU, MaterialOpening, phiếu/chi tiết nhập–xuất–kiểm kê, TIEUHAO_HOADON D6 Công nợ CONGNO_NCC, T"
+  },
+  {
+    "pdf_page": 20,
+    "characters": 951,
+    "start": "10 Mã Dữ liệu vào Dữ liệu ra / đối ứng F07 / F08 P4 → P5: nguồn phiếu nhập, trả ngay và nợ. P5 → P4: mã/liên kết chi, nợ đã tạo cùng nghiệp "
+  },
+  {
+    "pdf_page": 21,
+    "characters": 58,
+    "start": "11 3.4.2 Mức đỉnh Hình 3.3. DFD mức đỉnh của CoffeeManager"
+  },
+  {
+    "pdf_page": 22,
+    "characters": 714,
+    "start": "12 Hình 3.4. Trao đổi nguồn chi và công nợ giữa các nhóm ở mức đỉnh Hình lặp ký hiệu tác nhân và một số kho để giảm giao cắt; các bản lặp cù"
+  },
+  {
+    "pdf_page": 23,
+    "characters": 373,
+    "start": "13 3.4.3 Mức dưới đỉnh Hình 3.5. Phân rã P1 xác thực và kiểm tra phiên P1.1 tiếp nhận tên đăng nhập, đọc thông tin tài khoản; việc kiểm chứn"
+  },
+  {
+    "pdf_page": 24,
+    "characters": 408,
+    "start": "14 Hình 3.6. Phân rã P2 dữ liệu nền và khách hàng P2.1 quản lý danh mục, menu/công thức, bàn/khu vực và chính sách có quyền. P2.2 quản lý hồ"
+  },
+  {
+    "pdf_page": 25,
+    "characters": 373,
+    "start": "15 Hình 3.7. Phân rã P3 bán hàng và thanh toán P3.1 tạo/sửa đơn mở, P3.2 xác định ưu đãi và phân bổ, P3.3 chốt đồng thời tiền– kho–điểm, P3."
+  },
+  {
+    "pdf_page": 26,
+    "characters": 371,
+    "start": "16 Hình 3.8. Phân rã P4 quản lý kho P4.1 kiểm soát nguyên liệu và mở sổ. P4.2 lập phiếu nhập và chuyển dữ liệu nguồn chi/nợ cho P5. P4.3 ghi"
+  },
+  {
+    "pdf_page": 27,
+    "characters": 356,
+    "start": "17 Hình 3.9. Phân rã P5 thu chi và công nợ P5.1 ghi thu/chi thường được phép. P5.2 xử lý chi trả ngay và nợ nguồn phiếu nhập. P5.3 trả nợ và"
+  },
+  {
+    "pdf_page": 28,
+    "characters": 414,
+    "start": "18 Hình 3.10. Phân rã P6 nhân sự tài sản và báo cáo theo thiết kế đích P6.1 dự kiến quản lý nhân viên/tài khoản, chấm công và lương; P6.2 qu"
+  },
+  {
+    "pdf_page": 29,
+    "characters": 1540,
+    "start": "19 CHƯƠNG 4 THIẾT KẾ HỆ THỐNG 4.1 Thiết kế cơ sở dữ liệu CSDL được đối chiếu từ DB_Schema.sql và các migration 001–021 có trong source tại t"
+  },
+  {
+    "pdf_page": 30,
+    "characters": 706,
+    "start": "20 Bảng 4.3. Nguyên vật liệu — NGUYENVATLIEU Thuộc tính Kiểu dữ liệu Khóa / khả năng NULL MaNVL char(5) PK; NOT NULL TenNVL nvarchar(50) NOT"
+  },
+  {
+    "pdf_page": 31,
+    "characters": 662,
+    "start": "21 Khách hàng và ưu đãi Bảng 4.7. Hạng thành viên — HANGTHANHVIEN Thuộc tính Kiểu dữ liệu Khóa / khả năng NULL MaHang char(5) PK; NOT NULL D"
+  },
+  {
+    "pdf_page": 32,
+    "characters": 745,
+    "start": "22 Thuộc tính Kiểu dữ liệu Khóa / khả năng NULL SoDiem int NOT NULL LyDo nvarchar(100) NOT NULL Bảng 4.10. Khuyến mãi — KHUYENMAI Thuộc tính"
+  },
+  {
+    "pdf_page": 33,
+    "characters": 724,
+    "start": "23 Thuộc tính Kiểu dữ liệu Khóa / khả năng NULL NgayLap datetime2(0) NOT NULL MaNV char(5) FK → NHANVIEN(MaNV); NOT NULL MaKH char(5) FK → K"
+  },
+  {
+    "pdf_page": 34,
+    "characters": 701,
+    "start": "24 Bảng 4.14. Dòng hóa đơn — CHITIET_HD Thuộc tính Kiểu dữ liệu Khóa / khả năng NULL MaHD char(10) FK → HOADON(MaHD); NOT NULL MaDong int PK"
+  },
+  {
+    "pdf_page": 35,
+    "characters": 707,
+    "start": "25 Thuộc tính Kiểu dữ liệu Khóa / khả năng NULL MaNVL char(5) PK; FK → NGUYENVATLIEU(MaNVL); NOT NULL SoLuong decimal(18,4) NOT NULL Kho và "
+  },
+  {
+    "pdf_page": 36,
+    "characters": 730,
+    "start": "26 Thuộc tính Kiểu dữ liệu Khóa / khả năng NULL MaNVL char(5) PK; FK → NGUYENVATLIEU(MaNVL); NOT NULL SoLuong decimal(18,4) NOT NULL DonGiaN"
+  },
+  {
+    "pdf_page": 37,
+    "characters": 764,
+    "start": "27 Thuộc tính Kiểu dữ liệu Khóa / khả năng NULL MaNV char(5) FK → NHANVIEN(MaNV); NOT NULL DaDieuChinh bit NOT NULL Bảng 4.23. Chi tiết kiểm"
+  },
+  {
+    "pdf_page": 38,
+    "characters": 646,
+    "start": "28 Thuộc tính Kiểu dữ liệu Khóa / khả năng NULL GiaTri decimal(18,0) NOT NULL SoThangKH int NOT NULL Bảng 4.26. Phiếu thu chi — PHIEUTHUCHI "
+  },
+  {
+    "pdf_page": 39,
+    "characters": 648,
+    "start": "29 Bảng 4.28. Lịch sử trả nợ — THANHTOAN_CONGNO Thuộc tính Kiểu dữ liệu Khóa / khả năng NULL MaTT int PK; NOT NULL MaCN char(10) FK → CONGNO"
+  },
+  {
+    "pdf_page": 40,
+    "characters": 602,
+    "start": "30 Bảng 4.31. Nhân viên — NHANVIEN Thuộc tính Kiểu dữ liệu Khóa / khả năng NULL MaNV char(5) PK; NOT NULL TenNV nvarchar(50) NOT NULL SDT va"
+  },
+  {
+    "pdf_page": 41,
+    "characters": 720,
+    "start": "31 Bảng 4.33. Vai trò — VAITRO Thuộc tính Kiểu dữ liệu Khóa / khả năng NULL MaVT char(5) PK; NOT NULL TenVT nvarchar(50) NOT NULL Bảng 4.34."
+  },
+  {
+    "pdf_page": 42,
+    "characters": 1207,
+    "start": "32 Thuộc tính Kiểu dữ liệu Khóa / khả năng NULL TienTangCa decimal(18,0) NOT NULL PhuCap decimal(18,0) NOT NULL Thuong decimal(18,0) NOT NUL"
+  },
+  {
+    "pdf_page": 43,
+    "characters": 1563,
+    "start": "33 ghi kết quả yêu cầu để đối chiếu và chống thực hiện lặp. MaterialOpening và CustomerOpening lưu mốc số dư đầu kỳ. LoyaltyPolicyState giữ "
+  },
+  {
+    "pdf_page": 44,
+    "characters": 532,
+    "start": "34 Hình 4.1. Mô hình ER khái niệm về menu và bán hàng Một hóa đơn có các dòng món; mỗi dòng thuộc đúng một hóa đơn và một sản phẩm. Quan hệ "
+  },
+  {
+    "pdf_page": 45,
+    "characters": 398,
+    "start": "35 Hình 4.2. Mô hình ER khái niệm về kho và công nợ Mỗi phiếu nhập thuộc một nhà cung cấp; mỗi nhà cung cấp có thể có nhiều phiếu. Phiếu nhậ"
+  },
+  {
+    "pdf_page": 46,
+    "characters": 1071,
+    "start": "36 Hình 4.3. Mô hình ER khái niệm về khách hàng nhân sự và tài chính Nhân viên có tối đa một tài khoản theo UNIQUE MaNV; nhân viên có thể ch"
+  },
+  {
+    "pdf_page": 47,
+    "characters": 1487,
+    "start": "37 thị PK/FK trực tiếp, khác với tên nghiệp vụ ở ER khái niệm. Đường liên kết ghi trường FK tới PK; không suy thêm quan hệ chỉ vì tên cột gi"
+  },
+  {
+    "pdf_page": 48,
+    "characters": 949,
+    "start": "38 TAISAN_CODINH (MaTS, TenTS, NgayMua, GiaTri, SoThangKH). PHIEUTHUCHI (MaTC, NgayLap, MaDMTC, MaNV, MaTS, SoTien, GhiChu). CONGNO_NCC (MaC"
+  },
+  {
+    "pdf_page": 49,
+    "characters": 104,
+    "start": "39 Hình 4.5. Lược đồ quan hệ của nhóm menu và khách hàng Hình 4.6. Lược đồ quan hệ của nhóm chứng từ kho"
+  },
+  {
+    "pdf_page": 50,
+    "characters": 56,
+    "start": "40 Hình 4.7. Lược đồ quan hệ của nhóm công nợ và thu chi"
+  },
+  {
+    "pdf_page": 51,
+    "characters": 1415,
+    "start": "41 Hình 4.8. Lược đồ quan hệ của nhóm nhân sự và tài khoản Giữa các cụm, HOADON.MaNV, các phiếu kho và PHIEUTHUCHI.MaNV cùng tham chiếu NHAN"
+  },
+  {
+    "pdf_page": 52,
+    "characters": 1614,
+    "start": "42 Đổi tên sản phẩm hoặc nhân viên trên nhiều dòng dễ tạo bất nhất. Phần mô tả tên khách còn phải xét MaKH tùy chọn, không coi NULL là một m"
+  },
+  {
+    "pdf_page": 53,
+    "characters": 1696,
+    "start": "43 Trong CHITIET_HD, MaSP không xác định GiaBan của mọi giao dịch vì giá có thể đổi theo thời gian. Phụ thuộc phù hợp là MaDong → GiaBan của"
+  },
+  {
+    "pdf_page": 54,
+    "characters": 517,
+    "start": "44 trạng thái, không chứng minh lần đăng nhập thành công hoặc hiện trạng mọi thành phần giao diện. Hình 4.10. Giao diện đăng nhập trong ảnh "
+  },
+  {
+    "pdf_page": 55,
+    "characters": 1591,
+    "start": "45 Hình 4.11. Cửa sổ chính và màn khách hàng trong ảnh lưu ngày 22 tháng 10 năm 2026 POS hiện có SalesControl, OrderPanel và các dialog chọn"
+  },
+  {
+    "pdf_page": 56,
+    "characters": 1085,
+    "start": "46 chọn hết nội dung khi vừa vào ô nhập được thực hiện bằng helper chung; click tiếp trong cùng lần focus vẫn cho đặt caret bình thường. [2]"
+  },
+  {
+    "pdf_page": 57,
+    "characters": 2350,
+    "start": "47 4.2.3 Thiết kế giao diện xử lý dữ liệu Hộp thanh toán hiển thị tiền món, nguồn giảm, giảm giá, ship, số phải trả và bảng phân bổ. Người d"
+  },
+  {
+    "pdf_page": 58,
+    "characters": 1463,
+    "start": "48 Trạng thái Biểu hiện Hành động tiếp Xung đột Phiên bản đơn hoặc snapshot đã đổi. Tải lại, đối chiếu và xác nhận dữ liệu mới. Đang ghi Khó"
+  },
+  {
+    "pdf_page": 59,
+    "characters": 1346,
+    "start": "49 KẾT LUẬN VÀ KIẾN NGHỊ Báo cáo đã hệ thống hóa bài toán quản lý một quán cà phê với một kho chung, xác định nhóm chức năng, tác nhân và hồ"
+  },
+  {
+    "pdf_page": 60,
+    "characters": 2257,
+    "start": "50 TÀI LIỆU THAM KHẢO [1]. Hồ sơ dự án CoffeeManager. Kế hoạch dự án WinForms Quản lí quán cafe và các cập nhật trạng thái. Tài liệu nội bộ "
+  },
+  {
+    "pdf_page": 61,
+    "characters": 478,
+    "start": "51 [12]. Hồ sơ dự án CoffeeManager. Báo cáo triển khai và kiểm thử theo nhóm. Tài liệu nội bộ, các hồ sơ docs/tasks/g01…g05 và embedded-dial"
+  }
+]

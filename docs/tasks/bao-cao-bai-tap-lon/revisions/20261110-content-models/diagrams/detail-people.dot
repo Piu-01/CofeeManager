@@ -1,0 +1,33 @@
+digraph G {
+rankdir=LR; graph [bgcolor="white", pad="0.12", nodesep="0.35", ranksep="0.75", splines=polyline, overlap=false];
+"people_0" [label="Quản lý nhân sự, chấm\ncông và lương",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08",style="rounded"];
+"people_1" [label="Quản lý hồ sơ tài sản",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08",style="rounded"];
+"people_2" [label="Tổng hợp và đối chiếu\nbáo cáo",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08",style="rounded"];
+"admin" [label="Người quản lý",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08"];
+"hr" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD BORDER="1" SIDES="TB" CELLPADDING="8">Hồ sơ nhân sự và tài<BR/>sản</TD></TR></TABLE>>,shape="plain",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08"];
+"sale" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD BORDER="1" SIDES="TB" CELLPADDING="8">Hồ sơ bán hàng</TD></TR></TABLE>>,shape="plain",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08"];
+"stock" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD BORDER="1" SIDES="TB" CELLPADDING="8">Hồ sơ kho</TD></TR></TABLE>>,shape="plain",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08"];
+"debt" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD BORDER="1" SIDES="TB" CELLPADDING="8">Hồ sơ công nợ</TD></TR></TABLE>>,shape="plain",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08"];
+"finance" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD BORDER="1" SIDES="TB" CELLPADDING="8">Chứng từ thu chi</TD></TR></TABLE>>,shape="plain",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08"];
+"money" [label="Quản lý thu chi và\ncông nợ",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08",style="rounded"];
+"account" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD BORDER="1" SIDES="TB" CELLPADDING="8">Tài khoản và quyền</TD></TR></TABLE>>,shape="plain",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08"];
+"admin" -> "people_0" [label="Yêu cầu nhân sự, tài\nsản và báo cáo",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"people_2" -> "admin" [label="Hồ sơ và báo cáo theo\nyêu cầu",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"hr" -> "people_0" [label="Hồ sơ nhân sự và tài\nsản đã lưu",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"people_0" -> "hr" [label="Hồ sơ nhân sự và lương\nđã cập nhật",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"sale" -> "people_2" [label="Dữ liệu bán hàng đã ghi",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"stock" -> "people_2" [label="Dữ liệu kho đã ghi",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"debt" -> "people_2" [label="Dữ liệu công nợ đã ghi",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"finance" -> "people_2" [label="Dữ liệu thu chi đã ghi",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"money" -> "people_0" [label="Liên kết phiếu chi\nlương",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"people_0" -> "money" [label="Nguồn chi lương đã chốt",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"people_1" -> "hr" [label="Hồ sơ tài sản đã cập\nnhật",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"account" -> "people_0" [label="Tài khoản và quyền hiện\ncó",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"people_0" -> "account" [label="Tài khoản và quyền đã\ncập nhật",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"people_0" -> "people_2" [label="Kết quả nhân sự và\nlương",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9",weight="3"];
+"people_1" -> "people_2" [label="Thông tin tài sản",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9",weight="3"];
+"people_0" -> "people_1" [label="Yêu cầu quản lý tài sản\nđã kiểm quyền",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9",weight="3"];
+{rank=same; people_0; people_1; people_2;}
+{rank=min; admin;}
+{rank=max; finance; hr; sale; account; stock; debt;}
+}

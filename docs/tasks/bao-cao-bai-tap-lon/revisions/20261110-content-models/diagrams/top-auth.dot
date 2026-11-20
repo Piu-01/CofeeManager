@@ -1,0 +1,17 @@
+digraph G {
+rankdir=LR; graph [bgcolor="white", pad="0.12", nodesep="0.35", ranksep="0.75", splines=polyline, overlap=false];
+"auth" [label="Xác thực và quản lý\nphiên",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08",style="rounded"];
+"admin" [label="Người quản lý",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08"];
+"cash" [label="Nhân viên thu ngân",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08"];
+"store" [label="Nhân viên kho",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08"];
+"account" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD BORDER="1" SIDES="TB" CELLPADDING="8">Tài khoản và quyền</TD></TR></TABLE>>,shape="plain",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08"];
+"admin" -> "auth" [label="Thông tin đăng nhập và\nyêu cầu phiên",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"auth" -> "admin" [label="Kết quả xác thực và\ntrạng thái phiên",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"cash" -> "auth" [label="Thông tin đăng nhập và\nyêu cầu phiên",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"auth" -> "cash" [label="Kết quả xác thực và\ntrạng thái phiên",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"store" -> "auth" [label="Thông tin đăng nhập và\nyêu cầu phiên",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"auth" -> "store" [label="Kết quả xác thực và\ntrạng thái phiên",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+"account" -> "auth" [label="Hồ sơ xác thực",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9"];
+{rank=min; admin; cash; store;}
+{rank=max; account;}
+}

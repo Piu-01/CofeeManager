@@ -1,0 +1,65 @@
+{
+  "context": {
+    "engine": "dot"
+  },
+  "top-auth": {
+    "engine": "dot"
+  },
+  "detail-auth": {
+    "engine": "dot"
+  },
+  "top-catalogue": {
+    "engine": "dot"
+  },
+  "detail-catalogue": {
+    "engine": "dot"
+  },
+  "top-sales": {
+    "engine": "dot"
+  },
+  "detail-sales": {
+    "engine": "dot"
+  },
+  "top-inventory": {
+    "engine": "dot"
+  },
+  "detail-inventory": {
+    "engine": "dot"
+  },
+  "top-money": {
+    "engine": "dot"
+  },
+  "detail-money": {
+    "engine": "dot"
+  },
+  "top-people": {
+    "engine": "dot"
+  },
+  "detail-people": {
+    "engine": "dot"
+  },
+  "bfd": {
+    "engine": "dot"
+  },
+  "er-menu": {
+    "engine": "neato"
+  },
+  "er-sales": {
+    "engine": "neato"
+  },
+  "er-stock": {
+    "engine": "neato"
+  },
+  "er-finance": {
+    "engine": "neato"
+  },
+  "er-people": {
+    "engine": "neato"
+  },
+  "er-customers": {
+    "engine": "neato"
+  },
+  "architecture": {
+    "engine": "dot"
+  }
+}

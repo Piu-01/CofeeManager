@@ -1,0 +1,149 @@
+[
+  {
+    "name": "context",
+    "w": 643,
+    "h": 385,
+    "fontAt15cm": 13.7,
+    "heightCm": 9.3
+  },
+  {
+    "name": "top-auth",
+    "w": 958,
+    "h": 373,
+    "fontAt15cm": 9.2,
+    "heightCm": 6
+  },
+  {
+    "name": "detail-auth",
+    "w": 985,
+    "h": 385,
+    "fontAt15cm": 8.9,
+    "heightCm": 6.1
+  },
+  {
+    "name": "top-catalogue",
+    "w": 1098,
+    "h": 395,
+    "fontAt15cm": 8,
+    "heightCm": 5.6
+  },
+  {
+    "name": "detail-catalogue",
+    "w": 1095,
+    "h": 426,
+    "fontAt15cm": 8,
+    "heightCm": 6
+  },
+  {
+    "name": "top-sales",
+    "w": 1049,
+    "h": 455,
+    "fontAt15cm": 8.4,
+    "heightCm": 6.7
+  },
+  {
+    "name": "detail-sales",
+    "w": 1069,
+    "h": 440,
+    "fontAt15cm": 8.2,
+    "heightCm": 6.4
+  },
+  {
+    "name": "top-inventory",
+    "w": 920,
+    "h": 485,
+    "fontAt15cm": 9.6,
+    "heightCm": 8.2
+  },
+  {
+    "name": "detail-inventory",
+    "w": 1021,
+    "h": 641,
+    "fontAt15cm": 8.6,
+    "heightCm": 9.7
+  },
+  {
+    "name": "top-money",
+    "w": 981,
+    "h": 555,
+    "fontAt15cm": 9,
+    "heightCm": 8.8
+  },
+  {
+    "name": "detail-money",
+    "w": 1021,
+    "h": 538,
+    "fontAt15cm": 8.6,
+    "heightCm": 8.2
+  },
+  {
+    "name": "top-people",
+    "w": 991,
+    "h": 689,
+    "fontAt15cm": 8.9,
+    "heightCm": 10.8
+  },
+  {
+    "name": "detail-people",
+    "w": 1019,
+    "h": 692,
+    "fontAt15cm": 8.6,
+    "heightCm": 10.5
+  },
+  {
+    "name": "bfd",
+    "w": 735,
+    "h": 1380,
+    "fontAt15cm": 12,
+    "heightCm": 29.1
+  },
+  {
+    "name": "er-menu",
+    "w": 769,
+    "h": 715,
+    "fontAt15cm": 11.4,
+    "heightCm": 14.4
+  },
+  {
+    "name": "er-sales",
+    "w": 1016,
+    "h": 922,
+    "fontAt15cm": 8.6,
+    "heightCm": 14.1
+  },
+  {
+    "name": "er-stock",
+    "w": 877,
+    "h": 1018,
+    "fontAt15cm": 10,
+    "heightCm": 18
+  },
+  {
+    "name": "er-finance",
+    "w": 1164,
+    "h": 1080,
+    "fontAt15cm": 7.5,
+    "heightCm": 14.4
+  },
+  {
+    "name": "er-people",
+    "w": 1150,
+    "h": 823,
+    "fontAt15cm": 7.6,
+    "heightCm": 11.1
+  },
+  {
+    "name": "er-customers",
+    "w": 707,
+    "h": 604,
+    "fontAt15cm": 12.4,
+    "heightCm": 13.2
+  },
+  {
+    "name": "architecture",
+    "w": 861,
+    "h": 428,
+    "fontAt15cm": 10.2,
+    "heightCm": 7.7
+  }
+]

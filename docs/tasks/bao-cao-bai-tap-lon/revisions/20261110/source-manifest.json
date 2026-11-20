@@ -1,0 +1,34 @@
+[
+  {
+    "path": "src\\CafeManager.WinForms\\Modules\\Home\\AdminDashboardControl.cs",
+    "sha256": "0c467e54ab27864778cc8631e2d8073739525882bc3cb2cc2cf72f63d4bade49"
+  },
+  {
+    "path": "src\\CafeManager.Models\\Localization\\L.cs",
+    "sha256": "aaf8f6cfce64343b3889b4cf2abfb7ef204920f8532f5d30167f8c879da08442"
+  },
+  {
+    "path": "src\\CafeManager.Models\\Localization\\LanguageService.cs",
+    "sha256": "73052635381b6f53675826e209d050c4fde29316705ffcc7268788306990ff33"
+  },
+  {
+    "path": "src\\CafeManager.WinForms\\Configuration\\LanguagePreference.cs",
+    "sha256": "7c0a78e7ea254042c4084ac06ccdb68406de1233a0ced414c3d8bfcefa3d46dc"
+  },
+  {
+    "path": "src\\CafeManager.WinForms\\Forms\\LoginForm.cs",
+    "sha256": "437cdc9314919eafe5f6015cf6dfbed9e3cdb7b5b33570e48a923ba864309a4c"
+  },
+  {
+    "path": "src\\CafeManager.WinForms\\Modules\\System\\SystemInfoControl.cs",
+    "sha256": "d5467b072cf70f38cdce730bd981fd245622b0804fdaf7fc7e19b461b1e61ef1"
+  },
+  {
+    "path": "docs\\tasks\\localization-vi-en\\test-results.md",
+    "sha256": "aca04345d234c8a873999b40db28a9dcc3df8f59f67b1a207e7fbb45d6f0afdf"
+  },
+  {
+    "path": "docs\\tasks\\g07-tai-san-bao-cao-hieu-nang-du-lieu\\t28-bao-cao-doi-chieu\\dashboard-analytics-test-results.md",
+    "sha256": "42ed8a9ed82430ebc3ea7d7c64ef0bad6d997fd11cdf21c92b0514c5b2c0ab28"
+  }
+]

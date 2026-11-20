@@ -1,0 +1,24 @@
+digraph G {
+graph [bgcolor="white", pad="0.20", overlap=true, splines=polyline, notranslate=true];
+"tier" [label="Hạng thành viên",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08",pos="0.0,5.75!",pin="true"];
+"customer" [label="Khách hàng",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08",pos="0.0,1.15!",pin="true"];
+"point" [label="Giao dịch điểm",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08",pos="6.8999999999999995,1.15!",pin="true"];
+"invoice" [label="Hóa đơn",shape="box",fontname="Times New Roman",fontsize="20",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08",pos="6.8999999999999995,5.75!",pin="true"];
+"ranked" [label="Phân hạng",shape="diamond",fontname="Times New Roman",fontsize="18",color="black",fontcolor="black",penwidth="1.4",margin="0.03",pos="0.0,3.4499999999999997!",pin="true"];
+"points" [label="Có",shape="diamond",fontname="Times New Roman",fontsize="18",color="black",fontcolor="black",penwidth="1.4",margin="0.03",pos="3.4499999999999997,1.15!",pin="true"];
+"source" [label="Phát sinh từ",shape="diamond",fontname="Times New Roman",fontsize="18",color="black",fontcolor="black",penwidth="1.4",margin="0.03",pos="6.8999999999999995,3.4499999999999997!",pin="true"];
+"tier_attr0" [label=<<U>Mã hạng</U>>,shape="ellipse",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08",pos="0.0,7.13!",pin="true"];
+"customer_attr0" [label=<<U>Mã khách hàng</U>>,shape="ellipse",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08",pos="0.0,-0.22999999999999993!",pin="true"];
+"point_attr0" [label=<<U>Mã giao dịch</U>>,shape="ellipse",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08",pos="6.8999999999999995,-0.22999999999999993!",pin="true"];
+"invoice_attr0" [label=<<U>Mã hóa đơn</U>>,shape="ellipse",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.4",margin="0.10,0.08",pos="6.8999999999999995,7.13!",pin="true"];
+"tier" -> "ranked" [label="",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9",dir="none",taillabel="1",labeldistance="2.2",labelangle="30"];
+"ranked" -> "customer" [label="",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9",dir="none",headlabel="N",labeldistance="2.2",labelangle="30"];
+"customer" -> "points" [label="",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9",dir="none",taillabel="1",labeldistance="2.2",labelangle="30"];
+"points" -> "point" [label="",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9",dir="none",headlabel="N",labeldistance="2.2",labelangle="30"];
+"point" -> "source" [label="",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9",dir="none",taillabel="N",labeldistance="2.2",labelangle="30"];
+"source" -> "invoice" [label="",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9",dir="none",headlabel="0..1",labeldistance="2.2",labelangle="30"];
+"tier" -> "tier_attr0" [label="",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9",dir="none",weight="0.2"];
+"customer" -> "customer_attr0" [label="",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9",dir="none",weight="0.2"];
+"point" -> "point_attr0" [label="",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9",dir="none",weight="0.2"];
+"invoice" -> "invoice_attr0" [label="",fontname="Times New Roman",fontsize="17",color="black",fontcolor="black",penwidth="1.2",arrowsize="0.9",dir="none",weight="0.2"];
+}

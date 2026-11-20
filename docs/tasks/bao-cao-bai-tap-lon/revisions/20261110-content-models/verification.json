@@ -1,0 +1,16 @@
+{
+  "pages": 56,
+  "front_numbers": "I-VI",
+  "content_numbers": "1-48",
+  "tables": 44,
+  "baseline_attribute_and_type_columns_preserved": 35,
+  "rewritten_paragraphs": 104,
+  "additional_ER_explanations": 2,
+  "rebuilt_diagrams": 21,
+  "references": 14,
+  "automatic_lists": 3,
+  "dfd_boundary_checks": 6,
+  "actors_preserved": 3,
+  "forbidden_symbols": 0,
+  "sha256": "f401e3ba1eaa79f858f5c0dccfa4587425a0cb30fcb5441a88d60aadb0ad62a0"
+}

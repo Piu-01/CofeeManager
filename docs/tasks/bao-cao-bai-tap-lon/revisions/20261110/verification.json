@@ -1,0 +1,18 @@
+{
+  "checks": {
+    "all_44_tables_text_unchanged": true,
+    "all_table_cells_white": true,
+    "visible_text_color_black": true,
+    "no_numeric_square_citations": true,
+    "all_existing_media_unchanged": true,
+    "three_contents_fields": true,
+    "toc_includes_new_sections": true,
+    "prose_indented_1_27_cm": true,
+    "all_pages_a4": true,
+    "no_word_field_errors": true,
+    "no_text_outside_page": true
+  },
+  "pages": 64,
+  "sha256": "2bf57f3332ee2f1220a285cace4b1974e3b3953f167f40cac68b4fa270bd283e",
+  "outside_characters": []
+}
