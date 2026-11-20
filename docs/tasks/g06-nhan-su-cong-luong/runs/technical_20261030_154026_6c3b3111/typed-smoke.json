@@ -1,0 +1,49 @@
+{
+  "Kind": "Technical dependency smoke; runtime EXECUTE AS USER; not acceptance",
+  "AttendanceActual": {
+    "Hours": 8.00,
+    "Incomplete": false,
+    "PeriodLocked": false,
+    "ReceiptMatches": true
+  },
+  "AttendanceHours": 8.00,
+  "PayrollPreviewActual": {
+    "Employee": "NV011",
+    "EmployeeName": "Nh\u00E2n vi\u00EAn smoke",
+    "Month": 10,
+    "Year": 2026,
+    "Contract": "Part-time",
+    "PositionName": "Pha che",
+    "Employed": true,
+    "MonthlyRate": 0,
+    "HourlyRate": 35000,
+    "TotalSeconds": 28800,
+    "TotalHours": 8.00,
+    "RegularHours": 8.00,
+    "OvertimeHours": 0.00,
+    "BasePay": 0,
+    "PaidHours": 8.00,
+    "HourlyPayRate": 35000,
+    "OvertimePay": 0,
+    "Allowance": 0,
+    "Bonus": 0,
+    "Deduction": 0,
+    "Amount": 280000,
+    "Issues": [],
+    "Attendance": [
+      {
+        "Employee": "NV011",
+        "WorkDate": "2026-10-29T00:00:00",
+        "Shift": "CA001",
+        "ClockIn": "2026-10-29T08:00:00",
+        "ClockOut": "2026-10-29T16:00:00",
+        "Status": "Di lam"
+      }
+    ]
+  },
+  "PayrollId": 3,
+  "PayrollAmount": 280000.00,
+  "ExpenseCode": "TC20250505",
+  "Status": "Failed",
+  "Error": "System.InvalidOperationException: UI technical smoke failed.\r\n ---\u003E System.InvalidOperationException: Owner/modal contract failed.\r\n   at UiSmoke.\u003C\u003Ec__DisplayClass0_1.\u003C\u003CRun\u003Eb__1\u003Ed.MoveNext() in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G06Probe\\UiSmoke.cs:line 35\r\n   --- End of inner exception stack trace ---\r\n   at UiSmoke.Run(EmployeeService employees, EmployeeAccountService accounts, AttendanceService attendance, PayrollService payroll, SessionContext session, DocumentLinks links, HumanResourcesContext context, PayrollRow row) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G06Probe\\UiSmoke.cs:line 46\r\n   at Program.\u003CMain\u003E$(String[] args) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G06Probe\\Program.cs:line 66\r\n   at Program.\u003CMain\u003E$(String[] args) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G06Probe\\Program.cs:line 70\r\n   at Program.\u003CMain\u003E$(String[] args) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G06Probe\\Program.cs:line 70\r\n   at Program.\u003CMain\u003E$(String[] args) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G06Probe\\Program.cs:line 70"
+}

@@ -1,0 +1,128 @@
+[
+  {
+    "Id": "T24-K02",
+    "Subcase": "SqlName51",
+    "ExpectedError": 53101,
+    "ActualError": 53101,
+    "Before": {
+      "TranCount": 0,
+      "XactState": 1,
+      "OpenTransactions": 0
+    },
+    "After": {
+      "TranCount": 0,
+      "XactState": 1,
+      "OpenTransactions": 0
+    },
+    "Status": "PASS",
+    "Criterion": "Expected rejection; no explicit/open session transaction; compare XactState to same-connection baseline"
+  },
+  {
+    "Id": "T24-K06",
+    "Subcase": "SetupDenied",
+    "ExpectedError": 229,
+    "ActualError": 229,
+    "Before": {
+      "TranCount": 0,
+      "XactState": 1,
+      "OpenTransactions": 0
+    },
+    "After": {
+      "TranCount": 0,
+      "XactState": 1,
+      "OpenTransactions": 0
+    },
+    "Status": "PASS",
+    "Criterion": "Expected rejection; no explicit/open session transaction; compare XactState to same-connection baseline"
+  },
+  {
+    "Id": "T24-K10",
+    "Subcase": "CashSQL",
+    "ExpectedError": 51605,
+    "ActualError": 51605,
+    "Before": {
+      "TranCount": 0,
+      "XactState": 1,
+      "OpenTransactions": 0
+    },
+    "After": {
+      "TranCount": 0,
+      "XactState": 1,
+      "OpenTransactions": 0
+    },
+    "Status": "PASS",
+    "Criterion": "Expected rejection; no explicit/open session transaction; compare XactState to same-connection baseline"
+  },
+  {
+    "Id": "T24-K10",
+    "Subcase": "StoreSQL",
+    "ExpectedError": 51605,
+    "ActualError": 51605,
+    "Before": {
+      "TranCount": 0,
+      "XactState": 1,
+      "OpenTransactions": 0
+    },
+    "After": {
+      "TranCount": 0,
+      "XactState": 1,
+      "OpenTransactions": 0
+    },
+    "Status": "PASS",
+    "Criterion": "Expected rejection; no explicit/open session transaction; compare XactState to same-connection baseline"
+  },
+  {
+    "Id": "T26-K07",
+    "Subcase": "DirectPayrollDml",
+    "ExpectedError": 229,
+    "ActualError": 229,
+    "Before": {
+      "TranCount": 0,
+      "XactState": 1,
+      "OpenTransactions": 0
+    },
+    "After": {
+      "TranCount": 0,
+      "XactState": 1,
+      "OpenTransactions": 0
+    },
+    "Status": "PASS",
+    "Criterion": "Expected rejection; no explicit/open session transaction; compare XactState to same-connection baseline"
+  },
+  {
+    "Id": "T26-K12",
+    "Subcase": "CashSQL",
+    "ExpectedError": 51605,
+    "ActualError": 51605,
+    "Before": {
+      "TranCount": 0,
+      "XactState": 1,
+      "OpenTransactions": 0
+    },
+    "After": {
+      "TranCount": 0,
+      "XactState": 1,
+      "OpenTransactions": 0
+    },
+    "Status": "PASS",
+    "Criterion": "Expected rejection; no explicit/open session transaction; compare XactState to same-connection baseline"
+  },
+  {
+    "Id": "T26-K12",
+    "Subcase": "StoreSQL",
+    "ExpectedError": 51605,
+    "ActualError": 51605,
+    "Before": {
+      "TranCount": 0,
+      "XactState": 1,
+      "OpenTransactions": 0
+    },
+    "After": {
+      "TranCount": 0,
+      "XactState": 1,
+      "OpenTransactions": 0
+    },
+    "Status": "PASS",
+    "Criterion": "Expected rejection; no explicit/open session transaction; compare XactState to same-connection baseline"
+  }
+]

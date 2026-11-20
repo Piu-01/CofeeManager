@@ -1,0 +1,14 @@
+{
+  "Kind": "Technical dependency smoke; runtime EXECUTE AS USER; not acceptance",
+  "AttendanceActual": {
+    "Hours": 8.00,
+    "Incomplete": false,
+    "PeriodLocked": false,
+    "ReceiptMatches": true
+  },
+  "AttendanceHours": 8.00,
+  "Schema": 23,
+  "Employee": "NV011",
+  "Runtime": "G06Runtime",
+  "Status": "Succeeded"
+}

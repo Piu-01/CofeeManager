@@ -1,0 +1,20 @@
+{
+  "RunId": "20261031_024435_baf21892",
+  "Server": "localhost",
+  "Database": "CoffeeManager_Test_G06_20261031_024435_baf21892_demo",
+  "Kind": "Extended acceptance; fixed product source",
+  "Status": "Completed",
+  "Created": [
+    {
+      "Name": "CoffeeManager_Test_G06_20261031_024435_baf21892_demo",
+      "Marker": "20261031_024435_baf21892"
+    }
+  ],
+  "Cleaned": [
+    "CoffeeManager_Test_G06_20261031_024435_baf21892_demo"
+  ],
+  "Retained": [],
+  "PassSubcases": 75,
+  "FailSubcases": 3,
+  "SourceUnchanged": true
+}

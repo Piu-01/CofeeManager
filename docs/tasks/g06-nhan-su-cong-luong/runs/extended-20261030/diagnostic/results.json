@@ -1,0 +1,57 @@
+[
+  {
+    "Value": 12000000,
+    "Scale": 18,
+    "Result": 12000000,
+    "Status": "PASS"
+  },
+  {
+    "Value": 12000000,
+    "Scale": 0,
+    "Result": 12000000,
+    "Status": "PASS"
+  },
+  {
+    "Value": 99999999999,
+    "Scale": 18,
+    "Exception": "System.OverflowException: Conversion overflows.\r\n   at System.Data.SqlTypes.SqlDecimal.ToDecimal()\r\n   at Microsoft.Data.SqlClient.TdsParser.AdjustDecimalScale(Decimal value, Int32 newScale)\r\n   at Microsoft.Data.SqlClient.TdsParser.TDSExecuteRPCAddParameter(TdsParserStateObject stateObj, SqlParameter param, MetaType mt, Byte options, SqlCommand command, Boolean isAnonymous)\r\n   at Microsoft.Data.SqlClient.TdsParser.TdsExecuteRPC(SqlCommand cmd, IList\u00601 rpcArray, Int32 timeout, Boolean inSchema, SqlNotificationRequest notificationRequest, TdsParserStateObject stateObj, Boolean isCommandProc, Boolean sync, TaskCompletionSource\u00601 completion, Int32 startRpc, Int32 startParam)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task\u0026 task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource\u00601 completion, Int32 timeout, Task\u0026 task, Boolean\u0026 usedCache, Boolean asyncWrite, Boolean inRetry, String method)\r\n   at Microsoft.Data.SqlClient.SqlCommand.BeginExecuteReaderInternal(CommandBehavior behavior, AsyncCallback callback, Object stateObject, Int32 timeout, Boolean inRetry, Boolean asyncWrite)\r\n   at Microsoft.Data.SqlClient.SqlCommand.\u003C\u003Ec.\u003CInternalExecuteReaderAsync\u003Eb__201_0(AsyncCallback callback, Object stateObject)\r\n   at System.Threading.Tasks.TaskFactory\u00601.FromAsyncImpl(Func\u00603 beginMethod, Func\u00602 endFunction, Action\u00601 endAction, Object state, TaskCreationOptions creationOptions)\r\n   at System.Threading.Tasks.TaskFactory\u00601.FromAsync(Func\u00603 beginMethod, Func\u00602 endMethod, Object state)\r\n   at Microsoft.Data.SqlClient.SqlCommand.InternalExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)\r\n--- End of stack trace from previous location ---\r\n   at Diagnostic.Main(String[] args) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g06-nhan-su-cong-luong\\runs\\extended-20261030\\diagnostic\\Program.cs:line 9",
+    "Status": "FAIL"
+  },
+  {
+    "Value": 99999999999,
+    "Scale": 0,
+    "Result": 99999999999,
+    "Status": "PASS"
+  },
+  {
+    "Value": 999999999999,
+    "Scale": 18,
+    "Exception": "System.OverflowException: Conversion overflows.\r\n   at System.Data.SqlTypes.SqlDecimal.ToDecimal()\r\n   at Microsoft.Data.SqlClient.TdsParser.AdjustDecimalScale(Decimal value, Int32 newScale)\r\n   at Microsoft.Data.SqlClient.TdsParser.TDSExecuteRPCAddParameter(TdsParserStateObject stateObj, SqlParameter param, MetaType mt, Byte options, SqlCommand command, Boolean isAnonymous)\r\n   at Microsoft.Data.SqlClient.TdsParser.TdsExecuteRPC(SqlCommand cmd, IList\u00601 rpcArray, Int32 timeout, Boolean inSchema, SqlNotificationRequest notificationRequest, TdsParserStateObject stateObj, Boolean isCommandProc, Boolean sync, TaskCompletionSource\u00601 completion, Int32 startRpc, Int32 startParam)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task\u0026 task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource\u00601 completion, Int32 timeout, Task\u0026 task, Boolean\u0026 usedCache, Boolean asyncWrite, Boolean inRetry, String method)\r\n   at Microsoft.Data.SqlClient.SqlCommand.BeginExecuteReaderInternal(CommandBehavior behavior, AsyncCallback callback, Object stateObject, Int32 timeout, Boolean inRetry, Boolean asyncWrite)\r\n   at Microsoft.Data.SqlClient.SqlCommand.\u003C\u003Ec.\u003CInternalExecuteReaderAsync\u003Eb__201_0(AsyncCallback callback, Object stateObject)\r\n   at System.Threading.Tasks.TaskFactory\u00601.FromAsyncImpl(Func\u00603 beginMethod, Func\u00602 endFunction, Action\u00601 endAction, Object state, TaskCreationOptions creationOptions)\r\n   at System.Threading.Tasks.TaskFactory\u00601.FromAsync(Func\u00603 beginMethod, Func\u00602 endMethod, Object state)\r\n   at Microsoft.Data.SqlClient.SqlCommand.InternalExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)\r\n--- End of stack trace from previous location ---\r\n   at Diagnostic.Main(String[] args) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g06-nhan-su-cong-luong\\runs\\extended-20261030\\diagnostic\\Program.cs:line 9",
+    "Status": "FAIL"
+  },
+  {
+    "Value": 999999999999,
+    "Scale": 0,
+    "Result": 999999999999,
+    "Status": "PASS"
+  },
+  {
+    "Value": 999999999999999999,
+    "Scale": 18,
+    "Exception": "System.OverflowException: Conversion overflows.\r\n   at System.Data.SqlTypes.SqlDecimal.ToDecimal()\r\n   at Microsoft.Data.SqlClient.TdsParser.AdjustDecimalScale(Decimal value, Int32 newScale)\r\n   at Microsoft.Data.SqlClient.TdsParser.TDSExecuteRPCAddParameter(TdsParserStateObject stateObj, SqlParameter param, MetaType mt, Byte options, SqlCommand command, Boolean isAnonymous)\r\n   at Microsoft.Data.SqlClient.TdsParser.TdsExecuteRPC(SqlCommand cmd, IList\u00601 rpcArray, Int32 timeout, Boolean inSchema, SqlNotificationRequest notificationRequest, TdsParserStateObject stateObj, Boolean isCommandProc, Boolean sync, TaskCompletionSource\u00601 completion, Int32 startRpc, Int32 startParam)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task\u0026 task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource\u00601 completion, Int32 timeout, Task\u0026 task, Boolean\u0026 usedCache, Boolean asyncWrite, Boolean inRetry, String method)\r\n   at Microsoft.Data.SqlClient.SqlCommand.BeginExecuteReaderInternal(CommandBehavior behavior, AsyncCallback callback, Object stateObject, Int32 timeout, Boolean inRetry, Boolean asyncWrite)\r\n   at Microsoft.Data.SqlClient.SqlCommand.\u003C\u003Ec.\u003CInternalExecuteReaderAsync\u003Eb__201_0(AsyncCallback callback, Object stateObject)\r\n   at System.Threading.Tasks.TaskFactory\u00601.FromAsyncImpl(Func\u00603 beginMethod, Func\u00602 endFunction, Action\u00601 endAction, Object state, TaskCreationOptions creationOptions)\r\n   at System.Threading.Tasks.TaskFactory\u00601.FromAsync(Func\u00603 beginMethod, Func\u00602 endMethod, Object state)\r\n   at Microsoft.Data.SqlClient.SqlCommand.InternalExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)\r\n--- End of stack trace from previous location ---\r\n   at Diagnostic.Main(String[] args) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g06-nhan-su-cong-luong\\runs\\extended-20261030\\diagnostic\\Program.cs:line 9",
+    "Status": "FAIL"
+  },
+  {
+    "Value": 999999999999999999,
+    "Scale": 0,
+    "Result": 999999999999999999,
+    "Status": "PASS"
+  },
+  {
+    "Literal": 999999999999999999
+  },
+  {
+    "Format": "N12000000 \u20AB",
+    "Expected": "12.000.000 \u20AB"
+  }
+]

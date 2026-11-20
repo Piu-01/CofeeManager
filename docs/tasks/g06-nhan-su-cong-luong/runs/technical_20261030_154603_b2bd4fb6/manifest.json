@@ -1,0 +1,26 @@
+{
+  "RunId": "20261030_154603_b2bd4fb6",
+  "Kind": "Technical migration/dependency smoke only; not acceptance",
+  "Server": "localhost",
+  "ThroughVersion": 24,
+  "Operator": "LAPTOP-79UNRIRC\\Lenovo",
+  "Created": [
+    {
+      "Marker": "20261030_154603_b2bd4fb6",
+      "Database": "CoffeeManager_Test_G06_20261030_154603_b2bd4fb6_clean",
+      "Mode": "clean"
+    },
+    {
+      "Marker": "20261030_154603_b2bd4fb6",
+      "Database": "CoffeeManager_Test_G06_20261030_154603_b2bd4fb6_demo",
+      "Mode": "demo"
+    }
+  ],
+  "Cleaned": [
+    "CoffeeManager_Test_G06_20261030_154603_b2bd4fb6_clean",
+    "CoffeeManager_Test_G06_20261030_154603_b2bd4fb6_demo"
+  ],
+  "Retained": [],
+  "Status": "Succeeded",
+  "SourceUnchanged": true
+}

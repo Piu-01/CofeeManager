@@ -1,0 +1,7 @@
+{
+  "Kind": "Technical dependency smoke; runtime EXECUTE AS USER; not acceptance",
+  "Schema": 22,
+  "Employee": "NV011",
+  "Runtime": "G06Runtime",
+  "Status": "Succeeded"
+}

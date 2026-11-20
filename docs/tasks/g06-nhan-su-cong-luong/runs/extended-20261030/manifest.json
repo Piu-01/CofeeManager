@@ -1,0 +1,20 @@
+{
+  "RunId": "20261030_160502_a75dec53",
+  "Server": "localhost",
+  "Database": "CoffeeManager_Test_G06_20261030_160502_a75dec53_demo",
+  "Kind": "Extended acceptance; fixed product source",
+  "Status": "Completed",
+  "Created": [
+    {
+      "Name": "CoffeeManager_Test_G06_20261030_160502_a75dec53_demo",
+      "Marker": "20261030_160502_a75dec53"
+    }
+  ],
+  "Cleaned": [
+    "CoffeeManager_Test_G06_20261030_160502_a75dec53_demo"
+  ],
+  "Retained": [],
+  "PassSubcases": 52,
+  "FailSubcases": 7,
+  "SourceUnchanged": true
+}

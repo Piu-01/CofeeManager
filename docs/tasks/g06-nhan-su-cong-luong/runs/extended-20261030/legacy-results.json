@@ -1,0 +1,55 @@
+{
+  "RunId": "20261030_194714_57eed4d7",
+  "Database": "CoffeeManager_Test_G06_20261030_194714_57eed4d7_legacy",
+  "Cases": [
+    {
+      "Expected": 53107,
+      "Case": "EmptyLegacyName",
+      "Status": "PASS",
+      "MigrationRows": 0,
+      "ColumnExists": false,
+      "Error": "System.Management.Automation.MethodInvocationException: Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Hồ sơ cũ cần rà soát tên, SDT hoặc tài khoản nhân viên nghỉ việc.\"\r\n ---> System.Data.SqlClient.SqlException (0x80131904): Hồ sơ cũ cần rà soát tên, SDT hoặc tài khoản nhân viên nghỉ việc.\r\n   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)\r\n   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)\r\n   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()\r\n   at CallSite.Target(Closure, CallSite, Object)\r\nClientConnectionId:e3b392c8-4f12-4723-9cab-897b574c6bb1\r\nError Number:53107,State:1,Class:16\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)"
+    },
+    {
+      "Expected": 53107,
+      "Case": "LegacyPhone",
+      "Status": "PASS",
+      "MigrationRows": 0,
+      "ColumnExists": false,
+      "Error": "System.Management.Automation.MethodInvocationException: Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Hồ sơ cũ cần rà soát tên, SDT hoặc tài khoản nhân viên nghỉ việc.\"\r\n ---> System.Data.SqlClient.SqlException (0x80131904): Hồ sơ cũ cần rà soát tên, SDT hoặc tài khoản nhân viên nghỉ việc.\r\n   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)\r\n   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)\r\n   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()\r\n   at CallSite.Target(Closure, CallSite, Object)\r\nClientConnectionId:e3b392c8-4f12-4723-9cab-897b574c6bb1\r\nError Number:53107,State:1,Class:16\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)"
+    },
+    {
+      "Expected": 53107,
+      "Case": "RetiredActiveAccount",
+      "Status": "FAIL",
+      "MigrationRows": 1,
+      "ColumnExists": true,
+      "Error": null
+    },
+    {
+      "Expected": 53207,
+      "Case": "LegacyOverlap",
+      "Status": "PASS",
+      "MigrationRows": 0,
+      "ColumnExists": false,
+      "Error": "System.Management.Automation.MethodInvocationException: Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"Công cũ có khoảng giờ chồng nhau; cần đối soát.\"\r\n ---> System.Data.SqlClient.SqlException (0x80131904): Công cũ có khoảng giờ chồng nhau; cần đối soát.\r\n   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)\r\n   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)\r\n   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()\r\n   at CallSite.Target(Closure, CallSite, Object)\r\nClientConnectionId:e3b392c8-4f12-4723-9cab-897b574c6bb1\r\nError Number:53207,State:1,Class:16\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)"
+    },
+    {
+      "Rerun": "AlreadyApplied",
+      "Mismatch": "Migration version exists with a different checksum; create a new version.",
+      "Case": "RerunChecksum",
+      "Status": "PASS"
+    }
+  ],
+  "Created": [
+    {
+      "Marker": "20261030_194714_57eed4d7",
+      "Database": "CoffeeManager_Test_G06_20261030_194714_57eed4d7_legacy"
+    }
+  ],
+  "Cleaned": [
+    "CoffeeManager_Test_G06_20261030_194714_57eed4d7_legacy"
+  ],
+  "Retained": [],
+  "Status": "Completed"
+}

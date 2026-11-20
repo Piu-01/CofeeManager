@@ -1,0 +1,13 @@
+{
+  "InvalidError": 53101,
+  "TransactionDiagnostic": {
+    "TranCount": 0,
+    "XactState": 1,
+    "Concat": "0:1"
+  },
+  "Database": "CoffeeManager_Test_G06_20261030_160836_ea0f560f_demo",
+  "Marker": "20261030_160836_ea0f560f",
+  "Kind": "Native UI against real MainForm/modules; session authenticated via production AuthService, not LoginForm UI",
+  "DeviceDpi": 120,
+  "Status": "Ready"
+}

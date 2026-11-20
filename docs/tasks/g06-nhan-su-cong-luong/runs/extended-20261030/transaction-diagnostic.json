@@ -1,0 +1,17 @@
+[
+  {
+    "Column": "a",
+    "Value": 0,
+    "Type": "System.Int32"
+  },
+  {
+    "Column": "b",
+    "Value": 1,
+    "Type": "System.Int16"
+  },
+  {
+    "Column": "c",
+    "Value": "0:1",
+    "Type": "System.String"
+  }
+]

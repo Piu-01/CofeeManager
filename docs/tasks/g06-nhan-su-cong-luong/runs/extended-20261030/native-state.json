@@ -1,0 +1,5 @@
+{
+  "InvalidError": 53101,
+  "Status": "Failed",
+  "Error": "System.InvalidCastException: Unable to cast object of type \u0027System.Int16\u0027 to type \u0027System.Int32\u0027.\r\n   at Microsoft.Data.SqlClient.SqlBuffer.get_Int32()\r\n   at Microsoft.Data.SqlClient.SqlDataReader.GetInt32(Int32 i)\r\n   at NativeProgram.Main(String[] args) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g06-nhan-su-cong-luong\\runs\\extended-20261030\\Native.cs:line 38"
+}

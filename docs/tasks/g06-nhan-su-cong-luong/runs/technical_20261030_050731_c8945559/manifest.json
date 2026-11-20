@@ -1,0 +1,13 @@
+{
+  "RunId": "20261030_050731_c8945559",
+  "Kind": "Technical migration/dependency smoke only; not acceptance",
+  "Server": "localhost",
+  "ThroughVersion": 22,
+  "Operator": "LAPTOP-79UNRIRC\\Lenovo",
+  "Created": [],
+  "Cleaned": [],
+  "Retained": [],
+  "Status": "Failed",
+  "Error": "System.Management.Automation.RuntimeException: Typed probe build failed; no stale binary allowed",
+  "SourceUnchanged": true
+}

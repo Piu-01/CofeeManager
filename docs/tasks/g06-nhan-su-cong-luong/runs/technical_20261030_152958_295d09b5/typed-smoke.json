@@ -1,0 +1,5 @@
+{
+  "Kind": "Technical dependency smoke; runtime EXECUTE AS USER; not acceptance",
+  "Status": "Failed",
+  "Error": "System.InvalidOperationException: Attendance dependency mapping failed.\r\n   at Program.\u003CMain\u003E$(String[] args) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G06Probe\\Program.cs:line 44\r\n   at Program.\u003CMain\u003E$(String[] args) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G06Probe\\Program.cs:line 48\r\n   at Program.\u003CMain\u003E$(String[] args) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G06Probe\\Program.cs:line 48\r\n   at Program.\u003CMain\u003E$(String[] args) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G06Probe\\Program.cs:line 48"
+}

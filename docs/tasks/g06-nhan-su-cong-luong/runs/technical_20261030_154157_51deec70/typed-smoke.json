@@ -1,0 +1,71 @@
+{
+  "Kind": "Technical dependency smoke; runtime EXECUTE AS USER; not acceptance",
+  "AttendanceActual": {
+    "Hours": 8.00,
+    "Incomplete": false,
+    "PeriodLocked": false,
+    "ReceiptMatches": true
+  },
+  "AttendanceHours": 8.00,
+  "PayrollPreviewActual": {
+    "Employee": "NV011",
+    "EmployeeName": "Nh\u00E2n vi\u00EAn smoke",
+    "Month": 10,
+    "Year": 2026,
+    "Contract": "Part-time",
+    "PositionName": "Pha che",
+    "Employed": true,
+    "MonthlyRate": 0,
+    "HourlyRate": 35000,
+    "TotalSeconds": 28800,
+    "TotalHours": 8.00,
+    "RegularHours": 8.00,
+    "OvertimeHours": 0.00,
+    "BasePay": 0,
+    "PaidHours": 8.00,
+    "HourlyPayRate": 35000,
+    "OvertimePay": 0,
+    "Allowance": 0,
+    "Bonus": 0,
+    "Deduction": 0,
+    "Amount": 280000,
+    "Issues": [],
+    "Attendance": [
+      {
+        "Employee": "NV011",
+        "WorkDate": "2026-10-29T00:00:00",
+        "Shift": "CA001",
+        "ClockIn": "2026-10-29T08:00:00",
+        "ClockOut": "2026-10-29T16:00:00",
+        "Status": "Di lam"
+      }
+    ]
+  },
+  "PayrollId": 3,
+  "PayrollAmount": 280000.00,
+  "ExpenseCode": "TC20250505",
+  "UI": {
+    "DeviceDpi": 120,
+    "Tabs": [
+      "Nh\u00E2n vi\u00EAn",
+      "T\u00E0i kho\u1EA3n",
+      "Ch\u1EA5m c\u00F4ng",
+      "B\u1EA3ng l\u01B0\u01A1ng"
+    ],
+    "ClientWidth": 1280,
+    "ClientHeight": 720,
+    "ModalActual": {
+      "OwnerMatches": true,
+      "NativeOwnerEnabled": false,
+      "ShowInTaskbar": false,
+      "AcceptButtonIsNull": true,
+      "Border": "Sizable"
+    },
+    "PayrollModalOwner": true,
+    "Kind": "Component WinForms real controls; not native keyboard/visual acceptance"
+  },
+  "Schema": 24,
+  "Employee": "NV011",
+  "Runtime": "G06Runtime",
+  "Status": "Succeeded"
+}

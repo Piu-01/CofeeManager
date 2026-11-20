@@ -1,0 +1,299 @@
+[
+  {
+    "Id": "T24-K02",
+    "Subcase": "Name50Phone15MaxMoney",
+    "Expected": "Valid upper boundaries preserved",
+    "Actual": "Conversion overflows.",
+    "Error": 0,
+    "Status": "FAIL"
+  },
+  {
+    "Id": "T24-K03",
+    "Subcase": "AccountTwoSessions",
+    "Expected": "Same employee two accounts: exactly one succeeds",
+    "Actual": {
+      "Waiters": 2,
+      "Results": [
+        0,
+        2627
+      ]
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "T24-K04",
+    "Subcase": "PasswordLength7",
+    "Expected": "8/128 accepted;7/129 rejected",
+    "Actual": -100,
+    "Status": "PASS"
+  },
+  {
+    "Id": "T24-K04",
+    "Subcase": "PasswordLength8",
+    "Expected": "8/128 accepted;7/129 rejected",
+    "Actual": "Accepted",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T24-K04",
+    "Subcase": "PasswordLength128",
+    "Expected": "8/128 accepted;7/129 rejected",
+    "Actual": "Accepted",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T24-K04",
+    "Subcase": "PasswordLength129",
+    "Expected": "8/128 accepted;7/129 rejected",
+    "Actual": -100,
+    "Status": "PASS"
+  },
+  {
+    "Id": "T24-K04",
+    "Subcase": "ConfirmationMismatch",
+    "Expected": "Different confirmation rejected",
+    "Actual": -100,
+    "Status": "PASS"
+  },
+  {
+    "Id": "T24-K06",
+    "Subcase": "LastAdminDeleteAndDemote",
+    "Expected": "Last admin delete/demote denied; state remains active",
+    "Actual": {
+      "Delete": 547,
+      "Demote": 53102
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "T24-K07",
+    "Subcase": "LowPrivilegeWrite2",
+    "Expected": "Active CASH/STORE cannot change role or employee",
+    "Actual": {
+      "Role": "CASH",
+      "Employee": 51605,
+      "Account": 51605
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "T24-K07",
+    "Subcase": "LowPrivilegeWrite3",
+    "Expected": "Active CASH/STORE cannot change role or employee",
+    "Actual": {
+      "Role": "STORE",
+      "Employee": 51605,
+      "Account": 51605
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "T24-K09",
+    "Subcase": "AccountAndInvoiceReferences",
+    "Expected": "Account-linked/invoice-linked employees cannot delete",
+    "Actual": {
+      "AccountReference": 547,
+      "InvoiceReference": 547
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "T24-K10",
+    "Subcase": "FilterPagingAndVersion",
+    "Expected": "Filtered payroll profile and stale version/receipt protected",
+    "Actual": {
+      "Stale": 53103,
+      "Code": "NV017"
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "T25-K03",
+    "Subcase": "LeaveValidIncompleteNoHours",
+    "Expected": "Leave/absent without times valid; incomplete distinguished",
+    "Actual": [
+      {
+        "Status": "Di lam",
+        "Incomplete": true,
+        "Hours": null
+      },
+      {
+        "Status": "Vang",
+        "Incomplete": false,
+        "Hours": null
+      },
+      {
+        "Status": "Nghi phep",
+        "Incomplete": false,
+        "Hours": null
+      }
+    ],
+    "Status": "PASS"
+  },
+  {
+    "Id": "T25-K04",
+    "Subcase": "Contained",
+    "Expected": "Overlap rejected and no second row",
+    "Actual": 53203,
+    "Status": "PASS"
+  },
+  {
+    "Id": "T25-K04",
+    "Subcase": "Partial",
+    "Expected": "Overlap rejected and no second row",
+    "Actual": 53203,
+    "Status": "PASS"
+  },
+  {
+    "Id": "T25-K04",
+    "Subcase": "CrossDay",
+    "Expected": "Overlap rejected and no second row",
+    "Actual": 53203,
+    "Status": "PASS"
+  },
+  {
+    "Id": "T25-K04",
+    "Subcase": "Open",
+    "Expected": "Overlap rejected and no second row",
+    "Actual": 53203,
+    "Status": "PASS"
+  },
+  {
+    "Id": "T25-K05",
+    "Subcase": "OneSecondOverlap",
+    "Expected": "One second overlap rejected; exact boundary accepted",
+    "Actual": "Exact boundary accepted",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T25-K08",
+    "Subcase": "NewClosedAllMutations",
+    "Expected": "New period rejects insert/update/delete and direct runtime DML",
+    "Actual": {
+      "Update": 53202,
+      "Delete": 53202,
+      "Insert": 53202
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "T25-K10",
+    "Subcase": "FiltersReload",
+    "Expected": "Employee/status/month filters return correct actual rows",
+    "Actual": {
+      "Complete": 1,
+      "Incomplete": 1
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "T25-K11",
+    "Subcase": "ValidBatchAndInternalOverlap",
+    "Expected": "Valid two employees commit; overlapping same employee batch rolls back",
+    "Actual": "Valid2rows; invalid0rows/receipt",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T26-K02",
+    "Subcase": "RoundSumOnce",
+    "Expected": "Two36sec records total0.02h, not per-line0.01\u002B0.01 altered",
+    "Actual": {
+      "TotalSeconds": 36,
+      "TotalHours": 0.01,
+      "Amount": 1
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "T26-K03",
+    "Subcase": "DefensiveLegacyOverlapPreview",
+    "Expected": "Raw fixture overlap reported and cannot commit",
+    "Actual": 53302,
+    "Status": "PASS"
+  },
+  {
+    "Id": "T26-K04",
+    "Subcase": "SQLNullPeriodAndPrecision",
+    "Expected": "SQL rejects invalid period/negative/precision outside BLL",
+    "Actual": 53301,
+    "Status": "PASS"
+  },
+  {
+    "Id": "T26-K06",
+    "Subcase": "NoDataFullTimeAndRetiredHistory",
+    "Expected": "No prorating; valid historical payroll for retired employee",
+    "Actual": {
+      "Amount": 1000000.00,
+      "Employed": false
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "T26-K07",
+    "Subcase": "OwnerImmutableTriggers",
+    "Expected": "Even owner UPDATE/DELETE of posted snapshot rejected",
+    "Actual": {
+      "Update": 53302,
+      "Delete": 53302
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "T26-K12",
+    "Subcase": "TimeoutBeforeCommit",
+    "Expected": "Before-commit timeout does not persist payroll payment",
+    "Actual": {
+      "AfterCommit": false,
+      "ClientError": -2,
+      "ExpenseCount": 0,
+      "Receipt": null,
+      "Status": "Unpaid"
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "T26-K12",
+    "Subcase": "TimeoutAfterCommit",
+    "Expected": "Expense committed once; receipt and replay identify result",
+    "Actual": {
+      "AfterCommit": true,
+      "ClientError": -2,
+      "ExpenseCount": 1,
+      "Receipt": "7",
+      "Status": "Paid"
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "T26-K10",
+    "Subcase": "ZeroDirectSql",
+    "Expected": "Direct public SQL cannot create zero-valued expense",
+    "Actual": 53302,
+    "Status": "PASS"
+  },
+  {
+    "Id": "T26-K12",
+    "Subcase": "PendingScopeAndDoubleSend",
+    "Expected": "DPAPI roundtrip; another DB scope cannot read; second request not overwrite",
+    "Actual": {
+      "Roundtrip": true,
+      "CrossScopeMissing": true,
+      "OverwriteError": -200
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "T26-K12",
+    "Subcase": "PendingNewProcess",
+    "Expected": "New process same Windows user reads protected pending request",
+    "Actual": "MATCH",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T26-K12",
+    "Subcase": "CorruptPending",
+    "Expected": "Corrupted DPAPI file reports error instead of silent reset",
+    "Actual": -201,
+    "Status": "PASS"
+  }
+]

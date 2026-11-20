@@ -1,0 +1,40 @@
+{
+  "RunId": "20261030_155806_b10d6581",
+  "Kind": "G06 SQL subset plus unit; native/concurrency cases separately recorded",
+  "Server": "localhost",
+  "ThroughVersion": 24,
+  "Operator": "LAPTOP-79UNRIRC\\Lenovo",
+  "Created": [
+    {
+      "Marker": "20261030_155806_b10d6581",
+      "Database": "CoffeeManager_Test_G06_20261030_155806_b10d6581_clean",
+      "Mode": "clean"
+    },
+    {
+      "Marker": "20261030_155806_b10d6581",
+      "Database": "CoffeeManager_Test_G06_20261030_155806_b10d6581_demo",
+      "Mode": "demo"
+    }
+  ],
+  "Cleaned": [
+    "CoffeeManager_Test_G06_20261030_155806_b10d6581_clean",
+    "CoffeeManager_Test_G06_20261030_155806_b10d6581_demo"
+  ],
+  "Retained": [],
+  "Status": "Succeeded",
+  "SqlFixtures": [
+    {
+      "Name": "t24_account_metadata.sql",
+      "Status": "Succeeded"
+    },
+    {
+      "Name": "t25_period_lock.sql",
+      "Status": "Succeeded"
+    },
+    {
+      "Name": "t26_payroll_sources.sql",
+      "Status": "Succeeded"
+    }
+  ],
+  "SourceUnchanged": true
+}

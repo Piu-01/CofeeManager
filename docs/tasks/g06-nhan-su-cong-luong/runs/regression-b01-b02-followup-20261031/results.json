@@ -1,0 +1,759 @@
+{
+  "Database": "CoffeeManager_Test_G06_20261031_024630_9379d6cf_demo",
+  "Marker": "20261031_024630_9379d6cf",
+  "Runtime": "G06Runtime",
+  "Cases": [
+    {
+      "Id": "T24-K01",
+      "Subcase": "FullPartRoundtrip",
+      "Expected": "Both contract/salary/position persisted",
+      "Actual": {
+        "Code": "NV011",
+        "Contract": "Full-time",
+        "MonthlyRate": 10000000,
+        "Position": "CV003"
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "T24-K02",
+      "Subcase": "EmptyName",
+      "Expected": "Rejected before mutation",
+      "Actual": -100,
+      "Status": "PASS"
+    },
+    {
+      "Id": "T24-K02",
+      "Subcase": "LongName",
+      "Expected": "Rejected before mutation",
+      "Actual": -100,
+      "Status": "PASS"
+    },
+    {
+      "Id": "T24-K02",
+      "Subcase": "Contract",
+      "Expected": "Rejected before mutation",
+      "Actual": -100,
+      "Status": "PASS"
+    },
+    {
+      "Id": "T24-K02",
+      "Subcase": "Negative",
+      "Expected": "Rejected before mutation",
+      "Actual": -100,
+      "Status": "PASS"
+    },
+    {
+      "Id": "T24-K02",
+      "Subcase": "Fraction",
+      "Expected": "Rejected before mutation",
+      "Actual": -100,
+      "Status": "PASS"
+    },
+    {
+      "Id": "T24-K02",
+      "Subcase": "Overflow",
+      "Expected": "Rejected before mutation",
+      "Actual": -100,
+      "Status": "PASS"
+    },
+    {
+      "Id": "T24-K02",
+      "Subcase": "PhoneAlpha",
+      "Expected": "Rejected before mutation",
+      "Actual": -100,
+      "Status": "PASS"
+    },
+    {
+      "Id": "T24-K02",
+      "Subcase": "PhoneUniqueNullFK",
+      "Expected": "Multiple NULL allowed; real duplicate/FK rejected",
+      "Actual": {
+        "Duplicate": 2601,
+        "ForeignKey": 547
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "T24-K02",
+      "Subcase": "SqlWideName",
+      "Expected": "SQL rejects51-char name, transaction0:0",
+      "Actual": 53101,
+      "Status": "PASS"
+    },
+    {
+      "Id": "T24-K03",
+      "Subcase": "UniqueAccountAndLoginKey",
+      "Expected": "One employee/account, usernames case insensitive",
+      "Actual": {
+        "EmployeeUnique": 2627,
+        "UsernameUnique": 2627
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "T24-K04",
+      "Subcase": "ResetLoginAndMetadata",
+      "Expected": "Old credential invalid/new valid; grid DTO has no hash",
+      "Actual": {
+        "OldRejected": true,
+        "NewLogin": "CASH",
+        "NoSecretMember": true
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "T24-K05",
+      "Subcase": "RetirementSessionHistory",
+      "Expected": "Retirement locks account and keeps history; session revoked",
+      "Actual": {
+        "Employed": false,
+        "Active": false,
+        "OldSessionRevoked": true
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "T24-K06",
+      "Subcase": "TwoAdminsSelfDemote",
+      "Expected": "Barrier two sessions; exactly one demotion, one ADMIN remains",
+      "Actual": {
+        "Waiters": 2,
+        "SqlResults": [
+          0,
+          53102
+        ]
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "T24-K06",
+      "Subcase": "LastAdminLockRetireBootstrap",
+      "Expected": "Last ADMIN lock/retire/bootstrap reopen blocked",
+      "Actual": {
+        "Lock": 53102,
+        "Retire": 53102,
+        "Bootstrap": 229
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "T24-K07",
+      "Subcase": "PositionIndependentFromRole",
+      "Expected": "Position edit does not change CASH role",
+      "Actual": "CASH unchanged",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T24-K08",
+      "Subcase": "LegacySalarySnapshot",
+      "Expected": "Employee salary edits do not alter legacy payroll amounts",
+      "Actual": "866216B94C4345949962D44DAED2901568A47E8CF93C68C38E2153C872FD752E",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T24-K09",
+      "Subcase": "ReferencedDeleteAndUnusedDelete",
+      "Expected": "Referenced employee blocked; unused employee deletable",
+      "Actual": {
+        "ReferencedError": 547,
+        "UnusedDeleted": true
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "T24-K10",
+      "Subcase": "DirectRoleNV013",
+      "Expected": "CASH/STORE HR services and runtime procedures denied",
+      "Actual": {
+        "Role": "CASH",
+        "Bll": 51605,
+        "Sql": 51605
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "T24-K10",
+      "Subcase": "DirectRoleNV014",
+      "Expected": "CASH/STORE HR services and runtime procedures denied",
+      "Actual": {
+        "Role": "STORE",
+        "Bll": 51605,
+        "Sql": 51605
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "T25-K01",
+      "Subcase": "DayAndOvernight",
+      "Expected": "8h same day and8h overnight",
+      "Actual": "8h/8h",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T25-K02",
+      "Subcase": "OutWithoutIn",
+      "Expected": "Invalid times rejected",
+      "Actual": -100,
+      "Status": "PASS"
+    },
+    {
+      "Id": "T25-K02",
+      "Subcase": "Equal",
+      "Expected": "Invalid times rejected",
+      "Actual": -100,
+      "Status": "PASS"
+    },
+    {
+      "Id": "T25-K02",
+      "Subcase": "Before",
+      "Expected": "Invalid times rejected",
+      "Actual": -100,
+      "Status": "PASS"
+    },
+    {
+      "Id": "T25-K02",
+      "Subcase": "OtherDate",
+      "Expected": "Invalid times rejected",
+      "Actual": -100,
+      "Status": "PASS"
+    },
+    {
+      "Id": "T25-K02",
+      "Subcase": "Subsecond",
+      "Expected": "Invalid times rejected",
+      "Actual": -100,
+      "Status": "PASS"
+    },
+    {
+      "Id": "T25-K03",
+      "Subcase": "LeaveAndIncomplete",
+      "Expected": "Leave with time rejected; open shift saved and preview blocks",
+      "Actual": {
+        "PreviewIssues": 1,
+        "Commit": 53302
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "T25-K04",
+      "Subcase": "DuplicateOverlapAtomic",
+      "Expected": "Duplicate PK/overlap rollback whole batch and no receipt",
+      "Actual": {
+        "Overlap": 53203,
+        "Rows": 1
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "T25-K05",
+      "Subcase": "Adjacent",
+      "Expected": "16h finish permits16h next start",
+      "Actual": "[8,16),[16,20)",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T25-K06",
+      "Subcase": "OverlapTwoSessions",
+      "Expected": "Two blocked sessions at employee gate, only one success",
+      "Actual": {
+        "Waiters": 2,
+        "SqlResults": [
+          0,
+          53203
+        ]
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "T25-K07",
+      "Subcase": "RetiredInvalidShiftHistory",
+      "Expected": "Retired/invalid shift rejects new work; history readable",
+      "Actual": {
+        "Retired": 53202,
+        "Shift": 53202
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "T25-K08",
+      "Subcase": "LegacyClosedPeriod",
+      "Expected": "Insert in existing legacy payroll period blocked",
+      "Actual": 53202,
+      "Status": "PASS"
+    },
+    {
+      "Id": "T25-K09",
+      "Subcase": "MonthBoundary",
+      "Expected": "Sep30 overnight belongs Sep, not Oct",
+      "Actual": "September8h,October0rows",
+      "Status": "PASS"
+    },
+    {
+      "Id": "T25-K10",
+      "Subcase": "RoleNV013",
+      "Expected": "CASH/STORE attendance denied",
+      "Actual": 51605,
+      "Status": "PASS"
+    },
+    {
+      "Id": "T25-K10",
+      "Subcase": "RoleNV014",
+      "Expected": "CASH/STORE attendance denied",
+      "Actual": 51605,
+      "Status": "PASS"
+    },
+    {
+      "Id": "T25-K11",
+      "Subcase": "MixedBatchRollback",
+      "Expected": "Invalid second employee rolls back first row and receipt",
+      "Actual": {
+        "FirstEmployeeRows": 0,
+        "Receipt": false
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "T26-K01",
+      "Subcase": "FullTimeHandCalculation",
+      "Expected": "10m\u002B400k\u002B500k\u002B100k-200k=10.8m",
+      "Actual": 10800000.00,
+      "Status": "PASS"
+    },
+    {
+      "Id": "T26-K01",
+      "Subcase": "PartTimeHandCalculation",
+      "Expected": "36*35k\u002B210k\u002B100k\u002B50k-20k=1.6m",
+      "Actual": 1600000.00,
+      "Status": "PASS"
+    },
+    {
+      "Id": "T26-K02",
+      "Subcase": "RoundingAndOvertimeSplit",
+      "Expected": "Sum seconds rounded once;0.50 VND rounds1; split mismatch rejected",
+      "Actual": {
+        "Amount": 1.00,
+        "TotalHours": 0.50
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "T26-K03",
+      "Subcase": "IncompleteBothTimes",
+      "Expected": "Di lam NULL/NULL issues block commit",
+      "Actual": 53302,
+      "Status": "PASS"
+    },
+    {
+      "Id": "T26-K04",
+      "Subcase": "Month0",
+      "Expected": "Invalid payroll request rejected",
+      "Actual": -100,
+      "Status": "PASS"
+    },
+    {
+      "Id": "T26-K04",
+      "Subcase": "Month13",
+      "Expected": "Invalid payroll request rejected",
+      "Actual": -100,
+      "Status": "PASS"
+    },
+    {
+      "Id": "T26-K04",
+      "Subcase": "Year1999",
+      "Expected": "Invalid payroll request rejected",
+      "Actual": -100,
+      "Status": "PASS"
+    },
+    {
+      "Id": "T26-K04",
+      "Subcase": "NegativePay",
+      "Expected": "Invalid payroll request rejected",
+      "Actual": -100,
+      "Status": "PASS"
+    },
+    {
+      "Id": "T26-K04",
+      "Subcase": "FractionPay",
+      "Expected": "Invalid payroll request rejected",
+      "Actual": -100,
+      "Status": "PASS"
+    },
+    {
+      "Id": "T26-K04",
+      "Subcase": "NegativeHours",
+      "Expected": "Invalid payroll request rejected",
+      "Actual": -100,
+      "Status": "PASS"
+    },
+    {
+      "Id": "T26-K04",
+      "Subcase": "ExcessPrecision",
+      "Expected": "Invalid payroll request rejected",
+      "Actual": -100,
+      "Status": "PASS"
+    },
+    {
+      "Id": "T26-K04",
+      "Subcase": "DeductionExceedsGross",
+      "Expected": "SQL rejects deduction above total",
+      "Actual": 53305,
+      "Status": "PASS"
+    },
+    {
+      "Id": "T26-K05",
+      "Subcase": "CommitTwoSessions",
+      "Expected": "Two session barrier yields one payroll/snapshot",
+      "Actual": {
+        "Waiters": 2,
+        "SqlResults": [
+          53302,
+          0
+        ]
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "T26-K06",
+      "Subcase": "SnapshotImmutableAfterProfileChange",
+      "Expected": "New snapshot unchanged after profile edit; stale preview rejected",
+      "Actual": {
+        "SnapshotUnchanged": true,
+        "StalePreview": 53303
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "T26-K07",
+      "Subcase": "ClosedPayrollAndAttendance",
+      "Expected": "Direct DML denied and app cannot update/delete closed work",
+      "Actual": {
+        "Direct": 229,
+        "Update": 53202,
+        "Delete": 53202
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "T26-K08",
+      "Subcase": "PayTwoSessions",
+      "Expected": "Exactly one source expense and correct amount/employee",
+      "Actual": {
+        "Waiters": 2,
+        "SqlResults": [
+          0,
+          53302
+        ]
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "T26-K09",
+      "Subcase": "InjectedPostExpenseFailure",
+      "Expected": "Fault after finance insert rolls back expense and receipt",
+      "Actual": {
+        "ExpenseCount": 0,
+        "Receipt": false
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "T26-K10",
+      "Subcase": "ZeroNetNoExpense",
+      "Expected": "Zero-net label NoExpense, no finance row, direct pay rejected",
+      "Actual": {
+        "Status": "NoExpense",
+        "Error": -100
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "T26-K11",
+      "Subcase": "UnpaidVsPaidSource",
+      "Expected": "Committed unpaid distinct from paid; finance counts once",
+      "Actual": {
+        "Unpaid": "Unpaid",
+        "Paid": "Paid",
+        "FinanceSum": 10800000
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "T26-K12",
+      "Subcase": "RoleNV013",
+      "Expected": "CASH/STORE payroll BLL/SQL denied",
+      "Actual": {
+        "BLL": 51605,
+        "SQL": 51605
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "T26-K12",
+      "Subcase": "RoleNV014",
+      "Expected": "CASH/STORE payroll BLL/SQL denied",
+      "Actual": {
+        "BLL": 51605,
+        "SQL": 51605
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "T26-K12",
+      "Subcase": "CommitReplayMismatchReceipt",
+      "Expected": "Same request replays once; changed payload rejected; receipt readable",
+      "Actual": {
+        "Code": "8",
+        "Replay": "8"
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "G06-B01",
+      "Subcase": "EmployeeMoney0",
+      "Expected": "Create/update exact money; receipt present; replay once",
+      "Actual": {
+        "Code": "NV035",
+        "MonthlyRate": 0,
+        "HourlyRate": 0
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "G06-B01",
+      "Subcase": "EmployeeMoney12000000",
+      "Expected": "Create/update exact money; receipt present; replay once",
+      "Actual": {
+        "Code": "NV036",
+        "MonthlyRate": 12000000,
+        "HourlyRate": 12000000
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "G06-B01",
+      "Subcase": "EmployeeMoney99999999999",
+      "Expected": "Create/update exact money; receipt present; replay once",
+      "Actual": {
+        "Code": "NV037",
+        "MonthlyRate": 99999999999,
+        "HourlyRate": 99999999999
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "G06-B01",
+      "Subcase": "EmployeeMoney999999999999",
+      "Expected": "Create/update exact money; receipt present; replay once",
+      "Actual": {
+        "Code": "NV038",
+        "MonthlyRate": 999999999999,
+        "HourlyRate": 999999999999
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "G06-B01",
+      "Subcase": "EmployeeMoney999999999999999999",
+      "Expected": "Create/update exact money; receipt present; replay once",
+      "Actual": {
+        "Code": "NV039",
+        "MonthlyRate": 999999999999999999,
+        "HourlyRate": 999999999999999999
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "G06-B01",
+      "Subcase": "PublicMaxNamePhone",
+      "Expected": "Original valid50name/15phone/maxMoney succeeds",
+      "Actual": "NV040",
+      "Status": "PASS"
+    },
+    {
+      "Id": "G06-B01",
+      "Subcase": "ParameterNull",
+      "Expected": "Parameter arrives exact, including invalid fractions before SQL validation",
+      "Actual": "NULL",
+      "Status": "PASS"
+    },
+    {
+      "Id": "G06-B01",
+      "Subcase": "Parameter0",
+      "Expected": "Parameter arrives exact, including invalid fractions before SQL validation",
+      "Actual": "0.000000000000000000",
+      "Status": "PASS"
+    },
+    {
+      "Id": "G06-B01",
+      "Subcase": "Parameter0.01",
+      "Expected": "Parameter arrives exact, including invalid fractions before SQL validation",
+      "Actual": "0.010000000000000000",
+      "Status": "PASS"
+    },
+    {
+      "Id": "G06-B01",
+      "Subcase": "Parameter0.001",
+      "Expected": "Parameter arrives exact, including invalid fractions before SQL validation",
+      "Actual": "0.001000000000000000",
+      "Status": "PASS"
+    },
+    {
+      "Id": "G06-B01",
+      "Subcase": "Parameter0.5",
+      "Expected": "Parameter arrives exact, including invalid fractions before SQL validation",
+      "Actual": "0.500000000000000000",
+      "Status": "PASS"
+    },
+    {
+      "Id": "G06-B01",
+      "Subcase": "Parameter-1",
+      "Expected": "Parameter arrives exact, including invalid fractions before SQL validation",
+      "Actual": "-1.000000000000000000",
+      "Status": "PASS"
+    },
+    {
+      "Id": "G06-B01",
+      "Subcase": "Parameter99999999.99",
+      "Expected": "Parameter arrives exact, including invalid fractions before SQL validation",
+      "Actual": "99999999.990000000000000000",
+      "Status": "PASS"
+    },
+    {
+      "Id": "G06-B01",
+      "Subcase": "Parameter999999999999999999",
+      "Expected": "Parameter arrives exact, including invalid fractions before SQL validation",
+      "Actual": "999999999999999999.000000000000000000",
+      "Status": "PASS"
+    },
+    {
+      "Id": "G06-B01",
+      "Subcase": "Parameter1000000000000000000",
+      "Expected": "Parameter arrives exact, including invalid fractions before SQL validation",
+      "Actual": "1000000000000000000.000000000000000000",
+      "Status": "PASS"
+    },
+    {
+      "Id": "G06-B01",
+      "Subcase": "SQLRejectsFractionThroughHelper",
+      "Expected": "SQL still rejects noninteger pay; no mutation",
+      "Actual": "Rejected53101; unchanged",
+      "Status": "PASS"
+    },
+    {
+      "Id": "G06-B01",
+      "Subcase": "MaxPayrollCommitPayReplay",
+      "Expected": "18-digit SQL preview/commit/pay exact; one source and receipts",
+      "Actual": {
+        "Payroll": "9",
+        "Expense": "9",
+        "Amount": 999999999999999999.00,
+        "CommittedAt": "2026-10-31T02:46:49",
+        "PaymentDate": "2026-10-31T02:46:50+07:00",
+        "RejectedDate": "2026-10-31T02:46:48"
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "G06-B01",
+      "Subcase": "FractionalHoursPreserved",
+      "Expected": "0.01regular\u002B0.01OT exactly, SQL amount1",
+      "Actual": {
+        "RegularHours": 0.01,
+        "OvertimeHours": 0.01,
+        "Amount": 1
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "G06-B02",
+      "Subcase": "RealGridsFormattedValues",
+      "Expected": "Both employee money columns and payroll text match vi-VN under en-US current culture",
+      "Actual": {
+        "DeviceDpi": 120,
+        "Values": [
+          {
+            "Control": "EmployeesControl",
+            "Column": "MonthlyRate",
+            "Raw": 0,
+            "Text": "0 \u20AB"
+          },
+          {
+            "Control": "EmployeesControl",
+            "Column": "HourlyRate",
+            "Raw": 0,
+            "Text": "0 \u20AB"
+          },
+          {
+            "Control": "EmployeesControl",
+            "Column": "MonthlyRate",
+            "Raw": 35000,
+            "Text": "35.000 \u20AB"
+          },
+          {
+            "Control": "EmployeesControl",
+            "Column": "HourlyRate",
+            "Raw": 35000,
+            "Text": "35.000 \u20AB"
+          },
+          {
+            "Control": "EmployeesControl",
+            "Column": "MonthlyRate",
+            "Raw": 12000000,
+            "Text": "12.000.000 \u20AB"
+          },
+          {
+            "Control": "EmployeesControl",
+            "Column": "HourlyRate",
+            "Raw": 12000000,
+            "Text": "12.000.000 \u20AB"
+          },
+          {
+            "Control": "EmployeesControl",
+            "Column": "MonthlyRate",
+            "Raw": 999999999999999999,
+            "Text": "999.999.999.999.999.999 \u20AB"
+          },
+          {
+            "Control": "EmployeesControl",
+            "Column": "HourlyRate",
+            "Raw": 999999999999999999,
+            "Text": "999.999.999.999.999.999 \u20AB"
+          },
+          {
+            "Control": "PayrollControl",
+            "Column": "Amount",
+            "Raw": 0,
+            "Text": "0 \u20AB"
+          },
+          {
+            "Control": "PayrollControl",
+            "Column": "Amount",
+            "Raw": 35000,
+            "Text": "35.000 \u20AB"
+          },
+          {
+            "Control": "PayrollControl",
+            "Column": "Amount",
+            "Raw": 12000000,
+            "Text": "12.000.000 \u20AB"
+          },
+          {
+            "Control": "PayrollControl",
+            "Column": "Amount",
+            "Raw": 999999999999999999,
+            "Text": "999.999.999.999.999.999 \u20AB"
+          }
+        ]
+      },
+      "Status": "PASS"
+    },
+    {
+      "Id": "G06",
+      "Subcase": "UnrelatedBalances",
+      "Expected": "Inventory/points/invoices/debts unchanged",
+      "Actual": "3102B986F31A68C604F5FE8749D45C06FFA44D05803FF4CDFEADB0206A00E786",
+      "Status": "PASS"
+    }
+  ]
+}
