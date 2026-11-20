@@ -61,16 +61,16 @@ INSERT INTO dbo.CHAMCONG (MaNV, NgayLam, MaCa, GioVao, GioRa, TrangThai) VALUES
 (N'NV009', N'2025-04-05', N'CA002', N'2025-04-05 14:00', N'2025-04-05 22:00', N'Di lam');
 
 INSERT INTO dbo.DANHMUC_SP (MaDM, TenDM) VALUES
-(N'DM001', N'Ca phe'),
-(N'DM002', N'Tra sua'),
-(N'DM003', N'Sinh to'),
-(N'DM004', N'Banh ngot'),
-(N'DM005', N'Nuoc ep'),
-(N'DM006', N'Nuoc ngot'),
-(N'DM007', N'Tra trai cay'),
-(N'DM008', N'Do uong nong'),
-(N'DM009', N'Kem - Trang mien'),
-(N'DM010', N'Mon an nhe');
+(N'DM001', N'Cà phê'),
+(N'DM002', N'Trà sữa'),
+(N'DM003', N'Sinh tố'),
+(N'DM004', N'Bánh ngọt'),
+(N'DM005', N'Nước ép'),
+(N'DM006', N'Nước ngọt'),
+(N'DM007', N'Trà trái cây'),
+(N'DM008', N'Đồ uống nóng'),
+(N'DM009', N'Kem - Tráng miệng'),
+(N'DM010', N'Món ăn nhẹ');
 
 INSERT INTO dbo.NGUYENVATLIEU (MaNVL, TenNVL, DonViTinh, SoLuongTon) VALUES
 (N'NVL01', N'Ca phe hat', N'Kg', 50.0),
