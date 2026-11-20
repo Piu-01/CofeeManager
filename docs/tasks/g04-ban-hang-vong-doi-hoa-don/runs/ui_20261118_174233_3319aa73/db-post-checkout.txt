@@ -1,0 +1,36 @@
+MaHD|TrangThai|TongTien|GiamGia|ThanhTien|NgayThanhToan
+----|---------|--------|-------|---------|-------------
+HD26093444|Da thanh toan|30000|0|30000|2026-11-18 21:30:10
+Operation|C
+---------|-
+SalesCheckout|1
+SalesCreate|1
+SalesRequestPay|1
+MaNVL|SoLuongTon
+-----|----------
+NVL01|68.8020
+NVL02|206.4000
+NVL03|58.1060
+NVL04|20.8230
+NVL05|6.6800
+NVL06|11.4500
+NVL07|33.2500
+NVL08|26.4900
+NVL09|15.9700
+NVL10|500.0000
+NVL11|90.0000
+NVL12|31.0000
+NVL13|19.1600
+NVL14|20.6000
+NVL15|8.6500
+NVL16|9.1000
+NVL17|1.0100
+NVL19|35.2000
+NVL20|48.4500
+NVL21|94.0000
+MaBan|TenBan|MaKV|TrangThai|MaHD|MaPhien|SessionRevision|Retained
+-----|------|----|---------|----|-------|---------------|--------
+B0007|Ban 07|KV003|Dang phuc vu|NULL|1|0x000000000002C718|1
+SoLuong
+-------
+1.0000

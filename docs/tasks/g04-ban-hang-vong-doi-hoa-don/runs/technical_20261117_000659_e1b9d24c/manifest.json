@@ -1,0 +1,21 @@
+﻿{
+    "RunId":  "20261117_000659_e1b9d24c",
+    "Kind":  "Technical migration/dependency smoke only; not acceptance",
+    "Server":  "localhost",
+    "ThroughVersion":  17,
+    "SchemaVersion":  34,
+    "Operator":  "LAPTOP-79UNRIRC\\Lenovo",
+    "Created":  [
+
+                ],
+    "Cleaned":  [
+
+                ],
+    "Retained":  [
+
+                 ],
+    "Status":  "Failed",
+    "ProbeBuildExitCode":  1,
+    "Error":  "System.Management.Automation.RuntimeException: Probe build failed; no stale binary smoke allowed",
+    "SourceUnchanged":  true
+}

@@ -5,17 +5,18 @@
   "Marker": "20261025_181739_98e5df59",
   "Created": true,
   "Cleaned": false,
-  "State": "Ready for guided GUI; no test cases passed by provisioning",
+  "State": "Retained for manual POS preview after approved money-display fix31Oct; technical regression180PASS",
   "Purpose": "Approved post-checkout print/reset functional wave",
-  "RetainReason": "Delivery UI manual/visual check active PID6748; keep shared DB and prior native475-478 fixtures. Delivery acceptance103headers/actors/receipts and regression fixtures cleaned, snapshots unchanged. Old process entries retained as ownership history; verify actual processes before cleanup.",
-  "ReviewBy": "2026-10-27",
+  "RetainReason": "PID32440 is new POS Login preview confirmed31Oct. Prior process IDs are ownership history only. Paid compact acceptance fixtures retained for audit, three owned actors disabled. Verify all consumers before shared DB cleanup; never reset stock/points or delete paid history.",
+  "ReviewBy": "2026-11-01",
   "ProcessIds": [
     23512,
     34776,
     37712,
     27260,
     23728,
-    6748
+    6748,
+    32440
   ],
   "SchemaVersion": 16
 }

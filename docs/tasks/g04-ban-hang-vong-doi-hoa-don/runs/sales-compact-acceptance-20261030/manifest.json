@@ -1,0 +1,102 @@
+{
+  "RunId": "sales-compact-acceptance-20261030",
+  "State": "Tested; two product money-display failures; no product fix during test",
+  "Database": "CoffeeManager_Test_G04_20261025_181739_98e5df59_checkout",
+  "Marker": "20261025_181739_98e5df59",
+  "SchemaVersion": 16,
+  "NewDatabaseCreated": false,
+  "Dpi": 120,
+  "Source": "Frozen implementation Debug; six owned source hashes unchanged; other workspace modules excluded",
+  "FunctionalAssertions": {
+    "ProductFail": 2,
+    "RawHarnessFail": 2,
+    "Pass": 79
+  },
+  "UnitPass": 18,
+  "Visual": "SKIPPED by assignment",
+  "Dpi100150": "NOT RUN",
+  "RetainReason": "Paid audit history/consumption/points/receipts retained; shared G04 test DB may still serve manual checks. Never reset stock or delete paid history to clean fixtures.",
+  "ReviewBy": "2026-10-31",
+  "ActorsDisabled": [
+    "SCA30",
+    "SCC30",
+    "SCS30"
+  ],
+  "OwnedCustomer": "SC030",
+  "OwnedPromotions": [
+    "KM96300001",
+    "KM96300002"
+  ],
+  "OwnedTable": "B9630",
+  "OwnedProduct": "SP963",
+  "OwnedOrders": [
+    {
+      "MaHD": "HD20250480",
+      "TrangThai": "Da thanh toan",
+      "LoaiDon": "Mang di",
+      "ThanhTien": 145800,
+      "MaKH": "SC030"
+    },
+    {
+      "MaHD": "HD20250481",
+      "TrangThai": "Huy",
+      "LoaiDon": "Tai quan",
+      "ThanhTien": 81000
+    },
+    {
+      "MaHD": "HD20250482",
+      "TrangThai": "Chua thanh toan",
+      "LoaiDon": "Giao hang",
+      "ThanhTien": 100000
+    },
+    {
+      "MaHD": "HD96300001",
+      "TrangThai": "Da thanh toan",
+      "LoaiDon": "Mang di",
+      "ThanhTien": 81000
+    },
+    {
+      "MaHD": "HD96300002",
+      "TrangThai": "Da thanh toan",
+      "LoaiDon": "Mang di",
+      "ThanhTien": 0
+    },
+    {
+      "MaHD": "HD96300003",
+      "TrangThai": "Chua thanh toan",
+      "LoaiDon": "Mang di",
+      "ThanhTien": 1000
+    },
+    {
+      "MaHD": "HD96300004",
+      "TrangThai": "Da thanh toan",
+      "LoaiDon": "Mang di",
+      "ThanhTien": 81000
+    }
+  ],
+  "Cleanup": "Verify consumers/processes and original root marker before eventual whole owned DB cleanup; do not touch other G05/G06 databases or user fixtures",
+  "NotRun": [
+    "Native print/PDF and Yes-Cancel on new binary",
+    "Stale/two-session/repeated-submit/session expiry on new binary",
+    "Other shared grid profiles full regression",
+    "Physical keyboard/manual visual acceptance"
+  ],
+  "BinaryHashes": [
+    {
+      "SHA256": "C2FC214A118A059BC3F493DEBAE6BB50A9230445F8E823EB3EAE1A89CFA2A9CC",
+      "Name": "CafeManager.Business.dll"
+    },
+    {
+      "SHA256": "8C9F3D41E4F4F9A5C32BF86BBF9D7A20BA90FA7373EFF7AC4679817585DFFE6A",
+      "Name": "CafeManager.DataAccess.dll"
+    },
+    {
+      "SHA256": "F9839C91CCF07BDC29217E7B24C72A43FDA680AF24B6C84E145AA44AB2D9DF5D",
+      "Name": "CafeManager.Models.dll"
+    },
+    {
+      "SHA256": "8F7EEEF93A711CE829BA194EA5DA10511983624275C539FBEE818C5A454CD4B9",
+      "Name": "CafeManager.WinForms.dll"
+    }
+  ]
+}

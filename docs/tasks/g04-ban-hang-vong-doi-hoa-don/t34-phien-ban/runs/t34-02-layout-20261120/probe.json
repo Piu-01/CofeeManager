@@ -1,0 +1,88 @@
+{
+  "Kind": "Native layout check of OrderPanel.HeaderActions; no visual acceptance",
+  "width345": {
+    "Dpi": 120,
+    "Inner": 315,
+    "Bounds": [
+      {
+        "Left": 0,
+        "Right": 55,
+        "Width": 55,
+        "Visible": true
+      },
+      {
+        "Left": 65,
+        "Right": 169,
+        "Width": 104,
+        "Visible": true
+      },
+      {
+        "Left": 179,
+        "Right": 315,
+        "Width": 136,
+        "Visible": true
+      }
+    ],
+    "NoOverlap": true,
+    "LastAtRight": true,
+    "AllInside": true,
+    "Ok": true
+  },
+  "width420": {
+    "Dpi": 120,
+    "Inner": 390,
+    "Bounds": [
+      {
+        "Left": 0,
+        "Right": 130,
+        "Width": 130,
+        "Visible": true
+      },
+      {
+        "Left": 140,
+        "Right": 244,
+        "Width": 104,
+        "Visible": true
+      },
+      {
+        "Left": 254,
+        "Right": 390,
+        "Width": 136,
+        "Visible": true
+      }
+    ],
+    "NoOverlap": true,
+    "LastAtRight": true,
+    "AllInside": true,
+    "Ok": true
+  },
+  "width300": {
+    "Dpi": 120,
+    "Inner": 270,
+    "Bounds": [
+      {
+        "Left": 0,
+        "Right": 10,
+        "Width": 10,
+        "Visible": true
+      },
+      {
+        "Left": 20,
+        "Right": 124,
+        "Width": 104,
+        "Visible": true
+      },
+      {
+        "Left": 134,
+        "Right": 270,
+        "Width": 136,
+        "Visible": true
+      }
+    ],
+    "NoOverlap": true,
+    "LastAtRight": true,
+    "AllInside": true,
+    "Ok": true
+  },
+  "Success": true
+}

@@ -1,0 +1,10 @@
+﻿{
+    "RunId":  "20261118_173947_89a8ed29",
+    "Database":  "CoffeeManager_Test_G04_20261118_173947_89a8ed29_ui",
+    "Server":  "localhost",
+    "SchemaVersion":  35,
+    "Status":  "Succeeded",
+    "Accounts":  "[{\"TenDangNhap\":\"admin\",\"HoatDong\":true,\"L\":84},{\"TenDangNhap\":\"thungan\",\"HoatDong\":true,\"L\":84},{\"TenDangNhap\":\"kho\",\"HoatDong\":true,\"L\":84}]",
+    "OpenOrders":  1,
+    "OpenSessions":  0
+}

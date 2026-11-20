@@ -1,0 +1,22 @@
+﻿{
+    "RunId":  "20261110_124309_41e6e800",
+    "Server":  "localhost",
+    "Database":  "CoffeeManager_Test_G04_20261110_124309_41e6e800_posnew",
+    "Marker":  "20261110_124309_41e6e800",
+    "Created":  true,
+    "Cleaned":  false,
+    "State":  "Tested PASS 27/27 functional assertions; source hashes unchanged during run",
+    "SchemaVersion":  16,
+    "Purpose":  "G04-POS-01 isolated functional test for New Order free-table switching",
+    "Dpi":  120,
+    "SourceCommit":  "8a38f86",
+    "SourceHashes":  {
+        "SalesControl.cs":  "822A94DF06241657CBA4577CB2DD82E56725509DBC33C10706ACAF2C583716CD",
+        "OrbitConfirmationDialog.cs":  "44DFFEC1902734BAD70E2930C05652E5020A839C49897CEA0DD7D80CF987EC68",
+        "CafeManager.WinForms.dll":  "20c1b7b4f884a1397993824052bad07f4f21e622e58368fc4c7f2b010ef35844"
+    },
+    "Visual":  "SKIPPED by assignment",
+    "Dpi100150":  "NOT RUN",
+    "FixtureOrders":  ["HD20250411", "HD20250412", "HD20250413", "HD20250414", "HD20250415", "HD20250416", "HD20250417", "HD20250418", "HD20250419", "HD20250420"],
+    "RetainReason":  "Isolated G04 functional DB retained for regression/evidence; fixture accounts disabled. Never reset or delete paid/open order history to clean fixtures."
+}

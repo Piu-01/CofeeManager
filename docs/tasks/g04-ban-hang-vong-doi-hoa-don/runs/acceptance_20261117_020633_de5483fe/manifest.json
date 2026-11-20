@@ -1,0 +1,64 @@
+﻿{
+    "RunId":  "20261117_020633_de5483fe",
+    "Kind":  "Approved acceptance SQL subset + unit; remaining manual/concurrency tracked separately",
+    "Server":  "localhost",
+    "ThroughVersion":  18,
+    "SchemaVersion":  35,
+    "Operator":  "LAPTOP-79UNRIRC\\Lenovo",
+    "Created":  [
+                    {
+                        "Marker":  "20261117_020633_de5483fe",
+                        "Database":  "CoffeeManager_Test_G04_20261117_020633_de5483fe_clean",
+                        "Mode":  "clean"
+                    },
+                    {
+                        "Marker":  "20261117_020633_de5483fe",
+                        "Database":  "CoffeeManager_Test_G04_20261117_020633_de5483fe_demo",
+                        "Mode":  "demo"
+                    }
+                ],
+    "Cleaned":  [
+                    "CoffeeManager_Test_G04_20261117_020633_de5483fe_clean",
+                    "CoffeeManager_Test_G04_20261117_020633_de5483fe_demo"
+                ],
+    "Retained":  [
+
+                 ],
+    "Status":  "SucceededPartialCoverage",
+    "ProbeBuildExitCode":  0,
+    "SqlSubsets":  [
+                       {
+                           "File":  "acceptance-orders.sql",
+                           "Kind":  "SQL subcases only; not whole checklist IDs",
+                           "Status":  "PASS"
+                       },
+                       {
+                           "File":  "acceptance-checkout.sql",
+                           "Kind":  "SQL subcases only; not whole checklist IDs",
+                           "Status":  "PASS"
+                       },
+                       {
+                           "File":  "acceptance-delivery.sql",
+                           "Kind":  "SQL subcases only; not whole checklist IDs",
+                           "Status":  "PASS"
+                       },
+                       {
+                           "File":  "acceptance-pending-payment.sql",
+                           "Kind":  "SQL subcases only; not whole checklist IDs",
+                           "Status":  "PASS"
+                       },
+                       {
+                           "File":  "acceptance-table-sessions.sql",
+                           "Kind":  "SQL subcases only; not whole checklist IDs",
+                           "Status":  "PASS"
+                       }
+                   ],
+    "UnitExitCode":  0,
+    "UnitCounters":  {
+                         "NotExecuted":  0,
+                         "Failed":  0,
+                         "Total":  23,
+                         "Passed":  23
+                     },
+    "SourceUnchanged":  true
+}

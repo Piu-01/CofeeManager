@@ -1,0 +1,42 @@
+{
+  "RunId": "sales-money-fix-20261031",
+  "Approval": "User approved grouped money-display fix and regression31Oct",
+  "OwnedFiles": [
+    "OrderPanel.cs",
+    "OrbitDataGridView.cs OrderLines only"
+  ],
+  "FinalPass": 180,
+  "FinalFail": 0,
+  "PriorRounds": [
+    "regression-round1.json:9FAIL",
+    "regression-round2.json:1FAIL"
+  ],
+  "Dpi": 120,
+  "Visual": "User acceptance pending; agent SKIPPED",
+  "Dpi100150": "NOT RUN",
+  "SqlWrites": 0,
+  "FixtureCreated": false,
+  "PreviewProcess": 32440,
+  "PreviewDatabase": "CoffeeManager_Test_G04_20261025_181739_98e5df59_checkout",
+  "RetainReason": "Retain preview binary and shared testDB until manual consumers finish; paid history in prior acceptance preserved",
+  "ReviewBy": "2026-11-01",
+  "DebugRelease": "0warning/0error final builds",
+  "BinaryHashes": [
+    {
+      "SHA256": "0A50DBF4A482DF114C64DBBEEBB0CEDA148F0FC517817FCA03630F9C6B1111E8",
+      "Name": "CafeManager.Business.dll"
+    },
+    {
+      "SHA256": "850F67C7636E747BB14724672879E8440DD7D046A7A2B5C08157A28BF5A4A12A",
+      "Name": "CafeManager.DataAccess.dll"
+    },
+    {
+      "SHA256": "F9839C91CCF07BDC29217E7B24C72A43FDA680AF24B6C84E145AA44AB2D9DF5D",
+      "Name": "CafeManager.Models.dll"
+    },
+    {
+      "SHA256": "AFC30075412E31A24578C4176D8588D3740B1619E86560F7C111DC05E3F1B730",
+      "Name": "CafeManager.WinForms.dll"
+    }
+  ]
+}

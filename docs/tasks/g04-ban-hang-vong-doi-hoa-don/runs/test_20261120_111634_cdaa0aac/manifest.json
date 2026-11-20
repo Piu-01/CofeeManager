@@ -1,0 +1,19 @@
+﻿{
+    "RunId":  "20261120_111634_cdaa0aac",
+    "Database":  "CoffeeManager_Test_G04_20261120_111634_cdaa0aac_demo",
+    "Server":  "localhost",
+    "Mode":  "clean seed + migrations 001-036",
+    "SourceCommit":  "5673f51119e3c42285a09b905cb86f22c1e1d2e3",
+    "Status":  "Failed",
+    "Fixtures":  [
+                     {
+                         "File":  "acceptance-pending-payment.sql",
+                         "Status":  "PASS"
+                     },
+                     {
+                         "Status":  "FAIL",
+                         "Error":  "Bàn/khách/đối tác/chương trình không hợp lệ.",
+                         "File":  "acceptance-pending-add-items.sql"
+                     }
+                 ]
+}

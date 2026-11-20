@@ -1,0 +1,1200 @@
+{
+  "Failed": 0,
+  "Scope": "Technical bounds only; revoked constructor-only session and in-memory DTO, no auth/SQL/business interaction or visual QA",
+  "Results": [
+    {
+      "Name": "DeviceDpi120",
+      "Outcome": "PASS",
+      "Actual": 120
+    },
+    {
+      "Name": "{Width=1280, Height=720}/0 inside topActions",
+      "Outcome": "PASS",
+      "Actual": "{X=452,Y=38,Width=548,Height=50}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/0 inside tableHost",
+      "Outcome": "PASS",
+      "Actual": "{X=30,Y=100,Width=970,Height=70}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/0 inside menuSurface",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=538,Height=427}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/0 inside orderPanel",
+      "Outcome": "PASS",
+      "Actual": "{X=558,Y=0,Width=412,Height=427}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/0 inside menuFooter",
+      "Outcome": "PASS",
+      "Actual": "{X=15,Y=372,Width=508,Height=40}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/0 inside products",
+      "Outcome": "PASS",
+      "Actual": "{X=10,Y=114,Width=518,Height=251}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/0 inside state",
+      "Outcome": "PASS",
+      "Actual": "{X=30,Y=622,Width=970,Height=28}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/0 inside button pay",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=382,Height=48}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/0 inside button header",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=154,Height=32}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/0 inside button edit",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=123,Height=35}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/0 inside button delete",
+      "Outcome": "PASS",
+      "Actual": "{X=129,Y=0,Width=123,Height=35}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/0 inside button cancel",
+      "Outcome": "PASS",
+      "Actual": "{X=258,Y=0,Width=123,Height=35}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/0 inside button reconcile",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=55,Width=382,Height=32}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/0 grid has header\u002Bone row",
+      "Outcome": "PASS",
+      "Actual": {
+        "Lines": "{X=1,Y=118,Width=410,Height=104}",
+        "Panel": "{Width=412, Height=427}",
+        "Header": 36,
+        "Row": 45
+      }
+    },
+    {
+      "Name": "{Width=1280, Height=720}/0 grid before actions",
+      "Outcome": "PASS",
+      "Actual": "{X=1,Y=118,Width=410,Height=104}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/1 inside topActions",
+      "Outcome": "PASS",
+      "Actual": "{X=452,Y=38,Width=548,Height=50}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/1 inside tableHost",
+      "Outcome": "PASS",
+      "Actual": "{X=30,Y=100,Width=970,Height=70}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/1 inside menuSurface",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=538,Height=427}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/1 inside orderPanel",
+      "Outcome": "PASS",
+      "Actual": "{X=558,Y=0,Width=412,Height=427}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/1 inside menuFooter",
+      "Outcome": "PASS",
+      "Actual": "{X=15,Y=372,Width=508,Height=40}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/1 inside products",
+      "Outcome": "PASS",
+      "Actual": "{X=10,Y=114,Width=518,Height=251}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/1 inside state",
+      "Outcome": "PASS",
+      "Actual": "{X=30,Y=622,Width=970,Height=28}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/1 inside button pay",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=382,Height=48}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/1 inside button header",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=154,Height=32}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/1 inside button edit",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=123,Height=35}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/1 inside button delete",
+      "Outcome": "PASS",
+      "Actual": "{X=129,Y=0,Width=123,Height=35}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/1 inside button cancel",
+      "Outcome": "PASS",
+      "Actual": "{X=258,Y=0,Width=123,Height=35}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/1 inside button reconcile",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=55,Width=382,Height=32}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/1 grid has header\u002Bone row",
+      "Outcome": "PASS",
+      "Actual": {
+        "Lines": "{X=1,Y=118,Width=410,Height=104}",
+        "Panel": "{Width=412, Height=427}",
+        "Header": 36,
+        "Row": 45
+      }
+    },
+    {
+      "Name": "{Width=1280, Height=720}/1 grid before actions",
+      "Outcome": "PASS",
+      "Actual": "{X=1,Y=118,Width=410,Height=104}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/1 card height",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1280, Height=720}/1 card child PictureBox",
+      "Outcome": "PASS",
+      "Actual": "{X=10,Y=12,Width=68,Height=106}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/1 card child Label",
+      "Outcome": "PASS",
+      "Actual": "{X=88,Y=21,Width=136,Height=45}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/1 card child Label",
+      "Outcome": "PASS",
+      "Actual": "{X=88,Y=77,Width=92,Height=38}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/1 card child OrbitButton",
+      "Outcome": "PASS",
+      "Actual": "{X=186,Y=77,Width=36,Height=36}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/50 inside topActions",
+      "Outcome": "PASS",
+      "Actual": "{X=452,Y=38,Width=548,Height=50}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/50 inside tableHost",
+      "Outcome": "PASS",
+      "Actual": "{X=30,Y=100,Width=970,Height=70}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/50 inside menuSurface",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=538,Height=427}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/50 inside orderPanel",
+      "Outcome": "PASS",
+      "Actual": "{X=558,Y=0,Width=412,Height=427}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/50 inside menuFooter",
+      "Outcome": "PASS",
+      "Actual": "{X=15,Y=372,Width=508,Height=40}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/50 inside products",
+      "Outcome": "PASS",
+      "Actual": "{X=10,Y=114,Width=518,Height=251}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/50 inside state",
+      "Outcome": "PASS",
+      "Actual": "{X=30,Y=622,Width=970,Height=28}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/50 inside button pay",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=382,Height=48}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/50 inside button header",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=154,Height=32}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/50 inside button edit",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=123,Height=35}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/50 inside button delete",
+      "Outcome": "PASS",
+      "Actual": "{X=129,Y=0,Width=123,Height=35}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/50 inside button cancel",
+      "Outcome": "PASS",
+      "Actual": "{X=258,Y=0,Width=123,Height=35}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/50 inside button reconcile",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=55,Width=382,Height=32}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/50 grid has header\u002Bone row",
+      "Outcome": "PASS",
+      "Actual": {
+        "Lines": "{X=1,Y=118,Width=410,Height=104}",
+        "Panel": "{Width=412, Height=427}",
+        "Header": 36,
+        "Row": 45
+      }
+    },
+    {
+      "Name": "{Width=1280, Height=720}/50 grid before actions",
+      "Outcome": "PASS",
+      "Actual": "{X=1,Y=118,Width=410,Height=104}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/50 card height",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1280, Height=720}/50 card child PictureBox",
+      "Outcome": "PASS",
+      "Actual": "{X=10,Y=12,Width=115,Height=106}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/50 card child Label",
+      "Outcome": "PASS",
+      "Actual": "{X=135,Y=21,Width=317,Height=45}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/50 card child Label",
+      "Outcome": "PASS",
+      "Actual": "{X=135,Y=77,Width=273,Height=38}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/50 card child OrbitButton",
+      "Outcome": "PASS",
+      "Actual": "{X=414,Y=77,Width=36,Height=36}"
+    },
+    {
+      "Name": "{Width=1280, Height=720}/0 total fits",
+      "Outcome": "PASS",
+      "Actual": {
+        "Text": "0 \u20AB",
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 138,
+            "Y": 277
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 260,
+            "Height": 45
+          },
+          "X": 138,
+          "Y": 277,
+          "Width": 260,
+          "Height": 45,
+          "Left": 138,
+          "Top": 277,
+          "Right": 398,
+          "Bottom": 322,
+          "IsEmpty": false
+        },
+        "Measured": "{Width=69, Height=45}"
+      }
+    },
+    {
+      "Name": "{Width=1280, Height=720}/0 caption and payment separate",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1280, Height=720}/0 line money fits",
+      "Outcome": "PASS",
+      "Actual": {
+        "Width": 132,
+        "Needed": 63
+      }
+    },
+    {
+      "Name": "{Width=1280, Height=720}/0 grid row and scroll space",
+      "Outcome": "PASS",
+      "Actual": 104
+    },
+    {
+      "Name": "{Width=1280, Height=720}/0 selection retained",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1280, Height=720}/81000 total fits",
+      "Outcome": "PASS",
+      "Actual": {
+        "Text": "81.000 \u20AB",
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 138,
+            "Y": 277
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 260,
+            "Height": 45
+          },
+          "X": 138,
+          "Y": 277,
+          "Width": 260,
+          "Height": 45,
+          "Left": 138,
+          "Top": 277,
+          "Right": 398,
+          "Bottom": 322,
+          "IsEmpty": false
+        },
+        "Measured": "{Width=154, Height=45}"
+      }
+    },
+    {
+      "Name": "{Width=1280, Height=720}/81000 caption and payment separate",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1280, Height=720}/81000 line money fits",
+      "Outcome": "PASS",
+      "Actual": {
+        "Width": 132,
+        "Needed": 98
+      }
+    },
+    {
+      "Name": "{Width=1280, Height=720}/81000 grid row and scroll space",
+      "Outcome": "PASS",
+      "Actual": 104
+    },
+    {
+      "Name": "{Width=1280, Height=720}/81000 selection retained",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1280, Height=720}/999999999999999999 total fits",
+      "Outcome": "PASS",
+      "Actual": {
+        "Text": "999.999.999.999.999.999 \u20AB",
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 15,
+            "Y": 292
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 382,
+            "Height": 35
+          },
+          "X": 15,
+          "Y": 292,
+          "Width": 382,
+          "Height": 35,
+          "Left": 15,
+          "Top": 292,
+          "Right": 397,
+          "Bottom": 327,
+          "IsEmpty": false
+        },
+        "Measured": "{Width=296, Height=35}"
+      }
+    },
+    {
+      "Name": "{Width=1280, Height=720}/999999999999999999 caption and payment separate",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1280, Height=720}/999999999999999999 line money fits",
+      "Outcome": "PASS",
+      "Actual": {
+        "Width": 216,
+        "Needed": 214
+      }
+    },
+    {
+      "Name": "{Width=1280, Height=720}/999999999999999999 grid row and scroll space",
+      "Outcome": "PASS",
+      "Actual": 102
+    },
+    {
+      "Name": "{Width=1280, Height=720}/999999999999999999 selection retained",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1280, Height=720} invalid stays dash",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1280, Height=720} unknown stays dash",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1280, Height=720} paid total stays actual",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1280, Height=720} empty stays dash",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Observation": "{Width=1280, Height=720}",
+      "Content": "{Width=1030, Height=658}",
+      "Order": "{X=558,Y=0,Width=412,Height=427}",
+      "Grid": "{X=1,Y=118,Width=410,Height=104}",
+      "Menu": "{X=10,Y=114,Width=518,Height=251}",
+      "Cards": 50
+    },
+    {
+      "Name": "{Width=1366, Height=768}/0 inside topActions",
+      "Outcome": "PASS",
+      "Actual": "{X=538,Y=38,Width=548,Height=50}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/0 inside tableHost",
+      "Outcome": "PASS",
+      "Actual": "{X=30,Y=100,Width=1056,Height=70}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/0 inside menuSurface",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=605,Height=475}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/0 inside orderPanel",
+      "Outcome": "PASS",
+      "Actual": "{X=625,Y=0,Width=431,Height=475}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/0 inside menuFooter",
+      "Outcome": "PASS",
+      "Actual": "{X=15,Y=420,Width=575,Height=40}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/0 inside products",
+      "Outcome": "PASS",
+      "Actual": "{X=10,Y=114,Width=585,Height=299}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/0 inside state",
+      "Outcome": "PASS",
+      "Actual": "{X=30,Y=670,Width=1056,Height=28}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/0 inside button pay",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=401,Height=48}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/0 inside button header",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=154,Height=32}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/0 inside button edit",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=129,Height=35}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/0 inside button delete",
+      "Outcome": "PASS",
+      "Actual": "{X=135,Y=0,Width=129,Height=35}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/0 inside button cancel",
+      "Outcome": "PASS",
+      "Actual": "{X=270,Y=0,Width=129,Height=35}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/0 inside button reconcile",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=55,Width=401,Height=32}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/0 grid has header\u002Bone row",
+      "Outcome": "PASS",
+      "Actual": {
+        "Lines": "{X=1,Y=118,Width=429,Height=152}",
+        "Panel": "{Width=431, Height=475}",
+        "Header": 36,
+        "Row": 45
+      }
+    },
+    {
+      "Name": "{Width=1366, Height=768}/0 grid before actions",
+      "Outcome": "PASS",
+      "Actual": "{X=1,Y=118,Width=429,Height=152}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/1 inside topActions",
+      "Outcome": "PASS",
+      "Actual": "{X=538,Y=38,Width=548,Height=50}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/1 inside tableHost",
+      "Outcome": "PASS",
+      "Actual": "{X=30,Y=100,Width=1056,Height=70}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/1 inside menuSurface",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=605,Height=475}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/1 inside orderPanel",
+      "Outcome": "PASS",
+      "Actual": "{X=625,Y=0,Width=431,Height=475}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/1 inside menuFooter",
+      "Outcome": "PASS",
+      "Actual": "{X=15,Y=420,Width=575,Height=40}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/1 inside products",
+      "Outcome": "PASS",
+      "Actual": "{X=10,Y=114,Width=585,Height=299}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/1 inside state",
+      "Outcome": "PASS",
+      "Actual": "{X=30,Y=670,Width=1056,Height=28}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/1 inside button pay",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=401,Height=48}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/1 inside button header",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=154,Height=32}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/1 inside button edit",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=129,Height=35}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/1 inside button delete",
+      "Outcome": "PASS",
+      "Actual": "{X=135,Y=0,Width=129,Height=35}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/1 inside button cancel",
+      "Outcome": "PASS",
+      "Actual": "{X=270,Y=0,Width=129,Height=35}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/1 inside button reconcile",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=55,Width=401,Height=32}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/1 grid has header\u002Bone row",
+      "Outcome": "PASS",
+      "Actual": {
+        "Lines": "{X=1,Y=118,Width=429,Height=152}",
+        "Panel": "{Width=431, Height=475}",
+        "Header": 36,
+        "Row": 45
+      }
+    },
+    {
+      "Name": "{Width=1366, Height=768}/1 grid before actions",
+      "Outcome": "PASS",
+      "Actual": "{X=1,Y=118,Width=429,Height=152}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/1 card height",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1366, Height=768}/1 card child PictureBox",
+      "Outcome": "PASS",
+      "Actual": "{X=10,Y=12,Width=78,Height=106}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/1 card child Label",
+      "Outcome": "PASS",
+      "Actual": "{X=98,Y=21,Width=160,Height=45}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/1 card child Label",
+      "Outcome": "PASS",
+      "Actual": "{X=98,Y=77,Width=116,Height=38}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/1 card child OrbitButton",
+      "Outcome": "PASS",
+      "Actual": "{X=220,Y=77,Width=36,Height=36}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/50 inside topActions",
+      "Outcome": "PASS",
+      "Actual": "{X=538,Y=38,Width=548,Height=50}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/50 inside tableHost",
+      "Outcome": "PASS",
+      "Actual": "{X=30,Y=100,Width=1056,Height=70}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/50 inside menuSurface",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=605,Height=475}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/50 inside orderPanel",
+      "Outcome": "PASS",
+      "Actual": "{X=625,Y=0,Width=431,Height=475}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/50 inside menuFooter",
+      "Outcome": "PASS",
+      "Actual": "{X=15,Y=420,Width=575,Height=40}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/50 inside products",
+      "Outcome": "PASS",
+      "Actual": "{X=10,Y=114,Width=585,Height=299}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/50 inside state",
+      "Outcome": "PASS",
+      "Actual": "{X=30,Y=670,Width=1056,Height=28}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/50 inside button pay",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=401,Height=48}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/50 inside button header",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=154,Height=32}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/50 inside button edit",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=129,Height=35}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/50 inside button delete",
+      "Outcome": "PASS",
+      "Actual": "{X=135,Y=0,Width=129,Height=35}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/50 inside button cancel",
+      "Outcome": "PASS",
+      "Actual": "{X=270,Y=0,Width=129,Height=35}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/50 inside button reconcile",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=55,Width=401,Height=32}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/50 grid has header\u002Bone row",
+      "Outcome": "PASS",
+      "Actual": {
+        "Lines": "{X=1,Y=118,Width=429,Height=152}",
+        "Panel": "{Width=431, Height=475}",
+        "Header": 36,
+        "Row": 45
+      }
+    },
+    {
+      "Name": "{Width=1366, Height=768}/50 grid before actions",
+      "Outcome": "PASS",
+      "Actual": "{X=1,Y=118,Width=429,Height=152}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/50 card height",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1366, Height=768}/50 card child PictureBox",
+      "Outcome": "PASS",
+      "Actual": "{X=10,Y=12,Width=75,Height=106}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/50 card child Label",
+      "Outcome": "PASS",
+      "Actual": "{X=95,Y=21,Width=152,Height=45}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/50 card child Label",
+      "Outcome": "PASS",
+      "Actual": "{X=95,Y=77,Width=108,Height=38}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/50 card child OrbitButton",
+      "Outcome": "PASS",
+      "Actual": "{X=209,Y=77,Width=36,Height=36}"
+    },
+    {
+      "Name": "{Width=1366, Height=768}/0 total fits",
+      "Outcome": "PASS",
+      "Actual": {
+        "Text": "0 \u20AB",
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 138,
+            "Y": 325
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 279,
+            "Height": 45
+          },
+          "X": 138,
+          "Y": 325,
+          "Width": 279,
+          "Height": 45,
+          "Left": 138,
+          "Top": 325,
+          "Right": 417,
+          "Bottom": 370,
+          "IsEmpty": false
+        },
+        "Measured": "{Width=69, Height=45}"
+      }
+    },
+    {
+      "Name": "{Width=1366, Height=768}/0 caption and payment separate",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1366, Height=768}/0 line money fits",
+      "Outcome": "PASS",
+      "Actual": {
+        "Width": 132,
+        "Needed": 63
+      }
+    },
+    {
+      "Name": "{Width=1366, Height=768}/0 grid row and scroll space",
+      "Outcome": "PASS",
+      "Actual": 152
+    },
+    {
+      "Name": "{Width=1366, Height=768}/0 selection retained",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1366, Height=768}/81000 total fits",
+      "Outcome": "PASS",
+      "Actual": {
+        "Text": "81.000 \u20AB",
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 138,
+            "Y": 325
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 279,
+            "Height": 45
+          },
+          "X": 138,
+          "Y": 325,
+          "Width": 279,
+          "Height": 45,
+          "Left": 138,
+          "Top": 325,
+          "Right": 417,
+          "Bottom": 370,
+          "IsEmpty": false
+        },
+        "Measured": "{Width=154, Height=45}"
+      }
+    },
+    {
+      "Name": "{Width=1366, Height=768}/81000 caption and payment separate",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1366, Height=768}/81000 line money fits",
+      "Outcome": "PASS",
+      "Actual": {
+        "Width": 132,
+        "Needed": 98
+      }
+    },
+    {
+      "Name": "{Width=1366, Height=768}/81000 grid row and scroll space",
+      "Outcome": "PASS",
+      "Actual": 152
+    },
+    {
+      "Name": "{Width=1366, Height=768}/81000 selection retained",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1366, Height=768}/999999999999999999 total fits",
+      "Outcome": "PASS",
+      "Actual": {
+        "Text": "999.999.999.999.999.999 \u20AB",
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 15,
+            "Y": 340
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 401,
+            "Height": 35
+          },
+          "X": 15,
+          "Y": 340,
+          "Width": 401,
+          "Height": 35,
+          "Left": 15,
+          "Top": 340,
+          "Right": 416,
+          "Bottom": 375,
+          "IsEmpty": false
+        },
+        "Measured": "{Width=296, Height=35}"
+      }
+    },
+    {
+      "Name": "{Width=1366, Height=768}/999999999999999999 caption and payment separate",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1366, Height=768}/999999999999999999 line money fits",
+      "Outcome": "PASS",
+      "Actual": {
+        "Width": 216,
+        "Needed": 214
+      }
+    },
+    {
+      "Name": "{Width=1366, Height=768}/999999999999999999 grid row and scroll space",
+      "Outcome": "PASS",
+      "Actual": 150
+    },
+    {
+      "Name": "{Width=1366, Height=768}/999999999999999999 selection retained",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1366, Height=768} invalid stays dash",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1366, Height=768} unknown stays dash",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1366, Height=768} paid total stays actual",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "{Width=1366, Height=768} empty stays dash",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Observation": "{Width=1366, Height=768}",
+      "Content": "{Width=1116, Height=706}",
+      "Order": "{X=625,Y=0,Width=431,Height=475}",
+      "Grid": "{X=1,Y=118,Width=429,Height=152}",
+      "Menu": "{X=10,Y=114,Width=585,Height=299}",
+      "Cards": 50
+    },
+    {
+      "Name": "Narrow reparent M\u00F3n/\u0110\u01A1n",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Compact inside topActions",
+      "Outcome": "PASS",
+      "Actual": "{X=30,Y=100,Width=548,Height=50}"
+    },
+    {
+      "Name": "Compact inside tableHost",
+      "Outcome": "PASS",
+      "Actual": "{X=30,Y=165,Width=650,Height=125}"
+    },
+    {
+      "Name": "Compact inside state",
+      "Outcome": "PASS",
+      "Actual": "{X=30,Y=802,Width=650,Height=28}"
+    },
+    {
+      "Name": "Compact inside pay",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=612,Height=48}"
+    },
+    {
+      "Name": "Compact inside header",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=154,Height=32}"
+    },
+    {
+      "Name": "Compact inside edit",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=0,Width=200,Height=35}"
+    },
+    {
+      "Name": "Compact inside delete",
+      "Outcome": "PASS",
+      "Actual": "{X=206,Y=0,Width=200,Height=35}"
+    },
+    {
+      "Name": "Compact inside cancel",
+      "Outcome": "PASS",
+      "Actual": "{X=412,Y=0,Width=200,Height=35}"
+    },
+    {
+      "Name": "Compact inside reconcile",
+      "Outcome": "PASS",
+      "Actual": "{X=0,Y=55,Width=612,Height=32}"
+    },
+    {
+      "Name": "Compact grid header\u002Bone row",
+      "Outcome": "PASS",
+      "Actual": "{X=1,Y=118,Width=640,Height=128}"
+    },
+    {
+      "Name": "Compact/0 total fits",
+      "Outcome": "PASS",
+      "Actual": {
+        "Text": "0 \u20AB",
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 138,
+            "Y": 301
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 490,
+            "Height": 45
+          },
+          "X": 138,
+          "Y": 301,
+          "Width": 490,
+          "Height": 45,
+          "Left": 138,
+          "Top": 301,
+          "Right": 628,
+          "Bottom": 346,
+          "IsEmpty": false
+        },
+        "Measured": "{Width=69, Height=45}"
+      }
+    },
+    {
+      "Name": "Compact/0 caption and payment separate",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Compact/0 line money fits",
+      "Outcome": "PASS",
+      "Actual": {
+        "Width": 132,
+        "Needed": 63
+      }
+    },
+    {
+      "Name": "Compact/0 grid row and scroll space",
+      "Outcome": "PASS",
+      "Actual": 128
+    },
+    {
+      "Name": "Compact/0 selection retained",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Compact/81000 total fits",
+      "Outcome": "PASS",
+      "Actual": {
+        "Text": "81.000 \u20AB",
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 138,
+            "Y": 301
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 490,
+            "Height": 45
+          },
+          "X": 138,
+          "Y": 301,
+          "Width": 490,
+          "Height": 45,
+          "Left": 138,
+          "Top": 301,
+          "Right": 628,
+          "Bottom": 346,
+          "IsEmpty": false
+        },
+        "Measured": "{Width=154, Height=45}"
+      }
+    },
+    {
+      "Name": "Compact/81000 caption and payment separate",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Compact/81000 line money fits",
+      "Outcome": "PASS",
+      "Actual": {
+        "Width": 132,
+        "Needed": 98
+      }
+    },
+    {
+      "Name": "Compact/81000 grid row and scroll space",
+      "Outcome": "PASS",
+      "Actual": 128
+    },
+    {
+      "Name": "Compact/81000 selection retained",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Compact/999999999999999999 total fits",
+      "Outcome": "PASS",
+      "Actual": {
+        "Text": "999.999.999.999.999.999 \u20AB",
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 138,
+            "Y": 301
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 490,
+            "Height": 45
+          },
+          "X": 138,
+          "Y": 301,
+          "Width": 490,
+          "Height": 45,
+          "Left": 138,
+          "Top": 301,
+          "Right": 628,
+          "Bottom": 346,
+          "IsEmpty": false
+        },
+        "Measured": "{Width=437, Height=45}"
+      }
+    },
+    {
+      "Name": "Compact/999999999999999999 caption and payment separate",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Compact/999999999999999999 line money fits",
+      "Outcome": "PASS",
+      "Actual": {
+        "Width": 216,
+        "Needed": 214
+      }
+    },
+    {
+      "Name": "Compact/999999999999999999 grid row and scroll space",
+      "Outcome": "PASS",
+      "Actual": 128
+    },
+    {
+      "Name": "Compact/999999999999999999 selection retained",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Compact invalid stays dash",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Compact unknown stays dash",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Compact paid total stays actual",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Compact empty stays dash",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Restore parents and selection",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Observation": "Compact branch",
+      "Client": "960x900; narrower content; no Scale change",
+      "Mode": "Native tabs M\u00F3n/\u0110\u01A1n"
+    }
+  ]
+}

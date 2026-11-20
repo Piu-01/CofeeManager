@@ -1,0 +1,303 @@
+{
+  "Purpose": "G04-POS-07 channel switch / draft discard functional smoke",
+  "Started": "2026-11-16T07:11:02.1296424+07:00",
+  "Finished": "2026-11-16T07:11:10.7785681+07:00",
+  "Database": "CoffeeManager_Test_G04_20261111_draftflush",
+  "Schema": 31,
+  "Environment": {
+    "Dpi": 120,
+    "OS": "Microsoft Windows NT 10.0.26200.0",
+    "DotNet": "10.0.14"
+  },
+  "Total": 32,
+  "Failed": 0,
+  "Results": [
+    {
+      "Name": "E00 database is isolated test DB schema\u003E=31",
+      "Outcome": "PASS",
+      "Actual": {
+        "Db": "CoffeeManager_Test_G04_20261111_draftflush",
+        "Schema": 31
+      }
+    },
+    {
+      "Name": "E01 DPI is 125% (120)",
+      "Outcome": "PASS",
+      "Actual": 120
+    },
+    {
+      "Name": "E02 fixture B0001 has one open order as in bug report",
+      "Outcome": "PASS",
+      "Actual": 1
+    },
+    {
+      "Name": "G1.0 draft at occupied B0001 has 2 lines and a note",
+      "Outcome": "PASS",
+      "Actual": {
+        "Channel": "Tai quan",
+        "TableCode": "B0001",
+        "Lines": 2
+      }
+    },
+    {
+      "Name": "G1.1 no draft decision/conflict dialog on channel switch",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "G1.2 draft keeps lines \u002B note, channel=Mang di, table released",
+      "Outcome": "PASS",
+      "Actual": {
+        "Channel": "Mang di",
+        "TableCode": null,
+        "Lines": 2,
+        "Note": "\u00CDt \u0111\u00E1"
+      }
+    },
+    {
+      "Name": "G1.3 table combo cleared and status says no table",
+      "Outcome": "PASS",
+      "Actual": {
+        "Selected": null,
+        "Status": "Kh\u00F4ng d\u00F9ng b\u00E0n \u00B7 Mang \u0111i"
+      }
+    },
+    {
+      "Name": "G1.4 panel refreshed, still interactive",
+      "Outcome": "PASS",
+      "Actual": {
+        "Rows": 2,
+        "Interactive": true
+      }
+    },
+    {
+      "Name": "G1.5 status says not written to SQL yet",
+      "Outcome": "PASS",
+      "Actual": "Nh\u00E1p \u0111\u00E3 chuy\u1EC3n sang Mang \u0111i; ch\u01B0a ghi SQL."
+    },
+    {
+      "Name": "G1.6 channel switch wrote nothing to SQL",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "G1.7 flush creates Mang di order without table",
+      "Outcome": "PASS",
+      "Actual": {
+        "Code": "HD26093407",
+        "Created": "2026-11-16T07:11:05",
+        "Employee": "NV004",
+        "Customer": null,
+        "TableCode": null,
+        "Partner": null,
+        "Promotion": null,
+        "Channel": "Mang di",
+        "Recipient": null,
+        "Phone": null,
+        "Address": null,
+        "Delivery": null,
+        "PaidAt": null,
+        "PartnerPercent": 0.00,
+        "PartnerFee": 0,
+        "Total": 55000,
+        "Ship": 0,
+        "Discount": 0,
+        "Payable": 55000,
+        "Status": "Chua thanh toan",
+        "Revision": "AAAAAAACmC8=",
+        "PreviewValid": true,
+        "PreviewSource": "None",
+        "PreviewPercent": 0,
+        "ReadAt": "2026-11-16T07:11:04.8368211",
+        "IsOpen": true
+      }
+    },
+    {
+      "Name": "G1.8 SQL row is Mang di, MaBan NULL, 2 lines, note kept",
+      "Outcome": "PASS",
+      "Actual": {
+        "Row": "Mang di|\u003Cnull\u003E",
+        "Lines": 2,
+        "Note": "\u00CDt \u0111\u00E1",
+        "Code": "HD26093407"
+      }
+    },
+    {
+      "Name": "G1.9 B0001 open order untouched",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "G2.0 delivery draft prepared",
+      "Outcome": "PASS",
+      "Actual": {
+        "Channel": "Giao hang",
+        "TableCode": null,
+        "Customer": null,
+        "Promotion": null,
+        "Partner": null,
+        "Recipient": "Ng\u01B0\u1EDDi nh\u1EADn A",
+        "Phone": "0909123456",
+        "Address": "12 \u0110\u01B0\u1EDDng A",
+        "Ship": 15000
+      }
+    },
+    {
+      "Name": "G2.1 confirm dialog for clearing delivery data",
+      "Outcome": "PASS",
+      "Actual": {
+        "Title": "\u0110\u1ED5i lo\u1EA1i \u0111\u01A1n",
+        "Buttons": [
+          "C\u00F3",
+          "Kh\u00F4ng"
+        ]
+      }
+    },
+    {
+      "Name": "G2.2 No keeps Giao hang draft and delivery fields",
+      "Outcome": "PASS",
+      "Actual": {
+        "Channel": "Giao hang",
+        "Recipient": "Ng\u01B0\u1EDDi nh\u1EADn A",
+        "Ship": 15000
+      }
+    },
+    {
+      "Name": "G2.3 Yes switches to Mang di and clears delivery data, keeps lines",
+      "Outcome": "PASS",
+      "Actual": {
+        "Channel": "Mang di",
+        "Recipient": null,
+        "Ship": 0,
+        "Lines": 1
+      }
+    },
+    {
+      "Name": "G2.4 switching wrote nothing to SQL",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "G3.1 switching back attaches selected free table and keeps lines",
+      "Outcome": "PASS",
+      "Actual": {
+        "TableCode": "B0007",
+        "Selected": "B0007",
+        "Lines": 1
+      }
+    },
+    {
+      "Name": "G3.2 occupied table is refused: no table, hint to choose",
+      "Outcome": "PASS",
+      "Actual": {
+        "TableCode": null,
+        "Selected": null,
+        "State": "Nh\u00E1p \u0111\u00E3 chuy\u1EC3n sang T\u1EA1i qu\u00E1n; ch\u1ECDn b\u00E0n tr\u01B0\u1EDBc khi l\u01B0u."
+      }
+    },
+    {
+      "Name": "G3.3 panel still has the lines",
+      "Outcome": "PASS",
+      "Actual": 1
+    },
+    {
+      "Name": "G3.4 flush without table must fail and keep draft",
+      "Outcome": "PASS",
+      "Actual": "T\u1EA1i qu\u00E1n c\u1EA7n b\u00E0n; k\u00EAnh kh\u00E1c kh\u00F4ng g\u00E1n b\u00E0n."
+    },
+    {
+      "Name": "G5.1 ResetDraft clears panel and locks editing",
+      "Outcome": "PASS",
+      "Actual": {
+        "Rows": 0,
+        "Caption": "Ch\u01B0a t\u1EA1o \u0111\u01A1n",
+        "Totals": "\u2014"
+      }
+    },
+    {
+      "Name": "G5.2 DiscardChanges \u002B reload leaves no stale grid",
+      "Outcome": "PASS",
+      "Actual": {
+        "Rows": 0,
+        "Draft": null,
+        "Lines": 0
+      }
+    },
+    {
+      "Name": "G5.3 New Order asks draft decision",
+      "Outcome": "PASS",
+      "Actual": {
+        "Title": "Gi\u1EEF \u0111\u01A1n nh\u00E1p?",
+        "Buttons": [
+          "Gi\u1EEF",
+          "Kh\u00F4ng gi\u1EEF",
+          "\u1EDE l\u1EA1i"
+        ]
+      }
+    },
+    {
+      "Name": "G5.4 Discard continues target action with clean panel",
+      "Outcome": "PASS",
+      "Actual": {
+        "Header": null,
+        "Lines": 0,
+        "Rows": 0,
+        "State": "\u0110ang ch\u1ECDn Ban 08 (tr\u1ED1ng). Th\u00EAm m\u00F3n \u0111\u1EA7u \u0111\u1EC3 t\u1EA1o \u0111\u01A1n."
+      }
+    },
+    {
+      "Name": "G5.5 discard wrote nothing to SQL",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "G5.6 new draft works after discard",
+      "Outcome": "PASS",
+      "Actual": {
+        "Lines": 1,
+        "Rows": 1,
+        "Interactive": true
+      }
+    },
+    {
+      "Name": "G6.1 genuine table conflict still shows 4-choice dialog",
+      "Outcome": "PASS",
+      "Actual": {
+        "Title": "B\u00E0n \u0111\u00E3 c\u00F3 \u0111\u01A1n",
+        "Buttons": [
+          "M\u1EDF \u0111\u01A1n hi\u1EC7n c\u00F3",
+          "Ch\u1ECDn b\u00E0n kh\u00E1c",
+          "B\u1ECF nh\u00E1p",
+          "\u1EDE l\u1EA1i"
+        ]
+      }
+    },
+    {
+      "Name": "G6.2 discard from conflict clears panel and writes nothing",
+      "Outcome": "PASS",
+      "Actual": {
+        "Flush": false,
+        "Rows": 0,
+        "State": "\u0110\u00E3 b\u1ECF nh\u00E1p; kh\u00F4ng ghi SQL.",
+        "Orders": 3420
+      }
+    },
+    {
+      "Name": "G7.1 opened saved order locks channel",
+      "Outcome": "PASS",
+      "Actual": {
+        "Code": "HD20250411",
+        "Channel": "Tai quan",
+        "Enabled": false
+      }
+    },
+    {
+      "Name": "G7.2 final total order count only from G1 flush",
+      "Outcome": "PASS",
+      "Actual": {
+        "before": 3419,
+        "after": 3420
+      }
+    }
+  ]
+}

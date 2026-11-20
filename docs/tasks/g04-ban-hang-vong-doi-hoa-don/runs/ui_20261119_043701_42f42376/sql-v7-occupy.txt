@@ -1,0 +1,6 @@
+HD26999001|B0002|3|Huy
+HD26999002|B0002|4|Chua thanh toan
+HD26999003|B0007|5|Chua thanh toan
+HD26999004|B0008|6|Chua thanh toan
+HD26999005|B0009|7|Chua thanh toan
+HD26999006|B0010|8|Chua thanh toan

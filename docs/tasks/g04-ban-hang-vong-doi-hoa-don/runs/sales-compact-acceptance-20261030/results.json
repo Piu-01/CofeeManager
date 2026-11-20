@@ -1,0 +1,161 @@
+{
+  "Failed": 3,
+  "Database": "CoffeeManager_Test_G04_20261025_181739_98e5df59_checkout",
+  "Scope": "Frozen binary; real Auth/runtime SQL and in-process native UI actions. Header money probe DTO-only. No physical keyboard/visual acceptance. Paid fixture history retained, actors disabled.",
+  "Results": [
+    {
+      "Name": "SC01 actual GUI DPI125",
+      "Outcome": "PASS",
+      "Actual": 120
+    },
+    {
+      "Name": "SC01 empty total not fake zero",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC02 empty menu",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC02 menu reload",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC02 next empty page real query",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC04 table context no empty invoice",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC04 cancel discard keeps draft",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC04 approve discard clears",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC03 first Add once",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC05 MaDong and price snapshot",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC05 delete selected only",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC05 F3 customer/discount Payable",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC01 full 18-digit money fits total",
+      "Outcome": "FAIL",
+      "Actual": {
+        "Text": "999.999.999.999.999.999 \u20AB",
+        "Width": 279,
+        "Measured": 417
+      }
+    },
+    {
+      "Name": "SC06 unknown hides stale total",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC05 invalid preview not fake zero",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC05 F8 breakdown matches DTO cash",
+      "Outcome": "PASS",
+      "Actual": {
+        "Total": 162000,
+        "Discount": 16200,
+        "Ship": 0,
+        "Payable": 145800
+      }
+    },
+    {
+      "Name": "SC07 confirm enabled cash",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Confirmation title X\u00E1c nh\u1EADn thanh to\u00E1n",
+      "Outcome": "PASS",
+      "Actual": "X\u00E1c nh\u1EADn thanh to\u00E1n"
+    },
+    {
+      "Name": "SC07 print question cash",
+      "Outcome": "FAIL",
+      "Actual": "X\u00E1c nh\u1EADn thanh to\u00E1n"
+    },
+    {
+      "Name": "Runner exception",
+      "Outcome": "FAIL",
+      "Actual": "System.TimeoutException: The operation has timed out.\r\n   at Program.\u003C\u003Ec__DisplayClass14_1.\u003C\u003CMain\u003Eg__Pay|10\u003Ed.MoveNext() in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g04-ban-hang-vong-doi-hoa-don\\runs\\sales-compact-acceptance-20261030\\Program.cs:line 89\r\n--- End of stack trace from previous location ---\r\n   at Program.\u003C\u003Ec__DisplayClass14_1.\u003C\u003CMain\u003Eb__5\u003Ed.MoveNext() in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g04-ban-hang-vong-doi-hoa-don\\runs\\sales-compact-acceptance-20261030\\Program.cs:line 107"
+    },
+    {
+      "Name": "SC07 all stock equals snapshot consumption",
+      "Outcome": "PASS",
+      "Actual": {
+        "Before": {
+          "NVL01": 96.5060,
+          "NVL02": 98.1600,
+          "NVL03": 72.5750,
+          "NVL04": 21.9650,
+          "NVL05": 5.0000,
+          "NVL06": 9.7000,
+          "NVL07": 22.7000,
+          "NVL08": 42.0000,
+          "NVL09": 20.3800,
+          "NVL10": 500.0000,
+          "NVL11": 59.0000,
+          "NVL12": 29.0000
+        },
+        "After": {
+          "NVL01": 96.5060,
+          "NVL02": 98.1600,
+          "NVL03": 72.5750,
+          "NVL04": 21.9650,
+          "NVL05": 5.0000,
+          "NVL06": 9.7000,
+          "NVL07": 22.7000,
+          "NVL08": 42.0000,
+          "NVL09": 20.3800,
+          "NVL10": 500.0000,
+          "NVL11": 59.0000,
+          "NVL12": 29.0000
+        },
+        "Consumed": {}
+      }
+    },
+    {
+      "Name": "SC07 customer points equal point history",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Existing orders/lines/payments/points unchanged",
+      "Outcome": "PASS",
+      "Actual": null
+    }
+  ]
+}

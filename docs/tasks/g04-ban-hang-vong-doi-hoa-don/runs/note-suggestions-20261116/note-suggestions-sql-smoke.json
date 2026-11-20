@@ -1,0 +1,75 @@
+{
+  "Kind": "SalesService.NoteSuggestionsAsync read-only integration on owned test DB",
+  "CashAll": [
+    "It duong",
+    "It da",
+    "Khong duong",
+    "Khong da",
+    "Nhieu da"
+  ],
+  "Q1-cash-reads-history": {
+    "Pass": true,
+    "Expected": {
+      "Count": 5,
+      "First": "It duong"
+    },
+    "Actual": {
+      "Count": 5,
+      "First": "It duong"
+    }
+  },
+  "CashFiltered": [
+    "It da",
+    "Khong da",
+    "Nhieu da"
+  ],
+  "Q2-filter-da": {
+    "Pass": true,
+    "Expected": {
+      "Count": 3,
+      "Notes": [
+        "It da",
+        "Khong da",
+        "Nhieu da"
+      ]
+    },
+    "Actual": {
+      "Count": 3,
+      "Notes": [
+        "It da",
+        "Khong da",
+        "Nhieu da"
+      ]
+    }
+  },
+  "Q3-wildcard-escaped": {
+    "Pass": true,
+    "Expected": 0,
+    "Actual": 0
+  },
+  "CashTrimmedSearch": [
+    "It duong",
+    "It da"
+  ],
+  "Q4-search-trimmed": {
+    "Pass": true,
+    "Expected": "contains \u0027It\u0027",
+    "Actual": [
+      "It duong",
+      "It da"
+    ]
+  },
+  "StoreDenied": "B\u1EA1n kh\u00F4ng c\u00F3 quy\u1EC1n thao t\u00E1c n\u00E0y.",
+  "Q5-store-denied": {
+    "Pass": true,
+    "Expected": "permission error",
+    "Actual": "B\u1EA1n kh\u00F4ng c\u00F3 quy\u1EC1n thao t\u00E1c n\u00E0y."
+  },
+  "Q6-cash-session-alive": {
+    "Pass": true,
+    "Expected": false,
+    "Actual": false
+  },
+  "Failures": [],
+  "Success": true
+}

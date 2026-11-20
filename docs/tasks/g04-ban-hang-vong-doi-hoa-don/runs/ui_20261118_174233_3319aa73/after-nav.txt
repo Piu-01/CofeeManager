@@ -1,0 +1,35 @@
+TITLE='CoffeeManager'
+Window name='CoffeeManager' id='' enabled=True offscreen=False rect=97,6 1726x1007
+  Window name='Gi? don nh p?' id='' enabled=True offscreen=False rect=671,366 700x325
+    Pane name='' id='' enabled=True offscreen=False rect=680,404 682x278
+      Text name='Gi? don nh p?' id='' enabled=True offscreen=False rect=704,428 634x35
+      Text name='Don nh p chua ghi SQL. Gi? don r?i r?i m…n B n h…ng, hay b? nh p?' id='' enabled=True offscreen=False rect=704,483 634x105
+      Pane name='Don nh p chua ghi SQL. Gi? don r?i r?i m…n B n h…ng, hay b? nh p?' id='' enabled=True offscreen=False rect=704,608 634x50
+        Pane name='' id='' enabled=True offscreen=False rect=1089,608 249x50
+    TitleBar name='Gi? don nh p?' id='TitleBar' enabled=True offscreen=False rect=680,375 682x29
+      MenuBar name='System Menu Bar' id='' enabled=True offscreen=False rect=680,375 28x28
+        MenuItem name='System' id='Item 1' enabled=True offscreen=False rect=680,375 28x28
+      Button name='Close' id='Close' enabled=True offscreen=False rect=1319,367 44x37
+  Pane name='' id='' enabled=True offscreen=False rect=106,44 1708x960
+    Pane name='' id='' enabled=True offscreen=False rect=106,44 250x960
+      Pane name='' id='' enabled=True offscreen=False rect=106,44 250x960
+        Pane name='' id='' enabled=True offscreen=False rect=106,44 249x105
+        Pane name='KHONG GIAN QU?N LY' id='' enabled=True offscreen=False rect=106,149 249x695
+        Pane name='' id='' enabled=True offscreen=False rect=106,844 249x160
+    Pane name='Phiˆn dang ho?t d?ng.' id='' enabled=True offscreen=False rect=356,44 1458x62
+      Text name='Qu?n ly / B n h…ng' id='' enabled=True offscreen=False rect=360,65 170x19
+      Text name='Nguyen Van An ú ADMIN' id='' enabled=True offscreen=False rect=1596,65 214x19
+    Pane name='Nguyen Van An ú ADMIN' id='' enabled=True offscreen=False rect=356,106 1458x898
+      Pane name='Nguyen Van An ú ADMIN' id='4656610' enabled=False offscreen=False rect=356,106 1458x898
+        Text name='Da thˆm v…o nh p; chua ghi SQL. Ch?n Gi? ho?c Thanh to n d? luu.' id='' enabled=True offscreen=False rect=386,968 1398x28
+        Pane name='Da thˆm v…o nh p; chua ghi SQL. Ch?n Gi? ho?c Thanh to n d? luu.' id='3280788' enabled=False offscreen=False rect=386,206 1398x70
+        Pane name='' id='' enabled=True offscreen=False rect=386,291 1398x667
+        Text name='SALES WORKSPACE' id='' enabled=True offscreen=False rect=386,126 1398x20
+        Text name='B n h…ng' id='' enabled=True offscreen=False rect=386,148 850x48
+        Pane name='B n h…ng' id='' enabled=True offscreen=False rect=1236,144 548x50
+  TitleBar name='CoffeeManager' id='TitleBar' enabled=False offscreen=False rect=106,15 1708x29
+    MenuBar name='System Menu Bar' id='' enabled=False offscreen=False rect=106,15 28x28
+      MenuItem name='System' id='Item 1' enabled=False offscreen=False rect=106,15 28x28
+    Button name='Minimize' id='Minimize' enabled=False offscreen=False rect=1636,7 60x37
+    Button name='Maximize' id='Maximize' enabled=False offscreen=False rect=1696,7 59x37
+    Button name='Close' id='Close' enabled=False offscreen=False rect=1755,7 60x37

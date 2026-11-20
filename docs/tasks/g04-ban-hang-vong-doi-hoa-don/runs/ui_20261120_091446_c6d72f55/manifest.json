@@ -1,0 +1,10 @@
+﻿{
+    "RunId":  "20261120_091446_c6d72f55",
+    "Database":  "CoffeeManager_Test_G04_20261120_091446_c6d72f55_ui",
+    "Server":  "localhost",
+    "Source":  "CoffeeManager_Development",
+    "SourceVersion":  35,
+    "Status":  "Ready",
+    "Backup":  "C:\\Program Files\\Microsoft SQL Server\\MSSQL17.MSSQLSERVER\\MSSQL\\Backup\\G04Ui_20261120_091446_c6d72f55.bak",
+    "Created":  true
+}

@@ -1,0 +1,14 @@
+﻿{
+    "RunId":  "20261120_in_tam",
+    "Database":  "CoffeeManager_Test_G04_20261120_in_tam_ui",
+    "Server":  "localhost",
+    "Source":  "CoffeeManager_Development",
+    "SourceVersion":  35,
+    "SchemaVersion":  35,
+    "Status":  "Succeeded",
+    "Backup":  "C:\\Program Files\\Microsoft SQL Server\\MSSQL17.MSSQLSERVER\\MSSQL\\Backup\\G04Ui_20261120_in_tam.bak",
+    "OpenOrders":  8,
+    "OpenSessions":  3,
+    "Accounts":  "[{\"TenDangNhap\":\"admin\",\"HoatDong\":true},{\"TenDangNhap\":\"thungan\",\"HoatDong\":true},{\"TenDangNhap\":\"kho\",\"HoatDong\":true}]",
+    "SchemaVersionNow":  35
+}

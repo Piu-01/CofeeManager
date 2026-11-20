@@ -1,0 +1,26 @@
+﻿{
+    "RunId":  "20261118_173622_aeaf4f9f",
+    "Kind":  "TS04 two-connection table race; technical verdict only",
+    "Server":  "localhost",
+    "ThroughVersion":  18,
+    "SchemaVersion":  35,
+    "Operator":  "LAPTOP-79UNRIRC\\Lenovo",
+    "Created":  [
+                    {
+                        "Marker":  "20261118_173622_aeaf4f9f",
+                        "Database":  "CoffeeManager_Test_G04_20261118_173622_aeaf4f9f_ts04",
+                        "Mode":  "ts04"
+                    }
+                ],
+    "Cleaned":  [
+                    "CoffeeManager_Test_G04_20261118_173622_aeaf4f9f_ts04"
+                ],
+    "Retained":  [
+
+                 ],
+    "Status":  "Failed",
+    "Checks":  [
+
+               ],
+    "Error":  "System.Management.Automation.MethodInvocationException: Exception calling \"ExecuteScalar\" with \"0\" argument(s): \"Column name or number of supplied values does not match table definition.\" ---\u003e System.Data.SqlClient.SqlException: Column name or number of supplied values does not match table definition.\r\n   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean\u0026 dataReady)\r\n   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()\r\n   at System.Data.SqlClient.SqlDataReader.get_MetaData()\r\n   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)\r\n   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task\u0026 task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)\r\n   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task\u0026 task, Boolean\u0026 usedCache, Boolean asyncWrite, Boolean inRetry)\r\n   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)\r\n   at System.Data.SqlClient.SqlCommand.ExecuteScalar()\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)"
+}

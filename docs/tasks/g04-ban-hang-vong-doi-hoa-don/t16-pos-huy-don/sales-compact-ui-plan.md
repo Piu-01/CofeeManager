@@ -1,6 +1,7 @@
 # Plan bổ sung T16 — Bán hàng gọn theo Orbit_BanHang_Gon
 
-Ngày30/10/2026. Trạng thái: PHẠM VI/PLAN CHỜ USER DUYỆT, chưa sửa product source.
+Ngày30/10/2026. User đã duyệt bằng “duyệt”; đã triển khai và smoke bounds
+123/123 tại125%. Chờ duyệt đợt test chức năng riêng, chưa nghiệm thu hình thức.
 Thuộc bổ sung UI của G04/T16; giữ requirements/plan/checklist nhóm hiện có,
 không tạo requirements task con hoặc thay325ID. User yêu cầu chỉnh màn Bán hàng
 từ ZIP, ưu tiên kế thừa theme/control theo chỉ dẫn dự án.
@@ -168,4 +169,5 @@ hỗ trợ; build sạch và ca nghiệm thu trong phạm vi đã PASS, user xá
 thức. Rủi ro chính là reparent mất state/focus, action handler lặp, grid quá hẹp
 làm mất dữ liệu dòng, tổng cũ khi preview lỗi, hoặc lỡ thay hậu thanh toán.
 Giữ state machine, thiết kế opt-in/grid riêng và regression theo ma trận trên.
-Hiện mới nhập tài liệu tham chiếu/lập plan, chưa code/build/test bổ sung này.
+Trạng thái triển khai/bằng chứng tại sales-compact-ui-implementation.md;
+kết quả kỹ thuật không tự chuyển các ca SC01–SC08 thành PASS.

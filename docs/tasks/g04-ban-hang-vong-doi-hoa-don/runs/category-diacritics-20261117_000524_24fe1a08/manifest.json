@@ -1,0 +1,38 @@
+{
+  "RunId": "20261117_000524_24fe1a08",
+  "Date": "2026-11-17",
+  "Commit": "8a38f86",
+  "Scope": "033 category diacritics + Insert_Data seed",
+  "Server": "localhost",
+  "Collation": "SQL_Latin1_General_CP1_CI_AS",
+  "SourceHashes": {
+    "database/migrations/033_category_diacritics.sql": "8B7DE26D7415A96D858BDD7121AB1A2C831A8A5CE720C20726C1CD5A6149E25A",
+    "database/Insert_Data.sql": "574B48F60ED6C4E2AE060FA16B962DF4A33041AE882A81941337466030E9D554"
+  },
+  "Databases": {
+    "clean": "CoffeeManager_Test_033_20261117_000524_24fe1a08_clean",
+    "upgrade": "CoffeeManager_Test_033_20261117_000524_24fe1a08_upgrade"
+  },
+  "DatabaseVersions": {
+    "clean": 33,
+    "upgrade": 33
+  },
+  "Cases": {
+    "DIA-01": "PASS",
+    "DIA-02": "PASS",
+    "DIA-03": "PASS",
+    "DIA-04": "PASS",
+    "DIA-05": "PASS",
+    "DIA-06": "PASS",
+    "DIA-07": "PASS",
+    "DIA-08": "PASS",
+    "DIA-09": "PASS",
+    "DIA-10": "PASS",
+    "DIA-11": "PASS",
+    "DIA-12": "PASS",
+    "UI": "SKIPPED (user verifies)"
+  },
+  "Status": "12/12 PASS; UI SKIPPED",
+  "DevelopmentUntouched": true,
+  "Results": "test-results.md"
+}

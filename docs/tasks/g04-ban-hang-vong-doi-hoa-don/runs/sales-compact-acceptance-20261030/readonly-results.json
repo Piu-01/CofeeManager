@@ -1,0 +1,94 @@
+{
+  "Failed": 1,
+  "Scope": "Frozen binary, real SQL/Auth; keyboard handler/native modal component actions; money stress DTO only; no physical input/visual QA/financial writes",
+  "Results": [
+    {
+      "Name": "SC01 loaded order/selection retained on resize",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC06 F2 focus/selectall",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC02 Enter searches without checkout",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC02 category typed filter",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC03 one callback/disabled False",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC03 one callback/disabled True",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC06 F3 native owner",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC04 F4 exact result",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC04 F4 returns same saved order",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC06 F8 native owner and no AcceptButton",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC06 Enter did not settle",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC05 invalid preview locks pay and hides total",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC06 unknown blocks edits/pay but allows reconcile",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC01 full large line price/amount fits",
+      "Outcome": "FAIL",
+      "Actual": {
+        "ColumnWidth": 132,
+        "Needed": 205
+      }
+    },
+    {
+      "Name": "SC06 paid order financial actions locked",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC05 paid Payable remains actual",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Readonly/keyboard tests change no financial data",
+      "Outcome": "PASS",
+      "Actual": null
+    }
+  ]
+}

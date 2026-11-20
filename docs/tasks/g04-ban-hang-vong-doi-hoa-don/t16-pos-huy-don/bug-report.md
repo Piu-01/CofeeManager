@@ -236,3 +236,110 @@ kiểm native F3; chưa đóng bug/toàn T18-K01. Evidence: ../runs/recipient-va
 User26/10 xác nhận toàn bộ dấu lỗi/focus đúng ô và tìm đơn Mang đi421 trong màn
 Giao hàng không có dòng. SQL474 giữ dữ liệu hợp lệ,0payment/0tiêu hao. Bug đã
 được sửa và regression đạt; T18-K01 PASS. Giữ nguyên hiện tượngFAIL ban đầu.
+
+## G04-SC-MONEY-20261030 — Bán hàng gọn cắt số tiền dài
+
+Trạng thái: FAIL, điều tra xong, CHỜ DUYỆT đợt sửa/regression; chưa sửa source.
+Bằng chứng runs/sales-compact-acceptance-20261030/results.json và readonly-results.json.
+Probe typed DTO18chữ số (999.999.999.999.999.999 ₫), không ghi số giả vào SQL.
+1. Tổng phải trả: TextRenderer cần417px nhưng Totals.Width279px tại125%; AutoEllipsis=true.
+2. Cột giá/tiền dòng: cần205px nhưng cột132px tại125%.
+
+Nguyên nhân: OrderPanel.cs:12/57–58 chia cùng hàng caption98logical + amount phần còn lại,
+không đo tiền trước bố trí. OrbitDataGridView.cs:87 cố định Amount106logical, painter
+hai dòng ở246–254 không tăng chiều rộng theo tiền. Dữ liệu typed còn đúng; không có
+bằng chứng mất tiền/tính sai SQL. Hai lỗi cùng nhóm hiển thị tiền dài của POS compact.
+
+Đề xuất sửa đúng phạm vi: tổng tự xuống hàng riêng khi thiếu chiều ngang và bố trí
+đủ cao; cột Amount của profile OrderLines đo chuỗi giá/tiền typed để tăng chiều rộng,
+cho grid cuộn ngang khi cần, không thu nhỏ tiền thành khó đọc/ellipsis. Tận dụng font/
+metric Orbit, không thay SQL/BLL/checkout hoặc profile khác. Giữ panel/menu và F8 khả dụng.
+Rủi ro: thay đổi kích thước grid/footer ở màn nhỏ; regression tổng0/bình thường/18chữ số,
+đơn rỗng/invalid/unknown/paid, selection/resize desktop1280×720/1366×768 và compact tại125%,
+F8 tổng đúng/khóa đúng.100/150% chưa chạy phải ghi rõ; hình thức do user kiểm.
+Không tối ưu/refactor ngoài hai nguyên nhân. Duyệt một lần cho cả hai lỗi và regression.
+
+### G04-SC-MONEY-20261030 — sửa theo duyệt31/10/2026
+
+User duyệt một đợt sửa hai lỗi và regression. Chỉ đổi OrderPanel.cs và nhánh
+OrderLines trong OrbitDataGridView.cs; source-changes.csv xác nhận đúng2file.
+Tổng đo font thực, tiền dài xuống hàng dùng CardTitle có sẵn, không ellipsis;
+chiều cao đo theo font để không cắt dọc. Cột đo cả giá snapshot/tiền dòng typed,
+tăng rộng và cho cuộn ngang; profile khác không thay. Không đổi SQL/BLL/checkout.
+
+Regression cuối180/180PASS WinForms thật DeviceDpi120, hai desktop1280×720,
+1366×768 và compact960×900;0/81000/18chữ số, caption không đè tiền/F8, bảng đủ
+header+một dòng+scroll, selection/resize, null/invalid/unknown/paid. Session constructor
+đã revoke; services null; DTO bộ nhớ, không auth/query/ghi tài chính. Đây là kiểm
+bounds/text/handler hiển thị, không nghiệm thu hình thức thay user hoặc chạy lại79caSQL.
+Debug/Release0warning/0error. Hồ sơ runs/sales-money-fix-20261031/.
+
+Giữ raw regression-round1.json9FAIL chiều cao label và regression-round2.json1FAIL
+thiếu1px chỗ row+scroll; mỗi lượt giữ source cố định, lưu source tương ứng, sau đó
+điều chỉnh trong cùng đợt debug đã duyệt, không đổi expected. Final regression-final.json
+180PASS. Không gộp kết quả lượt đầu thành PASS, không sửa checklist gốc.
+Lỗi kỹ thuật hai ô tiền đã khắc phục; hình thức vẫn chờ user,100/150% NOT RUN.
+Login bản Debug mới mở PID32440 dùng DBtest cũ; không tự đăng nhập/checkout.
+
+## G04-SC-PAGER-20261031 — nút phân trang món cắt chữ
+
+Trạng thái: điều tra xong, CHỜ DUYỆT sửa/regression. User gửi ảnh hai nút Trước/Sau
+bị cắt, icon sát/ra mép nút. Không tự chạy nghiệm thu hình thức thay user.
+Source: SalesControl.cs:76–77 dùng ManagementButtonStyle.Pager kèm chữ và icon;
+Arrange:236–237 lấy GetPreferredSize. OrbitButton.cs:49 trả width38logical cố định
+cho Pager, còn PaintManagement:219–235 căn giữa tổng icon+text và vẽ ellipsis.
+38logical thiết kế cho icon, không đủ cả chữ; không phải query/SQL hay lỗi DPI riêng.
+
+Đề xuất phạm vi nhỏ ở SalesControl: hai nút chỉ hiện mũi tên trái/phải, tái dùng
+Pager hiện có; tooltip và AccessibleName Trang trước/Trang sau. Giữ handler/trạng
+thái khóa/phân trang, không đổi control Pager dùng chung hoặc SQL. Regression kỹ
+thuật125%: icon nằm trong nút, accessible labels đúng, callback trước/sau và enable
+vẫn đúng; hình thức user kiểm,100/150% chưa chạy ghi NOT RUN. Không kèm refactor.
+
+### G04-SC-PAGER-20261031 — đã sửa theo user duyệt
+
+SalesControl dùng Pager icon-only trái/phải; tooltip và AccessibleName Trang trước/
+Trang sau. Giữ nguyên callback menuPage/LoadMenu, style Pager chung và SetBusy.
+Build Debug/Release0warning/0error. Regression real WinForms125%37/37PASS tại1280×720,
+1366×768/960×900: icon-only, labels, bounds/icon đủ chỗ, enable/busy/không đổi trang
+khi khóa. Session đã revoke/services null, không query/ghi SQL, không chạy lại
+callback query bình thường; callback không đổi theo đối chiếu source. Hình thức
+user kiểm, DPI100/150% NOT RUN. Evidence ../runs/sales-pager-fix-20261031/.
+Bản Debug mới có luôn cột Đơn giá một dòng, mở Login DBtest; không đóng bản cũ.
+
+## G04-POS-05 — Ghi chú dòng cuối trong lưới thấp: editor ẩn nhưng dòng vẫn nở
+
+Trạng thái: **đã sửa16/11 theo duyệt; regression41/41 PASS**, chưa kiểm hình thức.
+
+Hiện tượng: lưới thấp (ví dụ 140 px ở DPI125%), cuộn tới dòng cuối rồi bấm tên món
+thì không thấy ô ghi chú, nhưng dòng cao thêm30 logical (58→96 px) và để lại khoảng
+trống; bấm lại vẫn không thấy gì cho tới khi lưới đủ chỗ.
+
+Nguyên nhân (đã tái hiện bằng harness, không suy đoán): `OrderPanel.BeginNoteEdit`
+nở dòng trước, `PositionNoteEditor` kiểm `top + height > đáy lưới − 2` thì chỉ đặt
+`noteEditor.Visible=false` mà không trả chiều cao dòng. Với lưới140 px, dòng cuối
+bắt đầu ở50 px, cần 50+58+2+32=142 px nên luôn rơi vào nhánh ẩn.
+
+Ảnh hưởng: cửa sổ thấp/đơn nhiều dòng có thể khiến thao tác thêm ghi chú trông như
+không phản hồi. Ở lưới 340 px (cửa sổ chuẩn) ca L3 PASS.
+
+Đề xuất sửa (chờ duyệt, phạm vi `OrderPanel`): khi không đủ chỗ thì gọi
+`CancelNoteEdit` để trả chiều cao thay vì chỉ ẩn editor; đồng thời giảm lề dọc
+2→0 và/hoặc cuộn thêm để tăng khả năng đủ chỗ trước khi ẩn. Không đổi painter,
+model, SQL. Sau sửa cần regression L2/L3, C1–C8, D1–D4, H0–H3 và test thật trên
+lưới đơn nhiều dòng ở1280×720/125%. Biên bản đợt test:
+[note-editor-inline-test-results.md](note-editor-inline-test-results.md).
+
+### G04-POS-05 — đã sửa theo duyệt16/11/2026
+
+Chỉ sửa `Modules/Sales/OrderPanel.cs`: `PositionNoteEditor` bỏ lề dọc2 (editor sát
+đáy lưới vẫn hợp lệ) và `BeginNoteEdit` gọi `CancelNoteEdit` khi không đặt được
+editor, trả chiều cao dòng thay vì để khoảng trống. Không đổi painter, DTO, SQL.
+Build project WinForms Debug và Release vào thư mục tạm: 0 error (1 warning MSB3277
+có sẵn từ WebView2).
+Regression harness125%: 41/41 PASS, gồm L2 hiện editor trong lưới140 px (top226,
+đáy258 = đáy lưới), L4 dòng có ghi chú không đủ chỗ thì đóng và trả80, L5 không
+giữ focus ẩn, cùng C/D/E/F/G/H cũ. Còn hạn chế: đang mở editor rồi thu nhỏ panel
+thì editor ẩn tạm, dòng giữ chiều cao tới khi đủ chỗ lại; chưa chạy click tay,
+IME, DPI100/150%, hình thức. Bằng chứng:
+[runs/note-editor-inline-20261116](runs/note-editor-inline-20261116/note-editor-smoke.json).

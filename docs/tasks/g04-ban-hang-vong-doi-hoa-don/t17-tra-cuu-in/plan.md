@@ -4,6 +4,11 @@ Bổ sung25/10 đã duyệt/triển khai: đường in dùng chung cho hỏi in 
 preview/in lại lịch sử; [kế hoạch/tiêu chí](../t16-pos-huy-don/post-checkout-print-plan.md).
 Chờ duyệt đợt test riêng, không thay checklist hoặc kết quả cũ.
 
+**Bổ sung 16/11/2026:** đường in được thay bằng FastReport OpenSource + PDF preview
+WebView2 (A4/80mm), xem `docs/tasks/print-output-fastreport/plan.md`. `PrintDocument`
+và `InvoicePrintPreviewForm` cũ đã xóa; `DemandPrintAsync` vẫn kiểm quyền trước khi
+mở preview. Hộp in native đổi thành print preview của Edge (lệch UX đã chấp nhận).
+
 **Trạng thái:** Bộ plan G04 đã được duyệt ngày 23/10/2026; đã triển khai trong nhóm, đã chạy đợt test được duyệt; còn FAIL/BLOCKED, xem report.md. **Phụ thuộc:** T16. Áp dụng [plans.md](../plans.md), UX9/K19/K23 và trạng thái chung. Không chạy nghiệm thu khi mới duyệt bộ plan.
 
 ## 1. Contract SQL và dữ liệu lịch sử

@@ -1,0 +1,103 @@
+﻿{
+  "Scope": "Technical layout/paint smoke only; revoked session, in-memory DTO, no SQL/auth/visual acceptance",
+  "1280x720@120": {
+    "Pass": true,
+    "DeviceDpi": 120,
+    "GridDpi": 120,
+    "Panel": {
+      "Width": 431,
+      "Height": 669
+    },
+    "Grid": {
+      "Left": 1,
+      "Top": 118,
+      "Width": 429,
+      "Height": 389,
+      "ColumnHeadersHeight": 35,
+      "RowTemplateHeight": 45
+    },
+    "ColumnWidths": {
+      "Name": 165,
+      "Quantity": 92,
+      "Price": 130,
+      "Delete": 42
+    },
+    "Rows": [
+      45,
+      68,
+      68
+    ],
+    "ExpectedRows": [
+      45,
+      68,
+      68
+    ],
+    "Columns": [
+      "Name",
+      "Quantity",
+      "Price",
+      "Delete"
+    ],
+    "ButtonsApart": true,
+    "ButtonsInside": true,
+    "GridInside": true,
+    "PriceRight": 64,
+    "EditorOn": true,
+    "EditorInside": true,
+    "EditingHeight": 72,
+    "Restored": 45,
+    "HeaderNow": 35,
+    "HeaderMode": 1
+  },
+  "1366x768@120": {
+    "Pass": true,
+    "DeviceDpi": 120,
+    "GridDpi": 120,
+    "Panel": {
+      "Width": 431,
+      "Height": 729
+    },
+    "Grid": {
+      "Left": 1,
+      "Top": 118,
+      "Width": 429,
+      "Height": 449,
+      "ColumnHeadersHeight": 35,
+      "RowTemplateHeight": 45
+    },
+    "ColumnWidths": {
+      "Name": 165,
+      "Quantity": 92,
+      "Price": 130,
+      "Delete": 42
+    },
+    "Rows": [
+      45,
+      68,
+      68
+    ],
+    "ExpectedRows": [
+      45,
+      68,
+      68
+    ],
+    "Columns": [
+      "Name",
+      "Quantity",
+      "Price",
+      "Delete"
+    ],
+    "ButtonsApart": true,
+    "ButtonsInside": true,
+    "GridInside": true,
+    "PriceRight": 64,
+    "EditorOn": true,
+    "EditorInside": true,
+    "EditingHeight": 72,
+    "Restored": 45,
+    "HeaderNow": 35,
+    "HeaderMode": 1
+  },
+  "Pass": true,
+  "Failures": []
+}

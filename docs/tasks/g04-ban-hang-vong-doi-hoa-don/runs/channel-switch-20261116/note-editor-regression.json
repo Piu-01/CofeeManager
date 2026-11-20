@@ -1,0 +1,676 @@
+{
+  "Kind": "Native UI interaction technical smoke; in-memory DTOs; no visual acceptance; no SQL write",
+  "DeviceDpi": 120,
+  "GridBounds": {
+    "Location": {
+      "IsEmpty": false,
+      "X": 1,
+      "Y": 118
+    },
+    "Size": {
+      "IsEmpty": false,
+      "Width": 428,
+      "Height": 340
+    },
+    "X": 1,
+    "Y": 118,
+    "Width": 428,
+    "Height": 340,
+    "Left": 1,
+    "Top": 118,
+    "Right": 429,
+    "Bottom": 458,
+    "IsEmpty": false
+  },
+  "HeaderHeight": 50,
+  "Columns": 4,
+  "A1-profile-columns": {
+    "Pass": true,
+    "Expected": 4,
+    "Actual": 4
+  },
+  "ContentHeight": {
+    "Short": 58,
+    "WithNote": 80
+  },
+  "A2-row-height-short": {
+    "Pass": true,
+    "Expected": 58,
+    "Actual": 58
+  },
+  "A3-row-height-note": {
+    "Pass": true,
+    "Expected": 80,
+    "Actual": 80
+  },
+  "A4-rowheight-matches-dpi": {
+    "Pass": true,
+    "Expected": {
+      "Short": 58,
+      "Note": 80
+    },
+    "Actual": {
+      "contentShort": 58,
+      "contentNote": 80
+    }
+  },
+  "DiagHover": {
+    "Fired": 1,
+    "Assembly": "C:\\Users\\Lenovo\\AppData\\Local\\CoffeeManager\\build-check\\note-ui-test\\bin\\Debug\\net10.0-windows\\CafeManager.WinForms.dll",
+    "HasField": true,
+    "RuntimeType": "CafeManager.WinForms.UI.OrbitDataGridView"
+  },
+  "B1-hover-cursor-hand": {
+    "Pass": true,
+    "Expected": "Hand",
+    "Actual": "[Cursor: Hand]"
+  },
+  "B2-hover-column-tracked": {
+    "Pass": true,
+    "Expected": 0,
+    "Actual": 0
+  },
+  "B3-hover-quantity-default-cursor": {
+    "Pass": true,
+    "Expected": "Default",
+    "Actual": "[Cursor: Default]"
+  },
+  "Attempts-click-name": 1,
+  "C1-editor-visible": {
+    "Pass": true,
+    "Expected": true,
+    "Actual": true
+  },
+  "C2-row-grown": {
+    "Pass": true,
+    "Expected": 96,
+    "Actual": 96
+  },
+  "C3-editor-below-content": {
+    "Pass": true,
+    "Expected": 226,
+    "Actual": 226
+  },
+  "C4-editor-not-overlap-content": {
+    "Pass": true,
+    "Expected": "\u003E= 226",
+    "Actual": 226
+  },
+  "C5-editor-within-grid": {
+    "Pass": true,
+    "Expected": "\u003C=456",
+    "Actual": 258
+  },
+  "C6-editor-span-name-price": {
+    "Pass": true,
+    "Expected": {
+      "Left": 1,
+      "Right": 366
+    },
+    "Actual": {
+      "Left": 3,
+      "Right": 364
+    }
+  },
+  "C7-input-focused": {
+    "Pass": true,
+    "Expected": true,
+    "Actual": true
+  },
+  "C8-select-all-empty": {
+    "Pass": true,
+    "Expected": "empty",
+    "Actual": {
+      "Text": "",
+      "SelectionLength": 0
+    }
+  },
+  "EditorHeight": 32,
+  "Attempts-click-note-row": 1,
+  "D1-old-row-restored": {
+    "Pass": true,
+    "Expected": 58,
+    "Actual": 58
+  },
+  "D2-note-row-grown": {
+    "Pass": true,
+    "Expected": 118,
+    "Actual": 118
+  },
+  "D3-editor-shows-note": {
+    "Pass": true,
+    "Expected": "\u00CDt \u0111\u00E1",
+    "Actual": "\u00CDt \u0111\u00E1"
+  },
+  "D4-note-selected": {
+    "Pass": true,
+    "Expected": 5,
+    "Actual": 5
+  },
+  "N1-suggestion-visible": {
+    "Pass": true,
+    "Expected": true,
+    "Actual": true
+  },
+  "N2-suggestion-filtered": {
+    "Pass": true,
+    "Expected": "1..6 items containing \u0027kh\u0027",
+    "Actual": [
+      "Kh\u00F4ng \u0111\u00E1",
+      "Kh\u00F4ng \u0111\u01B0\u1EDDng",
+      "Kh\u00F4ng s\u1EEFa",
+      "Kh\u00F4ng \u1ED1ng h\u00FAt"
+    ]
+  },
+  "N3-suggestion-fixed-first": {
+    "Pass": true,
+    "Expected": "first starts \u0027Kh\u00F4ng\u0027",
+    "Actual": "Kh\u00F4ng \u0111\u00E1"
+  },
+  "N4-suggestion-below-editor": {
+    "Pass": true,
+    "Expected": {
+      "Below": true,
+      "Inside": true
+    },
+    "Actual": {
+      "Top": 340,
+      "Bottom": 442,
+      "EditorBottom": 338,
+      "PanelHeight": 620
+    }
+  },
+  "N5-suggestion-inside-width": {
+    "Pass": true,
+    "Expected": true,
+    "Actual": {
+      "Left": 3,
+      "Right": 364,
+      "Width": 430
+    }
+  },
+  "N6-suggestion-history": {
+    "Pass": true,
+    "Expected": "contains \u0027Ghi ch\u00FA c\u0169\u0027",
+    "Actual": [
+      "Ghi ch\u00FA c\u0169"
+    ]
+  },
+  "N7-enter-accepts-and-saves": {
+    "Pass": true,
+    "Expected": {
+      "Count": 1,
+      "Note": "Kh\u00F4ng \u0111\u00E1",
+      "Closed": true
+    },
+    "Actual": {
+      "saveCount": 1,
+      "lastSavedNote": "Kh\u00F4ng \u0111\u00E1",
+      "Closed": true,
+      "Dropdown": false
+    }
+  },
+  "Attempts-esc-dropdown": 1,
+  "N8-esc-closes-dropdown-only": {
+    "Pass": true,
+    "Expected": {
+      "Opened": true,
+      "Closed": true,
+      "EditorOpen": true
+    },
+    "Actual": {
+      "Opened": true,
+      "Closed": true,
+      "EditorOpen": true
+    }
+  },
+  "N9-second-esc-cancels": {
+    "Pass": true,
+    "Expected": {
+      "Closed": true,
+      "Saves": 1
+    },
+    "Actual": {
+      "Closed": true,
+      "saveCount": 1
+    }
+  },
+  "N10-click-note-opens": {
+    "Pass": true,
+    "Expected": {
+      "Visible": true,
+      "Text": "\u00CDt \u0111\u00E1"
+    },
+    "Actual": {
+      "Visible": true,
+      "Text": "\u00CDt \u0111\u00E1",
+      "Row1": 118,
+      "Cell1": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 0,
+          "Y": 108
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 151,
+          "Height": 118
+        },
+        "X": 0,
+        "Y": 108,
+        "Width": 151,
+        "Height": 118,
+        "Left": 0,
+        "Top": 108,
+        "Right": 151,
+        "Bottom": 226,
+        "IsEmpty": false
+      },
+      "Scroll": 0,
+      "Enabled": true,
+      "Interactive": true,
+      "Editing": {
+        "LineId": 2,
+        "Product": "SP002",
+        "Name": "Tr\u00E0 \u0111\u00E0o cam s\u1EA3",
+        "Quantity": 2,
+        "Price": 45000,
+        "Note": "\u00CDt \u0111\u00E1",
+        "Amount": 90000
+      },
+      "RowCount": 4,
+      "MouseDiag": [
+        "mouse-down Left 20,176 hit=Cell",
+        "cell-down 0/1",
+        "cell-click 0/1",
+        "mouse-up Left 20,176"
+      ]
+    }
+  },
+  "N11-open-no-auto-dropdown": {
+    "Pass": true,
+    "Expected": false,
+    "Actual": false
+  },
+  "E1-save-event": {
+    "Pass": true,
+    "Expected": 2,
+    "Actual": 2
+  },
+  "E2-save-trim": {
+    "Pass": true,
+    "Expected": "Kh\u00F4ng \u0111\u01B0\u1EDDng",
+    "Actual": "Kh\u00F4ng \u0111\u01B0\u1EDDng"
+  },
+  "E3-editor-closed-after-save": {
+    "Pass": true,
+    "Expected": false,
+    "Actual": false
+  },
+  "E4-row-restored-after-save": {
+    "Pass": true,
+    "Expected": 80,
+    "Actual": 80
+  },
+  "Attempts-esc": 1,
+  "F1-esc-no-save": {
+    "Pass": true,
+    "Expected": 2,
+    "Actual": 2
+  },
+  "F2-esc-closed": {
+    "Pass": true,
+    "Expected": false,
+    "Actual": false
+  },
+  "F3-esc-row-restored": {
+    "Pass": true,
+    "Expected": 58,
+    "Actual": 58
+  },
+  "Attempts-save-button": 1,
+  "G1-save-button": {
+    "Pass": true,
+    "Expected": {
+      "Count": 3,
+      "Note": "B\u1EA5m n\u00FAt l\u01B0u"
+    },
+    "Actual": {
+      "Count": 3,
+      "Note": "B\u1EA5m n\u00FAt l\u01B0u"
+    }
+  },
+  "Attempts-quantity-open": 1,
+  "H0-note-open-before-quantity": {
+    "Pass": true,
+    "Expected": true,
+    "Actual": true
+  },
+  "H1-quantity-zones": {
+    "Pass": true,
+    "Expected": {
+      "Decrease": 1,
+      "Increase": 1
+    },
+    "Actual": {
+      "decrease": 1,
+      "increase": 1
+    }
+  },
+  "H3-clicking-minus-closes-note": {
+    "Pass": true,
+    "Expected": false,
+    "Actual": false
+  },
+  "H2-delete-click": {
+    "Pass": true,
+    "Expected": 1,
+    "Actual": 1
+  },
+  "I1-noninteractive-ignored": {
+    "Pass": true,
+    "Expected": false,
+    "Actual": false
+  },
+  "J1-disabled-cursor-default": {
+    "Pass": true,
+    "Expected": "Default",
+    "Actual": "[Cursor: Default]"
+  },
+  "J2-disabled-no-editor": {
+    "Pass": true,
+    "Expected": false,
+    "Actual": false
+  },
+  "Attempts-show-order": 1,
+  "K1-show-order-closes-editor": {
+    "Pass": true,
+    "Expected": {
+      "Opened": true,
+      "ClosedAfterShow": true
+    },
+    "Actual": {
+      "Opened": true,
+      "ClosedAfterShow": true
+    }
+  },
+  "L1-short-panel-safe": {
+    "Pass": true,
+    "Expected": "visible-inside or hidden",
+    "Actual": {
+      "Visible": false,
+      "Top": 364,
+      "Bottom": 396,
+      "GridBottom": 126,
+      "Scroll": -1
+    }
+  },
+  "ShortPanel": {
+    "ClientSize": {
+      "IsEmpty": false,
+      "Width": 428,
+      "Height": 8
+    },
+    "Bounds": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 3,
+        "Y": 364
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 361,
+        "Height": 32
+      },
+      "X": 3,
+      "Y": 364,
+      "Width": 361,
+      "Height": 32,
+      "Left": 3,
+      "Top": 364,
+      "Right": 364,
+      "Bottom": 396,
+      "IsEmpty": false
+    },
+    "Scroll": -1
+  },
+  "Attempts-mid-panel": 1,
+  "L2-scroll-then-open-inside": {
+    "Pass": true,
+    "Expected": {
+      "Clickable": true,
+      "VisibleInside": true
+    },
+    "Actual": {
+      "Clickable": true,
+      "VisibleInside": true
+    }
+  },
+  "MidPanel": {
+    "ClientSize": {
+      "IsEmpty": false,
+      "Width": 428,
+      "Height": 140
+    },
+    "LastCell": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 0,
+        "Y": 50
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 151,
+        "Height": 58
+      },
+      "X": 0,
+      "Y": 50,
+      "Width": 151,
+      "Height": 58,
+      "Left": 0,
+      "Top": 50,
+      "Right": 151,
+      "Bottom": 108,
+      "IsEmpty": false
+    },
+    "Bounds": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 3,
+        "Y": 226
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 361,
+        "Height": 32
+      },
+      "X": 3,
+      "Y": 226,
+      "Width": 361,
+      "Height": 32,
+      "Left": 3,
+      "Top": 226,
+      "Right": 364,
+      "Bottom": 258,
+      "IsEmpty": false
+    },
+    "Scroll": 3,
+    "Visible": true
+  },
+  "N12-dropdown-stays-in-panel": {
+    "Pass": true,
+    "Expected": {
+      "Inside": true,
+      "Separate": true
+    },
+    "Actual": {
+      "Visible": true,
+      "SuggestionBounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 3,
+          "Y": 260
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 361,
+          "Height": 102
+        },
+        "X": 3,
+        "Y": 260,
+        "Width": 361,
+        "Height": 102,
+        "Left": 3,
+        "Top": 260,
+        "Right": 364,
+        "Bottom": 362,
+        "IsEmpty": false
+      },
+      "PanelWidth": 430,
+      "PanelHeight": 420,
+      "EditorBounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 3,
+          "Y": 226
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 361,
+          "Height": 32
+        },
+        "X": 3,
+        "Y": 226,
+        "Width": 361,
+        "Height": 32,
+        "Left": 3,
+        "Top": 226,
+        "Right": 364,
+        "Bottom": 258,
+        "IsEmpty": false
+      }
+    }
+  },
+  "Attempts-normal-panel": 1,
+  "L3-last-row-normal-panel": {
+    "Pass": true,
+    "Expected": true,
+    "Actual": {
+      "Visible": true,
+      "insideNormal": true
+    }
+  },
+  "NormalPanel": {
+    "ClientSize": {
+      "IsEmpty": false,
+      "Width": 428,
+      "Height": 340
+    },
+    "LastCell": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 0,
+        "Y": 246
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 172,
+        "Height": 58
+      },
+      "X": 0,
+      "Y": 246,
+      "Width": 172,
+      "Height": 58,
+      "Left": 0,
+      "Top": 246,
+      "Right": 172,
+      "Bottom": 304,
+      "IsEmpty": false
+    },
+    "Bounds": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 3,
+        "Y": 364
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 361,
+        "Height": 32
+      },
+      "X": 3,
+      "Y": 364,
+      "Width": 361,
+      "Height": 32,
+      "Left": 3,
+      "Top": 364,
+      "Right": 364,
+      "Bottom": 396,
+      "IsEmpty": false
+    },
+    "Scroll": 1,
+    "Visible": true
+  },
+  "L4-no-room-note-restores-height": {
+    "Pass": true,
+    "Expected": {
+      "Visible": false,
+      "Height": 80
+    },
+    "Actual": {
+      "Visible": false,
+      "Height": 80
+    }
+  },
+  "L5-no-room-note-input-hidden": {
+    "Pass": true,
+    "Expected": false,
+    "Actual": false
+  },
+  "Attempts-resize-open": 1,
+  "L6-resize-hides-then-click-cancels": {
+    "Pass": true,
+    "Expected": {
+      "Opened": true,
+      "HiddenAfterResize": true,
+      "ClosedAfterClick": true,
+      "Height": 58
+    },
+    "Actual": {
+      "Opened": true,
+      "HiddenAfterResize": true,
+      "ClosedAfterClick": true,
+      "Height": 58
+    }
+  },
+  "DrawToBitmap": "OK {Width=430, Height=400}",
+  "HoverPaint": "OK",
+  "Failures": [],
+  "Success": true,
+  "Trace": [
+    "07:14:01.395 main-run",
+    "07:14:01.477 run-start",
+    "07:14:01.533 hover",
+    "07:14:01.823 click-name",
+    "07:14:01.938 click-other",
+    "07:14:02.086 suggestions",
+    "07:14:02.739 click-note",
+    "07:14:02.820 enter-save",
+    "07:14:02.913 esc-cancel",
+    "07:14:03.119 save-button",
+    "07:14:03.337 quantity",
+    "07:14:03.688 noninteractive",
+    "07:14:03.760 disabled",
+    "07:14:03.976 show-order",
+    "07:14:04.099 short-panel",
+    "07:14:04.221 mid-panel",
+    "07:14:04.321 suggestion-mid-panel",
+    "07:14:04.518 normal-panel",
+    "07:14:04.620 no-room-with-note",
+    "07:14:04.776 resize-while-open",
+    "07:14:05.003 draw",
+    "07:14:05.015 final",
+    "07:14:05.213 run-done",
+    "07:14:05.213 save"
+  ]
+}

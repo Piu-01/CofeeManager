@@ -1,0 +1,74 @@
+TITLE='CoffeeManager'
+Window name='CoffeeManager' id='' enabled=True offscreen=False rect=97,6 1726x1007
+  Pane name='' id='' enabled=True offscreen=False rect=106,44 1708x960
+    Pane name='' id='' enabled=True offscreen=False rect=106,44 250x960
+      Pane name='' id='' enabled=True offscreen=False rect=106,44 250x960
+        Pane name='' id='' enabled=True offscreen=False rect=106,44 249x105
+          Text name='CoffeeManager' id='' enabled=True offscreen=False rect=126,62 217x40
+          Text name='KHONG GIAN QU?N LY' id='' enabled=True offscreen=False rect=126,105 217x25
+        Pane name='KHONG GIAN QU?N LY' id='' enabled=True offscreen=False rect=106,149 249x695
+          Pane name='KHONG GIAN QU?N LY' id='' enabled=True offscreen=False rect=106,149 228x1183
+            Button name='T?ng quan' id='' enabled=True offscreen=False rect=116,154 208x54
+            Pane name='' id='' enabled=True offscreen=False rect=116,216 208x258
+              Text name='B†n hÖng' id='' enabled=True offscreen=False rect=119,216 202x42
+              Pane name='B†n hÖng' id='' enabled=True offscreen=False rect=116,258 208x216
+            Pane name='' id='' enabled=True offscreen=False rect=116,482 208x150
+              Text name='Kh†ch hÖng & uu dai' id='' enabled=True offscreen=False rect=119,482 202x42
+              Pane name='Kh†ch hÖng  uu dai' id='' enabled=True offscreen=False rect=116,524 208x108
+            Pane name='' id='' enabled=True offscreen=False rect=116,640 208x204
+              Text name='Menu & kho' id='' enabled=True offscreen=False rect=119,640 202x42
+              Pane name='Menu  kho' id='' enabled=True offscreen=False rect=116,682 208x162
+            Pane name='' id='' enabled=True offscreen=False rect=116,852 208x258
+              Text name='TÖi ch°nh & b†o c†o' id='' enabled=True offscreen=False rect=119,852 202x42
+              Pane name='TÖi ch°nh  b†o c†o' id='' enabled=True offscreen=False rect=116,894 208x216
+            Pane name='' id='' enabled=True offscreen=False rect=116,1118 208x204
+              Text name='Qu?n tr?' id='' enabled=True offscreen=False rect=119,1118 202x42
+              Pane name='Qu?n tr?' id='' enabled=True offscreen=False rect=116,1160 208x162
+          ScrollBar name='KHONG GIAN QU?N LY' id='Vertical ScrollBar' enabled=True offscreen=False rect=334,149 21x695
+            Button name='Back by small amount' id='SmallDecrement' enabled=True offscreen=False rect=334,149 21x17
+            Button name='Back by large amount' id='LargeDecrement' enabled=True offscreen=False rect=334,166 21x4
+            Thumb name='Thumb' id='Thumb' enabled=True offscreen=False rect=334,170 21x384
+            Button name='Forward by large amount' id='LargeIncrement' enabled=True offscreen=False rect=334,554 21x273
+            Button name='Forward by small amount' id='SmallIncrement' enabled=True offscreen=False rect=334,827 21x17
+        Pane name='' id='' enabled=True offscreen=False rect=106,844 249x160
+          Text name='Nguyen Van An' id='' enabled=True offscreen=False rect=178,859 164x24
+          Text name='Qu?n tr? viàn ˙ ADMIN' id='' enabled=True offscreen=False rect=178,885 164x22
+          Button name='Dang xu?t' id='logout' enabled=True offscreen=False rect=116,918 229x45
+          Text name='Phiàn dang ho?t d?ng.' id='' enabled=True offscreen=False rect=121,968 219x34
+    Pane name='Phiàn dang ho?t d?ng.' id='' enabled=True offscreen=False rect=356,44 1458x62
+      Text name='Qu?n ly / L?ch s? h¢a don' id='' enabled=True offscreen=False rect=360,65 209x19
+      Text name='Nguyen Van An ˙ ADMIN' id='' enabled=True offscreen=False rect=1596,65 214x19
+    Pane name='Nguyen Van An ˙ ADMIN' id='' enabled=True offscreen=False rect=356,106 1458x898
+      Pane name='Nguyen Van An ˙ ADMIN' id='526970' enabled=True offscreen=False rect=356,106 1458x898
+        Pane name='' id='527050' enabled=True offscreen=False rect=356,106 1458x898
+          Text name='INVOICE WORKSPACE' id='' enabled=True offscreen=False rect=388,134 1393x20
+          Text name='L?ch s? h¢a don' id='' enabled=True offscreen=False rect=388,156 1143x45
+          Text name='Tra c?u h¢a don theo th?i gian, tr?ng th†i vÖ kành b†n.' id='' enabled=True offscreen=False rect=388,209 1393x25
+          Pane name='Tra c?u h¢a don theo th?i gian, tr?ng th†i vÖ kành b†n.' id='' enabled=True offscreen=False rect=388,256 1393x695
+            Pane name='Tra c?u h¢a don theo th?i gian, tr?ng th†i vÖ kành b†n.' id='' enabled=True offscreen=False rect=409,274 1231x50
+              Pane name='Tra c?u h¢a don theo th?i gian, tr?ng th†i vÖ kành b†n.' id='199340' enabled=True offscreen=False rect=409,274 1231x50
+            Pane name='' id='' enabled=True offscreen=False rect=1650,274 110x50
+              Button name='Tçm ki?m' id='' enabled=True offscreen=False rect=1650,274 50x50
+              Button name='T?i l?i danh s†ch' id='' enabled=True offscreen=False rect=1710,274 50x50
+            Pane name='' id='' enabled=True offscreen=False rect=409,336 1351x50
+              Text name='L?c theo' id='' enabled=True offscreen=False rect=409,336 55x50
+              Pane name='L?c theo' id='199354' enabled=True offscreen=False rect=474,336 156x50
+              Pane name='L?c theo' id='199336' enabled=True offscreen=False rect=640,336 375x50
+              Pane name='L?c theo' id='330434' enabled=True offscreen=False rect=1025,336 175x50
+              Pane name='L?c theo' id='133774' enabled=True offscreen=False rect=1210,336 150x50
+            Pane name='1 h¢a don' id='' enabled=True offscreen=False rect=1632,412 128x41
+              Button name='Chi ti?t / In' id='Chi ti?t / In' enabled=True offscreen=False rect=1632,412 128x41
+            Pane name='' id='' enabled=True offscreen=False rect=389,462 1391x421
+              DataGrid name='' id='' enabled=True offscreen=False rect=389,462 1391x421
+            Pane name='' id='133772' enabled=True offscreen=False rect=389,883 1391x66
+              Text name='Hi?n th? 1-1 / 1 h¢a don' id='' enabled=True offscreen=False rect=410,884 1166x65
+              Button name='Trang tru?c' id='' enabled=False offscreen=False rect=1593,897 48x38
+              Text name='1 / 1' id='' enabled=True offscreen=False rect=1652,884 48x65
+              Button name='Trang sau' id='' enabled=False offscreen=False rect=1711,897 48x38
+          Text name='Da c?p nh?t 21:35:04' id='' enabled=True offscreen=False rect=388,961 1393x22
+  TitleBar name='CoffeeManager' id='TitleBar' enabled=True offscreen=False rect=106,15 1708x29
+    MenuBar name='System Menu Bar' id='' enabled=True offscreen=False rect=106,15 28x28
+      MenuItem name='System' id='Item 1' enabled=True offscreen=False rect=106,15 28x28
+    Button name='Minimize' id='Minimize' enabled=True offscreen=False rect=1636,7 60x37
+    Button name='Maximize' id='Maximize' enabled=True offscreen=False rect=1696,7 59x37
+    Button name='Close' id='Close' enabled=True offscreen=False rect=1755,7 60x37

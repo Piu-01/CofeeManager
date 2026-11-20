@@ -1,5 +1,10 @@
 # Plan T16 — POS, thanh toán và hủy đơn trên WinForms
 
+Bổ sung mới30/10/2026: [Bán hàng gọn](sales-compact-ui-plan.md) đã được user duyệt
+và triển khai; [bàn giao](sales-compact-ui-implementation.md),
+[test chờ duyệt riêng](sales-compact-ui-test-plan.md).123bounds checks không
+thay nghiệm thuT16/SQL/native/hình thức. Giữ lịch sử các bổ sung phía dưới.
+
 Bổ sung Đơn đang mở25/10 đã duyệt/triển khai:
 [plan](open-orders-ui-plan.md), [triển khai](open-orders-ui-implementation.md),
 [test chờ duyệt](open-orders-ui-test-plan.md). Không thaySQL/role/checklist.

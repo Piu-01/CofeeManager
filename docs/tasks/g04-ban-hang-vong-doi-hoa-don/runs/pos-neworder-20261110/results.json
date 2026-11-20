@@ -1,0 +1,292 @@
+{
+  "Failed": 0,
+  "Database": "CoffeeManager_Test_G04_20261110_124309_41e6e800_posnew",
+  "Scope": "Frozen source; real Auth/runtime SQL and in-process native UI actions; dialog clicks via WinForms controls. No physical keyboard/visual acceptance.",
+  "Results": [
+    {
+      "Name": "F00 B0001 occupied fixture is open",
+      "Outcome": "PASS",
+      "Actual": "HD20250411"
+    },
+    {
+      "Name": "P00 default selection is occupied B0001 as in bug report",
+      "Outcome": "PASS",
+      "Actual": {
+        "Table": "B0001",
+        "Status": "Ban 01 \u00B7 \u0110ang ph\u1EE5c v\u1EE5"
+      }
+    },
+    {
+      "Name": "P01 New Order switches off occupied B0001",
+      "Outcome": "PASS",
+      "Actual": {
+        "Selected": "B0002"
+      }
+    },
+    {
+      "Name": "P01 status announces free table",
+      "Outcome": "PASS",
+      "Actual": {
+        "State": "\u0110\u00E3 chuy\u1EC3n sang Ban 02 (tr\u1ED1ng). Th\u00EAm m\u00F3n \u0111\u1EA7u \u0111\u1EC3 t\u1EA1o \u0111\u01A1n.",
+        "Status": "Ban 02 \u00B7 Tr\u1ED1ng"
+      }
+    },
+    {
+      "Name": "P01 first item creates order on switched table",
+      "Outcome": "PASS",
+      "Actual": {
+        "Code": "HD20250412",
+        "Created": "2026-11-10T12:48:23",
+        "Employee": "SCC30",
+        "Customer": null,
+        "TableCode": "B0002",
+        "Partner": null,
+        "Promotion": null,
+        "Channel": "Tai quan",
+        "Recipient": null,
+        "Phone": null,
+        "Address": null,
+        "Delivery": null,
+        "PaidAt": null,
+        "PartnerPercent": 0.00,
+        "PartnerFee": 0,
+        "Total": 25000,
+        "Ship": 0,
+        "Discount": 0,
+        "Payable": 25000,
+        "Status": "Chua thanh toan",
+        "Revision": "AAAAAAAACLc=",
+        "PreviewValid": true,
+        "PreviewSource": "None",
+        "PreviewPercent": 0,
+        "ReadAt": "2026-11-10T12:48:24.1765652",
+        "IsOpen": true
+      }
+    },
+    {
+      "Name": "P01 SQL order/line on switched table only",
+      "Outcome": "PASS",
+      "Actual": {
+        "New": "HD20250412"
+      }
+    },
+    {
+      "Name": "P03 repeat New Order picks next free table",
+      "Outcome": "PASS",
+      "Actual": {
+        "Selected": "B0004"
+      }
+    },
+    {
+      "Name": "P03 repeat New Order created no header",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "P02 current free table is kept",
+      "Outcome": "PASS",
+      "Actual": {
+        "Selected": "B0005",
+        "State": "\u0110ang ch\u1ECDn Ban 05 (tr\u1ED1ng). Th\u00EAm m\u00F3n \u0111\u1EA7u \u0111\u1EC3 t\u1EA1o \u0111\u01A1n."
+      }
+    },
+    {
+      "Name": "P06 table pick keeps chosen free table draft",
+      "Outcome": "PASS",
+      "Actual": {
+        "Selected": "B0004",
+        "State": "\u0110\u00E3 ch\u1ECDn Ban 04. Th\u00EAm m\u00F3n \u0111\u1EA7u m\u1EDBi t\u1EA1o \u0111\u01A1n."
+      }
+    },
+    {
+      "Name": "P06 table pick creates order at picked table",
+      "Outcome": "PASS",
+      "Actual": {
+        "Code": "HD20250413",
+        "Created": "2026-11-10T12:48:27",
+        "Employee": "SCC30",
+        "Customer": null,
+        "TableCode": "B0004",
+        "Partner": null,
+        "Promotion": null,
+        "Channel": "Tai quan",
+        "Recipient": null,
+        "Phone": null,
+        "Address": null,
+        "Delivery": null,
+        "PaidAt": null,
+        "PartnerPercent": 0.00,
+        "PartnerFee": 0,
+        "Total": 25000,
+        "Ship": 0,
+        "Discount": 0,
+        "Payable": 25000,
+        "Status": "Chua thanh toan",
+        "Revision": "AAAAAAAACL4=",
+        "PreviewValid": true,
+        "PreviewSource": "None",
+        "PreviewPercent": 0,
+        "ReadAt": "2026-11-10T12:48:27.9256635",
+        "IsOpen": true
+      }
+    },
+    {
+      "Name": "P06 YesNo dialog has two actions",
+      "Outcome": "PASS",
+      "Actual": [
+        "C\u00F3",
+        "Kh\u00F4ng"
+      ]
+    },
+    {
+      "Name": "P06 YesNo cancel returns No",
+      "Outcome": "PASS",
+      "Actual": 7
+    },
+    {
+      "Name": "P06 OKCancel dialog has two actions",
+      "Outcome": "PASS",
+      "Actual": [
+        "\u0110\u1ED3ng \u00FD",
+        "H\u1EE7y"
+      ]
+    },
+    {
+      "Name": "P06 OKCancel cancel returns Cancel",
+      "Outcome": "PASS",
+      "Actual": 2
+    },
+    {
+      "Name": "P04 fixture frees at least one table before fill",
+      "Outcome": "PASS",
+      "Actual": [
+        "B0005",
+        "B0006",
+        "B0007",
+        "B0008",
+        "B0009",
+        "B0010"
+      ]
+    },
+    {
+      "Name": "P04 all tables occupied in SQL",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "P04 no free table dialog title",
+      "Outcome": "PASS",
+      "Actual": "H\u1EBFt b\u00E0n tr\u1ED1ng"
+    },
+    {
+      "Name": "P04 no free table dialog has one action only",
+      "Outcome": "PASS",
+      "Actual": [
+        "\u0110\u00E3 hi\u1EC3u"
+      ]
+    },
+    {
+      "Name": "P04 table cleared and state explains full house",
+      "Outcome": "PASS",
+      "Actual": {
+        "Selected": "(null)",
+        "State": "Kh\u00F4ng c\u00F2n b\u00E0n tr\u1ED1ng. Ch\u1ECDn Mang \u0111i/Giao h\u00E0ng ho\u1EB7c x\u1EED l\u00FD \u0111\u01A1n \u0111ang m\u1EDF."
+      }
+    },
+    {
+      "Name": "P04 add blocked with no header written",
+      "Outcome": "PASS",
+      "Actual": {
+        "State": "Ch\u1ECDn b\u00E0n tr\u01B0\u1EDBc khi th\u00EAm m\u00F3n cho \u0111\u01A1n t\u1EA1i qu\u00E1n.",
+        "Orders": 19
+      }
+    },
+    {
+      "Name": "P04 no header on occupied table from full-house path",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "P05 take-away creates order after full house",
+      "Outcome": "PASS",
+      "Actual": {
+        "Code": "HD20250420",
+        "Created": "2026-11-10T12:48:43",
+        "Employee": "SCC30",
+        "Customer": null,
+        "TableCode": null,
+        "Partner": null,
+        "Promotion": null,
+        "Channel": "Mang di",
+        "Recipient": null,
+        "Phone": null,
+        "Address": null,
+        "Delivery": null,
+        "PaidAt": null,
+        "PartnerPercent": 0.00,
+        "PartnerFee": 0,
+        "Total": 25000,
+        "Ship": 0,
+        "Discount": 0,
+        "Payable": 25000,
+        "Status": "Chua thanh toan",
+        "Revision": "AAAAAAAACNM=",
+        "PreviewValid": true,
+        "PreviewSource": "None",
+        "PreviewPercent": 0,
+        "ReadAt": "2026-11-10T12:48:43.3396464",
+        "IsOpen": true
+      }
+    },
+    {
+      "Name": "P05 take-away SQL row has no table",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "P06 open existing order loads table/context",
+      "Outcome": "PASS",
+      "Actual": {
+        "Code": "HD20250410",
+        "Created": "2025-05-10T09:00:00",
+        "Employee": "NV004",
+        "Customer": null,
+        "TableCode": "B0003",
+        "Partner": null,
+        "Promotion": null,
+        "Channel": "Tai quan",
+        "Recipient": null,
+        "Phone": null,
+        "Address": null,
+        "Delivery": null,
+        "PaidAt": null,
+        "PartnerPercent": 0.00,
+        "PartnerFee": 0,
+        "Total": 85000,
+        "Ship": 0,
+        "Discount": 0,
+        "Payable": 85000,
+        "Status": "Chua thanh toan",
+        "Revision": "AAAAAAAACJU=",
+        "PreviewValid": true,
+        "PreviewSource": "None",
+        "PreviewPercent": 0,
+        "ReadAt": "2026-11-10T12:48:44.9352038",
+        "IsOpen": true
+      }
+    },
+    {
+      "Name": "P06 add line to existing order succeeds",
+      "Outcome": "PASS",
+      "Actual": {
+        "Before": 2,
+        "After": 3
+      }
+    },
+    {
+      "Name": "F99 no order was created on occupied B0001 by cashier",
+      "Outcome": "PASS",
+      "Actual": null
+    }
+  ]
+}

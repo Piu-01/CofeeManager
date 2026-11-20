@@ -1,0 +1,58 @@
+﻿{
+    "RunId":  "20261117_003501_600081b1",
+    "Kind":  "Approved acceptance SQL subset + unit; remaining manual/concurrency tracked separately",
+    "Server":  "localhost",
+    "ThroughVersion":  17,
+    "SchemaVersion":  34,
+    "Operator":  "LAPTOP-79UNRIRC\\Lenovo",
+    "Created":  [
+                    {
+                        "Marker":  "20261117_003501_600081b1",
+                        "Database":  "CoffeeManager_Test_G04_20261117_003501_600081b1_clean",
+                        "Mode":  "clean"
+                    },
+                    {
+                        "Marker":  "20261117_003501_600081b1",
+                        "Database":  "CoffeeManager_Test_G04_20261117_003501_600081b1_demo",
+                        "Mode":  "demo"
+                    }
+                ],
+    "Cleaned":  [
+                    "CoffeeManager_Test_G04_20261117_003501_600081b1_clean",
+                    "CoffeeManager_Test_G04_20261117_003501_600081b1_demo"
+                ],
+    "Retained":  [
+
+                 ],
+    "Status":  "Failed",
+    "ProbeBuildExitCode":  0,
+    "SqlSubsets":  [
+                       {
+                           "File":  "acceptance-orders.sql",
+                           "Kind":  "SQL subcases only; not whole checklist IDs",
+                           "Status":  "PASS"
+                       },
+                       {
+                           "File":  "acceptance-checkout.sql",
+                           "Kind":  "SQL subcases only; not whole checklist IDs",
+                           "Status":  "PASS"
+                       },
+                       {
+                           "File":  "acceptance-delivery.sql",
+                           "Kind":  "SQL subcases only; not whole checklist IDs",
+                           "Status":  "PASS"
+                       },
+                       {
+                           "File":  "acceptance-pending-payment.sql",
+                           "Kind":  "SQL subcases only; not whole checklist IDs",
+                           "Status":  "PASS"
+                       },
+                       {
+                           "File":  "acceptance-table-sessions.sql",
+                           "Kind":  "SQL subcases only; not whole checklist IDs",
+                           "Status":  "PASS"
+                       }
+                   ],
+    "Error":  "System.Management.Automation.RuntimeException: Typed dependency smoke failed; inspect typed-smoke.json",
+    "SourceUnchanged":  true
+}

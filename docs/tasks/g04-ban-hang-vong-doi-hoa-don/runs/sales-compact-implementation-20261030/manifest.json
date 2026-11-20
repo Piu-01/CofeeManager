@@ -1,0 +1,15 @@
+{
+  "Run": "sales-compact-implementation-20261030",
+  "DebugBuildExit": 0,
+  "ReleaseBuildExit": 0,
+  "Scope": "Approved POS compact layout only",
+  "OwnedSourceFiles": 6,
+  "SourceCount": 205,
+  "TechnicalSmoke": "123/123 bounds checks at DeviceDpi120; no SQL/auth/business/visual acceptance",
+  "Visual": "User assigned, agent SKIPPED",
+  "Acceptance": "NOT RUN - separate approval required",
+  "ConcurrentChanges": "See concurrent-out-of-scope-changes.csv, preserved",
+  "Dpi100and150": "NOT RUN",
+  "BuildWarnings": "Debug/Release each1xCS8602 AttendanceControl.cs:53 outside POS, preserved",
+  "OwnedSourceUnchangedSinceBuild": true
+}

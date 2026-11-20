@@ -1,0 +1,280 @@
+{
+  "Failed": 0,
+  "Database": "CoffeeManager_Test_G04_20261025_181739_98e5df59_checkout",
+  "Scope": "Frozen binary; real Auth/runtime SQL and in-process native UI actions. Header money probe DTO-only. No physical keyboard/visual acceptance. Paid fixture history retained, actors disabled.",
+  "Results": [
+    {
+      "Name": "SC05 F8 breakdown matches DTO cash",
+      "Outcome": "PASS",
+      "Actual": {
+        "Total": 162000,
+        "Discount": 16200,
+        "Ship": 0,
+        "Payable": 145800
+      }
+    },
+    {
+      "Name": "SC07 confirm enabled cash",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Confirmation title X\u00E1c nh\u1EADn thanh to\u00E1n",
+      "Outcome": "PASS",
+      "Actual": "X\u00E1c nh\u1EADn thanh to\u00E1n"
+    },
+    {
+      "Name": "SC07 print question cash",
+      "Outcome": "PASS",
+      "Actual": "In h\u00F3a \u0111\u01A1n"
+    },
+    {
+      "Name": "SC07 paid once/reset cash",
+      "Outcome": "PASS",
+      "Actual": "\u0110\u00E3 thanh to\u00E1n HD20250480 \u00B7 Thu 145.800 \u20AB \u00B7 Th\u1ED1i 19.000 \u20AB \u00B7 \u0110i\u1EC3m mua \u0111\u00E3 c\u1ED9ng 145 Tra c\u1EE9u ho\u1EB7c in l\u1EA1i t\u1EA1i L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n."
+    },
+    {
+      "Name": "SC07 allocations exact cash",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC07 one checkout receipt cash",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC07 cash change19000",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC05 F8 breakdown matches DTO mixed",
+      "Outcome": "PASS",
+      "Actual": {
+        "Total": 81000,
+        "Discount": 0,
+        "Ship": 0,
+        "Payable": 81000
+      }
+    },
+    {
+      "Name": "SC07 confirm enabled mixed",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Confirmation title X\u00E1c nh\u1EADn thanh to\u00E1n",
+      "Outcome": "PASS",
+      "Actual": "X\u00E1c nh\u1EADn thanh to\u00E1n"
+    },
+    {
+      "Name": "SC07 print question mixed",
+      "Outcome": "PASS",
+      "Actual": "In h\u00F3a \u0111\u01A1n"
+    },
+    {
+      "Name": "SC07 paid once/reset mixed",
+      "Outcome": "PASS",
+      "Actual": "\u0110\u00E3 thanh to\u00E1n HD96300001 \u00B7 Thu 81.000 \u20AB \u00B7 Th\u1ED1i 20.000 \u20AB \u00B7 \u0110i\u1EC3m mua \u0111\u00E3 c\u1ED9ng 0 Tra c\u1EE9u ho\u1EB7c in l\u1EA1i t\u1EA1i L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n."
+    },
+    {
+      "Name": "SC07 allocations exact mixed",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC07 one checkout receipt mixed",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC05 F8 breakdown matches DTO zero",
+      "Outcome": "PASS",
+      "Actual": {
+        "Total": 81000,
+        "Discount": 81000,
+        "Ship": 0,
+        "Payable": 0
+      }
+    },
+    {
+      "Name": "SC07 confirm enabled zero",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Confirmation title X\u00E1c nh\u1EADn thanh to\u00E1n",
+      "Outcome": "PASS",
+      "Actual": "X\u00E1c nh\u1EADn thanh to\u00E1n"
+    },
+    {
+      "Name": "SC07 print question zero",
+      "Outcome": "PASS",
+      "Actual": "In h\u00F3a \u0111\u01A1n"
+    },
+    {
+      "Name": "SC07 paid once/reset zero",
+      "Outcome": "PASS",
+      "Actual": "\u0110\u00E3 thanh to\u00E1n HD96300002 \u00B7 Thu 0 \u20AB \u00B7 \u0110i\u1EC3m mua \u0111\u00E3 c\u1ED9ng 0 Tra c\u1EE9u ho\u1EB7c in l\u1EA1i t\u1EA1i L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n."
+    },
+    {
+      "Name": "SC07 allocations exact zero",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC07 one checkout receipt zero",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC05 F8 breakdown matches DTO missing-stock",
+      "Outcome": "PASS",
+      "Actual": {
+        "Total": 1000,
+        "Discount": 0,
+        "Ship": 0,
+        "Payable": 1000
+      }
+    },
+    {
+      "Name": "SC07 confirm enabled missing-stock",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Confirmation title X\u00E1c nh\u1EADn thanh to\u00E1n",
+      "Outcome": "PASS",
+      "Actual": "X\u00E1c nh\u1EADn thanh to\u00E1n"
+    },
+    {
+      "Name": "SC07 insufficient stock rejected atomically",
+      "Outcome": "PASS",
+      "Actual": "Kh\u00F4ng \u0111\u1EE7 nguy\u00EAn li\u1EC7u. \u0110\u01A1n ch\u01B0a ch\u1ED1t; ki\u1EC3m tra t\u1ED3n v\u00E0 s\u1EEDa \u0111\u01A1n."
+    },
+    {
+      "Name": "SC04 at-table creates first item",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC04 canceled order locks pay",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC04 delivery info/ship",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC05 delivery F8 breakdown",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC05 F8 breakdown matches DTO postcommit-read-fault",
+      "Outcome": "PASS",
+      "Actual": {
+        "Total": 81000,
+        "Discount": 0,
+        "Ship": 0,
+        "Payable": 81000
+      }
+    },
+    {
+      "Name": "SC07 confirm enabled postcommit-read-fault",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Confirmation title X\u00E1c nh\u1EADn thanh to\u00E1n",
+      "Outcome": "PASS",
+      "Actual": "X\u00E1c nh\u1EADn thanh to\u00E1n"
+    },
+    {
+      "Name": "SC07 print question postcommit-read-fault",
+      "Outcome": "PASS",
+      "Actual": "In h\u00F3a \u0111\u01A1n"
+    },
+    {
+      "Name": "SC07 paid once/reset postcommit-read-fault",
+      "Outcome": "PASS",
+      "Actual": "\u0110\u00E3 thanh to\u00E1n HD96300004 \u00B7 Thu 81.000 \u20AB \u00B7 Th\u1ED1i 19.000 \u20AB \u00B7 Ch\u01B0a in \u0111\u01B0\u1EE3c h\u00F3a \u0111\u01A1n. Kh\u00F4ng k\u1EBFt n\u1ED1i \u0111\u01B0\u1EE3c d\u1EEF li\u1EC7u; ki\u1EC3m tra k\u1EBFt n\u1ED1i v\u00E0 th\u1EED l\u1EA1i. Tra c\u1EE9u ho\u1EB7c in l\u1EA1i t\u1EA1i L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n."
+    },
+    {
+      "Name": "SC07 allocations exact postcommit-read-fault",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC07 one checkout receipt postcommit-read-fault",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC07 read failure still paid/reset",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC08 ADMIN reads menu",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC08 STORE sales denied",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "SC07 all stock equals snapshot consumption",
+      "Outcome": "PASS",
+      "Actual": {
+        "Before": {
+          "NVL01": 96.5060,
+          "NVL02": 98.1600,
+          "NVL03": 72.5750,
+          "NVL04": 21.9650,
+          "NVL05": 5.0000,
+          "NVL06": 9.7000,
+          "NVL07": 22.7000,
+          "NVL08": 42.0000,
+          "NVL09": 20.3800,
+          "NVL10": 500.0000,
+          "NVL11": 59.0000,
+          "NVL12": 29.0000
+        },
+        "After": {
+          "NVL01": 96.4160,
+          "NVL02": 98.1600,
+          "NVL03": 72.5250,
+          "NVL04": 21.9650,
+          "NVL05": 5.0000,
+          "NVL06": 9.7000,
+          "NVL07": 22.7000,
+          "NVL08": 42.0000,
+          "NVL09": 20.3800,
+          "NVL10": 500.0000,
+          "NVL11": 59.0000,
+          "NVL12": 29.0000
+        },
+        "Consumed": {
+          "NVL01": 0.0900,
+          "NVL03": 0.0500
+        }
+      }
+    },
+    {
+      "Name": "SC07 customer points equal point history",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Existing orders/lines/payments/points unchanged",
+      "Outcome": "PASS",
+      "Actual": null
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+﻿{
+    "RunId":  "20261117_000940_217157f1",
+    "Kind":  "Technical migration/dependency smoke only; not acceptance",
+    "Server":  "localhost",
+    "ThroughVersion":  17,
+    "SchemaVersion":  34,
+    "Operator":  "LAPTOP-79UNRIRC\\Lenovo",
+    "Created":  [
+                    {
+                        "Marker":  "20261117_000940_217157f1",
+                        "Database":  "CoffeeManager_Test_G04_20261117_000940_217157f1_clean",
+                        "Mode":  "clean"
+                    },
+                    {
+                        "Marker":  "20261117_000940_217157f1",
+                        "Database":  "CoffeeManager_Test_G04_20261117_000940_217157f1_demo",
+                        "Mode":  "demo"
+                    }
+                ],
+    "Cleaned":  [
+                    "CoffeeManager_Test_G04_20261117_000940_217157f1_clean",
+                    "CoffeeManager_Test_G04_20261117_000940_217157f1_demo"
+                ],
+    "Retained":  [
+
+                 ],
+    "Status":  "Failed",
+    "ProbeBuildExitCode":  0,
+    "Error":  "System.Management.Automation.MethodInvocationException: Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"UX_PHIEN_BAN_Mo missing\" ---\u003e System.Data.SqlClient.SqlException: UX_PHIEN_BAN_Mo missing\r\n   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean\u0026 dataReady)\r\n   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)\r\n   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean\u0026 usedCache, Boolean asyncWrite, Boolean inRetry)\r\n   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)",
+    "SourceUnchanged":  true
+}

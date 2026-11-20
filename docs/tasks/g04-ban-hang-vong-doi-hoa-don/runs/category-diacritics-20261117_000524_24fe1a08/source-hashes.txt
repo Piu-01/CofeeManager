@@ -1,0 +1,2 @@
+8b7de26d7415a96d858bdd7121ab1a2c831a8a5ce720c20726c1cd5a6149e25a *database/migrations/033_category_diacritics.sql
+574b48f60ed6c4e2ae060fa16b962df4a33041ae882a81941337466030e9d554 *database/Insert_Data.sql

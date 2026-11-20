@@ -3,6 +3,42 @@ Trạng thái24/10/2026: hai vấn đề bổ sung đã xử lý theo duyệt, s
 
 # Bộ plan G04 — Bán hàng và vòng đời hóa đơn
 
+**Bổ sung 16/11/2026, requirements và bộ plan T33–T35 đã duyệt; đã triển khai, chạy
+đợt test 17/11/2026 và bổ sung 18/11/2026 (đủ điều kiện nghiệm thu):** [Đơn "Chờ thanh
+toán" và phiên bàn](requirements-cho-thanh-toan-phien-ban.md) — thêm trạng thái khóa sửa ở mốc yêu
+cầu thanh toán, bàn bận theo phiên bàn, trả bàn thủ công, hỗ trợ trả trước giữ bàn.
+Kết quả: 5/5 SQL subset PASS, unit Sales 23/23; bug
+[T34-01](t34-phien-ban/bug-report.md) (`sp_InvoiceDetail` thiếu `MaPhien`/`SessionRevision`)
+đã sửa bằng migration 035. Ngày 18/11/2026 chạy nốt TS04 (concurrency) và UI chức năng
+125%: PP12/TS08/TS09/TS11/CP06(UI)/CP08 PASS; còn NOT RUN có ghi rõ (STORE UI, nhánh lỗi
+đóng phiên UI, in lại UI của TS12, hình thức/DPI 100–150%).
+
+| Thứ tự | Plan | Migration dự kiến | Đầu ra |
+|---|---|---|---|
+| 6 | [T33 — Đơn "Chờ thanh toán"](t33-cho-thanh-toan/plan.md) | 032_sales_pending_payment.sql | Trạng thái thứ tư, tách cổng sửa/thu, yêu cầu TT + mở lại ADMIN, view/trigger/đọc/đếm, Models/POS |
+| 7 | [T34 — Phiên bàn và trả bàn](t34-phien-ban/plan.md) | 034_sales_table_sessions.sql | `PHIEN_BAN`, `HOADON.MaPhien`, view + cờ giữ bàn, `sp_TraBan`, POS/màn Bàn, hộp trả bàn |
+| 8 | [T35 — Tương thích, tài liệu và regression](t35-tuong-thich-tai-lieu/plan.md) | (không bắt buộc) | Rà predicate/nhãn/lọc/in/dashboard, UX + contract, regression ảnh hưởng |
+
+Số migration là tạm thời; nếu migration cấp quyền cho 031 được tạo trước thì dùng số kế
+tiếp còn trống, không sửa migration đã áp. Ghi nhận 16/11/2026: 033 đã thuộc
+`033_category_diacritics.sql` nên T34 dùng 034. T33/T34/T35 đã code và đã chạy đợt test
+17/11/2026; T34-01 (sp_InvoiceDetail thiếu cột phiên) đã sửa bằng migration 035 và
+regression typed/native + 5/5 SQL subset PASS. Bổ sung 18/11/2026: TS04 PASS bằng hai
+connection chồng thực; PP12/TS08/TS09/TS11/CP06(UI)/CP08 PASS trên app WinForms thật
+(125%); T33–T35 đủ điều kiện nghiệm thu, các mục NOT RUN ghi tại test-results từng task.
+Giữ nguyên 56 ID T14–T18, 325 ID toàn dự án và lịch sử test.
+
+**Bổ sung 10/11/2026, chờ duyệt plan:** [Nháp thật cho đơn mới POS — G04-POS-02](t14-tao-sua-don/pos-draft-plan.md)
+— đơn mới chỉ giữ món trong bộ nhớ, Giữ/Thanh toán mới flush một transaction qua
+TVP; rời nháp hỏi Giữ/Không giữ/Ở lại; xung đột bàn giữ nháp và cho chọn hướng.
+Phạm vi **A** (chỉ đơn mới) đã chốt ngày 10/11/2026; đơn đã lưu giữ autosave.
+Không sửa 56 ID/checklist; chưa code.
+
+**Bổ sung 10/11/2026, chờ duyệt plan:** [Đặt món trực tiếp trên POS](t16-pos-huy-don/inline-order-lines-plan.md)
+— bỏ hộp Món, số lượng `− n +`/thùng rác xóa ngay trên dòng, ghi chú sửa inline
+dưới tên món, cột khớp header; không đổi SQL/contract. Các điểm 1–4 đã được
+người dùng chốt ngày 10/11/2026.
+
 Bổ sung Đơn đang mở25/10 đã duyệt/triển khai/test component+SQL98checksPASS; native/hìnhthức chờ người dùng:
 [giao diện theoZIP và cột mã đầy đủ](t16-pos-huy-don/open-orders-ui-plan.md).
 
@@ -147,6 +183,24 @@ hạn subcase tại [kết quả](t18-giao-hang/ui-delivery-test-results.md).
 ## Bổ sung Bán hàng gọn —30/10/2026
 
 [Phạm vi/plan UI POS](t16-pos-huy-don/sales-compact-ui-plan.md) theo ZIP
-Orbit_BanHang_Gon đã soạn, chờ duyệt bổ sung. Menu/card ngang và cột đơn gọn,
-POS chỉ Payable, breakdown tại F8; giữ nghiệp vụ/native/SQL/quyền. Chưa code,
-sau triển khai duyệt đợt test riêng; không kế thừa PASS từ mẫu/hồ sơ cũ.
+Orbit_BanHang_Gon đã được duyệt và triển khai. Menu/card ngang và cột đơn gọn,
+POS chỉ Payable, breakdown tại F8; giữ nghiệp vụ/native/SQL/quyền.123/123smoke
+bounds kỹ thuật125%, Debug/Release0error (1warning ngoàiPOS). Chờ duyệt
+[test riêng](t16-pos-huy-don/sales-compact-ui-test-plan.md), không kế thừa PASS
+từ mẫu/hồ sơ cũ. Thay đổi đồng thời module khác được lưu riêng, không sửa/reset.
+
+## Bổ sung Nháp thật cho đơn mới POS —11/11/2026 (ĐÃ BỊ THAY THẾ 19/11/2026)
+
+> **Bỏ nháp ngày 19/11/2026 theo yêu cầu người dùng.** Toàn bộ hộp Giữ/Không giữ/Ở lại,
+> Tạm tính từ bộ nhớ và flush TVP đã gỡ khỏi app; POS trở lại hợp đồng gốc T14 (món đầu
+> tạo hóa đơn một giao dịch) và tự mở đơn mới khi vào tab/sau khi kết thúc đơn
+> (xem UX §7.6). Ghi chép dưới đây giữ làm lịch sử; ca DK01–DK10 không còn áp dụng.
+> Bằng chứng điều tra/hướng thay thế: [audit bỏ nháp](t14-tao-sua-don/audit-bo-nhap-pos.md).
+
+[Plan nháp thật G04-POS-02](t14-tao-sua-don/pos-draft-plan.md) đã được duyệt và
+triển khai: migration030 + TVP `SalesDraftLines` + `sp_TaoHoaDonTuNhap`; nháp header/
+dòng trong bộ nhớ, Tạm tính; hộp Giữ/Không giữ/Ở lại qua `IAsyncLeaveConfirmation`;
+xung đột 52104 giữ nháp và cho Mở đơn hiện có/Chọn bàn khác/Bỏ nháp/Ở lại. Đã build
+Debug/Release 0 error và áp migration030 trên DB test riêng
+`CoffeeManager_Test_G04_20261111_draftflush`. Ca DK01–DK10 **NOT RUN**, chờ duyệt
+đợt test; hình thức do người dùng tự kiểm.

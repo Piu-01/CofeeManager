@@ -1,5 +1,14 @@
 # G04 — Đã kiểm nốt phần SQL của agent24/10/2026
 
+**30/10 — Bán hàng gọn theo ZIP mới đã triển khai sau duyệt plan:** menu/card
+ngang, panel đơn330–345logical, chỉPayable ởPOS và chi tiết tiền tạiF8, giữ luồng
+ghi/chốt/in/reset.123/123bounds kỹ thuật125%; Debug/Release0error,1warningCS8602
+ngoàiPOS tại AttendanceControl.cs:53 được giữ. Chưa chạy đợt chức năng/SQL mới;
+[bàn giao](t16-pos-huy-don/sales-compact-ui-implementation.md) và
+[test chờ duyệt](t16-pos-huy-don/sales-compact-ui-test-plan.md).
+Lượt giao hàng cũ đóng theo hash cũ với manual/hình thức chưa xác nhận giữ nguyên;
+không chốtG04 hoặc đổi kết quả/nguồn đang triển khaiG05/G06 từ bổ sung này.
+
 **Mới nhất26/10 — UI Giao hàng đã triển khai theo plan bổ sung được duyệt:**
 toolbar tìm kiếm hết hàng, filter tự áp dụng, profile Delivery/Address fill,
 pager TotalCount thật và actionstate theo writing/unknown. Debug/Release sạch,
@@ -280,3 +289,95 @@ lượt này:[report-before-sql-completion](runs/sql-completion_20261024_v4/repo
 
 
 
+
+### Bán hàng gọn — đợt test30/10/2026
+
+Đã chạy theo duyệt trên binary cố định:79assertion chức năng PASS/2FAIL sản phẩm,
+18unit PASS;123bounds kỹ thuật pha triển khai.2rawFAIL khác là đồng bộ harness,
+được giữ bằng chứng và chạy tiếp cùng binary/expected. Chi tiết:
+[t16 kết quả](t16-pos-huy-don/sales-compact-ui-test-results.md).
+Lỗi [G04-SC-MONEY-20261030](t16-pos-huy-don/bug-report.md): tổng và cột tiền cắt số dài,
+chờ duyệt một đợt sửa/regression. Chưa sửa source trong test. Các nhánh native print,
+stale/hai session/logout và profile khác chưa chạy bổ sung trên binary mới; hình thức
+user kiểm,100/150% NOT RUN. Không đổi checklist gốc hoặc trạng thái hoàn tất G04.
+
+### POS compact — sửa tiền dài31/10/2026
+
+Sau user duyệt đã khắc phục hai lỗi G04-SC-MONEY-20261030;180/180 kiểm kỹ thuật125%
+đạt, Debug/Release0warning/0error. Không thay SQL/BLL/checkout; hình thức user kiểm,
+100/150% NOT RUN. Chi tiết T16/bug-report.md, sales-compact-ui-test-results.md và
+runs/sales-money-fix-20261031/. Không đổi checklist hoặc tuyên bố hoàn tấtG04;
+các nhánh NOT RUN trước vẫn giữ nguyên.
+
+### Chờ thanh toán + phiên bàn (T33–T35) — đợt test17/11/2026
+
+Theo duyệt đợt test17/11/2026, đã chạy trên DB test riêng schema034 (runs
+`acceptance_20261117_003501_600081b1`, `technical_20261117_001148_f2533692`).
+Kết quả: 5/5 SQL subset PASS (`orders`, `checkout`, `delivery`, `pending-payment`,
+`table-sessions`); unit Sales23/23 PASS; typed smoke **FAIL** với
+[T34-01](t34-phien-ban/bug-report.md): `sp_InvoiceDetail` vẫn trả25 cột header trong khi
+DAL đọc27 cột (`MaPhien`/`SessionRevision`), làm lỗi chi tiết/in lại hóa đơn và chặn
+native smoke. Trong lượt đã sửa **script test** (guard filtered index, TS03 không-gộp,
+TS12 baseline doanh thu/phiên, PP09 nguồn tổng quan), không sửa source sản phẩm;
+`SourceUnchanged=true`.
+
+Chưa chạy: TS04 (đợt hai connection riêng), TS08/09/11, PP12, CP06(UI), CP08; hình thức
+SKIPPED theo phân công, DPI100/150% NOT RUN. Chi tiết:
+[T33](t33-cho-thanh-toan/test-results.md), [T34](t34-phien-ban/test-results.md),
+[T35](t35-tuong-thich-tai-lieu/test-results.md). Kết luận: T33–T35 **chưa nghiệm thu**;
+đề xuất migration035 cho `sp_InvoiceDetail` và chờ duyệt đợt sửa/regression.
+
+### Sửa T34-01 (migration 035) và regression — 17/11/2026
+
+Sau duyệt, đã áp migration `035_sales_invoice_detail_sessions.sql` (ALTER
+`sp_InvoiceDetail` trả 27 cột header với `MaPhien`/`SessionRevision` qua `OUTER APPLY`
+trên `PHIEN_BAN`; không đổi tiền/snapshot), thêm `technical-v18.sql`, nâng runner lên
+`ThroughVersion 18`/schema 035. Regression: technical run
+`runs/technical_20261117_020349_e6dedcdf` typed + native smoke `Success=true`;
+acceptance `runs/acceptance_20261117_020633_de5483fe` 5/5 SQL subset PASS, typed smoke
+`Success=true`, unit Sales 23/23 PASS, `SourceUnchanged=true`. PP11 và CP05 chuyển
+PASS; TS12 chỉ còn phần in lại trên UI là NOT RUN. Các mục chưa chạy giữ nguyên: TS04,
+TS08/09/11, PP12, CP06(UI), CP08; hình thức SKIPPED, DPI100/150% NOT RUN. T33–T35
+vẫn **chưa nghiệm thu**.
+
+### TS04 + UI chức năng 125% — 18/11/2026
+
+Theo lựa chọn của người dùng sau lượt trước, đã chạy hai phần còn lại:
+
+- **TS04 (concurrency, SQL thật):** `runs/concurrency_20261118_173648_529b4d1e/manifest.json`
+  — hai connection tạo đơn cùng bàn chồng thực sự (giữ `UPDLOCK,HOLDLOCK` trên `BAN`
+  để cả hai lệnh cùng bay), một lệnh thắng, một lệnh bị **52104**; đúng 1 đơn/1 phiên
+  mở, không sinh dòng/thanh toán phía thua, kho không đổi, transaction `0:0`; DB tạm
+  tự dọn. **PASS**.
+- **UI chức năng trên app WinForms thật (DPI 120 = 125%):** DB clone
+  `CoffeeManager_Test_G04_20261118_174233_3319aa73_ui` = backup `COPY_ONLY` của DB
+  Development (đã bootstrap tài khoản) + migration 032–035 trên bản clone; DB
+  Development không bị ghi. Bằng chứng: `runs/ui_20261118_174233_3319aa73/`.
+  - PP12: yêu cầu thanh toán `HD26093444` → `Cho thanh toan` + receipt
+    `SalesRequestPay`, khóa toàn bộ nút thêm món; F8 từ `Cho` chốt 30.000 đúng tiền,
+    kho trừ đúng 1 đơn vị NVL21. **PASS**.
+  - TS08/TS09: hộp "Trả bàn ngay?" xuất hiện sau thu và sau hủy; chọn Không → giữ
+    phiên `Retained=1`; chọn Có → phiên đóng (`GioRa`, `MaNVTra=NV001`), bàn `Trong`,
+    receipt `TableClose`; hủy đơn không hoàn kho. **PASS** (nhánh "đóng phiên lỗi sau
+    thu" không gieo lỗi được trên UI; độ bền do TS06/TS07 SQL phủ).
+  - TS11: nút "Trả bàn" khóa khi còn đơn mở, mở khi phiên giữ sạch, có hộp xác nhận
+    modal đúng owner/focus. **PASS**.
+  - CP06 (UI): ADMIN thấy "Mở lại đơn" bật trên đơn `Cho thanh toan`; CASH
+    (`thungan`) thấy tắt trên cùng đơn. STORE chưa đăng nhập thử — **NOT RUN**.
+  - CP08 (chức năng): co cửa sổ 1280×720 và 1366×768 tại 125%, các nút/ô chính nằm
+    trong biên, danh sách món cuộn bình thường. **PASS**.
+  - Lưu ý vận hành: app test đã đóng giữa hai bước (không có bản ghi crash trong
+    Application event log) nên được khởi động lại bằng cùng connection; không ảnh
+    hưởng dữ liệu. Hình thức **SKIPPED**, DPI 100%/150% **NOT RUN** theo phân công.
+
+Kết luận cập nhật: T33, T34, T35 **đủ điều kiện nghiệm thu**; các phần còn NOT RUN
+được ghi rõ tại từng test-results (STORE UI, nhánh lỗi đóng phiên UI, in lại UI của
+TS12, hình thức/DPI 100-150%).
+
+Dọn dẹp sau lượt UI: đã đóng app test và DROP DB clone
+`CoffeeManager_Test_G04_20261118_174233_3319aa73_ui` sau khi kiểm marker
+`G04TestMarker` (bản backup `G04Ui_20261118_174233_3319aa73.bak` nằm trong thư mục
+Backup của SQL Server, tài khoản hiện tại không có quyền xóa — cần dọn thủ công).
+DB `CoffeeManager_Development` không bị ghi. Script harness UI/TS04 nằm trong
+`tools/database/` (G04Ui.ps1, Dump/Click/Login/Start/New-G04UiTestDatabase,
+Test-G04Concurrency) và chưa commit.

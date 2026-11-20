@@ -1,0 +1,154 @@
+{
+  "Failed": 0,
+  "Scope": "Real WinForms technical bounds/labels/busy, revoked session, no SQL/no screenshots; normal callback query not executed",
+  "Results": [
+    {
+      "Name": "DPI125",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=1280, Height=720}previous icon only",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=1280, Height=720}previous labels",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=1280, Height=720}previous bounds",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=1280, Height=720}previous centered icon fits",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=1280, Height=720}next icon only",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=1280, Height=720}next labels",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=1280, Height=720}next bounds",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=1280, Height=720}next centered icon fits",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=1280, Height=720} enabled normal",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=1280, Height=720} busy locks pager",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=1280, Height=720} disabled no page mutation",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=1280, Height=720} unlocks pager",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=1366, Height=768}previous icon only",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=1366, Height=768}previous labels",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=1366, Height=768}previous bounds",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=1366, Height=768}previous centered icon fits",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=1366, Height=768}next icon only",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=1366, Height=768}next labels",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=1366, Height=768}next bounds",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=1366, Height=768}next centered icon fits",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=1366, Height=768} enabled normal",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=1366, Height=768} busy locks pager",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=1366, Height=768} disabled no page mutation",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=1366, Height=768} unlocks pager",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=960, Height=900}previous icon only",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=960, Height=900}previous labels",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=960, Height=900}previous bounds",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=960, Height=900}previous centered icon fits",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=960, Height=900}next icon only",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=960, Height=900}next labels",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=960, Height=900}next bounds",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=960, Height=900}next centered icon fits",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=960, Height=900} enabled normal",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=960, Height=900} busy locks pager",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=960, Height=900} disabled no page mutation",
+      "Outcome": "PASS"
+    },
+    {
+      "Name": "{Width=960, Height=900} unlocks pager",
+      "Outcome": "PASS"
+    }
+  ]
+}

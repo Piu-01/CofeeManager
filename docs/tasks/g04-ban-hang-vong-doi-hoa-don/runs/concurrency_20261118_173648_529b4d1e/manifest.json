@@ -1,0 +1,87 @@
+﻿{
+    "RunId":  "20261118_173648_529b4d1e",
+    "Kind":  "TS04 two-connection table race; technical verdict only",
+    "Server":  "localhost",
+    "ThroughVersion":  18,
+    "SchemaVersion":  35,
+    "Operator":  "LAPTOP-79UNRIRC\\Lenovo",
+    "Created":  [
+                    {
+                        "Marker":  "20261118_173648_529b4d1e",
+                        "Database":  "CoffeeManager_Test_G04_20261118_173648_529b4d1e_ts04",
+                        "Mode":  "ts04"
+                    }
+                ],
+    "Cleaned":  [
+                    "CoffeeManager_Test_G04_20261118_173648_529b4d1e_ts04"
+                ],
+    "Retained":  [
+
+                 ],
+    "Status":  "Succeeded",
+    "Checks":  [
+                   {
+                       "Detail":  "A=False B=False",
+                       "Ok":  true,
+                       "Check":  "both-commands-in-flight"
+                   },
+                   {
+                       "Detail":  "A=\u0027\u0027 B=\u002752104\u0027",
+                       "Ok":  true,
+                       "Check":  "one-winner-one-conflict"
+                   },
+                   {
+                       "Detail":  "loser=HD20250412 numbers=52104",
+                       "Ok":  true,
+                       "Check":  "loser-error-52104"
+                   },
+                   {
+                       "Detail":  "A=0:0",
+                       "Ok":  true,
+                       "Check":  "winner-connection-clean"
+                   },
+                   {
+                       "Detail":  "B=0:0",
+                       "Ok":  true,
+                       "Check":  "loser-connection-clean"
+                   },
+                   {
+                       "Detail":  "open=1",
+                       "Ok":  true,
+                       "Check":  "single-open-order"
+                   },
+                   {
+                       "Detail":  "rows=1 winner=HD20250411 loser=HD20250412",
+                       "Ok":  true,
+                       "Check":  "single-order-row"
+                   },
+                   {
+                       "Detail":  "sessions=1 open=1",
+                       "Ok":  true,
+                       "Check":  "single-session"
+                   },
+                   {
+                       "Detail":  "link=1:B0007:NV001:open",
+                       "Ok":  true,
+                       "Check":  "winner-session-linked"
+                   },
+                   {
+                       "Detail":  "loser=0 winner=1",
+                       "Ok":  true,
+                       "Check":  "no-loser-rows"
+                   },
+                   {
+                       "Detail":  "payments=0",
+                       "Ok":  true,
+                       "Check":  "no-payment-written"
+                   },
+                   {
+                       "Detail":  "inventory compared",
+                       "Ok":  true,
+                       "Check":  "inventory-unchanged"
+                   }
+               ],
+    "Winner":  "HD20250411",
+    "Loser":  "HD20250412",
+    "LoserError":  "52104"
+}
