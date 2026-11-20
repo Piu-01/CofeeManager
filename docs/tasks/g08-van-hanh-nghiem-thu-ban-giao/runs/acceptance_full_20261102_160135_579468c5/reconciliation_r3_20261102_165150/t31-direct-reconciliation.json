@@ -1,0 +1,159 @@
+[
+  {
+    "Id": "T31-K09.probe-five-flows",
+    "Expected": "7 SQL/BLL subcases đều PASS, không thay native",
+    "Actual": {
+      "Subcases": 7,
+      "Failed": 0,
+      "ExitCode": 0
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "T31-K09.sales-money-lines-payments",
+    "Expected": "2billmới,3dòng,3TT,tổngTT+80000;2NVL/bill→4tiêuhao",
+    "Actual": {
+      "BillsDelta": 2,
+      "ConsumptionDelta": 4,
+      "PaymentsDelta": 3,
+      "PaymentAmountDelta": 80000.0,
+      "LinesDelta": 3
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "T31-K09.inventory-all-materials",
+    "Expected": "NVL01:+10−2xuất−1KK−.054tiêuhao=+6.946;NVL03−.030;NVLkháckhôngđổi",
+    "Actual": [
+      {
+        "Before": 96.74,
+        "Match": true,
+        "Expected": 103.686,
+        "Actual": 103.686,
+        "Material": "NVL01"
+      },
+      {
+        "Before": 98.16,
+        "Match": true,
+        "Expected": 98.16,
+        "Actual": 98.16,
+        "Material": "NVL02"
+      },
+      {
+        "Before": 72.705,
+        "Match": true,
+        "Expected": 72.675,
+        "Actual": 72.675,
+        "Material": "NVL03"
+      },
+      {
+        "Before": 21.965,
+        "Match": true,
+        "Expected": 21.965,
+        "Actual": 21.965,
+        "Material": "NVL04"
+      },
+      {
+        "Before": 5.0,
+        "Match": true,
+        "Expected": 5.0,
+        "Actual": 5.0,
+        "Material": "NVL05"
+      },
+      {
+        "Before": 9.7,
+        "Match": true,
+        "Expected": 9.7,
+        "Actual": 9.7,
+        "Material": "NVL06"
+      },
+      {
+        "Before": 22.7,
+        "Match": true,
+        "Expected": 22.7,
+        "Actual": 22.7,
+        "Material": "NVL07"
+      },
+      {
+        "Before": 42.0,
+        "Match": true,
+        "Expected": 42.0,
+        "Actual": 42.0,
+        "Material": "NVL08"
+      },
+      {
+        "Before": 20.38,
+        "Match": true,
+        "Expected": 20.38,
+        "Actual": 20.38,
+        "Material": "NVL09"
+      },
+      {
+        "Before": 500.0,
+        "Match": true,
+        "Expected": 500.0,
+        "Actual": 500.0,
+        "Material": "NVL10"
+      },
+      {
+        "Before": 59.0,
+        "Match": true,
+        "Expected": 59.0,
+        "Actual": 59.0,
+        "Material": "NVL11"
+      },
+      {
+        "Before": 29.0,
+        "Match": true,
+        "Expected": 29.0,
+        "Actual": 29.0,
+        "Material": "NVL12"
+      }
+    ],
+    "Status": "PASS"
+  },
+  {
+    "Id": "T31-K09.points-no-customer",
+    "Expected": "CácbillkhônggắnKH:điểmvàlịchsửđiểmkhôngđổi",
+    "Actual": {
+      "PointsDelta": 0,
+      "HistoryDelta": 0
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "T31-K09.finance-payroll",
+    "Expected": "Chi+2000+3000+5000+280000=290000,4phiếuchi;khôngphiếuthucheckoutthứ2;1lương+280000",
+    "Actual": {
+      "InflowDelta": 0.0,
+      "PayrollAmountDelta": 280000.00,
+      "OutflowDelta": 290000.0,
+      "FinanceRowsDelta": 4,
+      "PayrollRowsDelta": 1
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "T31-K09.source-links-and-table",
+    "Expected": "1chinhập,2liênkếttrảnợtổng8000,1chilương,bànB0001trống",
+    "Actual": {
+      "PurchaseExpense": 1,
+      "DebtExpenseLinks": 2,
+      "DebtPaid": 8000.0,
+      "PayrollExpense": 1,
+      "OpenOnTable": 0
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "T31-K09.same-runtime-error-state",
+    "Expected": "StaleKK52903,sameconnectionruntime@@TRANCOUNT/XACT_STATE0:0,toànbảngkhôngđổi",
+    "Actual": {
+      "Transactions": 0,
+      "State": 0,
+      "AllTablesUnchanged": true,
+      "Error": 52903
+    },
+    "Status": "PASS"
+  }
+]

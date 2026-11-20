@@ -1,0 +1,11 @@
+{
+  "RunId": "20261102_153203_0031333c",
+  "Server": "localhost",
+  "Database": "CoffeeManager_Test_G08_20261102_153200_b19ad139_clean",
+  "Mode": "Clean",
+  "Status": "Failed",
+  "Created": false,
+  "Migrations": [],
+  "Cleanup": "Không tự xóa DB cài đặt; kiểm manifest/marker trước xử lý lỗi.",
+  "ErrorType": "MethodInvocationException"
+}

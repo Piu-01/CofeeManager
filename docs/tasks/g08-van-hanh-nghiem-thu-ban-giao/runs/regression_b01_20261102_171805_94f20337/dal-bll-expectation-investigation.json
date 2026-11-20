@@ -1,0 +1,10 @@
+{
+  "GuardSHA256": "3F663CC30BF1D58111517B6013EF36C6012D6F5BFB8A34B150A2019919314867",
+  "OriginalExpected": "Write path always RequiresReconciliation=true",
+  "UnitPostSendWritingFlag": "142unitPASS include mapperwritingtrue=>reconciletrue",
+  "OriginalEvidence": "dal-bll-regression.json retained unchanged",
+  "Kind": "Invalid execution-script expectation, not product failure",
+  "ExistingContract": "SalesRepository.Call:sent=false;OpenAsync;then sent=true;catch maps writing && sent",
+  "SourceGuardUnchangedSinceAcceptance": true,
+  "CorrectionPolicy": "Close original check; new before-send scenario in child run, do not overwrite original FAIL or change product guard"
+}

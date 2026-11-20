@@ -1,0 +1,5 @@
+{
+  "Reason": "Test host trong sandbox không trả kết quả; đã ngắt, không dùng làm chứng cứ sản phẩm. Suite có integration cần fixture riêng.",
+  "Status": "BLOCKED",
+  "Command": "dotnet test unfiltered Release"
+}

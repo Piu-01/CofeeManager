@@ -1,0 +1,8 @@
+{
+  "Database": "CoffeeManager_Test_G08_20261102_171805_94f20337_b01",
+  "Login": "G08_B01_20261102_171805_94f20337",
+  "DatabaseCreated": true,
+  "LoginCreated": true,
+  "InstallManifest": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g08-van-hanh-nghiem-thu-ban-giao\\runs\\regression_b01_20261102_171805_94f20337\\install.json",
+  "Policy": "Own test DB/principal; drop exact names after regression; no development changes"
+}

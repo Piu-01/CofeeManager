@@ -1,0 +1,11 @@
+{
+  "RunId": "20261102_153143_475c590b",
+  "Server": "localhost",
+  "Database": "CoffeeManager_Test_G08_20261102_153138_58c64c73_clean",
+  "Mode": "Clean",
+  "Status": "Failed",
+  "Created": false,
+  "Migrations": [],
+  "Cleanup": "Không tự xóa DB cài đặt; kiểm manifest/marker trước xử lý lỗi.",
+  "ErrorType": "ArgumentException"
+}

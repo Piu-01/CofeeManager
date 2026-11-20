@@ -1,0 +1,7 @@
+{
+  "Status": "BLOCKED",
+  "Reason": "Amount is stored in PHIEUTHUCHI.SoTien, not THANHTOAN_CONGNO; original attempt retained and DB cleaned",
+  "OriginalScriptSHA256": "8B05D5178B04C377AAC3E8FC2AA6C2F0968DB27F60F042D53F3083964A7B5743",
+  "ExpectedMoneyUnchanged": 8000,
+  "Kind": "Read-only verification SQL schema mismatch, not product FAIL"
+}

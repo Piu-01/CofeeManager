@@ -1,0 +1,31 @@
+{
+  "RunId": "20261102_160135_579468c5",
+  "DatabasesCreated": 6,
+  "DatabasesCleaned": [
+    "CoffeeManager_Test_G08_20261102_160135_579468c5_restoredevelopment",
+    "CoffeeManager_Test_G08_20261102_160135_579468c5_clean",
+    "CoffeeManager_Test_G08_20261102_160135_579468c5_demo21",
+    "CoffeeManager_Test_G08_20261102_160135_579468c5_restorev21",
+    "CoffeeManager_Test_G08_20261102_160135_579468c5_demo26",
+    "CoffeeManager_Test_G08_20261102_160135_579468c5_restorev26"
+  ],
+  "BackupsCleaned": [
+    "CoffeeManager_G08_20261102_160135_579468c5_development.bak",
+    "CoffeeManager_G08_20261102_160135_579468c5_v21.bak",
+    "CoffeeManager_G08_20261102_160135_579468c5_v26.bak"
+  ],
+  "LoginsCleaned": [
+    "G08_Runtime_20261102_160135_579468c5",
+    "G08_Setup_20261102_160135_579468c5"
+  ],
+  "Retained": [],
+  "SourceDevelopmentUnchanged": true,
+  "TemporaryPermissionRestored": true,
+  "AllG08DatabasesRemaining": [],
+  "OwnLoginsRemaining": [],
+  "TemporarySecretRemoved": true,
+  "DirectAttemptDatabasesCreated": 3,
+  "FrozenRunnerDatabasesCreated": 2,
+  "TotalCreatedInBatch": 11,
+  "CompletedAt": "2026-11-02T09:57:44.5143805Z"
+}

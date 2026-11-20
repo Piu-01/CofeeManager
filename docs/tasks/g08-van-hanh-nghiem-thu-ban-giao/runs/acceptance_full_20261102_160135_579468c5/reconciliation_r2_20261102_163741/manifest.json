@@ -1,0 +1,7 @@
+{
+  "Expected": "Same literal values6.946,-0.03,0; no expectation changes",
+  "SourcePackageUnchanged": true,
+  "Kind": "New execution run after PowerShell literal error",
+  "ScriptSHA256": "8B05D5178B04C377AAC3E8FC2AA6C2F0968DB27F60F042D53F3083964A7B5743",
+  "ParentRun": "20261102_160135_579468c5"
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "Expected": {
+      "Kind": "Connection",
+      "Number": 258,
+      "RequiresReconciliation": false
+    },
+    "Actual": {
+      "Message": "Không kết nối được dữ liệu; kiểm tra kết nối và thử lại.",
+      "Kind": "Connection",
+      "Type": "DataAccessException",
+      "Number": 258,
+      "RequiresReconciliation": false
+    },
+    "Status": "PASS",
+    "Id": "Offline-Read"
+  },
+  {
+    "Expected": {
+      "Kind": "Connection",
+      "Number": 258,
+      "RequiresReconciliation": true
+    },
+    "Actual": {
+      "Message": "Không kết nối được dữ liệu; kiểm tra kết nối và thử lại.",
+      "Kind": "Connection",
+      "Type": "UserOperationException",
+      "Number": 258,
+      "RequiresReconciliation": false
+    },
+    "Status": "FAIL",
+    "Id": "Offline-Write"
+  },
+  {
+    "Expected": {
+      "Kind": "Connection",
+      "Number": -2146893019,
+      "RequiresReconciliation": false
+    },
+    "Actual": {
+      "Message": "Không xác thực được chứng chỉ SQL Server; kiểm tra chứng chỉ và tên máy chủ.",
+      "Kind": "Connection",
+      "Type": "DataAccessException",
+      "Number": -2146893019,
+      "RequiresReconciliation": false
+    },
+    "Status": "PASS",
+    "Id": "Certificate-Read"
+  },
+  {
+    "Expected": {
+      "Kind": "Connection",
+      "Number": -2146893019,
+      "RequiresReconciliation": true
+    },
+    "Actual": {
+      "Message": "Không xác thực được chứng chỉ SQL Server; kiểm tra chứng chỉ và tên máy chủ.",
+      "Kind": "Connection",
+      "Type": "UserOperationException",
+      "Number": -2146893019,
+      "RequiresReconciliation": false
+    },
+    "Status": "FAIL",
+    "Id": "Certificate-Write"
+  }
+]

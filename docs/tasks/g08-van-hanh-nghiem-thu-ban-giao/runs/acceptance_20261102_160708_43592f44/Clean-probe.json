@@ -1,0 +1,13 @@
+{
+  "Kind": "acceptance",
+  "Mode": "Clean",
+  "Bootstrap": {
+    "State": "Completed",
+    "Role": "ADMIN",
+    "Runtime": "DB user WITHOUT LOGIN/CafeManagerApp; kh\u00F4ng thay ki\u1EC3m identity k\u1EBFt n\u1ED1i th\u1EADt"
+  },
+  "SchemaVersion": 27,
+  "E2ESubcases": [],
+  "E2ENative": "NOT RUN: clean fixture ch\u1EC9 bootstrap; E2E SQL d\u00F9ng nh\u00E1nh Demo",
+  "Status": "Succeeded"
+}

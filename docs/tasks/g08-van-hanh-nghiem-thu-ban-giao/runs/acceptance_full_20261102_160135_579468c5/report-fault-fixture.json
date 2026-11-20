@@ -1,0 +1,11 @@
+{
+  "Database": "CoffeeManager_Test_G08_20261102_160135_579468c5_clean",
+  "User": "G08NativeRuntime",
+  "Procedure": "dbo.sp_ReportSales",
+  "Approval": "User:Cho phép fixture tạm",
+  "Started": "2026-11-02T09:54:00.9578466Z",
+  "Applied": true,
+  "Restored": true,
+  "DeadlineSeconds": 45,
+  "Ended": "2026-11-02T09:54:31.1901988Z"
+}

@@ -1,0 +1,42 @@
+{
+  "Batch": "20261102_160135_579468c5",
+  "SourceFilesFrozen": 460,
+  "PackageSHA256": "D1F7A782FB0C083DE02D30D0597DE4EC1AF68F138D17C36BF3143EBF88D8C54A",
+  "Tasks": [
+    {
+      "BLOCKED": 0,
+      "Task": "T30",
+      "PASS": 8,
+      "NOT_RUN": 0,
+      "FAIL": 1
+    },
+    {
+      "BLOCKED": 10,
+      "Task": "T31",
+      "PASS": 1,
+      "NOT_RUN": 0,
+      "FAIL": 0
+    },
+    {
+      "BLOCKED": 3,
+      "Task": "T32",
+      "PASS": 6,
+      "NOT_RUN": 0,
+      "FAIL": 0
+    }
+  ],
+  "Total": {
+    "BLOCKED": 13,
+    "OriginalIDs": 29,
+    "PASS": 15,
+    "NOT_RUN": 0,
+    "FAIL": 1
+  },
+  "ProductBugs": [
+    "G08-B01"
+  ],
+  "SourceOrMigrationFixed": false,
+  "BypassGate": "BLOCKED: native modal/session/legacy flags not fully verified",
+  "Visual": "SKIPPED by assignment",
+  "DPI100_150": "NOT RUN"
+}

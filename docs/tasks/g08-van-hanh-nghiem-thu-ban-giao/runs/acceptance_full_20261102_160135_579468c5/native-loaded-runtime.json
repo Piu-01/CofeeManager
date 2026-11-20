@@ -1,0 +1,10 @@
+[
+  {
+    "Name": "coreclr.dll",
+    "Version": "10,0,1326,50504 @Commit: 4099f83977f4d29604a9aeb971fb0a7bc1d5f699"
+  },
+  {
+    "Name": "System.Windows.Forms.dll",
+    "Version": "10.0.1326.50504"
+  }
+]

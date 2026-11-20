@@ -1,0 +1,7 @@
+{
+  "Mode": "Offline",
+  "Purpose": "Native acceptance case; no credential in evidence",
+  "Database": "CoffeeManager_Test_G08_20261102_160135_579468c5_restorev26",
+  "Pid": 17904,
+  "Server": "tcp:127.0.0.1,1"
+}

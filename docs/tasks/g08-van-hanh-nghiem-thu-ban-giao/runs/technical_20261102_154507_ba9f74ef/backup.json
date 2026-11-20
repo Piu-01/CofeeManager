@@ -1,0 +1,494 @@
+{
+  "Server": "localhost",
+  "Database": "CoffeeManager_Test_G08_20261102_154507_ba9f74ef_demo",
+  "Status": "Verified",
+  "BackupFile": "C:\\Program Files\\Microsoft SQL Server\\MSSQL17.MSSQLSERVER\\MSSQL\\Backup\\CoffeeManager_G08_20261102_154507_ba9f74ef.bak",
+  "Kind": "COPY_ONLY CHECKSUM",
+  "StartedAt": "2026-11-02T08:45:20.4457039Z",
+  "Snapshot": [
+    {
+      "Table": "AppDatabaseIdentity",
+      "Rows": 1,
+      "Hash": "563953E71514D5EBE314E4B5E04919B80ED86F6FB88997ED0FED9883BFBC4864"
+    },
+    {
+      "Table": "AppSetupState",
+      "Rows": 1,
+      "Hash": "CA521DA3C5C4089A91975161C14B454EF12A3210197888A3ADAC629BEE0AB1AE"
+    },
+    {
+      "Table": "AttendanceBatchReceipt",
+      "Rows": 0,
+      "Hash": ""
+    },
+    {
+      "Table": "AttendanceBatchReceiptLine",
+      "Rows": 0,
+      "Hash": ""
+    },
+    {
+      "Table": "BAN",
+      "Rows": 10,
+      "Hash": "0E4E41A4BD796B5D406B92F0836ABAE8DC68A9179455BA01E2A95143FC179F75"
+    },
+    {
+      "Table": "BANGLUONG",
+      "Rows": 2,
+      "Hash": "E0224734303C61CF16AAC8C1CB0864D74433FE678F33AE553C89CD799B582F1A"
+    },
+    {
+      "Table": "CALAMVIEC",
+      "Rows": 10,
+      "Hash": "19C4EA0E4AFF782E9E03CE983E298E89F54EAA69D30A8F491940FA3AA05D9E97"
+    },
+    {
+      "Table": "CatalogCreateReceipt",
+      "Rows": 0,
+      "Hash": ""
+    },
+    {
+      "Table": "CHAMCONG",
+      "Rows": 10,
+      "Hash": "92DF9159BB74AFD1EF3CB56AC47BD411A3AAF908C4945F170A61C7FDB5DEC0F6"
+    },
+    {
+      "Table": "CHITIET_HD",
+      "Rows": 18,
+      "Hash": "DA4EF8A4F37D9C96B3A16F24DE4618A6FEF1E76A24F367E5EE6A2AF1C891BC5C"
+    },
+    {
+      "Table": "CHITIET_KK",
+      "Rows": 12,
+      "Hash": "782A220F5B7FEE2D958682AC801D312CB2ADBFC9E0DEEF0E1FF178C4C05B344A"
+    },
+    {
+      "Table": "CHITIET_PN",
+      "Rows": 12,
+      "Hash": "A7E8F064C953B65A26AAB66894109C7D3C27F2A5886E6E2225937B64855D0536"
+    },
+    {
+      "Table": "CHITIET_PX",
+      "Rows": 10,
+      "Hash": "3BAC295F7F4BCAB0FC28987ED62225E2658C462F38FB6946997EDD216685F5BF"
+    },
+    {
+      "Table": "CHITIET_THANHTOAN",
+      "Rows": 10,
+      "Hash": "0D3418F1936106944E62FCDF44B2463222D8AF4382C5AEA1E660D93F2C5AB3F2"
+    },
+    {
+      "Table": "CHUCVU",
+      "Rows": 10,
+      "Hash": "888211D67F6D511D7AA051E8369C8B9203D8277D30B119F3221F09B50887F6CE"
+    },
+    {
+      "Table": "CONGNO_NCC",
+      "Rows": 9,
+      "Hash": "DF5C37A834C69D23211CAF6FC6E796DEDBFB7C9BD677DE1C0820D4695EE4FD31"
+    },
+    {
+      "Table": "CONGTHUC",
+      "Rows": 24,
+      "Hash": "517901E22845F31277D480BC804E5FE2780ED3000693206D84658B33A6EB2BFE"
+    },
+    {
+      "Table": "CustomerOpening",
+      "Rows": 10,
+      "Hash": "A5147DC31448951533F5B518281FFB46D40D8268675E4FE45DBAAE541A98DD1E"
+    },
+    {
+      "Table": "DANHMUC_SP",
+      "Rows": 10,
+      "Hash": "84EB24E5FE5F52F2EC9CA64F198433FCAF9AC06A0F76D4DD40E1E7A6532C5F88"
+    },
+    {
+      "Table": "DANHMUC_THUCHI",
+      "Rows": 12,
+      "Hash": "99F05520FCD83CE53755971A5DD860546FBBB410CDF5B991879EFD9A1EFBD7DF"
+    },
+    {
+      "Table": "DOITACGIAOHANG",
+      "Rows": 2,
+      "Hash": "CDBB4329CFBBC02F6C1DC111A9F6CFF30DAF2EE91D6A17231DB13B5105DA9D8F"
+    },
+    {
+      "Table": "G03OperationReceipt",
+      "Rows": 0,
+      "Hash": ""
+    },
+    {
+      "Table": "HANGTHANHVIEN",
+      "Rows": 10,
+      "Hash": "91E5BE363056C1DC9AA00F20D680F3BCE7576D4F05658379E18BC6D6681DB5C2"
+    },
+    {
+      "Table": "HOADON",
+      "Rows": 10,
+      "Hash": "A6640D040D3BECC76D79AF33782209A8DC44FBFD40BCBC5C74B05E28C033D816"
+    },
+    {
+      "Table": "HoaDonUuDaiSnapshot",
+      "Rows": 9,
+      "Hash": "8DD8DED977637D522A7B3AD464492F2148FD0444D718AFB075D2369B67F3E9AA"
+    },
+    {
+      "Table": "KHACHHANG",
+      "Rows": 10,
+      "Hash": "CE84EAA8E3679242F1BE5D0C4FFEF34B0C9AAC674E5085E85A62A6420657DD67"
+    },
+    {
+      "Table": "KHUVUC",
+      "Rows": 10,
+      "Hash": "CAF52DE7A7891070EDD057BA2716A3A426E103D81563DB46143723609FB38928"
+    },
+    {
+      "Table": "KHUYENMAI",
+      "Rows": 11,
+      "Hash": "A524BBB2CDF4B2119DBE0F0CD0C904BAA200F0809C27C9F90A6AD1FB6079CB08"
+    },
+    {
+      "Table": "LICHSU_DIEM",
+      "Rows": 10,
+      "Hash": "3F9A88CED917A197E9BF21F8D8F017C1965F12F21FEF9F01ED04649E16BB542B"
+    },
+    {
+      "Table": "LoyaltyPolicyState",
+      "Rows": 1,
+      "Hash": "2D040DFEC4ED8D9C3A1956D31DE538479BD22A80D003B1D1711B57C8B12BA6A4"
+    },
+    {
+      "Table": "MaterialOpening",
+      "Rows": 12,
+      "Hash": "659F854A2A4C5B513EF3D2F72BCA5F6D34C4BE73CA03C8FA354BEE0DB6B4267A"
+    },
+    {
+      "Table": "NGUYENVATLIEU",
+      "Rows": 12,
+      "Hash": "6DB90157A153F37849BFCF3E1AD462508DDB1CC1662327643A31ECE2547E0BE2"
+    },
+    {
+      "Table": "NHACUNGCAP",
+      "Rows": 10,
+      "Hash": "F5BF04F55AFC5440FB36D6B4E69A06D34FB01029212E7187D0128C38C78CE8AA"
+    },
+    {
+      "Table": "NHANVIEN",
+      "Rows": 10,
+      "Hash": "E272DDD26E3685CFB625C9E4DF2B2025B7638C0B35BB2F94261E9A451E014948"
+    },
+    {
+      "Table": "PaymentMethodSupport",
+      "Rows": 10,
+      "Hash": "399D91F0C612251AC445784806E52E9EEC7CEFC46FBF82F156E11404C86F2284"
+    },
+    {
+      "Table": "PayrollAttendanceSnapshot",
+      "Rows": 0,
+      "Hash": ""
+    },
+    {
+      "Table": "PHIEUKIEMKE",
+      "Rows": 1,
+      "Hash": "E0A77B15B4E1DF1F2425F1DDF023DD777DC94173C56B9F8D18B389493BD892B7"
+    },
+    {
+      "Table": "PHIEUNHAP",
+      "Rows": 10,
+      "Hash": "67689CB2C4358D31D8AFF29D41A4B34E2B2B468B2DACB4FC38DACA616B6AD85D"
+    },
+    {
+      "Table": "PHIEUTHUCHI",
+      "Rows": 16,
+      "Hash": "84CF8B94B48FA10F7703B2020DA5C72CDA0C4CB5410FFF1071A68CE7FDC9665A"
+    },
+    {
+      "Table": "PHIEUXUAT",
+      "Rows": 10,
+      "Hash": "B22EE0676EF3A135B24A67E64821AE50DC0ADDA487619387B9A4D42782E5AE89"
+    },
+    {
+      "Table": "PHUONGTHUCTT",
+      "Rows": 10,
+      "Hash": "872E9E642FCD70BBA6175220985F94988ABC65BD43094CAFED8AEEC47F82CB0A"
+    },
+    {
+      "Table": "SANPHAM",
+      "Rows": 10,
+      "Hash": "F8FDA83D8EF4CF4A02E210227FCA56C333A8B32E5175AF93A708D119DFD090F5"
+    },
+    {
+      "Table": "SystemExpenseCategory",
+      "Rows": 3,
+      "Hash": "6314A5B30E2F7F4BA78378620347949D3D8E612C734063A0D32E98A6FB497E20"
+    },
+    {
+      "Table": "TAIKHOAN",
+      "Rows": 3,
+      "Hash": "65B24C254F1E9E37CC245F9D5DA0A48F6AAC0A7AA9C59E828CC44C9ED0494B7B"
+    },
+    {
+      "Table": "TAISAN_CODINH",
+      "Rows": 10,
+      "Hash": "A1BADD762E4D36D2A22B6A8BF482DCC3CF4105E33247C3F93CBFEC7FCFD109BE"
+    },
+    {
+      "Table": "THANHTOAN_CONGNO",
+      "Rows": 6,
+      "Hash": "109FFB6F13CBC88785F84DD3BC77490F536E41E77BA035D17DE49A84B0142242"
+    },
+    {
+      "Table": "TIEUHAO_HOADON",
+      "Rows": 37,
+      "Hash": "C9107AC3284D785C41FC5340404C19D35AEC0FDDBCA446E50E239AB65AF352E9"
+    },
+    {
+      "Table": "VAITRO",
+      "Rows": 3,
+      "Hash": "B364B2CDCD304AEBA21CE7B043D05BA050AE5E938C91780C334304A9DBFCF582"
+    }
+  ],
+  "BackupSetGUID": "7c707eab-601e-40ce-ae89-3fd135dcab1c",
+  "AfterSnapshot": [
+    {
+      "Table": "AppDatabaseIdentity",
+      "Rows": 1,
+      "Hash": "563953E71514D5EBE314E4B5E04919B80ED86F6FB88997ED0FED9883BFBC4864"
+    },
+    {
+      "Table": "AppSetupState",
+      "Rows": 1,
+      "Hash": "CA521DA3C5C4089A91975161C14B454EF12A3210197888A3ADAC629BEE0AB1AE"
+    },
+    {
+      "Table": "AttendanceBatchReceipt",
+      "Rows": 0,
+      "Hash": ""
+    },
+    {
+      "Table": "AttendanceBatchReceiptLine",
+      "Rows": 0,
+      "Hash": ""
+    },
+    {
+      "Table": "BAN",
+      "Rows": 10,
+      "Hash": "0E4E41A4BD796B5D406B92F0836ABAE8DC68A9179455BA01E2A95143FC179F75"
+    },
+    {
+      "Table": "BANGLUONG",
+      "Rows": 2,
+      "Hash": "E0224734303C61CF16AAC8C1CB0864D74433FE678F33AE553C89CD799B582F1A"
+    },
+    {
+      "Table": "CALAMVIEC",
+      "Rows": 10,
+      "Hash": "19C4EA0E4AFF782E9E03CE983E298E89F54EAA69D30A8F491940FA3AA05D9E97"
+    },
+    {
+      "Table": "CatalogCreateReceipt",
+      "Rows": 0,
+      "Hash": ""
+    },
+    {
+      "Table": "CHAMCONG",
+      "Rows": 10,
+      "Hash": "92DF9159BB74AFD1EF3CB56AC47BD411A3AAF908C4945F170A61C7FDB5DEC0F6"
+    },
+    {
+      "Table": "CHITIET_HD",
+      "Rows": 18,
+      "Hash": "DA4EF8A4F37D9C96B3A16F24DE4618A6FEF1E76A24F367E5EE6A2AF1C891BC5C"
+    },
+    {
+      "Table": "CHITIET_KK",
+      "Rows": 12,
+      "Hash": "782A220F5B7FEE2D958682AC801D312CB2ADBFC9E0DEEF0E1FF178C4C05B344A"
+    },
+    {
+      "Table": "CHITIET_PN",
+      "Rows": 12,
+      "Hash": "A7E8F064C953B65A26AAB66894109C7D3C27F2A5886E6E2225937B64855D0536"
+    },
+    {
+      "Table": "CHITIET_PX",
+      "Rows": 10,
+      "Hash": "3BAC295F7F4BCAB0FC28987ED62225E2658C462F38FB6946997EDD216685F5BF"
+    },
+    {
+      "Table": "CHITIET_THANHTOAN",
+      "Rows": 10,
+      "Hash": "0D3418F1936106944E62FCDF44B2463222D8AF4382C5AEA1E660D93F2C5AB3F2"
+    },
+    {
+      "Table": "CHUCVU",
+      "Rows": 10,
+      "Hash": "888211D67F6D511D7AA051E8369C8B9203D8277D30B119F3221F09B50887F6CE"
+    },
+    {
+      "Table": "CONGNO_NCC",
+      "Rows": 9,
+      "Hash": "DF5C37A834C69D23211CAF6FC6E796DEDBFB7C9BD677DE1C0820D4695EE4FD31"
+    },
+    {
+      "Table": "CONGTHUC",
+      "Rows": 24,
+      "Hash": "517901E22845F31277D480BC804E5FE2780ED3000693206D84658B33A6EB2BFE"
+    },
+    {
+      "Table": "CustomerOpening",
+      "Rows": 10,
+      "Hash": "A5147DC31448951533F5B518281FFB46D40D8268675E4FE45DBAAE541A98DD1E"
+    },
+    {
+      "Table": "DANHMUC_SP",
+      "Rows": 10,
+      "Hash": "84EB24E5FE5F52F2EC9CA64F198433FCAF9AC06A0F76D4DD40E1E7A6532C5F88"
+    },
+    {
+      "Table": "DANHMUC_THUCHI",
+      "Rows": 12,
+      "Hash": "99F05520FCD83CE53755971A5DD860546FBBB410CDF5B991879EFD9A1EFBD7DF"
+    },
+    {
+      "Table": "DOITACGIAOHANG",
+      "Rows": 2,
+      "Hash": "CDBB4329CFBBC02F6C1DC111A9F6CFF30DAF2EE91D6A17231DB13B5105DA9D8F"
+    },
+    {
+      "Table": "G03OperationReceipt",
+      "Rows": 0,
+      "Hash": ""
+    },
+    {
+      "Table": "HANGTHANHVIEN",
+      "Rows": 10,
+      "Hash": "91E5BE363056C1DC9AA00F20D680F3BCE7576D4F05658379E18BC6D6681DB5C2"
+    },
+    {
+      "Table": "HOADON",
+      "Rows": 10,
+      "Hash": "A6640D040D3BECC76D79AF33782209A8DC44FBFD40BCBC5C74B05E28C033D816"
+    },
+    {
+      "Table": "HoaDonUuDaiSnapshot",
+      "Rows": 9,
+      "Hash": "8DD8DED977637D522A7B3AD464492F2148FD0444D718AFB075D2369B67F3E9AA"
+    },
+    {
+      "Table": "KHACHHANG",
+      "Rows": 10,
+      "Hash": "CE84EAA8E3679242F1BE5D0C4FFEF34B0C9AAC674E5085E85A62A6420657DD67"
+    },
+    {
+      "Table": "KHUVUC",
+      "Rows": 10,
+      "Hash": "CAF52DE7A7891070EDD057BA2716A3A426E103D81563DB46143723609FB38928"
+    },
+    {
+      "Table": "KHUYENMAI",
+      "Rows": 11,
+      "Hash": "A524BBB2CDF4B2119DBE0F0CD0C904BAA200F0809C27C9F90A6AD1FB6079CB08"
+    },
+    {
+      "Table": "LICHSU_DIEM",
+      "Rows": 10,
+      "Hash": "3F9A88CED917A197E9BF21F8D8F017C1965F12F21FEF9F01ED04649E16BB542B"
+    },
+    {
+      "Table": "LoyaltyPolicyState",
+      "Rows": 1,
+      "Hash": "2D040DFEC4ED8D9C3A1956D31DE538479BD22A80D003B1D1711B57C8B12BA6A4"
+    },
+    {
+      "Table": "MaterialOpening",
+      "Rows": 12,
+      "Hash": "659F854A2A4C5B513EF3D2F72BCA5F6D34C4BE73CA03C8FA354BEE0DB6B4267A"
+    },
+    {
+      "Table": "NGUYENVATLIEU",
+      "Rows": 12,
+      "Hash": "6DB90157A153F37849BFCF3E1AD462508DDB1CC1662327643A31ECE2547E0BE2"
+    },
+    {
+      "Table": "NHACUNGCAP",
+      "Rows": 10,
+      "Hash": "F5BF04F55AFC5440FB36D6B4E69A06D34FB01029212E7187D0128C38C78CE8AA"
+    },
+    {
+      "Table": "NHANVIEN",
+      "Rows": 10,
+      "Hash": "E272DDD26E3685CFB625C9E4DF2B2025B7638C0B35BB2F94261E9A451E014948"
+    },
+    {
+      "Table": "PaymentMethodSupport",
+      "Rows": 10,
+      "Hash": "399D91F0C612251AC445784806E52E9EEC7CEFC46FBF82F156E11404C86F2284"
+    },
+    {
+      "Table": "PayrollAttendanceSnapshot",
+      "Rows": 0,
+      "Hash": ""
+    },
+    {
+      "Table": "PHIEUKIEMKE",
+      "Rows": 1,
+      "Hash": "E0A77B15B4E1DF1F2425F1DDF023DD777DC94173C56B9F8D18B389493BD892B7"
+    },
+    {
+      "Table": "PHIEUNHAP",
+      "Rows": 10,
+      "Hash": "67689CB2C4358D31D8AFF29D41A4B34E2B2B468B2DACB4FC38DACA616B6AD85D"
+    },
+    {
+      "Table": "PHIEUTHUCHI",
+      "Rows": 16,
+      "Hash": "84CF8B94B48FA10F7703B2020DA5C72CDA0C4CB5410FFF1071A68CE7FDC9665A"
+    },
+    {
+      "Table": "PHIEUXUAT",
+      "Rows": 10,
+      "Hash": "B22EE0676EF3A135B24A67E64821AE50DC0ADDA487619387B9A4D42782E5AE89"
+    },
+    {
+      "Table": "PHUONGTHUCTT",
+      "Rows": 10,
+      "Hash": "872E9E642FCD70BBA6175220985F94988ABC65BD43094CAFED8AEEC47F82CB0A"
+    },
+    {
+      "Table": "SANPHAM",
+      "Rows": 10,
+      "Hash": "F8FDA83D8EF4CF4A02E210227FCA56C333A8B32E5175AF93A708D119DFD090F5"
+    },
+    {
+      "Table": "SystemExpenseCategory",
+      "Rows": 3,
+      "Hash": "6314A5B30E2F7F4BA78378620347949D3D8E612C734063A0D32E98A6FB497E20"
+    },
+    {
+      "Table": "TAIKHOAN",
+      "Rows": 3,
+      "Hash": "65B24C254F1E9E37CC245F9D5DA0A48F6AAC0A7AA9C59E828CC44C9ED0494B7B"
+    },
+    {
+      "Table": "TAISAN_CODINH",
+      "Rows": 10,
+      "Hash": "A1BADD762E4D36D2A22B6A8BF482DCC3CF4105E33247C3F93CBFEC7FCFD109BE"
+    },
+    {
+      "Table": "THANHTOAN_CONGNO",
+      "Rows": 6,
+      "Hash": "109FFB6F13CBC88785F84DD3BC77490F536E41E77BA035D17DE49A84B0142242"
+    },
+    {
+      "Table": "TIEUHAO_HOADON",
+      "Rows": 37,
+      "Hash": "C9107AC3284D785C41FC5340404C19D35AEC0FDDBCA446E50E239AB65AF352E9"
+    },
+    {
+      "Table": "VAITRO",
+      "Rows": 3,
+      "Hash": "B364B2CDCD304AEBA21CE7B043D05BA050AE5E938C91780C334304A9DBFCF582"
+    }
+  ],
+  "SourceStable": true
+}

@@ -1,0 +1,37 @@
+{
+  "Status": "CandidateBuilt",
+  "Path": "artifacts/g08/20261102_155435_c6b76b42/candidate.zip",
+  "RID": "win-x64",
+  "SelfContained": false,
+  "SchemaVersion": 27,
+  "ArchiveSHA256": "D1F7A782FB0C083DE02D30D0597DE4EC1AF68F138D17C36BF3143EBF88D8C54A",
+  "FileCount": 94,
+  "UnpackedFilesVerified": 94,
+  "InventoryStatus": "Succeeded",
+  "InventoryIssues": 0,
+  "RuntimeFrameworks": [
+    {
+      "name": "Microsoft.NETCore.App",
+      "version": "10.0.0"
+    },
+    {
+      "name": "Microsoft.WindowsDesktop.App",
+      "version": "10.0.0"
+    }
+  ],
+  "InstalledRuntimes": [
+    "Microsoft.AspNetCore.App 8.0.31",
+    "Microsoft.AspNetCore.App 10.0.12",
+    "Microsoft.NETCore.App 8.0.31",
+    "Microsoft.NETCore.App 10.0.12",
+    "Microsoft.NETCore.App 10.0.13",
+    "Microsoft.WindowsDesktop.App 8.0.31",
+    "Microsoft.WindowsDesktop.App 10.0.12",
+    "Microsoft.WindowsDesktop.App 10.0.13"
+  ],
+  "Build": "Debug/Release successful; NU1900 warnings, not vulnerability audit clean",
+  "Acceptance": "15 PASS /1FAIL /13BLOCKED on29IDs; candidate remains not accepted",
+  "NativeBypassRegression": "BLOCKED:partial native/SQL evidence, legacy env and full session cases not verified",
+  "LocationPolicy": "Candidate/integrity unpack retained under ignored artifacts; no test DB or backup retained",
+  "AcceptanceBatch": "20261102_160135_579468c5"
+}

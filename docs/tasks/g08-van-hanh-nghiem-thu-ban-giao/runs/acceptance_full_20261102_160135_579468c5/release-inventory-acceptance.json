@@ -1,0 +1,45 @@
+{
+  "Status": "Succeeded",
+  "SourceFiles": 280,
+  "PackageFiles": 95,
+  "Assemblies": {
+    "publish/CafeManager.Business": {
+      "Hash": "731CB9E23B6CFE3B65CE7C229DC770E275D28955E66F3B179D6B4660B7F05349",
+      "TypeCount": 195
+    },
+    "Release/CafeManager.DataAccess": {
+      "Hash": "1089B5E4538816BD11891317186AE85BB15424BDC7DEB0FA5E10FC96C8E6E6AD",
+      "TypeCount": 159
+    },
+    "publish/CafeManager.DataAccess": {
+      "Hash": "1089B5E4538816BD11891317186AE85BB15424BDC7DEB0FA5E10FC96C8E6E6AD",
+      "TypeCount": 159
+    },
+    "Release/CafeManager.Business": {
+      "Hash": "731CB9E23B6CFE3B65CE7C229DC770E275D28955E66F3B179D6B4660B7F05349",
+      "TypeCount": 195
+    },
+    "Release/CafeManager.WinForms": {
+      "Hash": "D806DB66F202B1A01FF9DE186FDDD59F58D9FD930D62CB87A7E1FE1B6D5D11D8",
+      "TypeCount": 689
+    },
+    "Debug/CafeManager.Business": {
+      "Hash": "8789DBBDDBE14777E6B4E4C2DB193EDC3DFACCE9C9892E56FA814962675322DE",
+      "TypeCount": 195
+    },
+    "Debug/CafeManager.DataAccess": {
+      "Hash": "AA1B843162F0ABD590E18B6019D20760E547E846DEC0D8EF46C72DCAAE0BDEB9",
+      "TypeCount": 159
+    },
+    "Debug/CafeManager.WinForms": {
+      "Hash": "27E7FA501A5C578D3BCEC2A0734F0C9A02233D1C02D1E7EC32C9200130B67A17",
+      "TypeCount": 693
+    },
+    "publish/CafeManager.WinForms": {
+      "Hash": "519516A4F79A7E9889C61B6F806615888778C71E0C9726D8A37EA787190A51FB",
+      "TypeCount": 689
+    }
+  },
+  "Issues": [],
+  "Native": "NOT RUN: không thay kiểm login/logout/phiên/quyền với biến cũ"
+}

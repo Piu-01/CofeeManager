@@ -1,0 +1,70 @@
+[
+  {
+    "Expected": {
+      "Number": 258,
+      "Kind": "Connection",
+      "RequiresReconciliation": false,
+      "Sent": false
+    },
+    "Status": "PASS",
+    "Id": "Offline-ReadBeforeSend",
+    "Actual": {
+      "Message": "Không kết nối được dữ liệu; kiểm tra kết nối và thử lại.",
+      "Number": 258,
+      "Kind": "Connection",
+      "RequiresReconciliation": false,
+      "Type": "DataAccessException"
+    }
+  },
+  {
+    "Expected": {
+      "Number": 258,
+      "Kind": "Connection",
+      "RequiresReconciliation": false,
+      "Sent": false
+    },
+    "Status": "PASS",
+    "Id": "Offline-WriteBeforeSend",
+    "Actual": {
+      "Message": "Không kết nối được dữ liệu; kiểm tra kết nối và thử lại.",
+      "Number": 258,
+      "Kind": "Connection",
+      "RequiresReconciliation": false,
+      "Type": "UserOperationException"
+    }
+  },
+  {
+    "Expected": {
+      "Number": -2146893019,
+      "Kind": "Connection",
+      "RequiresReconciliation": false,
+      "Sent": false
+    },
+    "Status": "PASS",
+    "Id": "Certificate-ReadBeforeSend",
+    "Actual": {
+      "Message": "Không xác thực được chứng chỉ SQL Server; kiểm tra chứng chỉ và tên máy chủ.",
+      "Number": -2146893019,
+      "Kind": "Connection",
+      "RequiresReconciliation": false,
+      "Type": "DataAccessException"
+    }
+  },
+  {
+    "Expected": {
+      "Number": -2146893019,
+      "Kind": "Connection",
+      "RequiresReconciliation": false,
+      "Sent": false
+    },
+    "Status": "PASS",
+    "Id": "Certificate-WriteBeforeSend",
+    "Actual": {
+      "Message": "Không xác thực được chứng chỉ SQL Server; kiểm tra chứng chỉ và tên máy chủ.",
+      "Number": -2146893019,
+      "Kind": "Connection",
+      "RequiresReconciliation": false,
+      "Type": "UserOperationException"
+    }
+  }
+]

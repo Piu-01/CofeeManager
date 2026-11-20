@@ -1,0 +1,29 @@
+{
+  "RecordedAt": "2026-11-02T08:55:36.2043649Z",
+  "Server": "localhost",
+  "SQLVersion": "17.0.1000.7",
+  "Edition": "Enterprise Developer Edition (64-bit)",
+  "ActualCreated": 13,
+  "CleanedIncludingRecovery": 13,
+  "RemainingDatabases": [],
+  "BackupFiles": [
+    {
+      "File": "CoffeeManager_G08_20261102_154211_506f857f.bak",
+      "Exists": 0
+    },
+    {
+      "File": "CoffeeManager_G08_20261102_154357_0cd6667f.bak",
+      "Exists": 0
+    },
+    {
+      "File": "CoffeeManager_G08_20261102_154507_ba9f74ef.bak",
+      "Exists": 0
+    },
+    {
+      "File": "CoffeeManager_G08_20261102_155211_7e943c93.bak",
+      "Exists": 0
+    }
+  ],
+  "DevelopmentChanged": false,
+  "Acceptance": "NOT RUN"
+}

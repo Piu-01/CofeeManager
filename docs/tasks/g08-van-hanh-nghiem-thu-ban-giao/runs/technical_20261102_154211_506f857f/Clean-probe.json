@@ -1,0 +1,11 @@
+{
+  "Kind": "technical",
+  "Mode": "Clean",
+  "Bootstrap": {
+    "State": "Completed",
+    "Role": "ADMIN",
+    "Runtime": "DB user WITHOUT LOGIN/CafeManagerApp; kh\u00F4ng thay ki\u1EC3m identity k\u1EBFt n\u1ED1i th\u1EADt"
+  },
+  "SchemaVersion": 27,
+  "Status": "Succeeded"
+}

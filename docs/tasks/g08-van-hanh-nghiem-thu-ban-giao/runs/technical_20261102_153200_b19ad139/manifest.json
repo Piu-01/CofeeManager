@@ -1,0 +1,16 @@
+{
+  "RunId": "20261102_153200_b19ad139",
+  "Kind": "technical",
+  "Server": "localhost",
+  "Status": "Failed",
+  "Created": [
+    {
+      "Database": "CoffeeManager_Test_G08_20261102_153200_b19ad139_clean",
+      "InstallManifest": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g08-van-hanh-nghiem-thu-ban-giao\\runs\\technical_20261102_153200_b19ad139\\Clean-install.json"
+    }
+  ],
+  "Cleaned": [],
+  "Retained": [],
+  "SourceUnchanged": true,
+  "Error": "Exception calling \"Open\" with \"0\" argument(s): \"A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)\""
+}

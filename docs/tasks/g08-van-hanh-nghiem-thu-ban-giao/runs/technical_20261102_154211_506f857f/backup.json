@@ -1,0 +1,10 @@
+{
+  "Server": "localhost",
+  "Database": "CoffeeManager_Test_G08_20261102_154211_506f857f_demo",
+  "Status": "Failed",
+  "BackupFile": "C:\\Program Files\\Microsoft SQL Server\\MSSQL17.MSSQLSERVER\\MSSQL\\Backup\\CoffeeManager_G08_20261102_154211_506f857f.bak",
+  "Kind": "COPY_ONLY CHECKSUM",
+  "StartedAt": "2026-11-02T08:42:29.0279089Z",
+  "Snapshot": [],
+  "ErrorType": "MethodInvocationException"
+}

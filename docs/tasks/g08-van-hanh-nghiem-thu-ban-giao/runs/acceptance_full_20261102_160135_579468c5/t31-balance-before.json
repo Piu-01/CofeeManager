@@ -1,0 +1,15 @@
+{
+  "Bills": 10,
+  "Lines": 18,
+  "Payments": 10,
+  "PaymentAmount": 965100.0,
+  "Consumption": 37,
+  "PointHistory": 10,
+  "Points": 39874,
+  "FinanceRows": 16,
+  "Outflow": 47500000.0,
+  "Inflow": 0.0,
+  "PayrollRows": 2,
+  "PayrollAmount": 17800000.00,
+  "Stocks": "[{\"MaNVL\":\"NVL01\",\"SoLuongTon\":96.7400},{\"MaNVL\":\"NVL02\",\"SoLuongTon\":98.1600},{\"MaNVL\":\"NVL03\",\"SoLuongTon\":72.7050},{\"MaNVL\":\"NVL04\",\"SoLuongTon\":21.9650},{\"MaNVL\":\"NVL05\",\"SoLuongTon\":5.0000},{\"MaNVL\":\"NVL06\",\"SoLuongTon\":9.7000},{\"MaNVL\":\"NVL07\",\"SoLuongTon\":22.7000},{\"MaNVL\":\"NVL08\",\"SoLuongTon\":42.0000},{\"MaNVL\":\"NVL09\",\"SoLuongTon\":20.3800},{\"MaNVL\":\"NVL10\",\"SoLuongTon\":500.0000},{\"MaNVL\":\"NVL11\",\"SoLuongTon\":59.0000},{\"MaNVL\":\"NVL12\",\"SoLuongTon\":29.0000}]"
+}

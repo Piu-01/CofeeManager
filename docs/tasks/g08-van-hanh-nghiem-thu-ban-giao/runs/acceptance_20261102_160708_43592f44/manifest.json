@@ -1,0 +1,25 @@
+{
+  "RunId": "20261102_160708_43592f44",
+  "Kind": "acceptance",
+  "Server": "localhost",
+  "Status": "Succeeded",
+  "Created": [
+    {
+      "InstallManifest": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g08-van-hanh-nghiem-thu-ban-giao\\runs\\acceptance_20261102_160708_43592f44\\Clean-install.json",
+      "Database": "CoffeeManager_Test_G08_20261102_160708_43592f44_clean",
+      "Kind": "Install"
+    },
+    {
+      "InstallManifest": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g08-van-hanh-nghiem-thu-ban-giao\\runs\\acceptance_20261102_160708_43592f44\\Demo-install.json",
+      "Database": "CoffeeManager_Test_G08_20261102_160708_43592f44_demo",
+      "Kind": "Install"
+    }
+  ],
+  "Cleaned": [
+    "CoffeeManager_Test_G08_20261102_160708_43592f44_clean",
+    "CoffeeManager_Test_G08_20261102_160708_43592f44_demo"
+  ],
+  "Retained": [],
+  "SourceUnchanged": true,
+  "Native": "NOT RUN; chạy native-test-guide và publish-guide riêng, không suy PASS từ runner này."
+}

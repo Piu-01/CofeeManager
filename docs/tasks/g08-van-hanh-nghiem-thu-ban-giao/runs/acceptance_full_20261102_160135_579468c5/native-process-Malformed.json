@@ -1,0 +1,7 @@
+{
+  "Purpose": "Native acceptance case; no credential in evidence",
+  "Pid": 23980,
+  "Server": "localhost",
+  "Database": "CoffeeManager_Test_G08_20261102_160135_579468c5_restorev26",
+  "Mode": "Malformed"
+}

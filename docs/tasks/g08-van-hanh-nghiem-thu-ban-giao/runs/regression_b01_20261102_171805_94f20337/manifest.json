@@ -1,0 +1,30 @@
+{
+  "Artifact": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\artifacts\\g08\\regression_b01_20261102_171805_94f20337",
+  "Status": "RegressionPassed",
+  "ChangedTests": "ParameterAndErrorTests.cs",
+  "SQLChanged": false,
+  "Output": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g08-van-hanh-nghiem-thu-ban-giao\\runs\\regression_b01_20261102_171805_94f20337",
+  "RunId": "20261102_171805_94f20337",
+  "Approval": "G08-B01 fix+regression approved",
+  "ChangedProductFile": "SqlErrorMapper.cs",
+  "SourceFiles": 460,
+  "Results": {
+    "UnitPassed": 142,
+    "BeforeSendPassed": 4,
+    "PackageUnchanged": true,
+    "SourceUnchanged": true,
+    "OriginalInvalidExpectationLogPreserved": true,
+    "Cleanup": "1DB/1SQLlogin/DPAPI cleaned;0businesswrites;no development access",
+    "NativePassed": 7
+  },
+  "Package": {
+    "SHA256": "DBE592A647904A4FF2F06AA6FB29E14D7292C487F86D722AFE33B0EEDFD3C436",
+    "Path": "artifacts/g08/20261102_171805_94f20337/candidate.zip"
+  },
+  "HandoffPackage": {
+    "ExecutableSqlToolParity": true,
+    "ComparedFiles": 87,
+    "Path": "artifacts/g08/20261102_215232_0a0b72a5/candidate.zip",
+    "SHA256": "61AD7FC48DF29E79398F9CD7706F9283594BB5A4FBA83295B772771201E4AE12"
+  }
+}

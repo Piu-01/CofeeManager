@@ -1,0 +1,24 @@
+[
+  {
+    "Status": "PASS",
+    "Id": "T31-K09.probe-five-flows",
+    "Actual": {
+      "Subcases": 7,
+      "Failed": 0,
+      "ExitCode": 0
+    },
+    "Expected": "7 SQL/BLL subcases đều PASS, không thay native"
+  },
+  {
+    "Status": "PASS",
+    "Id": "T31-K09.sales-money-lines-payments",
+    "Actual": {
+      "BillsDelta": 2,
+      "PaymentAmountDelta": 80000.0,
+      "LinesDelta": 3,
+      "ConsumptionDelta": 4,
+      "PaymentsDelta": 3
+    },
+    "Expected": "2billmới,3dòng,3TT,tổngTT+80000;2NVL/bill→4tiêuhao"
+  }
+]

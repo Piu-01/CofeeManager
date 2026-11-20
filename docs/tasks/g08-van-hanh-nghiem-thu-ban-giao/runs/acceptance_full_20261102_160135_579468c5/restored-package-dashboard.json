@@ -1,0 +1,16 @@
+{
+  "Native": "native-transcript T32-K01.native-package-start reads same restoredDB under runtime login",
+  "Expected": {
+    "OpenBills": 1,
+    "Debt": 5500000,
+    "PaidToday": 0
+  },
+  "Actual": {
+    "OpenBills": 1,
+    "Debt": 5500000.0,
+    "PaidToday": 0.0
+  },
+  "SourceChanged": false,
+  "Match": true,
+  "Id": "T32-K06.restored-package-dashboard"
+}

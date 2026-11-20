@@ -1,0 +1,15 @@
+{
+  "PackageInstallCreated": 2,
+  "PermissionRestored": true,
+  "BackupsCleaned": 3,
+  "Source": "cleanup-audit.json + packaged-install-results.json + final SQL inventory",
+  "Retained": [],
+  "RemainingDatabases": [],
+  "DevelopmentUnchanged": true,
+  "TemporarySecretRemoved": true,
+  "TotalDatabaseCleanupOperations": 13,
+  "PackageInstallCleaned": 2,
+  "TotalDatabaseCreateOperations": 13,
+  "RecordedAt": "2026-11-02T10:08:02.6533443Z",
+  "RemainingOwnLogins": []
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "Raw": {
+      "Number": 258,
+      "ExceptionType": "SqlException",
+      "Errors": [
+        {
+          "Number": 258,
+          "State": 0,
+          "Class": 20
+        }
+      ]
+    },
+    "Mapped": {
+      "Number": 258,
+      "Kind": "Unknown",
+      "ExceptionType": "DataAccessException",
+      "Message": "Có lỗi dữ liệu chưa xác định; tra mã hỗ trợ trước khi tiếp tục."
+    },
+    "Mode": "Offline"
+  },
+  {
+    "Raw": {
+      "Number": -2146893019,
+      "ExceptionType": "SqlException",
+      "Errors": [
+        {
+          "Number": -2146893019,
+          "State": 0,
+          "Class": 20
+        }
+      ]
+    },
+    "Mapped": {
+      "Number": -2146893019,
+      "Kind": "Unknown",
+      "ExceptionType": "DataAccessException",
+      "Message": "Có lỗi dữ liệu chưa xác định; tra mã hỗ trợ trước khi tiếp tục."
+    },
+    "Mode": "Certificate"
+  }
+]

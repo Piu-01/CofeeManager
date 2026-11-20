@@ -1,0 +1,11 @@
+{
+  "RunId": "20261102_152842_771ecbc5",
+  "Kind": "technical",
+  "Server": "localhost",
+  "Status": "Failed",
+  "Created": [],
+  "Cleaned": [],
+  "Retained": [],
+  "SourceUnchanged": true,
+  "Error": "Build probe failed."
+}

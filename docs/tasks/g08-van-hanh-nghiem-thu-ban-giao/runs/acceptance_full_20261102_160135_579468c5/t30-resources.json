@@ -1,0 +1,47 @@
+[
+  {
+    "File": "C:\\Program Files\\Microsoft SQL Server\\MSSQL17.MSSQLSERVER\\MSSQL\\Backup\\CoffeeManager_G08_20261102_160135_579468c5_development.bak",
+    "Kind": "Backup",
+    "Manifest": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g08-van-hanh-nghiem-thu-ban-giao\\runs\\acceptance_full_20261102_160135_579468c5\\development-backup.json"
+  },
+  {
+    "Database": "CoffeeManager_Test_G08_20261102_160135_579468c5_restoredevelopment",
+    "Kind": "Restore",
+    "Manifest": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g08-van-hanh-nghiem-thu-ban-giao\\runs\\acceptance_full_20261102_160135_579468c5\\restoredevelopment.json"
+  },
+  {
+    "Database": "CoffeeManager_Test_G08_20261102_160135_579468c5_clean",
+    "Kind": "Install",
+    "Manifest": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g08-van-hanh-nghiem-thu-ban-giao\\runs\\acceptance_full_20261102_160135_579468c5\\clean-install.json"
+  },
+  {
+    "Database": "CoffeeManager_Test_G08_20261102_160135_579468c5_demo21",
+    "Kind": "Install",
+    "Manifest": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g08-van-hanh-nghiem-thu-ban-giao\\runs\\acceptance_full_20261102_160135_579468c5\\demo21-install.json"
+  },
+  {
+    "File": "C:\\Program Files\\Microsoft SQL Server\\MSSQL17.MSSQLSERVER\\MSSQL\\Backup\\CoffeeManager_G08_20261102_160135_579468c5_v21.bak",
+    "Kind": "Backup",
+    "Manifest": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g08-van-hanh-nghiem-thu-ban-giao\\runs\\acceptance_full_20261102_160135_579468c5\\v21-backup.json"
+  },
+  {
+    "Database": "CoffeeManager_Test_G08_20261102_160135_579468c5_restorev21",
+    "Kind": "Restore",
+    "Manifest": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g08-van-hanh-nghiem-thu-ban-giao\\runs\\acceptance_full_20261102_160135_579468c5\\restorev21.json"
+  },
+  {
+    "Database": "CoffeeManager_Test_G08_20261102_160135_579468c5_demo26",
+    "Kind": "Install",
+    "Manifest": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g08-van-hanh-nghiem-thu-ban-giao\\runs\\acceptance_full_20261102_160135_579468c5\\demo26-install.json"
+  },
+  {
+    "File": "C:\\Program Files\\Microsoft SQL Server\\MSSQL17.MSSQLSERVER\\MSSQL\\Backup\\CoffeeManager_G08_20261102_160135_579468c5_v26.bak",
+    "Kind": "Backup",
+    "Manifest": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g08-van-hanh-nghiem-thu-ban-giao\\runs\\acceptance_full_20261102_160135_579468c5\\v26-backup.json"
+  },
+  {
+    "Database": "CoffeeManager_Test_G08_20261102_160135_579468c5_restorev26",
+    "Kind": "Restore",
+    "Manifest": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g08-van-hanh-nghiem-thu-ban-giao\\runs\\acceptance_full_20261102_160135_579468c5\\restorev26.json"
+  }
+]

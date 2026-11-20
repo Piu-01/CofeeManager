@@ -1,0 +1,76 @@
+[
+  {
+    "Id": "T30-K04.Clean-bootstrap",
+    "Status": "PASS",
+    "Actual": {
+      "Mode": "Clean",
+      "State": "Completed",
+      "SecondBootstrapRejected": true
+    },
+    "Expected": "SetupSQLidentity riêng:bootstrap1lần,StateCompletedbềnvững,rerunbịchặn"
+  },
+  {
+    "Id": "T30-K06.Clean-revoke-setup",
+    "Status": "PASS",
+    "Actual": {
+      "Denied": true
+    },
+    "Expected": "Thu hồi CafeManagerSetup làm identity riêng không setup nữa"
+  },
+  {
+    "Id": "T30-K06.Clean-runtime-real-login",
+    "Status": "PASS",
+    "Actual": {
+      "State": "Completed",
+      "AppRole": 1,
+      "DbOwner": 0,
+      "Sysadmin": 0,
+      "CanBackup": 0,
+      "Denied": [
+        "DDL",
+        "AccountDML",
+        "InventoryDML",
+        "Setup"
+      ],
+      "Mode": "Clean"
+    },
+    "Expected": "RuntimeSQLloginthậtchỉCafeManagerApp,publicreadOK,DDL/DML/setup/backupbịchặn"
+  },
+  {
+    "Id": "T30-K04.Demo-bootstrap",
+    "Status": "PASS",
+    "Actual": {
+      "Mode": "Demo",
+      "State": "Completed",
+      "SecondBootstrapRejected": true
+    },
+    "Expected": "SetupSQLidentity riêng:bootstrap1lần,StateCompletedbềnvững,rerunbịchặn"
+  },
+  {
+    "Id": "T30-K06.Demo-revoke-setup",
+    "Status": "PASS",
+    "Actual": {
+      "Denied": true
+    },
+    "Expected": "Thu hồi CafeManagerSetup làm identity riêng không setup nữa"
+  },
+  {
+    "Id": "T30-K06.Demo-runtime-real-login",
+    "Status": "PASS",
+    "Actual": {
+      "State": "Completed",
+      "AppRole": 1,
+      "DbOwner": 0,
+      "Sysadmin": 0,
+      "CanBackup": 0,
+      "Denied": [
+        "DDL",
+        "AccountDML",
+        "InventoryDML",
+        "Setup"
+      ],
+      "Mode": "Demo"
+    },
+    "Expected": "RuntimeSQLloginthậtchỉCafeManagerApp,publicreadOK,DDL/DML/setup/backupbịchặn"
+  }
+]

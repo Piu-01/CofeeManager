@@ -1,0 +1,5 @@
+{
+  "SourceChanged": false,
+  "Command": "Existing unit rules; excludes SQL Integration/G02 fixture suites without configured target",
+  "ExitCode": 0
+}

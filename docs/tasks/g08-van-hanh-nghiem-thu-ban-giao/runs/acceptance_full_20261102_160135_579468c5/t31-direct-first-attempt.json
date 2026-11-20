@@ -1,0 +1,9 @@
+{
+  "Reason": "PowerShell does not accept C# decimal suffix m; stopped after2checks and cleanupfinally",
+  "ExpectedChanged": false,
+  "Kind": "Execution script syntax, not product FAIL",
+  "ParentRun": "20261102_160135_579468c5",
+  "Status": "BLOCKED",
+  "OriginalCommand": "T31-direct-snapshots.ps1",
+  "OriginalSHA256": "D999D3D1521A25340C9AC4F744C48DBC8267A3D208E71D6FEB1C3AB1BD44F007"
+}

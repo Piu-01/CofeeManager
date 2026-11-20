@@ -1,0 +1,102 @@
+[
+  {
+    "Id": "T30-K01.development-backup-restore",
+    "Expected": "Development marker đúng; backup COPY_ONLY/CHECKSUM và restore đích mới online, source ổn định",
+    "Actual": {
+      "Source": "CoffeeManager_Development",
+      "SourceVersion": 21,
+      "Target": "CoffeeManager_Test_G08_20261102_160135_579468c5_restoredevelopment",
+      "Backup": "Verified",
+      "Restore": "Restored",
+      "SourceStable": true,
+      "Parity": true,
+      "Tables": 45
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "T30-K02.development-parity-groups",
+    "Expected": "Mọi bảng theo PK/hash khớp; tiền/kho/điểm/nợ/lương/trạng thái/liên kết có bằng chứng riêng",
+    "Actual": {
+      "Groups": [
+        "HOADON",
+        "CHITIET_HD",
+        "CHITIET_THANHTOAN",
+        "TIEUHAO_HOADON",
+        "NGUYENVATLIEU",
+        "KHACHHANG",
+        "LICHSU_DIEM",
+        "PHIEUTHUCHI",
+        "CONGNO_NCC",
+        "THANHTOAN_CONGNO",
+        "BANGLUONG"
+      ],
+      "AllTables": 45,
+      "Parity": true
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "T30-K03.server-path-and-reject-overwrite",
+    "Expected": "SQLservice ghi được backup; trùngfile/đườngdẫnkhôngtồntại bị chặn, backup gốc vẫn verify",
+    "Actual": {
+      "BackupStatus": "Verified",
+      "DuplicateRejected": true,
+      "MissingDirectoryRejected": true,
+      "AclChanged": false
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "T30-K04.clean-foundation",
+    "Expected": "Clean001–027:3role,2PTTT,chi hệ thống;0NV/khách/tồn/bill/account trước bootstrap",
+    "Actual": {
+      "Database": "CoffeeManager_Test_G08_20261102_160135_579468c5_clean",
+      "Roles": 3,
+      "Methods": 2,
+      "SystemExpenses": 3,
+      "DemoRows": 0,
+      "SetupState": "Pending"
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "T30-K05.restore21-upgrade-rerun-checksum",
+    "Expected": "Backup/restore schema cũ→027 giữ nguyên nghiệp vụ; rerunAlreadyApplied;checksum khác bị chặn",
+    "Actual": {
+      "From": 21,
+      "To": 27,
+      "Database": "CoffeeManager_Test_G08_20261102_160135_579468c5_restorev21",
+      "BeforeHash": "22E4DC05AB5058A728233278105D14BEFC6D3840D555827EE17C0DD1B9B5CE6B",
+      "AfterHash": "22E4DC05AB5058A728233278105D14BEFC6D3840D555827EE17C0DD1B9B5CE6B",
+      "Rerun": "AlreadyApplied",
+      "BadChecksumRejected": true
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "T30-K05.restore26-upgrade-rerun-checksum",
+    "Expected": "Backup/restore schema cũ→027 giữ nguyên nghiệp vụ; rerunAlreadyApplied;checksum khác bị chặn",
+    "Actual": {
+      "From": 26,
+      "To": 27,
+      "Database": "CoffeeManager_Test_G08_20261102_160135_579468c5_restorev26",
+      "BeforeHash": "22E4DC05AB5058A728233278105D14BEFC6D3840D555827EE17C0DD1B9B5CE6B",
+      "AfterHash": "22E4DC05AB5058A728233278105D14BEFC6D3840D555827EE17C0DD1B9B5CE6B",
+      "Rerun": "AlreadyApplied",
+      "BadChecksumRejected": true
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "T30-K08.engine-backup-documentation",
+    "Expected": "Scripts dùng BACKUP/RESTORE/VERIFYONLY; docs không hướng dẫn copyMDF/LDF đang mở",
+    "Actual": {
+      "DevelopmentBackupRan": true,
+      "RestoreRan": true,
+      "Operation": "BACKUP COPY_ONLY CHECKSUM / RESTORE FILELISTONLY MOVE",
+      "CopyOpenFiles": false
+    },
+    "Status": "PASS"
+  }
+]

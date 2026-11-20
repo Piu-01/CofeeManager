@@ -1,0 +1,28 @@
+{
+  "RunId": "20261102_160135_579468c5",
+  "RunDirectory": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g08-van-hanh-nghiem-thu-ban-giao\\runs\\acceptance_full_20261102_160135_579468c5",
+  "ArtifactDirectory": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\artifacts\\g08\\acceptance_20261102_160135_579468c5",
+  "SourceFrozenAt": "2026-11-02T09:01:35.6481814Z",
+  "Package": "artifacts/g08/20261102_155435_c6b76b42/candidate.zip",
+  "PackageSHA256": "D1F7A782FB0C083DE02D30D0597DE4EC1AF68F138D17C36BF3143EBF88D8C54A",
+  "Approved": "Người dùng duyệt đợt test G08",
+  "SourceFiles": 460,
+  "Status": "CompletedWithFailureAndBlockers",
+  "Resources": [],
+  "Summary": {
+    "FAIL": 1,
+    "PASS": 15,
+    "IDs": 29,
+    "BLOCKED": 13
+  },
+  "SourceUnchanged": true,
+  "PackageUnchanged": true,
+  "Cleanup": {
+    "TemporaryPermissionRestored": true,
+    "Created": 13,
+    "RemainingDatabases": 0,
+    "RemainingLogins": 0,
+    "Cleaned": 13,
+    "DevelopmentUnchanged": true
+  }
+}

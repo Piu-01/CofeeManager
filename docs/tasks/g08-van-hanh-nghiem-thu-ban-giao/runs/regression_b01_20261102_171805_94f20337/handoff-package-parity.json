@@ -1,0 +1,10 @@
+{
+  "BinarySqlToolParity": true,
+  "FileSetChanged": [],
+  "TestedPackageSHA256": "DBE592A647904A4FF2F06AA6FB29E14D7292C487F86D722AFE33B0EEDFD3C436",
+  "FinalPackageSHA256": "61AD7FC48DF29E79398F9CD7706F9283594BB5A4FBA83295B772771201E4AE12",
+  "FinalPackage": "artifacts/g08/20261102_215232_0a0b72a5/candidate.zip",
+  "ComparedExecutableSqlToolFiles": 87,
+  "DocsUpdatedAfterRegression": true,
+  "ChangedFiles": []
+}

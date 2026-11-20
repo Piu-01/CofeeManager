@@ -1,0 +1,7 @@
+{
+  "Mode": "Certificate",
+  "Server": "tcp:localhost",
+  "Pid": 25340,
+  "Purpose": "Native acceptance case; no credential in evidence",
+  "Database": "CoffeeManager_Test_G08_20261102_160135_579468c5_restorev26"
+}

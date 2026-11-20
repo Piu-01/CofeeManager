@@ -1,0 +1,13 @@
+{
+  "Expected": "Money8000 and all counts/deltas unchanged; joins follow baseline PHIEUTHUCHI ownership",
+  "ParentRun": "20261102_160135_579468c5",
+  "ScriptSHA256": "1FFF2B7856EC273469C3AE3326ECDA25B63942F548B0613ED349428EF776A05D",
+  "Kind": "New direct reconciliation run after read-query schema error",
+  "SourcePackageUnchanged": true,
+  "Status": "Succeeded",
+  "Subcases": {
+    "FAIL": 0,
+    "PASS": 7,
+    "DatabaseCleaned": true
+  }
+}

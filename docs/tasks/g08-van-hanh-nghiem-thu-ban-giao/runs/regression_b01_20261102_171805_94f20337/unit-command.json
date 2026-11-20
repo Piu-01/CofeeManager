@@ -1,0 +1,5 @@
+{
+  "ExitCode": 0,
+  "Scope": "Unit rules incl14new mapper cases; existing SQL fixture suites excluded",
+  "Approval": "B01 regression"
+}

@@ -1,0 +1,15 @@
+{
+  "RunId": "20261102_171805_94f20337",
+  "DatabaseCleaned": true,
+  "LoginCleaned": true,
+  "SecretRemoved": true,
+  "NoBusinessWrite": true,
+  "DevelopmentAccessed": false,
+  "Retained": [],
+  "BusinessRows": {
+    "Payments": 0,
+    "Finance": 0,
+    "Bills": 0
+  },
+  "CompletedAt": "2026-11-02T14:44:11.0034445Z"
+}

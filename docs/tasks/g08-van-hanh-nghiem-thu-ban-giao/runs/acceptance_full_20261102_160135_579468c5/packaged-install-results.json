@@ -1,0 +1,30 @@
+[
+  {
+    "Database": "CoffeeManager_Test_G08_20261102_160135_579468c5_packageclean",
+    "Created": true,
+    "Expected": "Packaged baseline+migrations027,0demo,Pendingbootstrap",
+    "Cleaned": true,
+    "Actual": {
+      "Bills": 0,
+      "Employees": 0,
+      "Versions": 27,
+      "SetupState": "Pending"
+    },
+    "Id": "T32-K07.package-Clean-install",
+    "Status": "PASS"
+  },
+  {
+    "Database": "CoffeeManager_Test_G08_20261102_160135_579468c5_packagedemo",
+    "Created": true,
+    "Expected": "Packaged baseline→seedduynhất→migrations027,10bill/10NV",
+    "Cleaned": true,
+    "Actual": {
+      "Bills": 10,
+      "Employees": 10,
+      "Versions": 27,
+      "SetupState": "Pending"
+    },
+    "Id": "T32-K07.package-Demo-install",
+    "Status": "PASS"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "Created": [
+    "G08_Runtime_20261102_160135_579468c5",
+    "G08_Setup_20261102_160135_579468c5"
+  ],
+  "RuntimeLogin": "G08_Runtime_20261102_160135_579468c5",
+  "Databases": [
+    "CoffeeManager_Test_G08_20261102_160135_579468c5_clean",
+    "CoffeeManager_Test_G08_20261102_160135_579468c5_restorev26"
+  ],
+  "Policy": "Drop exact logins after DBtest cleanup; remove session.dpapi; no Windows user created",
+  "SetupLogin": "G08_Setup_20261102_160135_579468c5"
+}

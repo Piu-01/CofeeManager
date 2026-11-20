@@ -1,0 +1,28 @@
+{
+  "RunId": "20261102_154357_0cd6667f",
+  "Kind": "technical",
+  "Server": "localhost",
+  "Status": "Running",
+  "Created": [
+    {
+      "Kind": "Install",
+      "InstallManifest": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g08-van-hanh-nghiem-thu-ban-giao\\runs\\technical_20261102_154357_0cd6667f\\Clean-install.json",
+      "Database": "CoffeeManager_Test_G08_20261102_154357_0cd6667f_clean"
+    },
+    {
+      "Kind": "Install",
+      "InstallManifest": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g08-van-hanh-nghiem-thu-ban-giao\\runs\\technical_20261102_154357_0cd6667f\\Demo-install.json",
+      "Database": "CoffeeManager_Test_G08_20261102_154357_0cd6667f_demo"
+    },
+    {
+      "Kind": "Restore",
+      "InstallManifest": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g08-van-hanh-nghiem-thu-ban-giao\\runs\\technical_20261102_154357_0cd6667f\\restore.json",
+      "Database": "CoffeeManager_Test_G08_20261102_154357_0cd6667f_restore"
+    }
+  ],
+  "Cleaned": [],
+  "Retained": [],
+  "SourceUnchanged": false,
+  "BackupFile": "C:\\Program Files\\Microsoft SQL Server\\MSSQL17.MSSQLSERVER\\MSSQL\\Backup\\CoffeeManager_G08_20261102_154357_0cd6667f.bak",
+  "BackupRoot": "C:\\Program Files\\Microsoft SQL Server\\MSSQL17.MSSQLSERVER\\MSSQL\\Backup"
+}

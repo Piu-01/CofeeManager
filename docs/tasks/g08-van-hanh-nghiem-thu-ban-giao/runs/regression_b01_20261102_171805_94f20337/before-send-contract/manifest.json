@@ -1,0 +1,6 @@
+{
+  "Contract": "writing && sent",
+  "Kind": "New before-send scenario; original incorrect always-reconcile check retained",
+  "SourceUnchanged": true,
+  "ExpectedReconcileBeforeSending": false
+}
