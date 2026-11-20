@@ -1,0 +1,6 @@
+# Build outputs of local UI fixtures; keep source, screenshots and test evidence.
+*.dll
+*.exe
+*.pdb
+*.deps.json
+*.runtimeconfig.json

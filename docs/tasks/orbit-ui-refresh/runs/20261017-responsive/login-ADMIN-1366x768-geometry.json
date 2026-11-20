@@ -1,0 +1,425 @@
+{
+  "Mode": "login",
+  "Database": "CoffeeManager_Test_G02_20261017_173711_c86ff044",
+  "DeviceDpi": 120,
+  "Size": {
+    "IsEmpty": false,
+    "Width": 1938,
+    "Height": 1038
+  },
+  "ClientSize": {
+    "IsEmpty": false,
+    "Width": 1920,
+    "Height": 991
+  },
+  "Controls": [
+    {
+      "Type": "OrbitContentHost",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": true,
+          "X": 0,
+          "Y": 0
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1920,
+          "Height": 991
+        },
+        "X": 0,
+        "Y": 0,
+        "Width": 1920,
+        "Height": 991,
+        "Left": 0,
+        "Top": 0,
+        "Right": 1920,
+        "Bottom": 991,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 0
+    },
+    {
+      "Type": "TableLayoutPanel",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 660,
+          "Y": 191
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 600,
+          "Height": 609
+        },
+        "X": 660,
+        "Y": 191,
+        "Width": 600,
+        "Height": 609,
+        "Left": 660,
+        "Top": 191,
+        "Right": 1260,
+        "Bottom": 800,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 0
+    },
+    {
+      "Type": "OrbitHeader",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 40,
+          "Y": 40
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 520,
+          "Height": 117
+        },
+        "X": 40,
+        "Y": 40,
+        "Width": 520,
+        "Height": 117,
+        "Left": 40,
+        "Top": 40,
+        "Right": 560,
+        "Bottom": 157,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 0
+    },
+    {
+      "Type": "Label",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 24,
+          "Y": 25
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 472,
+          "Height": 37
+        },
+        "X": 24,
+        "Y": 25,
+        "Width": 472,
+        "Height": 37,
+        "Left": 24,
+        "Top": 25,
+        "Right": 496,
+        "Bottom": 62,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 16,
+      "TabIndex": 0
+    },
+    {
+      "Type": "Label",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 24,
+          "Y": 72
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 264,
+          "Height": 20
+        },
+        "X": 24,
+        "Y": 72,
+        "Width": 264,
+        "Height": 20,
+        "Left": 24,
+        "Top": 72,
+        "Right": 288,
+        "Bottom": 92,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 9,
+      "TabIndex": 1
+    },
+    {
+      "Type": "Label",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 44,
+          "Y": 187
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 129,
+          "Height": 25
+        },
+        "X": 44,
+        "Y": 187,
+        "Width": 129,
+        "Height": 25,
+        "Left": 44,
+        "Top": 187,
+        "Right": 173,
+        "Bottom": 212,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 1
+    },
+    {
+      "Type": "Label",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 44,
+          "Y": 290
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 86,
+          "Height": 25
+        },
+        "X": 44,
+        "Y": 290,
+        "Width": 86,
+        "Height": 25,
+        "Left": 44,
+        "Top": 290,
+        "Right": 130,
+        "Bottom": 315,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 2
+    },
+    {
+      "Type": "CheckBox",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 44,
+          "Y": 393
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 149,
+          "Height": 29
+        },
+        "X": 44,
+        "Y": 393,
+        "Width": 149,
+        "Height": 29,
+        "Left": 44,
+        "Top": 393,
+        "Right": 193,
+        "Bottom": 422,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 2
+    },
+    {
+      "Type": "OrbitButton",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 44,
+          "Y": 444
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 512,
+          "Height": 70
+        },
+        "X": 44,
+        "Y": 444,
+        "Width": 512,
+        "Height": 70,
+        "Left": 44,
+        "Top": 444,
+        "Right": 556,
+        "Bottom": 514,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": false,
+      "Font": 10.5,
+      "TabIndex": 3
+    },
+    {
+      "Type": "Label",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 44,
+          "Y": 532
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 512,
+          "Height": 37
+        },
+        "X": 44,
+        "Y": 532,
+        "Width": 512,
+        "Height": 37,
+        "Left": 44,
+        "Top": 532,
+        "Right": 556,
+        "Bottom": 569,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 4
+    },
+    {
+      "Type": "OrbitField",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 44,
+          "Y": 222
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 512,
+          "Height": 46
+        },
+        "X": 44,
+        "Y": 222,
+        "Width": 512,
+        "Height": 46,
+        "Left": 44,
+        "Top": 222,
+        "Right": 556,
+        "Bottom": 268,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 0
+    },
+    {
+      "Type": "TextBox",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 12,
+          "Y": 11
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 488,
+          "Height": 24
+        },
+        "X": 12,
+        "Y": 11,
+        "Width": 488,
+        "Height": 24,
+        "Left": 12,
+        "Top": 11,
+        "Right": 500,
+        "Bottom": 35,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 0
+    },
+    {
+      "Type": "OrbitField",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 44,
+          "Y": 325
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 512,
+          "Height": 46
+        },
+        "X": 44,
+        "Y": 325,
+        "Width": 512,
+        "Height": 46,
+        "Left": 44,
+        "Top": 325,
+        "Right": 556,
+        "Bottom": 371,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 1
+    },
+    {
+      "Type": "TextBox",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 12,
+          "Y": 11
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 488,
+          "Height": 24
+        },
+        "X": 12,
+        "Y": 11,
+        "Width": 488,
+        "Height": 24,
+        "Left": 12,
+        "Top": 11,
+        "Right": 500,
+        "Bottom": 35,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 1
+    }
+  ],
+  "FormCount": 1,
+  "Handles": 504
+}

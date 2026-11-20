@@ -1,0 +1,338 @@
+{
+  "Mode": "main",
+  "Database": "CoffeeManager_Test_G02_20261017_173711_c86ff044",
+  "DeviceDpi": 120,
+  "Size": {
+    "IsEmpty": false,
+    "Width": 720,
+    "Height": 720
+  },
+  "ClientSize": {
+    "IsEmpty": false,
+    "Width": 702,
+    "Height": 673
+  },
+  "Controls": [
+    {
+      "Type": "TableLayoutPanel",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": true,
+          "X": 0,
+          "Y": 0
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 702,
+          "Height": 673
+        },
+        "X": 0,
+        "Y": 0,
+        "Width": 702,
+        "Height": 673,
+        "Left": 0,
+        "Top": 0,
+        "Right": 702,
+        "Bottom": 673,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 0
+    },
+    {
+      "Type": "FlowLayoutPanel",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 4,
+          "Y": 4
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 694,
+          "Height": 124
+        },
+        "X": 4,
+        "Y": 4,
+        "Width": 694,
+        "Height": 124,
+        "Left": 4,
+        "Top": 4,
+        "Right": 698,
+        "Bottom": 128,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 0
+    },
+    {
+      "Type": "Label",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 25,
+          "Y": 30
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 216,
+          "Height": 37
+        },
+        "X": 25,
+        "Y": 30,
+        "Width": 216,
+        "Height": 37,
+        "Left": 25,
+        "Top": 30,
+        "Right": 241,
+        "Bottom": 67,
+        "IsEmpty": false
+      },
+      "Visible": false,
+      "Enabled": true,
+      "Font": 16,
+      "TabIndex": 0
+    },
+    {
+      "Type": "Label",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 25,
+          "Y": 75
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 164,
+          "Height": 20
+        },
+        "X": 25,
+        "Y": 75,
+        "Width": 164,
+        "Height": 20,
+        "Left": 25,
+        "Top": 75,
+        "Right": 189,
+        "Bottom": 95,
+        "IsEmpty": false
+      },
+      "Visible": false,
+      "Enabled": true,
+      "Font": 9,
+      "TabIndex": 1
+    },
+    {
+      "Type": "OrbitButton",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 11,
+          "Y": 11
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 185,
+          "Height": 48
+        },
+        "X": 11,
+        "Y": 11,
+        "Width": 185,
+        "Height": 48,
+        "Left": 11,
+        "Top": 11,
+        "Right": 196,
+        "Bottom": 59,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": false,
+      "Font": 10.5,
+      "TabIndex": 2
+    },
+    {
+      "Type": "OrbitButton",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 202,
+          "Y": 11
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 208,
+          "Height": 48
+        },
+        "X": 202,
+        "Y": 11,
+        "Width": 208,
+        "Height": 48,
+        "Left": 202,
+        "Top": 11,
+        "Right": 410,
+        "Bottom": 59,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": false,
+      "Font": 10.5,
+      "TabIndex": 3
+    },
+    {
+      "Type": "OrbitButton",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 416,
+          "Y": 11
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 246,
+          "Height": 48
+        },
+        "X": 416,
+        "Y": 11,
+        "Width": 246,
+        "Height": 48,
+        "Left": 416,
+        "Top": 11,
+        "Right": 662,
+        "Bottom": 59,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": false,
+      "Font": 10.5,
+      "TabIndex": 4
+    },
+    {
+      "Type": "OrbitButton",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 11,
+          "Y": 65
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 174,
+          "Height": 48
+        },
+        "X": 11,
+        "Y": 65,
+        "Width": 174,
+        "Height": 48,
+        "Left": 11,
+        "Top": 65,
+        "Right": 185,
+        "Bottom": 113,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 5
+    },
+    {
+      "Type": "Label",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 4,
+          "Y": 132
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 694,
+          "Height": 33
+        },
+        "X": 4,
+        "Y": 132,
+        "Width": 694,
+        "Height": 33,
+        "Left": 4,
+        "Top": 132,
+        "Right": 698,
+        "Bottom": 165,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 1
+    },
+    {
+      "Type": "Panel",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 0,
+          "Y": 165
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 702,
+          "Height": 471
+        },
+        "X": 0,
+        "Y": 165,
+        "Width": 702,
+        "Height": 471,
+        "Left": 0,
+        "Top": 165,
+        "Right": 702,
+        "Bottom": 636,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 2
+    },
+    {
+      "Type": "Label",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 4,
+          "Y": 636
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 694,
+          "Height": 37
+        },
+        "X": 4,
+        "Y": 636,
+        "Width": 694,
+        "Height": 37,
+        "Left": 4,
+        "Top": 636,
+        "Right": 698,
+        "Bottom": 673,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 3
+    }
+  ],
+  "FormCount": 1,
+  "Handles": 562
+}

@@ -1,0 +1,10 @@
+  CafeManager.Models -> D:\Workspace\Nam_3\HK1\CoffeeManager\docs\tasks\orbit-ui-refresh\runs\20261017-responsive\release\CafeManager.Models.dll
+  CafeManager.DataAccess -> D:\Workspace\Nam_3\HK1\CoffeeManager\docs\tasks\orbit-ui-refresh\runs\20261017-responsive\release\CafeManager.DataAccess.dll
+  CafeManager.Business -> D:\Workspace\Nam_3\HK1\CoffeeManager\docs\tasks\orbit-ui-refresh\runs\20261017-responsive\release\CafeManager.Business.dll
+  CafeManager.WinForms -> D:\Workspace\Nam_3\HK1\CoffeeManager\docs\tasks\orbit-ui-refresh\runs\20261017-responsive\release\CafeManager.WinForms.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:11.34

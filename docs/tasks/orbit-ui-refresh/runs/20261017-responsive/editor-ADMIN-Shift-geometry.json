@@ -1,0 +1,1411 @@
+{
+  "Mode": "editor",
+  "Database": "CoffeeManager_Test_G02_20261017_173711_c86ff044",
+  "DeviceDpi": 120,
+  "Size": {
+    "IsEmpty": false,
+    "Width": 600,
+    "Height": 720
+  },
+  "ClientSize": {
+    "IsEmpty": false,
+    "Width": 582,
+    "Height": 673
+  },
+  "Controls": [
+    {
+      "Type": "OrbitContentHost",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": true,
+          "X": 0,
+          "Y": 0
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 582,
+          "Height": 673
+        },
+        "X": 0,
+        "Y": 0,
+        "Width": 582,
+        "Height": 673,
+        "Left": 0,
+        "Top": 0,
+        "Right": 582,
+        "Bottom": 673,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 0
+    },
+    {
+      "Type": "TableLayoutPanel",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 30,
+          "Y": 20
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 521,
+          "Height": 615
+        },
+        "X": 30,
+        "Y": 20,
+        "Width": 521,
+        "Height": 615,
+        "Left": 30,
+        "Top": 20,
+        "Right": 551,
+        "Bottom": 635,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 0
+    },
+    {
+      "Type": "Label",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 30,
+          "Y": 30
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 461,
+          "Height": 37
+        },
+        "X": 30,
+        "Y": 30,
+        "Width": 461,
+        "Height": 37,
+        "Left": 30,
+        "Top": 30,
+        "Right": 491,
+        "Bottom": 67,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 16,
+      "TabIndex": 0
+    },
+    {
+      "Type": "TableLayoutPanel",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 34,
+          "Y": 91
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 453,
+          "Height": 414
+        },
+        "X": 34,
+        "Y": 91,
+        "Width": 453,
+        "Height": 414,
+        "Left": 34,
+        "Top": 91,
+        "Right": 487,
+        "Bottom": 505,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 1
+    },
+    {
+      "Type": "Label",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 4,
+          "Y": 8
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 37,
+          "Height": 25
+        },
+        "X": 4,
+        "Y": 8,
+        "Width": 37,
+        "Height": 25,
+        "Left": 4,
+        "Top": 8,
+        "Right": 41,
+        "Bottom": 33,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 0
+    },
+    {
+      "Type": "Label",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 4,
+          "Y": 111
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 38,
+          "Height": 25
+        },
+        "X": 4,
+        "Y": 111,
+        "Width": 38,
+        "Height": 25,
+        "Left": 4,
+        "Top": 111,
+        "Right": 42,
+        "Bottom": 136,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 1
+    },
+    {
+      "Type": "Label",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 4,
+          "Y": 132
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 43,
+          "Height": 25
+        },
+        "X": 4,
+        "Y": 132,
+        "Width": 43,
+        "Height": 25,
+        "Left": 4,
+        "Top": 132,
+        "Right": 47,
+        "Bottom": 157,
+        "IsEmpty": false
+      },
+      "Visible": false,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 2
+    },
+    {
+      "Type": "Label",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 4,
+          "Y": 194
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 125,
+          "Height": 25
+        },
+        "X": 4,
+        "Y": 194,
+        "Width": 125,
+        "Height": 25,
+        "Left": 4,
+        "Top": 194,
+        "Right": 129,
+        "Bottom": 219,
+        "IsEmpty": false
+      },
+      "Visible": false,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 3
+    },
+    {
+      "Type": "Label",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 4,
+          "Y": 257
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 101,
+          "Height": 25
+        },
+        "X": 4,
+        "Y": 257,
+        "Width": 101,
+        "Height": 25,
+        "Left": 4,
+        "Top": 257,
+        "Right": 105,
+        "Bottom": 282,
+        "IsEmpty": false
+      },
+      "Visible": false,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 4
+    },
+    {
+      "Type": "Label",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 4,
+          "Y": 320
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 121,
+          "Height": 25
+        },
+        "X": 4,
+        "Y": 320,
+        "Width": 121,
+        "Height": 25,
+        "Left": 4,
+        "Top": 320,
+        "Right": 125,
+        "Bottom": 345,
+        "IsEmpty": false
+      },
+      "Visible": false,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 5
+    },
+    {
+      "Type": "Label",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 4,
+          "Y": 383
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 120,
+          "Height": 25
+        },
+        "X": 4,
+        "Y": 383,
+        "Width": 120,
+        "Height": 25,
+        "Left": 4,
+        "Top": 383,
+        "Right": 124,
+        "Bottom": 408,
+        "IsEmpty": false
+      },
+      "Visible": false,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 6
+    },
+    {
+      "Type": "ComboBox",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 137,
+          "Y": 383
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 561,
+          "Height": 33
+        },
+        "X": 137,
+        "Y": 383,
+        "Width": 561,
+        "Height": 33,
+        "Left": 137,
+        "Top": 383,
+        "Right": 698,
+        "Bottom": 416,
+        "IsEmpty": false
+      },
+      "Visible": false,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 6
+    },
+    {
+      "Type": "Label",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 4,
+          "Y": 214
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 72,
+          "Height": 25
+        },
+        "X": 4,
+        "Y": 214,
+        "Width": 72,
+        "Height": 25,
+        "Left": 4,
+        "Top": 214,
+        "Right": 76,
+        "Bottom": 239,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 7
+    },
+    {
+      "Type": "OrbitTimeInput",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 4,
+          "Y": 255
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 394,
+          "Height": 47
+        },
+        "X": 4,
+        "Y": 255,
+        "Width": 394,
+        "Height": 47,
+        "Left": 4,
+        "Top": 255,
+        "Right": 398,
+        "Bottom": 302,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 7
+    },
+    {
+      "Type": "ClockPart",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 10,
+          "Y": 10
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 80,
+          "Height": 27
+        },
+        "X": 10,
+        "Y": 10,
+        "Width": 80,
+        "Height": 27,
+        "Left": 10,
+        "Top": 10,
+        "Right": 90,
+        "Bottom": 37,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 0
+    },
+    {
+      "Type": "UpDownButtons",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 60,
+          "Y": 0
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 20,
+          "Height": 27
+        },
+        "X": 60,
+        "Y": 0,
+        "Width": 20,
+        "Height": 27,
+        "Left": 60,
+        "Top": 0,
+        "Right": 80,
+        "Bottom": 27,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 0
+    },
+    {
+      "Type": "UpDownEdit",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": true,
+          "X": 0,
+          "Y": 0
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 60,
+          "Height": 27
+        },
+        "X": 0,
+        "Y": 0,
+        "Width": 60,
+        "Height": 27,
+        "Left": 0,
+        "Top": 0,
+        "Right": 60,
+        "Bottom": 27,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 1
+    },
+    {
+      "Type": "Label",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 90,
+          "Y": 10
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 20,
+          "Height": 27
+        },
+        "X": 90,
+        "Y": 10,
+        "Width": 20,
+        "Height": 27,
+        "Left": 90,
+        "Top": 10,
+        "Right": 110,
+        "Bottom": 37,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 1
+    },
+    {
+      "Type": "ClockPart",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 110,
+          "Y": 10
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 80,
+          "Height": 27
+        },
+        "X": 110,
+        "Y": 10,
+        "Width": 80,
+        "Height": 27,
+        "Left": 110,
+        "Top": 10,
+        "Right": 190,
+        "Bottom": 37,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 1
+    },
+    {
+      "Type": "UpDownButtons",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 60,
+          "Y": 0
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 20,
+          "Height": 27
+        },
+        "X": 60,
+        "Y": 0,
+        "Width": 20,
+        "Height": 27,
+        "Left": 60,
+        "Top": 0,
+        "Right": 80,
+        "Bottom": 27,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 0
+    },
+    {
+      "Type": "UpDownEdit",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": true,
+          "X": 0,
+          "Y": 0
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 60,
+          "Height": 27
+        },
+        "X": 0,
+        "Y": 0,
+        "Width": 60,
+        "Height": 27,
+        "Left": 0,
+        "Top": 0,
+        "Right": 60,
+        "Bottom": 27,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 1
+    },
+    {
+      "Type": "Label",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 4,
+          "Y": 318
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 76,
+          "Height": 25
+        },
+        "X": 4,
+        "Y": 318,
+        "Width": 76,
+        "Height": 25,
+        "Left": 4,
+        "Top": 318,
+        "Right": 80,
+        "Bottom": 343,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 8
+    },
+    {
+      "Type": "OrbitTimeInput",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 4,
+          "Y": 359
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 394,
+          "Height": 47
+        },
+        "X": 4,
+        "Y": 359,
+        "Width": 394,
+        "Height": 47,
+        "Left": 4,
+        "Top": 359,
+        "Right": 398,
+        "Bottom": 406,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 8
+    },
+    {
+      "Type": "ClockPart",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 10,
+          "Y": 10
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 80,
+          "Height": 27
+        },
+        "X": 10,
+        "Y": 10,
+        "Width": 80,
+        "Height": 27,
+        "Left": 10,
+        "Top": 10,
+        "Right": 90,
+        "Bottom": 37,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 0
+    },
+    {
+      "Type": "UpDownButtons",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 60,
+          "Y": 0
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 20,
+          "Height": 27
+        },
+        "X": 60,
+        "Y": 0,
+        "Width": 20,
+        "Height": 27,
+        "Left": 60,
+        "Top": 0,
+        "Right": 80,
+        "Bottom": 27,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 0
+    },
+    {
+      "Type": "UpDownEdit",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": true,
+          "X": 0,
+          "Y": 0
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 60,
+          "Height": 27
+        },
+        "X": 0,
+        "Y": 0,
+        "Width": 60,
+        "Height": 27,
+        "Left": 0,
+        "Top": 0,
+        "Right": 60,
+        "Bottom": 27,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 1
+    },
+    {
+      "Type": "Label",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 90,
+          "Y": 10
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 20,
+          "Height": 27
+        },
+        "X": 90,
+        "Y": 10,
+        "Width": 20,
+        "Height": 27,
+        "Left": 90,
+        "Top": 10,
+        "Right": 110,
+        "Bottom": 37,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 1
+    },
+    {
+      "Type": "ClockPart",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 110,
+          "Y": 10
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 80,
+          "Height": 27
+        },
+        "X": 110,
+        "Y": 10,
+        "Width": 80,
+        "Height": 27,
+        "Left": 110,
+        "Top": 10,
+        "Right": 190,
+        "Bottom": 37,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 1
+    },
+    {
+      "Type": "UpDownButtons",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 60,
+          "Y": 0
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 20,
+          "Height": 27
+        },
+        "X": 60,
+        "Y": 0,
+        "Width": 20,
+        "Height": 27,
+        "Left": 60,
+        "Top": 0,
+        "Right": 80,
+        "Bottom": 27,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 0
+    },
+    {
+      "Type": "UpDownEdit",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": true,
+          "X": 0,
+          "Y": 0
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 60,
+          "Height": 27
+        },
+        "X": 0,
+        "Y": 0,
+        "Width": 60,
+        "Height": 27,
+        "Left": 0,
+        "Top": 0,
+        "Right": 60,
+        "Bottom": 27,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 1
+    },
+    {
+      "Type": "CheckBox",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 4,
+          "Y": 258
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 415,
+          "Height": 29
+        },
+        "X": 4,
+        "Y": 258,
+        "Width": 415,
+        "Height": 29,
+        "Left": 4,
+        "Top": 258,
+        "Right": 419,
+        "Bottom": 287,
+        "IsEmpty": false
+      },
+      "Visible": false,
+      "Enabled": false,
+      "Font": 10.5,
+      "TabIndex": 9
+    },
+    {
+      "Type": "OrbitField",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 4,
+          "Y": 49
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 394,
+          "Height": 46
+        },
+        "X": 4,
+        "Y": 49,
+        "Width": 394,
+        "Height": 46,
+        "Left": 4,
+        "Top": 49,
+        "Right": 398,
+        "Bottom": 95,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 0
+    },
+    {
+      "Type": "TextBox",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 12,
+          "Y": 11
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 370,
+          "Height": 24
+        },
+        "X": 12,
+        "Y": 11,
+        "Width": 370,
+        "Height": 24,
+        "Left": 12,
+        "Top": 11,
+        "Right": 382,
+        "Bottom": 35,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 0
+    },
+    {
+      "Type": "OrbitField",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 4,
+          "Y": 152
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 394,
+          "Height": 46
+        },
+        "X": 4,
+        "Y": 152,
+        "Width": 394,
+        "Height": 46,
+        "Left": 4,
+        "Top": 152,
+        "Right": 398,
+        "Bottom": 198,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 1
+    },
+    {
+      "Type": "TextBox",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 12,
+          "Y": 11
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 370,
+          "Height": 24
+        },
+        "X": 12,
+        "Y": 11,
+        "Width": 370,
+        "Height": 24,
+        "Left": 12,
+        "Top": 11,
+        "Right": 382,
+        "Bottom": 35,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 1
+    },
+    {
+      "Type": "OrbitField",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 137,
+          "Y": 132
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 561,
+          "Height": 46
+        },
+        "X": 137,
+        "Y": 132,
+        "Width": 561,
+        "Height": 46,
+        "Left": 137,
+        "Top": 132,
+        "Right": 698,
+        "Bottom": 178,
+        "IsEmpty": false
+      },
+      "Visible": false,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 2
+    },
+    {
+      "Type": "TextBox",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 12,
+          "Y": 11
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 537,
+          "Height": 24
+        },
+        "X": 12,
+        "Y": 11,
+        "Width": 537,
+        "Height": 24,
+        "Left": 12,
+        "Top": 11,
+        "Right": 549,
+        "Bottom": 35,
+        "IsEmpty": false
+      },
+      "Visible": false,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 2
+    },
+    {
+      "Type": "OrbitField",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 137,
+          "Y": 194
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 561,
+          "Height": 47
+        },
+        "X": 137,
+        "Y": 194,
+        "Width": 561,
+        "Height": 47,
+        "Left": 137,
+        "Top": 194,
+        "Right": 698,
+        "Bottom": 241,
+        "IsEmpty": false
+      },
+      "Visible": false,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 3
+    },
+    {
+      "Type": "TextBox",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 12,
+          "Y": 11
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 537,
+          "Height": 24
+        },
+        "X": 12,
+        "Y": 11,
+        "Width": 537,
+        "Height": 24,
+        "Left": 12,
+        "Top": 11,
+        "Right": 549,
+        "Bottom": 35,
+        "IsEmpty": false
+      },
+      "Visible": false,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 3
+    },
+    {
+      "Type": "OrbitField",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 137,
+          "Y": 257
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 561,
+          "Height": 47
+        },
+        "X": 137,
+        "Y": 257,
+        "Width": 561,
+        "Height": 47,
+        "Left": 137,
+        "Top": 257,
+        "Right": 698,
+        "Bottom": 304,
+        "IsEmpty": false
+      },
+      "Visible": false,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 4
+    },
+    {
+      "Type": "TextBox",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 12,
+          "Y": 11
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 537,
+          "Height": 24
+        },
+        "X": 12,
+        "Y": 11,
+        "Width": 537,
+        "Height": 24,
+        "Left": 12,
+        "Top": 11,
+        "Right": 549,
+        "Bottom": 35,
+        "IsEmpty": false
+      },
+      "Visible": false,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 4
+    },
+    {
+      "Type": "OrbitField",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 137,
+          "Y": 320
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 561,
+          "Height": 47
+        },
+        "X": 137,
+        "Y": 320,
+        "Width": 561,
+        "Height": 47,
+        "Left": 137,
+        "Top": 320,
+        "Right": 698,
+        "Bottom": 367,
+        "IsEmpty": false
+      },
+      "Visible": false,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 5
+    },
+    {
+      "Type": "TextBox",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 12,
+          "Y": 11
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 537,
+          "Height": 24
+        },
+        "X": 12,
+        "Y": 11,
+        "Width": 537,
+        "Height": 24,
+        "Left": 12,
+        "Top": 11,
+        "Right": 549,
+        "Bottom": 35,
+        "IsEmpty": false
+      },
+      "Visible": false,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 5
+    },
+    {
+      "Type": "Label",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 34,
+          "Y": 472
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 453,
+          "Height": 37
+        },
+        "X": 34,
+        "Y": 472,
+        "Width": 453,
+        "Height": 37,
+        "Left": 34,
+        "Top": 472,
+        "Right": 487,
+        "Bottom": 509,
+        "IsEmpty": false
+      },
+      "Visible": false,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 2
+    },
+    {
+      "Type": "FlowLayoutPanel",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 34,
+          "Y": 513
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 453,
+          "Height": 68
+        },
+        "X": 34,
+        "Y": 513,
+        "Width": 453,
+        "Height": 68,
+        "Left": 34,
+        "Top": 513,
+        "Right": 487,
+        "Bottom": 581,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 3
+    },
+    {
+      "Type": "OrbitButton",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 4,
+          "Y": 4
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 101,
+          "Height": 60
+        },
+        "X": 4,
+        "Y": 4,
+        "Width": 101,
+        "Height": 60,
+        "Left": 4,
+        "Top": 4,
+        "Right": 105,
+        "Bottom": 64,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 0
+    },
+    {
+      "Type": "OrbitButton",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 113,
+          "Y": 4
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 195,
+          "Height": 60
+        },
+        "X": 113,
+        "Y": 4,
+        "Width": 195,
+        "Height": 60,
+        "Left": 113,
+        "Top": 4,
+        "Right": 308,
+        "Bottom": 64,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 1
+    },
+    {
+      "Type": "OrbitButton",
+      "Name": "",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 316,
+          "Y": 4
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 104,
+          "Height": 60
+        },
+        "X": 316,
+        "Y": 4,
+        "Width": 104,
+        "Height": 60,
+        "Left": 316,
+        "Top": 4,
+        "Right": 420,
+        "Bottom": 64,
+        "IsEmpty": false
+      },
+      "Visible": true,
+      "Enabled": true,
+      "Font": 10.5,
+      "TabIndex": 2
+    }
+  ],
+  "FormCount": 1,
+  "Handles": 547
+}

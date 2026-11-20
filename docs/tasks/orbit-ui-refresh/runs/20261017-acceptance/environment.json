@@ -1,0 +1,22 @@
+{
+  "RecordedAt": "2026-10-17T18:23:07.1967915+07:00",
+  "SqlVersion": "17.0.1000.7",
+  "Database": "CoffeeManager_Test_G02_20261017_173711_c86ff044",
+  "Schema": [
+    {
+      "Version": 1,
+      "Checksum": "0C4300BB58CE9E29A3A8E2B814AEB1F259F51F2DC0251142CD6479D23D44036C"
+    },
+    {
+      "Version": 2,
+      "Checksum": "04D8DAA716626F613D4FEDF8D84F8F15E53E5DB74D88B5B572947BA8AC84B342"
+    },
+    {
+      "Version": 3,
+      "Checksum": "6054F75F7285190879ED60EABA8A5D985DBD56DD16712049ED11005A7D0EA49D"
+    }
+  ],
+  "TemporaryDenyCount": 0,
+  "Dpi": 120,
+  "SizeNotes": "Form outer bounds, not emulated display DPI; other scaling levels not run."
+}

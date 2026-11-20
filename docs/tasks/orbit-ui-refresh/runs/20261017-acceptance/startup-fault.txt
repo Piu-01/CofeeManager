@@ -1,0 +1,2 @@
+Fault injection active only in marked UI test DB.
+DENY revoked; inherited role permissions restored.

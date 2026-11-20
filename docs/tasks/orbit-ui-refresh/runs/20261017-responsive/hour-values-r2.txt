@@ -1,0 +1,57 @@
+Window: "Thêm danh mục", App: UiLauncher.exe.
+	0 window Thêm danh mục Secondary Actions: Raise
+		1 pane
+			2 pane
+				3 text Thông tin danh mục
+				4 pane Thông tin danh mục
+					5 text Mã
+					6 text Tên
+					7 text Bắt đầu
+					8 pane Bắt đầu ID: 69854
+						9 spinner Giờ
+							10 spinner UpDown
+								11 button (disabled) Up
+								12 button (disabled) Down
+							13 edit (settable, string) Giờ Value: 06
+						14 text :
+						15 spinner Phút
+							16 spinner UpDown
+								17 button (disabled) Up
+								18 button (disabled) Down
+							19 edit (settable, string) Phút Value: 00
+					20 text Kết thúc
+					21 pane Kết thúc ID: 69872
+						22 spinner Giờ
+							23 spinner UpDown
+								24 button (disabled) Up
+								25 button (disabled) Down
+							26 edit (settable, string) Giờ Value: 14
+						27 text :
+						28 spinner Phút
+							29 spinner UpDown
+								30 button (disabled) Up
+								31 button (disabled) Down
+							32 edit (settable, string) Phút Value: 00
+					33 pane Mã
+						34 edit (settable, string) Mã
+					35 pane Tên
+						36 edit (settable, string) Tên
+					37 scroll bar (settable, float) Vertical Value: 0 ID: NonClientVerticalScrollBar
+						38 button Line up ID: UpButton
+						39 thumb Position ID: ScrollbarThumb
+						40 button Page down ID: DownPageButton
+						41 button Line down ID: DownButton
+				42 pane
+					43 button Lưu
+					44 button Kiểm tra / tải lại
+					45 button Hủy
+		46 title bar (settable, string) Value: Thêm danh mục
+			47 menu bar System ID: MenuBar
+				53 menu item System
+			49 button Minimize
+			50 button Maximize
+			51 button Close
+
+Document text: ```
+00
+```

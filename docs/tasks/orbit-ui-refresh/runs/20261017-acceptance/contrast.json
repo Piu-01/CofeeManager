@@ -1,0 +1,58 @@
+[
+  {
+    "Pair": "text/canvas",
+    "Foreground": "#FFF4E7",
+    "Background": "#100E15",
+    "Ratio": 17.657,
+    "Threshold": 4.5,
+    "Status": "PASS"
+  },
+  {
+    "Pair": "text/surface",
+    "Foreground": "#FFF4E7",
+    "Background": "#211B28",
+    "Ratio": 15.451,
+    "Threshold": 4.5,
+    "Status": "PASS"
+  },
+  {
+    "Pair": "muted/surface",
+    "Foreground": "#D0C2D7",
+    "Background": "#211B28",
+    "Ratio": 9.888,
+    "Threshold": 4.5,
+    "Status": "PASS"
+  },
+  {
+    "Pair": "onCaramel/caramel",
+    "Foreground": "#28180E",
+    "Background": "#FFD09A",
+    "Ratio": 12.012,
+    "Threshold": 4.5,
+    "Status": "PASS"
+  },
+  {
+    "Pair": "text/selected",
+    "Foreground": "#FFF4E7",
+    "Background": "#3D2D22",
+    "Ratio": 12.115,
+    "Threshold": 4.5,
+    "Status": "PASS"
+  },
+  {
+    "Pair": "muted/disabled-top",
+    "Foreground": "#D0C2D7",
+    "Background": "#514357",
+    "Ratio": 5.405,
+    "Threshold": 4.5,
+    "Status": "PASS"
+  },
+  {
+    "Pair": "onCaramel/gradient-shade",
+    "Foreground": "#28180E",
+    "Background": "#DDA76C",
+    "Ratio": 8.001,
+    "Threshold": 4.5,
+    "Status": "PASS"
+  }
+]
