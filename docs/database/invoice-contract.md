@@ -15,3 +15,9 @@ State phân trang reset BeginPrint, giữ cursor qua PrintPage; khổ quá nhỏ
 thay vì cắt dòng. Chưa có máy in thì chi tiết vẫn đọc; không tự cài/đổi printer.
 
 Chưa nghiệm thu ca in hoặc hình thức; hình thức do người dùng kiểm theo phân công.
+
+Từ T33/T34, bộ lọc trạng thái hóa đơn có đủ Chua thanh toan / Cho thanh toan /
+Da thanh toan / Huy (lọc qua tham số sp_InvoiceList, không hard-code); danh sách
+đơn giao cũng có mục “Chờ thanh toán”. Hóa đơn đã trả trong một phiên bàn đã đóng
+vẫn tra cứu/in lại bình thường; chi tiết/in không đọc PHIEN_BAN và không đổi số
+snapshot. “Quay lại POS” chỉ bật cho đơn Chua/Cho; in hóa đơn chính chỉ cho Da.

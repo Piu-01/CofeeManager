@@ -28,9 +28,11 @@ lương là snapshot, không tính lại lịch sử bằng danh mục mới.
 | LICHSU_DIEM.Loai | Cong / Tru |
 | DANHMUC_THUCHI.Loai | Thu / Chi |
 | HOADON.LoaiDon | Tai quan / Mang di / Giao hang |
-| HOADON.TrangThai | Chua thanh toan / Da thanh toan / Huy |
+| HOADON.TrangThai | Chua thanh toan / Cho thanh toan / Da thanh toan / Huy |
 | HOADON.TrangThaiGiao | NULL / Cho giao / Dang giao / Da giao / Huy giao |
-| vw_TrangThaiBan.TrangThai | Trong / Dang phuc vu (dẫn xuất, không CHECK/field BAN) |
+| HOADON.MaPhien | int NULL → PHIEN_BAN; đơn tại bàn từ T34; không backfill đơn cũ |
+| PHIEN_BAN | Phiên bàn (GioVao/GioRa/MaNVMo/MaNVTra/Revision); app DML DENY; tối đa một phiên mở/bàn |
+| vw_TrangThaiBan.TrangThai | Trong / Dang phuc vu / Cho thanh toan (dẫn xuất, không CHECK/field BAN); thêm MaPhien/SessionRevision/Retained |
 | vw_CongNoNCC.TrangThai | Da tra / Qua han / Chua tra / Tra mot phan (dẫn xuất) |
 | PHIEUKIEMKE.DaDieuChinh | bit 0/1 |
 

@@ -18,6 +18,18 @@ Tiền đưa/thối chỉ trong UI phiên hiện tại, không phải số thu v
 Timeout sau gửi phải đối chiếu request/MaHD, không retry checkout tự động. Lỗi522xx
 được dịch an toàn;52103 xung đột,52201 yêu cầu preview mới. Chưa nghiệm thu G04.
 
+Từ migration032 (T33), preview/checkout/hủy dùng sp_SalesCheckPayable nên thu được
+đơn Chua thanh toan hoặc Cho thanh toan; đơn Cho vẫn khóa sửa dòng/header qua
+sp_SalesCheckOpen. Tiền/kho/điểm/snapshot tính như đơn Chua; trigger thanh toán và
+tiêu hao chấp nhận trạng thái Cho trong transaction. Sau commit header mới thành Da
+thanh toan và NgayThanhToan được ghi như cũ.
+
+Từ migration034 (T34), checkout **không** đóng phiên bàn và không làm bàn trống;
+phiên chỉ đóng bằng sp_TraBan khi không còn đơn Chua/Cho. UI hỏi “Trả bàn ngay?”
+sau khi đã commit tiền; lỗi trả bàn không rollback thanh toán (đối chiếu rồi bấm
+lại). In lại hóa đơn đã trả trong phiên đã đóng vẫn đọc theo MaHD, không phụ thuộc
+phiên.
+
 Migration016 (G04-CONC-01): TR_CTTT_KiemTra duyệt tập MaHD affected theo thứ tự,
 khóa từng PK_HOADON bằng seek trước kiểm trạng thái. Không range scan các đơn lân
 cận khi checkout đã giữ khóa kho. Giữ lỗi51002 cho đơn đóng,51003 cho phân bổ vượt,

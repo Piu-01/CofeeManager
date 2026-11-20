@@ -30,7 +30,8 @@ ADMIN/CASH/STORE nghiệp vụ ở BLL T06.
 | BAN | Danh mục; trạng thái từ view | T11 |
 | DOITACGIAOHANG | Danh mục | T08/T18 |
 | PHUONGTHUCTT | Danh mục, PT010 ngoài scope | T08 |
-| HOADON | Tổng trigger, chốt/hủy qua procedure; app DML DENY; ThanhTien computed | T14–T18 |
+| HOADON | Tổng trigger, chốt/hủy qua procedure; app DML DENY; ThanhTien computed; MaPhien do procedure tạo đơn gán | T14–T18, T34 |
+| PHIEN_BAN | Chỉ sp_TaoHoaDon/sp_TaoHoaDonTuNhap mở-nối phiên và sp_TraBan đóng; app DML DENY | T34 |
 | CHITIET_HD | Món/giá snapshot, tổng qua trigger; MaDong identity | T14 |
 | CHITIET_THANHTOAN | Checkout allocation; app DML DENY; MaTT identity | T15 |
 | DANHMUC_THUCHI | Danh mục loại, trigger khóa loại đã có trả nợ | T08/T19 |

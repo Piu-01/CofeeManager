@@ -106,3 +106,89 @@ chỉ nhận DB CoffeeManager_Development có marker/schema015–016, backup COP
 CHECKSUM trước nâng, kiểm checksum001–016 và đối chiếu tồn/điểm/hóa đơn/tài khoản.
 Fresh development: Initialize đến009, Update-DevelopmentG04 đến015 rồi updater016.
 Không seed lại. App đang chạy thì updater dừng, không tự kill process người dùng.
+
+## G04 —030 draft order flush (11/11/2026)
+
+030_draft_order_flush.sql chạy sau029 bằng Apply-Migration.ps1 Version30. Thêm TVP
+dbo.SalesDraftLines (RowNo/Product/Quantity/Note/Price) và procedure
+dbo.sp_TaoHoaDonTuNhap: nhận header + toàn bộ dòng nháp, tự mở transaction, dùng
+sp_SalesBegin/sp_SalesFinish với Operation SalesCreate để giữ idempotency/reconcile,
+khóa bàn UPDLOCK/HOLDLOCK và trả 52104 khi bàn đã có đơn, kiểm giá dòng bằng
+SANPHAM.GiaBan (lệch giá trả 52105), chèn HOADON + CHITIET_HD rồi
+sp_SalesRefreshDiscount. Không sửa procedure/rows của028–029; không đổi
+checksum001–029.
+
+Đã áp migration trên DB test riêng CoffeeManager_Test_G04_20261111_draftflush
+(clone COPY_ONLY từ CoffeeManager_Test_DemoSeed2 đang ở schema029) và kiểm
+type/proc/grant tồn tại. Chưa chạy ca nghiệp vụ DK01–DK10 trên DB này — chờ duyệt
+đợt test.
+
+Cập nhật 15/11/2026 (người dùng duyệt): 030 cũng đã áp lên
+CoffeeManager_Development đang ở schema029, vì app gọi proc mới trong khi DB thiếu
+đối tượng (bug G04-POS-04). Backup COPY_ONLY + CHECKSUM đã Verify
+(CoffeeManager_Development_before030_20261115.bak), Apply-Migration Version30 trả
+Applied, SHA-256 của cả 30 file khớp checksum trong dbo.SchemaMigrations nên
+001–029 không lệch; type SalesDraftLines, proc sp_TaoHoaDonTuNhap và GRANT EXECUTE
+cho CafeManagerApp đã có. Không reseed, không sửa 028–029. Chưa chạy DK01–DK10 —
+vẫn chờ duyệt đợt test.
+
+## G04 —032 sales pending payment (16/11/2026, T33)
+
+032_sales_pending_payment.sql chạy sau031 bằng Apply-Migration.ps1 Version32. Thêm
+trạng thái HOADON Cho thanh toan: mở rộng CHK_HD_TrangThai và index lọc UX_HD_BanMo,
+ALTER vw_TrangThaiBan, tạo sp_SalesCheckPayable (còn thu/hủy) tách khỏi
+sp_SalesCheckOpen (còn sửa), tạo sp_YeuCauThanhToan/sp_MoLaiHoaDon dùng receipt
+SalesRequestPay/SalesReopen, mở rộng whitelist sp_SalesReconcile, cập nhật các đọc/
+đếm (sp_SalesReadCore, sp_SalesOpenOrders, sp_TaoHoaDon, sp_TaoHoaDonTuNhap,
+sp_ReportDashboard, sp_DashboardAnalyticsRead/Sources) và ba trigger
+TR_CTTT_KiemTra/TR_DiscountSnapshot/TR_TieuHao_Kho. Không sửa TR_CTHD_TongTien,
+TR_HD_Chot hay checksum001–031; GRANT EXECUTE hai procedure mới cho CafeManagerApp,
+không cấp quyền bảng.
+
+Đã áp thành công trên DB scratch riêng CoffeeManager_Test_G04_20261116_pendingpay
+(clone schema+seed) đến Version32; chưa áp lên CoffeeManager_Development và chưa
+chạy PP01–PP12 — chờ duyệt đợt test. Acceptance SQL:
+database/tests/g04/acceptance-pending-payment.sql; milestone kỹ thuật v16 nằm trong
+Invoke-G04Technical.ps1. Lưu ý migration031 thiếu GRANT EXECUTE cho
+sp_SalesNoteSuggestions (ghi nhận riêng, ngoài phạm vi 032).
+
+## G04 — 034 sales table sessions (16/11/2026, T34)
+
+034_sales_table_sessions.sql chạy sau033 bằng Apply-Migration.ps1 Version34; tiền đề
+`SchemaMigrations Version=32` (034 không phụ thuộc dữ liệu nhãn của 033). Preflight
+chặn nếu PHIEN_BAN đã tồn tại hoặc có bàn mở nhiều đơn, rollback nguyên trạng. Thêm
+bảng dbo.PHIEN_BAN (GioVao/GioRa, MaNVMo/MaNVTra char(5), Revision rowversion),
+unique filtered index UX_PHIEN_BAN_Mo(MaBan) WHERE GioRa IS NULL, DENY
+INSERT/UPDATE/DELETE cho CafeManagerApp; ALTER HOADON thêm MaPhien int NULL (FK
+FK_HD_Phien, IX_HD_Phien), không backfill. ALTER vw_TrangThaiBan thêm MaPhien,
+SessionRevision, Retained; ALTER sp_TableList/sp_TableSelectCurrent thêm 3 cột;
+ALTER sp_TaoHoaDon/sp_TaoHoaDonTuNhap tự mở/nối phiên; ALTER sp_SalesReadCore trả
+MaPhien + SessionRevision; tạo sp_TraBan (receipt TableClose, 52110/52111/52103) và
+GRANT EXECUTE. Không sửa checksum001–033, trigger hay dữ liệu cũ.
+
+Đã áp thành công trên DB scratch CoffeeManager_Test_G04_20261116_pendingpay (đang
+schema032, chưa áp 033) bằng Apply-Migration Version34; kiểm Version=34, bảng/deny/
+index/view 3 cột mới, sp_TraBan + grant, sp_TableList 10 cột và sp_SalesOrderGet 27
+cột. Chưa áp lên CoffeeManager_Development và chưa chạy TS01–TS12 — chờ duyệt đợt
+test. Acceptance SQL: database/tests/g04/acceptance-table-sessions.sql; milestone kỹ
+thuật v17 trong Invoke-G04Technical.ps1; Test-G04.ps1 đã nâng ThroughVersion=17 và
+ánh xạ schema034.
+
+## G04 — 035 invoice detail sessions (17/11/2026, T34-01)
+
+035_sales_invoice_detail_sessions.sql chạy sau034 bằng Apply-Migration.ps1 Version35;
+tiền đề `SchemaMigrations Version=34` và sp_InvoiceDetail tồn tại. Lỗi phát hiện trong
+đợt test 17/11/2026: DAL T34 đọc 27 cột header (thêm MaPhien, SessionRevision) nhưng
+sp_InvoiceDetail (013) còn trả 25 cột, làm chi tiết hóa đơn/in lại ném
+IndexOutOfRangeException. 035 ALTER PROCEDURE sp_InvoiceDetail: giữ nguyên 25 cột cũ
+theo thứ tự, thêm `h.MaPhien` và `sessionRow.Revision SessionRevision` qua
+OUTER APPLY PHIEN_BAN; các resultset dòng món/thanh toán/snapshot không đổi; GRANT
+EXECUTE giữ cho CafeManagerApp. Không sửa 013/034, không đổi dữ liệu.
+
+Milestone kỹ thuật v18: database/tests/g04/technical-v18.sql kiểm metadata 27 cột
+(ordinal 26/27 = MaPhien/SessionRevision), gọi sp_InvoiceDetail trên đơn có phiên và
+đối chiếu MaPhien/SessionRevision, dọn đơn/phiên. Test-G04.ps1 và
+Invoke-G04Technical.ps1 đã nâng ThroughVersion=18, ánh xạ schema035. Regression
+17/11/2026: technical `technical_20261117_020349_e6dedcdf` typed+native Success;
+acceptance `acceptance_20261117_020633_de5483fe` 5/5 SQL subset PASS, typed smoke
+Success, unit 23/23.
