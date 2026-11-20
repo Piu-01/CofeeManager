@@ -1,0 +1,150 @@
+Window: "CoffeeManager", App: CafeManager.WinForms.exe.
+	0 window CoffeeManager Secondary Actions: Raise
+		1 pane
+			2 pane
+				3 text CoffeeManager
+				4 text KHÔNG GIAN QUẢN LÝ
+				5 button Trang phiên
+				6 button Danh mục nền
+				7 button Khách hàng
+				8 button Bàn / Khu vực
+				9 button Menu / Công thức
+				10 button Nguyên liệu / Tồn
+				11 button Ưu đãi / Điểm
+				12 button Thông tin hệ thống
+				13 button Đăng xuất ID: logout
+				14 text Nguyen Van An
+				15 text Quản trị viên · ADMIN
+				16 text Phiên đang hoạt động.
+			17 pane
+				18 text Quản lý / Bàn / Khu vực
+				19 text Nguyen Van An · ADMIN
+			20 pane Nguyen Van An · ADMIN
+				389 pane Nguyen Van An · ADMIN ID: 11208486
+					390 pane ID: 9112604
+						391 pane ID: 3607454
+							392 pane ID: 31391946
+								393 text SPACE WORKSPACE
+								394 text Bàn & khu vực
+								395 text Theo dõi trạng thái bàn và quản lý khu vực.
+								396 pane Theo dõi trạng thái bàn và quản lý khu vực.
+									397 button Thêm
+								398 pane
+									399 pane
+										400 button Bàn / Sơ đồ
+										401 button Khu vực
+								402 pane
+									403 pane
+										404 pane ID: 25365026
+											405 edit (settable, string) Description: Tìm mã hoặc tên…
+									406 pane
+										407 pane ID: 3934394
+											408 combo box (settable, string) Tất cả khu vực Value: Tất cả khu vực
+												409 text
+												410 button Open
+										411 button Danh sách
+										412 button Sơ đồ
+										413 button Tải lại danh sách
+									414 text 10 bàn
+									415 pane 10 bàn
+										416 button Chọn bàn
+										417 button Sửa
+										418 button Xóa
+									419 pane
+										437 data grid
+											438 scroll bar (settable, float) Vertical Value: 0
+												439 button Line up
+												440 thumb Position
+												441 button Page down
+												442 button Line down
+											443 custom Top Row
+												444 header Top Left Header Cell ID: 4220902484
+												445 header MÃ ID: 423296847
+												446 header BÀN ID: 4242859021
+												447 header KHU VỰC ID: 4220296365
+												448 header TRẠNG THÁI ID: 4262526164
+												449 header ĐƠN MỞ ID: 427533771
+											450 custom Row 1
+												451 header Row 1 ID: 4265247871
+												452 item MÃ Row 1 Value: B0001 ID: 4242915959
+												453 item BÀN Row 1 Value: Ban 01 ID: 4221036558
+												454 item KHU VỰC Row 1 Value: KV001 ID: 425039806
+												455 item TRẠNG THÁI Row 1 Value: Trống ID: 4265517487
+												456 item ĐƠN MỞ Row 1 Value: (null) ID: 4246420972
+											457 custom Row 2
+												458 header Row 2 ID: 4260516207
+												459 item MÃ Row 2 Value: B0002 ID: 4248513199
+												460 item BÀN Row 2 Value: Ban 02 ID: 4226691813
+												461 item KHU VỰC Row 2 Value: KV001 ID: 4211449257
+												462 item TRẠNG THÁI Row 2 Value: Trống ID: 4214622620
+												463 item ĐƠN MỞ Row 2 Value: (null) ID: 4255876333
+											464 custom Row 3
+												465 header Row 3 ID: 4247859425
+												466 item MÃ Row 3 Value: B0003 ID: 4218192755
+												467 item BÀN Row 3 Value: Ban 03 ID: 4235179227
+												468 item KHU VỰC Row 3 Value: KV001 ID: 4254676768
+												469 item TRẠNG THÁI Row 3 Value: Đang phục vụ ID: 4239709344
+												470 item ĐƠN MỞ Row 3 Value: HD20250410 ID: 4246459429
+											471 custom Row 4
+												472 header Row 4 ID: 4267015361
+												473 item MÃ Row 4 Value: B0004 ID: 4265893334
+												474 item BÀN Row 4 Value: Ban 04 ID: 4251306978
+												475 item KHU VỰC Row 4 Value: KV002 ID: 4263010946
+												476 item TRẠNG THÁI Row 4 Value: Trống ID: 4213835942
+												477 item ĐƠN MỞ Row 4 Value: (null) ID: 4245649523
+											478 custom Row 5
+												479 header Row 5 ID: 4264358941
+												480 item MÃ Row 5 Value: B0005 ID: 4231359870
+												481 item BÀN Row 5 Value: Ban 05 ID: 425025127
+												482 item KHU VỰC Row 5 Value: KV002 ID: 4265326654
+												483 item TRẠNG THÁI Row 5 Value: Trống ID: 4243940134
+												484 item ĐƠN MỞ Row 5 Value: (null) ID: 4234350840
+											485 custom Row 6
+												486 header Row 6 ID: 4233929788
+												487 item MÃ Row 6 Value: B0006 ID: 4238434063
+												488 item BÀN Row 6 Value: Ban 06 ID: 4229880774
+												489 item KHU VỰC Row 6 Value: KV003 ID: 4252905748
+												490 item TRẠNG THÁI Row 6 Value: Trống ID: 4216686085
+												491 item ĐƠN MỞ Row 6 Value: (null) ID: 4215592518
+											492 custom Row 7
+												493 header Row 7 ID: 4217889965
+												494 item MÃ Row 7 Value: B0007 ID: 4231242953
+												495 item BÀN Row 7 Value: Ban 07 ID: 423505213
+												496 item KHU VỰC Row 7 Value: KV003 ID: 4245567770
+												497 item TRẠNG THÁI Row 7 Value: Trống ID: 4255510108
+												498 item ĐƠN MỞ Row 7 Value: (null) ID: 4250542776
+											499 custom Row 8
+												500 header Row 8 ID: 4218903553
+												501 item MÃ Row 8 Value: B0008 ID: 4244419603
+												502 item BÀN Row 8 Value: Ban 08 ID: 4240583939
+												503 item KHU VỰC Row 8 Value: KV004 ID: 4257829159
+												504 item TRẠNG THÁI Row 8 Value: Trống ID: 4213581563
+												505 item ĐƠN MỞ Row 8 Value: (null) ID: 4242342593
+											506 custom Row 9
+												507 header Row 9 ID: 4242358778
+												508 item MÃ Row 9 Value: B0009 ID: 4213793207
+												509 item BÀN Row 9 Value: Ban 09 ID: 4245093974
+												510 item KHU VỰC Row 9 Value: KV004 ID: 4249350760
+												511 item TRẠNG THÁI Row 9 Value: Trống ID: 4237580108
+												512 item ĐƠN MỞ Row 9 Value: (null) ID: 4218779367
+											513 custom Row 10
+												514 header Row 10 ID: 4219596515
+												515 item MÃ Row 10 Value: B0010 ID: 4253428110
+												516 item BÀN Row 10 Value: Ban 10 ID: 4223476794
+												517 item KHU VỰC Row 10 Value: KV005 ID: 4236762869
+												518 item TRẠNG THÁI Row 10 Value: Trống ID: 428155257
+												519 item ĐƠN MỞ Row 10 Value: (null) ID: 4238909486
+									421 pane ID: 6555428
+										422 text Hiển thị 1–10 / 10 bàn
+										423 button (disabled) Trang trước
+										424 text 1 / 1
+										425 button (disabled) Trang sau
+								426 text Đã cập nhật 14:53:07
+		21 title bar (settable, string) Value: CoffeeManager
+			22 menu bar System ID: MenuBar
+				23 menu item System
+			24 button Minimize
+			25 button Maximize
+			26 button Close
+
+The focused UI element is 405 edit (settable, string) Description: Tìm mã hoặc tên….

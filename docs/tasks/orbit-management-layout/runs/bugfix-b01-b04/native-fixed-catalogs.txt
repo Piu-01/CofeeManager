@@ -1,0 +1,104 @@
+Window: "CoffeeManager", App: CafeManager.WinForms.exe.
+	0 window CoffeeManager Secondary Actions: Raise
+		1 pane
+			2 pane
+				3 text CoffeeManager
+				4 text KHÔNG GIAN QUẢN LÝ
+				5 button Trang phiên
+				6 button Danh mục nền
+				7 button Khách hàng
+				8 button Bàn / Khu vực
+				9 button Menu / Công thức
+				10 button Nguyên liệu / Tồn
+				11 button Ưu đãi / Điểm
+				12 button Thông tin hệ thống
+				13 button Đăng xuất
+			14 pane
+				15 text Quản lý / Danh mục nền
+				16 text Nguyen Van An · ADMIN
+			17 pane Nguyen Van An · ADMIN
+				316 pane Nguyen Van An · ADMIN ID: 2099694
+					317 pane
+						318 pane
+							319 pane
+								320 text Danh mục nền
+								321 text Dữ liệu tham chiếu · CoffeeManager
+							322 pane Dữ liệu tham chiếu · CoffeeManager
+								323 button Thêm
+						324 pane
+							325 tab
+								326 pane Sản phẩm
+									327 pane
+										328 pane Đã lưu · Trang 1 · 10 dòng · 22:01.
+											329 pane Đã lưu · Trang 1 · 10 dòng · 22:01.
+												330 edit (settable, string) Tìm tên danh mục Description: Tên danh mục…
+												331 pane
+													332 button Tìm
+													333 button Tải / đối chiếu
+											334 pane
+												335 text 10 dòng trong trang
+												336 pane 10 dòng trong trang
+													337 button Sửa
+													338 button Xóa
+											339 pane
+												340 data grid
+													341 scroll bar (settable, float) Vertical Value: 0
+														342 button Line up
+														343 thumb Position
+														344 button Page down
+														345 button Line down
+													346 custom Top Row
+														347 header Mã ID: 4251484025
+														348 header Tên ID: 4265312552
+													349 custom Row 1
+														350 item Mã Row 1, Not sorted. Value: DM001 ID: 4231967602
+														351 item Tên Row 1, Not sorted. Value: Ca phe ID: 4212925652
+													352 custom Row 2
+														353 item Mã Row 2, Not sorted. Value: DM002 ID: 421341678
+														354 item Tên Row 2, Not sorted. Value: Tra sua ID: 4217441826
+													355 custom Row 3
+														356 item Mã Row 3, Not sorted. Value: DM003 ID: 4246110386
+														357 item Tên Row 3, Not sorted. Value: Sinh to ID: 4262564110
+													358 custom Row 4
+														359 item Mã Row 4, Not sorted. Value: DM004 ID: 4250727104
+														360 item Tên Row 4, Not sorted. Value: Banh ngot ID: 4255472578
+													361 custom Row 5
+														362 item Mã Row 5, Not sorted. Value: DM005 ID: 4227877518
+														363 item Tên Row 5, Not sorted. Value: Nuoc ep ID: 4226863423
+													364 custom Row 6
+														365 item Mã Row 6, Not sorted. Value: DM006 ID: 4247259451
+														366 item Tên Row 6, Not sorted. Value: Nuoc ngot ID: 4210393089
+													367 custom Row 7
+														368 item Mã Row 7, Not sorted. Value: DM007 ID: 4210690797
+														369 item Tên Row 7, Not sorted. Value: Tra trai cay ID: 424762643
+													370 custom Row 8
+														371 item Mã Row 8, Not sorted. Value: DM008 ID: 4220296365
+														372 item Tên Row 8, Not sorted. Value: Do uong nong ID: 4262526164
+													373 custom Row 9
+														374 item Mã Row 9, Not sorted. Value: DM009 ID: 4226691813
+														375 item Tên Row 9, Not sorted. Value: Kem - Trang mien ID: 4211449257
+													376 custom Row 10
+														377 item Mã Row 10, Not sorted. Value: DM010 ID: 4255876333
+														378 item Tên Row 10, Not sorted. Value: Mon an nhe ID: 4255303697
+											379 pane
+												380 text Trang 1 · Hiển thị 1–10
+												381 pane Trang 1 · Hiển thị 1–10
+													382 button (disabled) Trước
+													383 button (disabled) Sau
+										384 text Đã lưu · Trang 1 · 10 dòng · 22:01.
+								385 tab item (selectable) Sản phẩm
+								386 tab item (selectable) Nhà cung cấp
+								387 tab item (selectable) Phương thức
+								388 tab item (selectable) Đối tác
+								389 tab item (selectable) Thu / chi
+								390 tab item (selectable) Chức vụ
+								391 tab item (selectable) Ca làm
+			135 text Phiên đang hoạt động.
+		136 title bar (settable, string) Value: CoffeeManager
+			137 menu bar System ID: MenuBar
+				138 menu item System
+			139 button Minimize
+			140 button Maximize
+			141 button Close
+
+The focused UI element is 330 edit (settable, string) Tìm tên danh mục Description: Tên danh mục….

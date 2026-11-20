@@ -1,0 +1,124 @@
+Window: "CoffeeManager", App: CafeManager.WinForms.exe.
+	0 window CoffeeManager Secondary Actions: Raise
+		1 pane
+			2 pane
+				3 text CoffeeManager
+				4 text KHÔNG GIAN QUẢN LÝ
+				5 button Trang phiên
+				6 button Danh mục nền
+				7 button Khách hàng
+				8 button Bàn / Khu vực
+				9 button Menu / Công thức
+				10 button Nguyên liệu / Tồn
+				11 button Ưu đãi / Điểm
+				12 button Thông tin hệ thống
+				13 button Đăng xuất ID: logout
+				14 text Nguyen Van An
+				15 text Quản trị viên · ADMIN
+				16 text Phiên đang hoạt động.
+			17 pane
+				18 text Quản lý / Danh mục nền
+				19 text Nguyen Van An · ADMIN
+			20 pane Nguyen Van An · ADMIN
+				27 pane Nguyen Van An · ADMIN ID: 1117632
+					28 pane ID: 921114
+						29 text REFERENCE WORKSPACE
+						30 text Danh mục nền
+						31 text Dữ liệu tham chiếu · CoffeeManager
+						32 pane Dữ liệu tham chiếu · CoffeeManager
+							33 button Thêm
+						34 pane
+							35 pane
+								36 button Sản phẩm
+								37 button Nhà cung cấp
+								38 button Phương thức
+								39 button Đối tác
+								40 button Thu / chi
+								41 button Chức vụ
+								42 button Ca làm
+						43 pane
+							44 pane ID: 724442
+								45 edit (settable, string) Tìm tên danh mục Description: Tìm tên danh mục…
+							46 pane
+								47 button Tìm
+								48 button Tải / đối chiếu
+							49 text 10 phương thức
+							50 pane 10 phương thức
+								51 button Sửa
+								52 button Xóa
+							53 pane
+								54 data grid
+									110 scroll bar (settable, float) Vertical Value: 0
+										111 button Line up
+										112 thumb Position
+										113 button Page down
+										114 button Line down
+									55 custom Top Row
+										56 header Top Left Header Cell ID: 4237887652
+										57 header MÃ ID: 4222777435
+										58 header TÊN ID: 4227671211
+										115 header HỖ TRỢ THỦ CÔNG ID: 4233460895
+									116 custom Row 1
+										117 header Row 1 ID: 4229381954
+										118 item MÃ Row 1 Value: PT001 ID: 4246421085
+										119 item TÊN Row 1 Value: Tien mat ID: 4266603199
+										120 check box HỖ TRỢ THỦ CÔNG Row 1 Value: True ID: 4260535220
+									121 custom Row 2
+										122 header Row 2 ID: 4229904926
+										123 item MÃ Row 2 Value: PT002 ID: 4253219720
+										124 item TÊN Row 2 Value: Chuyen khoan ngan hang ID: 4220767720
+										125 check box HỖ TRỢ THỦ CÔNG Row 2 Value: True ID: 421544912
+									126 custom Row 3
+										127 header Row 3 ID: 4259763559
+										128 item MÃ Row 3 Value: PT003 ID: 4238728775
+										129 item TÊN Row 3 Value: Quet the noi dia ID: 4233712037
+										130 check box HỖ TRỢ THỦ CÔNG Row 3 Value: False ID: 4235603304
+									131 custom Row 4
+										132 header Row 4 ID: 4244269570
+										133 item MÃ Row 4 Value: PT004 ID: 4238633498
+										134 item TÊN Row 4 Value: Vi MoMo ID: 4232473426
+										135 check box HỖ TRỢ THỦ CÔNG Row 4 Value: False ID: 4219501356
+									136 custom Row 5
+										137 header Row 5 ID: 427394973
+										138 item MÃ Row 5 Value: PT005 ID: 4229025790
+										139 item TÊN Row 5 Value: ZaloPay ID: 4241790961
+										140 check box HỖ TRỢ THỦ CÔNG Row 5 Value: False ID: 426411591
+									141 custom Row 6
+										142 header Row 6 ID: 429817118
+										143 item MÃ Row 6 Value: PT006 ID: 4260513677
+										144 item TÊN Row 6 Value: VNPay QR ID: 4248480306
+										145 check box HỖ TRỢ THỦ CÔNG Row 6 Value: False ID: 4226264209
+									146 custom Row 7
+										147 header Row 7 ID: 429466352
+										148 item MÃ Row 7 Value: PT007 ID: 4255953720
+										149 item TÊN Row 7 Value: ShopeePay ID: 4256309729
+										150 check box HỖ TRỢ THỦ CÔNG Row 7 Value: False ID: 4260937846
+									151 custom Row 8
+										152 header Row 8 ID: 4230839945
+										153 item MÃ Row 8 Value: PT008 ID: 4265374977
+										154 item TÊN Row 8 Value: Moca (Grab Pay) ID: 4244568335
+										155 check box HỖ TRỢ THỦ CÔNG Row 8 Value: False ID: 4242517451
+									156 custom Row 9
+										157 header Row 9 ID: 424800863
+										158 item MÃ Row 9 Value: PT009 ID: 4262411227
+										159 item TÊN Row 9 Value: The tin dung quoc te ID: 426039587
+										160 check box HỖ TRỢ THỦ CÔNG Row 9 Value: False ID: 4211405773
+									161 custom Row 10
+										162 header Row 10 ID: 4248527498
+										163 item MÃ Row 10 Value: PT010 ID: 4226877698
+										164 item TÊN Row 10 Value: Diem thuong doi ID: 4213865759
+										165 check box HỖ TRỢ THỦ CÔNG Row 10 Value: False ID: 4246037145
+							59 pane ID: 8127116
+								60 text Hiển thị 1–10 / 10 phương thức
+								61 button (disabled) Trang trước
+								62 text 1 / 1
+								63 button (disabled) Trang sau
+						64 text Đã lưu · Trang 1 · 10 dòng · 15:09.
+		21 title bar (settable, string) Value: CoffeeManager
+			22 menu bar System ID: MenuBar
+				23 menu item System
+			24 button Minimize
+			25 button Maximize
+			26 button Close
+
+The focused UI element is 45 edit (settable, string) Tìm tên danh mục Description: Tìm tên danh mục….

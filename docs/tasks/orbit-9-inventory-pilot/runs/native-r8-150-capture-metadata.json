@@ -1,0 +1,12 @@
+{
+  "screenshots": [
+    {
+      "width": 1274,
+      "height": 720,
+      "originX": 9,
+      "originY": 0
+    }
+  ],
+  "dpiEvidence": "probe-r8-current-dpi.json",
+  "note": "Sky capture returned 1274x720; not claimed physical client1366x768 at150. Probe confirms desktop DeviceDpi144. Original tool image saved without editing."
+}

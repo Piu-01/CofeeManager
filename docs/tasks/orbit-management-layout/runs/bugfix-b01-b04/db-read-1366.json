@@ -1,0 +1,6985 @@
+[
+  {
+    "Role": "ADMIN",
+    "Module": "Materials",
+    "Tab": null,
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 14,
+    "GridWidth": 1304,
+    "ColumnWidth": 1283,
+    "WorkspaceWidth": 1366,
+    "BodySize": {
+      "IsEmpty": false,
+      "Width": 1304,
+      "Height": 374
+    },
+    "Panels": [
+      {
+        "Type": "OrbitManagementLayout",
+        "Height": 768,
+        "Rows": [
+          90,
+          583,
+          35
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          70
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          45,
+          25
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 583,
+        "Rows": [
+          69,
+          69,
+          374,
+          69
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 69,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 69,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 69,
+        "Rows": [
+          49
+        ]
+      }
+    ],
+    "Buttons": [
+      {
+        "Text": "Th\u00EAm nguy\u00EAn li\u1EC7u",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 250,
+            "Height": 50
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 250,
+          "Height": 50,
+          "Left": 5,
+          "Top": 2,
+          "Right": 255,
+          "Bottom": 52,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 260,
+          "Height": 70
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u1EA3i l\u1EA1i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 205,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 210,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "M\u1EDF s\u1ED5",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 360,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 360,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "X\u00F3a",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 245,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 245,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 245,
+          "Top": 2,
+          "Right": 355,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 360,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Nguy\u00EAn li\u1EC7u \u0026 t\u1ED3n kho",
+      "Tra c\u1EE9u nguy\u00EAn li\u1EC7u, \u0111\u01A1n v\u1ECB v\u00E0 s\u1ED1 l\u01B0\u1EE3ng t\u1ED3n.",
+      "14 nguy\u00EAn li\u1EC7u trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201314",
+      "\u0110\u00E3 c\u1EADp nh\u1EADt 21:42:27"
+    ]
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Products",
+    "Tab": null,
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 11,
+    "GridWidth": 1304,
+    "ColumnWidth": 1283,
+    "WorkspaceWidth": 1366,
+    "BodySize": {
+      "IsEmpty": false,
+      "Width": 1304,
+      "Height": 373
+    },
+    "Panels": [
+      {
+        "Type": "OrbitManagementLayout",
+        "Height": 768,
+        "Rows": [
+          90,
+          583,
+          35
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          70
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          45,
+          25
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 583,
+        "Rows": [
+          70,
+          69,
+          373,
+          69
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          50
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 69,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 69,
+        "Rows": [
+          49
+        ]
+      }
+    ],
+    "Buttons": [
+      {
+        "Text": "Th\u00EAm s\u1EA3n ph\u1EA9m",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 250,
+            "Height": 50
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 250,
+          "Height": 50,
+          "Left": 5,
+          "Top": 2,
+          "Right": 255,
+          "Bottom": 52,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 260,
+          "Height": 70
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u1EA3i l\u1EA1i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 205,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 532,
+          "Height": 50
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 450,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "C\u00F4ng th\u1EE9c",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 325,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 450,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "X\u00F3a",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 335,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 335,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 335,
+          "Top": 2,
+          "Right": 445,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 450,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Menu v\u00E0 c\u00F4ng th\u1EE9c",
+      "Qu\u1EA3n l\u00FD s\u1EA3n ph\u1EA9m v\u00E0 c\u00F4ng th\u1EE9c pha ch\u1EBF.",
+      "11 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201311",
+      "S\u1EB5n s\u00E0ng"
+    ]
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Catalogs",
+    "Tab": "S\u1EA3n ph\u1EA9m",
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 10,
+    "GridWidth": 1308,
+    "ColumnWidth": 1287,
+    "WorkspaceWidth": 1310,
+    "BodySize": {
+      "IsEmpty": false,
+      "Width": 1308,
+      "Height": 352
+    },
+    "Panels": [
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 768,
+        "Rows": [
+          88,
+          632
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 80,
+        "Rows": [
+          68
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 68,
+        "Rows": [
+          43,
+          25
+        ]
+      },
+      {
+        "Type": "OrbitManagementLayout",
+        "Height": 582,
+        "Rows": [
+          0,
+          549,
+          33
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 549,
+        "Rows": [
+          65,
+          65,
+          352,
+          65
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 65,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 65,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 65,
+        "Rows": [
+          49
+        ]
+      }
+    ],
+    "Buttons": [
+      {
+        "Text": "Th\u00EAm",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 250,
+            "Height": 50
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 250,
+          "Height": 50,
+          "Left": 5,
+          "Top": 2,
+          "Right": 255,
+          "Bottom": 52,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 260,
+          "Height": 68
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u00ECm",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 330,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u1EA3i / \u0111\u1ED1i chi\u1EBFu",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 325,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 330,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "X\u00F3a",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Danh m\u1EE5c n\u1EC1n",
+      "D\u1EEF li\u1EC7u tham chi\u1EBFu \u00B7 CoffeeManager",
+      "10 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201310",
+      "\u0110\u00E3 l\u01B0u \u00B7 Trang 1 \u00B7 10 d\u00F2ng \u00B7 21:42."
+    ]
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Catalogs",
+    "Tab": "Nh\u00E0 cung c\u1EA5p",
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 10,
+    "GridWidth": 1308,
+    "ColumnWidth": 1287,
+    "WorkspaceWidth": 1310,
+    "BodySize": {
+      "IsEmpty": false,
+      "Width": 1308,
+      "Height": 352
+    },
+    "Panels": [
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 768,
+        "Rows": [
+          88,
+          632
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 80,
+        "Rows": [
+          68
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 68,
+        "Rows": [
+          43,
+          25
+        ]
+      },
+      {
+        "Type": "OrbitManagementLayout",
+        "Height": 582,
+        "Rows": [
+          0,
+          549,
+          33
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 549,
+        "Rows": [
+          65,
+          65,
+          352,
+          65
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 65,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 65,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 65,
+        "Rows": [
+          49
+        ]
+      }
+    ],
+    "Buttons": [
+      {
+        "Text": "Th\u00EAm",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 250,
+            "Height": 50
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 250,
+          "Height": 50,
+          "Left": 5,
+          "Top": 2,
+          "Right": 255,
+          "Bottom": 52,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 260,
+          "Height": 68
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u00ECm",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 330,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u1EA3i / \u0111\u1ED1i chi\u1EBFu",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 325,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 330,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "X\u00F3a",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Danh m\u1EE5c n\u1EC1n",
+      "D\u1EEF li\u1EC7u tham chi\u1EBFu \u00B7 CoffeeManager",
+      "10 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201310",
+      "\u0110\u00E3 l\u01B0u \u00B7 Trang 1 \u00B7 10 d\u00F2ng \u00B7 21:42."
+    ]
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Catalogs",
+    "Tab": "Ph\u01B0\u01A1ng th\u1EE9c",
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 10,
+    "GridWidth": 1308,
+    "ColumnWidth": 1287,
+    "WorkspaceWidth": 1310,
+    "BodySize": {
+      "IsEmpty": false,
+      "Width": 1308,
+      "Height": 352
+    },
+    "Panels": [
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 768,
+        "Rows": [
+          88,
+          632
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 80,
+        "Rows": [
+          68
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 68,
+        "Rows": [
+          43,
+          25
+        ]
+      },
+      {
+        "Type": "OrbitManagementLayout",
+        "Height": 582,
+        "Rows": [
+          0,
+          549,
+          33
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 549,
+        "Rows": [
+          65,
+          65,
+          352,
+          65
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 65,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 65,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 65,
+        "Rows": [
+          49
+        ]
+      }
+    ],
+    "Buttons": [
+      {
+        "Text": "Th\u00EAm",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 250,
+            "Height": 50
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 250,
+          "Height": 50,
+          "Left": 5,
+          "Top": 2,
+          "Right": 255,
+          "Bottom": 52,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 260,
+          "Height": 68
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u00ECm",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 330,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u1EA3i / \u0111\u1ED1i chi\u1EBFu",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 325,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 330,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "X\u00F3a",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Danh m\u1EE5c n\u1EC1n",
+      "D\u1EEF li\u1EC7u tham chi\u1EBFu \u00B7 CoffeeManager",
+      "10 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201310",
+      "\u0110\u00E3 l\u01B0u \u00B7 Trang 1 \u00B7 10 d\u00F2ng \u00B7 21:42."
+    ]
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Catalogs",
+    "Tab": "\u0110\u1ED1i t\u00E1c",
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 2,
+    "GridWidth": 1308,
+    "ColumnWidth": 1308,
+    "WorkspaceWidth": 1310,
+    "BodySize": {
+      "IsEmpty": false,
+      "Width": 1308,
+      "Height": 352
+    },
+    "Panels": [
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 768,
+        "Rows": [
+          88,
+          632
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 80,
+        "Rows": [
+          68
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 68,
+        "Rows": [
+          43,
+          25
+        ]
+      },
+      {
+        "Type": "OrbitManagementLayout",
+        "Height": 582,
+        "Rows": [
+          0,
+          549,
+          33
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 549,
+        "Rows": [
+          65,
+          65,
+          352,
+          65
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 65,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 65,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 65,
+        "Rows": [
+          49
+        ]
+      }
+    ],
+    "Buttons": [
+      {
+        "Text": "Th\u00EAm",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 250,
+            "Height": 50
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 250,
+          "Height": 50,
+          "Left": 5,
+          "Top": 2,
+          "Right": 255,
+          "Bottom": 52,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 260,
+          "Height": 68
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u00ECm",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 330,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u1EA3i / \u0111\u1ED1i chi\u1EBFu",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 325,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 330,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "X\u00F3a",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Danh m\u1EE5c n\u1EC1n",
+      "D\u1EEF li\u1EC7u tham chi\u1EBFu \u00B7 CoffeeManager",
+      "2 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u20132",
+      "\u0110\u00E3 l\u01B0u \u00B7 Trang 1 \u00B7 2 d\u00F2ng \u00B7 21:42."
+    ]
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Catalogs",
+    "Tab": "Thu / chi",
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 12,
+    "GridWidth": 1308,
+    "ColumnWidth": 1287,
+    "WorkspaceWidth": 1310,
+    "BodySize": {
+      "IsEmpty": false,
+      "Width": 1308,
+      "Height": 352
+    },
+    "Panels": [
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 768,
+        "Rows": [
+          88,
+          632
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 80,
+        "Rows": [
+          68
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 68,
+        "Rows": [
+          43,
+          25
+        ]
+      },
+      {
+        "Type": "OrbitManagementLayout",
+        "Height": 582,
+        "Rows": [
+          0,
+          549,
+          33
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 549,
+        "Rows": [
+          65,
+          65,
+          352,
+          65
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 65,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 65,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 65,
+        "Rows": [
+          49
+        ]
+      }
+    ],
+    "Buttons": [
+      {
+        "Text": "Th\u00EAm",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 250,
+            "Height": 50
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 250,
+          "Height": 50,
+          "Left": 5,
+          "Top": 2,
+          "Right": 255,
+          "Bottom": 52,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 260,
+          "Height": 68
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u00ECm",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 330,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u1EA3i / \u0111\u1ED1i chi\u1EBFu",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 325,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 330,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "X\u00F3a",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Danh m\u1EE5c n\u1EC1n",
+      "D\u1EEF li\u1EC7u tham chi\u1EBFu \u00B7 CoffeeManager",
+      "12 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201312",
+      "\u0110\u00E3 l\u01B0u \u00B7 Trang 1 \u00B7 12 d\u00F2ng \u00B7 21:42."
+    ]
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Catalogs",
+    "Tab": "Ch\u1EE9c v\u1EE5",
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 10,
+    "GridWidth": 1308,
+    "ColumnWidth": 1287,
+    "WorkspaceWidth": 1310,
+    "BodySize": {
+      "IsEmpty": false,
+      "Width": 1308,
+      "Height": 352
+    },
+    "Panels": [
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 768,
+        "Rows": [
+          88,
+          632
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 80,
+        "Rows": [
+          68
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 68,
+        "Rows": [
+          43,
+          25
+        ]
+      },
+      {
+        "Type": "OrbitManagementLayout",
+        "Height": 582,
+        "Rows": [
+          0,
+          549,
+          33
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 549,
+        "Rows": [
+          65,
+          65,
+          352,
+          65
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 65,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 65,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 65,
+        "Rows": [
+          49
+        ]
+      }
+    ],
+    "Buttons": [
+      {
+        "Text": "Th\u00EAm",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 250,
+            "Height": 50
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 250,
+          "Height": 50,
+          "Left": 5,
+          "Top": 2,
+          "Right": 255,
+          "Bottom": 52,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 260,
+          "Height": 68
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u00ECm",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 330,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u1EA3i / \u0111\u1ED1i chi\u1EBFu",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 325,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 330,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "X\u00F3a",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Danh m\u1EE5c n\u1EC1n",
+      "D\u1EEF li\u1EC7u tham chi\u1EBFu \u00B7 CoffeeManager",
+      "10 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201310",
+      "\u0110\u00E3 l\u01B0u \u00B7 Trang 1 \u00B7 10 d\u00F2ng \u00B7 21:42."
+    ]
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Catalogs",
+    "Tab": "Ca l\u00E0m",
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 10,
+    "GridWidth": 1308,
+    "ColumnWidth": 1287,
+    "WorkspaceWidth": 1310,
+    "BodySize": {
+      "IsEmpty": false,
+      "Width": 1308,
+      "Height": 352
+    },
+    "Panels": [
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 768,
+        "Rows": [
+          88,
+          632
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 80,
+        "Rows": [
+          68
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 68,
+        "Rows": [
+          43,
+          25
+        ]
+      },
+      {
+        "Type": "OrbitManagementLayout",
+        "Height": 582,
+        "Rows": [
+          0,
+          549,
+          33
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 549,
+        "Rows": [
+          65,
+          65,
+          352,
+          65
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 65,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 65,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 65,
+        "Rows": [
+          49
+        ]
+      }
+    ],
+    "Buttons": [
+      {
+        "Text": "Th\u00EAm",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 250,
+            "Height": 50
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 250,
+          "Height": 50,
+          "Left": 5,
+          "Top": 2,
+          "Right": 255,
+          "Bottom": 52,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 260,
+          "Height": 68
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u00ECm",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 330,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u1EA3i / \u0111\u1ED1i chi\u1EBFu",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 325,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 330,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "X\u00F3a",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Danh m\u1EE5c n\u1EC1n",
+      "D\u1EEF li\u1EC7u tham chi\u1EBFu \u00B7 CoffeeManager",
+      "10 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201310",
+      "\u0110\u00E3 l\u01B0u \u00B7 Trang 1 \u00B7 10 d\u00F2ng \u00B7 21:42."
+    ]
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Customers",
+    "Tab": null,
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 11,
+    "GridWidth": 1304,
+    "ColumnWidth": 1283,
+    "WorkspaceWidth": 1366,
+    "BodySize": {
+      "IsEmpty": false,
+      "Width": 1304,
+      "Height": 373
+    },
+    "Panels": [
+      {
+        "Type": "OrbitManagementLayout",
+        "Height": 768,
+        "Rows": [
+          90,
+          583,
+          35
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          70
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          45,
+          25
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 583,
+        "Rows": [
+          70,
+          69,
+          373,
+          69
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          50
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 69,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 69,
+        "Rows": [
+          49
+        ]
+      }
+    ],
+    "Buttons": [
+      {
+        "Text": "Th\u00EAm kh\u00E1ch h\u00E0ng",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 250,
+            "Height": 50
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 250,
+          "Height": 50,
+          "Left": 5,
+          "Top": 2,
+          "Right": 255,
+          "Bottom": 52,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 260,
+          "Height": 70
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u1EA3i l\u1EA1i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 205,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 210,
+          "Height": 50
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 660,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "X\u00F3a",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 660,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "M\u1EDF s\u1ED5 \u0111i\u1EC3m",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 245,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 245,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 245,
+          "Top": 2,
+          "Right": 445,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 660,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "H\u00F3a \u0111\u01A1n",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 455,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 455,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 455,
+          "Top": 2,
+          "Right": 655,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 660,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Kh\u00E1ch h\u00E0ng",
+      "Qu\u1EA3n l\u00FD kh\u00E1ch h\u00E0ng, \u0111i\u1EC3m t\u00EDch l\u0169y v\u00E0 h\u1EA1ng th\u00E0nh vi\u00EAn.",
+      "11 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201311",
+      "S\u1EB5n s\u00E0ng"
+    ]
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Tables",
+    "Tab": "B\u00E0n / S\u01A1 \u0111\u1ED3",
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 10,
+    "GridWidth": 126,
+    "ColumnWidth": 753,
+    "WorkspaceWidth": 1288,
+    "BodySize": {
+      "IsEmpty": false,
+      "Width": 1286,
+      "Height": 313
+    },
+    "Panels": [
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 768,
+        "Rows": [
+          90,
+          630
+        ]
+      },
+      {
+        "Type": "OrbitManagementLayout",
+        "Height": 558,
+        "Rows": [
+          0,
+          523,
+          35
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 523,
+        "Rows": [
+          70,
+          69,
+          313,
+          69
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          50
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 69,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 69,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          70
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          45,
+          25
+        ]
+      }
+    ],
+    "Buttons": [
+      {
+        "Text": "T\u1EA3i l\u1EA1i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 205,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 706,
+          "Height": 50
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Danh s\u00E1ch",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 381,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 381,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 381,
+          "Top": 2,
+          "Right": 581,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 706,
+          "Height": 50
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u01A1 \u0111\u1ED3",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 591,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 591,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 591,
+          "Top": 2,
+          "Right": 701,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 706,
+          "Height": 50
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Ch\u1ECDn b\u00E0n",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 205,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 450,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 215,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 215,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 215,
+          "Top": 2,
+          "Right": 325,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 450,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "X\u00F3a",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 335,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 335,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 335,
+          "Top": 2,
+          "Right": 445,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 450,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0001 \u00B7 Ban 01\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 229,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 19,
+            "Y": 19
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 180
+          },
+          "X": 19,
+          "Y": 19,
+          "Width": 229,
+          "Height": 180,
+          "Left": 19,
+          "Top": 19,
+          "Right": 248,
+          "Bottom": 199,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 1265,
+          "Height": 313
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0002 \u00B7 Ban 02\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 233,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 262,
+            "Y": 19
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 233,
+            "Height": 180
+          },
+          "X": 262,
+          "Y": 19,
+          "Width": 233,
+          "Height": 180,
+          "Left": 262,
+          "Top": 19,
+          "Right": 495,
+          "Bottom": 199,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 1265,
+          "Height": 313
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0003 \u00B7 Ban 03\n\u25CF \u0110ang ph\u1EE5c v\u1EE5\nHD20250410",
+        "Width": 233,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 509,
+            "Y": 19
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 233,
+            "Height": 180
+          },
+          "X": 509,
+          "Y": 19,
+          "Width": 233,
+          "Height": 180,
+          "Left": 509,
+          "Top": 19,
+          "Right": 742,
+          "Bottom": 199,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 1265,
+          "Height": 313
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0004 \u00B7 Ban 04\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 233,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 756,
+            "Y": 19
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 233,
+            "Height": 180
+          },
+          "X": 756,
+          "Y": 19,
+          "Width": 233,
+          "Height": 180,
+          "Left": 756,
+          "Top": 19,
+          "Right": 989,
+          "Bottom": 199,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 1265,
+          "Height": 313
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0005 \u00B7 Ban 05\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 233,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 1003,
+            "Y": 19
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 233,
+            "Height": 180
+          },
+          "X": 1003,
+          "Y": 19,
+          "Width": 233,
+          "Height": 180,
+          "Left": 1003,
+          "Top": 19,
+          "Right": 1236,
+          "Bottom": 199,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 1265,
+          "Height": 313
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0006 \u00B7 Ban 06\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 233,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": false,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 19,
+            "Y": 213
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 233,
+            "Height": 180
+          },
+          "X": 19,
+          "Y": 213,
+          "Width": 233,
+          "Height": 180,
+          "Left": 19,
+          "Top": 213,
+          "Right": 252,
+          "Bottom": 393,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 1265,
+          "Height": 313
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0007 \u00B7 Ban 07\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 233,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": false,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 266,
+            "Y": 213
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 233,
+            "Height": 180
+          },
+          "X": 266,
+          "Y": 213,
+          "Width": 233,
+          "Height": 180,
+          "Left": 266,
+          "Top": 213,
+          "Right": 499,
+          "Bottom": 393,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 1265,
+          "Height": 313
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0008 \u00B7 Ban 08\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 233,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": false,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 513,
+            "Y": 213
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 233,
+            "Height": 180
+          },
+          "X": 513,
+          "Y": 213,
+          "Width": 233,
+          "Height": 180,
+          "Left": 513,
+          "Top": 213,
+          "Right": 746,
+          "Bottom": 393,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 1265,
+          "Height": 313
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0009 \u00B7 Ban 09\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 233,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": false,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 760,
+            "Y": 213
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 233,
+            "Height": 180
+          },
+          "X": 760,
+          "Y": 213,
+          "Width": 233,
+          "Height": 180,
+          "Left": 760,
+          "Top": 213,
+          "Right": 993,
+          "Bottom": 393,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 1265,
+          "Height": 313
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0010 \u00B7 Ban 10\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 233,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": false,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 1007,
+            "Y": 213
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 233,
+            "Height": 180
+          },
+          "X": 1007,
+          "Y": 213,
+          "Width": 233,
+          "Height": 180,
+          "Left": 1007,
+          "Top": 213,
+          "Right": 1240,
+          "Bottom": 393,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 1265,
+          "Height": 313
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Th\u00EAm b\u00E0n",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 250,
+            "Height": 50
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 250,
+          "Height": 50,
+          "Left": 5,
+          "Top": 2,
+          "Right": 255,
+          "Bottom": 52,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 260,
+          "Height": 70
+        },
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "10 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201310",
+      "S\u1EB5n s\u00E0ng",
+      "B\u00E0n v\u00E0 tr\u1EA1ng th\u00E1i hi\u1EC7n t\u1EA1i",
+      "Tra c\u1EE9u v\u00E0 qu\u1EA3n l\u00FD d\u1EEF li\u1EC7u hi\u1EC7n t\u1EA1i."
+    ]
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Tables",
+    "Tab": "Khu v\u1EF1c",
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 10,
+    "GridWidth": 1286,
+    "ColumnWidth": 1265,
+    "WorkspaceWidth": 1288,
+    "BodySize": {
+      "IsEmpty": false,
+      "Width": 1286,
+      "Height": 313
+    },
+    "Panels": [
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 768,
+        "Rows": [
+          90,
+          630
+        ]
+      },
+      {
+        "Type": "OrbitManagementLayout",
+        "Height": 558,
+        "Rows": [
+          0,
+          523,
+          35
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 523,
+        "Rows": [
+          70,
+          69,
+          313,
+          69
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          50
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 69,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 69,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          70
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          45,
+          25
+        ]
+      }
+    ],
+    "Buttons": [
+      {
+        "Text": "T\u1EA3i l\u1EA1i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 205,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 210,
+          "Height": 50
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "X\u00F3a",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Th\u00EAm khu v\u1EF1c",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 250,
+            "Height": 50
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 250,
+          "Height": 50,
+          "Left": 5,
+          "Top": 2,
+          "Right": 255,
+          "Bottom": 52,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 260,
+          "Height": 70
+        },
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "10 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201310",
+      "S\u1EB5n s\u00E0ng",
+      "Khu v\u1EF1c",
+      "Tra c\u1EE9u v\u00E0 qu\u1EA3n l\u00FD d\u1EEF li\u1EC7u hi\u1EC7n t\u1EA1i."
+    ]
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Loyalty",
+    "Tab": "Khuy\u1EBFn m\u00E3i",
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 12,
+    "GridWidth": 1286,
+    "ColumnWidth": 1265,
+    "WorkspaceWidth": 1288,
+    "BodySize": {
+      "IsEmpty": false,
+      "Width": 1286,
+      "Height": 313
+    },
+    "Panels": [
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 768,
+        "Rows": [
+          90,
+          630
+        ]
+      },
+      {
+        "Type": "OrbitManagementLayout",
+        "Height": 558,
+        "Rows": [
+          0,
+          523,
+          35
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 523,
+        "Rows": [
+          70,
+          69,
+          313,
+          69
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          50
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 69,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 69,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          70
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          45,
+          25
+        ]
+      }
+    ],
+    "Buttons": [
+      {
+        "Text": "T\u1EA3i l\u1EA1i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 205,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 210,
+          "Height": 50
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 450,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "X\u00F3a",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 450,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Preview \u01B0u \u0111\u00E3i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 245,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 245,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 245,
+          "Top": 2,
+          "Right": 445,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 450,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Th\u00EAm khuy\u1EBFn m\u00E3i",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 250,
+            "Height": 50
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 250,
+          "Height": 50,
+          "Left": 5,
+          "Top": 2,
+          "Right": 255,
+          "Bottom": 52,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 260,
+          "Height": 70
+        },
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "12 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201312",
+      "S\u1EB5n s\u00E0ng",
+      "Khuy\u1EBFn m\u00E3i",
+      "Qu\u1EA3n l\u00FD ch\u01B0\u01A1ng tr\u00ECnh khuy\u1EBFn m\u00E3i v\u00E0 xem tr\u01B0\u1EDBc \u01B0u \u0111\u00E3i."
+    ]
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Loyalty",
+    "Tab": "H\u1EA1ng th\u00E0nh vi\u00EAn",
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 10,
+    "GridWidth": 1286,
+    "ColumnWidth": 1265,
+    "WorkspaceWidth": 1288,
+    "BodySize": {
+      "IsEmpty": false,
+      "Width": 1286,
+      "Height": 318
+    },
+    "Panels": [
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 768,
+        "Rows": [
+          90,
+          630
+        ]
+      },
+      {
+        "Type": "OrbitManagementLayout",
+        "Height": 558,
+        "Rows": [
+          0,
+          523,
+          35
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 523,
+        "Rows": [
+          69,
+          65,
+          318,
+          69
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 69,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 65,
+        "Rows": [
+          45
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 69,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          70
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          45,
+          25
+        ]
+      }
+    ],
+    "Buttons": [
+      {
+        "Text": "T\u1EA3i l\u1EA1i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 205,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 210,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Thay ch\u00EDnh s\u00E1ch",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 250,
+            "Height": 50
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 250,
+          "Height": 50,
+          "Left": 5,
+          "Top": 2,
+          "Right": 255,
+          "Bottom": 52,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 260,
+          "Height": 70
+        },
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "10 d\u00F2ng trong trang",
+      "10 d\u00F2ng",
+      "S\u1EB5n s\u00E0ng",
+      "Ch\u00EDnh s\u00E1ch h\u1EA1ng",
+      "Thi\u1EBFt l\u1EADp ng\u01B0\u1EE1ng \u0111i\u1EC3m v\u00E0 \u01B0u \u0111\u00E3i theo h\u1EA1ng th\u00E0nh vi\u00EAn."
+    ]
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Loyalty",
+    "Tab": "\u0110i\u1EC3m kh\u00E1ch h\u00E0ng",
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 0,
+    "GridWidth": 1286,
+    "ColumnWidth": 1286,
+    "WorkspaceWidth": 1288,
+    "BodySize": {
+      "IsEmpty": false,
+      "Width": 1286,
+      "Height": 318
+    },
+    "Panels": [
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 768,
+        "Rows": [
+          90,
+          630
+        ]
+      },
+      {
+        "Type": "OrbitManagementLayout",
+        "Height": 558,
+        "Rows": [
+          0,
+          523,
+          35
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 523,
+        "Rows": [
+          69,
+          65,
+          318,
+          69
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 69,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 65,
+        "Rows": [
+          45
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 69,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          70
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          45,
+          25
+        ]
+      }
+    ],
+    "Buttons": [
+      {
+        "Text": "T\u1EA3i l\u1EA1i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 205,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 420,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Ch\u1ECDn kh\u00E1ch",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 215,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 215,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 215,
+          "Top": 2,
+          "Right": 415,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 420,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "\u0110i\u1EC1u ch\u1EC9nh \u0111i\u1EC3m",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 250,
+            "Height": 50
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 250,
+          "Height": 50,
+          "Left": 5,
+          "Top": 2,
+          "Right": 255,
+          "Bottom": 52,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 260,
+          "Height": 70
+        },
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Ch\u01B0a ch\u1ECDn kh\u00E1ch h\u00E0ng",
+      "Ch\u1ECDn kh\u00E1ch h\u00E0ng \u0111\u1EC3 xem l\u1ECBch s\u1EED \u0111i\u1EC3m.",
+      "",
+      "S\u1EB5n s\u00E0ng",
+      "L\u1ECBch s\u1EED \u0111i\u1EC3m",
+      "Tra c\u1EE9u l\u1ECBch s\u1EED \u0111i\u1EC3m kh\u00E1ch h\u00E0ng \u00B7 Ch\u1EC9 \u0111\u1ECDc."
+    ]
+  },
+  {
+    "Role": "CASH",
+    "Module": "Materials",
+    "Tab": null,
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 14,
+    "GridWidth": 1304,
+    "ColumnWidth": 1283,
+    "WorkspaceWidth": 1366,
+    "BodySize": {
+      "IsEmpty": false,
+      "Width": 1304,
+      "Height": 378
+    },
+    "Panels": [
+      {
+        "Type": "OrbitManagementLayout",
+        "Height": 768,
+        "Rows": [
+          90,
+          583,
+          35
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          70
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          45,
+          25
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 583,
+        "Rows": [
+          69,
+          65,
+          378,
+          69
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 69,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 65,
+        "Rows": [
+          45
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 69,
+        "Rows": [
+          49
+        ]
+      }
+    ],
+    "Buttons": [
+      {
+        "Text": "T\u1EA3i l\u1EA1i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 205,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 210,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Nguy\u00EAn li\u1EC7u \u0026 t\u1ED3n kho",
+      "Tra c\u1EE9u nguy\u00EAn li\u1EC7u, \u0111\u01A1n v\u1ECB v\u00E0 s\u1ED1 l\u01B0\u1EE3ng t\u1ED3n.",
+      "14 nguy\u00EAn li\u1EC7u trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201314",
+      "\u0110\u00E3 c\u1EADp nh\u1EADt 21:42:40"
+    ]
+  },
+  {
+    "Role": "CASH",
+    "Module": "Products",
+    "Tab": null,
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 11,
+    "GridWidth": 1304,
+    "ColumnWidth": 1283,
+    "WorkspaceWidth": 1366,
+    "BodySize": {
+      "IsEmpty": false,
+      "Width": 1304,
+      "Height": 377
+    },
+    "Panels": [
+      {
+        "Type": "OrbitManagementLayout",
+        "Height": 768,
+        "Rows": [
+          90,
+          583,
+          35
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          70
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          45,
+          25
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 583,
+        "Rows": [
+          70,
+          65,
+          377,
+          69
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          50
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 65,
+        "Rows": [
+          45
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 69,
+        "Rows": [
+          49
+        ]
+      }
+    ],
+    "Buttons": [
+      {
+        "Text": "T\u1EA3i l\u1EA1i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 205,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 532,
+          "Height": 50
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Menu v\u00E0 c\u00F4ng th\u1EE9c",
+      "Qu\u1EA3n l\u00FD s\u1EA3n ph\u1EA9m v\u00E0 c\u00F4ng th\u1EE9c pha ch\u1EBF.",
+      "11 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201311",
+      "S\u1EB5n s\u00E0ng"
+    ]
+  },
+  {
+    "Role": "CASH",
+    "Module": "Customers",
+    "Tab": null,
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 11,
+    "GridWidth": 1304,
+    "ColumnWidth": 1283,
+    "WorkspaceWidth": 1366,
+    "BodySize": {
+      "IsEmpty": false,
+      "Width": 1304,
+      "Height": 373
+    },
+    "Panels": [
+      {
+        "Type": "OrbitManagementLayout",
+        "Height": 768,
+        "Rows": [
+          90,
+          583,
+          35
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          70
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          45,
+          25
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 583,
+        "Rows": [
+          70,
+          69,
+          373,
+          69
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          50
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 69,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 69,
+        "Rows": [
+          49
+        ]
+      }
+    ],
+    "Buttons": [
+      {
+        "Text": "Th\u00EAm kh\u00E1ch h\u00E0ng",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 250,
+            "Height": 50
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 250,
+          "Height": 50,
+          "Left": 5,
+          "Top": 2,
+          "Right": 255,
+          "Bottom": 52,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 260,
+          "Height": 70
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u1EA3i l\u1EA1i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 205,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 210,
+          "Height": 50
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "H\u00F3a \u0111\u01A1n",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 205,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 210,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Kh\u00E1ch h\u00E0ng",
+      "Qu\u1EA3n l\u00FD kh\u00E1ch h\u00E0ng, \u0111i\u1EC3m t\u00EDch l\u0169y v\u00E0 h\u1EA1ng th\u00E0nh vi\u00EAn.",
+      "11 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201311",
+      "S\u1EB5n s\u00E0ng"
+    ]
+  },
+  {
+    "Role": "CASH",
+    "Module": "Tables",
+    "Tab": "B\u00E0n / S\u01A1 \u0111\u1ED3",
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 10,
+    "GridWidth": 126,
+    "ColumnWidth": 753,
+    "WorkspaceWidth": 1288,
+    "BodySize": {
+      "IsEmpty": false,
+      "Width": 1286,
+      "Height": 313
+    },
+    "Panels": [
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 768,
+        "Rows": [
+          90,
+          630
+        ]
+      },
+      {
+        "Type": "OrbitManagementLayout",
+        "Height": 558,
+        "Rows": [
+          0,
+          523,
+          35
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 523,
+        "Rows": [
+          70,
+          69,
+          313,
+          69
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          50
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 69,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 69,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          70
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          45,
+          25
+        ]
+      }
+    ],
+    "Buttons": [
+      {
+        "Text": "T\u1EA3i l\u1EA1i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 205,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 706,
+          "Height": 50
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Danh s\u00E1ch",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 381,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 381,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 381,
+          "Top": 2,
+          "Right": 581,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 706,
+          "Height": 50
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u01A1 \u0111\u1ED3",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 591,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 591,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 591,
+          "Top": 2,
+          "Right": 701,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 706,
+          "Height": 50
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Ch\u1ECDn b\u00E0n",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 205,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 210,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0001 \u00B7 Ban 01\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 229,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 19,
+            "Y": 19
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 180
+          },
+          "X": 19,
+          "Y": 19,
+          "Width": 229,
+          "Height": 180,
+          "Left": 19,
+          "Top": 19,
+          "Right": 248,
+          "Bottom": 199,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 1265,
+          "Height": 313
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0002 \u00B7 Ban 02\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 229,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 262,
+            "Y": 19
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 180
+          },
+          "X": 262,
+          "Y": 19,
+          "Width": 229,
+          "Height": 180,
+          "Left": 262,
+          "Top": 19,
+          "Right": 491,
+          "Bottom": 199,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 1265,
+          "Height": 313
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0003 \u00B7 Ban 03\n\u25CF \u0110ang ph\u1EE5c v\u1EE5\nHD20250410",
+        "Width": 229,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 505,
+            "Y": 19
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 180
+          },
+          "X": 505,
+          "Y": 19,
+          "Width": 229,
+          "Height": 180,
+          "Left": 505,
+          "Top": 19,
+          "Right": 734,
+          "Bottom": 199,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 1265,
+          "Height": 313
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0004 \u00B7 Ban 04\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 229,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 748,
+            "Y": 19
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 180
+          },
+          "X": 748,
+          "Y": 19,
+          "Width": 229,
+          "Height": 180,
+          "Left": 748,
+          "Top": 19,
+          "Right": 977,
+          "Bottom": 199,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 1265,
+          "Height": 313
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0005 \u00B7 Ban 05\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 229,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 991,
+            "Y": 19
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 180
+          },
+          "X": 991,
+          "Y": 19,
+          "Width": 229,
+          "Height": 180,
+          "Left": 991,
+          "Top": 19,
+          "Right": 1220,
+          "Bottom": 199,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 1265,
+          "Height": 313
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0006 \u00B7 Ban 06\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 229,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": false,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 19,
+            "Y": 213
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 180
+          },
+          "X": 19,
+          "Y": 213,
+          "Width": 229,
+          "Height": 180,
+          "Left": 19,
+          "Top": 213,
+          "Right": 248,
+          "Bottom": 393,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 1265,
+          "Height": 313
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0007 \u00B7 Ban 07\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 229,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": false,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 262,
+            "Y": 213
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 180
+          },
+          "X": 262,
+          "Y": 213,
+          "Width": 229,
+          "Height": 180,
+          "Left": 262,
+          "Top": 213,
+          "Right": 491,
+          "Bottom": 393,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 1265,
+          "Height": 313
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0008 \u00B7 Ban 08\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 229,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": false,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 505,
+            "Y": 213
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 180
+          },
+          "X": 505,
+          "Y": 213,
+          "Width": 229,
+          "Height": 180,
+          "Left": 505,
+          "Top": 213,
+          "Right": 734,
+          "Bottom": 393,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 1265,
+          "Height": 313
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0009 \u00B7 Ban 09\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 229,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": false,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 748,
+            "Y": 213
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 180
+          },
+          "X": 748,
+          "Y": 213,
+          "Width": 229,
+          "Height": 180,
+          "Left": 748,
+          "Top": 213,
+          "Right": 977,
+          "Bottom": 393,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 1265,
+          "Height": 313
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0010 \u00B7 Ban 10\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 229,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": false,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 991,
+            "Y": 213
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 180
+          },
+          "X": 991,
+          "Y": 213,
+          "Width": 229,
+          "Height": 180,
+          "Left": 991,
+          "Top": 213,
+          "Right": 1220,
+          "Bottom": 393,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 1265,
+          "Height": 313
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "10 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201310",
+      "S\u1EB5n s\u00E0ng",
+      "B\u00E0n v\u00E0 tr\u1EA1ng th\u00E1i hi\u1EC7n t\u1EA1i",
+      "Tra c\u1EE9u v\u00E0 qu\u1EA3n l\u00FD d\u1EEF li\u1EC7u hi\u1EC7n t\u1EA1i."
+    ]
+  },
+  {
+    "Role": "CASH",
+    "Module": "Loyalty",
+    "Tab": "Khuy\u1EBFn m\u00E3i",
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 1,
+    "GridWidth": 1286,
+    "ColumnWidth": 1286,
+    "WorkspaceWidth": 1288,
+    "BodySize": {
+      "IsEmpty": false,
+      "Width": 1286,
+      "Height": 313
+    },
+    "Panels": [
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 768,
+        "Rows": [
+          90,
+          630
+        ]
+      },
+      {
+        "Type": "OrbitManagementLayout",
+        "Height": 558,
+        "Rows": [
+          0,
+          523,
+          35
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 523,
+        "Rows": [
+          70,
+          69,
+          313,
+          69
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          50
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 69,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 69,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          70
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          45,
+          25
+        ]
+      }
+    ],
+    "Buttons": [
+      {
+        "Text": "T\u1EA3i l\u1EA1i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 205,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 210,
+          "Height": 50
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Preview \u01B0u \u0111\u00E3i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 205,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 210,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "1 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u20131",
+      "S\u1EB5n s\u00E0ng",
+      "Khuy\u1EBFn m\u00E3i",
+      "Qu\u1EA3n l\u00FD ch\u01B0\u01A1ng tr\u00ECnh khuy\u1EBFn m\u00E3i v\u00E0 xem tr\u01B0\u1EDBc \u01B0u \u0111\u00E3i."
+    ]
+  },
+  {
+    "Role": "STORE",
+    "Module": "Materials",
+    "Tab": null,
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 14,
+    "GridWidth": 1304,
+    "ColumnWidth": 1283,
+    "WorkspaceWidth": 1366,
+    "BodySize": {
+      "IsEmpty": false,
+      "Width": 1304,
+      "Height": 374
+    },
+    "Panels": [
+      {
+        "Type": "OrbitManagementLayout",
+        "Height": 768,
+        "Rows": [
+          90,
+          583,
+          35
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          70
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          45,
+          25
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 583,
+        "Rows": [
+          69,
+          69,
+          374,
+          69
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 69,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 69,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 69,
+        "Rows": [
+          49
+        ]
+      }
+    ],
+    "Buttons": [
+      {
+        "Text": "Th\u00EAm nguy\u00EAn li\u1EC7u",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 250,
+            "Height": 50
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 250,
+          "Height": 50,
+          "Left": 5,
+          "Top": 2,
+          "Right": 255,
+          "Bottom": 52,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 260,
+          "Height": 70
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u1EA3i l\u1EA1i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 205,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 210,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "X\u00F3a",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Nguy\u00EAn li\u1EC7u \u0026 t\u1ED3n kho",
+      "Tra c\u1EE9u nguy\u00EAn li\u1EC7u, \u0111\u01A1n v\u1ECB v\u00E0 s\u1ED1 l\u01B0\u1EE3ng t\u1ED3n.",
+      "14 nguy\u00EAn li\u1EC7u trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201314",
+      "\u0110\u00E3 c\u1EADp nh\u1EADt 21:42:45"
+    ]
+  },
+  {
+    "Role": "STORE",
+    "Module": "Products",
+    "Tab": null,
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 11,
+    "GridWidth": 1304,
+    "ColumnWidth": 1283,
+    "WorkspaceWidth": 1366,
+    "BodySize": {
+      "IsEmpty": false,
+      "Width": 1304,
+      "Height": 373
+    },
+    "Panels": [
+      {
+        "Type": "OrbitManagementLayout",
+        "Height": 768,
+        "Rows": [
+          90,
+          583,
+          35
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          70
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          45,
+          25
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 583,
+        "Rows": [
+          70,
+          69,
+          373,
+          69
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 70,
+        "Rows": [
+          50
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 69,
+        "Rows": [
+          49
+        ]
+      },
+      {
+        "Type": "TableLayoutPanel",
+        "Height": 69,
+        "Rows": [
+          49
+        ]
+      }
+    ],
+    "Buttons": [
+      {
+        "Text": "T\u1EA3i l\u1EA1i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 205,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 532,
+          "Height": 50
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "C\u00F4ng th\u1EE9c",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 200,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 200,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 205,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 210,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 5,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 5,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 5,
+          "Top": 2,
+          "Right": 115,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 2
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 110,
+            "Height": 45
+          },
+          "X": 125,
+          "Y": 2,
+          "Width": 110,
+          "Height": 45,
+          "Left": 125,
+          "Top": 2,
+          "Right": 235,
+          "Bottom": 47,
+          "IsEmpty": false
+        },
+        "ParentSize": {
+          "IsEmpty": false,
+          "Width": 240,
+          "Height": 49
+        },
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Menu v\u00E0 c\u00F4ng th\u1EE9c",
+      "Qu\u1EA3n l\u00FD s\u1EA3n ph\u1EA9m v\u00E0 c\u00F4ng th\u1EE9c pha ch\u1EBF.",
+      "11 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201311",
+      "S\u1EB5n s\u00E0ng"
+    ]
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "Layout",
+    "Status": "PASS",
+    "Dpi": 120
+  },
+  {
+    "Id": "RecordList",
+    "Status": "PASS",
+    "Dpi": 120
+  },
+  {
+    "Id": "MainForm",
+    "Status": "PASS",
+    "Dpi": 120
+  },
+  {
+    "Id": "Catalogs",
+    "Status": "PASS",
+    "Dpi": 120
+  },
+  {
+    "Id": "Catalogs",
+    "Status": "FAIL",
+    "Error": "System.ObjectDisposedException: The CancellationTokenSource has been disposed.\r\n   at System.Threading.CancellationTokenSource.Cancel()\r\n   at CafeManager.WinForms.Modules.Catalogs.CatalogsControl.Dispose(Boolean disposing) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Modules\\Catalogs\\CatalogsControl.cs:line 214\r\n   at System.ComponentModel.Component.Dispose()\r\n   at Program.Main(String[] args) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\orbit-management-layout\\runs\\acceptance-20261020\\LayoutProbe\\Program.cs:line 18\r\n   at Program.Main(String[] args)"
+  },
+  {
+    "Id": "Materials",
+    "Status": "PASS",
+    "Dpi": 120
+  },
+  {
+    "Id": "Products-empty",
+    "Status": "PASS",
+    "Dpi": 120
+  },
+  {
+    "Id": "Customers-empty",
+    "Status": "PASS",
+    "Dpi": 120
+  }
+]

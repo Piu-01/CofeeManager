@@ -1,0 +1,93 @@
+Window: "CoffeeManager", App: CafeManager.WinForms.exe.
+	0 window CoffeeManager Secondary Actions: Raise
+		1 pane
+			2 pane
+				3 text CoffeeManager
+				4 text KHÔNG GIAN QUẢN LÝ
+				5 button Trang phiên
+				6 button Danh mục nền
+				7 button Khách hàng
+				8 button Bàn / Khu vực
+				9 button Menu / Công thức
+				10 button Nguyên liệu / Tồn
+				11 button Ưu đãi / Điểm
+				12 button Thông tin hệ thống
+				13 button Đăng xuất ID: logout
+				14 text Nguyen Van An
+				15 text Quản trị viên · ADMIN
+				16 text Phiên đang hoạt động.
+			17 pane
+				18 text Quản lý / Lịch sử điểm
+				19 text Nguyen Van An · ADMIN
+			20 pane Nguyen Van An · ADMIN
+				166 pane Nguyen Van An · ADMIN ID: 15205042
+					167 pane ID: 23005428
+						295 pane ID: 10619058
+							296 pane ID: 25954192
+								297 text LOYALTY WORKSPACE
+								298 text Lịch sử điểm
+								299 text Tra cứu lịch sử điểm khách hàng · Chỉ đọc.
+								300 pane Tra cứu lịch sử điểm khách hàng · Chỉ đọc.
+									301 button Điều chỉnh điểm
+								302 pane
+									303 pane
+										304 button Khuyến mãi
+										305 button Hạng thành viên
+										306 button Điểm khách hàng
+								307 pane
+									308 pane
+										309 text KH001 · Nguyen Minh Khoa · 3433 điểm · BKIM
+										310 button Chọn khách
+									311 pane
+										312 button Tải lại danh sách
+									313 pane 4 giao dịch
+										315 data grid 4 giao dịch
+											316 custom Top Row
+												317 header MÃ GD ID: 423561706
+												318 header THỜI ĐIỂM ID: 4246302178
+												319 header LOẠI ID: 4265057407
+												320 header ĐIỂM ID: 4240439929
+												321 header LÝ DO ID: 4255957035
+												322 header HÓA ĐƠN ID: 4256352824
+											466 custom Row 1
+												467 item MÃ GD Row 1 Value: 9 ID: 4262623085
+												468 item THỜI ĐIỂM Row 1 Value: 01/04/2025 00:00 ID: 428793749
+												469 item LOẠI Row 1 Value: Trừ ID: 4247209883
+												470 item ĐIỂM Row 1 Value: 50 ID: 429748710
+												471 item LÝ DO Row 1 Value: Doi diem lay voucher giam 50k ID: 4259624372
+												472 item HÓA ĐƠN Row 1 Value: (null) ID: 4236919344
+											473 custom Row 2
+												474 item MÃ GD Row 2 Value: 8 ID: 4265353648
+												475 item THỜI ĐIỂM Row 2 Value: 01/05/2025 08:00 ID: 4244291058
+												476 item LOẠI Row 2 Value: Cộng ID: 4238912853
+												477 item ĐIỂM Row 2 Value: 81 ID: 4236105043
+												478 item LÝ DO Row 2 Value: Tich diem mua hang ID: 4266712380
+												479 item HÓA ĐƠN Row 2 Value: HD20250409 ID: 4261954583
+											480 custom Row 3
+												481 item MÃ GD Row 3 Value: 4 ID: 421341877
+												482 item THỜI ĐIỂM Row 3 Value: 05/04/2025 16:20 ID: 4217444412
+												483 item LOẠI Row 3 Value: Cộng ID: 4225450771
+												484 item ĐIỂM Row 3 Value: 90 ID: 4262424576
+												485 item LÝ DO Row 3 Value: Tich diem mua hang ID: 426213127
+												486 item HÓA ĐƠN Row 3 Value: HD20250405 ID: 4213661791
+											487 custom Row 4
+												488 item MÃ GD Row 4 Value: 1 ID: 4227141350
+												489 item THỜI ĐIỂM Row 4 Value: 01/04/2025 09:15 ID: 4217293239
+												490 item LOẠI Row 4 Value: Cộng ID: 4223485524
+												491 item ĐIỂM Row 4 Value: 112 ID: 4236876368
+												492 item LÝ DO Row 4 Value: Tich diem mua hang ID: 429630743
+												493 item HÓA ĐƠN Row 4 Value: HD20250401 ID: 4258090807
+									323 pane ID: 21499022
+										324 text Hiển thị 1–4 / 4 giao dịch
+										325 button (disabled) Trang trước
+										326 text 1 / 1
+										327 button (disabled) Trang sau
+								328 text KH001 · Nguyen Minh Khoa · điểm 3433 · hạng BKIM
+		104 title bar (settable, string) Value: CoffeeManager
+			105 menu bar System ID: MenuBar
+				106 menu item System
+			107 button Minimize
+			108 button Maximize
+			109 button Close
+
+The focused UI element is 0 window CoffeeManager Secondary Actions: Raise.

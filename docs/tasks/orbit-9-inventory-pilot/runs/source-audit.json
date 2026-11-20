@@ -1,0 +1,20 @@
+{
+  "BackendChanged": 0,
+  "Changed": [
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Forms\\MainForm.cs",
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Forms\\MainForm.Designer.cs",
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Modules\\Inventory\\MaterialsControl.cs",
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Modules\\Inventory\\MaterialsControl.Designer.cs",
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\UI\\OrbitButton.cs"
+  ],
+  "NewFiles": [
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Theme\\OrbitManagementTheme.cs",
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\UI\\OrbitDataGridView.cs",
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\UI\\OrbitEmptyState.cs",
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\UI\\OrbitFilterBox.cs",
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\UI\\OrbitListWorkspace.cs",
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\UI\\OrbitPagination.cs",
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\UI\\OrbitSearchBox.cs",
+    "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\UI\\OrbitSidebar.cs"
+  ]
+}

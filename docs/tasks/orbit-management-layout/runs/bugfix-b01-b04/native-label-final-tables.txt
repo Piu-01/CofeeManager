@@ -1,0 +1,82 @@
+Window: "CoffeeManager", App: CafeManager.WinForms.exe.
+	0 window CoffeeManager Secondary Actions: Raise
+		1 pane
+			2 pane
+				3 text CoffeeManager
+				4 text KHÔNG GIAN QUẢN LÝ
+				5 button Trang phiên
+				6 button Danh mục nền
+				7 button Khách hàng
+				8 button Bàn / Khu vực
+				9 button Menu / Công thức
+				10 button Nguyên liệu / Tồn
+				11 button Ưu đãi / Điểm
+				12 button Thông tin hệ thống
+				13 button Đăng xuất
+			14 pane
+				15 text Quản lý / Bàn / Khu vực
+				16 text Nguyen Van An · ADMIN
+			17 pane Nguyen Van An · ADMIN
+				265 pane Nguyen Van An · ADMIN ID: 3672286
+					266 pane ID: 2820368
+						267 pane
+							268 tab
+								269 pane Bàn / Sơ đồ
+									270 pane ID: 6163226
+										271 pane
+											272 pane
+												273 pane
+													274 edit (settable, string) Description: Tìm mã hoặc tên…
+													275 pane
+														276 button Tải lại
+														277 combo box (settable, string) Tất cả khu vực Value: Tất cả khu vực
+															278 text
+															279 button Open
+														280 button Danh sách
+														281 button Sơ đồ
+												282 pane
+													302 text 10 dòng trong trang
+													283 pane 10 dòng trong trang
+														284 button Chọn bàn
+														285 button Sửa
+														286 button Xóa
+												287 pane
+													288 pane Chưa có dữ liệu trong bộ lọc này.
+														303 button B0001 · Ban 01 ○ Trống Chưa có đơn
+														304 button B0002 · Ban 02 ○ Trống Chưa có đơn
+														305 button B0003 · Ban 03 ● Đang phục vụ HD20250410
+														306 button B0004 · Ban 04 ○ Trống Chưa có đơn
+														307 button B0005 · Ban 05 ○ Trống Chưa có đơn
+														308 button B0006 · Ban 06 ○ Trống Chưa có đơn
+														309 button B0007 · Ban 07 ○ Trống Chưa có đơn
+														310 button B0008 · Ban 08 ○ Trống Chưa có đơn
+														311 button B0009 · Ban 09 ○ Trống Chưa có đơn
+														312 button B0010 · Ban 10 ○ Trống Chưa có đơn
+														313 scroll bar (settable, float) Vertical Value: 0 ID: NonClientVerticalScrollBar
+															314 button Line up ID: UpButton
+															315 thumb Position ID: ScrollbarThumb
+															316 button Page down ID: DownPageButton
+															317 button Line down ID: DownButton
+												289 pane
+													318 text Trang 1 · Hiển thị 1–10
+													290 pane Trang 1 · Hiển thị 1–10
+														291 button (disabled) Trước
+														292 button (disabled) Sau
+											293 text Sẵn sàng
+								294 tab item (selectable) Bàn / Sơ đồ
+								295 tab item (selectable) Khu vực
+							296 pane
+								297 pane
+									298 text Bàn và trạng thái hiện tại
+									299 text Tra cứu và quản lý dữ liệu hiện tại.
+								300 pane Tra cứu và quản lý dữ liệu hiện tại.
+									301 button Thêm bàn
+			136 text Phiên đang hoạt động.
+		137 title bar (settable, string) Value: CoffeeManager
+			138 menu bar System ID: MenuBar
+				139 menu item System
+			140 button Minimize
+			141 button Maximize
+			142 button Close
+
+The focused UI element is 274 edit (settable, string) Description: Tìm mã hoặc tên….

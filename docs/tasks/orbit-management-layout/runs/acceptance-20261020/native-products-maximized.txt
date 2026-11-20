@@ -1,0 +1,68 @@
+Window: "CoffeeManager", App: CafeManager.WinForms.exe.
+	0 window CoffeeManager Secondary Actions: Raise
+		1 pane
+			2 pane
+				3 text CoffeeManager
+				4 text KHÔNG GIAN QUẢN LÝ
+				5 button (disabled) Trang phiên
+				6 button (disabled) Danh mục nền
+				7 button Khách hàng
+				8 button Bàn / Khu vực
+				9 button Menu / Công thức
+				10 button Nguyên liệu / Tồn
+				11 button Ưu đãi / Điểm
+				12 button (disabled) Thông tin hệ thống
+				13 button Đăng xuất
+			14 pane
+				15 text Quản lý / Lịch sử điểm (chỉ đọc)
+				16 text Nguyen Van An · ADMIN
+			17 pane Nguyen Van An · ADMIN
+				101 pane Nguyen Van An · ADMIN ID: 9045996
+					102 pane ID: 1378604
+						103 pane
+							104 tab
+								105 pane Điểm khách hàng
+									106 pane ID: 26151582
+										107 pane
+											108 pane
+												109 pane
+													110 pane
+														111 button Tải lại
+														112 button Chọn khách
+												113 pane
+													114 text Chọn khách hàng để xem lịch sử điểm.
+													115 pane Chọn khách hàng để xem lịch sử điểm.
+												116 pane Chọn khách hàng để xem lịch sử điểm.
+													117 text Chọn khách hàng để xem lịch sử điểm.
+													118 data grid Chọn khách hàng để xem lịch sử điểm.
+														119 custom Top Row
+															120 header Mã GD ID: 4214637078
+															121 header Thời điểm ID: 4256064287
+															122 header Loại ID: 4257747099
+															123 header Điểm ID: 4212514787
+															124 header Lý do ID: 4228474509
+															125 header Hóa đơn ID: 4234624301
+												126 pane Chọn khách hàng để xem lịch sử điểm.
+													127 text Trang 1 · 0 dòng
+													128 pane Trang 1 · 0 dòng
+														129 button (disabled) Trước
+														130 button (disabled) Sau
+											131 text Chọn khách hàng để xem lịch sử điểm.
+								132 tab item (selectable) Khuyến mãi
+								133 tab item (selectable) Hạng thành viên
+								134 tab item (selectable) Điểm khách hàng
+							135 pane
+								136 pane
+									137 text Lịch sử điểm (chỉ đọc)
+									138 text Tra cứu và quản lý dữ liệu hiện tại.
+								139 pane Tra cứu và quản lý dữ liệu hiện tại.
+									140 button Điều chỉnh điểm
+			94 text Phiên đang hoạt động.
+		95 title bar (settable, string) Value: CoffeeManager
+			96 menu bar System ID: MenuBar
+				97 menu item System
+			98 button Minimize
+			99 button Restore
+			100 button Close
+
+The focused UI element is 0 window CoffeeManager Secondary Actions: Raise.

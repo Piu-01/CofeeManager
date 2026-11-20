@@ -1,0 +1,832 @@
+[
+  {
+    "Case": "Shell",
+    "Dpi": 144,
+    "Client": {
+      "IsEmpty": false,
+      "Width": 1924,
+      "Height": 1050
+    },
+    "Sidebar": 300
+  },
+  {
+    "Case": "Loaded",
+    "Role": "ADMIN",
+    "Dpi": 144,
+    "Font": 9,
+    "HeaderFont": 7.5,
+    "Rows": 7,
+    "Count": "14 nguy\u00EAn li\u1EC7u",
+    "Range": "Hi\u1EC3n th\u1ECB 1\u20137 / 14",
+    "Columns": [
+      {
+        "Name": "Code",
+        "Width": 114
+      },
+      {
+        "Name": "Name",
+        "Width": 618
+      },
+      {
+        "Name": "Unit",
+        "Width": 96
+      },
+      {
+        "Name": "Quantity",
+        "Width": 174
+      }
+    ],
+    "Buttons": [
+      {
+        "Text": "Th\u00EAm nguy\u00EAn li\u1EC7u",
+        "AccessibleName": null,
+        "Width": 243,
+        "Height": 60,
+        "Enabled": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 243,
+            "Height": 60
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 243,
+          "Height": 60,
+          "Left": 0,
+          "Top": 0,
+          "Right": 243,
+          "Bottom": 60,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "IsEmpty": false,
+          "Width": 243,
+          "Height": 66
+        }
+      },
+      {
+        "Text": "",
+        "AccessibleName": "T\u1EA3i l\u1EA1i danh s\u00E1ch",
+        "Width": 60,
+        "Height": 60,
+        "Enabled": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 201,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 60,
+            "Height": 60
+          },
+          "X": 201,
+          "Y": 0,
+          "Width": 60,
+          "Height": 60,
+          "Left": 201,
+          "Top": 0,
+          "Right": 261,
+          "Bottom": 60,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "IsEmpty": false,
+          "Width": 261,
+          "Height": 60
+        }
+      },
+      {
+        "Text": "M\u1EDF s\u1ED5",
+        "AccessibleName": null,
+        "Width": 116,
+        "Height": 50,
+        "Enabled": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 116,
+            "Height": 50
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 116,
+          "Height": 50,
+          "Left": 0,
+          "Top": 0,
+          "Right": 116,
+          "Bottom": 50,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "IsEmpty": false,
+          "Width": 324,
+          "Height": 50
+        }
+      },
+      {
+        "Text": "S\u1EEDa",
+        "AccessibleName": null,
+        "Width": 94,
+        "Height": 50,
+        "Enabled": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 94,
+            "Height": 50
+          },
+          "X": 125,
+          "Y": 0,
+          "Width": 94,
+          "Height": 50,
+          "Left": 125,
+          "Top": 0,
+          "Right": 219,
+          "Bottom": 50,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "IsEmpty": false,
+          "Width": 324,
+          "Height": 50
+        }
+      },
+      {
+        "Text": "X\u00F3a",
+        "AccessibleName": null,
+        "Width": 96,
+        "Height": 50,
+        "Enabled": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 228,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 96,
+            "Height": 50
+          },
+          "X": 228,
+          "Y": 0,
+          "Width": 96,
+          "Height": 50,
+          "Left": 228,
+          "Top": 0,
+          "Right": 324,
+          "Bottom": 50,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "IsEmpty": false,
+          "Width": 324,
+          "Height": 50
+        }
+      },
+      {
+        "Text": "",
+        "AccessibleName": "Trang tr\u01B0\u1EDBc",
+        "Width": 57,
+        "Height": 45,
+        "Enabled": false,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 869,
+            "Y": 17
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 57,
+            "Height": 45
+          },
+          "X": 869,
+          "Y": 17,
+          "Width": 57,
+          "Height": 45,
+          "Left": 869,
+          "Top": 17,
+          "Right": 926,
+          "Bottom": 62,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "IsEmpty": false,
+          "Width": 1085,
+          "Height": 80
+        }
+      },
+      {
+        "Text": "",
+        "AccessibleName": "Trang sau",
+        "Width": 57,
+        "Height": 45,
+        "Enabled": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 1003,
+            "Y": 17
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 57,
+            "Height": 45
+          },
+          "X": 1003,
+          "Y": 17,
+          "Width": 57,
+          "Height": 45,
+          "Left": 1003,
+          "Top": 17,
+          "Right": 1060,
+          "Bottom": 62,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "IsEmpty": false,
+          "Width": 1085,
+          "Height": 80
+        }
+      }
+    ]
+  },
+  {
+    "Case": "Paging",
+    "Role": "ADMIN",
+    "First": [
+      "NVL01",
+      "NVL02",
+      "NVL03",
+      "NVL04",
+      "NVL05",
+      "NVL06",
+      "NVL07"
+    ],
+    "Second": [
+      "NVL08",
+      "NVL09",
+      "NVL10",
+      "NVL11",
+      "NVL12",
+      "NVL81",
+      "NVL82"
+    ],
+    "Range": "Hi\u1EC3n th\u1ECB 8\u201314 / 14",
+    "Disjoint": true
+  },
+  {
+    "Case": "Unit",
+    "Role": "ADMIN",
+    "Unit": "Cai",
+    "Rows": 3,
+    "AllMatch": true
+  },
+  {
+    "Case": "Resize",
+    "Role": "ADMIN",
+    "FooterVisible": true,
+    "GridHeight": 45,
+    "RowHeight": 69
+  },
+  {
+    "Case": "TypedPagingFixture",
+    "Count": 0,
+    "Pass": true,
+    "Pages": 1,
+    "Range": "0 nguy\u00EAn li\u1EC7u",
+    "Note": "In-process typed UI fixture only; no SQL writes"
+  },
+  {
+    "Case": "TypedPagingFixture",
+    "Count": 1,
+    "Pass": true,
+    "Pages": 1,
+    "Range": "Hi\u1EC3n th\u1ECB 1\u20131 / 1",
+    "Note": "In-process typed UI fixture only; no SQL writes"
+  },
+  {
+    "Case": "TypedPagingFixture",
+    "Count": 7,
+    "Pass": true,
+    "Pages": 1,
+    "Range": "Hi\u1EC3n th\u1ECB 1\u20137 / 7",
+    "Note": "In-process typed UI fixture only; no SQL writes"
+  },
+  {
+    "Case": "TypedPagingFixture",
+    "Count": 8,
+    "Pass": true,
+    "Pages": 2,
+    "Range": "Hi\u1EC3n th\u1ECB 8\u20138 / 8",
+    "Note": "In-process typed UI fixture only; no SQL writes"
+  },
+  {
+    "Case": "TypedPagingFixture",
+    "Count": 14,
+    "Pass": true,
+    "Pages": 2,
+    "Range": "Hi\u1EC3n th\u1ECB 8\u201314 / 14",
+    "Note": "In-process typed UI fixture only; no SQL writes"
+  },
+  {
+    "Case": "TypedPagingFixture",
+    "Count": 49,
+    "Pass": true,
+    "Pages": 7,
+    "Range": "Hi\u1EC3n th\u1ECB 43\u201349 / 49",
+    "Note": "In-process typed UI fixture only; no SQL writes"
+  },
+  {
+    "Case": "TypedPagingFixture",
+    "Count": 50,
+    "Pass": true,
+    "Pages": 8,
+    "Range": "Hi\u1EC3n th\u1ECB 50\u201350 / 50",
+    "Note": "In-process typed UI fixture only; no SQL writes"
+  },
+  {
+    "Case": "TypedPagingFixture",
+    "Count": 51,
+    "Pass": true,
+    "Pages": 8,
+    "Range": "Hi\u1EC3n th\u1ECB 50\u201351 / 51",
+    "Note": "In-process typed UI fixture only; no SQL writes"
+  },
+  {
+    "Case": "TypedPagingFixture",
+    "Count": 99,
+    "Pass": true,
+    "Pages": 15,
+    "Range": "Hi\u1EC3n th\u1ECB 99\u201399 / 99",
+    "Note": "In-process typed UI fixture only; no SQL writes"
+  },
+  {
+    "Case": "SearchValidationKeepsData",
+    "Pass": true,
+    "State": "Ch\u01B0a c\u1EADp nh\u1EADt \u00B7 B\u1ED9 l\u1ECDc kh\u00F4ng h\u1EE3p l\u1EC7.",
+    "Count": "14 nguy\u00EAn li\u1EC7u"
+  },
+  {
+    "Case": "Empty",
+    "Pass": true,
+    "Count": "0 nguy\u00EAn li\u1EC7u"
+  },
+  {
+    "Case": "SearchCode",
+    "Pass": true,
+    "Range": "Hi\u1EC3n th\u1ECB 1\u20131 / 1"
+  },
+  {
+    "Case": "Loaded",
+    "Role": "CASH",
+    "Dpi": 144,
+    "Font": 9,
+    "HeaderFont": 7.5,
+    "Rows": 7,
+    "Count": "14 nguy\u00EAn li\u1EC7u",
+    "Range": "Hi\u1EC3n th\u1ECB 1\u20137 / 14",
+    "Columns": [
+      {
+        "Name": "Code",
+        "Width": 114
+      },
+      {
+        "Name": "Name",
+        "Width": 618
+      },
+      {
+        "Name": "Unit",
+        "Width": 96
+      },
+      {
+        "Name": "Quantity",
+        "Width": 174
+      }
+    ],
+    "Buttons": [
+      {
+        "Text": "",
+        "AccessibleName": "T\u1EA3i l\u1EA1i danh s\u00E1ch",
+        "Width": 60,
+        "Height": 60,
+        "Enabled": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 201,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 60,
+            "Height": 60
+          },
+          "X": 201,
+          "Y": 0,
+          "Width": 60,
+          "Height": 60,
+          "Left": 201,
+          "Top": 0,
+          "Right": 261,
+          "Bottom": 60,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "IsEmpty": false,
+          "Width": 261,
+          "Height": 60
+        }
+      },
+      {
+        "Text": "",
+        "AccessibleName": "Trang tr\u01B0\u1EDBc",
+        "Width": 57,
+        "Height": 45,
+        "Enabled": false,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 869,
+            "Y": 17
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 57,
+            "Height": 45
+          },
+          "X": 869,
+          "Y": 17,
+          "Width": 57,
+          "Height": 45,
+          "Left": 869,
+          "Top": 17,
+          "Right": 926,
+          "Bottom": 62,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "IsEmpty": false,
+          "Width": 1085,
+          "Height": 80
+        }
+      },
+      {
+        "Text": "",
+        "AccessibleName": "Trang sau",
+        "Width": 57,
+        "Height": 45,
+        "Enabled": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 1003,
+            "Y": 17
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 57,
+            "Height": 45
+          },
+          "X": 1003,
+          "Y": 17,
+          "Width": 57,
+          "Height": 45,
+          "Left": 1003,
+          "Top": 17,
+          "Right": 1060,
+          "Bottom": 62,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "IsEmpty": false,
+          "Width": 1085,
+          "Height": 80
+        }
+      }
+    ]
+  },
+  {
+    "Case": "Paging",
+    "Role": "CASH",
+    "First": [
+      "NVL01",
+      "NVL02",
+      "NVL03",
+      "NVL04",
+      "NVL05",
+      "NVL06",
+      "NVL07"
+    ],
+    "Second": [
+      "NVL08",
+      "NVL09",
+      "NVL10",
+      "NVL11",
+      "NVL12",
+      "NVL81",
+      "NVL82"
+    ],
+    "Range": "Hi\u1EC3n th\u1ECB 8\u201314 / 14",
+    "Disjoint": true
+  },
+  {
+    "Case": "Unit",
+    "Role": "CASH",
+    "Unit": "Cai",
+    "Rows": 3,
+    "AllMatch": true
+  },
+  {
+    "Case": "Resize",
+    "Role": "CASH",
+    "FooterVisible": true,
+    "GridHeight": 45,
+    "RowHeight": 69
+  },
+  {
+    "Case": "Loaded",
+    "Role": "STORE",
+    "Dpi": 144,
+    "Font": 9,
+    "HeaderFont": 7.5,
+    "Rows": 7,
+    "Count": "14 nguy\u00EAn li\u1EC7u",
+    "Range": "Hi\u1EC3n th\u1ECB 1\u20137 / 14",
+    "Columns": [
+      {
+        "Name": "Code",
+        "Width": 114
+      },
+      {
+        "Name": "Name",
+        "Width": 618
+      },
+      {
+        "Name": "Unit",
+        "Width": 96
+      },
+      {
+        "Name": "Quantity",
+        "Width": 174
+      }
+    ],
+    "Buttons": [
+      {
+        "Text": "Th\u00EAm nguy\u00EAn li\u1EC7u",
+        "AccessibleName": null,
+        "Width": 243,
+        "Height": 60,
+        "Enabled": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 243,
+            "Height": 60
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 243,
+          "Height": 60,
+          "Left": 0,
+          "Top": 0,
+          "Right": 243,
+          "Bottom": 60,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "IsEmpty": false,
+          "Width": 243,
+          "Height": 66
+        }
+      },
+      {
+        "Text": "",
+        "AccessibleName": "T\u1EA3i l\u1EA1i danh s\u00E1ch",
+        "Width": 60,
+        "Height": 60,
+        "Enabled": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 201,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 60,
+            "Height": 60
+          },
+          "X": 201,
+          "Y": 0,
+          "Width": 60,
+          "Height": 60,
+          "Left": 201,
+          "Top": 0,
+          "Right": 261,
+          "Bottom": 60,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "IsEmpty": false,
+          "Width": 261,
+          "Height": 60
+        }
+      },
+      {
+        "Text": "S\u1EEDa",
+        "AccessibleName": null,
+        "Width": 94,
+        "Height": 50,
+        "Enabled": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 94,
+            "Height": 50
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 94,
+          "Height": 50,
+          "Left": 0,
+          "Top": 0,
+          "Right": 94,
+          "Bottom": 50,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "IsEmpty": false,
+          "Width": 199,
+          "Height": 50
+        }
+      },
+      {
+        "Text": "X\u00F3a",
+        "AccessibleName": null,
+        "Width": 96,
+        "Height": 50,
+        "Enabled": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 103,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 96,
+            "Height": 50
+          },
+          "X": 103,
+          "Y": 0,
+          "Width": 96,
+          "Height": 50,
+          "Left": 103,
+          "Top": 0,
+          "Right": 199,
+          "Bottom": 50,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "IsEmpty": false,
+          "Width": 199,
+          "Height": 50
+        }
+      },
+      {
+        "Text": "",
+        "AccessibleName": "Trang tr\u01B0\u1EDBc",
+        "Width": 57,
+        "Height": 45,
+        "Enabled": false,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 869,
+            "Y": 17
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 57,
+            "Height": 45
+          },
+          "X": 869,
+          "Y": 17,
+          "Width": 57,
+          "Height": 45,
+          "Left": 869,
+          "Top": 17,
+          "Right": 926,
+          "Bottom": 62,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "IsEmpty": false,
+          "Width": 1085,
+          "Height": 80
+        }
+      },
+      {
+        "Text": "",
+        "AccessibleName": "Trang sau",
+        "Width": 57,
+        "Height": 45,
+        "Enabled": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 1003,
+            "Y": 17
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 57,
+            "Height": 45
+          },
+          "X": 1003,
+          "Y": 17,
+          "Width": 57,
+          "Height": 45,
+          "Left": 1003,
+          "Top": 17,
+          "Right": 1060,
+          "Bottom": 62,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "IsEmpty": false,
+          "Width": 1085,
+          "Height": 80
+        }
+      }
+    ]
+  },
+  {
+    "Case": "Paging",
+    "Role": "STORE",
+    "First": [
+      "NVL01",
+      "NVL02",
+      "NVL03",
+      "NVL04",
+      "NVL05",
+      "NVL06",
+      "NVL07"
+    ],
+    "Second": [
+      "NVL08",
+      "NVL09",
+      "NVL10",
+      "NVL11",
+      "NVL12",
+      "NVL81",
+      "NVL82"
+    ],
+    "Range": "Hi\u1EC3n th\u1ECB 8\u201314 / 14",
+    "Disjoint": true
+  },
+  {
+    "Case": "Unit",
+    "Role": "STORE",
+    "Unit": "Cai",
+    "Rows": 3,
+    "AllMatch": true
+  },
+  {
+    "Case": "Resize",
+    "Role": "STORE",
+    "FooterVisible": true,
+    "GridHeight": 45,
+    "RowHeight": 69
+  }
+]

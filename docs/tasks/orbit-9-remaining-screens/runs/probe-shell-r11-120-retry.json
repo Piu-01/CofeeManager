@@ -1,0 +1,19 @@
+[
+  {
+    "Case": "ShellStartup",
+    "DeviceDpi": 120,
+    "SidebarWidth": 250,
+    "ExpectedSidebarWidth": 250,
+    "Pass": true
+  },
+  {
+    "Case": "ShellTabs",
+    "ClientSize": {
+      "IsEmpty": false,
+      "Width": 1393,
+      "Height": 48
+    },
+    "Scroll": false,
+    "Pass": true
+  }
+]

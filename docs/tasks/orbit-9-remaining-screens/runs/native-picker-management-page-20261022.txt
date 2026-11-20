@@ -1,0 +1,157 @@
+Window: "CoffeeManager", App: CafeManager.WinForms.exe.
+	0 window CoffeeManager Secondary Actions: Raise
+		1 pane
+			2 pane
+				3 text CoffeeManager
+				4 text KHÔNG GIAN QUẢN LÝ
+				5 button Trang phiên
+				6 button Danh mục nền
+				7 button Khách hàng
+				8 button Bàn / Khu vực
+				9 button Menu / Công thức
+				10 button Nguyên liệu / Tồn
+				11 button Ưu đãi / Điểm
+				12 button Thông tin hệ thống
+				13 button Đăng xuất ID: logout
+				14 text Nguyen Van An
+				15 text Quản trị viên · ADMIN
+				16 text Phiên đang hoạt động.
+			17 pane
+				18 text Quản lý / Khách hàng
+				19 text Nguyen Van An · ADMIN
+			20 pane Nguyen Van An · ADMIN
+				222 pane Nguyen Van An · ADMIN ID: 329950
+					223 pane ID: 264412
+						224 text CUSTOMER WORKSPACE
+						225 text Khách hàng
+						226 text Quản lý khách hàng, điểm tích lũy và hạng thành viên.
+						227 pane Quản lý khách hàng, điểm tích lũy và hạng thành viên.
+							228 button Thêm
+						229 pane
+							230 pane
+								231 pane ID: 393316
+									232 edit (settable, string) Description: Tìm SDT hoặc tên khách
+							233 pane
+								234 button Tải lại danh sách
+							235 pane 11 khách hàng
+								236 button Mở sổ điểm
+								237 button Hóa đơn
+								238 button Sửa
+								239 button Xóa
+							240 pane
+								241 data grid
+									256 scroll bar (settable, float) Vertical Value: 0
+										257 button Line up
+										258 thumb Position
+										259 button Page down
+										260 button Line down
+									242 custom Top Row
+										243 header Top Left Header Cell ID: 4258871145
+										244 header MÃ ID: 4227127383
+										245 header KHÁCH HÀNG ID: 4217111667
+										246 header SDT ID: 4221125086
+										247 header ĐIỂM ID: 426190663
+										248 header HẠNG ID: 4213369763
+										249 header ƯU ĐÃI % ID: 4239589195
+									261 custom Row 1
+										262 header Row 1 ID: 4247841683
+										263 item MÃ Row 1 Value: KH001 ID: 4217962105
+										264 item KHÁCH HÀNG Row 1 Value: Nguyen Minh Khoa ID: 4232180776
+										265 item SDT Row 1 Value: 0911111111 ID: 4215696907
+										266 item ĐIỂM Row 1 Value: 3.433 ID: 422733205
+										267 item HẠNG Row 1 Value: BKIM ID: 4235531666
+										268 item ƯU ĐÃI % Row 1 Value: 10% ID: 4259258479
+									269 custom Row 2
+										270 header Row 2 ID: 4215462334
+										271 item MÃ Row 2 Value: KH002 ID: 4266792614
+										272 item KHÁCH HÀNG Row 2 Value: Tran Lan Anh ID: 4262997622
+										273 item SDT Row 2 Value: 0922222222 ID: 4213662719
+										274 item ĐIỂM Row 2 Value: 916 ID: 4243397629
+										275 item HẠNG Row 2 Value: VANG ID: 4227298277
+										276 item ƯU ĐÃI % Row 2 Value: 7% ID: 4219333291
+									277 custom Row 3
+										278 header Row 3 ID: 4246100804
+										279 item MÃ Row 3 Value: KH003 ID: 4262439552
+										280 item KHÁCH HÀNG Row 3 Value: Le Thanh Dat ID: 426407808
+										281 item SDT Row 3 Value: 0933333333 ID: 4216192640
+										282 item ĐIỂM Row 3 Value: 6.910 ID: 429177730
+										283 item HẠNG Row 3 Value: KIM ID: 4252201637
+										284 item ƯU ĐÃI % Row 3 Value: 15% ID: 427532643
+									285 custom Row 4
+										286 header Row 4 ID: 4265057191
+										287 item MÃ Row 4 Value: KH004 ID: 4240437125
+										288 item KHÁCH HÀNG Row 4 Value: Pham Thu Ha ID: 4255920581
+										289 item SDT Row 4 Value: 0944444444 ID: 4255878924
+										290 item ĐIỂM Row 4 Value: 215 ID: 4255337379
+										291 item HẠNG Row 4 Value: DONG ID: 4248297296
+										292 item ƯU ĐÃI % Row 4 Value: 0% ID: 4223885079
+									293 custom Row 5
+										294 header Row 5 ID: 4210046566
+										295 item MÃ Row 5 Value: KH005 ID: 4263496502
+										296 item KHÁCH HÀNG Row 5 Value: Hoang Bao Chau ID: 4220148167
+										297 item SDT Row 5 Value: 0955555555 ID: 4260599588
+										298 item ĐIỂM Row 5 Value: 1.800 ID: 4249597152
+										299 item HẠNG Row 5 Value: VANG ID: 4240783207
+										300 item ƯU ĐÃI % Row 5 Value: 7% ID: 4260419655
+									301 custom Row 6
+										302 header Row 6 ID: 4210374401
+										303 item MÃ Row 6 Value: KH006 ID: 42649492
+										304 item KHÁCH HÀNG Row 6 Value: Vo Quoc Hung ID: 428443397
+										305 item SDT Row 6 Value: 0966666666 ID: 4242655305
+										306 item ĐIỂM Row 6 Value: 9.200 ID: 4217648057
+										307 item HẠNG Row 6 Value: PLAT ID: 4228098155
+										308 item ƯU ĐÃI % Row 6 Value: 18% ID: 4229731699
+									309 custom Row 7
+										310 header Row 7 ID: 4258601208
+										311 item MÃ Row 7 Value: KH007 ID: 4223618205
+										312 item KHÁCH HÀNG Row 7 Value: Nguyen Thi Mai ID: 4238601215
+										313 item SDT Row 7 Value: 0977777777 ID: 4232053753
+										314 item ĐIỂM Row 7 Value: 350 ID: 4214045614
+										315 item HẠNG Row 7 Value: BAC ID: 4248375258
+										316 item ƯU ĐÃI % Row 7 Value: 3% ID: 4224898586
+									317 custom Row 8
+										318 header Row 8 ID: 4247111627
+										319 item MÃ Row 8 Value: KH008 ID: 428471378
+										320 item KHÁCH HÀNG Row 8 Value: Tran Duc Thinh ID: 4243019061
+										321 item SDT Row 8 Value: 0988888888 ID: 4222376886
+										322 item ĐIỂM Row 8 Value: 50 ID: 4222464063
+										323 item HẠNG Row 8 Value: DONG ID: 4223597366
+										324 item ƯU ĐÃI % Row 8 Value: 0% ID: 4238330302
+									325 custom Row 9
+										326 header Row 9 ID: 4235370234
+										327 item MÃ Row 9 Value: KH009 ID: 4257159860
+										328 item KHÁCH HÀNG Row 9 Value: Ly Khanh Linh ID: 424880679
+										329 item SDT Row 9 Value: 0999999999 ID: 4263448830
+										330 item ĐIỂM Row 9 Value: 14.500 ID: 4219528428
+										331 item HẠNG Row 9 Value: DIAM ID: 4252542973
+										332 item ƯU ĐÃI % Row 9 Value: 20% ID: 4211970014
+									333 custom Row 10
+										334 header Row 10 ID: 429666565
+										335 item MÃ Row 10 Value: KH010 ID: 4258556481
+										336 item KHÁCH HÀNG Row 10 Value: Do Van Minh ID: 4223036757
+										337 item SDT Row 10 Value: 0912345678 ID: 4231042386
+										338 item ĐIỂM Row 10 Value: 2.500 ID: 42897844
+										339 item HẠNG Row 10 Value: BKIM ID: 4211671984
+										340 item ƯU ĐÃI % Row 10 Value: 10% ID: 4217518074
+									341 custom Row 11
+										342 header Row 11 ID: 427764587
+										343 item MÃ Row 11 Value: KH011 ID: 4233830779
+										344 item KHÁCH HÀNG Row 11 Value: Khách kiểm thử sau mở sổ ID: 4237146943
+										345 item SDT Row 11 Value: 0900000981 ID: 4213148211
+										346 item ĐIỂM Row 11 Value: 300 ID: 4236709017
+										347 item HẠNG Row 11 Value: BAC ID: 427455184
+										348 item ƯU ĐÃI % Row 11 Value: 3% ID: 4229808530
+							250 pane ID: 393322
+								251 text Hiển thị 1–11 / 11 khách hàng
+								252 button (disabled) Trang trước
+								253 text 1 / 1
+								254 button (disabled) Trang sau
+						255 text Đã cập nhật 19:01:22
+		57 title bar (settable, string) Value: CoffeeManager
+			58 menu bar System ID: MenuBar
+				63 menu item System
+			60 button Minimize
+			61 button Maximize
+			62 button Close
+
+The focused UI element is 232 edit (settable, string) Description: Tìm SDT hoặc tên khách.

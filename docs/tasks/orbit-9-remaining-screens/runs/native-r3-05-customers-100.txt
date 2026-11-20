@@ -1,0 +1,105 @@
+Window: "CoffeeManager", App: CafeManager.WinForms.exe.
+	0 window CoffeeManager Secondary Actions: Raise
+		1 pane
+			2 pane
+				3 text CoffeeManager
+				4 text KHÔNG GIAN QUẢN LÝ
+				5 button Trang phiên
+				6 button Danh mục nền
+				7 button Khách hàng
+				8 button Bàn / Khu vực
+				9 button Menu / Công thức
+				10 button Nguyên liệu / Tồn
+				11 button Ưu đãi / Điểm
+				12 button Thông tin hệ thống
+				13 button Đăng xuất ID: logout
+				14 text Nguyen Van An
+				15 text Quản trị viên · ADMIN
+				16 text Phiên đang hoạt động.
+			17 pane
+				18 text Quản lý / Bàn khu vực
+				19 text Nguyen Van An · ADMIN
+			20 pane Nguyen Van An · ADMIN
+				389 pane Nguyen Van An · ADMIN ID: 11208486
+					390 pane ID: 9112604
+						520 pane ID: 8849898
+							521 pane ID: 18614700
+								522 text SPACE WORKSPACE
+								523 text Bàn & khu vực
+								524 text Theo dõi trạng thái bàn và quản lý khu vực.
+								525 pane Theo dõi trạng thái bàn và quản lý khu vực.
+									526 button Thêm
+								527 pane
+									399 pane
+										400 button Bàn / Sơ đồ
+										401 button Khu vực
+								528 pane
+									529 pane
+										530 pane ID: 6555168
+											531 edit (settable, string) Description: Tìm mã hoặc tên…
+									532 pane
+										533 button Tải lại danh sách
+									534 text 10 khu vực
+									535 pane 10 khu vực
+										536 button Sửa
+										537 button Xóa
+									538 pane
+										539 data grid
+											540 custom Top Row
+												541 header Top Left Header Cell ID: 4220253611
+												542 header MÃ ID: 4261970360
+												543 header KHU VỰC ID: 42308324
+											550 custom Row 1
+												551 header Row 1 ID: 4253690403
+												552 item MÃ Row 1 Value: KV001 ID: 4226886601
+												553 item KHU VỰC Row 1 Value: Trong nha ID: 4213981493
+											554 custom Row 2
+												555 header Row 2 ID: 4214062182
+												556 item MÃ Row 2 Value: KV002 ID: 4248590648
+												557 item KHU VỰC Row 2 Value: San vuon ID: 4227698660
+											558 custom Row 3
+												559 header Row 3 ID: 4250562061
+												560 item MÃ Row 3 Value: KV003 ID: 4253327023
+												561 item KHU VỰC Row 3 Value: Tang 2 ID: 4222162671
+											562 custom Row 4
+												563 header Row 4 ID: 4254503879
+												564 item MÃ Row 4 Value: KV004 ID: 4237461789
+												565 item KHU VỰC Row 4 Value: Khu VIP ID: 4217241220
+											566 custom Row 5
+												567 header Row 5 ID: 4228085059
+												568 item MÃ Row 5 Value: KV005 ID: 4229561458
+												569 item KHU VỰC Row 5 Value: Ban bar ID: 4248754644
+											570 custom Row 6
+												571 header Row 6 ID: 4252253491
+												572 item MÃ Row 6 Value: KV006 ID: 428206750
+												573 item KHU VỰC Row 6 Value: Hien ngoai ID: 4239578895
+											574 custom Row 7
+												575 header Row 7 ID: 4245055814
+												576 item MÃ Row 7 Value: KV007 ID: 4248854673
+												577 item KHU VỰC Row 7 Value: Phong rieng ID: 4231130981
+											578 custom Row 8
+												579 header Row 8 ID: 4226644523
+												580 item MÃ Row 8 Value: KV008 ID: 4210834491
+												581 item KHU VỰC Row 8 Value: Tang thuong ID: 426630662
+											582 custom Row 9
+												583 header Row 9 ID: 4246840212
+												584 item MÃ Row 9 Value: KV009 ID: 424942988
+												585 item KHU VỰC Row 9 Value: Khu khoi dong ID: 4264258851
+											586 custom Row 10
+												587 header Row 10 ID: 4255218736
+												588 item MÃ Row 10 Value: KV010 ID: 4246754932
+												589 item KHU VỰC Row 10 Value: Khu khong khoi thuoc ID: 423834346
+									544 pane ID: 4784316
+										545 text Hiển thị 1–10 / 10 khu vực
+										546 button (disabled) Trang trước
+										547 text 1 / 1
+										548 button (disabled) Trang sau
+								549 text Đã cập nhật 14:53:57
+		21 title bar (settable, string) Value: CoffeeManager
+			22 menu bar System ID: MenuBar
+				23 menu item System
+			24 button Minimize
+			25 button Maximize
+			26 button Close
+
+The focused UI element is 531 edit (settable, string) Description: Tìm mã hoặc tên….

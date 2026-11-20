@@ -1,0 +1,31 @@
+[
+  {
+    "Case": "Create",
+    "Pass": true,
+    "Code": "NVL99",
+    "RequestId": "3aba9ec1-ca92-440d-8ac7-30a9b5a7bdaf"
+  },
+  {
+    "Case": "Update",
+    "Pass": true,
+    "RequestId": "783a29d1-749b-4763-ac34-96029a717d6b"
+  },
+  {
+    "Case": "DeleteOwnedFixture",
+    "Pass": true,
+    "RequestId": "05febc82-9923-49ad-a4f1-31940e4f8a77"
+  },
+  {
+    "Case": "RepeatOpeningRejected",
+    "Pass": true,
+    "Code": "NVL01",
+    "Before": 96.7400,
+    "After": 96.7400
+  },
+  {
+    "Case": "FixtureCleanup",
+    "Pass": true,
+    "Code": "NVL99",
+    "Note": "Only owned unused material deleted through existing BLL; receipts retained"
+  }
+]

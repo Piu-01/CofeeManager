@@ -1,0 +1,196 @@
+Window: "CoffeeManager", App: CafeManager.WinForms.exe.
+	0 window CoffeeManager Secondary Actions: Raise
+		64 window Chọn khách hàng Secondary Actions: Raise
+			65 pane ID: 196752
+				66 pane ID: 196754
+					67 text CUSTOMER WORKSPACE
+					68 text Chọn khách hàng
+					69 text Tìm và chọn khách hàng trong danh sách.
+					70 pane Tìm và chọn khách hàng trong danh sách.
+						71 pane Tìm và chọn khách hàng trong danh sách.
+							72 pane Tìm và chọn khách hàng trong danh sách. ID: 196778
+								73 edit (settable, string) Description: Tìm SDT hoặc tên khách
+						74 pane
+							75 button Tải lại danh sách
+						76 pane 11 khách hàng
+							77 button Chọn khách
+							78 button Đóng
+						79 pane
+							80 data grid
+								101 scroll bar (settable, float) Vertical Value: 0
+									102 button Line up
+									103 thumb Position
+									104 button Page down
+									105 button Line down
+								81 custom Top Row
+									82 header Top Left Header Cell ID: 4243160236
+									83 header MÃ ID: 4224212163
+									84 header KHÁCH HÀNG ID: 4246322672
+									85 header SDT ID: 4265323831
+									86 header ĐIỂM ID: 4243903439
+									87 header HẠNG ID: 4233873798
+									88 header ƯU ĐÃI % ID: 4237706198
+								106 custom Row 1
+									107 header Row 1 ID: 429786995
+									108 item MÃ Row 1 Value: KH001 ID: 4260122076
+									109 item KHÁCH HÀNG Row 1 Value: Nguyen Minh Khoa ID: 4243389493
+									110 item SDT Row 1 Value: 0911111111 ID: 4227192499
+									111 item ĐIỂM Row 1 Value: 3.433 ID: 4217958167
+									112 item HẠNG Row 1 Value: BKIM ID: 4232129587
+									113 item ƯU ĐÃI % Row 1 Value: 10% ID: 4215031448
+								114 custom Row 2
+									115 header Row 2 ID: 4257286886
+									116 item MÃ Row 2 Value: KH002 ID: 426532024
+									117 item KHÁCH HÀNG Row 2 Value: Tran Lan Anh ID: 4217807455
+									118 item SDT Row 2 Value: 0922222222 ID: 4230170329
+									119 item ĐIỂM Row 2 Value: 916 ID: 4256669969
+									120 item HẠNG Row 2 Value: VANG ID: 4265620957
+									121 item ƯU ĐÃI % Row 2 Value: 7% ID: 4247766073
+								122 custom Row 3
+									123 header Row 3 ID: 4219402694
+									124 item MÃ Row 3 Value: KH003 ID: 4250908432
+									125 item KHÁCH HÀNG Row 3 Value: Le Thanh Dat ID: 4257829845
+									126 item SDT Row 3 Value: 0933333333 ID: 4213590492
+									127 item ĐIỂM Row 3 Value: 6.910 ID: 4242458678
+									128 item HẠNG Row 3 Value: KIM ID: 4215091906
+									129 item ƯU ĐÃI % Row 3 Value: 15% ID: 4261977061
+								130 custom Row 4
+									131 header Row 4 ID: 425140625
+									132 item MÃ Row 4 Value: KH004 ID: 4266828132
+									133 item KHÁCH HÀNG Row 4 Value: Pham Thu Ha ID: 4263459352
+									134 item SDT Row 4 Value: 0944444444 ID: 4219665211
+									135 item ĐIỂM Row 4 Value: 215 ID: 4254321159
+									136 item HẠNG Row 4 Value: DONG ID: 4235086436
+									137 item ƯU ĐÃI % Row 4 Value: 0% ID: 4253470493
+								138 custom Row 5
+									139 header Row 5 ID: 4243925704
+									140 item MÃ Row 5 Value: KH005 ID: 4234163252
+									141 item KHÁCH HÀNG Row 5 Value: Hoang Bao Chau ID: 4241469094
+									142 item SDT Row 5 Value: 0955555555 ID: 422227318
+									143 item ĐIỂM Row 5 Value: 1.800 ID: 4228955141
+									144 item HẠNG Row 5 Value: VANG ID: 4240872514
+									145 item ƯU ĐÃI % Row 5 Value: 7% ID: 4261580642
+								146 custom Row 6
+									147 header Row 6 ID: 425254636
+									148 item MÃ Row 6 Value: KH006 ID: 421201408
+									149 item KHÁCH HÀNG Row 6 Value: Vo Quoc Hung ID: 4215618305
+									150 item SDT Row 6 Value: 0966666666 ID: 421711373
+									151 item ĐIỂM Row 6 Value: 9.200 ID: 4222247854
+									152 item HẠNG Row 6 Value: PLAT ID: 4220786652
+									153 item ƯU ĐÃI % Row 6 Value: 18% ID: 421791026
+								154 custom Row 7
+									155 header Row 7 ID: 4234248059
+									156 item MÃ Row 7 Value: KH007 ID: 4242571591
+									157 item KHÁCH HÀNG Row 7 Value: Nguyen Thi Mai ID: 4216559783
+									158 item SDT Row 7 Value: 0977777777 ID: 4213950592
+									159 item ĐIỂM Row 7 Value: 350 ID: 4247139971
+									160 item HẠNG Row 7 Value: BAC ID: 428839858
+									161 item ƯU ĐÃI % Row 7 Value: 3% ID: 4247809295
+								162 custom Row 8
+									163 header Row 8 ID: 4226707191
+									164 item MÃ Row 8 Value: KH008 ID: 4211649163
+									165 item KHÁCH HÀNG Row 8 Value: Tran Duc Thinh ID: 4217221401
+									166 item SDT Row 8 Value: 0988888888 ID: 4222551631
+									167 item ĐIỂM Row 8 Value: 50 ID: 4224735749
+									168 item HẠNG Row 8 Value: DONG ID: 4253129284
+									169 item ƯU ĐÃI % Row 8 Value: 0% ID: 4219592055
+								170 custom Row 9
+									171 header Row 9 ID: 4222723038
+									172 item MÃ Row 9 Value: KH009 ID: 4226964043
+									173 item KHÁCH HÀNG Row 9 Value: Ly Khanh Linh ID: 4214988248
+									174 item SDT Row 9 Value: 0999999999 ID: 4260629498
+									175 item ĐIỂM Row 9 Value: 14.500 ID: 4249985970
+									176 item HẠNG Row 9 Value: DIAM ID: 4245837842
+									177 item ƯU ĐÃI % Row 9 Value: 20% ID: 4259021035
+								178 custom Row 10
+									179 header Row 10 ID: 4242443185
+									180 item MÃ Row 10 Value: KH010 ID: 4214890503
+									181 item KHÁCH HÀNG Row 10 Value: Do Van Minh ID: 4259358818
+									182 item SDT Row 10 Value: 0912345678 ID: 4233467136
+									183 item ĐIỂM Row 10 Value: 2.500 ID: 4232419596
+									184 item HẠNG Row 10 Value: BKIM ID: 4218801564
+									185 item ƯU ĐÃI % Row 10 Value: 10% ID: 4243093740
+								186 custom Row 11
+									187 header Row 11 ID: 4235084785
+									188 item MÃ Row 11 Value: KH011 ID: 4253449023
+									189 item KHÁCH HÀNG Row 11 Value: Khách kiểm thử sau mở sổ ID: 4223748664
+									190 item SDT Row 11 Value: 0900000981 ID: 4240297187
+									191 item ĐIỂM Row 11 Value: 300 ID: 4254101393
+									192 item HẠNG Row 11 Value: BAC ID: 4232229473
+									193 item ƯU ĐÃI % Row 11 Value: 3% ID: 4216329976
+						89 pane ID: 196730
+							90 text Hiển thị 1–11 / 11 khách hàng
+							91 button (disabled) Trang trước
+							92 text 1 / 1
+							93 button (disabled) Trang sau
+					94 text Đã cập nhật 18:59:54
+			95 title bar (settable, string) Value: Chọn khách hàng
+				96 menu bar System ID: MenuBar
+					97 menu item System
+				98 button Minimize
+				99 button Maximize
+				100 button Close
+		1 pane
+			2 pane
+				3 text CoffeeManager
+				4 text KHÔNG GIAN QUẢN LÝ
+				5 button Trang phiên
+				6 button Danh mục nền
+				7 button Khách hàng
+				8 button Bàn / Khu vực
+				9 button Menu / Công thức
+				10 button Nguyên liệu / Tồn
+				11 button Ưu đãi / Điểm
+				12 button Thông tin hệ thống
+				13 button Đăng xuất ID: logout
+				14 text Nguyen Van An
+				15 text Quản trị viên · ADMIN
+				16 text Phiên đang hoạt động.
+			17 pane
+				18 text Quản lý / Lịch sử điểm
+				19 text Nguyen Van An · ADMIN
+			20 pane Nguyen Van An · ADMIN
+				21 pane Nguyen Van An · ADMIN ID: 67570
+					22 pane ID: 67572
+						23 pane ID: 67578
+							24 pane ID: 67580
+								25 text LOYALTY WORKSPACE
+								26 text Lịch sử điểm
+								27 text Tra cứu lịch sử điểm khách hàng · Chỉ đọc.
+								28 pane Tra cứu lịch sử điểm khách hàng · Chỉ đọc.
+									29 button Điều chỉnh điểm
+								30 pane
+									31 pane
+										32 button Khuyến mãi
+										33 button Hạng thành viên
+										34 button Điểm khách hàng
+								35 pane
+									36 pane
+										37 text Chưa chọn khách hàng
+										38 button (disabled) Chọn khách
+									39 pane
+										40 button Tải lại danh sách
+									41 pane 0 giao dịch
+										42 pane Chọn khách hàng để xem lịch sử điểm. ID: 67620
+										43 data grid 0 giao dịch
+											44 custom Top Row
+												45 header MÃ GD ID: 4227892297
+												46 header THỜI ĐIỂM ID: 4227055544
+												47 header LOẠI ID: 4216177758
+												48 header ĐIỂM ID: 428984263
+												49 header LÝ DO ID: 4249686560
+												50 header HÓA ĐƠN ID: 4241945513
+									51 pane ID: 67608
+										52 text 0 giao dịch
+										53 button (disabled) Trang trước
+										54 text 1 / 1
+										55 button (disabled) Trang sau
+								56 text Đã cập nhật 19:00:22
+		57 title bar (settable, string) Value: CoffeeManager
+			58 menu bar System ID: MenuBar
+				63 menu item System
+			60 button Minimize
+			61 button Maximize
+			62 button Close
+
+The focused UI element is 73 edit (settable, string) Description: Tìm SDT hoặc tên khách.

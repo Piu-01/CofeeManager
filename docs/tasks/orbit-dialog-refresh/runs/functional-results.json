@@ -1,0 +1,142 @@
+[
+  {
+    "id": "D05-validation-retains-input",
+    "status": "FAIL",
+    "actual": "System.NullReferenceException: Object reference not set to an instance of an object.\r\n   at CafeManager.WinForms.UI.OrbitDialogField.OnLayout(LayoutEventArgs levent) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\UI\\OrbitDialogField.cs:line 31\r\n   at System.Windows.Forms.Control.PerformLayout(LayoutEventArgs args)\r\n   at CafeManager.WinForms.UI.OrbitDialogField..ctor(String label, Control input, Boolean expands) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\UI\\OrbitDialogField.cs:line 14\r\n   at CafeManager.WinForms.Forms.OperationEditorDialog.AddField(String label, Control input) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Forms\\OperationEditorDialog.cs:line 33\r\n   at CafeManager.WinForms.Forms.OperationEditorDialog.AddText(String label, String value, Boolean readOnly) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Forms\\OperationEditorDialog.cs:line 28\r\n   at Program.\u003C\u003Ec.\u003C\u003CRun\u003Eb__15_0\u003Ed.MoveNext() in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\orbit-dialog-refresh\\runs\\FunctionalProbe\\Program.cs:line 54\r\n--- End of stack trace from previous location ---\r\n   at Program.Case(String id, Func\u00601 action) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\orbit-dialog-refresh\\runs\\FunctionalProbe\\Program.cs:line 32"
+  },
+  {
+    "id": "D06-reject-confirmation-no-write",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D06-busy-blocks-double-save-close",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D06-unknown-reconcile-original-id",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D06-dirty-close-cancel-then-discard",
+    "status": "FAIL",
+    "actual": "System.NullReferenceException: Object reference not set to an instance of an object.\r\n   at CafeManager.WinForms.UI.OrbitDialogField.OnLayout(LayoutEventArgs levent) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\UI\\OrbitDialogField.cs:line 31\r\n   at System.Windows.Forms.Control.PerformLayout(LayoutEventArgs args)\r\n   at CafeManager.WinForms.UI.OrbitDialogField..ctor(String label, Control input, Boolean expands) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\UI\\OrbitDialogField.cs:line 14\r\n   at CafeManager.WinForms.Forms.OperationEditorDialog.AddField(String label, Control input) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Forms\\OperationEditorDialog.cs:line 33\r\n   at CafeManager.WinForms.Forms.OperationEditorDialog.AddText(String label, String value, Boolean readOnly) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Forms\\OperationEditorDialog.cs:line 28\r\n   at Program.\u003C\u003Ec.\u003C\u003CRun\u003Eb__15_4\u003Ed.MoveNext() in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\orbit-dialog-refresh\\runs\\FunctionalProbe\\Program.cs:line 83\r\n--- End of stack trace from previous location ---\r\n   at Program.Case(String id, Func\u00601 action) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\orbit-dialog-refresh\\runs\\FunctionalProbe\\Program.cs:line 32"
+  },
+  {
+    "id": "D06-confirm-YesNo-positive",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D06-confirm-YesNo-negative",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D06-confirm-YesNo-escape",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D06-confirm-YesNo-close",
+    "status": "FAIL",
+    "actual": "System.Exception: Expected No, actual Cancel\r\n   at Program.Assert(Boolean condition, String message) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\orbit-dialog-refresh\\runs\\FunctionalProbe\\Program.cs:line 29\r\n   at Program.\u003C\u003Ec__DisplayClass15_5.\u003CRun\u003Eb__20() in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\orbit-dialog-refresh\\runs\\FunctionalProbe\\Program.cs:line 102\r\n   at Program.Case(String id, Func\u00601 action) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\orbit-dialog-refresh\\runs\\FunctionalProbe\\Program.cs:line 32"
+  },
+  {
+    "id": "D06-confirm-YesNo-enter",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D06-confirm-OKCancel-positive",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D06-confirm-OKCancel-negative",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D06-confirm-OKCancel-escape",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D06-confirm-OKCancel-close",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D06-confirm-OKCancel-enter",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "DB-marker",
+    "status": "PASS",
+    "actual": "CoffeeManager_Test_G03_20261019_215457_29e552a9_demo marker verified; no production target"
+  },
+  {
+    "id": "D02-catalog-ProductCategory",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D02-catalog-Supplier",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D02-catalog-PaymentMethod",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D02-catalog-DeliveryPartner",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D02-catalog-ExpenseCategory",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D02-catalog-Position",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D02-catalog-Shift",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D04-picker-search-select",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D04-picker-guest-and-cancel",
+    "status": "FAIL",
+    "actual": "System.Exception: Close selected a customer\r\n   at Program.Assert(Boolean condition, String message) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\orbit-dialog-refresh\\runs\\FunctionalProbe\\Program.cs:line 29\r\n   at Program.\u003C\u003Ec__DisplayClass15_0.\u003C\u003CRun\u003Eb__6\u003Ed.MoveNext() in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\orbit-dialog-refresh\\runs\\FunctionalProbe\\Program.cs:line 143\r\n--- End of stack trace from previous location ---\r\n   at Program.Case(String id, Func\u00601 action) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\orbit-dialog-refresh\\runs\\FunctionalProbe\\Program.cs:line 32"
+  },
+  {
+    "id": "D03-recipe-unit-delete-cancel",
+    "status": "FAIL",
+    "actual": "System.NullReferenceException: Object reference not set to an instance of an object.\r\n   at CafeManager.WinForms.UI.OrbitDialogField.OnLayout(LayoutEventArgs levent) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\UI\\OrbitDialogField.cs:line 31\r\n   at System.Windows.Forms.Control.PerformLayout(LayoutEventArgs args)\r\n   at CafeManager.WinForms.UI.OrbitDialogField..ctor(String label, Control input, Boolean expands) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\UI\\OrbitDialogField.cs:line 14\r\n   at CafeManager.WinForms.Forms.OperationEditorDialog.AddField(String label, Control input) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Forms\\OperationEditorDialog.cs:line 33\r\n   at CafeManager.WinForms.Modules.Menu.ProductsControl.Recipe() in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Modules\\Menu\\ProductsControl.cs:line 64\r\n   at Program.\u003C\u003Ec__DisplayClass15_0.\u003C\u003CRun\u003Eb__7\u003Ed.MoveNext() in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\orbit-dialog-refresh\\runs\\FunctionalProbe\\Program.cs:line 158\r\n--- End of stack trace from previous location ---\r\n   at Program.Case(String id, Func\u00601 action) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\orbit-dialog-refresh\\runs\\FunctionalProbe\\Program.cs:line 32"
+  },
+  {
+    "id": "D09-customer-editor-write-readback-cleanup",
+    "status": "FAIL",
+    "actual": "System.NullReferenceException: Object reference not set to an instance of an object.\r\n   at CafeManager.WinForms.UI.OrbitDialogField.OnLayout(LayoutEventArgs levent) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\UI\\OrbitDialogField.cs:line 31\r\n   at System.Windows.Forms.Control.PerformLayout(LayoutEventArgs args)\r\n   at CafeManager.WinForms.UI.OrbitDialogField..ctor(String label, Control input, Boolean expands) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\UI\\OrbitDialogField.cs:line 14\r\n   at CafeManager.WinForms.Forms.OperationEditorDialog.AddField(String label, Control input) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Forms\\OperationEditorDialog.cs:line 33\r\n   at CafeManager.WinForms.Forms.OperationEditorDialog.AddText(String label, String value, Boolean readOnly) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Forms\\OperationEditorDialog.cs:line 28\r\n   at Program.\u003C\u003Ec__DisplayClass15_0.\u003C\u003CRun\u003Eb__8\u003Ed.MoveNext() in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\orbit-dialog-refresh\\runs\\FunctionalProbe\\Program.cs:line 164\r\n--- End of stack trace from previous location ---\r\n   at Program.Case(String id, Func\u00601 action) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\orbit-dialog-refresh\\runs\\FunctionalProbe\\Program.cs:line 32"
+  },
+  {
+    "id": "D09-catalog-editor-write-readback-cleanup",
+    "status": "FAIL",
+    "actual": "System.InvalidOperationException: Sequence contains no matching element\r\n   at System.Linq.ThrowHelper.ThrowNoMatchException()\r\n   at System.Linq.Enumerable.Single[TSource](IEnumerable\u00601 source, Func\u00602 predicate)\r\n   at Program.Click(Control root, String text) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\orbit-dialog-refresh\\runs\\FunctionalProbe\\Program.cs:line 33\r\n   at Program.\u003C\u003Ec__DisplayClass15_0.\u003C\u003CRun\u003Eb__9\u003Ed.MoveNext() in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\orbit-dialog-refresh\\runs\\FunctionalProbe\\Program.cs:line 173\r\n--- End of stack trace from previous location ---\r\n   at Program.Case(String id, Func\u00601 action) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\orbit-dialog-refresh\\runs\\FunctionalProbe\\Program.cs:line 32"
+  }
+]

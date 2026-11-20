@@ -1,0 +1,70 @@
+[
+  {
+    "Case": "FirstPage-0",
+    "Pass": true
+  },
+  {
+    "Case": "FirstPage-14",
+    "Pass": true
+  },
+  {
+    "Case": "FirstPage-49",
+    "Pass": true
+  },
+  {
+    "Case": "FirstPage-50",
+    "Pass": true
+  },
+  {
+    "Case": "FirstPage-51",
+    "Pass": true
+  },
+  {
+    "Case": "InternalScrollAvailable",
+    "Pass": true
+  },
+  {
+    "Case": "ScrollReachesRow50",
+    "Pass": true
+  },
+  {
+    "Case": "NextPage51",
+    "Pass": true
+  },
+  {
+    "Case": "PreviousPage",
+    "Pass": true
+  },
+  {
+    "Case": "FilterResetsAndCounts",
+    "Pass": true
+  },
+  {
+    "Case": "ResizeMetrics-1080",
+    "Rows": 50,
+    "Height": 58,
+    "ExpectedHeight": 58,
+    "FooterTop": 399,
+    "BodyBottom": 400,
+    "FooterParent": "RoundedPanel",
+    "BodyParent": "RoundedPanel"
+  },
+  {
+    "Case": "Resize-1080",
+    "Pass": false
+  },
+  {
+    "Case": "ResizeMetrics-1166",
+    "Rows": 50,
+    "Height": 58,
+    "ExpectedHeight": 58,
+    "FooterTop": 447,
+    "BodyBottom": 448,
+    "FooterParent": "RoundedPanel",
+    "BodyParent": "RoundedPanel"
+  },
+  {
+    "Case": "Resize-1166",
+    "Pass": false
+  }
+]

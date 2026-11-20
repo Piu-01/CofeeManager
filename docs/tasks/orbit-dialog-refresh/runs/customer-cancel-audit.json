@@ -1,0 +1,17 @@
+[
+  {
+    "id": "AUDIT",
+    "status": "PASS",
+    "actual": "[{\u0022MaKH\u0022:\u0022KH014\u0022,\u0022TenKH\u0022:\u0022DlgRP1022205634 edit\u0022,\u0022DiemTichLuy\u0022:300,\u0022MaHang\u0022:\u0022BAC  \u0022,\u0022Revision\u0022:\u0022\\u0000\\u0000\\u0000\\u0000\\u0000\\u00006\\u00D0\u0022}]"
+  },
+  {
+    "id": "AUDIT",
+    "status": "PASS",
+    "actual": "[{\u0022Operation\u0022:\u0022CustomerOpen\u0022,\u0022EntityCode\u0022:\u0022KH014\u0022,\u0022Revision\u0022:\u002200000000000036D0\u0022},{\u0022Operation\u0022:\u0022CustomerUpdate\u0022,\u0022EntityCode\u0022:\u0022KH014\u0022,\u0022Revision\u0022:\u002200000000000036CF\u0022},{\u0022Operation\u0022:\u0022CustomerCreate\u0022,\u0022EntityCode\u0022:\u0022KH014\u0022,\u0022Revision\u0022:\u002200000000000036CE\u0022}]"
+  },
+  {
+    "id": "AUDIT",
+    "status": "PASS",
+    "actual": "[{\u0022MaKH\u0022:\u0022KH014\u0022,\u0022Points\u0022:300,\u0022Source\u0022:\u0022DlgRP1022205634\u0022}]"
+  }
+]

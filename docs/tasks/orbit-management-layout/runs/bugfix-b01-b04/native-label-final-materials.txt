@@ -1,0 +1,150 @@
+Window: "CoffeeManager", App: CafeManager.WinForms.exe.
+	0 window CoffeeManager Secondary Actions: Raise
+		1 pane
+			2 pane
+				3 text CoffeeManager
+				4 text KHÔNG GIAN QUẢN LÝ
+				5 button Trang phiên
+				6 button Danh mục nền
+				7 button Khách hàng
+				8 button Bàn / Khu vực
+				9 button Menu / Công thức
+				10 button Nguyên liệu / Tồn
+				11 button Ưu đãi / Điểm
+				12 button Thông tin hệ thống
+				13 button Đăng xuất
+			14 pane
+				15 text Quản lý / Nguyên liệu / Tồn
+				16 text Nguyen Van An · ADMIN
+			17 pane Nguyen Van An · ADMIN
+				143 pane Nguyen Van An · ADMIN ID: 3279680
+					144 pane
+						145 pane
+							146 pane
+								147 text Nguyên liệu tồn kho
+								148 text Tra cứu nguyên liệu, đơn vị và số lượng tồn.
+							149 pane Tra cứu nguyên liệu, đơn vị và số lượng tồn.
+								150 button Thêm nguyên liệu
+						151 pane
+							152 pane
+								153 edit (settable, string) Description: Tìm tên hoặc mã nguyên liệu…
+								154 pane
+									155 button Tải lại
+							156 pane
+								174 text 14 nguyên liệu trong trang
+								157 pane 14 nguyên liệu trong trang
+									158 button Mở sổ
+									159 button Sửa
+									160 button Xóa
+							161 pane
+								162 data grid
+									175 scroll bar (settable, float) Vertical Value: 0
+										176 button Line up
+										177 thumb Position
+										178 button Page down
+										179 button Line down
+									163 custom Top Row
+										164 header Mã ID: 4230309794
+										165 header Nguyên liệu ID: 4258483006
+										166 header Đơn vị ID: 4222081585
+										167 header Tồn hiện tại ID: 4218625156
+										168 header Mốc mở sổ ID: 4240800445
+									180 custom Row 1
+										181 item Mã Row 1, Not sorted. Value: NVL01 ID: 4260729893
+										182 item Nguyên liệu Row 1, Not sorted. Value: Ca phe hat ID: 4251291115
+										183 item Đơn vị Row 1, Not sorted. Value: Kg ID: 4262804721
+										184 item Tồn hiện tại Row 1, Not sorted. Value: 96,7400 ID: 4211155008
+										185 item Mốc mở sổ Row 1, Not sorted. Value: LegacyCutover ID: 4210797379
+									186 custom Row 2
+										187 item Mã Row 2, Not sorted. Value: NVL02 ID: 421012622
+										188 item Nguyên liệu Row 2, Not sorted. Value: Sua tuoi ID: 4213164087
+										189 item Đơn vị Row 2, Not sorted. Value: Lit ID: 4236915413
+										190 item Tồn hiện tại Row 2, Not sorted. Value: 98,1600 ID: 4210138333
+										191 item Mốc mở sổ Row 2, Not sorted. Value: LegacyCutover ID: 4264689475
+									192 custom Row 3
+										193 item Mã Row 3, Not sorted. Value: NVL03 ID: 4232723101
+										194 item Nguyên liệu Row 3, Not sorted. Value: Duong ID: 4222747131
+										195 item Đơn vị Row 3, Not sorted. Value: Kg ID: 4227277252
+										196 item Tồn hiện tại Row 3, Not sorted. Value: 72,7050 ID: 4219059967
+										197 item Mốc mở sổ Row 3, Not sorted. Value: LegacyCutover ID: 4246452989
+									198 custom Row 4
+										199 item Mã Row 4, Not sorted. Value: NVL04 ID: 4266935486
+										200 item Nguyên liệu Row 4, Not sorted. Value: Tra xanh ID: 4264854958
+										201 item Đơn vị Row 4, Not sorted. Value: Kg ID: 4237808095
+										202 item Tồn hiện tại Row 4, Not sorted. Value: 21,9650 ID: 4221743196
+										203 item Mốc mở sổ Row 4, Not sorted. Value: LegacyCutover ID: 4214226104
+									204 custom Row 5
+										205 item Mã Row 5, Not sorted. Value: NVL05 ID: 4224682113
+										206 item Nguyên liệu Row 5, Not sorted. Value: Bot matcha ID: 4252432017
+										207 item Đơn vị Row 5, Not sorted. Value: Kg ID: 4210527587
+										208 item Tồn hiện tại Row 5, Not sorted. Value: 5,0000 ID: 422640907
+										209 item Mốc mở sổ Row 5, Not sorted. Value: LegacyCutover ID: 4234331792
+									210 custom Row 6
+										211 item Mã Row 6, Not sorted. Value: NVL06 ID: 4210756018
+										212 item Nguyên liệu Row 6, Not sorted. Value: Tran chau ID: 425610518
+										213 item Đơn vị Row 6, Not sorted. Value: Kg ID: 425827875
+										214 item Tồn hiện tại Row 6, Not sorted. Value: 9,7000 ID: 428653514
+										215 item Mốc mở sổ Row 6, Not sorted. Value: LegacyCutover ID: 4245386829
+									216 custom Row 7
+										217 item Mã Row 7, Not sorted. Value: NVL07 ID: 4263137580
+										218 item Nguyên liệu Row 7, Not sorted. Value: Bo ID: 4215482175
+										219 item Đơn vị Row 7, Not sorted. Value: Kg ID: 4267050550
+										220 item Tồn hiện tại Row 7, Not sorted. Value: 22,7000 ID: 4266350788
+										221 item Mốc mở sổ Row 7, Not sorted. Value: LegacyCutover ID: 4257253877
+									222 custom Row 8
+										223 item Mã Row 8, Not sorted. Value: NVL08 ID: 4242738188
+										224 item Nguyên liệu Row 8, Not sorted. Value: Xoai ID: 4218725544
+										225 item Đơn vị Row 8, Not sorted. Value: Kg ID: 4242105490
+										226 item Tồn hiện tại Row 8, Not sorted. Value: 42,0000 ID: 4210500465
+										227 item Mốc mở sổ Row 8, Not sorted. Value: LegacyCutover ID: 422288323
+									228 custom Row 9
+										229 item Mã Row 9, Not sorted. Value: NVL09 ID: 4255717159
+										230 item Nguyên liệu Row 9, Not sorted. Value: Kem tuoi ID: 4253234438
+										231 item Đơn vị Row 9, Not sorted. Value: Lit ID: 4220959064
+										232 item Tồn hiện tại Row 9, Not sorted. Value: 20,3800 ID: 424032380
+										233 item Mốc mở sổ Row 9, Not sorted. Value: LegacyCutover ID: 4252420951
+									234 custom Row 10
+										235 item Mã Row 10, Not sorted. Value: NVL10 ID: 4229890142
+										236 item Nguyên liệu Row 10, Not sorted. Value: Ly nhua ID: 4253027535
+										237 item Đơn vị Row 10, Not sorted. Value: Cai ID: 4218269327
+										238 item Tồn hiện tại Row 10, Not sorted. Value: 500,0000 ID: 4236174666
+										239 item Mốc mở sổ Row 10, Not sorted. Value: LegacyCutover ID: 42508622
+									240 custom Row 11
+										241 item Mã Row 11, Not sorted. Value: NVL11 ID: 4258153134
+										242 item Nguyên liệu Row 11, Not sorted. Value: Banh tiramisu thanh pham ID: 4217793242
+										243 item Đơn vị Row 11, Not sorted. Value: Cai ID: 4229985555
+										244 item Tồn hiện tại Row 11, Not sorted. Value: 59,0000 ID: 4254267895
+										245 item Mốc mở sổ Row 11, Not sorted. Value: LegacyCutover ID: 4234394000
+									246 custom Row 12
+										247 item Mã Row 12, Not sorted. Value: NVL12 ID: 4245731498
+										248 item Nguyên liệu Row 12, Not sorted. Value: Banh croissant thanh pham ID: 4257638565
+										249 item Đơn vị Row 12, Not sorted. Value: Cai ID: 4211103852
+										250 item Tồn hiện tại Row 12, Not sorted. Value: 29,0000 ID: 4210132353
+										251 item Mốc mở sổ Row 12, Not sorted. Value: LegacyCutover ID: 4264611726
+									252 custom Row 13
+										253 item Mã Row 13, Not sorted. Value: NVL81 ID: 4256900137
+										254 item Nguyên liệu Row 13, Not sorted. Value: Cà phê kiểm thử GUI đổi tên ID: 421504283
+										255 item Đơn vị Row 13, Not sorted. Value: Kg ID: 4219555680
+										256 item Tồn hiện tại Row 13, Not sorted. Value: 0,0180 ID: 4252897253
+										257 item Mốc mở sổ Row 13, Not sorted. Value: Manual ID: 4216575658
+									258 custom Row 14
+										259 item Mã Row 14, Not sorted. Value: NVL82 ID: 4249822804
+										260 item Nguyên liệu Row 14, Not sorted. Value: Cà phê kiểm thử chưa mở sổ ID: 4243716684
+										261 item Đơn vị Row 14, Not sorted. Value: Kg ID: 4231445981
+										262 item Tồn hiện tại Row 14, Not sorted. Value: 1,2345 ID: 426144579
+										263 item Mốc mở sổ Row 14, Not sorted. Value: Manual ID: 4212770675
+							169 pane
+								264 text Trang 1 · Hiển thị 1–14
+								170 pane Trang 1 · Hiển thị 1–14
+									171 button (disabled) Trước
+									172 button (disabled) Sau
+						173 text Đã cập nhật 01:05:14
+			136 text Phiên đang hoạt động.
+		137 title bar (settable, string) Value: CoffeeManager
+			138 menu bar System ID: MenuBar
+				139 menu item System
+			140 button Minimize
+			141 button Maximize
+			142 button Close
+
+The focused UI element is 153 edit (settable, string) Description: Tìm tên hoặc mã nguyên liệu….

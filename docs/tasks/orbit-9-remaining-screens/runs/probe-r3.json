@@ -1,0 +1,1108 @@
+[
+  {
+    "Case": "Screen",
+    "Screen": "02-menu",
+    "Dpi": 120,
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1457,
+      "Height": 897
+    },
+    "Title": "Menu \u0026 c\u00F4ng th\u1EE9c",
+    "RowHeight": 58,
+    "Rows": 11,
+    "FirstCode": "SP001",
+    "Count": "11 s\u1EA3n ph\u1EA9m",
+    "Range": "Hi\u1EC3n th\u1ECB 1\u201311 / 11 s\u1EA3n ph\u1EA9m",
+    "Tabs": [],
+    "Primary": [
+      {
+        "Text": "Th\u00EAm s\u1EA3n ph\u1EA9m",
+        "Enabled": false,
+        "Width": 191,
+        "Height": 50
+      }
+    ],
+    "Actions": [
+      {
+        "Text": "C\u00F4ng th\u1EE9c",
+        "Enabled": false,
+        "Width": 122,
+        "Height": 41
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Enabled": false,
+        "Width": 79,
+        "Height": 41
+      },
+      {
+        "Text": "X\u00F3a",
+        "Enabled": false,
+        "Width": 80,
+        "Height": 41
+      }
+    ],
+    "Columns": [
+      {
+        "DataPropertyName": "Code",
+        "Width": 112,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Name",
+        "Width": 633,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Category",
+        "Width": 200,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Price",
+        "Width": 188,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Status",
+        "Width": 188,
+        "ReadOnly": true
+      }
+    ],
+    "HeaderOutsideScroll": true,
+    "FooterInside": true,
+    "Cards": 0,
+    "State": "\u0110ang t\u1EA3i\u2026"
+  },
+  {
+    "Case": "MenuCategoryFilter",
+    "Pass": true,
+    "Category": "DM002",
+    "Rows": 2
+  },
+  {
+    "Case": "Screen",
+    "Screen": "03-tables",
+    "Dpi": 120,
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1457,
+      "Height": 897
+    },
+    "Title": "B\u00E0n \u0026 khu v\u1EF1c",
+    "RowHeight": 58,
+    "Rows": 10,
+    "FirstCode": "B0001",
+    "Count": "10 b\u00E0n",
+    "Range": "Hi\u1EC3n th\u1ECB 1\u201310 / 10 b\u00E0n",
+    "Tabs": [
+      "B\u00E0n / S\u01A1 \u0111\u1ED3",
+      "Khu v\u1EF1c"
+    ],
+    "Primary": [
+      {
+        "Text": "Th\u00EAm b\u00E0n",
+        "Enabled": true,
+        "Width": 144,
+        "Height": 50
+      }
+    ],
+    "Actions": [
+      {
+        "Text": "Ch\u1ECDn b\u00E0n",
+        "Enabled": true,
+        "Width": 118,
+        "Height": 41
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Enabled": true,
+        "Width": 79,
+        "Height": 41
+      },
+      {
+        "Text": "X\u00F3a",
+        "Enabled": true,
+        "Width": 80,
+        "Height": 41
+      }
+    ],
+    "Columns": [
+      {
+        "DataPropertyName": "Code",
+        "Width": 112,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Name",
+        "Width": 138,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Area",
+        "Width": 188,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Status",
+        "Width": 212,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "OrderCode",
+        "Width": 212,
+        "ReadOnly": true
+      }
+    ],
+    "HeaderOutsideScroll": true,
+    "FooterInside": true,
+    "Cards": 10,
+    "State": "\u0110\u00E3 c\u1EADp nh\u1EADt 14:47:14"
+  },
+  {
+    "Case": "Screen",
+    "Screen": "04-areas",
+    "Dpi": 120,
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1457,
+      "Height": 897
+    },
+    "Title": "B\u00E0n \u0026 khu v\u1EF1c",
+    "RowHeight": 35,
+    "Rows": 10,
+    "FirstCode": "KV001",
+    "Count": "10 khu v\u1EF1c",
+    "Range": "Hi\u1EC3n th\u1ECB 1\u201310 / 10 khu v\u1EF1c",
+    "Tabs": [
+      "B\u00E0n / S\u01A1 \u0111\u1ED3",
+      "Khu v\u1EF1c"
+    ],
+    "Primary": [
+      {
+        "Text": "Th\u00EAm khu v\u1EF1c",
+        "Enabled": true,
+        "Width": 175,
+        "Height": 50
+      }
+    ],
+    "Actions": [
+      {
+        "Text": "S\u1EEDa",
+        "Enabled": true,
+        "Width": 79,
+        "Height": 41
+      },
+      {
+        "Text": "X\u00F3a",
+        "Enabled": true,
+        "Width": 80,
+        "Height": 41
+      }
+    ],
+    "Columns": [
+      {
+        "DataPropertyName": "Code",
+        "Width": 175,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Name",
+        "Width": 1167,
+        "ReadOnly": true
+      }
+    ],
+    "HeaderOutsideScroll": true,
+    "FooterInside": true,
+    "Cards": 10,
+    "State": "\u0110\u00E3 c\u1EADp nh\u1EADt 14:47:14"
+  },
+  {
+    "Case": "Screen",
+    "Screen": "05-customers",
+    "Dpi": 120,
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1457,
+      "Height": 897
+    },
+    "Title": "Kh\u00E1ch h\u00E0ng",
+    "RowHeight": 42,
+    "Rows": 11,
+    "FirstCode": "KH001",
+    "Count": "11 kh\u00E1ch h\u00E0ng",
+    "Range": "Hi\u1EC3n th\u1ECB 1\u201311 / 11 kh\u00E1ch h\u00E0ng",
+    "Tabs": [],
+    "Primary": [
+      {
+        "Text": "Th\u00EAm kh\u00E1ch h\u00E0ng",
+        "Enabled": true,
+        "Width": 204,
+        "Height": 50
+      }
+    ],
+    "Actions": [
+      {
+        "Text": "M\u1EDF s\u1ED5 \u0111i\u1EC3m",
+        "Enabled": true,
+        "Width": 134,
+        "Height": 41
+      },
+      {
+        "Text": "H\u00F3a \u0111\u01A1n",
+        "Enabled": true,
+        "Width": 112,
+        "Height": 41
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Enabled": true,
+        "Width": 79,
+        "Height": 41
+      },
+      {
+        "Text": "X\u00F3a",
+        "Enabled": true,
+        "Width": 80,
+        "Height": 41
+      }
+    ],
+    "Columns": [
+      {
+        "DataPropertyName": "Code",
+        "Width": 119,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Name",
+        "Width": 602,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Phone",
+        "Width": 212,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Points",
+        "Width": 125,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Tier",
+        "Width": 125,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Discount",
+        "Width": 138,
+        "ReadOnly": true
+      }
+    ],
+    "HeaderOutsideScroll": true,
+    "FooterInside": true,
+    "Cards": 0,
+    "State": "\u0110\u00E3 c\u1EADp nh\u1EADt 14:47:16"
+  },
+  {
+    "Case": "Screen",
+    "Screen": "06-promotions",
+    "Dpi": 120,
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1457,
+      "Height": 897
+    },
+    "Title": "Khuy\u1EBFn m\u00E3i",
+    "RowHeight": 45,
+    "Rows": 12,
+    "FirstCode": "KM20261020",
+    "Count": "12 ch\u01B0\u01A1ng tr\u00ECnh",
+    "Range": "Hi\u1EC3n th\u1ECB 1\u201312 / 12 ch\u01B0\u01A1ng tr\u00ECnh",
+    "Tabs": [
+      "Khuy\u1EBFn m\u00E3i",
+      "H\u1EA1ng th\u00E0nh vi\u00EAn",
+      "\u0110i\u1EC3m kh\u00E1ch h\u00E0ng"
+    ],
+    "Primary": [
+      {
+        "Text": "Th\u00EAm khuy\u1EBFn m\u00E3i",
+        "Enabled": true,
+        "Width": 204,
+        "Height": 50
+      }
+    ],
+    "Actions": [
+      {
+        "Text": "Preview \u01B0u \u0111\u00E3i",
+        "Enabled": true,
+        "Width": 151,
+        "Height": 41
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Enabled": true,
+        "Width": 79,
+        "Height": 41
+      },
+      {
+        "Text": "X\u00F3a",
+        "Enabled": true,
+        "Width": 80,
+        "Height": 41
+      }
+    ],
+    "Columns": [
+      {
+        "DataPropertyName": "Code",
+        "Width": 181,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Name",
+        "Width": 640,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "StartDate",
+        "Width": 181,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "EndDate",
+        "Width": 181,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Discount",
+        "Width": 138,
+        "ReadOnly": true
+      }
+    ],
+    "HeaderOutsideScroll": true,
+    "FooterInside": true,
+    "Cards": 0,
+    "State": "\u0110\u00E3 c\u1EADp nh\u1EADt 14:47:17"
+  },
+  {
+    "Case": "Screen",
+    "Screen": "07-ranks",
+    "Dpi": 120,
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1457,
+      "Height": 897
+    },
+    "Title": "Ch\u00EDnh s\u00E1ch h\u1EA1ng",
+    "RowHeight": 41,
+    "Rows": 10,
+    "FirstCode": "DONG",
+    "Count": "10 h\u1EA1ng th\u00E0nh vi\u00EAn",
+    "Range": "Hi\u1EC3n th\u1ECB 1\u201310 / 10 h\u1EA1ng th\u00E0nh vi\u00EAn",
+    "Tabs": [
+      "Khuy\u1EBFn m\u00E3i",
+      "H\u1EA1ng th\u00E0nh vi\u00EAn",
+      "\u0110i\u1EC3m kh\u00E1ch h\u00E0ng"
+    ],
+    "Primary": [
+      {
+        "Text": "Thay ch\u00EDnh s\u00E1ch",
+        "Enabled": true,
+        "Width": 189,
+        "Height": 50
+      }
+    ],
+    "Actions": [
+      {
+        "Text": "T\u1EA3i l\u1EA1i",
+        "Enabled": true,
+        "Width": 104,
+        "Height": 50
+      }
+    ],
+    "Columns": [
+      {
+        "DataPropertyName": "Code",
+        "Width": 642,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "MinimumPoints",
+        "Width": 350,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Discount",
+        "Width": 350,
+        "ReadOnly": true
+      }
+    ],
+    "HeaderOutsideScroll": true,
+    "FooterInside": true,
+    "Cards": 0,
+    "State": "\u0110\u00E3 c\u1EADp nh\u1EADt 14:47:18"
+  },
+  {
+    "Case": "Screen",
+    "Screen": "08-points",
+    "Dpi": 120,
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1457,
+      "Height": 897
+    },
+    "Title": "L\u1ECBch s\u1EED \u0111i\u1EC3m",
+    "RowHeight": 45,
+    "Rows": 0,
+    "FirstCode": null,
+    "Count": "0 giao d\u1ECBch",
+    "Range": "0 giao d\u1ECBch",
+    "Tabs": [
+      "Khuy\u1EBFn m\u00E3i",
+      "H\u1EA1ng th\u00E0nh vi\u00EAn",
+      "\u0110i\u1EC3m kh\u00E1ch h\u00E0ng"
+    ],
+    "Primary": [
+      {
+        "Text": "\u0110i\u1EC1u ch\u1EC9nh \u0111i\u1EC3m",
+        "Enabled": true,
+        "Width": 192,
+        "Height": 50
+      }
+    ],
+    "Actions": [],
+    "Columns": [
+      {
+        "DataPropertyName": "Id",
+        "Width": 181,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "OccurredAt",
+        "Width": 225,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Direction",
+        "Width": 181,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Points",
+        "Width": 100,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Reason",
+        "Width": 522,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "OrderCode",
+        "Width": 181,
+        "ReadOnly": true
+      }
+    ],
+    "HeaderOutsideScroll": true,
+    "FooterInside": true,
+    "Cards": 0,
+    "State": "\u0110\u00E3 c\u1EADp nh\u1EADt 14:47:18"
+  },
+  {
+    "Case": "Screen",
+    "Screen": "09-catalog-products",
+    "Dpi": 120,
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1457,
+      "Height": 897
+    },
+    "Title": "Danh m\u1EE5c n\u1EC1n",
+    "RowHeight": 41,
+    "Rows": 10,
+    "FirstCode": "DM001",
+    "Count": "10 danh m\u1EE5c s\u1EA3n ph\u1EA9m",
+    "Range": "Hi\u1EC3n th\u1ECB 1\u201310 / 10 danh m\u1EE5c s\u1EA3n ph\u1EA9m",
+    "Tabs": [
+      "S\u1EA3n ph\u1EA9m",
+      "Nh\u00E0 cung c\u1EA5p",
+      "Ph\u01B0\u01A1ng th\u1EE9c",
+      "\u0110\u1ED1i t\u00E1c",
+      "Thu / chi",
+      "Ch\u1EE9c v\u1EE5",
+      "Ca l\u00E0m"
+    ],
+    "Primary": [
+      {
+        "Text": "Th\u00EAm",
+        "Enabled": true,
+        "Width": 109,
+        "Height": 50
+      }
+    ],
+    "Actions": [
+      {
+        "Text": "S\u1EEDa",
+        "Enabled": true,
+        "Width": 79,
+        "Height": 41
+      },
+      {
+        "Text": "X\u00F3a",
+        "Enabled": true,
+        "Width": 80,
+        "Height": 41
+      }
+    ],
+    "Columns": [
+      {
+        "DataPropertyName": "Code",
+        "Width": 150,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Name",
+        "Width": 1171,
+        "ReadOnly": true
+      }
+    ],
+    "HeaderOutsideScroll": true,
+    "FooterInside": true,
+    "Cards": 0,
+    "State": "\u0110\u00E3 l\u01B0u \u00B7 Trang 1 \u00B7 10 d\u00F2ng \u00B7 14:47."
+  },
+  {
+    "Case": "Screen",
+    "Screen": "09-methods",
+    "Dpi": 120,
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1457,
+      "Height": 897
+    },
+    "Title": "Danh m\u1EE5c n\u1EC1n",
+    "RowHeight": 41,
+    "Rows": 10,
+    "FirstCode": "PT001",
+    "Count": "10 ph\u01B0\u01A1ng th\u1EE9c",
+    "Range": "Hi\u1EC3n th\u1ECB 1\u201310 / 10 ph\u01B0\u01A1ng th\u1EE9c",
+    "Tabs": [
+      "S\u1EA3n ph\u1EA9m",
+      "Nh\u00E0 cung c\u1EA5p",
+      "Ph\u01B0\u01A1ng th\u1EE9c",
+      "\u0110\u1ED1i t\u00E1c",
+      "Thu / chi",
+      "Ch\u1EE9c v\u1EE5",
+      "Ca l\u00E0m"
+    ],
+    "Primary": [
+      {
+        "Text": "Th\u00EAm",
+        "Enabled": true,
+        "Width": 109,
+        "Height": 50
+      }
+    ],
+    "Actions": [
+      {
+        "Text": "S\u1EEDa",
+        "Enabled": true,
+        "Width": 79,
+        "Height": 41
+      },
+      {
+        "Text": "X\u00F3a",
+        "Enabled": true,
+        "Width": 80,
+        "Height": 41
+      }
+    ],
+    "Columns": [
+      {
+        "DataPropertyName": "Code",
+        "Width": 150,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Name",
+        "Width": 933,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Supported",
+        "Width": 238,
+        "ReadOnly": true
+      }
+    ],
+    "HeaderOutsideScroll": true,
+    "FooterInside": true,
+    "Cards": 0,
+    "State": "\u0110\u00E3 l\u01B0u \u00B7 Trang 1 \u00B7 10 d\u00F2ng \u00B7 14:47."
+  },
+  {
+    "Case": "CatalogTab",
+    "Index": 0,
+    "Rows": 10,
+    "Columns": [
+      "Code",
+      "Name"
+    ]
+  },
+  {
+    "Case": "CatalogTab",
+    "Index": 1,
+    "Rows": 10,
+    "Columns": [
+      "Code",
+      "Name",
+      "Phone"
+    ]
+  },
+  {
+    "Case": "CatalogTab",
+    "Index": 2,
+    "Rows": 10,
+    "Columns": [
+      "Code",
+      "Name",
+      "Supported"
+    ]
+  },
+  {
+    "Case": "CatalogTab",
+    "Index": 3,
+    "Rows": 2,
+    "Columns": [
+      "Code",
+      "Name",
+      "Ratio"
+    ]
+  },
+  {
+    "Case": "CatalogTab",
+    "Index": 4,
+    "Rows": 12,
+    "Columns": [
+      "Code",
+      "Name",
+      "Type"
+    ]
+  },
+  {
+    "Case": "CatalogTab",
+    "Index": 5,
+    "Rows": 10,
+    "Columns": [
+      "Code",
+      "Name",
+      "Allowance",
+      "Factor"
+    ]
+  },
+  {
+    "Case": "CatalogTab",
+    "Index": 6,
+    "Rows": 10,
+    "Columns": [
+      "Code",
+      "Name",
+      "StartTime",
+      "EndTime"
+    ]
+  },
+  {
+    "Case": "Screen",
+    "Screen": "role-CASH-menu",
+    "Dpi": 120,
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1457,
+      "Height": 897
+    },
+    "Title": "Menu \u0026 c\u00F4ng th\u1EE9c",
+    "RowHeight": 58,
+    "Rows": 11,
+    "FirstCode": "SP001",
+    "Count": "11 s\u1EA3n ph\u1EA9m",
+    "Range": "Hi\u1EC3n th\u1ECB 1\u201311 / 11 s\u1EA3n ph\u1EA9m",
+    "Tabs": [],
+    "Primary": [],
+    "Actions": [],
+    "Columns": [
+      {
+        "DataPropertyName": "Code",
+        "Width": 112,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Name",
+        "Width": 633,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Category",
+        "Width": 200,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Price",
+        "Width": 188,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Status",
+        "Width": 188,
+        "ReadOnly": true
+      }
+    ],
+    "HeaderOutsideScroll": true,
+    "FooterInside": true,
+    "Cards": 0,
+    "State": "\u0110\u00E3 c\u1EADp nh\u1EADt 14:47:28"
+  },
+  {
+    "Case": "Screen",
+    "Screen": "role-STORE-menu",
+    "Dpi": 120,
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1457,
+      "Height": 897
+    },
+    "Title": "Menu \u0026 c\u00F4ng th\u1EE9c",
+    "RowHeight": 58,
+    "Rows": 11,
+    "FirstCode": "SP001",
+    "Count": "11 s\u1EA3n ph\u1EA9m",
+    "Range": "Hi\u1EC3n th\u1ECB 1\u201311 / 11 s\u1EA3n ph\u1EA9m",
+    "Tabs": [],
+    "Primary": [],
+    "Actions": [
+      {
+        "Text": "C\u00F4ng th\u1EE9c",
+        "Enabled": true,
+        "Width": 122,
+        "Height": 41
+      }
+    ],
+    "Columns": [
+      {
+        "DataPropertyName": "Code",
+        "Width": 112,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Name",
+        "Width": 633,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Category",
+        "Width": 200,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Price",
+        "Width": 188,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Status",
+        "Width": 188,
+        "ReadOnly": true
+      }
+    ],
+    "HeaderOutsideScroll": true,
+    "FooterInside": true,
+    "Cards": 0,
+    "State": "\u0110\u00E3 c\u1EADp nh\u1EADt 14:47:30"
+  },
+  {
+    "Case": "Screen",
+    "Screen": "paging-0",
+    "Dpi": 120,
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1457,
+      "Height": 897
+    },
+    "Title": "Menu \u0026 c\u00F4ng th\u1EE9c",
+    "RowHeight": 58,
+    "Rows": 0,
+    "FirstCode": null,
+    "Count": "0 s\u1EA3n ph\u1EA9m",
+    "Range": "0 s\u1EA3n ph\u1EA9m",
+    "Tabs": [],
+    "Primary": [],
+    "Actions": [],
+    "Columns": [
+      {
+        "DataPropertyName": "Code",
+        "Width": 112,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Name",
+        "Width": 1230,
+        "ReadOnly": true
+      }
+    ],
+    "HeaderOutsideScroll": true,
+    "FooterInside": true,
+    "Cards": 0,
+    "State": "\u0110\u00E3 c\u1EADp nh\u1EADt 14:47:30"
+  },
+  {
+    "Case": "ServerPaging",
+    "Count": 0,
+    "Seen": 0,
+    "Pass": true
+  },
+  {
+    "Case": "Screen",
+    "Screen": "paging-1",
+    "Dpi": 120,
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1457,
+      "Height": 897
+    },
+    "Title": "Menu \u0026 c\u00F4ng th\u1EE9c",
+    "RowHeight": 58,
+    "Rows": 1,
+    "FirstCode": "P0",
+    "Count": "1 s\u1EA3n ph\u1EA9m",
+    "Range": "Hi\u1EC3n th\u1ECB 1\u20131 / 1 s\u1EA3n ph\u1EA9m",
+    "Tabs": [],
+    "Primary": [],
+    "Actions": [],
+    "Columns": [
+      {
+        "DataPropertyName": "Code",
+        "Width": 112,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Name",
+        "Width": 1230,
+        "ReadOnly": true
+      }
+    ],
+    "HeaderOutsideScroll": true,
+    "FooterInside": true,
+    "Cards": 0,
+    "State": "\u0110\u00E3 c\u1EADp nh\u1EADt 14:47:31"
+  },
+  {
+    "Case": "ServerPaging",
+    "Count": 1,
+    "Seen": 1,
+    "Pass": true
+  },
+  {
+    "Case": "Screen",
+    "Screen": "paging-49",
+    "Dpi": 120,
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1457,
+      "Height": 897
+    },
+    "Title": "Menu \u0026 c\u00F4ng th\u1EE9c",
+    "RowHeight": 58,
+    "Rows": 49,
+    "FirstCode": "P0",
+    "Count": "49 s\u1EA3n ph\u1EA9m",
+    "Range": "Hi\u1EC3n th\u1ECB 1\u201349 / 49 s\u1EA3n ph\u1EA9m",
+    "Tabs": [],
+    "Primary": [],
+    "Actions": [],
+    "Columns": [
+      {
+        "DataPropertyName": "Code",
+        "Width": 112,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Name",
+        "Width": 1209,
+        "ReadOnly": true
+      }
+    ],
+    "HeaderOutsideScroll": true,
+    "FooterInside": true,
+    "Cards": 0,
+    "State": "\u0110\u00E3 c\u1EADp nh\u1EADt 14:47:31"
+  },
+  {
+    "Case": "ServerPaging",
+    "Count": 49,
+    "Seen": 49,
+    "Pass": true
+  },
+  {
+    "Case": "Screen",
+    "Screen": "paging-50",
+    "Dpi": 120,
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1457,
+      "Height": 897
+    },
+    "Title": "Menu \u0026 c\u00F4ng th\u1EE9c",
+    "RowHeight": 58,
+    "Rows": 50,
+    "FirstCode": "P0",
+    "Count": "50 s\u1EA3n ph\u1EA9m trong trang",
+    "Range": "Hi\u1EC3n th\u1ECB 1\u201350 s\u1EA3n ph\u1EA9m",
+    "Tabs": [],
+    "Primary": [],
+    "Actions": [],
+    "Columns": [
+      {
+        "DataPropertyName": "Code",
+        "Width": 112,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Name",
+        "Width": 1209,
+        "ReadOnly": true
+      }
+    ],
+    "HeaderOutsideScroll": true,
+    "FooterInside": true,
+    "Cards": 0,
+    "State": "\u0110\u00E3 c\u1EADp nh\u1EADt 14:47:32"
+  },
+  {
+    "Case": "ServerPaging",
+    "Count": 50,
+    "Seen": 50,
+    "Pass": true
+  },
+  {
+    "Case": "Screen",
+    "Screen": "paging-51",
+    "Dpi": 120,
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1457,
+      "Height": 897
+    },
+    "Title": "Menu \u0026 c\u00F4ng th\u1EE9c",
+    "RowHeight": 58,
+    "Rows": 50,
+    "FirstCode": "P0",
+    "Count": "50 s\u1EA3n ph\u1EA9m trong trang",
+    "Range": "Hi\u1EC3n th\u1ECB 1\u201350 s\u1EA3n ph\u1EA9m",
+    "Tabs": [],
+    "Primary": [],
+    "Actions": [],
+    "Columns": [
+      {
+        "DataPropertyName": "Code",
+        "Width": 112,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Name",
+        "Width": 1209,
+        "ReadOnly": true
+      }
+    ],
+    "HeaderOutsideScroll": true,
+    "FooterInside": true,
+    "Cards": 0,
+    "State": "\u0110\u00E3 c\u1EADp nh\u1EADt 14:47:32"
+  },
+  {
+    "Case": "ServerPaging",
+    "Count": 51,
+    "Seen": 51,
+    "Pass": true
+  },
+  {
+    "Case": "Screen",
+    "Screen": "paging-100",
+    "Dpi": 120,
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1457,
+      "Height": 897
+    },
+    "Title": "Menu \u0026 c\u00F4ng th\u1EE9c",
+    "RowHeight": 58,
+    "Rows": 50,
+    "FirstCode": "P0",
+    "Count": "50 s\u1EA3n ph\u1EA9m trong trang",
+    "Range": "Hi\u1EC3n th\u1ECB 1\u201350 s\u1EA3n ph\u1EA9m",
+    "Tabs": [],
+    "Primary": [],
+    "Actions": [],
+    "Columns": [
+      {
+        "DataPropertyName": "Code",
+        "Width": 112,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Name",
+        "Width": 1209,
+        "ReadOnly": true
+      }
+    ],
+    "HeaderOutsideScroll": true,
+    "FooterInside": true,
+    "Cards": 0,
+    "State": "\u0110\u00E3 c\u1EADp nh\u1EADt 14:47:33"
+  },
+  {
+    "Case": "ServerPaging",
+    "Count": 100,
+    "Seen": 100,
+    "Pass": true
+  },
+  {
+    "Case": "Screen",
+    "Screen": "paging-101",
+    "Dpi": 120,
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1457,
+      "Height": 897
+    },
+    "Title": "Menu \u0026 c\u00F4ng th\u1EE9c",
+    "RowHeight": 58,
+    "Rows": 50,
+    "FirstCode": "P0",
+    "Count": "50 s\u1EA3n ph\u1EA9m trong trang",
+    "Range": "Hi\u1EC3n th\u1ECB 1\u201350 s\u1EA3n ph\u1EA9m",
+    "Tabs": [],
+    "Primary": [],
+    "Actions": [],
+    "Columns": [
+      {
+        "DataPropertyName": "Code",
+        "Width": 112,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Name",
+        "Width": 1209,
+        "ReadOnly": true
+      }
+    ],
+    "HeaderOutsideScroll": true,
+    "FooterInside": true,
+    "Cards": 0,
+    "State": "\u0110\u00E3 c\u1EADp nh\u1EADt 14:47:34"
+  },
+  {
+    "Case": "ServerPaging",
+    "Count": 101,
+    "Seen": 101,
+    "Pass": true
+  }
+]

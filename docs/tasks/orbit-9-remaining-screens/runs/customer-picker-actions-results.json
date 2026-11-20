@@ -1,0 +1,66 @@
+[
+  {
+    "Case": "PickerActions",
+    "Role": "ADMIN",
+    "AllowGuest": false,
+    "Actions": [
+      "T\u1EA3i l\u1EA1i danh s\u00E1ch",
+      "Ch\u1ECDn kh\u00E1ch",
+      "\u0110\u00F3ng",
+      "Trang tr\u01B0\u1EDBc",
+      "Trang sau"
+    ],
+    "Pass": true
+  },
+  {
+    "Case": "PickerActions",
+    "Role": "ADMIN",
+    "AllowGuest": true,
+    "Actions": [
+      "T\u1EA3i l\u1EA1i danh s\u00E1ch",
+      "Ch\u1ECDn kh\u00E1ch",
+      "Kh\u00E1ch v\u00E3ng lai",
+      "\u0110\u00F3ng",
+      "Trang tr\u01B0\u1EDBc",
+      "Trang sau"
+    ],
+    "Pass": true
+  },
+  {
+    "Case": "ManagementPageActionsRetained",
+    "Role": "ADMIN",
+    "Pass": true
+  },
+  {
+    "Case": "PickerActions",
+    "Role": "CASH",
+    "AllowGuest": false,
+    "Actions": [
+      "T\u1EA3i l\u1EA1i danh s\u00E1ch",
+      "Ch\u1ECDn kh\u00E1ch",
+      "\u0110\u00F3ng",
+      "Trang tr\u01B0\u1EDBc",
+      "Trang sau"
+    ],
+    "Pass": true
+  },
+  {
+    "Case": "PickerActions",
+    "Role": "CASH",
+    "AllowGuest": true,
+    "Actions": [
+      "T\u1EA3i l\u1EA1i danh s\u00E1ch",
+      "Ch\u1ECDn kh\u00E1ch",
+      "Kh\u00E1ch v\u00E3ng lai",
+      "\u0110\u00F3ng",
+      "Trang tr\u01B0\u1EDBc",
+      "Trang sau"
+    ],
+    "Pass": true
+  },
+  {
+    "Case": "ManagementPageActionsRetained",
+    "Role": "CASH",
+    "Pass": true
+  }
+]

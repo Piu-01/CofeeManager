@@ -1,0 +1,108 @@
+[
+  {
+    "Case": "EmptyHeaderResize",
+    "DeviceDpi": 144,
+    "ColumnHeadersHeight": 90,
+    "OverlayTop": 90,
+    "Pass": true
+  },
+  {
+    "Case": "EmptyOverlay",
+    "Screen": "points-header-restored",
+    "Visible": true,
+    "Bounds": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 0,
+        "Y": 60
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 1668,
+        "Height": 510
+      },
+      "X": 0,
+      "Y": 60,
+      "Width": 1668,
+      "Height": 510,
+      "Left": 0,
+      "Top": 60,
+      "Right": 1668,
+      "Bottom": 570,
+      "IsEmpty": false
+    },
+    "FrontIndex": 0,
+    "HistoryPrompt": true
+  },
+  {
+    "Case": "EmptyHeaderOffset",
+    "Screen": "points-header-restored",
+    "Pass": true
+  },
+  {
+    "Case": "Screen",
+    "Screen": "points-header-restored",
+    "Dpi": 144,
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1749,
+      "Height": 1077
+    },
+    "Title": "L\u1ECBch s\u1EED \u0111i\u1EC3m",
+    "RowHeight": 54,
+    "Rows": 0,
+    "FirstCode": null,
+    "Count": "0 giao d\u1ECBch",
+    "Range": "0 giao d\u1ECBch",
+    "Tabs": [
+      "Khuy\u1EBFn m\u00E3i",
+      "H\u1EA1ng th\u00E0nh vi\u00EAn",
+      "\u0110i\u1EC3m kh\u00E1ch h\u00E0ng"
+    ],
+    "Primary": [
+      {
+        "Text": "\u0110i\u1EC1u ch\u1EC9nh \u0111i\u1EC3m",
+        "Enabled": true,
+        "Width": 230,
+        "Height": 60
+      }
+    ],
+    "Actions": [],
+    "Columns": [
+      {
+        "DataPropertyName": "Id",
+        "Width": 218,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "OccurredAt",
+        "Width": 270,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Direction",
+        "Width": 218,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Points",
+        "Width": 120,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "Reason",
+        "Width": 624,
+        "ReadOnly": true
+      },
+      {
+        "DataPropertyName": "OrderCode",
+        "Width": 218,
+        "ReadOnly": true
+      }
+    ],
+    "HeaderOutsideScroll": true,
+    "FooterInside": true,
+    "Cards": 0,
+    "State": "\u0110\u00E3 c\u1EADp nh\u1EADt 19:36:40"
+  }
+]

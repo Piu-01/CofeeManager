@@ -1,0 +1,17 @@
+[
+  {
+    "id": "FIXTURE-customer",
+    "status": "PASS",
+    "actual": "KH015; DlgRP1022205855"
+  },
+  {
+    "id": "R-D09-customer-actual-handlers-edit-open-adjust-cancel",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "R-D03-store-recipe-readonly-real-role",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  }
+]

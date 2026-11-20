@@ -1,0 +1,11 @@
+{
+  "Exceptions": 0,
+  "PagingCases": 9,
+  "PagingPass": 9,
+  "ReadRoles": [
+    "ADMIN",
+    "CASH",
+    "STORE"
+  ],
+  "SearchPass": 3
+}

@@ -1,0 +1,109 @@
+Window: "CoffeeManager", App: CafeManager.WinForms.exe.
+	0 window CoffeeManager Secondary Actions: Raise
+		658 tool tip NVL02 · Sua tuoi Mốc mở sổ: LegacyCutover
+		1 pane
+			2 pane
+				3 text CoffeeManager
+				4 text KHÔNG GIAN QUẢN LÝ
+				5 button Trang phiên
+				6 button Danh mục nền
+				7 button Khách hàng
+				8 button Bàn / Khu vực
+				9 button Menu / Công thức
+				10 button Nguyên liệu / Tồn
+				11 button Ưu đãi / Điểm
+				12 button Thông tin hệ thống
+				13 button Đăng xuất ID: logout
+				14 text Nguyen Van An
+				15 text Quản trị viên · ADMIN
+				16 text Phiên đang hoạt động.
+			17 pane
+				18 text Kho nguyên liệu / Tồn hiện tại
+				19 text Nguyen Van An · ADMIN
+			20 pane Nguyen Van An · ADMIN
+				580 pane Nguyen Van An · ADMIN ID: 1443716
+					581 pane ID: 5114320
+						582 text INVENTORY WORKSPACE
+						583 text Nguyên liệu & tồn kho
+						584 text Tra cứu nguyên liệu, đơn vị và số lượng tồn.
+						585 pane Tra cứu nguyên liệu, đơn vị và số lượng tồn.
+							586 button Thêm nguyên liệu
+						587 pane
+							588 pane ID: 1838112
+								589 edit (settable, string) Description: Tìm tên hoặc mã nguyên liệu…
+							590 pane
+								591 pane ID: 4852264
+									592 combo box (settable, string) Tất cả đơn vị Value: Tất cả đơn vị
+										593 text
+										594 button Open
+								595 button Tải lại danh sách
+							596 text 14 nguyên liệu
+							597 pane 14 nguyên liệu
+								598 button Mở sổ
+								599 button Sửa
+								600 button Xóa
+							601 pane
+								602 data grid
+									603 custom Top Row
+										604 header Top Left Header Cell ID: 4258034427
+										605 header MÃ ID: 4216250050
+										606 header NGUYÊN LIỆU ID: 429924058
+										607 header ĐƠN VỊ ID: 4261903900
+										608 header TỒN HIỆN TẠI ID: 4266553206
+									609 custom Row 1
+										610 header Row 1 ID: 4240311555
+										611 item MÃ Row 1 Value: NVL01 ID: 4254288170
+										612 item NGUYÊN LIỆU Row 1 Value: Ca phe hat ID: 4234657576
+										613 item ĐƠN VỊ Row 1 Value: Kg ID: 4247895305
+										614 item TỒN HIỆN TẠI Row 1 Value: 96,7400 ID: 4218659194
+									615 custom Row 2
+										616 header Row 2 ID: 4266396161
+										617 item MÃ Row 2 Value: NVL02 ID: 4257843725
+										618 item NGUYÊN LIỆU Row 2 Value: Sua tuoi ID: 4213770929
+										619 item ĐƠN VỊ Row 2 Value: Lit ID: 4244804350
+										620 item TỒN HIỆN TẠI Row 2 Value: 98,1600 ID: 4245585648
+									621 custom Row 3
+										622 header Row 3 ID: 4253564182
+										623 item MÃ Row 3 Value: NVL03 ID: 4225245733
+										624 item NGUYÊN LIỆU Row 3 Value: Duong ID: 4259759079
+										625 item ĐƠN VỊ Row 3 Value: Kg ID: 4238670535
+										626 item TỒN HIỆN TẠI Row 3 Value: 72,7050 ID: 4232954907
+									627 custom Row 4
+										628 header Row 4 ID: 4266452437
+										629 item MÃ Row 4 Value: NVL04 ID: 4258575324
+										630 item NGUYÊN LIỆU Row 4 Value: Tra xanh ID: 4223281710
+										631 item ĐƠN VỊ Row 4 Value: Kg ID: 4234226779
+										632 item TỒN HIỆN TẠI Row 4 Value: 21,9650 ID: 4242294954
+									633 custom Row 5
+										634 header Row 5 ID: 4234307776
+										635 item MÃ Row 5 Value: NVL05 ID: 4243347915
+										636 item NGUYÊN LIỆU Row 5 Value: Bot matcha ID: 4226651990
+										637 item ĐƠN VỊ Row 5 Value: Kg ID: 4210931559
+										638 item TỒN HIỆN TẠI Row 5 Value: 5,0000 ID: 427892546
+									639 custom Row 6
+										640 header Row 6 ID: 4258771913
+										641 item MÃ Row 6 Value: NVL06 ID: 4225837373
+										642 item NGUYÊN LIỆU Row 6 Value: Tran chau ID: 42341538
+										643 item ĐƠN VỊ Row 6 Value: Kg ID: 424440003
+										644 item TỒN HIỆN TẠI Row 6 Value: 9,7000 ID: 4257720051
+									645 custom Row 7
+										646 header Row 7 ID: 4223903442
+										647 item MÃ Row 7 Value: NVL07 ID: 4242309292
+										648 item NGUYÊN LIỆU Row 7 Value: Bo ID: 4213149892
+										649 item ĐƠN VỊ Row 7 Value: Kg ID: 4236730875
+										650 item TỒN HIỆN TẠI Row 7 Value: 22,7000 ID: 427739328
+							651 pane ID: 10226964
+								652 text Hiển thị 1–7 / 14
+								653 button (disabled) Trang trước
+								654 text 1 / 2
+								655 button Trang sau
+						656 text Đã cập nhật 15:26:54
+		21 title bar (settable, string) Value: CoffeeManager
+			22 menu bar System ID: MenuBar
+				659 menu item System
+			24 button Minimize
+			25 button Maximize
+			26 button Close
+		658 tool tip NVL02 · Sua tuoi Mốc mở sổ: LegacyCutover
+
+The focused UI element is 589 edit (settable, string) Description: Tìm tên hoặc mã nguyên liệu….

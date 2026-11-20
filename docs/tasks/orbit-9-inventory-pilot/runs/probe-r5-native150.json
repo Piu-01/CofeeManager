@@ -1,0 +1,296 @@
+[
+  {
+    "Case": "Shell",
+    "Dpi": 144,
+    "Client": {
+      "IsEmpty": false,
+      "Width": 1924,
+      "Height": 1050
+    },
+    "Sidebar": 300
+  },
+  {
+    "Case": "SidebarShortViewport",
+    "Dpi": 144,
+    "Height": 945,
+    "ProfileBottom": 940,
+    "Pass": false,
+    "Note": "Owned sidebar with eight native navigation buttons and logout; unchanged button size"
+  },
+  {
+    "Case": "Loaded",
+    "Role": "ADMIN",
+    "Dpi": 144,
+    "Font": 9,
+    "HeaderFont": 7.5,
+    "Rows": 7,
+    "Count": "14 nguy\u00EAn li\u1EC7u",
+    "Range": "Hi\u1EC3n th\u1ECB 1\u20137 / 14",
+    "Columns": [
+      {
+        "Name": "Code",
+        "Width": 114
+      },
+      {
+        "Name": "Name",
+        "Width": 618
+      },
+      {
+        "Name": "Unit",
+        "Width": 96
+      },
+      {
+        "Name": "Quantity",
+        "Width": 174
+      }
+    ],
+    "Buttons": [
+      {
+        "Text": "Th\u00EAm nguy\u00EAn li\u1EC7u",
+        "AccessibleName": null,
+        "Width": 243,
+        "Height": 60,
+        "Enabled": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 243,
+            "Height": 60
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 243,
+          "Height": 60,
+          "Left": 0,
+          "Top": 0,
+          "Right": 243,
+          "Bottom": 60,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "IsEmpty": false,
+          "Width": 243,
+          "Height": 66
+        }
+      },
+      {
+        "Text": "",
+        "AccessibleName": "T\u1EA3i l\u1EA1i danh s\u00E1ch",
+        "Width": 60,
+        "Height": 60,
+        "Enabled": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 201,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 60,
+            "Height": 60
+          },
+          "X": 201,
+          "Y": 0,
+          "Width": 60,
+          "Height": 60,
+          "Left": 201,
+          "Top": 0,
+          "Right": 261,
+          "Bottom": 60,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "IsEmpty": false,
+          "Width": 261,
+          "Height": 60
+        }
+      },
+      {
+        "Text": "M\u1EDF s\u1ED5",
+        "AccessibleName": null,
+        "Width": 116,
+        "Height": 50,
+        "Enabled": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 116,
+            "Height": 50
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 116,
+          "Height": 50,
+          "Left": 0,
+          "Top": 0,
+          "Right": 116,
+          "Bottom": 50,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "IsEmpty": false,
+          "Width": 324,
+          "Height": 50
+        }
+      },
+      {
+        "Text": "S\u1EEDa",
+        "AccessibleName": null,
+        "Width": 94,
+        "Height": 50,
+        "Enabled": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 125,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 94,
+            "Height": 50
+          },
+          "X": 125,
+          "Y": 0,
+          "Width": 94,
+          "Height": 50,
+          "Left": 125,
+          "Top": 0,
+          "Right": 219,
+          "Bottom": 50,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "IsEmpty": false,
+          "Width": 324,
+          "Height": 50
+        }
+      },
+      {
+        "Text": "X\u00F3a",
+        "AccessibleName": null,
+        "Width": 96,
+        "Height": 50,
+        "Enabled": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 228,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 96,
+            "Height": 50
+          },
+          "X": 228,
+          "Y": 0,
+          "Width": 96,
+          "Height": 50,
+          "Left": 228,
+          "Top": 0,
+          "Right": 324,
+          "Bottom": 50,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "IsEmpty": false,
+          "Width": 324,
+          "Height": 50
+        }
+      },
+      {
+        "Text": "",
+        "AccessibleName": "Trang tr\u01B0\u1EDBc",
+        "Width": 57,
+        "Height": 45,
+        "Enabled": false,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 869,
+            "Y": 17
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 57,
+            "Height": 45
+          },
+          "X": 869,
+          "Y": 17,
+          "Width": 57,
+          "Height": 45,
+          "Left": 869,
+          "Top": 17,
+          "Right": 926,
+          "Bottom": 62,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "IsEmpty": false,
+          "Width": 1085,
+          "Height": 80
+        }
+      },
+      {
+        "Text": "",
+        "AccessibleName": "Trang sau",
+        "Width": 57,
+        "Height": 45,
+        "Enabled": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 1003,
+            "Y": 17
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 57,
+            "Height": 45
+          },
+          "X": 1003,
+          "Y": 17,
+          "Width": 57,
+          "Height": 45,
+          "Left": 1003,
+          "Top": 17,
+          "Right": 1060,
+          "Bottom": 62,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "IsEmpty": false,
+          "Width": 1085,
+          "Height": 80
+        }
+      }
+    ]
+  },
+  {
+    "Case": "HoverLeavePixels",
+    "Pass": true,
+    "Hovered": -14016461,
+    "Normal": -14936029,
+    "ExpectedSurface": -14936029,
+    "Note": "Pixels from actual owned grid DrawToBitmap; not a desktop screenshot"
+  },
+  {
+    "Case": "NoVerticalCellBorder",
+    "Pass": false,
+    "Boundary": -15199202,
+    "Expected": -14936029,
+    "Note": "Owned native grid pixels, not desktop capture"
+  }
+]

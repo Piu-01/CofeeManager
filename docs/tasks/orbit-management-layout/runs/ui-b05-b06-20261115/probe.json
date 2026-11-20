@@ -1,0 +1,476 @@
+[
+  {
+    "caseId": "B05-lazy-tab-1",
+    "dpi": 120,
+    "textBoxes": [
+      {
+        "BorderStyle": 0,
+        "Back": "23,19,29",
+        "Parent": "OrbitSearchBox",
+        "Text": ""
+      }
+    ],
+    "squareBorderCount": 0,
+    "gridHeaderBack": "37,31,46",
+    "gridFont": "Segoe UI"
+  },
+  {
+    "caseId": "B05-lazy-tab-2",
+    "dpi": 120,
+    "textBoxes": [
+      {
+        "BorderStyle": 0,
+        "Back": "23,19,29",
+        "Parent": "OrbitSearchBox",
+        "Text": ""
+      },
+      {
+        "BorderStyle": 0,
+        "Back": "23,19,29",
+        "Parent": "OrbitSearchBox",
+        "Text": ""
+      }
+    ],
+    "squareBorderCount": 0,
+    "gridHeaderBack": "37,31,46",
+    "gridFont": "Segoe UI"
+  },
+  {
+    "caseId": "B06-finance-1400",
+    "dpi": 120,
+    "gridWidth": 1315,
+    "rowHeaders": 48,
+    "columns": [
+      {
+        "Name": "Code",
+        "AutoSize": "Fill",
+        "Width": 211,
+        "MinimumWidth": 154,
+        "FillWeight": 154,
+        "required": 154,
+        "truncated": false
+      },
+      {
+        "Name": "Date",
+        "AutoSize": "Fill",
+        "Width": 215,
+        "MinimumWidth": 157,
+        "FillWeight": 157,
+        "required": 157,
+        "truncated": false
+      },
+      {
+        "Name": "Type",
+        "AutoSize": "Fill",
+        "Width": 95,
+        "MinimumWidth": 70,
+        "FillWeight": 70,
+        "required": 69,
+        "truncated": false
+      },
+      {
+        "Name": "Category",
+        "AutoSize": "Fill",
+        "Width": 207,
+        "MinimumWidth": 151,
+        "FillWeight": 151,
+        "required": 151,
+        "truncated": false
+      },
+      {
+        "Name": "Amount",
+        "AutoSize": "Fill",
+        "Width": 142,
+        "MinimumWidth": 104,
+        "FillWeight": 104,
+        "required": 104,
+        "truncated": false
+      },
+      {
+        "Name": "Note",
+        "AutoSize": "Fill",
+        "Width": 397,
+        "MinimumWidth": 290,
+        "FillWeight": 290,
+        "required": 290,
+        "truncated": false
+      }
+    ],
+    "columnSum": 1267,
+    "scrolled": false
+  },
+  {
+    "caseId": "B06-finance-1366",
+    "dpi": 120,
+    "gridWidth": 1281,
+    "rowHeaders": 48,
+    "columns": [
+      {
+        "Name": "Code",
+        "AutoSize": "Fill",
+        "Width": 205,
+        "MinimumWidth": 154,
+        "FillWeight": 154,
+        "required": 154,
+        "truncated": false
+      },
+      {
+        "Name": "Date",
+        "AutoSize": "Fill",
+        "Width": 210,
+        "MinimumWidth": 157,
+        "FillWeight": 157,
+        "required": 157,
+        "truncated": false
+      },
+      {
+        "Name": "Type",
+        "AutoSize": "Fill",
+        "Width": 93,
+        "MinimumWidth": 70,
+        "FillWeight": 70,
+        "required": 69,
+        "truncated": false
+      },
+      {
+        "Name": "Category",
+        "AutoSize": "Fill",
+        "Width": 201,
+        "MinimumWidth": 151,
+        "FillWeight": 151,
+        "required": 151,
+        "truncated": false
+      },
+      {
+        "Name": "Amount",
+        "AutoSize": "Fill",
+        "Width": 138,
+        "MinimumWidth": 104,
+        "FillWeight": 104,
+        "required": 104,
+        "truncated": false
+      },
+      {
+        "Name": "Note",
+        "AutoSize": "Fill",
+        "Width": 386,
+        "MinimumWidth": 290,
+        "FillWeight": 290,
+        "required": 290,
+        "truncated": false
+      }
+    ],
+    "columnSum": 1233,
+    "scrolled": false
+  },
+  {
+    "caseId": "B06-finance-1000",
+    "dpi": 120,
+    "gridWidth": 915,
+    "rowHeaders": 48,
+    "columns": [
+      {
+        "Name": "Code",
+        "AutoSize": "Fill",
+        "Width": 154,
+        "MinimumWidth": 154,
+        "FillWeight": 154,
+        "required": 154,
+        "truncated": false
+      },
+      {
+        "Name": "Date",
+        "AutoSize": "Fill",
+        "Width": 157,
+        "MinimumWidth": 157,
+        "FillWeight": 157,
+        "required": 157,
+        "truncated": false
+      },
+      {
+        "Name": "Type",
+        "AutoSize": "Fill",
+        "Width": 70,
+        "MinimumWidth": 70,
+        "FillWeight": 70,
+        "required": 69,
+        "truncated": false
+      },
+      {
+        "Name": "Category",
+        "AutoSize": "Fill",
+        "Width": 151,
+        "MinimumWidth": 151,
+        "FillWeight": 151,
+        "required": 151,
+        "truncated": false
+      },
+      {
+        "Name": "Amount",
+        "AutoSize": "Fill",
+        "Width": 104,
+        "MinimumWidth": 104,
+        "FillWeight": 104,
+        "required": 104,
+        "truncated": false
+      },
+      {
+        "Name": "Note",
+        "AutoSize": "Fill",
+        "Width": 290,
+        "MinimumWidth": 290,
+        "FillWeight": 290,
+        "required": 290,
+        "truncated": false
+      }
+    ],
+    "columnSum": 926,
+    "scrolled": true
+  },
+  {
+    "caseId": "B06-debts-1400",
+    "dpi": 120,
+    "gridWidth": 1315,
+    "rowHeaders": 48,
+    "columns": [
+      {
+        "Name": "Code",
+        "AutoSize": "Fill",
+        "Width": 165,
+        "MinimumWidth": 146,
+        "FillWeight": 146,
+        "required": 146,
+        "truncated": false
+      },
+      {
+        "Name": "Supplier",
+        "AutoSize": "Fill",
+        "Width": 311,
+        "MinimumWidth": 276,
+        "FillWeight": 276,
+        "required": 276,
+        "truncated": false
+      },
+      {
+        "Name": "PurchaseCode",
+        "AutoSize": "Fill",
+        "Width": 168,
+        "MinimumWidth": 149,
+        "FillWeight": 149,
+        "required": 149,
+        "truncated": false
+      },
+      {
+        "Name": "Original",
+        "AutoSize": "Fill",
+        "Width": 126,
+        "MinimumWidth": 112,
+        "FillWeight": 112,
+        "required": 112,
+        "truncated": false
+      },
+      {
+        "Name": "Paid",
+        "AutoSize": "Fill",
+        "Width": 117,
+        "MinimumWidth": 104,
+        "FillWeight": 104,
+        "required": 104,
+        "truncated": false
+      },
+      {
+        "Name": "Remaining",
+        "AutoSize": "Fill",
+        "Width": 117,
+        "MinimumWidth": 104,
+        "FillWeight": 104,
+        "required": 104,
+        "truncated": false
+      },
+      {
+        "Name": "Due",
+        "AutoSize": "Fill",
+        "Width": 133,
+        "MinimumWidth": 118,
+        "FillWeight": 118,
+        "required": 118,
+        "truncated": false
+      },
+      {
+        "Name": "Status",
+        "AutoSize": "Fill",
+        "Width": 130,
+        "MinimumWidth": 115,
+        "FillWeight": 115,
+        "required": 115,
+        "truncated": false
+      }
+    ],
+    "columnSum": 1267,
+    "scrolled": false
+  },
+  {
+    "caseId": "B06-debts-1366",
+    "dpi": 120,
+    "gridWidth": 1281,
+    "rowHeaders": 48,
+    "columns": [
+      {
+        "Name": "Code",
+        "AutoSize": "Fill",
+        "Width": 160,
+        "MinimumWidth": 146,
+        "FillWeight": 146,
+        "required": 146,
+        "truncated": false
+      },
+      {
+        "Name": "Supplier",
+        "AutoSize": "Fill",
+        "Width": 304,
+        "MinimumWidth": 276,
+        "FillWeight": 276,
+        "required": 276,
+        "truncated": false
+      },
+      {
+        "Name": "PurchaseCode",
+        "AutoSize": "Fill",
+        "Width": 164,
+        "MinimumWidth": 149,
+        "FillWeight": 149,
+        "required": 149,
+        "truncated": false
+      },
+      {
+        "Name": "Original",
+        "AutoSize": "Fill",
+        "Width": 122,
+        "MinimumWidth": 112,
+        "FillWeight": 112,
+        "required": 112,
+        "truncated": false
+      },
+      {
+        "Name": "Paid",
+        "AutoSize": "Fill",
+        "Width": 113,
+        "MinimumWidth": 104,
+        "FillWeight": 104,
+        "required": 104,
+        "truncated": false
+      },
+      {
+        "Name": "Remaining",
+        "AutoSize": "Fill",
+        "Width": 114,
+        "MinimumWidth": 104,
+        "FillWeight": 104,
+        "required": 104,
+        "truncated": false
+      },
+      {
+        "Name": "Due",
+        "AutoSize": "Fill",
+        "Width": 130,
+        "MinimumWidth": 118,
+        "FillWeight": 118,
+        "required": 118,
+        "truncated": false
+      },
+      {
+        "Name": "Status",
+        "AutoSize": "Fill",
+        "Width": 126,
+        "MinimumWidth": 115,
+        "FillWeight": 115,
+        "required": 115,
+        "truncated": false
+      }
+    ],
+    "columnSum": 1233,
+    "scrolled": false
+  },
+  {
+    "caseId": "B06-debts-1000",
+    "dpi": 120,
+    "gridWidth": 915,
+    "rowHeaders": 48,
+    "columns": [
+      {
+        "Name": "Code",
+        "AutoSize": "Fill",
+        "Width": 146,
+        "MinimumWidth": 146,
+        "FillWeight": 146,
+        "required": 146,
+        "truncated": false
+      },
+      {
+        "Name": "Supplier",
+        "AutoSize": "Fill",
+        "Width": 276,
+        "MinimumWidth": 276,
+        "FillWeight": 276,
+        "required": 276,
+        "truncated": false
+      },
+      {
+        "Name": "PurchaseCode",
+        "AutoSize": "Fill",
+        "Width": 149,
+        "MinimumWidth": 149,
+        "FillWeight": 149,
+        "required": 149,
+        "truncated": false
+      },
+      {
+        "Name": "Original",
+        "AutoSize": "Fill",
+        "Width": 112,
+        "MinimumWidth": 112,
+        "FillWeight": 112,
+        "required": 112,
+        "truncated": false
+      },
+      {
+        "Name": "Paid",
+        "AutoSize": "Fill",
+        "Width": 104,
+        "MinimumWidth": 104,
+        "FillWeight": 104,
+        "required": 104,
+        "truncated": false
+      },
+      {
+        "Name": "Remaining",
+        "AutoSize": "Fill",
+        "Width": 104,
+        "MinimumWidth": 104,
+        "FillWeight": 104,
+        "required": 104,
+        "truncated": false
+      },
+      {
+        "Name": "Due",
+        "AutoSize": "Fill",
+        "Width": 118,
+        "MinimumWidth": 118,
+        "FillWeight": 118,
+        "required": 118,
+        "truncated": false
+      },
+      {
+        "Name": "Status",
+        "AutoSize": "Fill",
+        "Width": 115,
+        "MinimumWidth": 115,
+        "FillWeight": 115,
+        "required": 115,
+        "truncated": false
+      }
+    ],
+    "columnSum": 1124,
+    "scrolled": true
+  }
+]

@@ -1,3 +1,14 @@
+## Đợt test B07 — chuẩn kích thước bảng Giao hàng, 15/11/2026, PASS kỹ thuật ở125%
+
+Chốt dùng màn Giao hàng làm chuẩn: mọi bảng 46 logical dòng/40 header, dòng OrderLines có ghi chú 64; giữ cỡ chữ. BuildDebug/Release PASS0warning0error, unit52/52PASS. Probe16/16 profile đều 58px dòng/50px header tại125%, bảng Thu chi/Công nợ vẫn 0 cột cắt chữ. [Biên bản đợt](runs/ui-b07-20261115/test-results.md). Không chạy app thật+DB/POS dialog (người dùng tự kiểm GUI), DPI100/150, Designer — ghi NOT RUN. Không commit.
+
+## Đợt test B05/B06 — 15/11/2026, PASS kỹ thuật ở125%
+
+Duyệt đợt test; source giữ nguyên trong lượt test. BuildDebug/Release PASS0warning0error. Unit Finance/Inventory/HumanResources/G03 52/52PASS. Probe control thật (project tạm ngoài repo, không DB):
+B05 hai trang lazy đều có TextBox `BorderStyle=None` nền `23,19,29`, 0 ô viền vuông; header grid giữ `37,31,46`. B06 Thu chi 6/6 và Công nợ 8/8 cột `Fill`, tổng cột bằng bề rộng khả dụng tại1366/1400, 0 cột cắt chữ; cửa sổ hẹp1000 chuyển sang cuộn ngang thay vì rút chữ. [Biên bản đợt](runs/ui-b05-b06-20261115/test-results.md).
+
+Không chạy: app thật + DB test/đăng nhập (người dùng tự kiểm GUI), DPI100/150, Designer — ghi NOT RUN, không suy diễn PASS. Không đổi backend/SQL, không commit. Trong lượt test có lỗi build tạm thời do `Forms/MainForm.cs` đang được sửa song song ngoài phạm vi; sau khi file đó hoàn tất build lại PASS.
+
 ## Kết quả native cuối — 21/10/2026
 
 B03: PASS cho hai nhãn còn lại tại125% trên app thật PID29492, DB test CoffeeManager_Test_G03_20261019_215457_29e552a9_demo. Mở sổ hiện đầy đủ, Sơ đồ hiện đầy đủ; toolbar không wrap/chồng footer sau tăng chiều rộng. Evidence runs/bugfix-b01-b04/native-label-final-materials-0.png và native-label-final-tables-0.png. Tab đầu Danh mục nền tự tải10dòng, không bấm Tải lại: native-label-final-catalogs-first-0.png và .txt (DM001–DM010). Không xóa/đổi kết quả raw probe21PASS/1FAIL; native xác nhận lần quan sát này tải bình thường, không đủ kết luận nguyên nhân timeout harness.

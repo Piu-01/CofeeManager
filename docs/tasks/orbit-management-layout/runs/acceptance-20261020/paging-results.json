@@ -1,0 +1,63 @@
+[
+  {
+    "Total": 0,
+    "Status": "PASS",
+    "End": "Trang 1 \u00B7 0 d\u00F2ng",
+    "Skips": [
+      0
+    ],
+    "ActualDpi": 120
+  },
+  {
+    "Total": 1,
+    "Status": "PASS",
+    "End": "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u20131",
+    "Skips": [
+      0
+    ],
+    "ActualDpi": 120
+  },
+  {
+    "Total": 49,
+    "Status": "PASS",
+    "End": "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201349",
+    "Skips": [
+      0
+    ],
+    "ActualDpi": 120
+  },
+  {
+    "Total": 50,
+    "Status": "PASS",
+    "End": "Trang 2 \u00B7 0 d\u00F2ng",
+    "Skips": [
+      0,
+      50,
+      0
+    ],
+    "ActualDpi": 120
+  },
+  {
+    "Total": 51,
+    "Status": "PASS",
+    "End": "Trang 2 \u00B7 Hi\u1EC3n th\u1ECB 51\u201351",
+    "Skips": [
+      0,
+      50,
+      0
+    ],
+    "ActualDpi": 120
+  },
+  {
+    "Total": 101,
+    "Status": "PASS",
+    "End": "Trang 3 \u00B7 Hi\u1EC3n th\u1ECB 101\u2013101",
+    "Skips": [
+      0,
+      50,
+      100,
+      50
+    ],
+    "ActualDpi": 120
+  }
+]

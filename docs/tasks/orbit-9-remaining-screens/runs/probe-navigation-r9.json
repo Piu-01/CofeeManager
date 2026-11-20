@@ -1,0 +1,21 @@
+[
+  {
+    "Case": "NavigationCache",
+    "Created": 2,
+    "Pages": 2,
+    "VisiblePages": 1,
+    "Pass": true
+  },
+  {
+    "Case": "TabsWidth",
+    "Width": 160,
+    "Visible": true,
+    "Pass": true
+  },
+  {
+    "Case": "TabsWidth",
+    "Width": 900,
+    "Visible": false,
+    "Pass": true
+  }
+]

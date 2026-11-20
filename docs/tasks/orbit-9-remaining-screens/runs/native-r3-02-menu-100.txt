@@ -1,0 +1,150 @@
+Window: "CoffeeManager", App: CafeManager.WinForms.exe.
+	0 window CoffeeManager Secondary Actions: Raise
+		1 pane
+			2 pane
+				3 text CoffeeManager
+				4 text KHÔNG GIAN QUẢN LÝ
+				5 button Trang phiên
+				6 button Danh mục nền
+				7 button Khách hàng
+				8 button Bàn / Khu vực
+				9 button Menu / Công thức
+				10 button Nguyên liệu / Tồn
+				11 button Ưu đãi / Điểm
+				12 button Thông tin hệ thống
+				13 button Đăng xuất ID: logout
+				14 text Nguyen Van An
+				15 text Quản trị viên · ADMIN
+				16 text Phiên đang hoạt động.
+			17 pane
+				18 text Quản lý / Menu / Công thức
+				19 text Nguyen Van An · ADMIN
+			20 pane Nguyen Van An · ADMIN
+				166 pane Nguyen Van An · ADMIN ID: 11668396
+					167 pane ID: 4263182
+						168 text MENU WORKSPACE
+						169 text Menu & công thức
+						170 text Quản lý sản phẩm và công thức pha chế.
+						171 pane Quản lý sản phẩm và công thức pha chế.
+							172 button Thêm
+						173 pane
+							174 pane
+								175 pane ID: 66063600
+									176 edit (settable, string) Description: Tìm mã hoặc tên…
+							177 pane
+								178 pane ID: 12649954
+									179 combo box (settable, string) Tất cả danh mục Value: Tất cả danh mục
+										180 text
+										181 button Open
+								182 check box Chỉ đang bán
+								183 button Tải lại danh sách
+							184 text 11 sản phẩm
+							185 pane 11 sản phẩm
+								186 button Công thức
+								187 button Sửa
+								188 button Xóa
+							189 pane
+								190 data grid
+									204 scroll bar (settable, float) Vertical Value: 0
+										205 button Line up
+										206 thumb Position
+										207 button Page down
+										208 button Line down
+									191 custom Top Row
+										192 header Top Left Header Cell ID: 4247472827
+										193 header MÃ ID: 4213166979
+										194 header SẢN PHẨM ID: 4236953007
+										195 header DANH MỤC ID: 4210627055
+										196 header GIÁ BÁN ID: 423933992
+										197 header TRẠNG THÁI ID: 4251141899
+									286 custom Row 1
+										287 header Row 1 ID: 422256151
+										288 item MÃ Row 1 Value: SP001 ID: 4229329967
+										289 item SẢN PHẨM Row 1 Value: Ca phe den ID: 4245745259
+										290 item DANH MỤC Row 1 Value: DM001 ID: 4257817467
+										291 item GIÁ BÁN Row 1 Value: 25.000 ₫ ID: 4213429572
+										292 item TRẠNG THÁI Row 1 Value: Đang bán ID: 4240366711
+									293 custom Row 2
+										294 header Row 2 ID: 4243979043
+										295 item MÃ Row 2 Value: SP002 ID: 4234856648
+										296 item SẢN PHẨM Row 2 Value: Ca phe sua ID: 4250483243
+										297 item DANH MỤC Row 2 Value: DM001 ID: 4252302383
+										298 item GIÁ BÁN Row 2 Value: 30.000 ₫ ID: 428842349
+										299 item TRẠNG THÁI Row 2 Value: Đang bán ID: 4247841683
+									300 custom Row 3
+										301 header Row 3 ID: 4232180776
+										302 item MÃ Row 3 Value: SP003 ID: 4215696907
+										303 item SẢN PHẨM Row 3 Value: Bac xiu ID: 422733205
+										304 item DANH MỤC Row 3 Value: DM001 ID: 4235531666
+										305 item GIÁ BÁN Row 3 Value: 32.000 ₫ ID: 4259258479
+										306 item TRẠNG THÁI Row 3 Value: Đang bán ID: 4232162732
+									307 custom Row 4
+										308 header Row 4 ID: 4266792614
+										309 item MÃ Row 4 Value: SP004 ID: 4262997622
+										310 item SẢN PHẨM Row 4 Value: Cappuccino ID: 4213662719
+										311 item DANH MỤC Row 4 Value: DM001 ID: 4243397629
+										312 item GIÁ BÁN Row 4 Value: 55.000 ₫ ID: 4227298277
+										313 item TRẠNG THÁI Row 4 Value: Đang bán ID: 4219333291
+									314 custom Row 5
+										315 header Row 5 ID: 4246100804
+										316 item MÃ Row 5 Value: SP005 ID: 4262439552
+										317 item SẢN PHẨM Row 5 Value: Tra sua tran chau ID: 426407808
+										318 item DANH MỤC Row 5 Value: DM002 ID: 4216192640
+										319 item GIÁ BÁN Row 5 Value: 45.000 ₫ ID: 429177730
+										320 item TRẠNG THÁI Row 5 Value: Đang bán ID: 4252201637
+									321 custom Row 6
+										322 header Row 6 ID: 4230815500
+										323 item MÃ Row 6 Value: SP006 ID: 4265057191
+										324 item SẢN PHẨM Row 6 Value: Tra xanh ID: 4240437125
+										325 item DANH MỤC Row 6 Value: DM002 ID: 4255920581
+										326 item GIÁ BÁN Row 6 Value: 40.000 ₫ ID: 4255878924
+										327 item TRẠNG THÁI Row 6 Value: Đang bán ID: 4255337379
+									328 custom Row 7
+										329 header Row 7 ID: 4223885079
+										330 item MÃ Row 7 Value: SP007 ID: 4242070575
+										331 item SẢN PHẨM Row 7 Value: Sinh to bo ID: 4210046566
+										332 item DANH MỤC Row 7 Value: DM003 ID: 4263496502
+										333 item GIÁ BÁN Row 7 Value: 55.000 ₫ ID: 4220148167
+										334 item TRẠNG THÁI Row 7 Value: Đang bán ID: 4260599588
+									335 custom Row 8
+										336 header Row 8 ID: 4240783207
+										337 item MÃ Row 8 Value: SP008 ID: 4260419655
+										338 item SẢN PHẨM Row 8 Value: Sinh to xoai ID: 4247258013
+										339 item DANH MỤC Row 8 Value: DM003 ID: 4210374401
+										340 item GIÁ BÁN Row 8 Value: 50.000 ₫ ID: 42649492
+										341 item TRẠNG THÁI Row 8 Value: Đang bán ID: 428443397
+									342 custom Row 9
+										343 header Row 9 ID: 4217648057
+										344 item MÃ Row 9 Value: SP009 ID: 4228098155
+										345 item SẢN PHẨM Row 9 Value: Banh tiramisu ID: 4229731699
+										346 item DANH MỤC Row 9 Value: DM004 ID: 4250967768
+										347 item GIÁ BÁN Row 9 Value: 65.000 ₫ ID: 4258601208
+										348 item TRẠNG THÁI Row 9 Value: Đang bán ID: 4223618205
+									349 custom Row 10
+										350 header Row 10 ID: 4232053753
+										351 item MÃ Row 10 Value: SP010 ID: 4214045614
+										352 item SẢN PHẨM Row 10 Value: Banh croissant ID: 4248375258
+										353 item DANH MỤC Row 10 Value: DM004 ID: 4224898586
+										354 item GIÁ BÁN Row 10 Value: 35.000 ₫ ID: 4255246174
+										355 item TRẠNG THÁI Row 10 Value: Đang bán ID: 4247111627
+									356 custom Row 11
+										357 header Row 11 ID: 4243019061
+										358 item MÃ Row 11 Value: SP981 ID: 4222376886
+										359 item SẢN PHẨM Row 11 Value: Cà phê thử GUI ID: 4222464063
+										360 item DANH MỤC Row 11 Value: DM001 ID: 4223597366
+										361 item GIÁ BÁN Row 11 Value: 25.000 ₫ ID: 4238330302
+										362 item TRẠNG THÁI Row 11 Value: Đang bán ID: 4228531888
+							198 pane ID: 4327306
+								199 text Hiển thị 1–11 / 11 sản phẩm
+								200 button (disabled) Trang trước
+								201 text 1 / 1
+								202 button (disabled) Trang sau
+						203 text Đã cập nhật 14:52:01
+		21 title bar (settable, string) Value: CoffeeManager
+			22 menu bar System ID: MenuBar
+				23 menu item System
+			24 button Minimize
+			25 button Maximize
+			26 button Close
+
+The focused UI element is 176 edit (settable, string) Description: Tìm mã hoặc tên….

@@ -1,0 +1,222 @@
+[
+  {
+    "id": "D02-catalog-DeliveryPartner",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D02-catalog-ExpenseCategory",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D02-catalog-PaymentMethod",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D02-catalog-Position",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D02-catalog-ProductCategory",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D02-catalog-Shift",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D02-catalog-Supplier",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D02-PT010-protected-support",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D03-recipe-unit-delete-cancel",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D04-customer-orders-data-empty-and-page50",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D04-picker-close-after-load",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D04-picker-guest",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D04-picker-guest-and-cancel",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D04-picker-search-select",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D05-catalog-invalid-retains-input-and-focus",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D05-date-typed-and-invalid-input",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D05-validation-retains-input",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D06-busy-blocks-double-save-close",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D06-confirm-OKCancel-close",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D06-confirm-OKCancel-enter",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D06-confirm-OKCancel-escape",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D06-confirm-OKCancel-negative",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D06-confirm-OKCancel-positive",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D06-confirm-YesNo-close",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D06-confirm-YesNo-enter",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D06-confirm-YesNo-escape",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D06-confirm-YesNo-negative",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D06-confirm-YesNo-positive",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D06-dirty-close-cancel-then-discard",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D06-readonly-no-write-actions",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D06-reject-confirmation-no-write",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D06-retry-keeps-id-and-captured-payload",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D06-unknown-reconcile-original-id",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D09-catalog-editor-write-readback-cleanup",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D09-catalog-real-editor-write-readback-cleanup",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D09-customer-editor-write-readback-cleanup",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "R-D03-policy-preview-invalidate-cancel",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "R-D03-store-recipe-readonly-real-role",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "R-D05-discount-preview-invalidate",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "R-D09-area-table-actual-handlers-create-cleanup",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "R-D09-customer-actual-handlers-edit-open-adjust-cancel",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "R-D09-material-actual-handler-create-open-cancel-cleanup",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "R-D09-product-actual-handler-create-cleanup",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "R-D09-promotion-actual-handler-create-cleanup",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  }
+]

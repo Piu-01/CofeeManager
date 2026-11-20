@@ -1,0 +1,79 @@
+Window: "CoffeeManager", App: CafeManager.WinForms.exe.
+	0 window CoffeeManager Secondary Actions: Raise
+		1 pane
+			2 pane
+				3 text CoffeeManager
+				4 text KHÔNG GIAN QUẢN LÝ
+				5 button Trang phiên
+				6 button Danh mục nền
+				7 button Khách hàng
+				8 button Bàn / Khu vực
+				9 button Menu / Công thức
+				10 button Nguyên liệu / Tồn
+				11 button Ưu đãi / Điểm
+				12 button Thông tin hệ thống
+				13 button Đăng xuất ID: logout
+				14 text Nguyen Van An
+				15 text Quản trị viên · ADMIN
+				16 text Phiên đang hoạt động.
+			17 pane
+				18 text Quản lý / Bàn / Khu vực
+				19 text Nguyen Van An · ADMIN
+			20 pane Nguyen Van An · ADMIN
+				288 pane Nguyen Van An · ADMIN ID: 3934840
+					289 pane ID: 658770
+						290 pane ID: 13896924
+							291 pane ID: 1314342
+								292 text SPACE WORKSPACE
+								293 text Bàn & khu vực
+								294 text Theo dõi trạng thái bàn và quản lý khu vực.
+								295 pane Theo dõi trạng thái bàn và quản lý khu vực.
+									296 button Thêm
+								297 pane
+									298 pane
+										299 button Bàn / Sơ đồ
+										300 button Khu vực
+								301 pane
+									302 pane
+										303 pane ID: 20515936
+											304 edit (settable, string) Description: Tìm mã hoặc tên bàn…
+									305 pane
+										306 pane ID: 1117470
+											307 combo box (settable, string) Tất cả khu vực Value: Tất cả khu vực
+												308 text
+												309 button Open
+										310 pane ID: 658866
+											311 button Danh sách
+											312 button Sơ đồ
+										313 button Tải lại danh sách
+									314 text 10 bàn
+									315 pane 10 bàn
+										316 button Chọn bàn
+										317 button Sửa
+										318 button Xóa
+									319 pane
+										320 pane
+											327 button Ban 01 · Trống
+											328 button Ban 02 · Trống
+											329 button Ban 03 · Đang phục vụ
+											330 button Ban 04 · Trống
+											331 button Ban 05 · Trống
+											332 button Ban 06 · Trống
+											333 button Ban 07 · Trống
+											334 button Ban 08 · Trống
+											335 button Ban 09 · Trống
+											336 button Ban 10 · Trống
+									321 pane ID: 13110418
+										322 text Hiển thị 1–10 / 10 bàn
+										323 button (disabled) Trang trước
+										324 text 1 / 1
+										325 button (disabled) Trang sau
+								326 text Ban 03 · Dang phuc vu · đơn hiện tại: HD20250410. Mở POS sẽ được tích hợp ở G04.
+		21 title bar (settable, string) Value: CoffeeManager
+			22 menu bar System ID: MenuBar
+				111 menu item System
+			24 button Minimize
+			25 button Maximize
+			26 button Close
+
+The focused UI element is 304 edit (settable, string) Description: Tìm mã hoặc tên bàn….

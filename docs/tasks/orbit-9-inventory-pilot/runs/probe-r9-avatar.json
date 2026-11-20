@@ -1,0 +1,392 @@
+[
+  {
+    "Case": "Shell",
+    "Dpi": 96,
+    "Client": {
+      "IsEmpty": false,
+      "Width": 1366,
+      "Height": 768
+    },
+    "Sidebar": 200
+  },
+  {
+    "Case": "SidebarShortViewport",
+    "Dpi": 96,
+    "Height": 630,
+    "Client": {
+      "IsEmpty": false,
+      "Width": 200,
+      "Height": 630
+    },
+    "ProfileBottom": 624,
+    "Pass": true,
+    "Note": "Owned sidebar with eight native navigation buttons and logout; unchanged button size; TopDown matches MainForm.Designer"
+  },
+  {
+    "Case": "SidebarAvatarResizeInvalidation",
+    "Pass": true,
+    "OldAvatar": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 21,
+        "Y": 569
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 32,
+        "Height": 32
+      },
+      "X": 21,
+      "Y": 569,
+      "Width": 32,
+      "Height": 32,
+      "Left": 21,
+      "Top": 569,
+      "Right": 53,
+      "Bottom": 601,
+      "IsEmpty": false
+    },
+    "NewProfileTop": 836,
+    "InvalidatedOldAvatar": true,
+    "Note": "Owned native sidebar resize; verifies old painted avatar region invalidated, not desktop screenshot"
+  },
+  {
+    "Case": "Loaded",
+    "Role": "ADMIN",
+    "Dpi": 96,
+    "Font": 9,
+    "HeaderFont": 7.5,
+    "Rows": 7,
+    "Count": "14 nguy\u00EAn li\u1EC7u",
+    "Range": "Hi\u1EC3n th\u1ECB 1\u20137 / 14",
+    "Columns": [
+      {
+        "Name": "Code",
+        "Width": 76
+      },
+      {
+        "Name": "Name",
+        "Width": 818
+      },
+      {
+        "Name": "Unit",
+        "Width": 64
+      },
+      {
+        "Name": "Quantity",
+        "Width": 116
+      }
+    ],
+    "Buttons": [
+      {
+        "Text": "Th\u00EAm nguy\u00EAn li\u1EC7u",
+        "AccessibleName": null,
+        "Width": 160,
+        "Height": 40,
+        "Enabled": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 160,
+            "Height": 40
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 160,
+          "Height": 40,
+          "Left": 0,
+          "Top": 0,
+          "Right": 160,
+          "Bottom": 40,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "IsEmpty": false,
+          "Width": 160,
+          "Height": 44
+        }
+      },
+      {
+        "Text": "",
+        "AccessibleName": "T\u1EA3i l\u1EA1i danh s\u00E1ch",
+        "Width": 40,
+        "Height": 40,
+        "Enabled": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 134,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 40,
+            "Height": 40
+          },
+          "X": 134,
+          "Y": 0,
+          "Width": 40,
+          "Height": 40,
+          "Left": 134,
+          "Top": 0,
+          "Right": 174,
+          "Bottom": 40,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "IsEmpty": false,
+          "Width": 174,
+          "Height": 40
+        }
+      },
+      {
+        "Text": "M\u1EDF s\u1ED5",
+        "AccessibleName": null,
+        "Width": 76,
+        "Height": 33,
+        "Enabled": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 76,
+            "Height": 33
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 76,
+          "Height": 33,
+          "Left": 0,
+          "Top": 0,
+          "Right": 76,
+          "Bottom": 33,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "IsEmpty": false,
+          "Width": 213,
+          "Height": 33
+        }
+      },
+      {
+        "Text": "S\u1EEDa",
+        "AccessibleName": null,
+        "Width": 62,
+        "Height": 33,
+        "Enabled": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 82,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 62,
+            "Height": 33
+          },
+          "X": 82,
+          "Y": 0,
+          "Width": 62,
+          "Height": 33,
+          "Left": 82,
+          "Top": 0,
+          "Right": 144,
+          "Bottom": 33,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "IsEmpty": false,
+          "Width": 213,
+          "Height": 33
+        }
+      },
+      {
+        "Text": "X\u00F3a",
+        "AccessibleName": null,
+        "Width": 63,
+        "Height": 33,
+        "Enabled": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 150,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 63,
+            "Height": 33
+          },
+          "X": 150,
+          "Y": 0,
+          "Width": 63,
+          "Height": 33,
+          "Left": 150,
+          "Top": 0,
+          "Right": 213,
+          "Bottom": 33,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "IsEmpty": false,
+          "Width": 213,
+          "Height": 33
+        }
+      },
+      {
+        "Text": "",
+        "AccessibleName": "Trang tr\u01B0\u1EDBc",
+        "Width": 38,
+        "Height": 30,
+        "Enabled": false,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 967,
+            "Y": 11
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 38,
+            "Height": 30
+          },
+          "X": 967,
+          "Y": 11,
+          "Width": 38,
+          "Height": 30,
+          "Left": 967,
+          "Top": 11,
+          "Right": 1005,
+          "Bottom": 41,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "IsEmpty": false,
+          "Width": 1112,
+          "Height": 53
+        }
+      },
+      {
+        "Text": "",
+        "AccessibleName": "Trang sau",
+        "Width": 38,
+        "Height": 30,
+        "Enabled": true,
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 1057,
+            "Y": 11
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 38,
+            "Height": 30
+          },
+          "X": 1057,
+          "Y": 11,
+          "Width": 38,
+          "Height": 30,
+          "Left": 1057,
+          "Top": 11,
+          "Right": 1095,
+          "Bottom": 41,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "IsEmpty": false,
+          "Width": 1112,
+          "Height": 53
+        }
+      }
+    ]
+  },
+  {
+    "Case": "HoverLeavePixels",
+    "Pass": true,
+    "Hovered": -14016461,
+    "Normal": -14936029,
+    "ExpectedSurface": -14936029,
+    "Note": "Pixels from actual owned grid DrawToBitmap; not a desktop screenshot"
+  },
+  {
+    "Case": "NoVerticalCellBorder",
+    "Pass": true,
+    "Boundary": -14936029,
+    "Expected": -14936029,
+    "Cell": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 114,
+        "Y": 86
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 818,
+        "Height": 46
+      },
+      "X": 114,
+      "Y": 86,
+      "Width": 818,
+      "Height": 46,
+      "Left": 114,
+      "Top": 86,
+      "Right": 932,
+      "Bottom": 132,
+      "IsEmpty": false
+    },
+    "NeighborPixels": [
+      {
+        "X": 111,
+        "Pixel": -14936029
+      },
+      {
+        "X": 112,
+        "Pixel": -14936029
+      },
+      {
+        "X": 113,
+        "Pixel": -14936029
+      },
+      {
+        "X": 114,
+        "Pixel": -14936029
+      },
+      {
+        "X": 115,
+        "Pixel": -14936029
+      },
+      {
+        "X": 116,
+        "Pixel": -14936029
+      },
+      {
+        "X": 117,
+        "Pixel": -14936029
+      },
+      {
+        "X": 118,
+        "Pixel": -14936029
+      },
+      {
+        "X": 119,
+        "Pixel": -14936029
+      },
+      {
+        "X": 120,
+        "Pixel": -14936029
+      }
+    ],
+    "Note": "Owned native grid pixels, not desktop capture"
+  }
+]

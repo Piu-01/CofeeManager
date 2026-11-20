@@ -1,0 +1,6 @@
+{
+  "Database": "CoffeeManager_Test_G03_20261019_215457_29e552a9_demo",
+  "MarkerVerified": true,
+  "Expiry": "2026-10-21",
+  "Scope": "Read/UI layout acceptance only; writes require owned fixtures"
+}

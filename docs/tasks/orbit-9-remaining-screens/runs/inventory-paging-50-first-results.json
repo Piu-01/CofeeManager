@@ -1,0 +1,50 @@
+[
+  {
+    "Case": "FirstPage-0",
+    "Pass": true
+  },
+  {
+    "Case": "FirstPage-14",
+    "Pass": true
+  },
+  {
+    "Case": "FirstPage-49",
+    "Pass": true
+  },
+  {
+    "Case": "FirstPage-50",
+    "Pass": true
+  },
+  {
+    "Case": "FirstPage-51",
+    "Pass": true
+  },
+  {
+    "Case": "InternalScrollAvailable",
+    "Pass": true
+  },
+  {
+    "Case": "ScrollReachesRow50",
+    "Pass": true
+  },
+  {
+    "Case": "NextPage51",
+    "Pass": true
+  },
+  {
+    "Case": "PreviousPage",
+    "Pass": true
+  },
+  {
+    "Case": "FilterResetsAndCounts",
+    "Pass": true
+  },
+  {
+    "Case": "Resize-1080",
+    "Pass": false
+  },
+  {
+    "Case": "Resize-1166",
+    "Pass": false
+  }
+]

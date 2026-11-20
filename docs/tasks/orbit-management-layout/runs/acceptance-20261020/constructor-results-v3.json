@@ -1,0 +1,37 @@
+[
+  {
+    "Id": "Layout",
+    "Status": "PASS",
+    "Dpi": 120
+  },
+  {
+    "Id": "RecordList",
+    "Status": "PASS",
+    "Dpi": 120
+  },
+  {
+    "Id": "MainForm",
+    "Status": "PASS",
+    "Dpi": 120
+  },
+  {
+    "Id": "Catalogs",
+    "Status": "PASS",
+    "Dpi": 120
+  },
+  {
+    "Id": "Materials",
+    "Status": "PASS",
+    "Dpi": 120
+  },
+  {
+    "Id": "Products-empty",
+    "Status": "PASS",
+    "Dpi": 120
+  },
+  {
+    "Id": "Customers-empty",
+    "Status": "PASS",
+    "Dpi": 120
+  }
+]

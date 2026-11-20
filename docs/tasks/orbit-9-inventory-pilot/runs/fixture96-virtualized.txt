@@ -1,0 +1,102 @@
+Window: "CoffeeManager · UI fixture 96DPI (desktop virtualized)", App: VisualProbe.exe.
+	0 window CoffeeManager · UI fixture 96DPI (desktop virtualized) Secondary Actions: Raise
+		1 pane
+			2 pane
+				3 text CoffeeManager
+				4 text KHÔNG GIAN QUẢN LÝ
+				5 button Trang phiên
+				6 text Nguyen Van An
+				7 text Quản trị viên · ADMIN
+				8 button Nguyên liệu / Tồn
+				9 text Phiên đang hoạt động.
+				10 button Thông tin hệ thống
+				11 button Đăng xuất ID: logout
+			12 pane
+				13 text Kho nguyên liệu / Tồn hiện tại
+				14 text Nguyen Van An · ADMIN
+			15 pane Nguyen Van An · ADMIN
+				16 pane Nguyen Van An · ADMIN ID: 3147766
+					17 pane ID: 6163084
+						18 text INVENTORY WORKSPACE
+						19 text Nguyên liệu & tồn kho
+						20 text Tra cứu nguyên liệu, đơn vị và số lượng tồn.
+						21 pane Tra cứu nguyên liệu, đơn vị và số lượng tồn.
+							22 button Thêm nguyên liệu
+						23 pane
+							24 pane ID: 2165276
+								25 edit (settable, string) Description: Tìm tên hoặc mã nguyên liệu…
+							26 pane
+								27 pane ID: 9570258
+									28 combo box (settable, string) Tất cả đơn vị Value: Tất cả đơn vị
+										29 text
+										30 button Open
+								31 button Tải lại danh sách
+							32 text 14 nguyên liệu
+							33 pane 14 nguyên liệu
+								34 button Mở sổ
+								35 button Sửa
+								36 button Xóa
+							37 pane
+								38 data grid
+									39 custom Top Row
+										40 header Top Left Header Cell ID: 425717096
+										41 header MÃ ID: 427213388
+										42 header NGUYÊN LIỆU ID: 4226665181
+										43 header ĐƠN VỊ ID: 4211103033
+										44 header TỒN HIỆN TẠI ID: 4210121706
+									45 custom Row 1
+										46 header Row 1 ID: 4232846798
+										47 item MÃ Row 1 Value: NVL01 ID: 4224355199
+										48 item NGUYÊN LIỆU Row 1 Value: Ca phe hat ID: 4248182135
+										49 item ĐƠN VỊ Row 1 Value: Kg ID: 4222387987
+										50 item TỒN HIỆN TẠI Row 1 Value: 96,7400 ID: 4222608387
+									51 custom Row 2
+										52 header Row 2 ID: 4262721087
+										53 item MÃ Row 2 Value: NVL02 ID: 4210067774
+										54 item NGUYÊN LIỆU Row 2 Value: Sua tuoi ID: 4263772203
+										55 item ĐƠN VỊ Row 2 Value: Lit ID: 4223732272
+										56 item TỒN HIỆN TẠI Row 2 Value: 98,1600 ID: 4240084083
+									57 custom Row 3
+										58 header Row 3 ID: 4263323637
+										59 item MÃ Row 3 Value: NVL03 ID: 4217900923
+										60 item NGUYÊN LIỆU Row 3 Value: Duong ID: 4231385409
+										61 item ĐƠN VỊ Row 3 Value: Kg ID: 425357136
+										62 item TỒN HIỆN TẠI Row 3 Value: 72,7050 ID: 422533907
+									63 custom Row 4
+										64 header Row 4 ID: 4225577178
+										65 item MÃ Row 4 Value: NVL04 ID: 4264067863
+										66 item NGUYÊN LIỆU Row 4 Value: Tra xanh ID: 4227575860
+										67 item ĐƠN VỊ Row 4 Value: Kg ID: 4222941862
+										68 item TỒN HIỆN TẠI Row 4 Value: 21,9650 ID: 4229808750
+									69 custom Row 5
+										70 header Row 5 ID: 424514055
+										71 item MÃ Row 5 Value: NVL05 ID: 4258682725
+										72 item NGUYÊN LIỆU Row 5 Value: Bot matcha ID: 4224677933
+										73 item ĐƠN VỊ Row 5 Value: Kg ID: 4252377683
+										74 item TỒN HIỆN TẠI Row 5 Value: 5,0000 ID: 429821246
+									75 custom Row 6
+										76 header Row 6 ID: 4249177928
+										77 item MÃ Row 6 Value: NVL06 ID: 4235333288
+										78 item NGUYÊN LIỆU Row 6 Value: Tran chau ID: 4256679560
+										79 item ĐƠN VỊ Row 6 Value: Kg ID: 4265745642
+										80 item TỒN HIỆN TẠI Row 6 Value: 9,7000 ID: 4249386989
+									81 custom Row 7
+										82 header Row 7 ID: 4224902036
+										83 item MÃ Row 7 Value: NVL07 ID: 4255291023
+										84 item NGUYÊN LIỆU Row 7 Value: Bo ID: 4247694669
+										85 item ĐƠN VỊ Row 7 Value: Kg ID: 4216050925
+										86 item TỒN HIỆN TẠI Row 7 Value: 22,7000 ID: 427335444
+							87 pane ID: 1248216
+								88 text Hiển thị 1–7 / 14
+								89 button (disabled) Trang trước
+								90 text 1 / 2
+								91 button Trang sau
+						92 text Đã cập nhật 07:59:04
+		93 title bar (settable, string) Value: CoffeeManager · UI fixture 96DPI (desktop virtualized)
+			94 menu bar System ID: MenuBar
+				95 menu item System
+			96 button Minimize
+			97 button Maximize
+			98 button Close
+
+The focused UI element is 25 edit (settable, string) Description: Tìm tên hoặc mã nguyên liệu….

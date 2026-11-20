@@ -1,0 +1,1635 @@
+[
+  {
+    "Role": "ADMIN",
+    "Module": "Materials",
+    "Tab": null,
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 14,
+    "GridWidth": 1038,
+    "ColumnWidth": 1017,
+    "WorkspaceWidth": 1100,
+    "Buttons": [
+      {
+        "Text": "Th\u00EAm nguy\u00EAn li\u1EC7u",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u1EA3i l\u1EA1i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "M\u1EDF s\u1ED5",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "X\u00F3a",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Nguy\u00EAn li\u1EC7u \u0026 t\u1ED3n kho",
+      "Tra c\u1EE9u nguy\u00EAn li\u1EC7u, \u0111\u01A1n v\u1ECB v\u00E0 s\u1ED1 l\u01B0\u1EE3ng t\u1ED3n.",
+      "14 nguy\u00EAn li\u1EC7u trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201314",
+      "\u0110\u00E3 c\u1EADp nh\u1EADt 21:38:07"
+    ]
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Products",
+    "Tab": null,
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 11,
+    "GridWidth": 1038,
+    "ColumnWidth": 1017,
+    "WorkspaceWidth": 1100,
+    "Buttons": [
+      {
+        "Text": "Th\u00EAm s\u1EA3n ph\u1EA9m",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u1EA3i l\u1EA1i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "C\u00F4ng th\u1EE9c",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "X\u00F3a",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Menu v\u00E0 c\u00F4ng th\u1EE9c",
+      "Qu\u1EA3n l\u00FD s\u1EA3n ph\u1EA9m v\u00E0 c\u00F4ng th\u1EE9c pha ch\u1EBF.",
+      "11 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201311",
+      "S\u1EB5n s\u00E0ng"
+    ]
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Catalogs",
+    "Tab": "S\u1EA3n ph\u1EA9m",
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 10,
+    "GridWidth": 1042,
+    "ColumnWidth": 1021,
+    "WorkspaceWidth": 1044,
+    "Buttons": [
+      {
+        "Text": "Th\u00EAm",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u00ECm",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u1EA3i / \u0111\u1ED1i chi\u1EBFu",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "X\u00F3a",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Danh m\u1EE5c n\u1EC1n",
+      "D\u1EEF li\u1EC7u tham chi\u1EBFu \u00B7 CoffeeManager",
+      "10 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201310",
+      "\u0110\u00E3 l\u01B0u \u00B7 Trang 1 \u00B7 10 d\u00F2ng \u00B7 21:38."
+    ]
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Catalogs",
+    "Tab": "Nh\u00E0 cung c\u1EA5p",
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 10,
+    "GridWidth": 1042,
+    "ColumnWidth": 1021,
+    "WorkspaceWidth": 1044,
+    "Buttons": [
+      {
+        "Text": "Th\u00EAm",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u00ECm",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u1EA3i / \u0111\u1ED1i chi\u1EBFu",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "X\u00F3a",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Danh m\u1EE5c n\u1EC1n",
+      "D\u1EEF li\u1EC7u tham chi\u1EBFu \u00B7 CoffeeManager",
+      "10 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201310",
+      "\u0110\u00E3 l\u01B0u \u00B7 Trang 1 \u00B7 10 d\u00F2ng \u00B7 21:38."
+    ]
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Catalogs",
+    "Tab": "Ph\u01B0\u01A1ng th\u1EE9c",
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 10,
+    "GridWidth": 1042,
+    "ColumnWidth": 1021,
+    "WorkspaceWidth": 1044,
+    "Buttons": [
+      {
+        "Text": "Th\u00EAm",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u00ECm",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u1EA3i / \u0111\u1ED1i chi\u1EBFu",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "X\u00F3a",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Danh m\u1EE5c n\u1EC1n",
+      "D\u1EEF li\u1EC7u tham chi\u1EBFu \u00B7 CoffeeManager",
+      "10 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201310",
+      "\u0110\u00E3 l\u01B0u \u00B7 Trang 1 \u00B7 10 d\u00F2ng \u00B7 21:38."
+    ]
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Catalogs",
+    "Tab": "\u0110\u1ED1i t\u00E1c",
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 2,
+    "GridWidth": 1042,
+    "ColumnWidth": 1042,
+    "WorkspaceWidth": 1044,
+    "Buttons": [
+      {
+        "Text": "Th\u00EAm",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u00ECm",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u1EA3i / \u0111\u1ED1i chi\u1EBFu",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "X\u00F3a",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Danh m\u1EE5c n\u1EC1n",
+      "D\u1EEF li\u1EC7u tham chi\u1EBFu \u00B7 CoffeeManager",
+      "2 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u20132",
+      "\u0110\u00E3 l\u01B0u \u00B7 Trang 1 \u00B7 2 d\u00F2ng \u00B7 21:38."
+    ]
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Catalogs",
+    "Tab": "Thu / chi",
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 12,
+    "GridWidth": 1042,
+    "ColumnWidth": 1021,
+    "WorkspaceWidth": 1044,
+    "Buttons": [
+      {
+        "Text": "Th\u00EAm",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u00ECm",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u1EA3i / \u0111\u1ED1i chi\u1EBFu",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "X\u00F3a",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Danh m\u1EE5c n\u1EC1n",
+      "D\u1EEF li\u1EC7u tham chi\u1EBFu \u00B7 CoffeeManager",
+      "12 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201312",
+      "\u0110\u00E3 l\u01B0u \u00B7 Trang 1 \u00B7 12 d\u00F2ng \u00B7 21:38."
+    ]
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Catalogs",
+    "Tab": "Ch\u1EE9c v\u1EE5",
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 10,
+    "GridWidth": 1042,
+    "ColumnWidth": 1021,
+    "WorkspaceWidth": 1044,
+    "Buttons": [
+      {
+        "Text": "Th\u00EAm",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u00ECm",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u1EA3i / \u0111\u1ED1i chi\u1EBFu",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "X\u00F3a",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Danh m\u1EE5c n\u1EC1n",
+      "D\u1EEF li\u1EC7u tham chi\u1EBFu \u00B7 CoffeeManager",
+      "10 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201310",
+      "\u0110\u00E3 l\u01B0u \u00B7 Trang 1 \u00B7 10 d\u00F2ng \u00B7 21:38."
+    ]
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Catalogs",
+    "Tab": "Ca l\u00E0m",
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 10,
+    "GridWidth": 1042,
+    "ColumnWidth": 1021,
+    "WorkspaceWidth": 1044,
+    "Buttons": [
+      {
+        "Text": "Th\u00EAm",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u00ECm",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u1EA3i / \u0111\u1ED1i chi\u1EBFu",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "X\u00F3a",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Danh m\u1EE5c n\u1EC1n",
+      "D\u1EEF li\u1EC7u tham chi\u1EBFu \u00B7 CoffeeManager",
+      "10 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201310",
+      "\u0110\u00E3 l\u01B0u \u00B7 Trang 1 \u00B7 10 d\u00F2ng \u00B7 21:38."
+    ]
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Customers",
+    "Tab": null,
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 11,
+    "GridWidth": 1038,
+    "ColumnWidth": 1017,
+    "WorkspaceWidth": 1100,
+    "Buttons": [
+      {
+        "Text": "Th\u00EAm kh\u00E1ch h\u00E0ng",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u1EA3i l\u1EA1i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "X\u00F3a",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "M\u1EDF s\u1ED5 \u0111i\u1EC3m",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "H\u00F3a \u0111\u01A1n",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Kh\u00E1ch h\u00E0ng",
+      "Qu\u1EA3n l\u00FD kh\u00E1ch h\u00E0ng, \u0111i\u1EC3m t\u00EDch l\u0169y v\u00E0 h\u1EA1ng th\u00E0nh vi\u00EAn.",
+      "11 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201311",
+      "S\u1EB5n s\u00E0ng"
+    ]
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Tables",
+    "Tab": "B\u00E0n / S\u01A1 \u0111\u1ED3",
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 10,
+    "GridWidth": 126,
+    "ColumnWidth": 753,
+    "WorkspaceWidth": 1022,
+    "Buttons": [
+      {
+        "Text": "T\u1EA3i l\u1EA1i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Danh s\u00E1ch",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u01A1 \u0111\u1ED3",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Ch\u1ECDn b\u00E0n",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "X\u00F3a",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0001 \u00B7 Ban 01\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 223,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": false,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0002 \u00B7 Ban 02\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 223,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": false,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0003 \u00B7 Ban 03\n\u25CF \u0110ang ph\u1EE5c v\u1EE5\nHD20250410",
+        "Width": 223,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": false,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0004 \u00B7 Ban 04\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 223,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": false,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0005 \u00B7 Ban 05\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 223,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": false,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0006 \u00B7 Ban 06\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 223,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": false,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0007 \u00B7 Ban 07\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 223,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": false,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0008 \u00B7 Ban 08\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 223,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": false,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0009 \u00B7 Ban 09\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 223,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": false,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0010 \u00B7 Ban 10\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 223,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": false,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Th\u00EAm b\u00E0n",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "10 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201310",
+      "S\u1EB5n s\u00E0ng",
+      "B\u00E0n v\u00E0 tr\u1EA1ng th\u00E1i hi\u1EC7n t\u1EA1i",
+      "Tra c\u1EE9u v\u00E0 qu\u1EA3n l\u00FD d\u1EEF li\u1EC7u hi\u1EC7n t\u1EA1i."
+    ]
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Tables",
+    "Tab": "Khu v\u1EF1c",
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 10,
+    "GridWidth": 1020,
+    "ColumnWidth": 999,
+    "WorkspaceWidth": 1022,
+    "Buttons": [
+      {
+        "Text": "T\u1EA3i l\u1EA1i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "X\u00F3a",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Th\u00EAm khu v\u1EF1c",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "10 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201310",
+      "S\u1EB5n s\u00E0ng",
+      "Khu v\u1EF1c",
+      "Tra c\u1EE9u v\u00E0 qu\u1EA3n l\u00FD d\u1EEF li\u1EC7u hi\u1EC7n t\u1EA1i."
+    ]
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Loyalty",
+    "Tab": "Khuy\u1EBFn m\u00E3i",
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 12,
+    "GridWidth": 1020,
+    "ColumnWidth": 999,
+    "WorkspaceWidth": 1022,
+    "Buttons": [
+      {
+        "Text": "T\u1EA3i l\u1EA1i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "X\u00F3a",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Preview \u01B0u \u0111\u00E3i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Th\u00EAm khuy\u1EBFn m\u00E3i",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "12 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201312",
+      "S\u1EB5n s\u00E0ng",
+      "Khuy\u1EBFn m\u00E3i",
+      "Qu\u1EA3n l\u00FD ch\u01B0\u01A1ng tr\u00ECnh khuy\u1EBFn m\u00E3i v\u00E0 xem tr\u01B0\u1EDBc \u01B0u \u0111\u00E3i."
+    ]
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Loyalty",
+    "Tab": "H\u1EA1ng th\u00E0nh vi\u00EAn",
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 10,
+    "GridWidth": 1020,
+    "ColumnWidth": 999,
+    "WorkspaceWidth": 1022,
+    "Buttons": [
+      {
+        "Text": "T\u1EA3i l\u1EA1i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Thay ch\u00EDnh s\u00E1ch",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "10 d\u00F2ng trong trang",
+      "10 d\u00F2ng",
+      "S\u1EB5n s\u00E0ng",
+      "Ch\u00EDnh s\u00E1ch h\u1EA1ng",
+      "Thi\u1EBFt l\u1EADp ng\u01B0\u1EE1ng \u0111i\u1EC3m v\u00E0 \u01B0u \u0111\u00E3i theo h\u1EA1ng th\u00E0nh vi\u00EAn."
+    ]
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Loyalty",
+    "Tab": "\u0110i\u1EC3m kh\u00E1ch h\u00E0ng",
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 0,
+    "GridWidth": 1020,
+    "ColumnWidth": 1020,
+    "WorkspaceWidth": 1022,
+    "Buttons": [
+      {
+        "Text": "T\u1EA3i l\u1EA1i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Ch\u1ECDn kh\u00E1ch",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "\u0110i\u1EC1u ch\u1EC9nh \u0111i\u1EC3m",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Ch\u01B0a ch\u1ECDn kh\u00E1ch h\u00E0ng",
+      "Ch\u1ECDn kh\u00E1ch h\u00E0ng \u0111\u1EC3 xem l\u1ECBch s\u1EED \u0111i\u1EC3m.",
+      "",
+      "S\u1EB5n s\u00E0ng",
+      "L\u1ECBch s\u1EED \u0111i\u1EC3m",
+      "Tra c\u1EE9u l\u1ECBch s\u1EED \u0111i\u1EC3m kh\u00E1ch h\u00E0ng \u00B7 Ch\u1EC9 \u0111\u1ECDc."
+    ]
+  },
+  {
+    "Role": "CASH",
+    "Module": "Materials",
+    "Tab": null,
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 14,
+    "GridWidth": 1038,
+    "ColumnWidth": 1017,
+    "WorkspaceWidth": 1100,
+    "Buttons": [
+      {
+        "Text": "T\u1EA3i l\u1EA1i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Nguy\u00EAn li\u1EC7u \u0026 t\u1ED3n kho",
+      "Tra c\u1EE9u nguy\u00EAn li\u1EC7u, \u0111\u01A1n v\u1ECB v\u00E0 s\u1ED1 l\u01B0\u1EE3ng t\u1ED3n.",
+      "14 nguy\u00EAn li\u1EC7u trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201314",
+      "\u0110\u00E3 c\u1EADp nh\u1EADt 21:38:19"
+    ]
+  },
+  {
+    "Role": "CASH",
+    "Module": "Products",
+    "Tab": null,
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 11,
+    "GridWidth": 1038,
+    "ColumnWidth": 1017,
+    "WorkspaceWidth": 1100,
+    "Buttons": [
+      {
+        "Text": "T\u1EA3i l\u1EA1i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Menu v\u00E0 c\u00F4ng th\u1EE9c",
+      "Qu\u1EA3n l\u00FD s\u1EA3n ph\u1EA9m v\u00E0 c\u00F4ng th\u1EE9c pha ch\u1EBF.",
+      "11 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201311",
+      "S\u1EB5n s\u00E0ng"
+    ]
+  },
+  {
+    "Role": "CASH",
+    "Module": "Customers",
+    "Tab": null,
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 11,
+    "GridWidth": 1038,
+    "ColumnWidth": 1017,
+    "WorkspaceWidth": 1100,
+    "Buttons": [
+      {
+        "Text": "Th\u00EAm kh\u00E1ch h\u00E0ng",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u1EA3i l\u1EA1i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "H\u00F3a \u0111\u01A1n",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Kh\u00E1ch h\u00E0ng",
+      "Qu\u1EA3n l\u00FD kh\u00E1ch h\u00E0ng, \u0111i\u1EC3m t\u00EDch l\u0169y v\u00E0 h\u1EA1ng th\u00E0nh vi\u00EAn.",
+      "11 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201311",
+      "S\u1EB5n s\u00E0ng"
+    ]
+  },
+  {
+    "Role": "CASH",
+    "Module": "Tables",
+    "Tab": "B\u00E0n / S\u01A1 \u0111\u1ED3",
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 10,
+    "GridWidth": 126,
+    "ColumnWidth": 753,
+    "WorkspaceWidth": 1022,
+    "Buttons": [
+      {
+        "Text": "T\u1EA3i l\u1EA1i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Danh s\u00E1ch",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u01A1 \u0111\u1ED3",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Ch\u1ECDn b\u00E0n",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0001 \u00B7 Ban 01\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 223,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": false,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0002 \u00B7 Ban 02\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 223,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": false,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0003 \u00B7 Ban 03\n\u25CF \u0110ang ph\u1EE5c v\u1EE5\nHD20250410",
+        "Width": 223,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": false,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0004 \u00B7 Ban 04\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 223,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": false,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0005 \u00B7 Ban 05\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 223,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": false,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0006 \u00B7 Ban 06\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 223,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": false,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0007 \u00B7 Ban 07\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 223,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": false,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0008 \u00B7 Ban 08\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 223,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": false,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0009 \u00B7 Ban 09\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 223,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": false,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "B0010 \u00B7 Ban 10\n\u25CB Tr\u1ED1ng\nCh\u01B0a c\u00F3 \u0111\u01A1n",
+        "Width": 223,
+        "Height": 180,
+        "Enabled": true,
+        "Fits": false,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "10 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201310",
+      "S\u1EB5n s\u00E0ng",
+      "B\u00E0n v\u00E0 tr\u1EA1ng th\u00E1i hi\u1EC7n t\u1EA1i",
+      "Tra c\u1EE9u v\u00E0 qu\u1EA3n l\u00FD d\u1EEF li\u1EC7u hi\u1EC7n t\u1EA1i."
+    ]
+  },
+  {
+    "Role": "CASH",
+    "Module": "Loyalty",
+    "Tab": "Khuy\u1EBFn m\u00E3i",
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 1,
+    "GridWidth": 1020,
+    "ColumnWidth": 1020,
+    "WorkspaceWidth": 1022,
+    "Buttons": [
+      {
+        "Text": "T\u1EA3i l\u1EA1i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Preview \u01B0u \u0111\u00E3i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "1 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u20131",
+      "S\u1EB5n s\u00E0ng",
+      "Khuy\u1EBFn m\u00E3i",
+      "Qu\u1EA3n l\u00FD ch\u01B0\u01A1ng tr\u00ECnh khuy\u1EBFn m\u00E3i v\u00E0 xem tr\u01B0\u1EDBc \u01B0u \u0111\u00E3i."
+    ]
+  },
+  {
+    "Role": "STORE",
+    "Module": "Materials",
+    "Tab": null,
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 14,
+    "GridWidth": 1038,
+    "ColumnWidth": 1017,
+    "WorkspaceWidth": 1100,
+    "Buttons": [
+      {
+        "Text": "Th\u00EAm nguy\u00EAn li\u1EC7u",
+        "Width": 250,
+        "Height": 50,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "T\u1EA3i l\u1EA1i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "S\u1EEDa",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "X\u00F3a",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Nguy\u00EAn li\u1EC7u \u0026 t\u1ED3n kho",
+      "Tra c\u1EE9u nguy\u00EAn li\u1EC7u, \u0111\u01A1n v\u1ECB v\u00E0 s\u1ED1 l\u01B0\u1EE3ng t\u1ED3n.",
+      "14 nguy\u00EAn li\u1EC7u trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201314",
+      "\u0110\u00E3 c\u1EADp nh\u1EADt 21:38:23"
+    ]
+  },
+  {
+    "Role": "STORE",
+    "Module": "Products",
+    "Tab": null,
+    "Dpi": 120,
+    "Status": "PASS",
+    "Rows": 11,
+    "GridWidth": 1038,
+    "ColumnWidth": 1017,
+    "WorkspaceWidth": 1100,
+    "Buttons": [
+      {
+        "Text": "T\u1EA3i l\u1EA1i",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "C\u00F4ng th\u1EE9c",
+        "Width": 200,
+        "Height": 45,
+        "Enabled": true,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Tr\u01B0\u1EDBc",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      },
+      {
+        "Text": "Sau",
+        "Width": 110,
+        "Height": 45,
+        "Enabled": false,
+        "Fits": true,
+        "Parent": "FlowLayoutPanel"
+      }
+    ],
+    "States": [
+      "Menu v\u00E0 c\u00F4ng th\u1EE9c",
+      "Qu\u1EA3n l\u00FD s\u1EA3n ph\u1EA9m v\u00E0 c\u00F4ng th\u1EE9c pha ch\u1EBF.",
+      "11 d\u00F2ng trong trang",
+      "Trang 1 \u00B7 Hi\u1EC3n th\u1ECB 1\u201311",
+      "S\u1EB5n s\u00E0ng"
+    ]
+  }
+]

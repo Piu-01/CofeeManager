@@ -1,0 +1,12 @@
+{
+  "DeviceDpi": 96,
+  "Client": {
+    "IsEmpty": false,
+    "Width": 1366,
+    "Height": 768
+  },
+  "Awareness": "DpiUnawareGdiScaled; desktop125%; not a Windows100% acceptance",
+  "Database": "CoffeeManager_Test_G03_20261019_215457_29e552a9_demo",
+  "IdentitySource": "Test fixture metadata, not login test",
+  "NativeForm": "CafeManager.WinForms.Forms.MainForm"
+}

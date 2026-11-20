@@ -1,0 +1,23 @@
+[
+  {
+    "Case": "ShellStartup",
+    "DeviceDpi": 120,
+    "SidebarWidth": 250,
+    "ExpectedSidebarWidth": 250,
+    "Pass": true
+  },
+  {
+    "Case": "ShellTabs",
+    "ClientSize": {
+      "IsEmpty": false,
+      "Width": 1393,
+      "Height": 48
+    },
+    "Scroll": false,
+    "Pass": true
+  },
+  {
+    "Case": "Exception",
+    "Error": "System.ObjectDisposedException: The CancellationTokenSource has been disposed.\r\n   at System.Threading.CancellationTokenSource.Cancel()\r\n   at CafeManager.WinForms.Modules.Catalogs.CatalogsControl.Dispose(Boolean disposing) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\Modules\\Catalogs\\CatalogsControl.cs:line 158\r\n   at System.ComponentModel.Component.Dispose()\r\n   at Program.\u003C\u003Ec__DisplayClass2_0.\u003C\u003CMain\u003Eb__3\u003Ed.MoveNext() in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\orbit-9-remaining-screens\\runs\\UiProbe\\Program.cs:line 78\r\n   at Program.\u003C\u003Ec__DisplayClass2_0.\u003C\u003CMain\u003Eb__3\u003Ed.MoveNext()"
+  }
+]

@@ -1,0 +1,107 @@
+Window: "CoffeeManager", App: CafeManager.WinForms.exe.
+	0 window CoffeeManager Secondary Actions: Raise
+		1 pane
+			2 pane
+				3 text CoffeeManager
+				4 text KHÔNG GIAN QUẢN LÝ
+				5 button Trang phiên
+				6 button Danh mục nền
+				7 button Khách hàng
+				8 button Bàn / Khu vực
+				9 button Menu / Công thức
+				10 button Nguyên liệu / Tồn
+				11 button Ưu đãi / Điểm
+				12 button Thông tin hệ thống
+				13 button Đăng xuất ID: logout
+				14 text Nguyen Van An
+				15 text Quản trị viên · ADMIN
+				16 text Phiên đang hoạt động.
+			17 pane
+				18 text Kho nguyên liệu / Tồn hiện tại
+				19 text Nguyen Van An · ADMIN
+			20 pane Nguyen Van An · ADMIN
+				103 pane Nguyen Van An · ADMIN ID: 3213206
+					104 pane ID: 14354574
+						105 text INVENTORY WORKSPACE
+						106 text Nguyên liệu & tồn kho
+						107 text Tra cứu nguyên liệu, đơn vị và số lượng tồn.
+						108 pane Tra cứu nguyên liệu, đơn vị và số lượng tồn.
+							109 button Thêm nguyên liệu
+						110 pane
+							111 pane ID: 13371818
+								112 edit (settable, string) Description: Tìm tên hoặc mã nguyên liệu…
+							113 pane
+								114 pane ID: 1706996
+									115 combo box (settable, string) Tất cả đơn vị Value: Tất cả đơn vị
+										116 text
+										117 button Open
+								118 button Tải lại danh sách
+							119 text 14 nguyên liệu
+							120 pane 14 nguyên liệu
+								121 button Mở sổ
+								122 button Sửa
+								123 button Xóa
+							124 pane
+								125 data grid
+									126 custom Top Row
+										127 header Top Left Header Cell ID: 4217746811
+										128 header MÃ ID: 4229381954
+										129 header NGUYÊN LIỆU ID: 4246421085
+										130 header ĐƠN VỊ ID: 4266603199
+										131 header TỒN HIỆN TẠI ID: 4260535220
+									138 custom Row 1
+										139 header Row 1 ID: 4218445665
+										140 item MÃ Row 1 Value: NVL01 ID: 4238467064
+										141 item NGUYÊN LIỆU Row 1 Value: Ca phe hat ID: 4230309794
+										142 item ĐƠN VỊ Row 1 Value: Kg ID: 4258483006
+										143 item TỒN HIỆN TẠI Row 1 Value: 96,7400 ID: 4222081585
+									144 custom Row 2
+										145 header Row 2 ID: 4240800445
+										146 item MÃ Row 2 Value: NVL02 ID: 4260643744
+										147 item NGUYÊN LIỆU Row 2 Value: Sua tuoi ID: 4250171172
+										148 item ĐƠN VỊ Row 2 Value: Lit ID: 4248245463
+										149 item TỒN HIỆN TẠI Row 2 Value: 98,1600 ID: 4223211251
+									150 custom Row 3
+										151 header Row 3 ID: 4230387433
+										152 item MÃ Row 3 Value: NVL03 ID: 4259492321
+										153 item NGUYÊN LIỆU Row 3 Value: Duong ID: 4235202676
+										154 item ĐƠN VỊ Row 3 Value: Kg ID: 4254981616
+										155 item TỒN HIỆN TẠI Row 3 Value: 72,7050 ID: 4243672370
+									156 custom Row 4
+										157 header Row 4 ID: 4265764465
+										158 item MÃ Row 4 Value: NVL04 ID: 4249631678
+										159 item NGUYÊN LIỆU Row 4 Value: Tra xanh ID: 4241232046
+										160 item ĐƠN VỊ Row 4 Value: Kg ID: 4266254554
+										161 item TỒN HIỆN TẠI Row 4 Value: 21,9650 ID: 4256002840
+									162 custom Row 5
+										163 header Row 5 ID: 422130189
+										164 item MÃ Row 5 Value: NVL05 ID: 4227692457
+										165 item NGUYÊN LIỆU Row 5 Value: Bot matcha ID: 4224457626
+										166 item ĐƠN VỊ Row 5 Value: Kg ID: 4249513688
+										167 item TỒN HIỆN TẠI Row 5 Value: 5,0000 ID: 4239698174
+									168 custom Row 6
+										169 header Row 6 ID: 4265213991
+										170 item MÃ Row 6 Value: NVL06 ID: 4242475523
+										171 item NGUYÊN LIỆU Row 6 Value: Tran chau ID: 4215310899
+										172 item ĐƠN VỊ Row 6 Value: Kg ID: 4264823964
+										173 item TỒN HIỆN TẠI Row 6 Value: 9,7000 ID: 4237405167
+									174 custom Row 7
+										175 header Row 7 ID: 4213240155
+										176 item MÃ Row 7 Value: NVL07 ID: 4237904288
+										177 item NGUYÊN LIỆU Row 7 Value: Bo ID: 4222993699
+										178 item ĐƠN VỊ Row 7 Value: Kg ID: 4230482631
+										179 item TỒN HIỆN TẠI Row 7 Value: 22,7000 ID: 4260729893
+							132 pane ID: 2034824
+								133 text Hiển thị 1–7 / 14
+								134 button (disabled) Trang trước
+								135 text 1 / 2
+								136 button Trang sau
+						137 text Đã cập nhật 12:07:56
+		97 title bar (settable, string) Value: CoffeeManager
+			98 menu bar System ID: MenuBar
+				99 menu item System
+			100 button Minimize
+			101 button Restore
+			102 button Close
+
+The focused UI element is 112 edit (settable, string) Description: Tìm tên hoặc mã nguyên liệu….

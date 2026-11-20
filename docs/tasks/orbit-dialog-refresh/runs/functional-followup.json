@@ -1,0 +1,52 @@
+[
+  {
+    "id": "D06-retry-keeps-id-and-captured-payload",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D06-readonly-no-write-actions",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D05-date-typed-and-invalid-input",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D04-picker-close-after-load",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D04-picker-guest",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "FIXTURE-catalog-code",
+    "status": "PASS",
+    "actual": "DM011; Dlg1022204150; created in guarded DB test"
+  },
+  {
+    "id": "D09-catalog-real-editor-write-readback-cleanup",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D05-catalog-invalid-retains-input-and-focus",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D02-PT010-protected-support",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  },
+  {
+    "id": "D04-customer-orders-data-empty-and-page50",
+    "status": "PASS",
+    "actual": "Expected assertions satisfied"
+  }
+]

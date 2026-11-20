@@ -1,0 +1,66 @@
+Window: "CoffeeManager", App: CafeManager.WinForms.exe.
+	0 window CoffeeManager Secondary Actions: Raise
+		1 pane
+			2 pane
+				3 text CoffeeManager
+				4 text KHÔNG GIAN QUẢN LÝ
+				5 button Trang phiên
+				6 button Danh mục nền
+				7 button Khách hàng
+				8 button Bàn / Khu vực
+				9 button Menu / Công thức
+				10 button Nguyên liệu / Tồn
+				11 button Ưu đãi / Điểm
+				12 button Thông tin hệ thống
+				13 button Đăng xuất ID: logout
+				14 text Nguyen Van An
+				15 text Quản trị viên · ADMIN
+				16 text Phiên đang hoạt động.
+			17 pane
+				18 text Quản lý / Lịch sử điểm
+				19 text Nguyen Van An · ADMIN
+			20 pane Nguyen Van An · ADMIN
+				544 pane Nguyen Van An · ADMIN ID: 4980924
+					545 pane ID: 658848
+						546 pane ID: 12519442
+							547 pane ID: 10750840
+								548 text LOYALTY WORKSPACE
+								549 text Lịch sử điểm
+								550 text Tra cứu lịch sử điểm khách hàng · Chỉ đọc.
+								551 pane Tra cứu lịch sử điểm khách hàng · Chỉ đọc.
+									552 button Điều chỉnh điểm
+								553 pane
+									554 pane
+										555 button Khuyến mãi
+										556 button Hạng thành viên
+										557 button Điểm khách hàng
+								558 pane
+									559 pane
+										560 text Chưa chọn khách hàng
+										561 button Chọn khách
+									562 pane
+										563 button Tải lại danh sách
+									564 pane 0 giao dịch
+										565 pane Chọn khách hàng để xem lịch sử điểm. ID: 6949278
+										566 data grid 0 giao dịch
+											567 custom Top Row
+												568 header MÃ GD ID: 4246840212
+												569 header THỜI ĐIỂM ID: 424942988
+												570 header LOẠI ID: 4264258851
+												571 header ĐIỂM ID: 4230058696
+												572 header LÝ DO ID: 4255218736
+												573 header HÓA ĐƠN ID: 4246754932
+									574 pane ID: 18548314
+										575 text 0 giao dịch
+										576 button (disabled) Trang trước
+										577 text 1 / 1
+										578 button (disabled) Trang sau
+								579 text Đã cập nhật 15:25:57
+		21 title bar (settable, string) Value: CoffeeManager
+			22 menu bar System ID: MenuBar
+				111 menu item System
+			24 button Minimize
+			25 button Maximize
+			26 button Close
+
+The focused UI element is 0 window CoffeeManager Secondary Actions: Raise.
