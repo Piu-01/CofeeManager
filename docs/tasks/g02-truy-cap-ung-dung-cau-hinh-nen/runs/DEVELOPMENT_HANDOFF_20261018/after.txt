@@ -1,0 +1,48 @@
+TenDangNhap                                        MaVT  HoatDong                                                                                                     
+-------------------------------------------------- ----- -------- ----------------------------------------------------------------------------------------------------
+admin                                              ADMIN        1                                                                                                     
+kho                                                STORE        1                                                                                                     
+thungan                                            CASH         1                                                                                                     
+name                                                                                                                             RowsCount           
+-------------------------------------------------------------------------------------------------------------------------------- --------------------
+AppSetupState                                                                                                                                       1
+BAN                                                                                                                                                10
+BANGLUONG                                                                                                                                           2
+CALAMVIEC                                                                                                                                          10
+CatalogCreateReceipt                                                                                                                                0
+CHAMCONG                                                                                                                                           10
+CHITIET_HD                                                                                                                                         18
+CHITIET_KK                                                                                                                                         12
+CHITIET_PN                                                                                                                                         12
+CHITIET_PX                                                                                                                                         10
+CHITIET_THANHTOAN                                                                                                                                  10
+CHUCVU                                                                                                                                             10
+CONGNO_NCC                                                                                                                                          9
+CONGTHUC                                                                                                                                           24
+DANHMUC_SP                                                                                                                                         10
+DANHMUC_THUCHI                                                                                                                                     12
+DevelopmentMarker                                                                                                                                   1
+DOITACGIAOHANG                                                                                                                                      2
+HANGTHANHVIEN                                                                                                                                      10
+HOADON                                                                                                                                             10
+KHACHHANG                                                                                                                                          10
+KHUVUC                                                                                                                                             10
+KHUYENMAI                                                                                                                                          11
+LICHSU_DIEM                                                                                                                                        10
+NGUYENVATLIEU                                                                                                                                      12
+NHACUNGCAP                                                                                                                                         10
+NHANVIEN                                                                                                                                           10
+PaymentMethodSupport                                                                                                                               10
+PHIEUKIEMKE                                                                                                                                         1
+PHIEUNHAP                                                                                                                                          10
+PHIEUTHUCHI                                                                                                                                        16
+PHIEUXUAT                                                                                                                                          10
+PHUONGTHUCTT                                                                                                                                       10
+SANPHAM                                                                                                                                            10
+SchemaMigrations                                                                                                                                    3
+SystemExpenseCategory                                                                                                                               3
+TAIKHOAN                                                                                                                                            3
+TAISAN_CODINH                                                                                                                                      10
+THANHTOAN_CONGNO                                                                                                                                    6
+TIEUHAO_HOADON                                                                                                                                     37
+VAITRO                                                                                                                                              3

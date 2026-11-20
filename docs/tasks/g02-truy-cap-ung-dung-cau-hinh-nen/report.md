@@ -1,5 +1,22 @@
 # G02 — Kết quả nghiệm thu và bàn giao kỹ thuật
 
+**Làm rõ09/11/2026 — label nhóm, không ẩn tab:** đã bỏ accordion/chevron/nút
+nhóm theo chỉ dẫn mới. Header/footer giữ cố định; mọi tab được phép theo role
+luôn hiện trong danh sách cuộn. Regression bản label299/299PASS tại125%,
+Debug/Release0warning/0error;230file source không đổi trong lượt test.
+Xem [biên bản hiện hành](t07-khung-giao-dien-dieu-huong/sidebar-labels-test-results.md).
+Kết quả297/297 bên dưới là lịch sử bản accordion đã thay thế; hình thức vẫn
+do người dùng tự kiểm, DPI100/150%NOT RUN. Chưa commit/push.
+
+**Bổ sung09/11/2026 — đã duyệt/sửa, regression sidebar297/297PASS:** header/footer
+cố định, menu cuộn riêng và chia5nhóm thu gọn; giữ menu/quyền/module hiện có.
+WinForms thật tại125%,3role, client1280×720/1366×768/800×640; buildDebug/Release
+0warning/0error,230file source giữ nguyên trong lượt test. Nội dung module dùng
+stub, permission đọc DB test schema016, không ghi dữ liệu; không thay nghiệm thu
+CRUD/login/G02. Lượt1 có1FAIL phép đo transaction của runner đã đối chiếu/sửa
+ngoài lượt, giữ evidence; không có bug sản phẩm mới. Hình thứcSKIPPED để người
+dùng tự kiểm, DPI100/150%NOT RUN. Xem [biên bản và raw evidence](t07-khung-giao-dien-dieu-huong/sidebar-ui-test-results.md).
+
 **Bổ sung24/10/2026:** người dùng duyệt sửa menu theo role, giữ ba role SQL.
 T07-NAV-20261024 đã sửa; componentMainForm/startup18/18PASS ở125%, buildDebug/Release
 sạch. [Biên bản và giới hạn kiểm](t07-khung-giao-dien-dieu-huong/menu-fix-test-results.md).

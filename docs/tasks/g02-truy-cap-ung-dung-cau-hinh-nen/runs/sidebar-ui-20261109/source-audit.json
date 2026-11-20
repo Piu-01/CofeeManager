@@ -1,0 +1,19 @@
+{
+  "SourceFiles": 230,
+  "ChangedSourceFiles": 0,
+  "ChangedPaths": [],
+  "Binaries": [
+    {
+      "Path": "bin/CafeManager.WinForms.dll",
+      "SHA256": "9D60E60EDA734732438843943776BE5281303EBAF44E1B2011AC64549014FCC2"
+    },
+    {
+      "Path": "app-debug/CafeManager.WinForms.dll",
+      "SHA256": "9D60E60EDA734732438843943776BE5281303EBAF44E1B2011AC64549014FCC2"
+    },
+    {
+      "Path": "app-release/CafeManager.WinForms.dll",
+      "SHA256": "0CCAA8154ED26375108FF11BA4592021DA1F5796AD1BDC3206C18FFE40252778"
+    }
+  ]
+}

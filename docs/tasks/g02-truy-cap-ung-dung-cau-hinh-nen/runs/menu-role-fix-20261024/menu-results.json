@@ -1,0 +1,168 @@
+{
+  "Database": "CoffeeManager_Test_G04_20261024_152759_12204643_manual",
+  "Schema": 16,
+  "ComponentTest": "Real MainForm; CASH real SalesControl/BLL/runtime SQL reads; other module bodies are stubs, no handler/CRUD coverage claimed",
+  "Results": [
+    {
+      "Name": "ADMIN exact ordered menu",
+      "Outcome": "PASS",
+      "Actual": {
+        "Targets": [
+          "Sales",
+          "Invoices",
+          "Delivery",
+          "Customers",
+          "Tables",
+          "Products",
+          "Materials",
+          "Loyalty"
+        ],
+        "Buttons": [
+          "Trang phi\u00EAn",
+          "Danh m\u1EE5c n\u1EC1n",
+          "B\u00E1n h\u00E0ng",
+          "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+          "Giao h\u00E0ng",
+          "Kh\u00E1ch h\u00E0ng",
+          "B\u00E0n / Khu v\u1EF1c",
+          "Menu / C\u00F4ng th\u1EE9c",
+          "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+          "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+          "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+          "\u0110\u0103ng xu\u1EA5t"
+        ]
+      }
+    },
+    {
+      "Name": "ADMIN catalog visibility",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN workspace role label",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN initial screen",
+      "Outcome": "PASS",
+      "Actual": {
+        "Actual": "SessionHomeControl",
+        "Status": "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "DeviceDpi": 120,
+        "Breadcrumb": "Qu\u1EA3n l\u00FD / Trang phi\u00EAn"
+      }
+    },
+    {
+      "Name": "CASH exact ordered menu",
+      "Outcome": "PASS",
+      "Actual": {
+        "Targets": [
+          "Sales",
+          "Invoices",
+          "Delivery",
+          "Customers",
+          "Materials"
+        ],
+        "Buttons": [
+          "Trang phi\u00EAn",
+          "B\u00E1n h\u00E0ng",
+          "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+          "Giao h\u00E0ng",
+          "Kh\u00E1ch h\u00E0ng",
+          "T\u1ED3n ph\u1EE5c v\u1EE5 b\u00E1n",
+          "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+          "\u0110\u0103ng xu\u1EA5t"
+        ]
+      }
+    },
+    {
+      "Name": "CASH catalog visibility",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH workspace role label",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH initial screen",
+      "Outcome": "PASS",
+      "Actual": {
+        "Actual": "SalesControl",
+        "Status": "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "DeviceDpi": 120,
+        "Breadcrumb": "Thu ng\u00E2n / B\u00E1n h\u00E0ng"
+      }
+    },
+    {
+      "Name": "CASH POS table/customer/promotion entry points remain",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH real POS read succeeded",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH workspace title",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE exact ordered menu",
+      "Outcome": "PASS",
+      "Actual": {
+        "Targets": [
+          "Materials",
+          "Products"
+        ],
+        "Buttons": [
+          "Trang phi\u00EAn",
+          "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+          "Menu / C\u00F4ng th\u1EE9c",
+          "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+          "\u0110\u0103ng xu\u1EA5t"
+        ]
+      }
+    },
+    {
+      "Name": "STORE catalog visibility",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE workspace role label",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE initial screen",
+      "Outcome": "PASS",
+      "Actual": {
+        "Actual": "SessionHomeControl",
+        "Status": "Phi\u00EAn \u0111ang ho\u1EA1t \u0111\u1ED9ng.",
+        "DeviceDpi": 120,
+        "Breadcrumb": "Kho / Trang phi\u00EAn"
+      }
+    },
+    {
+      "Name": "Original account roles/stamps unchanged",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Fixture employees removed",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Owner transaction clean",
+      "Outcome": "PASS",
+      "Actual": null
+    }
+  ],
+  "Failed": 0
+}

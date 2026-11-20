@@ -1,0 +1,5 @@
+Three mock account passwords synchronized; business data unchanged.
+DPAPI development profile connection PASS
+admin: ADMIN, login/permission/session PASS
+thungan: CASH, login/permission/session PASS
+kho: STORE, login/permission/session PASS

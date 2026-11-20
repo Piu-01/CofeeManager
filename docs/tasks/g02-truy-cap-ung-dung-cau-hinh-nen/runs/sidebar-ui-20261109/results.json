@@ -1,0 +1,7664 @@
+{
+  "Database": "CoffeeManager_Test_G04_20261025_181739_98e5df59_checkout",
+  "Schema": 16,
+  "Mode": "Read-only SQL identity/permission checks; real MainForm/native handlers; stub module bodies; no business CRUD/login or visual acceptance",
+  "Results": [
+    {
+      "Name": "Test schema016",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN native DPI125",
+      "Outcome": "PASS",
+      "Actual": {
+        "DeviceDpi": 120,
+        "Screen": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1920,
+            "Height": 1080
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1920,
+          "Height": 1080,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1920,
+          "Bottom": 1080,
+          "IsEmpty": false
+        },
+        "WorkingArea": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1920,
+            "Height": 1020
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1920,
+          "Height": 1020,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1920,
+          "Bottom": 1020,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN complete ordered menu",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN catalog ownership/visibility",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN initial target",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN group count (empty groups hidden)",
+      "Outcome": "PASS",
+      "Actual": [
+        "B\u00E1n h\u00E0ng",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "Menu \u0026 kho",
+        "T\u00E0i ch\u00EDnh \u0026 b\u00E1o c\u00E1o",
+        "Qu\u1EA3n tr\u1ECB"
+      ]
+    },
+    {
+      "Name": "ADMIN initial single expanded group",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN group click does not navigate: B\u00E1n h\u00E0ng",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN accordion at most one open: B\u00E1n h\u00E0ng",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN group click does not navigate: Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN accordion at most one open: Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN group click does not navigate: Menu \u0026 kho",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN accordion at most one open: Menu \u0026 kho",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN group click does not navigate: T\u00E0i ch\u00EDnh \u0026 b\u00E1o c\u00E1o",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN accordion at most one open: T\u00E0i ch\u00EDnh \u0026 b\u00E1o c\u00E1o",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN group click does not navigate: Qu\u1EA3n tr\u1ECB",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN accordion at most one open: Qu\u1EA3n tr\u1ECB",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN native Space toggles once",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN native Enter toggles once",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN Tab traversal enters visible enabled control",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN ShiftTab traversal returns",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN disjoint fixed regions {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "ClientSize": {
+          "IsEmpty": false,
+          "Width": 1280,
+          "Height": 720
+        },
+        "Compact": false,
+        "Head": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 105
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 105,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 105,
+          "IsEmpty": false
+        },
+        "Viewport": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 0,
+            "Y": 105
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 455
+          },
+          "X": 0,
+          "Y": 105,
+          "Width": 249,
+          "Height": 455,
+          "Left": 0,
+          "Top": 105,
+          "Right": 249,
+          "Bottom": 560,
+          "IsEmpty": false
+        },
+        "Footer": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 0,
+            "Y": 560
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 160
+          },
+          "X": 0,
+          "Y": 560,
+          "Width": 249,
+          "Height": 160,
+          "Left": 0,
+          "Top": 560,
+          "Right": 249,
+          "Bottom": 720,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN header bounds/order {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN logout always inside footer {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN scroll moves menu only {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1280, Height=720} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 208,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 218,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 228,
+            "Height": 535
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 228,
+          "Height": 535,
+          "Left": 0,
+          "Top": 0,
+          "Right": 228,
+          "Bottom": 535,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1280, Height=720} B\u00E1n h\u00E0ng",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 198,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 198,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 216
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 208,
+          "Height": 216,
+          "Left": 0,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 216,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1280, Height=720} L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 54
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 198,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 54,
+          "Width": 198,
+          "Height": 54,
+          "Left": 10,
+          "Top": 54,
+          "Right": 208,
+          "Bottom": 108,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 216
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 208,
+          "Height": 216,
+          "Left": 0,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 216,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1280, Height=720} Giao h\u00E0ng",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 108
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 198,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 108,
+          "Width": 198,
+          "Height": 54,
+          "Left": 10,
+          "Top": 108,
+          "Right": 208,
+          "Bottom": 162,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 216
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 208,
+          "Height": 216,
+          "Left": 0,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 216,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1280, Height=720} B\u00E0n / Khu v\u1EF1c",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 162
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 198,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 162,
+          "Width": 198,
+          "Height": 54,
+          "Left": 10,
+          "Top": 162,
+          "Right": 208,
+          "Bottom": 216,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 216
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 208,
+          "Height": 216,
+          "Left": 0,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 216,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1280, Height=720} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 229,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 239,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 427
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 427,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 427,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1280, Height=720} Kh\u00E1ch h\u00E0ng",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 108
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 108,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 108,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1280, Height=720} \u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 54
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 54,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 54,
+          "Right": 229,
+          "Bottom": 108,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 108
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 108,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 108,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1280, Height=720} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 208,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 218,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 228,
+            "Height": 481
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 228,
+          "Height": 481,
+          "Left": 0,
+          "Top": 0,
+          "Right": 228,
+          "Bottom": 481,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1280, Height=720} Menu / C\u00F4ng th\u1EE9c",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 198,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 198,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 208,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1280, Height=720} Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 54
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 198,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 54,
+          "Width": 198,
+          "Height": 54,
+          "Left": 10,
+          "Top": 54,
+          "Right": 208,
+          "Bottom": 108,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 208,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1280, Height=720} Kho",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 108
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 198,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 108,
+          "Width": 198,
+          "Height": 54,
+          "Left": 10,
+          "Top": 108,
+          "Right": 208,
+          "Bottom": 162,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 208,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1280, Height=720} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 208,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 218,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 228,
+            "Height": 535
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 228,
+          "Height": 535,
+          "Left": 0,
+          "Top": 0,
+          "Right": 228,
+          "Bottom": 535,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1280, Height=720} Thu chi",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 198,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 198,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 216
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 208,
+          "Height": 216,
+          "Left": 0,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 216,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1280, Height=720} C\u00F4ng n\u1EE3",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 54
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 198,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 54,
+          "Width": 198,
+          "Height": 54,
+          "Left": 10,
+          "Top": 54,
+          "Right": 208,
+          "Bottom": 108,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 216
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 208,
+          "Height": 216,
+          "Left": 0,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 216,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1280, Height=720} T\u00E0i s\u1EA3n",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 108
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 198,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 108,
+          "Width": 198,
+          "Height": 54,
+          "Left": 10,
+          "Top": 108,
+          "Right": 208,
+          "Bottom": 162,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 216
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 208,
+          "Height": 216,
+          "Left": 0,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 216,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1280, Height=720} B\u00E1o c\u00E1o",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 162
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 198,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 162,
+          "Width": 198,
+          "Height": 54,
+          "Left": 10,
+          "Top": 162,
+          "Right": 208,
+          "Bottom": 216,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 216
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 208,
+          "Height": 216,
+          "Left": 0,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 216,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1280, Height=720} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 208,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 218,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 228,
+            "Height": 481
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 228,
+          "Height": 481,
+          "Left": 0,
+          "Top": 0,
+          "Right": 228,
+          "Bottom": 481,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1280, Height=720} Nh\u00E2n s\u1EF1",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 198,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 198,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 208,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1280, Height=720} Danh m\u1EE5c n\u1EC1n",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 54
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 198,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 54,
+          "Width": 198,
+          "Height": 54,
+          "Left": 10,
+          "Top": 54,
+          "Right": 208,
+          "Bottom": 108,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 208,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1280, Height=720} Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 108
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 198,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 108,
+          "Width": 198,
+          "Height": 54,
+          "Left": 10,
+          "Top": 108,
+          "Right": 208,
+          "Bottom": 162,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 208,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN disjoint fixed regions {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "ClientSize": {
+          "IsEmpty": false,
+          "Width": 1366,
+          "Height": 768
+        },
+        "Compact": false,
+        "Head": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 105
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 105,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 105,
+          "IsEmpty": false
+        },
+        "Viewport": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 0,
+            "Y": 105
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 503
+          },
+          "X": 0,
+          "Y": 105,
+          "Width": 249,
+          "Height": 503,
+          "Left": 0,
+          "Top": 105,
+          "Right": 249,
+          "Bottom": 608,
+          "IsEmpty": false
+        },
+        "Footer": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 0,
+            "Y": 608
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 160
+          },
+          "X": 0,
+          "Y": 608,
+          "Width": 249,
+          "Height": 160,
+          "Left": 0,
+          "Top": 608,
+          "Right": 249,
+          "Bottom": 768,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN header bounds/order {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN logout always inside footer {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN scroll moves menu only {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 208,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 218,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 228,
+            "Height": 535
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 228,
+          "Height": 535,
+          "Left": 0,
+          "Top": 0,
+          "Right": 228,
+          "Bottom": 535,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} B\u00E1n h\u00E0ng",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 198,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 198,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 216
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 208,
+          "Height": 216,
+          "Left": 0,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 216,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 54
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 198,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 54,
+          "Width": 198,
+          "Height": 54,
+          "Left": 10,
+          "Top": 54,
+          "Right": 208,
+          "Bottom": 108,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 216
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 208,
+          "Height": 216,
+          "Left": 0,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 216,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} Giao h\u00E0ng",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 108
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 198,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 108,
+          "Width": 198,
+          "Height": 54,
+          "Left": 10,
+          "Top": 108,
+          "Right": 208,
+          "Bottom": 162,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 216
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 208,
+          "Height": 216,
+          "Left": 0,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 216,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} B\u00E0n / Khu v\u1EF1c",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 162
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 198,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 162,
+          "Width": 198,
+          "Height": 54,
+          "Left": 10,
+          "Top": 162,
+          "Right": 208,
+          "Bottom": 216,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 216
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 208,
+          "Height": 216,
+          "Left": 0,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 216,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 229,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 239,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 427
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 427,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 427,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} Kh\u00E1ch h\u00E0ng",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 108
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 108,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 108,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} \u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 54
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 54,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 54,
+          "Right": 229,
+          "Bottom": 108,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 108
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 108,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 108,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 229,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 239,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 481
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 481,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 481,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} Menu / C\u00F4ng th\u1EE9c",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 54
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 54,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 54,
+          "Right": 229,
+          "Bottom": 108,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} Kho",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 108
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 108,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 108,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 208,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 218,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 228,
+            "Height": 535
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 228,
+          "Height": 535,
+          "Left": 0,
+          "Top": 0,
+          "Right": 228,
+          "Bottom": 535,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} Thu chi",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 198,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 198,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 216
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 208,
+          "Height": 216,
+          "Left": 0,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 216,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} C\u00F4ng n\u1EE3",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 54
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 198,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 54,
+          "Width": 198,
+          "Height": 54,
+          "Left": 10,
+          "Top": 54,
+          "Right": 208,
+          "Bottom": 108,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 216
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 208,
+          "Height": 216,
+          "Left": 0,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 216,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} T\u00E0i s\u1EA3n",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 108
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 198,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 108,
+          "Width": 198,
+          "Height": 54,
+          "Left": 10,
+          "Top": 108,
+          "Right": 208,
+          "Bottom": 162,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 216
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 208,
+          "Height": 216,
+          "Left": 0,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 216,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} B\u00E1o c\u00E1o",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 162
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 198,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 162,
+          "Width": 198,
+          "Height": 54,
+          "Left": 10,
+          "Top": 162,
+          "Right": 208,
+          "Bottom": 216,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 216
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 208,
+          "Height": 216,
+          "Left": 0,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 216,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 229,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 239,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 481
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 481,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 481,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} Nh\u00E2n s\u1EF1",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} Danh m\u1EE5c n\u1EC1n",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 54
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 54,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 54,
+          "Right": 229,
+          "Bottom": 108,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 108
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 108,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 108,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN disjoint fixed regions {Width=800, Height=640}",
+      "Outcome": "PASS",
+      "Actual": {
+        "ClientSize": {
+          "IsEmpty": false,
+          "Width": 800,
+          "Height": 640
+        },
+        "Compact": true,
+        "Head": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 77,
+            "Height": 62
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 77,
+          "Height": 62,
+          "Left": 0,
+          "Top": 0,
+          "Right": 77,
+          "Bottom": 62,
+          "IsEmpty": false
+        },
+        "Viewport": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 0,
+            "Y": 62
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 77,
+            "Height": 513
+          },
+          "X": 0,
+          "Y": 62,
+          "Width": 77,
+          "Height": 513,
+          "Left": 0,
+          "Top": 62,
+          "Right": 77,
+          "Bottom": 575,
+          "IsEmpty": false
+        },
+        "Footer": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 0,
+            "Y": 575
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 77,
+            "Height": 65
+          },
+          "X": 0,
+          "Y": 575,
+          "Width": 77,
+          "Height": 65,
+          "Left": 0,
+          "Top": 575,
+          "Right": 77,
+          "Bottom": 640,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN header bounds/order {Width=800, Height=640}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN logout always inside footer {Width=800, Height=640}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN scroll moves menu only {Width=800, Height=640}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN compact exposes all targets",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN compact tooltips preserve names",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN compact icon fits despite scrollbar",
+      "Outcome": "PASS",
+      "Actual": [
+        {
+          "Text": "Trang phi\u00EAn",
+          "Width": 52,
+          "Height": 54
+        },
+        {
+          "Text": "B\u00E1n h\u00E0ng",
+          "Width": 52,
+          "Height": 54
+        },
+        {
+          "Text": "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+          "Width": 52,
+          "Height": 54
+        },
+        {
+          "Text": "Giao h\u00E0ng",
+          "Width": 52,
+          "Height": 54
+        },
+        {
+          "Text": "B\u00E0n / Khu v\u1EF1c",
+          "Width": 52,
+          "Height": 54
+        },
+        {
+          "Text": "Kh\u00E1ch h\u00E0ng",
+          "Width": 52,
+          "Height": 54
+        },
+        {
+          "Text": "\u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+          "Width": 52,
+          "Height": 54
+        },
+        {
+          "Text": "Menu / C\u00F4ng th\u1EE9c",
+          "Width": 52,
+          "Height": 54
+        },
+        {
+          "Text": "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+          "Width": 52,
+          "Height": 54
+        },
+        {
+          "Text": "Kho",
+          "Width": 52,
+          "Height": 54
+        },
+        {
+          "Text": "Thu chi",
+          "Width": 52,
+          "Height": 54
+        },
+        {
+          "Text": "C\u00F4ng n\u1EE3",
+          "Width": 52,
+          "Height": 54
+        },
+        {
+          "Text": "T\u00E0i s\u1EA3n",
+          "Width": 52,
+          "Height": 54
+        },
+        {
+          "Text": "B\u00E1o c\u00E1o",
+          "Width": 52,
+          "Height": 54
+        },
+        {
+          "Text": "Nh\u00E2n s\u1EF1",
+          "Width": 52,
+          "Height": 54
+        },
+        {
+          "Text": "Danh m\u1EE5c n\u1EC1n",
+          "Width": 52,
+          "Height": 54
+        },
+        {
+          "Text": "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+          "Width": 52,
+          "Height": 54
+        }
+      ]
+    },
+    {
+      "Name": "ADMIN disjoint fixed regions {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "ClientSize": {
+          "IsEmpty": false,
+          "Width": 1366,
+          "Height": 768
+        },
+        "Compact": false,
+        "Head": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 105
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 105,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 105,
+          "IsEmpty": false
+        },
+        "Viewport": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 0,
+            "Y": 105
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 503
+          },
+          "X": 0,
+          "Y": 105,
+          "Width": 249,
+          "Height": 503,
+          "Left": 0,
+          "Top": 105,
+          "Right": 249,
+          "Bottom": 608,
+          "IsEmpty": false
+        },
+        "Footer": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 0,
+            "Y": 608
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 160
+          },
+          "X": 0,
+          "Y": 608,
+          "Width": 249,
+          "Height": 160,
+          "Left": 0,
+          "Top": 608,
+          "Right": 249,
+          "Bottom": 768,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN header bounds/order {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN logout always inside footer {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN scroll moves menu only {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 208,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 218,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 228,
+            "Height": 535
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 228,
+          "Height": 535,
+          "Left": 0,
+          "Top": 0,
+          "Right": 228,
+          "Bottom": 535,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} B\u00E1n h\u00E0ng",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 198,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 198,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 216
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 208,
+          "Height": 216,
+          "Left": 0,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 216,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 54
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 198,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 54,
+          "Width": 198,
+          "Height": 54,
+          "Left": 10,
+          "Top": 54,
+          "Right": 208,
+          "Bottom": 108,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 216
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 208,
+          "Height": 216,
+          "Left": 0,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 216,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} Giao h\u00E0ng",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 108
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 198,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 108,
+          "Width": 198,
+          "Height": 54,
+          "Left": 10,
+          "Top": 108,
+          "Right": 208,
+          "Bottom": 162,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 216
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 208,
+          "Height": 216,
+          "Left": 0,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 216,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} B\u00E0n / Khu v\u1EF1c",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 162
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 198,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 162,
+          "Width": 198,
+          "Height": 54,
+          "Left": 10,
+          "Top": 162,
+          "Right": 208,
+          "Bottom": 216,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 216
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 208,
+          "Height": 216,
+          "Left": 0,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 216,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 229,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 239,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 427
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 427,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 427,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} Kh\u00E1ch h\u00E0ng",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 108
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 108,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 108,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} \u01AFu \u0111\u00E3i / \u0110i\u1EC3m",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 54
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 54,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 54,
+          "Right": 229,
+          "Bottom": 108,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 108
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 108,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 108,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 229,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 239,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 481
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 481,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 481,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} Menu / C\u00F4ng th\u1EE9c",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 54
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 54,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 54,
+          "Right": 229,
+          "Bottom": 108,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} Kho",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 108
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 108,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 108,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 208,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 218,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 228,
+            "Height": 535
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 228,
+          "Height": 535,
+          "Left": 0,
+          "Top": 0,
+          "Right": 228,
+          "Bottom": 535,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} Thu chi",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 198,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 198,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 216
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 208,
+          "Height": 216,
+          "Left": 0,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 216,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} C\u00F4ng n\u1EE3",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 54
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 198,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 54,
+          "Width": 198,
+          "Height": 54,
+          "Left": 10,
+          "Top": 54,
+          "Right": 208,
+          "Bottom": 108,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 216
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 208,
+          "Height": 216,
+          "Left": 0,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 216,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} T\u00E0i s\u1EA3n",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 108
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 198,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 108,
+          "Width": 198,
+          "Height": 54,
+          "Left": 10,
+          "Top": 108,
+          "Right": 208,
+          "Bottom": 162,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 216
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 208,
+          "Height": 216,
+          "Left": 0,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 216,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} B\u00E1o c\u00E1o",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 162
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 198,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 162,
+          "Width": 198,
+          "Height": 54,
+          "Left": 10,
+          "Top": 162,
+          "Right": 208,
+          "Bottom": 216,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 208,
+            "Height": 216
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 208,
+          "Height": 216,
+          "Left": 0,
+          "Top": 0,
+          "Right": 208,
+          "Bottom": 216,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 229,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 239,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 481
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 481,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 481,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} Nh\u00E2n s\u1EF1",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} Danh m\u1EE5c n\u1EC1n",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 54
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 54,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 54,
+          "Right": 229,
+          "Bottom": 108,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN row bounds {Width=1366, Height=768} Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 108
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 108,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 108,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN external navigation reveals Sales",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN selected target scrolled into viewport Sales",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN external navigation reveals Invoices",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN selected target scrolled into viewport Invoices",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN external navigation reveals Delivery",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN selected target scrolled into viewport Delivery",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN external navigation reveals Tables",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN selected target scrolled into viewport Tables",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN external navigation reveals Customers",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN selected target scrolled into viewport Customers",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN external navigation reveals Loyalty",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN selected target scrolled into viewport Loyalty",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN external navigation reveals Products",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN selected target scrolled into viewport Products",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN external navigation reveals Materials",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN selected target scrolled into viewport Materials",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN external navigation reveals Inventory",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN selected target scrolled into viewport Inventory",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN external navigation reveals Finance",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN selected target scrolled into viewport Finance",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN external navigation reveals Debt",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN selected target scrolled into viewport Debt",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN external navigation reveals Assets",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN selected target scrolled into viewport Assets",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN external navigation reveals Reports",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN selected target scrolled into viewport Reports",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN external navigation reveals HumanResources",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN selected target scrolled into viewport HumanResources",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN navigation click handler and repeat guard",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN module cached and input retained",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN busy guard preserves page",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN refuse discard retains draft/selection",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN approve discard navigates once",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN modal blocks navigation",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN native logout handler once and session revoked",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH native DPI125",
+      "Outcome": "PASS",
+      "Actual": {
+        "DeviceDpi": 120,
+        "Screen": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1920,
+            "Height": 1080
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1920,
+          "Height": 1080,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1920,
+          "Bottom": 1080,
+          "IsEmpty": false
+        },
+        "WorkingArea": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1920,
+            "Height": 1020
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1920,
+          "Height": 1020,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1920,
+          "Bottom": 1020,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH complete ordered menu",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH catalog ownership/visibility",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH initial target",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH group count (empty groups hidden)",
+      "Outcome": "PASS",
+      "Actual": [
+        "B\u00E1n h\u00E0ng",
+        "Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+        "Menu \u0026 kho",
+        "Qu\u1EA3n tr\u1ECB"
+      ]
+    },
+    {
+      "Name": "CASH initial single expanded group",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH group click does not navigate: B\u00E1n h\u00E0ng",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH accordion at most one open: B\u00E1n h\u00E0ng",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH group click does not navigate: Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH accordion at most one open: Kh\u00E1ch h\u00E0ng \u0026 \u01B0u \u0111\u00E3i",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH group click does not navigate: Menu \u0026 kho",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH accordion at most one open: Menu \u0026 kho",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH group click does not navigate: Qu\u1EA3n tr\u1ECB",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH accordion at most one open: Qu\u1EA3n tr\u1ECB",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH native Space toggles once",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH native Enter toggles once",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH Tab traversal enters visible enabled control",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH ShiftTab traversal returns",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH disjoint fixed regions {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "ClientSize": {
+          "IsEmpty": false,
+          "Width": 1280,
+          "Height": 720
+        },
+        "Compact": false,
+        "Head": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 105
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 105,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 105,
+          "IsEmpty": false
+        },
+        "Viewport": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 0,
+            "Y": 105
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 455
+          },
+          "X": 0,
+          "Y": 105,
+          "Width": 249,
+          "Height": 455,
+          "Left": 0,
+          "Top": 105,
+          "Right": 249,
+          "Bottom": 560,
+          "IsEmpty": false
+        },
+        "Footer": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 0,
+            "Y": 560
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 160
+          },
+          "X": 0,
+          "Y": 560,
+          "Width": 249,
+          "Height": 160,
+          "Left": 0,
+          "Top": 560,
+          "Right": 249,
+          "Bottom": 720,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH header bounds/order {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH logout always inside footer {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH scroll moves menu only {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH row bounds {Width=1280, Height=720} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 229,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 239,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 431
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 431,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 431,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH row bounds {Width=1280, Height=720} B\u00E1n h\u00E0ng",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH row bounds {Width=1280, Height=720} L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 54
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 54,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 54,
+          "Right": 229,
+          "Bottom": 108,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH row bounds {Width=1280, Height=720} Giao h\u00E0ng",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 108
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 108,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 108,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH row bounds {Width=1280, Height=720} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 229,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 239,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 323
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 323,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 323,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH row bounds {Width=1280, Height=720} Kh\u00E1ch h\u00E0ng",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 54,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH row bounds {Width=1280, Height=720} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 229,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 239,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 323
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 323,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 323,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH row bounds {Width=1280, Height=720} T\u1ED3n ph\u1EE5c v\u1EE5 b\u00E1n",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 54,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH row bounds {Width=1280, Height=720} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 229,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 239,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 323
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 323,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 323,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH row bounds {Width=1280, Height=720} Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 54,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH disjoint fixed regions {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "ClientSize": {
+          "IsEmpty": false,
+          "Width": 1366,
+          "Height": 768
+        },
+        "Compact": false,
+        "Head": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 105
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 105,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 105,
+          "IsEmpty": false
+        },
+        "Viewport": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 0,
+            "Y": 105
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 503
+          },
+          "X": 0,
+          "Y": 105,
+          "Width": 249,
+          "Height": 503,
+          "Left": 0,
+          "Top": 105,
+          "Right": 249,
+          "Bottom": 608,
+          "IsEmpty": false
+        },
+        "Footer": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 0,
+            "Y": 608
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 160
+          },
+          "X": 0,
+          "Y": 608,
+          "Width": 249,
+          "Height": 160,
+          "Left": 0,
+          "Top": 608,
+          "Right": 249,
+          "Bottom": 768,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH header bounds/order {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH logout always inside footer {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH scroll moves menu only {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH row bounds {Width=1366, Height=768} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 229,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 239,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 431
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 431,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 431,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH row bounds {Width=1366, Height=768} B\u00E1n h\u00E0ng",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH row bounds {Width=1366, Height=768} L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 54
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 54,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 54,
+          "Right": 229,
+          "Bottom": 108,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH row bounds {Width=1366, Height=768} Giao h\u00E0ng",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 108
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 108,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 108,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH row bounds {Width=1366, Height=768} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 229,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 239,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 323
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 323,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 323,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH row bounds {Width=1366, Height=768} Kh\u00E1ch h\u00E0ng",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 54,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH row bounds {Width=1366, Height=768} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 229,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 239,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 323
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 323,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 323,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH row bounds {Width=1366, Height=768} T\u1ED3n ph\u1EE5c v\u1EE5 b\u00E1n",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 54,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH row bounds {Width=1366, Height=768} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 229,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 239,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 323
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 323,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 323,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH row bounds {Width=1366, Height=768} Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 54,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH disjoint fixed regions {Width=800, Height=640}",
+      "Outcome": "PASS",
+      "Actual": {
+        "ClientSize": {
+          "IsEmpty": false,
+          "Width": 800,
+          "Height": 640
+        },
+        "Compact": true,
+        "Head": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 77,
+            "Height": 62
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 77,
+          "Height": 62,
+          "Left": 0,
+          "Top": 0,
+          "Right": 77,
+          "Bottom": 62,
+          "IsEmpty": false
+        },
+        "Viewport": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 0,
+            "Y": 62
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 77,
+            "Height": 513
+          },
+          "X": 0,
+          "Y": 62,
+          "Width": 77,
+          "Height": 513,
+          "Left": 0,
+          "Top": 62,
+          "Right": 77,
+          "Bottom": 575,
+          "IsEmpty": false
+        },
+        "Footer": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 0,
+            "Y": 575
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 77,
+            "Height": 65
+          },
+          "X": 0,
+          "Y": 575,
+          "Width": 77,
+          "Height": 65,
+          "Left": 0,
+          "Top": 575,
+          "Right": 77,
+          "Bottom": 640,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH header bounds/order {Width=800, Height=640}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH logout always inside footer {Width=800, Height=640}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH scroll moves menu only {Width=800, Height=640}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH compact exposes all targets",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH compact tooltips preserve names",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH compact icon fits despite scrollbar",
+      "Outcome": "PASS",
+      "Actual": [
+        {
+          "Text": "Trang phi\u00EAn",
+          "Width": 73,
+          "Height": 54
+        },
+        {
+          "Text": "B\u00E1n h\u00E0ng",
+          "Width": 73,
+          "Height": 54
+        },
+        {
+          "Text": "L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+          "Width": 73,
+          "Height": 54
+        },
+        {
+          "Text": "Giao h\u00E0ng",
+          "Width": 73,
+          "Height": 54
+        },
+        {
+          "Text": "Kh\u00E1ch h\u00E0ng",
+          "Width": 73,
+          "Height": 54
+        },
+        {
+          "Text": "T\u1ED3n ph\u1EE5c v\u1EE5 b\u00E1n",
+          "Width": 73,
+          "Height": 54
+        },
+        {
+          "Text": "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+          "Width": 73,
+          "Height": 54
+        }
+      ]
+    },
+    {
+      "Name": "CASH disjoint fixed regions {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "ClientSize": {
+          "IsEmpty": false,
+          "Width": 1366,
+          "Height": 768
+        },
+        "Compact": false,
+        "Head": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 105
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 105,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 105,
+          "IsEmpty": false
+        },
+        "Viewport": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 0,
+            "Y": 105
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 503
+          },
+          "X": 0,
+          "Y": 105,
+          "Width": 249,
+          "Height": 503,
+          "Left": 0,
+          "Top": 105,
+          "Right": 249,
+          "Bottom": 608,
+          "IsEmpty": false
+        },
+        "Footer": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 0,
+            "Y": 608
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 160
+          },
+          "X": 0,
+          "Y": 608,
+          "Width": 249,
+          "Height": 160,
+          "Left": 0,
+          "Top": 608,
+          "Right": 249,
+          "Bottom": 768,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH header bounds/order {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH logout always inside footer {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH scroll moves menu only {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH row bounds {Width=1366, Height=768} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 229,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 239,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 431
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 431,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 431,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH row bounds {Width=1366, Height=768} B\u00E1n h\u00E0ng",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH row bounds {Width=1366, Height=768} L\u1ECBch s\u1EED h\u00F3a \u0111\u01A1n",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 54
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 54,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 54,
+          "Right": 229,
+          "Bottom": 108,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH row bounds {Width=1366, Height=768} Giao h\u00E0ng",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 108
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 108,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 108,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH row bounds {Width=1366, Height=768} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 229,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 239,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 323
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 323,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 323,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH row bounds {Width=1366, Height=768} Kh\u00E1ch h\u00E0ng",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 54,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH row bounds {Width=1366, Height=768} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 229,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 239,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 323
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 323,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 323,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH row bounds {Width=1366, Height=768} T\u1ED3n ph\u1EE5c v\u1EE5 b\u00E1n",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 54,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH row bounds {Width=1366, Height=768} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 229,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 239,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 323
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 323,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 323,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH row bounds {Width=1366, Height=768} Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 54,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH external navigation reveals Sales",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH selected target scrolled into viewport Sales",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH external navigation reveals Invoices",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH selected target scrolled into viewport Invoices",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH external navigation reveals Delivery",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH selected target scrolled into viewport Delivery",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH external navigation reveals Customers",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH selected target scrolled into viewport Customers",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH external navigation reveals Materials",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH selected target scrolled into viewport Materials",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH navigation click handler and repeat guard",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH module cached and input retained",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH busy guard preserves page",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH refuse discard retains draft/selection",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH approve discard navigates once",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH modal blocks navigation",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH native logout handler once and session revoked",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE native DPI125",
+      "Outcome": "PASS",
+      "Actual": {
+        "DeviceDpi": 120,
+        "Screen": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1920,
+            "Height": 1080
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1920,
+          "Height": 1080,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1920,
+          "Bottom": 1080,
+          "IsEmpty": false
+        },
+        "WorkingArea": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1920,
+            "Height": 1020
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1920,
+          "Height": 1020,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1920,
+          "Bottom": 1020,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE complete ordered menu",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE catalog ownership/visibility",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE initial target",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE group count (empty groups hidden)",
+      "Outcome": "PASS",
+      "Actual": [
+        "Menu \u0026 kho",
+        "T\u00E0i ch\u00EDnh \u0026 b\u00E1o c\u00E1o",
+        "Qu\u1EA3n tr\u1ECB"
+      ]
+    },
+    {
+      "Name": "STORE initial single expanded group",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE group click does not navigate: Menu \u0026 kho",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE accordion at most one open: Menu \u0026 kho",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE group click does not navigate: T\u00E0i ch\u00EDnh \u0026 b\u00E1o c\u00E1o",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE accordion at most one open: T\u00E0i ch\u00EDnh \u0026 b\u00E1o c\u00E1o",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE group click does not navigate: Qu\u1EA3n tr\u1ECB",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE accordion at most one open: Qu\u1EA3n tr\u1ECB",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE native Space toggles once",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE native Enter toggles once",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE Tab traversal enters visible enabled control",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE ShiftTab traversal returns",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE disjoint fixed regions {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": {
+        "ClientSize": {
+          "IsEmpty": false,
+          "Width": 1280,
+          "Height": 720
+        },
+        "Compact": false,
+        "Head": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 105
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 105,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 105,
+          "IsEmpty": false
+        },
+        "Viewport": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 0,
+            "Y": 105
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 455
+          },
+          "X": 0,
+          "Y": 105,
+          "Width": 249,
+          "Height": 455,
+          "Left": 0,
+          "Top": 105,
+          "Right": 249,
+          "Bottom": 560,
+          "IsEmpty": false
+        },
+        "Footer": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 0,
+            "Y": 560
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 160
+          },
+          "X": 0,
+          "Y": 560,
+          "Width": 249,
+          "Height": 160,
+          "Left": 0,
+          "Top": 560,
+          "Right": 249,
+          "Bottom": 720,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE header bounds/order {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE logout always inside footer {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE scroll moves menu only {Width=1280, Height=720}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE row bounds {Width=1280, Height=720} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 229,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 239,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 381
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 381,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 381,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE row bounds {Width=1280, Height=720} Menu / C\u00F4ng th\u1EE9c",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE row bounds {Width=1280, Height=720} Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 54
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 54,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 54,
+          "Right": 229,
+          "Bottom": 108,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE row bounds {Width=1280, Height=720} Kho",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 108
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 108,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 108,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE row bounds {Width=1280, Height=720} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 229,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 239,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 273
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 273,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 273,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE row bounds {Width=1280, Height=720} C\u00F4ng n\u1EE3",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 54,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE row bounds {Width=1280, Height=720} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 229,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 239,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 273
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 273,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 273,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE row bounds {Width=1280, Height=720} Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 54,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE disjoint fixed regions {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "ClientSize": {
+          "IsEmpty": false,
+          "Width": 1366,
+          "Height": 768
+        },
+        "Compact": false,
+        "Head": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 105
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 105,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 105,
+          "IsEmpty": false
+        },
+        "Viewport": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 0,
+            "Y": 105
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 503
+          },
+          "X": 0,
+          "Y": 105,
+          "Width": 249,
+          "Height": 503,
+          "Left": 0,
+          "Top": 105,
+          "Right": 249,
+          "Bottom": 608,
+          "IsEmpty": false
+        },
+        "Footer": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 0,
+            "Y": 608
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 160
+          },
+          "X": 0,
+          "Y": 608,
+          "Width": 249,
+          "Height": 160,
+          "Left": 0,
+          "Top": 608,
+          "Right": 249,
+          "Bottom": 768,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE header bounds/order {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE logout always inside footer {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE scroll moves menu only {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE row bounds {Width=1366, Height=768} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 229,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 239,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 381
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 381,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 381,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE row bounds {Width=1366, Height=768} Menu / C\u00F4ng th\u1EE9c",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE row bounds {Width=1366, Height=768} Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 54
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 54,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 54,
+          "Right": 229,
+          "Bottom": 108,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE row bounds {Width=1366, Height=768} Kho",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 108
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 108,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 108,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE row bounds {Width=1366, Height=768} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 229,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 239,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 273
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 273,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 273,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE row bounds {Width=1366, Height=768} C\u00F4ng n\u1EE3",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 54,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE row bounds {Width=1366, Height=768} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 229,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 239,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 273
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 273,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 273,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE row bounds {Width=1366, Height=768} Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 54,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE disjoint fixed regions {Width=800, Height=640}",
+      "Outcome": "PASS",
+      "Actual": {
+        "ClientSize": {
+          "IsEmpty": false,
+          "Width": 800,
+          "Height": 640
+        },
+        "Compact": true,
+        "Head": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 77,
+            "Height": 62
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 77,
+          "Height": 62,
+          "Left": 0,
+          "Top": 0,
+          "Right": 77,
+          "Bottom": 62,
+          "IsEmpty": false
+        },
+        "Viewport": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 0,
+            "Y": 62
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 77,
+            "Height": 513
+          },
+          "X": 0,
+          "Y": 62,
+          "Width": 77,
+          "Height": 513,
+          "Left": 0,
+          "Top": 62,
+          "Right": 77,
+          "Bottom": 575,
+          "IsEmpty": false
+        },
+        "Footer": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 0,
+            "Y": 575
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 77,
+            "Height": 65
+          },
+          "X": 0,
+          "Y": 575,
+          "Width": 77,
+          "Height": 65,
+          "Left": 0,
+          "Top": 575,
+          "Right": 77,
+          "Bottom": 640,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE header bounds/order {Width=800, Height=640}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE logout always inside footer {Width=800, Height=640}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE scroll moves menu only {Width=800, Height=640}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE compact exposes all targets",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE compact tooltips preserve names",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE compact icon fits despite scrollbar",
+      "Outcome": "PASS",
+      "Actual": [
+        {
+          "Text": "Trang phi\u00EAn",
+          "Width": 73,
+          "Height": 54
+        },
+        {
+          "Text": "Menu / C\u00F4ng th\u1EE9c",
+          "Width": 73,
+          "Height": 54
+        },
+        {
+          "Text": "Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+          "Width": 73,
+          "Height": 54
+        },
+        {
+          "Text": "Kho",
+          "Width": 73,
+          "Height": 54
+        },
+        {
+          "Text": "C\u00F4ng n\u1EE3",
+          "Width": 73,
+          "Height": 54
+        },
+        {
+          "Text": "Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+          "Width": 73,
+          "Height": 54
+        }
+      ]
+    },
+    {
+      "Name": "STORE disjoint fixed regions {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": {
+        "ClientSize": {
+          "IsEmpty": false,
+          "Width": 1366,
+          "Height": 768
+        },
+        "Compact": false,
+        "Head": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 105
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 105,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 105,
+          "IsEmpty": false
+        },
+        "Viewport": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 0,
+            "Y": 105
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 503
+          },
+          "X": 0,
+          "Y": 105,
+          "Width": 249,
+          "Height": 503,
+          "Left": 0,
+          "Top": 105,
+          "Right": 249,
+          "Bottom": 608,
+          "IsEmpty": false
+        },
+        "Footer": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 0,
+            "Y": 608
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 160
+          },
+          "X": 0,
+          "Y": 608,
+          "Width": 249,
+          "Height": 160,
+          "Left": 0,
+          "Top": 608,
+          "Right": 249,
+          "Bottom": 768,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE header bounds/order {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE logout always inside footer {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE scroll moves menu only {Width=1366, Height=768}",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE row bounds {Width=1366, Height=768} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 229,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 239,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 381
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 381,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 381,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE row bounds {Width=1366, Height=768} Menu / C\u00F4ng th\u1EE9c",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE row bounds {Width=1366, Height=768} Nguy\u00EAn li\u1EC7u / T\u1ED3n",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 54
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 54,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 54,
+          "Right": 229,
+          "Bottom": 108,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE row bounds {Width=1366, Height=768} Kho",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 108
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 108,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 108,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 162
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 162,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 162,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE row bounds {Width=1366, Height=768} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 229,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 239,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 273
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 273,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 273,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE row bounds {Width=1366, Height=768} C\u00F4ng n\u1EE3",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 54,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE row bounds {Width=1366, Height=768} Trang phi\u00EAn",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 5
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 5,
+          "Width": 229,
+          "Height": 54,
+          "Left": 10,
+          "Top": 5,
+          "Right": 239,
+          "Bottom": 59,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 249,
+            "Height": 273
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 249,
+          "Height": 273,
+          "Left": 0,
+          "Top": 0,
+          "Right": 249,
+          "Bottom": 273,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE row bounds {Width=1366, Height=768} Th\u00F4ng tin h\u1EC7 th\u1ED1ng",
+      "Outcome": "PASS",
+      "Actual": {
+        "Bounds": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 10,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 219,
+            "Height": 54
+          },
+          "X": 10,
+          "Y": 0,
+          "Width": 219,
+          "Height": 54,
+          "Left": 10,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        },
+        "Parent": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 229,
+            "Height": 54
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 229,
+          "Height": 54,
+          "Left": 0,
+          "Top": 0,
+          "Right": 229,
+          "Bottom": 54,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE external navigation reveals Products",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE selected target scrolled into viewport Products",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE external navigation reveals Materials",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE selected target scrolled into viewport Materials",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE external navigation reveals Inventory",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE selected target scrolled into viewport Inventory",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE external navigation reveals Debt",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE selected target scrolled into viewport Debt",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE navigation click handler and repeat guard",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE module cached and input retained",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE busy guard preserves page",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE refuse discard retains draft/selection",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE approve discard navigates once",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE modal blocks navigation",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE native logout handler once and session revoked",
+      "Outcome": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Read-only fixture transaction clean",
+      "Outcome": "PASS",
+      "Actual": "0:0"
+    }
+  ],
+  "Failed": 0
+}
