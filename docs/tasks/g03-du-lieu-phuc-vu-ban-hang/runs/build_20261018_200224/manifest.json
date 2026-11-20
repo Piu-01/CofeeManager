@@ -1,0 +1,14 @@
+[
+  {
+    "Configuration": "Debug",
+    "ExitCode": 0,
+    "Executable": "src/CafeManager.WinForms/bin/Debug/net10.0-windows/CafeManager.WinForms.exe",
+    "SHA256": "B61EF6BC5BE5E1910E6E78C7A0B6F2047F16566FFFF74FB8A6B34CCF78341825"
+  },
+  {
+    "Configuration": "Release",
+    "ExitCode": 0,
+    "Executable": "src/CafeManager.WinForms/bin/Release/net10.0-windows/CafeManager.WinForms.exe",
+    "SHA256": "B61EF6BC5BE5E1910E6E78C7A0B6F2047F16566FFFF74FB8A6B34CCF78341825"
+  }
+]

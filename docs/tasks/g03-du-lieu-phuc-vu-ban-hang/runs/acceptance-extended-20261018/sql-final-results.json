@@ -1,0 +1,209 @@
+[
+  {
+    "Id": "T10-K02-price-0",
+    "Expected": "Invalid price rejected",
+    "Actual": "SQL error 51701; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "final-T10-K02-price-0.sql"
+  },
+  {
+    "Id": "T10-K02-price--1",
+    "Expected": "Invalid price rejected",
+    "Actual": "SQL error 51701; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "final-T10-K02-price--1.sql"
+  },
+  {
+    "Id": "T10-K02-price-0.5",
+    "Expected": "Invalid price rejected",
+    "Actual": "SQL error 51701; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "final-T10-K02-price-0.5.sql"
+  },
+  {
+    "Id": "T10-K02-qty-0",
+    "Expected": "Invalid recipe quantity rejected",
+    "Actual": "SQL error 51701; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "final-T10-K02-qty-0.sql"
+  },
+  {
+    "Id": "T10-K02-qty--1",
+    "Expected": "Invalid recipe quantity rejected",
+    "Actual": "SQL error 51701; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "final-T10-K02-qty--1.sql"
+  },
+  {
+    "Id": "T10-K02-qty-0.00001",
+    "Expected": "Invalid recipe quantity rejected",
+    "Actual": "SQL error 51701; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "final-T10-K02-qty-0.00001.sql"
+  },
+  {
+    "Id": "T10-K02-qty-100000000000000",
+    "Expected": "Invalid recipe quantity rejected",
+    "Actual": "SQL error 51701; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "final-T10-K02-qty-100000000000000.sql"
+  },
+  {
+    "Id": "T10-K02-duplicate",
+    "Expected": "Duplicate recipe ingredient rejected",
+    "Actual": "SQL error 51701; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "final-T10-K02-duplicate.sql"
+  },
+  {
+    "Id": "T10-K02-fk",
+    "Expected": "Invalid material FK rejected",
+    "Actual": "SQL error 51701; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "final-T10-K02-fk.sql"
+  },
+  {
+    "Id": "T11-K02-empty",
+    "Expected": "Empty area name rejected",
+    "Actual": "SQL error 51801; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "final-T11-K02-empty.sql"
+  },
+  {
+    "Id": "T11-K02-long",
+    "Expected": "Overlength table name rejected",
+    "Actual": "SQL error 51801; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "final-T11-K02-long.sql"
+  },
+  {
+    "Id": "T11-K02-fk",
+    "Expected": "Invalid area FK rejected",
+    "Actual": "SQL error 51801; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "final-T11-K02-fk.sql"
+  },
+  {
+    "Id": "T11-K06-paid",
+    "Expected": "Table with paid history cannot delete",
+    "Actual": "SQL error 547; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "final-T11-K06-paid.sql"
+  },
+  {
+    "Id": "T11-K06-cancel",
+    "Expected": "Table with cancelled history cannot delete",
+    "Actual": "SQL error 547; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "final-T11-K06-cancel.sql"
+  },
+  {
+    "Id": "T13-K02-fk-customer",
+    "Expected": "Unknown customer rejected",
+    "Actual": "SQL error 52001; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "final-T13-K02-fk-customer.sql"
+  },
+  {
+    "Id": "T13-K02-fk-promotion",
+    "Expected": "Unknown promotion rejected",
+    "Actual": "SQL error 52001; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "final-T13-K02-fk-promotion.sql"
+  },
+  {
+    "Id": "T13-K04-percent-negative",
+    "Expected": "Negative percent rejected",
+    "Actual": "SQL error 52001; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "final-T13-K04-percent-negative.sql"
+  },
+  {
+    "Id": "T13-K04-code-long",
+    "Expected": "Overlength tier code rejected before cast",
+    "Actual": "SQL error 52001; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "final-T13-K04-code-long.sql"
+  },
+  {
+    "Id": "T13-K04-points-overflow",
+    "Expected": "Threshold exceeding int rejected before cast",
+    "Actual": "SQL error 52001; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "final-T13-K04-points-overflow.sql"
+  },
+  {
+    "Id": "T13-K05-stale",
+    "Expected": "Policy changes invalidate earlier preview",
+    "Actual": "SQL error 51603; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "final-T13-K05-stale.sql"
+  },
+  {
+    "Id": "T13-K07-nonexistent",
+    "Expected": "Nonexistent order FK rejected",
+    "Actual": "SQL error 547; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "final-T13-K07-nonexistent.sql"
+  },
+  {
+    "Id": "T13-K07-wrong-customer",
+    "Expected": "Paid order with zero earned points still rejects wrong customer",
+    "Actual": "SQL error 51012; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "final-T13-K07-wrong-customer.sql"
+  },
+  {
+    "Id": "T13-K09-date-rate",
+    "Expected": "Date, percentage and name changes preserve paid snapshot",
+    "Actual": "Assertions completed; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "final-T13-K09-date-rate.sql"
+  }
+]

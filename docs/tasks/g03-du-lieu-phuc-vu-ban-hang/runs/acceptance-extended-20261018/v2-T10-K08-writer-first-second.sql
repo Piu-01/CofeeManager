@@ -1,0 +1,1 @@
+DECLARE @a int,@s binary(8),@id uniqueidentifier=NEWID();SELECT TOP(1) @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaVT='ADMIN' AND HoatDong=1 ORDER BY MaTK;DECLARE @tt dbo.DanhSachThanhToan;INSERT @tt(MaPT,SoTien)VALUES('PT001',10000);EXEC dbo.sp_ThanhToanHoaDon 'HD09999002',@tt;

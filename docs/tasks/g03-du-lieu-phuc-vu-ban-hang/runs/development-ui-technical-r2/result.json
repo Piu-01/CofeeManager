@@ -1,0 +1,167 @@
+[
+  {
+    "Role": "ADMIN",
+    "Module": "Materials",
+    "File": "ADMIN-Materials.png",
+    "Grids": [],
+    "Messages": [
+      "Trang phi\u00EAn"
+    ],
+    "Kind": "Technical read-only UI; identity injection, not login acceptance"
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Products",
+    "File": "ADMIN-Products.png",
+    "Grids": [
+      {
+        "Rows": 12,
+        "Columns": 5
+      }
+    ],
+    "Messages": [
+      "Trang 1 \u00B7 \u0111\u1ECDc t\u1EEB DB 19:52:35"
+    ],
+    "Kind": "Technical read-only UI; identity injection, not login acceptance"
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Tables",
+    "File": "ADMIN-Tables.png",
+    "Grids": [
+      {
+        "Rows": 12,
+        "Columns": 5
+      }
+    ],
+    "Messages": [
+      "Trang 1 \u00B7 \u0111\u1ECDc t\u1EEB DB 19:52:35"
+    ],
+    "Kind": "Technical read-only UI; identity injection, not login acceptance"
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Customers",
+    "File": "ADMIN-Customers.png",
+    "Grids": [
+      {
+        "Rows": 10,
+        "Columns": 5
+      }
+    ],
+    "Messages": [
+      "Trang 1 \u00B7 c\u1EADp nh\u1EADt 19:52:37"
+    ],
+    "Kind": "Technical read-only UI; identity injection, not login acceptance"
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Loyalty",
+    "File": "ADMIN-Loyalty.png",
+    "Grids": [
+      {
+        "Rows": 10,
+        "Columns": 5
+      }
+    ],
+    "Messages": [
+      "Trang 1 \u00B7 c\u1EADp nh\u1EADt 19:52:37"
+    ],
+    "Kind": "Technical read-only UI; identity injection, not login acceptance"
+  },
+  {
+    "Role": "CASH",
+    "Module": "Materials",
+    "File": "CASH-Materials.png",
+    "Grids": [],
+    "Messages": [
+      "Trang phi\u00EAn"
+    ],
+    "Kind": "Technical read-only UI; identity injection, not login acceptance"
+  },
+  {
+    "Role": "CASH",
+    "Module": "Products",
+    "File": "CASH-Products.png",
+    "Grids": [
+      {
+        "Rows": 12,
+        "Columns": 5
+      }
+    ],
+    "Messages": [
+      "Trang 1 \u00B7 \u0111\u1ECDc t\u1EEB DB 19:52:39"
+    ],
+    "Kind": "Technical read-only UI; identity injection, not login acceptance"
+  },
+  {
+    "Role": "CASH",
+    "Module": "Tables",
+    "File": "CASH-Tables.png",
+    "Grids": [
+      {
+        "Rows": 12,
+        "Columns": 5
+      }
+    ],
+    "Messages": [
+      "Trang 1 \u00B7 \u0111\u1ECDc t\u1EEB DB 19:52:39"
+    ],
+    "Kind": "Technical read-only UI; identity injection, not login acceptance"
+  },
+  {
+    "Role": "CASH",
+    "Module": "Customers",
+    "File": "CASH-Customers.png",
+    "Grids": [
+      {
+        "Rows": 10,
+        "Columns": 5
+      }
+    ],
+    "Messages": [
+      "Trang 1 \u00B7 c\u1EADp nh\u1EADt 19:52:41"
+    ],
+    "Kind": "Technical read-only UI; identity injection, not login acceptance"
+  },
+  {
+    "Role": "CASH",
+    "Module": "Loyalty",
+    "File": "CASH-Loyalty.png",
+    "Grids": [
+      {
+        "Rows": 10,
+        "Columns": 5
+      }
+    ],
+    "Messages": [
+      "Trang 1 \u00B7 c\u1EADp nh\u1EADt 19:52:41"
+    ],
+    "Kind": "Technical read-only UI; identity injection, not login acceptance"
+  },
+  {
+    "Role": "STORE",
+    "Module": "Materials",
+    "File": "STORE-Materials.png",
+    "Grids": [],
+    "Messages": [
+      "Trang phi\u00EAn"
+    ],
+    "Kind": "Technical read-only UI; identity injection, not login acceptance"
+  },
+  {
+    "Role": "STORE",
+    "Module": "Products",
+    "File": "STORE-Products.png",
+    "Grids": [
+      {
+        "Rows": 12,
+        "Columns": 5
+      }
+    ],
+    "Messages": [
+      "Trang 1 \u00B7 \u0111\u1ECDc t\u1EEB DB 19:52:44"
+    ],
+    "Kind": "Technical read-only UI; identity injection, not login acceptance"
+  }
+]

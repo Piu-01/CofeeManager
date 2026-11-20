@@ -1,0 +1,14 @@
+{
+  "RunId": "20261018_201318_7318d0f8",
+  "Database": "CoffeeManager_Test_G03_20261018_201318_7318d0f8_demo",
+  "Server": "localhost",
+  "Marker": "20261018_201318_7318d0f8",
+  "Created": true,
+  "Cleaned": true,
+  "Purpose": "Approved SQL supplemental + native GUI",
+  "RetainReason": "None",
+  "Expiry": "2026-10-19",
+  "Principal": "G03Runtime WITHOUT LOGIN + G03Gui mapped existing development runtime login",
+  "ProcessId": 43860,
+  "State": "Completed; database removed; owned GUI process stopped"
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "Id": "Migration-rerun",
+    "Actual": "AlreadyApplied",
+    "Expected": "AlreadyApplied and all inventory balances unchanged",
+    "Status": "PASS"
+  },
+  {
+    "Id": "Migration-checksum",
+    "Actual": "True",
+    "Expected": "Changed checksum rejected before DDL",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T09-preflight",
+    "Actual": "Invariant=1",
+    "Expected": "Invalid legacy name rejects004 without normalization/DDL/version",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T10-preflight",
+    "Actual": "Invariant=1",
+    "Expected": "Selling legacy product without recipe rejects005; no auto stop",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T12-preflight",
+    "Actual": "Invariant=1",
+    "Expected": "Missing zero legacy tier rejects007; does not change policy",
+    "Status": "PASS"
+  }
+]

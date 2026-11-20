@@ -1,0 +1,335 @@
+[
+  {
+    "Id": "T09-K01-a",
+    "Expected": "Create zero, exact opening, replay once",
+    "Actual": "Assertions completed; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "v2-T09-K01-a.sql"
+  },
+  {
+    "Id": "T09-K03-a",
+    "Expected": "Second opening rejected",
+    "Actual": "SQL error 51602; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "v2-T09-K03-a.sql"
+  },
+  {
+    "Id": "T09-K04-a",
+    "Expected": "Scale5 rejected",
+    "Actual": "SQL error 51601; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "v2-T09-K04-a.sql"
+  },
+  {
+    "Id": "T09-K04-b",
+    "Expected": "Negative rejected",
+    "Actual": "SQL error 51601; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "v2-T09-K04-b.sql"
+  },
+  {
+    "Id": "T09-K04-c",
+    "Expected": "Blank unit rejected",
+    "Actual": "SQL error 51601; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "v2-T09-K04-c.sql"
+  },
+  {
+    "Id": "T09-K06-a",
+    "Expected": "Rename keeps stock",
+    "Actual": "Assertions completed; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "v2-T09-K06-a.sql"
+  },
+  {
+    "Id": "T09-K06-b",
+    "Expected": "Unit change after opening rejected",
+    "Actual": "SQL error 51602; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "v2-T09-K06-b.sql"
+  },
+  {
+    "Id": "T09-K07-a",
+    "Expected": "CASH runtime read",
+    "Actual": "Assertions completed; transaction 0:0",
+    "Status": "PASS",
+    "Role": "CASH",
+    "RuntimePrincipal": true,
+    "SqlFile": "v2-T09-K07-a.sql"
+  },
+  {
+    "Id": "T09-K07-b",
+    "Expected": "CASH create denied",
+    "Actual": "SQL error 51605; transaction 0:0",
+    "Status": "PASS",
+    "Role": "CASH",
+    "RuntimePrincipal": true,
+    "SqlFile": "v2-T09-K07-b.sql"
+  },
+  {
+    "Id": "T09-K07-c",
+    "Expected": "STORE opening denied",
+    "Actual": "SQL error 51605; transaction 0:0",
+    "Status": "PASS",
+    "Role": "STORE",
+    "RuntimePrincipal": true,
+    "SqlFile": "v2-T09-K07-c.sql"
+  },
+  {
+    "Id": "T09-K07-d",
+    "Expected": "Direct stock DML denied",
+    "Actual": "SQL error 229; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": true,
+    "SqlFile": "v2-T09-K07-d.sql"
+  },
+  {
+    "Id": "T09-K08-a",
+    "Expected": "Delete referenced material rejected",
+    "Actual": "SQL error 51602; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "v2-T09-K08-a.sql"
+  },
+  {
+    "Id": "T10-K01-a",
+    "Expected": "Multi-line recipe saved",
+    "Actual": "Assertions completed; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "v2-T10-K01-a.sql"
+  },
+  {
+    "Id": "T10-K02-a",
+    "Expected": "Invalid recipe rejected",
+    "Actual": "SQL error 51701; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "v2-T10-K02-a.sql"
+  },
+  {
+    "Id": "T10-K03-a",
+    "Expected": "Old recipe remains after error",
+    "Actual": "Assertions completed; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "v2-T10-K03-a.sql"
+  },
+  {
+    "Id": "T10-K04-a",
+    "Expected": "Cannot sell without recipe",
+    "Actual": "SQL error 51702; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "v2-T10-K04-a.sql"
+  },
+  {
+    "Id": "T10-K09-a",
+    "Expected": "STORE runtime recipe read",
+    "Actual": "Assertions completed; transaction 0:0",
+    "Status": "PASS",
+    "Role": "STORE",
+    "RuntimePrincipal": true,
+    "SqlFile": "v2-T10-K09-a.sql"
+  },
+  {
+    "Id": "T10-K09-b",
+    "Expected": "CASH recipe mutation denied",
+    "Actual": "SQL error 51605; transaction 0:0",
+    "Status": "PASS",
+    "Role": "CASH",
+    "RuntimePrincipal": true,
+    "SqlFile": "v2-T10-K09-b.sql"
+  },
+  {
+    "Id": "T11-K03-a",
+    "Expected": "Seed view B0003 serving",
+    "Actual": "Assertions completed; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "v2-T11-K03-a.sql"
+  },
+  {
+    "Id": "T11-K06-a",
+    "Expected": "Area with tables cannot delete",
+    "Actual": "SQL error 547; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "v2-T11-K06-a.sql"
+  },
+  {
+    "Id": "T11-K08-a",
+    "Expected": "STORE map read denied",
+    "Actual": "SQL error 51605; transaction 0:0",
+    "Status": "PASS",
+    "Role": "STORE",
+    "RuntimePrincipal": true,
+    "SqlFile": "v2-T11-K08-a.sql"
+  },
+  {
+    "Id": "T11-K08-b",
+    "Expected": "CASH map read succeeds",
+    "Actual": "Assertions completed; transaction 0:0",
+    "Status": "PASS",
+    "Role": "CASH",
+    "RuntimePrincipal": true,
+    "SqlFile": "v2-T11-K08-b.sql"
+  },
+  {
+    "Id": "T12-K01-a",
+    "Expected": "Customer zero gets threshold zero",
+    "Actual": "Assertions completed; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "v2-T12-K01-a.sql"
+  },
+  {
+    "Id": "T12-K02-a",
+    "Expected": "Multiple NULL phones accepted",
+    "Actual": "Assertions completed; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "v2-T12-K02-a.sql"
+  },
+  {
+    "Id": "T12-K02-b",
+    "Expected": "Duplicate phone denied",
+    "Actual": "SQL error 2601; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "v2-T12-K02-b.sql"
+  },
+  {
+    "Id": "T12-K03-a",
+    "Expected": "Overlength name rejected",
+    "Actual": "SQL error 51901; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "v2-T12-K03-a.sql"
+  },
+  {
+    "Id": "T12-K08-a",
+    "Expected": "CASH opening denied",
+    "Actual": "SQL error 51605; transaction 0:0",
+    "Status": "PASS",
+    "Role": "CASH",
+    "RuntimePrincipal": true,
+    "SqlFile": "v2-T12-K08-a.sql"
+  },
+  {
+    "Id": "T12-K08-b",
+    "Expected": "STORE customer read denied",
+    "Actual": "SQL error 51605; transaction 0:0",
+    "Status": "PASS",
+    "Role": "STORE",
+    "RuntimePrincipal": true,
+    "SqlFile": "v2-T12-K08-b.sql"
+  },
+  {
+    "Id": "T13-K01-a",
+    "Expected": "KM replaces tier; ship not discounted",
+    "Actual": "Assertions completed; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "v2-T13-K01-a.sql"
+  },
+  {
+    "Id": "T13-K02-a",
+    "Expected": "Outside KM date rejected",
+    "Actual": "SQL error 52001; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "v2-T13-K02-a.sql"
+  },
+  {
+    "Id": "T13-K03-a",
+    "Expected": "No discount adds whole ship",
+    "Actual": "Assertions completed; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "v2-T13-K03-a.sql"
+  },
+  {
+    "Id": "T13-K04-a",
+    "Expected": "Missing zero threshold rejected",
+    "Actual": "SQL error 52001; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "v2-T13-K04-a.sql"
+  },
+  {
+    "Id": "T13-K06-a",
+    "Expected": "Blank reason rejected",
+    "Actual": "SQL error 52001; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "v2-T13-K06-a.sql"
+  },
+  {
+    "Id": "T13-K07-a",
+    "Expected": "Runtime history DML denied",
+    "Actual": "SQL error 229; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": true,
+    "SqlFile": "v2-T13-K07-a.sql"
+  },
+  {
+    "Id": "T13-K08-a",
+    "Expected": "Runtime points DML denied",
+    "Actual": "SQL error 229; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": true,
+    "SqlFile": "v2-T13-K08-a.sql"
+  },
+  {
+    "Id": "T13-K10-a",
+    "Expected": "CASH policy operation denied",
+    "Actual": "SQL error 51605; transaction 0:0",
+    "Status": "PASS",
+    "Role": "CASH",
+    "RuntimePrincipal": true,
+    "SqlFile": "v2-T13-K10-a.sql"
+  },
+  {
+    "Id": "T13-K10-b",
+    "Expected": "STORE KM read denied",
+    "Actual": "SQL error 51605; transaction 0:0",
+    "Status": "PASS",
+    "Role": "STORE",
+    "RuntimePrincipal": true,
+    "SqlFile": "v2-T13-K10-b.sql"
+  }
+]

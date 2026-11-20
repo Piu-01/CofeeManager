@@ -1,0 +1,30 @@
+[
+  {
+    "Id": "T09-K03-two",
+    "Expected": "Second request blocks; then error 51603; final SQL assertions hold",
+    "Status": "FAIL",
+    "Actual": "Exception calling \"ExecuteScalar\" with \"0\" argument(s): \"Incorrect syntax near the keyword 'AND'.\"",
+    "Wait": null
+  },
+  {
+    "Id": "T13-K11-two",
+    "Expected": "Second request blocks; then error 51603; final SQL assertions hold",
+    "Status": "FAIL",
+    "Actual": "Exception calling \"ExecuteScalar\" with \"0\" argument(s): \"Incorrect syntax near the keyword 'AND'.\"",
+    "Wait": null
+  },
+  {
+    "Id": "T10-K08-checkout-first",
+    "Expected": "Second request blocks; then error 0; final SQL assertions hold",
+    "Status": "FAIL",
+    "Actual": "Exception calling \"ExecuteScalar\" with \"0\" argument(s): \"Incorrect syntax near the keyword 'AND'.\"",
+    "Wait": null
+  },
+  {
+    "Id": "T10-K08-writer-first",
+    "Expected": "Second request blocks; then error 0; final SQL assertions hold",
+    "Status": "FAIL",
+    "Actual": "Exception calling \"ExecuteScalar\" with \"0\" argument(s): \"Incorrect syntax near the keyword 'AND'.\"",
+    "Wait": null
+  }
+]

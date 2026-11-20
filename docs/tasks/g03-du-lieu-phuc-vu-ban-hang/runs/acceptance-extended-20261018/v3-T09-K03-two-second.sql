@@ -1,0 +1,1 @@
+DECLARE @a int,@s binary(8),@id uniqueidentifier=NEWID();SELECT TOP(1) @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaVT='ADMIN' AND HoatDong=1 ORDER BY MaTK;DECLARE @r binary(8)=0x0000000000000916;EXEC dbo.sp_MaterialOpen @Actor=@a,@Stamp=@s,@Code='NVL98',@RequestId=@id,@ExpectedRevision=@r,@Quantity=2,@Source=N'Session2';

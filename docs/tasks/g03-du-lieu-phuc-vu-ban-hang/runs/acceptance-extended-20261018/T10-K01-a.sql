@@ -1,0 +1,2 @@
+DECLARE @a int,@s binary(8),@id uniqueidentifier=NEWID(),@rev binary(8);SELECT TOP(1) @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaVT='ADMIN' AND HoatDong=1 ORDER BY MaTK;
+DECLARE @r dbo.RecipeLineInput;INSERT @r VALUES('NVL01',0.0180),('NVL02',0.0200);EXEC dbo.sp_ProductCreate @Actor=@a,@Stamp=@s,@Code='SP991',@RequestId=@id,@Recipe=@r,@Name=N'Món kiểm thử',@Category='DM001',@Price=10000,@Status=N'Dang ban';IF (SELECT COUNT(*) FROM dbo.CONGTHUC WHERE MaSP='SP991')<>2 THROW 52999,'Missing lines',1;

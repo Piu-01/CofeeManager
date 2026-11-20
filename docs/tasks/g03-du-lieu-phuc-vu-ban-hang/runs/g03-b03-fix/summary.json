@@ -1,0 +1,8 @@
+{
+  "ChangedDuringRegression": 0,
+  "NativeGui": "Pending manual confirmation",
+  "ReleaseBuild": "PASS 0 warnings 0 errors",
+  "BugStatus": "Implemented; not closed",
+  "Unit": "20 PASS",
+  "DebugBuild": "PASS 0 warnings 0 errors"
+}

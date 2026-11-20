@@ -1,0 +1,92 @@
+[
+  {
+    "Id": "T10-K05-stop",
+    "Expected": "Stop selling removes selector entry and preserves existing invoice lines",
+    "Actual": "Assertions completed; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "history-T10-K05-stop.sql"
+  },
+  {
+    "Id": "T10-K06-price",
+    "Expected": "Changing menu price preserves all historical snapshot prices",
+    "Actual": "Assertions completed; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "history-T10-K06-price.sql"
+  },
+  {
+    "Id": "T10-K07-snapshot",
+    "Expected": "Replacing recipe preserves consumption snapshots and stock",
+    "Actual": "Assertions completed; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "history-T10-K07-snapshot.sql"
+  },
+  {
+    "Id": "T10-K10-delete-history",
+    "Expected": "Product with paid invoices cannot delete",
+    "Actual": "SQL error 51702; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "history-T10-K10-delete-history.sql"
+  },
+  {
+    "Id": "T10-K10-delete-unused",
+    "Expected": "Unused product deletes atomically, receipt remains",
+    "Actual": "Assertions completed; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "history-T10-K10-delete-unused.sql"
+  },
+  {
+    "Id": "T11-K04-view",
+    "Expected": "Paid/cancelled do not occupy table; open does",
+    "Actual": "Assertions completed; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "history-T11-K04-view.sql"
+  },
+  {
+    "Id": "T11-K07-refresh",
+    "Expected": "After second session cancels order select-current sees empty table",
+    "Actual": "Assertions completed; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "history-T11-K07-refresh.sql"
+  },
+  {
+    "Id": "T12-K05-repeat-legacy",
+    "Expected": "Existing legacy customer cannot reopen points",
+    "Actual": "SQL error 51902; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "history-T12-K05-repeat-legacy.sql"
+  },
+  {
+    "Id": "T12-K07-history",
+    "Expected": "Existing customer source prevents deletion",
+    "Actual": "SQL error 547; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "history-T12-K07-history.sql"
+  },
+  {
+    "Id": "T12-K01-profile",
+    "Expected": "Profile changes preserve points and tier",
+    "Actual": "Assertions completed; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "history-T12-K01-profile.sql"
+  }
+]

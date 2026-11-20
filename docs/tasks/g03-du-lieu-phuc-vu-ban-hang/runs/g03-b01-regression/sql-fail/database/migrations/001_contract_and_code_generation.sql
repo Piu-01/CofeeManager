@@ -1,0 +1,74 @@
+-- Run through Apply-Migration.ps1: one transaction and migration lock across GO.
+SET NOCOUNT ON;
+SET XACT_ABORT ON;
+IF @@TRANCOUNT=0 THROW 51300,'Migration requires the migration runner transaction.',1;
+IF OBJECT_ID(N'dbo.SchemaMigrations',N'U') IS NULL
+    CREATE TABLE dbo.SchemaMigrations (
+        Version INT NOT NULL CONSTRAINT PK_SchemaMigrations PRIMARY KEY,
+        Checksum CHAR(64) NOT NULL,
+        AppliedAt DATETIME2(0) NOT NULL DEFAULT SYSUTCDATETIME()
+    );
+DECLARE @hd BIGINT,@dm BIGINT,@nv BIGINT;
+SELECT @hd=COALESCE(MAX(TRY_CONVERT(BIGINT,SUBSTRING(MaHD,3,8))),0)+1
+FROM dbo.HOADON WITH(TABLOCKX,HOLDLOCK)
+WHERE MaHD COLLATE Latin1_General_100_BIN2 LIKE 'HD[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]';
+SELECT @dm=COALESCE(MAX(TRY_CONVERT(BIGINT,SUBSTRING(MaDM,3,3))),0)+1
+FROM dbo.DANHMUC_SP WITH(TABLOCKX,HOLDLOCK)
+WHERE MaDM COLLATE Latin1_General_100_BIN2 LIKE 'DM[0-9][0-9][0-9]';
+SELECT @nv=COALESCE(MAX(TRY_CONVERT(BIGINT,SUBSTRING(MaNV,3,3))),0)+1
+FROM dbo.NHANVIEN WITH(TABLOCKX,HOLDLOCK)
+WHERE MaNV COLLATE Latin1_General_100_BIN2 LIKE 'NV[0-9][0-9][0-9]';
+IF @hd>99999999 OR @dm>999 OR @nv>999 THROW 51302,'Code range exhausted during bootstrap.',1;
+DECLARE @sql NVARCHAR(MAX)=N'CREATE SEQUENCE dbo.SeqHoaDon AS BIGINT START WITH '+CONVERT(NVARCHAR(20),@hd)+N' INCREMENT BY 1 MINVALUE 1 MAXVALUE 99999999 NO CYCLE NO CACHE;'
+    +N'CREATE SEQUENCE dbo.SeqDanhMuc AS BIGINT START WITH '+CONVERT(NVARCHAR(20),@dm)+N' INCREMENT BY 1 MINVALUE 1 MAXVALUE 999 NO CYCLE NO CACHE;'
+    +N'CREATE SEQUENCE dbo.SeqNhanVien AS BIGINT START WITH '+CONVERT(NVARCHAR(20),@nv)+N' INCREMENT BY 1 MINVALUE 1 MAXVALUE 999 NO CYCLE NO CACHE;';
+EXEC sys.sp_executesql @sql;
+GO
+CREATE PROCEDURE dbo.sp_CapMa @Loai VARCHAR(20)
+AS
+BEGIN
+    SET NOCOUNT ON;
+    DECLARE @number BIGINT;
+    BEGIN TRY
+        IF @Loai='HOADON'
+        BEGIN
+            SET @number=NEXT VALUE FOR dbo.SeqHoaDon;
+            SELECT @Loai AS Loai,CAST('HD'+RIGHT('00000000'+CONVERT(VARCHAR(20),@number),8) AS CHAR(10)) AS Ma;
+        END
+        ELSE IF @Loai='DANHMUC_SP'
+        BEGIN
+            SET @number=NEXT VALUE FOR dbo.SeqDanhMuc;
+            SELECT @Loai AS Loai,CAST('DM'+RIGHT('000'+CONVERT(VARCHAR(20),@number),3) AS CHAR(5)) AS Ma;
+        END
+        ELSE IF @Loai='NHANVIEN'
+        BEGIN
+            SET @number=NEXT VALUE FOR dbo.SeqNhanVien;
+            SELECT @Loai AS Loai,CAST('NV'+RIGHT('000'+CONVERT(VARCHAR(20),@number),3) AS CHAR(5)) AS Ma;
+        END
+        ELSE THROW 51301,'Unsupported code source.',1;
+    END TRY
+    BEGIN CATCH
+        IF ERROR_NUMBER()=11728 THROW 51302,'Code range exhausted; contact administrator.',1;
+        THROW;
+    END CATCH
+END;
+GO
+CREATE ROLE CafeManagerApp AUTHORIZATION dbo;
+GRANT SELECT ON dbo.vw_TrangThaiBan TO CafeManagerApp;
+GRANT SELECT ON dbo.vw_CongNoNCC TO CafeManagerApp;
+GRANT EXECUTE ON dbo.sp_CapMa TO CafeManagerApp;
+GRANT EXECUTE ON dbo.sp_ThanhToanHoaDon TO CafeManagerApp;
+GRANT EXECUTE ON dbo.sp_HuyHoaDon TO CafeManagerApp;
+GRANT EXECUTE ON dbo.sp_TraCongNo TO CafeManagerApp;
+GRANT EXECUTE ON dbo.sp_ChotKiemKe TO CafeManagerApp;
+GRANT EXECUTE,REFERENCES ON TYPE::dbo.DanhSachThanhToan TO CafeManagerApp;
+DENY INSERT,UPDATE,DELETE ON dbo.TIEUHAO_HOADON TO CafeManagerApp;
+DENY INSERT,UPDATE,DELETE ON dbo.LICHSU_DIEM TO CafeManagerApp;
+DENY INSERT,UPDATE,DELETE ON dbo.CHITIET_THANHTOAN TO CafeManagerApp;
+DENY INSERT,UPDATE,DELETE ON dbo.THANHTOAN_CONGNO TO CafeManagerApp;
+DENY INSERT,UPDATE,DELETE ON dbo.HOADON TO CafeManagerApp;
+DENY INSERT,UPDATE,DELETE ON dbo.PHIEUTHUCHI TO CafeManagerApp;
+DENY INSERT,UPDATE,DELETE ON dbo.PHIEUKIEMKE TO CafeManagerApp;
+DENY UPDATE ON dbo.NGUYENVATLIEU(SoLuongTon) TO CafeManagerApp;
+DENY UPDATE ON dbo.KHACHHANG(DiemTichLuy,MaHang) TO CafeManagerApp;
+DENY INSERT,UPDATE,DELETE ON dbo.SchemaMigrations TO CafeManagerApp;

@@ -1,0 +1,62 @@
+[
+  {
+    "Id": "T09-K02-fault",
+    "Expected": "SQL 52990; rollback invariants checked separately",
+    "Status": "PASS",
+    "Actual": "Assertions/error expectation completed"
+  },
+  {
+    "Id": "T09-K02-invariants",
+    "Expected": "All assertions hold; transaction 0:0",
+    "Status": "PASS",
+    "Actual": "Assertions/error expectation completed"
+  },
+  {
+    "Id": "T10-K03-fault",
+    "Expected": "SQL 52990; rollback invariants checked separately",
+    "Status": "PASS",
+    "Actual": "Assertions/error expectation completed"
+  },
+  {
+    "Id": "T10-K03-invariants",
+    "Expected": "All assertions hold; transaction 0:0",
+    "Status": "PASS",
+    "Actual": "Assertions/error expectation completed"
+  },
+  {
+    "Id": "T10-K03-recipe-compare",
+    "Actual": "[{\"MaNVL\":\"NVL01\",\"DinhMuc\":0.0500},{\"MaNVL\":\"NVL02\",\"DinhMuc\":0.0600}]",
+    "Expected": "Identical old recipe",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T12-K05-fault",
+    "Expected": "SQL 52990; rollback invariants checked separately",
+    "Status": "PASS",
+    "Actual": "Assertions/error expectation completed"
+  },
+  {
+    "Id": "T12-K05-invariants",
+    "Expected": "All assertions hold; transaction 0:0",
+    "Status": "PASS",
+    "Actual": "Assertions/error expectation completed"
+  },
+  {
+    "Id": "T13-K05-fault",
+    "Expected": "SQL 52990; rollback invariants checked separately",
+    "Status": "PASS",
+    "Actual": "Assertions/error expectation completed"
+  },
+  {
+    "Id": "T13-K05-invariants",
+    "Expected": "All assertions hold; transaction 0:0",
+    "Status": "PASS",
+    "Actual": "Assertions/error expectation completed"
+  },
+  {
+    "Id": "T13-K05-policy-customer-compare",
+    "Actual": "Compared ordered JSON before/after",
+    "Expected": "Policy and all customer points/tiers unchanged",
+    "Status": "PASS"
+  }
+]

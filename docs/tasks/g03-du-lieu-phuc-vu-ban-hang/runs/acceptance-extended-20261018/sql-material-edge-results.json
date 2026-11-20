@@ -1,0 +1,83 @@
+[
+  {
+    "Id": "T09-K04-maximum",
+    "Expected": "Maximum decimal18,4 persists exactly",
+    "Actual": "Assertions completed; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "edge-T09-K04-maximum.sql"
+  },
+  {
+    "Id": "T09-K04-overflow",
+    "Expected": "Quantity over decimal18,4 maximum rejected",
+    "Actual": "SQL error 51601; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "edge-T09-K04-overflow.sql"
+  },
+  {
+    "Id": "T09-K06-before-source",
+    "Expected": "Unit changes before any source allowed and stock remains zero",
+    "Actual": "Assertions completed; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "edge-T09-K06-before-source.sql"
+  },
+  {
+    "Id": "T09-K06-recipe",
+    "Expected": "Unit changes after recipe blocked without opening marker",
+    "Actual": "SQL error 51602; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "edge-T09-K06-recipe.sql"
+  },
+  {
+    "Id": "T09-K08-recipe",
+    "Expected": "Delete recipe-referenced material blocked",
+    "Actual": "SQL error 51602; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "edge-T09-K08-recipe.sql"
+  },
+  {
+    "Id": "T09-K03-transaction-setup",
+    "Expected": "Valid baseline purchase increases stock after material creation",
+    "Actual": "Assertions completed; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "edge-T09-K03-transaction-setup.sql"
+  },
+  {
+    "Id": "T09-K03-after-transaction",
+    "Expected": "Opening after transaction rejected without preexisting opening marker",
+    "Actual": "SQL error 51602; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "edge-T09-K03-after-transaction.sql"
+  },
+  {
+    "Id": "T09-K06-transaction",
+    "Expected": "Unit change after transaction blocked",
+    "Actual": "SQL error 51602; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "edge-T09-K06-transaction.sql"
+  },
+  {
+    "Id": "T09-K08-transaction",
+    "Expected": "Delete material with transaction source blocked",
+    "Actual": "SQL error 51602; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "edge-T09-K08-transaction.sql"
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "Id": "Date-only-roundtrip",
+    "Status": "PASS"
+  },
+  {
+    "Id": "Leap-day",
+    "Status": "PASS"
+  },
+  {
+    "Id": "Reject-29/02/2026",
+    "Status": "PASS"
+  },
+  {
+    "Id": "Reject-31/04/2026",
+    "Status": "PASS"
+  },
+  {
+    "Id": "Reject-02/29/2024",
+    "Status": "PASS"
+  },
+  {
+    "Id": "Reject-",
+    "Status": "PASS"
+  },
+  {
+    "Id": "Reject-01/01/1752",
+    "Status": "PASS"
+  },
+  {
+    "Id": "Reject-2026-10-20",
+    "Status": "PASS"
+  },
+  {
+    "Id": "Invalid-text-invalidates-preview",
+    "Status": "PASS"
+  },
+  {
+    "Id": "Correct-after-invalid",
+    "Status": "PASS"
+  },
+  {
+    "Id": "Native-calendar-selection",
+    "Status": "PASS"
+  }
+]

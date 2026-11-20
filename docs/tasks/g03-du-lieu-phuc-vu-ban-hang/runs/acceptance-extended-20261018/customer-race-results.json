@@ -1,0 +1,7 @@
+{
+  "Id": "T12-K05-two",
+  "Expected": "Second request blocks; then error 51603; final SQL assertions hold",
+  "Status": "PASS",
+  "Actual": "Blocked at LCK_M_RS_U:67; SQL 51603; assertions and transaction 0:0",
+  "Wait": "LCK_M_RS_U:67"
+}

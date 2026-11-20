@@ -1,0 +1,30 @@
+[
+  {
+    "Id": "T09-K03-two",
+    "Expected": "Second request blocks; then error 51603; final SQL assertions hold",
+    "Status": "PASS",
+    "Actual": "Blocked at LCK_M_RS_U:56; SQL 51603; assertions and transaction 0:0",
+    "Wait": "LCK_M_RS_U:56"
+  },
+  {
+    "Id": "T13-K11-two",
+    "Expected": "Second request blocks; then error 51603; final SQL assertions hold",
+    "Status": "PASS",
+    "Actual": "Blocked at LCK_M_RS_U:56; SQL 51603; assertions and transaction 0:0",
+    "Wait": "LCK_M_RS_U:56"
+  },
+  {
+    "Id": "T10-K08-checkout-first",
+    "Expected": "Second request blocks; then error 0; final SQL assertions hold",
+    "Status": "PASS",
+    "Actual": "Blocked at LCK_M_S:56; SQL 0; assertions and transaction 0:0",
+    "Wait": "LCK_M_S:56"
+  },
+  {
+    "Id": "T10-K08-writer-first",
+    "Expected": "Second request blocks; then error 0; final SQL assertions hold",
+    "Status": "PASS",
+    "Actual": "Blocked at LCK_M_S:56; SQL 0; assertions and transaction 0:0",
+    "Wait": "LCK_M_S:56"
+  }
+]

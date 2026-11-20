@@ -1,0 +1,1 @@
+DECLARE @a int,@s binary(8),@id uniqueidentifier=NEWID();SELECT TOP(1) @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaVT='ADMIN' AND HoatDong=1 ORDER BY MaTK;DECLARE @r binary(8)=0x0000000000000902,@p binary(8)=0x000000000000088C;EXEC dbo.sp_LoyaltyAdjust @a,@s,'KH018',N'Tru',80,N'Session2',@r,@p,@id;

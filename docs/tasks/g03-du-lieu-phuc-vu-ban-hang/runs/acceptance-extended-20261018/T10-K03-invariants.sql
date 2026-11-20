@@ -1,0 +1,1 @@
+DECLARE @a int,@s binary(8);SELECT TOP(1) @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaVT='ADMIN' AND HoatDong=1 ORDER BY MaTK;IF EXISTS(SELECT 1 FROM dbo.G03OperationReceipt WHERE RequestId='11111111-1111-1111-1111-111111111110') THROW 52999,'Recipe receipt survived',1;

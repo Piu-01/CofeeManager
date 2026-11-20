@@ -1,0 +1,4 @@
+DECLARE @a int,@s binary(8),@id uniqueidentifier=NEWID(),@rev binary(8);SELECT TOP(1) @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaVT='ADMIN' AND HoatDong=1 ORDER BY MaTK;
+DECLARE @before int,@count int,@cr binary(8),@pr binary(8);SELECT @before=DiemTichLuy,@cr=Revision FROM dbo.KHACHHANG WHERE MaKH='KH001';SELECT @pr=Revision FROM dbo.LoyaltyPolicyState;SELECT @count=COUNT(*) FROM dbo.LICHSU_DIEM WHERE MaKH='KH001';
+BEGIN TRY EXEC dbo.sp_LoyaltyAdjust @a,@s,'KH001',N'Tru',2147483647,N'Overdraw actual write',@cr,@pr,@id;THROW 52999,'Overdraw accepted',1;END TRY BEGIN CATCH IF ERROR_NUMBER()<>52002 THROW;END CATCH;
+IF (SELECT DiemTichLuy FROM dbo.KHACHHANG WHERE MaKH='KH001')<>@before OR (SELECT COUNT(*) FROM dbo.LICHSU_DIEM WHERE MaKH='KH001')<>@count OR EXISTS(SELECT 1 FROM dbo.G03OperationReceipt WHERE RequestId=@id) THROW 52999,'Overdraw partial state',1;

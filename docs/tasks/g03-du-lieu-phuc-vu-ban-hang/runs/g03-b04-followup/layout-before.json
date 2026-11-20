@@ -1,0 +1,112 @@
+{
+  "DeviceDpi": 120,
+  "Calendar": {
+    "IsEmpty": false,
+    "Width": 262,
+    "Height": 207
+  },
+  "SingleMonthSize": {
+    "IsEmpty": false,
+    "Width": 281,
+    "Height": 248
+  },
+  "NativeRequired": {
+    "IsEmpty": false,
+    "Width": 281,
+    "Height": 248
+  },
+  "Host": {
+    "IsEmpty": false,
+    "Width": 262,
+    "Height": 207
+  },
+  "Popup": {
+    "IsEmpty": false,
+    "Width": 264,
+    "Height": 209
+  },
+  "CalendarBounds": {
+    "Location": {
+      "IsEmpty": false,
+      "X": 1,
+      "Y": 1
+    },
+    "Size": {
+      "IsEmpty": false,
+      "Width": 262,
+      "Height": 207
+    },
+    "X": 1,
+    "Y": 1,
+    "Width": 262,
+    "Height": 207,
+    "Left": 1,
+    "Top": 1,
+    "Right": 263,
+    "Bottom": 208,
+    "IsEmpty": false
+  },
+  "HostBounds": {
+    "Location": {
+      "IsEmpty": false,
+      "X": 1,
+      "Y": 1
+    },
+    "Size": {
+      "IsEmpty": false,
+      "Width": 262,
+      "Height": 207
+    },
+    "X": 1,
+    "Y": 1,
+    "Width": 262,
+    "Height": 207,
+    "Left": 1,
+    "Top": 1,
+    "Right": 263,
+    "Bottom": 208,
+    "IsEmpty": false
+  },
+  "PopupBounds": {
+    "Location": {
+      "IsEmpty": false,
+      "X": 690,
+      "Y": 418
+    },
+    "Size": {
+      "IsEmpty": false,
+      "Width": 264,
+      "Height": 209
+    },
+    "X": 690,
+    "Y": 418,
+    "Width": 264,
+    "Height": 209,
+    "Left": 690,
+    "Top": 418,
+    "Right": 954,
+    "Bottom": 627,
+    "IsEmpty": false
+  },
+  "WorkingArea": {
+    "Location": {
+      "IsEmpty": true,
+      "X": 0,
+      "Y": 0
+    },
+    "Size": {
+      "IsEmpty": false,
+      "Width": 1920,
+      "Height": 1020
+    },
+    "X": 0,
+    "Y": 0,
+    "Width": 1920,
+    "Height": 1020,
+    "Left": 0,
+    "Top": 0,
+    "Right": 1920,
+    "Bottom": 1020,
+    "IsEmpty": false
+  }
+}

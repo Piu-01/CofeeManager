@@ -1,0 +1,10 @@
+{
+  "Id": "T11-K07-two-session",
+  "Expected": "A initially sees open HD09999005; B cancels; A reread has NULL",
+  "Status": "PASS",
+  "Scope": "SQL view refresh in two connections; native selection still BLOCKED",
+  "Actual": {
+    "After": null,
+    "Before": "HD09999005"
+  }
+}

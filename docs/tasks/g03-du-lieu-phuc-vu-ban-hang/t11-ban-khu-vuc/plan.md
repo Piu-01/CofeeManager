@@ -52,3 +52,12 @@ Mỗi subcase lưu mã, môi trường/schema/source hash, dữ liệu, lệnh/t
 
 
 
+
+## Thay đổi hành vi sau T34 (20/11/2026)
+
+Theo `docs/tasks/roi-gon-thao-tac-ban/` (requirements/plan đã duyệt): màn Bàn/Khu vực bỏ
+các nút Chọn bàn, Trả bàn, Sửa, Xóa trên toolbar; giữ click card/dòng mở POS, thêm
+double-click dòng để Sửa và icon thùng rác theo dòng để Xóa (ADMIN, dùng chung hạ tầng
+`OrbitRecordListControl`); POS bỏ nút Chọn bàn và tự mở bàn khi chọn trong ô chọn bàn.
+Các ca T11-K01/K06/K07 vẫn giữ nguyên kỳ vọng nghiệp vụ, chỉ đổi đường thao tác UI; lịch
+sử test cũ không chỉnh. Kiểm chứng UI sau thay đổi nằm ở đợt test của task roi-gon-thao-tac-ban.

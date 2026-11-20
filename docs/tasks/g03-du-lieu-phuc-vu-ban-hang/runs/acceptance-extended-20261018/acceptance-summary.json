@@ -1,0 +1,13 @@
+{
+  "ValidSupplementalChecks": 132,
+  "Pass": 132,
+  "Fail": 0,
+  "OriginalIds": 47,
+  "OriginalPass": 20,
+  "OriginalBlocked": 27,
+  "UnitPass": 20,
+  "SourceChangedFiles": 0,
+  "DatabasesCreated": 4,
+  "DatabasesCleaned": 4,
+  "Retained": 0
+}

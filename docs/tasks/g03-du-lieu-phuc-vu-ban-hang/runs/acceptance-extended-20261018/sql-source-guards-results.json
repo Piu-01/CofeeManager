@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "T13-K06-write-overdraw",
+    "Expected": "Real adjust overdraw rejects and rolls back points/history/receipt",
+    "Actual": "Assertions completed; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "guards-T13-K06-write-overdraw.sql"
+  },
+  {
+    "Id": "T09-K03-other-sources-setup",
+    "Expected": "Valid PX, KK and consumption fixture sources exist",
+    "Actual": "Assertions completed; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "guards-T09-K03-other-sources-setup.sql"
+  },
+  {
+    "Id": "T09-K03-source-NVL85",
+    "Expected": "Opening rejected for material with transaction source",
+    "Actual": "SQL error 51602; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "guards-T09-K03-source-NVL85.sql"
+  },
+  {
+    "Id": "T09-K08-source-NVL85",
+    "Expected": "Deleting referenced material rejected",
+    "Actual": "SQL error 51602; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "guards-T09-K08-source-NVL85.sql"
+  },
+  {
+    "Id": "T09-K03-source-NVL86",
+    "Expected": "Opening rejected for material with transaction source",
+    "Actual": "SQL error 51602; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "guards-T09-K03-source-NVL86.sql"
+  },
+  {
+    "Id": "T09-K08-source-NVL86",
+    "Expected": "Deleting referenced material rejected",
+    "Actual": "SQL error 51602; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "guards-T09-K08-source-NVL86.sql"
+  },
+  {
+    "Id": "T09-K03-source-NVL87",
+    "Expected": "Opening rejected for material with transaction source",
+    "Actual": "SQL error 51602; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "guards-T09-K03-source-NVL87.sql"
+  },
+  {
+    "Id": "T09-K08-source-NVL87",
+    "Expected": "Deleting referenced material rejected",
+    "Actual": "SQL error 51602; transaction 0:0",
+    "Status": "PASS",
+    "Role": "ADMIN",
+    "RuntimePrincipal": false,
+    "SqlFile": "guards-T09-K08-source-NVL87.sql"
+  }
+]

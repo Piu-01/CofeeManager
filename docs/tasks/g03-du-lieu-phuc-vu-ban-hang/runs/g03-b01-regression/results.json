@@ -1,0 +1,65 @@
+[
+  {
+    "Case": "pass",
+    "Status": "PASS",
+    "ExitCode": 0,
+    "Manifest": "docs\\tasks\\g03-du-lieu-phuc-vu-ban-hang\\runs\\acceptance_20261018_204600_4a5881aa\\manifest.json",
+    "RunnerStatus": "Succeeded",
+    "SqlFailed": 0,
+    "Unit": {
+      "Status": "PASS",
+      "ExitCode": 0,
+      "Filter": "FullyQualifiedName~CafeManager.Tests.G03|FullyQualifiedName~MaterialRulesTests",
+      "Trx": "unit/g03-unit.trx",
+      "Log": "unit/dotnet-test.log",
+      "Total": 20,
+      "Passed": 20,
+      "Failed": 0
+    },
+    "Created": 2,
+    "Cleaned": 2,
+    "Retained": 0,
+    "SourceUnchanged": true
+  },
+  {
+    "Case": "sql-fail",
+    "Status": "PASS",
+    "ExitCode": 1,
+    "Manifest": "docs\\tasks\\g03-du-lieu-phuc-vu-ban-hang\\runs\\g03-b01-regression\\sql-fail\\docs\\tasks\\g03-du-lieu-phuc-vu-ban-hang\\runs\\acceptance_20261018_204624_8dd7916b\\manifest.json",
+    "RunnerStatus": "Failed",
+    "SqlFailed": 1,
+    "Unit": {
+      "Status": "PASS",
+      "ExitCode": 0,
+      "Filter": "FullyQualifiedName~CafeManager.Tests.G03|FullyQualifiedName~MaterialRulesTests",
+      "Trx": "unit/g03-unit.trx",
+      "Log": "unit/dotnet-test.log",
+      "Total": 20,
+      "Passed": 20,
+      "Failed": 0
+    },
+    "Created": 2,
+    "Cleaned": 2,
+    "Retained": 0,
+    "SourceUnchanged": true
+  },
+  {
+    "Case": "unit-fail",
+    "Status": "PASS",
+    "ExitCode": 1,
+    "Manifest": "docs\\tasks\\g03-du-lieu-phuc-vu-ban-hang\\runs\\g03-b01-regression\\unit-fail\\docs\\tasks\\g03-du-lieu-phuc-vu-ban-hang\\runs\\acceptance_20261018_204700_9899e54c\\manifest.json",
+    "RunnerStatus": "Failed",
+    "SqlFailed": 0,
+    "Unit": {
+      "Status": "FAIL",
+      "ExitCode": 1,
+      "Filter": "FullyQualifiedName~CafeManager.Tests.G03|FullyQualifiedName~MaterialRulesTests",
+      "Trx": "unit/g03-unit.trx",
+      "Log": "unit/dotnet-test.log"
+    },
+    "Created": 2,
+    "Cleaned": 2,
+    "Retained": 0,
+    "SourceUnchanged": true
+  }
+]

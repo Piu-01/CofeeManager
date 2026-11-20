@@ -1,0 +1,9 @@
+{
+  "database": "CoffeeManager_Development",
+  "purpose": "Mock data for local demo only",
+  "accounts": [
+    { "username": "admin", "password": "Admin@123", "role": "ADMIN", "employee": "NV001" },
+    { "username": "thungan", "password": "Cash@123", "role": "CASH", "employee": "NV004" },
+    { "username": "kho", "password": "Store@123", "role": "STORE", "employee": "NV010" }
+  ]
+}

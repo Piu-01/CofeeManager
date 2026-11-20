@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="aeaa4a07-ee40-40ec-a26c-55682d298dff" name="Lenovo@LAPTOP-79UNRIRC 2026-10-20 16:15:12" runUser="LAPTOP-79UNRIRC\Lenovo" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-20T16:15:12.0987585+07:00" queuing="2026-10-20T16:15:12.0987592+07:00" start="2026-10-20T16:15:10.6646183+07:00" finish="2026-10-20T16:15:12.1718604+07:00" />
+  <TestSettings name="default" id="e04da5dc-9f74-4d51-83fa-6b125b67533e">
+    <Deployment runDeploymentRoot="Lenovo_LAPTOP-79UNRIRC_2026-10-20_16_15_12" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="83f0d931-aa4f-4be9-8e98-5d153f905ed1" testId="0efecc30-820f-dd15-625a-2a5e9e0971bc" testName="CafeManager.Tests.G03.RulesTests.MaterialPermissionsAreSeparated(role: &quot;CASH&quot;, read: True, manage: False, open: False)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0000166" startTime="2026-10-20T16:15:12.0235563+07:00" endTime="2026-10-20T16:15:12.0235960+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="83f0d931-aa4f-4be9-8e98-5d153f905ed1" />
+    <UnitTestResult executionId="3fabb453-fa6d-4603-9333-3d5f2096a2fe" testId="1bc0f965-8f25-7a10-d889-201f23e0722e" testName="CafeManager.Tests.G03.RulesTests.BlankPhoneIsNull(phone: &quot;   &quot;)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0001598" startTime="2026-10-20T16:15:12.0609396+07:00" endTime="2026-10-20T16:15:12.0609754+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3fabb453-fa6d-4603-9333-3d5f2096a2fe" />
+    <UnitTestResult executionId="8f1632d0-79ab-4a5e-bdaa-369b1d4b39be" testId="3e91c4b8-fbc7-2c15-5a5b-e1ced2ba50be" testName="CafeManager.Tests.G03.RulesTests.BlankPhoneIsNull(phone: &quot;&quot;)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0002550" startTime="2026-10-20T16:15:12.0608405+07:00" endTime="2026-10-20T16:15:12.0608773+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8f1632d0-79ab-4a5e-bdaa-369b1d4b39be" />
+    <UnitTestResult executionId="21b6bed3-b624-43a4-887d-b42cba4112dc" testId="6d0fb92a-6c92-5169-5df7-04e9af2bd453" testName="CafeManager.Tests.G03.RulesTests.RejectsInvalidPhone(phone: &quot;090a&quot;)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0007944" startTime="2026-10-20T16:15:12.0236878+07:00" endTime="2026-10-20T16:15:12.0237255+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="21b6bed3-b624-43a4-887d-b42cba4112dc" />
+    <UnitTestResult executionId="f5e5000a-e1b8-43dc-aef9-cc5fe3295dbf" testId="578fd096-6adc-db96-b675-8d41148ee4bb" testName="CafeManager.Tests.G03.RulesTests.MoneyIsWholeVnd(text: &quot;-1&quot;)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0001844" startTime="2026-10-20T16:15:12.0606092+07:00" endTime="2026-10-20T16:15:12.0606503+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f5e5000a-e1b8-43dc-aef9-cc5fe3295dbf" />
+    <UnitTestResult executionId="6e82cf2d-04e4-4c42-b567-01f8e61554ff" testId="032e077d-3842-f3ec-29a0-f16299ec217a" testName="CafeManager.Tests.G03.RulesTests.MoneyIsWholeVnd(text: &quot;1000000000000000000&quot;)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0000160" startTime="2026-10-20T16:15:12.0607143+07:00" endTime="2026-10-20T16:15:12.0607503+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6e82cf2d-04e4-4c42-b567-01f8e61554ff" />
+    <UnitTestResult executionId="6c336218-a006-46be-8a55-aeec3bd87cd7" testId="779ca3fd-ee33-1e3e-096c-2cb11cea7878" testName="CafeManager.Tests.Inventory.MaterialRulesTests.RejectsInvalidQuantity(value: &quot;0.00001&quot;)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0058277" startTime="2026-10-20T16:15:11.9856217+07:00" endTime="2026-10-20T16:15:12.0006201+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6c336218-a006-46be-8a55-aeec3bd87cd7" />
+    <UnitTestResult executionId="92545429-2f44-4b8c-8edb-145bf89e3a1c" testId="7a9a4a7f-9c07-d9ad-4bb6-75f59aa20107" testName="CafeManager.Tests.G03.RulesTests.RejectsTierPolicyWithoutZero" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0011474" startTime="2026-10-20T16:15:12.0620211+07:00" endTime="2026-10-20T16:15:12.0620602+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="92545429-2f44-4b8c-8edb-145bf89e3a1c" />
+    <UnitTestResult executionId="0198dc73-2665-4386-ba88-86a01fdb9d41" testId="e50f5318-c91c-e1e7-2523-6370e1486367" testName="CafeManager.Tests.G03.RulesTests.MoneyIsWholeVnd(text: &quot;0.5&quot;)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0003852" startTime="2026-10-20T16:15:12.0598006+07:00" endTime="2026-10-20T16:15:12.0604968+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0198dc73-2665-4386-ba88-86a01fdb9d41" />
+    <UnitTestResult executionId="b1f5d6b0-443b-4212-a7ad-78f7cfe9fea6" testId="f03a6000-18b9-31fe-15a9-ecec44e63c56" testName="CafeManager.Tests.G03.RulesTests.LegacyPromotionCodeCanBeEditedButNotCreated" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0070080" startTime="2026-10-20T16:15:11.9880030+07:00" endTime="2026-10-20T16:15:12.0074230+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b1f5d6b0-443b-4212-a7ad-78f7cfe9fea6" />
+    <UnitTestResult executionId="fa731104-ab40-4503-b03a-b6151f952668" testId="21ab9c3a-441c-b074-84d8-ff0b354e4944" testName="CafeManager.Tests.G03.RulesTests.RejectsInvalidPhone(phone: &quot;1234567890123456&quot;)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0002407" startTime="2026-10-20T16:15:12.0594103+07:00" endTime="2026-10-20T16:15:12.0594773+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fa731104-ab40-4503-b03a-b6151f952668" />
+    <UnitTestResult executionId="74db7046-7320-49ac-8c9b-41fea649ea49" testId="f19ace30-1a67-1d8e-459f-790f6bf5f58c" testName="CafeManager.Tests.G03.RulesTests.MaterialPermissionsAreSeparated(role: &quot;ADMIN&quot;, read: True, manage: True, open: True)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0063329" startTime="2026-10-20T16:15:12.0223807+07:00" endTime="2026-10-20T16:15:12.0231553+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="74db7046-7320-49ac-8c9b-41fea649ea49" />
+    <UnitTestResult executionId="a62365a7-3aa4-4af1-92e6-804a30cabe60" testId="75ec57d9-dead-78f0-9902-d766e5970f0e" testName="CafeManager.Tests.Inventory.MaterialRulesTests.RejectsInvalidQuantity(value: &quot;100000000000000&quot;)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0000407" startTime="2026-10-20T16:15:12.0200173+07:00" endTime="2026-10-20T16:15:12.0222143+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a62365a7-3aa4-4af1-92e6-804a30cabe60" />
+    <UnitTestResult executionId="82e4be0b-5dca-4f62-a7f5-30ffb20952b0" testId="00d4d4b9-b3b6-6837-db29-6dec2b881aee" testName="CafeManager.Tests.G03.RulesTests.ReasonIsRequired" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0011139" startTime="2026-10-20T16:15:12.0642143+07:00" endTime="2026-10-20T16:15:12.0644533+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="82e4be0b-5dca-4f62-a7f5-30ffb20952b0" />
+    <UnitTestResult executionId="9b80ba80-9ac9-4345-9338-1e48630880ec" testId="5b70f616-bb78-473e-b5e4-6159781bebee" testName="CafeManager.Tests.Inventory.MaterialRulesTests.KeepsCanonicalUnitAndName" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0065145" startTime="2026-10-20T16:15:12.0231088+07:00" endTime="2026-10-20T16:15:12.0232892+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9b80ba80-9ac9-4345-9338-1e48630880ec" />
+    <UnitTestResult executionId="a28ac0fe-67cd-4e1f-a909-1a201eb5e960" testId="c36c6639-bf62-a6f2-2bb4-b697756422c2" testName="CafeManager.Tests.Inventory.MaterialRulesTests.RejectsInvalidQuantity(value: &quot;-0.0001&quot;)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0004201" startTime="2026-10-20T16:15:12.0194211+07:00" endTime="2026-10-20T16:15:12.0196696+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a28ac0fe-67cd-4e1f-a909-1a201eb5e960" />
+    <UnitTestResult executionId="5428abb1-7fad-42be-b118-72ad87218bc1" testId="ba1e34ef-eae7-5f02-57e9-7701ab7810f9" testName="CafeManager.Tests.G03.RulesTests.RejectsDuplicateThreshold" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0054599" startTime="2026-10-20T16:15:12.0618896+07:00" endTime="2026-10-20T16:15:12.0619302+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5428abb1-7fad-42be-b118-72ad87218bc1" />
+    <UnitTestResult executionId="8304ee38-c4af-44bb-8f78-b66e71e7db79" testId="a7017453-3092-c4ed-de26-0f3f3c1aa892" testName="CafeManager.Tests.G03.RulesTests.MaterialPermissionsAreSeparated(role: &quot;STORE&quot;, read: True, manage: True, open: False)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0006662" startTime="2026-10-20T16:15:12.0232499+07:00" endTime="2026-10-20T16:15:12.0234760+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8304ee38-c4af-44bb-8f78-b66e71e7db79" />
+    <UnitTestResult executionId="99fbeb2f-90cd-4d7b-be1b-7f6b39347424" testId="f65d1f3d-d0da-5c02-fde5-bc85e3752403" testName="CafeManager.Tests.G03.RulesTests.SameDayPromotionIsValid" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0006311" startTime="2026-10-20T16:15:12.0610611+07:00" endTime="2026-10-20T16:15:12.0617535+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="99fbeb2f-90cd-4d7b-be1b-7f6b39347424" />
+    <UnitTestResult executionId="fbaf5972-be0d-4127-bf05-43d34c72a17a" testId="f53b202b-cff6-a093-e1dc-f636c2925221" testName="CafeManager.Tests.G03.RulesTests.PhoneIsNotNumber" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0003499" startTime="2026-10-20T16:15:12.0640164+07:00" endTime="2026-10-20T16:15:12.0640752+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fbaf5972-be0d-4127-bf05-43d34c72a17a" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="CafeManager.Tests.G03.RulesTests.RejectsTierPolicyWithoutZero" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="7a9a4a7f-9c07-d9ad-4bb6-75f59aa20107">
+      <Execution id="92545429-2f44-4b8c-8edb-145bf89e3a1c" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.G03.RulesTests" name="RejectsTierPolicyWithoutZero" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.G03.RulesTests.BlankPhoneIsNull(phone: &quot;&quot;)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="3e91c4b8-fbc7-2c15-5a5b-e1ced2ba50be">
+      <Execution id="8f1632d0-79ab-4a5e-bdaa-369b1d4b39be" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.G03.RulesTests" name="BlankPhoneIsNull" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.G03.RulesTests.MoneyIsWholeVnd(text: &quot;-1&quot;)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="578fd096-6adc-db96-b675-8d41148ee4bb">
+      <Execution id="f5e5000a-e1b8-43dc-aef9-cc5fe3295dbf" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.G03.RulesTests" name="MoneyIsWholeVnd" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.G03.RulesTests.MaterialPermissionsAreSeparated(role: &quot;STORE&quot;, read: True, manage: True, open: False)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="a7017453-3092-c4ed-de26-0f3f3c1aa892">
+      <Execution id="8304ee38-c4af-44bb-8f78-b66e71e7db79" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.G03.RulesTests" name="MaterialPermissionsAreSeparated" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.G03.RulesTests.MoneyIsWholeVnd(text: &quot;0.5&quot;)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="e50f5318-c91c-e1e7-2523-6370e1486367">
+      <Execution id="0198dc73-2665-4386-ba88-86a01fdb9d41" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.G03.RulesTests" name="MoneyIsWholeVnd" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.G03.RulesTests.RejectsInvalidPhone(phone: &quot;1234567890123456&quot;)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="21ab9c3a-441c-b074-84d8-ff0b354e4944">
+      <Execution id="fa731104-ab40-4503-b03a-b6151f952668" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.G03.RulesTests" name="RejectsInvalidPhone" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.G03.RulesTests.SameDayPromotionIsValid" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="f65d1f3d-d0da-5c02-fde5-bc85e3752403">
+      <Execution id="99fbeb2f-90cd-4d7b-be1b-7f6b39347424" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.G03.RulesTests" name="SameDayPromotionIsValid" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.G03.RulesTests.ReasonIsRequired" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="00d4d4b9-b3b6-6837-db29-6dec2b881aee">
+      <Execution id="82e4be0b-5dca-4f62-a7f5-30ffb20952b0" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.G03.RulesTests" name="ReasonIsRequired" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Inventory.MaterialRulesTests.RejectsInvalidQuantity(value: &quot;0.00001&quot;)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="779ca3fd-ee33-1e3e-096c-2cb11cea7878">
+      <Execution id="6c336218-a006-46be-8a55-aeec3bd87cd7" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Inventory.MaterialRulesTests" name="RejectsInvalidQuantity" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.G03.RulesTests.PhoneIsNotNumber" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="f53b202b-cff6-a093-e1dc-f636c2925221">
+      <Execution id="fbaf5972-be0d-4127-bf05-43d34c72a17a" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.G03.RulesTests" name="PhoneIsNotNumber" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.G03.RulesTests.MoneyIsWholeVnd(text: &quot;1000000000000000000&quot;)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="032e077d-3842-f3ec-29a0-f16299ec217a">
+      <Execution id="6e82cf2d-04e4-4c42-b567-01f8e61554ff" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.G03.RulesTests" name="MoneyIsWholeVnd" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.G03.RulesTests.RejectsInvalidPhone(phone: &quot;090a&quot;)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="6d0fb92a-6c92-5169-5df7-04e9af2bd453">
+      <Execution id="21b6bed3-b624-43a4-887d-b42cba4112dc" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.G03.RulesTests" name="RejectsInvalidPhone" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.G03.RulesTests.BlankPhoneIsNull(phone: &quot;   &quot;)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="1bc0f965-8f25-7a10-d889-201f23e0722e">
+      <Execution id="3fabb453-fa6d-4603-9333-3d5f2096a2fe" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.G03.RulesTests" name="BlankPhoneIsNull" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Inventory.MaterialRulesTests.RejectsInvalidQuantity(value: &quot;-0.0001&quot;)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="c36c6639-bf62-a6f2-2bb4-b697756422c2">
+      <Execution id="a28ac0fe-67cd-4e1f-a909-1a201eb5e960" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Inventory.MaterialRulesTests" name="RejectsInvalidQuantity" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.G03.RulesTests.MaterialPermissionsAreSeparated(role: &quot;ADMIN&quot;, read: True, manage: True, open: True)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="f19ace30-1a67-1d8e-459f-790f6bf5f58c">
+      <Execution id="74db7046-7320-49ac-8c9b-41fea649ea49" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.G03.RulesTests" name="MaterialPermissionsAreSeparated" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Inventory.MaterialRulesTests.KeepsCanonicalUnitAndName" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="5b70f616-bb78-473e-b5e4-6159781bebee">
+      <Execution id="9b80ba80-9ac9-4345-9338-1e48630880ec" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Inventory.MaterialRulesTests" name="KeepsCanonicalUnitAndName" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Inventory.MaterialRulesTests.RejectsInvalidQuantity(value: &quot;100000000000000&quot;)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="75ec57d9-dead-78f0-9902-d766e5970f0e">
+      <Execution id="a62365a7-3aa4-4af1-92e6-804a30cabe60" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Inventory.MaterialRulesTests" name="RejectsInvalidQuantity" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.G03.RulesTests.LegacyPromotionCodeCanBeEditedButNotCreated" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="f03a6000-18b9-31fe-15a9-ecec44e63c56">
+      <Execution id="b1f5d6b0-443b-4212-a7ad-78f7cfe9fea6" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.G03.RulesTests" name="LegacyPromotionCodeCanBeEditedButNotCreated" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.G03.RulesTests.RejectsDuplicateThreshold" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="ba1e34ef-eae7-5f02-57e9-7701ab7810f9">
+      <Execution id="5428abb1-7fad-42be-b118-72ad87218bc1" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.G03.RulesTests" name="RejectsDuplicateThreshold" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.G03.RulesTests.MaterialPermissionsAreSeparated(role: &quot;CASH&quot;, read: True, manage: False, open: False)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="0efecc30-820f-dd15-625a-2a5e9e0971bc">
+      <Execution id="83f0d931-aa4f-4be9-8e98-5d153f905ed1" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.G03.RulesTests" name="MaterialPermissionsAreSeparated" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="0efecc30-820f-dd15-625a-2a5e9e0971bc" executionId="83f0d931-aa4f-4be9-8e98-5d153f905ed1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1bc0f965-8f25-7a10-d889-201f23e0722e" executionId="3fabb453-fa6d-4603-9333-3d5f2096a2fe" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3e91c4b8-fbc7-2c15-5a5b-e1ced2ba50be" executionId="8f1632d0-79ab-4a5e-bdaa-369b1d4b39be" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6d0fb92a-6c92-5169-5df7-04e9af2bd453" executionId="21b6bed3-b624-43a4-887d-b42cba4112dc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="578fd096-6adc-db96-b675-8d41148ee4bb" executionId="f5e5000a-e1b8-43dc-aef9-cc5fe3295dbf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="032e077d-3842-f3ec-29a0-f16299ec217a" executionId="6e82cf2d-04e4-4c42-b567-01f8e61554ff" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="779ca3fd-ee33-1e3e-096c-2cb11cea7878" executionId="6c336218-a006-46be-8a55-aeec3bd87cd7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7a9a4a7f-9c07-d9ad-4bb6-75f59aa20107" executionId="92545429-2f44-4b8c-8edb-145bf89e3a1c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e50f5318-c91c-e1e7-2523-6370e1486367" executionId="0198dc73-2665-4386-ba88-86a01fdb9d41" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f03a6000-18b9-31fe-15a9-ecec44e63c56" executionId="b1f5d6b0-443b-4212-a7ad-78f7cfe9fea6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="21ab9c3a-441c-b074-84d8-ff0b354e4944" executionId="fa731104-ab40-4503-b03a-b6151f952668" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f19ace30-1a67-1d8e-459f-790f6bf5f58c" executionId="74db7046-7320-49ac-8c9b-41fea649ea49" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="75ec57d9-dead-78f0-9902-d766e5970f0e" executionId="a62365a7-3aa4-4af1-92e6-804a30cabe60" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="00d4d4b9-b3b6-6837-db29-6dec2b881aee" executionId="82e4be0b-5dca-4f62-a7f5-30ffb20952b0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5b70f616-bb78-473e-b5e4-6159781bebee" executionId="9b80ba80-9ac9-4345-9338-1e48630880ec" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c36c6639-bf62-a6f2-2bb4-b697756422c2" executionId="a28ac0fe-67cd-4e1f-a909-1a201eb5e960" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ba1e34ef-eae7-5f02-57e9-7701ab7810f9" executionId="5428abb1-7fad-42be-b118-72ad87218bc1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a7017453-3092-c4ed-de26-0f3f3c1aa892" executionId="8304ee38-c4af-44bb-8f78-b66e71e7db79" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f65d1f3d-d0da-5c02-fde5-bc85e3752403" executionId="99fbeb2f-90cd-4d7b-be1b-7f6b39347424" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f53b202b-cff6-a093-e1dc-f636c2925221" executionId="fbaf5972-be0d-4127-bf05-43d34c72a17a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="20" executed="20" passed="20" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.13)&#xD;
+[xUnit.net 00:00:00.17]   Discovering: CafeManager.Tests&#xD;
+[xUnit.net 00:00:00.50]   Discovered:  CafeManager.Tests&#xD;
+[xUnit.net 00:00:00.55]   Starting:    CafeManager.Tests&#xD;
+[xUnit.net 00:00:00.67]   Finished:    CafeManager.Tests&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

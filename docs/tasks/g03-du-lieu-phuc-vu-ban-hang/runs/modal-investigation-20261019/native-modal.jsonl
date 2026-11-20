@@ -1,0 +1,16 @@
+{"At":"2026-10-19T01:15:25.2375909+07:00","Event":"Started","Value":"False"}
+{"At":"2026-10-19T01:15:25.3649501+07:00","Event":"ParentActivated","Value":""}
+{"At":"2026-10-19T01:15:31.950776+07:00","Event":"ParentDeactivated","Value":""}
+{"At":"2026-10-19T01:16:22.259131+07:00","Event":"ParentActivated","Value":""}
+{"At":"2026-10-19T01:16:30.1835497+07:00","Event":"ParentDeactivated","Value":""}
+{"At":"2026-10-19T01:16:30.1894249+07:00","Event":"ParentActivated","Value":""}
+{"At":"2026-10-19T01:16:30.2162723+07:00","Event":"ParentTextChanged","Value":"parent-control"}
+{"At":"2026-10-19T01:16:30.2194893+07:00","Event":"ParentTextChanged","Value":"parent-control"}
+{"At":"2026-10-19T01:16:47.1743781+07:00","Event":"OpeningModal","Value":"False"}
+{"At":"2026-10-19T01:16:47.2338887+07:00","Event":"ParentDeactivated","Value":""}
+{"At":"2026-10-19T01:16:47.2554922+07:00","Event":"InputGotFocus","Value":""}
+{"At":"2026-10-19T01:16:47.2591798+07:00","Event":"ModalActivated","Value":""}
+{"At":"2026-10-19T01:16:57.2512428+07:00","Event":"InputKeyDown","Value":"LWin"}
+{"At":"2026-10-19T01:16:57.2990573+07:00","Event":"ModalDeactivated","Value":""}
+{"At":"2026-10-19T01:16:57.3006209+07:00","Event":"InputLostFocus","Value":""}
+{"At":"2026-10-19T01:17:07.3240671+07:00","Event":"ParentActivated","Value":""}

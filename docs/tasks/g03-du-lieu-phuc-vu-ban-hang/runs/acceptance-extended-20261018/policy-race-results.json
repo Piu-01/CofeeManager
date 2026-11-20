@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "T13-policy-first-create",
+    "Expected": "Second request blocks; then error 0; final SQL assertions hold",
+    "Status": "PASS",
+    "Actual": "Blocked at LCK_M_S:66; SQL 0; assertions and transaction 0:0",
+    "Wait": "LCK_M_S:66"
+  },
+  {
+    "Id": "T13-create-first-policy",
+    "Expected": "Second request blocks; then error 0; final SQL assertions hold",
+    "Status": "PASS",
+    "Actual": "Blocked at LCK_M_S:66; SQL 0; assertions and transaction 0:0",
+    "Wait": "LCK_M_S:66"
+  },
+  {
+    "Id": "T13-policy-first-open",
+    "Expected": "Second request blocks; then error 0; final SQL assertions hold",
+    "Status": "PASS",
+    "Actual": "Blocked at LCK_M_S:66; SQL 0; assertions and transaction 0:0",
+    "Wait": "LCK_M_S:66"
+  },
+  {
+    "Id": "T13-open-first-policy",
+    "Expected": "Second request blocks; then error 0; final SQL assertions hold",
+    "Status": "PASS",
+    "Actual": "Blocked at LCK_M_S:66; SQL 0; assertions and transaction 0:0",
+    "Wait": "LCK_M_S:66"
+  },
+  {
+    "Id": "T13-policy-first-adjust",
+    "Expected": "Second request blocks; then error 0; final SQL assertions hold",
+    "Status": "PASS",
+    "Actual": "Blocked at LCK_M_S:66; SQL 0; assertions and transaction 0:0",
+    "Wait": "LCK_M_S:66"
+  },
+  {
+    "Id": "T13-adjust-first-policy",
+    "Expected": "Second request blocks; then error 0; final SQL assertions hold",
+    "Status": "PASS",
+    "Actual": "Blocked at LCK_M_S:66; SQL 0; assertions and transaction 0:0",
+    "Wait": "LCK_M_S:66"
+  },
+  {
+    "Id": "T13-policy-first-checkout",
+    "Expected": "Second request blocks; then error 0; final SQL assertions hold",
+    "Status": "PASS",
+    "Actual": "Blocked at LCK_M_S:66; SQL 0; assertions and transaction 0:0",
+    "Wait": "LCK_M_S:66"
+  },
+  {
+    "Id": "T13-checkout-first-policy",
+    "Expected": "Second request blocks; then error 0; final SQL assertions hold",
+    "Status": "PASS",
+    "Actual": "Blocked at LCK_M_S:66; SQL 0; assertions and transaction 0:0",
+    "Wait": "LCK_M_S:66"
+  }
+]

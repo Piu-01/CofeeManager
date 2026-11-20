@@ -1,0 +1,8 @@
+{
+  "Task": "t11",
+  "Batch": "SQL contract subset (not full ID acceptance)",
+  "Expected": "All SQL assertions complete; transaction clean",
+  "Status": "PASS",
+  "Fixture": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g03-du-lieu-phuc-vu-ban-hang\\runs\\g03-b01-regression\\unit-fail\\database\\tests\\t11\\acceptance-contract.sql",
+  "Actual": "Assertions completed"
+}

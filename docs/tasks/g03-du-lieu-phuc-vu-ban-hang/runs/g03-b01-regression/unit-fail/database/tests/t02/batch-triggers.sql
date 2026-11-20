@@ -1,0 +1,80 @@
+-- CASE T02-K08-lines-insert | Batch insert groups independent invoice totals | 0 |
+-- SETUP
+EXEC #T02_Order 'ZBILL00001',@Quantity=0;
+EXEC #T02_Order 'ZBILL00002',@Quantity=0;
+-- ACT
+INSERT dbo.CHITIET_HD(MaHD,MaSP,SoLuong,GiaBan,GhiChu) VALUES
+('ZBILL00001','SP001',2,25000,N'line A'),('ZBILL00001','SP002',1,30000,N'line B'),
+('ZBILL00002','SP001',3,25000,N'line C'),('ZBILL00002','SP002',2,30000,N'line D');
+-- ASSERT
+IF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD='ZBILL00001' AND TongTien=80000) THROW 52008,'Bill1 insert total',1;
+IF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD='ZBILL00002' AND TongTien=135000) THROW 52008,'Bill2 insert total',1;
+-- CASE T02-K08-lines-update | Batch quantity update preserves per-invoice groups | 0 |
+-- ACT
+UPDATE dbo.CHITIET_HD SET SoLuong=SoLuong+1 WHERE MaHD IN ('ZBILL00001','ZBILL00002');
+-- ASSERT
+IF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD='ZBILL00001' AND TongTien=135000) THROW 52008,'Bill1 update total',1;
+IF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD='ZBILL00002' AND TongTien=190000) THROW 52008,'Bill2 update total',1;
+-- CASE T02-K08-lines-delete | Batch delete recomputes all affected invoices | 0 |
+-- ACT
+DELETE dbo.CHITIET_HD WHERE MaHD IN ('ZBILL00001','ZBILL00002') AND MaSP='SP001';
+-- ASSERT
+IF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD='ZBILL00001' AND TongTien=60000) THROW 52008,'Bill1 delete total',1;
+IF NOT EXISTS(SELECT 1 FROM dbo.HOADON WHERE MaHD='ZBILL00002' AND TongTien=90000) THROW 52008,'Bill2 delete total',1;
+-- CASE T02-K08-lines-atomic | One invalid quantity rolls back the entire batch | 547 | CHK_CTHD_SoLuong
+-- ACT
+INSERT dbo.CHITIET_HD(MaHD,MaSP,SoLuong,GiaBan) VALUES('ZBILL00001','SP001',1,25000),('ZBILL00002','SP001',0,25000);
+-- CASE T02-K08-receipts-insert | Receipt insert accumulates a shared ingredient across two headers | 0 |
+-- SETUP
+INSERT dbo.NGUYENVATLIEU(MaNVL,TenNVL,DonViTinh,SoLuongTon) VALUES('ZB001',N'T02 batch 1',N'Kg',10),('ZB002',N'T02 batch 2',N'Lit',20);
+INSERT dbo.PHIEUNHAP(MaPN,MaNV,MaNCC) VALUES('ZREC000001','NV001','NCC01'),('ZREC000002','NV001','NCC02');
+-- ACT
+INSERT dbo.CHITIET_PN(MaPN,MaNVL,SoLuong,DonGiaNhap) VALUES
+('ZREC000001','ZB001',1.1111,1000),('ZREC000001','ZB002',2,2000),('ZREC000002','ZB001',3,2000);
+-- ASSERT
+IF NOT EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE MaNVL='ZB001' AND SoLuongTon=14.1111) THROW 52008,'Receipt shared stock',1;
+IF NOT EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE MaNVL='ZB002' AND SoLuongTon=22) THROW 52008,'Receipt stock2',1;
+IF NOT EXISTS(SELECT 1 FROM dbo.PHIEUNHAP WHERE MaPN='ZREC000001' AND TongTien=5111) THROW 52008,'Receipt1 rounding',1;
+IF NOT EXISTS(SELECT 1 FROM dbo.PHIEUNHAP WHERE MaPN='ZREC000002' AND TongTien=6000) THROW 52008,'Receipt2 total',1;
+-- CASE T02-K08-receipts-update | Receipt update uses inserted minus deleted delta | 0 |
+-- ACT
+UPDATE dbo.CHITIET_PN SET SoLuong=SoLuong+1 WHERE MaPN IN ('ZREC000001','ZREC000002');
+-- ASSERT
+IF NOT EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE MaNVL='ZB001' AND SoLuongTon=16.1111) THROW 52008,'Receipt delta shared',1;
+IF NOT EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE MaNVL='ZB002' AND SoLuongTon=23) THROW 52008,'Receipt delta2',1;
+IF NOT EXISTS(SELECT 1 FROM dbo.PHIEUNHAP WHERE MaPN='ZREC000001' AND TongTien=8111) THROW 52008,'Receipt1 update total',1;
+IF NOT EXISTS(SELECT 1 FROM dbo.PHIEUNHAP WHERE MaPN='ZREC000002' AND TongTien=8000) THROW 52008,'Receipt2 update total',1;
+-- CASE T02-K08-receipts-delete | Receipt delete reverses every grouped stock delta | 0 |
+-- ACT
+DELETE dbo.CHITIET_PN WHERE MaPN IN ('ZREC000001','ZREC000002');
+-- ASSERT
+IF NOT EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE MaNVL='ZB001' AND SoLuongTon=10) THROW 52008,'Receipt delete stock1',1;
+IF NOT EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE MaNVL='ZB002' AND SoLuongTon=20) THROW 52008,'Receipt delete stock2',1;
+IF EXISTS(SELECT 1 FROM dbo.PHIEUNHAP WHERE MaPN IN ('ZREC000001','ZREC000002') AND TongTien<>0) THROW 52008,'Receipt delete totals',1;
+-- CASE T02-K08-exports-insert | Export batch groups stock shared across two headers | 0 |
+-- SETUP
+INSERT dbo.PHIEUXUAT(MaPX,MaNV,LoaiXuat) VALUES('ZEXP000001','NV001',N'Huy do hong'),('ZEXP000002','NV001',N'Tra hang');
+-- ACT
+INSERT dbo.CHITIET_PX(MaPX,MaNVL,SoLuongXuat) VALUES
+('ZEXP000001','ZB001',1),('ZEXP000001','ZB002',2),('ZEXP000002','ZB001',3);
+-- ASSERT
+IF NOT EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE MaNVL='ZB001' AND SoLuongTon=6) THROW 52008,'Export shared stock',1;
+IF NOT EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE MaNVL='ZB002' AND SoLuongTon=18) THROW 52008,'Export stock2',1;
+-- CASE T02-K08-exports-update | Export update subtracts only changed quantities | 0 |
+-- ACT
+UPDATE dbo.CHITIET_PX SET SoLuongXuat=SoLuongXuat+1 WHERE MaPX IN ('ZEXP000001','ZEXP000002');
+-- ASSERT
+IF NOT EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE MaNVL='ZB001' AND SoLuongTon=4) THROW 52008,'Export delta1',1;
+IF NOT EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE MaNVL='ZB002' AND SoLuongTon=17) THROW 52008,'Export delta2',1;
+-- CASE T02-K08-exports-delete | Export delete restores grouped amounts | 0 |
+-- ACT
+DELETE dbo.CHITIET_PX WHERE MaPX IN ('ZEXP000001','ZEXP000002');
+-- ASSERT
+IF NOT EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE MaNVL='ZB001' AND SoLuongTon=10) THROW 52008,'Export delete1',1;
+IF NOT EXISTS(SELECT 1 FROM dbo.NGUYENVATLIEU WHERE MaNVL='ZB002' AND SoLuongTon=20) THROW 52008,'Export delete2',1;
+-- CASE T02-K08-exports-atomic | Insufficient stock in one row rolls back all export rows | 547 | CHK_NVL_TonKho
+-- ACT
+INSERT dbo.CHITIET_PX(MaPX,MaNVL,SoLuongXuat) VALUES('ZEXP000001','ZB001',1),('ZEXP000002','ZB002',21);
+-- CASE T02-K08-receipts-atomic | Invalid ingredient FK rolls back all receipt rows | 547 | FK_CTPN_NVL
+-- ACT
+INSERT dbo.CHITIET_PN(MaPN,MaNVL,SoLuong,DonGiaNhap) VALUES('ZREC000001','ZB001',1,1000),('ZREC000002','ZZ999',1,1000);

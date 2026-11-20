@@ -1,0 +1,26 @@
+[
+  {
+    "Database": "CoffeeManager_Test_G03_20261018_204600_4a5881aa_clean",
+    "Exists": 0
+  },
+  {
+    "Database": "CoffeeManager_Test_G03_20261018_204600_4a5881aa_demo",
+    "Exists": 0
+  },
+  {
+    "Database": "CoffeeManager_Test_G03_20261018_204624_8dd7916b_clean",
+    "Exists": 0
+  },
+  {
+    "Database": "CoffeeManager_Test_G03_20261018_204624_8dd7916b_demo",
+    "Exists": 0
+  },
+  {
+    "Database": "CoffeeManager_Test_G03_20261018_204700_9899e54c_clean",
+    "Exists": 0
+  },
+  {
+    "Database": "CoffeeManager_Test_G03_20261018_204700_9899e54c_demo",
+    "Exists": 0
+  }
+]

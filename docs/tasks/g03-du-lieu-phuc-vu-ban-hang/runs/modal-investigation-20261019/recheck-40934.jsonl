@@ -1,0 +1,10 @@
+{"At":"2026-10-19T19:08:12.8131833+07:00","Event":"Started","Value":"False"}
+{"At":"2026-10-19T19:08:12.9172349+07:00","Event":"ParentActivated","Value":""}
+{"At":"2026-10-19T19:08:26.204205+07:00","Event":"ParentDeactivated","Value":""}
+{"At":"2026-10-19T19:08:26.2108937+07:00","Event":"ParentActivated","Value":""}
+{"At":"2026-10-19T19:08:26.239216+07:00","Event":"ParentTextChanged","Value":"parent-new-helper"}
+{"At":"2026-10-19T19:08:26.2399075+07:00","Event":"ParentTextChanged","Value":"parent-new-helper"}
+{"At":"2026-10-19T19:08:31.4919972+07:00","Event":"OpeningModal","Value":"False"}
+{"At":"2026-10-19T19:08:31.5220641+07:00","Event":"ParentDeactivated","Value":""}
+{"At":"2026-10-19T19:08:31.540417+07:00","Event":"InputGotFocus","Value":""}
+{"At":"2026-10-19T19:08:31.543046+07:00","Event":"ModalActivated","Value":""}

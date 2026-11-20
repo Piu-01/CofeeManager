@@ -1,0 +1,182 @@
+[
+  {
+    "Role": "ADMIN",
+    "Module": "Materials",
+    "File": "ADMIN-Materials.png",
+    "Grids": [
+      {
+        "Rows": 12,
+        "Columns": 5
+      }
+    ],
+    "Messages": [
+      "Trang 1 \u00B7 \u0111\u1ECDc t\u1EEB DB 19:53:52"
+    ],
+    "Kind": "Technical read-only UI; identity injection, not login acceptance"
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Products",
+    "File": "ADMIN-Products.png",
+    "Grids": [
+      {
+        "Rows": 10,
+        "Columns": 5
+      }
+    ],
+    "Messages": [
+      "Trang 1 \u00B7 c\u1EADp nh\u1EADt 19:53:53"
+    ],
+    "Kind": "Technical read-only UI; identity injection, not login acceptance"
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Tables",
+    "File": "ADMIN-Tables.png",
+    "Grids": [
+      {
+        "Rows": 10,
+        "Columns": 5
+      }
+    ],
+    "Messages": [
+      "Trang 1 \u00B7 c\u1EADp nh\u1EADt 19:53:55"
+    ],
+    "Kind": "Technical read-only UI; identity injection, not login acceptance"
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Customers",
+    "File": "ADMIN-Customers.png",
+    "Grids": [
+      {
+        "Rows": 10,
+        "Columns": 6
+      }
+    ],
+    "Messages": [
+      "Trang 1 \u00B7 c\u1EADp nh\u1EADt 19:53:56"
+    ],
+    "Kind": "Technical read-only UI; identity injection, not login acceptance"
+  },
+  {
+    "Role": "ADMIN",
+    "Module": "Loyalty",
+    "File": "ADMIN-Loyalty.png",
+    "Grids": [
+      {
+        "Rows": 11,
+        "Columns": 5
+      }
+    ],
+    "Messages": [
+      "Trang 1 \u00B7 c\u1EADp nh\u1EADt 19:53:58"
+    ],
+    "Kind": "Technical read-only UI; identity injection, not login acceptance"
+  },
+  {
+    "Role": "CASH",
+    "Module": "Materials",
+    "File": "CASH-Materials.png",
+    "Grids": [
+      {
+        "Rows": 12,
+        "Columns": 5
+      }
+    ],
+    "Messages": [
+      "Trang 1 \u00B7 \u0111\u1ECDc t\u1EEB DB 19:54:00"
+    ],
+    "Kind": "Technical read-only UI; identity injection, not login acceptance"
+  },
+  {
+    "Role": "CASH",
+    "Module": "Products",
+    "File": "CASH-Products.png",
+    "Grids": [
+      {
+        "Rows": 10,
+        "Columns": 5
+      }
+    ],
+    "Messages": [
+      "Trang 1 \u00B7 c\u1EADp nh\u1EADt 19:54:02"
+    ],
+    "Kind": "Technical read-only UI; identity injection, not login acceptance"
+  },
+  {
+    "Role": "CASH",
+    "Module": "Tables",
+    "File": "CASH-Tables.png",
+    "Grids": [
+      {
+        "Rows": 10,
+        "Columns": 5
+      }
+    ],
+    "Messages": [
+      "Trang 1 \u00B7 c\u1EADp nh\u1EADt 19:54:03"
+    ],
+    "Kind": "Technical read-only UI; identity injection, not login acceptance"
+  },
+  {
+    "Role": "CASH",
+    "Module": "Customers",
+    "File": "CASH-Customers.png",
+    "Grids": [
+      {
+        "Rows": 10,
+        "Columns": 6
+      }
+    ],
+    "Messages": [
+      "Trang 1 \u00B7 c\u1EADp nh\u1EADt 19:54:05"
+    ],
+    "Kind": "Technical read-only UI; identity injection, not login acceptance"
+  },
+  {
+    "Role": "CASH",
+    "Module": "Loyalty",
+    "File": "CASH-Loyalty.png",
+    "Grids": [
+      {
+        "Rows": 0,
+        "Columns": 5
+      }
+    ],
+    "Messages": [
+      "Ch\u01B0a c\u00F3 d\u1EEF li\u1EC7u trong b\u1ED9 l\u1ECDc n\u00E0y."
+    ],
+    "Kind": "Technical read-only UI; identity injection, not login acceptance"
+  },
+  {
+    "Role": "STORE",
+    "Module": "Materials",
+    "File": "STORE-Materials.png",
+    "Grids": [
+      {
+        "Rows": 12,
+        "Columns": 5
+      }
+    ],
+    "Messages": [
+      "Trang 1 \u00B7 \u0111\u1ECDc t\u1EEB DB 19:54:09"
+    ],
+    "Kind": "Technical read-only UI; identity injection, not login acceptance"
+  },
+  {
+    "Role": "STORE",
+    "Module": "Products",
+    "File": "STORE-Products.png",
+    "Grids": [
+      {
+        "Rows": 10,
+        "Columns": 5
+      }
+    ],
+    "Messages": [
+      "Trang 1 \u00B7 c\u1EADp nh\u1EADt 19:54:10"
+    ],
+    "Kind": "Technical read-only UI; identity injection, not login acceptance"
+  }
+]

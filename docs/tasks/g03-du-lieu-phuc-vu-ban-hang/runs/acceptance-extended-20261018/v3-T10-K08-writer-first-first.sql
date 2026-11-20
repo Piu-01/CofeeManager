@@ -1,0 +1,1 @@
+DECLARE @a int,@s binary(8),@id uniqueidentifier=NEWID();SELECT TOP(1) @a=MaTK,@s=SecurityStamp FROM dbo.TAIKHOAN WHERE MaVT='ADMIN' AND HoatDong=1 ORDER BY MaTK;DECLARE @r binary(8)=0x0000000000000920;DECLARE @recipe dbo.RecipeLineInput;INSERT @recipe VALUES('NVL01',0.05),('NVL02',0.06);BEGIN TRAN;EXEC dbo.sp_ProductReplaceRecipe @a,@s,'SP996',@id,@recipe,@r;
