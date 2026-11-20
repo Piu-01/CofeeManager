@@ -1,0 +1,18 @@
+{
+  "RunId": "20261031_100202_0a6c7f47",
+  "Kind": "Technical migration/dependency smoke, not acceptance",
+  "Server": "localhost",
+  "ThroughVersion": 26,
+  "Created": [
+    {
+      "Marker": "20261031_100202_0a6c7f47",
+      "Database": "CoffeeManager_Test_G07_20261031_100202_0a6c7f47_clean"
+    }
+  ],
+  "Cleaned": [
+    "CoffeeManager_Test_G07_20261031_100202_0a6c7f47_clean"
+  ],
+  "Retained": [],
+  "Status": "Failed",
+  "Error": "System.Management.Automation.MethodInvocationException: Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"The multi-part identifier \"eo.RecordedAt\" could not be bound.\"\r\n ---> System.Data.SqlClient.SqlException (0x80131904): The multi-part identifier \"eo.RecordedAt\" could not be bound.\r\n   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)\r\n   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)\r\n   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()\r\n   at CallSite.Target(Closure, CallSite, Object)\r\nClientConnectionId:d4aa80ab-b95e-464d-ae5a-d7ca94330915\r\nError Number:4104,State:1,Class:16\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)"
+}

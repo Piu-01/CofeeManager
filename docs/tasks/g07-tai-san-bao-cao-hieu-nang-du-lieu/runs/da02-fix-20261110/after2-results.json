@@ -1,0 +1,465 @@
+{
+  "Open": {
+    "ReadyMs": 1286.8294,
+    "State": "\u0110\u00E3 c\u1EADp nh\u1EADt s\u1ED1 li\u1EC7u."
+  },
+  "Samples": [
+    {
+      "Label": "fast-render-1",
+      "Method": "Render",
+      "ElapsedMs": 38.5858,
+      "Layouts": 1,
+      "ControlsBefore": 78,
+      "ByType": {
+        "AdminDashboardControl": 1
+      },
+      "Geometry": {
+        "Scroll": {
+          "Width": 1116,
+          "Height": 706,
+          "Left": 0,
+          "Top": 0
+        },
+        "ScrollClient": {
+          "IsEmpty": false,
+          "Width": 1095,
+          "Height": 706
+        },
+        "Page": {
+          "Width": 1047,
+          "Height": 1847,
+          "Left": 24,
+          "Top": 24
+        },
+        "Metrics": {
+          "Width": 1047,
+          "Height": 546,
+          "Left": 0,
+          "Top": 319
+        },
+        "Charts": {
+          "Width": 1047,
+          "Height": 538,
+          "Left": 0,
+          "Top": 869
+        },
+        "Bottom": {
+          "Width": 1047,
+          "Height": 392,
+          "Left": 0,
+          "Top": 1407
+        },
+        "Products": {
+          "Width": 471,
+          "Height": 37,
+          "Left": 0,
+          "Top": 80
+        },
+        "ProductsRows": 5,
+        "ProductsChildren": [
+          {
+            "Width": 100,
+            "Height": 23,
+            "Left": 0,
+            "Top": 0
+          },
+          {
+            "Width": 154,
+            "Height": 50,
+            "Left": 0,
+            "Top": 0
+          },
+          {
+            "Width": 0,
+            "Height": 5,
+            "Left": 0,
+            "Top": 0
+          },
+          {
+            "Width": 209,
+            "Height": 50,
+            "Left": 0,
+            "Top": 0
+          },
+          {
+            "Width": 0,
+            "Height": 5,
+            "Left": 0,
+            "Top": 0
+          }
+        ],
+        "AlertHeights": [
+          65,
+          65,
+          65,
+          65
+        ],
+        "MetricValues": [
+          "125.000 \u20AB",
+          "1",
+          "125.000 \u20AB",
+          "0 \u20AB"
+        ]
+      }
+    },
+    {
+      "Label": "fast-clear",
+      "Method": "ClearSnapshot",
+      "ElapsedMs": 23.4043,
+      "Layouts": 1,
+      "ControlsBefore": 78,
+      "ByType": {
+        "AdminDashboardControl": 1
+      },
+      "Geometry": {
+        "Scroll": {
+          "Width": 1116,
+          "Height": 706,
+          "Left": 0,
+          "Top": 0
+        },
+        "ScrollClient": {
+          "IsEmpty": false,
+          "Width": 1095,
+          "Height": 706
+        },
+        "Page": {
+          "Width": 1047,
+          "Height": 1847,
+          "Left": 24,
+          "Top": 24
+        },
+        "Metrics": {
+          "Width": 1047,
+          "Height": 546,
+          "Left": 0,
+          "Top": 319
+        },
+        "Charts": {
+          "Width": 1047,
+          "Height": 538,
+          "Left": 0,
+          "Top": 869
+        },
+        "Bottom": {
+          "Width": 1047,
+          "Height": 392,
+          "Left": 0,
+          "Top": 1407
+        },
+        "Products": {
+          "Width": 471,
+          "Height": 37,
+          "Left": 0,
+          "Top": 80
+        },
+        "ProductsRows": 1,
+        "ProductsChildren": [
+          {
+            "Width": 100,
+            "Height": 23,
+            "Left": 0,
+            "Top": 0
+          }
+        ],
+        "AlertHeights": [
+          65,
+          65,
+          65,
+          65
+        ],
+        "MetricValues": [
+          "\u2014",
+          "\u2014",
+          "\u2014",
+          "\u2014"
+        ]
+      }
+    },
+    {
+      "Label": "fast-render-2",
+      "Method": "Render",
+      "ElapsedMs": 23.232,
+      "Layouts": 1,
+      "ControlsBefore": 74,
+      "ByType": {
+        "AdminDashboardControl": 1
+      },
+      "Geometry": {
+        "Scroll": {
+          "Width": 1116,
+          "Height": 706,
+          "Left": 0,
+          "Top": 0
+        },
+        "ScrollClient": {
+          "IsEmpty": false,
+          "Width": 1095,
+          "Height": 706
+        },
+        "Page": {
+          "Width": 1047,
+          "Height": 1847,
+          "Left": 24,
+          "Top": 24
+        },
+        "Metrics": {
+          "Width": 1047,
+          "Height": 546,
+          "Left": 0,
+          "Top": 319
+        },
+        "Charts": {
+          "Width": 1047,
+          "Height": 538,
+          "Left": 0,
+          "Top": 869
+        },
+        "Bottom": {
+          "Width": 1047,
+          "Height": 392,
+          "Left": 0,
+          "Top": 1407
+        },
+        "Products": {
+          "Width": 471,
+          "Height": 37,
+          "Left": 0,
+          "Top": 80
+        },
+        "ProductsRows": 5,
+        "ProductsChildren": [
+          {
+            "Width": 100,
+            "Height": 23,
+            "Left": 0,
+            "Top": 0
+          },
+          {
+            "Width": 154,
+            "Height": 50,
+            "Left": 0,
+            "Top": 0
+          },
+          {
+            "Width": 0,
+            "Height": 5,
+            "Left": 0,
+            "Top": 0
+          },
+          {
+            "Width": 209,
+            "Height": 50,
+            "Left": 0,
+            "Top": 0
+          },
+          {
+            "Width": 0,
+            "Height": 5,
+            "Left": 0,
+            "Top": 0
+          }
+        ],
+        "AlertHeights": [
+          65,
+          65,
+          65,
+          65
+        ],
+        "MetricValues": [
+          "125.000 \u20AB",
+          "1",
+          "125.000 \u20AB",
+          "0 \u20AB"
+        ]
+      }
+    },
+    {
+      "Label": "raw-render",
+      "Method": "RenderCore",
+      "ElapsedMs": 5829.1774,
+      "Layouts": 325,
+      "ControlsBefore": 78,
+      "ByType": {
+        "TableLayoutPanel": 192,
+        "OrbitSurface": 46,
+        "Label": 7,
+        "Panel": 76,
+        "OrbitButton": 2,
+        "Bar": 2
+      },
+      "Geometry": {
+        "Scroll": {
+          "Width": 1116,
+          "Height": 706,
+          "Left": 0,
+          "Top": 0
+        },
+        "ScrollClient": {
+          "IsEmpty": false,
+          "Width": 1095,
+          "Height": 706
+        },
+        "Page": {
+          "Width": 1047,
+          "Height": 1883,
+          "Left": 24,
+          "Top": 24
+        },
+        "Metrics": {
+          "Width": 1047,
+          "Height": 582,
+          "Left": 0,
+          "Top": 319
+        },
+        "Charts": {
+          "Width": 1047,
+          "Height": 538,
+          "Left": 0,
+          "Top": 905
+        },
+        "Bottom": {
+          "Width": 1047,
+          "Height": 392,
+          "Left": 0,
+          "Top": 1443
+        },
+        "Products": {
+          "Width": 471,
+          "Height": 179,
+          "Left": 0,
+          "Top": 80
+        },
+        "ProductsRows": 5,
+        "ProductsChildren": [
+          {
+            "Width": 471,
+            "Height": 29,
+            "Left": 0,
+            "Top": 0
+          },
+          {
+            "Width": 471,
+            "Height": 50,
+            "Left": 0,
+            "Top": 37
+          },
+          {
+            "Width": 471,
+            "Height": 5,
+            "Left": 0,
+            "Top": 91
+          },
+          {
+            "Width": 471,
+            "Height": 50,
+            "Left": 0,
+            "Top": 108
+          },
+          {
+            "Width": 471,
+            "Height": 5,
+            "Left": 0,
+            "Top": 162
+          }
+        ],
+        "AlertHeights": [
+          65,
+          65,
+          65,
+          65
+        ],
+        "MetricValues": [
+          "125.000 \u20AB",
+          "1",
+          "125.000 \u20AB",
+          "0 \u20AB"
+        ]
+      }
+    },
+    {
+      "Label": "raw-clear",
+      "Method": "ClearSnapshotCore",
+      "ElapsedMs": 3065.7945,
+      "Layouts": 179,
+      "ControlsBefore": 78,
+      "ByType": {
+        "TableLayoutPanel": 104,
+        "OrbitSurface": 28,
+        "Panel": 44,
+        "Label": 3
+      },
+      "Geometry": {
+        "Scroll": {
+          "Width": 1116,
+          "Height": 706,
+          "Left": 0,
+          "Top": 0
+        },
+        "ScrollClient": {
+          "IsEmpty": false,
+          "Width": 1095,
+          "Height": 706
+        },
+        "Page": {
+          "Width": 1047,
+          "Height": 1847,
+          "Left": 24,
+          "Top": 24
+        },
+        "Metrics": {
+          "Width": 1047,
+          "Height": 546,
+          "Left": 0,
+          "Top": 319
+        },
+        "Charts": {
+          "Width": 1047,
+          "Height": 538,
+          "Left": 0,
+          "Top": 869
+        },
+        "Bottom": {
+          "Width": 1047,
+          "Height": 392,
+          "Left": 0,
+          "Top": 1407
+        },
+        "Products": {
+          "Width": 471,
+          "Height": 37,
+          "Left": 0,
+          "Top": 80
+        },
+        "ProductsRows": 1,
+        "ProductsChildren": [
+          {
+            "Width": 471,
+            "Height": 29,
+            "Left": 0,
+            "Top": 0
+          }
+        ],
+        "AlertHeights": [
+          65,
+          65,
+          65,
+          65
+        ],
+        "MetricValues": [
+          "\u2014",
+          "\u2014",
+          "\u2014",
+          "\u2014"
+        ]
+      }
+    }
+  ],
+  "LayoutComparison": {
+    "FastStable": true,
+    "FastMatchesRaw": false,
+    "Fast": "{\u0022Scroll\u0022:{\u0022Width\u0022:1116,\u0022Height\u0022:706,\u0022Left\u0022:0,\u0022Top\u0022:0},\u0022ScrollClient\u0022:{\u0022IsEmpty\u0022:false,\u0022Width\u0022:1095,\u0022Height\u0022:706},\u0022Page\u0022:{\u0022Width\u0022:1047,\u0022Height\u0022:1847,\u0022Left\u0022:24,\u0022Top\u0022:24},\u0022Metrics\u0022:{\u0022Width\u0022:1047,\u0022Height\u0022:546,\u0022Left\u0022:0,\u0022Top\u0022:319},\u0022Charts\u0022:{\u0022Width\u0022:1047,\u0022Height\u0022:538,\u0022Left\u0022:0,\u0022Top\u0022:869},\u0022Bottom\u0022:{\u0022Width\u0022:1047,\u0022Height\u0022:392,\u0022Left\u0022:0,\u0022Top\u0022:1407},\u0022Products\u0022:{\u0022Width\u0022:471,\u0022Height\u0022:37,\u0022Left\u0022:0,\u0022Top\u0022:80},\u0022ProductsRows\u0022:5,\u0022ProductsChildren\u0022:[{\u0022Width\u0022:100,\u0022Height\u0022:23,\u0022Left\u0022:0,\u0022Top\u0022:0},{\u0022Width\u0022:154,\u0022Height\u0022:50,\u0022Left\u0022:0,\u0022Top\u0022:0},{\u0022Width\u0022:0,\u0022Height\u0022:5,\u0022Left\u0022:0,\u0022Top\u0022:0},{\u0022Width\u0022:209,\u0022Height\u0022:50,\u0022Left\u0022:0,\u0022Top\u0022:0},{\u0022Width\u0022:0,\u0022Height\u0022:5,\u0022Left\u0022:0,\u0022Top\u0022:0}],\u0022AlertHeights\u0022:[65,65,65,65],\u0022MetricValues\u0022:[\u0022125.000 \\u20AB\u0022,\u00221\u0022,\u0022125.000 \\u20AB\u0022,\u00220 \\u20AB\u0022]}",
+    "Raw": "{\u0022Scroll\u0022:{\u0022Width\u0022:1116,\u0022Height\u0022:706,\u0022Left\u0022:0,\u0022Top\u0022:0},\u0022ScrollClient\u0022:{\u0022IsEmpty\u0022:false,\u0022Width\u0022:1095,\u0022Height\u0022:706},\u0022Page\u0022:{\u0022Width\u0022:1047,\u0022Height\u0022:1883,\u0022Left\u0022:24,\u0022Top\u0022:24},\u0022Metrics\u0022:{\u0022Width\u0022:1047,\u0022Height\u0022:582,\u0022Left\u0022:0,\u0022Top\u0022:319},\u0022Charts\u0022:{\u0022Width\u0022:1047,\u0022Height\u0022:538,\u0022Left\u0022:0,\u0022Top\u0022:905},\u0022Bottom\u0022:{\u0022Width\u0022:1047,\u0022Height\u0022:392,\u0022Left\u0022:0,\u0022Top\u0022:1443},\u0022Products\u0022:{\u0022Width\u0022:471,\u0022Height\u0022:179,\u0022Left\u0022:0,\u0022Top\u0022:80},\u0022ProductsRows\u0022:5,\u0022ProductsChildren\u0022:[{\u0022Width\u0022:471,\u0022Height\u0022:29,\u0022Left\u0022:0,\u0022Top\u0022:0},{\u0022Width\u0022:471,\u0022Height\u0022:50,\u0022Left\u0022:0,\u0022Top\u0022:37},{\u0022Width\u0022:471,\u0022Height\u0022:5,\u0022Left\u0022:0,\u0022Top\u0022:91},{\u0022Width\u0022:471,\u0022Height\u0022:50,\u0022Left\u0022:0,\u0022Top\u0022:108},{\u0022Width\u0022:471,\u0022Height\u0022:5,\u0022Left\u0022:0,\u0022Top\u0022:162}],\u0022AlertHeights\u0022:[65,65,65,65],\u0022MetricValues\u0022:[\u0022125.000 \\u20AB\u0022,\u00221\u0022,\u0022125.000 \\u20AB\u0022,\u00220 \\u20AB\u0022]}"
+  },
+  "Error": null
+}

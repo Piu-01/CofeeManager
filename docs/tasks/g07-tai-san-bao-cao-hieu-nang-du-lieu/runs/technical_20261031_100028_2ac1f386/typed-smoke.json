@@ -1,0 +1,8 @@
+{
+  "Kind": "Technical dependency smoke, not acceptance",
+  "Asset": "TS011",
+  "DatabaseScope": "BBBFD8C6-E03E-44D1-AEED-A5B6EA8410A4|LAPTOP-79UNRIRC|COFFEEMANAGER_TEST_G07_20261031_100028_2AC1F386_DEMO",
+  "AssetPageCount": 1,
+  "Status": "Failed",
+  "Error": "CafeManager.Business.Services.UserOperationException: C\u00F3 l\u1ED7i d\u1EEF li\u1EC7u ch\u01B0a x\u00E1c \u0111\u1ECBnh; tra m\u00E3 h\u1ED7 tr\u1EE3 tr\u01B0\u1EDBc khi ti\u1EBFp t\u1EE5c.\r\n   at CafeManager.Business.Services.HumanResourcesAccess.Run[T](PermissionService permissions, SessionContext session, AppPermission permission, Func\u00602 action, CancellationToken token) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.Business\\Services\\HumanResourcesAccess.cs:line 19\r\n   at ReportSmoke.Run(ConnectionFactory factory, PermissionService permissions, SessionContext session, Dictionary\u00602 evidence) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G07Probe\\ReportSmoke.cs:line 13\r\n   at Program.\u003CMain\u003E$(String[] args) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G07Probe\\Program.cs:line 28\r\n   at Program.\u003CMain\u003E$(String[] args) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G07Probe\\Program.cs:line 29\r\n   at Program.\u003CMain\u003E$(String[] args) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G07Probe\\Program.cs:line 29\r\n   at Program.\u003CMain\u003E$(String[] args) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G07Probe\\Program.cs:line 29\r\n   at Program.\u003CMain\u003E$(String[] args) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G07Probe\\Program.cs:line 29"
+}

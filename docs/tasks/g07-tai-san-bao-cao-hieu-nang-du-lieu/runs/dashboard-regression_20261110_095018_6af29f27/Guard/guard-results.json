@@ -1,0 +1,13 @@
+[
+  {
+    "Id": "DA11/schema027",
+    "Status": "PASS",
+    "Number": 53502,
+    "Message": "C\u1EA7n c\u1EADp nh\u1EADt d\u1EEF li\u1EC7u l\u00EAn schema028 \u0111\u1EC3 m\u1EDF T\u1ED5ng quan ng\u00E0y/th\u00E1ng. Li\u00EAn h\u1EC7 ng\u01B0\u1EDDi tri\u1EC3n khai."
+  },
+  {
+    "Id": "DA10/points",
+    "Status": "PASS",
+    "Hash": "4DE55859E627A7F905F89639DEC548867AEDA1BC83D7928A146986A38ABE2BF6"
+  }
+]

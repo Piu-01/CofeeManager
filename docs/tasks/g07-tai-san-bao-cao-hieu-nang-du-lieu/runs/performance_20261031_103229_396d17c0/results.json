@@ -1,0 +1,9 @@
+{
+  "Kind": "Implementation benchmark, not acceptance",
+  "Database": "CoffeeManager_Test_G07Bench_20261031_103229_396d17c0",
+  "Seed": 7,
+  "HistoricalDateLimitation": "Checkout owns server date; dataset generated on actual current day, not backdated90days",
+  "Status": "Failed",
+  "Error": "CafeManager.Business.Services.UserOperationException: Nh\u00E2n vi\u00EAn, k\u1EF3, gi\u1EDD ho\u1EB7c kho\u1EA3n duy\u1EC7t l\u01B0\u01A1ng kh\u00F4ng h\u1EE3p l\u1EC7.\r\n   at CafeManager.Business.Services.HumanResourcesAccess.Run[T](PermissionService permissions, SessionContext session, AppPermission permission, Func\u00602 action, CancellationToken token) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.Business\\Services\\HumanResourcesAccess.cs:line 19\r\n   at PerformanceProbe.Run(String database, String marker, String output) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G07Probe\\PerformanceProbe.cs:line 52\r\n   at PerformanceProbe.Run(String database, String marker, String output) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G07Probe\\PerformanceProbe.cs:line 85",
+  "ErrorNumber": 53301
+}

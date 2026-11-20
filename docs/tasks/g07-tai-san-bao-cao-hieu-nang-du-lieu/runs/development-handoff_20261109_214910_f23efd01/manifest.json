@@ -1,0 +1,56 @@
+{
+  "RunId": "20261109_214910_f23efd01",
+  "Native": {
+    "Scope": "localhost/CoffeeManager_Development",
+    "Method": "Native production exe; quick ADMIN clicked using screenshot coordinates after AX geometry failed; AX refreshed on resulting MainForm",
+    "AdminDisplayed": true,
+    "DashboardDisplayed": true,
+    "Summary": "Khách đã trả hôm nay (09/11/2026): 0 ₫ Đơn mở: 1 Công nợ nhà cung cấp hiện tại: 5.500.000 ₫",
+    "SummaryMatches": true,
+    "PriorErrorAbsent": true,
+    "VisualAcceptance": "SKIPPED; screenshot only used to locate button; no comparison or visual acceptance",
+    "AppLeftOpen": true
+  },
+  "SourceUnchanged": true,
+  "Backups": [
+    {
+      "Manifest": "docs/tasks/g06-nhan-su-cong-luong/runs/development024_20261109_214928_9d110509/manifest.json",
+      "Backup": "C:\\Program Files\\Microsoft SQL Server\\MSSQL17.MSSQLSERVER\\MSSQL\\Backup\\CoffeeManager_Development_before_G06_024_20261109_214928_9d110509.bak",
+      "VerifyOnlyChecksum": "PASS",
+      "DataHashEqual": true,
+      "BeforeVersion": 21,
+      "AfterVersion": 24
+    },
+    {
+      "Manifest": "docs/tasks/g07-tai-san-bao-cao-hieu-nang-du-lieu/runs/developmentG07_20261109_214946_4da7406b/manifest.json",
+      "Backup": "C:\\Program Files\\Microsoft SQL Server\\MSSQL17.MSSQLSERVER\\MSSQL\\Backup\\CoffeeManager_Development_before_G07_20261109_214946_4da7406b.bak",
+      "VerifyOnlyChecksum": "PASS",
+      "DataHashEqual": true,
+      "BeforeVersion": 24,
+      "AfterVersion": 27
+    }
+  ],
+  "App": {
+    "Pid": 32656,
+    "Path": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.WinForms\\bin\\Debug\\net10.0-windows\\CafeManager.WinForms.exe",
+    "Profile": "Development",
+    "EnvironmentOverrideRemoved": true
+  },
+  "Data": {
+    "AfterReadHash": "8C47164E951D2FEC1697ED9684D12327243537FF5535B5817F23C8D0ACF87A13",
+    "BeforeReadHash": "8C47164E951D2FEC1697ED9684D12327243537FF5535B5817F23C8D0ACF87A13",
+    "ReadOnlyDataUnchanged": true
+  },
+  "Database": "CoffeeManager_Development",
+  "Approval": "User approved development021→024→027 upgrade and readonly regression",
+  "AccountReset": false,
+  "ReadFail": 0,
+  "ReadPass": 16,
+  "Server": "localhost",
+  "AfterVersion": 27,
+  "BeforeVersion": 21,
+  "Status": "Upgraded027AndDashboardVerified",
+  "FixtureWritten": false,
+  "NativeOtherGroups": "Not accepted by this operation",
+  "BackupPolicy": "Retain both verified backups; no deletion"
+}

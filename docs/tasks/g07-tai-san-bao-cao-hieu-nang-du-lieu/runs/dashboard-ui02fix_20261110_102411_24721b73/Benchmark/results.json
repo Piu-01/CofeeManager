@@ -1,0 +1,73 @@
+{
+  "Database": "CoffeeManager_Test_G07_20261110_102810_0b67b365_demo",
+  "Cases": [
+    {
+      "Id": "DA05/linked-expenses",
+      "Expected": "manual73\u002Bpurchase100\u002Bdebt200\u002Bpaid payroll; commit/asset do not create extra expense",
+      "Status": "PASS",
+      "Actual": {
+        "pn": "PN20250502",
+        "DebtCode": "CN20250405",
+        "payCode": "3",
+        "Amount": 1000.00,
+        "Delta": 1373.00000000
+      }
+    },
+    {
+      "Id": "DA10/concurrent-checkout",
+      "Expected": "20 simultaneous reads with checkout; snapshot equality; revenue\u002B1000, count\u002B1, stock\u22120.0001, single payment/receipt",
+      "Status": "PASS",
+      "Actual": {
+        "code": "HD20250411",
+        "ElapsedMs": 2191.8109,
+        "Reads": 20
+      }
+    },
+    {
+      "Id": "DA10/concurrent-expense",
+      "Expected": "20 reads concurrently with expense; one73 increment and one receipt",
+      "Status": "PASS",
+      "Actual": {
+        "code": "TC20250509",
+        "Delta": 73.00000000
+      }
+    },
+    {
+      "Id": "DA07/delivery-states",
+      "Expected": "unpaid/cancelled not pending; paid waiting \u002B1; delivered back to baseline",
+      "Status": "PASS",
+      "Actual": "HD20250412"
+    },
+    {
+      "Id": "DA11/timeout",
+      "Expected": "HOADON lock causes real SQL timeout; next read succeeds; no 0 fabricated",
+      "Status": "PASS",
+      "Actual": -2
+    },
+    {
+      "Id": "DA04/midnight",
+      "Expected": "midnight and month start have empty current buckets with exact previous cutoff",
+      "Status": "PASS",
+      "Actual": "3 midnight cutoffs matched"
+    },
+    {
+      "Id": "DA13/10000",
+      "Expected": "exactly10000 mixed-status invoices via real contracts; measure2modes, totals agree",
+      "Status": "FAIL",
+      "Actual": "CafeManager.Business.Services.UserOperationException: Ch\u01B0a x\u00E1c \u0111\u1ECBnh k\u1EBFt qu\u1EA3 ghi; \u0111\u1ED1i chi\u1EBFu m\u00E3 ngu\u1ED3n tr\u01B0\u1EDBc khi g\u1EEDi l\u1EA1i.\r\n   at CafeManager.Business.Services.SalesService.Run[T](SessionContext session, Func\u00602 action, CancellationToken token) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.Business\\Services\\SalesService.cs:line 19\r\n   at Program.\u003C\u003Ec__DisplayClass0_1.\u003C\u003C\u003CMain\u003E$\u003Eg__NewOrder|7\u003Ed.MoveNext() in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g07-tai-san-bao-cao-hieu-nang-du-lieu\\runs\\dashboard-ui02fix_20261110_102411_24721b73\\Probe\\Program.cs:line 38\r\n--- End of stack trace from previous location ---\r\n   at Program.\u003C\u003Ec__DisplayClass0_1.\u003C\u003C\u003CMain\u003E$\u003Eb__15\u003Ed.MoveNext() in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g07-tai-san-bao-cao-hieu-nang-du-lieu\\runs\\dashboard-ui02fix_20261110_102411_24721b73\\Probe\\Program.cs:line 86\r\n--- End of stack trace from previous location ---\r\n   at Program.\u003C\u003Ec__DisplayClass0_1.\u003C\u003C\u003CMain\u003E$\u003Eg__Check|3\u003Ed.MoveNext() in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g07-tai-san-bao-cao-hieu-nang-du-lieu\\runs\\dashboard-ui02fix_20261110_102411_24721b73\\Probe\\Program.cs:line 28"
+    },
+    {
+      "Id": "DA09/revoked-session",
+      "Expected": "revoked session cannot read analytics or source",
+      "Status": "PASS",
+      "Actual": 2
+    },
+    {
+      "Id": "DA10/final-transaction",
+      "Expected": "fresh connection state0:0",
+      "Status": "PASS",
+      "Actual": "0:0"
+    }
+  ],
+  "Failures": 1
+}

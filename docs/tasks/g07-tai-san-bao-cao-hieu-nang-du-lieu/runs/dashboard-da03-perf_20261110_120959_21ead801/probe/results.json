@@ -1,0 +1,58 @@
+{
+  "Kind": "Implementation benchmark, not acceptance",
+  "Database": "CoffeeManager_Test_G07Bench_20261110_120959_21ead801",
+  "Seed": 7,
+  "HistoricalDateLimitation": "Checkout owns server date; dataset generated on actual current day, not backdated90days",
+  "Dataset": "[{\u0022Bills\u0022:10000,\u0022Paid\u0022:8000,\u0022OpenBills\u0022:1000,\u0022Cancelled\u0022:1000,\u0022FirstPaid\u0022:\u00222026-11-10T12:10:30\u0022,\u0022LastPaid\u0022:\u00222026-11-10T12:19:35\u0022}]",
+  "Machine": {
+    "OS": "Microsoft Windows NT 10.0.26200.0",
+    "CPU": 12,
+    "MemoryBytes": 16890978304,
+    "Framework": ".NET 10.0.14"
+  },
+  "SQL": "Microsoft SQL Server 2025 (RTM) - 17.0.1000.7 (X64) \n\tOct 21 2025 12:05:57 \n\tCopyright (C) 2025 Microsoft Corporation\n\tEnterprise Developer Edition (64-bit) on Windows 10 Home Single Language 10.0 \u003CX64\u003E (Build 26200: ) (Hypervisor)\n",
+  "BaselineBusinessHash": "8372BA032134EB4DCAD345E706743D7A03B0015E59D5A972678C47E82343A292",
+  "ReadParityBeforeCandidates": "99E142BCD6C2477FAFCE38DA96F2AE1D227B646980216160DF47A624579A34A7",
+  "Candidates": [
+    {
+      "Name": "IX_G07_HD_Paid",
+      "Sql": "CREATE INDEX IX_G07_HD_Paid ON dbo.HOADON(NgayThanhToan,TrangThai) INCLUDE(TongTien,GiamGia,PhiShip,PhiDoiTac,LoaiDon,ThanhTien)",
+      "Table": "dbo.HOADON",
+      "Status": "MeasuredCandidate",
+      "ReadParity": true,
+      "Baseline": "IX_G07_HD_Paid-before",
+      "Note": "Same dataset for candidate read pair; writes append valid transactions and are separately timed"
+    },
+    {
+      "Name": "IX_G07_Receipt_OperationSource",
+      "Sql": "CREATE INDEX IX_G07_Receipt_OperationSource ON dbo.G03OperationReceipt(Operation,EntityCode) INCLUDE(CompletedAt)",
+      "Table": "dbo.G03OperationReceipt",
+      "Status": "MeasuredCandidate",
+      "ReadParity": true,
+      "Baseline": "IX_G07_Receipt_OperationSource-before",
+      "Note": "Same dataset for candidate read pair; writes append valid transactions and are separately timed"
+    }
+  ],
+  "FinalBusinessHash": "A6D66634361EEEBADEA65E74A7204C673137D9FC34F5D93A079BBF7C97926748",
+  "CandidateDecisions": [
+    {
+      "Name": "IX_G07_HD_Paid",
+      "Sql": "CREATE INDEX IX_G07_HD_Paid ON dbo.HOADON(NgayThanhToan,TrangThai) INCLUDE(TongTien,GiamGia,PhiShip,PhiDoiTac,LoaiDon,ThanhTien)",
+      "Table": "dbo.HOADON",
+      "Status": "MeasuredCandidate",
+      "ReadParity": true,
+      "Baseline": "IX_G07_HD_Paid-before",
+      "Note": "Same dataset for candidate read pair; writes append valid transactions and are separately timed"
+    },
+    {
+      "Name": "IX_G07_Receipt_OperationSource",
+      "Sql": "CREATE INDEX IX_G07_Receipt_OperationSource ON dbo.G03OperationReceipt(Operation,EntityCode) INCLUDE(CompletedAt)",
+      "Table": "dbo.G03OperationReceipt",
+      "Status": "MeasuredCandidate",
+      "ReadParity": true,
+      "Baseline": "IX_G07_Receipt_OperationSource-before",
+      "Note": "Same dataset for candidate read pair; writes append valid transactions and are separately timed"
+    }
+  ],
+  "Status": "Succeeded"
+}

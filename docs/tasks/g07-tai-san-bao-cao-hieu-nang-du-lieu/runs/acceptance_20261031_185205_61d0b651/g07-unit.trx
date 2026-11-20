@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="dceba56e-cc19-4bb8-b5a2-12af6e07e7d0" name="Lenovo@LAPTOP-79UNRIRC 2026-10-31 18:52:22" runUser="LAPTOP-79UNRIRC\Lenovo" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-31T18:52:22.1103269+07:00" queuing="2026-10-31T18:52:22.1103277+07:00" start="2026-10-31T18:52:16.3377757+07:00" finish="2026-10-31T18:52:22.3411628+07:00" />
+  <TestSettings name="default" id="0cc53be7-dd78-44b2-a42c-f772d6119259">
+    <Deployment runDeploymentRoot="Lenovo_LAPTOP-79UNRIRC_2026-10-31_18_52_22" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="100c3203-385e-46f8-97e9-6b8bbab46fb7" testId="956d3387-7d42-7cb4-e2c5-edfc30bde893" testName="CafeManager.Tests.Assets.AssetRulesTests.LargeMonthCountDoesNotOverflowCalendar" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0031287" startTime="2026-10-31T18:52:22.0724498+07:00" endTime="2026-10-31T18:52:22.0751088+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="100c3203-385e-46f8-97e9-6b8bbab46fb7" />
+    <UnitTestResult executionId="f2237e43-5523-44bd-897b-bb360cdc73b1" testId="647d28d7-3561-6bc5-a0a8-dabba07b15ef" testName="CafeManager.Tests.Assets.AssetRulesTests.InvalidValueOrMonthsAreRejected(value: -1, months: 12)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.2640672" startTime="2026-10-31T18:52:21.7796806+07:00" endTime="2026-10-31T18:52:22.0113333+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f2237e43-5523-44bd-897b-bb360cdc73b1" />
+    <UnitTestResult executionId="0909418a-58fb-4e54-947d-6b95125d0231" testId="d03579cf-cd18-1fa3-9b3c-f349d3fe4c39" testName="CafeManager.Tests.Integration.DataAccessTests.UnknownAndTimeoutErrorsDoNotLeakSensitiveTextOrReportSuccess" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0010000" startTime="2026-10-31T18:52:22.0765609+07:00" endTime="2026-10-31T18:52:22.0782103+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0909418a-58fb-4e54-947d-6b95125d0231">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Integration needs Test-DataAccess.ps1 and an isolated T05 database.</Message>
+          <StackTrace>   at CafeManager.Tests.TestDatabaseFixture..ctor() in D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\TestDatabaseFixture.cs:line 19&#xD;
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Constructor(Object obj, IntPtr* args)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="cf46fd25-9763-45cd-aedb-79ad9837f1fc" testId="36ec0d37-bd4f-5ad2-78f1-49d53b47e090" testName="CafeManager.Tests.Assets.AssetRulesTests.FractionalAndOversizeMoneyAreNotRounded" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0017105" startTime="2026-10-31T18:52:22.0756683+07:00" endTime="2026-10-31T18:52:22.0758489+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cf46fd25-9763-45cd-aedb-79ad9837f1fc" />
+    <UnitTestResult executionId="a80f1599-3101-4afb-ba06-b546ea596da4" testId="02ec9bbe-5736-1777-2e45-0b57310a6cdd" testName="CafeManager.Tests.Assets.AssetRulesTests.DepreciationPaysRemainderOnlyInFinalMonth(value: 1, count: 3, elapsed: 3, monthly: 1, accumulated: 1)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0000306" startTime="2026-10-31T18:52:22.0710150+07:00" endTime="2026-10-31T18:52:22.0711797+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a80f1599-3101-4afb-ba06-b546ea596da4" />
+    <UnitTestResult executionId="87f64ba9-0e6b-4060-a2e0-c932b9d52be6" testId="0084ecc8-e7f9-7494-e5a8-67b8f6ab9d7f" testName="CafeManager.Tests.Reports.ReportRulesTests.ReportRejectsMethodFilterOnFullBillRevenue" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0008600" startTime="2026-10-31T18:52:22.0484659+07:00" endTime="2026-10-31T18:52:22.0486554+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="87f64ba9-0e6b-4060-a2e0-c932b9d52be6" />
+    <UnitTestResult executionId="7f416886-7e4e-4f86-8b61-21d577198d7b" testId="646d431a-1c5b-5993-fe95-3c35b1aabd33" testName="CafeManager.Tests.Assets.AssetRulesTests.DepreciationPaysRemainderOnlyInFinalMonth(value: 100, count: 3, elapsed: 1, monthly: 33, accumulated: 33)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0090831" startTime="2026-10-31T18:52:22.0477325+07:00" endTime="2026-10-31T18:52:22.0517013+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7f416886-7e4e-4f86-8b61-21d577198d7b" />
+    <UnitTestResult executionId="9b06d8d5-0ad9-465d-b224-0ee3333714ea" testId="a65ce08a-7823-3827-6963-35d963fd3dd2" testName="CafeManager.Tests.Assets.AssetRulesTests.InvalidValueOrMonthsAreRejected(value: 1, months: 0)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0000310" startTime="2026-10-31T18:52:22.0462227+07:00" endTime="2026-10-31T18:52:22.0465480+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9b06d8d5-0ad9-465d-b224-0ee3333714ea" />
+    <UnitTestResult executionId="2faae635-2e26-4dad-baeb-cd1110100160" testId="6231a888-b448-7e09-7cf2-b232c851de93" testName="CafeManager.Tests.Assets.AssetRulesTests.DepreciationPaysRemainderOnlyInFinalMonth(value: 100, count: 3, elapsed: 4, monthly: 0, accumulated: 100)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0000407" startTime="2026-10-31T18:52:22.0704195+07:00" endTime="2026-10-31T18:52:22.0706086+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2faae635-2e26-4dad-baeb-cd1110100160" />
+    <UnitTestResult executionId="0c7d8573-ce8e-457f-a551-b17166cebbfc" testId="78d5ea78-31a0-fee8-ede9-f3abb8c2b72b" testName="CafeManager.Tests.Assets.AssetRulesTests.DepreciationPaysRemainderOnlyInFinalMonth(value: 100, count: 3, elapsed: 0, monthly: 0, accumulated: 0)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0013872" startTime="2026-10-31T18:52:22.0526037+07:00" endTime="2026-10-31T18:52:22.0527921+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0c7d8573-ce8e-457f-a551-b17166cebbfc" />
+    <UnitTestResult executionId="7f788eca-7a14-4aae-bc58-70a2363f9f06" testId="359cf4c5-84e9-9461-67ce-4f8ae272071c" testName="CafeManager.Tests.Reports.ReportRulesTests.DateUpperBoundaryIsAcceptedWithoutIncrementingCalendar" computerName="LAPTOP-79UNRIRC" duration="00:00:00.2742552" startTime="2026-10-31T18:52:21.7826770+07:00" endTime="2026-10-31T18:52:22.0397096+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7f788eca-7a14-4aae-bc58-70a2363f9f06" />
+    <UnitTestResult executionId="46c8a347-415d-4941-a911-30f09382a693" testId="53789ff0-1a58-2995-18cd-58337de69abc" testName="CafeManager.Tests.Reports.ReportRulesTests.InvalidPeriodAndUnsupportedRoleSpecificFiltersAreRejected" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0027440" startTime="2026-10-31T18:52:22.0461220+07:00" endTime="2026-10-31T18:52:22.0479711+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="46c8a347-415d-4941-a911-30f09382a693" />
+    <UnitTestResult executionId="d6ff5157-2521-4829-9664-107d55762c1c" testId="6800a97d-de35-aa39-fb1d-5962812c5078" testName="CafeManager.Tests.Assets.AssetRulesTests.InvalidValueOrMonthsAreRejected(value: 0, months: 12)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0000209" startTime="2026-10-31T18:52:22.0469491+07:00" endTime="2026-10-31T18:52:22.0471482+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d6ff5157-2521-4829-9664-107d55762c1c" />
+    <UnitTestResult executionId="8ea8f34b-aadb-4998-b375-e00ea0fcf41e" testId="9b16c133-6d9f-7c1d-98e2-515b7ea99ae9" testName="CafeManager.Tests.Assets.AssetRulesTests.InvalidValueOrMonthsAreRejected(value: 1, months: -1)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0011883" startTime="2026-10-31T18:52:22.0395314+07:00" endTime="2026-10-31T18:52:22.0454138+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8ea8f34b-aadb-4998-b375-e00ea0fcf41e" />
+    <UnitTestResult executionId="128f831e-f0a8-4550-83bc-5751be898209" testId="49f3b8d0-3fc1-22bc-2fd9-8bbb91c54501" testName="CafeManager.Tests.Assets.AssetRulesTests.DepreciationPaysRemainderOnlyInFinalMonth(value: 100, count: 3, elapsed: 3, monthly: 34, accumulated: 100)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0000181" startTime="2026-10-31T18:52:22.0715009+07:00" endTime="2026-10-31T18:52:22.0716613+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="128f831e-f0a8-4550-83bc-5751be898209" />
+    <UnitTestResult executionId="4b68ae44-09b0-4243-9f8c-04fc7c2547d4" testId="f73a57ce-6a88-acf2-a81b-a29de995b092" testName="CafeManager.Tests.Assets.AssetRulesTests.DepreciationPaysRemainderOnlyInFinalMonth(value: 1, count: 3, elapsed: 2, monthly: 0, accumulated: 0)" computerName="LAPTOP-79UNRIRC" duration="00:00:00.0000220" startTime="2026-10-31T18:52:22.0719188+07:00" endTime="2026-10-31T18:52:22.0720570+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4b68ae44-09b0-4243-9f8c-04fc7c2547d4" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="CafeManager.Tests.Assets.AssetRulesTests.FractionalAndOversizeMoneyAreNotRounded" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="36ec0d37-bd4f-5ad2-78f1-49d53b47e090">
+      <Execution id="cf46fd25-9763-45cd-aedb-79ad9837f1fc" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Assets.AssetRulesTests" name="FractionalAndOversizeMoneyAreNotRounded" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Assets.AssetRulesTests.DepreciationPaysRemainderOnlyInFinalMonth(value: 1, count: 3, elapsed: 2, monthly: 0, accumulated: 0)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="f73a57ce-6a88-acf2-a81b-a29de995b092">
+      <Execution id="4b68ae44-09b0-4243-9f8c-04fc7c2547d4" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Assets.AssetRulesTests" name="DepreciationPaysRemainderOnlyInFinalMonth" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Assets.AssetRulesTests.InvalidValueOrMonthsAreRejected(value: 1, months: -1)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="9b16c133-6d9f-7c1d-98e2-515b7ea99ae9">
+      <Execution id="8ea8f34b-aadb-4998-b375-e00ea0fcf41e" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Assets.AssetRulesTests" name="InvalidValueOrMonthsAreRejected" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Assets.AssetRulesTests.InvalidValueOrMonthsAreRejected(value: 1, months: 0)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="a65ce08a-7823-3827-6963-35d963fd3dd2">
+      <Execution id="9b06d8d5-0ad9-465d-b224-0ee3333714ea" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Assets.AssetRulesTests" name="InvalidValueOrMonthsAreRejected" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Reports.ReportRulesTests.DateUpperBoundaryIsAcceptedWithoutIncrementingCalendar" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="359cf4c5-84e9-9461-67ce-4f8ae272071c">
+      <Execution id="7f788eca-7a14-4aae-bc58-70a2363f9f06" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Reports.ReportRulesTests" name="DateUpperBoundaryIsAcceptedWithoutIncrementingCalendar" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Assets.AssetRulesTests.DepreciationPaysRemainderOnlyInFinalMonth(value: 1, count: 3, elapsed: 3, monthly: 1, accumulated: 1)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="02ec9bbe-5736-1777-2e45-0b57310a6cdd">
+      <Execution id="a80f1599-3101-4afb-ba06-b546ea596da4" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Assets.AssetRulesTests" name="DepreciationPaysRemainderOnlyInFinalMonth" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Assets.AssetRulesTests.DepreciationPaysRemainderOnlyInFinalMonth(value: 100, count: 3, elapsed: 4, monthly: 0, accumulated: 100)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="6231a888-b448-7e09-7cf2-b232c851de93">
+      <Execution id="2faae635-2e26-4dad-baeb-cd1110100160" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Assets.AssetRulesTests" name="DepreciationPaysRemainderOnlyInFinalMonth" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Assets.AssetRulesTests.InvalidValueOrMonthsAreRejected(value: -1, months: 12)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="647d28d7-3561-6bc5-a0a8-dabba07b15ef">
+      <Execution id="f2237e43-5523-44bd-897b-bb360cdc73b1" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Assets.AssetRulesTests" name="InvalidValueOrMonthsAreRejected" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Integration.DataAccessTests.UnknownAndTimeoutErrorsDoNotLeakSensitiveTextOrReportSuccess" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="d03579cf-cd18-1fa3-9b3c-f349d3fe4c39">
+      <Execution id="0909418a-58fb-4e54-947d-6b95125d0231" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Integration.DataAccessTests" name="UnknownAndTimeoutErrorsDoNotLeakSensitiveTextOrReportSuccess" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Reports.ReportRulesTests.ReportRejectsMethodFilterOnFullBillRevenue" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="0084ecc8-e7f9-7494-e5a8-67b8f6ab9d7f">
+      <Execution id="87f64ba9-0e6b-4060-a2e0-c932b9d52be6" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Reports.ReportRulesTests" name="ReportRejectsMethodFilterOnFullBillRevenue" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Assets.AssetRulesTests.DepreciationPaysRemainderOnlyInFinalMonth(value: 100, count: 3, elapsed: 3, monthly: 34, accumulated: 100)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="49f3b8d0-3fc1-22bc-2fd9-8bbb91c54501">
+      <Execution id="128f831e-f0a8-4550-83bc-5751be898209" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Assets.AssetRulesTests" name="DepreciationPaysRemainderOnlyInFinalMonth" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Assets.AssetRulesTests.DepreciationPaysRemainderOnlyInFinalMonth(value: 100, count: 3, elapsed: 1, monthly: 33, accumulated: 33)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="646d431a-1c5b-5993-fe95-3c35b1aabd33">
+      <Execution id="7f416886-7e4e-4f86-8b61-21d577198d7b" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Assets.AssetRulesTests" name="DepreciationPaysRemainderOnlyInFinalMonth" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Assets.AssetRulesTests.DepreciationPaysRemainderOnlyInFinalMonth(value: 100, count: 3, elapsed: 0, monthly: 0, accumulated: 0)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="78d5ea78-31a0-fee8-ede9-f3abb8c2b72b">
+      <Execution id="0c7d8573-ce8e-457f-a551-b17166cebbfc" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Assets.AssetRulesTests" name="DepreciationPaysRemainderOnlyInFinalMonth" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Assets.AssetRulesTests.LargeMonthCountDoesNotOverflowCalendar" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="956d3387-7d42-7cb4-e2c5-edfc30bde893">
+      <Execution id="100c3203-385e-46f8-97e9-6b8bbab46fb7" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Assets.AssetRulesTests" name="LargeMonthCountDoesNotOverflowCalendar" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Reports.ReportRulesTests.InvalidPeriodAndUnsupportedRoleSpecificFiltersAreRejected" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="53789ff0-1a58-2995-18cd-58337de69abc">
+      <Execution id="46c8a347-415d-4941-a911-30f09382a693" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Reports.ReportRulesTests" name="InvalidPeriodAndUnsupportedRoleSpecificFiltersAreRejected" />
+    </UnitTest>
+    <UnitTest name="CafeManager.Tests.Assets.AssetRulesTests.InvalidValueOrMonthsAreRejected(value: 0, months: 12)" storage="d:\workspace\nam_3\hk1\coffeemanager\tests\cafemanager.tests\bin\debug\net10.0-windows\cafemanager.tests.dll" id="6800a97d-de35-aa39-fb1d-5962812c5078">
+      <Execution id="d6ff5157-2521-4829-9664-107d55762c1c" />
+      <TestMethod codeBase="D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\bin\Debug\net10.0-windows\CafeManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="CafeManager.Tests.Assets.AssetRulesTests" name="InvalidValueOrMonthsAreRejected" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="956d3387-7d42-7cb4-e2c5-edfc30bde893" executionId="100c3203-385e-46f8-97e9-6b8bbab46fb7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="647d28d7-3561-6bc5-a0a8-dabba07b15ef" executionId="f2237e43-5523-44bd-897b-bb360cdc73b1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d03579cf-cd18-1fa3-9b3c-f349d3fe4c39" executionId="0909418a-58fb-4e54-947d-6b95125d0231" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="36ec0d37-bd4f-5ad2-78f1-49d53b47e090" executionId="cf46fd25-9763-45cd-aedb-79ad9837f1fc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="02ec9bbe-5736-1777-2e45-0b57310a6cdd" executionId="a80f1599-3101-4afb-ba06-b546ea596da4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0084ecc8-e7f9-7494-e5a8-67b8f6ab9d7f" executionId="87f64ba9-0e6b-4060-a2e0-c932b9d52be6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="646d431a-1c5b-5993-fe95-3c35b1aabd33" executionId="7f416886-7e4e-4f86-8b61-21d577198d7b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a65ce08a-7823-3827-6963-35d963fd3dd2" executionId="9b06d8d5-0ad9-465d-b224-0ee3333714ea" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6231a888-b448-7e09-7cf2-b232c851de93" executionId="2faae635-2e26-4dad-baeb-cd1110100160" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="78d5ea78-31a0-fee8-ede9-f3abb8c2b72b" executionId="0c7d8573-ce8e-457f-a551-b17166cebbfc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="359cf4c5-84e9-9461-67ce-4f8ae272071c" executionId="7f788eca-7a14-4aae-bc58-70a2363f9f06" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="53789ff0-1a58-2995-18cd-58337de69abc" executionId="46c8a347-415d-4941-a911-30f09382a693" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6800a97d-de35-aa39-fb1d-5962812c5078" executionId="d6ff5157-2521-4829-9664-107d55762c1c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9b16c133-6d9f-7c1d-98e2-515b7ea99ae9" executionId="8ea8f34b-aadb-4998-b375-e00ea0fcf41e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="49f3b8d0-3fc1-22bc-2fd9-8bbb91c54501" executionId="128f831e-f0a8-4550-83bc-5751be898209" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f73a57ce-6a88-acf2-a81b-a29de995b092" executionId="4b68ae44-09b0-4243-9f8c-04fc7c2547d4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="16" executed="16" passed="15" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.13)&#xD;
+[xUnit.net 00:00:01.99]   Discovering: CafeManager.Tests&#xD;
+[xUnit.net 00:00:02.51]   Discovered:  CafeManager.Tests&#xD;
+[xUnit.net 00:00:02.59]   Starting:    CafeManager.Tests&#xD;
+[xUnit.net 00:00:03.05]       System.InvalidOperationException : Integration needs Test-DataAccess.ps1 and an isolated T05 database.&#xD;
+[xUnit.net 00:00:03.05]       Stack Trace:&#xD;
+[xUnit.net 00:00:03.05]         D:\Workspace\Nam_3\HK1\CoffeeManager\tests\CafeManager.Tests\TestDatabaseFixture.cs(19,0): at CafeManager.Tests.TestDatabaseFixture..ctor()&#xD;
+[xUnit.net 00:00:03.05]            at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Constructor(Object obj, IntPtr* args)&#xD;
+[xUnit.net 00:00:03.05]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+[xUnit.net 00:00:03.06]   Finished:    CafeManager.Tests&#xD;
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="LAPTOP-79UNRIRC" outcome="Error" timestamp="2026-10-31T18:52:22.1265645+07:00">
+        <Text>[xUnit.net 00:00:03.05]     CafeManager.Tests.Integration.DataAccessTests.UnknownAndTimeoutErrorsDoNotLeakSensitiveTextOrReportSuccess [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

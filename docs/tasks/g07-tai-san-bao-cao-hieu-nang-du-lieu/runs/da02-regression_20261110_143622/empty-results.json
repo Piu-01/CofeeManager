@@ -1,0 +1,236 @@
+{
+  "Database": "CoffeeManager_Test_G07_20261110_152830_fceb2357_demo",
+  "Marker": "20261110_152830_fceb2357",
+  "Mode": "empty",
+  "StartedAt": "2026-11-10T15:28:59.4439918\u002B07:00",
+  "Checks": [
+    {
+      "Id": "EMPTY-day-ready",
+      "Expected": "ready with zero period",
+      "Status": "PASS",
+      "Actual": "\u0110\u00E3 c\u1EADp nh\u1EADt s\u1ED1 li\u1EC7u."
+    },
+    {
+      "Id": "EMPTY-day-zero",
+      "Expected": "revenue 0 \u20AB, invoices 0, empty Top5 text",
+      "Status": "PASS",
+      "Actual": [
+        "0 \u20AB",
+        "0",
+        "\u2014",
+        "0 \u20AB"
+      ]
+    },
+    {
+      "Id": "EMPTY-month-zero",
+      "Expected": "monthly period also empty",
+      "Status": "PASS",
+      "Actual": [
+        "0 \u20AB",
+        "0",
+        "\u2014",
+        "0 \u20AB"
+      ]
+    }
+  ],
+  "Failures": 0,
+  "Measurements": {
+    "Layouts": [
+      {
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1366,
+          "Height": 768
+        },
+        "DeviceDpi": 120,
+        "MetricsColumn": 2,
+        "ChartsColumn": 2,
+        "Kpi": [
+          {
+            "Left": 0,
+            "Top": 0,
+            "Width": 511,
+            "Height": 279
+          },
+          {
+            "Left": 523,
+            "Top": 0,
+            "Width": 512,
+            "Height": 279
+          },
+          {
+            "Left": 0,
+            "Top": 291,
+            "Width": 511,
+            "Height": 279
+          },
+          {
+            "Left": 523,
+            "Top": 291,
+            "Width": 512,
+            "Height": 279
+          }
+        ],
+        "Chart": [
+          {
+            "Width": 511,
+            "Height": 526
+          },
+          {
+            "Width": 512,
+            "Height": 526
+          }
+        ],
+        "PageWidth": 1047,
+        "ScrollWidth": 1095
+      },
+      {
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1280,
+          "Height": 720
+        },
+        "DeviceDpi": 120,
+        "MetricsColumn": 2,
+        "ChartsColumn": 2,
+        "Kpi": [
+          {
+            "Left": 0,
+            "Top": 0,
+            "Width": 468,
+            "Height": 279
+          },
+          {
+            "Left": 480,
+            "Top": 0,
+            "Width": 469,
+            "Height": 279
+          },
+          {
+            "Left": 0,
+            "Top": 291,
+            "Width": 468,
+            "Height": 279
+          },
+          {
+            "Left": 480,
+            "Top": 291,
+            "Width": 469,
+            "Height": 279
+          }
+        ],
+        "Chart": [
+          {
+            "Width": 468,
+            "Height": 526
+          },
+          {
+            "Width": 469,
+            "Height": 526
+          }
+        ],
+        "PageWidth": 961,
+        "ScrollWidth": 1009
+      },
+      {
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1920,
+          "Height": 1080
+        },
+        "DeviceDpi": 120,
+        "MetricsColumn": 4,
+        "ChartsColumn": 2,
+        "Kpi": [
+          {
+            "Left": 0,
+            "Top": 0,
+            "Width": 388,
+            "Height": 279
+          },
+          {
+            "Left": 400,
+            "Top": 0,
+            "Width": 388,
+            "Height": 279
+          },
+          {
+            "Left": 800,
+            "Top": 0,
+            "Width": 388,
+            "Height": 279
+          },
+          {
+            "Left": 1200,
+            "Top": 0,
+            "Width": 389,
+            "Height": 279
+          }
+        ],
+        "Chart": [
+          {
+            "Width": 788,
+            "Height": 526
+          },
+          {
+            "Width": 789,
+            "Height": 526
+          }
+        ],
+        "PageWidth": 1601,
+        "ScrollWidth": 1649
+      },
+      {
+        "Size": {
+          "IsEmpty": false,
+          "Width": 600,
+          "Height": 720
+        },
+        "DeviceDpi": 120,
+        "MetricsColumn": 1,
+        "ChartsColumn": 1,
+        "Kpi": [
+          {
+            "Left": 0,
+            "Top": 0,
+            "Width": 441,
+            "Height": 279
+          },
+          {
+            "Left": 0,
+            "Top": 291,
+            "Width": 441,
+            "Height": 279
+          },
+          {
+            "Left": 0,
+            "Top": 582,
+            "Width": 441,
+            "Height": 261
+          },
+          {
+            "Left": 0,
+            "Top": 855,
+            "Width": 441,
+            "Height": 279
+          }
+        ],
+        "Chart": [
+          {
+            "Width": 441,
+            "Height": 476
+          },
+          {
+            "Width": 441,
+            "Height": 526
+          }
+        ],
+        "PageWidth": 453,
+        "ScrollWidth": 501
+      }
+    ]
+  },
+  "Unhandled": [],
+  "Error": null,
+  "Status": "PASS"
+}

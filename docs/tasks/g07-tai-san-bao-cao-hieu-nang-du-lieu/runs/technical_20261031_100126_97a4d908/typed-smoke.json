@@ -1,0 +1,15 @@
+{
+  "Kind": "Technical dependency smoke, not acceptance",
+  "Asset": "TS011",
+  "DatabaseScope": "B8853F5E-3D99-4F9B-8BF1-1DC1691400E4|LAPTOP-79UNRIRC|COFFEEMANAGER_TEST_G07_20261031_100126_97A4D908_DEMO",
+  "AssetPageCount": 1,
+  "FailedReport": "Inventory",
+  "ErrorNumber": 8124,
+  "SqlDiagnostic": {
+    "Number": 8124,
+    "Message": "Multiple columns are specified in an aggregated expression containing an outer reference. If an expression being aggregated contains an outer reference, then that outer reference must be the only column referenced in the expression.",
+    "LineNumber": 86
+  },
+  "Status": "Failed",
+  "Error": "CafeManager.Business.Services.UserOperationException: C\u00F3 l\u1ED7i d\u1EEF li\u1EC7u ch\u01B0a x\u00E1c \u0111\u1ECBnh; tra m\u00E3 h\u1ED7 tr\u1EE3 tr\u01B0\u1EDBc khi ti\u1EBFp t\u1EE5c.\r\n   at CafeManager.Business.Services.HumanResourcesAccess.Run[T](PermissionService permissions, SessionContext session, AppPermission permission, Func\u00602 action, CancellationToken token) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.Business\\Services\\HumanResourcesAccess.cs:line 19\r\n   at ReportSmoke.Run(ConnectionFactory factory, PermissionService permissions, SessionContext session, Dictionary\u00602 evidence, SqlConnection owner) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G07Probe\\ReportSmoke.cs:line 15\r\n   at ReportSmoke.Run(ConnectionFactory factory, PermissionService permissions, SessionContext session, Dictionary\u00602 evidence, SqlConnection owner) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G07Probe\\ReportSmoke.cs:line 18\r\n   at ReportSmoke.Run(ConnectionFactory factory, PermissionService permissions, SessionContext session, Dictionary\u00602 evidence, SqlConnection owner) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G07Probe\\ReportSmoke.cs:line 18\r\n   at Program.\u003CMain\u003E$(String[] args) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G07Probe\\Program.cs:line 28\r\n   at Program.\u003CMain\u003E$(String[] args) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G07Probe\\Program.cs:line 29\r\n   at Program.\u003CMain\u003E$(String[] args) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G07Probe\\Program.cs:line 29\r\n   at Program.\u003CMain\u003E$(String[] args) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G07Probe\\Program.cs:line 29\r\n   at Program.\u003CMain\u003E$(String[] args) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G07Probe\\Program.cs:line 29"
+}

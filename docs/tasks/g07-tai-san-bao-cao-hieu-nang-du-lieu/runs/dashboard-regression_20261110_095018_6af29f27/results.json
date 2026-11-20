@@ -1,0 +1,88 @@
+{
+  "Database": "CoffeeManager_Test_G07_20261110_095040_69348283_demo",
+  "Cases": [
+    {
+      "Id": "DA05/linked-expenses",
+      "Expected": "manual73\u002Bpurchase100\u002Bdebt200\u002Bpaid payroll; commit/asset do not create extra expense",
+      "Status": "PASS",
+      "Actual": {
+        "pn": "PN20250502",
+        "DebtCode": "CN20250405",
+        "payCode": "3",
+        "Amount": 1000.00,
+        "Delta": 1373.00000000
+      }
+    },
+    {
+      "Id": "DA10/concurrent-checkout",
+      "Expected": "20 simultaneous reads with checkout; snapshot equality; revenue\u002B1000, count\u002B1, stock\u22120.0001, single payment/receipt",
+      "Status": "PASS",
+      "Actual": {
+        "code": "HD20250411",
+        "ElapsedMs": 2219.5994,
+        "Reads": 20
+      }
+    },
+    {
+      "Id": "DA10/concurrent-expense",
+      "Expected": "20 reads concurrently with expense; one73 increment and one receipt",
+      "Status": "PASS",
+      "Actual": {
+        "code": "TC20250509",
+        "Delta": 73.00000000
+      }
+    },
+    {
+      "Id": "DA07/delivery-states",
+      "Expected": "unpaid/cancelled not pending; paid waiting \u002B1; delivered back to baseline",
+      "Status": "PASS",
+      "Actual": "HD20250412"
+    },
+    {
+      "Id": "DA11/timeout",
+      "Expected": "HOADON lock causes real SQL timeout; next read succeeds; no 0 fabricated",
+      "Status": "PASS",
+      "Actual": -2
+    },
+    {
+      "Id": "DA04/midnight",
+      "Expected": "midnight and month start have empty current buckets with exact previous cutoff",
+      "Status": "PASS",
+      "Actual": "3 midnight cutoffs matched"
+    },
+    {
+      "Id": "DA13/10000",
+      "Expected": "exactly10000 mixed-status invoices via real contracts; measure2modes, totals agree",
+      "Status": "PASS",
+      "Actual": {
+        "Total": 10000,
+        "Timings": [
+          {
+            "Month": false,
+            "MedianMs": 343.0652,
+            "P90Ms": 365.6772
+          },
+          {
+            "Month": true,
+            "MedianMs": 330.2111,
+            "P90Ms": 366.3932
+          }
+        ],
+        "Distribution": "[{\u0022TrangThai\u0022:\u0022Chua thanh toan\u0022,\u0022Bills\u0022:1001},{\u0022TrangThai\u0022:\u0022Da thanh toan\u0022,\u0022Bills\u0022:7998},{\u0022TrangThai\u0022:\u0022Huy\u0022,\u0022Bills\u0022:1001}]"
+      }
+    },
+    {
+      "Id": "DA09/revoked-session",
+      "Expected": "revoked session cannot read analytics or source",
+      "Status": "PASS",
+      "Actual": 2
+    },
+    {
+      "Id": "DA10/final-transaction",
+      "Expected": "fresh connection state0:0",
+      "Status": "PASS",
+      "Actual": "0:0"
+    }
+  ],
+  "Failures": 0
+}

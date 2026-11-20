@@ -1,0 +1,27 @@
+{
+  "CapturedAt": "2026-10-31T10:41:01.4848527+07:00",
+  "CPU": [
+    {
+      "Name": "12th Gen Intel(R) Core(TM) i7-1255U",
+      "NumberOfCores": 10,
+      "NumberOfLogicalProcessors": 12
+    }
+  ],
+  "Memory": [
+    {
+      "TotalPhysicalMemory": 16890978304
+    }
+  ],
+  "Storage": [
+    {
+      "DeviceID": "C:",
+      "Size": 538884173824,
+      "FreeSpace": 35279777792
+    },
+    {
+      "DeviceID": "D:",
+      "Size": 482936352768,
+      "FreeSpace": 447737229312
+    }
+  ]
+}

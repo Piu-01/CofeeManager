@@ -1,0 +1,17 @@
+﻿{
+    "RunId":  "20261110_120907_6ba78edd",
+    "Kind":  "G07-DA03 I/O measurement 028 vs 029 on 10,000 invoices; not acceptance",
+    "Database":  "CoffeeManager_Test_G07Bench_20261110_120907_6ba78edd",
+    "Created":  true,
+    "Status":  "Failed",
+    "MeasurementActor":  "MaTK=1 (admin, NV001) activated as measurement fixture; hash/stamp unchanged",
+    "ProbeExit":  1,
+    "Dataset":  {
+                    "Bills":  10,
+                    "Paid":  9,
+                    "Lines":  18,
+                    "FirstPaid":  "2025-04-01T09:15:00",
+                    "LastPaid":  "2025-05-01T08:00:00"
+                },
+    "Error":  "System.Management.Automation.RuntimeException: Dataset incomplete: 10"
+}

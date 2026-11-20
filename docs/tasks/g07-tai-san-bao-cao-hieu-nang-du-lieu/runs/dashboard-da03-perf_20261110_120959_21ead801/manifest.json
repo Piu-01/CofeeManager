@@ -1,0 +1,18 @@
+﻿{
+    "RunId":  "20261110_120959_21ead801",
+    "Kind":  "G07-DA03 I/O measurement 028 vs 029 on 10,000 invoices; not acceptance",
+    "Database":  "CoffeeManager_Test_G07Bench_20261110_120959_21ead801",
+    "Created":  true,
+    "Status":  "Passed",
+    "MeasurementActor":  "Benchmark bootstrap admin created by probe (TAIKHOAN identity 1)",
+    "ProbeExit":  0,
+    "Dataset":  {
+                    "Bills":  10036,
+                    "Paid":  8036,
+                    "Lines":  30720,
+                    "FirstPaid":  "2026-11-10T12:10:30",
+                    "LastPaid":  "2026-11-10T12:30:17"
+                },
+    "Error":  "System.Management.Automation.RuntimeException: missing D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g07-tai-san-bao-cao-hieu-nang-du-lieu\\runs\\dashboard-da03-perf_20261110_120959_21ead801\\028-revenue.log",
+    "MeasurementPhase":  "measure-only.ps1 (dataset reused; first attempt failed on PowerShell alias Measure)"
+}

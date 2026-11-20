@@ -1,0 +1,18 @@
+[
+  {
+    "Manifest": "docs/tasks/g06-nhan-su-cong-luong/runs/development024_20261109_214928_9d110509/manifest.json",
+    "Backup": "C:\\Program Files\\Microsoft SQL Server\\MSSQL17.MSSQLSERVER\\MSSQL\\Backup\\CoffeeManager_Development_before_G06_024_20261109_214928_9d110509.bak",
+    "VerifyOnlyChecksum": "PASS",
+    "DataHashEqual": true,
+    "BeforeVersion": 21,
+    "AfterVersion": 24
+  },
+  {
+    "Manifest": "docs/tasks/g07-tai-san-bao-cao-hieu-nang-du-lieu/runs/developmentG07_20261109_214946_4da7406b/manifest.json",
+    "Backup": "C:\\Program Files\\Microsoft SQL Server\\MSSQL17.MSSQLSERVER\\MSSQL\\Backup\\CoffeeManager_Development_before_G07_20261109_214946_4da7406b.bak",
+    "VerifyOnlyChecksum": "PASS",
+    "DataHashEqual": true,
+    "BeforeVersion": 24,
+    "AfterVersion": 27
+  }
+]

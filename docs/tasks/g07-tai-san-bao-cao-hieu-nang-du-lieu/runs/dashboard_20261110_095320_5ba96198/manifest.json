@@ -1,0 +1,34 @@
+{
+  "RunId": "20261110_095320_5ba96198",
+  "Status": "SubsetCompleted",
+  "Created": [
+    {
+      "Marker": "20261110_095320_5ba96198",
+      "Database": "CoffeeManager_Test_G07_20261110_095320_5ba96198_clean"
+    },
+    {
+      "Marker": "20261110_095320_5ba96198",
+      "Database": "CoffeeManager_Test_G07_20261110_095320_5ba96198_demo"
+    }
+  ],
+  "Cleaned": [
+    "CoffeeManager_Test_G07_20261110_095320_5ba96198_clean",
+    "CoffeeManager_Test_G07_20261110_095320_5ba96198_demo"
+  ],
+  "Retained": [],
+  "Results": [
+    {
+      "Id": "DA01",
+      "Mode": "clean",
+      "Status": "PASS",
+      "Actual": "028+rerun; tables/columns/computed/indexes and business data unchanged"
+    },
+    {
+      "Id": "DA01",
+      "Mode": "demo",
+      "Status": "PASS",
+      "Actual": "028+rerun; tables/columns/computed/indexes and business data unchanged"
+    }
+  ],
+  "SourceUnchanged": true
+}

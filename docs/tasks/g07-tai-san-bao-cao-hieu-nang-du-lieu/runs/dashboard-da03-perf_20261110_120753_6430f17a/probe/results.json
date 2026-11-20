@@ -1,0 +1,8 @@
+{
+  "Kind": "Implementation benchmark, not acceptance",
+  "Database": "CoffeeManager_Test_G07Bench_20261110_120753_6430f17a",
+  "Seed": 7,
+  "HistoricalDateLimitation": "Checkout owns server date; dataset generated on actual current day, not backdated90days",
+  "Status": "Failed",
+  "Error": "System.UnauthorizedAccessException: T\u00E0i kho\u1EA3n ho\u1EB7c quy\u1EC1n \u0111\u00E3 thay \u0111\u1ED5i; \u0111\u0103ng nh\u1EADp l\u1EA1i.\r\n   at CafeManager.Business.Security.PermissionService.DemandAsync(SessionContext session, AppPermission permission, CancellationToken token) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.Business\\Security\\PermissionService.cs:line 25\r\n   at CafeManager.Business.Services.CatalogService.Run[T](SessionContext session, Func\u00602 operation, CancellationToken token) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.Business\\Services\\CatalogService.cs:line 70\r\n   at PerformanceProbe.Run(String database, String marker, String output) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G07Probe\\PerformanceProbe.cs:line 36\r\n   at PerformanceProbe.Run(String database, String marker, String output) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G07Probe\\PerformanceProbe.cs:line 85"
+}

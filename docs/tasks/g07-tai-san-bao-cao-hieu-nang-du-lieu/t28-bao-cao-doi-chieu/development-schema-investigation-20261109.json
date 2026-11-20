@@ -1,0 +1,25 @@
+{
+  "Date": "2026-11-09",
+  "Kind": "ReadOnlyInvestigation",
+  "Server": "localhost",
+  "Database": "CoffeeManager_Development",
+  "ConfiguredF5TargetVerified": true,
+  "ActiveProcess": {
+    "Pid": 22872,
+    "Path": "D:/Workspace/Nam_3/HK1/CoffeeManager/src/CafeManager.WinForms/bin/Debug/net10.0-windows/CafeManager.WinForms.exe"
+  },
+  "ActiveSqlSessionMatchedAtSnapshot": false,
+  "AppliedVersions": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21],
+  "DevelopmentMarker": {"Id":1,"Application":"CoffeeManager.Development.v1","SchemaReady":true},
+  "DashboardProcedureCount": 0,
+  "ReadOnlyMissingProcedureCall": {
+    "Command": "EXEC dbo.sp_ReportDashboard",
+    "ErrorNumber": 2812,
+    "ErrorMessage": "Could not find stored procedure 'dbo.sp_ReportDashboard'."
+  },
+  "ProcedureDefinedBy": "database/migrations/026_reports.sql:131",
+  "DataChanged": false,
+  "SourceChanged": false,
+  "CredentialsExported": false,
+  "Status": "AwaitingApprovalForDevelopmentUpgrade"
+}

@@ -1,0 +1,126 @@
+{
+  "Database": "CoffeeManager_Test_G07_20261110_095320_5ba96198_demo",
+  "Marker": "20261110_095320_5ba96198",
+  "Results": [
+    {
+      "Id": "DA02/03/day",
+      "Expected": "62 invoices; paid127500; quantity127; expense1000; no fanout; Until excluded",
+      "Status": "PASS",
+      "Actual": {
+        "Revenue": 127500,
+        "Bills": 62,
+        "Cups": 127
+      }
+    },
+    {
+      "Id": "DA04/month",
+      "Expected": "137500 MTD, previous20000, previous day10000",
+      "Status": "PASS",
+      "Actual": {
+        "MTD": 137500,
+        "Previous": 20000,
+        "Change": 1175
+      }
+    },
+    {
+      "Id": "DA04/calendar",
+      "Expected": "31Mar=\u003Eno prior bounds; leap29Feb=\u003E29Jan; empty average null and both0 change0",
+      "Status": "PASS",
+      "Actual": "Bounds/null rules matched"
+    },
+    {
+      "Id": "DA06/top",
+      "Expected": "61 SKUs, deterministic top5 X0002,X0001,X0003,X0004,X0005; snapshot price1000",
+      "Status": "PASS",
+      "Actual": [
+        "X0002",
+        "X0001",
+        "X0003",
+        "X0004",
+        "X0005"
+      ]
+    },
+    {
+      "Id": "DA07/current",
+      "Expected": "counter predicates match live views/tables; identical across modes",
+      "Status": "PASS",
+      "Actual": "4 predicates matched"
+    },
+    {
+      "Id": "DA08/paging",
+      "Expected": "62 distinct invoices; pages50\u002B12; channel1; X0002 sources2; expense1",
+      "Status": "PASS",
+      "Actual": {
+        "TotalCount": 62,
+        "Page1": 50,
+        "Page2": 12
+      }
+    },
+    {
+      "Id": "DA09/permissions",
+      "Expected": "non ADMIN blocked at BLL and SQL; runtime has no direct SELECT",
+      "Status": "PASS",
+      "Actual": 2
+    },
+    {
+      "Id": "DA14/mapping",
+      "Expected": "new day/month APIs mapped; old full day137500 and old dashboard callable",
+      "Status": "PASS",
+      "Actual": {
+        "DayPages": 4,
+        "MonthPages": 4,
+        "LegacyFullDay": 137500
+      }
+    },
+    {
+      "Id": "DA10/transaction",
+      "Expected": "all calls released transactions",
+      "Status": "PASS",
+      "Actual": 0
+    },
+    {
+      "Id": "DA11/cancel",
+      "Expected": "cancelled request throws without returning fake aggregates",
+      "Status": "PASS",
+      "Actual": "Cancelled"
+    },
+    {
+      "Id": "DA11/12/native",
+      "Expected": "real WinForms at125%; mode/refresh/layout/source ownership/keyboard; visual excluded",
+      "Status": "PASS",
+      "Actual": {
+        "DeviceDpi": 120,
+        "TechnicalBounds": [
+          {
+            "Width": 1600,
+            "KpiColumns": 2,
+            "ChartColumns": 2
+          },
+          {
+            "Width": 1150,
+            "KpiColumns": 2,
+            "ChartColumns": 1
+          },
+          {
+            "Width": 700,
+            "KpiColumns": 1,
+            "ChartColumns": 1
+          }
+        ],
+        "ChartDescription": "10/11/2026 09:00: 0 \u20AB \u00B7 K\u1EF3 tr\u01B0\u1EDBc 09/11/2026 09:00: 0 \u20AB",
+        "OwnedSourceDialog": true,
+        "HideShowReload": true,
+        "Status": "PASS technical/function subset; no visual acceptance"
+      }
+    }
+  ],
+  "Failed": 0,
+  "NotRun": [
+    "DA05 linked expense scenarios",
+    "DA10 two-session checkout/expense concurrency",
+    "DA11 connection failure/late response forced cases",
+    "DA13 10000 bills performance",
+    "DPI100%/150%"
+  ],
+  "Skipped": "Visual appearance: user assignment"
+}

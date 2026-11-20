@@ -1,0 +1,1383 @@
+[
+  {
+    "Id": "delete-expense-1",
+    "Expected": "2session qua barrier; k\u1EBFt qu\u1EA3 nghi\u1EC7p v\u1EE5 \u0111\u00FAng, kh\u00F4ng1205, transaction0:0, receipt/phi\u1EBFu/row kh\u1EDBp",
+    "Actual": {
+      "family": "delete-expense",
+      "Code": "TS029",
+      "waiters": 2,
+      "result": [
+        {
+          "RequestId": "f87ece7e-3739-4866-aed2-5195568c752c",
+          "Error": 53402,
+          "Code": null,
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 94.121
+        },
+        {
+          "RequestId": "f1f26ff4-f83d-4f4a-a0e5-6019a0efef58",
+          "Error": 0,
+          "Code": "TC20250517",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 90.259
+        }
+      ],
+      "Actual": {
+        "Code": "TS029",
+        "Name": "G07-B01 regression",
+        "PurchasedOn": "2026-10-31",
+        "Value": 100,
+        "Months": 3,
+        "Revision": "AAAAAAAAC8I="
+      },
+      "Receipts": [
+        null,
+        "TC20250517"
+      ],
+      "LinkedExpenses": 1
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "delete-expense-2",
+    "Expected": "2session qua barrier; k\u1EBFt qu\u1EA3 nghi\u1EC7p v\u1EE5 \u0111\u00FAng, kh\u00F4ng1205, transaction0:0, receipt/phi\u1EBFu/row kh\u1EDBp",
+    "Actual": {
+      "family": "delete-expense",
+      "Code": "TS030",
+      "waiters": 2,
+      "result": [
+        {
+          "RequestId": "652bd61a-081e-4a2c-abb8-d1eae832cb8e",
+          "Error": 0,
+          "Code": "TS030",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 113.3139
+        },
+        {
+          "RequestId": "bafe5805-f771-4c08-91a7-8a3b0e358753",
+          "Error": 52602,
+          "Code": null,
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 113.3913
+        }
+      ],
+      "Actual": null,
+      "Receipts": [
+        "TS030",
+        null
+      ],
+      "LinkedExpenses": 0
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "delete-expense-3",
+    "Expected": "2session qua barrier; k\u1EBFt qu\u1EA3 nghi\u1EC7p v\u1EE5 \u0111\u00FAng, kh\u00F4ng1205, transaction0:0, receipt/phi\u1EBFu/row kh\u1EDBp",
+    "Actual": {
+      "family": "delete-expense",
+      "Code": "TS031",
+      "waiters": 2,
+      "result": [
+        {
+          "RequestId": "a2a859f4-eeac-4d6f-b1f5-9ce62d366989",
+          "Error": 53402,
+          "Code": null,
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 106.549
+        },
+        {
+          "RequestId": "7c61aaee-ebd8-45f8-9814-aa451b80251f",
+          "Error": 0,
+          "Code": "TC20250518",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 106.0951
+        }
+      ],
+      "Actual": {
+        "Code": "TS031",
+        "Name": "G07-B01 regression",
+        "PurchasedOn": "2026-10-31",
+        "Value": 100,
+        "Months": 3,
+        "Revision": "AAAAAAAAC8Q="
+      },
+      "Receipts": [
+        null,
+        "TC20250518"
+      ],
+      "LinkedExpenses": 1
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "delete-expense-4",
+    "Expected": "2session qua barrier; k\u1EBFt qu\u1EA3 nghi\u1EC7p v\u1EE5 \u0111\u00FAng, kh\u00F4ng1205, transaction0:0, receipt/phi\u1EBFu/row kh\u1EDBp",
+    "Actual": {
+      "family": "delete-expense",
+      "Code": "TS032",
+      "waiters": 2,
+      "result": [
+        {
+          "RequestId": "8e2cba0e-4af9-402a-b1dc-dd70d719b29a",
+          "Error": 53402,
+          "Code": null,
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 104.1098
+        },
+        {
+          "RequestId": "8a789d95-ab38-41db-94ed-956f9fdcbfa7",
+          "Error": 0,
+          "Code": "TC20250519",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 103.3391
+        }
+      ],
+      "Actual": {
+        "Code": "TS032",
+        "Name": "G07-B01 regression",
+        "PurchasedOn": "2026-10-31",
+        "Value": 100,
+        "Months": 3,
+        "Revision": "AAAAAAAAC8U="
+      },
+      "Receipts": [
+        null,
+        "TC20250519"
+      ],
+      "LinkedExpenses": 1
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "delete-expense-5",
+    "Expected": "2session qua barrier; k\u1EBFt qu\u1EA3 nghi\u1EC7p v\u1EE5 \u0111\u00FAng, kh\u00F4ng1205, transaction0:0, receipt/phi\u1EBFu/row kh\u1EDBp",
+    "Actual": {
+      "family": "delete-expense",
+      "Code": "TS033",
+      "waiters": 2,
+      "result": [
+        {
+          "RequestId": "db5e4253-8fbb-4c7d-8283-71a7301f2a5d",
+          "Error": 0,
+          "Code": "TS033",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 109.2416
+        },
+        {
+          "RequestId": "517e043c-49b2-4f0e-aa20-38e217d72fd8",
+          "Error": 52602,
+          "Code": null,
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 109.4316
+        }
+      ],
+      "Actual": null,
+      "Receipts": [
+        "TS033",
+        null
+      ],
+      "LinkedExpenses": 0
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "delete-expense-6",
+    "Expected": "2session qua barrier; k\u1EBFt qu\u1EA3 nghi\u1EC7p v\u1EE5 \u0111\u00FAng, kh\u00F4ng1205, transaction0:0, receipt/phi\u1EBFu/row kh\u1EDBp",
+    "Actual": {
+      "family": "delete-expense",
+      "Code": "TS034",
+      "waiters": 2,
+      "result": [
+        {
+          "RequestId": "aab8f69c-122b-47b6-a0e5-8f01f23c8892",
+          "Error": 0,
+          "Code": "TS034",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 107.3011
+        },
+        {
+          "RequestId": "e642d9a2-7bd6-46c3-bd31-3da2596a1bcd",
+          "Error": 52602,
+          "Code": null,
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 108.0909
+        }
+      ],
+      "Actual": null,
+      "Receipts": [
+        "TS034",
+        null
+      ],
+      "LinkedExpenses": 0
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "delete-expense-7",
+    "Expected": "2session qua barrier; k\u1EBFt qu\u1EA3 nghi\u1EC7p v\u1EE5 \u0111\u00FAng, kh\u00F4ng1205, transaction0:0, receipt/phi\u1EBFu/row kh\u1EDBp",
+    "Actual": {
+      "family": "delete-expense",
+      "Code": "TS035",
+      "waiters": 2,
+      "result": [
+        {
+          "RequestId": "58231d8b-219a-4625-b7bc-ceff4e9b8da2",
+          "Error": 53402,
+          "Code": null,
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 114.7208
+        },
+        {
+          "RequestId": "a888ea29-b14c-44cf-977d-bbdcd0035fad",
+          "Error": 0,
+          "Code": "TC20250520",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 113.8437
+        }
+      ],
+      "Actual": {
+        "Code": "TS035",
+        "Name": "G07-B01 regression",
+        "PurchasedOn": "2026-10-31",
+        "Value": 100,
+        "Months": 3,
+        "Revision": "AAAAAAAAC8g="
+      },
+      "Receipts": [
+        null,
+        "TC20250520"
+      ],
+      "LinkedExpenses": 1
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "delete-expense-8",
+    "Expected": "2session qua barrier; k\u1EBFt qu\u1EA3 nghi\u1EC7p v\u1EE5 \u0111\u00FAng, kh\u00F4ng1205, transaction0:0, receipt/phi\u1EBFu/row kh\u1EDBp",
+    "Actual": {
+      "family": "delete-expense",
+      "Code": "TS036",
+      "waiters": 2,
+      "result": [
+        {
+          "RequestId": "e212dd46-a2b4-4560-88de-1735337555d2",
+          "Error": 0,
+          "Code": "TS036",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 109.2853
+        },
+        {
+          "RequestId": "c471967b-add2-4505-816f-25d7f4ed3548",
+          "Error": 52602,
+          "Code": null,
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 107.2722
+        }
+      ],
+      "Actual": null,
+      "Receipts": [
+        "TS036",
+        null
+      ],
+      "LinkedExpenses": 0
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "delete-expense-9",
+    "Expected": "2session qua barrier; k\u1EBFt qu\u1EA3 nghi\u1EC7p v\u1EE5 \u0111\u00FAng, kh\u00F4ng1205, transaction0:0, receipt/phi\u1EBFu/row kh\u1EDBp",
+    "Actual": {
+      "family": "delete-expense",
+      "Code": "TS037",
+      "waiters": 2,
+      "result": [
+        {
+          "RequestId": "138aa4dc-3012-4630-b1f5-17c74757805e",
+          "Error": 0,
+          "Code": "TS037",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 103.2501
+        },
+        {
+          "RequestId": "1ad5b716-84d9-4020-bc54-ea5706277b43",
+          "Error": 52602,
+          "Code": null,
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 103.6984
+        }
+      ],
+      "Actual": null,
+      "Receipts": [
+        "TS037",
+        null
+      ],
+      "LinkedExpenses": 0
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "delete-expense-10",
+    "Expected": "2session qua barrier; k\u1EBFt qu\u1EA3 nghi\u1EC7p v\u1EE5 \u0111\u00FAng, kh\u00F4ng1205, transaction0:0, receipt/phi\u1EBFu/row kh\u1EDBp",
+    "Actual": {
+      "family": "delete-expense",
+      "Code": "TS038",
+      "waiters": 2,
+      "result": [
+        {
+          "RequestId": "66fee83c-ab29-4ac8-8bf7-4aca1fd2526e",
+          "Error": 53402,
+          "Code": null,
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 100.8184
+        },
+        {
+          "RequestId": "f4907df1-d641-431d-98e2-3a41dcf308ea",
+          "Error": 0,
+          "Code": "TC20250521",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 100.0331
+        }
+      ],
+      "Actual": {
+        "Code": "TS038",
+        "Name": "G07-B01 regression",
+        "PurchasedOn": "2026-10-31",
+        "Value": 100,
+        "Months": 3,
+        "Revision": "AAAAAAAAC8s="
+      },
+      "Receipts": [
+        null,
+        "TC20250521"
+      ],
+      "LinkedExpenses": 1
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "update-delete-1",
+    "Expected": "2session qua barrier; k\u1EBFt qu\u1EA3 nghi\u1EC7p v\u1EE5 \u0111\u00FAng, kh\u00F4ng1205, transaction0:0, receipt/phi\u1EBFu/row kh\u1EDBp",
+    "Actual": {
+      "family": "update-delete",
+      "Code": "TS039",
+      "waiters": 2,
+      "result": [
+        {
+          "RequestId": "0b3cd3fa-a390-4310-a0b3-2ba633386355",
+          "Error": 53403,
+          "Code": null,
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 110.7059
+        },
+        {
+          "RequestId": "89cc69bd-6314-4163-8910-3b5b4c808c91",
+          "Error": 0,
+          "Code": "TS039",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 110.5166
+        }
+      ],
+      "Actual": null,
+      "Receipts": [
+        null,
+        "TS039"
+      ],
+      "LinkedExpenses": 0
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "update-delete-2",
+    "Expected": "2session qua barrier; k\u1EBFt qu\u1EA3 nghi\u1EC7p v\u1EE5 \u0111\u00FAng, kh\u00F4ng1205, transaction0:0, receipt/phi\u1EBFu/row kh\u1EDBp",
+    "Actual": {
+      "family": "update-delete",
+      "Code": "TS040",
+      "waiters": 2,
+      "result": [
+        {
+          "RequestId": "85da8d5f-1ed2-4239-bcb0-8f4ff22cfaec",
+          "Error": 53403,
+          "Code": null,
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 94.6775
+        },
+        {
+          "RequestId": "17c96910-f2ce-4cd6-b95a-5d7afa065a8f",
+          "Error": 0,
+          "Code": "TS040",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 95.9408
+        }
+      ],
+      "Actual": null,
+      "Receipts": [
+        null,
+        "TS040"
+      ],
+      "LinkedExpenses": 0
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "update-delete-3",
+    "Expected": "2session qua barrier; k\u1EBFt qu\u1EA3 nghi\u1EC7p v\u1EE5 \u0111\u00FAng, kh\u00F4ng1205, transaction0:0, receipt/phi\u1EBFu/row kh\u1EDBp",
+    "Actual": {
+      "family": "update-delete",
+      "Code": "TS041",
+      "waiters": 2,
+      "result": [
+        {
+          "RequestId": "ae3fd975-44cd-4ec8-8f5f-6dbb4e3ccbe9",
+          "Error": 0,
+          "Code": "TS041",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 118.9969
+        },
+        {
+          "RequestId": "81151704-9aa1-4903-bef3-17c9fe63a225",
+          "Error": 53403,
+          "Code": null,
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 119.3948
+        }
+      ],
+      "Actual": {
+        "Code": "TS041",
+        "Name": "G07 raceA",
+        "PurchasedOn": "2026-10-31",
+        "Value": 201,
+        "Months": 3,
+        "Revision": "AAAAAAAAC88="
+      },
+      "Receipts": [
+        "TS041",
+        null
+      ],
+      "LinkedExpenses": 0
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "update-delete-4",
+    "Expected": "2session qua barrier; k\u1EBFt qu\u1EA3 nghi\u1EC7p v\u1EE5 \u0111\u00FAng, kh\u00F4ng1205, transaction0:0, receipt/phi\u1EBFu/row kh\u1EDBp",
+    "Actual": {
+      "family": "update-delete",
+      "Code": "TS042",
+      "waiters": 2,
+      "result": [
+        {
+          "RequestId": "5ddd6dc2-cfa7-436e-be7f-f1ae2722ba2d",
+          "Error": 0,
+          "Code": "TS042",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 117.3091
+        },
+        {
+          "RequestId": "f04afc92-5f6d-4c0f-845b-bac657b3fe1c",
+          "Error": 53403,
+          "Code": null,
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 118.1137
+        }
+      ],
+      "Actual": {
+        "Code": "TS042",
+        "Name": "G07 raceA",
+        "PurchasedOn": "2026-10-31",
+        "Value": 201,
+        "Months": 3,
+        "Revision": "AAAAAAAAC9E="
+      },
+      "Receipts": [
+        "TS042",
+        null
+      ],
+      "LinkedExpenses": 0
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "update-delete-5",
+    "Expected": "2session qua barrier; k\u1EBFt qu\u1EA3 nghi\u1EC7p v\u1EE5 \u0111\u00FAng, kh\u00F4ng1205, transaction0:0, receipt/phi\u1EBFu/row kh\u1EDBp",
+    "Actual": {
+      "family": "update-delete",
+      "Code": "TS043",
+      "waiters": 2,
+      "result": [
+        {
+          "RequestId": "976b4898-6e06-420e-b926-03ed192a98e4",
+          "Error": 0,
+          "Code": "TS043",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 100.6613
+        },
+        {
+          "RequestId": "b76c5ffa-1f91-4aa5-b25c-1aa55b4103bf",
+          "Error": 53403,
+          "Code": null,
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 100.9601
+        }
+      ],
+      "Actual": {
+        "Code": "TS043",
+        "Name": "G07 raceA",
+        "PurchasedOn": "2026-10-31",
+        "Value": 201,
+        "Months": 3,
+        "Revision": "AAAAAAAAC9M="
+      },
+      "Receipts": [
+        "TS043",
+        null
+      ],
+      "LinkedExpenses": 0
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "update-delete-6",
+    "Expected": "2session qua barrier; k\u1EBFt qu\u1EA3 nghi\u1EC7p v\u1EE5 \u0111\u00FAng, kh\u00F4ng1205, transaction0:0, receipt/phi\u1EBFu/row kh\u1EDBp",
+    "Actual": {
+      "family": "update-delete",
+      "Code": "TS044",
+      "waiters": 2,
+      "result": [
+        {
+          "RequestId": "dbeeda84-956b-4466-a70e-125491b84ed5",
+          "Error": 53403,
+          "Code": null,
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 117.5148
+        },
+        {
+          "RequestId": "2e5c36c1-649d-4aff-b3c1-c4e811cf28e6",
+          "Error": 0,
+          "Code": "TS044",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 116.5962
+        }
+      ],
+      "Actual": null,
+      "Receipts": [
+        null,
+        "TS044"
+      ],
+      "LinkedExpenses": 0
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "update-delete-7",
+    "Expected": "2session qua barrier; k\u1EBFt qu\u1EA3 nghi\u1EC7p v\u1EE5 \u0111\u00FAng, kh\u00F4ng1205, transaction0:0, receipt/phi\u1EBFu/row kh\u1EDBp",
+    "Actual": {
+      "family": "update-delete",
+      "Code": "TS045",
+      "waiters": 2,
+      "result": [
+        {
+          "RequestId": "8de72d30-a5be-44ed-80d9-bac678be16a7",
+          "Error": 0,
+          "Code": "TS045",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 98.6419
+        },
+        {
+          "RequestId": "bbf52e13-fffe-40df-97ab-8e7fdd5bc34f",
+          "Error": 53403,
+          "Code": null,
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 97.3666
+        }
+      ],
+      "Actual": {
+        "Code": "TS045",
+        "Name": "G07 raceA",
+        "PurchasedOn": "2026-10-31",
+        "Value": 201,
+        "Months": 3,
+        "Revision": "AAAAAAAAC9c="
+      },
+      "Receipts": [
+        "TS045",
+        null
+      ],
+      "LinkedExpenses": 0
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "update-delete-8",
+    "Expected": "2session qua barrier; k\u1EBFt qu\u1EA3 nghi\u1EC7p v\u1EE5 \u0111\u00FAng, kh\u00F4ng1205, transaction0:0, receipt/phi\u1EBFu/row kh\u1EDBp",
+    "Actual": {
+      "family": "update-delete",
+      "Code": "TS046",
+      "waiters": 2,
+      "result": [
+        {
+          "RequestId": "5cc71697-8f02-4727-801d-b2d2efe73b79",
+          "Error": 53403,
+          "Code": null,
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 111.1824
+        },
+        {
+          "RequestId": "3ae3d32a-b5d0-47b9-bd80-b9291730bfb0",
+          "Error": 0,
+          "Code": "TS046",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 110.5696
+        }
+      ],
+      "Actual": null,
+      "Receipts": [
+        null,
+        "TS046"
+      ],
+      "LinkedExpenses": 0
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "update-delete-9",
+    "Expected": "2session qua barrier; k\u1EBFt qu\u1EA3 nghi\u1EC7p v\u1EE5 \u0111\u00FAng, kh\u00F4ng1205, transaction0:0, receipt/phi\u1EBFu/row kh\u1EDBp",
+    "Actual": {
+      "family": "update-delete",
+      "Code": "TS047",
+      "waiters": 2,
+      "result": [
+        {
+          "RequestId": "28479f97-1132-44e4-b0f0-fa4d844e8ae9",
+          "Error": 0,
+          "Code": "TS047",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 114.7206
+        },
+        {
+          "RequestId": "0d2a1861-d6f6-433c-adcd-754b29df580e",
+          "Error": 53403,
+          "Code": null,
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 115.2415
+        }
+      ],
+      "Actual": {
+        "Code": "TS047",
+        "Name": "G07 raceA",
+        "PurchasedOn": "2026-10-31",
+        "Value": 201,
+        "Months": 3,
+        "Revision": "AAAAAAAAC9o="
+      },
+      "Receipts": [
+        "TS047",
+        null
+      ],
+      "LinkedExpenses": 0
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "update-delete-10",
+    "Expected": "2session qua barrier; k\u1EBFt qu\u1EA3 nghi\u1EC7p v\u1EE5 \u0111\u00FAng, kh\u00F4ng1205, transaction0:0, receipt/phi\u1EBFu/row kh\u1EDBp",
+    "Actual": {
+      "family": "update-delete",
+      "Code": "TS048",
+      "waiters": 2,
+      "result": [
+        {
+          "RequestId": "ec4ed2d9-4e20-4d98-838e-190d5f8eda10",
+          "Error": 53403,
+          "Code": null,
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 96.4985
+        },
+        {
+          "RequestId": "64fae8dc-16d3-4900-84f9-d9ea6822f394",
+          "Error": 0,
+          "Code": "TS048",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 96.2744
+        }
+      ],
+      "Actual": null,
+      "Receipts": [
+        null,
+        "TS048"
+      ],
+      "LinkedExpenses": 0
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "update-update-1",
+    "Expected": "2session qua barrier; k\u1EBFt qu\u1EA3 nghi\u1EC7p v\u1EE5 \u0111\u00FAng, kh\u00F4ng1205, transaction0:0, receipt/phi\u1EBFu/row kh\u1EDBp",
+    "Actual": {
+      "family": "update-update",
+      "Code": "TS049",
+      "waiters": 2,
+      "result": [
+        {
+          "RequestId": "9e88b2f5-6caa-430a-a109-73701f9eefa4",
+          "Error": 53403,
+          "Code": null,
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 100.0062
+        },
+        {
+          "RequestId": "6bb2e617-9257-4db2-a8c7-c2277871f011",
+          "Error": 0,
+          "Code": "TS049",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 100.2671
+        }
+      ],
+      "Actual": {
+        "Code": "TS049",
+        "Name": "G07 raceB",
+        "PurchasedOn": "2026-10-31",
+        "Value": 202,
+        "Months": 3,
+        "Revision": "AAAAAAAAC94="
+      },
+      "Receipts": [
+        null,
+        "TS049"
+      ],
+      "LinkedExpenses": 0
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "update-update-2",
+    "Expected": "2session qua barrier; k\u1EBFt qu\u1EA3 nghi\u1EC7p v\u1EE5 \u0111\u00FAng, kh\u00F4ng1205, transaction0:0, receipt/phi\u1EBFu/row kh\u1EDBp",
+    "Actual": {
+      "family": "update-update",
+      "Code": "TS050",
+      "waiters": 2,
+      "result": [
+        {
+          "RequestId": "48f30662-66fb-4413-b55c-6b5f53d075cc",
+          "Error": 0,
+          "Code": "TS050",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 108.6076
+        },
+        {
+          "RequestId": "7c75bec3-4edb-48bf-b7fe-90a4b0170729",
+          "Error": 53403,
+          "Code": null,
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 108.9043
+        }
+      ],
+      "Actual": {
+        "Code": "TS050",
+        "Name": "G07 raceA",
+        "PurchasedOn": "2026-10-31",
+        "Value": 201,
+        "Months": 3,
+        "Revision": "AAAAAAAAC+A="
+      },
+      "Receipts": [
+        "TS050",
+        null
+      ],
+      "LinkedExpenses": 0
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "update-update-3",
+    "Expected": "2session qua barrier; k\u1EBFt qu\u1EA3 nghi\u1EC7p v\u1EE5 \u0111\u00FAng, kh\u00F4ng1205, transaction0:0, receipt/phi\u1EBFu/row kh\u1EDBp",
+    "Actual": {
+      "family": "update-update",
+      "Code": "TS051",
+      "waiters": 2,
+      "result": [
+        {
+          "RequestId": "87740b0a-bce7-454d-a6de-d9e726a6ade2",
+          "Error": 53403,
+          "Code": null,
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 102.9212
+        },
+        {
+          "RequestId": "e497376c-3da9-4f67-bdfa-7eb973bbf383",
+          "Error": 0,
+          "Code": "TS051",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 102.6827
+        }
+      ],
+      "Actual": {
+        "Code": "TS051",
+        "Name": "G07 raceB",
+        "PurchasedOn": "2026-10-31",
+        "Value": 202,
+        "Months": 3,
+        "Revision": "AAAAAAAAC+I="
+      },
+      "Receipts": [
+        null,
+        "TS051"
+      ],
+      "LinkedExpenses": 0
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "update-update-4",
+    "Expected": "2session qua barrier; k\u1EBFt qu\u1EA3 nghi\u1EC7p v\u1EE5 \u0111\u00FAng, kh\u00F4ng1205, transaction0:0, receipt/phi\u1EBFu/row kh\u1EDBp",
+    "Actual": {
+      "family": "update-update",
+      "Code": "TS052",
+      "waiters": 2,
+      "result": [
+        {
+          "RequestId": "11e435c2-1b89-466e-955e-b203e3676552",
+          "Error": 53403,
+          "Code": null,
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 107.4179
+        },
+        {
+          "RequestId": "3dbd9ead-244f-44fb-834a-af6418bc413c",
+          "Error": 0,
+          "Code": "TS052",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 107.1132
+        }
+      ],
+      "Actual": {
+        "Code": "TS052",
+        "Name": "G07 raceB",
+        "PurchasedOn": "2026-10-31",
+        "Value": 202,
+        "Months": 3,
+        "Revision": "AAAAAAAAC+Q="
+      },
+      "Receipts": [
+        null,
+        "TS052"
+      ],
+      "LinkedExpenses": 0
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "update-update-5",
+    "Expected": "2session qua barrier; k\u1EBFt qu\u1EA3 nghi\u1EC7p v\u1EE5 \u0111\u00FAng, kh\u00F4ng1205, transaction0:0, receipt/phi\u1EBFu/row kh\u1EDBp",
+    "Actual": {
+      "family": "update-update",
+      "Code": "TS053",
+      "waiters": 2,
+      "result": [
+        {
+          "RequestId": "3d0e868d-7ac9-4704-887a-fe9a74b0a156",
+          "Error": 53403,
+          "Code": null,
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 110.0307
+        },
+        {
+          "RequestId": "e40f7313-f8fc-4b0b-a402-567935ecc482",
+          "Error": 0,
+          "Code": "TS053",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 109.9139
+        }
+      ],
+      "Actual": {
+        "Code": "TS053",
+        "Name": "G07 raceB",
+        "PurchasedOn": "2026-10-31",
+        "Value": 202,
+        "Months": 3,
+        "Revision": "AAAAAAAAC+Y="
+      },
+      "Receipts": [
+        null,
+        "TS053"
+      ],
+      "LinkedExpenses": 0
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "update-update-6",
+    "Expected": "2session qua barrier; k\u1EBFt qu\u1EA3 nghi\u1EC7p v\u1EE5 \u0111\u00FAng, kh\u00F4ng1205, transaction0:0, receipt/phi\u1EBFu/row kh\u1EDBp",
+    "Actual": {
+      "family": "update-update",
+      "Code": "TS054",
+      "waiters": 2,
+      "result": [
+        {
+          "RequestId": "1cd2686b-5e68-44a8-a6f4-9882cbcd143e",
+          "Error": 0,
+          "Code": "TS054",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 101.8736
+        },
+        {
+          "RequestId": "5bc940a1-7271-4848-a420-8ee7302cf475",
+          "Error": 53403,
+          "Code": null,
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 101.1227
+        }
+      ],
+      "Actual": {
+        "Code": "TS054",
+        "Name": "G07 raceA",
+        "PurchasedOn": "2026-10-31",
+        "Value": 201,
+        "Months": 3,
+        "Revision": "AAAAAAAAC+g="
+      },
+      "Receipts": [
+        "TS054",
+        null
+      ],
+      "LinkedExpenses": 0
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "update-update-7",
+    "Expected": "2session qua barrier; k\u1EBFt qu\u1EA3 nghi\u1EC7p v\u1EE5 \u0111\u00FAng, kh\u00F4ng1205, transaction0:0, receipt/phi\u1EBFu/row kh\u1EDBp",
+    "Actual": {
+      "family": "update-update",
+      "Code": "TS055",
+      "waiters": 2,
+      "result": [
+        {
+          "RequestId": "eb099200-8f2a-4b0e-9f78-b4b1426220fc",
+          "Error": 0,
+          "Code": "TS055",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 101.6062
+        },
+        {
+          "RequestId": "98f10cf7-1ac6-4054-ac99-7fdb9be7f901",
+          "Error": 53403,
+          "Code": null,
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 100.7592
+        }
+      ],
+      "Actual": {
+        "Code": "TS055",
+        "Name": "G07 raceA",
+        "PurchasedOn": "2026-10-31",
+        "Value": 201,
+        "Months": 3,
+        "Revision": "AAAAAAAAC+o="
+      },
+      "Receipts": [
+        "TS055",
+        null
+      ],
+      "LinkedExpenses": 0
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "update-update-8",
+    "Expected": "2session qua barrier; k\u1EBFt qu\u1EA3 nghi\u1EC7p v\u1EE5 \u0111\u00FAng, kh\u00F4ng1205, transaction0:0, receipt/phi\u1EBFu/row kh\u1EDBp",
+    "Actual": {
+      "family": "update-update",
+      "Code": "TS056",
+      "waiters": 2,
+      "result": [
+        {
+          "RequestId": "a31a9a49-08b7-45c1-932a-89cffdfe45b4",
+          "Error": 0,
+          "Code": "TS056",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 107.4078
+        },
+        {
+          "RequestId": "e3166b2e-b29a-4c14-af07-8a59ab4c50d5",
+          "Error": 53403,
+          "Code": null,
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 107.7811
+        }
+      ],
+      "Actual": {
+        "Code": "TS056",
+        "Name": "G07 raceA",
+        "PurchasedOn": "2026-10-31",
+        "Value": 201,
+        "Months": 3,
+        "Revision": "AAAAAAAAC+w="
+      },
+      "Receipts": [
+        "TS056",
+        null
+      ],
+      "LinkedExpenses": 0
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "update-update-9",
+    "Expected": "2session qua barrier; k\u1EBFt qu\u1EA3 nghi\u1EC7p v\u1EE5 \u0111\u00FAng, kh\u00F4ng1205, transaction0:0, receipt/phi\u1EBFu/row kh\u1EDBp",
+    "Actual": {
+      "family": "update-update",
+      "Code": "TS057",
+      "waiters": 2,
+      "result": [
+        {
+          "RequestId": "6ca3e236-6b87-441b-9f13-af5fd06fb80e",
+          "Error": 0,
+          "Code": "TS057",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 99.9465
+        },
+        {
+          "RequestId": "ca529bd5-5155-4556-870d-3bd01aca0aac",
+          "Error": 53403,
+          "Code": null,
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 100.0641
+        }
+      ],
+      "Actual": {
+        "Code": "TS057",
+        "Name": "G07 raceA",
+        "PurchasedOn": "2026-10-31",
+        "Value": 201,
+        "Months": 3,
+        "Revision": "AAAAAAAAC+4="
+      },
+      "Receipts": [
+        "TS057",
+        null
+      ],
+      "LinkedExpenses": 0
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "update-update-10",
+    "Expected": "2session qua barrier; k\u1EBFt qu\u1EA3 nghi\u1EC7p v\u1EE5 \u0111\u00FAng, kh\u00F4ng1205, transaction0:0, receipt/phi\u1EBFu/row kh\u1EDBp",
+    "Actual": {
+      "family": "update-update",
+      "Code": "TS058",
+      "waiters": 2,
+      "result": [
+        {
+          "RequestId": "4c8f19b9-6682-4e2d-8d5a-2e518021b40f",
+          "Error": 0,
+          "Code": "TS058",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 110.7974
+        },
+        {
+          "RequestId": "b46bc70e-0c60-45b7-a154-67659335544a",
+          "Error": 53403,
+          "Code": null,
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 111.9073
+        }
+      ],
+      "Actual": {
+        "Code": "TS058",
+        "Name": "G07 raceA",
+        "PurchasedOn": "2026-10-31",
+        "Value": 201,
+        "Months": 3,
+        "Revision": "AAAAAAAAC/A="
+      },
+      "Receipts": [
+        "TS058",
+        null
+      ],
+      "LinkedExpenses": 0
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "independent-asset",
+    "Expected": "Gi\u1EEF kh\u00F3aA, ghi chi t\u00E0i s\u1EA3nB v\u00E0 kh\u00F4ngMaTS v\u1EABn ho\u00E0n t\u1EA5t",
+    "Actual": {
+      "Held": "TS059",
+      "Other": "TS060",
+      "results": [
+        {
+          "RequestId": "20ada95a-a57c-435a-91f8-2ecd7154d2f1",
+          "Error": 0,
+          "Code": "TC20250522",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 5.9152
+        },
+        {
+          "RequestId": "8cd9a326-9d3c-4892-8fca-6b8cc9c27cca",
+          "Error": 0,
+          "Code": "TC20250523",
+          "Before": "0:0",
+          "Transaction": "0:0",
+          "Milliseconds": 6.4293
+        }
+      ]
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "lock-timeout",
+    "Expected": "C\u00F9ngMaTS kh\u00E1ccase b\u1ECB52603 sau~10s; rollback/kh\u00F4ngreceipt, sau nh\u1EA3 kh\u00F3a g\u1EEDi l\u1EA1i request ch\u01B0aghi \u0111\u01B0\u1EE3c1l\u1EA7n",
+    "Actual": {
+      "result": {
+        "RequestId": "08bb17cc-6709-4980-8773-469d041a6565",
+        "Error": 52603,
+        "Code": null,
+        "Before": "0:0",
+        "Transaction": "0:0",
+        "Milliseconds": 10019.808
+      },
+      "retry": {
+        "RequestId": "08bb17cc-6709-4980-8773-469d041a6565",
+        "Error": 0,
+        "Code": "TC20250524",
+        "Before": "0:0",
+        "Transaction": "0:0",
+        "Milliseconds": 7.2844
+      }
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "replay-actor-payload",
+    "Expected": "Replay \u0111\u00FAng kh\u00F4ng ghi2l\u1EA7n; sai payload/actor51608; kh\u00F4ng gi\u1EEF transaction",
+    "Actual": {
+      "one": {
+        "RequestId": "aa064f4d-316e-4a86-b509-3da3aa9bc193",
+        "Error": 0,
+        "Code": "TS062",
+        "Before": "0:0",
+        "Transaction": "0:0",
+        "Milliseconds": 5.3374
+      },
+      "two": {
+        "RequestId": "aa064f4d-316e-4a86-b509-3da3aa9bc193",
+        "Error": 0,
+        "Code": "TS062",
+        "Before": "0:0",
+        "Transaction": "0:0",
+        "Milliseconds": 3.913
+      },
+      "mismatch": {
+        "RequestId": "aa064f4d-316e-4a86-b509-3da3aa9bc193",
+        "Error": 51608,
+        "Code": null,
+        "Before": "0:0",
+        "Transaction": "0:0",
+        "Milliseconds": 3.382
+      },
+      "wrongActor": {
+        "RequestId": "aa064f4d-316e-4a86-b509-3da3aa9bc193",
+        "Error": 51608,
+        "Code": null,
+        "Before": "0:0",
+        "Transaction": "0:0",
+        "Milliseconds": 3.249
+      },
+      "income": {
+        "RequestId": "3296bc9a-13a2-4eac-9fdb-c6bdf4939c86",
+        "Error": 0,
+        "Code": "TC20250525",
+        "Before": "0:0",
+        "Transaction": "0:0",
+        "Milliseconds": 4.9238
+      },
+      "repeated": {
+        "RequestId": "3296bc9a-13a2-4eac-9fdb-c6bdf4939c86",
+        "Error": 0,
+        "Code": "TC20250525",
+        "Before": "0:0",
+        "Transaction": "0:0",
+        "Milliseconds": 3.0824
+      }
+    },
+    "Status": "PASS"
+  },
+  {
+    "Id": "write-cost",
+    "Expected": "30create/update/expense m\u1ED7i lo\u1EA1i, rawsamples v\u00E0median/p95; t\u00E0i s\u1EA3n c\u00F3chi v\u1EABnx\u00F3a53402",
+    "Actual": {
+      "Create": {
+        "Samples": [
+          27.5048,
+          33.9437,
+          28.6231,
+          32.5136,
+          27.4502,
+          27.5605,
+          27.3473,
+          31.4846,
+          27.6318,
+          29.2669,
+          29.8675,
+          29.0782,
+          32.4243,
+          29.6117,
+          29.5494,
+          36.912,
+          31.933,
+          35.5133,
+          37.7415,
+          33.3913,
+          25.7874,
+          30.4237,
+          27.2105,
+          27.6757,
+          27.394,
+          35.8375,
+          34.5751,
+          31.2904,
+          36.8275,
+          29.2534
+        ],
+        "Median": 29.7396,
+        "P95": 36.912
+      },
+      "Update": {
+        "Samples": [
+          4.3746,
+          4.3612,
+          4.6892,
+          4.5702,
+          4.3629,
+          4.4494,
+          4.4163,
+          5.0617,
+          4.4709,
+          4.6926,
+          4.7035,
+          4.8636,
+          5.5757,
+          4.3572,
+          5.0705,
+          5.4885,
+          4.5529,
+          5.0516,
+          4.7457,
+          4.5217,
+          4.7471,
+          5.1648,
+          4.3109,
+          4.3729,
+          4.7946,
+          4.809,
+          4.5602,
+          4.6268,
+          4.8852,
+          5.455
+        ],
+        "Median": 4.690899999999999,
+        "P95": 5.4885
+      },
+      "Expense": {
+        "Samples": [
+          5.045,
+          5.2965,
+          4.5253,
+          5.8227,
+          5.3555,
+          5.1029,
+          5.0215,
+          5.3657,
+          5.2127,
+          4.9827,
+          5.1639,
+          6.1479,
+          5.468,
+          5.4087,
+          5.6223,
+          5.8105,
+          5.365,
+          5.9551,
+          5.3786,
+          5.1586,
+          5.0871,
+          4.8605,
+          4.8315,
+          4.696,
+          5.2485,
+          5.6791,
+          5.0919,
+          5.1931,
+          5.2189,
+          6.1605
+        ],
+        "Median": 5.2337,
+        "P95": 6.1479
+      },
+      "Note": "3warm\u002B30samples on demo fixture; not a same-dataset before/after benchmark"
+    },
+    "Status": "PASS"
+  }
+]

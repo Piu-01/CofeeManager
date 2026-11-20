@@ -1,0 +1,10 @@
+{
+  "Database": "CoffeeManager_Test_G07_20261110_144033_ca33988f_demo",
+  "Marker": "20261110_144033_ca33988f",
+  "Mode": "bills",
+  "StartedAt": "2026-11-10T14:55:57.0921777\u002B07:00",
+  "Bills": 10000,
+  "Distribution": "[{\u0022TrangThai\u0022:\u0022Chua thanh toan\u0022,\u0022Bills\u0022:1001},{\u0022TrangThai\u0022:\u0022Da thanh toan\u0022,\u0022Bills\u0022:7999},{\u0022TrangThai\u0022:\u0022Huy\u0022,\u0022Bills\u0022:1000}]",
+  "GenerationMinutes": 26.71,
+  "Status": "Generated"
+}

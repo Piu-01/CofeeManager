@@ -1,0 +1,140 @@
+[
+  {
+    "Id": "RuntimeIdentity",
+    "Status": "PASS",
+    "Actual": {
+      "Sysadmin": 0,
+      "DbOwner": 0,
+      "AppRole": 1,
+      "Database": "CoffeeManager_Development"
+    }
+  },
+  {
+    "Id": "DashboardAndIndependentSqlParity",
+    "Status": "PASS",
+    "Actual": {
+      "BusinessDate": "2026-11-09",
+      "ReadAt": "2026-11-09T21:53:55.0955566",
+      "Revenue": 0,
+      "OpenOrders": 1,
+      "Debt": 5500000
+    }
+  },
+  {
+    "Id": "ReportOptions",
+    "Status": "PASS",
+    "Actual": {
+      "Count": 52
+    }
+  },
+  {
+    "Id": "Report.SalesDay",
+    "Status": "PASS",
+    "Actual": {
+      "Rows": 0,
+      "Total": 0,
+      "Complete": true
+    }
+  },
+  {
+    "Id": "Report.SalesChannel",
+    "Status": "PASS",
+    "Actual": {
+      "Rows": 0,
+      "Total": 0,
+      "Complete": true
+    }
+  },
+  {
+    "Id": "Report.Products",
+    "Status": "PASS",
+    "Actual": {
+      "Rows": 0,
+      "Total": 0,
+      "Complete": true
+    }
+  },
+  {
+    "Id": "Report.Payments",
+    "Status": "PASS",
+    "Actual": {
+      "Rows": 0,
+      "Total": 0,
+      "Complete": true
+    }
+  },
+  {
+    "Id": "Report.Inventory",
+    "Status": "PASS",
+    "Actual": {
+      "Rows": 12,
+      "Total": 12,
+      "Complete": true
+    }
+  },
+  {
+    "Id": "Report.Debts",
+    "Status": "PASS",
+    "Actual": {
+      "Rows": 9,
+      "Total": 9,
+      "Complete": true
+    }
+  },
+  {
+    "Id": "Report.CashFlow",
+    "Status": "PASS",
+    "Actual": {
+      "Rows": 0,
+      "Total": 0,
+      "Complete": true
+    }
+  },
+  {
+    "Id": "Report.Labor",
+    "Status": "PASS",
+    "Actual": {
+      "Rows": 0,
+      "Total": 0,
+      "Complete": true
+    }
+  },
+  {
+    "Id": "Report.Assets",
+    "Status": "PASS",
+    "Actual": {
+      "Rows": 10,
+      "Total": 10,
+      "Complete": true
+    }
+  },
+  {
+    "Id": "EmployeeContext",
+    "Status": "PASS",
+    "Actual": {
+      "Version": 27
+    }
+  },
+  {
+    "Id": "EmployeeList",
+    "Status": "PASS",
+    "Actual": {
+      "Rows": 10
+    }
+  },
+  {
+    "Id": "AssetContext",
+    "Status": "PASS",
+    "Actual": {
+      "Database": "CoffeeManager_Development"
+    }
+  },
+  {
+    "Id": "AssetList",
+    "Status": "PASS",
+    "Actual": {
+      "Rows": 10,
+      "Total": 10
+    }
+  }
+]

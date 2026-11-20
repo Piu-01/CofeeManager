@@ -1,0 +1,14 @@
+[
+  {
+    "Path": "src/CafeManager.WinForms/bin/Debug/net10.0-windows/CafeManager.WinForms.dll",
+    "Hash": "9D60E60EDA734732438843943776BE5281303EBAF44E1B2011AC64549014FCC2"
+  },
+  {
+    "Path": "artifacts/home-ui02/bin/Debug/net10.0-windows/CafeManager.WinForms.dll",
+    "Hash": "9D60E60EDA734732438843943776BE5281303EBAF44E1B2011AC64549014FCC2"
+  },
+  {
+    "Path": "artifacts/home-ui02/bin/Release/net10.0-windows/CafeManager.WinForms.dll",
+    "Hash": "0CCAA8154ED26375108FF11BA4592021DA1F5796AD1BDC3206C18FFE40252778"
+  }
+]

@@ -1,0 +1,194 @@
+﻿{
+    "Database":  "CoffeeManager_Test_G07Bench_20261110_120959_21ead801",
+    "RunId":  "20261110_120959_21ead801",
+    "Status":  "Passed",
+    "Bills":  10036,
+    "Before028":  {
+                      "revenue":  {
+                                      "LogicalReadsPerExec":  451,
+                                      "SqlElapsedMsPerExec":  223.2,
+                                      "WallMsPerExec":  124.2,
+                                      "Statements":  143
+                                  },
+                      "invoices":  {
+                                       "LogicalReadsPerExec":  451,
+                                       "SqlElapsedMsPerExec":  206,
+                                       "WallMsPerExec":  112.9,
+                                       "Statements":  143
+                                   },
+                      "average":  {
+                                      "LogicalReadsPerExec":  451,
+                                      "SqlElapsedMsPerExec":  186.2,
+                                      "WallMsPerExec":  98.9,
+                                      "Statements":  143
+                                  },
+                      "trend":  {
+                                    "LogicalReadsPerExec":  451,
+                                    "SqlElapsedMsPerExec":  191.6,
+                                    "WallMsPerExec":  102.3,
+                                    "Statements":  143
+                                },
+                      "channel":  {
+                                      "LogicalReadsPerExec":  327,
+                                      "SqlElapsedMsPerExec":  125,
+                                      "WallMsPerExec":  70,
+                                      "Statements":  143
+                                  },
+                      "product":  {
+                                      "LogicalReadsPerExec":  78575,
+                                      "SqlElapsedMsPerExec":  533.2,
+                                      "WallMsPerExec":  273,
+                                      "Statements":  143
+                                  },
+                      "orders":  {
+                                     "LogicalReadsPerExec":  289,
+                                     "SqlElapsedMsPerExec":  101.6,
+                                     "WallMsPerExec":  58,
+                                     "Statements":  143
+                                 },
+                      "delivery":  {
+                                       "LogicalReadsPerExec":  329,
+                                       "SqlElapsedMsPerExec":  139.6,
+                                       "WallMsPerExec":  76.9,
+                                       "Statements":  143
+                                   },
+                      "material":  {
+                                       "LogicalReadsPerExec":  10,
+                                       "SqlElapsedMsPerExec":  17.2,
+                                       "WallMsPerExec":  16.9,
+                                       "Statements":  143
+                                   },
+                      "debt":  {
+                                   "LogicalReadsPerExec":  284,
+                                   "SqlElapsedMsPerExec":  18.8,
+                                   "WallMsPerExec":  17.5,
+                                   "Statements":  143
+                               },
+                      "expense":  {
+                                      "LogicalReadsPerExec":  110,
+                                      "SqlElapsedMsPerExec":  14.8,
+                                      "WallMsPerExec":  14.9,
+                                      "Statements":  143
+                                  }
+                  },
+    "After029":  {
+                     "revenue":  {
+                                     "LogicalReadsPerExec":  515,
+                                     "SqlElapsedMsPerExec":  133.6,
+                                     "WallMsPerExec":  78.6,
+                                     "Statements":  158
+                                 },
+                     "invoices":  {
+                                      "LogicalReadsPerExec":  516,
+                                      "SqlElapsedMsPerExec":  119.6,
+                                      "WallMsPerExec":  67.5,
+                                      "Statements":  158
+                                  },
+                     "average":  {
+                                     "LogicalReadsPerExec":  516,
+                                     "SqlElapsedMsPerExec":  112.8,
+                                     "WallMsPerExec":  64.2,
+                                     "Statements":  158
+                                 },
+                     "trend":  {
+                                   "LogicalReadsPerExec":  516,
+                                   "SqlElapsedMsPerExec":  119,
+                                   "WallMsPerExec":  67.2,
+                                   "Statements":  158
+                               },
+                     "channel":  {
+                                     "LogicalReadsPerExec":  349,
+                                     "SqlElapsedMsPerExec":  69.4,
+                                     "WallMsPerExec":  44,
+                                     "Statements":  158
+                                 },
+                     "product":  {
+                                     "LogicalReadsPerExec":  659,
+                                     "SqlElapsedMsPerExec":  120.4,
+                                     "WallMsPerExec":  71,
+                                     "Statements":  158
+                                 },
+                     "orders":  {
+                                    "LogicalReadsPerExec":  298,
+                                    "SqlElapsedMsPerExec":  44.8,
+                                    "WallMsPerExec":  30.1,
+                                    "Statements":  158
+                                },
+                     "delivery":  {
+                                      "LogicalReadsPerExec":  352,
+                                      "SqlElapsedMsPerExec":  68.4,
+                                      "WallMsPerExec":  41.9,
+                                      "Statements":  158
+                                  },
+                     "material":  {
+                                      "LogicalReadsPerExec":  10,
+                                      "SqlElapsedMsPerExec":  13.8,
+                                      "WallMsPerExec":  14.5,
+                                      "Statements":  148
+                                  },
+                     "debt":  {
+                                  "LogicalReadsPerExec":  284,
+                                  "SqlElapsedMsPerExec":  20.2,
+                                  "WallMsPerExec":  19.9,
+                                  "Statements":  148
+                              },
+                     "expense":  {
+                                     "LogicalReadsPerExec":  110,
+                                     "SqlElapsedMsPerExec":  20,
+                                     "WallMsPerExec":  19.1,
+                                     "Statements":  148
+                                 }
+                 },
+    "Error":  "System.Management.Automation.ParameterBindingValidationException: Cannot bind argument to parameter \u0027ReferenceObject\u0027 because it is null.\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)",
+    "ResultParity":  {
+                         "revenue":  {
+                                         "Rows":  250,
+                                         "Identical":  true
+                                     },
+                         "invoices":  {
+                                          "Rows":  250,
+                                          "Identical":  true
+                                      },
+                         "average":  {
+                                         "Rows":  250,
+                                         "Identical":  true
+                                     },
+                         "trend":  {
+                                       "Rows":  250,
+                                       "Identical":  true
+                                   },
+                         "channel":  {
+                                         "Rows":  250,
+                                         "Identical":  true
+                                     },
+                         "product":  {
+                                         "Rows":  250,
+                                         "Identical":  true
+                                     },
+                         "orders":  {
+                                        "Rows":  250,
+                                        "Identical":  true
+                                    },
+                         "delivery":  {
+                                          "Rows":  250,
+                                          "Identical":  true
+                                      },
+                         "material":  {
+                                          "Rows":  0,
+                                          "Identical":  true
+                                      },
+                         "debt":  {
+                                      "Rows":  150,
+                                      "Identical":  true
+                                  },
+                         "expense":  {
+                                         "Rows":  165,
+                                         "Identical":  true
+                                     }
+                     },
+    "FilesChangedDuringMeasurement":  [
+                                          null
+                                      ],
+    "SourceUnchanged":  true,
+    "ParityMethod":  "Joined lines compared case-sensitively; ReadAt/timing lines excluded because only source rows are matched"
+}

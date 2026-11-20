@@ -1,0 +1,25 @@
+{
+  "RunId": "20261031_100028_2ac1f386",
+  "Kind": "Technical migration/dependency smoke, not acceptance",
+  "Server": "localhost",
+  "ThroughVersion": 26,
+  "Created": [
+    {
+      "Marker": "20261031_100028_2ac1f386",
+      "Database": "CoffeeManager_Test_G07_20261031_100028_2ac1f386_clean"
+    },
+    {
+      "Marker": "20261031_100028_2ac1f386",
+      "Database": "CoffeeManager_Test_G07_20261031_100028_2ac1f386_demo"
+    }
+  ],
+  "Cleaned": [
+    "CoffeeManager_Test_G07_20261031_100028_2ac1f386_clean",
+    "CoffeeManager_Test_G07_20261031_100028_2ac1f386_demo"
+  ],
+  "Retained": [],
+  "Status": "Failed",
+  "cleanBalancesUnchanged": true,
+  "demoBalancesUnchanged": true,
+  "Error": "System.Management.Automation.RuntimeException: Typed dependency smoke failed"
+}

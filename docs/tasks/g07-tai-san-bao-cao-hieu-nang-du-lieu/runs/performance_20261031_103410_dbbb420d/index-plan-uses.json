@@ -1,0 +1,16 @@
+[
+  {
+    "Index": "IX_G07_HD_Paid",
+    "UsedInPlans": [
+      "IX_G07_HD_Paid-CashFlow-2.sqlplan",
+      "IX_G07_HD_Paid-Products-2.sqlplan",
+      "IX_G07_HD_Paid-SalesDay-2.sqlplan"
+    ]
+  },
+  {
+    "Index": "IX_G07_Receipt_OperationSource",
+    "UsedInPlans": [
+      "IX_G07_Receipt_OperationSource-Inventory-2.sqlplan"
+    ]
+  }
+]

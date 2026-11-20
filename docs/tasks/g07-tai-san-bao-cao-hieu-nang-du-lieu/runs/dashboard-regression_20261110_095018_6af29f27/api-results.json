@@ -1,0 +1,104 @@
+{
+  "Results": [
+    {
+      "Id": "DA09/role-lock",
+      "Expected": "role change and account disable revoke old identity; analytics/source both denied",
+      "Status": "PASS",
+      "Actual": {
+        "accountId": 4,
+        "RoleRevoked": true,
+        "DisabledRevoked": true
+      }
+    },
+    {
+      "Id": "DA08/typed-bucket-channel-product",
+      "Expected": "source header within[From,Until);source channel/product real codes;totals match at captured cutoff",
+      "Status": "PASS",
+      "Actual": {
+        "Bucket": "2026-11-10T10:00:00",
+        "BucketTotal": 1800,
+        "ProductCount": 5660,
+        "ChannelCount": 5659
+      }
+    },
+    {
+      "Id": "DA14/all-legacy-reports",
+      "Expected": "9 legacy report types and source routes callable after028;no duplicate IDs",
+      "Status": "PASS",
+      "Actual": [
+        {
+          "Kind": "SalesDay",
+          "Rows": 1,
+          "Amount": 5665000
+        },
+        {
+          "Kind": "SalesChannel",
+          "Rows": 2,
+          "Amount": 5669000
+        },
+        {
+          "Kind": "Products",
+          "Rows": 1,
+          "Amount": 5670000
+        },
+        {
+          "Kind": "Payments",
+          "Rows": 1,
+          "Amount": 5675000
+        },
+        {
+          "Kind": "Inventory",
+          "Rows": 13,
+          "Amount": 0
+        },
+        {
+          "Kind": "Debts",
+          "Rows": 10,
+          "Amount": 0
+        },
+        {
+          "Kind": "CashFlow",
+          "Rows": 5,
+          "Amount": 5681554
+        },
+        {
+          "Kind": "Labor",
+          "Rows": 1,
+          "Amount": 0
+        },
+        {
+          "Kind": "Assets",
+          "Rows": 11,
+          "Amount": 0
+        }
+      ]
+    },
+    {
+      "Id": "DA08/material-list",
+      "Expected": "zero materials in g/ml;counter exact and source rows have0quantity;no unsupported detail action",
+      "Status": "PASS",
+      "Actual": {
+        "TotalCount": 2,
+        "DetailDisabled": true
+      }
+    },
+    {
+      "Id": "DA14/CASH-STORE-login-startup-logout",
+      "Expected": "real AuthService login;CASH=\u003ESalesControl,STORE=\u003EInventoryControl;logout revokes and no ADMIN dashboard",
+      "Status": "PASS",
+      "Actual": [
+        {
+          "role": "CASH",
+          "opened": "SalesControl",
+          "logout": true
+        },
+        {
+          "role": "STORE",
+          "opened": "InventoryControl",
+          "logout": true
+        }
+      ]
+    }
+  ],
+  "Failures": 0
+}

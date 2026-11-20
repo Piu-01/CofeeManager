@@ -1,0 +1,93 @@
+﻿{
+    "Database":  "CoffeeManager_Test_G07_20261110_111837_5845e46f_demo",
+    "Status":  "Passed",
+    "Steps":  [
+                  {
+                      "Id":  "DA03-parity-before",
+                      "Cases":  19,
+                      "PermissionRows":  1,
+                      "Errors":  [
+                                     {
+                                         "Expected":  53501,
+                                         "Observed":  true,
+                                         "Id":  "invalid-kind"
+                                     },
+                                     {
+                                         "Expected":  53501,
+                                         "Observed":  true,
+                                         "Id":  "invalid-range"
+                                     },
+                                     {
+                                         "Expected":  53501,
+                                         "Observed":  true,
+                                         "Id":  "product-required"
+                                     },
+                                     {
+                                         "Expected":  53501,
+                                         "Observed":  true,
+                                         "Id":  "channel-required"
+                                     },
+                                     {
+                                         "Expected":  53501,
+                                         "Observed":  true,
+                                         "Id":  "product-code-length"
+                                     },
+                                     {
+                                         "Expected":  51505,
+                                         "Observed":  true,
+                                         "Id":  "inactive-actor"
+                                     },
+                                     {
+                                         "Expected":  53501,
+                                         "Observed":  true,
+                                         "Id":  "outer-transaction"
+                                     }
+                                 ],
+                      "Status":  "Captured",
+                      "Grant":  1
+                  },
+                  {
+                      "Status":  "Applied",
+                      "Checksum":  "05E2508D0F902F9A431D31971749377A2009819DE7A245C311FBB6720A706361",
+                      "Id":  "DA03-apply-029-attempt1"
+                  },
+                  {
+                      "Status":  "AlreadyApplied",
+                      "Checksum":  "05E2508D0F902F9A431D31971749377A2009819DE7A245C311FBB6720A706361",
+                      "Id":  "DA03-apply-029-attempt2"
+                  },
+                  {
+                      "DataUnchanged":  true,
+                      "Status":  "PASS",
+                      "Different":  [
+
+                                    ],
+                      "Id":  "DA03-parity-after",
+                      "SchemaUnchanged":  true
+                  },
+                  {
+                      "Status":  "PASS",
+                      "Id":  "DA03-grant",
+                      "Grants":  1
+                  },
+                  {
+                      "Cases":  [
+                                    {
+                                        "Id":  "invalid-kind",
+                                        "Observed":  true
+                                    },
+                                    {
+                                        "Id":  "product-required",
+                                        "Observed":  true
+                                    }
+                                ],
+                      "Status":  "PASS",
+                      "Id":  "DA03-contract-errors-after"
+                  },
+                  {
+                      "Status":  "PASS",
+                      "Id":  "DA03-lock-order-source",
+                      "Note":  "Header materialization statement does not reference the line table; product filter runs in a later statement."
+                  }
+              ]
+}

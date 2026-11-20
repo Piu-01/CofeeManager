@@ -1,0 +1,99 @@
+{
+  "Results": [
+    {
+      "Id": "DA09/role-lock",
+      "Expected": "role change and account disable revoke old identity; analytics/source both denied",
+      "Status": "PASS",
+      "Actual": {
+        "accountId": 4,
+        "RoleRevoked": true,
+        "DisabledRevoked": true
+      }
+    },
+    {
+      "Id": "DA08/typed-bucket-channel-product",
+      "Expected": "source header within[From,Until);source channel/product real codes;totals match at captured cutoff",
+      "Status": "FAIL",
+      "Actual": "CafeManager.Business.Services.UserOperationException: Giao d\u1ECBch g\u1EB7p xung \u0111\u1ED9t kh\u00F3a v\u00E0 \u0111\u00E3 rollback; t\u1EA3i l\u1EA1i/\u0111\u1ED1i chi\u1EBFu tr\u01B0\u1EDBc th\u1EED l\u1EA1i.\r\n   at CafeManager.Business.Services.HumanResourcesAccess.Run[T](PermissionService permissions, SessionContext session, AppPermission permission, Func\u00602 action, CancellationToken token) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.Business\\Services\\HumanResourcesAccess.cs:line 19\r\n   at Program.\u003C\u003Ec__DisplayClass0_1.\u003C\u003C\u003CMain\u003E$\u003Eb__7\u003Ed.MoveNext() in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g07-tai-san-bao-cao-hieu-nang-du-lieu\\runs\\dashboard-ui02fix_20261110_102411_24721b73\\Api\\Program.cs:line 41\r\n--- End of stack trace from previous location ---\r\n   at Program.\u003C\u003Ec__DisplayClass0_1.\u003C\u003C\u003CMain\u003E$\u003Eg__Check|4\u003Ed.MoveNext() in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g07-tai-san-bao-cao-hieu-nang-du-lieu\\runs\\dashboard-ui02fix_20261110_102411_24721b73\\Api\\Program.cs:line 27"
+    },
+    {
+      "Id": "DA14/all-legacy-reports",
+      "Expected": "9 legacy report types and source routes callable after028;no duplicate IDs",
+      "Status": "PASS",
+      "Actual": [
+        {
+          "Kind": "SalesDay",
+          "Rows": 1,
+          "Amount": 1807000
+        },
+        {
+          "Kind": "SalesChannel",
+          "Rows": 2,
+          "Amount": 1809000
+        },
+        {
+          "Kind": "Products",
+          "Rows": 1,
+          "Amount": 1810000
+        },
+        {
+          "Kind": "Payments",
+          "Rows": 1,
+          "Amount": 1811000
+        },
+        {
+          "Kind": "Inventory",
+          "Rows": 13,
+          "Amount": 0
+        },
+        {
+          "Kind": "Debts",
+          "Rows": 10,
+          "Amount": 0
+        },
+        {
+          "Kind": "CashFlow",
+          "Rows": 5,
+          "Amount": 1814554
+        },
+        {
+          "Kind": "Labor",
+          "Rows": 1,
+          "Amount": 0
+        },
+        {
+          "Kind": "Assets",
+          "Rows": 11,
+          "Amount": 0
+        }
+      ]
+    },
+    {
+      "Id": "DA08/material-list",
+      "Expected": "zero materials in g/ml;counter exact and source rows have0quantity;no unsupported detail action",
+      "Status": "PASS",
+      "Actual": {
+        "TotalCount": 2,
+        "DetailDisabled": true
+      }
+    },
+    {
+      "Id": "DA14/CASH-STORE-login-startup-logout",
+      "Expected": "real AuthService login;CASH=\u003ESalesControl,STORE=\u003EInventoryControl;logout revokes and no ADMIN dashboard",
+      "Status": "PASS",
+      "Actual": [
+        {
+          "role": "CASH",
+          "opened": "SalesControl",
+          "logout": true
+        },
+        {
+          "role": "STORE",
+          "opened": "InventoryControl",
+          "logout": true
+        }
+      ]
+    }
+  ],
+  "Failures": 1
+}

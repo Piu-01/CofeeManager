@@ -1,0 +1,75 @@
+using System.Diagnostics;
+using System.Reflection;
+using System.Text.Json;
+using CafeManager.Business.Security;
+using CafeManager.Business.Services;
+using CafeManager.DataAccess;
+using CafeManager.DataAccess.Repositories;
+using CafeManager.Models.Requests;
+using CafeManager.Models.Requests.Assets;
+using CafeManager.Models.Requests.HumanResources;
+using CafeManager.Models.Requests.Reports;
+using CafeManager.WinForms.Configuration;
+using CafeManager.WinForms.Forms;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Data.SqlClient;
+
+var output = args[0]; var expectedPath = args[1]; var exe = Path.GetFullPath(args[2]);
+var results = new List<object>();
+async Task Check(string id, Func<Task<object>> action)
+{
+    try { results.Add(new { Id=id,Status="PASS",Actual=await action() }); }
+    catch(Exception e) { results.Add(new { Id=id,Status="FAIL",Type=e.GetType().Name,Number=e is DataAccessException d?d.Error.Number:e is UserOperationException u?u.Error.Number:(int?)null }); }
+    File.WriteAllText(output,JsonSerializer.Serialize(results,new JsonSerializerOptions{WriteIndented=true}));
+}
+void Require(bool value,string message) { if(!value)throw new InvalidOperationException(message); }
+var connection=DevelopmentConnection.Read();
+var target=new SqlConnectionStringBuilder(connection);
+Require(target.DataSource=="localhost"&&target.InitialCatalog=="CoffeeManager_Development","Wrong target");
+var factory=new ConnectionFactory(connection);var repository=new AuthRepository(factory);
+await Check("RuntimeIdentity",async()=>
+{
+    await using var c=new SqlConnection(connection);await c.OpenAsync();using var cmd=c.CreateCommand();
+    cmd.CommandText="SELECT IS_SRVROLEMEMBER('sysadmin'),IS_ROLEMEMBER('db_owner'),IS_ROLEMEMBER('CafeManagerApp'),DB_NAME()";
+    using var reader=await cmd.ExecuteReaderAsync();await reader.ReadAsync();
+    Require(reader.GetInt32(0)==0&&reader.GetInt32(1)==0&&reader.GetInt32(2)==1,"Runtime identity too broad");
+    return new {Sysadmin=0,DbOwner=0,AppRole=1,Database=reader.GetString(3)};
+});
+Environment.SetEnvironmentVariable("CAFEMANAGER_USE_DEVELOPMENT","1");
+Environment.SetEnvironmentVariable("CAFEMANAGER_DEV_QUICK_LOGIN","1");
+var helper=typeof(LoginForm).Assembly.GetType("CafeManager.WinForms.Configuration.DevelopmentQuickLogin")!;
+var config=helper.GetMethod("Create",BindingFlags.Static|BindingFlags.NonPublic)!.Invoke(null,[connection]);
+var credential=config is null?null:(LoginRequest?)helper.GetMethod("Get",BindingFlags.Instance|BindingFlags.NonPublic)!.Invoke(config,["ADMIN"]);
+if(credential is null) { results.Add(new {Id="ExistingAdminCredential",Status="BLOCKED",Reason="No saved ADMIN credential; user login required"}); }
+else
+{
+    var passwords=new PasswordService();
+    var account=await repository.ReadCredentialAsync(PasswordService.Username(credential.Username).ToLowerInvariant());
+    Require(account is not null&&passwords.Verify(account.Hash,credential.Password)==PasswordVerificationResult.Success,"Stop before auth write/rehash");
+    using var session=await new AuthService(repository,passwords).LoginAsync(credential);
+    Require(session.Identity.Role=="ADMIN","Wrong account role");
+    var permissions=new PermissionService(repository);var reports=new ReportService(new ReportRepository(factory),permissions);
+    DateOnly day=default;
+    await Check("DashboardAndIndependentSqlParity",async()=>
+    {
+        var row=await reports.DashboardAsync(session);day=row.BusinessDate;
+        using var expected=JsonDocument.Parse(File.ReadAllText(expectedPath));var e=expected.RootElement;
+        Require(row.Revenue==e.GetProperty("Revenue").GetDecimal()&&row.OpenOrders==e.GetProperty("OpenOrders").GetInt32()&&row.Debt==e.GetProperty("Debt").GetDecimal(),"Dashboard mismatch");
+        return row;
+    });
+    await Check("ReportOptions",async()=>new {Count=(await reports.OptionsAsync(session)).Count});
+    foreach(var kind in Enum.GetValues<ReportKind>())
+        await Check("Report."+kind,async()=>{var page=await reports.ReadAsync(session,new(kind,day,day));return new {Rows=page.Rows.Count,Total=page.Metadata.TotalCount,Complete=page.Metadata.Complete};});
+    var employees=new EmployeeService(new EmployeeRepository(factory),permissions);
+    await Check("EmployeeContext",async()=>{var context=await employees.ContextAsync(session);Require(context.SchemaVersion==27,"Schema not current");return new {Version=context.SchemaVersion};});
+    await Check("EmployeeList",async()=>new {Rows=(await employees.ListAsync(session,new EmployeeFilter())).Count});
+    var assets=new AssetService(new AssetRepository(factory),permissions);
+    await Check("AssetContext",async()=>{var context=await assets.ContextAsync(session);Require(context.DatabaseName=="CoffeeManager_Development","Wrong asset target");return new {Database=context.DatabaseName};});
+    await Check("AssetList",async()=>{var page=await assets.ListAsync(session,new AssetFilter());return new {Rows=page.Rows.Count,Total=page.TotalCount};});
+}
+File.WriteAllText(output,JsonSerializer.Serialize(results,new JsonSerializerOptions{WriteIndented=true}));
+Require(exe.EndsWith("src\\CafeManager.WinForms\\bin\\Debug\\net10.0-windows\\CafeManager.WinForms.exe",StringComparison.OrdinalIgnoreCase),"Unexpected app path");
+var start=new ProcessStartInfo(exe){UseShellExecute=false,CreateNoWindow=true};
+start.Environment.Remove("CAFEMANAGER_APP_CONNECTION");start.Environment["CAFEMANAGER_USE_DEVELOPMENT"]="1";start.Environment["CAFEMANAGER_DEV_QUICK_LOGIN"]="1";
+using var app=Process.Start(start)!;
+File.WriteAllText(Path.Combine(Path.GetDirectoryName(output)!,"reopened-app.json"),JsonSerializer.Serialize(new {Pid=app.Id,Path=exe,Profile="Development",EnvironmentOverrideRemoved=true}));

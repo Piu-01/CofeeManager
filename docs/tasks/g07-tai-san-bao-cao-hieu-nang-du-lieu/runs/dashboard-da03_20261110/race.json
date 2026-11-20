@@ -1,0 +1,55 @@
+﻿{
+    "Database":  "CoffeeManager_Test_G07_20261110_111837_5845e46f_race",
+    "DurationSeconds":  60,
+    "Phases":  [
+                   {
+                       "LogRows":  229,
+                       "Version":  28,
+                       "Deadlocks":  229,
+                       "Timeouts":  0,
+                       "Label":  "control-028",
+                       "DeadlockReportsInRingBuffer":  114,
+                       "Rows":  [
+                                    "reader|229|229|0|0",
+                                    "writer|done loops=611",
+                                    "reader|done loops=238",
+                                    "reader|0|1205|Transaction (Process ID 61) was deadlocked on lock resources with another process and has been chosen as the deadlock victim. Rerun the transaction.",
+                                    "reader|2|1205|Transaction (Process ID 61) was deadlocked on lock resources with another process and has been chosen as the deadlock victim. Rerun the transaction.",
+                                    "reader|3|1205|Transaction (Process ID 61) was deadlocked on lock resources with another process and has been chosen as the deadlock victim. Rerun the transaction.",
+                                    "reader|4|1205|Transaction (Process ID 61) was deadlocked on lock resources with another process and has been chosen as the deadlock victim. Rerun the transaction.",
+                                    "reader|7|1205|Transaction (Process ID 61) was deadlocked on lock resources with another process and has been chosen as the deadlock victim. Rerun the transaction."
+                                ],
+                       "OtherErrors":  0
+                   },
+                   {
+                       "LogRows":  0,
+                       "Version":  29,
+                       "Deadlocks":  0,
+                       "Timeouts":  0,
+                       "Label":  "fix-029",
+                       "DeadlockReportsInRingBuffer":  114,
+                       "Rows":  [
+                                    "writer|done loops=1870",
+                                    "reader|done loops=760"
+                                ],
+                       "OtherErrors":  0
+                   }
+               ],
+    "Apply029":  {
+                     "Version":  29,
+                     "Checksum":  "05E2508D0F902F9A431D31971749377A2009819DE7A245C311FBB6720A706361",
+                     "Status":  "Applied",
+                     "Database":  "CoffeeManager_Test_G07_20261110_111837_5845e46f_race"
+                 },
+    "Integrity":  {
+                      "BillsWithoutLines":  0,
+                      "OrphanLines":  0,
+                      "NegativeStock":  0,
+                      "PaidWithoutPayment":  0,
+                      "PaymentMismatch":  0,
+                      "DuplicateCheckoutReceipts":  0
+                  },
+    "Bills":  6779,
+    "Paid":  5093,
+    "Status":  "Passed"
+}

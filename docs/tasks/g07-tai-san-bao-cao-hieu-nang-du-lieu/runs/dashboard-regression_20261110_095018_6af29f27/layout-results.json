@@ -1,0 +1,42 @@
+{
+  "Samples": [
+    {
+      "Method": "Render",
+      "ElapsedMs": 3154.8722,
+      "Layouts": 220,
+      "ControlsBefore": 77,
+      "ByType": {
+        "TableLayoutPanel": 132,
+        "Label": 6,
+        "OrbitSurface": 30,
+        "Panel": 52
+      }
+    },
+    {
+      "Method": "ClearSnapshot",
+      "ElapsedMs": 4097.8376,
+      "Layouts": 161,
+      "ControlsBefore": 77,
+      "ByType": {
+        "TableLayoutPanel": 92,
+        "OrbitSurface": 26,
+        "Panel": 40,
+        "Label": 3
+      }
+    },
+    {
+      "Method": "Render",
+      "ElapsedMs": 6001.65,
+      "Layouts": 234,
+      "ControlsBefore": 74,
+      "ByType": {
+        "TableLayoutPanel": 136,
+        "OrbitSurface": 33,
+        "Panel": 62,
+        "Label": 3
+      }
+    }
+  ],
+  "Error": null,
+  "Note": "Instrumentation only; no layout suspension/fix or production source modifications."
+}

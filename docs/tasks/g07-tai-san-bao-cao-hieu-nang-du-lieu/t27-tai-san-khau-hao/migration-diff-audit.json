@@ -1,0 +1,7 @@
+{
+  "025_assets.sqlUnchanged": true,
+  "026_reports.sqlUnchanged": true,
+  "AssetWriteOnlyAddedLockCalls": true,
+  "FinanceCreateOnlyAddedLockCalls": true,
+  "LockCalls": 3
+}

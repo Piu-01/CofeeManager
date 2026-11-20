@@ -1,0 +1,375 @@
+{
+  "Database": "CoffeeManager_Test_G07_20261110_144033_ca33988f_demo",
+  "Marker": "20261110_144033_ca33988f",
+  "Mode": "perf",
+  "StartedAt": "2026-11-10T15:27:26.0750235\u002B07:00",
+  "Checks": [
+    {
+      "Id": "UI-startup-day-under-3s",
+      "Expected": "ready \u003C 3000 ms",
+      "Status": "PASS",
+      "Actual": 582.6
+    },
+    {
+      "Id": "UI-day-values-match-sql",
+      "Expected": "revenue/invoices equal SQL aggregate",
+      "Status": "PASS",
+      "Actual": {
+        "Revenue": "7.990.000 \u20AB",
+        "Count": "7.990",
+        "SqlCount": 7990
+      }
+    },
+    {
+      "Id": "UI-monthly-under-3s",
+      "Expected": "ready \u003C 3000 ms",
+      "Status": "PASS",
+      "Actual": 645.2
+    },
+    {
+      "Id": "UI-monthly-matches-sql",
+      "Expected": "revenue/invoices equal SQL aggregate",
+      "Status": "PASS",
+      "Actual": {
+        "Revenue": "7.990.000 \u20AB",
+        "Count": "7.990",
+        "SqlCount": 7990
+      }
+    },
+    {
+      "Id": "UI-today-under-3s",
+      "Expected": "ready \u003C 3000 ms",
+      "Status": "PASS",
+      "Actual": 661.5
+    },
+    {
+      "Id": "UI-today-matches-sql",
+      "Expected": "revenue/invoices equal SQL aggregate",
+      "Status": "PASS",
+      "Actual": {
+        "Revenue": "7.990.000 \u20AB",
+        "Count": "7.990",
+        "SqlCount": 7990
+      }
+    },
+    {
+      "Id": "UI-top5-sql-parity",
+      "Expected": "top5 names/quantities and one bar per row",
+      "Status": "PASS",
+      "Actual": {
+        "Top5": [
+          "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA \u00B7 7.990 ly"
+        ],
+        "Bars": 1
+      }
+    },
+    {
+      "Id": "UI-late-cancel-final-mode",
+      "Expected": "rapid monthly\u2192today settles on today with current values",
+      "Status": "PASS",
+      "Actual": "H\u00F4m nay \u00B7 10/11/2026 00:00:00 \u2192 10/11/2026 15:27:38 (kh\u00F4ng g\u1ED3m m\u1ED1c cu\u1ED1i)"
+    },
+    {
+      "Id": "UI-hide-during-load",
+      "Expected": "values cleared, no ready state",
+      "Status": "PASS",
+      "Actual": {
+        "State": "\u0110ang t\u1EA3i t\u1ED5ng quan\u2026",
+        "Values": [
+          "\u2014",
+          "\u2014",
+          "\u2014",
+          "\u2014"
+        ]
+      }
+    },
+    {
+      "Id": "UI-dispose-during-load",
+      "Expected": "dispose mid-query without exception",
+      "Status": "PASS",
+      "Actual": {
+        "Disposed": true,
+        "Unhandled": 0
+      }
+    },
+    {
+      "Id": "UI-error-no-fake-zero",
+      "Expected": "error message, values \u0027\u2014\u0027, refresh enabled",
+      "Status": "PASS",
+      "Actual": {
+        "State": "Ch\u01B0a c\u1EADp nh\u1EADt \u00B7 Kh\u00F4ng k\u1EBFt n\u1ED1i \u0111\u01B0\u1EE3c d\u1EEF li\u1EC7u; ki\u1EC3m tra k\u1EBFt n\u1ED1i v\u00E0 th\u1EED l\u1EA1i.",
+        "Values": [
+          "\u2014",
+          "\u2014",
+          "\u2014",
+          "\u2014"
+        ]
+      }
+    },
+    {
+      "Id": "UI-sources-paging",
+      "Expected": "revenue/product sources page and match totals",
+      "Status": "PASS",
+      "Actual": {
+        "RevenueTotal": 7990,
+        "Page1": 50,
+        "Page2": 50,
+        "Product": "SP999",
+        "ProductRows": 7990,
+        "TopText": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA \u00B7 7.990 ly"
+      }
+    }
+  ],
+  "Failures": 0,
+  "Measurements": {
+    "SQL": [
+      {
+        "Month": false,
+        "Round": 0,
+        "ElapsedMs": 711.8,
+        "Rows": 63
+      },
+      {
+        "Month": false,
+        "Round": 1,
+        "ElapsedMs": 404.4,
+        "Rows": 63
+      },
+      {
+        "Month": false,
+        "Round": 2,
+        "ElapsedMs": 375.9,
+        "Rows": 63
+      },
+      {
+        "Month": true,
+        "Round": 0,
+        "ElapsedMs": 353.6,
+        "Rows": 51
+      },
+      {
+        "Month": true,
+        "Round": 1,
+        "ElapsedMs": 342.4,
+        "Rows": 51
+      },
+      {
+        "Month": true,
+        "Round": 2,
+        "ElapsedMs": 375.7,
+        "Rows": 51
+      }
+    ],
+    "UI": [
+      {
+        "Mode": "startup-day",
+        "ElapsedMs": 582.6
+      },
+      {
+        "Mode": "monthly",
+        "ElapsedMs": 645.2
+      },
+      {
+        "Mode": "today",
+        "ElapsedMs": 661.5
+      }
+    ],
+    "Layouts": [
+      {
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1366,
+          "Height": 768
+        },
+        "DeviceDpi": 120,
+        "MetricsColumn": 2,
+        "ChartsColumn": 2,
+        "Kpi": [
+          {
+            "Left": 0,
+            "Top": 0,
+            "Width": 511,
+            "Height": 279
+          },
+          {
+            "Left": 523,
+            "Top": 0,
+            "Width": 512,
+            "Height": 279
+          },
+          {
+            "Left": 0,
+            "Top": 291,
+            "Width": 511,
+            "Height": 279
+          },
+          {
+            "Left": 523,
+            "Top": 291,
+            "Width": 512,
+            "Height": 279
+          }
+        ],
+        "Chart": [
+          {
+            "Width": 511,
+            "Height": 526
+          },
+          {
+            "Width": 512,
+            "Height": 526
+          }
+        ],
+        "PageWidth": 1047,
+        "ScrollWidth": 1095
+      },
+      {
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1280,
+          "Height": 720
+        },
+        "DeviceDpi": 120,
+        "MetricsColumn": 2,
+        "ChartsColumn": 2,
+        "Kpi": [
+          {
+            "Left": 0,
+            "Top": 0,
+            "Width": 468,
+            "Height": 279
+          },
+          {
+            "Left": 480,
+            "Top": 0,
+            "Width": 469,
+            "Height": 279
+          },
+          {
+            "Left": 0,
+            "Top": 291,
+            "Width": 468,
+            "Height": 279
+          },
+          {
+            "Left": 480,
+            "Top": 291,
+            "Width": 469,
+            "Height": 279
+          }
+        ],
+        "Chart": [
+          {
+            "Width": 468,
+            "Height": 526
+          },
+          {
+            "Width": 469,
+            "Height": 526
+          }
+        ],
+        "PageWidth": 961,
+        "ScrollWidth": 1009
+      },
+      {
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1920,
+          "Height": 1080
+        },
+        "DeviceDpi": 120,
+        "MetricsColumn": 4,
+        "ChartsColumn": 2,
+        "Kpi": [
+          {
+            "Left": 0,
+            "Top": 0,
+            "Width": 388,
+            "Height": 279
+          },
+          {
+            "Left": 400,
+            "Top": 0,
+            "Width": 388,
+            "Height": 279
+          },
+          {
+            "Left": 800,
+            "Top": 0,
+            "Width": 388,
+            "Height": 279
+          },
+          {
+            "Left": 1200,
+            "Top": 0,
+            "Width": 389,
+            "Height": 279
+          }
+        ],
+        "Chart": [
+          {
+            "Width": 788,
+            "Height": 526
+          },
+          {
+            "Width": 789,
+            "Height": 526
+          }
+        ],
+        "PageWidth": 1601,
+        "ScrollWidth": 1649
+      },
+      {
+        "Size": {
+          "IsEmpty": false,
+          "Width": 600,
+          "Height": 720
+        },
+        "DeviceDpi": 120,
+        "MetricsColumn": 1,
+        "ChartsColumn": 1,
+        "Kpi": [
+          {
+            "Left": 0,
+            "Top": 0,
+            "Width": 441,
+            "Height": 279
+          },
+          {
+            "Left": 0,
+            "Top": 291,
+            "Width": 441,
+            "Height": 279
+          },
+          {
+            "Left": 0,
+            "Top": 582,
+            "Width": 441,
+            "Height": 261
+          },
+          {
+            "Left": 0,
+            "Top": 855,
+            "Width": 441,
+            "Height": 279
+          }
+        ],
+        "Chart": [
+          {
+            "Width": 441,
+            "Height": 476
+          },
+          {
+            "Width": 441,
+            "Height": 526
+          }
+        ],
+        "PageWidth": 453,
+        "ScrollWidth": 501
+      }
+    ]
+  },
+  "Unhandled": [],
+  "Error": null,
+  "Status": "PASS"
+}

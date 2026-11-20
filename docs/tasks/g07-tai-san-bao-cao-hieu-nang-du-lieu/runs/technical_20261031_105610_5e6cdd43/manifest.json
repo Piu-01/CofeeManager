@@ -1,0 +1,25 @@
+{
+  "RunId": "20261031_105610_5e6cdd43",
+  "Kind": "Technical migration/dependency smoke, not acceptance",
+  "Server": "localhost",
+  "ThroughVersion": 26,
+  "Created": [
+    {
+      "Database": "CoffeeManager_Test_G07_20261031_105610_5e6cdd43_clean",
+      "Marker": "20261031_105610_5e6cdd43"
+    },
+    {
+      "Database": "CoffeeManager_Test_G07_20261031_105610_5e6cdd43_demo",
+      "Marker": "20261031_105610_5e6cdd43"
+    }
+  ],
+  "Cleaned": [
+    "CoffeeManager_Test_G07_20261031_105610_5e6cdd43_clean",
+    "CoffeeManager_Test_G07_20261031_105610_5e6cdd43_demo"
+  ],
+  "Retained": [],
+  "Status": "Succeeded",
+  "cleanBalancesUnchanged": true,
+  "demoBalancesUnchanged": true,
+  "SourceUnchanged": true
+}

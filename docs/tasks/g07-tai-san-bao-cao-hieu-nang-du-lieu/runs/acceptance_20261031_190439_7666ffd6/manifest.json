@@ -1,0 +1,47 @@
+{
+  "RunId": "20261031_190439_7666ffd6",
+  "Kind": "Acceptance SQL/unit subset; native/concurrency/performance recorded separately",
+  "Server": "localhost",
+  "ThroughVersion": 26,
+  "Created": [
+    {
+      "Database": "CoffeeManager_Test_G07_20261031_190439_7666ffd6_clean",
+      "Marker": "20261031_190439_7666ffd6"
+    },
+    {
+      "Database": "CoffeeManager_Test_G07_20261031_190439_7666ffd6_demo",
+      "Marker": "20261031_190439_7666ffd6"
+    }
+  ],
+  "Cleaned": [
+    "CoffeeManager_Test_G07_20261031_190439_7666ffd6_clean",
+    "CoffeeManager_Test_G07_20261031_190439_7666ffd6_demo"
+  ],
+  "Retained": [],
+  "Status": "Failed",
+  "Fixtures": [
+    {
+      "Name": "t27-assets.sql",
+      "Status": "Succeeded"
+    },
+    {
+      "Name": "t28-reports.sql",
+      "Status": "Succeeded"
+    },
+    {
+      "Name": "t29-equivalence.sql",
+      "Status": "Succeeded"
+    }
+  ],
+  "UnitExitCode": 0,
+  "cleanBalancesUnchanged": true,
+  "demoBalancesUnchanged": true,
+  "Extended": {
+    "Executed": 138,
+    "Passed": 128,
+    "Failed": 10,
+    "Blocked": 0,
+    "File": "extended-results.json"
+  },
+  "SourceUnchanged": true
+}

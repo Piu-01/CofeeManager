@@ -1,0 +1,17 @@
+{
+  "RunId": "20261109_214946_4da7406b",
+  "Server": "localhost",
+  "Database": "CoffeeManager_Development",
+  "Status": "Succeeded",
+  "FixtureWritten": false,
+  "AccountReset": false,
+  "Backup": {
+    "Path": "C:\\Program Files\\Microsoft SQL Server\\MSSQL17.MSSQLSERVER\\MSSQL\\Backup\\CoffeeManager_Development_before_G07_20261109_214946_4da7406b.bak",
+    "Policy": "Giữ đến khi nghiệm thu/chấp nhận bản development; không tự xóa",
+    "Kind": "COPY_ONLY CHECKSUM"
+  },
+  "BeforeVersion": 24,
+  "BeforeHash": "8C47164E951D2FEC1697ED9684D12327243537FF5535B5817F23C8D0ACF87A13",
+  "AfterVersion": 27,
+  "AfterHash": "8C47164E951D2FEC1697ED9684D12327243537FF5535B5817F23C8D0ACF87A13"
+}

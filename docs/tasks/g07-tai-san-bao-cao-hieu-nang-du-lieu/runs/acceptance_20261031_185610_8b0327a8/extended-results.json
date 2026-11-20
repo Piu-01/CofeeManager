@@ -1,0 +1,596 @@
+[
+  {
+    "Id": "T27-K01.create-update-reload",
+    "Expected": "T\u00EAn Vi\u1EC7t100k\u00FD t\u1EF1, gi\u00E1101 v\u00E0 revision m\u1EDBi",
+    "Actual": "{\u0022Code\u0022:\u0022TS012\u0022,\u0022Name\u0022:\u0022M\\u00E1y pha c\\u00E0 ph\\u00EA aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\u0022,\u0022PurchasedOn\u0022:\u00222026-01-15\u0022,\u0022Value\u0022:101,\u0022Months\u0022:3,\u0022Revision\u0022:\u0022AAAAAAAACSg=\u0022}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T27-K03.no-expense",
+    "Expected": "L\u01B0u h\u1ED3 s\u01A1 kh\u00F4ng sinh chi",
+    "Actual": "{\u0022Before\u0022:16,\u0022After\u0022:16}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T27-K02.BLL-0-3",
+    "Expected": "Input sai b\u1ECB BLL ch\u1EB7n",
+    "Actual": "-1",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T27-K02.SQL-0-3",
+    "Expected": "SQL53401 v\u00E0 transaction tr\u01B0\u1EDBc/sau b\u1EB1ng nhau",
+    "Actual": "{\u0022e\u0022:53401,\u0022before\u0022:\u00220:1\u0022,\u0022after\u0022:\u00220:1\u0022}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T27-K02.BLL--1-3",
+    "Expected": "Input sai b\u1ECB BLL ch\u1EB7n",
+    "Actual": "-1",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T27-K02.SQL--1-3",
+    "Expected": "SQL53401 v\u00E0 transaction tr\u01B0\u1EDBc/sau b\u1EB1ng nhau",
+    "Actual": "{\u0022e\u0022:53401,\u0022before\u0022:\u00220:1\u0022,\u0022after\u0022:\u00220:1\u0022}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T27-K02.BLL-1.1-3",
+    "Expected": "Input sai b\u1ECB BLL ch\u1EB7n",
+    "Actual": "-1",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T27-K02.SQL-1.1-3",
+    "Expected": "SQL53401 v\u00E0 transaction tr\u01B0\u1EDBc/sau b\u1EB1ng nhau",
+    "Actual": "{\u0022e\u0022:53401,\u0022before\u0022:\u00220:1\u0022,\u0022after\u0022:\u00220:1\u0022}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T27-K02.BLL-1000000000000000000-3",
+    "Expected": "Input sai b\u1ECB BLL ch\u1EB7n",
+    "Actual": "-1",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T27-K02.SQL-1000000000000000000-3",
+    "Expected": "SQL53401 v\u00E0 transaction tr\u01B0\u1EDBc/sau b\u1EB1ng nhau",
+    "Actual": "{\u0022e\u0022:53401,\u0022before\u0022:\u00220:1\u0022,\u0022after\u0022:\u00220:1\u0022}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T27-K02.BLL-1-0",
+    "Expected": "Input sai b\u1ECB BLL ch\u1EB7n",
+    "Actual": "-1",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T27-K02.SQL-1-0",
+    "Expected": "SQL53401 v\u00E0 transaction tr\u01B0\u1EDBc/sau b\u1EB1ng nhau",
+    "Actual": "{\u0022e\u0022:53401,\u0022before\u0022:\u00220:1\u0022,\u0022after\u0022:\u00220:1\u0022}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T27-K02.BLL-1--1",
+    "Expected": "Input sai b\u1ECB BLL ch\u1EB7n",
+    "Actual": "-1",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T27-K02.SQL-1--1",
+    "Expected": "SQL53401 v\u00E0 transaction tr\u01B0\u1EDBc/sau b\u1EB1ng nhau",
+    "Actual": "{\u0022e\u0022:53401,\u0022before\u0022:\u00220:1\u0022,\u0022after\u0022:\u00220:1\u0022}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T27-K02.name-0",
+    "Expected": "SQL ch\u1EB7n t\u00EAn r\u1ED7ng/qu\u00E1 d\u00E0i",
+    "Actual": "53401",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T27-K02.name-3",
+    "Expected": "SQL ch\u1EB7n t\u00EAn r\u1ED7ng/qu\u00E1 d\u00E0i",
+    "Actual": "53401",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T27-K02.name-101",
+    "Expected": "SQL ch\u1EB7n t\u00EAn r\u1ED7ng/qu\u00E1 d\u00E0i",
+    "Actual": "53401",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T27-K02.max-money-intmax",
+    "Expected": "Max18 ch\u1EEF s\u1ED1/intmax th\u00E1ng gi\u1EEF ch\u00EDnh x\u00E1c",
+    "Actual": "{\u0022Code\u0022:\u0022TS013\u0022,\u0022Name\u0022:\u0022T\\u00E0i s\\u1EA3n nghi\\u1EC7m thu\u0022,\u0022PurchasedOn\u0022:\u00222026-10-31\u0022,\u0022Value\u0022:999999999999999999,\u0022Months\u0022:2147483647,\u0022Revision\u0022:\u0022AAAAAAAACSk=\u0022}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T27-K05-K06.parity-12/31/2025-100",
+    "Expected": "SQL v\u00E0 calculator b\u1EB1ng nhau, l\u0169y k\u1EBF\u2264nguy\u00EAn gi\u00E1",
+    "Actual": "{\u0022monthly\u0022:0,\u0022accumulated\u0022:0}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T27-K05-K06.parity-1/1/2026-100",
+    "Expected": "SQL v\u00E0 calculator b\u1EB1ng nhau, l\u0169y k\u1EBF\u2264nguy\u00EAn gi\u00E1",
+    "Actual": "{\u0022monthly\u0022:33,\u0022accumulated\u0022:33}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T27-K05-K06.parity-3/1/2026-100",
+    "Expected": "SQL v\u00E0 calculator b\u1EB1ng nhau, l\u0169y k\u1EBF\u2264nguy\u00EAn gi\u00E1",
+    "Actual": "{\u0022monthly\u0022:34,\u0022accumulated\u0022:100}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T27-K05-K06.parity-4/1/2026-100",
+    "Expected": "SQL v\u00E0 calculator b\u1EB1ng nhau, l\u0169y k\u1EBF\u2264nguy\u00EAn gi\u00E1",
+    "Actual": "{\u0022monthly\u0022:0,\u0022accumulated\u0022:100}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T27-K05-K06.parity-3/1/2026-1",
+    "Expected": "SQL v\u00E0 calculator b\u1EB1ng nhau, l\u0169y k\u1EBF\u2264nguy\u00EAn gi\u00E1",
+    "Actual": "{\u0022monthly\u0022:1,\u0022accumulated\u0022:1}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T27-K05-K06.parity-12/31/9999-999999999999999999",
+    "Expected": "SQL v\u00E0 calculator b\u1EB1ng nhau, l\u0169y k\u1EBF\u2264nguy\u00EAn gi\u00E1",
+    "Actual": "{\u0022monthly\u0022:465661287,\u0022accumulated\u0022:44558197230456}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T27-K09.replay",
+    "Expected": "C\u00F9ngrequest c\u00F9ngcode; payload kh\u00E1c51608",
+    "Actual": "{\u0022Code\u0022:\u0022TS014\u0022,\u0022e\u0022:51608}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T27-K01.empty-page-total",
+    "Expected": "Trang r\u1ED7ng v\u1EABn tr\u1EA3 t\u1ED5ng th\u1EADt",
+    "Actual": "{\u0022TotalCount\u0022:14,\u0022Rows\u0022:0}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T27-K08.delete-version",
+    "Expected": "Version c\u016953403, version m\u1EDBi x\u00F3a \u0111\u01B0\u1EE3c n\u1EBFu ch\u01B0a tham chi\u1EBFu",
+    "Actual": "53403",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T27-K04-K08.expense-source",
+    "Expected": "M\u1ED9t chi500.000 \u0111\u00FAngMaTS, x\u00F3a53402",
+    "Actual": "{\u0022TotalAmount\u0022:500000,\u0022e\u0022:53402}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T27-K09.role-CASH",
+    "Expected": "BLL/SQL ch\u1EB7n role b\u1EB1ng51605",
+    "Actual": "{\u0022bll\u0022:51605,\u0022sql\u0022:51605}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K12.CASH-SalesDay",
+    "Expected": "BLL ch\u1EB7n m\u1ECDi report",
+    "Actual": "51605",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K12.CASH-SalesChannel",
+    "Expected": "BLL ch\u1EB7n m\u1ECDi report",
+    "Actual": "51605",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K12.CASH-Products",
+    "Expected": "BLL ch\u1EB7n m\u1ECDi report",
+    "Actual": "51605",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K12.CASH-Payments",
+    "Expected": "BLL ch\u1EB7n m\u1ECDi report",
+    "Actual": "51605",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K12.CASH-Inventory",
+    "Expected": "BLL ch\u1EB7n m\u1ECDi report",
+    "Actual": "51605",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K12.CASH-Debts",
+    "Expected": "BLL ch\u1EB7n m\u1ECDi report",
+    "Actual": "51605",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K12.CASH-CashFlow",
+    "Expected": "BLL ch\u1EB7n m\u1ECDi report",
+    "Actual": "51605",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K12.CASH-Labor",
+    "Expected": "BLL ch\u1EB7n m\u1ECDi report",
+    "Actual": "51605",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K12.CASH-Assets",
+    "Expected": "BLL ch\u1EB7n m\u1ECDi report",
+    "Actual": "51605",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T27-K09.role-STORE",
+    "Expected": "BLL/SQL ch\u1EB7n role b\u1EB1ng51605",
+    "Actual": "{\u0022bll\u0022:51605,\u0022sql\u0022:51605}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K12.STORE-SalesDay",
+    "Expected": "BLL ch\u1EB7n m\u1ECDi report",
+    "Actual": "51605",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K12.STORE-SalesChannel",
+    "Expected": "BLL ch\u1EB7n m\u1ECDi report",
+    "Actual": "51605",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K12.STORE-Products",
+    "Expected": "BLL ch\u1EB7n m\u1ECDi report",
+    "Actual": "51605",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K12.STORE-Payments",
+    "Expected": "BLL ch\u1EB7n m\u1ECDi report",
+    "Actual": "51605",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K12.STORE-Inventory",
+    "Expected": "BLL ch\u1EB7n m\u1ECDi report",
+    "Actual": "51605",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K12.STORE-Debts",
+    "Expected": "BLL ch\u1EB7n m\u1ECDi report",
+    "Actual": "51605",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K12.STORE-CashFlow",
+    "Expected": "BLL ch\u1EB7n m\u1ECDi report",
+    "Actual": "51605",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K12.STORE-Labor",
+    "Expected": "BLL ch\u1EB7n m\u1ECDi report",
+    "Actual": "51605",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K12.STORE-Assets",
+    "Expected": "BLL ch\u1EB7n m\u1ECDi report",
+    "Actual": "51605",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T27-K09.fault-rollback",
+    "Expected": "Fault kh\u00F4ng \u0111\u1EC3 asset/receipt d\u1EDF",
+    "Actual": "54990",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K03.multi-line-payment",
+    "Expected": "2d\u00F2ng\u00D72TT: m\u00F3n24.690/l\u01B0\u1EE3ng2, TTkh\u1EDBp",
+    "Actual": "{\u0022Code\u0022:\u0022SP900\u0022,\u0022Name\u0022:\u0022M\\u00F3n G07 snapshot\u0022,\u0022Bills\u0022:1,\u0022Quantity\u0022:2.0000,\u0022BeforeBillDiscount\u0022:24690}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K04.snapshot",
+    "Expected": "\u0110\u1ED5i menu/c\u00F4ng th\u1EE9c kh\u00F4ng \u0111\u1ED5i ti\u1EC1n24.690 v\u00E0 ti\u00EAuhao2",
+    "Actual": "{\u0022BeforeBillDiscount\u0022:24690,\u0022Consumption\u0022:2.0000}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K07.cutoff",
+    "Expected": "N\u1EE3 ng\u00E0y tr\u01B0\u1EDBc100/h\u00F4m nay70",
+    "Actual": "{\u0022Past\u0022:100,\u0022Current\u0022:70}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K09.inventory",
+    "Expected": "200\u002B1nh\u1EADp\u22122b\u00E1n\u22121KK=198, Complete",
+    "Actual": "{\u0022Code\u0022:\u0022NVL99\u0022,\u0022Name\u0022:\u0022Nguy\\u00EAn li\\u1EC7u G07 NVL99 (g)\u0022,\u0022OpenedAt\u0022:\u00222026-10-30T00:00:00\u0022,\u0022Opening\u0022:200.0000,\u0022Purchases\u0022:1.0000,\u0022Issues\u0022:0.0000,\u0022Consumption\u0022:2.0000,\u0022Adjustment\u0022:-1.0000,\u0022Closing\u0022:198.0000,\u0022Current\u0022:198.0000,\u0022Coverage\u0022:\u0022Complete\u0022}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K05-K06.boundary-SalesDay",
+    "Expected": "Ng\u00E0y9999/trangr\u1ED7ng gi\u1EEF metadata",
+    "Actual": "{\u0022Kind\u0022:0,\u0022From\u0022:\u00220001-01-01\u0022,\u0022To\u0022:\u00229999-12-31\u0022,\u0022ReadAt\u0022:\u00222026-10-31T18:59:41.8525474\u0022,\u0022TotalCount\u0022:9,\u0022DateBasis\u0022:\u0022Ng\\u00E0y thanh to\\u00E1n h\\u00F3a \\u0111\\u01A1n\u0022,\u0022Note\u0022:\u0022\u0022,\u0022Complete\u0022:true}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K05-K06.boundary-SalesChannel",
+    "Expected": "Ng\u00E0y9999/trangr\u1ED7ng gi\u1EEF metadata",
+    "Actual": "{\u0022Kind\u0022:1,\u0022From\u0022:\u00220001-01-01\u0022,\u0022To\u0022:\u00229999-12-31\u0022,\u0022ReadAt\u0022:\u00222026-10-31T18:59:41.9242582\u0022,\u0022TotalCount\u0022:3,\u0022DateBasis\u0022:\u0022Ng\\u00E0y thanh to\\u00E1n h\\u00F3a \\u0111\\u01A1n\u0022,\u0022Note\u0022:\u0022\u0022,\u0022Complete\u0022:true}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K05-K06.boundary-Products",
+    "Expected": "Ng\u00E0y9999/trangr\u1ED7ng gi\u1EEF metadata",
+    "Actual": "{\u0022Kind\u0022:2,\u0022From\u0022:\u00220001-01-01\u0022,\u0022To\u0022:\u00229999-12-31\u0022,\u0022ReadAt\u0022:\u00222026-10-31T18:59:41.9525808\u0022,\u0022TotalCount\u0022:9,\u0022DateBasis\u0022:\u0022Ng\\u00E0y thanh to\\u00E1n h\\u00F3a \\u0111\\u01A1n\u0022,\u0022Note\u0022:\u0022Ti\\u1EC1n m\\u00F3n theo gi\\u00E1 snapshot, tr\\u01B0\\u1EDBc gi\\u1EA3m to\\u00E0n bill; t\\u00EAn m\\u00F3n l\\u00E0 t\\u00EAn hi\\u1EC7n t\\u1EA1i.\u0022,\u0022Complete\u0022:true}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K05-K06.boundary-Payments",
+    "Expected": "Ng\u00E0y9999/trangr\u1ED7ng gi\u1EEF metadata",
+    "Actual": "{\u0022Kind\u0022:3,\u0022From\u0022:\u00220001-01-01\u0022,\u0022To\u0022:\u00229999-12-31\u0022,\u0022ReadAt\u0022:\u00222026-10-31T18:59:42.0053799\u0022,\u0022TotalCount\u0022:5,\u0022DateBasis\u0022:\u0022Ng\\u00E0y thanh to\\u00E1n h\\u00F3a \\u0111\\u01A1n\u0022,\u0022Note\u0022:\u0022\u0022,\u0022Complete\u0022:true}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K05-K06.boundary-Inventory",
+    "Expected": "Ng\u00E0y9999/trangr\u1ED7ng gi\u1EEF metadata",
+    "Actual": "{\u0022Kind\u0022:4,\u0022From\u0022:\u00220001-01-01\u0022,\u0022To\u0022:\u00229999-12-31\u0022,\u0022ReadAt\u0022:\u00222026-10-31T18:59:42.0536254\u0022,\u0022TotalCount\u0022:14,\u0022DateBasis\u0022:\u0022Th\\u1EDDi \\u0111i\\u1EC3m ghi kho sau m\\u1ED1c m\\u1EDF s\\u1ED5; ng\\u00E0y ngu\\u1ED3n ch\\u1EE9ng t\\u1EEB hi\\u1EC3n th\\u1ECB ri\\u00EAng\u0022,\u0022Note\u0022:\u0022Kh\\u00F4ng d\\u1EF1ng t\\u1ED3n tr\\u01B0\\u1EDBc m\\u1EDF s\\u1ED5. Closing t\\u1EA1i ng\\u00E0y \\u0111\\u1EBFn kh\\u00E1c Current \\u0111\\u1ECDc hi\\u1EC7n t\\u1EA1i; kh\\u00F4ng c\\u1ED9ng l\\u1EA1i l\\u1ECBch s\\u1EED legacy \\u0111\\u00E3 n\\u1EB1m trong m\\u1ED1c.\u0022,\u0022Complete\u0022:false}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K05-K06.boundary-Debts",
+    "Expected": "Ng\u00E0y9999/trangr\u1ED7ng gi\u1EEF metadata",
+    "Actual": "{\u0022Kind\u0022:5,\u0022From\u0022:\u00220001-01-01\u0022,\u0022To\u0022:\u00229999-12-31\u0022,\u0022ReadAt\u0022:\u00222026-10-31T18:59:42.0864064\u0022,\u0022TotalCount\u0022:11,\u0022DateBasis\u0022:\u0022C\\u00F4ng n\\u1EE3 t\\u1EA1i cu\\u1ED1i ng\\u00E0y \\u0111\\u1EBFn; ng\\u00E0y ngu\\u1ED3n nh\\u1EADp v\\u00E0 ng\\u00E0y phi\\u1EBFu chi tr\\u1EA3 n\\u1EE3\u0022,\u0022Note\u0022:\u0022\u0022,\u0022Complete\u0022:true}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K05-K06.boundary-CashFlow",
+    "Expected": "Ng\u00E0y9999/trangr\u1ED7ng gi\u1EEF metadata",
+    "Actual": "{\u0022Kind\u0022:6,\u0022From\u0022:\u00220001-01-01\u0022,\u0022To\u0022:\u00229999-12-31\u0022,\u0022ReadAt\u0022:\u00222026-10-31T18:59:42.1102633\u0022,\u0022TotalCount\u0022:3,\u0022DateBasis\u0022:\u0022Thu b\\u00E1n: ng\\u00E0y thanh to\\u00E1n; thu/chi kh\\u00E1c: ng\\u00E0y phi\\u1EBFu\u0022,\u0022Note\u0022:\u0022D\\u00F2ng ti\\u1EC1n qu\\u1EA3n tr\\u1ECB, \\u0111\\u1ED1i t\\u00E1c ch\\u01B0a \\u0111\\u1ED1i so\\u00E1t; kh\\u00F4ng ph\\u1EA3i s\\u1ED1 d\\u01B0 ng\\u00E2n h\\u00E0ng ho\\u1EB7c l\\u1EE3i nhu\\u1EADn ch\\u00EDnh x\\u00E1c. D\\u1EEF li\\u1EC7u LegacyUnknown ch\\u01B0a \\u0111\\u1EE7 li\\u00EAn k\\u1EBFt ngu\\u1ED3n.\u0022,\u0022Complete\u0022:true}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K05-K06.boundary-Labor",
+    "Expected": "Ng\u00E0y9999/trangr\u1ED7ng gi\u1EEF metadata",
+    "Actual": "{\u0022Kind\u0022:7,\u0022From\u0022:\u00220001-01-01\u0022,\u0022To\u0022:\u00229999-12-31\u0022,\u0022ReadAt\u0022:\u00222026-10-31T18:59:42.1706364\u0022,\u0022TotalCount\u0022:7,\u0022DateBasis\u0022:\u0022Gi\\u1EDD: NgayLam; l\\u01B0\\u01A1ng ch\\u1ED1t: NgayChot; th\\u1EF1c chi: ng\\u00E0y phi\\u1EBFu\u0022,\u0022Note\u0022:\u0022K\\u1EF3 c\\u00F4ng, k\\u1EF3 b\\u1EA3ng l\\u01B0\\u01A1ng v\\u00E0 th\\u1EDDi \\u0111i\\u1EC3m ch\\u1ED1t/chi l\\u00E0 c\\u00E1c ngu\\u1ED3n \\u0111\\u1ED9c l\\u1EADp. Gi\\u1EDD t\\u0103ng ca theo snapshot New; LegacyUnknown kh\\u00F4ng suy t\\u1EEB h\\u1ED3 s\\u01A1 hi\\u1EC7n t\\u1EA1i.\u0022,\u0022Complete\u0022:true}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K05-K06.boundary-Assets",
+    "Expected": "Ng\u00E0y9999/trangr\u1ED7ng gi\u1EEF metadata",
+    "Actual": "{\u0022Kind\u0022:8,\u0022From\u0022:\u00220001-01-01\u0022,\u0022To\u0022:\u00229999-12-31\u0022,\u0022ReadAt\u0022:\u00222026-10-31T18:59:42.2539892\u0022,\u0022TotalCount\u0022:15,\u0022DateBasis\u0022:\u0022Th\\u00E1ng mua v\\u00E0 k\\u1EF3 kh\\u1EA5u hao; chi theo ng\\u00E0y phi\\u1EBFu\u0022,\u0022Note\u0022:\u0022Kh\\u1EA5u hao THAM KH\\u1EA2O theo h\\u1ED3 s\\u01A1 hi\\u1EC7n t\\u1EA1i, kh\\u00F4ng t\\u1EF1 ghi phi\\u1EBFu chi ho\\u1EB7c t\\u00EDnh nh\\u01B0 gi\\u00E1 v\\u1ED1n/d\\u00F2ng ti\\u1EC1n.\u0022,\u0022Complete\u0022:true}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K06.empty",
+    "Expected": "Filter kh\u00F4ng c\u00F3 d\u1EEF li\u1EC7u tr\u1EA30 th\u00E0nh c\u00F4ng",
+    "Actual": "{\u0022Gross\u0022:0,\u0022Discount\u0022:0,\u0022Ship\u0022:0,\u0022Amount\u0022:0,\u0022Fees\u0022:0,\u0022Inflow\u0022:0,\u0022Outflow\u0022:0,\u0022Committed\u0022:0,\u0022Paid\u0022:0,\u0022Depreciation\u0022:0,\u0022Accumulated\u0022:0,\u0022Remaining\u0022:0}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K01.open-cancel",
+    "Expected": "\u0110\u01A1n m\u1EDF/h\u1EE7y kh\u00F4ng \u0111\u1ED5i doanh thu",
+    "Actual": "24690",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K12.revoked",
+    "Expected": "Phi\u00EAn revoke b\u1ECB51505",
+    "Actual": "51505",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K02.ship-discount-fee",
+    "Expected": "M\u00F3n54.321 gi\u1EA3m10%=5.432; ship5.000; kh\u00E1ch53.889; ph\u00ED5% m\u00F3n sau gi\u1EA3m=2.444",
+    "Actual": "System.ArgumentException: M\u00E3 KM v\u00E08ch\u1EEF s\u1ED1.\r\n   at CafeManager.Business.Services.LoyaltyService.Normalize(PromotionRequest r, Boolean creating) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.Business\\Services\\LoyaltyService.cs:line 13\r\n   at CafeManager.Business.Services.LoyaltyService.SavePromotionAsync(SessionContext s, PromotionRequest r, Byte[] revision, Guid id, CancellationToken t) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.Business\\Services\\LoyaltyService.cs:line 32\r\n   at AcceptanceProbe.\u003CReconcile\u003Eb__21_0() in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G07Probe\\AcceptanceProbe.cs:line 87\r\n   at AcceptanceProbe.Check(String id, String expected, Func\u00601 test) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G07Probe\\AcceptanceProbe.cs:line 30",
+    "Status": "FAIL"
+  },
+  {
+    "Id": "T28-K08.cash-sources",
+    "Expected": "Thu kh\u00E1c73; chi kh\u00E1c31 \u002B nh\u1EADp tr\u1EA3 ngay30 \u002B tr\u1EA3 n\u1EE320 =81, kh\u00F4ng chi th\u00EAm t\u1EEB b\u1EA3ng li\u00EAn k\u1EBFt",
+    "Actual": "{\u0022Before\u0022:{\u0022Gross\u0022:0,\u0022Discount\u0022:0,\u0022Ship\u0022:0,\u0022Amount\u0022:-475340,\u0022Fees\u0022:0,\u0022Inflow\u0022:24690,\u0022Outflow\u0022:500030,\u0022Committed\u0022:0,\u0022Paid\u0022:0,\u0022Depreciation\u0022:0,\u0022Accumulated\u0022:0,\u0022Remaining\u0022:0},\u0022After\u0022:{\u0022Gross\u0022:0,\u0022Discount\u0022:0,\u0022Ship\u0022:0,\u0022Amount\u0022:-475348,\u0022Fees\u0022:0,\u0022Inflow\u0022:24763,\u0022Outflow\u0022:500111,\u0022Committed\u0022:0,\u0022Paid\u0022:0,\u0022Depreciation\u0022:0,\u0022Accumulated\u0022:0,\u0022Remaining\u0022:0}}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T28-K10.labor-cash",
+    "Expected": "8gi\u1EDD h\u00F4m qua, ch\u1ED1t280.000 h\u00F4m nay ch\u01B0a chi0; sau chi \u0111\u00FAng280.000, d\u00F2ng ti\u1EC1n t\u0103ng chi m\u1ED9t l\u1EA7n",
+    "Actual": "{\u0022unpaid\u0022:{\u0022Code\u0022:\u0022NV013\u0022,\u0022Name\u0022:\u0022G07 ng\\u01B0\\u1EDDi l\\u00E0m\u0022,\u0022IncompleteShifts\u0022:0,\u0022Hours\u0022:0.0000,\u0022RegularSnapshotHours\u0022:8.0000,\u0022OvertimeSnapshotHours\u0022:0.0000,\u0022Committed\u0022:280000,\u0022Paid\u0022:0,\u0022Coverage\u0022:\u0022Gi\\u1EDD snapshot ch\\u1EC9 g\\u1ED3m New\u0022},\u0022hours\u0022:{\u0022Code\u0022:\u0022NV013\u0022,\u0022Name\u0022:\u0022G07 ng\\u01B0\\u1EDDi l\\u00E0m\u0022,\u0022IncompleteShifts\u0022:0,\u0022Hours\u0022:8.0000,\u0022RegularSnapshotHours\u0022:0.0000,\u0022OvertimeSnapshotHours\u0022:0.0000,\u0022Committed\u0022:0,\u0022Paid\u0022:0,\u0022Coverage\u0022:\u0022Gi\\u1EDD snapshot ch\\u1EC9 g\\u1ED3m New\u0022},\u0022paid\u0022:{\u0022Code\u0022:\u0022NV013\u0022,\u0022Name\u0022:\u0022G07 ng\\u01B0\\u1EDDi l\\u00E0m\u0022,\u0022IncompleteShifts\u0022:0,\u0022Hours\u0022:0.0000,\u0022RegularSnapshotHours\u0022:8.0000,\u0022OvertimeSnapshotHours\u0022:0.0000,\u0022Committed\u0022:280000,\u0022Paid\u0022:280000,\u0022Coverage\u0022:\u0022Gi\\u1EDD snapshot ch\\u1EC9 g\\u1ED3m New\u0022},\u0022OutflowDelta\u0022:280000}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T29-K09.checkout-checkout-1",
+    "Expected": "Hai session ch\u1EDD barrier; kh\u00F4ng \u00E2m t\u1ED3n, kh\u00F4ng hai l\u1EA7n tr\u1EEB/paid; l\u1ED7i thi\u1EBFu t\u1ED3n rollback",
+    "Actual": "{\u0022waiters\u0022:2,\u0022Before\u0022:1,\u0022After\u0022:0.0000,\u0022Expected\u0022:0,\u0022Outcomes\u0022:[{\u0022Success\u0022:false,\u0022Error\u0022:52203},{\u0022Success\u0022:true,\u0022Error\u0022:0}]}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T29-K09.checkout-checkout-2",
+    "Expected": "Hai session ch\u1EDD barrier; kh\u00F4ng \u00E2m t\u1ED3n, kh\u00F4ng hai l\u1EA7n tr\u1EEB/paid; l\u1ED7i thi\u1EBFu t\u1ED3n rollback",
+    "Actual": "{\u0022waiters\u0022:2,\u0022Before\u0022:1,\u0022After\u0022:0.0000,\u0022Expected\u0022:0,\u0022Outcomes\u0022:[{\u0022Success\u0022:false,\u0022Error\u0022:52203},{\u0022Success\u0022:true,\u0022Error\u0022:0}]}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T29-K09.checkout-checkout-3",
+    "Expected": "Hai session ch\u1EDD barrier; kh\u00F4ng \u00E2m t\u1ED3n, kh\u00F4ng hai l\u1EA7n tr\u1EEB/paid; l\u1ED7i thi\u1EBFu t\u1ED3n rollback",
+    "Actual": "{\u0022waiters\u0022:2,\u0022Before\u0022:1,\u0022After\u0022:0.0000,\u0022Expected\u0022:0,\u0022Outcomes\u0022:[{\u0022Success\u0022:false,\u0022Error\u0022:52203},{\u0022Success\u0022:true,\u0022Error\u0022:0}]}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T29-K09.checkout-checkout-4",
+    "Expected": "Hai session ch\u1EDD barrier; kh\u00F4ng \u00E2m t\u1ED3n, kh\u00F4ng hai l\u1EA7n tr\u1EEB/paid; l\u1ED7i thi\u1EBFu t\u1ED3n rollback",
+    "Actual": "{\u0022waiters\u0022:2,\u0022Before\u0022:1,\u0022After\u0022:0.0000,\u0022Expected\u0022:0,\u0022Outcomes\u0022:[{\u0022Success\u0022:true,\u0022Error\u0022:0},{\u0022Success\u0022:false,\u0022Error\u0022:52203}]}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T29-K09.checkout-checkout-5",
+    "Expected": "Hai session ch\u1EDD barrier; kh\u00F4ng \u00E2m t\u1ED3n, kh\u00F4ng hai l\u1EA7n tr\u1EEB/paid; l\u1ED7i thi\u1EBFu t\u1ED3n rollback",
+    "Actual": "{\u0022waiters\u0022:2,\u0022Before\u0022:1,\u0022After\u0022:0.0000,\u0022Expected\u0022:0,\u0022Outcomes\u0022:[{\u0022Success\u0022:false,\u0022Error\u0022:52203},{\u0022Success\u0022:true,\u0022Error\u0022:0}]}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T29-K09.checkout-checkout-6",
+    "Expected": "Hai session ch\u1EDD barrier; kh\u00F4ng \u00E2m t\u1ED3n, kh\u00F4ng hai l\u1EA7n tr\u1EEB/paid; l\u1ED7i thi\u1EBFu t\u1ED3n rollback",
+    "Actual": "{\u0022waiters\u0022:2,\u0022Before\u0022:1,\u0022After\u0022:0.0000,\u0022Expected\u0022:0,\u0022Outcomes\u0022:[{\u0022Success\u0022:false,\u0022Error\u0022:52203},{\u0022Success\u0022:true,\u0022Error\u0022:0}]}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T29-K09.checkout-checkout-7",
+    "Expected": "Hai session ch\u1EDD barrier; kh\u00F4ng \u00E2m t\u1ED3n, kh\u00F4ng hai l\u1EA7n tr\u1EEB/paid; l\u1ED7i thi\u1EBFu t\u1ED3n rollback",
+    "Actual": "{\u0022waiters\u0022:2,\u0022Before\u0022:1,\u0022After\u0022:0.0000,\u0022Expected\u0022:0,\u0022Outcomes\u0022:[{\u0022Success\u0022:true,\u0022Error\u0022:0},{\u0022Success\u0022:false,\u0022Error\u0022:52203}]}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T29-K09.checkout-checkout-8",
+    "Expected": "Hai session ch\u1EDD barrier; kh\u00F4ng \u00E2m t\u1ED3n, kh\u00F4ng hai l\u1EA7n tr\u1EEB/paid; l\u1ED7i thi\u1EBFu t\u1ED3n rollback",
+    "Actual": "{\u0022waiters\u0022:2,\u0022Before\u0022:1,\u0022After\u0022:0.0000,\u0022Expected\u0022:0,\u0022Outcomes\u0022:[{\u0022Success\u0022:false,\u0022Error\u0022:52203},{\u0022Success\u0022:true,\u0022Error\u0022:0}]}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T29-K09.checkout-checkout-9",
+    "Expected": "Hai session ch\u1EDD barrier; kh\u00F4ng \u00E2m t\u1ED3n, kh\u00F4ng hai l\u1EA7n tr\u1EEB/paid; l\u1ED7i thi\u1EBFu t\u1ED3n rollback",
+    "Actual": "{\u0022waiters\u0022:2,\u0022Before\u0022:1,\u0022After\u0022:0.0000,\u0022Expected\u0022:0,\u0022Outcomes\u0022:[{\u0022Success\u0022:false,\u0022Error\u0022:52203},{\u0022Success\u0022:true,\u0022Error\u0022:0}]}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T29-K09.checkout-checkout-10",
+    "Expected": "Hai session ch\u1EDD barrier; kh\u00F4ng \u00E2m t\u1ED3n, kh\u00F4ng hai l\u1EA7n tr\u1EEB/paid; l\u1ED7i thi\u1EBFu t\u1ED3n rollback",
+    "Actual": "{\u0022waiters\u0022:2,\u0022Before\u0022:1,\u0022After\u0022:0.0000,\u0022Expected\u0022:0,\u0022Outcomes\u0022:[{\u0022Success\u0022:true,\u0022Error\u0022:0},{\u0022Success\u0022:false,\u0022Error\u0022:52203}]}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T29-K09.checkout-purchase-1",
+    "Expected": "Hai session ch\u1EDD barrier; kh\u00F4ng \u00E2m t\u1ED3n, kh\u00F4ng hai l\u1EA7n tr\u1EEB/paid; l\u1ED7i thi\u1EBFu t\u1ED3n rollback",
+    "Actual": "{\u0022waiters\u0022:2,\u0022Before\u0022:0,\u0022After\u0022:0.0000,\u0022Expected\u0022:0,\u0022Outcomes\u0022:[{\u0022Success\u0022:true,\u0022Error\u0022:0},{\u0022Success\u0022:true,\u0022Error\u0022:0}]}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T29-K09.checkout-purchase-2",
+    "Expected": "Hai session ch\u1EDD barrier; kh\u00F4ng \u00E2m t\u1ED3n, kh\u00F4ng hai l\u1EA7n tr\u1EEB/paid; l\u1ED7i thi\u1EBFu t\u1ED3n rollback",
+    "Actual": "{\u0022waiters\u0022:2,\u0022Before\u0022:0,\u0022After\u0022:0.0000,\u0022Expected\u0022:0,\u0022Outcomes\u0022:[{\u0022Success\u0022:true,\u0022Error\u0022:0},{\u0022Success\u0022:true,\u0022Error\u0022:0}]}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T29-K09.checkout-purchase-3",
+    "Expected": "Hai session ch\u1EDD barrier; kh\u00F4ng \u00E2m t\u1ED3n, kh\u00F4ng hai l\u1EA7n tr\u1EEB/paid; l\u1ED7i thi\u1EBFu t\u1ED3n rollback",
+    "Actual": "{\u0022waiters\u0022:2,\u0022Before\u0022:0,\u0022After\u0022:0.0000,\u0022Expected\u0022:0,\u0022Outcomes\u0022:[{\u0022Success\u0022:true,\u0022Error\u0022:0},{\u0022Success\u0022:true,\u0022Error\u0022:0}]}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T29-K09.checkout-purchase-4",
+    "Expected": "Hai session ch\u1EDD barrier; kh\u00F4ng \u00E2m t\u1ED3n, kh\u00F4ng hai l\u1EA7n tr\u1EEB/paid; l\u1ED7i thi\u1EBFu t\u1ED3n rollback",
+    "Actual": "{\u0022waiters\u0022:2,\u0022Before\u0022:0,\u0022After\u0022:0.0000,\u0022Expected\u0022:0,\u0022Outcomes\u0022:[{\u0022Success\u0022:true,\u0022Error\u0022:0},{\u0022Success\u0022:true,\u0022Error\u0022:0}]}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T29-K09.checkout-purchase-5",
+    "Expected": "Hai session ch\u1EDD barrier; kh\u00F4ng \u00E2m t\u1ED3n, kh\u00F4ng hai l\u1EA7n tr\u1EEB/paid; l\u1ED7i thi\u1EBFu t\u1ED3n rollback",
+    "Actual": "{\u0022waiters\u0022:2,\u0022Before\u0022:0,\u0022After\u0022:0.0000,\u0022Expected\u0022:0,\u0022Outcomes\u0022:[{\u0022Success\u0022:true,\u0022Error\u0022:0},{\u0022Success\u0022:true,\u0022Error\u0022:0}]}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T29-K09.checkout-purchase-6",
+    "Expected": "Hai session ch\u1EDD barrier; kh\u00F4ng \u00E2m t\u1ED3n, kh\u00F4ng hai l\u1EA7n tr\u1EEB/paid; l\u1ED7i thi\u1EBFu t\u1ED3n rollback",
+    "Actual": "{\u0022waiters\u0022:2,\u0022Before\u0022:0,\u0022After\u0022:1.0000,\u0022Expected\u0022:1,\u0022Outcomes\u0022:[{\u0022Success\u0022:false,\u0022Error\u0022:52203},{\u0022Success\u0022:true,\u0022Error\u0022:0}]}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T29-K09.checkout-purchase-7",
+    "Expected": "Hai session ch\u1EDD barrier; kh\u00F4ng \u00E2m t\u1ED3n, kh\u00F4ng hai l\u1EA7n tr\u1EEB/paid; l\u1ED7i thi\u1EBFu t\u1ED3n rollback",
+    "Actual": "{\u0022waiters\u0022:2,\u0022Before\u0022:0,\u0022After\u0022:1.0000,\u0022Expected\u0022:1,\u0022Outcomes\u0022:[{\u0022Success\u0022:false,\u0022Error\u0022:52203},{\u0022Success\u0022:true,\u0022Error\u0022:0}]}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T29-K09.checkout-purchase-8",
+    "Expected": "Hai session ch\u1EDD barrier; kh\u00F4ng \u00E2m t\u1ED3n, kh\u00F4ng hai l\u1EA7n tr\u1EEB/paid; l\u1ED7i thi\u1EBFu t\u1ED3n rollback",
+    "Actual": "{\u0022waiters\u0022:2,\u0022Before\u0022:0,\u0022After\u0022:0.0000,\u0022Expected\u0022:0,\u0022Outcomes\u0022:[{\u0022Success\u0022:true,\u0022Error\u0022:0},{\u0022Success\u0022:true,\u0022Error\u0022:0}]}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T29-K09.checkout-purchase-9",
+    "Expected": "Hai session ch\u1EDD barrier; kh\u00F4ng \u00E2m t\u1ED3n, kh\u00F4ng hai l\u1EA7n tr\u1EEB/paid; l\u1ED7i thi\u1EBFu t\u1ED3n rollback",
+    "Actual": "{\u0022waiters\u0022:2,\u0022Before\u0022:0,\u0022After\u0022:1.0000,\u0022Expected\u0022:1,\u0022Outcomes\u0022:[{\u0022Success\u0022:false,\u0022Error\u0022:52203},{\u0022Success\u0022:true,\u0022Error\u0022:0}]}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T29-K09.checkout-purchase-10",
+    "Expected": "Hai session ch\u1EDD barrier; kh\u00F4ng \u00E2m t\u1ED3n, kh\u00F4ng hai l\u1EA7n tr\u1EEB/paid; l\u1ED7i thi\u1EBFu t\u1ED3n rollback",
+    "Actual": "{\u0022waiters\u0022:2,\u0022Before\u0022:0,\u0022After\u0022:1.0000,\u0022Expected\u0022:1,\u0022Outcomes\u0022:[{\u0022Success\u0022:false,\u0022Error\u0022:52203},{\u0022Success\u0022:true,\u0022Error\u0022:0}]}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T29-K09.checkout-issue-1",
+    "Expected": "Hai session ch\u1EDD barrier; kh\u00F4ng \u00E2m t\u1ED3n, kh\u00F4ng hai l\u1EA7n tr\u1EEB/paid; l\u1ED7i thi\u1EBFu t\u1ED3n rollback",
+    "Actual": "{\u0022waiters\u0022:2,\u0022Before\u0022:1,\u0022After\u0022:0.0000,\u0022Expected\u0022:0,\u0022Outcomes\u0022:[{\u0022Success\u0022:false,\u0022Error\u0022:52203},{\u0022Success\u0022:true,\u0022Error\u0022:0}]}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T29-K09.checkout-issue-2",
+    "Expected": "Hai session ch\u1EDD barrier; kh\u00F4ng \u00E2m t\u1ED3n, kh\u00F4ng hai l\u1EA7n tr\u1EEB/paid; l\u1ED7i thi\u1EBFu t\u1ED3n rollback",
+    "Actual": "{\u0022waiters\u0022:2,\u0022Before\u0022:1,\u0022After\u0022:0.0000,\u0022Expected\u0022:0,\u0022Outcomes\u0022:[{\u0022Success\u0022:false,\u0022Error\u0022:52203},{\u0022Success\u0022:true,\u0022Error\u0022:0}]}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T29-K09.checkout-issue-3",
+    "Expected": "Hai session ch\u1EDD barrier; kh\u00F4ng \u00E2m t\u1ED3n, kh\u00F4ng hai l\u1EA7n tr\u1EEB/paid; l\u1ED7i thi\u1EBFu t\u1ED3n rollback",
+    "Actual": "{\u0022waiters\u0022:2,\u0022Before\u0022:1,\u0022After\u0022:0.0000,\u0022Expected\u0022:0,\u0022Outcomes\u0022:[{\u0022Success\u0022:false,\u0022Error\u0022:52203},{\u0022Success\u0022:true,\u0022Error\u0022:0}]}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T29-K09.checkout-issue-4",
+    "Expected": "Hai session ch\u1EDD barrier; kh\u00F4ng \u00E2m t\u1ED3n, kh\u00F4ng hai l\u1EA7n tr\u1EEB/paid; l\u1ED7i thi\u1EBFu t\u1ED3n rollback",
+    "Actual": "{\u0022waiters\u0022:2,\u0022Before\u0022:1,\u0022After\u0022:0.0000,\u0022Expected\u0022:0,\u0022Outcomes\u0022:[{\u0022Success\u0022:false,\u0022Error\u0022:52203},{\u0022Success\u0022:true,\u0022Error\u0022:0}]}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T29-K09.checkout-issue-5",
+    "Expected": "Hai session ch\u1EDD barrier; kh\u00F4ng \u00E2m t\u1ED3n, kh\u00F4ng hai l\u1EA7n tr\u1EEB/paid; l\u1ED7i thi\u1EBFu t\u1ED3n rollback",
+    "Actual": "{\u0022waiters\u0022:2,\u0022Before\u0022:1,\u0022After\u0022:0.0000,\u0022Expected\u0022:0,\u0022Outcomes\u0022:[{\u0022Success\u0022:false,\u0022Error\u0022:52203},{\u0022Success\u0022:true,\u0022Error\u0022:0}]}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T29-K09.checkout-issue-6",
+    "Expected": "Hai session ch\u1EDD barrier; kh\u00F4ng \u00E2m t\u1ED3n, kh\u00F4ng hai l\u1EA7n tr\u1EEB/paid; l\u1ED7i thi\u1EBFu t\u1ED3n rollback",
+    "Actual": "{\u0022waiters\u0022:2,\u0022Before\u0022:1,\u0022After\u0022:0.0000,\u0022Expected\u0022:0,\u0022Outcomes\u0022:[{\u0022Success\u0022:false,\u0022Error\u0022:52203},{\u0022Success\u0022:true,\u0022Error\u0022:0}]}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T29-K09.checkout-issue-7",
+    "Expected": "Hai session ch\u1EDD barrier; kh\u00F4ng \u00E2m t\u1ED3n, kh\u00F4ng hai l\u1EA7n tr\u1EEB/paid; l\u1ED7i thi\u1EBFu t\u1ED3n rollback",
+    "Actual": "{\u0022waiters\u0022:2,\u0022Before\u0022:1,\u0022After\u0022:0.0000,\u0022Expected\u0022:0,\u0022Outcomes\u0022:[{\u0022Success\u0022:false,\u0022Error\u0022:52203},{\u0022Success\u0022:true,\u0022Error\u0022:0}]}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T29-K09.checkout-issue-8",
+    "Expected": "Hai session ch\u1EDD barrier; kh\u00F4ng \u00E2m t\u1ED3n, kh\u00F4ng hai l\u1EA7n tr\u1EEB/paid; l\u1ED7i thi\u1EBFu t\u1ED3n rollback",
+    "Actual": "{\u0022waiters\u0022:2,\u0022Before\u0022:1,\u0022After\u0022:0.0000,\u0022Expected\u0022:0,\u0022Outcomes\u0022:[{\u0022Success\u0022:false,\u0022Error\u0022:52203},{\u0022Success\u0022:true,\u0022Error\u0022:0}]}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T29-K09.checkout-issue-9",
+    "Expected": "Hai session ch\u1EDD barrier; kh\u00F4ng \u00E2m t\u1ED3n, kh\u00F4ng hai l\u1EA7n tr\u1EEB/paid; l\u1ED7i thi\u1EBFu t\u1ED3n rollback",
+    "Actual": "{\u0022waiters\u0022:2,\u0022Before\u0022:1,\u0022After\u0022:0.0000,\u0022Expected\u0022:0,\u0022Outcomes\u0022:[{\u0022Success\u0022:false,\u0022Error\u0022:52203},{\u0022Success\u0022:true,\u0022Error\u0022:0}]}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T29-K09.checkout-issue-10",
+    "Expected": "Hai session ch\u1EDD barrier; kh\u00F4ng \u00E2m t\u1ED3n, kh\u00F4ng hai l\u1EA7n tr\u1EEB/paid; l\u1ED7i thi\u1EBFu t\u1ED3n rollback",
+    "Actual": "{\u0022waiters\u0022:2,\u0022Before\u0022:1,\u0022After\u0022:0.0000,\u0022Expected\u0022:0,\u0022Outcomes\u0022:[{\u0022Success\u0022:false,\u0022Error\u0022:52203},{\u0022Success\u0022:true,\u0022Error\u0022:0}]}",
+    "Status": "PASS"
+  },
+  {
+    "Id": "T29-K01-K04.artifacts",
+    "Expected": "L\u01B0\u1EE3t10.000bill \u0111\u1EA7y \u0111\u1EE7, source kh\u00F4ng \u0111\u1ED5i/DB\u0111\u00E3d\u1ECDn v\u00E0 actualplan",
+    "Actual": "{\u0022ActualPlans\u0022:230,\u0022Artifact\u0022:\u0022performance_20261031_103410_dbbb420d\u0022}",
+    "Status": "PASS"
+  }
+]

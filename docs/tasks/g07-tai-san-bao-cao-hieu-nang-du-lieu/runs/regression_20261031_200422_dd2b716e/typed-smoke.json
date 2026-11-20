@@ -1,0 +1,113 @@
+{
+  "Kind": "Technical dependency smoke, not acceptance",
+  "Asset": "TS011",
+  "DatabaseScope": "C40B7DAB-66E3-4DDF-9BA4-833E468168FD|LAPTOP-79UNRIRC|COFFEEMANAGER_TEST_G07_20261031_200422_DD2B716E_DEMO",
+  "AssetPageCount": 1,
+  "ReportMappings": [
+    {
+      "Kind": "SalesDay",
+      "TotalCount": 8,
+      "Amount": 990100,
+      "Complete": true
+    },
+    {
+      "Kind": "SalesChannel",
+      "TotalCount": 3,
+      "Amount": 990100,
+      "Complete": true
+    },
+    {
+      "Kind": "Products",
+      "TotalCount": 8,
+      "Amount": 1050000,
+      "Complete": true
+    },
+    {
+      "Kind": "Payments",
+      "TotalCount": 5,
+      "Amount": 990100,
+      "Complete": true
+    },
+    {
+      "Kind": "Inventory",
+      "TotalCount": 12,
+      "Amount": 0,
+      "Complete": false
+    },
+    {
+      "Kind": "Debts",
+      "TotalCount": 10,
+      "Amount": 0,
+      "Complete": true
+    },
+    {
+      "Kind": "CashFlow",
+      "TotalCount": 3,
+      "Amount": -46509900,
+      "Complete": true
+    },
+    {
+      "Kind": "Labor",
+      "TotalCount": 7,
+      "Amount": 0,
+      "Complete": true
+    },
+    {
+      "Kind": "Assets",
+      "TotalCount": 11,
+      "Amount": 0,
+      "Complete": true
+    }
+  ],
+  "Dashboard": {
+    "BusinessDate": "2026-10-31",
+    "ReadAt": "2026-10-31T20:04:43.4057653",
+    "Revenue": 0,
+    "OpenOrders": 1,
+    "Debt": 5500001
+  },
+  "OptionCount": 53,
+  "UI": {
+    "DeviceDpi": 120,
+    "AssetBinding": 11,
+    "ReportBinding": 0,
+    "TechnicalBounds": [
+      {
+        "ClientSize": {
+          "IsEmpty": false,
+          "Width": 1280,
+          "Height": 720
+        },
+        "Width": 955,
+        "Height": 96
+      },
+      {
+        "ClientSize": {
+          "IsEmpty": false,
+          "Width": 1366,
+          "Height": 768
+        },
+        "Width": 1041,
+        "Height": 144
+      }
+    ],
+    "ModalOwner": true,
+    "NativeInput": "NOT RUN",
+    "Visual": "SKIPPED by assignment"
+  },
+  "AcceptanceSummary": {
+    "Executed": 139,
+    "Passed": 139,
+    "Failed": 0,
+    "Blocked": 0,
+    "File": "extended-results.json"
+  },
+  "AssetLockRegression": {
+    "Executed": 34,
+    "Passed": 34,
+    "Failed": 0,
+    "Blocked": 0,
+    "File": "asset-lock-regression.json"
+  },
+  "Status": "Succeeded"
+}

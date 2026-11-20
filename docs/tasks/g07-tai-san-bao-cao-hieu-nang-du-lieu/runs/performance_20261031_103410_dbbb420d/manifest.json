@@ -1,0 +1,10 @@
+{
+  "RunId": "20261031_103410_dbbb420d",
+  "Kind": "T29 implementation measurement; not acceptance",
+  "Server": "localhost",
+  "Database": "CoffeeManager_Test_G07Bench_20261031_103410_dbbb420d",
+  "Created": true,
+  "Cleaned": true,
+  "Status": "Succeeded",
+  "SourceUnchanged": true
+}

@@ -1,0 +1,11 @@
+{
+  "Scope": "localhost/CoffeeManager_Development",
+  "Method": "Native production exe; quick ADMIN clicked using screenshot coordinates after AX geometry failed; AX refreshed on resulting MainForm",
+  "AdminDisplayed": true,
+  "DashboardDisplayed": true,
+  "Summary": "Khách đã trả hôm nay (09/11/2026): 0 ₫ Đơn mở: 1 Công nợ nhà cung cấp hiện tại: 5.500.000 ₫",
+  "SummaryMatches": true,
+  "PriorErrorAbsent": true,
+  "VisualAcceptance": "SKIPPED; screenshot only used to locate button; no comparison or visual acceptance",
+  "AppLeftOpen": true
+}

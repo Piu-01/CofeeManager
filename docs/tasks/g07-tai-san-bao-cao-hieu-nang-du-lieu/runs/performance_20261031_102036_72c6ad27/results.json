@@ -1,0 +1,24 @@
+{
+  "Kind": "Implementation benchmark, not acceptance",
+  "Database": "CoffeeManager_Test_G07Bench_20261031_102036_72c6ad27",
+  "Seed": 7,
+  "HistoricalDateLimitation": "Checkout owns server date; dataset generated on actual current day, not backdated90days",
+  "Dataset": "[{\u0022Bills\u0022:10000,\u0022Paid\u0022:8000,\u0022OpenBills\u0022:1000,\u0022Cancelled\u0022:1000,\u0022FirstPaid\u0022:\u00222026-10-31T10:20:57\u0022,\u0022LastPaid\u0022:\u00222026-10-31T10:26:22\u0022}]",
+  "Machine": {
+    "OS": "Microsoft Windows NT 10.0.26200.0",
+    "CPU": 12,
+    "MemoryBytes": 16890978304,
+    "Framework": ".NET 10.0.13"
+  },
+  "SQL": "Microsoft SQL Server 2025 (RTM) - 17.0.1000.7 (X64) \n\tOct 21 2025 12:05:57 \n\tCopyright (C) 2025 Microsoft Corporation\n\tEnterprise Developer Edition (64-bit) on Windows 10 Home Single Language 10.0 \u003CX64\u003E (Build 26200: ) (Hypervisor)\n",
+  "BaselineBusinessHash": "3D3813EAF7AA4DAE742C008A2EA4B401F0430458A954A4DB418C58143F62FB8C",
+  "InventoryError": 229,
+  "RawInventoryError": {
+    "Number": 229,
+    "Message": "The SELECT permission was denied on the object \u0027vw_ReportStockEvents\u0027, database \u0027CoffeeManager_Test_G07Bench_20261031_102036_72c6ad27\u0027, schema \u0027dbo\u0027.\r\nInvalid object name \u0027#events\u0027.",
+    "LineNumber": 1
+  },
+  "Status": "Failed",
+  "Error": "CafeManager.Business.Services.UserOperationException: T\u00E0i kho\u1EA3n k\u1EBFt n\u1ED1i kh\u00F4ng c\u00F3 quy\u1EC1n thao t\u00E1c n\u00E0y.\r\n   at CafeManager.Business.Services.HumanResourcesAccess.Run[T](PermissionService permissions, SessionContext session, AppPermission permission, Func\u00602 action, CancellationToken token) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\src\\CafeManager.Business\\Services\\HumanResourcesAccess.cs:line 19\r\n   at PerformanceProbe.\u003C\u003Ec__DisplayClass1_2.\u003C\u003CRun\u003Eg__CheckedInventoryRead|5\u003Ed.MoveNext() in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G07Probe\\PerformanceProbe.cs:line 80\r\n--- End of stack trace from previous location ---\r\n   at PerformanceProbe.\u003C\u003Ec__DisplayClass1_2.\u003C\u003CRun\u003Eg__CheckedInventoryRead|5\u003Ed.MoveNext() in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G07Probe\\PerformanceProbe.cs:line 82\r\n--- End of stack trace from previous location ---\r\n   at PerformanceProbe.\u003C\u003Ec__DisplayClass1_2.\u003C\u003CRun\u003Eg__CheckedInventoryRead|5\u003Ed.MoveNext() in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G07Probe\\PerformanceProbe.cs:line 82\r\n--- End of stack trace from previous location ---\r\n   at PerformanceProbe.\u003C\u003Ec__DisplayClass1_2.\u003C\u003CRun\u003Eg__CheckedInventoryRead|5\u003Ed.MoveNext() in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G07Probe\\PerformanceProbe.cs:line 82\r\n--- End of stack trace from previous location ---\r\n   at PerformanceProbe.Run(String database, String marker, String output) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G07Probe\\PerformanceProbe.cs:line 55\r\n   at PerformanceProbe.Run(String database, String marker, String output) in D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\CafeManager.G07Probe\\PerformanceProbe.cs:line 77",
+  "ErrorNumber": 229
+}

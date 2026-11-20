@@ -1,0 +1,1514 @@
+{
+  "Results": [
+    {
+      "Id": "UI02.Binding",
+      "Status": "PASS"
+    },
+    {
+      "Id": "UI02.Layout.1280x720",
+      "Status": "PASS"
+    },
+    {
+      "Id": "UI02.Layout.1366x768",
+      "Status": "PASS"
+    },
+    {
+      "Id": "UI02.Layout.920x720",
+      "Status": "PASS"
+    },
+    {
+      "Id": "UI02.Layout.620x720",
+      "Status": "PASS"
+    },
+    {
+      "Id": "UI02.Layout.440x720",
+      "Status": "PASS"
+    },
+    {
+      "Id": "UI02.LargeValueLayout",
+      "Status": "PASS"
+    },
+    {
+      "Id": "UI02.ErrorAndRetry",
+      "Status": "PASS"
+    },
+    {
+      "Id": "UI02.PendingDuplicateAndHide",
+      "Status": "PASS"
+    },
+    {
+      "Id": "UI02.DisposeWhilePending",
+      "Status": "PASS"
+    },
+    {
+      "Id": "UI02.RevokedDuringLoad",
+      "Status": "PASS"
+    },
+    {
+      "Id": "UI02.Navigation",
+      "Status": "PASS"
+    }
+  ],
+  "Metrics": [
+    {
+      "Size": {
+        "IsEmpty": false,
+        "Width": 1280,
+        "Height": 720
+      },
+      "DeviceDpi": 120,
+      "Columns": 3,
+      "Grid": {
+        "IsEmpty": false,
+        "Width": 1211,
+        "Height": 177
+      },
+      "Buttons": [
+        {
+          "Text": "T\u1EA3i l\u1EA1i",
+          "Actual": {
+            "IsEmpty": false,
+            "Width": 104,
+            "Height": 50
+          },
+          "Preferred": {
+            "IsEmpty": false,
+            "Width": 104,
+            "Height": 50
+          },
+          "Parent": {
+            "IsEmpty": false,
+            "Width": 1171,
+            "Height": 62
+          },
+          "Bounds": {
+            "Location": {
+              "IsEmpty": true,
+              "X": 0,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 104,
+              "Height": 50
+            },
+            "X": 0,
+            "Y": 0,
+            "Width": 104,
+            "Height": 50,
+            "Left": 0,
+            "Top": 0,
+            "Right": 104,
+            "Bottom": 50,
+            "IsEmpty": false
+          }
+        },
+        {
+          "Text": "B\u00E1o c\u00E1o",
+          "Actual": {
+            "IsEmpty": false,
+            "Width": 128,
+            "Height": 50
+          },
+          "Preferred": {
+            "IsEmpty": false,
+            "Width": 128,
+            "Height": 50
+          },
+          "Parent": {
+            "IsEmpty": false,
+            "Width": 1171,
+            "Height": 62
+          },
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 116,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 128,
+              "Height": 50
+            },
+            "X": 116,
+            "Y": 0,
+            "Width": 128,
+            "Height": 50,
+            "Left": 116,
+            "Top": 0,
+            "Right": 244,
+            "Bottom": 50,
+            "IsEmpty": false
+          }
+        },
+        {
+          "Text": "B\u00E1n h\u00E0ng",
+          "Actual": {
+            "IsEmpty": false,
+            "Width": 126,
+            "Height": 50
+          },
+          "Preferred": {
+            "IsEmpty": false,
+            "Width": 126,
+            "Height": 50
+          },
+          "Parent": {
+            "IsEmpty": false,
+            "Width": 1171,
+            "Height": 62
+          },
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 256,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 126,
+              "Height": 50
+            },
+            "X": 256,
+            "Y": 0,
+            "Width": 126,
+            "Height": 50,
+            "Left": 256,
+            "Top": 0,
+            "Right": 382,
+            "Bottom": 50,
+            "IsEmpty": false
+          }
+        },
+        {
+          "Text": "C\u00F4ng n\u1EE3",
+          "Actual": {
+            "IsEmpty": false,
+            "Width": 120,
+            "Height": 50
+          },
+          "Preferred": {
+            "IsEmpty": false,
+            "Width": 120,
+            "Height": 50
+          },
+          "Parent": {
+            "IsEmpty": false,
+            "Width": 1171,
+            "Height": 62
+          },
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 394,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 120,
+              "Height": 50
+            },
+            "X": 394,
+            "Y": 0,
+            "Width": 120,
+            "Height": 50,
+            "Left": 394,
+            "Top": 0,
+            "Right": 514,
+            "Bottom": 50,
+            "IsEmpty": false
+          }
+        }
+      ],
+      "Cards": [
+        {
+          "AccessibleName": "Doanh thu h\u00F4m nay",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": true,
+              "X": 0,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 391,
+              "Height": 165
+            },
+            "X": 0,
+            "Y": 0,
+            "Width": 391,
+            "Height": 165,
+            "Left": 0,
+            "Top": 0,
+            "Right": 391,
+            "Bottom": 165,
+            "IsEmpty": false
+          },
+          "ChildrenBottom": 145,
+          "Padding": {
+            "All": 20,
+            "Bottom": 20,
+            "Left": 20,
+            "Right": 20,
+            "Top": 20,
+            "Horizontal": 40,
+            "Vertical": 40,
+            "Size": {
+              "IsEmpty": false,
+              "Width": 40,
+              "Height": 40
+            }
+          }
+        },
+        {
+          "AccessibleName": "\u0110\u01A1n \u0111ang m\u1EDF",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 403,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 391,
+              "Height": 165
+            },
+            "X": 403,
+            "Y": 0,
+            "Width": 391,
+            "Height": 165,
+            "Left": 403,
+            "Top": 0,
+            "Right": 794,
+            "Bottom": 165,
+            "IsEmpty": false
+          },
+          "ChildrenBottom": 145,
+          "Padding": {
+            "All": 20,
+            "Bottom": 20,
+            "Left": 20,
+            "Right": 20,
+            "Top": 20,
+            "Horizontal": 40,
+            "Vertical": 40,
+            "Size": {
+              "IsEmpty": false,
+              "Width": 40,
+              "Height": 40
+            }
+          }
+        },
+        {
+          "AccessibleName": "C\u00F4ng n\u1EE3 nh\u00E0 cung c\u1EA5p",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 806,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 393,
+              "Height": 165
+            },
+            "X": 806,
+            "Y": 0,
+            "Width": 393,
+            "Height": 165,
+            "Left": 806,
+            "Top": 0,
+            "Right": 1199,
+            "Bottom": 165,
+            "IsEmpty": false
+          },
+          "ChildrenBottom": 145,
+          "Padding": {
+            "All": 20,
+            "Bottom": 20,
+            "Left": 20,
+            "Right": 20,
+            "Top": 20,
+            "Horizontal": 40,
+            "Vertical": 40,
+            "Size": {
+              "IsEmpty": false,
+              "Width": 40,
+              "Height": 40
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Size": {
+        "IsEmpty": false,
+        "Width": 1366,
+        "Height": 768
+      },
+      "DeviceDpi": 120,
+      "Columns": 3,
+      "Grid": {
+        "IsEmpty": false,
+        "Width": 1297,
+        "Height": 177
+      },
+      "Buttons": [
+        {
+          "Text": "T\u1EA3i l\u1EA1i",
+          "Actual": {
+            "IsEmpty": false,
+            "Width": 104,
+            "Height": 50
+          },
+          "Preferred": {
+            "IsEmpty": false,
+            "Width": 104,
+            "Height": 50
+          },
+          "Parent": {
+            "IsEmpty": false,
+            "Width": 1257,
+            "Height": 62
+          },
+          "Bounds": {
+            "Location": {
+              "IsEmpty": true,
+              "X": 0,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 104,
+              "Height": 50
+            },
+            "X": 0,
+            "Y": 0,
+            "Width": 104,
+            "Height": 50,
+            "Left": 0,
+            "Top": 0,
+            "Right": 104,
+            "Bottom": 50,
+            "IsEmpty": false
+          }
+        },
+        {
+          "Text": "B\u00E1o c\u00E1o",
+          "Actual": {
+            "IsEmpty": false,
+            "Width": 128,
+            "Height": 50
+          },
+          "Preferred": {
+            "IsEmpty": false,
+            "Width": 128,
+            "Height": 50
+          },
+          "Parent": {
+            "IsEmpty": false,
+            "Width": 1257,
+            "Height": 62
+          },
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 116,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 128,
+              "Height": 50
+            },
+            "X": 116,
+            "Y": 0,
+            "Width": 128,
+            "Height": 50,
+            "Left": 116,
+            "Top": 0,
+            "Right": 244,
+            "Bottom": 50,
+            "IsEmpty": false
+          }
+        },
+        {
+          "Text": "B\u00E1n h\u00E0ng",
+          "Actual": {
+            "IsEmpty": false,
+            "Width": 126,
+            "Height": 50
+          },
+          "Preferred": {
+            "IsEmpty": false,
+            "Width": 126,
+            "Height": 50
+          },
+          "Parent": {
+            "IsEmpty": false,
+            "Width": 1257,
+            "Height": 62
+          },
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 256,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 126,
+              "Height": 50
+            },
+            "X": 256,
+            "Y": 0,
+            "Width": 126,
+            "Height": 50,
+            "Left": 256,
+            "Top": 0,
+            "Right": 382,
+            "Bottom": 50,
+            "IsEmpty": false
+          }
+        },
+        {
+          "Text": "C\u00F4ng n\u1EE3",
+          "Actual": {
+            "IsEmpty": false,
+            "Width": 120,
+            "Height": 50
+          },
+          "Preferred": {
+            "IsEmpty": false,
+            "Width": 120,
+            "Height": 50
+          },
+          "Parent": {
+            "IsEmpty": false,
+            "Width": 1257,
+            "Height": 62
+          },
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 394,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 120,
+              "Height": 50
+            },
+            "X": 394,
+            "Y": 0,
+            "Width": 120,
+            "Height": 50,
+            "Left": 394,
+            "Top": 0,
+            "Right": 514,
+            "Bottom": 50,
+            "IsEmpty": false
+          }
+        }
+      ],
+      "Cards": [
+        {
+          "AccessibleName": "Doanh thu h\u00F4m nay",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": true,
+              "X": 0,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 420,
+              "Height": 165
+            },
+            "X": 0,
+            "Y": 0,
+            "Width": 420,
+            "Height": 165,
+            "Left": 0,
+            "Top": 0,
+            "Right": 420,
+            "Bottom": 165,
+            "IsEmpty": false
+          },
+          "ChildrenBottom": 145,
+          "Padding": {
+            "All": 20,
+            "Bottom": 20,
+            "Left": 20,
+            "Right": 20,
+            "Top": 20,
+            "Horizontal": 40,
+            "Vertical": 40,
+            "Size": {
+              "IsEmpty": false,
+              "Width": 40,
+              "Height": 40
+            }
+          }
+        },
+        {
+          "AccessibleName": "\u0110\u01A1n \u0111ang m\u1EDF",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 432,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 420,
+              "Height": 165
+            },
+            "X": 432,
+            "Y": 0,
+            "Width": 420,
+            "Height": 165,
+            "Left": 432,
+            "Top": 0,
+            "Right": 852,
+            "Bottom": 165,
+            "IsEmpty": false
+          },
+          "ChildrenBottom": 145,
+          "Padding": {
+            "All": 20,
+            "Bottom": 20,
+            "Left": 20,
+            "Right": 20,
+            "Top": 20,
+            "Horizontal": 40,
+            "Vertical": 40,
+            "Size": {
+              "IsEmpty": false,
+              "Width": 40,
+              "Height": 40
+            }
+          }
+        },
+        {
+          "AccessibleName": "C\u00F4ng n\u1EE3 nh\u00E0 cung c\u1EA5p",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 864,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 421,
+              "Height": 165
+            },
+            "X": 864,
+            "Y": 0,
+            "Width": 421,
+            "Height": 165,
+            "Left": 864,
+            "Top": 0,
+            "Right": 1285,
+            "Bottom": 165,
+            "IsEmpty": false
+          },
+          "ChildrenBottom": 145,
+          "Padding": {
+            "All": 20,
+            "Bottom": 20,
+            "Left": 20,
+            "Right": 20,
+            "Top": 20,
+            "Horizontal": 40,
+            "Vertical": 40,
+            "Size": {
+              "IsEmpty": false,
+              "Width": 40,
+              "Height": 40
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Size": {
+        "IsEmpty": false,
+        "Width": 920,
+        "Height": 720
+      },
+      "DeviceDpi": 120,
+      "Columns": 2,
+      "Grid": {
+        "IsEmpty": false,
+        "Width": 851,
+        "Height": 354
+      },
+      "Buttons": [
+        {
+          "Text": "T\u1EA3i l\u1EA1i",
+          "Actual": {
+            "IsEmpty": false,
+            "Width": 104,
+            "Height": 50
+          },
+          "Preferred": {
+            "IsEmpty": false,
+            "Width": 104,
+            "Height": 50
+          },
+          "Parent": {
+            "IsEmpty": false,
+            "Width": 811,
+            "Height": 62
+          },
+          "Bounds": {
+            "Location": {
+              "IsEmpty": true,
+              "X": 0,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 104,
+              "Height": 50
+            },
+            "X": 0,
+            "Y": 0,
+            "Width": 104,
+            "Height": 50,
+            "Left": 0,
+            "Top": 0,
+            "Right": 104,
+            "Bottom": 50,
+            "IsEmpty": false
+          }
+        },
+        {
+          "Text": "B\u00E1o c\u00E1o",
+          "Actual": {
+            "IsEmpty": false,
+            "Width": 128,
+            "Height": 50
+          },
+          "Preferred": {
+            "IsEmpty": false,
+            "Width": 128,
+            "Height": 50
+          },
+          "Parent": {
+            "IsEmpty": false,
+            "Width": 811,
+            "Height": 62
+          },
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 116,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 128,
+              "Height": 50
+            },
+            "X": 116,
+            "Y": 0,
+            "Width": 128,
+            "Height": 50,
+            "Left": 116,
+            "Top": 0,
+            "Right": 244,
+            "Bottom": 50,
+            "IsEmpty": false
+          }
+        },
+        {
+          "Text": "B\u00E1n h\u00E0ng",
+          "Actual": {
+            "IsEmpty": false,
+            "Width": 126,
+            "Height": 50
+          },
+          "Preferred": {
+            "IsEmpty": false,
+            "Width": 126,
+            "Height": 50
+          },
+          "Parent": {
+            "IsEmpty": false,
+            "Width": 811,
+            "Height": 62
+          },
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 256,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 126,
+              "Height": 50
+            },
+            "X": 256,
+            "Y": 0,
+            "Width": 126,
+            "Height": 50,
+            "Left": 256,
+            "Top": 0,
+            "Right": 382,
+            "Bottom": 50,
+            "IsEmpty": false
+          }
+        },
+        {
+          "Text": "C\u00F4ng n\u1EE3",
+          "Actual": {
+            "IsEmpty": false,
+            "Width": 120,
+            "Height": 50
+          },
+          "Preferred": {
+            "IsEmpty": false,
+            "Width": 120,
+            "Height": 50
+          },
+          "Parent": {
+            "IsEmpty": false,
+            "Width": 811,
+            "Height": 62
+          },
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 394,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 120,
+              "Height": 50
+            },
+            "X": 394,
+            "Y": 0,
+            "Width": 120,
+            "Height": 50,
+            "Left": 394,
+            "Top": 0,
+            "Right": 514,
+            "Bottom": 50,
+            "IsEmpty": false
+          }
+        }
+      ],
+      "Cards": [
+        {
+          "AccessibleName": "Doanh thu h\u00F4m nay",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": true,
+              "X": 0,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 413,
+              "Height": 165
+            },
+            "X": 0,
+            "Y": 0,
+            "Width": 413,
+            "Height": 165,
+            "Left": 0,
+            "Top": 0,
+            "Right": 413,
+            "Bottom": 165,
+            "IsEmpty": false
+          },
+          "ChildrenBottom": 145,
+          "Padding": {
+            "All": 20,
+            "Bottom": 20,
+            "Left": 20,
+            "Right": 20,
+            "Top": 20,
+            "Horizontal": 40,
+            "Vertical": 40,
+            "Size": {
+              "IsEmpty": false,
+              "Width": 40,
+              "Height": 40
+            }
+          }
+        },
+        {
+          "AccessibleName": "\u0110\u01A1n \u0111ang m\u1EDF",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 425,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 414,
+              "Height": 165
+            },
+            "X": 425,
+            "Y": 0,
+            "Width": 414,
+            "Height": 165,
+            "Left": 425,
+            "Top": 0,
+            "Right": 839,
+            "Bottom": 165,
+            "IsEmpty": false
+          },
+          "ChildrenBottom": 145,
+          "Padding": {
+            "All": 20,
+            "Bottom": 20,
+            "Left": 20,
+            "Right": 20,
+            "Top": 20,
+            "Horizontal": 40,
+            "Vertical": 40,
+            "Size": {
+              "IsEmpty": false,
+              "Width": 40,
+              "Height": 40
+            }
+          }
+        },
+        {
+          "AccessibleName": "C\u00F4ng n\u1EE3 nh\u00E0 cung c\u1EA5p",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 0,
+              "Y": 177
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 839,
+              "Height": 165
+            },
+            "X": 0,
+            "Y": 177,
+            "Width": 839,
+            "Height": 165,
+            "Left": 0,
+            "Top": 177,
+            "Right": 839,
+            "Bottom": 342,
+            "IsEmpty": false
+          },
+          "ChildrenBottom": 145,
+          "Padding": {
+            "All": 20,
+            "Bottom": 20,
+            "Left": 20,
+            "Right": 20,
+            "Top": 20,
+            "Horizontal": 40,
+            "Vertical": 40,
+            "Size": {
+              "IsEmpty": false,
+              "Width": 40,
+              "Height": 40
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Size": {
+        "IsEmpty": false,
+        "Width": 620,
+        "Height": 720
+      },
+      "DeviceDpi": 120,
+      "Columns": 1,
+      "Grid": {
+        "IsEmpty": false,
+        "Width": 551,
+        "Height": 531
+      },
+      "Buttons": [
+        {
+          "Text": "T\u1EA3i l\u1EA1i",
+          "Actual": {
+            "IsEmpty": false,
+            "Width": 104,
+            "Height": 50
+          },
+          "Preferred": {
+            "IsEmpty": false,
+            "Width": 104,
+            "Height": 50
+          },
+          "Parent": {
+            "IsEmpty": false,
+            "Width": 511,
+            "Height": 124
+          },
+          "Bounds": {
+            "Location": {
+              "IsEmpty": true,
+              "X": 0,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 104,
+              "Height": 50
+            },
+            "X": 0,
+            "Y": 0,
+            "Width": 104,
+            "Height": 50,
+            "Left": 0,
+            "Top": 0,
+            "Right": 104,
+            "Bottom": 50,
+            "IsEmpty": false
+          }
+        },
+        {
+          "Text": "B\u00E1o c\u00E1o",
+          "Actual": {
+            "IsEmpty": false,
+            "Width": 128,
+            "Height": 50
+          },
+          "Preferred": {
+            "IsEmpty": false,
+            "Width": 128,
+            "Height": 50
+          },
+          "Parent": {
+            "IsEmpty": false,
+            "Width": 511,
+            "Height": 124
+          },
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 116,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 128,
+              "Height": 50
+            },
+            "X": 116,
+            "Y": 0,
+            "Width": 128,
+            "Height": 50,
+            "Left": 116,
+            "Top": 0,
+            "Right": 244,
+            "Bottom": 50,
+            "IsEmpty": false
+          }
+        },
+        {
+          "Text": "B\u00E1n h\u00E0ng",
+          "Actual": {
+            "IsEmpty": false,
+            "Width": 126,
+            "Height": 50
+          },
+          "Preferred": {
+            "IsEmpty": false,
+            "Width": 126,
+            "Height": 50
+          },
+          "Parent": {
+            "IsEmpty": false,
+            "Width": 511,
+            "Height": 124
+          },
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 256,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 126,
+              "Height": 50
+            },
+            "X": 256,
+            "Y": 0,
+            "Width": 126,
+            "Height": 50,
+            "Left": 256,
+            "Top": 0,
+            "Right": 382,
+            "Bottom": 50,
+            "IsEmpty": false
+          }
+        },
+        {
+          "Text": "C\u00F4ng n\u1EE3",
+          "Actual": {
+            "IsEmpty": false,
+            "Width": 120,
+            "Height": 50
+          },
+          "Preferred": {
+            "IsEmpty": false,
+            "Width": 120,
+            "Height": 50
+          },
+          "Parent": {
+            "IsEmpty": false,
+            "Width": 511,
+            "Height": 124
+          },
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 0,
+              "Y": 62
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 120,
+              "Height": 50
+            },
+            "X": 0,
+            "Y": 62,
+            "Width": 120,
+            "Height": 50,
+            "Left": 0,
+            "Top": 62,
+            "Right": 120,
+            "Bottom": 112,
+            "IsEmpty": false
+          }
+        }
+      ],
+      "Cards": [
+        {
+          "AccessibleName": "Doanh thu h\u00F4m nay",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": true,
+              "X": 0,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 539,
+              "Height": 165
+            },
+            "X": 0,
+            "Y": 0,
+            "Width": 539,
+            "Height": 165,
+            "Left": 0,
+            "Top": 0,
+            "Right": 539,
+            "Bottom": 165,
+            "IsEmpty": false
+          },
+          "ChildrenBottom": 145,
+          "Padding": {
+            "All": 20,
+            "Bottom": 20,
+            "Left": 20,
+            "Right": 20,
+            "Top": 20,
+            "Horizontal": 40,
+            "Vertical": 40,
+            "Size": {
+              "IsEmpty": false,
+              "Width": 40,
+              "Height": 40
+            }
+          }
+        },
+        {
+          "AccessibleName": "\u0110\u01A1n \u0111ang m\u1EDF",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 0,
+              "Y": 177
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 539,
+              "Height": 165
+            },
+            "X": 0,
+            "Y": 177,
+            "Width": 539,
+            "Height": 165,
+            "Left": 0,
+            "Top": 177,
+            "Right": 539,
+            "Bottom": 342,
+            "IsEmpty": false
+          },
+          "ChildrenBottom": 145,
+          "Padding": {
+            "All": 20,
+            "Bottom": 20,
+            "Left": 20,
+            "Right": 20,
+            "Top": 20,
+            "Horizontal": 40,
+            "Vertical": 40,
+            "Size": {
+              "IsEmpty": false,
+              "Width": 40,
+              "Height": 40
+            }
+          }
+        },
+        {
+          "AccessibleName": "C\u00F4ng n\u1EE3 nh\u00E0 cung c\u1EA5p",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 0,
+              "Y": 354
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 539,
+              "Height": 165
+            },
+            "X": 0,
+            "Y": 354,
+            "Width": 539,
+            "Height": 165,
+            "Left": 0,
+            "Top": 354,
+            "Right": 539,
+            "Bottom": 519,
+            "IsEmpty": false
+          },
+          "ChildrenBottom": 145,
+          "Padding": {
+            "All": 20,
+            "Bottom": 20,
+            "Left": 20,
+            "Right": 20,
+            "Top": 20,
+            "Horizontal": 40,
+            "Vertical": 40,
+            "Size": {
+              "IsEmpty": false,
+              "Width": 40,
+              "Height": 40
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Size": {
+        "IsEmpty": false,
+        "Width": 440,
+        "Height": 720
+      },
+      "DeviceDpi": 120,
+      "Columns": 1,
+      "Grid": {
+        "IsEmpty": false,
+        "Width": 371,
+        "Height": 531
+      },
+      "Buttons": [
+        {
+          "Text": "T\u1EA3i l\u1EA1i",
+          "Actual": {
+            "IsEmpty": false,
+            "Width": 104,
+            "Height": 50
+          },
+          "Preferred": {
+            "IsEmpty": false,
+            "Width": 104,
+            "Height": 50
+          },
+          "Parent": {
+            "IsEmpty": false,
+            "Width": 331,
+            "Height": 124
+          },
+          "Bounds": {
+            "Location": {
+              "IsEmpty": true,
+              "X": 0,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 104,
+              "Height": 50
+            },
+            "X": 0,
+            "Y": 0,
+            "Width": 104,
+            "Height": 50,
+            "Left": 0,
+            "Top": 0,
+            "Right": 104,
+            "Bottom": 50,
+            "IsEmpty": false
+          }
+        },
+        {
+          "Text": "B\u00E1o c\u00E1o",
+          "Actual": {
+            "IsEmpty": false,
+            "Width": 128,
+            "Height": 50
+          },
+          "Preferred": {
+            "IsEmpty": false,
+            "Width": 128,
+            "Height": 50
+          },
+          "Parent": {
+            "IsEmpty": false,
+            "Width": 331,
+            "Height": 124
+          },
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 116,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 128,
+              "Height": 50
+            },
+            "X": 116,
+            "Y": 0,
+            "Width": 128,
+            "Height": 50,
+            "Left": 116,
+            "Top": 0,
+            "Right": 244,
+            "Bottom": 50,
+            "IsEmpty": false
+          }
+        },
+        {
+          "Text": "B\u00E1n h\u00E0ng",
+          "Actual": {
+            "IsEmpty": false,
+            "Width": 126,
+            "Height": 50
+          },
+          "Preferred": {
+            "IsEmpty": false,
+            "Width": 126,
+            "Height": 50
+          },
+          "Parent": {
+            "IsEmpty": false,
+            "Width": 331,
+            "Height": 124
+          },
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 0,
+              "Y": 62
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 126,
+              "Height": 50
+            },
+            "X": 0,
+            "Y": 62,
+            "Width": 126,
+            "Height": 50,
+            "Left": 0,
+            "Top": 62,
+            "Right": 126,
+            "Bottom": 112,
+            "IsEmpty": false
+          }
+        },
+        {
+          "Text": "C\u00F4ng n\u1EE3",
+          "Actual": {
+            "IsEmpty": false,
+            "Width": 120,
+            "Height": 50
+          },
+          "Preferred": {
+            "IsEmpty": false,
+            "Width": 120,
+            "Height": 50
+          },
+          "Parent": {
+            "IsEmpty": false,
+            "Width": 331,
+            "Height": 124
+          },
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 138,
+              "Y": 62
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 120,
+              "Height": 50
+            },
+            "X": 138,
+            "Y": 62,
+            "Width": 120,
+            "Height": 50,
+            "Left": 138,
+            "Top": 62,
+            "Right": 258,
+            "Bottom": 112,
+            "IsEmpty": false
+          }
+        }
+      ],
+      "Cards": [
+        {
+          "AccessibleName": "Doanh thu h\u00F4m nay",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": true,
+              "X": 0,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 359,
+              "Height": 165
+            },
+            "X": 0,
+            "Y": 0,
+            "Width": 359,
+            "Height": 165,
+            "Left": 0,
+            "Top": 0,
+            "Right": 359,
+            "Bottom": 165,
+            "IsEmpty": false
+          },
+          "ChildrenBottom": 145,
+          "Padding": {
+            "All": 20,
+            "Bottom": 20,
+            "Left": 20,
+            "Right": 20,
+            "Top": 20,
+            "Horizontal": 40,
+            "Vertical": 40,
+            "Size": {
+              "IsEmpty": false,
+              "Width": 40,
+              "Height": 40
+            }
+          }
+        },
+        {
+          "AccessibleName": "\u0110\u01A1n \u0111ang m\u1EDF",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 0,
+              "Y": 177
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 359,
+              "Height": 165
+            },
+            "X": 0,
+            "Y": 177,
+            "Width": 359,
+            "Height": 165,
+            "Left": 0,
+            "Top": 177,
+            "Right": 359,
+            "Bottom": 342,
+            "IsEmpty": false
+          },
+          "ChildrenBottom": 145,
+          "Padding": {
+            "All": 20,
+            "Bottom": 20,
+            "Left": 20,
+            "Right": 20,
+            "Top": 20,
+            "Horizontal": 40,
+            "Vertical": 40,
+            "Size": {
+              "IsEmpty": false,
+              "Width": 40,
+              "Height": 40
+            }
+          }
+        },
+        {
+          "AccessibleName": "C\u00F4ng n\u1EE3 nh\u00E0 cung c\u1EA5p",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 0,
+              "Y": 354
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 359,
+              "Height": 165
+            },
+            "X": 0,
+            "Y": 354,
+            "Width": 359,
+            "Height": 165,
+            "Left": 0,
+            "Top": 354,
+            "Right": 359,
+            "Bottom": 519,
+            "IsEmpty": false
+          },
+          "ChildrenBottom": 145,
+          "Padding": {
+            "All": 20,
+            "Bottom": 20,
+            "Left": 20,
+            "Right": 20,
+            "Top": 20,
+            "Horizontal": 40,
+            "Vertical": 40,
+            "Size": {
+              "IsEmpty": false,
+              "Width": 40,
+              "Height": 40
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "Evidence": {
+    "DeviceDpi": 120,
+    "SourceDllHash": "9D60E60EDA734732438843943776BE5281303EBAF44E1B2011AC64549014FCC2",
+    "Native": "NOT RUN in component probe; no screenshot or visual acceptance"
+  }
+}

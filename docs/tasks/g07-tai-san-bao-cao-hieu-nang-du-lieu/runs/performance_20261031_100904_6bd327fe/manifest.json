@@ -1,0 +1,11 @@
+{
+  "RunId": "20261031_100904_6bd327fe",
+  "Kind": "T29 implementation measurement; not acceptance",
+  "Server": "localhost",
+  "Database": "CoffeeManager_Test_G07Bench_20261031_100904_6bd327fe",
+  "Created": true,
+  "Cleaned": true,
+  "Status": "Failed",
+  "Error": "System.Management.Automation.RuntimeException: Benchmark probe failed",
+  "SourceUnchanged": true
+}

@@ -1,0 +1,62 @@
+{
+  "Open": {
+    "ReadyMs": 1256.8703,
+    "State": "\u0110\u00E3 c\u1EADp nh\u1EADt s\u1ED1 li\u1EC7u."
+  },
+  "Samples": [
+    {
+      "Method": "Render",
+      "ElapsedMs": 28.2974,
+      "Layouts": 1,
+      "ControlsBefore": 78,
+      "ByType": {
+        "AdminDashboardControl": 1
+      }
+    },
+    {
+      "Method": "ClearSnapshot",
+      "ElapsedMs": 15.0346,
+      "Layouts": 1,
+      "ControlsBefore": 78,
+      "ByType": {
+        "AdminDashboardControl": 1
+      }
+    },
+    {
+      "Method": "Render",
+      "ElapsedMs": 21.0969,
+      "Layouts": 1,
+      "ControlsBefore": 74,
+      "ByType": {
+        "AdminDashboardControl": 1
+      }
+    },
+    {
+      "Method": "RenderCore",
+      "ElapsedMs": 5636.7505,
+      "Layouts": 325,
+      "ControlsBefore": 78,
+      "ByType": {
+        "TableLayoutPanel": 192,
+        "OrbitSurface": 46,
+        "Label": 7,
+        "Panel": 76,
+        "OrbitButton": 2,
+        "Bar": 2
+      }
+    },
+    {
+      "Method": "ClearSnapshotCore",
+      "ElapsedMs": 3160.9434,
+      "Layouts": 179,
+      "ControlsBefore": 78,
+      "ByType": {
+        "TableLayoutPanel": 104,
+        "OrbitSurface": 28,
+        "Panel": 44,
+        "Label": 3
+      }
+    }
+  ],
+  "Error": null
+}

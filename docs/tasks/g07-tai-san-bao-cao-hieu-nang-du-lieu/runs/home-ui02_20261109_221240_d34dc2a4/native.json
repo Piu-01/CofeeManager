@@ -1,0 +1,11 @@
+{
+  "Method": "Production Debug exe; ADMIN button clicked using current screenshot coordinates, then AX observed on MainForm",
+  "Admin": true,
+  "ThreeMetricRegions": true,
+  "QuickAccess": true,
+  "FourActions": true,
+  "Loaded": true,
+  "UpdatedAtPresent": true,
+  "AppLeftOpen": true,
+  "VisualAcceptance": "SKIPPED per assignment; screenshot used only to locate ADMIN button; values tested via control binding in isolated SQL fixture"
+}

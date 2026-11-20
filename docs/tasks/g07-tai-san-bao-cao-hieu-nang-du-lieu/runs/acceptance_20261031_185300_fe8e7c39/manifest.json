@@ -1,0 +1,28 @@
+{
+  "RunId": "20261031_185300_fe8e7c39",
+  "Kind": "Acceptance SQL/unit subset; native/concurrency/performance recorded separately",
+  "Server": "localhost",
+  "ThroughVersion": 26,
+  "Created": [
+    {
+      "Database": "CoffeeManager_Test_G07_20261031_185300_fe8e7c39_clean",
+      "Marker": "20261031_185300_fe8e7c39"
+    },
+    {
+      "Database": "CoffeeManager_Test_G07_20261031_185300_fe8e7c39_demo",
+      "Marker": "20261031_185300_fe8e7c39"
+    }
+  ],
+  "Cleaned": [
+    "CoffeeManager_Test_G07_20261031_185300_fe8e7c39_clean",
+    "CoffeeManager_Test_G07_20261031_185300_fe8e7c39_demo"
+  ],
+  "Retained": [],
+  "Status": "Failed",
+  "Fixtures": [],
+  "UnitExitCode": 0,
+  "cleanBalancesUnchanged": true,
+  "demoBalancesUnchanged": true,
+  "Error": "System.Management.Automation.RuntimeException: Typed dependency smoke failed",
+  "SourceUnchanged": true
+}

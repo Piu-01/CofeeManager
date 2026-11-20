@@ -1,0 +1,54 @@
+{
+  "RunId": "20261031_200218_8ec08ae7",
+  "Kind": "Acceptance SQL/unit subset; native/concurrency/performance recorded separately",
+  "Server": "localhost",
+  "ThroughVersion": 27,
+  "Created": [
+    {
+      "Database": "CoffeeManager_Test_G07_20261031_200218_8ec08ae7_clean",
+      "Marker": "20261031_200218_8ec08ae7"
+    },
+    {
+      "Database": "CoffeeManager_Test_G07_20261031_200218_8ec08ae7_demo",
+      "Marker": "20261031_200218_8ec08ae7"
+    }
+  ],
+  "Cleaned": [
+    "CoffeeManager_Test_G07_20261031_200218_8ec08ae7_clean",
+    "CoffeeManager_Test_G07_20261031_200218_8ec08ae7_demo"
+  ],
+  "Retained": [],
+  "Status": "Failed",
+  "Fixtures": [
+    {
+      "Status": "Succeeded",
+      "Name": "t27-assets.sql"
+    },
+    {
+      "Status": "Succeeded",
+      "Name": "t28-reports.sql"
+    },
+    {
+      "Status": "Succeeded",
+      "Name": "t29-equivalence.sql"
+    }
+  ],
+  "UnitExitCode": 0,
+  "cleanBalancesUnchanged": true,
+  "demoBalancesUnchanged": true,
+  "Extended": {
+    "Executed": 139,
+    "Passed": 139,
+    "Failed": 0,
+    "Blocked": 0,
+    "File": "extended-results.json"
+  },
+  "AssetLockRegression": {
+    "Executed": 34,
+    "Passed": 0,
+    "Failed": 34,
+    "Blocked": 0,
+    "File": "asset-lock-regression.json"
+  },
+  "SourceUnchanged": true
+}

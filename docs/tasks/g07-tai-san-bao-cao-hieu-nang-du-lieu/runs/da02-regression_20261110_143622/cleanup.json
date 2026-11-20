@@ -1,0 +1,19 @@
+{
+  "CleanedAt": "2026-11-10T15:45:00+07:00",
+  "Databases": [
+    { "Name": "CoffeeManager_Test_G07_20261110_144033_ca33988f_demo", "Marker": "20261110_144033_ca33988f", "MarkerVerified": true, "Dropped": true },
+    { "Name": "CoffeeManager_Test_G07_20261110_152830_fceb2357_demo", "Marker": "20261110_152830_fceb2357", "MarkerVerified": true, "Dropped": true }
+  ],
+  "SkippedNotInScope": [
+    "CoffeeManager_Test_G07_20261110_102416_f0d5a6c0_demo",
+    "CoffeeManager_Test_G07_20261110_102810_0b67b365_demo",
+    "CoffeeManager_Test_G07_20261110_103325_e3fd965c_demo",
+    "CoffeeManager_Test_G07_20261110_111837_5845e46f_demo",
+    "CoffeeManager_Test_G07_20261110_111837_5845e46f_race",
+    "CoffeeManager_Test_G07Bench_20261110_120541_7341e3bc",
+    "CoffeeManager_Test_G07Bench_20261110_120753_6430f17a",
+    "CoffeeManager_Test_G07Bench_20261110_120907_6ba78edd",
+    "CoffeeManager_Test_G07Bench_20261110_120959_21ead801"
+  ],
+  "RemainingG07Count": 9
+}

@@ -1,0 +1,8 @@
+﻿{
+    "RunId":  "20261110_120541_7341e3bc",
+    "Kind":  "G07-DA03 I/O measurement 028 vs 029 on 10,000 invoices; not acceptance",
+    "Database":  "CoffeeManager_Test_G07Bench_20261110_120541_7341e3bc",
+    "Created":  true,
+    "Status":  "Failed",
+    "Error":  "System.Management.Automation.RuntimeException: Probe build failed"
+}

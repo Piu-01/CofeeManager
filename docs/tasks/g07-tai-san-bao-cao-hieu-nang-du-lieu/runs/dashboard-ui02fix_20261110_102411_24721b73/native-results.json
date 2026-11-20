@@ -1,0 +1,81 @@
+{
+  "Dpi": 120,
+  "Results": [
+    {
+      "Id": "DA12/sizes-money",
+      "Expected": "1280\u00D7720/1366\u00D7768/pane;4/2/1KPIs,2/1charts;18digit label bound, accessible full value",
+      "Status": "PASS",
+      "Actual": [
+        {
+          "ClientSize": {
+            "IsEmpty": false,
+            "Width": 1800,
+            "Height": 850
+          },
+          "ColumnCount": 4,
+          "ChartColumns": 2
+        },
+        {
+          "ClientSize": {
+            "IsEmpty": false,
+            "Width": 1280,
+            "Height": 720
+          },
+          "ColumnCount": 2,
+          "ChartColumns": 2
+        },
+        {
+          "ClientSize": {
+            "IsEmpty": false,
+            "Width": 1366,
+            "Height": 768
+          },
+          "ColumnCount": 2,
+          "ChartColumns": 2
+        },
+        {
+          "ClientSize": {
+            "IsEmpty": false,
+            "Width": 700,
+            "Height": 720
+          },
+          "ColumnCount": 1,
+          "ChartColumns": 1
+        }
+      ]
+    },
+    {
+      "Id": "DA11/late-mode",
+      "Expected": "locked requestA cancelled;requestB monthly only after release;never renders old period",
+      "Status": "PASS",
+      "Actual": {
+        "Kind": 0,
+        "From": "2026-11-01",
+        "To": "2026-11-10",
+        "ReadAt": "2026-11-10T10:32:40.1284927",
+        "TotalCount": 10,
+        "DateBasis": "Ng\u00E0y thanh to\u00E1n h\u00F3a \u0111\u01A1n \u00B7 theo ng\u00E0y",
+        "Note": "Theo d\u1EEF li\u1EC7u \u0111\u00E3 ghi nh\u1EADn; \u0111\u00E3 gi\u1EA3m v\u00E0 g\u1ED3m ph\u00ED ship, ch\u01B0a \u0111\u1ED1i so\u00E1t \u0111\u1ED1i t\u00E1c.",
+        "Complete": true
+      }
+    },
+    {
+      "Id": "DA08/Invoice-Finance-Debt",
+      "Expected": "source modal\u002Bchild detail both owned;closing preserves dashboard mode",
+      "Status": "PASS",
+      "Actual": [
+        "revenue",
+        "expense",
+        "debt"
+      ]
+    },
+    {
+      "Id": "DA11/connection-error",
+      "Expected": "missing testDB shows error and \u2014 values, no fake0;dispose cancels",
+      "Status": "PASS",
+      "Actual": "Ch\u01B0a c\u1EADp nh\u1EADt \u00B7 Kh\u00F4ng k\u1EBFt n\u1ED1i \u0111\u01B0\u1EE3c d\u1EEF li\u1EC7u; ki\u1EC3m tra k\u1EBFt n\u1ED1i v\u00E0 th\u1EED l\u1EA1i."
+    }
+  ],
+  "Failures": 0,
+  "Visual": "SKIPPED by user assignment"
+}

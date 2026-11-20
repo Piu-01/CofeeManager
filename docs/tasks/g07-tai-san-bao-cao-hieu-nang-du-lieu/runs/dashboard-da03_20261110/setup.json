@@ -1,0 +1,18 @@
+﻿{
+    "RunId":  "20261110_111837_5845e46f",
+    "Demo":  "CoffeeManager_Test_G07_20261110_111837_5845e46f_demo",
+    "Race":  "CoffeeManager_Test_G07_20261110_111837_5845e46f_race",
+    "RaceSource":  "CoffeeManager_Test_G07_20261110_102810_0b67b365_demo",
+    "SourceVersion":  28,
+    "Status":  "Ready",
+    "Created":  [
+                    "CoffeeManager_Test_G07_20261110_111837_5845e46f_demo"
+                ],
+    "Retained":  [
+                     "CoffeeManager_Test_G07_20261110_111837_5845e46f_race"
+                 ],
+    "RaceVersion":  28,
+    "RaceBills":  4909,
+    "DemoBills":  77,
+    "DemoVersion":  28
+}
