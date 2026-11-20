@@ -1,5 +1,29 @@
 # G05-B01 — Không tiếp cận được thao tác trong workspace mới
 
+## G05-UI-20261109 — Tab Kho viền trắng, nội dung tồn co và giật khi mở
+
+**Đã duyệt/sửa10/11/2026; regression chung100+12 kiểm tra PASS.**
+[Kết quả và giới hạn](../ui-tabs-regression-20261110.md). Kho dùng tab tối,
+Tồn kho Dock.Fill, body khởi tạo theo nhu cầu; đủ4nhãn. Không kết luận mở Kho
+nhanh hơn vì số đo/diện tích vẽ sau sửa khác bản lỗi. Nội dung điều tra dưới
+giữ làm lịch sử. Bổ sung độc lập
+với các bug đã đóng ở dưới, giữ nguyên lịch sử của chúng.
+
+- Bằng chứng: ảnh Kho người dùng gửi09/11; InventoryControl.cs:10 tạo TabControl
+  mặc định, thêm MaterialsControl vào tab mà không Dock.Fill; MaterialsControl
+  Designer không đặt Dock cho chính UserControl. AppTheme chỉ vẽ nhãn tab;
+  đường xử lý chrome tối hiện có ở OrbitTabControl chưa được caller sử dụng.
+- Đã xác định sai cấu hình chrome và thiếu Dock ở đường ghép tab; chưa chạy
+  native bounds để ghi tái hiện hoặc số đo performance. Việc tạo4trang con
+  đồng loạt/theming toàn cây và các đường Load/VisibleChanged là ứng viên cần
+  đo; không kết luận mọi trang query đồng thời hoặc SQL chậm.
+- Đề xuất và regression chung với Nhân sự: dùng OrbitTabControl hiện có,
+  Dock.Fill cho Tồn kho, đo và xử lý khởi tạo/layout/load theo bằng chứng;
+  giữ đủ nhãn tab và contract tiền/kho/quyền. Xem
+  [báo cáo cả đợt](../ui-tabs-investigation-20261109.md), gồm phạm vi và rủi ro.
+
+---
+
 > Cập nhật29/10/2026: bug trong đợt G05-B01–B04 đã duyệt, đã sửa và PASS regression theo phạm vi tại phần cuối. Nội dung27/10 dưới đây là lịch sử điều tra.
 
 27/10/2026. **Chờ duyệt đợt bug; chưa sửa.** Chủ sở hữu T20, hồi quy T19/T21/T22/T23.

@@ -1,4 +1,17 @@
 # G05 — B01–B07 đã sửa; còn nhánh nghiệm thu chưa đủ
+
+**Đợt UI10/11/2026 đã duyệt/sửa:** Kho/Nhân sự dùng tab tối Orbit hiện có,
+giữ đủ nhãn, body theo nhu cầu; Tồn kho giãn đầy.100/100+12/12 kiểm module thật
+PASS tại125%, DB test schema024 riêng đã dọn. Nhân sự669→233ms trong cặp đo;
+không kết luận Kho mở nhanh hơn. Snapshot Debug/Release và workspace Debug
+buildPASS; workspace Release còn BLOCKED do sửa ngôn ngữ đồng thời ngoài3file.
+[Biên bản đầy đủ](ui-tabs-regression-20261110.md). Không nâng55ID hoặc trạng
+thái toàn G05; hình thứcSKIPPED, DPI100/150%NOT RUN, chưa commit/push.
+
+**Bổ sung09/11/2026, chờ duyệt G05/G06-UI:** người dùng báo tab Kho/Nhân sự có
+chrome trắng, Tồn kho bị co và giật khi click. Đã điều tra source, chưa sửa/
+chạy test mới; [báo cáo và phạm vi cả đợt](ui-tabs-investigation-20261109.md).
+Kết quả B01–B07 dưới đây giữ làm lịch sử, không phủ định bug mới.
 30/10/2026. **B01–B07 đã sửa và kiểm theo phạm vi. G05 vẫn Đang làm:** STORE nhập/trả hàng, ADMIN trả nợ/link chi và logout/relogin ADMIN/CASH bổ sung PASS; native keyboard và các nhánh nghiệm thu/UX còn thiếu. Không đổi bảng55ID lịch sử.
 
 **Đối chiếu bằng chứng hiện tại:44/55 đủ PASS,11ca chưa đủ để chốt** — [bảng từng task, ID và phần còn thiếu](coverage-current.md). Đây là tổng hợp kế thừa38PASS lịch sử và6ID bổ sung đủ bằng chứng, không phải một lượt chạy mới toàn55ca; không thay bảng27/10.

@@ -1,0 +1,12 @@
+{
+  "RunId": "20261110_b00bb153",
+  "Server": "localhost",
+  "Database": "CoffeeManager_Test_UiTabs_20261110_b00bb153",
+  "Marker": "UiTabsTestMarker",
+  "Schema": 24,
+  "Created": true,
+  "Cleaned": true,
+  "Principal": "UiTabsRuntime (database-only, no login)",
+  "Status": "Cleaned",
+  "Expires": "End of approved before/after regression in this chat"
+}

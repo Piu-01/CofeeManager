@@ -1,0 +1,68 @@
+[
+  {
+    "Stage": "ADMIN/Inventory/first",
+    "BeforeMs": 202.7,
+    "AfterMs": 273.6,
+    "BeforeGap": 178.3,
+    "AfterGap": 250.5,
+    "ReadsBefore": 3,
+    "ReadsAfter": 3,
+    "LayoutsBefore": 94,
+    "LayoutsAfter": 51
+  },
+  {
+    "Stage": "ADMIN/Inventory/reenter",
+    "BeforeMs": 62.3,
+    "AfterMs": 64.7,
+    "BeforeGap": 60.4,
+    "AfterGap": 66.8,
+    "ReadsBefore": 3,
+    "ReadsAfter": 3,
+    "LayoutsBefore": 52,
+    "LayoutsAfter": 52
+  },
+  {
+    "Stage": "ADMIN/HumanResources/first",
+    "BeforeMs": 668.5,
+    "AfterMs": 232.8,
+    "BeforeGap": 605.8,
+    "AfterGap": 174.8,
+    "ReadsBefore": 11,
+    "ReadsAfter": 7,
+    "LayoutsBefore": 667,
+    "LayoutsAfter": 49
+  },
+  {
+    "Stage": "ADMIN/HumanResources/reenter",
+    "BeforeMs": 100.4,
+    "AfterMs": 75.9,
+    "BeforeGap": 73.6,
+    "AfterGap": 66.3,
+    "ReadsBefore": 1,
+    "ReadsAfter": 1,
+    "LayoutsBefore": 33,
+    "LayoutsAfter": 33
+  },
+  {
+    "Stage": "STORE/Inventory/first",
+    "BeforeMs": 150.0,
+    "AfterMs": 156.3,
+    "BeforeGap": 91.3,
+    "AfterGap": 146.4,
+    "ReadsBefore": 3,
+    "ReadsAfter": 3,
+    "LayoutsBefore": 93,
+    "LayoutsAfter": 51
+  },
+  {
+    "Stage": "STORE/Inventory/reenter",
+    "BeforeMs": 73.4,
+    "AfterMs": 153.6,
+    "BeforeGap": 75.4,
+    "AfterGap": 68.6,
+    "ReadsBefore": 3,
+    "ReadsAfter": 2,
+    "LayoutsBefore": 52,
+    "LayoutsAfter": 49
+  }
+]

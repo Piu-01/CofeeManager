@@ -1,0 +1,4298 @@
+{
+  "Mode": "before",
+  "Database": "CoffeeManager_Test_UiTabs_20261110_b00bb153",
+  "Schema": 24,
+  "Checks": [
+    {
+      "Name": "ADMIN DPI125",
+      "Result": "PASS",
+      "Actual": {
+        "DeviceDpi": 120,
+        "Screen": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1920,
+            "Height": 1080
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1920,
+          "Height": 1080,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1920,
+          "Bottom": 1080,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN Inventory tab count",
+      "Result": "PASS",
+      "Actual": [
+        "T\u1ED3n kho",
+        "Nh\u1EADp h\u00E0ng",
+        "Xu\u1EA5t kho",
+        "Ki\u1EC3m k\u00EA"
+      ]
+    },
+    {
+      "Name": "ADMIN Inventory dark tab chrome",
+      "Result": "FAIL",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN Inventory ready tab0",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN Inventory ready tab1",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN Inventory ready tab2",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN Inventory ready tab3",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN Inventory cached tab0 round0",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN Inventory cached tab1 round0",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN Inventory cached tab2 round0",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN Inventory cached tab3 round0",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN Inventory cached tab0 round1",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN Inventory cached tab1 round1",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN Inventory cached tab2 round1",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN Inventory cached tab3 round1",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN Inventory fill {Width=1280, Height=720} tab0",
+      "Result": "FAIL",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1022,
+            "Height": 608
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1022,
+          "Height": 608,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1022,
+          "Bottom": 608,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 188,
+            "Height": 188
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 188,
+          "Height": 188,
+          "Left": 0,
+          "Top": 0,
+          "Right": 188,
+          "Bottom": 188,
+          "IsEmpty": false
+        },
+        "Dock": "None",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 398,
+            "Height": 38
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 398,
+          "Height": 38,
+          "Left": 0,
+          "Top": 0,
+          "Right": 398,
+          "Bottom": 38,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN Inventory fill {Width=1280, Height=720} tab1",
+      "Result": "PASS",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1022,
+            "Height": 608
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1022,
+          "Height": 608,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1022,
+          "Bottom": 608,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 8,
+            "Y": 8
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1006,
+            "Height": 592
+          },
+          "X": 8,
+          "Y": 8,
+          "Width": 1006,
+          "Height": 592,
+          "Left": 8,
+          "Top": 8,
+          "Right": 1014,
+          "Bottom": 600,
+          "IsEmpty": false
+        },
+        "Dock": "Fill",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 939,
+            "Height": 165
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 939,
+          "Height": 165,
+          "Left": 0,
+          "Top": 0,
+          "Right": 939,
+          "Bottom": 165,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN Inventory fill {Width=1280, Height=720} tab2",
+      "Result": "PASS",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1022,
+            "Height": 608
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1022,
+          "Height": 608,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1022,
+          "Bottom": 608,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 8,
+            "Y": 8
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1006,
+            "Height": 592
+          },
+          "X": 8,
+          "Y": 8,
+          "Width": 1006,
+          "Height": 592,
+          "Left": 8,
+          "Top": 8,
+          "Right": 1014,
+          "Bottom": 600,
+          "IsEmpty": false
+        },
+        "Dock": "Fill",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 939,
+            "Height": 165
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 939,
+          "Height": 165,
+          "Left": 0,
+          "Top": 0,
+          "Right": 939,
+          "Bottom": 165,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN Inventory fill {Width=1280, Height=720} tab3",
+      "Result": "PASS",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1022,
+            "Height": 608
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1022,
+          "Height": 608,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1022,
+          "Bottom": 608,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 8,
+            "Y": 8
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1006,
+            "Height": 592
+          },
+          "X": 8,
+          "Y": 8,
+          "Width": 1006,
+          "Height": 592,
+          "Left": 8,
+          "Top": 8,
+          "Right": 1014,
+          "Bottom": 600,
+          "IsEmpty": false
+        },
+        "Dock": "Fill",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 939,
+            "Height": 165
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 939,
+          "Height": 165,
+          "Left": 0,
+          "Top": 0,
+          "Right": 939,
+          "Bottom": 165,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN Inventory fill {Width=1366, Height=768} tab0",
+      "Result": "FAIL",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1108,
+            "Height": 656
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1108,
+          "Height": 656,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1108,
+          "Bottom": 656,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 188,
+            "Height": 188
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 188,
+          "Height": 188,
+          "Left": 0,
+          "Top": 0,
+          "Right": 188,
+          "Bottom": 188,
+          "IsEmpty": false
+        },
+        "Dock": "None",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 398,
+            "Height": 38
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 398,
+          "Height": 38,
+          "Left": 0,
+          "Top": 0,
+          "Right": 398,
+          "Bottom": 38,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN Inventory fill {Width=1366, Height=768} tab1",
+      "Result": "PASS",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1108,
+            "Height": 656
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1108,
+          "Height": 656,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1108,
+          "Bottom": 656,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 8,
+            "Y": 8
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1092,
+            "Height": 640
+          },
+          "X": 8,
+          "Y": 8,
+          "Width": 1092,
+          "Height": 640,
+          "Left": 8,
+          "Top": 8,
+          "Right": 1100,
+          "Bottom": 648,
+          "IsEmpty": false
+        },
+        "Dock": "Fill",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1025,
+            "Height": 213
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1025,
+          "Height": 213,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1025,
+          "Bottom": 213,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN Inventory fill {Width=1366, Height=768} tab2",
+      "Result": "PASS",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1108,
+            "Height": 656
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1108,
+          "Height": 656,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1108,
+          "Bottom": 656,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 8,
+            "Y": 8
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1092,
+            "Height": 640
+          },
+          "X": 8,
+          "Y": 8,
+          "Width": 1092,
+          "Height": 640,
+          "Left": 8,
+          "Top": 8,
+          "Right": 1100,
+          "Bottom": 648,
+          "IsEmpty": false
+        },
+        "Dock": "Fill",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1025,
+            "Height": 213
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1025,
+          "Height": 213,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1025,
+          "Bottom": 213,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN Inventory fill {Width=1366, Height=768} tab3",
+      "Result": "PASS",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1108,
+            "Height": 656
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1108,
+          "Height": 656,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1108,
+          "Bottom": 656,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 8,
+            "Y": 8
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1092,
+            "Height": 640
+          },
+          "X": 8,
+          "Y": 8,
+          "Width": 1092,
+          "Height": 640,
+          "Left": 8,
+          "Top": 8,
+          "Right": 1100,
+          "Bottom": 648,
+          "IsEmpty": false
+        },
+        "Dock": "Fill",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1025,
+            "Height": 213
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1025,
+          "Height": 213,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1025,
+          "Bottom": 213,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN Inventory fill {Width=800, Height=640} tab0",
+      "Result": "FAIL",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 714,
+            "Height": 528
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 714,
+          "Height": 528,
+          "Left": 0,
+          "Top": 0,
+          "Right": 714,
+          "Bottom": 528,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 188,
+            "Height": 188
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 188,
+          "Height": 188,
+          "Left": 0,
+          "Top": 0,
+          "Right": 188,
+          "Bottom": 188,
+          "IsEmpty": false
+        },
+        "Dock": "None",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 398,
+            "Height": 38
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 398,
+          "Height": 38,
+          "Left": 0,
+          "Top": 0,
+          "Right": 398,
+          "Bottom": 38,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN Inventory fill {Width=800, Height=640} tab1",
+      "Result": "PASS",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 714,
+            "Height": 528
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 714,
+          "Height": 528,
+          "Left": 0,
+          "Top": 0,
+          "Right": 714,
+          "Bottom": 528,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 8,
+            "Y": 8
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 698,
+            "Height": 512
+          },
+          "X": 8,
+          "Y": 8,
+          "Width": 698,
+          "Height": 512,
+          "Left": 8,
+          "Top": 8,
+          "Right": 706,
+          "Bottom": 520,
+          "IsEmpty": false
+        },
+        "Dock": "Fill",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 631,
+            "Height": 85
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 631,
+          "Height": 85,
+          "Left": 0,
+          "Top": 0,
+          "Right": 631,
+          "Bottom": 85,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN Inventory fill {Width=800, Height=640} tab2",
+      "Result": "PASS",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 714,
+            "Height": 528
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 714,
+          "Height": 528,
+          "Left": 0,
+          "Top": 0,
+          "Right": 714,
+          "Bottom": 528,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 8,
+            "Y": 8
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 698,
+            "Height": 512
+          },
+          "X": 8,
+          "Y": 8,
+          "Width": 698,
+          "Height": 512,
+          "Left": 8,
+          "Top": 8,
+          "Right": 706,
+          "Bottom": 520,
+          "IsEmpty": false
+        },
+        "Dock": "Fill",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 631,
+            "Height": 85
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 631,
+          "Height": 85,
+          "Left": 0,
+          "Top": 0,
+          "Right": 631,
+          "Bottom": 85,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN Inventory fill {Width=800, Height=640} tab3",
+      "Result": "PASS",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 714,
+            "Height": 528
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 714,
+          "Height": 528,
+          "Left": 0,
+          "Top": 0,
+          "Right": 714,
+          "Bottom": 528,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 8,
+            "Y": 8
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 698,
+            "Height": 512
+          },
+          "X": 8,
+          "Y": 8,
+          "Width": 698,
+          "Height": 512,
+          "Left": 8,
+          "Top": 8,
+          "Right": 706,
+          "Bottom": 520,
+          "IsEmpty": false
+        },
+        "Dock": "Fill",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 631,
+            "Height": 85
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 631,
+          "Height": 85,
+          "Left": 0,
+          "Top": 0,
+          "Right": 631,
+          "Bottom": 85,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN Inventory native arrow selects next",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN Inventory retains draft input",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN Inventory cached module",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN Inventory all tab headers remain",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN HumanResources tab count",
+      "Result": "PASS",
+      "Actual": [
+        "Nh\u00E2n vi\u00EAn",
+        "T\u00E0i kho\u1EA3n",
+        "Ch\u1EA5m c\u00F4ng",
+        "B\u1EA3ng l\u01B0\u01A1ng"
+      ]
+    },
+    {
+      "Name": "ADMIN HumanResources dark tab chrome",
+      "Result": "FAIL",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN HumanResources ready tab0",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN HumanResources ready tab1",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN HumanResources ready tab2",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN HumanResources ready tab3",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN HumanResources cached tab0 round0",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN HumanResources cached tab1 round0",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN HumanResources cached tab2 round0",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN HumanResources cached tab3 round0",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN HumanResources cached tab0 round1",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN HumanResources cached tab1 round1",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN HumanResources cached tab2 round1",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN HumanResources cached tab3 round1",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN HumanResources fill {Width=1280, Height=720} tab0",
+      "Result": "PASS",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1022,
+            "Height": 608
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1022,
+          "Height": 608,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1022,
+          "Bottom": 608,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 8,
+            "Y": 8
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1006,
+            "Height": 592
+          },
+          "X": 8,
+          "Y": 8,
+          "Width": 1006,
+          "Height": 592,
+          "Left": 8,
+          "Top": 8,
+          "Right": 1014,
+          "Bottom": 600,
+          "IsEmpty": false
+        },
+        "Dock": "Fill",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 939,
+            "Height": 115
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 939,
+          "Height": 115,
+          "Left": 0,
+          "Top": 0,
+          "Right": 939,
+          "Bottom": 115,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN HumanResources fill {Width=1280, Height=720} tab1",
+      "Result": "PASS",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1022,
+            "Height": 608
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1022,
+          "Height": 608,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1022,
+          "Bottom": 608,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 8,
+            "Y": 8
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1006,
+            "Height": 592
+          },
+          "X": 8,
+          "Y": 8,
+          "Width": 1006,
+          "Height": 592,
+          "Left": 8,
+          "Top": 8,
+          "Right": 1014,
+          "Bottom": 600,
+          "IsEmpty": false
+        },
+        "Dock": "Fill",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 939,
+            "Height": 115
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 939,
+          "Height": 115,
+          "Left": 0,
+          "Top": 0,
+          "Right": 939,
+          "Bottom": 115,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN HumanResources fill {Width=1280, Height=720} tab2",
+      "Result": "PASS",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1022,
+            "Height": 608
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1022,
+          "Height": 608,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1022,
+          "Bottom": 608,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 8,
+            "Y": 8
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1006,
+            "Height": 592
+          },
+          "X": 8,
+          "Y": 8,
+          "Width": 1006,
+          "Height": 592,
+          "Left": 8,
+          "Top": 8,
+          "Right": 1014,
+          "Bottom": 600,
+          "IsEmpty": false
+        },
+        "Dock": "Fill",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 939,
+            "Height": 115
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 939,
+          "Height": 115,
+          "Left": 0,
+          "Top": 0,
+          "Right": 939,
+          "Bottom": 115,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN HumanResources fill {Width=1280, Height=720} tab3",
+      "Result": "PASS",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1022,
+            "Height": 608
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1022,
+          "Height": 608,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1022,
+          "Bottom": 608,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 8,
+            "Y": 8
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1006,
+            "Height": 592
+          },
+          "X": 8,
+          "Y": 8,
+          "Width": 1006,
+          "Height": 592,
+          "Left": 8,
+          "Top": 8,
+          "Right": 1014,
+          "Bottom": 600,
+          "IsEmpty": false
+        },
+        "Dock": "Fill",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 939,
+            "Height": 115
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 939,
+          "Height": 115,
+          "Left": 0,
+          "Top": 0,
+          "Right": 939,
+          "Bottom": 115,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN HumanResources fill {Width=1366, Height=768} tab0",
+      "Result": "PASS",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1108,
+            "Height": 656
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1108,
+          "Height": 656,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1108,
+          "Bottom": 656,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 8,
+            "Y": 8
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1092,
+            "Height": 640
+          },
+          "X": 8,
+          "Y": 8,
+          "Width": 1092,
+          "Height": 640,
+          "Left": 8,
+          "Top": 8,
+          "Right": 1100,
+          "Bottom": 648,
+          "IsEmpty": false
+        },
+        "Dock": "Fill",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1025,
+            "Height": 163
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1025,
+          "Height": 163,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1025,
+          "Bottom": 163,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN HumanResources fill {Width=1366, Height=768} tab1",
+      "Result": "PASS",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1108,
+            "Height": 656
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1108,
+          "Height": 656,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1108,
+          "Bottom": 656,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 8,
+            "Y": 8
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1092,
+            "Height": 640
+          },
+          "X": 8,
+          "Y": 8,
+          "Width": 1092,
+          "Height": 640,
+          "Left": 8,
+          "Top": 8,
+          "Right": 1100,
+          "Bottom": 648,
+          "IsEmpty": false
+        },
+        "Dock": "Fill",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1025,
+            "Height": 163
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1025,
+          "Height": 163,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1025,
+          "Bottom": 163,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN HumanResources fill {Width=1366, Height=768} tab2",
+      "Result": "PASS",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1108,
+            "Height": 656
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1108,
+          "Height": 656,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1108,
+          "Bottom": 656,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 8,
+            "Y": 8
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1092,
+            "Height": 640
+          },
+          "X": 8,
+          "Y": 8,
+          "Width": 1092,
+          "Height": 640,
+          "Left": 8,
+          "Top": 8,
+          "Right": 1100,
+          "Bottom": 648,
+          "IsEmpty": false
+        },
+        "Dock": "Fill",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1025,
+            "Height": 163
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1025,
+          "Height": 163,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1025,
+          "Bottom": 163,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN HumanResources fill {Width=1366, Height=768} tab3",
+      "Result": "PASS",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1108,
+            "Height": 656
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1108,
+          "Height": 656,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1108,
+          "Bottom": 656,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 8,
+            "Y": 8
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1092,
+            "Height": 640
+          },
+          "X": 8,
+          "Y": 8,
+          "Width": 1092,
+          "Height": 640,
+          "Left": 8,
+          "Top": 8,
+          "Right": 1100,
+          "Bottom": 648,
+          "IsEmpty": false
+        },
+        "Dock": "Fill",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1025,
+            "Height": 163
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1025,
+          "Height": 163,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1025,
+          "Bottom": 163,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN HumanResources fill {Width=800, Height=640} tab0",
+      "Result": "PASS",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 714,
+            "Height": 528
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 714,
+          "Height": 528,
+          "Left": 0,
+          "Top": 0,
+          "Right": 714,
+          "Bottom": 528,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 8,
+            "Y": 8
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 698,
+            "Height": 512
+          },
+          "X": 8,
+          "Y": 8,
+          "Width": 698,
+          "Height": 512,
+          "Left": 8,
+          "Top": 8,
+          "Right": 706,
+          "Bottom": 520,
+          "IsEmpty": false
+        },
+        "Dock": "Fill",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 631,
+            "Height": 1
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 631,
+          "Height": 1,
+          "Left": 0,
+          "Top": 0,
+          "Right": 631,
+          "Bottom": 1,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN HumanResources fill {Width=800, Height=640} tab1",
+      "Result": "PASS",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 714,
+            "Height": 528
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 714,
+          "Height": 528,
+          "Left": 0,
+          "Top": 0,
+          "Right": 714,
+          "Bottom": 528,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 8,
+            "Y": 8
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 698,
+            "Height": 512
+          },
+          "X": 8,
+          "Y": 8,
+          "Width": 698,
+          "Height": 512,
+          "Left": 8,
+          "Top": 8,
+          "Right": 706,
+          "Bottom": 520,
+          "IsEmpty": false
+        },
+        "Dock": "Fill",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 631,
+            "Height": 1
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 631,
+          "Height": 1,
+          "Left": 0,
+          "Top": 0,
+          "Right": 631,
+          "Bottom": 1,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN HumanResources fill {Width=800, Height=640} tab2",
+      "Result": "PASS",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 714,
+            "Height": 528
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 714,
+          "Height": 528,
+          "Left": 0,
+          "Top": 0,
+          "Right": 714,
+          "Bottom": 528,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 8,
+            "Y": 8
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 698,
+            "Height": 512
+          },
+          "X": 8,
+          "Y": 8,
+          "Width": 698,
+          "Height": 512,
+          "Left": 8,
+          "Top": 8,
+          "Right": 706,
+          "Bottom": 520,
+          "IsEmpty": false
+        },
+        "Dock": "Fill",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 631,
+            "Height": 1
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 631,
+          "Height": 1,
+          "Left": 0,
+          "Top": 0,
+          "Right": 631,
+          "Bottom": 1,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN HumanResources fill {Width=800, Height=640} tab3",
+      "Result": "PASS",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 714,
+            "Height": 528
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 714,
+          "Height": 528,
+          "Left": 0,
+          "Top": 0,
+          "Right": 714,
+          "Bottom": 528,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 8,
+            "Y": 8
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 698,
+            "Height": 512
+          },
+          "X": 8,
+          "Y": 8,
+          "Width": 698,
+          "Height": 512,
+          "Left": 8,
+          "Top": 8,
+          "Right": 706,
+          "Bottom": 520,
+          "IsEmpty": false
+        },
+        "Dock": "Fill",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 631,
+            "Height": 35
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 631,
+          "Height": 35,
+          "Left": 0,
+          "Top": 0,
+          "Right": 631,
+          "Bottom": 35,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "ADMIN HumanResources native arrow selects next",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN HumanResources retains draft input",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN HumanResources cached module",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "ADMIN HumanResources all tab headers remain",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE DPI125",
+      "Result": "PASS",
+      "Actual": {
+        "DeviceDpi": 120,
+        "Screen": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1920,
+            "Height": 1080
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1920,
+          "Height": 1080,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1920,
+          "Bottom": 1080,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE Inventory tab count",
+      "Result": "PASS",
+      "Actual": [
+        "T\u1ED3n kho",
+        "Nh\u1EADp h\u00E0ng",
+        "Xu\u1EA5t kho",
+        "Ki\u1EC3m k\u00EA"
+      ]
+    },
+    {
+      "Name": "STORE Inventory dark tab chrome",
+      "Result": "FAIL",
+      "Actual": null
+    },
+    {
+      "Name": "STORE Inventory ready tab0",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE Inventory ready tab1",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE Inventory ready tab2",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE Inventory ready tab3",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE Inventory cached tab0 round0",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE Inventory cached tab1 round0",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE Inventory cached tab2 round0",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE Inventory cached tab3 round0",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE Inventory cached tab0 round1",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE Inventory cached tab1 round1",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE Inventory cached tab2 round1",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE Inventory cached tab3 round1",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE Inventory fill {Width=1280, Height=720} tab0",
+      "Result": "FAIL",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1022,
+            "Height": 608
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1022,
+          "Height": 608,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1022,
+          "Bottom": 608,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 188,
+            "Height": 188
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 188,
+          "Height": 188,
+          "Left": 0,
+          "Top": 0,
+          "Right": 188,
+          "Bottom": 188,
+          "IsEmpty": false
+        },
+        "Dock": "None",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 398,
+            "Height": 38
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 398,
+          "Height": 38,
+          "Left": 0,
+          "Top": 0,
+          "Right": 398,
+          "Bottom": 38,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE Inventory fill {Width=1280, Height=720} tab1",
+      "Result": "PASS",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1022,
+            "Height": 608
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1022,
+          "Height": 608,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1022,
+          "Bottom": 608,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 8,
+            "Y": 8
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1006,
+            "Height": 592
+          },
+          "X": 8,
+          "Y": 8,
+          "Width": 1006,
+          "Height": 592,
+          "Left": 8,
+          "Top": 8,
+          "Right": 1014,
+          "Bottom": 600,
+          "IsEmpty": false
+        },
+        "Dock": "Fill",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 939,
+            "Height": 165
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 939,
+          "Height": 165,
+          "Left": 0,
+          "Top": 0,
+          "Right": 939,
+          "Bottom": 165,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE Inventory fill {Width=1280, Height=720} tab2",
+      "Result": "PASS",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1022,
+            "Height": 608
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1022,
+          "Height": 608,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1022,
+          "Bottom": 608,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 8,
+            "Y": 8
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1006,
+            "Height": 592
+          },
+          "X": 8,
+          "Y": 8,
+          "Width": 1006,
+          "Height": 592,
+          "Left": 8,
+          "Top": 8,
+          "Right": 1014,
+          "Bottom": 600,
+          "IsEmpty": false
+        },
+        "Dock": "Fill",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 939,
+            "Height": 165
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 939,
+          "Height": 165,
+          "Left": 0,
+          "Top": 0,
+          "Right": 939,
+          "Bottom": 165,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE Inventory fill {Width=1280, Height=720} tab3",
+      "Result": "PASS",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1022,
+            "Height": 608
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1022,
+          "Height": 608,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1022,
+          "Bottom": 608,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 8,
+            "Y": 8
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1006,
+            "Height": 592
+          },
+          "X": 8,
+          "Y": 8,
+          "Width": 1006,
+          "Height": 592,
+          "Left": 8,
+          "Top": 8,
+          "Right": 1014,
+          "Bottom": 600,
+          "IsEmpty": false
+        },
+        "Dock": "Fill",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 939,
+            "Height": 165
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 939,
+          "Height": 165,
+          "Left": 0,
+          "Top": 0,
+          "Right": 939,
+          "Bottom": 165,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE Inventory fill {Width=1366, Height=768} tab0",
+      "Result": "FAIL",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1108,
+            "Height": 656
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1108,
+          "Height": 656,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1108,
+          "Bottom": 656,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 188,
+            "Height": 188
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 188,
+          "Height": 188,
+          "Left": 0,
+          "Top": 0,
+          "Right": 188,
+          "Bottom": 188,
+          "IsEmpty": false
+        },
+        "Dock": "None",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 398,
+            "Height": 38
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 398,
+          "Height": 38,
+          "Left": 0,
+          "Top": 0,
+          "Right": 398,
+          "Bottom": 38,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE Inventory fill {Width=1366, Height=768} tab1",
+      "Result": "PASS",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1108,
+            "Height": 656
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1108,
+          "Height": 656,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1108,
+          "Bottom": 656,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 8,
+            "Y": 8
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1092,
+            "Height": 640
+          },
+          "X": 8,
+          "Y": 8,
+          "Width": 1092,
+          "Height": 640,
+          "Left": 8,
+          "Top": 8,
+          "Right": 1100,
+          "Bottom": 648,
+          "IsEmpty": false
+        },
+        "Dock": "Fill",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1025,
+            "Height": 213
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1025,
+          "Height": 213,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1025,
+          "Bottom": 213,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE Inventory fill {Width=1366, Height=768} tab2",
+      "Result": "PASS",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1108,
+            "Height": 656
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1108,
+          "Height": 656,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1108,
+          "Bottom": 656,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 8,
+            "Y": 8
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1092,
+            "Height": 640
+          },
+          "X": 8,
+          "Y": 8,
+          "Width": 1092,
+          "Height": 640,
+          "Left": 8,
+          "Top": 8,
+          "Right": 1100,
+          "Bottom": 648,
+          "IsEmpty": false
+        },
+        "Dock": "Fill",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1025,
+            "Height": 213
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1025,
+          "Height": 213,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1025,
+          "Bottom": 213,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE Inventory fill {Width=1366, Height=768} tab3",
+      "Result": "PASS",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1108,
+            "Height": 656
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1108,
+          "Height": 656,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1108,
+          "Bottom": 656,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 8,
+            "Y": 8
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1092,
+            "Height": 640
+          },
+          "X": 8,
+          "Y": 8,
+          "Width": 1092,
+          "Height": 640,
+          "Left": 8,
+          "Top": 8,
+          "Right": 1100,
+          "Bottom": 648,
+          "IsEmpty": false
+        },
+        "Dock": "Fill",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1025,
+            "Height": 213
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1025,
+          "Height": 213,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1025,
+          "Bottom": 213,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE Inventory fill {Width=800, Height=640} tab0",
+      "Result": "FAIL",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 714,
+            "Height": 528
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 714,
+          "Height": 528,
+          "Left": 0,
+          "Top": 0,
+          "Right": 714,
+          "Bottom": 528,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 188,
+            "Height": 188
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 188,
+          "Height": 188,
+          "Left": 0,
+          "Top": 0,
+          "Right": 188,
+          "Bottom": 188,
+          "IsEmpty": false
+        },
+        "Dock": "None",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 398,
+            "Height": 38
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 398,
+          "Height": 38,
+          "Left": 0,
+          "Top": 0,
+          "Right": 398,
+          "Bottom": 38,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE Inventory fill {Width=800, Height=640} tab1",
+      "Result": "PASS",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 714,
+            "Height": 528
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 714,
+          "Height": 528,
+          "Left": 0,
+          "Top": 0,
+          "Right": 714,
+          "Bottom": 528,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 8,
+            "Y": 8
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 698,
+            "Height": 512
+          },
+          "X": 8,
+          "Y": 8,
+          "Width": 698,
+          "Height": 512,
+          "Left": 8,
+          "Top": 8,
+          "Right": 706,
+          "Bottom": 520,
+          "IsEmpty": false
+        },
+        "Dock": "Fill",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 631,
+            "Height": 85
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 631,
+          "Height": 85,
+          "Left": 0,
+          "Top": 0,
+          "Right": 631,
+          "Bottom": 85,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE Inventory fill {Width=800, Height=640} tab2",
+      "Result": "PASS",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 714,
+            "Height": 528
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 714,
+          "Height": 528,
+          "Left": 0,
+          "Top": 0,
+          "Right": 714,
+          "Bottom": 528,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 8,
+            "Y": 8
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 698,
+            "Height": 512
+          },
+          "X": 8,
+          "Y": 8,
+          "Width": 698,
+          "Height": 512,
+          "Left": 8,
+          "Top": 8,
+          "Right": 706,
+          "Bottom": 520,
+          "IsEmpty": false
+        },
+        "Dock": "Fill",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 631,
+            "Height": 85
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 631,
+          "Height": 85,
+          "Left": 0,
+          "Top": 0,
+          "Right": 631,
+          "Bottom": 85,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE Inventory fill {Width=800, Height=640} tab3",
+      "Result": "PASS",
+      "Actual": {
+        "Page": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 714,
+            "Height": 528
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 714,
+          "Height": 528,
+          "Left": 0,
+          "Top": 0,
+          "Right": 714,
+          "Bottom": 528,
+          "IsEmpty": false
+        },
+        "Padding": {
+          "All": 8,
+          "Bottom": 8,
+          "Left": 8,
+          "Right": 8,
+          "Top": 8,
+          "Horizontal": 16,
+          "Vertical": 16,
+          "Size": {
+            "IsEmpty": false,
+            "Width": 16,
+            "Height": 16
+          }
+        },
+        "Body": {
+          "Location": {
+            "IsEmpty": false,
+            "X": 8,
+            "Y": 8
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 698,
+            "Height": 512
+          },
+          "X": 8,
+          "Y": 8,
+          "Width": 698,
+          "Height": 512,
+          "Left": 8,
+          "Top": 8,
+          "Right": 706,
+          "Bottom": 520,
+          "IsEmpty": false
+        },
+        "Dock": "Fill",
+        "Grid": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 631,
+            "Height": 85
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 631,
+          "Height": 85,
+          "Left": 0,
+          "Top": 0,
+          "Right": 631,
+          "Bottom": 85,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "STORE Inventory native arrow selects next",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE Inventory retains draft input",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE Inventory cached module",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "STORE Inventory all tab headers remain",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH DPI125",
+      "Result": "PASS",
+      "Actual": {
+        "DeviceDpi": 120,
+        "Screen": {
+          "Location": {
+            "IsEmpty": true,
+            "X": 0,
+            "Y": 0
+          },
+          "Size": {
+            "IsEmpty": false,
+            "Width": 1920,
+            "Height": 1080
+          },
+          "X": 0,
+          "Y": 0,
+          "Width": 1920,
+          "Height": 1080,
+          "Left": 0,
+          "Top": 0,
+          "Right": 1920,
+          "Bottom": 1080,
+          "IsEmpty": false
+        }
+      }
+    },
+    {
+      "Name": "CASH no inventory",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "CASH no HR",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Read-only UI leaves business data unchanged",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Owner transaction clean",
+      "Result": "PASS",
+      "Actual": null
+    }
+  ],
+  "Failed": 9,
+  "Constructors": [
+    {
+      "Name": "Inventory",
+      "Milliseconds": 54.5938,
+      "Controls": 118
+    },
+    {
+      "Name": "HumanResources",
+      "Milliseconds": 0.9603,
+      "Controls": 1
+    },
+    {
+      "Name": "Inventory",
+      "Milliseconds": 12.8595,
+      "Controls": 118
+    }
+  ],
+  "Metrics": [
+    {
+      "Name": "ADMIN/Inventory/first",
+      "ElapsedMs": 202.7487,
+      "MaxHeartbeatGapMs": 178.3355,
+      "Connections": 3,
+      "ProcedureStarts": 3,
+      "LayoutEvents": 94
+    },
+    {
+      "Name": "ADMIN/Inventory/initial tree",
+      "Controls": 118,
+      "Lists": 4,
+      "CreatedPages": 4
+    },
+    {
+      "Name": "ADMIN/Inventory/tab0",
+      "ElapsedMs": 31.6656,
+      "MaxHeartbeatGapMs": 16.3494,
+      "Connections": 0,
+      "ProcedureStarts": 0,
+      "LayoutEvents": 0
+    },
+    {
+      "Name": "ADMIN/Inventory/tab1",
+      "ElapsedMs": 181.5508,
+      "MaxHeartbeatGapMs": 176.4798,
+      "Connections": 2,
+      "ProcedureStarts": 2,
+      "LayoutEvents": 107
+    },
+    {
+      "Name": "ADMIN/Inventory/tab2",
+      "ElapsedMs": 132.9316,
+      "MaxHeartbeatGapMs": 111.6327,
+      "Connections": 2,
+      "ProcedureStarts": 2,
+      "LayoutEvents": 107
+    },
+    {
+      "Name": "ADMIN/Inventory/tab3",
+      "ElapsedMs": 146.6644,
+      "MaxHeartbeatGapMs": 125.919,
+      "Connections": 2,
+      "ProcedureStarts": 2,
+      "LayoutEvents": 106
+    },
+    {
+      "Name": "ADMIN/Inventory/repeat0/0",
+      "ElapsedMs": 31.9916,
+      "MaxHeartbeatGapMs": 21.2569,
+      "Connections": 0,
+      "ProcedureStarts": 0,
+      "LayoutEvents": 20
+    },
+    {
+      "Name": "ADMIN/Inventory/repeat0/1",
+      "ElapsedMs": 58.6247,
+      "MaxHeartbeatGapMs": 71.2624,
+      "Connections": 2,
+      "ProcedureStarts": 2,
+      "LayoutEvents": 53
+    },
+    {
+      "Name": "ADMIN/Inventory/repeat0/2",
+      "ElapsedMs": 62.1239,
+      "MaxHeartbeatGapMs": 75.7997,
+      "Connections": 2,
+      "ProcedureStarts": 2,
+      "LayoutEvents": 53
+    },
+    {
+      "Name": "ADMIN/Inventory/repeat0/3",
+      "ElapsedMs": 60.6499,
+      "MaxHeartbeatGapMs": 59.5527,
+      "Connections": 2,
+      "ProcedureStarts": 2,
+      "LayoutEvents": 53
+    },
+    {
+      "Name": "ADMIN/Inventory/repeat1/0",
+      "ElapsedMs": 31.3899,
+      "MaxHeartbeatGapMs": 30.7567,
+      "Connections": 0,
+      "ProcedureStarts": 0,
+      "LayoutEvents": 20
+    },
+    {
+      "Name": "ADMIN/Inventory/repeat1/1",
+      "ElapsedMs": 60.4138,
+      "MaxHeartbeatGapMs": 62.6434,
+      "Connections": 2,
+      "ProcedureStarts": 2,
+      "LayoutEvents": 53
+    },
+    {
+      "Name": "ADMIN/Inventory/repeat1/2",
+      "ElapsedMs": 58.0678,
+      "MaxHeartbeatGapMs": 60.5485,
+      "Connections": 2,
+      "ProcedureStarts": 2,
+      "LayoutEvents": 53
+    },
+    {
+      "Name": "ADMIN/Inventory/repeat1/3",
+      "ElapsedMs": 46.7503,
+      "MaxHeartbeatGapMs": 56.0293,
+      "Connections": 2,
+      "ProcedureStarts": 2,
+      "LayoutEvents": 53
+    },
+    {
+      "Name": "ADMIN/Inventory/reenter",
+      "ElapsedMs": 62.3491,
+      "MaxHeartbeatGapMs": 60.4252,
+      "Connections": 3,
+      "ProcedureStarts": 3,
+      "LayoutEvents": 52
+    },
+    {
+      "Name": "ADMIN/HumanResources/first",
+      "ElapsedMs": 668.5288,
+      "MaxHeartbeatGapMs": 605.7657,
+      "Connections": 11,
+      "ProcedureStarts": 11,
+      "LayoutEvents": 667
+    },
+    {
+      "Name": "ADMIN/HumanResources/initial tree",
+      "Controls": 160,
+      "Lists": 4,
+      "CreatedPages": 4
+    },
+    {
+      "Name": "ADMIN/HumanResources/tab0",
+      "ElapsedMs": 31.7411,
+      "MaxHeartbeatGapMs": 16.1497,
+      "Connections": 0,
+      "ProcedureStarts": 0,
+      "LayoutEvents": 0
+    },
+    {
+      "Name": "ADMIN/HumanResources/tab1",
+      "ElapsedMs": 128.4289,
+      "MaxHeartbeatGapMs": 120.1193,
+      "Connections": 2,
+      "ProcedureStarts": 2,
+      "LayoutEvents": 85
+    },
+    {
+      "Name": "ADMIN/HumanResources/tab2",
+      "ElapsedMs": 156.219,
+      "MaxHeartbeatGapMs": 92.4865,
+      "Connections": 2,
+      "ProcedureStarts": 2,
+      "LayoutEvents": 107
+    },
+    {
+      "Name": "ADMIN/HumanResources/tab3",
+      "ElapsedMs": 140.5987,
+      "MaxHeartbeatGapMs": 125.7299,
+      "Connections": 2,
+      "ProcedureStarts": 2,
+      "LayoutEvents": 104
+    },
+    {
+      "Name": "ADMIN/HumanResources/repeat0/0",
+      "ElapsedMs": 65.1353,
+      "MaxHeartbeatGapMs": 59.4799,
+      "Connections": 0,
+      "ProcedureStarts": 0,
+      "LayoutEvents": 35
+    },
+    {
+      "Name": "ADMIN/HumanResources/repeat0/1",
+      "ElapsedMs": 59.113,
+      "MaxHeartbeatGapMs": 58.0996,
+      "Connections": 0,
+      "ProcedureStarts": 0,
+      "LayoutEvents": 34
+    },
+    {
+      "Name": "ADMIN/HumanResources/repeat0/2",
+      "ElapsedMs": 62.4622,
+      "MaxHeartbeatGapMs": 53.8694,
+      "Connections": 0,
+      "ProcedureStarts": 0,
+      "LayoutEvents": 42
+    },
+    {
+      "Name": "ADMIN/HumanResources/repeat0/3",
+      "ElapsedMs": 66.8403,
+      "MaxHeartbeatGapMs": 58.5532,
+      "Connections": 0,
+      "ProcedureStarts": 0,
+      "LayoutEvents": 46
+    },
+    {
+      "Name": "ADMIN/HumanResources/repeat1/0",
+      "ElapsedMs": 65.896,
+      "MaxHeartbeatGapMs": 58.3989,
+      "Connections": 0,
+      "ProcedureStarts": 0,
+      "LayoutEvents": 35
+    },
+    {
+      "Name": "ADMIN/HumanResources/repeat1/1",
+      "ElapsedMs": 68.8924,
+      "MaxHeartbeatGapMs": 71.6422,
+      "Connections": 0,
+      "ProcedureStarts": 0,
+      "LayoutEvents": 34
+    },
+    {
+      "Name": "ADMIN/HumanResources/repeat1/2",
+      "ElapsedMs": 66.4182,
+      "MaxHeartbeatGapMs": 65.5378,
+      "Connections": 0,
+      "ProcedureStarts": 0,
+      "LayoutEvents": 42
+    },
+    {
+      "Name": "ADMIN/HumanResources/repeat1/3",
+      "ElapsedMs": 66.6012,
+      "MaxHeartbeatGapMs": 59.2519,
+      "Connections": 0,
+      "ProcedureStarts": 0,
+      "LayoutEvents": 46
+    },
+    {
+      "Name": "ADMIN/HumanResources/reenter",
+      "ElapsedMs": 100.3926,
+      "MaxHeartbeatGapMs": 73.6414,
+      "Connections": 1,
+      "ProcedureStarts": 1,
+      "LayoutEvents": 33
+    },
+    {
+      "Name": "STORE/Inventory/first",
+      "ElapsedMs": 149.9683,
+      "MaxHeartbeatGapMs": 91.2804,
+      "Connections": 3,
+      "ProcedureStarts": 3,
+      "LayoutEvents": 93
+    },
+    {
+      "Name": "STORE/Inventory/initial tree",
+      "Controls": 118,
+      "Lists": 4,
+      "CreatedPages": 4
+    },
+    {
+      "Name": "STORE/Inventory/tab0",
+      "ElapsedMs": 31.8045,
+      "MaxHeartbeatGapMs": 16.4135,
+      "Connections": 0,
+      "ProcedureStarts": 0,
+      "LayoutEvents": 0
+    },
+    {
+      "Name": "STORE/Inventory/tab1",
+      "ElapsedMs": 158.0723,
+      "MaxHeartbeatGapMs": 100.6125,
+      "Connections": 2,
+      "ProcedureStarts": 2,
+      "LayoutEvents": 107
+    },
+    {
+      "Name": "STORE/Inventory/tab2",
+      "ElapsedMs": 154.6993,
+      "MaxHeartbeatGapMs": 85.4234,
+      "Connections": 2,
+      "ProcedureStarts": 2,
+      "LayoutEvents": 107
+    },
+    {
+      "Name": "STORE/Inventory/tab3",
+      "ElapsedMs": 124.723,
+      "MaxHeartbeatGapMs": 83.2995,
+      "Connections": 2,
+      "ProcedureStarts": 2,
+      "LayoutEvents": 106
+    },
+    {
+      "Name": "STORE/Inventory/repeat0/0",
+      "ElapsedMs": 31.3854,
+      "MaxHeartbeatGapMs": 22.0603,
+      "Connections": 0,
+      "ProcedureStarts": 0,
+      "LayoutEvents": 19
+    },
+    {
+      "Name": "STORE/Inventory/repeat0/1",
+      "ElapsedMs": 65.0053,
+      "MaxHeartbeatGapMs": 69.3608,
+      "Connections": 2,
+      "ProcedureStarts": 2,
+      "LayoutEvents": 53
+    },
+    {
+      "Name": "STORE/Inventory/repeat0/2",
+      "ElapsedMs": 68.3462,
+      "MaxHeartbeatGapMs": 75.0312,
+      "Connections": 2,
+      "ProcedureStarts": 2,
+      "LayoutEvents": 53
+    },
+    {
+      "Name": "STORE/Inventory/repeat0/3",
+      "ElapsedMs": 58.1406,
+      "MaxHeartbeatGapMs": 65.4923,
+      "Connections": 2,
+      "ProcedureStarts": 2,
+      "LayoutEvents": 53
+    },
+    {
+      "Name": "STORE/Inventory/repeat1/0",
+      "ElapsedMs": 46.488,
+      "MaxHeartbeatGapMs": 21.6466,
+      "Connections": 0,
+      "ProcedureStarts": 0,
+      "LayoutEvents": 19
+    },
+    {
+      "Name": "STORE/Inventory/repeat1/1",
+      "ElapsedMs": 63.9357,
+      "MaxHeartbeatGapMs": 76.6417,
+      "Connections": 2,
+      "ProcedureStarts": 2,
+      "LayoutEvents": 53
+    },
+    {
+      "Name": "STORE/Inventory/repeat1/2",
+      "ElapsedMs": 53.9202,
+      "MaxHeartbeatGapMs": 65.1422,
+      "Connections": 2,
+      "ProcedureStarts": 2,
+      "LayoutEvents": 53
+    },
+    {
+      "Name": "STORE/Inventory/repeat1/3",
+      "ElapsedMs": 45.1423,
+      "MaxHeartbeatGapMs": 51.3698,
+      "Connections": 2,
+      "ProcedureStarts": 2,
+      "LayoutEvents": 53
+    },
+    {
+      "Name": "STORE/Inventory/reenter",
+      "ElapsedMs": 73.3692,
+      "MaxHeartbeatGapMs": 75.3717,
+      "Connections": 3,
+      "ProcedureStarts": 3,
+      "LayoutEvents": 52
+    }
+  ],
+  "QueryStarts": [
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "ADMIN/Inventory/first",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "ADMIN/Inventory/first",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "ADMIN/Inventory/first",
+      "Procedure": "dbo.sp_MaterialList"
+    },
+    {
+      "Stage": "ADMIN/Inventory/tab1",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "ADMIN/Inventory/tab1",
+      "Procedure": "dbo.sp_PurchaseList"
+    },
+    {
+      "Stage": "ADMIN/Inventory/tab2",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "ADMIN/Inventory/tab2",
+      "Procedure": "dbo.sp_StockIssueList"
+    },
+    {
+      "Stage": "ADMIN/Inventory/tab3",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "ADMIN/Inventory/tab3",
+      "Procedure": "dbo.sp_StocktakeList"
+    },
+    {
+      "Stage": "ADMIN/Inventory/repeat0/1",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "ADMIN/Inventory/repeat0/1",
+      "Procedure": "dbo.sp_PurchaseList"
+    },
+    {
+      "Stage": "ADMIN/Inventory/repeat0/2",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "ADMIN/Inventory/repeat0/2",
+      "Procedure": "dbo.sp_StockIssueList"
+    },
+    {
+      "Stage": "ADMIN/Inventory/repeat0/3",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "ADMIN/Inventory/repeat0/3",
+      "Procedure": "dbo.sp_StocktakeList"
+    },
+    {
+      "Stage": "ADMIN/Inventory/repeat1/1",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "ADMIN/Inventory/repeat1/1",
+      "Procedure": "dbo.sp_PurchaseList"
+    },
+    {
+      "Stage": "ADMIN/Inventory/repeat1/2",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "ADMIN/Inventory/repeat1/2",
+      "Procedure": "dbo.sp_StockIssueList"
+    },
+    {
+      "Stage": "ADMIN/Inventory/repeat1/3",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "ADMIN/Inventory/repeat1/3",
+      "Procedure": "dbo.sp_StocktakeList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_PurchaseList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_StockIssueList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_StocktakeList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_PurchaseList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_StockIssueList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_StocktakeList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_PurchaseList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_StockIssueList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_StocktakeList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_PurchaseList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_StockIssueList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_PurchaseList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "ADMIN/Inventory/reenter",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "ADMIN/Inventory/reenter",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "ADMIN/Inventory/reenter",
+      "Procedure": "dbo.sp_PurchaseList"
+    },
+    {
+      "Stage": "ADMIN/HumanResources/first",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "ADMIN/HumanResources/first",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "ADMIN/HumanResources/first",
+      "Procedure": "dbo.sp_HRContext"
+    },
+    {
+      "Stage": "ADMIN/HumanResources/first",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "ADMIN/HumanResources/first",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "ADMIN/HumanResources/first",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "ADMIN/HumanResources/first",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "ADMIN/HumanResources/first",
+      "Procedure": "dbo.sp_EmployeeLookups"
+    },
+    {
+      "Stage": "ADMIN/HumanResources/first",
+      "Procedure": "dbo.sp_EmployeeList"
+    },
+    {
+      "Stage": "ADMIN/HumanResources/first",
+      "Procedure": "dbo.sp_EmployeeLookups"
+    },
+    {
+      "Stage": "ADMIN/HumanResources/first",
+      "Procedure": "dbo.sp_EmployeeLookups"
+    },
+    {
+      "Stage": "ADMIN/HumanResources/tab1",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "ADMIN/HumanResources/tab1",
+      "Procedure": "dbo.sp_EmployeeList"
+    },
+    {
+      "Stage": "ADMIN/HumanResources/tab2",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "ADMIN/HumanResources/tab2",
+      "Procedure": "dbo.sp_AttendanceList"
+    },
+    {
+      "Stage": "ADMIN/HumanResources/tab3",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "ADMIN/HumanResources/tab3",
+      "Procedure": "dbo.sp_PayrollList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "ADMIN/HumanResources/reenter",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "STORE/Inventory/first",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "STORE/Inventory/first",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "STORE/Inventory/first",
+      "Procedure": "dbo.sp_MaterialList"
+    },
+    {
+      "Stage": "STORE/Inventory/tab1",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "STORE/Inventory/tab1",
+      "Procedure": "dbo.sp_PurchaseList"
+    },
+    {
+      "Stage": "STORE/Inventory/tab2",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "STORE/Inventory/tab2",
+      "Procedure": "dbo.sp_StockIssueList"
+    },
+    {
+      "Stage": "STORE/Inventory/tab3",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "STORE/Inventory/tab3",
+      "Procedure": "dbo.sp_StocktakeList"
+    },
+    {
+      "Stage": "STORE/Inventory/repeat0/1",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "STORE/Inventory/repeat0/1",
+      "Procedure": "dbo.sp_PurchaseList"
+    },
+    {
+      "Stage": "STORE/Inventory/repeat0/2",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "STORE/Inventory/repeat0/2",
+      "Procedure": "dbo.sp_StockIssueList"
+    },
+    {
+      "Stage": "STORE/Inventory/repeat0/3",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "STORE/Inventory/repeat0/3",
+      "Procedure": "dbo.sp_StocktakeList"
+    },
+    {
+      "Stage": "STORE/Inventory/repeat1/1",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "STORE/Inventory/repeat1/1",
+      "Procedure": "dbo.sp_PurchaseList"
+    },
+    {
+      "Stage": "STORE/Inventory/repeat1/2",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "STORE/Inventory/repeat1/2",
+      "Procedure": "dbo.sp_StockIssueList"
+    },
+    {
+      "Stage": "STORE/Inventory/repeat1/3",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "STORE/Inventory/repeat1/3",
+      "Procedure": "dbo.sp_StocktakeList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_PurchaseList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_StockIssueList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_StocktakeList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_PurchaseList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_StockIssueList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_StocktakeList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_PurchaseList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_StockIssueList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_StocktakeList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_PurchaseList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_StockIssueList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_PurchaseList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "STORE/Inventory/reenter",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "STORE/Inventory/reenter",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "STORE/Inventory/reenter",
+      "Procedure": "dbo.sp_PurchaseList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    }
+  ],
+  "Visual": "SKIPPED by assignment; no screenshots",
+  "Dpi100And150": "NOT RUN"
+}

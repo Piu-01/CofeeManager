@@ -1,0 +1,22 @@
+[
+  {
+    "Path": "src/CafeManager.WinForms/Program.cs",
+    "Snapshot": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g05-kho-nguon-chi-cong-no\\runs\\push-20261030\\Program.cs.g05.snapshot"
+  },
+  {
+    "Path": "src/CafeManager.WinForms/Forms/MainForm.cs",
+    "Snapshot": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g05-kho-nguon-chi-cong-no\\runs\\push-20261030\\MainForm.cs.g05.snapshot"
+  },
+  {
+    "Path": "src/CafeManager.WinForms/Configuration/PendingOperationFile.cs",
+    "Snapshot": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g05-kho-nguon-chi-cong-no\\runs\\push-20261030\\PendingOperationFile.cs.g05.snapshot"
+  },
+  {
+    "Path": "src/CafeManager.WinForms/Navigation/NavigationController.cs",
+    "Snapshot": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g05-kho-nguon-chi-cong-no\\runs\\push-20261030\\NavigationController.cs.g05.snapshot"
+  },
+  {
+    "Path": "src/CafeManager.DataAccess/SqlErrorMapper.cs",
+    "Snapshot": "D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\docs\\tasks\\g05-kho-nguon-chi-cong-no\\runs\\push-20261030\\SqlErrorMapper.cs.g05.snapshot"
+  }
+]

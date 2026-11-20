@@ -1,0 +1,190 @@
+{
+  "Mode": "supplement",
+  "Database": "CoffeeManager_Test_UiTabs_20261110_b00bb153",
+  "Schema": 24,
+  "Checks": [
+    {
+      "Name": "Data-bearing stock fixture",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Stock SQL error explicit, keeps old rows",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Stock retry after SQL recovery",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Empty query differs from SQL failure",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Rapid tab switch cancels old load, retains current stock",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Cancelled purchase tab can load on revisit",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Modal owner remains MainForm",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Modal blocks module switch",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "HR SQL failure not false empty success",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "HR recovers without rebuilding module",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Session revoke during page load disposes form safely",
+      "Result": "PASS",
+      "Actual": null
+    },
+    {
+      "Name": "Supplement leaves business data unchanged",
+      "Result": "PASS",
+      "Actual": null
+    }
+  ],
+  "Failed": 0,
+  "Constructors": [],
+  "Metrics": [],
+  "QueryStarts": [
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_MaterialList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_MaterialList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_MaterialList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_MaterialList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_MaterialList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_PurchaseList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_PurchaseList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_HRContext"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_EmployeeLookups"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_EmployeeList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_EmployeeList"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_AuthReadIdentity"
+    },
+    {
+      "Stage": "idle",
+      "Procedure": "dbo.sp_PurchaseList"
+    }
+  ],
+  "Visual": "SKIPPED by assignment; no screenshots",
+  "Dpi100And150": "NOT RUN"
+}

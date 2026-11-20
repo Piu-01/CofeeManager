@@ -1,0 +1,13 @@
+/before/
+/after/
+/bin/
+/obj/
+/UiSnapshot/
+/FrozenBefore/
+/FrozenAfter/
+/snapshot-bin/
+/paired-before/
+/paired-after/
+/product-debug/
+/product-release/
+/snapshot-release/
