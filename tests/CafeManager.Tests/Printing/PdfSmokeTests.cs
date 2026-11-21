@@ -81,6 +81,6 @@ public sealed class PdfSmokeTests
             0m, 0m, total, 10_000m, 5_000m, total + 5_000m, "Da thanh toan", [], true, null, null,
             new DateTime(2026, 11, 16, 9, 35, 0), null, null);
         var order = new SalesOrderDto(header, items, [new SalesPayment(1, "TienMat", "Tiền mặt", header.Payable, null)]);
-        return new InvoiceDetailDto(order, "Promotion", "Giảm giá", 10, 120, header.PaidAt);
+        return new InvoiceDetailDto(order, "Promotion", "Giảm giá", 10, 0, 0, 120, header.PaidAt);
     }
 }

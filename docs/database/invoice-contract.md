@@ -5,7 +5,9 @@ kênh, khách, tìm mã/tên/SDT và Skip50. SQL dùng khoảng ngày nửa mở
 COUNT OVER trên tập hóa đơn, không join món×payment để cộng tiền.
 
 sp_InvoiceDetail đọc một transaction ngắn: header stored, dòng snapshot, payment,
-metadata snapshot/điểm. Không tính ưu đãi hiện tại cho đơn đã trả. Tên sản phẩm là
+metadata snapshot/điểm. Không tính ưu đãi hiện tại cho đơn đã trả. Từ migration038,
+metadata có thêm tỷ lệ hạng/tỷ lệ KM để in breakdown; đơn cũ (hoặc LegacyUnknown)
+thiếu cột này trả NULL và in như trước. Tên sản phẩm là
 nhãn danh mục hiện tại, không giả snapshot tên. LegacyUnknown không có nguồn/tỷ lệ.
 ADMIN/CASH được đọc/in, STORE bị chặn Business và SQL.
 

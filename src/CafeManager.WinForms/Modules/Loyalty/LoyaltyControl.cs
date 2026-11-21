@@ -2,6 +2,7 @@ using System.Globalization;
 using CafeManager.Business.Security;
 using CafeManager.Business.Services;
 using CafeManager.Models.Dtos.Loyalty;
+using CafeManager.Models.States;
 using CafeManager.Models.Dtos.Customers;
 using CafeManager.Models.Requests.Loyalty;
 using CafeManager.WinForms.Forms;

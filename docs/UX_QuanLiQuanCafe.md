@@ -227,7 +227,7 @@ Mang đi: chọn tab → Đơn mới → thêm món đầu tạo đơn → quả
 
 Dialog chọn khách tìm SDT/tên → chọn kết quả có tên, SDT che vừa đủ theo ngữ cảnh, hạng/điểm → Áp dụng. Khách mới: nhập tên/SDT tùy chọn theo schema, lưu rồi chọn ngay. Vãng lai là bỏ chọn khách, không tạo hồ sơ tên “Khách lẻ” cho mọi đơn.
 
-Ưu đãi có lựa chọn **Không chọn chương trình / Chọn chương trình hợp lệ**. Có chương trình thì thay ưu đãi hạng, không cộng dồn. Khi không chọn KM, SQL vẫn áp dụng hạng nếu có khách; nhãn “Không chọn chương trình” không có nghĩa tổng giảm luôn bằng 0. Hiển thị nguồn giảm và tỷ lệ từ preview SQL. Nếu chưa có hợp đồng lưu lựa chọn KM/khách vào đơn, T13/T14 phải bổ sung trước khi UI cho Áp dụng.
+Ưu đãi có lựa chọn **Không chọn chương trình / Chọn chương trình hợp lệ**. Có chương trình thì cộng thêm vào ưu đãi hạng (tối đa 100%), mỗi đơn chỉ một KM. Khi không chọn KM, SQL vẫn áp dụng hạng nếu có khách; nhãn “Không chọn chương trình” không có nghĩa tổng giảm luôn bằng 0. Hiển thị nguồn giảm và tỷ lệ từ preview SQL, có breakdown hạng + KM khi cả hai cùng áp dụng. Nếu chưa có hợp đồng lưu lựa chọn KM/khách vào đơn, T13/T14 phải bổ sung trước khi UI cho Áp dụng.
 
 Khách đổi/ưu đãi đổi → tải preview → cập nhật tổng; không cho Thanh toán khi preview đang tải hoặc thất bại. Điểm hiển thị trước thanh toán là điểm hiện tại; **Điểm dự kiến** ghi rõ tham khảo. Không có nút Dùng điểm.
 
@@ -499,7 +499,7 @@ Các ca này bổ sung phần trải nghiệm cho kiểm thử nghiệp vụ ở
 | UX-K07 | Thêm món, sửa lượng, hai ghi chú khác nhau | Dòng và tổng đúng, focus thuận tiện, không gộp sai |
 | UX-K08 | Hai phiên sửa cùng đơn | Báo xung đột, tải lại, không ghi đè |
 | UX-K09 | Khách mới/vãng lai/đổi khách | Không hồ sơ lẻ dùng chung, preview theo đúng khách |
-| UX-K10 | Có hạng và chọn KM | Nguồn giảm đúng, không cộng dồn, không có Dùng điểm |
+| UX-K10 | Có hạng và chọn KM | Nguồn giảm đúng, cộng dồn hạng + KM chặn 100%, breakdown hiển thị, không có Dùng điểm |
 | UX-K11 | Preview đang tải/thất bại | Không thanh toán theo số cũ |
 | UX-K12 | Thu 81.000, tiền mặt đưa 100.000 | Thu 81.000, thối 19.000; hiển thị đúng |
 | UX-K13 | Chia 30.000 + 51.000, thiếu/dư phân bổ | Chốt đúng khi đủ; lỗi tại bảng khi lệch |

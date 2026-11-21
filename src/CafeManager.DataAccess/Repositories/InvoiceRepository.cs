@@ -22,7 +22,8 @@ public sealed class InvoiceRepository(ConnectionFactory factory)
     {
         var order = await SalesRepository.ReadOrder(r, ct); if (order is null) return null;
         await r.NextResultAsync(ct);
-        if (!await r.ReadAsync(ct)) return new(order, null, null, null, 0, null);
-        return new(order, SalesRepository.Text(r, 0), SalesRepository.Optional(r, 1), r.IsDBNull(2) ? null : r.GetInt32(2), r.GetInt32(3), r.GetDateTime(4));
+        if (!await r.ReadAsync(ct)) return new(order, null, null, null, null, null, 0, null);
+        return new(order, SalesRepository.Text(r, 0), SalesRepository.Optional(r, 1), r.IsDBNull(2) ? null : r.GetInt32(2),
+            r.IsDBNull(3) ? null : r.GetInt32(3), r.IsDBNull(4) ? null : r.GetInt32(4), r.GetInt32(5), r.GetDateTime(6));
     }
 }

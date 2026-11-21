@@ -18,6 +18,12 @@ Tiền đưa/thối chỉ trong UI phiên hiện tại, không phải số thu v
 Timeout sau gửi phải đối chiếu request/MaHD, không retry checkout tự động. Lỗi522xx
 được dịch an toàn;52103 xung đột,52201 yêu cầu preview mới. Chưa nghiệm thu G04.
 
+Từ migration038 (cộng dồn ưu đãi): fn_CheckoutPreview trả thêm TierPercent/
+PromotionPercent, token gồm cả hai tỷ lệ; snapshot Checkout ghi thêm hai cột này và
+CHECK buộc PercentDiscount = min(100, hạng+KM). Dòng snapshot Checkout cũ không có
+breakdown (NULL) và không backfill; đọc/in vẫn theo PercentDiscount cũ. Preview cũ
+mất hiệu lực sau nâng cấp nên đơn đang mở phải xác nhận lại số mới.
+
 Từ migration032 (T33), preview/checkout/hủy dùng sp_SalesCheckPayable nên thu được
 đơn Chua thanh toan hoặc Cho thanh toan; đơn Cho vẫn khóa sửa dòng/header qua
 sp_SalesCheckOpen. Tiền/kho/điểm/snapshot tính như đơn Chua; trigger thanh toán và

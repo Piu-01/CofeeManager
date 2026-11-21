@@ -201,9 +201,15 @@ internal static class InvoicePdfReport
         Row(L.T("PHẢI TRẢ"), PrintFormat.Money(h.Payable), strong: true);
 
         if (!string.IsNullOrWhiteSpace(detail.Source) || detail.PercentDiscount is not null)
-            band.Objects.Add(PdfLayout.Text(L.T("Nguồn giảm: ") + SalesStates.Label(detail.Source) +
-                (detail.PercentDiscount is int percent ? $" {percent}%" : string.Empty), 0, y, width, 4.4f,
-                a4 ? 8f : 6.5f, FontStyle.Regular, HorzAlign.Left, VertAlign.Center, PdfLayout.Muted));
+        {
+            var percentText = detail.PercentDiscount is int percent
+                ? detail.Source == "TierAndPromotion"
+                    ? L.F(" {0}% (hạng {1}% + KM {2}%)", percent, detail.TierPercent ?? 0, detail.PromotionPercent ?? 0)
+                    : $" {percent}%"
+                : string.Empty;
+            band.Objects.Add(PdfLayout.Text(L.T("Nguồn giảm: ") + SalesStates.Label(detail.Source) + percentText,
+                0, y, width, 4.4f, a4 ? 8f : 6.5f, FontStyle.Regular, HorzAlign.Left, VertAlign.Center, PdfLayout.Muted));
+        }
         else
             band.Objects.Add(PdfLayout.Text(L.T("Nguồn/tỷ lệ ưu đãi lịch sử chưa lưu."), 0, y, width, 4.4f,
                 a4 ? 8f : 6.5f, FontStyle.Regular, HorzAlign.Left, VertAlign.Center, PdfLayout.Muted));

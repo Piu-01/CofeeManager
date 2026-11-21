@@ -5,11 +5,14 @@ không truy cập. Mọi procedure Actor/Stamp và BLL kiểm phiên/quyền. Pr
 phải checkout hoặc kết quả đã chốt; T14/T15 dùng lại fn_DiscountPreview bằng dữ liệu
 nguồn chính thức, không tin tổng do UI gửi vào màn dùng thử G03.
 
-fn_DiscountPreview: KM còn hiệu lực tại ngày lập thay hạng, không cộngdồn; khôngKH/
-KM giảm0. ROUND(tiềnmón×%/100,0), không giảmship; payable=tiềnmón+ship−giảm. Wrapper
+fn_DiscountPreview: %hạng + %KM còn hiệu lực tại ngày lập, cộng thẳng và chặn 100%
+(migration 038); khôngKH/KM giảm0. Source None/Tier/Promotion/TierAndPromotion; trả
+TierPercent/PromotionPercent và PercentDiscount là tổng. ROUND(tiềnmón×%/100,0), không
+giảmship; payable=tiềnmón+ship−giảm. Wrapper
 sp_DiscountPreview kiểm FK/hiệu lực/nguyênVND/biên, trả Source/Tier/Promotion/%/
-Discount/Payable/ReadAt/PolicyRevision. Giữ khóa policy Shared và hàng nguồn đến
-hết preview transaction; UI chỉ hiển thị DTO, đổi input vô hiệu kết quả cũ.
+TierPercent/PromotionPercent/Discount/Payable/ReadAt/PolicyRevision. Giữ khóa policy
+Shared và hàng nguồn đến hết preview transaction; UI chỉ hiển thị DTO, đổi input vô
+hiệu kết quả cũ.
 
 KM mã KM+8số, tên≤100, DateOnly hai đầu inclusive/cùngngày, tỷlệint0–100; xóa có
 hóađơn bịFKchặn, sửaKM không UPDATE hóađơn. sp_PromotionList/Get/Create/Update/Delete.

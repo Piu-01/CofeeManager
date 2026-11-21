@@ -146,7 +146,7 @@ Tạo header tổng/giảm 0 trước chi tiết. Thêm dòng lấy giá menu h�
 | Giá trị | Công thức / nguồn |
 |---|---|
 | Tiền món | SUM(số lượng × giá snapshot dòng) |
-| Tỷ lệ giảm | KM được chọn và còn hiệu lực tại ngày lập; nếu không KM thì hạng khách trước checkout; không cộng dồn |
+| Tỷ lệ giảm | %hạng khách (nếu có) + %KM được chọn và còn hiệu lực tại ngày lập; chặn tối đa 100%, không nhân nối tiếp (migration 038) |
 | Giảm giá | ROUND(tiền món × tỷ lệ / 100, 0), không giảm ship |
 | Phải trả | Tiền món + ship − giảm |
 | Phí đối tác | ROUND((tiền món − giảm) × tỷ lệ đối tác lúc chốt / 100, 0); chi phí quán |

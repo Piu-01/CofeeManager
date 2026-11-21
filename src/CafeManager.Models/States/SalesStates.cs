@@ -8,6 +8,6 @@ public static class SalesStates
         "Chua thanh toan" => L.T("Chưa thanh toán"), "Cho thanh toan" => L.T("Chờ thanh toán"),
         "Da thanh toan" => L.T("Đã thanh toán"), "Huy" => L.T("Đã hủy"),
         "Cho giao" => L.T("Chờ giao"), "Dang giao" => L.T("Đang giao"), "Da giao" => L.T("Đã giao"), "Huy giao" => L.T("Hủy giao"),
-        "Promotion" => L.T("Khuyến mãi"), "Tier" => L.T("Hạng thành viên"), "None" => L.T("Không ưu đãi"), _ => value ?? ""
+        "Promotion" => L.T("Khuyến mãi"), "Tier" => L.T("Hạng thành viên"), "TierAndPromotion" => L.T("Hạng + khuyến mãi"), "None" => L.T("Không ưu đãi"), _ => value ?? ""
     };
 }
