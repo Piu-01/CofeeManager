@@ -7,9 +7,16 @@ using CafeManager.WinForms.UI;
 namespace CafeManager.WinForms.Modules.Customers;
 public sealed class CustomersControl : OrbitRecordListControl
 {
-    private readonly CustomerService? service;private readonly SessionContext? session;
+    private readonly CustomerService? service;private readonly SessionContext? session;private readonly LoyaltyService? loyalty;
     public event Action<CustomerRow?>? CustomerSelected;
     public CustomersControl(){}
+    public CustomersControl(CustomerService service,SessionContext session,LoyaltyService loyalty)
+    {
+        this.service=service;this.session=session;this.loyalty=loyalty;
+        Configure("Khách hàng",session,async(q,skip,t)=>await service.ListAsync(session,q,skip,t),("Code",L.T("Mã")),("Name",L.T("Khách hàng")),("Phone",L.T("SDT")),("Points",L.T("Điểm")),("Tier",L.T("Hạng")),("Discount",L.T("Ưu đãi %")));
+        Search.PlaceholderText=L.T("Tìm SDT hoặc tên khách");
+        AddAction("Thêm",()=>Edit(true));AddAction("Sửa",()=>Edit(false),session.Identity.Role=="ADMIN");AddAction("Xóa",Delete,session.Identity.Role=="ADMIN");AddAction("Mở sổ điểm",Open,session.Identity.Role=="ADMIN");AddAction("Lịch sử điểm",History,session.Identity.Role=="ADMIN");
+    }
     public CustomersControl(CustomerService service,SessionContext session,bool picker=false,bool allowGuest=false)
     {
         this.service=service;this.session=session;
@@ -24,7 +31,7 @@ public sealed class CustomersControl : OrbitRecordListControl
             AddAction("Đóng",()=>{FindForm()?.Close();return Task.CompletedTask;});
             return;
         }
-        AddAction("Thêm",()=>Edit(true));AddAction("Sửa",()=>Edit(false),session.Identity.Role=="ADMIN");AddAction("Xóa",Delete,session.Identity.Role=="ADMIN");AddAction("Mở sổ điểm",Open,session.Identity.Role=="ADMIN");AddAction("Hóa đơn",Orders);
+        AddAction("Thêm",()=>Edit(true));AddAction("Sửa",()=>Edit(false),session.Identity.Role=="ADMIN");AddAction("Xóa",Delete,session.Identity.Role=="ADMIN");AddAction("Mở sổ điểm",Open,session.Identity.Role=="ADMIN");
     }
     private async Task Edit(bool create)
     {
@@ -42,16 +49,17 @@ public sealed class CustomersControl : OrbitRecordListControl
         dialog.CaptureWrite=()=>{if(!int.TryParse(points.Text,out var value)||value<0)throw new ArgumentException(L.T("Điểm phải là số nguyên không âm."));var request=new CustomerOpeningRequest(row.Code,value,MaterialService.Required(source.Text,100,L.T("Nguồn")));dialog.Confirmation=L.F("Ghi {0} điểm mở sổ cho {1}? Nguồn: {2}. Không thể mở lại.", value, row.Code, request.Source);return id=>service.OpenAsync(session,request,row.Revision,id);};if(await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this)==DialogResult.OK)await Reload();
     }
     private async Task Delete(){if(service is null||session is null||Selected is not CustomerRow row)return;using var dialog=new OperationEditorDialog(L.T("Xóa khách"),id=>service.ReconcileAsync(session,id));dialog.AddNote(L.F("{0} · {1}; chỉ xóa khi chưa có nguồn/lịch sử.", row.Code, row.Name));dialog.Confirmation=L.F("Xóa khách {0}?", row.Code);dialog.CaptureWrite=()=>id=>service.DeleteAsync(session,row,id);if(await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this)==DialogResult.OK)await Reload();}
-    private async Task Orders(){if(service is null||session is null||Selected is not CustomerRow row)return;using var dialog=new OperationEditorDialog(L.T("Hóa đơn · ")+row.Name,id=>service.ReconcileAsync(session,id));dialog.SetReadOnly();var history=new CustomerOrderList(service,session,row.Code);dialog.AddField(L.T("Hóa đơn"),history);await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this);await Task.CompletedTask;}
+    private async Task History(){if(service is null||session is null||loyalty is null||Selected is not CustomerRow row)return;using var dialog=new OperationEditorDialog(L.T("Lịch sử điểm · ")+row.Name,id=>service.ReconcileAsync(session,id));dialog.SetReadOnly();dialog.AddNote(L.F("{0} · {1} điểm · hạng {2}. Chỉ đọc; lịch sử điểm không sửa/xóa.", row.Code, row.Points, row.Tier));dialog.AddField(L.T("Lịch sử điểm"),new CustomerPointHistoryList(loyalty,session,row.Code));await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this);await Task.CompletedTask;}
 }
-internal sealed class CustomerOrderList : OrbitRecordListControl
+internal sealed class CustomerPointHistoryList : OrbitRecordListControl
 {
-    public CustomerOrderList(CustomerService service,SessionContext session,string code)
+    public CustomerPointHistoryList(LoyaltyService service,SessionContext session,string code)
     {
-        Configure("Hóa đơn của khách",session,async(_,skip,t)=>await service.OrdersAsync(session,code,skip,t),("Code",L.T("Mã hóa đơn")),("CreatedAt",L.T("Ngày lập")),("Status",L.T("Trạng thái")));
-        Workspace.Compact=true;Workspace.ShowTools=false;Workspace.ShowMeta=false;
-        Grid.Columns["CreatedAt"]!.DefaultCellStyle.Format="dd/MM/yyyy HH:mm";
-        void FillDateColumn()=>Grid.Columns["CreatedAt"]!.AutoSizeMode=DataGridViewAutoSizeColumnMode.Fill;
+        EmptyHint=()=>L.T("Khách chưa có giao dịch điểm.");
+        Configure("Lịch sử điểm (chỉ đọc)",session,async(_,skip,t)=>await service.HistoryAsync(session,code,skip,t),("Id",L.T("Mã GD")),("OccurredAt",L.T("Thời điểm")),("Direction",L.T("Loại")),("Points",L.T("Điểm")),("Reason",L.T("Lý do")),("OrderCode",L.T("Hóa đơn")));
+        Workspace.Compact=true;Workspace.ShowTools=false;Workspace.ShowMeta=false;Search.Visible=false;
+        Grid.Columns["OccurredAt"]!.DefaultCellStyle.Format="dd/MM/yyyy HH:mm";
+        void FillDateColumn()=>Grid.Columns["OccurredAt"]!.AutoSizeMode=DataGridViewAutoSizeColumnMode.Fill;
         Grid.HandleCreated+=(_,_)=>FillDateColumn();Grid.DpiChangedAfterParent+=(_,_)=>FillDateColumn();Grid.DataBindingComplete+=(_,_)=>FillDateColumn();FillDateColumn();
     }
 }

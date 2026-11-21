@@ -362,7 +362,7 @@ Bàn/khu vực: số/tên, khu vực, trạng thái hỗ trợ. Không xóa bàn
 
 ### 10.2. Khách, hạng và chương trình
 
-Hồ sơ khách có thông tin liên hệ, hạng/điểm chỉ đọc, lịch sử hóa đơn được phép, tab lịch sử điểm. ADMIN Điều chỉnh điểm mở dialog cộng/trừ, lượng điểm và lý do; preview số dư, xác nhận rồi ghi lịch sử. Không có ô sửa DiemTichLuy trong editor hồ sơ.
+Hồ sơ khách có thông tin liên hệ, hạng/điểm chỉ đọc. Action **Lịch sử điểm** (ADMIN) mở danh sách lịch sử điểm chỉ đọc của khách; không còn action hóa đơn theo khách và không còn chức năng điều chỉnh điểm trên giao diện. Không có ô sửa DiemTichLuy trong editor hồ sơ.
 
 Chính sách hạng có ngưỡng và tỷ lệ; thay đổi báo **“Hạng khách sẽ được tính lại theo chính sách mới.”** Xác nhận rồi gọi SQL nguyên tử, không hiện trạng thái hoàn tất khi chỉ sửa một phần. Chương trình có ngày bắt đầu/kết thúc, tỷ lệ; cùng ngày hợp lệ. UI ghi đơn cũ giữ snapshot, không hứa thay chính sách sẽ sửa lịch sử.
 

@@ -1,0 +1,4 @@
+﻿TEXT|Xóa hạng TST?
+TEXT|Xóa hạng thành viên
+BTN|Hủy|True
+BTN|Đồng ý|True

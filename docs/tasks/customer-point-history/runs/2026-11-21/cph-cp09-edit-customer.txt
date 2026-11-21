@@ -1,0 +1,57 @@
+﻿TEXT|Đã cập nhật 16:31:38
+TEXT|1 / 1
+TEXT|Hiển thị 1–23 / 23 khách hàng
+TEXT|Quản lý khách hàng, điểm tích lũy và hạng thành viên.
+TEXT|Khách hàng
+TEXT|CUSTOMER WORKSPACE
+TEXT|Nguyen Van An · ADMIN
+TEXT|Quản lý / Khách hàng
+TEXT|Phiên đang hoạt động.
+TEXT|Quản trị viên · ADMIN
+TEXT|Nguyen Van An
+TEXT|Quản trị
+TEXT|Tài chính & báo cáo
+TEXT|Menu & kho
+TEXT|Khách hàng & ưu đãi
+TEXT|Bán hàng
+TEXT|KHÔNG GIAN QUẢN LÝ
+TEXT|CoffeeManager
+TEXT|Số điện thoại (có thể trống)
+TEXT|Tên khách
+TEXT|KH001 · Điểm 8281 · Hạng PLAT (chỉ đọc).
+TEXT|Sửa khách hàng
+BTN|Trang sau|False
+BTN|Trang trước|False
+BTN|Line down|True
+BTN|Page down|True
+BTN|Line up|True
+BTN|Xóa|True
+BTN|Sửa|False
+BTN|Lịch sử điểm|True
+BTN|Mở sổ điểm|True
+BTN|Tải lại danh sách|True
+BTN|Thêm|True
+BTN|Đăng xuất|True
+BTN|Thông tin hệ thống|True
+BTN|Danh mục nền|True
+BTN|Nhân sự|True
+BTN|Báo cáo|True
+BTN|Tài sản|True
+BTN|Công nợ|True
+BTN|Thu chi|True
+BTN|Kho|True
+BTN|Nguyên liệu / Tồn|True
+BTN|Menu / Công thức|True
+BTN|Ưu đãi / Điểm|True
+BTN|Khách hàng|True
+BTN|Bàn / Khu vực|True
+BTN|Giao hàng|True
+BTN|Lịch sử hóa đơn|True
+BTN|Bán hàng|True
+BTN|Tổng quan|True
+BTN|Hủy|True
+BTN|Đối chiếu|False
+BTN|Lưu|True
+EDIT||
+EDIT|Số điện thoại (có thể trống)|0911111111
+EDIT|Tên khách|Nguyen Minh Khoa

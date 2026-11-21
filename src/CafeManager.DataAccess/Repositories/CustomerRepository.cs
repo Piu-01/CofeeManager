@@ -9,7 +9,6 @@ public sealed class CustomerRepository(ConnectionFactory factory)
     private readonly AuthRepository executor=new(factory);
     public Task<List<CustomerRow>> ListAsync(AccountIdentity a,string q,int skip,CancellationToken t)=>executor.ReadAsync("sp_CustomerList",[..CatalogRepository.Actor(a),AuthRepository.Parameter("@Search",SqlDbType.NVarChar,q,-1),AuthRepository.Parameter("@Skip",SqlDbType.Int,skip)],Map,t);
     public async Task<CustomerRow?> GetAsync(AccountIdentity a,string code,CancellationToken t)=>(await executor.ReadAsync("sp_CustomerGet",[..CatalogRepository.Actor(a),AuthRepository.Parameter("@Code",SqlDbType.VarChar,code,-1)],Map,t)).SingleOrDefault();
-    public Task<List<CustomerOrder>> OrdersAsync(AccountIdentity a,string code,int skip,CancellationToken t)=>executor.ReadAsync("sp_CustomerOrders",[..CatalogRepository.Actor(a),AuthRepository.Parameter("@Code",SqlDbType.VarChar,code,-1),AuthRepository.Parameter("@Skip",SqlDbType.Int,skip)],r=>new CustomerOrder(r.GetString(0).TrimEnd(),r.GetDateTime(1),r.GetString(2)),t);
     public async Task<OperationResult> WriteAsync(AccountIdentity a,string action,Guid id,string? code,byte[]? revision,string? name,string? phone,int? points,string? source,CancellationToken t)
     {
         var procedure=action switch{"Create"=>"sp_CustomerCreate","Update"=>"sp_CustomerUpdate","Delete"=>"sp_CustomerDelete","Open"=>"sp_CustomerOpen",_=>throw new ArgumentException(L.T("Thao tác không hợp lệ."))};

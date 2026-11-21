@@ -1,0 +1,5 @@
+﻿TEXT|TST · ngưỡng 50000 · giảm 3%. 0 khách sẽ được xếp lại hạng theo ngưỡng còn lại.
+TEXT|Xóa hạng thành viên
+BTN|Hủy|True
+BTN|Đối chiếu|False
+BTN|Lưu|True

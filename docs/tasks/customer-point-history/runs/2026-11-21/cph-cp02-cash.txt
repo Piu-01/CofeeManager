@@ -1,0 +1,112 @@
+﻿TEXT|Loại đơn
+TEXT|Bán hàng
+TEXT|SALES WORKSPACE
+TEXT|—
+TEXT|Phải thanh toán
+TEXT|Trống
+TEXT|Thêm món đầu tiên để lưu đơn
+TEXT|Chưa tạo đơn
+TEXT|40.000 ₫
+TEXT|Tra sen
+TEXT|30.000 ₫
+TEXT|Banh flan
+TEXT|38.000 ₫
+TEXT|Sua chua trai cay
+TEXT|40.000 ₫
+TEXT|Nuoc cam tuoi
+TEXT|50.000 ₫
+TEXT|Matcha latte
+TEXT|35.000 ₫
+TEXT|Ca phe muoi
+TEXT|42.000 ₫
+TEXT|Tra vai
+TEXT|45.000 ₫
+TEXT|Tra dao cam sa
+TEXT|35.000 ₫
+TEXT|Banh croissant
+TEXT|65.000 ₫
+TEXT|Banh tiramisu
+TEXT|50.000 ₫
+TEXT|Sinh to xoai
+TEXT|55.000 ₫
+TEXT|Sinh to bo
+TEXT|40.000 ₫
+TEXT|Tra xanh
+TEXT|45.000 ₫
+TEXT|Tra sua tran chau
+TEXT|55.000 ₫
+TEXT|Cappuccino
+TEXT|32.000 ₫
+TEXT|Bac xiu
+TEXT|30.000 ₫
+TEXT|Ca phe sua
+TEXT|25.000 ₫
+TEXT|Ca phe den
+TEXT|Ban 01 · Trống
+TEXT|Bàn
+TEXT|Khu vực
+TEXT|Khu vực / Bàn
+TEXT|Đã chọn Ban 01 (trống). Thêm món đầu để tạo đơn.
+TEXT|Pham Thi Dung · CASH
+TEXT|Thu ngân / Bán hàng
+TEXT|Phiên đang hoạt động.
+TEXT|Thu ngân · CASH
+TEXT|Pham Thi Dung
+TEXT|Quản trị
+TEXT|Menu & kho
+TEXT|Khách hàng & ưu đãi
+TEXT|Bán hàng
+TEXT|KHÔNG GIAN THU NGÂN
+TEXT|CoffeeManager
+BTN|Làm mới|True
+BTN|F4 · Đơn mở|True
+BTN|Đơn mới|True
+BTN|Open|True
+BTN|Kiểm tra kết quả|False
+BTN|F8 · Thanh toán|False
+BTN|In tạm|False
+BTN|Hủy đơn mở|False
+BTN|Trả bàn|False
+BTN|F3 · Khách / Ưu đãi|True
+BTN|Trang sau|True
+BTN|Trang trước|True
+BTN|Trà trái cây|True
+BTN|Trà sữa|True
+BTN|Sinh tố|True
+BTN|Nước ngọt|True
+BTN|Nước ép|True
+BTN|Món ăn nhẹ|True
+BTN|Kem - Tráng miệng|True
+BTN|Đồ uống nóng|True
+BTN|Cà phê|True
+BTN|Bánh ngọt|True
+BTN|Tất cả|True
+BTN|Tìm món|True
+BTN|Thêm Tra sen|True
+BTN|Thêm Banh flan|True
+BTN|Thêm Sua chua trai cay|True
+BTN|Thêm Nuoc cam tuoi|True
+BTN|Thêm Matcha latte|True
+BTN|Thêm Ca phe muoi|True
+BTN|Thêm Tra vai|True
+BTN|Thêm Tra dao cam sa|True
+BTN|Thêm Banh croissant|True
+BTN|Thêm Banh tiramisu|True
+BTN|Thêm Sinh to xoai|True
+BTN|Thêm Sinh to bo|True
+BTN|Thêm Tra xanh|True
+BTN|Thêm Tra sua tran chau|True
+BTN|Thêm Cappuccino|True
+BTN|Thêm Bac xiu|True
+BTN|Thêm Ca phe sua|True
+BTN|Thêm Ca phe den|True
+BTN|Open|True
+BTN|Open|True
+BTN|Đăng xuất|True
+BTN|Thông tin hệ thống|True
+BTN|Tồn phục vụ bán|True
+BTN|Khách hàng|True
+BTN|Giao hàng|True
+BTN|Lịch sử hóa đơn|True
+BTN|Bán hàng|True
+EDIT|Tìm món bán hàng|

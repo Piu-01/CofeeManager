@@ -1,0 +1,32 @@
+﻿TEXT|Đã cập nhật 10:42:07
+TEXT|1 / 1
+TEXT|Hiển thị 1–22 / 22 khách hàng
+TEXT|Quản lý khách hàng, điểm tích lũy và hạng thành viên.
+TEXT|Khách hàng
+TEXT|CUSTOMER WORKSPACE
+TEXT|Pham Thi Dung · CASH
+TEXT|Thu ngân / Khách hàng
+TEXT|Phiên đang hoạt động.
+TEXT|Thu ngân · CASH
+TEXT|Pham Thi Dung
+TEXT|Quản trị
+TEXT|Menu & kho
+TEXT|Khách hàng & ưu đãi
+TEXT|Bán hàng
+TEXT|KHÔNG GIAN THU NGÂN
+TEXT|CoffeeManager
+BTN|Trang sau|False
+BTN|Trang trước|False
+BTN|Line down|True
+BTN|Page down|True
+BTN|Line up|True
+BTN|Tải lại danh sách|True
+BTN|Thêm|True
+BTN|Đăng xuất|True
+BTN|Thông tin hệ thống|True
+BTN|Tồn phục vụ bán|True
+BTN|Khách hàng|True
+BTN|Giao hàng|True
+BTN|Lịch sử hóa đơn|True
+BTN|Bán hàng|True
+EDIT||

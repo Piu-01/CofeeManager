@@ -21,7 +21,6 @@ public sealed class CustomerService(CustomerRepository repository,PermissionServ
     }
     public Task<List<CustomerRow>> ListAsync(SessionContext s,string q,int skip,CancellationToken t=default)=>Run(s,false,ct=>repository.ListAsync(s.Identity,q,skip,ct),t);
     public Task<CustomerRow?> GetAsync(SessionContext s,string code,CancellationToken t=default)=>Run(s,false,ct=>repository.GetAsync(s.Identity,code,ct),t);
-    public Task<List<CustomerOrder>> OrdersAsync(SessionContext s,string code,int skip,CancellationToken t=default)=>Run(s,false,ct=>repository.OrdersAsync(s.Identity,code,skip,ct),t);
     public Task<OperationResult> SaveAsync(SessionContext s,CustomerRequest request,CustomerRow? row,Guid id,CancellationToken t=default){var r=Normalize(request);return Run(s,row is not null,ct=>repository.WriteAsync(s.Identity,row is null?"Create":"Update",id,row?.Code,row?.Revision,r.Name,r.Phone,null,null,ct),t);}
     public Task<OperationResult> OpenAsync(SessionContext s,CustomerOpeningRequest r,byte[] revision,Guid id,CancellationToken t=default){if(r.Points<0)throw new ArgumentException(L.T("Điểm mở sổ không âm."));var source=MaterialService.Required(r.Source,100,L.T("Nguồn"));return Run(s,true,ct=>repository.WriteAsync(s.Identity,"Open",id,r.Code,revision,null,null,r.Points,source,ct),t);}
     public Task<OperationResult> DeleteAsync(SessionContext s,CustomerRow row,Guid id,CancellationToken t=default)=>Run(s,true,ct=>repository.WriteAsync(s.Identity,"Delete",id,row.Code,row.Revision,null,null,null,null,ct),t);

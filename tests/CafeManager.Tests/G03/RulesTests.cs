@@ -26,6 +26,5 @@ public sealed class RulesTests
     }
     [Theory][InlineData("0.5")][InlineData("-1")][InlineData("1000000000000000000")]
     public void MoneyIsWholeVnd(string text)=>Assert.Throws<ArgumentException>(()=>LoyaltyService.Money(decimal.Parse(text,global::System.Globalization.CultureInfo.InvariantCulture)));
-    [Fact]public void ReasonIsRequired()=>Assert.Throws<ArgumentException>(()=>LoyaltyService.Normalize(new PointAdjustmentRequest("KH001","Cong",1," ")));
 }
 
