@@ -191,27 +191,21 @@ INSERT INTO dbo.CHITIET_PX (MaPX, MaNVL, SoLuongXuat) VALUES
 
 INSERT INTO dbo.HANGTHANHVIEN (MaHang, DiemToiThieu, PhanTramGiam) VALUES
 (N'DONG', 0, 0),
-(N'BAC', 300, 3),
-(N'VANG', 800, 7),
-(N'BKIM', 2000, 10),
-(N'KIM', 5000, 15),
-(N'PLAT', 8000, 18),
-(N'DIAM', 12000, 20),
-(N'TITA', 20000, 25),
-(N'ROYA', 35000, 30),
-(N'LEGE', 50000, 35);
+(N'BAC', 2000, 3),
+(N'VANG', 10000, 5),
+(N'KIM', 30000, 8);
 
 INSERT INTO dbo.KHACHHANG (MaKH, TenKH, SDT, DiemTichLuy, MaHang) VALUES
-(N'KH001', N'Nguyen Minh Khoa', N'0911111111', 3200, N'BKIM'),
-(N'KH002', N'Tran Lan Anh', N'0922222222', 750, N'BAC'),
-(N'KH003', N'Le Thanh Dat', N'0933333333', 6100, N'KIM'),
+(N'KH001', N'Nguyen Minh Khoa', N'0911111111', 3200, N'BAC'),
+(N'KH002', N'Tran Lan Anh', N'0922222222', 750, N'DONG'),
+(N'KH003', N'Le Thanh Dat', N'0933333333', 6100, N'BAC'),
 (N'KH004', N'Pham Thu Ha', N'0944444444', 120, N'DONG'),
-(N'KH005', N'Hoang Bao Chau', N'0955555555', 1800, N'VANG'),
-(N'KH006', N'Vo Quoc Hung', N'0966666666', 9200, N'PLAT'),
-(N'KH007', N'Nguyen Thi Mai', N'0977777777', 350, N'BAC'),
+(N'KH005', N'Hoang Bao Chau', N'0955555555', 1800, N'DONG'),
+(N'KH006', N'Vo Quoc Hung', N'0966666666', 9200, N'BAC'),
+(N'KH007', N'Nguyen Thi Mai', N'0977777777', 350, N'DONG'),
 (N'KH008', N'Tran Duc Thinh', N'0988888888', 50, N'DONG'),
-(N'KH009', N'Ly Khanh Linh', N'0999999999', 14500, N'DIAM'),
-(N'KH010', N'Do Van Minh', N'0912345678', 2500, N'BKIM');
+(N'KH009', N'Ly Khanh Linh', N'0999999999', 14500, N'VANG'),
+(N'KH010', N'Do Van Minh', N'0912345678', 2500, N'BAC');
 
 INSERT INTO dbo.KHUYENMAI (MaKM, TenKM, NgayBD, NgayKT, PhanTramGiam) VALUES
 (N'KM24TET', N'Khuyen mai Tet Giap Thin 2024', N'2024-01-20', N'2024-02-10', 20),
