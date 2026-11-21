@@ -22,7 +22,6 @@ public partial class MaterialsControl : UserControl
     {
         this.service = service; this.session = session;
         add.Visible = edit.Visible = remove.Visible = session.Identity.Role is "ADMIN" or "STORE";
-        open.Visible = session.Identity.Role == "ADMIN";
         VisibleChanged += async (_, _) => { if (shuttingDown || Disposing || IsDisposed) return; if (!Visible) { loading?.Cancel(); generation++; loaded = false; } else if (!loaded) { loaded = true; await LoadRows(); } };
         Load += async (_, _) => { if (!loaded) { loaded = true; await LoadRows(); } };
     }
@@ -68,32 +67,42 @@ public partial class MaterialsControl : UserControl
         if (selectedRow is not null) grid.CurrentCell = selectedRow.Cells[0];
         foreach (DataGridViewRow row in grid.Rows)
             if (row.DataBoundItem is MaterialRow material)
-                foreach (DataGridViewCell cell in row.Cells) cell.ToolTipText = L.F("{0} · {1}\nMốc mở sổ: {2}", material.Code, material.Name, material.OpeningKind ?? L.T("Chưa mở sổ"));
+                foreach (DataGridViewCell cell in row.Cells) cell.ToolTipText = L.F("{0} · {1}\nMốc tồn đầu: {2}", material.Code, material.Name, material.OpeningKind ?? L.T("Chưa có mốc tồn đầu"));
         workspace.Count.Text = L.F("{0} nguyên liệu", rows.Count);
         empty.Visible = rows.Count == 0; empty.BringToFront(); UpdatePagination(); UpdateRowActions();
     }
-    private void UpdateRowActions() { edit.Enabled = remove.Enabled = open.Enabled = grid.Enabled && Selected is not null; }
+    private void UpdateRowActions() { edit.Enabled = remove.Enabled = grid.Enabled && Selected is not null; }
     private async Task Edit(bool creating)
     {
         if (service is null || session is null || (!creating && Selected is null)) return;
         var row = creating ? null : Selected;
         using var dialog = new OperationEditorDialog(creating ? L.T("Thêm nguyên liệu") : L.F("Sửa nguyên liệu · {0}", row!.Code), id => service.ReconcileAsync(session, id));
         var name = dialog.AddText(L.T("Tên nguyên liệu"), row?.Name ?? ""); var unit = dialog.AddText(L.T("Đơn vị chuẩn"), row?.Unit ?? "");
-        dialog.CaptureWrite = () => { var request = MaterialService.Normalize(new(row?.Code ?? "", name.Text, unit.Text), creating); return id => service.SaveAsync(session, request, row?.Revision, id); };
-        if (await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this) == DialogResult.OK) await LoadRows();
-    }
-    private async Task OpenBalance()
-    {
-        if (service is null || session is null || Selected is not { } row) return;
-        using var dialog = new OperationEditorDialog(L.T("Mở sổ nguyên liệu"), id => service.ReconcileAsync(session, id));
-        dialog.AddNote(L.F("{0} · {1} · {2}. Mở sổ một lần, chỉ trước khi phát sinh.", row.Code, row.Name, row.Unit));
-        var quantity = dialog.AddText(L.T("Lượng theo đơn vị chuẩn"), "0"); var source = dialog.AddText(L.T("Nguồn / lý do"));
+        TextBox? opening = null, source = null;
+        if (creating)
+        {
+            dialog.AddNote(L.T("Tồn đầu kỳ là tùy chọn, chỉ nhập khi nguyên liệu đã có sẵn. Hàng mua sau đó nhập bằng phiếu nhập."));
+            opening = dialog.AddText(L.T("Lượng tồn đầu (tùy chọn)"), "");
+            source = dialog.AddText(L.T("Nguồn tồn đầu"), "");
+        }
         dialog.CaptureWrite = () =>
         {
-            if (!decimal.TryParse(quantity.Text, NumberStyles.Number, CultureInfo.GetCultureInfo("vi-VN"), out var amount)) throw new ArgumentException(L.T("Lượng không hợp lệ. Dùng dấu phẩy cho phần thập phân."));
-            MaterialService.Quantity(amount); var request = new MaterialOpeningRequest(row.Code, amount, MaterialService.Required(source.Text, 100, L.T("Nguồn")));
-            dialog.Confirmation = L.F("Ghi tồn đầu kỳ {0} {1} cho {2}? Nguồn: {3}. Không thể mở sổ lại.", string.Format(global::System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:N4}", amount), row.Unit, row.Code, request.Source);
-            return id => service.OpenAsync(session, request, row.Revision, id);
+            decimal? amount = null;
+            dialog.Confirmation = null;
+            if (creating && !string.IsNullOrWhiteSpace(opening!.Text))
+            {
+                if (!decimal.TryParse(opening.Text, NumberStyles.Number, CultureInfo.GetCultureInfo("vi-VN"), out var parsed)) throw new ArgumentException(L.T("Lượng không hợp lệ. Dùng dấu phẩy cho phần thập phân."));
+                MaterialService.Quantity(parsed); amount = parsed;
+                if (amount > 0)
+                {
+                    var origin = source!.Text.Trim();
+                    if (origin.Length == 0) throw new ArgumentException(L.T("Cần nguồn cho tồn đầu."), L.T("Nguồn tồn đầu"));
+                    dialog.Confirmation = L.F("Tạo nguyên liệu với tồn đầu {0} · nguồn {1}? Không khai lại tồn đầu sau khi phát sinh.",
+                        parsed.ToString("N4", CultureInfo.GetCultureInfo("vi-VN")), origin);
+                }
+            }
+            var request = MaterialService.Normalize(new(row?.Code ?? "", name.Text, unit.Text, amount, creating && amount is not null ? source!.Text : null), creating);
+            return id => service.SaveAsync(session, request, row?.Revision, id);
         };
         if (await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this) == DialogResult.OK) await LoadRows();
     }

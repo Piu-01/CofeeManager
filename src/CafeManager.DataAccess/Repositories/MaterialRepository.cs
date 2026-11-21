@@ -16,7 +16,7 @@ public sealed class MaterialRepository(ConnectionFactory factory)
     public async Task<OperationResult> WriteAsync(AccountIdentity actor, string action, Guid requestId, string code, byte[]? revision,
         string? name, string? unit, decimal? quantity, string? source, CancellationToken token)
     {
-        var procedure = action switch { "Create" => "sp_MaterialCreate", "Update" => "sp_MaterialUpdate", "Delete" => "sp_MaterialDelete", "Open" => "sp_MaterialOpen", _ => throw new ArgumentOutOfRangeException(nameof(action)) };
+        var procedure = action switch { "Create" => "sp_MaterialCreate", "Update" => "sp_MaterialUpdate", "Delete" => "sp_MaterialDelete", _ => throw new ArgumentOutOfRangeException(nameof(action)) };
         return (await executor.ReadAsync(procedure, [.. CatalogRepository.Actor(actor), AuthRepository.Parameter("@RequestId", SqlDbType.UniqueIdentifier, requestId),
             AuthRepository.Parameter("@Code", SqlDbType.VarChar, code, -1), AuthRepository.Parameter("@ExpectedRevision", SqlDbType.Binary, revision, 8),
             AuthRepository.Parameter("@Name", SqlDbType.NVarChar, name, -1), AuthRepository.Parameter("@Unit", SqlDbType.NVarChar, unit, -1),

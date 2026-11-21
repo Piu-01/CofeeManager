@@ -2,7 +2,7 @@ using CafeManager.DataAccess.Repositories;
 
 namespace CafeManager.Business.Security;
 
-public enum AppPermission { MaterialRead, MaterialManage, MaterialOpen, CatalogAdmin, Sales, Customers, Inventory, DebtRead, DebtPay, Finance, FinancialReports, RecipeRead, MenuRead, SystemInfo, EmployeeManage, AttendanceManage, PayrollManage }
+public enum AppPermission { MaterialRead, MaterialManage, CatalogAdmin, Sales, Customers, Inventory, DebtRead, DebtPay, Finance, FinancialReports, RecipeRead, MenuRead, SystemInfo, EmployeeManage, AttendanceManage, PayrollManage }
 
 public sealed class PermissionService(AuthRepository repository)
 {

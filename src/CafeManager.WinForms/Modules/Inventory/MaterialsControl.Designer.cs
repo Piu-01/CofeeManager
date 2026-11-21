@@ -11,7 +11,7 @@ public partial class MaterialsControl
     private Label state = null!;
     private OrbitListWorkspace workspace = null!;
     private OrbitEmptyState empty = null!;
-    private OrbitButton add = null!, edit = null!, remove = null!, open = null!, previous = null!, next = null!;
+    private OrbitButton add = null!, edit = null!, remove = null!, previous = null!, next = null!;
     private readonly ToolTip hints = new();
     private void InitializeComponent()
     {
@@ -32,17 +32,16 @@ public partial class MaterialsControl
         workspace = new OrbitListWorkspace(searchBox); state = workspace.Status;
         workspace.Title.Text = L.T("Nguyên liệu & tồn kho"); workspace.Description.Text = L.T("Tra cứu nguyên liệu, đơn vị và số lượng tồn.");
         add = new OrbitButton { Text = L.T("Thêm nguyên liệu") }; edit = new OrbitButton { Text = L.T("Sửa") };
-        remove = new OrbitButton { Text = L.T("Xóa") }; open = new OrbitButton { Text = L.T("Mở sổ") };
+        remove = new OrbitButton { Text = L.T("Xóa") };
         var refresh = new OrbitButton { AccessibleName = L.T("Tải lại danh sách") };
         OrbitManagementTheme.Button(add, ManagementButtonStyle.Primary, "plus");
-        OrbitManagementTheme.Button(open, ManagementButtonStyle.Action, "notebook");
         OrbitManagementTheme.Button(edit, ManagementButtonStyle.Action, "pencil");
         OrbitManagementTheme.Button(remove, ManagementButtonStyle.Danger, "trash");
         OrbitManagementTheme.Button(refresh, ManagementButtonStyle.Icon, "refresh"); hints.SetToolTip(refresh, L.T("Tải lại danh sách"));
         var filterBox = new OrbitFilterBox { Size = new Size(124, 40) }; unitFilter = filterBox.Input;
         unitFilter.Items.Add(L.T("Tất cả đơn vị")); unitFilter.SelectedIndex = 0;
         workspace.PrimaryActions.Controls.Add(add); workspace.Filters.Controls.AddRange([filterBox, refresh]);
-        workspace.RowActions.Controls.AddRange([open, edit, remove]);
+        workspace.RowActions.Controls.AddRange([edit, remove]);
         previous = workspace.Pagination.Previous; next = workspace.Pagination.Next;
         empty = new OrbitEmptyState { Dock = DockStyle.Fill, Visible = false };
         workspace.Body.Controls.AddRange([grid, empty]); Controls.Add(workspace);
@@ -53,7 +52,7 @@ public partial class MaterialsControl
         search.KeyDown += async (_, e) => { if (e.KeyCode == Keys.Enter) { e.SuppressKeyPress = true; page = 0; await LoadRows(); } };
         grid.SelectionChanged += (_, _) => UpdateRowActions();
         add.Click += async (_, _) => await Edit(true); edit.Click += async (_, _) => await Edit(false);
-        remove.Click += async (_, _) => await Delete(); open.Click += async (_, _) => await OpenBalance();
+        remove.Click += async (_, _) => await Delete();
         ResumeLayout(true);
     }
 }

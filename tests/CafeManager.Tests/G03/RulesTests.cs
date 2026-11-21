@@ -2,14 +2,18 @@ using CafeManager.Business.Security;
 using CafeManager.Business.Services;
 using CafeManager.Models.Dtos.Loyalty;
 using CafeManager.Models.Requests.Customers;
+using CafeManager.Models.Requests.Inventory;
 using CafeManager.Models.Requests.Loyalty;
 using Xunit;
 namespace CafeManager.Tests.G03;
 public sealed class RulesTests
 {
-    [Theory][InlineData("CASH",true,false,false)][InlineData("STORE",true,true,false)][InlineData("ADMIN",true,true,true)]
-    public void MaterialPermissionsAreSeparated(string role,bool read,bool manage,bool open)
-    {Assert.Equal(read,PermissionService.Allows(role,AppPermission.MaterialRead));Assert.Equal(manage,PermissionService.Allows(role,AppPermission.MaterialManage));Assert.Equal(open,PermissionService.Allows(role,AppPermission.MaterialOpen));}
+    [Theory][InlineData("CASH",true,false)][InlineData("STORE",true,true)][InlineData("ADMIN",true,true)]
+    public void MaterialPermissionsAreSeparated(string role,bool read,bool manage)
+    {Assert.Equal(read,PermissionService.Allows(role,AppPermission.MaterialRead));Assert.Equal(manage,PermissionService.Allows(role,AppPermission.MaterialManage));}
+    [Fact]public void OpeningQuantityIsOptionalOnCreate()=>Assert.Null(MaterialService.Normalize(new MaterialRequest("NVL01","Cà phê","Kg"),true).OpeningQuantity);
+    [Fact]public void OpeningQuantityNeedsSource()=>Assert.Throws<ArgumentException>(()=>MaterialService.Normalize(new MaterialRequest("NVL01","Cà phê","Kg",1.5m,""),true));
+    [Fact]public void OpeningIsIgnoredWhenUpdating()=>Assert.Null(MaterialService.Normalize(new MaterialRequest("NVL01","Cà phê","Kg",1.5m,"Kiểm kê"),false).OpeningQuantity);
     [Theory][InlineData("")][InlineData("   ")]
     public void BlankPhoneIsNull(string phone)=>Assert.Null(CustomerService.Normalize(new CustomerRequest("Khách",phone)).Phone);
     [Fact]public void PhoneIsNotNumber()=>Assert.Equal("090001",CustomerService.Normalize(new CustomerRequest("Khách"," 090001 ")).Phone);

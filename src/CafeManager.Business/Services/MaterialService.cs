@@ -19,7 +19,16 @@ public sealed class MaterialService(MaterialRepository repository, PermissionSer
     {
         var code = creating && string.IsNullOrWhiteSpace(request.Code) ? "" : Required(request.Code, 5, L.T("Mã")).ToUpperInvariant();
         if (code.Length > 0 && !Regex.IsMatch(code, "^NVL(0[1-9]|[1-9][0-9])$")) throw new ArgumentException(L.T("Mã nguyên liệu từ NVL01 đến NVL99."), L.T("Mã"));
-        return new(code, Required(request.Name, 50, L.T("Tên")), Required(request.Unit, 20, L.T("Đơn vị")));
+        // Tồn đầu chỉ nhập lúc tạo; bỏ trống thì SQL ghi mốc 0.
+        var opening = creating ? request.OpeningQuantity : null;
+        var source = creating ? request.OpeningSource?.Trim() : null;
+        if (opening is { } amount)
+        {
+            Quantity(amount);
+            if (amount > 0 && string.IsNullOrEmpty(source)) throw new ArgumentException(L.T("Cần nguồn cho tồn đầu."), L.T("Nguồn tồn đầu"));
+        }
+        if (!string.IsNullOrEmpty(source)) source = Required(source, 100, L.T("Nguồn tồn đầu"));
+        return new(code, Required(request.Name, 50, L.T("Tên")), Required(request.Unit, 20, L.T("Đơn vị")), opening, string.IsNullOrEmpty(source) ? null : source);
     }
     public static void Quantity(decimal value)
     {
@@ -43,17 +52,12 @@ public sealed class MaterialService(MaterialRepository repository, PermissionSer
     {
         var normalized = Normalize(request, revision is null);
         if (normalized.Code.Length > 0)
-            return Run(session, AppPermission.MaterialManage, t => repository.WriteAsync(session.Identity, revision is null ? "Create" : "Update", requestId, normalized.Code, revision, normalized.Name, normalized.Unit, null, null, t), token);
+            return Run(session, AppPermission.MaterialManage, t => repository.WriteAsync(session.Identity, revision is null ? "Create" : "Update", requestId, normalized.Code, revision, normalized.Name, normalized.Unit, normalized.OpeningQuantity, normalized.OpeningSource, t), token);
         return Run(session, AppPermission.MaterialManage, async t =>
-            await repository.WriteAsync(session.Identity, "Create", requestId, await repository.AllocateCodeAsync(t), revision, normalized.Name, normalized.Unit, null, null, t), token);
+            await repository.WriteAsync(session.Identity, "Create", requestId, await repository.AllocateCodeAsync(t), revision, normalized.Name, normalized.Unit, normalized.OpeningQuantity, normalized.OpeningSource, t), token);
     }
     public Task<OperationResult> DeleteAsync(SessionContext session, MaterialRow row, Guid requestId, CancellationToken token = default) =>
         Run(session, AppPermission.MaterialManage, t => repository.WriteAsync(session.Identity, "Delete", requestId, row.Code, row.Revision, null, null, null, null, t), token);
-    public Task<OperationResult> OpenAsync(SessionContext session, MaterialOpeningRequest request, byte[] revision, Guid requestId, CancellationToken token = default)
-    {
-        Quantity(request.Quantity); var source = Required(request.Source, 100, L.T("Nguồn"));
-        return Run(session, AppPermission.MaterialOpen, t => repository.WriteAsync(session.Identity, "Open", requestId, request.Code, revision, null, null, request.Quantity, source, t), token);
-    }
     public Task<OperationReceipt?> ReconcileAsync(SessionContext session, Guid requestId, CancellationToken token = default) =>
         Run(session, AppPermission.MaterialRead, t => repository.ReceiptAsync(session.Identity, requestId, t), token);
 }

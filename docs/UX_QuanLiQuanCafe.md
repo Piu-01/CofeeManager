@@ -370,7 +370,7 @@ Chính sách hạng có ngưỡng và tỷ lệ; thay đổi báo **“Hạng kh
 
 ### 11.1. Tồn và nguyên liệu
 
-Danh sách tồn hiển thị NVL, đơn vị chuẩn, tồn hiện tại, lần cập nhật và lối vào nguồn nhập/xuất/tiêu hao/kiểm kê. Không hiển thị cảnh báo “Sắp hết” nếu chưa có ngưỡng được lưu; có thể thêm sau khi bổ sung yêu cầu và dữ liệu. Mở sổ là thao tác ADMIN một lần với mốc/nguồn; sau đó editor không có ô sửa tồn. Đổi đơn vị nguyên liệu đã phát sinh bị chặn và giải thích.
+Danh sách tồn hiển thị NVL, đơn vị chuẩn, tồn hiện tại, lần cập nhật và lối vào nguồn nhập/xuất/tiêu hao/kiểm kê. Không hiển thị cảnh báo “Sắp hết” nếu chưa có ngưỡng được lưu; có thể thêm sau khi bổ sung yêu cầu và dữ liệu. Tồn đầu kỳ khai một lần ngay trong hộp thoại Thêm nguyên liệu (lượng và nguồn tùy chọn; bỏ trống ghi mốc 0); hàng mua sau đó nhập bằng phiếu nhập. Không còn thao tác “Mở sổ” riêng và editor không có ô sửa tồn. Đổi đơn vị nguyên liệu đã phát sinh bị chặn và giải thích.
 
 ### 11.2. Nhập hàng
 

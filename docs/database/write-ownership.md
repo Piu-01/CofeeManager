@@ -56,8 +56,8 @@ mới/seed; không sửa tồn/điểm sau mở sổ. Migration 001 không thay 
 
 | Dữ liệu | Nguồn ghi được phép | Giữ bất biến |
 |---|---|---|
-| MaterialOpening / CustomerOpening | Migration cutover hoặc procedure mở sổ ADMIN | Không sửa/xóa/ghi lại qua app |
-| Tồn nguyên liệu | Mở sổ một lần; trigger nguồn giao dịch hiện có | Profile không có field sửa tồn |
+| MaterialOpening / CustomerOpening | Migration cutover; tồn đầu nguyên liệu khai một lần trong tạo nguyên liệu; mở sổ điểm ADMIN | Không sửa/xóa/ghi lại qua app |
+| Tồn nguyên liệu | Tồn đầu ghi cùng lúc tạo nguyên liệu; sau đó trigger nguồn giao dịch hiện có | Profile không có field sửa tồn |
 | Sản phẩm/công thức | Procedure ADMIN transaction, revision + receipt | Giá dòng và tiêu hao hóa đơn cũ |
 | Bàn/khu vực | Procedure ADMIN metadata | Status chỉ từ view/HOADON |
 | Profile khách | Procedure ADMIN/CASH theo thao tác | Không sửa điểm/hạng qua profile |
