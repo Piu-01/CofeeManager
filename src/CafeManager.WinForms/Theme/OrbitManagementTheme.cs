@@ -97,7 +97,12 @@ public static class OrbitManagementTheme
             grid.RowTemplate.Height = Px(grid, 40); grid.ColumnHeadersHeight = Px(grid, 40); grid.RowHeadersWidth = Px(grid, 34);
             grid.DefaultCellStyle.Padding = grid.ColumnHeadersDefaultCellStyle.Padding = new Padding(Px(grid, 10), 0, Px(grid, 10), 0);
             foreach (DataGridViewRow row in grid.Rows) row.Height = grid.RowTemplate.Height;
-            foreach (DataGridViewColumn column in grid.Columns) { column.MinimumWidth = Px(grid, 70); if (column.ReadOnly) { column.DefaultCellStyle.ForeColor = Muted; column.DefaultCellStyle.BackColor = Input; } }
+            foreach (DataGridViewColumn column in grid.Columns)
+            {
+                // Cột thao tác xóa theo dòng: icon hẹp, không tiêu đề, không giãn.
+                if (column.Name == "Delete") { column.AutoSizeMode = DataGridViewAutoSizeColumnMode.None; column.MinimumWidth = column.Width = Px(grid, 44); column.DefaultCellStyle.Padding = column.HeaderCell.Style.Padding = new Padding(0); continue; }
+                column.MinimumWidth = Px(grid, 70); if (column.ReadOnly) { column.DefaultCellStyle.ForeColor = Muted; column.DefaultCellStyle.BackColor = Input; }
+            }
         }
         grid.HandleCreated += (_, _) => Metrics(); grid.DpiChangedAfterParent += (_, _) => Metrics();
         grid.DataBindingComplete += (_, _) => Metrics();
