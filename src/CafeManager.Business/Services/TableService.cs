@@ -8,10 +8,10 @@ using CafeManager.Models.Requests.Tables;
 namespace CafeManager.Business.Services;
 public sealed class TableService(TableRepository repository,PermissionService permissions)
 {
-    public static TableRequest Normalize(TableRequest r,bool area)
+    public static TableRequest Normalize(TableRequest r,bool area,bool creating=false)
     {
-        var code=MaterialService.Required(r.Code,5,L.T("Mã")).ToUpperInvariant();
-        if(!Regex.IsMatch(code,area?"^KV[0-9]{3}$":"^B[0-9]{4}$")||code==(area?"KV000":"B0000"))throw new ArgumentException(L.T("Mã bàn/khu vực không hợp lệ."));
+        var code=creating&&string.IsNullOrWhiteSpace(r.Code)?"":MaterialService.Required(r.Code,5,L.T("Mã")).ToUpperInvariant();
+        if(code.Length>0&&(!Regex.IsMatch(code,area?"^KV[0-9]{3}$":"^B[0-9]{4}$")||code==(area?"KV000":"B0000")))throw new ArgumentException(L.T("Mã bàn/khu vực không hợp lệ."));
         return new(code,MaterialService.Required(r.Name,50,L.T("Tên")),area?null:MaterialService.Required(r.Area,5,L.T("Khu vực")));
     }
     private async Task<T> Run<T>(SessionContext s,bool write,Func<CancellationToken,Task<T>> f,CancellationToken t)
@@ -22,7 +22,12 @@ public sealed class TableService(TableRepository repository,PermissionService pe
     public Task<List<AreaRow>> AreasAsync(SessionContext s,string q="",int skip=0,CancellationToken t=default)=>Run(s,false,ct=>repository.AreasAsync(s.Identity,q,skip,ct),t);
     public Task<List<TableRow>> ListAsync(SessionContext s,string q,int skip,string? area=null,CancellationToken t=default)=>Run(s,false,ct=>repository.ListAsync(s.Identity,q,skip,area,ct),t);
     public Task<TableRow?> SelectAsync(SessionContext s,string code,CancellationToken t=default)=>Run(s,false,ct=>repository.SelectAsync(s.Identity,code,ct),t);
-    public Task<OperationResult> SaveAsync(SessionContext s,bool area,TableRequest r,byte[]? revision,Guid id,CancellationToken t=default){var request=Normalize(r,area);return Run(s,true,ct=>repository.WriteAsync(s.Identity,area,revision is null?"Create":"Update",request,revision,id,ct),t);}
+    public Task<OperationResult> SaveAsync(SessionContext s,bool area,TableRequest r,byte[]? revision,Guid id,CancellationToken t=default)
+    {
+        var request=Normalize(r,area,revision is null);
+        if(request.Code.Length>0)return Run(s,true,ct=>repository.WriteAsync(s.Identity,area,revision is null?"Create":"Update",request,revision,id,ct),t);
+        return Run(s,true,async ct=>await repository.WriteAsync(s.Identity,area,"Create",request with{Code=await repository.AllocateCodeAsync(area,ct)},revision,id,ct),t);
+    }
     public Task<OperationResult> DeleteAsync(SessionContext s,bool area,TableRequest r,byte[] revision,Guid id,CancellationToken t=default)=>Run(s,true,ct=>repository.WriteAsync(s.Identity,area,"Delete",r,revision,id,ct),t);
     // Trả bàn dùng quyền vận hành bán hàng (CASH/ADMIN); SQL chặn khi còn đơn chưa chốt.
     public Task<OperationResult> CloseSessionAsync(SessionContext s,CloseSessionRequest r,CancellationToken t=default)

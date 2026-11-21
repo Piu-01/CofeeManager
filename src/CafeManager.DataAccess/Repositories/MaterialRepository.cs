@@ -10,6 +10,7 @@ public sealed class MaterialRepository(ConnectionFactory factory)
     private readonly AuthRepository executor = new(factory);
     public Task<List<MaterialRow>> ListAsync(AccountIdentity actor, string search, int skip, CancellationToken token) =>
         executor.ReadAsync("sp_MaterialList", [.. CatalogRepository.Actor(actor), AuthRepository.Parameter("@Search", SqlDbType.NVarChar, search, -1), AuthRepository.Parameter("@Skip", SqlDbType.Int, skip)], Map, token);
+    public Task<string> AllocateCodeAsync(CancellationToken token) => CatalogRepository.AllocateAsync(executor, "NGUYENVATLIEU", token);
     public async Task<MaterialRow?> GetAsync(AccountIdentity actor, string code, CancellationToken token) =>
         (await executor.ReadAsync("sp_MaterialGet", [.. CatalogRepository.Actor(actor), AuthRepository.Parameter("@Code", SqlDbType.VarChar, code, -1)], Map, token)).SingleOrDefault();
     public async Task<OperationResult> WriteAsync(AccountIdentity actor, string action, Guid requestId, string code, byte[]? revision,

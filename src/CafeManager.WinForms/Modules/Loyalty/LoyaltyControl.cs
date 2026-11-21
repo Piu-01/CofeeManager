@@ -33,12 +33,12 @@ internal sealed class PromotionList : OrbitRecordListControl
     private async Task Edit(bool create)
     {
         if(!create&&Selected is not PromotionRow)return;var row=create?null:(PromotionRow)Selected!;
-        using var dialog=new OperationEditorDialog(create?L.T("Thêm khuyến mãi"):L.T("Sửa khuyến mãi"),id=>service.ReconcileAsync(session,id));
-        var code=dialog.AddText(L.T("Mã KM và8chữ số"),row?.Code??"",!create);var name=dialog.AddText(L.T("Tên chương trình"),row?.Name??"");
+        using var dialog=new OperationEditorDialog(create?L.T("Thêm khuyến mãi"):L.F("Sửa khuyến mãi · {0}",row!.Code),id=>service.ReconcileAsync(session,id));
+        var name=dialog.AddText(L.T("Tên chương trình"),row?.Name??"");
         var start=new OrbitDateField{Value=(row?.StartDate??DateOnly.FromDateTime(DateTime.Today)).ToDateTime(TimeOnly.MinValue)};
         var end=new OrbitDateField{Value=(row?.EndDate??DateOnly.FromDateTime(DateTime.Today)).ToDateTime(TimeOnly.MinValue)};
         dialog.AddField(L.T("Ngày bắt đầu"),start);dialog.AddField(L.T("Ngày kết thúc (bao gồm ngày này)"),end);var discount=dialog.AddText(L.T("Tỷ lệ giảm0–100%"),row?.Discount.ToString()??"0");
-        dialog.CaptureWrite=()=>{if(!int.TryParse(discount.Text,out var percent))throw new ArgumentException(L.T("Tỷ lệ phải nguyên0–100."));var request=LoyaltyService.Normalize(new PromotionRequest(code.Text,name.Text,DateOnly.FromDateTime(start.Value),DateOnly.FromDateTime(end.Value),percent),create);return id=>service.SavePromotionAsync(session,request,row?.Revision,id);};if(await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this)==DialogResult.OK)await Reload();
+        dialog.CaptureWrite=()=>{if(!int.TryParse(discount.Text,out var percent))throw new ArgumentException(L.T("Tỷ lệ phải nguyên0–100."));var request=LoyaltyService.Normalize(new PromotionRequest(row?.Code??"",name.Text,DateOnly.FromDateTime(start.Value),DateOnly.FromDateTime(end.Value),percent),create);return id=>service.SavePromotionAsync(session,request,row?.Revision,id);};if(await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this)==DialogResult.OK)await Reload();
     }
     private async Task Delete(){if(Selected is not PromotionRow row)return;using var dialog=new OperationEditorDialog(L.T("Xóa khuyến mãi"),id=>service.ReconcileAsync(session,id));dialog.AddNote(L.F("{0} · {1}; có hóa đơn tham chiếu thì không xóa được.", row.Code, row.Name));dialog.Confirmation=L.F("Xóa {0}?", row.Code);dialog.CaptureWrite=()=>id=>service.DeletePromotionAsync(session,row,id);if(await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this)==DialogResult.OK)await Reload();}
     private async Task Preview()

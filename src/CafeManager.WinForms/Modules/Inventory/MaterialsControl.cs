@@ -77,10 +77,9 @@ public partial class MaterialsControl : UserControl
     {
         if (service is null || session is null || (!creating && Selected is null)) return;
         var row = creating ? null : Selected;
-        using var dialog = new OperationEditorDialog(creating ? L.T("Thêm nguyên liệu") : L.T("Sửa nguyên liệu"), id => service.ReconcileAsync(session, id));
-        var code = dialog.AddText(L.T("Mã NVL01–NVL99"), row?.Code ?? "", row is not null);
+        using var dialog = new OperationEditorDialog(creating ? L.T("Thêm nguyên liệu") : L.F("Sửa nguyên liệu · {0}", row!.Code), id => service.ReconcileAsync(session, id));
         var name = dialog.AddText(L.T("Tên nguyên liệu"), row?.Name ?? ""); var unit = dialog.AddText(L.T("Đơn vị chuẩn"), row?.Unit ?? "");
-        dialog.CaptureWrite = () => { var request = MaterialService.Normalize(new(code.Text, name.Text, unit.Text)); return id => service.SaveAsync(session, request, row?.Revision, id); };
+        dialog.CaptureWrite = () => { var request = MaterialService.Normalize(new(row?.Code ?? "", name.Text, unit.Text), creating); return id => service.SaveAsync(session, request, row?.Revision, id); };
         if (await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this) == DialogResult.OK) await LoadRows();
     }
     private async Task OpenBalance()

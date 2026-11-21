@@ -15,10 +15,10 @@ public sealed class MaterialService(MaterialRepository repository, PermissionSer
         if (text.Length == 0 || text.Length > maximum || text.Any(char.IsControl)) throw new ArgumentException(L.F("{0}: bắt buộc, tối đa {1} ký tự, không chứa ký tự điều khiển.", field, maximum), field);
         return text;
     }
-    public static MaterialRequest Normalize(MaterialRequest request)
+    public static MaterialRequest Normalize(MaterialRequest request, bool creating = false)
     {
-        var code = Required(request.Code, 5, L.T("Mã")).ToUpperInvariant();
-        if (!Regex.IsMatch(code, "^NVL(0[1-9]|[1-9][0-9])$")) throw new ArgumentException(L.T("Mã nguyên liệu từ NVL01 đến NVL99."), L.T("Mã"));
+        var code = creating && string.IsNullOrWhiteSpace(request.Code) ? "" : Required(request.Code, 5, L.T("Mã")).ToUpperInvariant();
+        if (code.Length > 0 && !Regex.IsMatch(code, "^NVL(0[1-9]|[1-9][0-9])$")) throw new ArgumentException(L.T("Mã nguyên liệu từ NVL01 đến NVL99."), L.T("Mã"));
         return new(code, Required(request.Name, 50, L.T("Tên")), Required(request.Unit, 20, L.T("Đơn vị")));
     }
     public static void Quantity(decimal value)
@@ -41,8 +41,11 @@ public sealed class MaterialService(MaterialRepository repository, PermissionSer
         Run(session, AppPermission.MaterialRead, t => repository.GetAsync(session.Identity, code, t), token);
     public Task<OperationResult> SaveAsync(SessionContext session, MaterialRequest request, byte[]? revision, Guid requestId, CancellationToken token = default)
     {
-        var normalized = Normalize(request);
-        return Run(session, AppPermission.MaterialManage, t => repository.WriteAsync(session.Identity, revision is null ? "Create" : "Update", requestId, normalized.Code, revision, normalized.Name, normalized.Unit, null, null, t), token);
+        var normalized = Normalize(request, revision is null);
+        if (normalized.Code.Length > 0)
+            return Run(session, AppPermission.MaterialManage, t => repository.WriteAsync(session.Identity, revision is null ? "Create" : "Update", requestId, normalized.Code, revision, normalized.Name, normalized.Unit, null, null, t), token);
+        return Run(session, AppPermission.MaterialManage, async t =>
+            await repository.WriteAsync(session.Identity, "Create", requestId, await repository.AllocateCodeAsync(t), revision, normalized.Name, normalized.Unit, null, null, t), token);
     }
     public Task<OperationResult> DeleteAsync(SessionContext session, MaterialRow row, Guid requestId, CancellationToken token = default) =>
         Run(session, AppPermission.MaterialManage, t => repository.WriteAsync(session.Identity, "Delete", requestId, row.Code, row.Revision, null, null, null, null, t), token);

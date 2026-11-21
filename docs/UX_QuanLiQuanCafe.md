@@ -539,6 +539,8 @@ Nghiệm thu sau prototype: một người thử đóng vai thu ngân thực hi�
 
 Mục tiêu trải nghiệm: các thao tác thường xuyên không phải mở menu quản trị; không có bước nhập mã kỹ thuật bằng tay trong bán hàng; mọi lỗi có hành động tiếp; không mất nháp vì lỗi; mọi chốt quan trọng có nguồn, số và xác nhận rõ. Tốc độ tải phải được đo cùng T29 trên dữ liệu mẫu, không đặt kết luận hiệu năng từ bản thiết kế này.
 
+Cấp mã bản ghi chủ (chốt 21/11/2026): hộp thêm/sửa của nhà cung cấp, phương thức thanh toán, đối tác giao hàng, loại thu/chi, chức vụ, ca làm, sản phẩm, nguyên liệu, bàn, khu vực và khuyến mãi không còn ô nhập mã; mã do hệ thống cấp khi lưu, người dùng không sửa được. Hộp sửa hiển thị mã hiện có ở tiêu đề. Mã hạng thành viên vẫn do người dùng đặt vì là mã nghiệp vụ có ý nghĩa (Đồng/Bạc/Vàng/Kim).
+
 ## 19. Thứ tự hiện thực thiết kế UX
 
 Thực hiện trong các task đã có: UX01–UX02 ở T06–T07; danh mục/bàn/khách ở T08–T13; POS/checkout/lịch sử ở T14–T17; giao ở T18; kho và tài chính ở T19–T23; nhân sự/lương/tài sản ở T24–T27; báo cáo T28; vận hành T30; kiểm thử xuyên luồng T31 và bàn giao T32.

@@ -30,12 +30,12 @@ public sealed class ProductsControl : OrbitRecordListControl
     {
         if(service is null||session is null||(!create&&Selected is not ProductRow))return;
         var row=create?null:(ProductRow)Selected!;var categories=await service.CategoriesAsync(session);
-        using var dialog=new OperationEditorDialog(create?L.T("Thêm sản phẩm"):L.T("Sửa sản phẩm"),id=>service.ReconcileAsync(session,id));
-        var code=dialog.AddText(L.T("Mã SP001–SP999"),row?.Code??"",!create);var name=dialog.AddText(L.T("Tên sản phẩm"),row?.Name??"");
+        using var dialog=new OperationEditorDialog(create?L.T("Thêm sản phẩm"):L.F("Sửa sản phẩm · {0}",row!.Code),id=>service.ReconcileAsync(session,id));
+        var name=dialog.AddText(L.T("Tên sản phẩm"),row?.Name??"");
         var category=new ComboBox{DropDownStyle=ComboBoxStyle.DropDownList,DataSource=categories,DisplayMember="Name",ValueMember="Code"};if(row is not null)category.SelectedValue=row.Category;dialog.AddField(L.T("Danh mục"),category);
         var price=dialog.AddText(L.T("Giá bán nguyên VND"),row?.Price.ToString("0",CultureInfo.InvariantCulture)??"");
         var status=new ComboBox{DropDownStyle=ComboBoxStyle.DropDownList};status.Items.AddRange([L.T("Ngừng bán"),L.T("Đang bán")]);status.SelectedIndex=row?.Status=="Dang ban"?1:0;dialog.AddField(L.T("Trạng thái"),status);
-        dialog.CaptureWrite=()=>{if(!decimal.TryParse(price.Text,NumberStyles.Number,CultureInfo.GetCultureInfo("vi-VN"),out var amount))throw new ArgumentException(L.T("Giá không hợp lệ."));var request=ProductService.Normalize(new(code.Text,name.Text,category.SelectedValue as string??"",amount,status.SelectedIndex==1?"Dang ban":"Ngung ban",[]));return id=>service.SaveAsync(session,request,row?.Revision,id);};
+        dialog.CaptureWrite=()=>{if(!decimal.TryParse(price.Text,NumberStyles.Number,CultureInfo.GetCultureInfo("vi-VN"),out var amount))throw new ArgumentException(L.T("Giá không hợp lệ."));var request=ProductService.Normalize(new(row?.Code??"",name.Text,category.SelectedValue as string??"",amount,status.SelectedIndex==1?"Dang ban":"Ngung ban",[]),create);return id=>service.SaveAsync(session,request,row?.Revision,id);};
         if(await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this)==DialogResult.OK)await Reload();
     }
     private async Task Recipe()

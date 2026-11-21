@@ -10,6 +10,7 @@ public sealed class TableRepository(ConnectionFactory factory)
     private readonly AuthRepository executor=new(factory);
     public Task<List<AreaRow>> AreasAsync(AccountIdentity a,string search,int skip,CancellationToken t)=>executor.ReadAsync("sp_AreaList",[..CatalogRepository.Actor(a),AuthRepository.Parameter("@Search",SqlDbType.NVarChar,search,-1),AuthRepository.Parameter("@Skip",SqlDbType.Int,skip)],r=>new AreaRow(r.GetString(0).TrimEnd(),r.GetString(1),(byte[])r[2]),t);
     public Task<List<TableRow>> ListAsync(AccountIdentity a,string search,int skip,string? area,CancellationToken t)=>executor.ReadAsync("sp_TableList",[..CatalogRepository.Actor(a),AuthRepository.Parameter("@Search",SqlDbType.NVarChar,search,-1),AuthRepository.Parameter("@Skip",SqlDbType.Int,skip),AuthRepository.Parameter("@Area",SqlDbType.VarChar,area,-1)],Map,t);
+    public Task<string> AllocateCodeAsync(bool area,CancellationToken t)=>CatalogRepository.AllocateAsync(executor,area?"KHUVUC":"BAN",t);
     public async Task<TableRow?> SelectAsync(AccountIdentity a,string code,CancellationToken t)=>(await executor.ReadAsync("sp_TableSelectCurrent",[..CatalogRepository.Actor(a),AuthRepository.Parameter("@Code",SqlDbType.VarChar,code,-1)],Map,t)).SingleOrDefault();
     public async Task<OperationResult> WriteAsync(AccountIdentity a,bool area,string action,TableRequest request,byte[]? revision,Guid id,CancellationToken t)
     {

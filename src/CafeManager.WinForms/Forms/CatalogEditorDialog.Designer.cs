@@ -4,7 +4,6 @@ partial class CatalogEditorDialog
 {
     private CafeManager.WinForms.UI.OrbitDialogLayout layout = null!;
     private TableLayoutPanel fields = null!;
-    private TextBox codeInput = null!;
     private TextBox nameInput = null!;
     private TextBox phoneInput = null!;
     private TextBox ratioInput = null!;
@@ -14,7 +13,6 @@ partial class CatalogEditorDialog
     private CafeManager.WinForms.UI.OrbitTimeInput startInput = null!;
     private CafeManager.WinForms.UI.OrbitTimeInput endInput = null!;
     private CheckBox supportedInput = null!;
-    private Label codeLabel = null!;
     private Label nameLabel = null!;
     private Label phoneLabel = null!;
     private Label ratioLabel = null!;
@@ -32,13 +30,13 @@ partial class CatalogEditorDialog
     private void InitializeComponent()
     {
         fields = new TableLayoutPanel(); actions = new FlowLayoutPanel();
-        codeInput = new TextBox(); nameInput = new TextBox(); phoneInput = new TextBox(); ratioInput = new TextBox(); allowanceInput = new TextBox(); factorInput = new TextBox();
+        nameInput = new TextBox(); phoneInput = new TextBox(); ratioInput = new TextBox(); allowanceInput = new TextBox(); factorInput = new TextBox();
         typeInput = new ComboBox(); startInput = new CafeManager.WinForms.UI.OrbitTimeInput(); endInput = new CafeManager.WinForms.UI.OrbitTimeInput(); supportedInput = new CheckBox();
-        codeLabel = new Label(); nameLabel = new Label(); phoneLabel = new Label(); ratioLabel = new Label(); allowanceLabel = new Label(); factorLabel = new Label();
+        nameLabel = new Label(); phoneLabel = new Label(); ratioLabel = new Label(); allowanceLabel = new Label(); factorLabel = new Label();
         typeLabel = new Label(); startLabel = new Label(); endLabel = new Label(); statusLabel = new Label();
         saveButton = new CafeManager.WinForms.UI.OrbitButton(); cancelButton = new CafeManager.WinForms.UI.OrbitButton(); reloadButton = new CafeManager.WinForms.UI.OrbitButton(); errors = new ErrorProvider();
         SuspendLayout(); fields.SuspendLayout(); actions.SuspendLayout();
-        fields.Dock = DockStyle.Fill; fields.AutoScroll = true; fields.Padding = new Padding(16); fields.ColumnCount = 2; fields.RowCount = 10;
+        fields.Dock = DockStyle.Fill; fields.AutoScroll = true; fields.Padding = new Padding(16); fields.ColumnCount = 2; fields.RowCount = 9;
         fields.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize)); fields.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
         fields.RowStyles.Add(new RowStyle(SizeType.AutoSize));
         fields.RowStyles.Add(new RowStyle(SizeType.AutoSize));
@@ -49,10 +47,8 @@ partial class CatalogEditorDialog
         fields.RowStyles.Add(new RowStyle(SizeType.AutoSize));
         fields.RowStyles.Add(new RowStyle(SizeType.AutoSize));
         fields.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-        fields.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-        codeLabel.Text = L.T("&Mã"); nameLabel.Text = L.T("&Tên"); phoneLabel.Text = L.T("&SDT"); ratioLabel.Text = L.T("Chiết khấu (%)");
+        nameLabel.Text = L.T("&Tên"); phoneLabel.Text = L.T("&SDT"); ratioLabel.Text = L.T("Chiết khấu (%)");
         allowanceLabel.Text = L.T("Phụ cấp (₫)"); factorLabel.Text = L.T("Hệ số tăng ca"); typeLabel.Text = L.T("Loại Thu / Chi"); startLabel.Text = L.T("Bắt đầu"); endLabel.Text = L.T("Kết thúc");
-        codeLabel.AutoSize = true;
         nameLabel.AutoSize = true;
         phoneLabel.AutoSize = true;
         ratioLabel.AutoSize = true;
@@ -61,7 +57,6 @@ partial class CatalogEditorDialog
         typeLabel.AutoSize = true;
         startLabel.AutoSize = true;
         endLabel.AutoSize = true;
-        codeInput.Dock = DockStyle.Top;
         nameInput.Dock = DockStyle.Top;
         phoneInput.Dock = DockStyle.Top;
         ratioInput.Dock = DockStyle.Top;
@@ -70,18 +65,18 @@ partial class CatalogEditorDialog
         typeInput.Dock = DockStyle.Top;
         startInput.Dock = DockStyle.Top;
         endInput.Dock = DockStyle.Top;
-        codeInput.MaxLength = 5; nameInput.MaxLength = 100; phoneInput.MaxLength = 15;
+        nameInput.MaxLength = 100; phoneInput.MaxLength = 15;
         ratioInput.Text = "0"; allowanceInput.Text = "0"; factorInput.Text = "1,5";
         typeInput.DropDownStyle = ComboBoxStyle.DropDownList; typeInput.Items.AddRange(new object[] { L.T("Thu"), L.T("Chi") }); typeInput.SelectedIndex = 0;
         startInput.Value = new DateTime(2026, 1, 1, 6, 0, 0); endInput.Value = new DateTime(2026, 1, 1, 14, 0, 0);
         supportedInput.Text = L.T("Cho phép ghi nhận thủ công đã xác nhận bên ngoài"); supportedInput.AutoSize = true;
-        codeInput.TabIndex = 0; nameInput.TabIndex = 1; phoneInput.TabIndex = 2; ratioInput.TabIndex = 3; allowanceInput.TabIndex = 4;
-        factorInput.TabIndex = 5; typeInput.TabIndex = 6; startInput.TabIndex = 7; endInput.TabIndex = 8; supportedInput.TabIndex = 9;
-        fields.Controls.Add(codeLabel, 0, 0); fields.Controls.Add(codeInput, 1, 0); fields.Controls.Add(nameLabel, 0, 1); fields.Controls.Add(nameInput, 1, 1);
-        fields.Controls.Add(phoneLabel, 0, 2); fields.Controls.Add(phoneInput, 1, 2); fields.Controls.Add(ratioLabel, 0, 3); fields.Controls.Add(ratioInput, 1, 3);
-        fields.Controls.Add(allowanceLabel, 0, 4); fields.Controls.Add(allowanceInput, 1, 4); fields.Controls.Add(factorLabel, 0, 5); fields.Controls.Add(factorInput, 1, 5);
-        fields.Controls.Add(typeLabel, 0, 6); fields.Controls.Add(typeInput, 1, 6); fields.Controls.Add(startLabel, 0, 7); fields.Controls.Add(startInput, 1, 7);
-        fields.Controls.Add(endLabel, 0, 8); fields.Controls.Add(endInput, 1, 8); fields.Controls.Add(supportedInput, 0, 9); fields.SetColumnSpan(supportedInput, 2);
+        nameInput.TabIndex = 0; phoneInput.TabIndex = 1; ratioInput.TabIndex = 2; allowanceInput.TabIndex = 3; factorInput.TabIndex = 4;
+        typeInput.TabIndex = 5; startInput.TabIndex = 6; endInput.TabIndex = 7; supportedInput.TabIndex = 8;
+        fields.Controls.Add(nameLabel, 0, 0); fields.Controls.Add(nameInput, 1, 0);
+        fields.Controls.Add(phoneLabel, 0, 1); fields.Controls.Add(phoneInput, 1, 1); fields.Controls.Add(ratioLabel, 0, 2); fields.Controls.Add(ratioInput, 1, 2);
+        fields.Controls.Add(allowanceLabel, 0, 3); fields.Controls.Add(allowanceInput, 1, 3); fields.Controls.Add(factorLabel, 0, 4); fields.Controls.Add(factorInput, 1, 4);
+        fields.Controls.Add(typeLabel, 0, 5); fields.Controls.Add(typeInput, 1, 5); fields.Controls.Add(startLabel, 0, 6); fields.Controls.Add(startInput, 1, 6);
+        fields.Controls.Add(endLabel, 0, 7); fields.Controls.Add(endInput, 1, 7); fields.Controls.Add(supportedInput, 0, 8); fields.SetColumnSpan(supportedInput, 2);
         actions.Dock = DockStyle.Fill; actions.AutoSize = true; actions.WrapContents = true;
         ((CafeManager.WinForms.UI.OrbitButton)saveButton).IsPrimary = true; saveButton.Text = L.T("&Lưu"); cancelButton.Text = L.T("&Hủy"); reloadButton.Text = L.T("Kiểm tra / tải lại");
         saveButton.AutoSize = true;

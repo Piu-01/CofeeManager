@@ -24,7 +24,7 @@ public sealed class CatalogService(CatalogRepository repository, PermissionServi
         var max = kind == CatalogKind.Supplier ? 100 : kind == CatalogKind.Shift ? 30 : 50;
         if (name.Length == 0 || name.Length > max || request.Name?.Any(char.IsControl) == true)
             throw new ArgumentException(L.F("Tên bắt buộc, tối đa {0} ký tự; không chứa ký tự điều khiển.", max), "Name");
-        if (creating && kind != CatalogKind.ProductCategory)
+        if (creating && kind != CatalogKind.ProductCategory && code.Length > 0)
         {
             var pattern = kind switch { CatalogKind.Supplier => "NCC[0-9]{2}", CatalogKind.PaymentMethod => "PT[0-9]{3}",
                 CatalogKind.DeliveryPartner => "DT[0-9]{3}", CatalogKind.ExpenseCategory => "TC[0-9]{3}", CatalogKind.Position => "CV[0-9]{3}", _ => "CA[0-9]{3}" };
@@ -89,10 +89,19 @@ public sealed class CatalogService(CatalogRepository repository, PermissionServi
         }
         return await GetAsync(session, KindOf(normalized), code, token);
     }
+    public Task<string> AllocateCodeAsync(SessionContext session, CatalogKind kind, CancellationToken token = default) =>
+        Run(session, ct => repository.AllocateCodeAsync(kind, ct), token);
     public Task<CatalogWriteResult> SaveAsync(SessionContext session, CatalogRequest request, byte[]? revision, CancellationToken token = default)
     {
         var normalized = Normalize(request, revision is null);
-        return Run(session, ct => repository.SaveAsync(session.Identity, KindOf(normalized), normalized, revision, ct), token);
+        if (normalized.Code.Length > 0 || normalized is ProductCategoryRequest)
+            return Run(session, ct => repository.SaveAsync(session.Identity, KindOf(normalized), normalized, revision, ct), token);
+        var kind = KindOf(normalized);
+        return Run(session, async ct =>
+        {
+            var code = await repository.AllocateCodeAsync(kind, ct);
+            return await repository.SaveAsync(session.Identity, kind, normalized with { Code = code }, revision, ct);
+        }, token);
     }
     public Task<CatalogWriteResult> DeleteAsync(SessionContext session, CatalogKind kind, CatalogRow row, CancellationToken token = default)
     {

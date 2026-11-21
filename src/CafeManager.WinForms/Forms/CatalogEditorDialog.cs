@@ -31,7 +31,7 @@ public partial class CatalogEditorDialog : CafeManager.WinForms.Forms.OrbitDialo
             OrbitManagementTheme.DialogInput(field);
             if (field is Label) { field.Font = OrbitManagementTheme.Table; field.ForeColor = OrbitManagementTheme.Muted; field.Anchor = AnchorStyles.Left; }
         }
-        foreach (var input in new Control[] { codeInput, nameInput, phoneInput, ratioInput, allowanceInput, factorInput, typeInput }) OrbitField.Wrap(input, true);
+        foreach (var input in new Control[] { nameInput, phoneInput, ratioInput, allowanceInput, factorInput, typeInput }) OrbitField.Wrap(input, true);
         OrbitFieldLayout.Attach(fields);
         initial = Snapshot();
     }
@@ -39,8 +39,7 @@ public partial class CatalogEditorDialog : CafeManager.WinForms.Forms.OrbitDialo
     {
         this.service = service; this.session = session; this.kind = kind; original = row;
         Text = row is null ? L.T("Thêm danh mục") : L.F("Sửa danh mục · {0}", row.Code);
-        codeInput.Text = row?.Code ?? ""; nameInput.Text = row?.Name ?? "";
-        codeInput.ReadOnly = row is not null || kind == CatalogKind.ProductCategory;
+        nameInput.Text = row?.Name ?? "";
         nameInput.MaxLength = kind == CatalogKind.Supplier ? 100 : kind == CatalogKind.Shift ? 30 : 50;
         ShowField(phoneLabel, phoneInput, kind == CatalogKind.Supplier);
         ShowField(ratioLabel, ratioInput, kind == CatalogKind.DeliveryPartner);
@@ -55,7 +54,7 @@ public partial class CatalogEditorDialog : CafeManager.WinForms.Forms.OrbitDialo
     private void Populate(CatalogRow? row)
     {
         original = row;
-        if (row is not null) { codeInput.Text = row.Code; nameInput.Text = row.Name; }
+        if (row is not null) nameInput.Text = row.Name;
         switch (row)
         {
             case SupplierRow s: phoneInput.Text = s.Phone; break;
@@ -68,7 +67,7 @@ public partial class CatalogEditorDialog : CafeManager.WinForms.Forms.OrbitDialo
         initial = Snapshot();
     }
     private static void ShowField(Control label, Control input, bool visible) { label.Visible = input.Visible = visible; if (input.Parent is OrbitField frame) frame.Visible = visible; }
-    private string Snapshot() => string.Join("\u001f", codeInput.Text, nameInput.Text, phoneInput.Text, ratioInput.Text,
+    private string Snapshot() => string.Join("\u001f", nameInput.Text, phoneInput.Text, ratioInput.Text,
         allowanceInput.Text, factorInput.Text, typeInput.Text, startInput.Value.TimeOfDay, endInput.Value.TimeOfDay, supportedInput.Checked);
     private decimal Amount(TextBox input, string field)
     {
@@ -76,15 +75,15 @@ public partial class CatalogEditorDialog : CafeManager.WinForms.Forms.OrbitDialo
             CultureInfo.GetCultureInfo("vi-VN"), out var value)) throw new ArgumentException(L.T("Nhập số hợp lệ (dấu phẩy thập phân, không dấu phân nhóm)."), field);
         return value;
     }
-    private CatalogRequest Request() => kind switch
+    private CatalogRequest Request(string code) => kind switch
     {
-        CatalogKind.ProductCategory => new ProductCategoryRequest(codeInput.Text, nameInput.Text, requestId),
-        CatalogKind.Supplier => new SupplierRequest(codeInput.Text, nameInput.Text, phoneInput.Text),
-        CatalogKind.PaymentMethod => new PaymentMethodRequest(codeInput.Text, nameInput.Text, supportedInput.Checked),
-        CatalogKind.DeliveryPartner => new DeliveryPartnerRequest(codeInput.Text, nameInput.Text, Amount(ratioInput, "Ratio")),
-        CatalogKind.ExpenseCategory => new ExpenseCategoryRequest(codeInput.Text, nameInput.Text, typeInput.SelectedIndex == 0 ? ExpenseType.Thu : ExpenseType.Chi),
-        CatalogKind.Position => new PositionRequest(codeInput.Text, nameInput.Text, Amount(allowanceInput, "Allowance"), Amount(factorInput, "Factor")),
-        _ => new ShiftRequest(codeInput.Text, nameInput.Text, new TimeSpan(startInput.Value.Hour, startInput.Value.Minute, 0), new TimeSpan(endInput.Value.Hour, endInput.Value.Minute, 0))
+        CatalogKind.ProductCategory => new ProductCategoryRequest(code, nameInput.Text, requestId),
+        CatalogKind.Supplier => new SupplierRequest(code, nameInput.Text, phoneInput.Text),
+        CatalogKind.PaymentMethod => new PaymentMethodRequest(code, nameInput.Text, supportedInput.Checked),
+        CatalogKind.DeliveryPartner => new DeliveryPartnerRequest(code, nameInput.Text, Amount(ratioInput, "Ratio")),
+        CatalogKind.ExpenseCategory => new ExpenseCategoryRequest(code, nameInput.Text, typeInput.SelectedIndex == 0 ? ExpenseType.Thu : ExpenseType.Chi),
+        CatalogKind.Position => new PositionRequest(code, nameInput.Text, Amount(allowanceInput, "Allowance"), Amount(factorInput, "Factor")),
+        _ => new ShiftRequest(code, nameInput.Text, new TimeSpan(startInput.Value.Hour, startInput.Value.Minute, 0), new TimeSpan(endInput.Value.Hour, endInput.Value.Minute, 0))
     };
     private void Busy(bool value)
     {
@@ -96,11 +95,13 @@ public partial class CatalogEditorDialog : CafeManager.WinForms.Forms.OrbitDialo
     {
         if (service is null || session is null || IsWriting) return;
         errors.Clear(); CatalogRequest request;
-        try { request = CatalogService.Normalize(Request(), original is null); }
+        try { request = CatalogService.Normalize(Request(original?.Code ?? ""), original is null); }
         catch (ArgumentException ex) { Validation(ex); return; }
         Busy(true); OperationStatePresenter.Show(statusLabel, ModuleState.Loading, L.T("Đang lưu danh mục."));
         try
         {
+            if (original is null && kind != CatalogKind.ProductCategory)
+                request = request with { Code = await service.AllocateCodeAsync(session, kind) };
             await service.SaveAsync(session, request, original?.Revision);
             if (IsDisposed) return;
             saved = true; writing = false; DialogResult = DialogResult.OK; Close();
@@ -121,7 +122,7 @@ public partial class CatalogEditorDialog : CafeManager.WinForms.Forms.OrbitDialo
     private void Validation(ArgumentException ex)
     {
         if (IsDisposed) return;
-        Control field = ex.ParamName switch { "Code" => codeInput, "Phone" => phoneInput, "Ratio" => ratioInput, "Allowance" => allowanceInput,
+        Control field = ex.ParamName switch { "Phone" => phoneInput, "Ratio" => ratioInput, "Allowance" => allowanceInput,
             "Factor" => factorInput, "Type" => typeInput, "StartTime" => startInput, "Supported" => supportedInput, _ => nameInput };
         errors.SetError(field, ex.Message); field.Focus(); statusLabel.Text = ex.Message;
     }

@@ -22,6 +22,17 @@ public sealed class CatalogRepository(ConnectionFactory factory)
         CatalogKind.Shift => "sp_CatalogShift" + action,
         _ => throw new ArgumentOutOfRangeException(nameof(kind))
     };
+    internal static async Task<string> AllocateAsync(AuthRepository executor, string source, CancellationToken token) =>
+        (await executor.ReadAsync("sp_CapMa", [AuthRepository.Parameter("@Loai", SqlDbType.VarChar, source, 20)], r => r.GetString(1), token))
+            .SingleOrDefault()?.TrimEnd() ?? throw new InvalidDataException(L.T("Không cấp được mã."));
+    public Task<string> AllocateCodeAsync(CatalogKind kind, CancellationToken token) =>
+        AllocateAsync(executor, kind switch
+        {
+            CatalogKind.Supplier => "NHACUNGCAP", CatalogKind.PaymentMethod => "PHUONGTHUCTT",
+            CatalogKind.DeliveryPartner => "DOITACGIAOHANG", CatalogKind.ExpenseCategory => "DANHMUC_THUCHI",
+            CatalogKind.Position => "CHUCVU", CatalogKind.Shift => "CALAMVIEC",
+            _ => throw new ArgumentOutOfRangeException(nameof(kind))
+        }, token);
     public Task<List<CatalogRow>> ListAsync(AccountIdentity actor, CatalogKind kind, string search, int skip, CancellationToken token) =>
         executor.ReadAsync(Procedure(kind, "List"), [.. Actor(actor), AuthRepository.Parameter("@Search", SqlDbType.NVarChar, search, 100),
             AuthRepository.Parameter("@Skip", SqlDbType.Int, skip)], r => Map(kind, r), token);

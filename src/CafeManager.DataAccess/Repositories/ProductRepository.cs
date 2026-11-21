@@ -17,6 +17,7 @@ public sealed class ProductRepository(ConnectionFactory factory)
         for(var skip=0;;skip+=50){var page=await material.ListAsync(actor,"",skip,token);result.AddRange(page);if(page.Count<50)return result;}
     }
     public Task<List<NameLookup>> CategoriesAsync(AccountIdentity a,CancellationToken t) => new CatalogRepository(factory).NamesAsync(a,CatalogKind.ProductCategory,t);
+    public Task<string> AllocateCodeAsync(CancellationToken t)=>CatalogRepository.AllocateAsync(executor,"SANPHAM",t);
     public async Task<OperationResult> WriteAsync(AccountIdentity a,string action,ProductRequest request,byte[]? revision,Guid id,CancellationToken t)
     {
         var procedure=action switch { "Create"=>"sp_ProductCreate","Update"=>"sp_ProductUpdate","Delete"=>"sp_ProductDelete","ReplaceRecipe"=>"sp_ProductReplaceRecipe",_=>throw new ArgumentException(L.T("Thao tác không hợp lệ.")) };

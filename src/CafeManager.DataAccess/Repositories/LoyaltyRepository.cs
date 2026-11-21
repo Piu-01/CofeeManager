@@ -17,6 +17,7 @@ public sealed class LoyaltyRepository(ConnectionFactory factory)
         return new("@Tiers",SqlDbType.Structured){TypeName="dbo.LoyaltyTierInput",Value=table};
     }
     public Task<List<PromotionRow>> PromotionsAsync(AccountIdentity a,string q,int skip,DateOnly? onDate,CancellationToken t)=>executor.ReadAsync("sp_PromotionList",[..CatalogRepository.Actor(a),P("@Search",SqlDbType.NVarChar,q,-1),P("@Skip",SqlDbType.Int,skip),P("@OnDate",SqlDbType.Date,onDate?.ToDateTime(TimeOnly.MinValue))],r=>new PromotionRow(r.GetString(0).TrimEnd(),r.GetString(1),DateOnly.FromDateTime(r.GetDateTime(2)),DateOnly.FromDateTime(r.GetDateTime(3)),r.GetInt32(4),(byte[])r[5]),t);
+    public Task<string> AllocateCodeAsync(CancellationToken t)=>CatalogRepository.AllocateAsync(executor,"KHUYENMAI",t);
     public async Task<OperationResult> SavePromotionAsync(AccountIdentity a,PromotionRequest r,byte[]? revision,Guid id,bool delete,CancellationToken t)
     {
         var proc=delete?"sp_PromotionDelete":revision is null?"sp_PromotionCreate":"sp_PromotionUpdate";

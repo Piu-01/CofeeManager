@@ -1,0 +1,67 @@
+Code|Revision
+----|--------
+NCC19|0x000000000003E0B1
+Code|Revision
+----|--------
+PT042|0x000000000003E0B2
+Code|Revision
+----|--------
+DT007|0x000000000003E0B3
+Code|Revision
+----|--------
+TC037|0x000000000003E0B4
+Code|Revision
+----|--------
+CV015|0x000000000003E0B5
+Code|Revision
+----|--------
+CA015|0x000000000003E0B6
+Code|Revision
+----|--------
+SP427|0x000000000003E0B8
+Code|Revision
+----|--------
+NVL25|0x000000000003E0B9
+Code|Revision
+----|--------
+B0014|0x000000000003E0BA
+Code|Revision
+----|--------
+KV013|0x000000000003E0BB
+Code|Revision
+----|--------
+KM00000003|0x000000000003E0BC
+Code|Revision
+----|--------
+NCC19|0x000000000003E0C1
+Code|Revision
+----|--------
+NCC19|NULL
+Seq|CaseCode|Result|Detail
+---|--------|------|------
+1|A01|PASS|T?o du?c NCC19     
+2|A02|PASS|T?o du?c PT042     
+3|A03|PASS|T?o du?c DT007     
+4|A04|PASS|T?o du?c TC037     
+5|A05|PASS|T?o du?c CV015     
+6|A06|PASS|T?o du?c CA015     
+7|A07|PASS|T?o du?c SP427     
+8|A08|PASS|T?o du?c NVL25     
+9|A09|PASS|T?o du?c B0014     
+10|A10|PASS|T?o du?c KV013     
+11|A11|PASS|T?o du?c KM00000003
+12|B01|PASS|SP427      -> SP428     
+13|B02|PASS|NCC20     
+14|C01|PASS|25 l?n c?p PT kh“ng c¢ PT010
+15|C02|PASS|20 l?n c?p TC kh“ng c¢ TC005/011/012
+16|D01|PASS|KM24BF c•n nguyˆn
+17|D02|PASS|PT010 c•n nguyˆn
+18|D03|PASS|TC005/011/012 c•n nguyˆn
+19|F01|PASS|Luu l?i, kh“ng c¢ SP429     
+20|F02|PASS|L?n sau c?p SP430     
+21|G01|PASS|S?a theo NCC19     
+22|G02|PASS|X¢a theo NCC19     
+23|I01|PASS|HD26093456
+Fails|Total
+-----|-----
+0|23

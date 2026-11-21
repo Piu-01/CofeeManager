@@ -10,7 +10,7 @@ public sealed class LoyaltyService(LoyaltyRepository repository,PermissionServic
 {
     public static PromotionRequest Normalize(PromotionRequest r,bool creating=true)
     {
-        var code=MaterialService.Required(r.Code,10,L.T("Mã")).ToUpperInvariant();if(creating&&!Regex.IsMatch(code,"^KM[0-9]{8}$"))throw new ArgumentException(L.T("Mã KM và8chữ số."));
+        var code=creating&&string.IsNullOrWhiteSpace(r.Code)?"":MaterialService.Required(r.Code,10,L.T("Mã")).ToUpperInvariant();if(creating&&code.Length>0&&!Regex.IsMatch(code,"^KM[0-9]{8}$"))throw new ArgumentException(L.T("Mã KM và8chữ số."));
         if(r.EndDate<r.StartDate||r.Discount<0||r.Discount>100)throw new ArgumentException(L.T("Ngày/khoảng giảm không hợp lệ."));return r with{Code=code,Name=MaterialService.Required(r.Name,100,L.T("Tên chương trình"))};
     }
     public static IReadOnlyList<TierInput> NormalizeTiers(IReadOnlyList<TierInput> tiers)
@@ -25,7 +25,12 @@ public sealed class LoyaltyService(LoyaltyRepository repository,PermissionServic
         try{var result=await f(linked.Token);s.EnsureCurrent();return result;}catch(DataAccessException e){if(e.Error.Number==51505)s.Revoke();throw new UserOperationException(e.Error);}
     }
     public Task<List<PromotionRow>> PromotionsAsync(SessionContext s,string q,int skip,DateOnly? onDate=null,CancellationToken t=default)=>Run(s,false,ct=>repository.PromotionsAsync(s.Identity,q,skip,onDate,ct),t);
-    public Task<OperationResult> SavePromotionAsync(SessionContext s,PromotionRequest r,byte[]? revision,Guid id,CancellationToken t=default){var normalized=Normalize(r,revision is null);return Run(s,true,ct=>repository.SavePromotionAsync(s.Identity,normalized,revision,id,false,ct),t);}
+    public Task<OperationResult> SavePromotionAsync(SessionContext s,PromotionRequest r,byte[]? revision,Guid id,CancellationToken t=default)
+    {
+        var normalized=Normalize(r,revision is null);
+        if(normalized.Code.Length>0)return Run(s,true,ct=>repository.SavePromotionAsync(s.Identity,normalized,revision,id,false,ct),t);
+        return Run(s,true,async ct=>await repository.SavePromotionAsync(s.Identity,normalized with{Code=await repository.AllocateCodeAsync(ct)},revision,id,false,ct),t);
+    }
     public Task<OperationResult> DeletePromotionAsync(SessionContext s,PromotionRow r,Guid id,CancellationToken t=default)=>Run(s,true,ct=>repository.SavePromotionAsync(s.Identity,new(r.Code,r.Name,r.StartDate,r.EndDate,r.Discount),r.Revision,id,true,ct),t);
     public Task<List<TierRow>> PolicyAsync(SessionContext s,CancellationToken t=default)=>Run(s,true,ct=>repository.PolicyAsync(s.Identity,ct),t);
     public Task<PolicyPreview> PolicyPreviewAsync(SessionContext s,IReadOnlyList<TierInput> tiers,CancellationToken t=default){var rows=NormalizeTiers(tiers);return Run(s,true,ct=>repository.PolicyPreviewAsync(s.Identity,rows,ct),t);}
