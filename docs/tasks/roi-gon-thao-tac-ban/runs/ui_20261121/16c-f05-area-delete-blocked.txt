@@ -1,0 +1,67 @@
+﻿TEXT|Đã cập nhật 00:25:19
+TEXT|1 / 1
+TEXT|Hiển thị 1–10 / 10 khu vực
+TEXT|Theo dõi trạng thái bàn và quản lý khu vực.
+TEXT|Bàn & khu vực
+TEXT|SPACE WORKSPACE
+TEXT|Nguyen Van An · ADMIN
+TEXT|Quản lý / Bàn  khu vực
+TEXT|Phiên đang hoạt động.
+TEXT|Quản trị viên · ADMIN
+TEXT|Nguyen Van An
+TEXT|Quản trị
+TEXT|Tài chính & báo cáo
+TEXT|Menu & kho
+TEXT|Khách hàng & ưu đãi
+TEXT|Bán hàng
+TEXT|KHÔNG GIAN QUẢN LÝ
+TEXT|CoffeeManager
+TEXT|Dữ liệu không thỏa ràng buộc hoặc không đủ tồn; kiểm tra nguồn liên quan.
+TEXT|Xóa KV002 · San vuon; khu vực có bàn sẽ bị chặn.
+TEXT|Xóa khu vực
+BTN|Trang sau|enabled=False
+BTN|Trang trước|enabled=False
+BTN|Line down|enabled=True
+BTN|Page down|enabled=True
+BTN|Page up|enabled=True
+BTN|Line up|enabled=True
+BTN|Tải lại danh sách|enabled=True
+BTN|Khu vực|enabled=True
+BTN|Bàn / Sơ đồ|enabled=True
+BTN|Thêm|enabled=True
+BTN|Đăng xuất|enabled=True
+BTN|Thông tin hệ thống|enabled=True
+BTN|Danh mục nền|enabled=True
+BTN|Nhân sự|enabled=True
+BTN|Báo cáo|enabled=True
+BTN|Tài sản|enabled=True
+BTN|Công nợ|enabled=True
+BTN|Thu chi|enabled=True
+BTN|Kho|enabled=True
+BTN|Nguyên liệu / Tồn|enabled=True
+BTN|Menu / Công thức|enabled=True
+BTN|Ưu đãi / Điểm|enabled=True
+BTN|Khách hàng|enabled=True
+BTN|Bàn / Khu vực|enabled=True
+BTN|Giao hàng|enabled=True
+BTN|Lịch sử hóa đơn|enabled=True
+BTN|Bán hàng|enabled=True
+BTN|Tổng quan|enabled=True
+BTN|Hủy|enabled=True
+BTN|Đối chiếu|enabled=False
+BTN|Lưu|enabled=True
+WIN|Xóa khu vực
+PANE|Nguyen Van An · ADMIN
+PANE|10 khu vực
+PANE|Theo dõi trạng thái bàn và quản lý khu vực.
+PANE|Phiên đang hoạt động.
+PANE|KHÔNG GIAN QUẢN LÝ
+PANE|KHÔNG GIAN QUẢN LÝ
+PANE|Quản trị
+PANE|Tài chính  báo cáo
+PANE|Menu  kho
+PANE|Khách hàng  ưu đãi
+PANE|Bán hàng
+PANE|Dữ liệu không thỏa ràng buộc hoặc không đủ tồn; kiểm tra nguồn liên quan.
+PANE|Dữ liệu không thỏa ràng buộc hoặc không đủ tồn; kiểm tra nguồn liên quan.
+PANE|Xóa khu vực

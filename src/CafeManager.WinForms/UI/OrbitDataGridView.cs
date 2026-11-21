@@ -332,7 +332,7 @@ public sealed class OrbitDataGridView : DataGridView
                 Math.Max(0, e.CellBounds.Width - padding.Horizontal), Math.Max(0, e.CellBounds.Height - padding.Vertical));
             var alignment = e.CellStyle.Alignment is DataGridViewContentAlignment.MiddleRight or DataGridViewContentAlignment.TopRight or DataGridViewContentAlignment.BottomRight
                 ? TextFormatFlags.Right : TextFormatFlags.Left;
-            var property = Columns[e.ColumnIndex].DataPropertyName;
+            var property = Property(Columns[e.ColumnIndex]);
             if (Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn)
             {
                 var size = OrbitManagementTheme.Px(this, 14); var box = new Rectangle(e.CellBounds.Left + (e.CellBounds.Width - size) / 2, e.CellBounds.Top + (e.CellBounds.Height - size) / 2, size, size);

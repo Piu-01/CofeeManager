@@ -53,6 +53,8 @@ public sealed class SalesControl : UserControl, IUnsavedChanges, IAsyncLeaveConf
     private Guid pendingId;
     private string? pendingCode, pendingOperation;
     private IReadOnlyList<string> noteHistory = [];
+    // Task của lần nạp gần nhất để luồng mở bàn từ màn Bàn chờ nạp xong thay vì bị guard busy nuốt mất.
+    private Task loading = Task.CompletedTask;
     private bool busy, unknown, initialized, changingLayout, disposed, layoutReady, suppressChannel, suppressTableOpen, openingTable;
     private int menuGeneration, menuPage;
     public bool HasUnsavedChanges => headerDraft is not null || orderPanel.HasPendingNote;
@@ -177,8 +179,8 @@ public sealed class SalesControl : UserControl, IUnsavedChanges, IAsyncLeaveConf
                 : L.F("Đã chuyển sang {0}. Thêm món đầu để tạo đơn.", Models.States.SalesStates.Label(target));
         };
         search.KeyDown += async (_, e) => { if (e.KeyCode == Keys.Enter) { e.SuppressKeyPress = true; menuPage = 0; await Guard(LoadMenu); } };
-        Load += async (_, _) => { if (!initialized) { initialized = true; await Guard(ReloadAll); } };
-        VisibleChanged += async (_, _) => { if (Visible && initialized && !disposed && !busy && !unknown) await Guard(ReloadAll); };
+        Load += async (_, _) => { if (!initialized) { initialized = true; loading = Guard(ReloadAll); await loading; } };
+        VisibleChanged += async (_, _) => { if (Visible && initialized && !disposed && !busy && !unknown) { loading = Guard(ReloadAll); await loading; } };
         SizeChanged += (_, _) => Arrange(); menuSurface.SizeChanged += (_, _) => Arrange(); products.SizeChanged += (_, _) => ArrangeCards();
         state.TextChanged += (_, _) => { tips.SetToolTip(state, state.Text); Arrange(); };
         layoutReady = true; SetBusy(false); Arrange();
@@ -370,12 +372,19 @@ public sealed class SalesControl : UserControl, IUnsavedChanges, IAsyncLeaveConf
         if (busy || unknown) return;
         if (!await ConfirmInputAsync(this, L.T("mở đơn khác"))) return;
         await Guard(async () => { SetBusy(true); try { await LoadOrder(code); DiscardChanges(); } finally { if (!disposed) SetBusy(false); } });
+        // Mở đơn xong phải thay câu gợi ý của ngữ cảnh trước (bàn trống/tải lại) để không còn chữ cũ.
+        if (!disposed && order is not null) state.Text = L.F("Đã mở đơn {0}.", code);
     }
     private async Task LoadOrder(string code)
     {
         var actual = await service.GetAsync(session, code, lifetime.Token); if (disposed) return;
         order = actual; orderPanel.ShowOrder(order);
-        if (order is not null) channel.SelectedValue = order.Header.Channel;
+        if (order is not null)
+        {
+            channel.SelectedValue = order.Header.Channel;
+            // Đồng bộ ô chọn bàn theo bàn của đơn vừa mở (kể cả khi mở từ sơ đồ bàn) để nhãn bàn khớp đơn.
+            if (order.Header.Channel == "Tai quan" && order.Header.TableCode is { } tableCode) SetTableSelection(tableCode);
+        }
         if (order is null) state.Text = L.T("Hóa đơn không tồn tại. Tải lại danh sách.");
         UpdateTableStatus();
     }
@@ -479,6 +488,8 @@ public sealed class SalesControl : UserControl, IUnsavedChanges, IAsyncLeaveConf
         else if (!disposed)
             state.Text = L.T("Đã giữ nguyên bàn đang chọn. Chọn bàn trống khác hoặc chọn bàn đang có đơn trong ô chọn bàn để mở đơn hiện có.");
     }
+    // Bàn thực của ngữ cảnh đang mở: đơn đã lưu ưu tiên, ngược lại là bàn của đơn mới; không đọc combo (đã bị binding đổi).
+    private string? ActiveTableCode() => order?.Header.TableCode ?? (context is { Channel: "Tai quan" } open ? open.TableCode : null);
     // Gán bàn bằng code (tải lại, Đơn mới, đổi kênh, mở đơn) không kích hoạt tự mở bàn.
     private void SetTableSelection(string? code)
     {
@@ -503,12 +514,34 @@ public sealed class SalesControl : UserControl, IUnsavedChanges, IAsyncLeaveConf
             if (!disposed) table.Enabled = area.Enabled = !busy && !unknown;
         }
     }
+    // Mở bàn sau khi lần nạp đang chạy xong (chuyển từ màn Bàn sang POS); tránh mất yêu cầu do busy.
+    public async Task OpenTableAfterLoadAsync(string code)
+    {
+        if (!loading.IsCompleted)
+        {
+            try { await loading; }
+            catch { /* Lỗi nạp đã hiện ở state; vẫn mở bàn theo yêu cầu của người dùng. */ }
+        }
+        if (disposed || busy || unknown) return;
+        await OpenTableAsync(code);
+    }
     public async Task OpenTableAsync(string code)
     {
         if (busy || unknown) return;
         var current = await tables.SelectAsync(session, code, lifetime.Token); if (disposed || current is null) return;
-        if (current.OrderCode is not null) { await OpenOrderAsync(current.OrderCode); return; }
-        if (!await ConfirmInputAsync(this, L.T("chọn bàn khác"))) return;
+        // Ô chọn bàn đã bị binding đổi sang bàn vừa bấm; giữ bàn thực của ngữ cảnh hiện tại để trả lại khi hủy.
+        var previous = ActiveTableCode();
+        if (current.OrderCode is not null)
+        {
+            await OpenOrderAsync(current.OrderCode); if (disposed) return;
+            SetTableSelection(ActiveTableCode() ?? previous); UpdateTableStatus();
+            return;
+        }
+        if (!await ConfirmInputAsync(this, L.T("chọn bàn khác")))
+        {
+            if (!disposed) { SetTableSelection(previous); UpdateTableStatus(); }
+            return;
+        }
         order = null; headerDraft = null; orderPanel.CancelNoteEdit();
         suppressChannel = true;
         try { channel.SelectedValue = "Tai quan"; } finally { suppressChannel = false; }

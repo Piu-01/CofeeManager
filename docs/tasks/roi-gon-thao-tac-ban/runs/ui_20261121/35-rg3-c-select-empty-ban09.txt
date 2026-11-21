@@ -1,0 +1,153 @@
+﻿TEXT|Loại đơn
+TEXT|Bán hàng
+TEXT|SALES WORKSPACE
+TEXT|—
+TEXT|Phải thanh toán
+TEXT|Trống
+TEXT|Thêm món đầu tiên để lưu đơn
+TEXT|Chưa tạo đơn
+TEXT|40.000 ₫
+TEXT|Tra sen
+TEXT|30.000 ₫
+TEXT|Banh flan
+TEXT|38.000 ₫
+TEXT|Sua chua trai cay
+TEXT|40.000 ₫
+TEXT|Nuoc cam tuoi
+TEXT|50.000 ₫
+TEXT|Matcha latte
+TEXT|35.000 ₫
+TEXT|Ca phe muoi
+TEXT|42.000 ₫
+TEXT|Tra vai
+TEXT|45.000 ₫
+TEXT|Tra dao cam sa
+TEXT|35.000 ₫
+TEXT|Banh croissant
+TEXT|65.000 ₫
+TEXT|Banh tiramisu
+TEXT|50.000 ₫
+TEXT|Sinh to xoai
+TEXT|55.000 ₫
+TEXT|Sinh to bo
+TEXT|40.000 ₫
+TEXT|Tra xanh
+TEXT|45.000 ₫
+TEXT|Tra sua tran chau
+TEXT|55.000 ₫
+TEXT|Cappuccino
+TEXT|32.000 ₫
+TEXT|Bac xiu
+TEXT|30.000 ₫
+TEXT|Ca phe sua
+TEXT|25.000 ₫
+TEXT|Ca phe den
+TEXT|Ban 09 · Trống
+TEXT|Bàn
+TEXT|Khu vực
+TEXT|Khu vực / Bàn
+TEXT|Đã chọn Ban 09. Thêm món đầu để tạo đơn.
+TEXT|Nguyen Van An · ADMIN
+TEXT|Quản lý / Bán hàng
+TEXT|Phiên đang hoạt động.
+TEXT|Quản trị viên · ADMIN
+TEXT|Nguyen Van An
+TEXT|Quản trị
+TEXT|Tài chính & báo cáo
+TEXT|Menu & kho
+TEXT|Khách hàng & ưu đãi
+TEXT|Bán hàng
+TEXT|KHÔNG GIAN QUẢN LÝ
+TEXT|CoffeeManager
+BTN|Làm mới|enabled=True
+BTN|F4 · Đơn mở|enabled=True
+BTN|Đơn mới|enabled=True
+BTN|Open|enabled=True
+BTN|Kiểm tra kết quả|enabled=False
+BTN|F8 · Thanh toán|enabled=False
+BTN|In tạm|enabled=False
+BTN|Hủy đơn mở|enabled=False
+BTN|Trả bàn|enabled=False
+BTN|F3 · Khách / Ưu đãi|enabled=True
+BTN|Trang sau|enabled=True
+BTN|Trang trước|enabled=True
+BTN|Trà trái cây|enabled=True
+BTN|Trà sữa|enabled=True
+BTN|Sinh tố|enabled=True
+BTN|Nước ngọt|enabled=True
+BTN|Nước ép|enabled=True
+BTN|Món ăn nhẹ|enabled=True
+BTN|Kem - Tráng miệng|enabled=True
+BTN|Đồ uống nóng|enabled=True
+BTN|Cà phê|enabled=True
+BTN|Bánh ngọt|enabled=True
+BTN|Tất cả|enabled=True
+BTN|Tìm món|enabled=True
+BTN|Thêm Tra sen|enabled=True
+BTN|Thêm Banh flan|enabled=True
+BTN|Thêm Sua chua trai cay|enabled=True
+BTN|Thêm Nuoc cam tuoi|enabled=True
+BTN|Thêm Matcha latte|enabled=True
+BTN|Thêm Ca phe muoi|enabled=True
+BTN|Thêm Tra vai|enabled=True
+BTN|Thêm Tra dao cam sa|enabled=True
+BTN|Thêm Banh croissant|enabled=True
+BTN|Thêm Banh tiramisu|enabled=True
+BTN|Thêm Sinh to xoai|enabled=True
+BTN|Thêm Sinh to bo|enabled=True
+BTN|Thêm Tra xanh|enabled=True
+BTN|Thêm Tra sua tran chau|enabled=True
+BTN|Thêm Cappuccino|enabled=True
+BTN|Thêm Bac xiu|enabled=True
+BTN|Thêm Ca phe sua|enabled=True
+BTN|Thêm Ca phe den|enabled=True
+BTN|Open|enabled=True
+BTN|Open|enabled=True
+BTN|Đăng xuất|enabled=True
+BTN|Thông tin hệ thống|enabled=True
+BTN|Danh mục nền|enabled=True
+BTN|Nhân sự|enabled=True
+BTN|Báo cáo|enabled=True
+BTN|Tài sản|enabled=True
+BTN|Công nợ|enabled=True
+BTN|Thu chi|enabled=True
+BTN|Kho|enabled=True
+BTN|Nguyên liệu / Tồn|enabled=True
+BTN|Menu / Công thức|enabled=True
+BTN|Ưu đãi / Điểm|enabled=True
+BTN|Khách hàng|enabled=True
+BTN|Bàn / Khu vực|enabled=True
+BTN|Giao hàng|enabled=True
+BTN|Lịch sử hóa đơn|enabled=True
+BTN|Bán hàng|enabled=True
+BTN|Tổng quan|enabled=True
+PANE|Nguyen Van An · ADMIN
+PANE|Bán hàng
+PANE|—
+PANE|Trống
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Phiên đang hoạt động.
+PANE|KHÔNG GIAN QUẢN LÝ
+PANE|KHÔNG GIAN QUẢN LÝ
+PANE|Quản trị
+PANE|Tài chính  báo cáo
+PANE|Menu  kho
+PANE|Khách hàng  ưu đãi
+PANE|Bán hàng

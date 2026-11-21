@@ -71,3 +71,103 @@ bấm thứ hai — giữ nguyên hành vi hiện có.
 Duyệt cả 2 fix trên như một đợt bug. Sau khi duyệt: sửa → build → chạy lại probe (bổ sung kiểm tra
 paint/column name và thứ tự mở bàn khi `loading` chưa xong) → ghi `test-results.md`. Đợt kiểm chức
 năng/GUI thật (SQL, phiên bàn, quyền) vẫn cần duyệt riêng theo quy trình.
+
+## Trạng thái (20/11/2026)
+
+Đã sửa cả 2 bug theo đợt được duyệt và xác nhận lại bằng build + probe kỹ thuật:
+
+- RG-B02 build 0 error (`runs/row-action-20261120/build-rg.log`).
+- RG-P06/P07/P08 PASS: cột `Delete` phân giải đúng property, icon được vẽ ở ô (ảnh
+  `runs/row-action-20261120/probe-delete-cell.png`), `OpenTableAfterLoadAsync` chờ nạp xong mới mở bàn.
+- Chi tiết trong `test-results.md` mục "Đợt bug RG-01 / RG-02".
+
+Kiểm chức năng/GUI thật (SQL, phiên bàn, quyền) vẫn NOT RUN, chờ duyệt đợt test riêng.
+
+## Bug RG-03 — Ô chọn bàn / nhãn bàn lệch với bàn-đơn đang mở ở POS
+
+- Ngày phát hiện: 21/11/2026, trong đợt test chức năng RG-F01–F06 (đã được duyệt chạy).
+- Trạng thái: **đã sửa và regression PASS ngày 21/11/2026** (đợt bug được duyệt; xem mục "Trạng thái RG-03" cuối bài).
+
+**Hiện tượng (có bằng chứng UIA, DB test `CoffeeManager_Test_RG_20261121_a_ui`):**
+
+1. Mở đơn qua bấm thẻ bàn ở màn Bàn (B0008, đơn HD26093450): POS mở đúng đơn (header
+   "Tại quán · Bàn B0008", tổng 125.000 ₫) nhưng ô chọn bàn và nhãn trạng thái vẫn hiển thị
+   bàn trước đó "Ban 02 · Trống" — `runs/ui_20261121/09-f02-card-ban08.txt`.
+2. Đang mở đơn HD26093335 (B0003), bấm một dòng món để mở ô ghi chú (nháp), rồi chọn bàn khác
+   (Ban 09 · Trống): hộp "Bỏ input chưa ghi để tiếp tục?" hiện đúng; bấm **Hủy** thì POS giữ
+   đơn B0003 và giữ ghi chú nháp, nhưng ô chọn bàn **ở lại "Ban 09 · Trống"** thay vì trả về
+   Ban 03 — `runs/ui_20261121/25-f02b-cancel-kept-order.txt`, `25b-f02b-combo-state.txt`
+   (header "Tại quán · Bàn B0003" + combo "Ban 09 · Trống" cùng lúc).
+
+**Nguyên nhân (theo code, chưa sửa):**
+
+- `SalesControl.OpenTableAsync` (dòng ~519–533): khi `ConfirmInputAsync("chọn bàn khác")` trả
+  `false`, method `return` mà không gọi `SetTableSelection`/`UpdateTableStatus` để trả ô chọn bàn
+  về bàn đang mở; giá trị combo đã bị binding đổi sang bàn người dùng vừa bấm.
+- Luồng mở đơn từ màn Bàn (`MainForm.OpenSalesTableAsync` → `OpenTableAfterLoadAsync` →
+  `OpenTableAsync` → `OpenOrderAsync`/`LoadOrder`) chỉ nạp `order` và gọi `UpdateTableStatus()`,
+  nhưng `UpdateTableStatus` đọc lại `table.SelectedValue` cũ nên nhãn bàn dựa trên lựa chọn cũ,
+  không dựa trên `order.Header.TableCode`; combo cũng không được đồng bộ theo bàn của đơn.
+
+**Đề xuất sửa (tối thiểu, không đổi SQL/contract):**
+
+- Trong `OpenTableAsync`, lưu `table.SelectedValue` trước khi gọi `ConfirmInputAsync`; nếu người
+  dùng Hủy thì `SetTableSelection(previous)` + `UpdateTableStatus()` rồi `return`.
+- Khi mở đơn thành công (`OpenOrderAsync`/`LoadOrder` có `order != null`), gọi
+  `SetTableSelection(order.Header.TableCode)` và cho nhãn bàn hiển thị theo bàn của đơn
+  (ưu tiên `order.Header.TableCode` khi `order` khác null).
+
+**Phạm vi ảnh hưởng:** chỉ phần hiển thị/đồng bộ ô chọn bàn ở POS; không đổi dữ liệu, phiên bàn,
+quyền hay luồng tạo đơn. Chỉ sửa sau khi đợt bug được duyệt.
+
+## Trạng thái RG-03 (21/11/2026)
+
+Đã sửa sau khi đợt bug được duyệt (`src/CafeManager.WinForms/Modules/Sales/SalesControl.cs`):
+
+- `LoadOrder`: khi đơn có `Header.Channel == "Tai quan"` và `TableCode` khác null thì gọi
+  `SetTableSelection(TableCode)` → combo chọn bàn luôn khớp bàn của đơn vừa mở.
+- `OpenTableAsync`: lấy `previous = ActiveTableCode()` trước khi mở/hỏi; nếu `ConfirmInputAsync`
+  trả false thì `SetTableSelection(previous)` + `UpdateTableStatus()`; sau khi mở đơn xong cũng
+  đồng bộ lại theo bàn thực của ngữ cảnh.
+- Thêm helper `ActiveTableCode()`: đọc bàn của đơn đã lưu (ưu tiên) hoặc bàn của đơn mới đang mở,
+  không đọc combo (combo có thể đã bị binding đổi).
+
+Kiểm chứng (chi tiết `test-results.md` mục "Đợt regression RG-03"):
+
+- RG-B03 build 0 error (`runs/ui_20261121/29-build-rg3.log`).
+- RG-F08 PASS: bấm thẻ Ban 08 → combo/nhãn "Ban 08 · HD26093450"/"Ban 08 · Đang dùng"
+  (`31-rg3-a-open-ban08.txt`).
+- RG-F09 PASS: Hủy bỏ nháp khi chọn Ban 09 → giữ HD26093335 và combo trả về Ban 03
+  (`34b-rg3-b-cancel-restored.txt`).
+- RG-F10 PASS: sanity chọn bàn trống/mở đơn/Làm mới/Đơn mới (`35`–`38-rg3-c-*.txt`).
+
+Quan sát ngoài phạm vi (chưa sửa): dòng gợi ý `state` có thể còn câu cũ sau khi mở đơn (hành vi có từ
+trước, không lệch đơn/bàn/tài chính); cần duyệt riêng nếu muốn dọn.
+
+## Bug RG-04 — Dòng gợi ý `state` còn câu của ngữ cảnh cũ sau khi mở đơn
+
+- Ngày phát hiện: 21/11/2026, trong đợt regression RG-03 (quan sát ngoài phạm vi, người dùng
+  đã duyệt dọn ngày 21/11/2026).
+- Trạng thái: **đã sửa và kiểm lại ngày 21/11/2026**.
+
+**Hiện tượng (bằng chứng UIA):** mở đơn từ thẻ bàn hoặc ô chọn bàn, dòng gợi ý dưới POS còn câu
+của ngữ cảnh trước, ví dụ đang mở HD26093335 nhưng vẫn "Đã chọn Ban 09. Thêm món đầu để tạo đơn."
+(`runs/ui_20261121/36-rg3-c-combo-open-ban03.txt`) hoặc "Đã chọn Ban 01 (trống)…" khi mở B0008
+(`31-rg3-a-open-ban08.txt`).
+
+**Nguyên nhân (code):** `SalesControl.OpenOrderAsync` chỉ nạp đơn (`LoadOrder`) rồi `return`;
+câu gợi ý do `ReloadAll`/`StartNewOrderAsync` đặt trước đó không được thay. Luồng mở bàn
+(`OpenTableAsync`) và hộp F4 đều đi qua `OpenOrderAsync` nên cùng bị.
+
+**Đề xuất/sửa (tối thiểu):** sau khi `LoadOrder` thành công trong `OpenOrderAsync`, đặt
+`state.Text = L.F("Đã mở đơn {0}.", code)` (cùng câu đã dùng ở `HandleOccupiedTableAsync`).
+Không đổi SQL/contract, không đổi logic mở đơn.
+
+**Phạm vi ảnh hưởng:** chỉ chữ gợi ý ở POS sau khi mở đơn; không đổi đơn, bàn, phiên, tiền.
+
+**Kiểm chứng:** build `cm-build-roi-gon4` 0 error (`runs/ui_20261121/39-build-rg4.log`);
+mở thẻ Ban 08 → "Đã mở đơn HD26093450." (`40-rg4-card-ban08.txt`); Hủy bỏ nháp chọn Ban 09 →
+combo/nhãn trả về Ban 03, gợi ý "Đã mở đơn HD26093335." (`41-rg4-cancel-restored.txt`); chọn
+Ban 09 rồi mở lại "Ban 03 · HD26093335" từ combo → gợi ý "Đã mở đơn HD26093335."
+(`42-rg4-combo-open-ban03.txt`); "Làm mới" → "Đã tải từ SQL · 08:02", vẫn giữ đơn
+(`43-rg4-reload.txt`).

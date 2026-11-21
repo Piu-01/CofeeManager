@@ -1,0 +1,31 @@
+GRID=10 khu v?c
+CELL|Row 10|(null)|Empty
+CELL|KHU V?C Row 10|Khu khong khoi thuoc|Empty
+CELL|MA Row 10|KV010|Empty
+CELL|Row 9|(null)|Empty
+CELL|KHU V?C Row 9|Khu khoi dong|Empty
+CELL|MA Row 9|KV009|Empty
+CELL|Row 8|(null)|1704,869,55,16
+CELL|KHU V?C Row 8|Tang thuong|612,869,1092,16
+CELL|MA Row 8|KV008|437,869,175,16
+CELL|Row 7|(null)|1704,811,55,58
+CELL|KHU V?C Row 7|Phong rieng|612,811,1092,58
+CELL|MA Row 7|KV007|437,811,175,58
+CELL|Row 6|(null)|1704,753,55,58
+CELL|KHU V?C Row 6|Hien ngoai|612,753,1092,58
+CELL|MA Row 6|KV006|437,753,175,58
+CELL|Row 5|(null)|1704,695,55,58
+CELL|KHU V?C Row 5|Ban bar|612,695,1092,58
+CELL|MA Row 5|KV005|437,695,175,58
+CELL|Row 4|(null)|1704,637,55,58
+CELL|KHU V?C Row 4|Khu VIP|612,637,1092,58
+CELL|MA Row 4|KV004|437,637,175,58
+CELL|Row 3|(null)|1704,579,55,58
+CELL|KHU V?C Row 3|Tang 2|612,579,1092,58
+CELL|MA Row 3|KV003|437,579,175,58
+CELL|Row 2|(null)|1704,521,55,58
+CELL|KHU V?C Row 2|San vuon|612,521,1092,58
+CELL|MA Row 2|KV002|437,521,175,58
+CELL|Row 1|(null)|Empty
+CELL|KHU V?C Row 1|Trong nha|Empty
+CELL|MA Row 1|KV001|Empty

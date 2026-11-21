@@ -1,0 +1,23 @@
+TITLE='CoffeeManager ú Dang nh?p'
+Window name='CoffeeManager ú Dang nh?p' id='' enabled=True offscreen=False rect=551,111 818x797
+  Pane name='' id='' enabled=True offscreen=False rect=560,149 800x750
+    Pane name='' id='' enabled=True offscreen=False rect=660,193 600x661
+      Pane name='' id='' enabled=True offscreen=False rect=700,233 520x169
+        Text name='CoffeeManager ú Dang nh?p' id='' enabled=True offscreen=False rect=724,258 472x37
+        Text name='KHONG GIAN QU?N LY QUAN CA PHE' id='' enabled=True offscreen=False rect=724,305 264x20
+        Pane name='KHONG GIAN QU?N LY QUAN CA PHE' id='' enabled=True offscreen=False rect=723,328 474x46
+      Text name='Tˆn dang nh?p' id='' enabled=True offscreen=False rect=704,432 129x25
+      Text name='M?t kh?u' id='' enabled=True offscreen=False rect=704,535 86x25
+      CheckBox name='Hi?n m?t kh?u' id='' enabled=True offscreen=False rect=704,638 149x29
+      Button name='Dang nh?p' id='' enabled=True offscreen=False rect=704,689 512x70
+      Text name='Nh?p t…i kho?n d? dang nh?p.' id='' enabled=True offscreen=False rect=704,777 512x37
+      Pane name='Nh?p t…i kho?n d? dang nh?p.' id='' enabled=True offscreen=False rect=704,467 512x46
+        Edit name='Tˆn dang nh?p' id='' enabled=True offscreen=False rect=716,478 488x24
+      Pane name='Tˆn dang nh?p' id='' enabled=True offscreen=False rect=704,570 512x46
+        Edit name='M?t kh?u' id='' enabled=True offscreen=False rect=716,581 488x24
+  TitleBar name='CoffeeManager ú Dang nh?p' id='TitleBar' enabled=True offscreen=False rect=560,120 800x29
+    MenuBar name='System Menu Bar' id='' enabled=True offscreen=False rect=560,120 28x28
+      MenuItem name='System' id='Item 1' enabled=True offscreen=False rect=560,120 28x28
+    Button name='Minimize' id='Minimize' enabled=True offscreen=False rect=1182,112 60x37
+    Button name='Maximize' id='Maximize' enabled=True offscreen=False rect=1242,112 59x37
+    Button name='Close' id='Close' enabled=True offscreen=False rect=1301,112 60x37

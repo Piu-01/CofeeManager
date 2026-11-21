@@ -150,7 +150,7 @@ public partial class MainForm : Form
     internal async Task OpenSalesTableAsync(string code)
     {
         await Navigate(NavigationTarget.Sales);
-        if (content.Controls.OfType<Modules.Sales.SalesControl>().FirstOrDefault() is { } sales && sales.Visible) await sales.OpenTableAsync(code);
+        if (content.Controls.OfType<Modules.Sales.SalesControl>().FirstOrDefault() is { } sales && sales.Visible) await sales.OpenTableAfterLoadAsync(code);
     }
     internal void SetWorkspaceTitle(string caption)
     {

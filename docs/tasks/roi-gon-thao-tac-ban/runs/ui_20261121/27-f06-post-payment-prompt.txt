@@ -1,0 +1,158 @@
+﻿TEXT|Loại đơn
+TEXT|Bán hàng
+TEXT|SALES WORKSPACE
+TEXT|25.000 ₫
+TEXT|Phải thanh toán
+TEXT|Chưa thanh toán
+TEXT|Tại quán · Bàn B0002 · Khách Vãng lai
+TEXT|HD26093455
+TEXT|40.000 ₫
+TEXT|Tra sen
+TEXT|30.000 ₫
+TEXT|Banh flan
+TEXT|38.000 ₫
+TEXT|Sua chua trai cay
+TEXT|40.000 ₫
+TEXT|Nuoc cam tuoi
+TEXT|50.000 ₫
+TEXT|Matcha latte
+TEXT|35.000 ₫
+TEXT|Ca phe muoi
+TEXT|42.000 ₫
+TEXT|Tra vai
+TEXT|45.000 ₫
+TEXT|Tra dao cam sa
+TEXT|35.000 ₫
+TEXT|Banh croissant
+TEXT|65.000 ₫
+TEXT|Banh tiramisu
+TEXT|50.000 ₫
+TEXT|Sinh to xoai
+TEXT|55.000 ₫
+TEXT|Sinh to bo
+TEXT|40.000 ₫
+TEXT|Tra xanh
+TEXT|45.000 ₫
+TEXT|Tra sua tran chau
+TEXT|55.000 ₫
+TEXT|Cappuccino
+TEXT|32.000 ₫
+TEXT|Bac xiu
+TEXT|30.000 ₫
+TEXT|Ca phe sua
+TEXT|25.000 ₫
+TEXT|Ca phe den
+TEXT|Ban 02 · Đang dùng
+TEXT|Bàn
+TEXT|Khu vực
+TEXT|Khu vực / Bàn
+TEXT|Bàn còn đơn chưa chốt; thu hoặc hủy trước khi trả bàn.
+TEXT|Nguyen Van An · ADMIN
+TEXT|Quản lý / Bán hàng
+TEXT|Phiên đang hoạt động.
+TEXT|Quản trị viên · ADMIN
+TEXT|Nguyen Van An
+TEXT|Quản trị
+TEXT|Tài chính & báo cáo
+TEXT|Menu & kho
+TEXT|Khách hàng & ưu đãi
+TEXT|Bán hàng
+TEXT|KHÔNG GIAN QUẢN LÝ
+TEXT|CoffeeManager
+TEXT|Thanh toán thành công HD26093455. Bạn có muốn in hóa đơn không?
+TEXT|In hóa đơn
+BTN|Làm mới|enabled=False
+BTN|F4 · Đơn mở|enabled=False
+BTN|Đơn mới|enabled=False
+BTN|Open|enabled=False
+BTN|Kiểm tra kết quả|enabled=False
+BTN|F8 · Thanh toán|enabled=False
+BTN|In tạm|enabled=False
+BTN|Hủy đơn mở|enabled=False
+BTN|Trả bàn|enabled=False
+BTN|F3 · Khách / Ưu đãi|enabled=False
+BTN|Trang sau|enabled=False
+BTN|Trang trước|enabled=False
+BTN|Trà trái cây|enabled=False
+BTN|Trà sữa|enabled=False
+BTN|Sinh tố|enabled=False
+BTN|Nước ngọt|enabled=False
+BTN|Nước ép|enabled=False
+BTN|Món ăn nhẹ|enabled=False
+BTN|Kem - Tráng miệng|enabled=False
+BTN|Đồ uống nóng|enabled=False
+BTN|Cà phê|enabled=False
+BTN|Bánh ngọt|enabled=False
+BTN|Tất cả|enabled=False
+BTN|Tìm món|enabled=False
+BTN|Thêm Tra sen|enabled=False
+BTN|Thêm Banh flan|enabled=False
+BTN|Thêm Sua chua trai cay|enabled=False
+BTN|Thêm Nuoc cam tuoi|enabled=False
+BTN|Thêm Matcha latte|enabled=False
+BTN|Thêm Ca phe muoi|enabled=False
+BTN|Thêm Tra vai|enabled=False
+BTN|Thêm Tra dao cam sa|enabled=False
+BTN|Thêm Banh croissant|enabled=False
+BTN|Thêm Banh tiramisu|enabled=False
+BTN|Thêm Sinh to xoai|enabled=False
+BTN|Thêm Sinh to bo|enabled=False
+BTN|Thêm Tra xanh|enabled=False
+BTN|Thêm Tra sua tran chau|enabled=False
+BTN|Thêm Cappuccino|enabled=False
+BTN|Thêm Bac xiu|enabled=False
+BTN|Thêm Ca phe sua|enabled=False
+BTN|Thêm Ca phe den|enabled=False
+BTN|Open|enabled=False
+BTN|Open|enabled=False
+BTN|Đăng xuất|enabled=True
+BTN|Thông tin hệ thống|enabled=True
+BTN|Danh mục nền|enabled=True
+BTN|Nhân sự|enabled=True
+BTN|Báo cáo|enabled=True
+BTN|Tài sản|enabled=True
+BTN|Công nợ|enabled=True
+BTN|Thu chi|enabled=True
+BTN|Kho|enabled=True
+BTN|Nguyên liệu / Tồn|enabled=True
+BTN|Menu / Công thức|enabled=True
+BTN|Ưu đãi / Điểm|enabled=True
+BTN|Khách hàng|enabled=True
+BTN|Bàn / Khu vực|enabled=True
+BTN|Giao hàng|enabled=True
+BTN|Lịch sử hóa đơn|enabled=True
+BTN|Bán hàng|enabled=True
+BTN|Tổng quan|enabled=True
+BTN|Không|enabled=True
+BTN|Có|enabled=True
+WIN|In hóa đơn
+PANE|Nguyen Van An · ADMIN
+PANE|Bán hàng
+PANE|25.000 ₫
+PANE|Chưa thanh toán
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Ảnh minh họa schematic, không phải ảnh thật món
+PANE|Phiên đang hoạt động.
+PANE|KHÔNG GIAN QUẢN LÝ
+PANE|KHÔNG GIAN QUẢN LÝ
+PANE|Quản trị
+PANE|Tài chính  báo cáo
+PANE|Menu  kho
+PANE|Khách hàng  ưu đãi
+PANE|Bán hàng

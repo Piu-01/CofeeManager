@@ -1,0 +1,8 @@
+﻿EDIT||1362,545
+EDIT|Tìm món bán hàng|446,321
+BTN|Hủy|1689,542
+BTN|Lưu|1637,542
+BTN|Thêm Ca phe sua|1224,569
+BTN|Thêm Ca phe den|782,569
+BTN|Ưu đãi / Điểm|126,578
+BTN|Khách hàng|126,524

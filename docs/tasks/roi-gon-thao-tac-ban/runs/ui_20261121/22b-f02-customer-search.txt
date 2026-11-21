@@ -1,0 +1,135 @@
+﻿TEXT|Loại đơn
+TEXT|Bán hàng
+TEXT|SALES WORKSPACE
+TEXT|—
+TEXT|Phải thanh toán
+TEXT|Trống
+TEXT|Thêm món đầu tiên để lưu đơn
+TEXT|Chưa tạo đơn
+TEXT|40.000 ₫
+TEXT|Tra sen
+TEXT|30.000 ₫
+TEXT|Banh flan
+TEXT|38.000 ₫
+TEXT|Sua chua trai cay
+TEXT|40.000 ₫
+TEXT|Nuoc cam tuoi
+TEXT|50.000 ₫
+TEXT|Matcha latte
+TEXT|35.000 ₫
+TEXT|Ca phe muoi
+TEXT|42.000 ₫
+TEXT|Tra vai
+TEXT|45.000 ₫
+TEXT|Tra dao cam sa
+TEXT|35.000 ₫
+TEXT|Banh croissant
+TEXT|65.000 ₫
+TEXT|Banh tiramisu
+TEXT|50.000 ₫
+TEXT|Sinh to xoai
+TEXT|55.000 ₫
+TEXT|Sinh to bo
+TEXT|40.000 ₫
+TEXT|Tra xanh
+TEXT|45.000 ₫
+TEXT|Tra sua tran chau
+TEXT|55.000 ₫
+TEXT|Cappuccino
+TEXT|32.000 ₫
+TEXT|Bac xiu
+TEXT|30.000 ₫
+TEXT|Ca phe sua
+TEXT|25.000 ₫
+TEXT|Ca phe den
+TEXT|Ban 01 · Trống
+TEXT|Bàn
+TEXT|Khu vực
+TEXT|Khu vực / Bàn
+TEXT|Đã chọn Ban 01 (trống). Thêm món đầu để tạo đơn.
+TEXT|Nguyen Van An · ADMIN
+TEXT|Quản lý / Bán hàng
+TEXT|Phiên đang hoạt động.
+TEXT|Quản trị viên · ADMIN
+TEXT|Nguyen Van An
+TEXT|Quản trị
+TEXT|Tài chính & báo cáo
+TEXT|Menu & kho
+TEXT|Khách hàng & ưu đãi
+TEXT|Bán hàng
+TEXT|KHÔNG GIAN QUẢN LÝ
+TEXT|CoffeeManager
+TEXT|Tối đa50 kết quả; nhập số điện thoại cụ thể để chọn đúng khách.
+TEXT|Không chọn chương trình vẫn áp dụng hạng
+TEXT|Không chọn chương trình vẫn áp dụng hạng
+TEXT|Khách / hạng / điểm hiện tại
+TEXT|Khách / hạng / điểm hiện tại
+TEXT|Tìm khách (bỏ chọn = vãng lai)
+BTN|Làm mới
+BTN|F4 · Đơn mở
+BTN|Đơn mới
+BTN|Open
+BTN|Kiểm tra kết quả
+BTN|F8 · Thanh toán
+BTN|In tạm
+BTN|Hủy đơn mở
+BTN|Trả bàn
+BTN|F3 · Khách / Ưu đãi
+BTN|Trang sau
+BTN|Trang trước
+BTN|Trà trái cây
+BTN|Trà sữa
+BTN|Sinh tố
+BTN|Nước ngọt
+BTN|Nước ép
+BTN|Món ăn nhẹ
+BTN|Kem - Tráng miệng
+BTN|Đồ uống nóng
+BTN|Cà phê
+BTN|Bánh ngọt
+BTN|Tất cả
+BTN|Tìm món
+BTN|Thêm Tra sen
+BTN|Thêm Banh flan
+BTN|Thêm Sua chua trai cay
+BTN|Thêm Nuoc cam tuoi
+BTN|Thêm Matcha latte
+BTN|Thêm Ca phe muoi
+BTN|Thêm Tra vai
+BTN|Thêm Tra dao cam sa
+BTN|Thêm Banh croissant
+BTN|Thêm Banh tiramisu
+BTN|Thêm Sinh to xoai
+BTN|Thêm Sinh to bo
+BTN|Thêm Tra xanh
+BTN|Thêm Tra sua tran chau
+BTN|Thêm Cappuccino
+BTN|Thêm Bac xiu
+BTN|Thêm Ca phe sua
+BTN|Thêm Ca phe den
+BTN|Open
+BTN|Open
+BTN|Đăng xuất
+BTN|Thông tin hệ thống
+BTN|Danh mục nền
+BTN|Nhân sự
+BTN|Báo cáo
+BTN|Tài sản
+BTN|Công nợ
+BTN|Thu chi
+BTN|Kho
+BTN|Nguyên liệu / Tồn
+BTN|Menu / Công thức
+BTN|Ưu đãi / Điểm
+BTN|Khách hàng
+BTN|Bàn / Khu vực
+BTN|Giao hàng
+BTN|Lịch sử hóa đơn
+BTN|Bán hàng
+BTN|Tổng quan
+BTN|Quay lại
+BTN|Áp dụng
+BTN|Open
+BTN|Open
+BTN|Thêm khách
+BTN|Tìm
