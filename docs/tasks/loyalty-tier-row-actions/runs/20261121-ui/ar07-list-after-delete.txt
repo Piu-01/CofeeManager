@@ -1,0 +1,42 @@
+﻿TEXT|Đã cập nhật 09:37:05
+TEXT|1 / 1
+TEXT|Hiển thị 1–4 / 4 hạng thành viên
+TEXT|Thiết lập ngưỡng điểm và ưu đãi theo hạng thành viên.
+TEXT|Chính sách hạng
+TEXT|LOYALTY WORKSPACE
+TEXT|Nguyen Van An · ADMIN
+TEXT|Quản lý / Chính sách hạng
+TEXT|Phiên đang hoạt động.
+TEXT|Quản trị viên · ADMIN
+TEXT|Nguyen Van An
+TEXT|Quản trị
+TEXT|Tài chính & báo cáo
+TEXT|Menu & kho
+TEXT|Khách hàng & ưu đãi
+TEXT|Bán hàng
+TEXT|KHÔNG GIAN QUẢN LÝ
+TEXT|CoffeeManager
+BTN|Trang sau|False
+BTN|Trang trước|False
+BTN|Điểm khách hàng|True
+BTN|Hạng thành viên|True
+BTN|Khuyến mãi|True
+BTN|Thêm|True
+BTN|Đăng xuất|True
+BTN|Thông tin hệ thống|True
+BTN|Danh mục nền|True
+BTN|Nhân sự|True
+BTN|Báo cáo|True
+BTN|Tài sản|True
+BTN|Công nợ|True
+BTN|Thu chi|True
+BTN|Kho|True
+BTN|Nguyên liệu / Tồn|True
+BTN|Menu / Công thức|True
+BTN|Ưu đãi / Điểm|True
+BTN|Khách hàng|True
+BTN|Bàn / Khu vực|True
+BTN|Giao hàng|True
+BTN|Lịch sử hóa đơn|True
+BTN|Bán hàng|True
+BTN|Tổng quan|True

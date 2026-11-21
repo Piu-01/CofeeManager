@@ -1,0 +1,16 @@
+﻿TEXT|Tỷ lệ giảm0–100%
+TEXT|Ngày kết thúc (bao gồm ngày này)
+TEXT|Ngày bắt đầu
+TEXT|Tên chương trình
+TEXT|Mã KM và8chữ số
+TEXT|Thêm khuyến mãi
+BTN|Hủy|True
+BTN|Đối chiếu|False
+BTN|Lưu|True
+BTN|Mở lịch chọn ngày|True
+BTN|Mở lịch chọn ngày|True
+EDIT|Tỷ lệ giảm0–100%|0
+EDIT|Ngày, định dạng dd/MM/yyyy|21/11/2026
+EDIT|Ngày, định dạng dd/MM/yyyy|21/11/2026
+EDIT|Tên chương trình|Test BR01 R7
+EDIT|Mã KM và8chữ số|KM20261121

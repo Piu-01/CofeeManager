@@ -87,8 +87,7 @@ public class OrbitRecordListControl : UserControl
         Search.PlaceholderText = profile switch { OrbitGridProfile.Menu => L.T("Tìm tên hoặc mã sản phẩm…"), OrbitGridProfile.Tables => L.T("Tìm mã hoặc tên bàn…"), OrbitGridProfile.Areas => L.T("Tìm mã hoặc tên khu vực…"), OrbitGridProfile.Promotions => L.T("Tìm mã hoặc tên chương trình…"), _ => Search.PlaceholderText };
         if (profile == OrbitGridProfile.Ranks)
         {
-            Workspace.ShowTools = false; Workspace.Filters.Controls.Remove(refresh); Workspace.RowActions.Controls.Add(refresh);
-            refresh.Text = L.T("Tải lại"); OrbitManagementTheme.Button(refresh, ManagementButtonStyle.Secondary, "refresh");
+            Workspace.ShowTools = false; Workspace.Filters.Controls.Remove(refresh); refresh.Visible = false;
         }
         if (profile == OrbitGridProfile.Points)
         {

@@ -1,0 +1,52 @@
+TEXT|Da c?p nh?t 16:44:20
+TEXT|1 / 1
+TEXT|Hi?n th? 1-4 / 4 h?ng th…nh viˆn
+TEXT|Thi?t l?p ngu?ng di?m v… uu dai theo h?ng th…nh viˆn.
+TEXT|Ch¡nh s ch h?ng
+TEXT|LOYALTY WORKSPACE
+TEXT|Nguyen Van An ú ADMIN
+TEXT|Qu?n ly / Ch¡nh s ch h?ng
+TEXT|Phiˆn dang ho?t d?ng.
+TEXT|Qu?n tr? viˆn ú ADMIN
+TEXT|Nguyen Van An
+TEXT|Qu?n tr?
+TEXT|T…i ch¡nh & b o c o
+TEXT|Menu & kho
+TEXT|Kh ch h…ng & uu dai
+TEXT|B n h…ng
+TEXT|KHONG GIAN QU?N LY
+TEXT|CoffeeManager
+BTN|Trang sau|enabled=False
+BTN|Trang tru?c|enabled=False
+BTN|H?ng th…nh viˆn|enabled=True
+BTN|Khuy?n mai|enabled=True
+BTN|Thˆm|enabled=True
+BTN|Dang xu?t|enabled=True
+BTN|Th“ng tin h? th?ng|enabled=True
+BTN|Danh m?c n?n|enabled=True
+BTN|Nhƒn s?|enabled=True
+BTN|B o c o|enabled=True
+BTN|T…i s?n|enabled=True
+BTN|C“ng n?|enabled=True
+BTN|Thu chi|enabled=True
+BTN|Kho|enabled=True
+BTN|Nguyˆn li?u / T?n|enabled=True
+BTN|Menu / C“ng th?c|enabled=True
+BTN|Uu dai / Di?m|enabled=True
+BTN|Kh ch h…ng|enabled=True
+BTN|B…n / Khu v?c|enabled=True
+BTN|Giao h…ng|enabled=True
+BTN|L?ch s? h¢a don|enabled=True
+BTN|B n h…ng|enabled=True
+BTN|T?ng quan|enabled=True
+PANE|Nguyen Van An ú ADMIN
+PANE|4 h?ng th…nh viˆn
+PANE|Thi?t l?p ngu?ng di?m v… uu dai theo h?ng th…nh viˆn.
+PANE|Phiˆn dang ho?t d?ng.
+PANE|KHONG GIAN QU?N LY
+PANE|KHONG GIAN QU?N LY
+PANE|Qu?n tr?
+PANE|T…i ch¡nh  b o c o
+PANE|Menu  kho
+PANE|Kh ch h…ng  uu dai
+PANE|B n h…ng

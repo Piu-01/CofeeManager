@@ -1,0 +1,4 @@
+﻿TEXT|Thêm hạng và tính lại hạng toàn bộ khách trong một transaction?
+TEXT|Thêm hạng thành viên
+BTN|Hủy|True
+BTN|Đồng ý|True

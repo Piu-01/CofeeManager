@@ -1,0 +1,22 @@
+AR-02 lần thử 1 (09:52, trước khi lặp lại sạch): hộp "Unhandled exception has occurred in your application" xuất hiện trên dialog Thêm hạng thành viên.
+Trích nội dung Details (Win32 GetWindowText của hộp lỗi, pid 25076):
+
+Unhandled exception has occurred in your application. If you click Continue, the application will ignore this error and attempt to continue. If you click Quit, the application will close immediately.
+
+Object reference not set to an instance of an object.
+
+************** Exception Text **************
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at CafeManager.WinForms.Forms.OperationEditorDialog.WriteAsync() in D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\Forms\OperationEditorDialog.cs:line 63
+   at CafeManager.WinForms.Forms.OperationEditorDialog.Save_Click(Object sender, EventArgs e) in D:\Workspace\Nam_3\HK1\CoffeeManager\src\CafeManager.WinForms\Forms\OperationEditorDialog.cs:line 55
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__124_0(Object state)
+   at System.Windows.Forms.Control.InvokeMarshaledCallbackHelper(Object obj)
+   at System.Windows.Forms.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+
+Trạng thái sau lỗi:
+- DB test KHÔNG có dòng hạng mới, không có G03OperationReceipt Operation='PolicyReplace'.
+- Dialog Thêm vẫn mở, danh sách phía sau vẫn 4 hạng.
+- Sau khi bấm Continue rồi Hủy dialog, ứng dụng tiếp tục chạy nhưng tiến trình sau đó bị đóng khi kết thúc lượt kiểm tra.
+- Lặp lại cùng thao tác (SILV / 5000 / 4, preview → Lưu → Đồng ý) trên tiến trình mới: không tái hiện; lưu thành công (xem ar02-list-after-add.txt và db-final-state.txt).
+
+Không sửa source trong lượt test; ghi nhận tại bug-report.md (BR-01).

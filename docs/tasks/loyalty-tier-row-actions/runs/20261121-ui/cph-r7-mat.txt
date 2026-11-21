@@ -1,0 +1,10 @@
+﻿TEXT|Đơn vị chuẩn
+TEXT|Tên nguyên liệu
+TEXT|Mã NVL01–NVL99
+TEXT|Thêm nguyên liệu
+BTN|Hủy|True
+BTN|Đối chiếu|False
+BTN|Lưu|True
+EDIT|Đơn vị chuẩn|
+EDIT|Tên nguyên liệu|
+EDIT|Mã NVL01–NVL99|

@@ -10,7 +10,7 @@ public partial class OperationEditorDialog : CafeManager.WinForms.Forms.OrbitDia
     private Func<Guid, Task<OperationResult>>? pendingWrite;
     private readonly Func<Guid, Task<OperationReceipt?>>? reconcile;
     private readonly Guid requestId = Guid.NewGuid();
-    private bool writing, unknown, dirty, saved;
+    private bool writing, unknown, dirty, saved, confirming;
     [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
     public Func<Func<Guid, Task<OperationResult>>>? CaptureWrite { get; set; }
     [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
@@ -46,21 +46,30 @@ public partial class OperationEditorDialog : CafeManager.WinForms.Forms.OrbitDia
     }
     private async void Save_Click(object? sender, EventArgs e)
     {
-        if (writing || unknown) return;
+        // Chỉ một lượt xác nhận/ghi tại một thời điểm; chặn lần bấm lặp làm mất pendingWrite.
+        if (writing || unknown || confirming) return;
         errors.Clear();
+        Func<Guid, Task<OperationResult>>? write = null;
         try
         {
-            pendingWrite ??= CaptureWrite?.Invoke() ?? throw new InvalidOperationException(L.T("Chưa cấu hình thao tác."));
-            if (Confirmation is not null && await OrbitConfirmationDialog.ShowAsync(this, Confirmation, Text, MessageBoxButtons.OKCancel) != DialogResult.OK) { pendingWrite = null; return; }
-            await WriteAsync();
+            write = pendingWrite ??= CaptureWrite?.Invoke() ?? throw new InvalidOperationException(L.T("Chưa cấu hình thao tác."));
+            if (Confirmation is not null)
+            {
+                confirming = true;
+                var confirmed = await OrbitConfirmationDialog.ShowAsync(this, Confirmation, Text, MessageBoxButtons.OKCancel) == DialogResult.OK;
+                confirming = false;
+                if (!confirmed) { if (ReferenceEquals(pendingWrite, write)) pendingWrite = null; return; }
+            }
+            await WriteAsync(write);
         }
         catch (ArgumentException ex) { pendingWrite = null; status.Text = ex.Message; var target = Descendants(fields).FirstOrDefault(c => c.TabStop && c is not Button && (ex.ParamName is null || c.AccessibleName?.Contains(ex.ParamName, StringComparison.OrdinalIgnoreCase) == true)) ?? fields;
             errors.SetError(target, ex.Message); target.Focus(); }
+        catch (Exception ex) { confirming = false; pendingWrite = null; if (!IsDisposed) status.Text = ex.Message; }
     }
-    private async Task WriteAsync()
+    private async Task WriteAsync(Func<Guid, Task<OperationResult>> write)
     {
         SetBusy(true);
-        try { var result = await pendingWrite!(requestId); if (IsDisposed) return; ResultCode = result.Code; AffectedCount = result.AffectedCount; saved = true; DialogResult = DialogResult.OK; Close(); }
+        try { var result = await write(requestId) ?? throw new InvalidOperationException(L.T("Thao tác không trả về kết quả.")); if (IsDisposed) return; ResultCode = result.Code; AffectedCount = result.AffectedCount; saved = true; DialogResult = DialogResult.OK; Close(); }
         catch (UserOperationException ex)
         {
             if (IsDisposed) return;
@@ -81,10 +90,11 @@ public partial class OperationEditorDialog : CafeManager.WinForms.Forms.OrbitDia
             if (IsDisposed) return;
             if (receipt is not null) { ResultCode = receipt.Code; saved = true; DialogResult = DialogResult.OK; Close(); }
             else if (await OrbitConfirmationDialog.ShowAsync(this, L.T("Chưa thấy kết quả; yêu cầu cũ có thể còn chạy. Gửi lại cùng mã và nội dung để SQL đối chiếu?"), L.T("Đối chiếu"), MessageBoxButtons.OKCancel) == DialogResult.OK)
-            { unknown = false; await WriteAsync(); }
+            { unknown = false; await WriteAsync(pendingWrite ?? throw new InvalidOperationException(L.T("Chưa cấu hình thao tác."))); }
             else status.Text = L.F("Chưa có kết quả xác nhận. Yêu cầu {0}.", requestId);
         }
         catch (Exception ex) when (ex is UserOperationException or UnauthorizedAccessException or OperationCanceledException) { if (!IsDisposed) status.Text = ex.Message; }
+        catch (Exception ex) { if (!IsDisposed) status.Text = ex.Message; }
         finally { if (!IsDisposed) SetBusy(false); }
     }
     private void SetBusy(bool value)

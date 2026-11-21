@@ -1,0 +1,14 @@
+﻿TEXT|Ảnh hưởng
+TEXT|Ảnh hưởng
+TEXT|Preview trước khi lưu
+TEXT|Giảm % (0–100)
+TEXT|Ngưỡng điểm
+TEXT|Mã hạng (A–Z, 0–9, tối đa 5 ký tự)
+TEXT|Thêm hạng thành viên
+BTN|Hủy|True
+BTN|Đối chiếu|False
+BTN|Lưu|True
+BTN|Preview trước khi lưu|True
+EDIT|Giảm % (0–100)|1
+EDIT|Ngưỡng điểm|50000
+EDIT|Mã hạng (A–Z, 0–9, tối đa 5 ký tự)|TST

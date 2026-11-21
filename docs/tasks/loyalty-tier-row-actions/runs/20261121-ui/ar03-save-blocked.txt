@@ -1,0 +1,198 @@
+TOP 264204 [WindowsForms10.Window.8.app.0.2042806_r3_ad1] CoffeeManager
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | CoffeeManager
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | KHONG GIAN QU?N LY
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | T?ng quan
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | B†n hÖng
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | B†n hÖng
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | L?ch s? h¢a don
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Giao hÖng
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | BÖn / Khu v?c
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Kh†ch hÖng & uu dai
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Kh†ch hÖng
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Uu dai / Di?m
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Menu & kho
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Menu / Cìng th?c
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Nguyàn li?u / T?n
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Kho
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | TÖi ch°nh & b†o c†o
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Thu chi
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Cìng n?
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | TÖi s?n
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | B†o c†o
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Qu?n tr?
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | NhÉn s?
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Danh m?c n?n
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Thìng tin h? th?ng
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Nguyen Van An
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Qu?n tr? viàn ˙ ADMIN
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Dang xu?t
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Phiàn dang ho?t d?ng.
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Qu?n ly / Ch°nh s†ch h?ng
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Nguyen Van An ˙ ADMIN
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | LOYALTY WORKSPACE
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Ch°nh s†ch h?ng
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Thi?t l?p ngu?ng di?m vÖ uu dai theo h?ng thÖnh viàn.
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Thàm
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Khuy?n mai
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | H?ng thÖnh viàn
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Di?m kh†ch hÖng
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Hi?n th? 1-5 / 5 h?ng thÖnh viàn
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | 1 / 1
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Da c?p nh?t 09:33:10
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | PROMOTION WORKSPACE
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Khuy?n mai
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Qu?n ly chuong trçnh khuy?n mai vÖ xem tru?c uu dai.
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Thàm khuy?n mai
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Preview uu dai
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | S?a
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | X¢a
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Hi?n th? 1-17 / 17 chuong trçnh
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | 1 / 1
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Da c?p nh?t 09:29:44
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Da ch?n Ban 01 (tr?ng). Thàm m¢n d?u d? t?o don.
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Khu v?c / BÖn
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Ban 01 ˙ Tr?ng
+   WindowsForms10.Window.8.app.0.2042806_r3_ad1 | M¢n
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Ca phe den
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | 25.000 ?
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Ca phe sua
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | 30.000 ?
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Bac xiu
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | 32.000 ?
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Cappuccino
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | 55.000 ?
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Tra sua tran chau
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | 45.000 ?
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Tra xanh
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | 40.000 ?
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Sinh to bo
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | 55.000 ?
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Sinh to xoai
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | 50.000 ?
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Banh tiramisu
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | 65.000 ?
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Banh croissant
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | 35.000 ?
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Tra dao cam sa
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | 45.000 ?
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Tra vai
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | 42.000 ?
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Ca phe muoi
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | 35.000 ?
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Matcha latte
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | 50.000 ?
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Nuoc cam tuoi
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | 40.000 ?
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Sua chua trai cay
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | 38.000 ?
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Banh flan
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | 30.000 ?
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Tra sen
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | 40.000 ?
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Tçm m¢n
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | T?t c?
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | B†nh ng?t
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | CÖ phà
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | D? u?ng n¢ng
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Kem - Tr†ng mi?ng
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | M¢n an nh?
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Nu?c Çp
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Nu?c ng?t
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Sinh t?
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | TrÖ s?a
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | TrÖ tr†i cÉy
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Chua t?o don
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Thàm m¢n d?u tiàn d? luu don
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Tr?ng
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | F3 ˙ Kh†ch / Uu dai
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Tr? bÖn
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | H?y don m?
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Ph?i thanh to†n
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | -
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | In t?m
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | F8 ˙ Thanh to†n
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Ki?m tra k?t qu?
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | SALES WORKSPACE
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | B†n hÖng
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Don m?i
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | F4 ˙ Don m?
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | LÖm m?i
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | INVENTORY WORKSPACE
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Nguyàn li?u & t?n kho
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Tra c?u nguyàn li?u, don v? vÖ s? lu?ng t?n.
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Thàm nguyàn li?u
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | M? s?
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | S?a
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | X¢a
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Hi?n th? 1-20 / 20
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | 1 / 1
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Da c?p nh?t 09:29:13
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | CUSTOMER WORKSPACE
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Kh†ch hÖng
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Qu?n ly kh†ch hÖng, di?m t°ch luy vÖ h?ng thÖnh viàn.
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Thàm kh†ch hÖng
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | M? s? di?m
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | H¢a don
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | S?a
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | X¢a
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Hi?n th? 1-22 / 22 kh†ch hÖng
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | 1 / 1
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Da c?p nh?t 09:28:03
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | T?ng quan qu†n
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | K?t qu? kinh doanh trong k? vÖ nh?ng vi?c c?n ch£ y ngay.
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Hìm nay
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Th†ng nÖy
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | T?i l?i
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Hìm nay ˙ 21/11/2026 00:00:00  21/11/2026 09:27:51 (khìng g?m m?c cu?i)
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | So s†nh: 20/11/2026 00:00:00  20/11/2026 09:27:51
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Da c?p nh?t s? li?u.
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | D?c l£c 09:27:51 ˙ 21/11/2026 theo SQL Server.
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Doanh thu da thanh to†n
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Sau gi?m, g?m ph° ship
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | 0 ?
+   WindowsForms10.Static.app.0.2042806_r3_ad1 |  100% ˙ -100.000 ?
+K? tru?c: 100.000 ?
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Xem chi ti?t
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | H¢a don da thanh to†n
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | S? h¢a don trong k?
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | 0
+   WindowsForms10.Static.app.0.2042806_r3_ad1 |  100% ˙ -2
+K? tru?c: 2
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Xem chi ti?t
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Bçnh quÉn m?i h¢a don
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Doanh thu / s? h¢a don da tr?
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | -
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Chua c¢ h¢a don da thanh to†n trong k?.
+K? tru?c: 50.000 ?
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Xem chi ti?t
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Th?c chi
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Phi?u chi da ghi nh?n trong k?
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | 0 ?
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Khìng thay d?i so v?i k? tru?c.
+K? tru?c: 0 ?
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Xem chi ti?t
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Xu hu?ng doanh thu
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Ch?n di?m ho?c dóng   r?i Enter d? xem ch?ng t?.
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Co c?u doanh thu
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Theo kành b†n ˙ % c¢ th? l?ch nh? do lÖm trïn.
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Top 5 m¢n b†n ch?y
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | X?p theo s? ly ˙ Ch? t°nh h¢a don da thanh to†n.
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | T?ng toÖn k?: 0 ly
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Chua c¢ m¢n b†n trong k?.
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | C?n ch£ y ˙ Hi?n t?i
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | S? du vÖ cìng vi?c t?i l£c d?c, khìng ph? thu?c k? ngÖy/th†ng.
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Doanh thu theo ngÖy thanh to†n; th?c chi theo ngÖy l?p phi?u chi. Chua d?i so†t d?i t†c; dÉy khìng ph?i l?i nhu?n. So s†nh d?a tràn d? li?u da ghi nh?n.
+TOP 264958 [WindowsForms10.Window.8.app.0.2042806_r3_ad1] Thàm h?ng thÖnh viàn
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Thàm h?ng thÖnh viàn
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Ma h?ng (A-Z, 0-9, t?i da 5 ky t?)
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Ngu?ng di?m
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Gi?m % (0-100)
+   WindowsForms10.Edit.app.0.2042806_r3_ad1 | 0
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | Preview tru?c khi luu
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Xem l?i t? SQL
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | ?nh hu?ng
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | H?ng c?n ma/ngu?ng duy nh?t, c¢ ngu?ng0 vÖ t? l?0..100.
+   WindowsForms10.Static.app.0.2042806_r3_ad1 | C?n xem l?i SQL cho n?i dung hi?n t?i.
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | Luu
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | D?i chi?u
+   WindowsForms10.Button.app.0.2042806_r3_ad1 | H?y

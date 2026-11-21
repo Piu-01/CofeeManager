@@ -1,0 +1,13 @@
+Tiers
+-----
+DONG :0:0 | BAC  :2000:3 | PLAT :6000:6 | KIM  :30000:8
+MaHang Customers
+------ ---------
+BAC   5
+KIM   1
+PLAT  16
+RequestId Operation EntityCode CompletedAt ResultCount
+--------- --------- ---------- ----------- -----------
+B26ED97B-43E4-4312-83E6-6458DF422D0C PolicyReplace POLICY 2026-11-21 09:33:10.2964389 14
+B06D0B94-4393-4032-A798-85CA20564D18 PolicyReplace POLICY 2026-11-21 09:36:24.0573411 14
+8B69B575-4A42-400E-97CF-2162E5CB5EBA PolicyReplace POLICY 2026-11-21 09:37:05.6828327 7
