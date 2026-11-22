@@ -20,7 +20,7 @@ public sealed record SalesOrderHeader(string Code, DateTime Created, string Empl
     public bool CanEditHeader => IsPayable;
 }
 public sealed record SalesLine(int LineId, string Product, string Name, int Quantity, decimal Price,
-    string? Note, decimal Amount);
+    string? Note, decimal Amount, string? GiftPromotion = null);
 public sealed record SalesPayment(int PaymentId, string Method, string Name, decimal Amount, string? Reference);
 public sealed record SalesOrderDto(SalesOrderHeader Header, IReadOnlyList<SalesLine> Lines,
     IReadOnlyList<SalesPayment> Payments, IReadOnlyList<AppliedPromotion> Promotions)

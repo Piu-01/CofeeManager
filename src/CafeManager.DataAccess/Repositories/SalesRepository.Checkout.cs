@@ -19,14 +19,18 @@ public sealed partial class SalesRepository
                 var percent = r.GetInt32(7); var tierPercent = r.GetInt32(8); var promotionPercent = r.GetInt32(9);
                 var tierDiscount = r.GetDecimal(10); var promotionDiscount = r.GetDecimal(11); var promotionCount = r.GetInt32(12);
                 var partnerPercent = r.GetDecimal(13); var partnerFee = r.GetDecimal(14); var points = r.GetInt64(15);
-                var token = (byte[])r[16];
+                var token = (byte[])r[16]; var giftCount = r.FieldCount > 17 && !r.IsDBNull(17) ? r.GetInt32(17) : 0;
                 var promotions = new List<AppliedPromotion>();
                 if (await r.NextResultAsync(ct))
                     while (await r.ReadAsync(ct))
                         promotions.Add(new AppliedPromotion(Text(r, 0), Text(r, 1), r.GetInt32(2), r.GetDecimal(3), r.GetDecimal(4)));
+                var gifts = new List<PreviewGift>();
+                if (await r.NextResultAsync(ct))
+                    while (await r.ReadAsync(ct))
+                        gifts.Add(new PreviewGift(Text(r, 0), Text(r, 1), Text(r, 2), Text(r, 3), r.GetInt32(4)));
                 return new CheckoutPreview(code, revision, total, ship, discount, payable, source, percent, tierPercent,
                     promotionPercent, partnerPercent, partnerFee, points, token, promotionCount, tierDiscount,
-                    promotionDiscount, promotions);
+                    promotionDiscount, promotions, giftCount, gifts);
             }, t);
     public async Task<SalesWriteResult> CheckoutAsync(AccountIdentity a, CheckoutRequest request, CancellationToken t)
     {

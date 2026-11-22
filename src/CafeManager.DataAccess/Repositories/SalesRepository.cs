@@ -89,7 +89,7 @@ public sealed partial class SalesRepository(ConnectionFactory factory)
             r.IsDBNull(25) ? null : r.GetInt32(25), r.IsDBNull(26) ? null : (byte[])r[26], r.IsDBNull(27) ? 0 : r.GetInt32(27));
         await r.NextResultAsync(t);
         var lines = await Rows(r, x => new SalesLine(x.GetInt32(0), Text(x, 1), Text(x, 2), x.GetInt32(3),
-            x.GetDecimal(4), Optional(x, 5), x.GetDecimal(6)), t);
+            x.GetDecimal(4), Optional(x, 5), x.GetDecimal(6), x.FieldCount > 7 ? Optional(x, 7) : null), t);
         await r.NextResultAsync(t);
         var payments = await Rows(r, x => new SalesPayment(x.GetInt32(0), Text(x, 1), Text(x, 2), x.GetDecimal(3), Optional(x, 4)), t);
         await r.NextResultAsync(t);

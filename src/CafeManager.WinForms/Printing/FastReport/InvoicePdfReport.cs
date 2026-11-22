@@ -118,10 +118,11 @@ internal static class InvoicePdfReport
         foreach (var line in detail.Order.Lines)
         {
             index++;
-            var item = line.Name;
+            var gift = line.GiftPromotion is not null;
+            var item = gift ? L.T("Tặng kèm · ") + line.Name : line.Name;
             if (!string.IsNullOrWhiteSpace(line.Note)) item += "\n" + L.T("Ghi chú: ") + line.Note;
             table.Rows.Add(index.ToString(PrintFormat.Vi), item, PrintFormat.Integer(line.Quantity),
-                PrintFormat.Money(line.Price), PrintFormat.Money(line.Amount));
+                gift ? L.T("Tặng") : PrintFormat.Money(line.Price), PrintFormat.Money(line.Amount));
         }
         return table;
     }
@@ -222,6 +223,20 @@ internal static class InvoicePdfReport
             band.Objects.Add(PdfLayout.Text(promos, 0, y, width, 4.4f, a4 ? 8f : 6.5f,
                 FontStyle.Regular, HorzAlign.Left, VertAlign.Top, null, true, true));
             y += Math.Max(5f, EstimateLines(promos, width, a4 ? 8f : 6.5f) * 4.2f);
+        }
+
+        // Đơn đã trả có dòng quà 0 ₫; đơn mở (in tạm) hiển thị quà SQL sẽ thêm khi thanh toán.
+        var gifts = detail.Order.Lines.Where(x => x.GiftPromotion is not null)
+            .Select(x => x.Name + " ×" + PrintFormat.Integer(x.Quantity)).ToArray();
+        var proposals = detail.GiftProposals ?? [];
+        var giftText = gifts.Length > 0 ? L.T("Tặng kèm: ") + string.Join(" · ", gifts)
+            : proposals.Count > 0 ? L.T("Tặng kèm khi thanh toán: ") + string.Join(" · ", proposals.Select(p => p.ProductName + " ×" + PrintFormat.Integer(p.Quantity)))
+            : null;
+        if (giftText is not null)
+        {
+            band.Objects.Add(PdfLayout.Text(giftText, 0, y, width, 4.4f, a4 ? 8f : 6.5f,
+                FontStyle.Regular, HorzAlign.Left, VertAlign.Top, null, true, true));
+            y += Math.Max(5f, EstimateLines(giftText, width, a4 ? 8f : 6.5f) * 4.2f);
         }
 
         if (detail.Order.Payments.Count > 0)

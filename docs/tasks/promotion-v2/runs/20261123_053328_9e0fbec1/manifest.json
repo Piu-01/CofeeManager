@@ -1,0 +1,45 @@
+﻿{
+    "RunId":  "20261123_053328_9e0fbec1",
+    "Server":  "localhost",
+    "Database":  "CoffeeManager_Test_PromoV2_20261123_053328_9e0fbec1",
+    "SchemaVersion":  42,
+    "Operator":  "LAPTOP-79UNRIRC\\Lenovo",
+    "Steps":  [
+                  {
+                      "Status":  "PASS",
+                      "Step":  "fixture",
+                      "File":  "database/tests/promo-v2/fixture.sql",
+                      "Ms":  512
+                  },
+                  {
+                      "Status":  "PASS",
+                      "Step":  "01-meta-date",
+                      "File":  "database/tests/promo-v2/01-meta-date.sql",
+                      "Ms":  261
+                  },
+                  {
+                      "Status":  "PASS",
+                      "Step":  "02-discount-gift-preview",
+                      "File":  "database/tests/promo-v2/02-discount-gift-preview.sql",
+                      "Ms":  2414
+                  },
+                  {
+                      "Status":  "PASS",
+                      "Step":  "03-checkout-gift",
+                      "File":  "database/tests/promo-v2/03-checkout-gift.sql",
+                      "Ms":  2800
+                  },
+                  {
+                      "Status":  "FAIL",
+                      "Step":  "04-regression",
+                      "Error":  "Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"KM seed 039 không còn áp đúng sau 042.\"",
+                      "File":  "database/tests/promo-v2/04-regression.sql",
+                      "Ms":  659
+                  }
+              ],
+    "Status":  "Failed",
+    "Created":  true,
+    "Cleaned":  true,
+    "Error":  "System.Management.Automation.MethodInvocationException: Exception calling \"ExecuteNonQuery\" with \"0\" argument(s): \"KM seed 039 không còn áp đúng sau 042.\" ---\u003e System.Data.SqlClient.SqlException: KM seed 039 không còn áp đúng sau 042.\r\n   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean\u0026 dataReady)\r\n   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)\r\n   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean\u0026 usedCache, Boolean asyncWrite, Boolean inRetry)\r\n   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   --- End of inner exception stack trace ---\r\n   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)\r\n   at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)\r\n   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)",
+    "SourceUnchanged":  true
+}

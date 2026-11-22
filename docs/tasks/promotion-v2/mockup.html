@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Orbit Café — Khuyến mãi v2 (mockup)</title>
+<style>
+:root{
+  --canvas:#100E15;--header:#141118;--surface:#211B28;--surfaceHover:#282030;
+  --text:#FFF4E7;--muted:#D0C2D7;--caramel:#FFD09A;--lilac:#D0BEFF;
+  --line:#514357;--cardBorder:#594760;--inputBorder:#776180;--onCaramel:#28180E;
+  --selectedSurface:#3D2D22;--selectedBorder:#B28A62;--error:#FF9B9B;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--canvas);color:var(--text);font:14px/1.45 "Segoe UI",Arial,sans-serif}
+.page{max-width:1240px;margin:0 auto;padding:24px}
+.eyebrow{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--caramel);font-weight:600}
+h1{font-size:26px;margin:6px 0 4px;font-weight:600}
+.sub{color:var(--muted);font-size:13px;margin:0 0 20px}
+.bar{display:flex;gap:10px;align-items:center;margin:0 0 14px}
+.bar .grow{flex:1}
+.btn{border:1px solid var(--inputBorder);background:transparent;color:var(--text);padding:9px 14px;border-radius:10px;font:inherit;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.btn:hover{background:var(--surfaceHover)}
+.btn.primary{background:var(--caramel);border-color:var(--caramel);color:var(--onCaramel);font-weight:600}
+.btn.ghost{border-color:transparent;color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--cardBorder);border-radius:16px;overflow:hidden}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);background:var(--header)}
+td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:middle}
+tr:last-child td{border-bottom:0}
+tr.sel td{background:var(--selectedSurface)}
+.badge{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-size:12px;color:var(--muted);white-space:nowrap}
+.badge.caramel{color:var(--caramel);border-color:#8a6a45;background:#2c2119}
+.badge.lilac{color:var(--lilac);border-color:#5d4e7d;background:#241f30}
+.badge.green{color:#BDE8C7;border-color:#3f6b4b;background:#1e2a21}
+.badge.amber{color:#FFD9A8;border-color:#7a5c33;background:#2b2115}
+.dot{width:7px;height:7px;border-radius:50%;background:currentColor}
+.muted{color:var(--muted)}
+.small{font-size:12px}
+.right{text-align:right}
+/* dialog */
+.overlay{position:fixed;inset:0;background:rgba(8,6,11,.66);display:flex;align-items:flex-start;justify-content:center;padding:30px 20px;overflow:auto}
+.dialog{width:920px;max-width:100%;background:var(--surface);border:1px solid var(--cardBorder);border-radius:16px;box-shadow:0 24px 70px rgba(0,0,0,.55)}
+.dlg-head{display:flex;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid var(--line);background:var(--header);border-radius:16px 16px 0 0}
+.dlg-head h2{font-size:16px;margin:0;font-weight:600;flex:1}
+.x{width:32px;height:32px;border-radius:8px;border:0;background:transparent;color:var(--muted);font-size:18px;cursor:pointer}
+.x:hover{background:var(--surfaceHover);color:var(--text)}
+.dlg-body{padding:18px 20px 4px;max-height:calc(100vh - 210px);overflow:auto}
+.dlg-foot{display:flex;justify-content:flex-end;gap:10px;padding:14px 20px;border-top:1px solid var(--line);background:var(--header);border-radius:0 0 16px 16px}
+.section{padding:16px 0;border-bottom:1px solid var(--line)}
+.section:last-child{border-bottom:0}
+.sec-title{display:flex;align-items:baseline;gap:10px;margin:0 0 4px}
+.sec-title h3{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--caramel);margin:0;font-weight:600}
+.sec-title .hint{font-size:12px;color:var(--muted)}
+.field{margin:12px 0 0}
+.label{font-size:12px;color:var(--muted);margin:0 0 6px;display:block}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.row>*{flex:1;min-width:180px}
+input[type=text],input[type=number],select{width:100%;background:#191420;border:1px solid var(--inputBorder);border-radius:10px;color:var(--text);padding:10px 12px;font:inherit}
+input::placeholder{color:#9b8ca2}
+select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 18px) 18px,calc(100% - 13px) 18px;background-size:5px 5px;background-repeat:no-repeat;padding-right:34px}
+.date{display:flex;align-items:center;gap:8px}
+.date .box{flex:1;display:flex;align-items:center;background:#191420;border:1px solid var(--inputBorder);border-radius:10px;padding:0 12px}
+.date input{border:0;background:transparent;padding:10px 0;flex:1}
+.date .cal{color:var(--muted)}
+.hintline{font-size:12px;color:var(--muted);margin:8px 0 0}
+.check{display:inline-flex;align-items:center;gap:8px;color:var(--text);font-size:13px;cursor:pointer;user-select:none}
+.check input{accent-color:var(--caramel);width:16px;height:16px}
+.seg{display:inline-flex;border:1px solid var(--inputBorder);border-radius:12px;overflow:hidden;background:#191420}
+.seg button{border:0;background:transparent;color:var(--muted);padding:9px 18px;font:inherit;cursor:pointer}
+.seg button.on{background:var(--selectedSurface);color:var(--caramel);box-shadow:inset 0 0 0 1px var(--selectedBorder)}
+.panel{display:none;margin-top:12px}
+.panel.on{display:block}
+.radio-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.rc{border:1px solid var(--inputBorder);border-radius:12px;padding:12px 14px;cursor:pointer;background:#191420}
+.rc:hover{background:var(--surfaceHover)}
+.rc.on{border-color:var(--selectedBorder);background:var(--selectedSurface);box-shadow:inset 0 0 0 1px var(--selectedBorder)}
+.rc b{display:block;font-size:13.5px;font-weight:600}
+.rc span{display:block;font-size:12px;color:var(--muted);margin-top:2px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chip{border:1px solid var(--inputBorder);background:#191420;color:var(--muted);border-radius:999px;padding:6px 12px;font-size:12.5px;cursor:pointer}
+.chip.on{background:var(--selectedSurface);border-color:var(--selectedBorder);color:var(--caramel)}
+.chip.all{border-style:dashed}
+.list{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#191420;margin-top:10px}
+.list-head,.list-row{display:grid;grid-template-columns:44px 1fr 110px 120px;align-items:center;gap:8px;padding:9px 12px}
+.list-head{background:var(--header);border-bottom:1px solid var(--line);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.list-row{border-bottom:1px solid #2c2434}
+.list-row:last-child{border-bottom:0}
+.list-row.selected{background:#241f2c}
+.list .name{font-size:13.5px}
+.list .code{font-size:12px;color:var(--muted)}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--inputBorder);border-radius:8px;overflow:hidden}
+.qty button{width:26px;height:28px;border:0;background:transparent;color:var(--text);cursor:pointer}
+.qty span{min-width:26px;text-align:center;font-size:13px}
+.summary{margin-top:10px;font-size:12.5px;color:var(--muted)}
+.summary b{color:var(--text);font-weight:600}
+.footnote{color:var(--muted);font-size:12px;margin-top:22px}
+.hidden{display:none!important}
+@media(max-width:760px){.radio-cards{grid-template-columns:1fr}.dialog{width:100%}}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="eyebrow">Loyalty · Khuyến mãi</div>
+  <h1>Chương trình ưu đãi</h1>
+  <p class="sub">Chỉ còn hai trạng thái Áp dụng / Tạm ngưng. Thời gian lặp hằng năm theo ngày–tháng; mỗi chương trình chọn Giảm giá hoặc Tặng món.</p>
+
+  <div class="bar">
+    <div class="grow"></div>
+    <button class="btn primary" onclick="openDialog()">＋ Thêm khuyến mãi</button>
+  </div>
+
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>Mã</th><th>Chương trình</th><th>Ưu đãi</th><th>Thời gian</th><th>Đối tượng</th><th>Trạng thái</th></tr>
+      </thead>
+      <tbody>
+        <tr class="sel" onclick="selectRow(this)">
+          <td class="muted">KM260001</td>
+          <td><b>Happy Hour chiều</b><div class="small muted">Áp cho 3 món</div></td>
+          <td><span class="badge caramel">Giảm 10%</span></td>
+          <td>14/02 – 20/02<div class="small muted">Lặp hằng năm</div></td>
+          <td><span class="badge">Mọi khách</span></td>
+          <td><span class="badge green"><i class="dot"></i>Áp dụng</span></td>
+        </tr>
+        <tr onclick="selectRow(this)">
+          <td class="muted">KM260002</td>
+          <td><b>Quà sinh nhật</b><div class="small muted">Tặng 2 món</div></td>
+          <td><span class="badge lilac">Tặng món</span></td>
+          <td>01/03 – 31/03<div class="small muted">Lặp hằng năm</div></td>
+          <td><span class="badge">Hạng Vàng</span></td>
+          <td><span class="badge green"><i class="dot"></i>Áp dụng</span></td>
+        </tr>
+        <tr onclick="selectRow(this)">
+          <td class="muted">KM260003</td>
+          <td><b>Khách quen cuối tuần</b><div class="small muted">Tất cả món</div></td>
+          <td><span class="badge caramel">Giảm 5%</span></td>
+          <td>01/06 – 02/09<div class="small muted">Lặp hằng năm</div></td>
+          <td><span class="badge">Khách vãng lai</span></td>
+          <td><span class="badge amber"><i class="dot"></i>Tạm ngưng</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="footnote">Bản mô phỏng HTML để duyệt bố cục — không phải app WinForms. Không còn Nháp, không còn nút Bật/Tạm dừng và Preview.</p>
+</div>
+
+<div class="overlay hidden" id="overlay">
+  <div class="dialog" role="dialog" aria-modal="true" aria-label="Sửa khuyến mãi">
+    <div class="dlg-head">
+      <h2>Sửa khuyến mãi · <span class="muted">KM260001</span></h2>
+      <button class="x" onclick="closeDialog()" aria-label="Đóng">✕</button>
+    </div>
+    <div class="dlg-body">
+      <div class="section" style="padding-top:0">
+        <div class="row">
+          <div style="flex:2">
+            <label class="label" for="name">Tên chương trình</label>
+            <input id="name" type="text" value="Happy Hour chiều" placeholder="Ví dụ: Giảm 10% giờ vắng khách">
+          </div>
+          <div style="flex:1;min-width:160px">
+            <label class="label" for="status">Trạng thái</label>
+            <select id="status"><option selected>Áp dụng</option><option>Tạm ngưng</option></select>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="sec-title"><h3>Thời gian áp dụng</h3><span class="hint">Lặp lại hằng năm — không cần tạo lại mỗi năm</span></div>
+        <div class="row">
+          <div>
+            <label class="label">Từ ngày</label>
+            <div class="date"><div class="box"><input type="text" value="14/02" placeholder="dd/MM" aria-label="Từ ngày"><span class="cal">▦</span></div></div>
+          </div>
+          <div>
+            <label class="label">Đến ngày (bao gồm ngày này)</label>
+            <div class="date"><div class="box"><input type="text" value="20/02" placeholder="dd/MM" aria-label="Đến ngày"><span class="cal">▦</span></div></div>
+          </div>
+        </div>
+        <div style="margin-top:10px"><label class="check"><input type="checkbox"> Không đặt ngày kết thúc (áp đến hết năm)</label></div>
+        <p class="hintline">Khoảng có thể vắt qua năm mới, ví dụ 20/12 – 10/01.</p>
+      </div>
+
+      <div class="section">
+        <div class="sec-title"><h3>Nội dung ưu đãi</h3><span class="hint">Mỗi chương trình chỉ chọn một loại</span></div>
+        <div class="seg" role="tablist">
+          <button id="tabDiscount" class="on" role="tab" onclick="setKind('discount')">Giảm giá</button>
+          <button id="tabGift" role="tab" onclick="setKind('gift')">Tặng món</button>
+        </div>
+
+        <div class="panel on" id="panelDiscount">
+          <div class="row">
+            <div style="max-width:180px">
+              <label class="label" for="percent">Giảm (%)</label>
+              <input id="percent" type="number" min="0" max="100" value="10">
+            </div>
+            <div style="flex:1;display:flex;align-items:flex-end"><span class="hintline" style="margin:0 0 10px">Giảm trên giá snapshot của các dòng đủ điều kiện, không giảm phí ship.</span></div>
+          </div>
+          <div class="field">
+            <label class="label">Món được giảm</label>
+            <input type="text" placeholder="Tìm theo tên hoặc mã món…" oninput="filterList(this,'discList')">
+            <div class="list" id="discList">
+              <div class="list-head"><span>Chọn</span><span>Món</span><span class="right">Giá</span><span></span></div>
+              <div class="list-row selected"><span><input type="checkbox" checked></span><span><div class="name">Trà đào cam sả</div><div class="code">SP012</div></span><span class="right">45.000 ₫</span><span></span></div>
+              <div class="list-row selected"><span><input type="checkbox" checked></span><span><div class="name">Cà phê sữa</div><div class="code">SP002</div></span><span class="right">30.000 ₫</span><span></span></div>
+              <div class="list-row selected"><span><input type="checkbox" checked></span><span><div class="name">Bạc xỉu</div><div class="code">SP005</div></span><span class="right">35.000 ₫</span><span></span></div>
+              <div class="list-row"><span><input type="checkbox"></span><span><div class="name">Cà phê đen</div><div class="code">SP001</div></span><span class="right">25.000 ₫</span><span></span></div>
+              <div class="list-row"><span><input type="checkbox"></span><span><div class="name">Trà sen vàng</div><div class="code">SP018</div></span><span class="right">42.000 ₫</span><span></span></div>
+            </div>
+            <p class="summary">Đang giảm <b>3 món</b>. Bỏ trống tất cả = áp cho <b>mọi món</b>.</p>
+          </div>
+        </div>
+
+        <div class="panel" id="panelGift">
+          <div class="field" style="margin-top:0">
+            <label class="label">Món tặng kèm</label>
+            <input type="text" placeholder="Tìm món để tặng…" oninput="filterList(this,'giftList')">
+            <div class="list" id="giftList">
+              <div class="list-head"><span>Chọn</span><span>Món tặng</span><span class="right">Giá</span><span class="right">SL</span></div>
+              <div class="list-row selected"><span><input type="checkbox" checked></span><span><div class="name">Bánh mì que</div><div class="code">SP021</div></span><span class="right">20.000 ₫</span><span class="right"><span class="qty"><button type="button">−</button><span>1</span><button type="button">＋</button></span></span></div>
+              <div class="list-row selected"><span><input type="checkbox" checked></span><span><div class="name">Nước suối</div><div class="code">SP030</div></span><span class="right">10.000 ₫</span><span class="right"><span class="qty"><button type="button">−</button><span>2</span><button type="button">＋</button></span></span></div>
+              <div class="list-row"><span><input type="checkbox"></span><span><div class="name">Bánh flan</div><div class="code">SP025</div></span><span class="right">18.000 ₫</span><span class="right"><span class="qty"><button type="button">−</button><span>1</span><button type="button">＋</button></span></span></div>
+            </div>
+            <p class="summary">Đang tặng <b>2 món · 3 phần</b>. Món tặng tự thêm vào đơn khi khách đủ điều kiện, mỗi hóa đơn một lần; giá 0 ₫ và vẫn trừ kho theo công thức.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="sec-title"><h3>Đối tượng khách</h3><span class="hint">Chọn một nhóm</span></div>
+        <div class="radio-cards" id="audCards">
+          <div class="rc on" onclick="setAudience('all',this)"><b>Tất cả khách</b><span>Kể cả khách vãng lai</span></div>
+          <div class="rc" onclick="setAudience('tier',this)"><b>Theo hạng</b><span>Chọn một hoặc nhiều hạng</span></div>
+          <div class="rc" onclick="setAudience('walkin',this)"><b>Khách vãng lai</b><span>Đơn không có hồ sơ khách</span></div>
+        </div>
+        <div id="tierBlock" class="hidden">
+          <div class="chips" id="tierChips">
+            <button type="button" class="chip all on" onclick="toggleAllTier(this)">Tất cả hạng</button>
+            <button type="button" class="chip" onclick="toggleChip(this)">Đồng</button>
+            <button type="button" class="chip" onclick="toggleChip(this)">Bạc</button>
+            <button type="button" class="chip" onclick="toggleChip(this)">Vàng</button>
+            <button type="button" class="chip" onclick="toggleChip(this)">Kim cương</button>
+          </div>
+          <p class="hintline">Chọn nhiều hạng bằng cách bấm từng hạng. “Tất cả hạng” bằng không chọn hạng nào cụ thể.</p>
+        </div>
+      </div>
+    </div>
+    <div class="dlg-foot">
+      <button class="btn" onclick="closeDialog()">Hủy</button>
+      <button class="btn primary" onclick="closeDialog()">Lưu khuyến mãi</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const overlay=document.getElementById('overlay');
+function openDialog(){overlay.classList.remove('hidden')}
+function closeDialog(){overlay.classList.add('hidden')}
+function selectRow(el){document.querySelectorAll('tbody tr').forEach(r=>r.classList.remove('sel'));el.classList.add('sel')}
+function setKind(kind){
+  document.getElementById('tabDiscount').classList.toggle('on',kind==='discount');
+  document.getElementById('tabGift').classList.toggle('on',kind==='gift');
+  document.getElementById('panelDiscount').classList.toggle('on',kind==='discount');
+  document.getElementById('panelGift').classList.toggle('on',kind==='gift');
+}
+function setAudience(kind,card){
+  document.querySelectorAll('#audCards .rc').forEach(c=>c.classList.remove('on'));card.classList.add('on');
+  document.getElementById('tierBlock').classList.toggle('hidden',kind!=='tier');
+}
+function toggleChip(chip){chip.classList.toggle('on');document.querySelector('.chip.all')?.classList.remove('on')}
+function toggleAllTier(chip){chip.classList.toggle('on');document.querySelectorAll('#tierChips .chip:not(.all)').forEach(c=>c.classList.remove('on'))}
+function filterList(input,listId){
+  const q=input.value.trim().toLowerCase();
+  document.querySelectorAll('#'+listId+' .list-row').forEach(row=>{
+    row.style.display=row.textContent.toLowerCase().includes(q)?'':'none';
+  });
+}
+document.querySelectorAll('.list-row').forEach(row=>{
+  row.querySelector('input[type=checkbox]')?.addEventListener('change',e=>row.classList.toggle('selected',e.target.checked));
+});
+</script>
+</body>
+</html>

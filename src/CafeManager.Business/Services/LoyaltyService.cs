@@ -11,19 +11,41 @@ public sealed class LoyaltyService(LoyaltyRepository repository,PermissionServic
     public static PromotionRequest Normalize(PromotionRequest r,bool creating=true)
     {
         var code=creating&&string.IsNullOrWhiteSpace(r.Code)?"":MaterialService.Required(r.Code,10,L.T("Mã")).ToUpperInvariant();if(creating&&code.Length>0&&!Regex.IsMatch(code,"^KM[0-9]{8}$"))throw new ArgumentException(L.T("Mã KM và8chữ số."));
-        if(r.EndDate is not null&&r.EndDate<r.StartDate||r.Discount<0||r.Discount>100)throw new ArgumentException(L.T("Ngày/khoảng giảm không hợp lệ."));
+        var kind=string.IsNullOrWhiteSpace(r.Kind)?"Giam":r.Kind.Trim();
+        if(kind is not ("Giam" or "Tang"))throw new ArgumentException(L.T("Loại ưu đãi không hợp lệ."));
+        if(r.Discount<0||r.Discount>100)throw new ArgumentException(L.T("Tỷ lệ giảm không hợp lệ."));
         var audience=string.IsNullOrWhiteSpace(r.Audience)?"ALL":r.Audience.Trim().ToUpperInvariant();
-        var status=string.IsNullOrWhiteSpace(r.Status)?"Nhap":r.Status.Trim();
-        if(audience is not ("ALL" or "FIRST" or "MEMBER" or "TIER")||status is not ("Nhap" or "DangChay" or "TamDung"))
+        var status=string.IsNullOrWhiteSpace(r.Status)?"DangChay":r.Status.Trim();
+        if(status=="Nhap")status="DangChay";
+        if(audience is not ("ALL" or "TIER" or "WALKIN")||status is not ("DangChay" or "TamDung"))
             throw new ArgumentException(L.T("Đối tượng/trạng thái ưu đãi không hợp lệ."));
         var tiers=(r.Tiers??[]).Select(x=>MaterialService.Required(x,5,L.T("Mã hạng")).ToUpperInvariant()).Distinct(StringComparer.Ordinal).ToArray();
         var items=(r.Items??[]).Select(x=>MaterialService.Required(x,5,L.T("Mã món")).ToUpperInvariant()).Distinct(StringComparer.Ordinal).ToArray();
-        if(audience=="TIER"&&tiers.Length==0)throw new ArgumentException(L.T("Ưu đãi theo hạng cần chọn hạng."));
         if(audience!="TIER"&&tiers.Length>0)throw new ArgumentException(L.T("Chỉ ưu đãi theo hạng mới chọn hạng."));
         if(items.Length>500||tiers.Any(x=>!Regex.IsMatch(x,"^[A-Z0-9]{2,5}$"))||items.Any(x=>!Regex.IsMatch(x,"^[A-Z0-9]{5}$")))
             throw new ArgumentException(L.T("Hạng/món của ưu đãi không hợp lệ."));
-        return r with{Code=code,Name=MaterialService.Required(r.Name,100,L.T("Tên chương trình")),Audience=audience,Status=status,Tiers=tiers,Items=items};
+        var gifts=(r.Gifts??[]).Select(g=>new PromotionGift(MaterialService.Required(g.Product,5,L.T("Mã món")).ToUpperInvariant(),g.Quantity))
+            .GroupBy(g=>g.Product,StringComparer.Ordinal).Select(g=>new PromotionGift(g.Key,g.Sum(x=>x.Quantity))).ToArray();
+        if(kind=="Giam")
+        {
+            if(gifts.Length>0)throw new ArgumentException(L.T("Ưu đãi giảm không kèm món tặng."));
+        }
+        else
+        {
+            if(items.Length>0)throw new ArgumentException(L.T("Ưu đãi tặng món không có phạm vi món giảm."));
+            if(gifts.Length is <1 or >50||gifts.Any(g=>!Regex.IsMatch(g.Product,"^[A-Z0-9]{5}$")||g.Quantity is <1 or >999))
+                throw new ArgumentException(L.T("Món tặng cần 1–50 dòng, số lượng 1–999."));
+        }
+        var start=NormalizeDay(r.StartDate)??throw new ArgumentException(L.T("Cần ngày bắt đầu."));
+        DateOnly? end=null;
+        if(r.EndDate is DateOnly endDay)
+            end=new DateOnly((endDay.Month*100+endDay.Day)<(start.Month*100+start.Day)?2001:2000,endDay.Month,endDay.Day);
+        return r with{Code=code,Name=MaterialService.Required(r.Name,100,L.T("Tên chương trình")),Audience=audience,Status=status,
+            Kind=kind,Tiers=tiers,Items=items,Gifts=gifts,StartDate=start,EndDate=end,Discount=kind=="Tang"?0:r.Discount};
     }
+    // Ngày/tháng lặp hằng năm: BD luôn năm 2000; KT năm 2001 khi vắt năm (xử lý ở trên).
+    private static DateOnly? NormalizeDay(DateOnly? day) =>
+        day is DateOnly value ? new DateOnly(2000,value.Month,value.Day) : null;
     public static IReadOnlyList<TierInput> NormalizeTiers(IReadOnlyList<TierInput> tiers)
     {
         var rows=tiers.Select(t=>t with{Code=MaterialService.Required(t.Code,5,L.T("Mã hạng")).ToUpperInvariant()}).ToArray();

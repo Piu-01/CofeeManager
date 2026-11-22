@@ -1,0 +1,43 @@
+﻿{
+    "RunId":  "20261123_053514_3a6515e3",
+    "Server":  "localhost",
+    "Database":  "CoffeeManager_Test_PromoV2_20261123_053514_3a6515e3",
+    "SchemaVersion":  42,
+    "Operator":  "LAPTOP-79UNRIRC\\Lenovo",
+    "Steps":  [
+                  {
+                      "Status":  "PASS",
+                      "Step":  "fixture",
+                      "File":  "database/tests/promo-v2/fixture.sql",
+                      "Ms":  599
+                  },
+                  {
+                      "Status":  "PASS",
+                      "Step":  "01-meta-date",
+                      "File":  "database/tests/promo-v2/01-meta-date.sql",
+                      "Ms":  283
+                  },
+                  {
+                      "Status":  "PASS",
+                      "Step":  "02-discount-gift-preview",
+                      "File":  "database/tests/promo-v2/02-discount-gift-preview.sql",
+                      "Ms":  2912
+                  },
+                  {
+                      "Status":  "PASS",
+                      "Step":  "03-checkout-gift",
+                      "File":  "database/tests/promo-v2/03-checkout-gift.sql",
+                      "Ms":  2803
+                  },
+                  {
+                      "Status":  "PASS",
+                      "Step":  "04-regression",
+                      "File":  "database/tests/promo-v2/04-regression.sql",
+                      "Ms":  603
+                  }
+              ],
+    "Status":  "Succeeded",
+    "Created":  true,
+    "Cleaned":  true,
+    "SourceUnchanged":  true
+}

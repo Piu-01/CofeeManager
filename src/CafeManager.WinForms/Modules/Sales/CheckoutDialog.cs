@@ -84,6 +84,10 @@ internal sealed partial class CheckoutDialog : CafeManager.WinForms.Forms.OrbitD
         // Danh sách từng ưu đãi đang áp; SQL là nguồn chốt, UI chỉ hiển thị.
         discountSource.Text = preview.Promotions.Count == 0 ? sourceText
             : sourceText + "\n" + string.Join("\n", preview.Promotions.Select(x => L.F("• {0} · {1}% · −{2}", x.Name, x.Percent, SalesUi.Money(x.Discount))));
+        // Quà tặng chỉ đọc; dòng 0 ₫ do SQL thêm lúc chốt, vẫn trừ kho.
+        if (preview.Gifts is { Count: > 0 } gifts)
+            discountSource.Text += "\n" + L.T("Tặng kèm (mỗi hóa đơn một lần):") + "\n"
+                + string.Join("\n", gifts.Select(x => L.F("• {0} · {1} ×{2}", x.Name, x.ProductName, x.Quantity)));
         shipValue.Text = SalesUi.Money(preview.Ship); payableValue.Text = SalesUi.Money(preview.Payable);
         confirm.Text = preview.Payable == 0 ? L.T("Chốt hóa đơn 0 ₫") : L.T("Xác nhận thanh toán");
         confirm.Size = confirm.GetPreferredSize(Size.Empty);

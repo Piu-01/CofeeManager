@@ -22,10 +22,25 @@ public sealed class InvoiceRepository(ConnectionFactory factory)
     {
         var order = await SalesRepository.ReadOrder(r, ct); if (order is null) return null;
         await r.NextResultAsync(ct);
-        if (!await r.ReadAsync(ct)) return new(order, null, null, null, null, null, 0, null, null, null, null, order.Promotions);
-        return new(order, SalesRepository.Text(r, 0), SalesRepository.Optional(r, 1), r.IsDBNull(2) ? null : r.GetInt32(2),
+        if (!await r.ReadAsync(ct))
+        {
+            var empty = new InvoiceDetailDto(order, null, null, null, null, null, 0, null, null, null, null, order.Promotions, []);
+            return await ReadGiftsAsync(r, empty, ct);
+        }
+        var detail = new InvoiceDetailDto(order, SalesRepository.Text(r, 0), SalesRepository.Optional(r, 1), r.IsDBNull(2) ? null : r.GetInt32(2),
             r.IsDBNull(3) ? null : r.GetInt32(3), r.IsDBNull(4) ? null : r.GetInt32(4),
             r.GetInt32(8), r.GetDateTime(9), r.IsDBNull(5) ? null : r.GetDecimal(5),
-            r.IsDBNull(6) ? null : r.GetDecimal(6), r.IsDBNull(7) ? null : r.GetInt32(7), order.Promotions);
+            r.IsDBNull(6) ? null : r.GetDecimal(6), r.IsDBNull(7) ? null : r.GetInt32(7), order.Promotions, []);
+        return await ReadGiftsAsync(r, detail, ct);
+    }
+    private static async Task<InvoiceDetailDto> ReadGiftsAsync(Microsoft.Data.SqlClient.SqlDataReader r,
+        InvoiceDetailDto detail, CancellationToken ct)
+    {
+        var gifts = new List<CafeManager.Models.Dtos.Loyalty.PreviewGift>();
+        if (await r.NextResultAsync(ct))
+            while (await r.ReadAsync(ct))
+                gifts.Add(new(SalesRepository.Text(r, 0), SalesRepository.Text(r, 1), SalesRepository.Text(r, 2),
+                    SalesRepository.Text(r, 3), r.GetInt32(4)));
+        return detail with { GiftProposals = gifts };
     }
 }
