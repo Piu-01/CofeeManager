@@ -7,7 +7,7 @@ partial class CatalogsControl
 {
     private OrbitSectionTabs tabs = null!;
     private TextBox searchInput = null!;
-    private Button searchButton = null!, reloadButton = null!, addButton = null!, editButton = null!, deleteButton = null!, previousButton = null!, nextButton = null!;
+    private Button searchButton = null!, reloadButton = null!, addButton = null!, previousButton = null!, nextButton = null!;
     private Label statusLabel = null!;
     private OrbitDataGridView grid = null!;
     private DataGridViewTextBoxColumn codeColumn = null!, nameColumn = null!, phoneColumn = null!, ratioColumn = null!, allowanceColumn = null!, factorColumn = null!, startColumn = null!, endColumn = null!, typeColumn = null!;
@@ -25,20 +25,19 @@ partial class CatalogsControl
         searchButton = MakeButton("", ManagementButtonStyle.Icon, "search", L.T("Tìm"));
         reloadButton = MakeButton(L.T("Tải / đối chiếu"), ManagementButtonStyle.Secondary, "refresh", L.T("Tải / đối chiếu"));
         addButton = MakeButton(L.T("Thêm"), ManagementButtonStyle.Primary, "plus", L.T("Thêm"));
-        editButton = MakeButton(L.T("Sửa"), ManagementButtonStyle.Action, "pencil", L.T("Sửa"));
-        deleteButton = MakeButton(L.T("Xóa"), ManagementButtonStyle.Danger, "trash", L.T("Xóa"));
         previousButton = management.Pagination.Previous; nextButton = management.Pagination.Next;
         management.Filters.Controls.AddRange([searchButton, reloadButton]);
-        management.PrimaryActions.Controls.Add(addButton); management.RowActions.Controls.AddRange([editButton, deleteButton]);
+        management.PrimaryActions.Controls.Add(addButton); management.ShowMeta = false;
         grid = new OrbitDataGridView { Dock = DockStyle.Fill };
         codeColumn = Column("Code", L.T("Mã")); nameColumn = Column("Name", L.T("Tên")); phoneColumn = Column("Phone", L.T("SDT"), false);
         ratioColumn = Column("Ratio", L.T("Chiết khấu (%)"), false); allowanceColumn = Column("Allowance", L.T("Phụ cấp"), false); factorColumn = Column("Factor", L.T("Hệ số tăng ca"), false);
         startColumn = Column("StartTime", L.T("Bắt đầu"), false); endColumn = Column("EndTime", L.T("Kết thúc"), false); typeColumn = Column("Type", L.T("Loại"), false);
         supportedColumn = new DataGridViewCheckBoxColumn { Name = "Supported", DataPropertyName = "Supported", HeaderText = L.T("Hỗ trợ thủ công"), ReadOnly = true, Visible = false };
         grid.Columns.AddRange([codeColumn, nameColumn, phoneColumn, ratioColumn, allowanceColumn, factorColumn, startColumn, endColumn, typeColumn, supportedColumn]);
+        grid.Columns.Add(new DataGridViewTextBoxColumn { Name = "Delete", HeaderText = "" });
         grid.Profile = OrbitGridProfile.Catalogs; grid.CellFormatting += Grid_CellFormatting;
         management.Body.Controls.AddRange([grid, emptyState]); Controls.Add(management);
-        searchButton.Click += Search_Click; reloadButton.Click += Reload_Click; addButton.Click += Add_Click; editButton.Click += Edit_Click; deleteButton.Click += Delete_Click;
+        searchButton.Click += Search_Click; reloadButton.Click += Reload_Click; addButton.Click += Add_Click;
         previousButton.Click += Previous_Click; nextButton.Click += Next_Click;
         AutoScaleDimensions = new SizeF(96, 96); AutoScaleMode = AutoScaleMode.Dpi; BackColor = OrbitManagementTheme.Background;
         ResumeLayout(true);

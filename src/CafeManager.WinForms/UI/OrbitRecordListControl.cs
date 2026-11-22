@@ -18,6 +18,9 @@ public class OrbitRecordListControl : UserControl
     // Thao tác trực tiếp trên dòng do từng màn đăng ký; hạ tầng click/paint dùng chung.
     protected Action<object>? RowDeleteRequested;
     protected Action<object>? RowActivated;
+    // Bận do engine sửa/xóa tại dòng; chặn nút hành động trong lúc ghi.
+    protected bool RowWriteBusy;
+    protected bool IsBusy => busy || RowWriteBusy;
     protected SessionContext? Session;
     protected object? Selected => Grid.CurrentRow?.DataBoundItem;
     internal OrbitListWorkspace PageWorkspace => Workspace;
@@ -54,7 +57,7 @@ public class OrbitRecordListControl : UserControl
         Register(Workspace.Pagination.Previous, "Trước", async () => { page = Math.Max(0, page - 1); await Reload(); });
         Register(Workspace.Pagination.Next, "Sau", async () => { page++; await Reload(); });
         Search.PlaceholderText = L.T("Tìm mã hoặc tên…");
-        Search.KeyDown += async (_, e) => { if (e.KeyCode == Keys.Enter) { e.SuppressKeyPress = true; if (!busy || committedSearchOnly) await SubmitSearch(); } };
+        Search.KeyDown += async (_, e) => { if (e.KeyCode == Keys.Enter) { e.SuppressKeyPress = true; if (!IsBusy || committedSearchOnly) await SubmitSearch(); } };
         Grid.SelectionChanged += (_, _) => UpdateActions();
         Grid.CellMouseClick += (_, e) => DispatchRowAction(e.RowIndex, e.ColumnIndex);
         Grid.CellDoubleClick += (_, e) => DispatchRowActivated(e.RowIndex, e.ColumnIndex);
@@ -76,10 +79,10 @@ public class OrbitRecordListControl : UserControl
     protected void Configure(string caption, SessionContext session, Func<string, int, CancellationToken, Task<IList>> read, params (string Property, string Header)[] columns)
     {
         Session = session; query = read;
-        var profile = caption switch { "Menu và công thức" => OrbitGridProfile.Menu, "Bàn và trạng thái hiện tại" => OrbitGridProfile.Tables, "Khu vực" => OrbitGridProfile.Areas, "Khách hàng" => OrbitGridProfile.Customers, "Khuyến mãi và preview SQL" => OrbitGridProfile.Promotions, "Chính sách hạng" => OrbitGridProfile.Ranks, "Lịch sử điểm (chỉ đọc)" => OrbitGridProfile.Points, _ => OrbitGridProfile.Catalogs };
+        var profile = caption switch { "Menu và công thức" => OrbitGridProfile.Menu, "Bàn và trạng thái hiện tại" => OrbitGridProfile.Tables, "Khu vực" => OrbitGridProfile.Areas, "Khách hàng" => OrbitGridProfile.Customers, "Khuyến mãi" or "Khuyến mãi và preview SQL" => OrbitGridProfile.Promotions, "Chính sách hạng" => OrbitGridProfile.Ranks, "Lịch sử điểm (chỉ đọc)" => OrbitGridProfile.Points, _ => OrbitGridProfile.Catalogs };
         Workspace.Title.Text = profile switch { OrbitGridProfile.Menu => L.T("Menu & công thức"), OrbitGridProfile.Tables or OrbitGridProfile.Areas => L.T("Bàn & khu vực"), OrbitGridProfile.Promotions => L.T("Khuyến mãi"), OrbitGridProfile.Points => L.T("Lịch sử điểm"), _ => L.T(caption) };
         Workspace.Eyebrow.Text = profile switch { OrbitGridProfile.Menu => "MENU WORKSPACE", OrbitGridProfile.Tables or OrbitGridProfile.Areas => "SPACE WORKSPACE", OrbitGridProfile.Customers => "CUSTOMER WORKSPACE", OrbitGridProfile.Promotions => "PROMOTION WORKSPACE", OrbitGridProfile.Ranks or OrbitGridProfile.Points => "LOYALTY WORKSPACE", _ => "REFERENCE WORKSPACE" };
-        Workspace.Description.Text = profile switch { OrbitGridProfile.Menu => L.T("Quản lý sản phẩm và công thức pha chế."), OrbitGridProfile.Tables or OrbitGridProfile.Areas => L.T("Theo dõi trạng thái bàn và quản lý khu vực."), OrbitGridProfile.Customers => L.T("Quản lý khách hàng, điểm tích lũy và hạng thành viên."), OrbitGridProfile.Promotions => L.T("Quản lý chương trình khuyến mãi và xem trước ưu đãi."), OrbitGridProfile.Ranks => L.T("Thiết lập ngưỡng điểm và ưu đãi theo hạng thành viên."), OrbitGridProfile.Points => L.T("Tra cứu lịch sử điểm khách hàng · Chỉ đọc."), _ => L.T("Tra cứu và quản lý dữ liệu hiện tại.") };
+        Workspace.Description.Text = profile switch { OrbitGridProfile.Menu => L.T("Quản lý sản phẩm và công thức pha chế."), OrbitGridProfile.Tables or OrbitGridProfile.Areas => L.T("Theo dõi trạng thái bàn và quản lý khu vực."), OrbitGridProfile.Customers => L.T("Quản lý khách hàng, điểm tích lũy và hạng thành viên."), OrbitGridProfile.Promotions => L.T("Quản lý chương trình khuyến mãi theo thời gian lặp hằng năm."), OrbitGridProfile.Ranks => L.T("Thiết lập ngưỡng điểm và ưu đãi theo hạng thành viên."), OrbitGridProfile.Points => L.T("Tra cứu lịch sử điểm khách hàng · Chỉ đọc."), _ => L.T("Tra cứu và quản lý dữ liệu hiện tại.") };
         createCaption = profile switch { OrbitGridProfile.Menu => L.T("Thêm sản phẩm"), OrbitGridProfile.Tables => L.T("Thêm bàn"), OrbitGridProfile.Areas => L.T("Thêm khu vực"), OrbitGridProfile.Customers => L.T("Thêm khách hàng"), OrbitGridProfile.Promotions => L.T("Thêm khuyến mãi"), _ => L.T("Thêm") };
         noun = profile switch { OrbitGridProfile.Menu => L.T("sản phẩm"), OrbitGridProfile.Tables => L.T("bàn"), OrbitGridProfile.Areas => L.T("khu vực"), OrbitGridProfile.Customers => L.T("khách hàng"), OrbitGridProfile.Promotions => L.T("chương trình"), OrbitGridProfile.Ranks => L.T("hạng thành viên"), OrbitGridProfile.Points => L.T("giao dịch"), _ => L.T("dòng") };
         foreach (var col in columns) Grid.Columns.Add(new DataGridViewTextBoxColumn { Name = col.Property, DataPropertyName = col.Property, HeaderText = L.T(col.Header) });
@@ -113,7 +116,7 @@ public class OrbitRecordListControl : UserControl
     private void DispatchRowAction(int rowIndex, int columnIndex)
     {
         if (rowIndex < 0 || columnIndex < 0 || Grid.Columns[columnIndex].Name != "Delete") return;
-        if (busy || !Grid.Enabled || RowDeleteRequested is not { } handler) return;
+        if (IsBusy || !Grid.Enabled || RowDeleteRequested is not { } handler) return;
         if (Grid.Rows[rowIndex].DataBoundItem is not { } item) return;
         Grid.CurrentCell = Grid.Rows[rowIndex].Cells[0];
         handler(item);
@@ -121,9 +124,16 @@ public class OrbitRecordListControl : UserControl
     private void DispatchRowActivated(int rowIndex, int columnIndex)
     {
         if (rowIndex < 0 || columnIndex < 0 || Grid.Columns[columnIndex].Name == "Delete") return;
-        if (busy || !Grid.Enabled || RowActivated is not { } handler) return;
+        if (IsBusy || !Grid.Enabled || RowActivated is not { } handler) return;
         if (Grid.Rows[rowIndex].DataBoundItem is not { } item) return;
         handler(item);
+    }
+    // Engine sửa/xóa tại dòng dùng Grid + vùng Body của workspace; màn chỉ cấp delegate nghiệp vụ.
+    protected OrbitRowEditor CreateInlineEditor()
+    {
+        var editor = new OrbitRowEditor(Grid, Workspace.Body, text => State.Text = text);
+        editor.StateChanged += (_, _) => { RowWriteBusy = editor.IsBusy; if (!IsDisposed) UpdateActions(); };
+        return editor;
     }
     protected void UseStackedSearch(string itemNoun, string? emptyDescription = null)
     {
@@ -181,7 +191,7 @@ public class OrbitRecordListControl : UserControl
     protected void UpdateActions()
     {
         foreach (var (button, needsRow, command) in buttons)
-            button.Enabled = !busy && !running.Contains(button) && IsActionAvailable(command) && (!needsRow || dataValid && Selected is not null)
+            button.Enabled = !busy && !RowWriteBusy && !running.Contains(button) && IsActionAvailable(command) && (!needsRow || dataValid && Selected is not null)
                 && (command != "Trước" || Paginated && dataValid && page > 0)
                 && (command != "Sau" || Paginated && dataValid && (totalCount is { } total ? ((long)page + 1) * 50 < total : rowCount == 50));
     }

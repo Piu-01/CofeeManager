@@ -1,6 +1,7 @@
 using CafeManager.Business.Security;
 using CafeManager.Business.Services;
 using CafeManager.Models.Dtos.Catalogs;
+using CafeManager.Models.Requests.Catalogs;
 using CafeManager.WinForms.Forms;
 using CafeManager.WinForms.Theme;
 using CafeManager.WinForms.UI;
@@ -14,43 +15,57 @@ public partial class CatalogsControl : UserControl, IUnsavedChanges
     private readonly CancellationTokenSource lifetime = new();
     private CancellationTokenSource? loading;
     private int generation;
-    private int skip, rowCount, dataSkip;
+    private int skip, rowCount, dataSkip, lastTab;
     private OrbitListWorkspace management = null!;
-    private bool writing;
-    private CatalogRow? unknownDelete;
+    private OrbitRowEditor? inline;
     private CatalogEditorDialog? editor;
+    private bool RowBusy => inline?.IsBusy == true;
     private readonly OrbitEmptyState emptyState = new()
     {
         AccessibleName = L.T("Danh mục không có dữ liệu"), Visible = false
     };
     private CatalogKind Kind => (CatalogKind)Math.Max(0, tabs.SelectedIndex);
     public bool HasUnsavedChanges => editor?.HasUnsavedChanges == true;
-    public bool IsWriting => writing || unknownDelete is not null || editor?.IsWriting == true;
+    public bool IsWriting => editor?.IsWriting == true;
     public void DiscardChanges() => editor?.DiscardChanges();
     public CatalogsControl()
     {
         InitializeComponent();
         allowanceColumn.DefaultCellStyle.Alignment = ratioColumn.DefaultCellStyle.Alignment = factorColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-        tabs.SelectedIndexChanged += TabChanged; grid.SelectionChanged += (_, _) => UpdateActions();
+        lastTab = tabs.SelectedIndex; tabs.SelectedIndexChanged += TabChanged; grid.SelectionChanged += (_, _) => UpdateActions();
         searchInput.KeyDown += (_, e) => { if (e.KeyCode == Keys.Enter) { e.SuppressKeyPress = true; Search_Click(searchInput, EventArgs.Empty); } };
         management.Body.SizeChanged += (_, _) => PositionEmpty(); UpdateActions();
     }
     public CatalogsControl(CatalogService service, SessionContext session) : this()
-    { this.service = service; this.session = session; Load += async (_, _) => await RefreshRows(); }
+    {
+        this.service = service; this.session = session;
+        inline = new OrbitRowEditor(grid, management.Body, text => statusLabel.Text = text);
+        inline.RowKey = item => ((CatalogRow)item).Code;
+        inline.ColumnFor = (item, cell) => Column((CatalogRow)item, cell.OwningColumn?.Name ?? "");
+        inline.Save = SaveInline; inline.Delete = DeleteInline; inline.Reconcile = ReconcileInline;
+        inline.Reload = RefreshRows; inline.CanWrite = _ => true;
+        inline.StateChanged += (_, _) => { if (!IsDisposed) UpdateActions(); };
+        Load += async (_, _) => await RefreshRows();
+    }
     private async void TabChanged(object? sender, EventArgs e)
     {
-        if (IsWriting || loading is not null) return;
-        grid.DataSource = null; skip = 0; await RefreshRows();
+        // Chặn đổi tab khi đang ghi/đang tải: trả tab về vị trí cũ để lưới không lệch loại danh mục.
+        if (IsWriting || RowBusy || loading is not null)
+        {
+            if (tabs.SelectedIndex != lastTab) { var keep = lastTab; tabs.SelectedIndexChanged -= TabChanged; try { tabs.SelectedIndex = keep; } finally { tabs.SelectedIndexChanged += TabChanged; } }
+            return;
+        }
+        lastTab = tabs.SelectedIndex;
+        inline?.Reset(); grid.DataSource = null; skip = 0; await RefreshRows();
     }
     private void PositionEmpty() => emptyState.SetBounds(0, grid.ColumnHeadersHeight, management.Body.Width, Math.Max(0, management.Body.Height - grid.ColumnHeadersHeight));
     private void UpdateActions()
     {
-        var available = loading is null && !IsWriting && service is not null;
-        addButton.Enabled = available; editButton.Enabled = available && grid.CurrentRow?.DataBoundItem is CatalogRow;
-        deleteButton.Enabled = editButton.Enabled && !(Kind == CatalogKind.ExpenseCategory && grid.CurrentRow?.DataBoundItem is CatalogRow r && CatalogService.IsSystemExpense(r.Code));
+        var available = loading is null && !IsWriting && !RowBusy && service is not null;
+        addButton.Enabled = available;
         tabs.Enabled = searchInput.Enabled = searchButton.Enabled = previousButton.Enabled = nextButton.Enabled = available;
         previousButton.Enabled &= skip > 0; nextButton.Enabled &= rowCount == 50;
-        reloadButton.Enabled = loading is null && !writing && editor is null && service is not null;
+        reloadButton.Enabled = available && editor is null;
     }
     private async Task RefreshRows()
     {
@@ -104,49 +119,99 @@ public partial class CatalogsControl : UserControl, IUnsavedChanges
     }
     private async void Reload_Click(object? sender, EventArgs e)
     {
-        if (writing || loading is not null || editor is not null || service is null || session is null) return;
-        if (unknownDelete is not null)
-        {
-            writing = true; UpdateActions();
-            try
-            {
-                var row = await service.GetAsync(session, Kind, unknownDelete.Code);
-                statusLabel.Text = row is null ? L.T("Đối chiếu: bản ghi không còn trong DB.") : L.T("Đối chiếu: bản ghi vẫn tồn tại. Tải lại trước khi xóa.");
-                unknownDelete = null;
-            }
-            catch (UserOperationException ex) { statusLabel.Text = ex.Message; }
-            catch (CafeManager.DataAccess.DataAccessException ex) { statusLabel.Text = ex.Error.Message; }
-            catch (UnauthorizedAccessException ex) { statusLabel.Text = ex.Message; }
-            catch (OperationCanceledException) when (session.IsRevoked) { }
-            finally { writing = false; UpdateActions(); }
-        }
-        if (unknownDelete is null) await RefreshRows();
+        if (IsWriting || RowBusy || loading is not null || editor is not null || service is null || session is null) return;
+        await RefreshRows();
     }
-    private async void Search_Click(object? sender, EventArgs e) { if (loading is not null || IsWriting) return; skip = 0; await RefreshRows(); }
-    private async void Previous_Click(object? sender, EventArgs e) { if (loading is not null || IsWriting) return; skip = Math.Max(0, skip - 50); await RefreshRows(); }
-    private async void Next_Click(object? sender, EventArgs e) { if (loading is not null || IsWriting) return; skip += 50; await RefreshRows(); }
+    private async void Search_Click(object? sender, EventArgs e) { if (loading is not null || IsWriting || RowBusy) return; skip = 0; await RefreshRows(); }
+    private async void Previous_Click(object? sender, EventArgs e) { if (loading is not null || IsWriting || RowBusy) return; skip = Math.Max(0, skip - 50); await RefreshRows(); }
+    private async void Next_Click(object? sender, EventArgs e) { if (loading is not null || IsWriting || RowBusy) return; skip += 50; await RefreshRows(); }
     private async void Add_Click(object? sender, EventArgs e) => await Edit(null);
-    private async void Edit_Click(object? sender, EventArgs e) { if (grid.CurrentRow?.DataBoundItem is CatalogRow row) await Edit(row); }
     private async Task Edit(CatalogRow? row)
     {
-        if (service is null || session is null || IsWriting || loading is not null) return;
+        if (service is null || session is null || IsWriting || RowBusy || loading is not null) return;
         using var dialog = new CatalogEditorDialog(service, session, Kind, row); editor = dialog; UpdateActions();
         var result = await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this); editor = null; UpdateActions();
         if (result == DialogResult.OK) await RefreshRows();
     }
-    private async void Delete_Click(object? sender, EventArgs e)
+    private static InlineColumn? Column(CatalogRow row, string property) => (row, property) switch
     {
-        if (service is null || session is null || IsWriting || loading is not null || grid.CurrentRow?.DataBoundItem is not CatalogRow row) return;
-        if (await OrbitConfirmationDialog.ShowAsync(this, L.F("Xóa {0} · {1}? Danh mục có lịch sử hoặc mã hệ thống sẽ bị từ chối.", row.Code, row.Name), L.T("Xóa danh mục"), MessageBoxButtons.YesNo) != DialogResult.Yes) return;
-        writing = true; UpdateActions();
-        var deleted = false;
-        try { await service.DeleteAsync(session, Kind, row); deleted = true; statusLabel.Text = L.T("Đã xóa danh mục."); }
-        catch (UserOperationException ex) { if (ex.Error.RequiresReconciliation) unknownDelete = row; OperationStatePresenter.Show(statusLabel, ex.Error.RequiresReconciliation ? ModuleState.Unknown : ex.Error.Number == 51503 ? ModuleState.Conflict : ModuleState.Error, ex.Message); }
-        catch (CafeManager.DataAccess.DataAccessException ex) { statusLabel.Text = ex.Error.Message; }
-        catch (Exception ex) when (ex is UnauthorizedAccessException or ArgumentException) { statusLabel.Text = ex.Message; }
-        catch (OperationCanceledException) when (session.IsRevoked) { }
-        finally { writing = false; UpdateActions(); }
-        if (deleted) await RefreshRows();
+        (_, "Name") => new("Name", InlineCellKind.Text, item => ((CatalogRow)item).Name, (_, text) => text.Trim()),
+        (SupplierRow, "Phone") => new("Phone", InlineCellKind.Text, item => ((SupplierRow)item).Phone, (_, text) => text.Trim()),
+        (DeliveryPartnerRow, "Ratio") => new("Ratio", InlineCellKind.Decimal, item => ((DeliveryPartnerRow)item).Ratio, (_, text) => Number(text), RightAligned: true),
+        (PositionRow, "Allowance") => new("Allowance", InlineCellKind.Money, item => ((PositionRow)item).Allowance, (_, text) => Money(text), RightAligned: true),
+        (PositionRow, "Factor") => new("Factor", InlineCellKind.Decimal, item => ((PositionRow)item).Factor, (_, text) => Number(text), RightAligned: true),
+        (ShiftRow, "StartTime") => new("StartTime", InlineCellKind.Time, item => ((ShiftRow)item).StartTime, (_, text) => Clock(text)),
+        (ShiftRow, "EndTime") => new("EndTime", InlineCellKind.Time, item => ((ShiftRow)item).EndTime, (_, text) => Clock(text)),
+        (ExpenseCategoryRow expense, "Type") => new("Type", InlineCellKind.Dropdown,
+            item => CafeManager.Models.States.FinanceStates.TypeLabel(((ExpenseCategoryRow)item).Type.ToString()),
+            (_, text) => text == L.T("Chi") ? ExpenseType.Chi : ExpenseType.Thu, _ => [L.T("Thu"), L.T("Chi")],
+            Editable: _ => !CatalogService.IsSystemExpense(expense.Code)),
+        (PaymentMethodRow payment, "Supported") => new("Supported", InlineCellKind.Check,
+            item => ((PaymentMethodRow)item).Supported, (_, text) => text == "True",
+            Editable: _ => payment.Code != "PT010"),
+        _ => null
+    };
+    // Tiền: dấu chấm là phân nhóm nghìn, dấu phẩy là thập phân; phải nguyên VND.
+    private static decimal Money(string text)
+    {
+        var cleaned = text.Replace("₫", "").Replace(" ", "").Replace(".", "").Replace(',', '.');
+        if (!decimal.TryParse(cleaned, global::System.Globalization.NumberStyles.Number, global::System.Globalization.CultureInfo.InvariantCulture, out var value) || decimal.Truncate(value) != value)
+            throw new ArgumentException(L.T("Giá trị phải là số nguyên."));
+        return value;
+    }
+    // Hệ số/chiết khấu: có dấu phẩy thì phẩy là thập phân, không thì chấm là thập phân.
+    private static decimal Number(string text)
+    {
+        var cleaned = text.Replace("₫", "").Replace(" ", "");
+        if (cleaned.Contains(',')) cleaned = cleaned.Replace(".", "").Replace(',', '.');
+        if (!decimal.TryParse(cleaned, global::System.Globalization.NumberStyles.Number, global::System.Globalization.CultureInfo.InvariantCulture, out var value))
+            throw new ArgumentException(L.T("Giá trị số không hợp lệ."));
+        return value;
+    }
+    private static TimeSpan Clock(string text)
+    {
+        if (!TimeSpan.TryParseExact(text.Trim(), [@"hh\:mm", @"h\:mm"], global::System.Globalization.CultureInfo.InvariantCulture, out var time))
+            throw new ArgumentException(L.T("Giờ phải theo dạng HH:mm."));
+        return time;
+    }
+    private CatalogRequest Request(CatalogRow row, string property, object? value)
+    {
+        var name = property == "Name" ? (string)value! : row.Name;
+        return row switch
+        {
+            ProductCategoryRow r => new ProductCategoryRequest(r.Code, name, Guid.Empty),
+            SupplierRow r => new SupplierRequest(r.Code, name, property == "Phone" ? (string)value! : r.Phone),
+            PaymentMethodRow r => new PaymentMethodRequest(r.Code, name, property == "Supported" ? (bool)value! : r.Supported),
+            DeliveryPartnerRow r => new DeliveryPartnerRequest(r.Code, name, property == "Ratio" ? (decimal)value! : r.Ratio),
+            ExpenseCategoryRow r => new ExpenseCategoryRequest(r.Code, name, property == "Type" ? (ExpenseType)value! : r.Type),
+            PositionRow r => new PositionRequest(r.Code, name, property == "Allowance" ? (decimal)value! : r.Allowance, property == "Factor" ? (decimal)value! : r.Factor),
+            ShiftRow r => new ShiftRequest(r.Code, name, property == "StartTime" ? (TimeSpan)value! : r.StartTime, property == "EndTime" ? (TimeSpan)value! : r.EndTime),
+            _ => throw new ArgumentException(L.T("Loại danh mục không hợp lệ."))
+        };
+    }
+    private async Task SaveInline(object item, string property, object? value, Guid id, CancellationToken token)
+    {
+        if (service is null || session is null) return;
+        var row = (CatalogRow)item;
+        await service.SaveAsync(session, CatalogService.Normalize(Request(row, property, value), false), row.Revision, token);
+    }
+    private async Task<bool> DeleteInline(object item, Guid id, CancellationToken token)
+    {
+        if (service is null || session is null) return false;
+        var row = (CatalogRow)item; var kind = Kind;
+        if (kind == CatalogKind.ExpenseCategory && CatalogService.IsSystemExpense(row.Code)) throw new ArgumentException(L.T("Không được xóa mã Chi hệ thống."));
+        var canceled = kind is CatalogKind.Supplier or CatalogKind.ExpenseCategory
+            && await OrbitConfirmationDialog.ShowAsync(this, L.F("Xóa {0} · {1}? Danh mục có lịch sử sẽ bị từ chối.", row.Code, row.Name), L.T("Xóa danh mục"), MessageBoxButtons.YesNo, L.T("Xóa"), L.T("Hủy")) != DialogResult.Yes;
+        if (canceled) return false;
+        await service.DeleteAsync(session, kind, row, token); return true;
+    }
+    // Catalog không có requestId: đối chiếu bằng bản ghi hiện tại và revision của dòng đã khóa.
+    private async Task<bool?> ReconcileInline(object item, Guid id, CancellationToken token)
+    {
+        if (service is null || session is null) return null;
+        var row = (CatalogRow)item;
+        var current = await service.GetAsync(session, Kind, row.Code, token);
+        return current is null || !current.Revision.SequenceEqual(row.Revision);
     }
     private void Grid_CellFormatting(object? sender, DataGridViewCellFormattingEventArgs e)
     {

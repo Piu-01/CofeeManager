@@ -21,6 +21,9 @@ internal sealed class TableList : OrbitRecordListControl
     private readonly SessionContext session;
     private readonly FlowLayoutPanel map=new(){Dock=DockStyle.Fill,Padding=new Padding(10),AutoScroll=true,WrapContents=true,BackColor=Theme.OrbitManagementTheme.Surface};
     private readonly ComboBox filter=new(){Width=160,DropDownStyle=ComboBoxStyle.DropDownList};
+    private readonly OrbitRowEditor inline;
+    private List<AreaRow> areaRows=[];
+    private bool refreshingAreas;
     public TableList(TableService service,SessionContext session)
     {
         this.service=service;this.session=session;
@@ -30,11 +33,18 @@ internal sealed class TableList : OrbitRecordListControl
         Theme.OrbitManagementTheme.Button(listView,Theme.ManagementButtonStyle.Segment,"list");Theme.OrbitManagementTheme.Button(mapView,Theme.ManagementButtonStyle.Segment,"grid");
         AddFilter(new OrbitViewSwitch(listView,mapView),180);mapView.NavigationSelected=true;
         listView.Click+=(_,_)=>{map.Visible=false;Grid.Visible=true;Grid.BringToFront();listView.NavigationSelected=true;mapView.NavigationSelected=false;listView.Invalidate();mapView.Invalidate();};mapView.Click+=(_,_)=>{Grid.Visible=false;map.Visible=true;map.BringToFront();listView.NavigationSelected=false;mapView.NavigationSelected=true;listView.Invalidate();mapView.Invalidate();};
-        filter.SelectedValueChanged+=async(_,_)=>{if(filter.DataSource is not null)await ResetAndReload();};
+        filter.SelectedValueChanged+=async(_,_)=>{if(!refreshingAreas&&filter.DataSource is not null)await ResetAndReload();};
         map.SizeChanged+=(_,_)=>ArrangeCards();
         AddAction("Thêm",()=>Edit(null),session.Identity.Role=="ADMIN");
-        // Sửa/xóa trực tiếp trên dòng (ADMIN): double-click mở Sửa, icon thùng rác mở Xóa.
-        if(session.Identity.Role=="ADMIN"){AddRowDeleteColumn();RowDeleteRequested=item=>_=RunRow(()=>Delete((TableRow)item));RowActivated=item=>_=RunRow(()=>Edit((TableRow)item));}
+        // Sửa tại ô, xóa tại dòng (ADMIN); không còn nút Sửa/Xóa hay hộp sửa.
+        AddRowDeleteColumn();Workspace.ShowMeta=false;
+        inline=CreateInlineEditor();
+        inline.CanWrite=_=>session.Identity.Role=="ADMIN";
+        inline.RowKey=item=>((TableRow)item).Code;
+        inline.ColumnFor=(item,cell)=>Column((TableRow)item,cell.OwningColumn?.Name ?? "");
+        inline.Save=SaveInline;inline.Delete=DeleteInline;
+        inline.Reconcile=async(_,id,t)=>await service.ReconcileAsync(session,id,t) is not null;
+        inline.Reload=()=>Reload();
         Grid.DataBindingComplete+=(_,_)=>
         {
             foreach(Control control in map.Controls.Cast<Control>().ToArray())control.Dispose();map.Controls.Clear();
@@ -43,7 +53,28 @@ internal sealed class TableList : OrbitRecordListControl
         };
         Grid.CurrentCellChanged+=(_,_)=>HighlightCards();
         Grid.DataBindingComplete+=(_,_)=>{ArrangeCards();HighlightCards();};
-        Load+=async(_,_)=>{try{var areas=await AllAreas();filter.DisplayMember="Name";filter.ValueMember="Code";filter.DataSource=new[]{new AreaRow("",L.T("Tất cả khu vực"),[])}.Concat(areas).ToList();}catch(Exception ex)when(ex is UserOperationException or UnauthorizedAccessException){State.Text=ex.Message;}};
+        Load+=async(_,_)=>await RefreshAreasAsync();
+        // Quay lại tab Bàn sau khi thêm/xóa khu vực: nạp lại danh sách khu vực cho ô chọn.
+        VisibleChanged+=async(_,_)=>{if(Visible)await RefreshAreasAsync();};
+    }
+    private InlineColumn? Column(TableRow row,string property)=>property switch
+    {
+        "Name"=>new("Name",InlineCellKind.Text,item=>((TableRow)item).Name,(_,text)=>text.Trim()),
+        "Area"=>new("Area",InlineCellKind.Dropdown,item=>AreaName(((TableRow)item).Area),(_ ,text)=>text,Options:_=>AreaNames()),
+        _=>null
+    };
+    private List<string> AreaNames()=>areaRows.Select(x=>x.Name).ToList();
+    private string AreaName(string code)=>areaRows.FirstOrDefault(x=>x.Code==code)?.Name??code;
+    private string AreaCode(string name)=>areaRows.FirstOrDefault(x=>x.Name==name)?.Code??throw new ArgumentException(L.T("Khu vực không hợp lệ."));
+    private async Task SaveInline(object item,string property,object? value,Guid id,CancellationToken token)
+    {
+        var row=(TableRow)item;
+        var request=TableService.Normalize(new(row.Code,property=="Name"?(string)value!:row.Name,property=="Area"?AreaCode((string)value!):row.Area),false);
+        await service.SaveAsync(session,false,request,row.Revision,id,token);
+    }
+    private async Task<bool> DeleteInline(object item,Guid id,CancellationToken token)
+    {
+        var row=(TableRow)item;await service.DeleteAsync(session,false,new(row.Code,row.Name,row.Area),row.Revision,id,token);return true;
     }
     private void HighlightCards()
     {
@@ -56,6 +87,24 @@ internal sealed class TableList : OrbitRecordListControl
         foreach(Control card in map.Controls){card.Margin=new Padding(gap/2);card.Size=new Size(Math.Max(1,width/columns-gap),Theme.OrbitManagementTheme.Px(this,142));}
     }
     private async Task<List<AreaRow>> AllAreas(){var all=new List<AreaRow>();for(var skip=0;;skip+=50){var page=await service.AreasAsync(session,"",skip);all.AddRange(page);if(page.Count<50)return all;}}
+    private async Task RefreshAreasAsync()
+    {
+        if(refreshingAreas)return;
+        refreshingAreas=true;
+        try
+        {
+            var areas=await AllAreas();
+            if(IsDisposed)return;
+            areaRows=areas;
+            var selected=filter.SelectedValue as string??"";
+            if(!areas.Any(x=>x.Code==selected))selected="";
+            filter.DisplayMember="Name";filter.ValueMember="Code";
+            filter.DataSource=new[]{new AreaRow("",L.T("Tất cả khu vực"),[])}.Concat(areas).ToList();
+            filter.SelectedValue=selected;
+        }
+        catch(Exception ex)when(ex is UserOperationException or UnauthorizedAccessException){if(!IsDisposed)State.Text=ex.Message;}
+        finally{refreshingAreas=false;}
+    }
     private async Task RunRow(Func<Task> action)
     {
         try{await action();}catch(Exception ex)when(ex is UserOperationException or UnauthorizedAccessException or ArgumentException){if(!IsDisposed)State.Text=ex.Message;}
@@ -76,9 +125,16 @@ internal sealed class TableList : OrbitRecordListControl
 }
 internal sealed class AreaList : OrbitRecordListControl
 {
-    private readonly TableService service;private readonly SessionContext session;
+    private readonly TableService service;private readonly SessionContext session;private readonly OrbitRowEditor inline;
     public AreaList(TableService service,SessionContext session){this.service=service;this.session=session;Configure("Khu vực",session,async(q,skip,t)=>await service.AreasAsync(session,q,skip,t),("Code",L.T("Mã")),("Name",L.T("Khu vực")));AddAction("Thêm",()=>Edit(null));
-        if(session.Identity.Role=="ADMIN"){AddRowDeleteColumn();RowDeleteRequested=item=>_=RunRow(()=>Delete((AreaRow)item));RowActivated=item=>_=RunRow(()=>Edit((AreaRow)item));}}
+        AddRowDeleteColumn();Workspace.ShowMeta=false;
+        inline=CreateInlineEditor();inline.CanWrite=_=>session.Identity.Role=="ADMIN";
+        inline.RowKey=item=>((AreaRow)item).Code;
+        inline.ColumnFor=(item,cell)=>(cell.OwningColumn?.Name ?? "")=="Name"?new("Name",InlineCellKind.Text,x=>((AreaRow)x).Name,(_,text)=>text.Trim()):null;
+        inline.Save=async(item,_,value,id,t)=>{var row=(AreaRow)item;await service.SaveAsync(session,true,TableService.Normalize(new(row.Code,(string)value!,null),true),row.Revision,id,t);};
+        inline.Delete=async(item,id,t)=>{var row=(AreaRow)item;await service.DeleteAsync(session,true,new(row.Code,row.Name,null),row.Revision,id,t);return true;};
+        inline.Reconcile=async(_,id,t)=>await service.ReconcileAsync(session,id,t) is not null;
+        inline.Reload=()=>Reload();}
     private async Task RunRow(Func<Task> action){try{await action();}catch(Exception ex)when(ex is UserOperationException or UnauthorizedAccessException or ArgumentException){if(!IsDisposed)State.Text=ex.Message;}}
     private async Task Edit(AreaRow? row){using var dialog=new OperationEditorDialog(row is null?L.T("Thêm khu vực"):L.F("Sửa khu vực · {0}",row.Code),id=>service.ReconcileAsync(session,id));var name=dialog.AddText(L.T("Tên khu vực"),row?.Name??"");dialog.CaptureWrite=()=>{var request=TableService.Normalize(new(row?.Code??"",name.Text,null),true,row is null);return id=>service.SaveAsync(session,true,request,row?.Revision,id);};if(await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this)==DialogResult.OK)await Reload();}
     private async Task Delete(AreaRow row){using var dialog=new OperationEditorDialog(L.T("Xóa khu vực"),id=>service.ReconcileAsync(session,id));dialog.AddNote(L.F("Xóa {0} · {1}; khu vực có bàn sẽ bị chặn.", row.Code, row.Name));dialog.Confirmation=L.F("Xóa {0}?", row.Code);dialog.CaptureWrite=()=>id=>service.DeleteAsync(session,true,new(row.Code,row.Name,null),row.Revision,id);if(await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this)==DialogResult.OK)await Reload();}

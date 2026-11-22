@@ -1,6 +1,6 @@
 # Requirements — Sửa/xóa trực tiếp trên dòng danh sách
 
-Trạng thái: **chờ người dùng duyệt requirements** (chưa viết plan, chưa code).
+Trạng thái: **requirements và plan đã được duyệt 22/11/2026** — đang triển khai.
 
 ## 1. Mục tiêu
 
@@ -22,7 +22,10 @@ Trạng thái: **chờ người dùng duyệt requirements** (chưa viết plan,
 ### 2.1 Trong phạm vi
 
 Các màn master data: Menu sản phẩm, Danh mục nền, Bàn/Khu vực, Nguyên liệu,
-Khách hàng, Nhân viên, Chấm công, Tài sản, Khuyến mãi, Hạng thành viên.
+Khách hàng, Nhân viên, Tài sản, Hạng thành viên.
+
+Không áp dụng cho **Khuyến mãi** (người dùng đang sửa riêng màn này) và
+**Chấm công** (bỏ qua theo yêu cầu, giữ nguyên nút Sửa hiện tại).
 
 Hạ tầng dùng chung (OrbitRecordListControl, OrbitDataGridView, OrbitListWorkspace)
 để mọi màn có cùng cách chọn, sửa, xóa, hover và bố cục.
@@ -47,8 +50,9 @@ Hạ tầng dùng chung (OrbitRecordListControl, OrbitDataGridView, OrbitListWor
 | Enter / Tab / bấm ô khác | Ghi giá trị ô vừa sửa (gọi đúng service hiện có), rồi mới chuyển ô. |
 | Esc | Hủy thay đổi của ô, trả giá trị cũ, giữ dòng đang chọn. |
 | F2 / double-click | Vẫn vào chế độ sửa ô như chuẩn lưới (không mở hộp thoại sửa). |
-| Lỗi nhập/validate/SQL | Không ghi một phần; trả giá trị hiển thị về dữ liệu DB, báo lỗi gần ô (ErrorText/status) và giữ dòng. Lỗi xung đột phiên bản thì tải lại dòng/trang. |
-| Đang ghi | Khóa sửa/xóa toàn lưới cho tới khi xong; chặn gửi lặp; không khóa transaction khi chờ người dùng nhập. |
+| Lỗi nhập/validate/SQL | Không ghi một phần; giữ giá trị đang nhập ở editor (hoặc trả giá trị hiển thị về dữ liệu DB nếu đã đóng), báo lỗi ở status và giữ dòng. Lỗi xung đột phiên bản thì tải lại dòng/trang. |
+| Kết quả ghi chưa xác định (timeout) | **Chỉ khóa đúng dòng đó** (không sửa/xóa, vẫn chọn/xem được), hiện nút **Đối chiếu** căn giữa dòng và status kèm request id. Các dòng khác vẫn dùng được. Bấm Đối chiếu: có biên nhận → tải lại + báo đã ghi; không có → mở khóa, tải lại, báo chưa ghi. Không tự hoàn giá trị đã nhập trước khi đối chiếu. |
+| Đang ghi | Chặn sửa/xóa trên lưới cho tới khi xong; chặn gửi lặp; không khóa transaction khi chờ người dùng nhập. |
 
 ### 3.2 Hiệu ứng hover
 
@@ -64,10 +68,16 @@ Hạ tầng dùng chung (OrbitRecordListControl, OrbitDataGridView, OrbitListWor
 - Bấm icon = xóa đúng dòng đó (không phụ thuộc dòng đang chọn trước đó).
 - Có xác nhận (mục 4): mở hộp xác nhận hiện có (modal có owner), nội dung cảnh báo
   giữ như hiện tại; đồng ý mới gọi xóa.
-- Không xác nhận: gọi xóa ngay; thành công hiện "Đã xóa …" ở status và tải lại;
+- Không xác nhận: gọi xóa ngay; thành công hiện "Đã xóa …" ở dòng status và tải lại;
+  **không** thêm thông báo/toast phụ hay nút undo;
   bị chặn (có lịch sử/ràng buộc/hệ thống) thì giữ dòng, báo lỗi rõ ở status.
 - Chỉ ADMIN (hoặc ADMIN/STORE ở Nguyên liệu như hiện tại) thấy và dùng được icon;
-  BLL vẫn kiểm quyền như cũ.
+  BLL vẫn kiểm quyền như cũ. Dòng đang chờ đối chiếu không hiện/không dùng icon xóa.
+- Dòng chờ đối chiếu hiện nút **Đối chiếu** căn giữa dòng (đè nội dung dòng đó), bấm để
+  tra biên nhận theo request id; không thêm nút đối chiếu toàn màn cho các màn này.
+- Danh mục nền chưa có `@RequestId` trong procedure Update/Delete (chỉ ProductCategory tạo
+  mới có biên nhận). Đối chiếu danh mục dùng `GetAsync` + so `Revision`/giá trị (sửa) hoặc
+  còn tồn tại (xóa); ghi rõ giới hạn này, không thêm migration ngoài phạm vi.
 
 ### 3.4 Bố cục
 
@@ -88,11 +98,8 @@ Cột “Sửa inline” là các trường bấm-sửa-tại-ô. Trường khô
 | Nguyên liệu | Tên, Đơn vị | Tồn đầu kỳ chỉ nhập khi Thêm; Tồn hiện tại chỉ đọc | **Xác nhận** (kho) |
 | Khách hàng | Tên, SDT | Mở sổ điểm / Lịch sử điểm giữ nguyên (nút riêng) | **Xác nhận** (điểm/lịch sử) |
 | Nhân viên | Tên, SDT, Hợp đồng (dropdown), Lương tháng, Lương giờ, Chức vụ (dropdown) | Nghỉ/Đi làm lại, tài khoản, đối chiếu chờ giữ nguyên | **Xác nhận** (lương/lịch sử) |
-| Chấm công | Giờ vào, Giờ ra, Ca (dropdown), Trạng thái (dropdown) | Kỳ đã chốt = chỉ đọc; Thêm vẫn mở bảng nhập nhiều dòng | Không có xóa dòng (giữ như hiện tại) |
-| Tài sản | — (giữ hộp thoại hồ sơ) | Bắt buộc giữ `AssetEditorDialog` vì có yêu cầu chờ bền vững + đối chiếu sau timeout | **Xác nhận** trong hộp hồ sơ tài sản (giữ luồng chờ/đối chiếu) |
-| Khuyến mãi | Tên, Từ ngày, Đến ngày, Giảm %, Trạng thái, Đối tượng | Danh sách hạng áp dụng + danh sách món giảm giữ trong một nút hành động riêng của dòng (xem câu hỏi mở Q1). Bật/Tạm dừng, Preview giữ nguyên | **Xác nhận** (tài chính) |
+| Tài sản | Tên, Ngày mua, Nguyên giá, Số tháng KH | `AssetEditorDialog` chỉ còn cho **Thêm**, **Yêu cầu chờ** và **Chi tiết**; ghi inline không ghi file chờ, đối chiếu bằng `ReceiptAsync` + tải lại | **Xác nhận** (tài chính) |
 | Hạng thành viên | Ngưỡng điểm, Giảm % | Mã hạng là khóa, chỉ đọc khi sửa; preview SQL trước khi ghi giữ nguyên | **Xác nhận** (hạ/đổi hạng khách) |
-| Chấm công (dòng) | như trên, Ngày làm **chỉ đọc** (là một phần khóa của dòng công) | | |
 
 Ghi chú quyền: giữ nguyên quyền hiện hành từng màn (Menu ADMIN; Khách hàng ADMIN;
 Nguyên liệu ADMIN/STORE; Danh mục theo service hiện tại; …). Thiếu quyền thì ô
@@ -101,40 +108,41 @@ không sửa được và không hiện icon xóa.
 ## 5. Giả định
 
 1. “Bỏ bảng sửa” áp dụng cho các trường đơn giản; cấu trúc con nhiều dòng
-   (định mức công thức, hạng/món khuyến mãi, batch chấm công) không thể sửa bằng
-   một ô, nên vẫn dùng hộp thoại chuyên dụng qua nút riêng hoặc nút Thêm.
-2. Tài sản là ngoại lệ có chủ đích: luồng ghi bền vững (file chờ) và đối chiếu
-   không thể hiển thị đầy đủ trong một ô lưới, nên giữ hộp hồ sơ; chỉ bỏ hai nút
-   Sửa/Xóa và chuyển sang mở bằng double-click dòng + thùng rác từng dòng.
-3. Xóa ngay nghĩa là không có câu hỏi xác nhận; vẫn có báo kết quả, vẫn bị SQL
-   chặn khi có lịch sử. Không thêm undo.
+   (định mức công thức) không thể sửa bằng một ô, nên vẫn dùng hộp thoại chuyên
+   dụng qua nút **Công thức**. Khuyến mãi và Chấm công nằm ngoài phạm vi lần này.
+2. Tài sản cũng sửa inline như các màn khác. Ghi inline không ghi `IPendingOperationFile`
+   (một file chờ dùng chung sẽ bị đè khi nhiều dòng), thay bằng request id + `ReceiptAsync`
+   và khóa đúng dòng khi kết quả chưa xác định. Hộp `AssetEditorDialog` giữ cho Thêm,
+   Yêu cầu chờ và Chi tiết; sau restart DB là nguồn đúng, revision cũ bị SQL từ chối.
+3. Xóa ngay nghĩa là không có câu hỏi xác nhận; chỉ báo kết quả ở dòng status,
+   không thêm thông báo phụ, không undo; vẫn bị SQL chặn khi có lịch sử.
 4. Mỗi lần ghi inline là một yêu cầu độc lập dùng đúng service/normalize hiện có,
-   request id mới, revision hiện tại của dòng; không gộp nhiều ô thành batch
-   (trừ Chấm công dùng batch một dòng theo đúng contract hiện có).
+   request id mới, revision hiện tại của dòng; không gộp nhiều ô thành batch.
 5. Không đổi vị trí/ý nghĩa các nút hành động khác (Công thức, Mở sổ điểm, …).
 6. Toàn bộ chữ mới đi qua `L.T` và bổ sung `en.json`; tiền/ngày hiển thị theo chuẩn
    `81.000 ₫`, `dd/MM/yyyy`; gửi giá trị typed vào SQL, không gửi chuỗi đã format.
 7. Người dùng tự kiểm hình thức; agent chỉ kiểm chức năng/layout kỹ thuật ở DPI 125%.
 
-## 6. Câu hỏi mở (cần chốt trước khi viết plan)
+## 6. Câu hỏi đã chốt
 
-- **Q1 — Khuyến mãi**: chọn một trong hai cách mở phần “hạng áp dụng + món giảm”:
-  (a) giữ một nút hành động của dòng, đổi tên từ “Sửa” thành **“Hạng & món”** (khuyến nghị);
-  (b) double-click dòng mở hộp cấu hình (bấm vùng trống vẫn chỉ chọn).
-- **Q2 — Tài sản**: chấp nhận ngoại lệ giữ hộp hồ sơ như mục 5.2? Nếu không,
-  cần thống nhất cách hiển thị trạng thái “chưa rõ kết quả” trên lưới.
-- **Q3 — Ngày làm ở Chấm công**: chấp nhận chỉ đọc (đổi ngày = đổi khóa dòng công)?
-- **Q4 — Xóa ngay**: có cần hiện thông báo ngắn kèm nút “Tải lại” sau khi xóa
-  (không undo), hay chỉ dòng status như hiện tại?
+- **Tài sản**: sửa inline như các màn khác (người dùng chốt 22/11/2026); lỗi/timeout
+  khóa đúng dòng và hiện nút Đối chiếu giữa dòng. Hộp hồ sơ chỉ còn cho Thêm/Yêu cầu
+  chờ/Chi tiết.
+- Q2 (Khuyến mãi), Q3 (Chấm công), Q4 (thông báo sau xóa) đã chốt: ngoài phạm vi /
+  bỏ qua / chỉ báo ở dòng status.
+- Quy tắc tương tác này được ghi thành quy tắc UI chung tại
+  `docs/ui/HuongDan_UI_Orbit_Cafe.md` mục 11.5 và `docs/ui/WINFORMS_IMPLEMENTATION.md`
+  mục 2.2 để các màn danh sách sau áp dụng, không chỉ riêng 8 màn lần này.
 
 ## 7. Tiêu chí hoàn thành
 
-1. Không còn nút Sửa/Xóa trên thanh hành động của 10 màn trong mục 2.1; không còn
+1. Không còn nút Sửa/Xóa trên thanh hành động của 8 màn trong mục 2.1; không còn
    khoảng trống bố cục; nút Thêm và các nút khác vẫn đúng chỗ, đúng quyền.
 2. Mỗi trường trong cột “Sửa inline” sửa được bằng một lần bấm; giá trị ghi đúng
    qua service/normalize hiện có; lỗi không làm mất dữ liệu cũ và có thông báo.
 3. Mỗi dòng có icon thùng rác đúng quyền; xóa đúng dòng; ma trận xác nhận ở mục 4
-   được áp đúng; xóa bị chặn thì dòng còn nguyên và báo lỗi.
+   được áp đúng; xóa bị chặn thì dòng còn nguyên và báo lỗi. Khi kết quả ghi chưa xác
+   định, chỉ dòng đó khóa và có nút Đối chiếu giữa dòng; các dòng khác vẫn thao tác được.
 4. Bấm vùng trống/ô chỉ đọc chỉ chọn dòng; các nút phụ thuộc dòng vẫn hoạt động.
 5. Hover đúng quy tắc 3.2, kể cả khi dòng đang chọn và khi lưới đang tải/khóa.
 6. Build Debug/Release sạch; kiểm chức năng trên WinForms thật với DB test riêng,

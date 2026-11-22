@@ -1,0 +1,45 @@
+Đợt test tương tác click hai bước — 23/11/2026
+Build: C:/Users/Lenovo/.qoder/tmp/cm-build-inline4 (Debug, 0 lỗi), PID 29604
+DB: CoffeeManager_Test_Inline_20261122_inline_ui (schema 41), SQL Server thật
+DPI: 120 (125%), tài khoản admin
+Công cụ: UIA/Win32 trong C:/Users/Lenovo/.qoder/tmp/cm-inline-tests (InlineUi.ps1)
+
+RG-11 Click đầu NVL02 (dòng chưa chọn)
+  FIRST|NGUYÊN LIỆU Row 2|OV=0
+  Click đầu dòng 1 đang auto-select: CLICK|OV=0
+RG-12 Click thứ hai mở đúng ô, Enter lưu
+  SECOND|OV=1|VAL=Inline Enter Probe
+  DB: NVL02 = Two Click Probe; sau đó trả Inline Enter Probe.
+RG-13 Dropdown khu vực bàn B0002
+  SECOND|CB=1|NAME=Inline Area A
+  LIST=1; I|Khu khoi dong ... I|Inline Area A (9 mục)
+  Chọn San vuon: DB B0002 = KV002; trả lại Inline Area A: DB = KV001.
+RG-14 Badge trạng thái SP001
+  SECOND|CB=1|NAME=Ngừng bán
+  LIST=1; I|Đang bán; I|Ngừng bán; Esc: CB400=0; DB vẫn Ngung ban.
+RG-15 Đang sửa NVL04, click dòng NVL05
+  A_FIRST|OV=0; A_SECOND|OV=1|VAL=Inline Mat Chained
+  B_CLICK|OV=0|STATUS=Đã cập nhật 05:17:15
+  DB NVL04 = Chain Probe A; click một lần sau đó mở editor NVL05 (dòng đã được chọn).
+  Đã trả NVL04 = Inline Mat Chained.
+RG-16 Đang sửa NVL05, click ô Đơn vị cùng dòng
+  UNIT|OV=1|VAL=Kg|STATUS=Đã cập nhật 05:17:47
+  DB NVL05 = Cell Switch Probe; đã trả Bot matcha.
+RG-17 F2/Esc
+  CLICK|OV=0; F2|OV=1|VAL=Inline Mat Test A; ESC|OV=0.
+RG-18 Lỗi 51602 rồi click dòng khác
+  OPEN|OV=1|VAL=Kg; nhập Gam + Enter
+  ERR|OV=1|STATUS=Đã có mốc mở sổ, công thức hoặc giao dịch; không thể thực hiện thao tác này.
+  SWITCH|OV=0 (không lặp lỗi); DB NVL03 vẫn Kg.
+RG-19 Thùng rác
+  NVL99: hộp có Hủy/Xóa; bấm Xóa -> DB còn 0 dòng.
+  B0099: DLG=0, DB còn 0 dòng.
+  SP99 tạo thẳng bằng SQL bị service từ chối “Thông tin sản phẩm/công thức không hợp lệ.”;
+  đã xóa SP99 bằng SQL, dùng B0099 cho ca xóa ngay.
+RG-20 IN-02
+  Tạo KV099 (SQL), xóa tại tab Khu vực (DLG=0), quay lại Bàn mở dropdown:
+  LIST=1 gồm 9 khu vực hiện có, không có KV099; DB KV=9, KV099=0.
+
+Dữ liệu cuối: NVL02 Inline Enter Probe/Lit, NVL03 Duong/Kg, NVL04 Inline Mat Chained/Kg,
+NVL05 Bot matcha/Kg; SP001 26000/Ngung ban; B0002 KV001; không còn SP99/B0099/KV099.
+Hover màu chữ Caramel: SKIPPED theo phân công, người dùng tự kiểm hình thức.

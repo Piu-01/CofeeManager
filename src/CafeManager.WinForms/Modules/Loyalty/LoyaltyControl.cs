@@ -175,25 +175,51 @@ internal sealed class PromotionList : OrbitRecordListControl
 }
 internal sealed class PolicyList : OrbitRecordListControl
 {
-    private readonly LoyaltyService service;private readonly SessionContext session;private bool rowBusy;
+    private readonly LoyaltyService service;private readonly SessionContext session;private readonly OrbitRowEditor inline;
     public PolicyList(LoyaltyService service,SessionContext session)
     {
         this.service=service;this.session=session;
         Configure("Chính sách hạng",session,async(_,skip,t)=>skip==0?await service.PolicyAsync(session,t):new List<TierRow>(),("Code",L.T("Hạng")),("MinimumPoints",L.T("Ngưỡng điểm")),("Discount",L.T("Giảm %")));Search.Visible=false;Paginated=false;
-        AddAction("Thêm",AddTier);AddRowDeleteColumn();
-        RowActivated=item=>{_=RunRowAction(()=>EditTier((TierRow)item));};
-        RowDeleteRequested=item=>{_=RunRowAction(()=>DeleteTier((TierRow)item));};
+        AddAction("Thêm",AddTier);AddRowDeleteColumn();Workspace.ShowMeta=false;
+        inline=CreateInlineEditor();
+        inline.RowKey=item=>((TierRow)item).Code;
+        inline.ColumnFor=(item,cell)=>Column((TierRow)item,cell.OwningColumn?.Name ?? "");
+        inline.Save=SaveInline;inline.Delete=DeleteInline;
+        inline.Reconcile=async(item,id,t)=>await service.ReconcileAsync(session,id,t) is not null;
+        inline.Reload=()=>Reload();
     }
-    private async Task RunRowAction(Func<Task> action)
+    private static InlineColumn? Column(TierRow row,string property)=>property switch
     {
-        if(rowBusy)return;rowBusy=true;
-        try{await action();}
-        catch(Exception ex)when(ex is UserOperationException or UnauthorizedAccessException or ArgumentException or OperationCanceledException){if(!IsDisposed)State.Text=ex.Message;}
-        finally{rowBusy=false;}
-    }
+        "MinimumPoints"=>new("MinimumPoints",InlineCellKind.Integer,item=>((TierRow)item).MinimumPoints,(_,text)=>Points(text),RightAligned:true),
+        "Discount"=>new("Discount",InlineCellKind.Integer,item=>((TierRow)item).Discount,(_,text)=>Percent(text),RightAligned:true),
+        _=>null
+    };
+    private static object Points(string text)=>int.TryParse(text.Trim(),out var value)&&value>=0?value:throw new ArgumentException(L.T("Ngưỡng điểm phải là số nguyên không âm."));
+    private static object Percent(string text)=>int.TryParse(text.Trim(),out var value)&&value is >=0 and <=100?value:throw new ArgumentException(L.T("Giảm % phải nguyên 0–100."));
     private static TierInput Input(TierRow row)=>new(row.Code,row.MinimumPoints,row.Discount);
     private Task AddTier()=>ShowEditor(null);
-    private Task EditTier(TierRow row)=>ShowEditor(row);
+    private async Task SaveInline(object item,string property,object? value,Guid id,CancellationToken token)
+    {
+        var row=(TierRow)item;
+        var current=await service.PolicyAsync(session,token);
+        var rows=current.Select(x=>x.Code==row.Code?new TierInput(x.Code,property=="MinimumPoints"?(int)value! :x.MinimumPoints,property=="Discount"?(int)value! :x.Discount):Input(x)).OrderBy(x=>x.MinimumPoints).ToArray();
+        var preview=await service.PolicyPreviewAsync(session,rows,token);
+        var confirm=await OrbitConfirmationDialog.ShowAsync(this,L.F("{0} khách sẽ đổi hạng. Lưu thay đổi?",preview.AffectedCustomers),L.T("Thay chính sách hạng"),MessageBoxButtons.YesNo,L.T("Lưu"),L.T("Hủy"));
+        if(confirm!=DialogResult.Yes)throw new OperationCanceledException();
+        await service.PolicySaveAsync(session,rows,preview,id,token);
+    }
+    private async Task<bool> DeleteInline(object item,Guid id,CancellationToken token)
+    {
+        var row=(TierRow)item;
+        var current=await service.PolicyAsync(session,token);
+        if(current.Count<=1||row.MinimumPoints==0)throw new ArgumentException(L.T("Phải giữ một hạng có ngưỡng 0 điểm."));
+        var rows=current.Where(x=>x.Code!=row.Code).Select(Input).OrderBy(x=>x.MinimumPoints).ToArray();
+        var preview=await service.PolicyPreviewAsync(session,rows,token);
+        var confirm=await OrbitConfirmationDialog.ShowAsync(this,L.F("{0} khách sẽ được xếp lại hạng. Xóa hạng {1}?",preview.AffectedCustomers,row.Code),L.T("Xóa hạng thành viên"),MessageBoxButtons.YesNo,L.T("Xóa"),L.T("Hủy"));
+        if(confirm!=DialogResult.Yes)return false;
+        await service.PolicySaveAsync(session,rows,preview,id,token);
+        return true;
+    }
     private async Task ShowEditor(TierRow? row)
     {
         var current=await service.PolicyAsync(session);

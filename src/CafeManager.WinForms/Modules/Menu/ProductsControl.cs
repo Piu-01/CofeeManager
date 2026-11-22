@@ -13,6 +13,8 @@ public sealed class ProductsControl : OrbitRecordListControl
     private readonly SessionContext? session;
     private readonly ComboBox categoryFilter=new(){Width=170,DropDownStyle=ComboBoxStyle.DropDownList};
     private readonly CheckBox selling=new(){Text=L.T("Chỉ đang bán"),AutoSize=true};
+    private OrbitRowEditor inline=null!;
+    private List<CafeManager.Models.Dtos.Catalogs.NameLookup> categories=[];
     public ProductsControl(){}
     public ProductsControl(ProductService service,SessionContext session)
     {
@@ -22,9 +24,14 @@ public sealed class ProductsControl : OrbitRecordListControl
         AddFilter(categoryFilter,146); AddFilter(selling,124);
         categoryFilter.SelectedValueChanged+=async(_,_)=>{if(categoryFilter.DataSource is not null)await ResetAndReload();};
         selling.CheckedChanged+=async(_,_)=>await ResetAndReload();
-        AddAction("Thêm",()=>Edit(true),session.Identity.Role=="ADMIN");AddAction("Sửa",()=>Edit(false),session.Identity.Role=="ADMIN");
-        AddAction("Công thức",Recipe,session.Identity.Role is "ADMIN" or "STORE");AddAction("Xóa",Delete,session.Identity.Role=="ADMIN");
-        Load+=async(_,_)=>{try{var rows=await service.CategoriesAsync(session);categoryFilter.DisplayMember="Name";categoryFilter.ValueMember="Code";categoryFilter.DataSource=new[]{new CafeManager.Models.Dtos.Catalogs.NameLookup("",L.T("Tất cả danh mục"))}.Concat(rows).ToList();}catch(Exception ex)when(ex is UserOperationException or UnauthorizedAccessException){State.Text=ex.Message;}};
+        var admin=session.Identity.Role=="ADMIN";
+        AddAction("Thêm",()=>Edit(true),admin);AddAction("Công thức",Recipe,session.Identity.Role is "ADMIN" or "STORE");
+        AddRowDeleteColumn();
+        inline=CreateInlineEditor();inline.CanWrite=_=>admin;inline.RowKey=item=>((ProductRow)item).Code;
+        inline.ColumnFor=(item,cell)=>Column((ProductRow)item,cell.OwningColumn?.Name ?? "");
+        inline.Save=SaveInline;inline.Delete=DeleteInline;
+        inline.Reconcile=async(_,id,t)=>await service.ReconcileAsync(session,id,t) is not null;inline.Reload=()=>Reload();
+        Load+=async(_,_)=>{try{var rows=await service.CategoriesAsync(session);categories=rows;categoryFilter.DisplayMember="Name";categoryFilter.ValueMember="Code";categoryFilter.DataSource=new[]{new CafeManager.Models.Dtos.Catalogs.NameLookup("",L.T("Tất cả danh mục"))}.Concat(rows).ToList();}catch(Exception ex)when(ex is UserOperationException or UnauthorizedAccessException){State.Text=ex.Message;}};
     }
     private async Task Edit(bool create)
     {
@@ -114,10 +121,35 @@ public sealed class ProductsControl : OrbitRecordListControl
         TextRenderer.DrawText(e.Graphics,text,combo.Font,Rectangle.Inflate(e.Bounds,-4,0),OrbitManagementTheme.Text,TextFormatFlags.Left|TextFormatFlags.VerticalCenter|TextFormatFlags.EndEllipsis);
         e.DrawFocusRectangle();
     }
-    private async Task Delete()
+    private InlineColumn? Column(ProductRow row,string property)=>property switch
     {
-        if(service is null||session is null||Selected is not ProductRow row)return;
-        using var dialog=new OperationEditorDialog(L.T("Xóa sản phẩm"),id=>service.ReconcileAsync(session,id));dialog.AddNote(L.F("Xóa {0} · {1}; có lịch sử sẽ bị chặn.", row.Code, row.Name));dialog.Confirmation=L.F("Xóa {0}?", row.Code);dialog.CaptureWrite=()=>id=>service.DeleteAsync(session,row,id);if(await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this)==DialogResult.OK)await Reload();
+        "Name"=>new("Name",InlineCellKind.Text,item=>((ProductRow)item).Name,(_,text)=>text.Trim()),
+        "Category"=>new("Category",InlineCellKind.Dropdown,item=>CategoryName(((ProductRow)item).Category),(_,text)=>CategoryCode(text),_=>categories.Select(x=>x.Name).ToList()),
+        "Price"=>new("Price",InlineCellKind.Money,item=>((ProductRow)item).Price,(_,text)=>Money(text),RightAligned:true),
+        "Status"=>new("Status",InlineCellKind.Dropdown,item=>((ProductRow)item).Status=="Dang ban"?L.T("Đang bán"):L.T("Ngừng bán"),(_,text)=>text==L.T("Đang bán")?"Dang ban":"Ngung ban",_=>[L.T("Ngừng bán"),L.T("Đang bán")]),
+        _=>null
+    };
+    private string CategoryName(string code)=>categories.FirstOrDefault(x=>x.Code==code)?.Name??code;
+    private string CategoryCode(string name)=>categories.FirstOrDefault(x=>x.Name==name)?.Code??throw new ArgumentException(L.T("Danh mục không hợp lệ."));
+    private static decimal Money(string text)
+    {
+        var cleaned=text.Replace("₫","").Replace(" ","").Replace(".","").Replace(',','.');
+        if(!decimal.TryParse(cleaned,NumberStyles.Number,CultureInfo.InvariantCulture,out var value))throw new ArgumentException(L.T("Giá không hợp lệ."));
+        return value;
+    }
+    // sp_ProductWrite Update chỉ đổi 4 trường sản phẩm; công thức giữ nguyên nên gửi [] như luồng cũ.
+    private async Task SaveInline(object item,string property,object? value,Guid id,CancellationToken token)
+    {
+        if(service is null||session is null)return;
+        var row=(ProductRow)item;
+        var request=ProductService.Normalize(new(row.Code,property=="Name"?(string)value!:row.Name,property=="Category"?(string)value!:row.Category,property=="Price"?(decimal)value!:row.Price,property=="Status"?(string)value!:row.Status,[]));
+        await service.SaveAsync(session,request,row.Revision,id,token);
+    }
+    // Sản phẩm thuần bán hàng: xóa ngay, không hộp xác nhận; SQL chặn khi có lịch sử.
+    private async Task<bool> DeleteInline(object item,Guid id,CancellationToken token)
+    {
+        if(service is null||session is null)return false;
+        await service.DeleteAsync(session,(ProductRow)item,id,token);return true;
     }
 }
 

@@ -135,6 +135,34 @@ chung. Bounds do WinForms scale không nhân DPI lần hai. Agent chỉ kiểm l
 kỹ thuật/chức năng tại125%, hình thức người dùng kiểm; quy định này ưu tiên
 các đoạn workflow chụp ảnh/DPI chung lịch sử phía dưới.
 
+### 2.2. Sửa/xóa trực tiếp trên dòng — 22/11/2026
+
+Hành vi bắt buộc xem [guide mục11.5](HuongDan_UI_Orbit_Cafe.md#115-sửaxóa-trực-tiếp-trên-dòng--22112026).
+Không dùng chế độ edit native của `DataGridView`: DTO là positional record immutable
+và lưới ReadOnly tự paint, nên sửa ô bằng **editor overlay** đặt đúng ô, ghi qua
+service rồi tải lại và chọn lại dòng theo mã. UI không chứa SQL/nghiệp vụ.
+
+| Thành phần/API | File | Cách tận dụng |
+|---|---|---|
+| OrbitCellEditor |`UI/OrbitCellEditor.cs` |Panel overlay một ô cho TextBox/ComboBox/CheckBox theo theme; viền Lilac, kích thước qua `OrbitManagementTheme.Px`; Enter/Tab/Esc và select-all qua `OrbitField`; không nhận click xuyên xuống lưới. |
+| OrbitRowEditor |`UI/OrbitRowEditor.cs` |Engine dùng chung nối lưới + ô editor: mô tả cột bằng `InlineColumn(Property, Kind, Read, Convert, Options, CanEdit)`, màn cấp delegate Save/Delete/Reconcile/Reload/RowKey/Status. Quản lý một editor mở, commit khi click ô khác/Enter/Tab/blur có guard gửi lặp, Esc hủy. |
+| OrbitDataGridView.InlineEditable/InlineCursor |`UI/OrbitDataGridView.cs` |Hook opt-in theo ô: hover đổi màu chữ/viền badge sang Caramel và đổi con trỏ; mặc định null giữ hành vi cũ cho mọi màn chưa chuyển. Không tự sửa nền dòng đang chọn. |
+| OrbitDataGridView.RowBlocked |`UI/OrbitDataGridView.cs` |Hook theo chỉ số dòng để vẽ veil + vạch trái cho dòng khóa kết quả chưa xác định. |
+| AddRowDeleteColumn |`UI/OrbitRecordListControl.cs` |Cột `Delete` 44 logical px, icon thùng rác; click xóa đúng dòng, không cần chọn trước. `RowDeleteRequested`/`RowActivated` cũ không dùng cho các màn đã chuyển. |
+| OrbitRecordListControl.RowWriteBusy/IsBusy |`UI/OrbitRecordListControl.cs` |Trạng thái ghi inline cho base: chặn `UpdateActions`, dừng reload chồng, làm cơ sở cho `StateChanged` của engine và `IsWriting` của màn Designer. |
+
+- Màn Designer (`CatalogsControl`, `MaterialsControl`) dựng engine trực tiếp trên `Grid`
+  và `Workspace.Body`; màn kế thừa base dùng helper `CreateInlineEditor`. Không chép
+  handler click/hover riêng từng màn.
+- Lỗi thường giữ editor + giá trị, báo ở status. Chỉ "kết quả chưa xác định" mới khóa
+  dòng và đặt nút **Đối chiếu** căn giữa dòng; đối chiếu qua `ReconcileAsync`/`ReceiptAsync`
+  sẵn có. Danh mục chưa có `@RequestId` cho Update/Delete nên đối chiếu bằng `GetAsync`
+  + so `Revision`/giá trị hoặc còn tồn tại — khoảng trống đã ghi nhận, không thêm migration.
+- Xóa theo ma trận xác nhận ở guide11.5; xóa ngay chỉ báo status, không toast/undo. Quyền
+  vẫn do service quyết định; ẩn nút không thay kiểm tra quyền.
+- Không thêm bảng sửa/`OperationEditorDialog` cho trường đơn giản đã inline; dialog thêm
+  mới và dialog chuyên biệt (công thức, tài sản Thêm/Yêu cầu chờ/Chi tiết) giữ nguyên.
+
 ## 3. DPI, font và bố cục
 
 - Chốt cấu hình DPI ở đầu ứng dụng theo cấu trúc project .NET 10 đang có; ưu tiên cấu hình thống nhất PerMonitorV2 khi đã kiểm chứng. Không trộn cấu hình .NET Framework/app.config cũ vào project hiện đại.

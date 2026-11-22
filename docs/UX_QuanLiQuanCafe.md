@@ -104,7 +104,8 @@ Tiền hiển thị `81.000 ₫`, số lượng `0,0180 Kg`, ngày `dd/MM/yyyy`,
 
 Lỗi trường dùng ErrorProvider và thông báo gần trường, focus vào lỗi đầu tiên. Lỗi nghiệp vụ DB xuất hiện ở vùng thông báo của dialog, giữ input để sửa. Không dùng MessageBox cho từng trường và không xóa toàn form khi lưu thất bại. Giá trị nhập phải được xác nhận trước khi rời ô/bước.
 
-Combobox chọn dữ liệu có tên rõ, chỉ dùng mã khi trùng tên. Grid chỉ đọc trừ màn hình nhập số đếm/chấm công/chi tiết nháp có kiểm soát. Không cho chỉnh số dư trực tiếp từ grid.
+Combobox chọn dữ liệu có tên rõ, chỉ dùng mã khi trùng tên. Grid chỉ đọc trừ màn hình nhập số đếm/chấm công/chi tiết nháp có kiểm soát và **ô master data sửa trực tiếp** theo [guide mục11.5](ui/HuongDan_UI_Orbit_Cafe.md#115-sửaxóa-trực-tiếp-trên-dòng--22112026)
+(click ô mở editor tại ô, ghi qua service rồi reload). Không cho chỉnh số dư trực tiếp từ grid.
 
 ### 5.3. Bàn phím và khả năng tiếp cận
 
@@ -141,10 +142,11 @@ Cài mới không seed: người cài có bước thiết lập DB và tạo ADM
 
 Bàn có nhãn **Trống / Đang dùng / Chờ thanh toán / Đã trả · giữ bàn**, không hiển thị “Đã đặt” vì chưa có đặt bàn. Chọn bàn có đơn mở thì mở đơn đó, không hỏi tạo thêm; chọn bàn “Đã trả · giữ bàn” thì mở ngữ cảnh đơn mới trong cùng phiên, bàn không bị coi là trống cho khách khác. Đổi khu vực không đổi đơn đang thao tác. Có nút Làm mới bàn; tải thất bại giữ dữ liệu cũ với nhãn **Chưa cập nhật**, không giả bàn trống.
 
-**Rơi gọn thao tác bàn (20/11/2026):** màn Bàn/Khu vực bỏ các nút Chọn bàn, Trả bàn,
+**Rơi gọn thao tác bàn (20/11/2026, cập nhật cách sửa/xóa22/11/2026):** màn Bàn/Khu vực bỏ các nút Chọn bàn, Trả bàn,
 Sửa, Xóa trên toolbar. Bấm card Sơ đồ hoặc dòng Danh sách vẫn mở POS đúng bàn như cũ;
-ADMIN double-click dòng ở chế độ Danh sách để mở hộp Sửa, bấm icon thùng rác cuối dòng
-để mở luồng Xóa (có xác nhận, chặn khi còn lịch sử). Ở POS không còn nút **Chọn bàn**:
+ADMIN click/F2 vào ô Tên/Khu vực để sửa tại chỗ (không mở hộp Sửa), bấm icon thùng rác cuối dòng
+để xóa ngay theo chuẩn mục11.5 — service vẫn chặn khi còn lịch sử/đơn mở và báo ở dòng trạng thái.
+Ở POS không còn nút **Chọn bàn**:
 chọn bàn trong ô chọn bàn là mở bàn/đơn ngay, tự chuyển kênh sang Tại quán khi cần, vẫn
 hỏi xác nhận nếu đang có nháp chưa lưu; các lần gán bàn bằng code (Đơn mới, đổi kênh,
 tải lại, sau trả bàn) không kích hoạt tự mở. Nhân viên vẫn trả bàn bằng nút **Trả bàn**
@@ -354,7 +356,15 @@ Không hứa lưu lịch sử chuyển trạng thái nếu DB chỉ có trạng 
 
 ### 10.1. Mẫu danh sách/editor
 
-Tìm/lọc → grid → Thêm hoặc Chọn dòng/Sửa → dialog → validation → Lưu → reload dòng vừa sửa. Thành công dùng thông báo nhẹ; xóa/ngừng hoạt động phải xác nhận theo mức tác động. FK đang được dùng thì báo không thể xóa và đề nghị ngừng sử dụng nếu schema có trạng thái; không tự thêm soft-delete bằng UI.
+Tìm/lọc → grid → Thêm hoặc **click chọn dòng rồi click ô để sửa tại chỗ** / **thùng rác từng dòng để xóa** → validation → ghi → reload, chọn lại dòng. Theo chuẩn chung chốt22/11/2026
+([guide mục11.5](ui/HuongDan_UI_Orbit_Cafe.md#115-sửaxóa-trực-tiếp-trên-dòng--22112026)),
+master data không còn nút Sửa/Xóa riêng và không mở bảng sửa cho trường đơn giản: click đầu chọn cả dòng,
+click kế tiếp vào ô sửa được mới mở editor tại ô, rê chuột vào ô đổi màu chữ để báo sửa được;
+Enter/Tab ghi, Esc hủy; click ô đọc/vùng trống chỉ chọn dòng. Xóa kho/tài chính/lịch sử (nguyên liệu,
+tài sản, khách hàng, nhân viên, hạng, NCC, loại thu/chi) hỏi xác nhận; sản phẩm/bàn/khu vực xóa ngay,
+chỉ báo ở dòng trạng thái, không toast/undo. Kết quả ghi chưa xác định (timeout) khóa đúng dòng đó và hiện
+nút **Đối chiếu** giữa dòng; các dòng khác vẫn dùng được. Lỗi validate giữ editor và giá trị đã nhập.
+FK đang được dùng thì báo không thể xóa và đề nghị ngừng sử dụng nếu schema có trạng thái; không tự thêm soft-delete bằng UI.
 
 Sản phẩm: tên, danh mục, giá, bán/ngừng; tab Công thức có NVL, lượng và đơn vị chuẩn. Không cho bật bán nếu thiếu công thức theo chính sách checkout. Công thức 18g cho NVL Kg nhập 0,0180 Kg và có gợi ý quy đổi đọc được, không âm thầm đổi đơn vị.
 

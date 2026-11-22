@@ -15,6 +15,7 @@ internal sealed class EmployeesControl : OrbitRecordListControl
     private readonly SessionContext session;
     private readonly IPendingOperationStore pending;
     private readonly List<HumanResourcesLookup> positionLookups = [];
+    private OrbitRowEditor? inline;
     private bool positionBuilding;
     public EmployeesControl(EmployeeService service, EmployeeAccountService accounts, SessionContext session, IPendingOperationStore pending, bool accountTab)
     {
@@ -33,7 +34,15 @@ internal sealed class EmployeesControl : OrbitRecordListControl
         { AddFilter(filter, 160, true); filter.SelectedValueChanged += async (_, _) => { if (!positionBuilding) await ResetAndReload(); }; }
         foreach (DataGridViewColumn col in Grid.Columns) if (col.DataPropertyName is "MonthlyRate" or "HourlyRate") { col.DefaultCellStyle.Format = "#,##0' ₫'"; col.DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("vi-VN"); col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight; }
         if (accountTab) { AddAction("Cấp tài khoản", () => Account("Create"), needsRow: true); AddAction("Đổi quyền / khóa", () => Account("Change"), needsRow: true); AddAction("Reset mật khẩu", () => Account("Reset"), needsRow: true); }
-        else { AddAction("Thêm", () => Edit(true)); AddAction("Sửa", () => Edit(false)); AddAction("Nghỉ / Đi làm lại", Employment, needsRow: true); AddAction("Xóa", Delete); }
+        else
+        {
+            var admin = session.Identity.Role == "ADMIN";
+            AddAction("Thêm", () => Edit(true)); AddAction("Nghỉ / Đi làm lại", Employment, needsRow: true);
+            AddRowDeleteColumn();
+            inline = CreateInlineEditor(); inline.CanWrite = _ => admin; inline.RowKey = item => ((EmployeeRow)item).Code;
+            inline.ColumnFor = (item, cell) => Column((EmployeeRow)item, cell.OwningColumn?.Name ?? "");
+            inline.Save = SaveInline; inline.Delete = DeleteInline; inline.Reconcile = ReconcileInline; inline.Reload = () => Reload();
+        }
         AddAction("Yêu cầu chờ", Recover);
         Load += async (_, _) =>
         {
@@ -91,11 +100,47 @@ internal sealed class EmployeesControl : OrbitRecordListControl
         d.CaptureCommand = () => (JsonSerializer.Serialize(new { row.Code, Employed = !row.Employed }), id => service.EmploymentAsync(session, row, !row.Employed, id));
         await OrbitDialogHost.ShowAsync(d, this); if (d.Changed) { if (row.AccountId == session.Identity.AccountId) session.Revoke(); else await Reload(); }
     }
-    private async Task Delete()
+    private InlineColumn? Column(EmployeeRow row, string property) => property switch
     {
-        var row = await Current(); using var d = Dialog(L.T("Xóa hồ sơ chưa có lịch sử"), "EmployeeDelete"); d.Note(row.Code + " · " + row.Name); d.Confirmation = L.T("Xóa hồ sơ này? Hồ sơ có tham chiếu sẽ bị SQL chặn.");
-        d.CaptureCommand = () => (JsonSerializer.Serialize(new { row.Code }), id => service.DeleteAsync(session, row, id));
-        await OrbitDialogHost.ShowAsync(d, this); if (d.Changed) await Reload();
+        "Name" => new("Name", InlineCellKind.Text, item => ((EmployeeRow)item).Name, (_, text) => text.Trim()),
+        "Phone" => new("Phone", InlineCellKind.Text, item => ((EmployeeRow)item).Phone ?? "", (_, text) => text.Trim()),
+        "Contract" => new("Contract", InlineCellKind.Dropdown, item => ((EmployeeRow)item).Contract, (_, text) => text, _ => ["Full-time", "Part-time"]),
+        "MonthlyRate" => new("MonthlyRate", InlineCellKind.Money, item => ((EmployeeRow)item).MonthlyRate, (_, text) => Money(text), RightAligned: true),
+        "HourlyRate" => new("HourlyRate", InlineCellKind.Money, item => ((EmployeeRow)item).HourlyRate, (_, text) => Money(text), RightAligned: true),
+        "PositionName" => new("PositionName", InlineCellKind.Dropdown, item => ((EmployeeRow)item).PositionName, (_, text) => PositionCode(text), _ => positionLookups.Select(x => x.Name).ToList()),
+        _ => null
+    };
+    private string PositionCode(string name) => positionLookups.FirstOrDefault(x => x.Name == name)?.Code ?? throw new ArgumentException(L.T("Chức vụ không hợp lệ."));
+    private static decimal Money(string text)
+    {
+        var cleaned = text.Replace("₫", "").Replace(" ", "").Replace(".", "").Replace(',', '.');
+        if (!decimal.TryParse(cleaned, NumberStyles.Number, CultureInfo.InvariantCulture, out var value) || value < 0) throw new ArgumentException(L.T("Nhập số tiền/giờ hợp lệ."));
+        return value;
+    }
+    private async Task SaveInline(object item, string property, object? value, Guid id, CancellationToken token)
+    {
+        var row = (EmployeeRow)item;
+        var request = EmployeeService.Normalize(new(
+            property == "Name" ? (string)value! : row.Name,
+            property == "Phone" ? (string)value! : row.Phone,
+            property == "Contract" ? (string)value! : row.Contract,
+            property == "MonthlyRate" ? (decimal)value! : row.MonthlyRate,
+            property == "HourlyRate" ? (decimal)value! : row.HourlyRate,
+            property == "PositionName" ? (string)value! : row.Position));
+        await service.SaveAsync(session, request, row, id, token);
+    }
+    private async Task<bool> DeleteInline(object item, Guid id, CancellationToken token)
+    {
+        var row = (EmployeeRow)item;
+        if (await OrbitConfirmationDialog.ShowAsync(this, L.F("Xóa hồ sơ {0} · {1}? Hồ sơ có tham chiếu sẽ bị SQL chặn.", row.Code, row.Name), L.T("Xóa hồ sơ chưa có lịch sử"), MessageBoxButtons.YesNo, L.T("Xóa"), L.T("Hủy")) != DialogResult.Yes) return false;
+        await service.DeleteAsync(session, row, id, token); return true;
+    }
+    // Không ghi file chờ cho từng dòng; SQL xác minh receipt theo request ID rồi tải lại.
+    private async Task<bool?> ReconcileInline(object item, Guid id, CancellationToken token)
+    {
+        var update = await service.ReceiptAsync(session, id, "EmployeeUpdate", token);
+        var receipt = update ?? await service.ReceiptAsync(session, id, "EmployeeDelete", token);
+        return receipt is null ? false : true;
     }
     private async Task Account(string action)
     {

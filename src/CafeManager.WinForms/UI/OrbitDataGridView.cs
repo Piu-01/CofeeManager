@@ -7,6 +7,16 @@ public sealed class OrbitDataGridView : DataGridView
     private int hovered = -1;
     private int hoveredColumn = -1;
     private OrbitGridProfile profile;
+    // Hook opt-in cho sửa tại ô/xóa tại dòng; null giữ nguyên hành vi các màn chưa chuyển.
+    [System.ComponentModel.Browsable(false)]
+    [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+    public Func<DataGridViewCell, bool>? InlineEditable { get; set; }
+    [System.ComponentModel.Browsable(false)]
+    [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+    public Func<DataGridViewCell, Cursor?>? InlineCursor { get; set; }
+    [System.ComponentModel.Browsable(false)]
+    [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+    public Func<int, bool>? RowBlocked { get; set; }
     [System.ComponentModel.DefaultValue(OrbitGridProfile.Inventory)]
     public OrbitGridProfile Profile { get => profile; set { profile = value; if (profile == OrbitGridProfile.Payment) { ReadOnly = false; EditMode = DataGridViewEditMode.EditOnEnter; } else if (profile is OrbitGridProfile.OpenOrders or OrbitGridProfile.InvoiceHistory or OrbitGridProfile.Delivery or OrbitGridProfile.OrderLines) { ReadOnly = true; EditMode = DataGridViewEditMode.EditProgrammatically; } ApplyMetrics(); } }
     public OrbitDataGridView()
@@ -28,13 +38,15 @@ public sealed class OrbitDataGridView : DataGridView
             var old = hovered; hovered = e.RowIndex; hoveredColumn = e.ColumnIndex;
             if (old >= 0 && old < Rows.Count) InvalidateRow(old);
             if (hovered >= 0) InvalidateRow(hovered);
-            if (profile == OrbitGridProfile.OrderLines) Cursor = Enabled && IsNameColumn(e.ColumnIndex) ? Cursors.Hand : Cursors.Default;
+            if (InlineCursor is not null)
+                Cursor = Enabled && e.RowIndex >= 0 && e.ColumnIndex >= 0 && InlineCursor(Rows[e.RowIndex].Cells[e.ColumnIndex]) is { } cursor ? cursor : Cursors.Default;
+            else if (profile == OrbitGridProfile.OrderLines) Cursor = Enabled && IsNameColumn(e.ColumnIndex) ? Cursors.Hand : Cursors.Default;
         };
         MouseLeave += (_, _) =>
         {
             var old = hovered; hovered = -1; hoveredColumn = -1;
             if (old >= 0 && old < Rows.Count) InvalidateRow(old);
-            if (profile == OrbitGridProfile.OrderLines) Cursor = Cursors.Default;
+            Cursor = Cursors.Default;
         };
         CellToolTipTextNeeded += (_, e) =>
         {
@@ -327,18 +339,26 @@ public sealed class OrbitDataGridView : DataGridView
             e.Graphics!.SmoothingMode = global::System.Drawing.Drawing2D.SmoothingMode.None;
             using var fill = new SolidBrush(selected ? e.CellStyle.SelectionBackColor : e.CellStyle.BackColor);
             e.Graphics!.FillRectangle(fill, e.CellBounds);
+            var blocked = RowBlocked?.Invoke(e.RowIndex) == true;
+            if (blocked)
+            {
+                using var veil = new SolidBrush(Color.FromArgb(30, 255, 190, 110));
+                e.Graphics.FillRectangle(veil, e.CellBounds);
+            }
             var padding = e.CellStyle.Padding;
             var textBounds = new Rectangle(e.CellBounds.Left + padding.Left, e.CellBounds.Top + padding.Top,
                 Math.Max(0, e.CellBounds.Width - padding.Horizontal), Math.Max(0, e.CellBounds.Height - padding.Vertical));
             var alignment = e.CellStyle.Alignment is DataGridViewContentAlignment.MiddleRight or DataGridViewContentAlignment.TopRight or DataGridViewContentAlignment.BottomRight
                 ? TextFormatFlags.Right : TextFormatFlags.Left;
             var property = Property(Columns[e.ColumnIndex]);
+            // Rê chuột vào ô sửa được: đổi màu chữ thay cho viền inset.
+            var editableHover = hovered == e.RowIndex && hoveredColumn == e.ColumnIndex && InlineEditable?.Invoke(Rows[e.RowIndex].Cells[e.ColumnIndex]) == true;
             if (Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn)
             {
                 var size = OrbitManagementTheme.Px(this, 14); var box = new Rectangle(e.CellBounds.Left + (e.CellBounds.Width - size) / 2, e.CellBounds.Top + (e.CellBounds.Height - size) / 2, size, size);
                 var check = e.Value is true;
                 using var checkFill = new SolidBrush(check ? OrbitManagementTheme.Caramel : Color.FromArgb(59, 59, 58)); e.Graphics.FillRectangle(checkFill, box);
-                using var checkPen = new Pen(check ? Color.FromArgb(80, 56, 40) : OrbitManagementTheme.Muted);
+                using var checkPen = new Pen(editableHover ? OrbitManagementTheme.Caramel : check ? Color.FromArgb(80, 56, 40) : OrbitManagementTheme.Muted);
                 e.Graphics.DrawRectangle(checkPen, box);
                 if (check) e.Graphics.DrawLines(checkPen, [new Point(box.Left + 3, box.Top + size/2), new(box.Left + size/2 - 1, box.Bottom - 3), new(box.Right - 2, box.Top + 3)]);
             }
@@ -352,10 +372,15 @@ public sealed class OrbitDataGridView : DataGridView
             else if ((profile == OrbitGridProfile.Menu && property == "Status") || (profile == OrbitGridProfile.Customers && property == "Tier")
                 || (profile == OrbitGridProfile.OpenOrders && property == "Channel")
                 || (profile == OrbitGridProfile.InvoiceHistory && property is "Channel" or "Status")
-                || (profile == OrbitGridProfile.Delivery && property is "Delivery" or "PaymentStatus")) PaintBadge(e, textBounds, property);
+                || (profile == OrbitGridProfile.Delivery && property is "Delivery" or "PaymentStatus")) PaintBadge(e, textBounds, property, editableHover);
             else TextRenderer.DrawText(e.Graphics, Convert.ToString(e.FormattedValue), e.CellStyle.Font ?? Font, textBounds,
-                    selected ? e.CellStyle.SelectionForeColor : e.CellStyle.ForeColor,
+                    editableHover ? OrbitManagementTheme.Caramel : selected ? e.CellStyle.SelectionForeColor : e.CellStyle.ForeColor,
                     alignment | TextFormatFlags.VerticalCenter | TextFormatFlags.EndEllipsis | TextFormatFlags.NoPrefix | TextFormatFlags.SingleLine);
+            if (blocked && e.ColumnIndex == 0)
+            {
+                using var bar = new SolidBrush(OrbitManagementTheme.Caramel);
+                e.Graphics.FillRectangle(bar, new Rectangle(e.CellBounds.Left, e.CellBounds.Top, Math.Max(2, OrbitManagementTheme.Px(this, 2)), e.CellBounds.Height));
+            }
             using var horizontal = new Pen(GridColor);
             e.Graphics!.DrawLine(horizontal, e.CellBounds.Left, e.CellBounds.Bottom - 1, e.CellBounds.Right, e.CellBounds.Bottom - 1);
             e.Handled = true;
@@ -441,7 +466,7 @@ public sealed class OrbitDataGridView : DataGridView
         using var horizontal = new Pen(GridColor);
         graphics.DrawLine(horizontal, e.CellBounds.Left, e.CellBounds.Bottom - 1, e.CellBounds.Right, e.CellBounds.Bottom - 1);
     }
-    private void PaintBadge(DataGridViewCellPaintingEventArgs e, Rectangle textBounds, string property)
+    private void PaintBadge(DataGridViewCellPaintingEventArgs e, Rectangle textBounds, string property, bool highlight = false)
     {
         var deliveryStatus = profile == OrbitGridProfile.Delivery && property is "Delivery" or "PaymentStatus";
         var status = property == "Status" || deliveryStatus; var text = Convert.ToString(e.FormattedValue) ?? "";
@@ -451,6 +476,7 @@ public sealed class OrbitDataGridView : DataGridView
         var canceled = profile == OrbitGridProfile.InvoiceHistory && status && raw == "Huy" || deliveryStatus && raw is "Huy" or "Huy giao";
         var warm = !status && text is "BKIM" or "VANG" || (profile is OrbitGridProfile.OpenOrders or OrbitGridProfile.InvoiceHistory) && property == "Channel" && raw == "Tai quan";
         var ink = status ? active ? Color.FromArgb(189, 215, 167) : pending ? OrbitManagementTheme.Caramel : canceled ? AppTheme.Error : OrbitManagementTheme.Muted : warm ? OrbitManagementTheme.Caramel : OrbitManagementTheme.Lilac;
+        if (highlight) ink = OrbitManagementTheme.Caramel;
         var font = OrbitManagementTheme.DrawingFont(this, OrbitManagementTheme.Small);
         var scale = DeviceDpi / 96F; var width = TextRenderer.MeasureText(e.Graphics!, text, font).Width + (int)((status ? 22 : 14) * scale);
         var box = new RectangleF(textBounds.Left, e.CellBounds.Top + (e.CellBounds.Height - 19 * scale) / 2, Math.Min(textBounds.Width, width), 19 * scale);
