@@ -1,5 +1,16 @@
 # Orbit Café — UI handoff
 
+## Hộp Khách hàng F3 —22/11/2026, chờ người dùng kiểm
+
+Người dùng báo hộp cao/bị cắt và còn chữ SQL; tìm khách phải bấm nút, chọn khách
+rồi tìm lại thì mất lựa chọn. Đã đổi sang bảng kết quả chọn dòng (tên/SĐT/hạng/điểm),
+tìm tự động 350 ms hoặc Enter/kính lúp, giữ khách đang chọn khi lọc lại, dải "Đã chọn"
+kèm nút Khách vãng lai. Bỏ chữ SQL/giới hạn 50 dòng. Đơn Giao hàng dùng hai cột
+khách/thông tin giao hàng để vừa 1366×768 tại 125%. Ba khối Tìm khách/Kết quả/
+Khách đang chọn dùng `OrbitDialogField` có nhãn như các editor trong app. Hình thức
+người dùng kiểm;
+hồ sơ tại `../bugs/order-header-khach-hang/report.md`.
+
 ## Bán hàng gọn —30/10/2026, đã triển khai/chờ test riêng
 
 Nguồn user Orbit_BanHang_Gon.zip lưu tại sales-compact/ cùng manifest/hash:
