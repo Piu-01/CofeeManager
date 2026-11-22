@@ -1,5 +1,6 @@
 using System.Data;
 using CafeManager.Models.Dtos;
+using CafeManager.Models.Dtos.Loyalty;
 using CafeManager.Models.Dtos.Sales;
 using CafeManager.Models.Errors;
 using CafeManager.Models.Requests.Sales;
@@ -48,8 +49,8 @@ public sealed partial class SalesRepository(ConnectionFactory factory)
     ];
     internal static SqlParameter[] EditableHeader(OrderHeaderInput h) =>
     [
-        P("@Customer", SqlDbType.VarChar, h.Customer, -1), P("@Promotion", SqlDbType.VarChar, h.Promotion, -1),
-        P("@Partner", SqlDbType.VarChar, h.Partner, -1), P("@Recipient", SqlDbType.NVarChar, h.Recipient, -1),
+        P("@Customer", SqlDbType.VarChar, h.Customer, -1), P("@Partner", SqlDbType.VarChar, h.Partner, -1),
+        P("@Recipient", SqlDbType.NVarChar, h.Recipient, -1),
         P("@Phone", SqlDbType.VarChar, h.Phone, -1), P("@Address", SqlDbType.NVarChar, h.Address, -1), SqlParameters.Decimal("@Ship", h.Ship)
     ];
     internal Task<SalesWriteResult> Write(AccountIdentity a, string procedure, string code, Guid id,
@@ -85,13 +86,16 @@ public sealed partial class SalesRepository(ConnectionFactory factory)
             r.IsDBNull(12) ? null : r.GetDateTime(12), r.GetDecimal(13), r.GetDecimal(14), r.GetDecimal(15), r.GetDecimal(16),
             r.GetDecimal(17), r.GetDecimal(18), Text(r, 19), (byte[])r[20], r.GetBoolean(21), Optional(r, 22),
             r.IsDBNull(23) ? null : r.GetInt32(23), r.GetDateTime(24),
-            r.IsDBNull(25) ? null : r.GetInt32(25), r.IsDBNull(26) ? null : (byte[])r[26]);
+            r.IsDBNull(25) ? null : r.GetInt32(25), r.IsDBNull(26) ? null : (byte[])r[26], r.GetInt32(27));
         await r.NextResultAsync(t);
         var lines = await Rows(r, x => new SalesLine(x.GetInt32(0), Text(x, 1), Text(x, 2), x.GetInt32(3),
             x.GetDecimal(4), Optional(x, 5), x.GetDecimal(6)), t);
         await r.NextResultAsync(t);
         var payments = await Rows(r, x => new SalesPayment(x.GetInt32(0), Text(x, 1), Text(x, 2), x.GetDecimal(3), Optional(x, 4)), t);
-        return new(header, lines, payments);
+        await r.NextResultAsync(t);
+        var promotions = await Rows(r, x => new AppliedPromotion(Text(x, 0), Text(x, 1), x.GetInt32(2),
+            x.GetDecimal(3), x.GetDecimal(4)), t);
+        return new(header, lines, payments, promotions);
     }
     public Task<SalesReceipt?> ReconcileAsync(AccountIdentity a, Guid id, string code, string operation, CancellationToken t) =>
         Call("sp_SalesReconcile", [.. Actor(a), P("@RequestId", SqlDbType.UniqueIdentifier, id),

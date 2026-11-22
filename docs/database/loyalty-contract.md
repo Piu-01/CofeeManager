@@ -43,3 +43,37 @@ thành kết quả nghiệm thu. Chưa chạy các ca policyrollback/concurrency
 Bổ sung T13/009: tạo mới KM+8số, còn mã seed đã tồn tại như KM24BF được sửa/xóa
 với expected revision, giữ nguyên khóa. Không remap lịch sử. 009 giữ chữ ký
 procedure, chỉ thu hẹp kiểm định dạng tạo mới. 008 giữ nguyên checksum đã áp dụng.
+
+## Ưu đãi tự áp theo điều kiện — migration039 (21/11/2026)
+
+`KHUYENMAI` thêm `TrangThai` (`Nhap/DangChay/TamDung`, mặc định `DangChay`),
+`DoiTuongKhach` (`ALL/FIRST/MEMBER/TIER`) và `PhamVi` (`ALL/ITEM`); `NgayKT` cho phép
+NULL = vô hạn; CHECK ngày chỉ còn `NgayKT IS NULL OR NgayKT >= NgayBD`. Hai bảng con
+`KHUYENMAI_HANG(MaKM,MaHang)` và `KHUYENMAI_MON(MaKM,MaSP)` bị DENY DML trực tiếp;
+sửa bảng con/trạng thái bump `KHUYENMAI.Revision` để token preview cũ mất hiệu lực.
+`HetHan` chỉ là trạng thái suy ra khi `NgayKT < NgayLap`, không ghi.
+
+`fn_DiscountPreview` bị bỏ. Điều kiện duy nhất nằm trong `fn_UuDaiDong` (trạng thái,
+ngày, đối tượng, phạm vi món, legacy): `ALL` mọi khách, `FIRST` khách có hồ sơ chưa
+từng có hóa đơn `Da thanh toan`, `MEMBER` khách có hồ sơ, `TIER` thuộc `KHUYENMAI_HANG`;
+`ITEM` chỉ giảm dòng thuộc `KHUYENMAI_MON`. Nhiều KM thỏa trên cùng dòng được cộng %
+và chặn 100%/dòng; giảm dòng làm tròn một lần `ROUND(amount × pct / 100, 0)`;
+`GiamGia = min(Σ giảm dòng, TongTien)`; `TierDiscount = min(GiamGia, ROUND(TongTien ×
+tier% / 100, 0))`, `PromotionDiscount = GiamGia − TierDiscount`; ship không giảm;
+điểm `FLOOR((TongTien − GiamGia) / 1000)`. Đơn mở cũ có `HOADON.MaKM` được đọc như KM
+legacy phạm vi `ALL`, vẫn xét hiệu lực ngày; không backfill.
+
+`sp_DiscountPreview @Lines dbo.PreviewLines READONLY` (không còn `@Promotion`), trả
+Source/Tier/TierPercent/PromotionPercent/PercentDiscount/TierDiscount/PromotionDiscount/
+PromotionCount/Discount/Payable/ReadAt/PolicyRevision và result set danh sách
+`AppliedPromotion(Code,Name,Percent,BaseAmount,Discount)`. TVP rỗng dùng `@Money` như
+một dòng giả cho KM phạm vi `ALL` (chỉ preview). `sp_PromotionList` trả thêm trạng
+thái/đối tượng/phạm vi/số món; CASH chỉ thấy `DangChay` còn hiệu lực. `sp_PromotionGet`
+trả 3 set: header, hạng, món. `sp_PromotionWrite` nhận `@Audience,@Status,@TiersJson,
+@ItemsJson`; action Create/Update/Delete/Pause/Resume, giữ RequestId + ExpectedRevision
+và receipt như các ghi G03. Ghi KM vẫn ADMIN; CASH chỉ đọc.
+
+Snapshot checkout thêm `TierDiscount/PromotionDiscount/PromotionCount/PromotionDigest`
+và `HoaDonUuDaiApDung(MaHD,MaKM,...)`; trigger con cấm UPDATE/DELETE, chỉ INSERT khi
+đơn còn mở và buộc tổng `Discount` bằng `snapshot.PromotionDiscount`. Hóa đơn cũ không
+có breakdown vẫn đọc theo `PercentDiscount`; UI/in giữ nhánh legacy.

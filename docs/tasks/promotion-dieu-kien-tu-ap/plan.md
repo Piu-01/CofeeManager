@@ -83,9 +83,15 @@ Liệt kê từng ưu đãi; giữ nhánh legacy.
 
 Bộ `database/tests/promo-auto/*` + biên bản `test-results.md`; gồm đa ưu đãi, điều kiện, trạng thái, làm tròn, token, báo cáo, legacy, đồng thời.
 
+Đã chạy 22/11/2026: PA01–PA13 PASS (`runs/20261122_135707_532a959f`);
+PA14 NOT RUN (cần GUI), PA15 do người dùng tự kiểm.
+
 ### Bước 14 — Build, áp DB development
 
 Build sạch; chờ duyệt đợt test; PASS mới áp 039 lên `CoffeeManager_Development`.
+
+Đã làm 22/11/2026: build 0 lỗi; áp 039 lên development khi app đóng
+(`Applied`, checksum `D2D1E735…86F0D1`, backup trước áp), dữ liệu không đổi.
 
 ## Kiểm chứng đầu-cuối
 

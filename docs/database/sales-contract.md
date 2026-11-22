@@ -74,3 +74,14 @@ Không sửa trigger/checksum của 001–030 ngoài phạm vi 034. Acceptance S
 `database/tests/g04/acceptance-table-sessions.sql`; hai connection chạy ở đợt
 concurrency riêng, ca UI thuộc đợt kiểm thủ công.
 
+## Ưu đãi tự áp — migration039 (21/11/2026)
+
+Bỏ `@Promotion` khỏi `sp_SuaThongTinHoaDon`, `sp_TaoHoaDon`, `sp_TaoHoaDonTuNhap`,
+`sp_SalesValidateHeader` và lỗi 52105 cũ. Header mới vẫn giữ cột `MaKM` cho đơn legacy;
+đơn tạo mới để NULL và SQL tự áp KM theo điều kiện. `sp_SalesReadCore` trả header
+28 cột (thêm `PromotionCount`) và **4 result set**: header/preview, dòng snapshot,
+payment, danh sách `AppliedPromotion`. `sp_SalesOrderGet` chỉ `EXEC sp_SalesReadCore`
+nên DTO `SalesOrderDto` có thêm `Promotions`. Sửa khách/món/trạng thái KM làm
+`fn_HoaDonGiamGia` tính lại; preview token đổi và checkout cũ trả 52201. Đơn mở có
+`MaKM` trước 039 đọc như KM legacy phạm vi `ALL`, UI không sửa lựa chọn này.
+

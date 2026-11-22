@@ -1,0 +1,48 @@
+﻿{
+    "RunId":  "20261122_135707_532a959f",
+    "Server":  "localhost",
+    "Database":  "CoffeeManager_Test_PromoAuto_20261122_135707_532a959f",
+    "SchemaVersion":  39,
+    "Operator":  "LAPTOP-79UNRIRC\\Lenovo",
+    "Steps":  [
+                  {
+                      "Status":  "PASS",
+                      "Step":  "fixture",
+                      "File":  "database/tests/promo-auto/fixture.sql",
+                      "Ms":  865
+                  },
+                  {
+                      "Status":  "PASS",
+                      "Step":  "01-preview-multi",
+                      "File":  "database/tests/promo-auto/01-preview-multi.sql",
+                      "Ms":  552
+                  },
+                  {
+                      "Status":  "PASS",
+                      "Step":  "02-conditions",
+                      "File":  "database/tests/promo-auto/02-conditions.sql",
+                      "Ms":  688
+                  },
+                  {
+                      "Status":  "PASS",
+                      "Step":  "03-checkout-snapshot",
+                      "File":  "database/tests/promo-auto/03-checkout-snapshot.sql",
+                      "Ms":  2589
+                  },
+                  {
+                      "Status":  "PASS",
+                      "Step":  "04-report-unchanged",
+                      "File":  "database/tests/promo-auto/04-report-unchanged.sql",
+                      "Ms":  580
+                  },
+                  {
+                      "Step":  "05-pause-race",
+                      "Status":  "PASS",
+                      "Ms":  1280
+                  }
+              ],
+    "Status":  "Succeeded",
+    "Created":  true,
+    "Cleaned":  true,
+    "SourceUnchanged":  true
+}

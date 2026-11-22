@@ -552,11 +552,11 @@ public sealed class SalesControl : UserControl, IUnsavedChanges, IAsyncLeaveConf
             : L.F("Đã chọn {0}. Thêm món đầu để tạo đơn.", current.Name);
     }
     private OrderHeaderInput CurrentHeader() => order is null ? context ?? new(channel.SelectedValue as string ?? "Mang di", (channel.SelectedValue as string) == "Tai quan" ? table.SelectedValue as string : null) :
-        new(order.Header.Channel, order.Header.TableCode, order.Header.Customer, order.Header.Promotion, order.Header.Partner, order.Header.Recipient, order.Header.Phone, order.Header.Address, order.Header.Ship);
+        new(order.Header.Channel, order.Header.TableCode, order.Header.Customer, order.Header.Partner, order.Header.Recipient, order.Header.Phone, order.Header.Address, order.Header.Ship);
     private async Task EditHeader()
     {
         if (busy || unknown) return;
-        using var dialog = new OrderHeaderDialog(headerDraft ?? CurrentHeader(), order?.Header.Created ?? DateTime.Now, service, customers, loyalty, session);
+        using var dialog = new OrderHeaderDialog(headerDraft ?? CurrentHeader(), service, customers, session);
         if (await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this) != DialogResult.OK || dialog.Result is null) return;
         if (order is null)
         {

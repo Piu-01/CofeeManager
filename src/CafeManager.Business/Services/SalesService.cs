@@ -30,7 +30,7 @@ public sealed partial class SalesService(SalesRepository repository, PermissionS
     public static OrderHeaderInput Normalize(OrderHeaderInput h)
     {
         LoyaltyService.Money(h.Ship);
-        h = h with { TableCode = Optional(h.TableCode, 5), Customer = Optional(h.Customer, 5), Promotion = Optional(h.Promotion, 10),
+        h = h with { TableCode = Optional(h.TableCode, 5), Customer = Optional(h.Customer, 5),
             Partner = Optional(h.Partner, 5), Recipient = Optional(h.Recipient, 100), Phone = Optional(h.Phone, 15), Address = Optional(h.Address, 250) };
         if (h.Channel is not ("Tai quan" or "Mang di" or "Giao hang")) throw new ArgumentException(L.T("Loại đơn không hợp lệ."));
         if (h.Channel == "Tai quan" && h.TableCode is null || h.Channel != "Tai quan" && h.TableCode is not null)

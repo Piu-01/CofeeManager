@@ -1,0 +1,44 @@
+﻿{
+    "RunId":  "20261122_135551_57b1c819",
+    "Server":  "localhost",
+    "Database":  "CoffeeManager_Test_PromoAuto_20261122_135551_57b1c819",
+    "SchemaVersion":  39,
+    "Operator":  "LAPTOP-79UNRIRC\\Lenovo",
+    "Steps":  [
+                  {
+                      "Status":  "PASS",
+                      "Step":  "fixture",
+                      "File":  "database/tests/promo-auto/fixture.sql",
+                      "Ms":  1131
+                  },
+                  {
+                      "Status":  "PASS",
+                      "Step":  "01-preview-multi",
+                      "File":  "database/tests/promo-auto/01-preview-multi.sql",
+                      "Ms":  418
+                  },
+                  {
+                      "Status":  "PASS",
+                      "Step":  "02-conditions",
+                      "File":  "database/tests/promo-auto/02-conditions.sql",
+                      "Ms":  579
+                  },
+                  {
+                      "Status":  "PASS",
+                      "Step":  "03-checkout-snapshot",
+                      "File":  "database/tests/promo-auto/03-checkout-snapshot.sql",
+                      "Ms":  1108
+                  },
+                  {
+                      "Status":  "PASS",
+                      "Step":  "04-report-unchanged",
+                      "File":  "database/tests/promo-auto/04-report-unchanged.sql",
+                      "Ms":  461
+                  }
+              ],
+    "Status":  "Failed",
+    "Created":  true,
+    "Cleaned":  true,
+    "Error":  "System.Management.Automation.RuntimeException: Pause race expected 1 OK + 1 CONFLICT, got: ERROR:Exception calling \"GetResult\" with \"0\" argument(s): \"No mapping exists from object type System.Object[] to a known managed provider native type.\", ERROR:Exception calling \"GetResult\" with \"0\" argument(s): \"No mapping exists from object type System.Object[] to a known managed provider native type.\"",
+    "SourceUnchanged":  true
+}

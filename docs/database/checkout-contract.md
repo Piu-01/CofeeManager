@@ -30,6 +30,14 @@ sp_SalesCheckOpen. Tiền/kho/điểm/snapshot tính như đơn Chua; trigger th
 tiêu hao chấp nhận trạng thái Cho trong transaction. Sau commit header mới thành Da
 thanh toan và NgayThanhToan được ghi như cũ.
 
+Từ migration039 (ưu đãi tự áp), `fn_CheckoutPreview` trả thêm TierDiscount/
+PromotionDiscount/PromotionCount và danh sách `AppliedPromotion`; token gồm digest
+danh mục KM + digest ưu đãi đang áp nên sửa bảng con/bật/tạm dừng KM làm preview cũ
+trả 52201. `sp_ThanhToanHoaDon` ghi một dòng `HoaDonUuDaiSnapshot` (breakdown, digest)
+và N dòng `HoaDonUuDaiApDung`; trigger buộc tổng Discount bằng
+`Snapshot.PromotionDiscount`, cấm UPDATE/DELETE. Ship không giảm; điểm tính trên
+`TongTien − GiamGia`. Đơn legacy còn `MaKM` được tính như KM phạm vi `ALL`.
+
 Từ migration034 (T34), checkout **không** đóng phiên bàn và không làm bàn trống;
 phiên chỉ đóng bằng sp_TraBan khi không còn đơn Chua/Cho. UI hỏi “Trả bàn ngay?”
 sau khi đã commit tiền; lỗi trả bàn không rollback thanh toán (đối chiếu rồi bấm

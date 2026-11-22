@@ -14,14 +14,20 @@ IF OBJECT_ID(N'dbo.KHUYENMAI',N'U') IS NULL OR OBJECT_ID(N'dbo.HoaDonUuDaiSnapsh
  THROW 53307,N'Thiếu object ưu đãi/bán hàng của 038; cần đối chiếu trước nâng cấp.',1;
 GO
 /* ===== 1. DDL ===== */
+-- Mỗi ALTER TABLE ở batch riêng: SQL Server biên dịch cả batch trước khi chạy,
+-- nên cột mới thêm chưa thấy được cho constraint/ALTER cùng batch.
 ALTER TABLE dbo.KHUYENMAI ADD TrangThai varchar(10) NOT NULL CONSTRAINT DF_KHUYENMAI_TrangThai DEFAULT 'DangChay',
  DoiTuongKhach varchar(10) NOT NULL CONSTRAINT DF_KHUYENMAI_DoiTuong DEFAULT 'ALL',
  PhamVi varchar(4) NOT NULL CONSTRAINT DF_KHUYENMAI_PhamVi DEFAULT 'ALL';
+GO
 ALTER TABLE dbo.KHUYENMAI ADD CONSTRAINT CK_KHUYENMAI_TrangThai CHECK(TrangThai IN('Nhap','DangChay','TamDung'));
 ALTER TABLE dbo.KHUYENMAI ADD CONSTRAINT CK_KHUYENMAI_DoiTuong CHECK(DoiTuongKhach IN('ALL','FIRST','MEMBER','TIER'));
 ALTER TABLE dbo.KHUYENMAI ADD CONSTRAINT CK_KHUYENMAI_PhamVi CHECK(PhamVi IN('ALL','ITEM'));
+GO
 ALTER TABLE dbo.KHUYENMAI DROP CONSTRAINT CHK_KM_NgayHopLe;
+GO
 ALTER TABLE dbo.KHUYENMAI ALTER COLUMN NgayKT date NULL;
+GO
 ALTER TABLE dbo.KHUYENMAI ADD CONSTRAINT CK_KHUYENMAI_NgayHopLe CHECK(NgayKT IS NULL OR NgayKT>=NgayBD);
 GO
 CREATE TABLE dbo.KHUYENMAI_HANG(
@@ -38,7 +44,7 @@ CREATE TABLE dbo.HoaDonUuDaiApDung(
  PromotionRevision binary(8) NOT NULL,
  Audience varchar(10) NOT NULL,
  Scope varchar(4) NOT NULL,
- Percent int NOT NULL CONSTRAINT CK_HDUD_Percent CHECK(Percent BETWEEN 0 AND 100),
+ [Percent] int NOT NULL CONSTRAINT CK_HDUD_Percent CHECK([Percent] BETWEEN 0 AND 100),
  BaseAmount decimal(18,0) NOT NULL CONSTRAINT CK_HDUD_Base CHECK(BaseAmount>=0),
  Discount decimal(18,0) NOT NULL CONSTRAINT CK_HDUD_Discount CHECK(Discount>=0),
  RecordedAt datetime2(7) NOT NULL CONSTRAINT DF_HDUD_RecordedAt DEFAULT SYSDATETIME(),
@@ -52,8 +58,10 @@ DENY INSERT,UPDATE,DELETE ON dbo.HoaDonUuDaiApDung TO CafeManagerApp;
 GO
 ALTER TABLE dbo.HoaDonUuDaiSnapshot ADD TierDiscount decimal(18,0) NULL,PromotionDiscount decimal(18,0) NULL,
  PromotionCount int NULL,PromotionDigest binary(32) NULL;
+GO
 ALTER TABLE dbo.HoaDonUuDaiSnapshot DROP CONSTRAINT CK_DiscountSnapshot_Known;
 ALTER TABLE dbo.HoaDonUuDaiSnapshot DROP CONSTRAINT CK_DiscountSnapshot_Source;
+GO
 ALTER TABLE dbo.HoaDonUuDaiSnapshot ADD CONSTRAINT CK_DiscountSnapshot_Source
  CHECK(Source IN('None','Tier','Promotion','TierAndPromotion') OR Source IS NULL);
 -- Dòng Checkout của 038 chưa có TierDiscount/PromotionDiscount; giữ NOCHECK để không
@@ -90,7 +98,7 @@ CREATE FUNCTION dbo.fn_HoaDonLinesJson(@Code char(10)) RETURNS TABLE AS RETURN
 );
 GO
 CREATE FUNCTION dbo.fn_UuDaiCap(@BusinessDate date,@Customer char(5),@LegacyPromotion char(10),@LinesJson nvarchar(max))
-RETURNS @result TABLE(MaKM char(10) NOT NULL,Percent int NOT NULL,No int NOT NULL,Amount decimal(18,0) NOT NULL)
+RETURNS @result TABLE(MaKM char(10) NOT NULL,[Percent] int NOT NULL,No int NOT NULL,Amount decimal(18,0) NOT NULL)
 AS
 BEGIN
  IF @LinesJson IS NULL OR LTRIM(RTRIM(@LinesJson))='' SET @LinesJson=N'[]';
@@ -98,7 +106,7 @@ BEGIN
  INSERT @line(MaSP,Amount)
  SELECT TRY_CONVERT(char(5),JSON_VALUE(v.value,'$.Product')),CONVERT(decimal(18,0),JSON_VALUE(v.value,'$.Amount'))
  FROM OPENJSON(@LinesJson) v WHERE JSON_VALUE(v.value,'$.Amount') IS NOT NULL;
- DECLARE @promo TABLE(MaKM char(10) NOT NULL PRIMARY KEY,Percent int NOT NULL,IsItem bit NOT NULL);
+ DECLARE @promo TABLE(MaKM char(10) NOT NULL PRIMARY KEY,[Percent] int NOT NULL,IsItem bit NOT NULL);
  INSERT @promo
  SELECT k.MaKM,k.PhanTramGiam,CONVERT(bit,CASE WHEN k.PhamVi='ITEM' THEN 1 ELSE 0 END)
  FROM dbo.KHUYENMAI k
@@ -114,26 +122,26 @@ BEGIN
  IF @LegacyPromotion IS NOT NULL AND NOT EXISTS(SELECT 1 FROM @promo WHERE MaKM=@LegacyPromotion)
   INSERT @promo SELECT k.MaKM,k.PhanTramGiam,0 FROM dbo.KHUYENMAI k
   WHERE k.MaKM=@LegacyPromotion AND @BusinessDate BETWEEN k.NgayBD AND COALESCE(k.NgayKT,CONVERT(date,'99991231',112));
- INSERT @result(MaKM,Percent,No,Amount)
- SELECT p.MaKM,p.Percent,l.No,l.Amount
+ INSERT @result(MaKM,[Percent],No,Amount)
+ SELECT p.MaKM,p.[Percent],l.No,l.Amount
  FROM @promo p JOIN @line l ON p.IsItem=0
    OR (l.MaSP IS NOT NULL AND EXISTS(SELECT 1 FROM dbo.KHUYENMAI_MON m WHERE m.MaKM=p.MaKM AND m.MaSP=l.MaSP))
- WHERE p.Percent>0;
+ WHERE p.[Percent]>0;
  RETURN;
 END;
 GO
 CREATE FUNCTION dbo.fn_UuDaiApDung(@BusinessDate date,@Customer char(5),@LegacyPromotion char(10),@LinesJson nvarchar(max))
-RETURNS @result TABLE(MaKM char(10) NOT NULL,Percent int NOT NULL,BaseAmount decimal(18,0) NOT NULL,RawShare decimal(28,4) NOT NULL)
+RETURNS @result TABLE(MaKM char(10) NOT NULL,[Percent] int NOT NULL,BaseAmount decimal(18,0) NOT NULL,RawShare decimal(28,4) NOT NULL)
 AS
 BEGIN
  INSERT @result
- SELECT MaKM,MAX(Percent),SUM(Amount),SUM(CONVERT(decimal(28,4),Amount)*CONVERT(decimal(5,2),Percent)/100)
+ SELECT MaKM,MAX([Percent]),SUM(Amount),SUM(CONVERT(decimal(28,4),Amount)*CONVERT(decimal(5,2),[Percent])/100)
  FROM dbo.fn_UuDaiCap(@BusinessDate,@Customer,@LegacyPromotion,@LinesJson) GROUP BY MaKM;
  RETURN;
 END;
 GO
 CREATE FUNCTION dbo.fn_UuDaiDong(@BusinessDate date,@Customer char(5),@LegacyPromotion char(10),@LinesJson nvarchar(max))
-RETURNS @result TABLE(No int NOT NULL,Amount decimal(18,0) NOT NULL,Percent int NOT NULL,Discount decimal(18,0) NOT NULL)
+RETURNS @result TABLE(No int NOT NULL,Amount decimal(18,0) NOT NULL,[Percent] int NOT NULL,Discount decimal(18,0) NOT NULL)
 AS
 BEGIN
  IF @LinesJson IS NULL OR LTRIM(RTRIM(@LinesJson))='' SET @LinesJson=N'[]';
@@ -143,12 +151,12 @@ BEGIN
  DECLARE @tier int=0;
  IF @Customer IS NOT NULL
   SELECT @tier=COALESCE(h.PhanTramGiam,0) FROM dbo.KHACHHANG k JOIN dbo.HANGTHANHVIEN h ON h.MaHang=k.MaHang WHERE k.MaKH=@Customer;
- INSERT @result(No,Amount,Percent,Discount)
+ INSERT @result(No,Amount,[Percent],Discount)
  SELECT l.No,l.Amount,
   CASE WHEN @tier+COALESCE(p.Pct,0)>100 THEN 100 ELSE @tier+COALESCE(p.Pct,0) END,
   CONVERT(decimal(18,0),ROUND(CONVERT(decimal(28,4),l.Amount)
    *CONVERT(decimal(5,2),CASE WHEN @tier+COALESCE(p.Pct,0)>100 THEN 100 ELSE @tier+COALESCE(p.Pct,0) END)/100,0))
- FROM @line l LEFT JOIN(SELECT No,SUM(Percent) Pct FROM dbo.fn_UuDaiCap(@BusinessDate,@Customer,@LegacyPromotion,@LinesJson) GROUP BY No) p ON p.No=l.No;
+ FROM @line l LEFT JOIN(SELECT No,SUM([Percent]) Pct FROM dbo.fn_UuDaiCap(@BusinessDate,@Customer,@LegacyPromotion,@LinesJson) GROUP BY No) p ON p.No=l.No;
  RETURN;
 END;
 GO
@@ -167,28 +175,28 @@ BEGIN
  DECLARE @tierDiscount decimal(18,0)=CASE WHEN @tier=0 THEN 0
   ELSE CONVERT(decimal(18,0),ROUND(CONVERT(decimal(28,4),@total)*@tier/100,0)) END;
  IF @tierDiscount>@discount SET @tierDiscount=@discount;
- DECLARE @promoPercent int=(SELECT CASE WHEN COALESCE(SUM(Percent),0)>100 THEN 100 ELSE COALESCE(SUM(Percent),0) END
+ DECLARE @promoPercent int=(SELECT CASE WHEN COALESCE(SUM([Percent]),0)>100 THEN 100 ELSE COALESCE(SUM([Percent]),0) END
   FROM dbo.fn_UuDaiApDung(@BusinessDate,@Customer,@LegacyPromotion,@LinesJson));
  INSERT @result VALUES(@tier,@promoPercent,@tierDiscount,@discount-@tierDiscount,@discount);
  RETURN;
 END;
 GO
 CREATE FUNCTION dbo.fn_UuDaiChia(@BusinessDate date,@Customer char(5),@LegacyPromotion char(10),@LinesJson nvarchar(max))
-RETURNS @result TABLE(MaKM char(10) NOT NULL,Percent int NOT NULL,BaseAmount decimal(18,0) NOT NULL,Discount decimal(18,0) NOT NULL)
+RETURNS @result TABLE(MaKM char(10) NOT NULL,[Percent] int NOT NULL,BaseAmount decimal(18,0) NOT NULL,Discount decimal(18,0) NOT NULL)
 AS
 BEGIN
  DECLARE @promoTotal decimal(18,0)=(SELECT PromotionDiscount FROM dbo.fn_UuDaiTong(@BusinessDate,@Customer,@LegacyPromotion,@LinesJson));
  DECLARE @rawTotal decimal(28,4)=(SELECT COALESCE(SUM(RawShare),0) FROM dbo.fn_UuDaiApDung(@BusinessDate,@Customer,@LegacyPromotion,@LinesJson));
  IF @rawTotal<=0 RETURN;
  ;WITH x AS(
-  SELECT MaKM,Percent,BaseAmount,
+  SELECT MaKM,[Percent],BaseAmount,
    CASE WHEN @promoTotal<=0 THEN CONVERT(decimal(18,0),0)
     ELSE CONVERT(decimal(18,0),FLOOR(CONVERT(decimal(38,8),@promoTotal)*RawShare/@rawTotal)) END Base,
    ROW_NUMBER() OVER(ORDER BY MaKM) rn,COUNT(*) OVER() cnt
   FROM dbo.fn_UuDaiApDung(@BusinessDate,@Customer,@LegacyPromotion,@LinesJson) WHERE RawShare>0),
  y AS(SELECT *,SUM(Base) OVER(ORDER BY MaKM ROWS UNBOUNDED PRECEDING) Cum FROM x)
- INSERT @result(MaKM,Percent,BaseAmount,Discount)
- SELECT MaKM,Percent,BaseAmount,CASE WHEN rn=cnt THEN @promoTotal-(Cum-Base) ELSE Base END FROM y;
+ INSERT @result(MaKM,[Percent],BaseAmount,Discount)
+ SELECT MaKM,[Percent],BaseAmount,CASE WHEN rn=cnt THEN @promoTotal-(Cum-Base) ELSE Base END FROM y;
  DELETE @result WHERE Discount<=0;
  RETURN;
 END;
@@ -215,7 +223,7 @@ BEGIN
 END;
 GO
 CREATE FUNCTION dbo.fn_HoaDonUuDaiApDung(@Code char(10))
-RETURNS @result TABLE(MaKM char(10) NOT NULL,Name nvarchar(200) NOT NULL,Percent int NOT NULL,
+RETURNS @result TABLE(MaKM char(10) NOT NULL,Name nvarchar(200) NOT NULL,[Percent] int NOT NULL,
  BaseAmount decimal(18,0) NOT NULL,Discount decimal(18,0) NOT NULL,
  PromotionRevision binary(8) NOT NULL,Audience varchar(10) NOT NULL,Scope varchar(4) NOT NULL)
 AS
@@ -228,12 +236,12 @@ BEGIN
  BEGIN
   SELECT @json=Json FROM dbo.fn_HoaDonLinesJson(@Code);
   INSERT @result
-  SELECT c.MaKM,k.TenKM,c.Percent,c.BaseAmount,c.Discount,k.Revision,k.DoiTuongKhach,k.PhamVi
+  SELECT c.MaKM,k.TenKM,c.[Percent],c.BaseAmount,c.Discount,k.Revision,k.DoiTuongKhach,k.PhamVi
   FROM dbo.fn_UuDaiChia(@date,@customer,@legacy,@json) c JOIN dbo.KHUYENMAI k ON k.MaKM=c.MaKM;
  END
  ELSE
   INSERT @result
-  SELECT a.MaKM,k.TenKM,a.Percent,a.BaseAmount,a.Discount,a.PromotionRevision,a.Audience,a.Scope
+  SELECT a.MaKM,k.TenKM,a.[Percent],a.BaseAmount,a.Discount,a.PromotionRevision,a.Audience,a.Scope
   FROM dbo.HoaDonUuDaiApDung a JOIN dbo.KHUYENMAI k ON k.MaKM=a.MaKM WHERE a.MaHD=@Code;
  RETURN;
 END;
@@ -259,7 +267,7 @@ BEGIN
  SET NOCOUNT ON; SET XACT_ABORT ON;
  BEGIN TRY
   BEGIN TRAN; EXEC dbo.sp_G03Demand @Actor,@Stamp,'ADMIN,CASH';
-  DECLARE @lock int; EXEC @lock=sys_getapplock @Resource=N'CafeManager:LoyaltyPolicy',@LockMode='Shared',@LockOwner='Transaction',@LockTimeout=10000;
+  DECLARE @lock int; EXEC @lock=sys.sp_getapplock @Resource=N'CafeManager:LoyaltyPolicy',@LockMode='Shared',@LockOwner='Transaction',@LockTimeout=10000;
   IF @lock<0 THROW 52004,N'Chính sách đang thay đổi.',1;
   IF @Customer IS NOT NULL AND DATALENGTH(@Customer)>5 THROW 52001,N'Mã khách không hợp lệ.',1;
   IF @Ship IS NULL OR @Ship<0 OR @Ship>999999999999999999 OR ROUND(@Ship,0)<>@Ship OR @BusinessDate IS NULL THROW 52001,N'Phí ship/ngày tạm tính không hợp lệ.',1;
@@ -293,9 +301,9 @@ BEGIN
    @discount Discount,CONVERT(decimal(18,0),@total+@Ship-@discount) Payable,
    SYSDATETIME() ReadAt,s.Revision PolicyRevision
   FROM dbo.LoyaltyPolicyState s LEFT JOIN dbo.KHACHHANG k ON k.MaKH=@Customer;
-  SELECT MaKM Code,Name,Percent,BaseAmount,Discount
+  SELECT c.MaKM Code,k.TenKM Name,c.[Percent],c.BaseAmount,c.Discount
   FROM dbo.fn_UuDaiChia(@BusinessDate,CONVERT(char(5),@Customer),NULL,@json) c JOIN dbo.KHUYENMAI k ON k.MaKM=c.MaKM
-  ORDER BY MaKM;
+  ORDER BY c.MaKM;
   COMMIT;
  END TRY BEGIN CATCH IF @@TRANCOUNT>0 ROLLBACK; THROW; END CATCH;
 END;
@@ -336,10 +344,10 @@ ALTER PROCEDURE dbo.sp_PromotionGet @Actor int,@Stamp binary(8),@Code varchar(ma
 BEGIN
  SET NOCOUNT ON; EXEC dbo.sp_G03Demand @Actor,@Stamp,'ADMIN,CASH';
  SELECT k.MaKM Code,k.TenKM Name,k.NgayBD StartDate,k.NgayKT EndDate,k.PhanTramGiam Discount,
-  k.TrangThai,k.DoiTuongKhach Audience,k.PhamVi Scope,k.Revision,
-  (SELECT COUNT(*) FROM dbo.KHUYENMAI_MON m WHERE m.MaKM=k.MaKM) ItemCount
+  k.TrangThai,k.DoiTuongKhach Audience,k.PhamVi Scope,
+  (SELECT COUNT(*) FROM dbo.KHUYENMAI_MON m WHERE m.MaKM=k.MaKM) ItemCount,k.Revision
  FROM dbo.KHUYENMAI k WHERE k.MaKM=@Code;
- SELECT x.MaHang,x.DiemToiThieu,x.PhanTramGiam FROM dbo.KHUYENMAI_HANG x
+ SELECT h.MaHang,h.DiemToiThieu,h.PhanTramGiam FROM dbo.KHUYENMAI_HANG x
   JOIN dbo.HANGTHANHVIEN h ON h.MaHang=x.MaHang WHERE x.MaKM=@Code ORDER BY h.DiemToiThieu;
  SELECT m.MaSP,s.TenSP,s.GiaBan,s.TrangThai FROM dbo.KHUYENMAI_MON m
   JOIN dbo.SANPHAM s ON s.MaSP=m.MaSP WHERE m.MaKM=@Code ORDER BY m.MaSP;
@@ -712,7 +720,7 @@ BEGIN
  FROM dbo.CHITIET_HD d JOIN dbo.SANPHAM s ON s.MaSP=d.MaSP WHERE d.MaHD=@Code ORDER BY d.MaDong;
  SELECT t.MaTT,t.MaPT,p.TenPT,t.SoTien,t.MaThamChieu FROM dbo.CHITIET_THANHTOAN t
  JOIN dbo.PHUONGTHUCTT p ON p.MaPT=t.MaPT WHERE t.MaHD=@Code ORDER BY t.MaTT;
- SELECT MaKM Code,Name,Percent,BaseAmount,Discount FROM dbo.fn_HoaDonUuDaiApDung(@Code) ORDER BY MaKM;
+ SELECT MaKM Code,Name,[Percent],BaseAmount,Discount FROM dbo.fn_HoaDonUuDaiApDung(@Code) ORDER BY MaKM;
 END;
 GO
 /* ===== 6. Preview/checkout/hóa đơn ===== */
@@ -756,7 +764,7 @@ BEGIN
    p.TierPercent,p.PromotionPercent,p.TierDiscount,p.PromotionDiscount,p.PromotionCount,p.PartnerPercent,p.PartnerFee,
    p.Points,p.PreviewToken
   FROM dbo.HOADON h CROSS APPLY dbo.fn_CheckoutPreview(h.MaHD) p WHERE h.MaHD=@Code;
-  SELECT MaKM Code,Name,Percent,BaseAmount,Discount FROM dbo.fn_HoaDonUuDaiApDung(@Code) ORDER BY MaKM;
+  SELECT MaKM Code,Name,[Percent],BaseAmount,Discount FROM dbo.fn_HoaDonUuDaiApDung(@Code) ORDER BY MaKM;
   COMMIT;
  END TRY BEGIN CATCH IF @@TRANCOUNT>0 ROLLBACK; THROW; END CATCH;
 END;
@@ -810,7 +818,7 @@ BEGIN
     JOIN dbo.PaymentMethodSupport s WITH(HOLDLOCK) ON s.MaPT=p.MaPT JOIN @ThanhToan t ON t.MaPT=p.MaPT;
    IF @payable<>COALESCE((SELECT SUM(CONVERT(decimal(38,0),SoTien)) FROM @ThanhToan),0)
     OR EXISTS(SELECT 1 FROM @ThanhToan t WHERE t.MaPT='PT010' OR NOT EXISTS(SELECT 1 FROM dbo.PHUONGTHUCTT p
-     JOIN dbo.PaymentMethodSupport s ON s.MaPT=p.MaPT WHERE p.MaPT=t.MaPT AND s.IsSupported=1)))
+     JOIN dbo.PaymentMethodSupport s ON s.MaPT=p.MaPT WHERE p.MaPT=t.MaPT AND s.IsSupported=1))
     THROW 52202,N'Phân bổ/phương thức không hợp lệ.',1;
    IF EXISTS(SELECT 1 FROM dbo.CHITIET_HD d JOIN dbo.SANPHAM s WITH(HOLDLOCK) ON s.MaSP=d.MaSP
      WHERE d.MaHD=@Code AND (s.TrangThai<>N'Dang ban' OR NOT EXISTS(SELECT 1 FROM dbo.CONGTHUC WHERE MaSP=d.MaSP)))
@@ -836,8 +844,8 @@ BEGIN
     TierDiscount,PromotionDiscount,PromotionCount,PromotionDigest,Discount,PolicyRevision,CustomerRevision,PromotionRevision)
    VALUES(@Code,'Checkout',@source,@tier,@promotion,@percent,@tierPercent,@promotionPercent,
     @tierDiscount,@promotionDiscount,@promoCount,@digest,@discount,@policyRevision,@customerRevision,@promotionRevision);
-   INSERT dbo.HoaDonUuDaiApDung(MaHD,MaKM,PromotionRevision,Audience,Scope,Percent,BaseAmount,Discount)
-   SELECT @Code,MaKM,PromotionRevision,Audience,Scope,Percent,BaseAmount,Discount FROM dbo.fn_HoaDonUuDaiApDung(@Code);
+   INSERT dbo.HoaDonUuDaiApDung(MaHD,MaKM,PromotionRevision,Audience,Scope,[Percent],BaseAmount,Discount)
+   SELECT @Code,MaKM,PromotionRevision,Audience,Scope,[Percent],BaseAmount,Discount FROM dbo.fn_HoaDonUuDaiApDung(@Code);
    INSERT dbo.TIEUHAO_HOADON(MaHD,MaNVL,SoLuong) SELECT @Code,MaNVL,CONVERT(decimal(18,4),Quantity) FROM @consume;
    INSERT dbo.CHITIET_THANHTOAN(MaHD,MaPT,SoTien,NgayTT,MaThamChieu)
    SELECT @Code,MaPT,SoTien,@date,MaThamChieu FROM @ThanhToan;
@@ -862,7 +870,7 @@ BEGIN
    h.TrangThaiGiao,h.NgayThanhToan,h.PhanTramPhiDoiTac,h.PhiDoiTac,h.TongTien,h.PhiShip,h.GiamGia,
    CONVERT(decimal(38,0),h.ThanhTien) Payable,h.TrangThai,h.Revision,CONVERT(bit,1) PreviewValid,
    s.Source PreviewSource,s.PercentDiscount PreviewPercent,SYSDATETIME() ReadAt,h.MaPhien,
-   sessionRow.Revision SessionRevision,s.TierPercent,s.PromotionPercent,s.TierDiscount,s.PromotionDiscount,s.PromotionCount
+   sessionRow.Revision SessionRevision,s.PromotionCount,s.TierPercent,s.PromotionPercent,s.TierDiscount,s.PromotionDiscount
   FROM dbo.HOADON h WITH(HOLDLOCK) LEFT JOIN dbo.HoaDonUuDaiSnapshot s ON s.MaHD=h.MaHD
   OUTER APPLY(SELECT TOP(1) p.Revision FROM dbo.PHIEN_BAN p WHERE p.MaPhien=h.MaPhien) sessionRow
   WHERE h.MaHD=@Code;
@@ -870,11 +878,11 @@ BEGIN
    JOIN dbo.SANPHAM s ON s.MaSP=d.MaSP WHERE d.MaHD=@Code ORDER BY d.MaDong;
   SELECT t.MaTT,t.MaPT,p.TenPT,t.SoTien,t.MaThamChieu FROM dbo.CHITIET_THANHTOAN t
    JOIN dbo.PHUONGTHUCTT p ON p.MaPT=t.MaPT WHERE t.MaHD=@Code ORDER BY t.MaTT;
+  SELECT MaKM Code,Name,[Percent],BaseAmount,Discount FROM dbo.fn_HoaDonUuDaiApDung(@Code) ORDER BY MaKM;
   SELECT s.Kind,s.Source,s.PercentDiscount,s.TierPercent,s.PromotionPercent,s.TierDiscount,s.PromotionDiscount,
    s.PromotionCount,COALESCE((SELECT SUM(SoDiem) FROM dbo.LICHSU_DIEM WHERE MaHD=@Code AND Loai=N'Cong'),0) Points,
    s.RecordedAt
   FROM dbo.HoaDonUuDaiSnapshot s WHERE s.MaHD=@Code;
-  SELECT MaKM Code,Name,Percent,BaseAmount,Discount FROM dbo.fn_HoaDonUuDaiApDung(@Code) ORDER BY MaKM;
   COMMIT;
  END TRY BEGIN CATCH IF @@TRANCOUNT>0 ROLLBACK; THROW; END CATCH;
 END;

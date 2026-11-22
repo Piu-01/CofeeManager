@@ -215,6 +215,15 @@ internal static class InvoicePdfReport
                 a4 ? 8f : 6.5f, FontStyle.Regular, HorzAlign.Left, VertAlign.Center, PdfLayout.Muted));
         y += 4.6f;
 
+        if (detail.Promotions.Count > 0)
+        {
+            var promos = L.T("Ưu đãi áp dụng: ") + string.Join(" · ", detail.Promotions.Select(p =>
+                $"{p.Code} {p.Name} {p.Percent}% ({PrintFormat.Money(p.Discount)})"));
+            band.Objects.Add(PdfLayout.Text(promos, 0, y, width, 4.4f, a4 ? 8f : 6.5f,
+                FontStyle.Regular, HorzAlign.Left, VertAlign.Top, null, true, true));
+            y += Math.Max(5f, EstimateLines(promos, width, a4 ? 8f : 6.5f) * 4.2f);
+        }
+
         if (detail.Order.Payments.Count > 0)
         {
             var payments = string.Join(" · ", detail.Order.Payments.Select(p =>

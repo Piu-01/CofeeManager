@@ -1,7 +1,7 @@
 namespace CafeManager.Models.Requests.Sales;
 
 public sealed record OrderHeaderInput(string Channel, string? TableCode = null, string? Customer = null,
-    string? Promotion = null, string? Partner = null, string? Recipient = null, string? Phone = null,
+    string? Partner = null, string? Recipient = null, string? Phone = null,
     string? Address = null, decimal Ship = 0);
 public sealed record CreateOrderRequest(string Code, Guid RequestId, OrderHeaderInput Header,
     string Product, int Quantity, string? Note);

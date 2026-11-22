@@ -1,0 +1,44 @@
+﻿{
+    "RunId":  "20261122_135629_c56cd05d",
+    "Server":  "localhost",
+    "Database":  "CoffeeManager_Test_PromoAuto_20261122_135629_c56cd05d",
+    "SchemaVersion":  39,
+    "Operator":  "LAPTOP-79UNRIRC\\Lenovo",
+    "Steps":  [
+                  {
+                      "Status":  "PASS",
+                      "Step":  "fixture",
+                      "File":  "database/tests/promo-auto/fixture.sql",
+                      "Ms":  837
+                  },
+                  {
+                      "Status":  "PASS",
+                      "Step":  "01-preview-multi",
+                      "File":  "database/tests/promo-auto/01-preview-multi.sql",
+                      "Ms":  427
+                  },
+                  {
+                      "Status":  "PASS",
+                      "Step":  "02-conditions",
+                      "File":  "database/tests/promo-auto/02-conditions.sql",
+                      "Ms":  564
+                  },
+                  {
+                      "Status":  "PASS",
+                      "Step":  "03-checkout-snapshot",
+                      "File":  "database/tests/promo-auto/03-checkout-snapshot.sql",
+                      "Ms":  1005
+                  },
+                  {
+                      "Status":  "PASS",
+                      "Step":  "04-report-unchanged",
+                      "File":  "database/tests/promo-auto/04-report-unchanged.sql",
+                      "Ms":  451
+                  }
+              ],
+    "Status":  "Failed",
+    "Created":  true,
+    "Cleaned":  true,
+    "Error":  "System.Management.Automation.RuntimeException: Pause race expected 1 OK + 1 CONFLICT, got: ERROR:Exception calling \"GetResult\" with \"0\" argument(s): \"Failed to convert parameter value from a Object[] to a Byte[].\", ERROR:Exception calling \"GetResult\" with \"0\" argument(s): \"Failed to convert parameter value from a Object[] to a Byte[].\"",
+    "SourceUnchanged":  true
+}

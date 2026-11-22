@@ -192,3 +192,33 @@ Invoke-G04Technical.ps1 đã nâng ThroughVersion=18, ánh xạ schema035. Regre
 17/11/2026: technical `technical_20261117_020349_e6dedcdf` typed+native Success;
 acceptance `acceptance_20261117_020633_de5483fe` 5/5 SQL subset PASS, typed smoke
 Success, unit 23/23.
+
+## G03 — 039 promotion auto-apply (21/11/2026)
+
+039_promotion_dieu_kien_tu_ap.sql chạy sau038 bằng Apply-Migration.ps1 Version39;
+tiền đề `SchemaMigrations Version=38` (guard `THROW 53307`). Thêm `KHUYENMAI.TrangThai/
+DoiTuongKhach/PhamVi` + CHECK, `NgayKT` NULL, CHECK ngày mới; bảng
+`KHUYENMAI_HANG/KHUYENMAI_MON`, `HoaDonUuDaiApDung` và cột breakdown/digest trên
+`HoaDonUuDaiSnapshot`; trigger con bất biến. Thay hàm ưu đãi bằng bộ inline TVF dùng
+chung (`fn_HoaDonLinesJson`, `fn_UuDaiCap/ApDung/Dong/Tong/Chia`, `fn_HoaDonGiamGia`,
+`fn_HoaDonUuDaiApDung`, digest) và **DROP `fn_DiscountPreview`**. `sp_DiscountPreview`
+nhận `dbo.PreviewLines`; `sp_PromotionList/Get/Write` thêm điều kiện/bật-tạm dừng;
+các procedure bán hàng bỏ `@Promotion`, trả danh sách ưu đãi và token digest. Không
+sửa checksum001–038.
+
+Trong lượt test được duyệt, 039 được sửa lỗi B01–B05 (tách batch `GO` cho DDL, bọc
+`[Percent]`, `sys.sp_getapplock`, `sp_PromotionGet`, `sp_DiscountPreview`,
+`sp_ThanhToanHoaDon`; xem `docs/tasks/promotion-dieu-kien-tu-ap/bug-report.md`). Bộ
+test PA01–PA13 PASS (`runs/20261122_135707_532a959f`). Ngày 22/11/2026 đã áp lên
+`CoffeeManager_Development` bằng `Apply-Migration.ps1 -Version 39` (app đóng): kết quả
+`Applied`, checksum `D2D1E735…86F0D1`; do 040 đã áp trước đó nên journal 1–38 rồi 40,
+039 bổ sung sau nhưng độc lập. Backup trước áp:
+`CoffeeManager_Development_before039_20261122_135842.bak` (COPY_ONLY, CHECKSUM, INIT,
+đã `RESTORE VERIFYONLY`). Không đổi dữ liệu: 3.442 hóa đơn đã trả giữ tổng
+336.840.000/19.617.820/331.182.180, tồn NVL01 68,7280, `HoaDonUuDaiApDung` 0 dòng;
+smoke `sp_InvoiceDetail` 5 set, `sp_PromotionList` 17 KM, `sp_PromotionGet`/
+`sp_DiscountPreview` chạy đúng. PA14 (GUI) chưa chạy, PA15 do người dùng tự kiểm.
+Lưu ý: seed demo cũ trong
+`database/demo/seed-demo-daily.sql` và `seed-demo-operational.sql` còn gọi
+`fn_DiscountPreview` đã bị bỏ — chỉ dùng cho DB mới sau 039 thì cần cập nhật ở task
+seed riêng; không chạy lại nguyên trạng trên schema039.

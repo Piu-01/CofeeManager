@@ -146,15 +146,15 @@ Tạo header tổng/giảm 0 trước chi tiết. Thêm dòng lấy giá menu h�
 | Giá trị | Công thức / nguồn |
 |---|---|
 | Tiền món | SUM(số lượng × giá snapshot dòng) |
-| Tỷ lệ giảm | %hạng khách (nếu có) + %KM được chọn và còn hiệu lực tại ngày lập; chặn tối đa 100%, không nhân nối tiếp (migration 038) |
+| Tỷ lệ giảm | %hạng khách (nếu có) + Σ%KM tự thỏa điều kiện tại ngày lập (migration 039); mỗi dòng chặn tối đa 100%, không nhân nối tiếp, không chọn tay |
 | Giảm giá | ROUND(tiền món × tỷ lệ / 100, 0), không giảm ship |
 | Phải trả | Tiền món + ship − giảm |
 | Phí đối tác | ROUND((tiền món − giảm) × tỷ lệ đối tác lúc chốt / 100, 0); chi phí quán |
 | Điểm mua | FLOOR((tiền món − giảm) / 1000); không cộng ship/phí đối tác |
 
-Chương trình cùng ngày hợp lệ, hai đầu ngày áp dụng được. Hạng có ngưỡng 0 và chọn ngưỡng cao nhất ≤ điểm. Sửa chính sách tái tính hạng nguyên tử; điều chỉnh điểm admin tạo lịch sử có lý do, không UPDATE số dư.
+Chương trình cùng ngày hợp lệ, hai đầu ngày áp dụng được. Từ 039, KM có `TrangThai` (`Nhap/DangChay/TamDung`, `HetHan` suy ra), `NgayKT` NULL = vô hạn, `DoiTuongKhach` (`ALL/FIRST/MEMBER/TIER`) và `PhamVi` (`ALL/ITEM` với bảng `KHUYENMAI_HANG/KHUYENMAI_MON`). SQL tự xét trạng thái → ngày → đối tượng → món cho từng đơn; nhiều KM thỏa thì cùng áp (không chọn “một chương trình”), KM theo món chỉ giảm dòng đủ điều kiện. “Khách lần đầu” là hồ sơ chưa có hóa đơn `Da thanh toan`; vãng lai không đạt. Hạng có ngưỡng 0 và chọn ngưỡng cao nhất ≤ điểm. Sửa chính sách tái tính hạng nguyên tử; điều chỉnh điểm admin tạo lịch sử có lý do, không UPDATE số dư.
 
-SQL checkout phải tính lại ưu đãi và snapshot nguồn/tỷ lệ/tiền giảm. Nếu preview được khách xác nhận không còn khớp, trả lỗi yêu cầu xác nhận số mới; không thu theo giá cũ. Không suy tỷ lệ cho đơn lịch sử chỉ biết tiền giảm rồi coi đó là dữ liệu thật.
+SQL checkout phải tính lại ưu đãi và snapshot nguồn/tỷ lệ/tiền giảm. Từ 039 snapshot một dòng `HoaDonUuDaiSnapshot` (breakdown hạng/KM, số KM, digest) cộng N dòng `HoaDonUuDaiApDung` bất biến; token preview gồm digest danh mục KM và digest ưu đãi đang áp nên sửa/tạm dừng KM làm preview cũ mất hiệu lực. Nếu preview được khách xác nhận không còn khớp, trả lỗi yêu cầu xác nhận số mới; không thu theo giá cũ. Không suy tỷ lệ cho đơn lịch sử chỉ biết tiền giảm rồi coi đó là dữ liệu thật; đơn mở cũ có `MaKM` đọc như KM legacy “tất cả món”, không backfill.
 
 ### 6.3. Checkout nguyên tử
 

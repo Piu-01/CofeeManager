@@ -20,6 +20,7 @@ internal sealed class InvoiceDetailDialog : CafeManager.WinForms.Forms.OrbitDial
             (detail.SnapshotKind == "LegacyUnknown" ? L.T("Nguồn/tỷ lệ ưu đãi lịch sử chưa lưu.") : detail.Source == "TierAndPromotion"
                 ? L.F("{0} · hạng {1}% + KM {2}% = {3}% · Điểm mua đã cộng {4}", SalesStates.Label(detail.Source), detail.TierPercent ?? 0, detail.PromotionPercent ?? 0, detail.PercentDiscount, detail.Points)
                 : L.F("{0} {1}% · Điểm mua đã cộng {2}", SalesStates.Label(detail.Source), detail.PercentDiscount, detail.Points)) +
+            (detail.Promotions.Count == 0 ? "" : L.T(" · Ưu đãi: ") + string.Join(" · ", detail.Promotions.Select(x => L.F("{0} {1}% ({2})", x.Name, x.Percent, SalesUi.Money(x.Discount))))) +
             "\n" + string.Join(" · ", detail.Order.Payments.Select(x => $"{x.Name}: {SalesUi.Money(x.Amount)}")) };
         var state = new Label { Dock = DockStyle.Bottom, AutoSize = true };
         var print = SalesUi.Button(L.T("Xem trước / In lại"), async (_, _) =>

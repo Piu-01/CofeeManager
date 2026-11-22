@@ -207,7 +207,7 @@ F8); đơn sang **Chờ thanh toán** và mở xem trước **ngay, không hỏi
 khách gọi thêm, nhân viên bấm món/tăng số lượng để **nối vào cùng hóa đơn** — cùng
 bill, cùng mã, ưu đãi tính lại trên toàn đơn; thêm lại món cũ gộp về một dòng (SL 1
 → 2). Đã in tạm thì **không xóa dòng, không giảm số lượng, không sửa ghi chú**; F3
-khách/ưu đãi/ship vẫn sửa được vì tiền chốt ở bước thu. Nút **In lại** in lại tạm tính
+khách/ship vẫn sửa được vì tiền chốt ở bước thu. Nút **In lại** in lại tạm tính
 sau khi nối món. Không còn nút **Mở lại đơn**; vẫn **Thanh toán**, **Hủy đơn**, **Trả
 bàn** theo T33–T34. Bàn vẫn bận và hiện “Chờ thanh toán”, không nhận đơn mới cho tới
 khi đơn được thu/hủy. Lỗi in chỉ báo, đơn đã lưu vẫn giữ. F8 vẫn là đường thanh toán
@@ -227,7 +227,7 @@ Mang đi: chọn tab → Đơn mới → thêm món đầu tạo đơn → quả
 
 Dialog chọn khách tìm SDT/tên → chọn kết quả có tên, SDT che vừa đủ theo ngữ cảnh, hạng/điểm → Áp dụng. Khách mới: nhập tên/SDT tùy chọn theo schema, lưu rồi chọn ngay. Vãng lai là bỏ chọn khách, không tạo hồ sơ tên “Khách lẻ” cho mọi đơn.
 
-Ưu đãi có lựa chọn **Không chọn chương trình / Chọn chương trình hợp lệ**. Có chương trình thì cộng thêm vào ưu đãi hạng (tối đa 100%), mỗi đơn chỉ một KM. Khi không chọn KM, SQL vẫn áp dụng hạng nếu có khách; nhãn “Không chọn chương trình” không có nghĩa tổng giảm luôn bằng 0. Hiển thị nguồn giảm và tỷ lệ từ preview SQL, có breakdown hạng + KM khi cả hai cùng áp dụng. Nếu chưa có hợp đồng lưu lựa chọn KM/khách vào đơn, T13/T14 phải bổ sung trước khi UI cho Áp dụng.
+Từ 21/11/2026 ưu đãi **không còn chọn tay**: dialog F3 chỉ còn khách và thông tin giao hàng, thêm dòng giải thích SQL tự xác định ưu đãi. Mỗi KM khai báo ngày bắt đầu/kết thúc (được bỏ trống kết thúc), trạng thái Nháp/Đang chạy/Tạm dừng, đối tượng (mọi khách, khách lần đầu, khách có hồ sơ, theo hạng) và phạm vi (tất cả món hoặc các món chọn). SQL xét trạng thái → ngày → đối tượng → món; **mọi KM thỏa cùng áp**, cộng dồn với % hạng và chặn 100%/dòng, KM theo món chỉ giảm các dòng đủ điều kiện. Không có “chọn một chương trình”, không có KM thay thế hạng. POS hiển thị danh sách KM đang áp (tên, %, tiền) và F8 hiển thị breakdown hạng + từng KM; preview cũ mất hiệu lực khi KM/thành phần đổi và người dùng phải xác nhận lại. Vãng lai không đạt “khách lần đầu”; khách lần đầu là hồ sơ chưa từng có hóa đơn đã thanh toán.
 
 Khách đổi/ưu đãi đổi → tải preview → cập nhật tổng; không cho Thanh toán khi preview đang tải hoặc thất bại. Điểm hiển thị trước thanh toán là điểm hiện tại; **Điểm dự kiến** ghi rõ tham khảo. Không có nút Dùng điểm.
 

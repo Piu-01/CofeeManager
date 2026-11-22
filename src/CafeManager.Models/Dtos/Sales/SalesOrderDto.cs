@@ -1,3 +1,5 @@
+using CafeManager.Models.Dtos.Loyalty;
+
 namespace CafeManager.Models.Dtos.Sales;
 
 public sealed record SalesOrderHeader(string Code, DateTime Created, string Employee, string? Customer,
@@ -5,7 +7,7 @@ public sealed record SalesOrderHeader(string Code, DateTime Created, string Empl
     string? Address, string? Delivery, DateTime? PaidAt, decimal PartnerPercent, decimal PartnerFee,
     decimal Total, decimal Ship, decimal Discount, decimal Payable, string Status, byte[] Revision,
     bool PreviewValid, string? PreviewSource, int? PreviewPercent, DateTime ReadAt,
-    int? SessionCode, byte[]? SessionRevision)
+    int? SessionCode, byte[]? SessionRevision, int PromotionCount = 0)
 {
     public bool CanEdit => Status == "Chua thanh toan";
     // Đơn đã "In tạm": món đã ra quầy nên chỉ nối thêm/tăng số lượng, không xóa hay sửa ghi chú.
@@ -21,7 +23,12 @@ public sealed record SalesLine(int LineId, string Product, string Name, int Quan
     string? Note, decimal Amount);
 public sealed record SalesPayment(int PaymentId, string Method, string Name, decimal Amount, string? Reference);
 public sealed record SalesOrderDto(SalesOrderHeader Header, IReadOnlyList<SalesLine> Lines,
-    IReadOnlyList<SalesPayment> Payments);
+    IReadOnlyList<SalesPayment> Payments, IReadOnlyList<AppliedPromotion> Promotions)
+{
+    // Giữ call site cũ (test/in hóa đơn) không có danh sách ưu đãi.
+    public SalesOrderDto(SalesOrderHeader header, IReadOnlyList<SalesLine> lines, IReadOnlyList<SalesPayment> payments)
+        : this(header, lines, payments, []) { }
+}
 public sealed record SalesWriteResult(string Code, byte[] Revision);
 public sealed record SalesReceipt(string Code, byte[]? Revision, string Operation, DateTime CompletedAt);
 public sealed record SalesMenuItem(string Code, string Name, decimal Price, string Status, bool HasRecipe)

@@ -54,7 +54,8 @@ internal sealed class OrderPanel : OrbitSurface
         status.Text = order is null ? L.T("Trống") : SalesStates.Label(order.Header.Status);
         status.ForeColor = order is null ? OrbitManagementTheme.Muted
             : order.Header.Status == "Huy" ? AppTheme.Error : order.Header.Status == "Da thanh toan" ? OrbitManagementTheme.Lilac : OrbitManagementTheme.Caramel;
-        context.Text = order is null ? L.T("Thêm món đầu tiên để lưu đơn") : L.F("{0} · Bàn {1} · Khách {2}", SalesStates.Label(order.Header.Channel), order.Header.TableCode ?? "—", order.Header.Customer ?? L.T("Vãng lai"));
+        context.Text = order is null ? L.T("Thêm món đầu tiên để lưu đơn") : L.F("{0} · Bàn {1} · Khách {2}", SalesStates.Label(order.Header.Channel), order.Header.TableCode ?? "—", order.Header.Customer ?? L.T("Vãng lai"))
+            + (order.Promotions.Count == 0 ? "" : L.T(" · Ưu đãi: ") + string.Join(", ", order.Promotions.Select(x => L.F("{0} {1}%", x.Name, x.Percent))));
         UpdateTotal();
     }
     internal void SetResultUnknown(bool value) { unknown = value; UpdateTotal(); }
