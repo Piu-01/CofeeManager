@@ -86,7 +86,7 @@ public sealed partial class SalesRepository(ConnectionFactory factory)
             r.IsDBNull(12) ? null : r.GetDateTime(12), r.GetDecimal(13), r.GetDecimal(14), r.GetDecimal(15), r.GetDecimal(16),
             r.GetDecimal(17), r.GetDecimal(18), Text(r, 19), (byte[])r[20], r.GetBoolean(21), Optional(r, 22),
             r.IsDBNull(23) ? null : r.GetInt32(23), r.GetDateTime(24),
-            r.IsDBNull(25) ? null : r.GetInt32(25), r.IsDBNull(26) ? null : (byte[])r[26], r.GetInt32(27));
+            r.IsDBNull(25) ? null : r.GetInt32(25), r.IsDBNull(26) ? null : (byte[])r[26], r.IsDBNull(27) ? 0 : r.GetInt32(27));
         await r.NextResultAsync(t);
         var lines = await Rows(r, x => new SalesLine(x.GetInt32(0), Text(x, 1), Text(x, 2), x.GetInt32(3),
             x.GetDecimal(4), Optional(x, 5), x.GetDecimal(6)), t);

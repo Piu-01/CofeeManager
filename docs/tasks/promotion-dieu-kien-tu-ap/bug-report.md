@@ -1,9 +1,11 @@
 # Bug report — promotion-dieu-kien-tu-ap
 
-- Ngày phát hiện: 21/11/2026, cập nhật 22/11/2026
-- Người phát hiện: agent (áp 040, sau đó lượt test 039 được duyệt)
+- Ngày phát hiện: 21/11/2026, cập nhật 22/11/2026 (thêm B06 tối 22/11)
+- Người phát hiện: agent (áp 040, sau đó lượt test 039 được duyệt); B06 do người dùng
+  gặp khi in tạm sau khi nhập khách
 - Trạng thái: **B01–B05 đã sửa và PASS lại trong lượt test 22/11/2026**
-  (`runs/20261122_135707_532a959f`, xem `test-results.md`)
+  (`runs/20261122_135707_532a959f`, xem `test-results.md`); **B06 đã sửa 22/11/2026,
+  regression kỹ thuật PASS (3 đơn, xem `test-results.md`), GUI chờ người dùng kiểm**
 
 ## B01 — Migration 039 không chạy được: batch DDL trộn ADD cột và CHECK
 
@@ -57,3 +59,38 @@ thuộc `HANGTHANHVIEN`, không thuộc `KHUYENMAI_HANG`).
 
 **Phạm vi ảnh hưởng:** chỉ 039 (chưa từng áp thành công ở DB nào trước 22/11) và bộ
 test mới. Không sửa 001–038, không đổi dữ liệu dev ngoài thêm object 039.
+
+## B06 — In tạm đơn chưa thanh toán: `SqlNullValueException` khi đọc chi tiết
+
+**Hiện tượng:** nhập khách ở F3, bấm **In tạm** thì app dừng với
+`System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property
+cannot be called on Null values.` trong `SalesRepository.ReadOrder`
+(`src/CafeManager.DataAccess/Repositories/SalesRepository.cs:88-89`, cột 27).
+
+**Bước tái hiện:** mở đơn có món → F3 chọn khách → Áp dụng → **In tạm**.
+`PrintTemp` lưu đơn sang `Cho thanh toan` rồi gọi `invoices.DetailAsync` để in;
+chi tiết gọi `sp_InvoiceDetail`, đọc header bằng cùng `ReadOrder`.
+
+**Nguyên nhân/bằng chứng:**
+
+- 039 thêm cột 28 `PromotionCount` vào `sp_InvoiceDetail`; `ReadOrder` đọc cột 27 bằng
+  `r.GetInt32(27)` không kiểm tra NULL (commit 57e7d8c).
+- `sp_InvoiceDetail` lấy `s.PromotionCount` từ `HoaDonUuDaiSnapshot`, mà snapshot chỉ
+  được tạo lúc thanh toán. Đơn mới/chờ in chưa có snapshot nên cột 27 là NULL.
+- Đối chiếu dev DB: `HD26093456` (`Cho thanh toan`, đơn trong ảnh lỗi) join
+  `HoaDonUuDaiSnapshot` trả `NULL|NULL|NULL|NULL`; `sp_SalesReadCore` cùng đơn trả
+  `PromotionCount = 2` vì đơn mở tính từ `fn_HoaDonUuDaiApDung`. Vì vậy lỗi chỉ xảy ra
+  ở đường in/chi tiết, không ở `LoadOrder`.
+- Các cột snapshot khác trong `ReadOrder` (22, 23, 25, 26) đã guard; chỉ cột 27 thiếu.
+
+**Cách sửa đề xuất:** đổi cột 27 thành
+`r.IsDBNull(27) ? 0 : r.GetInt32(27)` trong
+`src/CafeManager.DataAccess/Repositories/SalesRepository.cs`. Không đổi SQL/migration
+(039 đã áp dev; `sp_InvoiceDetail` trả NULL là đúng cho đơn chưa có snapshot).
+
+**Rủi ro:** thấp, chỉ ảnh hưởng giá trị `PromotionCount` của `SalesOrderHeader` khi
+đọc chi tiết đơn chưa thanh toán (trước đây là 0 ngầm định). Không đổi tiền, kho,
+điểm hay dữ liệu; POS/checkout vẫn nhận count thật từ `sp_SalesReadCore`.
+
+**Tối ưu (optional, ngoài fix):** có thể thêm test đọc `sp_InvoiceDetail` cho một đơn
+`Cho thanh toan` chưa có snapshot vào bộ promo-auto để chặn tái phát.

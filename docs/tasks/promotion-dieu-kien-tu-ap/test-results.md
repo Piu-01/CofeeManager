@@ -48,6 +48,20 @@ PA14 chưa chạy (cần thao tác GUI), PA15 do người dùng tự kiểm theo
 - Smoke engine trên dev: `sp_InvoiceDetail` trả 5 set đúng thứ tự (hóa đơn trả cũ),
   `sp_PromotionList` 17 KM, `sp_PromotionGet` 3 set, `sp_DiscountPreview` 1 header + 2 ưu đãi.
 
+## Regression B06 — đọc chi tiết đơn chưa có snapshot (22/11/2026)
+
+- Build Release sau fix: `dotnet build ... -c Release` → 0 lỗi (1 cảnh báo WebView2 có sẵn).
+- Harness đọc thật (ngoài repo, chỉ đọc DB dev, dùng `InvoiceRepository.DetailAsync`
+  với tài khoản 1): gọi `sp_InvoiceDetail` cho 3 đơn đại diện.
+  - `HD26093456` (`Cho thanh toan`, đơn trong ảnh lỗi): OK, `PromotionCount=0`,
+    2 KM đang áp từ `fn_HoaDonUuDaiApDung`; trước fix cột 27 NULL gây
+    `SqlNullValueException`.
+  - `HD26093455` (`Chua thanh toan`): OK, count 0, 2 KM.
+  - `HD26093449` (`Da thanh toan`): OK, count 0, không KM; đọc từ snapshot.
+- GUI (In tạm/In lại/nối món/thanh toán/in hóa đơn): **BLOCKED** — app đang mở
+  (PID 11128) khóa DLL Debug và agent không thao tác GUI WinForms; cần người dùng
+  đóng app, chạy bản mới và kiểm theo phân công. Không ghi PASS hình thức.
+
 ## Ghi chú rủi ro đã biết
 
 - `database/demo/seed-demo-daily.sql:180` và `seed-demo-operational.sql:349` còn gọi
