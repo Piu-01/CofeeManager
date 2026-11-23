@@ -12,7 +12,6 @@ internal sealed class OrderPanel : OrbitSurface
     internal readonly Label Totals = new() { Font = OrbitManagementTheme.Title, ForeColor = OrbitManagementTheme.Caramel, TextAlign = ContentAlignment.MiddleRight, UseMnemonic = false };
     internal readonly Panel HeaderActions = new(), PaymentActions = new();
     private readonly OrbitBadge status = new();
-    private readonly Label context = new() { Font = OrbitManagementTheme.Small, ForeColor = OrbitManagementTheme.Muted, UseMnemonic = false, AutoEllipsis = true };
     private readonly Label totalCaption = new() { Text = L.T("Phải thanh toán"), Font = OrbitManagementTheme.Small, ForeColor = OrbitManagementTheme.Muted, UseMnemonic = false, AutoEllipsis = true };
     private readonly OrderNoteEditor noteEditor = new();
     private readonly NoteSuggestionPanel suggestions = new();
@@ -25,6 +24,14 @@ internal sealed class OrderPanel : OrbitSurface
     private int editingRow = -1;
     private bool interactive, unknown, suppressSuggestions;
     internal bool HasPendingNote => editingLine is not null;
+    // Ghi chú đang mở có nội dung khác dòng để luồng rời/chuyển đơn lưu trước khi đi tiếp.
+    internal (SalesLine Line, string? Note)? PendingNote()
+    {
+        if (editingLine is not { } line) return null;
+        var note = string.IsNullOrWhiteSpace(noteEditor.Input.Text) ? null : noteEditor.Input.Text.Trim();
+        if (string.Equals(note, string.IsNullOrWhiteSpace(line.Note) ? null : line.Note.Trim(), StringComparison.Ordinal)) return null;
+        return (line, note);
+    }
     internal void SetInteractive(bool value) { interactive = value; noteEditor.Enabled = value; if (!value) suggestions.Reset(); }
     internal void SetNoteHistory(IReadOnlyList<string> notes) { historyNotes = notes; if (suggestions.Visible) ShowSuggestions(); }
     internal event Action<SalesLine>? IncreaseRequested, DecreaseRequested, DeleteRequested;
@@ -34,7 +41,7 @@ internal sealed class OrderPanel : OrbitSurface
         Dock = DockStyle.Fill; Lines.Dock = DockStyle.None;
         ((OrbitDataGridView)Lines).Profile = OrbitGridProfile.OrderLines;
         Lines.Columns["Delete"]!.DataPropertyName = "";
-        Controls.AddRange([Lines, Caption, context, status, HeaderActions, totalCaption, Totals, PaymentActions, noteEditor, suggestions]);
+        Controls.AddRange([Lines, Caption, status, HeaderActions, totalCaption, Totals, PaymentActions, noteEditor, suggestions]);
         Lines.CellMouseClick += (_, e) => LineClicked(e);
         Lines.Scroll += (_, _) => PositionNoteEditor();
         noteEditor.SaveRequested += (_, _) => SaveNote();
@@ -54,8 +61,6 @@ internal sealed class OrderPanel : OrbitSurface
         status.Text = order is null ? L.T("Trống") : SalesStates.Label(order.Header.Status);
         status.ForeColor = order is null ? OrbitManagementTheme.Muted
             : order.Header.Status == "Huy" ? AppTheme.Error : order.Header.Status == "Da thanh toan" ? OrbitManagementTheme.Lilac : OrbitManagementTheme.Caramel;
-        context.Text = order is null ? L.T("Thêm món đầu tiên để lưu đơn") : L.F("{0} · Bàn {1} · Khách {2}", SalesStates.Label(order.Header.Channel), order.Header.TableCode ?? "—", order.Header.Customer ?? L.T("Vãng lai"))
-            + (order.Promotions.Count == 0 ? "" : L.T(" · Ưu đãi: ") + string.Join(", ", order.Promotions.Select(x => L.F("{0} {1}%", x.Name, x.Percent))));
         UpdateTotal();
     }
     internal void SetResultUnknown(bool value) { unknown = value; UpdateTotal(); }
@@ -229,8 +234,8 @@ internal sealed class OrderPanel : OrbitSurface
         var inner = Math.Max(1, Width - P(24));
         status.SetBounds(Width - P(126), P(12), P(114), P(23));
         Caption.SetBounds(P(12), P(10), Math.Max(1, status.Left - P(20)), P(25));
-        context.SetBounds(P(12), P(37), inner, P(18));
-        HeaderActions.SetBounds(P(12), P(61), inner, P(26));
+        // Bỏ dòng ngữ cảnh (loại đơn/bàn/khách/ưu đãi) để panel đơn gọn hơn.
+        HeaderActions.SetBounds(P(12), P(37), inner, P(26));
         var headerButtons = HeaderActions.Controls.Cast<Control>().ToArray();
         if (headerButtons.Length > 0)
         {
@@ -268,7 +273,7 @@ internal sealed class OrderPanel : OrbitSurface
         totalCaption.SetBounds(P(12), totalY, stackedTotal ? inner : P(98), stackedTotal ? captionHeight : moneyHeight);
         Totals.SetBounds(P(stackedTotal ? 12 : 110), totalY + captionHeight,
             stackedTotal ? inner : Math.Max(1, Width - P(122)), moneyHeight);
-        Lines.SetBounds(P(1), P(94), Math.Max(1, Width - P(2)), Math.Max(1, totalY - P(10) - P(94)));
+        Lines.SetBounds(P(1), P(70), Math.Max(1, Width - P(2)), Math.Max(1, totalY - P(10) - P(70)));
         PositionNoteEditor();
     }
     protected override void OnPaint(PaintEventArgs e)

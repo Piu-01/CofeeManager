@@ -1,0 +1,43 @@
+{
+  "Kind": "Technical probe: HasUnsavedChanges + save-changes dialog button wiring; no DB calls, no visual inspection",
+  "EmptyContext": false,
+  "ContextTableOnly": false,
+  "ContextCustomer": true,
+  "ContextDelivery": true,
+  "SavedOrderClean": false,
+  "SavedOrderHeaderDraft": true,
+  "NoteChanged": true,
+  "NoteChangedPending": true,
+  "NoteUnchanged": true,
+  "NoteUnchangedPending": false,
+  "ThreeButtons": [
+    "Lưu",
+    "Bỏ thay đổi",
+    "Ở lại"
+  ],
+  "ThreeButtonResults": [
+    "OK",
+    "No",
+    "Cancel"
+  ],
+  "PrimaryIsSave": true,
+  "AcceptButtonNull": true,
+  "DefaultFocusText": "Ở lại",
+  "DefaultFocusStay": true,
+  "DiscardResult": "No",
+  "DiscardClosed": true,
+  "SaveResult": "OK",
+  "KeepText": [
+    "Giữ thông tin",
+    "Bỏ thay đổi",
+    "Ở lại"
+  ],
+  "KeepResult": "OK",
+  "NoSaveButtons": [
+    "Bỏ thay đổi",
+    "Ở lại"
+  ],
+  "EscapeClosed": true,
+  "EscapeResult": "Cancel",
+  "TechnicalSuccess": true
+}

@@ -148,8 +148,8 @@ ADMIN click/F2 vào ô Tên/Khu vực để sửa tại chỗ (không mở hộp
 để xóa ngay theo chuẩn mục11.5 — service vẫn chặn khi còn lịch sử/đơn mở và báo ở dòng trạng thái.
 Ở POS không còn nút **Chọn bàn**:
 chọn bàn trong ô chọn bàn là mở bàn/đơn ngay, tự chuyển kênh sang Tại quán khi cần, vẫn
-hỏi xác nhận nếu đang có nháp chưa lưu; các lần gán bàn bằng code (Đơn mới, đổi kênh,
-tải lại, sau trả bàn) không kích hoạt tự mở. Nhân viên vẫn trả bàn bằng nút **Trả bàn**
+hỏi **Lưu / Bỏ / Ở lại** nếu đang có input chưa ghi (header F3 hoặc ghi chú dòng đang mở);
+các lần gán bàn bằng code (Đơn mới, đổi kênh, tải lại, sau trả bàn) không kích hoạt tự mở. Nhân viên vẫn trả bàn bằng nút **Trả bàn**
 trên POS hoặc hộp “Trả bàn ngay?” sau thanh toán như T34.
 
 ### 7.2. Tại quán
@@ -251,9 +251,14 @@ SQL. Panel đơn hiện trạng thái **Trống** và Phải thanh toán **—**
 `sp_TaoHoaDon` (một giao dịch: header + dòng đầu, bàn/phiên, preview SQL) rồi tải lại
 đơn từ SQL; các thao tác sau autosave từng lệnh như mọi đơn đã lưu.
 
-Rời màn chỉ hỏi khi có input thật chưa ghi: header đang sửa (F3) hoặc ghi chú dòng
-đang mở. Chọn bàn/kênh cho đơn chưa tạo không phải input nên rời màn không hỏi; đơn
-đã lưu còn nguyên như trước. Đổi kênh (Tại quán/Mang đi/Giao hàng) khi chưa có đơn ghi
+Rời màn hoặc chuyển đơn/bàn chỉ hỏi khi có input thật chưa ghi: header đang sửa (F3),
+ghi chú dòng đang mở, hoặc thông tin F3 khách/người nhận/SĐT/địa chỉ/ship của **đơn
+mới chưa tạo** (chưa có bản ghi SQL). Hộp có 3 lựa chọn **Lưu / Bỏ thay đổi / Ở lại**;
+Lưu ghi header/ghi chú rồi mới đi tiếp, ghi lỗi thì ở lại POS và giữ input. Riêng F3
+đơn mới: khi rời màn, Lưu là **Giữ thông tin** trong màn cache; khi mở đơn/bàn khác
+không có nơi lưu nên hộp chỉ có **Bỏ thông tin / Ở lại**. Chọn bàn/kênh cho đơn chưa
+tạo không phải input nên rời màn không hỏi; đơn đã lưu còn nguyên như trước. Hộp
+Giữ/Không giữ/Ở lại của nháp bộ nhớ cũ vẫn đã bỏ từ 19/11/2026. Đổi kênh (Tại quán/Mang đi/Giao hàng) khi chưa có đơn ghi
 SQL thì cập nhật ngữ cảnh tại chỗ; rời Giao hàng xóa người nhận/SĐT/địa chỉ/phí ship
 sau xác nhận nếu đã nhập; vào Tại quán chọn bàn trống đầu tiên, hết bàn trống thì giữ
 kênh cũ và yêu cầu xử lý đơn đang mở hoặc chọn Mang đi/Giao hàng.
