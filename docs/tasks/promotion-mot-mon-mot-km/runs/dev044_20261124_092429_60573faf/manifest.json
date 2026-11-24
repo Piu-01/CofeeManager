@@ -1,0 +1,10 @@
+﻿{
+    "RunId":  "20261124_092429_60573faf",
+    "Server":  "localhost",
+    "Database":  "CoffeeManager_Development",
+    "Status":  "Failed",
+    "Backup":  null,
+    "BeforeVersion":  43,
+    "BeforeHash":  "2A3C08808608FEEFCA69434DE6E96E7D7D9379DA657BEF340545F1FE4E416E5A",
+    "Error":  "At D:\\Workspace\\Nam_3\\HK1\\CoffeeManager\\tools\\database\\Backup-Database.ps1:25 char:54\r\n+  if(-not $result.SourceStable){throw \u0027Nguá»“n thay Ä‘á»•i trong backu ...\r\n+                                                      ~~~~\nUnexpected token \u0027á»•i\u0027 in expression or statement."
+}

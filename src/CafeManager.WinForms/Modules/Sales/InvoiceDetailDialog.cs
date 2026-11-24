@@ -27,7 +27,7 @@ internal sealed class InvoiceDetailDialog : CafeManager.WinForms.Forms.OrbitDial
         var summary = new Label { Dock = DockStyle.Top, AutoSize = true, Padding = new Padding(12), Text =
             L.F("{0} · {1} · {2} · {3}\n{4} · Khách {5}\nMón {6} · Giảm {7} · Ship {8} · Phải trả {9}\n", h.Code, string.Format(global::System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:dd/MM/yyyy HH:mm}", h.Created), SalesStates.Label(h.Channel), SalesStates.Label(h.Status), SalesStates.Label(h.Delivery), h.Customer ?? L.T("Vãng lai"), SalesUi.Money(h.Total), SalesUi.Money(h.Discount), SalesUi.Money(h.Ship), SalesUi.Money(h.Payable)) +
             (detail.SnapshotKind == "LegacyUnknown" ? L.T("Nguồn/tỷ lệ ưu đãi lịch sử chưa lưu.") : detail.Source == "TierAndPromotion"
-                ? L.F("{0} · hạng {1}% + KM {2}% = {3}% · Điểm mua đã cộng {4}", SalesStates.Label(detail.Source), detail.TierPercent ?? 0, detail.PromotionPercent ?? 0, detail.PercentDiscount, detail.Points)
+                ? L.F("{0} · giảm {3}% (KM {2}%, hạng {1}% sau KM) · Điểm mua đã cộng {4}", SalesStates.Label(detail.Source), detail.TierPercent ?? 0, detail.PromotionPercent ?? 0, detail.PercentDiscount, detail.Points)
                 : L.F("{0} {1}% · Điểm mua đã cộng {2}", SalesStates.Label(detail.Source), detail.PercentDiscount, detail.Points)) +
             (detail.Promotions.Count == 0 ? "" : L.T(" · Ưu đãi: ") + string.Join(" · ", detail.Promotions.Select(x => L.F("{0} {1}% ({2})", x.Name, x.Percent, SalesUi.Money(x.Discount))))) +
             (giftText.Length == 0 ? "" : "\n" + giftText) +

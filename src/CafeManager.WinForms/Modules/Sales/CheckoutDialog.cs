@@ -79,7 +79,7 @@ internal sealed partial class CheckoutDialog : CafeManager.WinForms.Forms.OrbitD
     {
         totalValue.Text = SalesUi.Money(preview.Total); discountValue.Text = "−" + SalesUi.Money(preview.Discount);
         var sourceText = preview.Source == "TierAndPromotion"
-            ? L.F("{0} · {1}% (hạng {2}% + KM {3}%)", SalesStates.Label(preview.Source), preview.PercentDiscount, preview.TierPercent, preview.PromotionPercent)
+            ? L.F("{0} · {1}% (KM {3}%, hạng {2}% sau KM)", SalesStates.Label(preview.Source), preview.PercentDiscount, preview.TierPercent, preview.PromotionPercent)
             : $"{SalesStates.Label(preview.Source)} · {preview.PercentDiscount}%";
         // Danh sách từng ưu đãi đang áp; SQL là nguồn chốt, UI chỉ hiển thị.
         discountSource.Text = preview.Promotions.Count == 0 ? sourceText

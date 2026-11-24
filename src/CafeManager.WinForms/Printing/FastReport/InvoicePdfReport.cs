@@ -205,7 +205,7 @@ internal static class InvoicePdfReport
         {
             var percentText = detail.PercentDiscount is int percent
                 ? detail.Source == "TierAndPromotion"
-                    ? L.F(" {0}% (hạng {1}% + KM {2}%)", percent, detail.TierPercent ?? 0, detail.PromotionPercent ?? 0)
+                    ? L.F(" {0}% (KM {2}%, hạng {1}% sau KM)", percent, detail.TierPercent ?? 0, detail.PromotionPercent ?? 0)
                     : $" {percent}%"
                 : string.Empty;
             band.Objects.Add(PdfLayout.Text(L.T("Nguồn giảm: ") + SalesStates.Label(detail.Source) + percentText,

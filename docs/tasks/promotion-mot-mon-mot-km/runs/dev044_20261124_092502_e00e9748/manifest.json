@@ -1,0 +1,22 @@
+﻿{
+    "RunId":  "20261124_092502_e00e9748",
+    "Server":  "localhost",
+    "Database":  "CoffeeManager_Development",
+    "Status":  "Succeeded",
+    "Backup":  {
+                   "Path":  "C:\\Program Files\\Microsoft SQL Server\\MSSQL17.MSSQLSERVER\\MSSQL\\Backup\\CoffeeManager_Development_before044_20261124_092502_e00e9748.bak",
+                   "Policy":  "Giữ đến khi nghiệm thu; không tự xóa",
+                   "Manifest":  "C:\\Users\\Lenovo\\AppData\\Local\\CoffeeManager\\backups\\before044_20261124_092502_e00e9748.json",
+                   "Kind":  "COPY_ONLY CHECKSUM + VERIFYONLY"
+               },
+    "BeforeVersion":  43,
+    "BeforeHash":  "2A3C08808608FEEFCA69434DE6E96E7D7D9379DA657BEF340545F1FE4E416E5A",
+    "AfterVersion":  44,
+    "AfterHash":  "2A3C08808608FEEFCA69434DE6E96E7D7D9379DA657BEF340545F1FE4E416E5A",
+    "Objects":  {
+                    "fn_UuDaiChon":  1398296041,
+                    "Constraint":  1414296098,
+                    "Grants":  4,
+                    "LegacyPaidMatch":  0
+                }
+}

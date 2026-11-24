@@ -222,3 +222,17 @@ Lưu ý: seed demo cũ trong
 `database/demo/seed-demo-daily.sql` và `seed-demo-operational.sql` còn gọi
 `fn_DiscountPreview` đã bị bỏ — chỉ dùng cho DB mới sau 039 thì cần cập nhật ở task
 seed riêng; không chạy lại nguyên trạng trên schema039.
+
+## G03 — 044 promotion one-per-item (23/11/2026)
+
+044_promotion_one_per_item.sql chạy sau 043 bằng `Apply-Migration.ps1 -Version 44`;
+tiền đề `SchemaMigrations Version=43` (guard `THROW 54401`). Không đổi cấu trúc bảng
+nghiệp vụ; thêm hàm `fn_UuDaiChon` chọn tổ hợp KM rời nhau có tổng giảm lớn nhất
+(mỗi dòng tối đa một KM; tách nhóm xung đột, duyệt chính xác ≤ 15 KM/nhóm, hơn thì
+tham lam tất định có tài liệu), thay `fn_UuDaiCap/Dong/Tong/Chia`,
+`fn_CheckoutPreview`, `sp_DiscountPreview`. Luật mới: KM giảm trước trên từng dòng,
+hạng tính trên hóa đơn còn lại (`TierDiscount = round((TongTien − PromotionDiscount) ×
+hạng%)`); `Discount = TierDiscount + PromotionDiscount`. `PercentDiscount` là mức giảm
+thực tế `round(100 × Discount / TongTien)`; ràng buộc `CK_DiscountSnapshot_Known` bỏ
+công thức cộng cũ, không backfill snapshot lịch sử. KM legacy trên đơn mở tham gia tổ
+hợp như KM phạm vi `ALL`, không còn ép cộng thêm. Không sửa checksum 001–043.

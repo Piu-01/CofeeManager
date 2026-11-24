@@ -1,0 +1,9 @@
+﻿{
+    "RunId":  "20261124_092421_fd3ebbcf",
+    "Server":  "localhost",
+    "Database":  "CoffeeManager_Development",
+    "Status":  "Failed",
+    "Backup":  null,
+    "BeforeVersion":  43,
+    "Error":  "Exception calling \"ExecuteScalar\" with \"0\" argument(s): \"Invalid column name \u0027MaLS\u0027.\""
+}

@@ -1,0 +1,49 @@
+﻿{
+    "RunId":  "20261123_221900_256384b7",
+    "Server":  "localhost",
+    "Database":  "CoffeeManager_Test_PromoOnePerItem_20261123_221900_256384b7",
+    "SchemaVersion":  44,
+    "Operator":  "LAPTOP-79UNRIRC\\Lenovo",
+    "Steps":  [
+                  {
+                      "Status":  "PASS",
+                      "Step":  "fixture",
+                      "File":  "database/tests/promo-one-per-item/fixture.sql",
+                      "Ms":  892
+                  },
+                  {
+                      "Status":  "PASS",
+                      "Step":  "01-selection",
+                      "File":  "database/tests/promo-one-per-item/01-selection.sql",
+                      "Ms":  421
+                  },
+                  {
+                      "Status":  "PASS",
+                      "Step":  "02-tier-after",
+                      "File":  "database/tests/promo-one-per-item/02-tier-after.sql",
+                      "Ms":  743
+                  },
+                  {
+                      "Status":  "PASS",
+                      "Step":  "03-checkout",
+                      "File":  "database/tests/promo-one-per-item/03-checkout.sql",
+                      "Ms":  3066
+                  },
+                  {
+                      "Status":  "PASS",
+                      "Step":  "04-regression",
+                      "File":  "database/tests/promo-one-per-item/04-regression.sql",
+                      "Ms":  209
+                  },
+                  {
+                      "Status":  "PASS",
+                      "Step":  "05-performance",
+                      "File":  "database/tests/promo-one-per-item/05-performance.sql",
+                      "Ms":  541
+                  }
+              ],
+    "Status":  "Succeeded",
+    "Created":  true,
+    "Cleaned":  true,
+    "SourceUnchanged":  true
+}

@@ -77,3 +77,26 @@ Snapshot checkout thêm `TierDiscount/PromotionDiscount/PromotionCount/Promotion
 và `HoaDonUuDaiApDung(MaHD,MaKM,...)`; trigger con cấm UPDATE/DELETE, chỉ INSERT khi
 đơn còn mở và buộc tổng `Discount` bằng `snapshot.PromotionDiscount`. Hóa đơn cũ không
 có breakdown vẫn đọc theo `PercentDiscount`; UI/in giữ nhánh legacy.
+
+## Một món một khuyến mãi, hạng sau KM — migration044 (23/11/2026)
+
+Thay luật cộng dồn additive của 038/039. Ứng viên là KM `Giam` đang chạy, đúng
+ngày/đối tượng, `%>0`; KM legacy `HOADON.MaKM` của đơn mở được thêm như ứng viên
+phạm vi `ALL` (chỉ xét hiệu lực ngày), không còn ép cộng thêm. Hàm mới
+`fn_UuDaiChon` phủ dòng (`ALL` mọi dòng, `ITEM` theo `KHUYENMAI_MON`; nhiều dòng cùng
+`MaSP` cùng thuộc phạm vi) và chọn tập KM có tập dòng phủ rời nhau với tổng
+`ROUND(amount×%/100)` lớn nhất; hòa chọn ít KM hơn rồi theo chuỗi mã tăng dần. Tách
+nhóm xung đột; duyệt chính xác khi nhóm ≤ 15 KM, hơn ngưỡng dùng tham lam tất định
+(giới hạn cấu hình có tài liệu), không bao giờ cộng hai KM trên cùng dòng.
+
+`fn_UuDaiCap` chỉ trả cặp của tổ hợp được chọn. `fn_UuDaiDong` trả phần KM của dòng,
+không cộng hạng. `fn_UuDaiTong`: `PromotionDiscount = min(Σ giảm dòng, TongTien)`;
+`TierDiscount = ROUND((TongTien − PromotionDiscount) × hạng% / 100, 0)`;
+`Discount = PromotionDiscount + TierDiscount`; ship không giảm; điểm
+`FLOOR((TongTien − Discount)/1000)`. `fn_UuDaiChia/fn_UuDaiApDung` giữ cách phân bổ
+039 (RawShare, floor từng KM, dồn phần lẻ KM cuối). `PercentDiscount` của preview/
+snapshot là mức giảm thực tế `ROUND(100 × Discount / TongTien)`; snapshot mới chỉ bị
+ràng buộc `Discount = TierDiscount + PromotionDiscount`, dòng lịch sử không backfill.
+`sp_DiscountPreview`/`sp_SalesCheckoutPreview`/`sp_ThanhToanHoaDon`/`sp_InvoiceDetail`/
+`sp_SalesReadCore` giữ chữ ký, đọc chung các hàm trên. KM `Tang` độc lập, không tham
+gia tổ hợp. UI chỉ đổi nhãn hiển thị "(KM x%, hạng y% sau KM)", không tự tính lại.
