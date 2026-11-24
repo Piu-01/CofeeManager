@@ -29,8 +29,8 @@ public partial class MaterialsControl : UserControl
         workspace.ShowMeta = false;
         inline = new OrbitRowEditor(grid, workspace.Body, text => state.Text = text);
         inline.RowKey = item => ((MaterialRow)item).Code;
-        inline.ColumnFor = (item, cell) => Column((MaterialRow)item, cell.OwningColumn?.Name ?? "");
-        inline.Save = SaveInline; inline.Delete = DeleteInline;
+        inline.ColumnFor = (item, cell) => Column(cell.OwningColumn?.Name ?? "");
+        inline.Edit = item => Edit((MaterialRow)item); inline.Delete = DeleteInline;
         inline.Reconcile = async (_, id, t) => await service.ReconcileAsync(session, id, t) is not null;
         inline.Reload = LoadRows; inline.CanWrite = _ => writable;
         inline.StateChanged += (_, _) => { if (IsDisposed) return; add.Enabled = !inline.IsBusy && grid.Enabled; };
@@ -38,18 +38,24 @@ public partial class MaterialsControl : UserControl
         Load += async (_, _) => { if (!loaded) { loaded = true; await LoadRows(); } };
     }
     private MaterialRow? Selected => grid.CurrentRow?.DataBoundItem as MaterialRow;
-    private static InlineColumn? Column(MaterialRow row, string property) => property switch
+    private static InlineColumn? Column(string property) => property switch
     {
-        "Name" => new("Name", InlineCellKind.Text, item => ((MaterialRow)item).Name, (_, text) => text.Trim()),
-        "Unit" => new("Unit", InlineCellKind.Text, item => ((MaterialRow)item).Unit, (_, text) => text.Trim()),
+        "Name" => new("Name", InlineCellKind.Text),
+        "Unit" => new("Unit", InlineCellKind.Text),
         _ => null
     };
-    private async Task SaveInline(object item, string property, object? value, Guid id, CancellationToken token)
+    private async Task Edit(MaterialRow row)
     {
         if (service is null || session is null) return;
-        var row = (MaterialRow)item;
-        var request = MaterialService.Normalize(new(row.Code, property == "Name" ? (string)value! : row.Name, property == "Unit" ? (string)value! : row.Unit));
-        await service.SaveAsync(session, request, row.Revision, id, token);
+        using var dialog = new OperationEditorDialog(L.F("Sửa nguyên liệu · {0}", row.Code), id => service.ReconcileAsync(session, id));
+        var name = dialog.AddText(L.T("Tên nguyên liệu"), row.Name);
+        var unit = dialog.AddText(L.T("Đơn vị chuẩn"), row.Unit);
+        dialog.CaptureWrite = () =>
+        {
+            var request = MaterialService.Normalize(new(row.Code, name.Text, unit.Text, null, null));
+            return id => service.SaveAsync(session, request, row.Revision, id);
+        };
+        if (await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this) == DialogResult.OK) await LoadRows();
     }
     private async Task<bool> DeleteInline(object item, Guid id, CancellationToken token)
     {

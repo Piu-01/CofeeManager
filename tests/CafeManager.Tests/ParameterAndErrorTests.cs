@@ -70,6 +70,21 @@ public sealed class ParameterAndErrorTests
     }
 
     [Theory]
+    [Trait("Case", "F01-TRUNC")]
+    [InlineData(2628, false)]
+    [InlineData(2628, true)]
+    [InlineData(8152, true)]
+    public void TruncationMapsToConstraintInsteadOfUnknown(int number, bool writing)
+    {
+        var error = SqlErrorMapper.MapNumber(number, writing);
+
+        Assert.Equal(number, error.Number);
+        Assert.Equal(DataErrorKind.Constraint, error.Kind);
+        Assert.False(error.RequiresReconciliation);
+        Assert.Contains("độ dài", error.Message);
+    }
+
+    [Theory]
     [Trait("Case", "G04-POS-04")]
     [InlineData(2812, false, false)]
     [InlineData(2812, true, false)]

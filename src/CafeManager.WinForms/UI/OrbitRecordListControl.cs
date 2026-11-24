@@ -128,7 +128,7 @@ public class OrbitRecordListControl : UserControl
         if (Grid.Rows[rowIndex].DataBoundItem is not { } item) return;
         handler(item);
     }
-    // Engine sửa/xóa tại dòng dùng Grid + vùng Body của workspace; màn chỉ cấp delegate nghiệp vụ.
+    // Engine mở hộp sửa/xóa tại dòng dùng Grid + vùng Body của workspace; màn chỉ cấp delegate nghiệp vụ.
     protected OrbitRowEditor CreateInlineEditor()
     {
         var editor = new OrbitRowEditor(Grid, Workspace.Body, text => State.Text = text);

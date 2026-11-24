@@ -28,15 +28,17 @@ public sealed class ProductsControl : OrbitRecordListControl
         AddAction("Thêm",()=>Edit(true),admin);AddAction("Công thức",Recipe,session.Identity.Role is "ADMIN" or "STORE");
         AddRowDeleteColumn();
         inline=CreateInlineEditor();inline.CanWrite=_=>admin;inline.RowKey=item=>((ProductRow)item).Code;
-        inline.ColumnFor=(item,cell)=>Column((ProductRow)item,cell.OwningColumn?.Name ?? "");
-        inline.Save=SaveInline;inline.Delete=DeleteInline;
+        inline.ColumnFor=(item,cell)=>Column(cell.OwningColumn?.Name ?? "");
+        inline.Edit=item=>Edit(false,(ProductRow)item);inline.Delete=DeleteInline;
         inline.Reconcile=async(_,id,t)=>await service.ReconcileAsync(session,id,t) is not null;inline.Reload=()=>Reload();
         Load+=async(_,_)=>{try{var rows=await service.CategoriesAsync(session);categories=rows;categoryFilter.DisplayMember="Name";categoryFilter.ValueMember="Code";categoryFilter.DataSource=new[]{new CafeManager.Models.Dtos.Catalogs.NameLookup("",L.T("Tất cả danh mục"))}.Concat(rows).ToList();}catch(Exception ex)when(ex is UserOperationException or UnauthorizedAccessException){State.Text=ex.Message;}};
     }
-    private async Task Edit(bool create)
+    private async Task Edit(bool create, ProductRow? row = null)
     {
-        if(service is null||session is null||(!create&&Selected is not ProductRow))return;
-        var row=create?null:(ProductRow)Selected!;var categories=await service.CategoriesAsync(session);
+        if(service is null||session is null)return;
+        if(!create&&row is null)row=Selected as ProductRow;
+        if(!create&&row is null)return;
+        var categories=await service.CategoriesAsync(session);
         using var dialog=new OperationEditorDialog(create?L.T("Thêm sản phẩm"):L.F("Sửa sản phẩm · {0}",row!.Code),id=>service.ReconcileAsync(session,id));
         var name=dialog.AddText(L.T("Tên sản phẩm"),row?.Name??"");
         var category=new ComboBox{DropDownStyle=ComboBoxStyle.DropDownList,DataSource=categories,DisplayMember="Name",ValueMember="Code"};if(row is not null)category.SelectedValue=row.Category;dialog.AddField(L.T("Danh mục"),category);
@@ -121,30 +123,14 @@ public sealed class ProductsControl : OrbitRecordListControl
         TextRenderer.DrawText(e.Graphics,text,combo.Font,Rectangle.Inflate(e.Bounds,-4,0),OrbitManagementTheme.Text,TextFormatFlags.Left|TextFormatFlags.VerticalCenter|TextFormatFlags.EndEllipsis);
         e.DrawFocusRectangle();
     }
-    private InlineColumn? Column(ProductRow row,string property)=>property switch
+    private static InlineColumn? Column(string property)=>property switch
     {
-        "Name"=>new("Name",InlineCellKind.Text,item=>((ProductRow)item).Name,(_,text)=>text.Trim()),
-        "Category"=>new("Category",InlineCellKind.Dropdown,item=>CategoryName(((ProductRow)item).Category),(_,text)=>CategoryCode(text),_=>categories.Select(x=>x.Name).ToList()),
-        "Price"=>new("Price",InlineCellKind.Money,item=>((ProductRow)item).Price,(_,text)=>Money(text),RightAligned:true),
-        "Status"=>new("Status",InlineCellKind.Dropdown,item=>((ProductRow)item).Status=="Dang ban"?L.T("Đang bán"):L.T("Ngừng bán"),(_,text)=>text==L.T("Đang bán")?"Dang ban":"Ngung ban",_=>[L.T("Ngừng bán"),L.T("Đang bán")]),
+        "Name"=>new("Name",InlineCellKind.Text),
+        "Category"=>new("Category",InlineCellKind.Dropdown),
+        "Price"=>new("Price",InlineCellKind.Money),
+        "Status"=>new("Status",InlineCellKind.Dropdown),
         _=>null
     };
-    private string CategoryName(string code)=>categories.FirstOrDefault(x=>x.Code==code)?.Name??code;
-    private string CategoryCode(string name)=>categories.FirstOrDefault(x=>x.Name==name)?.Code??throw new ArgumentException(L.T("Danh mục không hợp lệ."));
-    private static decimal Money(string text)
-    {
-        var cleaned=text.Replace("₫","").Replace(" ","").Replace(".","").Replace(',','.');
-        if(!decimal.TryParse(cleaned,NumberStyles.Number,CultureInfo.InvariantCulture,out var value))throw new ArgumentException(L.T("Giá không hợp lệ."));
-        return value;
-    }
-    // sp_ProductWrite Update chỉ đổi 4 trường sản phẩm; công thức giữ nguyên nên gửi [] như luồng cũ.
-    private async Task SaveInline(object item,string property,object? value,Guid id,CancellationToken token)
-    {
-        if(service is null||session is null)return;
-        var row=(ProductRow)item;
-        var request=ProductService.Normalize(new(row.Code,property=="Name"?(string)value!:row.Name,property=="Category"?(string)value!:row.Category,property=="Price"?(decimal)value!:row.Price,property=="Status"?(string)value!:row.Status,[]));
-        await service.SaveAsync(session,request,row.Revision,id,token);
-    }
     // Sản phẩm thuần bán hàng: xóa ngay, không hộp xác nhận; SQL chặn khi có lịch sử.
     private async Task<bool> DeleteInline(object item,Guid id,CancellationToken token)
     {

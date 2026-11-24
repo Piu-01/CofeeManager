@@ -1,6 +1,7 @@
 using System.Data;
 using System.Text.Json;
 using CafeManager.Models.Dtos;
+using CafeManager.Models.Errors;
 using CafeManager.Models.Dtos.Inventory;
 using CafeManager.Models.Dtos.Loyalty;
 using CafeManager.Models.Requests.Loyalty;
@@ -26,10 +27,16 @@ public sealed class LoyaltyRepository(ConnectionFactory factory)
     }
     private static object? Day(DateOnly? date)=>date?.ToDateTime(TimeOnly.MinValue);
     private static AppliedPromotion Applied(SqlDataReader r)=>new(r.GetString(0).TrimEnd(),r.GetString(1),r.GetInt32(2),r.GetDecimal(3),r.GetDecimal(4));
-    private static PromotionRow Promotion(SqlDataReader r)=>new(r.GetString(0).TrimEnd(),r.GetString(1),
-        DateOnly.FromDateTime(r.GetDateTime(2)),r.IsDBNull(3)?null:DateOnly.FromDateTime(r.GetDateTime(3)),r.GetInt32(4),
-        r.GetString(5),r.GetString(6),r.GetString(7),r.GetInt32(8),(byte[])r[9],
-        r.GetString(10),r.GetInt32(11),r.GetInt32(12));
+    private static PromotionRow Promotion(SqlDataReader r)
+    {
+        // Hợp đồng v2 (042) trả 13 cột; DB thiếu migration thì báo schema thay vì IndexOutOfRange.
+        if(r.FieldCount<13)throw new DataAccessException(new(DataErrorKind.Schema,2812,
+            L.T("CSDL chưa áp migration cần thiết nên thiếu procedure hoặc kiểu dữ liệu; liên hệ người triển khai rồi thử lại.")));
+        return new(r.GetString(0).TrimEnd(),r.GetString(1),
+            DateOnly.FromDateTime(r.GetDateTime(2)),r.IsDBNull(3)?null:DateOnly.FromDateTime(r.GetDateTime(3)),r.GetInt32(4),
+            r.GetString(5),r.GetString(6),r.GetString(7),r.GetInt32(8),(byte[])r[9],
+            r.GetString(10),r.GetInt32(11),r.GetInt32(12));
+    }
     public Task<List<PromotionRow>> PromotionsAsync(AccountIdentity a,string q,int skip,DateOnly? onDate,CancellationToken t)=>executor.ReadAsync("sp_PromotionList",[..CatalogRepository.Actor(a),P("@Search",SqlDbType.NVarChar,q,-1),P("@Skip",SqlDbType.Int,skip),P("@OnDate",SqlDbType.Date,Day(onDate))],Promotion,t);
     public Task<string> AllocateCodeAsync(CancellationToken t)=>CatalogRepository.AllocateAsync(executor,"KHUYENMAI",t);
     public async Task<OperationResult> SavePromotionAsync(AccountIdentity a,PromotionRequest r,byte[]? revision,Guid id,bool delete,CancellationToken t)

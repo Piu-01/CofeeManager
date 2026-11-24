@@ -104,8 +104,9 @@ Tiền hiển thị `81.000 ₫`, số lượng `0,0180 Kg`, ngày `dd/MM/yyyy`,
 
 Lỗi trường dùng ErrorProvider và thông báo gần trường, focus vào lỗi đầu tiên. Lỗi nghiệp vụ DB xuất hiện ở vùng thông báo của dialog, giữ input để sửa. Không dùng MessageBox cho từng trường và không xóa toàn form khi lưu thất bại. Giá trị nhập phải được xác nhận trước khi rời ô/bước.
 
-Combobox chọn dữ liệu có tên rõ, chỉ dùng mã khi trùng tên. Grid chỉ đọc trừ màn hình nhập số đếm/chấm công/chi tiết nháp có kiểm soát và **ô master data sửa trực tiếp** theo [guide mục11.5](ui/HuongDan_UI_Orbit_Cafe.md#115-sửaxóa-trực-tiếp-trên-dòng--22112026)
-(click ô mở editor tại ô, ghi qua service rồi reload). Không cho chỉnh số dư trực tiếp từ grid.
+Combobox chọn dữ liệu có tên rõ, chỉ dùng mã khi trùng tên. Grid chỉ đọc trừ màn hình nhập số đếm/chấm công/chi tiết nháp có kiểm soát.
+Master data sửa qua **hộp sửa** theo [guide mục11.5](ui/HuongDan_UI_Orbit_Cafe.md#115-sửa-bằng-hộp-thoại-xóa-tại-dòng--23112026)
+(double-click/F2 mở hộp, ghi qua service rồi reload; không editor tại ô). Không cho chỉnh số dư trực tiếp từ grid.
 
 ### 5.3. Bàn phím và khả năng tiếp cận
 
@@ -361,11 +362,12 @@ Không hứa lưu lịch sử chuyển trạng thái nếu DB chỉ có trạng 
 
 ### 10.1. Mẫu danh sách/editor
 
-Tìm/lọc → grid → Thêm hoặc **click chọn dòng rồi click ô để sửa tại chỗ** / **thùng rác từng dòng để xóa** → validation → ghi → reload, chọn lại dòng. Theo chuẩn chung chốt22/11/2026
-([guide mục11.5](ui/HuongDan_UI_Orbit_Cafe.md#115-sửaxóa-trực-tiếp-trên-dòng--22112026)),
-master data không còn nút Sửa/Xóa riêng và không mở bảng sửa cho trường đơn giản: click đầu chọn cả dòng,
-click kế tiếp vào ô sửa được mới mở editor tại ô, rê chuột vào ô đổi màu chữ để báo sửa được;
-Enter/Tab ghi, Esc hủy; click ô đọc/vùng trống chỉ chọn dòng. Xóa kho/tài chính/lịch sử (nguyên liệu,
+Tìm/lọc → grid → Thêm hoặc **double-click ô dữ liệu / F2 mở hộp sửa** / **thùng rác từng dòng để xóa** → validation → ghi → reload, chọn lại dòng. Theo chuẩn chung chốt23/11/2026
+([guide mục11.5](ui/HuongDan_UI_Orbit_Cafe.md#115-sửa-bằng-hộp-thoại-xóa-tại-dòng--23112026)),
+master data không còn nút Sửa/Xóa riêng và không nhập tại ô: click một lần chỉ chọn cả dòng; double-click ô dữ liệu
+hoặc F2 mở hộp sửa hiện có của màn (không editor overlay, không con trỏ IBeam, không Enter/Tab ghi tại ô);
+rê chuột vào ô sửa được đổi màu chữ/con trỏ để báo sửa được, ô đọc/vùng trống không đổi. Quy tắc này áp cho
+mọi màn master data làm sau, không tự dựng inline riêng. Xóa kho/tài chính/lịch sử (nguyên liệu,
 tài sản, khách hàng, nhân viên, hạng, NCC, loại thu/chi) hỏi xác nhận; sản phẩm/bàn/khu vực xóa ngay,
 chỉ báo ở dòng trạng thái, không toast/undo. Kết quả ghi chưa xác định (timeout) khóa đúng dòng đó và hiện
 nút **Đối chiếu** giữa dòng; các dòng khác vẫn dùng được. Lỗi validate giữ editor và giá trị đã nhập.

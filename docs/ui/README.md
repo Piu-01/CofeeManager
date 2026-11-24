@@ -1,18 +1,19 @@
 # Orbit Café — UI handoff
 
-## Sửa/xóa trực tiếp trên dòng — người dùng chốt22/11/2026
+## Sửa bằng hộp thoại, xóa tại dòng — người dùng chốt23/11/2026
 
-Mọi màn master data bỏ nút Sửa/Xóa: click ô để sửa tại chỗ, thùng rác cuối dòng
-để xóa. Áp cho 8 màn đã chốt (Menu sản phẩm, Danh mục nền, Bàn/Khu vực, Nguyên
-liệu, Khách hàng, Nhân viên, Tài sản, Hạng thành viên); Khuyến mãi và Chấm công
-chưa chuyển; chứng từ/dialog thêm mới giữ quy tắc cũ. Đọc
-[guide mục11.5](HuongDan_UI_Orbit_Cafe.md#115-sửaxóa-trực-tiếp-trên-dòng--22112026)
-và [mapping WinForms mục2.2](WINFORMS_IMPLEMENTATION.md#22-sửaxóa-trực-tiếp-trên-dòng--22112026)
+Mọi màn master data bỏ nút Sửa/Xóa và bỏ nhập tại ô: click một lần chỉ chọn dòng,
+double-click ô dữ liệu hoặc F2 mở hộp sửa hiện có của màn; thùng rác cuối dòng
+để xóa. Hover Caramel/Hand, thùng rác, ma trận xác nhận xóa, khóa dòng + nút Đối
+chiếu giữ nguyên. Áp cho 8 màn đã chốt (Menu sản phẩm, Danh mục nền, Bàn/Khu vực,
+Nguyên liệu, Khách hàng, Nhân viên, Tài sản, Hạng thành viên) **và mọi màn master
+data làm sau**; Khuyến mãi và Chấm công chưa chuyển; chứng từ/dialog thêm mới giữ
+quy tắc cũ. Đọc
+[guide mục11.5](HuongDan_UI_Orbit_Cafe.md)
+và [mapping WinForms mục2.2](WINFORMS_IMPLEMENTATION.md)
 trước khi code màn danh sách mới. Hàng hành động ở mục11.1 được hiểu lại riêng cho
-master data: không còn Sửa/Xóa, dồn phải không chừa khoảng trống. Ma trận xác nhận
-xóa, xóa ngay không toast/undo, khóa từng dòng + nút Đối chiếu khi kết quả chưa xác
-định nằm trong mục11.5. Hồ sơ tại `../tasks/row-inline-edit-delete/`; ghi quy tắc
-không chứng nhận hình thức/chức năng đã PASS.
+master data: không còn Sửa/Xóa, dồn phải không chừa khoảng trống. Hồ sơ tại
+`../tasks/row-edit-dialog/`; ghi quy tắc không chứng nhận hình thức/chức năng đã PASS.
 
 ## Hộp Khách hàng F3 —22/11/2026, chờ người dùng kiểm
 

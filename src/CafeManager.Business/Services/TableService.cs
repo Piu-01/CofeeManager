@@ -12,7 +12,8 @@ public sealed class TableService(TableRepository repository,PermissionService pe
     {
         var code=creating&&string.IsNullOrWhiteSpace(r.Code)?"":MaterialService.Required(r.Code,5,L.T("Mã")).ToUpperInvariant();
         if(code.Length>0&&(!Regex.IsMatch(code,area?"^KV[0-9]{3}$":"^B[0-9]{4}$")||code==(area?"KV000":"B0000")))throw new ArgumentException(L.T("Mã bàn/khu vực không hợp lệ."));
-        return new(code,MaterialService.Required(r.Name,50,L.T("Tên")),area?null:MaterialService.Required(r.Area,5,L.T("Khu vực")));
+        // BAN.TenBan nvarchar(20), KHUVUC.TenKV nvarchar(50): chặn tại BLL để có thông báo rõ trường.
+        return new(code,MaterialService.Required(r.Name,area?50:20,L.T("Tên")),area?null:MaterialService.Required(r.Area,5,L.T("Khu vực")));
     }
     private async Task<T> Run<T>(SessionContext s,bool write,Func<CancellationToken,Task<T>> f,CancellationToken t)
     {

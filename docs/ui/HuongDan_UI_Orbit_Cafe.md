@@ -240,7 +240,7 @@ nghiệp vụ riêng; không ép các màn đó thành trang danh sách.
 |---|---|
 | Hàng1: tìm kiếm |Ô tìm kiếm co giãn chiếm toàn chiều ngang còn lại; bên phải là kính lúp và làm mới cùng nhóm nút icon. Không nhét bộ lọc vào hàng này làm ô tìm chỉ còn một đoạn ngắn. |
 | Hàng2: bộ lọc |Nhãn Lọc theo và các trường theo nghiệp vụ: loại ngày, khoảng từ–đến, trạng thái, kênh… Chỉ hiện trường màn đó cần; không chép filter hóa đơn sang mọi màn. Thiếu ngang thì wrap ở hàng dưới, không chồng hoặc cắt control. |
-| Hàng hành động |Các hành động trên dòng như Chi tiết/In (chứng từ) hoặc Công thức/Mở sổ điểm/Lịch sử điểm (màn dữ liệu) ở hàng riêng, căn phải. Master data **không** còn nút Sửa/Xóa: sửa tại ô và xóa bằng thùng rác từng dòng theo mục11.5. Hành động tạo mới dùng vị trí PrimaryActions của workspace; không trộn vào ô tìm hoặc footer phân trang. |
+| Hàng hành động |Các hành động trên dòng như Chi tiết/In (chứng từ) hoặc Công thức/Mở sổ điểm/Lịch sử điểm (màn dữ liệu) ở hàng riêng, căn phải. Master data **không** còn nút Sửa/Xóa: double-click mở hộp sửa và xóa bằng thùng rác từng dòng theo mục11.5. Hành động tạo mới dùng vị trí PrimaryActions của workspace; không trộn vào ô tìm hoặc footer phân trang. |
 | Vùng bảng |Giãn hết chiều ngang card và chiều cao còn lại sau toolbar/action/footer. Grid cuộn bên trong vùng này; mã/ngày/tiền không bị ép mất nội dung chỉ để vừa chiều ngang. |
 | Footer card |Phạm vi hiển thị bên trái; Trước, chỉ số trang, Sau bên phải. Luôn tiếp cận được khi resize và khi bảng cuộn. Không thêm summary đếm/khoảng ngày phía trên bảng theo mẫu V4. |
 | Trạng thái tải |Dòng trạng thái bên dưới card; phân biệt loading/rỗng/lỗi/hủy tải. Không dùng tổng0 hoặc dữ liệu bộ lọc cũ để giả tải thành công. |
@@ -293,15 +293,19 @@ nghiệp vụ riêng; không ép các màn đó thành trang danh sách.
 - Việc ghi quy tắc này chưa sửa các màn cũ. Khi được giao chỉnh một màn, áp
   dụng chuẩn trong phạm vi đó và ghi kết quả thực tế; không tự báo các màn đã đạt.
 
-## 11.5. Sửa/xóa trực tiếp trên dòng — 22/11/2026
+## 11.5. Sửa bằng hộp thoại, xóa tại dòng — 23/11/2026
 
-Người dùng chốt thay mô hình "chọn dòng → Sửa mở bảng → Xóa hỏi xác nhận" bằng
-**sửa tại ô, xóa tại dòng** cho các màn master data: Menu sản phẩm, Danh mục nền,
-Bàn/Khu vực, Nguyên liệu, Khách hàng, Nhân viên, Tài sản, Hạng thành viên. Mục này
-là chuẩn chung cho các màn danh sách code sau, không chỉ 8 màn hiện tại; thay cách
+Người dùng chốt thay mô hình "sửa tại ô" bằng **double-click mở hộp sửa, xóa tại
+dòng** cho các màn master data: Menu sản phẩm, Danh mục nền, Bàn/Khu vực, Nguyên liệu,
+Khách hàng, Nhân viên, Tài sản, Hạng thành viên. Mục này là **chuẩn chung cho mọi màn
+danh sách master data hiện có và màn làm sau**, không chỉ 8 màn hiện tại; thay cách
 hiểu hàng "Hàng hành động" ở mục11.1 **riêng cho master data**. Chứng từ (hóa đơn,
 phiếu nhập/xuất, phiếu chi) và dialog thêm mới giữ nguyên quy tắc cũ. Khuyến mãi và
 Chấm công chưa chuyển trong đợt này.
+
+Quy tắc bắt buộc cho màn master data làm sau: dùng `OrbitRowEditor` và hộp sửa hiện
+có của màn; click một lần chọn dòng, double-click hoặc F2 mở hộp sửa; **không** dựng
+editor nhập tại ô, không tự tạo pipeline sửa inline riêng.
 
 ### 11.5.1. Bỏ nút Sửa/Xóa, không chừa khoảng trống
 
@@ -313,29 +317,22 @@ Chấm công chưa chuyển trong đợt này.
 - Không đổi quyền: nút/hành động chỉ hiện và chỉ chạy khi người dùng có quyền theo
   service hiện có; engine UI không tự quyết định quyền.
 
-### 11.5.2. Sửa tại ô
+### 11.5.2. Double-click mở hộp sửa
 
 - Ô có thể sửa khi lia chuột: chữ đổi màu Caramel (badge/checkbox đổi viền Caramel) thay
-  cho viền inset, kèm con trỏ phù hợp kiểu dữ liệu (IBeam cho chữ/số, Hand cho danh
-  sách/ngày). Ô chỉ đọc và vùng trống không đổi màu chữ hoặc con trỏ.
-- Click lần đầu vào dòng chỉ chọn cả dòng, chưa mở editor. Click lần kế tiếp vào một ô
-  sửa được trong chính dòng đang chọn mới mở editor đúng tại ô đó, đúng kiểu nhập của
-  trường (nhập tay, danh sách chọn, ngày `dd/MM/yyyy`, giờ `HH:mm`, checkbox). Không
-  mở bảng sửa; các trường phức tạp không sửa được tại ô vẫn dùng dialog chuyên biệt
-  hiện có (ví dụ công thức món).
-- Editor overlay nằm trên lưới, che đúng ô, dùng control native và theme chung; không
-  nhận click xuyên xuống lưới. Chọn hết nội dung khi mới vào ô theo quy tắc chung.
-- Một editor mở tại một thời điểm. Click sang dòng khác thì ghi ô hiện tại trước, đóng
-  editor rồi chỉ chọn dòng mới; phải click thêm vào ô cần sửa của dòng mới mới mở editor.
-  Click ô khác trong cùng dòng thì ghi ô hiện tại rồi mở ô mới; Enter ghi và chuyển
-  xuống, Tab ghi và sang phải, Shift+Tab sang trái, Esc hủy không ghi. Rời editor (focus
-  sang chỗ khác) coi như ghi, có chặn gửi lặp.
-- Click vào ô chỉ đọc hoặc khoảng trống trong dòng chỉ chọn dòng và không mở editor;
-  F2 mở editor tại ô hiện tại. Double-click vẫn mở được editor vì click đầu chọn dòng,
-  click sau mở ô. Không tự lưu gì từ thao tác chọn dòng.
-- Sau khi ghi thành công: đóng editor, tải lại dữ liệu và chọn lại đúng dòng theo mã.
-  Lỗi validate/SQL thường giữ editor và giá trị đã nhập, báo ở dòng trạng thái, không
-  ghi một phần và không tự khôi phục giá trị cũ.
+  cho viền inset, con trỏ đổi thành Hand để báo double-click được. Không dùng IBeam vì
+  không còn nhập tại ô. Ô chỉ đọc và vùng trống không đổi màu chữ hoặc con trỏ.
+- Click một lần vào dòng chỉ chọn dòng, không mở editor và không mở hộp sửa.
+- Double-click vào ô dữ liệu của dòng mở hộp sửa hiện có của màn, nạp đúng dòng; không
+  cần click chọn trước. Double-click ô thùng rác chỉ xóa theo luồng hiện tại, không mở
+  hộp sửa.
+- F2 tại dòng đang chọn mở cùng hộp sửa. Không có editor overlay, không nhập trực tiếp
+  trên lưới, không dùng Enter/Tab/Esc để ghi ô.
+- Hộp sửa dùng lại dialog/control hiện có của màn và `OrbitCellEditor` làm ô nhập một
+  dòng khi phù hợp; không tạo dialog sửa dòng tổng quát hoặc nhân bản pipeline lưu.
+- Sau khi lưu thành công: đóng hộp, tải lại dữ liệu và chọn lại đúng dòng theo mã.
+  Hủy hộp không ghi dữ liệu. Lỗi validate/SQL giữ hộp và giá trị đã nhập, báo ở status;
+  không ghi một phần và không tự khôi phục giá trị cũ.
 - Ghi qua đúng service/Normalize/revision/requestId hiện có; UI không chứa SQL, không
   tính lại tiền/tồn/điểm.
 
@@ -364,8 +361,9 @@ Chấm công chưa chuyển trong đợt này.
 
 ### 11.5.5. Đối chiếu với tài liệu khác
 
-- `WINFORMS_IMPLEMENTATION.md` mục2.2 ghi control/API: `OrbitRowEditor`,
-  `OrbitCellEditor`, hook `InlineEditable`/`InlineCursor`/`RowBlocked`, cột `Delete`.
-- Hồ sơ triển khai và kết quả kiểm thực tế ở `docs/tasks/row-inline-edit-delete/`.
+- `WINFORMS_IMPLEMENTATION.md` mục2.2 ghi control/API: `OrbitRowEditor` mở hộp sửa,
+  `OrbitCellEditor` là ô nhập dùng chung, hook `InlineEditable`/`InlineCursor`/
+  `RowBlocked`, cột `Delete`.
+- Hồ sơ triển khai và kết quả kiểm thực tế ở `docs/tasks/row-edit-dialog/`.
   Việc ghi quy tắc này không chứng nhận hình thức hay chức năng đã PASS; người dùng
   tự kiểm hình thức, agent kiểm chức năng theo đợt test được duyệt.

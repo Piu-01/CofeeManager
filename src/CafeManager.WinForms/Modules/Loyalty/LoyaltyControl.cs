@@ -252,31 +252,19 @@ internal sealed class PolicyList : OrbitRecordListControl
         AddAction("Thêm",AddTier);AddRowDeleteColumn();Workspace.ShowMeta=false;
         inline=CreateInlineEditor();
         inline.RowKey=item=>((TierRow)item).Code;
-        inline.ColumnFor=(item,cell)=>Column((TierRow)item,cell.OwningColumn?.Name ?? "");
-        inline.Save=SaveInline;inline.Delete=DeleteInline;
+        inline.ColumnFor=(item,cell)=>Column(cell.OwningColumn?.Name ?? "");
+        inline.Edit=item=>ShowEditor((TierRow)item);inline.Delete=DeleteInline;
         inline.Reconcile=async(item,id,t)=>await service.ReconcileAsync(session,id,t) is not null;
         inline.Reload=()=>Reload();
     }
-    private static InlineColumn? Column(TierRow row,string property)=>property switch
+    private static InlineColumn? Column(string property)=>property switch
     {
-        "MinimumPoints"=>new("MinimumPoints",InlineCellKind.Integer,item=>((TierRow)item).MinimumPoints,(_,text)=>Points(text),RightAligned:true),
-        "Discount"=>new("Discount",InlineCellKind.Integer,item=>((TierRow)item).Discount,(_,text)=>Percent(text),RightAligned:true),
+        "MinimumPoints"=>new("MinimumPoints",InlineCellKind.Integer),
+        "Discount"=>new("Discount",InlineCellKind.Integer),
         _=>null
     };
-    private static object Points(string text)=>int.TryParse(text.Trim(),out var value)&&value>=0?value:throw new ArgumentException(L.T("Ngưỡng điểm phải là số nguyên không âm."));
-    private static object Percent(string text)=>int.TryParse(text.Trim(),out var value)&&value is >=0 and <=100?value:throw new ArgumentException(L.T("Giảm % phải nguyên 0–100."));
     private static TierInput Input(TierRow row)=>new(row.Code,row.MinimumPoints,row.Discount);
     private Task AddTier()=>ShowEditor(null);
-    private async Task SaveInline(object item,string property,object? value,Guid id,CancellationToken token)
-    {
-        var row=(TierRow)item;
-        var current=await service.PolicyAsync(session,token);
-        var rows=current.Select(x=>x.Code==row.Code?new TierInput(x.Code,property=="MinimumPoints"?(int)value! :x.MinimumPoints,property=="Discount"?(int)value! :x.Discount):Input(x)).OrderBy(x=>x.MinimumPoints).ToArray();
-        var preview=await service.PolicyPreviewAsync(session,rows,token);
-        var confirm=await OrbitConfirmationDialog.ShowAsync(this,L.F("{0} khách sẽ đổi hạng. Lưu thay đổi?",preview.AffectedCustomers),L.T("Thay chính sách hạng"),MessageBoxButtons.YesNo,L.T("Lưu"),L.T("Hủy"));
-        if(confirm!=DialogResult.Yes)throw new OperationCanceledException();
-        await service.PolicySaveAsync(session,rows,preview,id,token);
-    }
     private async Task<bool> DeleteInline(object item,Guid id,CancellationToken token)
     {
         var row=(TierRow)item;

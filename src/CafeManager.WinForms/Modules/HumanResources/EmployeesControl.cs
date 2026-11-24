@@ -40,8 +40,8 @@ internal sealed class EmployeesControl : OrbitRecordListControl
             AddAction("Thêm", () => Edit(true)); AddAction("Nghỉ / Đi làm lại", Employment, needsRow: true);
             AddRowDeleteColumn();
             inline = CreateInlineEditor(); inline.CanWrite = _ => admin; inline.RowKey = item => ((EmployeeRow)item).Code;
-            inline.ColumnFor = (item, cell) => Column((EmployeeRow)item, cell.OwningColumn?.Name ?? "");
-            inline.Save = SaveInline; inline.Delete = DeleteInline; inline.Reconcile = ReconcileInline; inline.Reload = () => Reload();
+            inline.ColumnFor = (item, cell) => Column(cell.OwningColumn?.Name ?? "");
+            inline.Edit = item => Edit(false, (EmployeeRow)item); inline.Delete = DeleteInline; inline.Reconcile = ReconcileInline; inline.Reload = () => Reload();
         }
         AddAction("Yêu cầu chờ", Recover);
         Load += async (_, _) =>
@@ -78,9 +78,11 @@ internal sealed class EmployeesControl : OrbitRecordListControl
         await OrbitDialogHost.ShowAsync(selector,this);
     }
     private async Task<EmployeeRow> Current() => Selected is EmployeeRow r ? await service.GetAsync(session, r.Code) ?? throw new ArgumentException(L.T("Hồ sơ không còn tồn tại.")) : throw new ArgumentException(L.T("Chọn nhân viên."));
-    private async Task Edit(bool create)
+    private async Task Edit(bool create, EmployeeRow? row = null)
     {
-        var old = create ? null : await Current(); var options = await service.LookupsAsync(session);
+        EmployeeRow? old = null;
+        if (!create) old = row is null ? await Current() : await service.GetAsync(session, row.Code) ?? throw new ArgumentException(L.T("Hồ sơ không còn tồn tại."));
+        var options = await service.LookupsAsync(session);
         if (options.Count == 0) throw new ArgumentException(L.T("Tạo chức vụ trong Danh mục trước."));
         using var d = Dialog(create ? L.T("Thêm nhân viên") : L.T("Sửa nhân viên"), create ? "EmployeeCreate" : "EmployeeUpdate");
         var name = d.TextField(L.T("Tên nhân viên"), old?.Name ?? ""); var phone = d.TextField(L.T("Số điện thoại"), old?.Phone ?? "");
@@ -100,35 +102,16 @@ internal sealed class EmployeesControl : OrbitRecordListControl
         d.CaptureCommand = () => (JsonSerializer.Serialize(new { row.Code, Employed = !row.Employed }), id => service.EmploymentAsync(session, row, !row.Employed, id));
         await OrbitDialogHost.ShowAsync(d, this); if (d.Changed) { if (row.AccountId == session.Identity.AccountId) session.Revoke(); else await Reload(); }
     }
-    private InlineColumn? Column(EmployeeRow row, string property) => property switch
+    private static InlineColumn? Column(string property) => property switch
     {
-        "Name" => new("Name", InlineCellKind.Text, item => ((EmployeeRow)item).Name, (_, text) => text.Trim()),
-        "Phone" => new("Phone", InlineCellKind.Text, item => ((EmployeeRow)item).Phone ?? "", (_, text) => text.Trim()),
-        "Contract" => new("Contract", InlineCellKind.Dropdown, item => ((EmployeeRow)item).Contract, (_, text) => text, _ => ["Full-time", "Part-time"]),
-        "MonthlyRate" => new("MonthlyRate", InlineCellKind.Money, item => ((EmployeeRow)item).MonthlyRate, (_, text) => Money(text), RightAligned: true),
-        "HourlyRate" => new("HourlyRate", InlineCellKind.Money, item => ((EmployeeRow)item).HourlyRate, (_, text) => Money(text), RightAligned: true),
-        "PositionName" => new("PositionName", InlineCellKind.Dropdown, item => ((EmployeeRow)item).PositionName, (_, text) => PositionCode(text), _ => positionLookups.Select(x => x.Name).ToList()),
+        "Name" => new("Name", InlineCellKind.Text),
+        "Phone" => new("Phone", InlineCellKind.Text),
+        "Contract" => new("Contract", InlineCellKind.Dropdown),
+        "MonthlyRate" => new("MonthlyRate", InlineCellKind.Money),
+        "HourlyRate" => new("HourlyRate", InlineCellKind.Money),
+        "PositionName" => new("PositionName", InlineCellKind.Dropdown),
         _ => null
     };
-    private string PositionCode(string name) => positionLookups.FirstOrDefault(x => x.Name == name)?.Code ?? throw new ArgumentException(L.T("Chức vụ không hợp lệ."));
-    private static decimal Money(string text)
-    {
-        var cleaned = text.Replace("₫", "").Replace(" ", "").Replace(".", "").Replace(',', '.');
-        if (!decimal.TryParse(cleaned, NumberStyles.Number, CultureInfo.InvariantCulture, out var value) || value < 0) throw new ArgumentException(L.T("Nhập số tiền/giờ hợp lệ."));
-        return value;
-    }
-    private async Task SaveInline(object item, string property, object? value, Guid id, CancellationToken token)
-    {
-        var row = (EmployeeRow)item;
-        var request = EmployeeService.Normalize(new(
-            property == "Name" ? (string)value! : row.Name,
-            property == "Phone" ? (string)value! : row.Phone,
-            property == "Contract" ? (string)value! : row.Contract,
-            property == "MonthlyRate" ? (decimal)value! : row.MonthlyRate,
-            property == "HourlyRate" ? (decimal)value! : row.HourlyRate,
-            property == "PositionName" ? (string)value! : row.Position));
-        await service.SaveAsync(session, request, row, id, token);
-    }
     private async Task<bool> DeleteInline(object item, Guid id, CancellationToken token)
     {
         var row = (EmployeeRow)item;

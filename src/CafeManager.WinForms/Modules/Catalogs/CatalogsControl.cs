@@ -42,7 +42,8 @@ public partial class CatalogsControl : UserControl, IUnsavedChanges
         inline = new OrbitRowEditor(grid, management.Body, text => statusLabel.Text = text);
         inline.RowKey = item => ((CatalogRow)item).Code;
         inline.ColumnFor = (item, cell) => Column((CatalogRow)item, cell.OwningColumn?.Name ?? "");
-        inline.Save = SaveInline; inline.Delete = DeleteInline; inline.Reconcile = ReconcileInline;
+        inline.Edit = item => Edit((CatalogRow)item);
+        inline.Delete = DeleteInline; inline.Reconcile = ReconcileInline;
         inline.Reload = RefreshRows; inline.CanWrite = _ => true;
         inline.StateChanged += (_, _) => { if (!IsDisposed) UpdateActions(); };
         Load += async (_, _) => await RefreshRows();
@@ -135,66 +136,17 @@ public partial class CatalogsControl : UserControl, IUnsavedChanges
     }
     private static InlineColumn? Column(CatalogRow row, string property) => (row, property) switch
     {
-        (_, "Name") => new("Name", InlineCellKind.Text, item => ((CatalogRow)item).Name, (_, text) => text.Trim()),
-        (SupplierRow, "Phone") => new("Phone", InlineCellKind.Text, item => ((SupplierRow)item).Phone, (_, text) => text.Trim()),
-        (DeliveryPartnerRow, "Ratio") => new("Ratio", InlineCellKind.Decimal, item => ((DeliveryPartnerRow)item).Ratio, (_, text) => Number(text), RightAligned: true),
-        (PositionRow, "Allowance") => new("Allowance", InlineCellKind.Money, item => ((PositionRow)item).Allowance, (_, text) => Money(text), RightAligned: true),
-        (PositionRow, "Factor") => new("Factor", InlineCellKind.Decimal, item => ((PositionRow)item).Factor, (_, text) => Number(text), RightAligned: true),
-        (ShiftRow, "StartTime") => new("StartTime", InlineCellKind.Time, item => ((ShiftRow)item).StartTime, (_, text) => Clock(text)),
-        (ShiftRow, "EndTime") => new("EndTime", InlineCellKind.Time, item => ((ShiftRow)item).EndTime, (_, text) => Clock(text)),
-        (ExpenseCategoryRow expense, "Type") => new("Type", InlineCellKind.Dropdown,
-            item => CafeManager.Models.States.FinanceStates.TypeLabel(((ExpenseCategoryRow)item).Type.ToString()),
-            (_, text) => text == L.T("Chi") ? ExpenseType.Chi : ExpenseType.Thu, _ => [L.T("Thu"), L.T("Chi")],
-            Editable: _ => !CatalogService.IsSystemExpense(expense.Code)),
-        (PaymentMethodRow payment, "Supported") => new("Supported", InlineCellKind.Check,
-            item => ((PaymentMethodRow)item).Supported, (_, text) => text == "True",
-            Editable: _ => payment.Code != "PT010"),
+        (_, "Name") => new("Name", InlineCellKind.Text),
+        (SupplierRow, "Phone") => new("Phone", InlineCellKind.Text),
+        (DeliveryPartnerRow, "Ratio") => new("Ratio", InlineCellKind.Decimal),
+        (PositionRow, "Allowance") => new("Allowance", InlineCellKind.Money),
+        (PositionRow, "Factor") => new("Factor", InlineCellKind.Decimal),
+        (ShiftRow, "StartTime") => new("StartTime", InlineCellKind.Time),
+        (ShiftRow, "EndTime") => new("EndTime", InlineCellKind.Time),
+        (ExpenseCategoryRow expense, "Type") => new("Type", InlineCellKind.Dropdown, Editable: _ => !CatalogService.IsSystemExpense(expense.Code)),
+        (PaymentMethodRow payment, "Supported") => new("Supported", InlineCellKind.Check, Editable: _ => payment.Code != "PT010"),
         _ => null
     };
-    // Tiền: dấu chấm là phân nhóm nghìn, dấu phẩy là thập phân; phải nguyên VND.
-    private static decimal Money(string text)
-    {
-        var cleaned = text.Replace("₫", "").Replace(" ", "").Replace(".", "").Replace(',', '.');
-        if (!decimal.TryParse(cleaned, global::System.Globalization.NumberStyles.Number, global::System.Globalization.CultureInfo.InvariantCulture, out var value) || decimal.Truncate(value) != value)
-            throw new ArgumentException(L.T("Giá trị phải là số nguyên."));
-        return value;
-    }
-    // Hệ số/chiết khấu: có dấu phẩy thì phẩy là thập phân, không thì chấm là thập phân.
-    private static decimal Number(string text)
-    {
-        var cleaned = text.Replace("₫", "").Replace(" ", "");
-        if (cleaned.Contains(',')) cleaned = cleaned.Replace(".", "").Replace(',', '.');
-        if (!decimal.TryParse(cleaned, global::System.Globalization.NumberStyles.Number, global::System.Globalization.CultureInfo.InvariantCulture, out var value))
-            throw new ArgumentException(L.T("Giá trị số không hợp lệ."));
-        return value;
-    }
-    private static TimeSpan Clock(string text)
-    {
-        if (!TimeSpan.TryParseExact(text.Trim(), [@"hh\:mm", @"h\:mm"], global::System.Globalization.CultureInfo.InvariantCulture, out var time))
-            throw new ArgumentException(L.T("Giờ phải theo dạng HH:mm."));
-        return time;
-    }
-    private CatalogRequest Request(CatalogRow row, string property, object? value)
-    {
-        var name = property == "Name" ? (string)value! : row.Name;
-        return row switch
-        {
-            ProductCategoryRow r => new ProductCategoryRequest(r.Code, name, Guid.Empty),
-            SupplierRow r => new SupplierRequest(r.Code, name, property == "Phone" ? (string)value! : r.Phone),
-            PaymentMethodRow r => new PaymentMethodRequest(r.Code, name, property == "Supported" ? (bool)value! : r.Supported),
-            DeliveryPartnerRow r => new DeliveryPartnerRequest(r.Code, name, property == "Ratio" ? (decimal)value! : r.Ratio),
-            ExpenseCategoryRow r => new ExpenseCategoryRequest(r.Code, name, property == "Type" ? (ExpenseType)value! : r.Type),
-            PositionRow r => new PositionRequest(r.Code, name, property == "Allowance" ? (decimal)value! : r.Allowance, property == "Factor" ? (decimal)value! : r.Factor),
-            ShiftRow r => new ShiftRequest(r.Code, name, property == "StartTime" ? (TimeSpan)value! : r.StartTime, property == "EndTime" ? (TimeSpan)value! : r.EndTime),
-            _ => throw new ArgumentException(L.T("Loại danh mục không hợp lệ."))
-        };
-    }
-    private async Task SaveInline(object item, string property, object? value, Guid id, CancellationToken token)
-    {
-        if (service is null || session is null) return;
-        var row = (CatalogRow)item;
-        await service.SaveAsync(session, CatalogService.Normalize(Request(row, property, value), false), row.Revision, token);
-    }
     private async Task<bool> DeleteInline(object item, Guid id, CancellationToken token)
     {
         if (service is null || session is null) return false;

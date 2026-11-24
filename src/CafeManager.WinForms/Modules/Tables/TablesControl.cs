@@ -41,8 +41,8 @@ internal sealed class TableList : OrbitRecordListControl
         inline=CreateInlineEditor();
         inline.CanWrite=_=>session.Identity.Role=="ADMIN";
         inline.RowKey=item=>((TableRow)item).Code;
-        inline.ColumnFor=(item,cell)=>Column((TableRow)item,cell.OwningColumn?.Name ?? "");
-        inline.Save=SaveInline;inline.Delete=DeleteInline;
+        inline.ColumnFor=(item,cell)=>Column(cell.OwningColumn?.Name ?? "");
+        inline.Edit=item=>Edit((TableRow)item);inline.Delete=DeleteInline;
         inline.Reconcile=async(_,id,t)=>await service.ReconcileAsync(session,id,t) is not null;
         inline.Reload=()=>Reload();
         Grid.DataBindingComplete+=(_,_)=>
@@ -57,21 +57,12 @@ internal sealed class TableList : OrbitRecordListControl
         // Quay lại tab Bàn sau khi thêm/xóa khu vực: nạp lại danh sách khu vực cho ô chọn.
         VisibleChanged+=async(_,_)=>{if(Visible)await RefreshAreasAsync();};
     }
-    private InlineColumn? Column(TableRow row,string property)=>property switch
+    private static InlineColumn? Column(string property)=>property switch
     {
-        "Name"=>new("Name",InlineCellKind.Text,item=>((TableRow)item).Name,(_,text)=>text.Trim()),
-        "Area"=>new("Area",InlineCellKind.Dropdown,item=>AreaName(((TableRow)item).Area),(_ ,text)=>text,Options:_=>AreaNames()),
+        "Name"=>new("Name",InlineCellKind.Text),
+        "Area"=>new("Area",InlineCellKind.Dropdown),
         _=>null
     };
-    private List<string> AreaNames()=>areaRows.Select(x=>x.Name).ToList();
-    private string AreaName(string code)=>areaRows.FirstOrDefault(x=>x.Code==code)?.Name??code;
-    private string AreaCode(string name)=>areaRows.FirstOrDefault(x=>x.Name==name)?.Code??throw new ArgumentException(L.T("Khu vực không hợp lệ."));
-    private async Task SaveInline(object item,string property,object? value,Guid id,CancellationToken token)
-    {
-        var row=(TableRow)item;
-        var request=TableService.Normalize(new(row.Code,property=="Name"?(string)value!:row.Name,property=="Area"?AreaCode((string)value!):row.Area),false);
-        await service.SaveAsync(session,false,request,row.Revision,id,token);
-    }
     private async Task<bool> DeleteInline(object item,Guid id,CancellationToken token)
     {
         var row=(TableRow)item;await service.DeleteAsync(session,false,new(row.Code,row.Name,row.Area),row.Revision,id,token);return true;
@@ -130,8 +121,8 @@ internal sealed class AreaList : OrbitRecordListControl
         AddRowDeleteColumn();Workspace.ShowMeta=false;
         inline=CreateInlineEditor();inline.CanWrite=_=>session.Identity.Role=="ADMIN";
         inline.RowKey=item=>((AreaRow)item).Code;
-        inline.ColumnFor=(item,cell)=>(cell.OwningColumn?.Name ?? "")=="Name"?new("Name",InlineCellKind.Text,x=>((AreaRow)x).Name,(_,text)=>text.Trim()):null;
-        inline.Save=async(item,_,value,id,t)=>{var row=(AreaRow)item;await service.SaveAsync(session,true,TableService.Normalize(new(row.Code,(string)value!,null),true),row.Revision,id,t);};
+        inline.ColumnFor=(item,cell)=>(cell.OwningColumn?.Name ?? "")=="Name"?new("Name",InlineCellKind.Text):null;
+        inline.Edit=item=>Edit((AreaRow)item);
         inline.Delete=async(item,id,t)=>{var row=(AreaRow)item;await service.DeleteAsync(session,true,new(row.Code,row.Name,null),row.Revision,id,t);return true;};
         inline.Reconcile=async(_,id,t)=>await service.ReconcileAsync(session,id,t) is not null;
         inline.Reload=()=>Reload();}

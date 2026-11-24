@@ -3,46 +3,33 @@ using CafeManager.WinForms.Theme;
 
 namespace CafeManager.WinForms.UI;
 
-// Mô tả một cột sửa được tại ô. Màn cấp Read/Parse/Options và gọi service trong Save/Delete.
+// Mô tả một cột sửa được: dùng cho hover/quyền và mở hộp sửa. Không còn nhập tại ô.
 public sealed record InlineColumn(
     string Property,
     InlineCellKind Kind,
-    Func<object, object?> Read,
-    Func<object, string, object?> Parse,
-    Func<object, IReadOnlyList<string>?>? Options = null,
-    bool RightAligned = false,
     Func<object, bool>? Editable = null);
 
-// Engine dùng chung cho master data: click ô mở editor overlay, Enter/Tab ghi, Esc hủy,
-// thùng rác xóa đúng dòng. Chỉ "kết quả chưa xác định" mới khóa dòng và hiện nút Đối chiếu.
+// Engine dùng chung cho master data: double-click/F2 mở hộp sửa, thùng rác xóa đúng dòng.
+// Chỉ "kết quả chưa xác định" mới khóa dòng và hiện nút Đối chiếu.
 public sealed class OrbitRowEditor
 {
     private readonly OrbitDataGridView grid;
     private readonly Control host;
     private readonly Action<string> status;
-    private readonly OrbitCellEditor editor = new();
     private readonly SemaphoreSlim gate = new(1, 1);
     private readonly Dictionary<string, Guid> unknown = new(StringComparer.Ordinal);
     private readonly Dictionary<string, OrbitButton> reconcileButtons = new(StringComparer.Ordinal);
-    private string? activeKey;
-    private string? activeProperty;
-    // Dòng đã nhận click chọn; click kế tiếp vào ô sửa được mới mở editor.
-    private string? armedKey;
     private bool sending;
+    private bool activating;
 
     public OrbitRowEditor(OrbitDataGridView grid, Control host, Action<string> status)
     {
         this.grid = grid; this.host = host; this.status = status;
-        host.Controls.Add(editor);
         grid.CellMouseClick += OnCellClick;
+        grid.CellDoubleClick += OnCellDoubleClick;
         grid.KeyDown += OnGridKeyDown;
-        grid.Scroll += (_, _) => Reposition();
-        grid.SizeChanged += (_, _) => Reposition();
-        grid.DataBindingComplete += (_, _) => { if (armedKey is not null && FindRowIndex(armedKey) < 0) armedKey = null; SyncButtons(); PositionEditor(); };
-        host.SizeChanged += (_, _) => { PositionEditor(); SyncButtons(); };
-        editor.MoveRequested += move => _ = RunAsync(() => CommitAsync(move));
-        editor.CommitRequested += (_, _) => _ = RunAsync(() => CommitAsync(InlineMove.None));
-        editor.CancelRequested += (_, _) => { CloseEditor(); UpdateState(); };
+        grid.DataBindingComplete += (_, _) => SyncButtons();
+        host.SizeChanged += (_, _) => SyncButtons();
         grid.InlineEditable = EditableCell;
         grid.InlineCursor = CursorFor;
         grid.RowBlocked = IsBlockedRow;
@@ -50,7 +37,8 @@ public sealed class OrbitRowEditor
 
     public Func<object, string> RowKey { get; set; } = static _ => "";
     public Func<object, DataGridViewCell, InlineColumn?> ColumnFor { get; set; } = static (_, _) => null;
-    public Func<object, string, object?, Guid, CancellationToken, Task> Save { get; set; } = static (_, _, _, _, _) => Task.CompletedTask;
+    // Mở hộp sửa của màn; modal tự chặn lưới, engine không giữ RowWriteBusy trong lúc mở.
+    public Func<object, Task>? Edit { get; set; }
     // Trả false khi người dùng hủy xác nhận; lỗi/unknown phát qua exception như service hiện có.
     public Func<object, Guid, CancellationToken, Task<bool>> Delete { get; set; } = static (_, _, _) => Task.FromResult(false);
     public Func<object, Guid, CancellationToken, Task<bool?>> Reconcile { get; set; } = static (_, _, _) => Task.FromResult<bool?>(null);
@@ -62,19 +50,12 @@ public sealed class OrbitRowEditor
     public bool HasUnknown => unknown.Count > 0;
     public event EventHandler? StateChanged;
 
-    // Đổi tab/đóng màn: bỏ editor và trạng thái khóa cũ, không ghi gì.
+    // Đổi tab/đóng màn: bỏ trạng thái khóa cũ, không ghi gì.
     public void Reset()
     {
-        CloseEditor();
         foreach (var button in reconcileButtons.Values) button.Dispose();
         reconcileButtons.Clear(); unknown.Clear();
         grid.Invalidate(); UpdateState();
-    }
-
-    public void CloseEditor()
-    {
-        activeKey = null; activeProperty = null;
-        editor.HideEditor();
     }
 
     private async Task RunAsync(Func<Task> action)
@@ -83,34 +64,61 @@ public sealed class OrbitRowEditor
         try { await action(); }
         catch (OperationCanceledException) { }
         catch (Exception ex) when (ex is UserOperationException or UnauthorizedAccessException or ArgumentException) { if (!grid.IsDisposed) status(ex.Message); }
-        finally { gate.Release(); editor.EndCommit(); }
+        finally { gate.Release(); }
     }
 
     private async void OnCellClick(object? sender, DataGridViewCellMouseEventArgs e)
     {
         if (!grid.Enabled || e.Button != MouseButtons.Left || e.RowIndex < 0 || e.ColumnIndex < 0) return;
-        var delete = string.Equals(grid.Columns[e.ColumnIndex].Name, "Delete", StringComparison.Ordinal);
-        var item = grid.Rows[e.RowIndex].DataBoundItem;
-        var targetKey = item is null ? null : RowKey(item);
-        var targetProperty = grid.Columns[e.ColumnIndex].Name;
-        if (delete) { await RunAsync(() => DeleteRowAsync(e.RowIndex)); return; }
-        // Click đầu chọn cả dòng; chỉ click kế tiếp trên chính dòng đó mới sửa ô.
-        if (targetKey is null || !string.Equals(armedKey, targetKey, StringComparison.Ordinal))
-        {
-            armedKey = targetKey;
-            await RunAsync(CommitOpenEditorAsync);
-            return;
-        }
-        await RunAsync(() => OpenByKeysAsync(targetKey, targetProperty));
+        if (!string.Equals(grid.Columns[e.ColumnIndex].Name, "Delete", StringComparison.Ordinal)) return;
+        await RunAsync(() => DeleteRowAsync(e.RowIndex));
+    }
+
+    private async void OnCellDoubleClick(object? sender, DataGridViewCellEventArgs e)
+    {
+        if (!grid.Enabled || e.RowIndex < 0 || e.ColumnIndex < 0) return;
+        if (string.Equals(grid.Columns[e.ColumnIndex].Name, "Delete", StringComparison.Ordinal)) return;
+        if (sending || activating || Edit is null) return;
+        var item = grid.Rows[e.RowIndex].DataBoundItem; if (item is null) return;
+        if (unknown.ContainsKey(RowKey(item)) || !CanWrite(item) || !HasEditableColumn(item, e.RowIndex)) return;
+        await ActivateEditAsync(item);
     }
 
     private async void OnGridKeyDown(object? sender, KeyEventArgs e)
     {
         if (e.KeyCode != Keys.F2) return;
         e.SuppressKeyPress = true;
-        if (sending || !grid.Enabled) return;
-        var row = grid.CurrentCell?.RowIndex ?? -1; var column = grid.CurrentCell?.ColumnIndex ?? -1;
-        await RunAsync(() => OpenAsync(row, column));
+        if (sending || activating || Edit is null || !grid.Enabled) return;
+        var rowIndex = grid.CurrentCell?.RowIndex ?? -1;
+        if (rowIndex < 0 || rowIndex >= grid.Rows.Count) return;
+        var item = grid.Rows[rowIndex].DataBoundItem; if (item is null) return;
+        if (unknown.ContainsKey(RowKey(item)) || !CanWrite(item)) return;
+        await ActivateEditAsync(item);
+    }
+
+    private async Task ActivateEditAsync(object item)
+    {
+        activating = true; UpdateState();
+        try
+        {
+            var rowIndex = FindRowIndex(RowKey(item));
+            if (rowIndex >= 0) grid.CurrentCell = grid.Rows[rowIndex].Cells[0];
+            await Edit!(item);
+        }
+        catch (OperationCanceledException) { }
+        catch (Exception ex) when (ex is UserOperationException or UnauthorizedAccessException or ArgumentException) { if (!grid.IsDisposed) status(ex.Message); }
+        finally { activating = false; if (!grid.IsDisposed) { SyncButtons(); UpdateState(); } }
+    }
+
+    private bool HasEditableColumn(object item, int rowIndex)
+    {
+        for (var i = 0; i < grid.Columns.Count; i++)
+        {
+            if (string.Equals(grid.Columns[i].Name, "Delete", StringComparison.Ordinal)) continue;
+            var column = ColumnFor(item, grid.Rows[rowIndex].Cells[i]);
+            if (column is not null && (column.Editable?.Invoke(item) ?? true)) return true;
+        }
+        return false;
     }
 
     private bool EditableCell(DataGridViewCell cell)
@@ -122,112 +130,13 @@ public sealed class OrbitRowEditor
         return column is not null && (column.Editable?.Invoke(item) ?? true) && CanWrite(item);
     }
 
-    private Cursor? CursorFor(DataGridViewCell cell)
-    {
-        if (!EditableCell(cell)) return null;
-        var item = grid.Rows[cell.RowIndex].DataBoundItem!;
-        return ColumnFor(item, cell)?.Kind switch
-        {
-            InlineCellKind.Dropdown or InlineCellKind.Date or InlineCellKind.Time or InlineCellKind.Check => Cursors.Hand,
-            _ => Cursors.IBeam
-        };
-    }
-
-    private async Task CommitOpenEditorAsync()
-    {
-        if (!editor.Visible) return;
-        if (editor.CommitFailed) { CloseEditor(); return; }
-        if (await CommitAsync(InlineMove.None)) return;
-        if (editor.Visible && editor.CommitFailed) CloseEditor();
-    }
-
-    private async Task OpenByKeysAsync(string? targetKey, string targetProperty)
-    {
-        if (editor.Visible && editor.CommitFailed) CloseEditor();
-        else if (editor.Visible && !await CommitAsync(InlineMove.None) && editor.Visible)
-        {
-            if (!editor.CommitFailed) return;
-            CloseEditor();
-        }
-        if (targetKey is null) return;
-        var rowIndex = FindRowIndex(targetKey); var columnIndex = ColumnIndex(targetProperty);
-        if (rowIndex < 0 || columnIndex < 0) return;
-        await OpenAsync(rowIndex, columnIndex);
-    }
-
-    private async Task OpenAsync(int rowIndex, int columnIndex)
-    {
-        if (rowIndex < 0 || rowIndex >= grid.Rows.Count || columnIndex < 0 || columnIndex >= grid.Columns.Count) return;
-        var item = grid.Rows[rowIndex].DataBoundItem; if (item is null) return;
-        if (unknown.ContainsKey(RowKey(item))) return;
-        var cell = grid.Rows[rowIndex].Cells[columnIndex];
-        var column = ColumnFor(item, cell);
-        if (column is null || !(column.Editable?.Invoke(item) ?? true) || !CanWrite(item)) { grid.CurrentCell = grid.Rows[rowIndex].Cells[0]; return; }
-        if (column.Kind == InlineCellKind.Check) { await WriteAsync(item, column, column.Read(item) is not true, InlineMove.None); return; }
-        activeKey = RowKey(item); activeProperty = column.Property;
-        editor.Begin(column.Kind, Display(column.Kind, column.Read(item)), column.Options?.Invoke(item), column.RightAligned);
-        PositionEditor();
-        if (!editor.Visible) { CloseEditor(); return; }
-        editor.BringToFront(); editor.FocusInput();
-    }
-
-    private async Task<bool> CommitAsync(InlineMove move)
-    {
-        if (!editor.Visible || activeKey is null || activeProperty is null) return true;
-        var rowIndex = FindRowIndex(activeKey);
-        if (rowIndex < 0) { CloseEditor(); return true; }
-        var item = grid.Rows[rowIndex].DataBoundItem; if (item is null) { CloseEditor(); return true; }
-        var columnIndex = ColumnIndex(activeProperty); if (columnIndex < 0) { CloseEditor(); return true; }
-        var column = ColumnFor(item, grid.Rows[rowIndex].Cells[columnIndex]);
-        if (column is null) { CloseEditor(); return true; }
-        object? value;
-        try { value = column.Parse(item, editor.Text); }
-        catch (Exception ex) when (ex is FormatException or ArgumentException or OverflowException or UserOperationException)
-        {
-            editor.FailCommit();
-            status(ex.Message); editor.FocusInput(); return false;
-        }
-        if (Equals(value, column.Read(item))) { CloseEditor(); UpdateState(); return true; }
-        var property = column.Property;
-        var written = await WriteAsync(item, column, value, move);
-        if (written && move != InlineMove.None) await OpenNeighbourAsync(RowKey(item), property, move);
-        return written;
-    }
-
-    private async Task<bool> WriteAsync(object item, InlineColumn column, object? value, InlineMove move)
-    {
-        var key = RowKey(item);
-        var requestId = Guid.NewGuid();
-        sending = true; UpdateState(); status(L.T("Đang ghi…"));
-        try
-        {
-            await Save(item, column.Property, value, requestId, Token);
-            CloseEditor();
-            status(L.F("Đã ghi {0}.", key));
-            await ReloadAndSelect(key);
-            return true;
-        }
-        catch (UserOperationException ex) when (ex.Error.RequiresReconciliation) { Lock(item, requestId, ex.Message); return false; }
-        catch (OperationCanceledException) { editor.FailCommit(); status(L.T("Đã hủy.")); if (editor.Visible) editor.FocusInput(); return false; }
-        catch (Exception ex) when (ex is UserOperationException or UnauthorizedAccessException or ArgumentException)
-        {
-            editor.FailCommit();
-            status(ex.Message); if (editor.Visible) editor.FocusInput(); return false;
-        }
-        finally { sending = false; if (!grid.IsDisposed) UpdateState(); }
-    }
+    private Cursor? CursorFor(DataGridViewCell cell) => EditableCell(cell) ? Cursors.Hand : null;
 
     private async Task DeleteRowAsync(int rowIndex)
     {
         if (rowIndex < 0 || rowIndex >= grid.Rows.Count) return;
         var clicked = grid.Rows[rowIndex].DataBoundItem; if (clicked is null) return;
         var clickedKey = RowKey(clicked);
-        if (editor.Visible && editor.CommitFailed) CloseEditor();
-        else if (editor.Visible && !await CommitAsync(InlineMove.None) && editor.Visible)
-        {
-            if (!editor.CommitFailed) return;
-            CloseEditor();
-        }
         rowIndex = FindRowIndex(clickedKey);
         if (rowIndex < 0) return;
         var item = grid.Rows[rowIndex].DataBoundItem; if (item is null) return;
@@ -270,36 +179,13 @@ public sealed class OrbitRowEditor
     {
         await Reload();
         if (key is not null) { var index = FindRowIndex(key); if (index >= 0) grid.CurrentCell = grid.Rows[index].Cells[0]; }
-        SyncButtons(); PositionEditor();
-    }
-
-    private async Task OpenNeighbourAsync(string key, string property, InlineMove move)
-    {
-        var rowIndex = FindRowIndex(key); if (rowIndex < 0) return;
-        var columnIndex = ColumnIndex(property); if (columnIndex < 0) return;
-        var targetRow = move == InlineMove.Down ? rowIndex + 1 : rowIndex;
-        if (targetRow >= grid.Rows.Count) return;
-        var targetColumn = columnIndex;
-        if (move is InlineMove.Right or InlineMove.Left)
-        {
-            var step = move == InlineMove.Right ? 1 : -1;
-            for (var candidate = columnIndex + step; candidate >= 0 && candidate < grid.Columns.Count; candidate += step)
-            {
-                var item = grid.Rows[targetRow].DataBoundItem;
-                if (item is null) break;
-                var definition = ColumnFor(item, grid.Rows[targetRow].Cells[candidate]);
-                if (definition is not null && (definition.Editable?.Invoke(item) ?? true) && CanWrite(item)) { targetColumn = candidate; break; }
-            }
-            if (targetColumn == columnIndex) return;
-        }
-        await OpenAsync(targetRow, targetColumn);
+        SyncButtons();
     }
 
     private void Lock(object item, Guid requestId, string message)
     {
         var key = RowKey(item);
         unknown[key] = requestId;
-        CloseEditor();
         status(L.F("{0} · Mã yêu cầu {1}. Bấm Đối chiếu trên dòng.", message, requestId));
         EnsureButton(key); grid.Invalidate(); SyncButtons(); UpdateState();
     }
@@ -336,22 +222,6 @@ public sealed class OrbitRowEditor
     private bool IsBlockedRow(int rowIndex) => rowIndex >= 0 && rowIndex < grid.Rows.Count
         && grid.Rows[rowIndex].DataBoundItem is { } item && unknown.ContainsKey(RowKey(item));
 
-    private void Reposition() { if (editor.Visible) PositionEditor(); SyncButtons(); }
-
-    private void PositionEditor()
-    {
-        if (activeKey is null || activeProperty is null) { if (editor.Visible) editor.HideEditor(); return; }
-        var rowIndex = FindRowIndex(activeKey); var columnIndex = ColumnIndex(activeProperty);
-        if (rowIndex < 0 || columnIndex < 0) { CloseEditor(); return; }
-        var rect = grid.GetCellDisplayRectangle(columnIndex, rowIndex, true);
-        var visible = rect.Width > 0 && rect.Height > 0 && rect.Top >= grid.ColumnHeadersHeight
-            && rect.Bottom <= grid.ClientSize.Height && rect.Left >= 0 && rect.Right <= grid.ClientSize.Width;
-        if (!visible) { editor.SetSilentVisible(false); return; }
-        var point = host.PointToClient(grid.PointToScreen(rect.Location));
-        editor.SetBounds(point.X, point.Y, rect.Width, rect.Height);
-        editor.SetSilentVisible(true); editor.BringToFront();
-    }
-
     private int FindRowIndex(string key)
     {
         for (var i = 0; i < grid.Rows.Count; i++)
@@ -359,21 +229,5 @@ public sealed class OrbitRowEditor
         return -1;
     }
 
-    private int ColumnIndex(string property)
-    {
-        for (var i = 0; i < grid.Columns.Count; i++)
-            if (string.Equals(grid.Columns[i].Name, property, StringComparison.Ordinal)) return i;
-        return -1;
-    }
-
     private void UpdateState() => StateChanged?.Invoke(this, EventArgs.Empty);
-
-    private static string Display(InlineCellKind kind, object? value) => kind switch
-    {
-        InlineCellKind.Date when value is DateOnly date => date.ToString("dd/MM/yyyy"),
-        InlineCellKind.Time when value is TimeOnly time => time.ToString("HH:mm"),
-        InlineCellKind.Time when value is TimeSpan span => span.ToString(@"hh\:mm"),
-        InlineCellKind.Decimal when value is decimal number => number.ToString("0.####", global::System.Globalization.CultureInfo.InvariantCulture),
-        _ => Convert.ToString(value, global::System.Globalization.CultureInfo.InvariantCulture) ?? ""
-    };
 }

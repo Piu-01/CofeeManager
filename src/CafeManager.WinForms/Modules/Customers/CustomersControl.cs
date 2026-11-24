@@ -20,8 +20,8 @@ public sealed class CustomersControl : OrbitRecordListControl
         AddAction("Thêm",()=>Edit(true));AddAction("Mở sổ điểm",Open,admin);AddAction("Lịch sử điểm",History,admin);
         AddRowDeleteColumn();
         inline=CreateInlineEditor();inline.CanWrite=_=>admin;inline.RowKey=item=>((CustomerRow)item).Code;
-        inline.ColumnFor=(item,cell)=>Column((CustomerRow)item,cell.OwningColumn?.Name ?? "");
-        inline.Save=SaveInline;inline.Delete=DeleteInline;
+        inline.ColumnFor=(item,cell)=>Column(cell.OwningColumn?.Name ?? "");
+        inline.Edit=item=>Edit(false,(CustomerRow)item);inline.Delete=DeleteInline;
         inline.Reconcile=async(_,id,t)=>await service.ReconcileAsync(session,id,t) is not null;inline.Reload=()=>Reload();
     }
     public CustomersControl(CustomerService service,SessionContext session,bool picker=false,bool allowGuest=false)
@@ -42,13 +42,15 @@ public sealed class CustomersControl : OrbitRecordListControl
         AddAction("Thêm",()=>Edit(true));AddAction("Mở sổ điểm",Open,admin);
         AddRowDeleteColumn();
         inline=CreateInlineEditor();inline.CanWrite=_=>admin;inline.RowKey=item=>((CustomerRow)item).Code;
-        inline.ColumnFor=(item,cell)=>Column((CustomerRow)item,cell.OwningColumn?.Name ?? "");
-        inline.Save=SaveInline;inline.Delete=DeleteInline;
+        inline.ColumnFor=(item,cell)=>Column(cell.OwningColumn?.Name ?? "");
+        inline.Edit=item=>Edit(false,(CustomerRow)item);inline.Delete=DeleteInline;
         inline.Reconcile=async(_,id,t)=>await service.ReconcileAsync(session,id,t) is not null;inline.Reload=()=>Reload();
     }
-    private async Task Edit(bool create)
+    private async Task Edit(bool create, CustomerRow? row = null)
     {
-        if(service is null||session is null||(!create&&Selected is not CustomerRow))return;var row=create?null:(CustomerRow)Selected!;
+        if(service is null||session is null)return;
+        if(!create&&row is null)row=Selected as CustomerRow;
+        if(!create&&row is null)return;
         using var dialog=new OperationEditorDialog(create?L.T("Thêm khách hàng"):L.T("Sửa khách hàng"),id=>service.ReconcileAsync(session,id));
         if(row is not null)dialog.AddNote(L.F("{0} · Điểm {1} · Hạng {2} (chỉ đọc).", row.Code, row.Points, row.Tier));
         var name=dialog.AddText(L.T("Tên khách"),row?.Name??"");var phone=dialog.AddText(L.T("Số điện thoại (có thể trống)"),row?.Phone??"");
@@ -61,19 +63,12 @@ public sealed class CustomersControl : OrbitRecordListControl
         using var dialog=new OperationEditorDialog(L.T("Mở sổ điểm khách"),id=>service.ReconcileAsync(session,id));dialog.AddNote(L.F("{0} · {1}; chỉ một lần trước giao dịch.", row.Code, row.Name));var points=dialog.AddText(L.T("Điểm mở sổ"),"0");var source=dialog.AddText(L.T("Nguồn / lý do"));
         dialog.CaptureWrite=()=>{if(!int.TryParse(points.Text,out var value)||value<0)throw new ArgumentException(L.T("Điểm phải là số nguyên không âm."));var request=new CustomerOpeningRequest(row.Code,value,MaterialService.Required(source.Text,100,L.T("Nguồn")));dialog.Confirmation=L.F("Ghi {0} điểm mở sổ cho {1}? Nguồn: {2}. Không thể mở lại.", value, row.Code, request.Source);return id=>service.OpenAsync(session,request,row.Revision,id);};if(await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this)==DialogResult.OK)await Reload();
     }
-    private static InlineColumn? Column(CustomerRow row,string property)=>property switch
+    private static InlineColumn? Column(string property)=>property switch
     {
-        "Name"=>new("Name",InlineCellKind.Text,item=>((CustomerRow)item).Name,(_,text)=>text.Trim()),
-        "Phone"=>new("Phone",InlineCellKind.Text,item=>((CustomerRow)item).Phone??"",(_,text)=>text.Trim()),
+        "Name"=>new("Name",InlineCellKind.Text),
+        "Phone"=>new("Phone",InlineCellKind.Text),
         _=>null
     };
-    private async Task SaveInline(object item,string property,object? value,Guid id,CancellationToken token)
-    {
-        if(service is null||session is null)return;
-        var row=(CustomerRow)item;
-        var request=CustomerService.Normalize(new(property=="Name"?(string)value!:row.Name,property=="Phone"?(string)value!:row.Phone));
-        await service.SaveAsync(session,request,row,id,token);
-    }
     // Khách hàng thuộc dữ liệu nghiệp vụ: xác nhận trước khi xóa; SQL chặn khi còn nguồn/lịch sử.
     private async Task<bool> DeleteInline(object item,Guid id,CancellationToken token)
     {

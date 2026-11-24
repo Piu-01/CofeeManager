@@ -140,7 +140,7 @@ internal static class SqlErrorMapper
     {
         // Select the actionable error rather than a secondary batch-aborted message.
         foreach (SqlError error in exception.Errors)
-            if (BusinessMessages.ContainsKey(error.Number) || error.Number is 547 or 2601 or 2627 or 229 or -2 or 208 or 2812 or 2715)
+            if (BusinessMessages.ContainsKey(error.Number) || error.Number is 547 or 2601 or 2627 or 2628 or 8152 or 229 or -2 or 208 or 2812 or 2715)
                 return MapNumber(error.Number, writing);
         return MapNumber(exception.Number, writing);
     }
@@ -153,6 +153,7 @@ internal static class SqlErrorMapper
         {
             547 => new(DataErrorKind.Constraint, number, L.T("Dữ liệu không thỏa ràng buộc hoặc không đủ tồn; kiểm tra nguồn liên quan.")),
             2601 or 2627 => new(DataErrorKind.Duplicate, number, L.T("Mã hoặc dữ liệu duy nhất đã tồn tại; tải lại để đối chiếu.")),
+            2628 or 8152 => new(DataErrorKind.Constraint, number, L.T("Dữ liệu vượt độ dài cột cho phép; kiểm tra tên/mã và thử lại.")),
             1205 => new(DataErrorKind.BusinessRule, number, L.T("Giao dịch gặp xung đột khóa và đã rollback; tải lại/đối chiếu trước thử lại.")),
             229 => new(DataErrorKind.Permission, number, L.T("Tài khoản kết nối không có quyền thao tác này.")),
             // Thiếu đối tượng do DB chưa áp đủ migration: lời gọi thiếu procedure/kiểu hỏng trước khi
