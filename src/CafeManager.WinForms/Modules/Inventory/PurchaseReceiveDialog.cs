@@ -48,7 +48,7 @@ public sealed class PurchaseReceiveDialog : OrbitDialogForm
         body.Controls.Add(info,0,0);body.Controls.Add(immediateRow,0,1);body.Controls.Add(grid,0,2);
         var close=new OrbitButton{Text=L.T("Quay lại")};close.Click+=(_,_)=>Close();var actions=new FlowLayoutPanel{AutoSize=true};actions.Controls.AddRange([check,print,save,post,close]);
         var dialogLayout=new OrbitDialogLayout(this,body,status,actions);Controls.Add(dialogLayout);dialogLayout.EnableResponsiveActions(this,true);OrbitField.ApplyInputBehavior(this);grid.DataBindingComplete+=(_,_)=>G05Display.Grid(grid);G05Display.Grid(grid);
-        grid.Columns["Actual"]!.DefaultCellStyle.Format="N0";grid.Columns["Ordered"]!.DefaultCellStyle.Format="N0";grid.Columns["Ordered"]!.DefaultCellStyle.Alignment=DataGridViewContentAlignment.MiddleRight;grid.Columns["Actual"]!.DefaultCellStyle.Alignment=DataGridViewContentAlignment.MiddleRight;
+        grid.Columns["Actual"]!.DefaultCellStyle.Format="0.####";grid.Columns["Ordered"]!.DefaultCellStyle.Format="0.####";grid.Columns["Ordered"]!.DefaultCellStyle.Alignment=DataGridViewContentAlignment.MiddleRight;grid.Columns["Actual"]!.DefaultCellStyle.Alignment=DataGridViewContentAlignment.MiddleRight;
         immediate.Leave+=(_,_)=>{if(decimal.TryParse(immediate.Text,NumberStyles.Number,Vi,out var cash))immediate.Text=cash.ToString("N0",Vi);};
         save.Click+=async(_,_)=>await SaveCount();post.Click+=async(_,_)=>await Post();check.Click+=async(_,_)=>await Reconcile();print.Click+=async(_,_)=>await Print();Shown+=async(_,_)=>await Initialize();AcceptButton=null;
     }
@@ -102,8 +102,8 @@ public sealed class PurchaseReceiveDialog : OrbitDialogForm
         var text=Convert.ToString(e.FormattedValue)??"";
         if(name=="Actual"&&text.Trim().Length>0)
         {
-            if(!decimal.TryParse(text,NumberStyles.Number,Vi,out var value)||value<0||decimal.Truncate(value)!=value)
-            {e.Cancel=true;grid.Rows[e.RowIndex].ErrorText=L.T("Thực nhận phải là số nguyên không âm.");status.Text=grid.Rows[e.RowIndex].ErrorText;}
+            if(!decimal.TryParse(text,NumberStyles.Number,Vi,out var value)||value<0||decimal.Round(value,4)!=value)
+            {e.Cancel=true;grid.Rows[e.RowIndex].ErrorText=L.T("Thực nhận phải là số thực không âm, tối đa 4 số thập phân.");status.Text=grid.Rows[e.RowIndex].ErrorText;}
             else if(grid.Rows[e.RowIndex].DataBoundItem is ReceiveRow line&&value>line.Ordered)
             {e.Cancel=true;grid.Rows[e.RowIndex].ErrorText=L.T("Thực nhận không vượt số đặt; giao bổ sung lập phiếu mới.");status.Text=grid.Rows[e.RowIndex].ErrorText;}
         }

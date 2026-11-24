@@ -24,6 +24,11 @@ public sealed class OrbitListWorkspace : UserControl
     public bool Compact { get; set; }
     [System.ComponentModel.DefaultValue(false)]
     public bool StackedTools { get; set; }
+    // Opt-in: xếp bộ lọc cùng hàng với ô tìm (thay vì hàng riêng bên dưới) và cho phép thu nhỏ chiều cao.
+    [System.ComponentModel.DefaultValue(false)]
+    public bool InlineStackedFilters { get; set; }
+    [System.ComponentModel.DefaultValue(40)]
+    public int FilterHeight { get; set; } = 40;
     public OrbitPagination Pagination { get; } = new();
     private readonly RoundedPanel card = new();
     private readonly Control search;
@@ -91,23 +96,36 @@ public sealed class OrbitListWorkspace : UserControl
         var actionWidth = ArrangeButtons(SearchActions, P(8));
         search.Visible = Filters.Visible = ShowTools; Count.Visible = false;
         SearchActions.SetBounds(card.Width - left - actionWidth, P(14), actionWidth, P(40));
-        search.SetBounds(left, P(14), Math.Max(1, SearchActions.Left - left - P(8)), P(40));
-        Filters.SetBounds(left, P(64), innerWidth, P(40));
-        var fx = 0; var fy = 0; var rowHeight = 0;
-        foreach (Control control in Filters.Controls)
+        int toolsBottom;
+        if (InlineStackedFilters && Filters.Controls.Count > 0)
         {
-            if (!control.Visible) continue;
-            var size = control switch
-            {
-                OrbitFilterBox filter => new Size(Math.Min(innerWidth, P(filter.LogicalWidth)), P(40)),
-                OrbitDateRangeField range => range.GetPreferredSize(new Size(innerWidth, 0)),
-                _ => new Size(Math.Min(innerWidth, control.Width), P(40))
-            };
-            if (fx > 0 && fx + size.Width > innerWidth) { fx = 0; fy += rowHeight + P(8); rowHeight = 0; }
-            control.SetBounds(fx, fy, size.Width, size.Height); fx += size.Width + P(8); rowHeight = Math.Max(rowHeight, size.Height);
+            var filtersWidth = ArrangeInlineFilters(FilterHeight);
+            var filterLeft = Math.Max(left + P(100), card.Width - left - actionWidth - P(8) - filtersWidth);
+            var filterHeight = P(FilterHeight);
+            search.SetBounds(left, P(14), Math.Max(P(100), filterLeft - left - P(8)), P(40));
+            Filters.SetBounds(filterLeft, P(14) + (P(40) - filterHeight) / 2, filtersWidth, filterHeight);
+            toolsBottom = P(14) + P(40) + P(14);
         }
-        Filters.Height = fy + rowHeight;
-        var toolsBottom = ShowTools ? Filters.Bottom + P(14) : 0;
+        else
+        {
+            search.SetBounds(left, P(14), Math.Max(1, SearchActions.Left - left - P(8)), P(40));
+            Filters.SetBounds(left, P(64), innerWidth, P(40));
+            var fx = 0; var fy = 0; var rowHeight = 0;
+            foreach (Control control in Filters.Controls)
+            {
+                if (!control.Visible) continue;
+                var size = control switch
+                {
+                    OrbitFilterBox filter => new Size(Math.Min(innerWidth, P(filter.LogicalWidth)), P(40)),
+                    OrbitDateRangeField range => range.GetPreferredSize(new Size(innerWidth, 0)),
+                    _ => new Size(Math.Min(innerWidth, control.Width), P(40))
+                };
+                if (fx > 0 && fx + size.Width > innerWidth) { fx = 0; fy += rowHeight + P(8); rowHeight = 0; }
+                control.SetBounds(fx, fy, size.Width, size.Height); fx += size.Width + P(8); rowHeight = Math.Max(rowHeight, size.Height);
+            }
+            Filters.Height = fy + rowHeight;
+            toolsBottom = ShowTools ? Filters.Bottom + P(14) : 0;
+        }
         var actionsWidth = ArrangeButtons(RowActions, P(6));
         var actionsHeight = Math.Max(P(33), RowActions.Controls.Cast<Control>().Where(c => c.Visible).Select(c => c.Height).DefaultIfEmpty(0).Max());
         var metaHeight = ShowMeta ? Math.Max(P(46), actionsHeight + P(12)) : 0;
@@ -117,6 +135,19 @@ public sealed class OrbitListWorkspace : UserControl
         Body.SetBounds(P(1), bodyTop, Math.Max(1, card.Width - P(2)), Math.Max(1, card.Height - bodyTop - P(54)));
         Pagination.SetBounds(P(1), card.Height - P(54), card.Width - P(2), P(53));
         card.ToolsDivider = ShowTools; card.ToolsDividerY = toolsBottom; card.Invalidate();
+    }
+    private int ArrangeInlineFilters(int height)
+    {
+        int P(float n) => OrbitManagementTheme.Px(this, n);
+        var x = 0; var h = P(height);
+        foreach (Control control in Filters.Controls)
+        {
+            if (!control.Visible) continue;
+            var width = Math.Max(P(80), control is OrbitFilterBox filter ? P(filter.LogicalWidth) : control.Width);
+            control.SetBounds(x, 0, width, Math.Max(1, h));
+            x += width + P(8);
+        }
+        return Math.Max(0, x - P(8));
     }
     private static int ArrangeButtons(Panel panel, int gap)
     {

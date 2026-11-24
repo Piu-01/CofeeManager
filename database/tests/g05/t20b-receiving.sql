@@ -7,7 +7,7 @@ DECLARE @admin int=(SELECT MIN(MaTK) FROM dbo.TAIKHOAN WHERE MaVT='ADMIN' AND Ho
  @as binary(8),@ss binary(8),@cs binary(8),
  @err int,@ok bit,@msg nvarchar(500),@code varchar(10),@code3 varchar(10),@code4 varchar(10),
  @id uniqueidentifier,@idCount uniqueidentifier,@idPost uniqueidentifier,@idCancel uniqueidentifier,
- @rev binary(8),@revDraft binary(8),
+ @rev binary(8),@revDraft binary(8),@revCount binary(8),
  @today datetime2(0)=CONVERT(datetime2(0),SYSDATETIME()),@tomorrow datetime2(0)=DATEADD(day,1,CONVERT(datetime2(0),SYSDATETIME())),
  @before1 decimal(18,4)=(SELECT SoLuongTon FROM dbo.NGUYENVATLIEU WHERE MaNVL='NVL01'),
  @before2 decimal(18,4)=(SELECT SoLuongTon FROM dbo.NGUYENVATLIEU WHERE MaNVL='NVL02'),
@@ -43,23 +43,26 @@ DELETE @receive;INSERT @receive VALUES('NVL01',12,N'Thừa'),('NVL02',4,NULL);SE
 BEGIN TRY EXEC dbo.sp_LuuKiemNhan @store,@ss,@idCount,@code,@revDraft,@receive; END TRY BEGIN CATCH SET @err=ERROR_NUMBER(); END CATCH;
 SET @ok=CASE WHEN @err=52704 THEN 1 ELSE 0 END;SET @msg=CONCAT(N'err=',ISNULL(CONVERT(nvarchar(10),@err),N'none'));
 EXEC dbo.sp_G05Assert 'T20b-K02.SQL-over-ordered',@ok,@msg;
-DELETE @receive;INSERT @receive VALUES('NVL01',7.5,N'Lẻ'),('NVL02',4,NULL);SET @err=NULL;SET @idCount=NEWID();
+DELETE @receive;INSERT @receive VALUES('NVL01',7.5,N'Lẻ 2,5'),('NVL02',4,NULL);SET @err=NULL;SET @idCount=NEWID();
 BEGIN TRY EXEC dbo.sp_LuuKiemNhan @store,@ss,@idCount,@code,@revDraft,@receive; END TRY BEGIN CATCH SET @err=ERROR_NUMBER(); END CATCH;
-SET @ok=CASE WHEN @err=52701 THEN 1 ELSE 0 END;SET @msg=CONCAT(N'err=',ISNULL(CONVERT(nvarchar(10),@err),N'none'));
+SET @ok=CASE WHEN @err IS NULL AND (SELECT SoLuongNhan FROM dbo.CHITIET_PN WHERE MaPN=@code AND MaNVL='NVL01')=7.5 THEN 1 ELSE 0 END;
+SET @msg=CONCAT(N'err=',ISNULL(CONVERT(nvarchar(10),@err),N'none'));
 EXEC dbo.sp_G05Assert 'T20b-K02.SQL-fraction',@ok,@msg;
+SELECT @revCount=Revision FROM dbo.PHIEUNHAP WHERE MaPN=@code;
 DELETE @receive;INSERT @receive VALUES('NVL01',8,NULL),('NVL02',4,NULL);SET @err=NULL;SET @idCount=NEWID();
-BEGIN TRY EXEC dbo.sp_LuuKiemNhan @store,@ss,@idCount,@code,@revDraft,@receive; END TRY BEGIN CATCH SET @err=ERROR_NUMBER(); END CATCH;
+BEGIN TRY EXEC dbo.sp_LuuKiemNhan @store,@ss,@idCount,@code,@revCount,@receive; END TRY BEGIN CATCH SET @err=ERROR_NUMBER(); END CATCH;
 SET @ok=CASE WHEN @err=52704 THEN 1 ELSE 0 END;SET @msg=CONCAT(N'err=',ISNULL(CONVERT(nvarchar(10),@err),N'none'));
 EXEC dbo.sp_G05Assert 'T20b-K02.SQL-diff-reason',@ok,@msg;
 DELETE @receive;INSERT @receive VALUES('NVL01',8,N'Thiếu 2'),('NVL02',4,NULL);SET @err=NULL;SET @idCount=NEWID();
-BEGIN TRY EXEC dbo.sp_LuuKiemNhan @cash,@cs,@idCount,@code,@revDraft,@receive; END TRY BEGIN CATCH SET @err=ERROR_NUMBER(); END CATCH;
+BEGIN TRY EXEC dbo.sp_LuuKiemNhan @cash,@cs,@idCount,@code,@revCount,@receive; END TRY BEGIN CATCH SET @err=ERROR_NUMBER(); END CATCH;
 SET @ok=CASE WHEN @err=51605 THEN 1 ELSE 0 END;SET @msg=CONCAT(N'err=',ISNULL(CONVERT(nvarchar(10),@err),N'none'));
 EXEC dbo.sp_G05Assert 'T20b-K02.SQL-cash-denied',@ok,@msg;
 SET @ok=CASE WHEN (SELECT SoLuongTon FROM dbo.NGUYENVATLIEU WHERE MaNVL='NVL01')=@before1 THEN 1 ELSE 0 END;
 EXEC dbo.sp_G05Assert 'T20b-K02.SQL-no-stock-before-count',@ok,N'Stock unchanged before valid count.';
-EXEC dbo.sp_LuuKiemNhan @store,@ss,@idCount,@code,@revDraft,@receive;
+SET @idCount=NEWID();
+EXEC dbo.sp_LuuKiemNhan @store,@ss,@idCount,@code,@revCount,@receive;
 SELECT @rev=Revision FROM dbo.PHIEUNHAP WHERE MaPN=@code;
-EXEC dbo.sp_LuuKiemNhan @store,@ss,@idCount,@code,@revDraft,@receive;
+EXEC dbo.sp_LuuKiemNhan @store,@ss,@idCount,@code,@revCount,@receive;
 SET @ok=CASE WHEN EXISTS(SELECT 1 FROM dbo.PHIEUNHAP WHERE MaPN=@code AND TrangThai='DaKiem' AND NgayKiem IS NOT NULL AND MaNVKiem=(SELECT MaNV FROM dbo.TAIKHOAN WHERE MaTK=@store))
  AND (SELECT SoLuongNhan FROM dbo.CHITIET_PN WHERE MaPN=@code AND MaNVL='NVL01')=8
  AND (SELECT SoLuongNhan FROM dbo.CHITIET_PN WHERE MaPN=@code AND MaNVL='NVL02')=4
@@ -144,11 +147,11 @@ EXEC dbo.sp_G05Assert 'T20b-K06.SQL-posted-cancel',@ok,@msg;
 SET @ok=CASE WHEN EXISTS(SELECT 1 FROM dbo.PHIEUNHAP WHERE CutoverKind='Legacy' AND DaChot=1)
  AND NOT EXISTS(SELECT 1 FROM dbo.CHITIET_PN d JOIN dbo.PHIEUNHAP p ON p.MaPN=d.MaPN WHERE p.CutoverKind='Legacy' AND p.DaChot=1 AND (d.SoLuongNhan IS NULL OR d.SoLuongNhan<>d.SoLuong OR d.DaGhiKho=0)) THEN 1 ELSE 0 END;
 EXEC dbo.sp_G05Assert 'T20b-K07.SQL-legacy-backfill',@ok,N'Legacy lines backfilled SoLuongNhan=SoLuong, DaGhiKho=1.';
-/* ===== K09: validate số nguyên/giá nguyên/trùng mã ===== */
+/* ===== K09: validate số thực/giá nguyên/trùng mã ===== */
 DECLARE @bad dbo.PurchaseLinesInput;
 INSERT @bad VALUES('NVL01',1.5,10000);SET @err=NULL;
 BEGIN TRY EXEC dbo.sp_PurchasePreview @admin,@as,@bad; END TRY BEGIN CATCH SET @err=ERROR_NUMBER(); END CATCH;
-SET @ok=CASE WHEN @err=52701 THEN 1 ELSE 0 END;SET @msg=CONCAT(N'err=',ISNULL(CONVERT(nvarchar(10),@err),N'none'));
+SET @ok=CASE WHEN @err IS NULL THEN 1 ELSE 0 END;SET @msg=CONCAT(N'err=',ISNULL(CONVERT(nvarchar(10),@err),N'none'));
 EXEC dbo.sp_G05Assert 'T20b-K09.SQL-frac-qty',@ok,@msg;
 DELETE @bad;INSERT @bad VALUES('NVL01',1,10000.5);SET @err=NULL;
 BEGIN TRY EXEC dbo.sp_PurchasePreview @admin,@as,@bad; END TRY BEGIN CATCH SET @err=ERROR_NUMBER(); END CATCH;

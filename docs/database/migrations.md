@@ -236,3 +236,21 @@ hạng%)`); `Discount = TierDiscount + PromotionDiscount`. `PercentDiscount` là
 thực tế `round(100 × Discount / TongTien)`; ràng buộc `CK_DiscountSnapshot_Known` bỏ
 công thức cộng cũ, không backfill snapshot lịch sử. KM legacy trên đơn mở tham gia tổ
 hợp như KM phạm vi `ALL`, không còn ép cộng thêm. Không sửa checksum 001–043.
+
+## G05 — 045 purchase fractional quantities (24/11/2026)
+
+045_purchase_fractional_quantities.sql chạy sau 044 bằng `Apply-Migration.ps1 -Version 45`;
+tiền đề `SchemaMigrations Version=44` (guard `THROW 54501`). Cho phép **số lượng** mua/nhận
+là số thực tối đa 4 chữ số thập phân theo cột `decimal(18,4)` sẵn có; đơn giá vẫn là số
+nguyên VND dương. Thay `sp_PurchaseValidate` (bỏ chặn `Quantity <> ROUND(Quantity,0)`,
+chặn `Quantity <> ROUND(Quantity,4)`; tổng dòng tính
+`SUM(ROUND(CONVERT(decimal(18,4),Quantity)*CONVERT(decimal(18,0),UnitPrice),0))` để không
+tràn `decimal(38,0)`), `sp_LuuKiemNhan` (thực nhận 0–99999999999999,9999, tối đa 4 số
+thập phân) và `sp_ChotNhanHang` (bỏ kiểm tra thực nhận nguyên; vẫn bắt buộc lý do khi
+thực nhận khác số lượng). Không đổi bảng, view, cột tiền hay snapshot lịch sử; không sửa
+checksum 001–044. Đã áp lên `CoffeeManager_Development` ngày 24/11/2026 (checksum
+`9B143AE9…`), smoke `sp_PurchaseValidate` với dòng 2,5 nhận tổng 4.608.000 và dòng
+2,50001 bị từ chối `52701`; ca K02/K09 của T20b đã cập nhật kỳ vọng số thực và **đã chạy lại
+24/11/2026: 35/35 PASS**, schema 45, `InventoryUnchanged=true` (bằng chứng
+`docs/tasks/g05-kho-nguon-chi-cong-no/nhan-hang/runs/acceptance_20261124_171230_15f773d7/`).
+Chưa chạy GUI/hình thức/DPI.

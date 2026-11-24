@@ -50,6 +50,20 @@ sqlcmd -S localhost -d CoffeeManager_Development -C -b -i database/demo/seed-dem
 Script chỉ thêm dữ liệu, không sửa/xóa dữ liệu cũ; đơn mở đang có của bạn được giữ nguyên.
 Chạy lại sẽ dừng ngay do guard.
 
+## Phiếu nhập đủ trạng thái để thử màn Nhập hàng
+
+[demo/seed-demo-purchase-statuses.sql](seed-demo-purchase-statuses.sql) thêm 5 phiếu nhập
+neo quanh ngày chạy với số liệu sát thực tế: 2 phiếu **Chờ nhận**, 2 phiếu **Đã kiểm**
+(có dòng thực nhận thiếu kèm lý do, gồm cả số lượng lẻ) và 1 phiếu **Đã hủy** có lý do;
+mã cố định `PN26000101`–`PN26000105` (NCC01/02/03/05, nguyên liệu NVL01/02/05/08/09/12/15/20/21).
+Script chỉ thêm phiếu chưa ghi kho nên `TongTien = 0` cho tới khi chốt nhận, theo đúng
+bất biến nghiệp vụ; guard `PN260001` chống chạy lặp và chỉ chấp nhận DB development.
+Các phiếu **Đã chốt**/lịch sử đã có từ `seed-demo-operational.sql`.
+
+```bash
+sqlcmd -S localhost -d CoffeeManager_Development -C -b -i database/demo/seed-demo-purchase-statuses.sql
+```
+
 ## Top-up dữ liệu hằng ngày
 
 Dữ liệu 60 ngày neo theo ngày chạy nên vài ngày sau sẽ thiếu hóa đơn "hôm nay"

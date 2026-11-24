@@ -11,8 +11,8 @@ public sealed class PurchaseService(PurchaseRepository repository,PermissionServ
         if(lines.Count==0||lines.Select(l=>l.Code).Distinct(StringComparer.OrdinalIgnoreCase).Count()!=lines.Count)throw new ArgumentException(L.T("Cần ít nhất một nguyên liệu; mỗi mã một dòng."));
         foreach(var line in lines)
         {
-            MaterialService.Quantity(line.Quantity);
-            if(line.Quantity<=0||decimal.Truncate(line.Quantity)!=line.Quantity||line.Price<=0||line.Price>999999999999999999m||decimal.Truncate(line.Price)!=line.Price)throw new ArgumentException(L.T("Số lượng phải là số nguyên dương; đơn giá nguyên VND."));
+            if(line.Quantity<=0||line.Quantity>99999999999999.9999m||decimal.Round(line.Quantity,4)!=line.Quantity
+                ||line.Price<=0||line.Price>999999999999999999m||decimal.Truncate(line.Price)!=line.Price)throw new ArgumentException(L.T("Số lượng phải lớn hơn 0 và tối đa 4 số thập phân; đơn giá nguyên VND."));
             MaterialService.Required(line.Code,5,L.T("Nguyên liệu"));
         }
     }
@@ -22,7 +22,7 @@ public sealed class PurchaseService(PurchaseRepository repository,PermissionServ
         if(r.Lines.Count==0||r.Lines.Select(l=>l.Code).Distinct(StringComparer.OrdinalIgnoreCase).Count()!=r.Lines.Count)throw new ArgumentException(L.T("Phải kiểm đủ các dòng, mỗi mã một dòng."));
         foreach(var line in r.Lines)
         {
-            if(line.Quantity<0||decimal.Truncate(line.Quantity)!=line.Quantity)throw new ArgumentException(L.T("Số thực nhận phải là số nguyên không âm."));
+            if(line.Quantity<0||line.Quantity>99999999999999.9999m||decimal.Round(line.Quantity,4)!=line.Quantity)throw new ArgumentException(L.T("Thực nhận phải là số thực không âm, tối đa 4 số thập phân."));
             if(line.Reason?.Length>200)throw new ArgumentException(L.T("Lý do lệch tối đa 200 ký tự."));
         }
     }

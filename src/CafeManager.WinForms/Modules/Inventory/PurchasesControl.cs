@@ -21,7 +21,7 @@ public sealed class PurchasesControl : UserControl
     {
         this.service=service;this.session=session;this.pending=pending;this.links=links;Dock=DockStyle.Fill;
         // Chuẩn danh sách: ô tìm giãn hết hàng 1, lọc trạng thái dưới ô tìm, thao tác dạng icon.
-        workspace=new(search){StackedTools=true,ShowMeta=false};workspace.Title.Text=L.T("Nhập hàng");workspace.Description.Text=L.T("Lập phiếu Chờ nhận → kiểm thực nhận → chốt kho. Tồn chỉ tăng khi chốt.");
+        workspace=new(search){StackedTools=true,ShowMeta=false,InlineStackedFilters=true,FilterHeight=32};workspace.Title.Text=L.T("Nhập hàng");workspace.Description.Text=L.T("Lập phiếu Chờ nhận → kiểm thực nhận → chốt kho. Tồn chỉ tăng khi chốt.");
         Controls.Add(workspace);
         foreach(var col in new[]{("Code",L.T("MÃ")),("Date",L.T("NGÀY NHẬP")),("Supplier",L.T("NHÀ CUNG CẤP")),("StatusText",L.T("TRẠNG THÁI")),("Total",L.T("TỔNG")),("Immediate",L.T("TRẢ NGAY")),("Debt",L.T("NỢ GỐC")),("CountedAt",L.T("NGÀY KIỂM"))})grid.Columns.Add(new DataGridViewTextBoxColumn{Name=col.Item1,DataPropertyName=col.Item1,HeaderText=col.Item2});
         workspace.Body.Controls.AddRange([grid,empty]);workspace.Body.SizeChanged+=(_,_)=>PositionEmpty();grid.ColumnHeadersHeightChanged+=(_,_)=>PositionEmpty();
@@ -39,7 +39,7 @@ public sealed class PurchasesControl : UserControl
         statusBox.SelectedIndexChanged+=async(_,_)=>{if(IsHandleCreated&&!IsDisposed){page=0;await LoadRows();}};
         search.Input.KeyDown+=async(_,e)=>{if(e.KeyCode==Keys.Enter){e.SuppressKeyPress=true;await Submit();}};
         grid.CellDoubleClick+=async(_,e)=>{if(e.RowIndex>=0)await Detail();};grid.KeyDown+=async(_,e)=>{if(e.KeyCode==Keys.Enter){e.SuppressKeyPress=true;await Detail();}};
-        grid.SelectionChanged+=(_,_)=>State();grid.CellFormatting+=(_,e)=>FormatStatus(e);
+        grid.SelectionChanged+=(_,_)=>State();grid.CellFormatting+=(_,e)=>FormatStatus(e);grid.CellFormatting+=(_,e)=>FormatAmounts(e);
         grid.Columns["CountedAt"]!.DefaultCellStyle.Format="dd/MM/yyyy HH:mm";
         Load+=async(_,_)=>await LoadRows();VisibleChanged+=async(_,_)=>{if(Visible&&IsHandleCreated)await LoadRows();else if(!Visible)StopLoading();};OrbitField.ApplyInputBehavior(this);grid.DataBindingComplete+=(_,_)=>G05Display.Grid(grid);G05Display.Grid(grid);
         State();
@@ -56,6 +56,21 @@ public sealed class PurchasesControl : UserControl
         if(e.ColumnIndex<0||e.RowIndex<0||grid.Columns[e.ColumnIndex].DataPropertyName!="StatusText")return;
         if(grid.Rows[e.RowIndex].DataBoundItem is not PurchaseRow row)return;
         e.CellStyle.ForeColor=row.Status switch{"ChoNhan"=>OrbitManagementTheme.Caramel,"DaKiem"=>OrbitManagementTheme.Lilac,"DaChot"=>Color.FromArgb(154,205,150),"DaHuy"=>Color.FromArgb(241,170,167),_=>OrbitManagementTheme.Muted};
+    }
+    private void FormatAmounts(DataGridViewCellFormattingEventArgs e)
+    {
+        if(e.ColumnIndex<0||e.RowIndex<0)return;
+        if(grid.Rows[e.RowIndex].DataBoundItem is not PurchaseRow row)return;
+        // Phiếu mới trả đủ ngay không có dòng công nợ nên Debt NULL; hiển thị 0 thay vì ô trống.
+        if(grid.Columns[e.ColumnIndex].DataPropertyName=="Debt"&&(e.Value is null or DBNull)&&row.CutoverKind=="New"&&row.Status=="DaChot")
+        {
+            e.Value="0";e.FormattingApplied=true;
+        }
+        // Dữ liệu trước chuyển đổi không có phần trả ngay; dùng "—" để không giống lỗi tải.
+        else if(grid.Columns[e.ColumnIndex].DataPropertyName=="Immediate"&&(e.Value is null or DBNull)&&row.CutoverKind=="Legacy")
+        {
+            e.Value="—";e.FormattingApplied=true;
+        }
     }
     private void PositionEmpty()=>empty.SetBounds(0,grid.ColumnHeadersHeight,workspace.Body.Width,Math.Max(0,workspace.Body.Height-grid.ColumnHeadersHeight));
     private async Task Submit(){page=0;applied=search.Input.Text.Trim();await LoadRows();}
@@ -131,7 +146,7 @@ public sealed class PurchaseDetailDialog : OrbitDialogForm
         lines.Columns["Code"]!.DefaultCellStyle.Font=OrbitManagementTheme.Code;
         foreach(var name in new[]{"Quantity","Received","Diff","Price","Amount"})
         {
-            var style=lines.Columns[name]!.DefaultCellStyle;style.Format=name=="Quantity"||name is "Received"||name=="Diff"?"N0":"#,##0' ₫'";style.FormatProvider=culture;style.Alignment=DataGridViewContentAlignment.MiddleRight;
+            var style=lines.Columns[name]!.DefaultCellStyle;style.Format=name=="Quantity"||name is "Received"||name=="Diff"?"0.####":"#,##0' ₫'";style.FormatProvider=culture;style.Alignment=DataGridViewContentAlignment.MiddleRight;
             lines.Columns[name]!.HeaderCell.Style.Alignment=DataGridViewContentAlignment.MiddleRight;
         }
         OrbitManagementTheme.DialogGrid(lines);

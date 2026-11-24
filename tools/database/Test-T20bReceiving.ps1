@@ -1,8 +1,8 @@
-# T20b receiving acceptance runner: isolated real SQL Server DB, schema 001-043.
+# T20b receiving acceptance runner: isolated real SQL Server DB, schema 001-045.
 # ASCII only (Windows PowerShell 5.1 safe). Creates, tests and drops CoffeeManager_Test_G05_<runId>_demo.
 [CmdletBinding()]param([switch]$Keep)
 $ErrorActionPreference='Stop'
-$ThroughVersion=43
+$ThroughVersion=45
 $root=[IO.Path]::GetFullPath((Join-Path $PSScriptRoot '../..'))
 . (Join-Path $PSScriptRoot 'DatabaseTestTools.ps1')
 $runId=(Get-Date -Format 'yyyyMMdd_HHmmss')+'_'+[guid]::NewGuid().ToString('N').Substring(0,8)

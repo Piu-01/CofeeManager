@@ -59,6 +59,7 @@ public sealed class OrbitDateField : UserControl
     }
 
     internal void SetInputName(string name) { AccessibleName = input.AccessibleName = name; }
+    internal void FocusInput() => input.Focus();
     internal void ApplyManagementTheme(bool borderless = false)
     {
         input.BorderStyle = borderless ? BorderStyle.None : BorderStyle.FixedSingle;
