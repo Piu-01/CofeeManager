@@ -36,7 +36,7 @@ internal sealed class TableList : OrbitRecordListControl
         filter.SelectedValueChanged+=async(_,_)=>{if(!refreshingAreas&&filter.DataSource is not null)await ResetAndReload();};
         map.SizeChanged+=(_,_)=>ArrangeCards();
         AddAction("Thêm",()=>Edit(null),session.Identity.Role=="ADMIN");
-        // Sửa tại ô, xóa tại dòng (ADMIN); không còn nút Sửa/Xóa hay hộp sửa.
+        // Double-click/F2 mở hộp sửa, xóa tại dòng (ADMIN); không còn nút Sửa/Xóa.
         AddRowDeleteColumn();Workspace.ShowMeta=false;
         inline=CreateInlineEditor();
         inline.CanWrite=_=>session.Identity.Role=="ADMIN";
