@@ -25,7 +25,7 @@ public sealed class DocumentLinks(PurchaseService purchases,FinanceService finan
         try{using var dialog=await create();if(owner.IsDisposed)return;if(dialog is null){await OrbitConfirmationDialog.ShowAsync(owner,L.T("Chứng từ không tồn tại."),L.T("Tra cứu"));return;}await OrbitDialogHost.ShowAsync(dialog,owner);}
         catch(Exception e)when(e is UserOperationException or OperationCanceledException or ArgumentException){if(!owner.IsDisposed&&!owner.Disposing)await OrbitConfirmationDialog.ShowAsync(owner,e.Message,L.T("Chưa tải được chứng từ"));}
     }
-    public Task ShowPurchaseAsync(Control owner,string code)=>Open(owner,async()=>{var row=await purchases.GetAsync(session,code);return row is null?null:new PurchaseDetailDialog(row,this);});
+    public Task ShowPurchaseAsync(Control owner,string code)=>Open(owner,async()=>{var row=await purchases.GetAsync(session,code);return row is null?null:new PurchaseDetailDialog(row,this,purchases,session);});
     public Task ShowFinanceAsync(Control owner,string code)
     {
         for(Form? form=owner.FindForm();form is not null;form=form.Owner) if(Equals(form.Tag,"Finance:"+code)) return Task.CompletedTask;

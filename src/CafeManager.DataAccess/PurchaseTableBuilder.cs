@@ -9,4 +9,10 @@ internal static class PurchaseTableBuilder
         foreach(var line in lines)table.Rows.Add(line.Code,line.Quantity,line.Price);
         return table;
     }
+    public static DataTable Receive(IEnumerable<PurchaseReceiveLine> lines)
+    {
+        var table=new DataTable();table.Columns.Add("MaNVL",typeof(string));table.Columns.Add("Quantity",typeof(decimal));table.Columns.Add("Reason",typeof(string));
+        foreach(var line in lines)table.Rows.Add(line.Code,line.Quantity,(object?)line.Reason??DBNull.Value);
+        return table;
+    }
 }

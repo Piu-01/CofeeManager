@@ -1,0 +1,15 @@
+﻿{
+    "RunId":  "20261123_220006_d9d1cf50",
+    "Kind":  "T20b SQL acceptance; GUI/print not implied",
+    "Server":  "localhost",
+    "Database":  "CoffeeManager_Test_G05_20261123_220006_d9d1cf50_demo",
+    "ThroughVersion":  43,
+    "Operator":  "LAPTOP-79UNRIRC\\Lenovo",
+    "Created":  true,
+    "Cleaned":  true,
+    "InventoryUnchanged":  true,
+    "Status":  "Succeeded",
+    "SqlTotal":  35,
+    "SqlFailed":  0,
+    "SchemaVersion":  43
+}

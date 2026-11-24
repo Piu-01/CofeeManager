@@ -78,3 +78,7 @@ STORE nhập21000/trả ngay0, xem nợ chỉ đọc và xuất trả2 đơn v�
 ## B07 — Đã duyệt, sửa và regression30/10/2026
 
 Người dùng duyệt bổ sung B07; đã sửa vòng đời CTS trong đúng năm control G05, không đổi SQL/quyền/ghi nghiệp vụ. Debug/Release0warning/0error,22/22unit,47/47lifecycle và5/5CASH-BLL PASS. Native chuyển năm màn, nháp modal, đóng lịch sử nợ→logout, CASH login/logout, ADMIN login lại/đóng MainForm PASS theo phạm vi. Counts/receipt/tồn không đổi; source cố định;1DB test dọn1/còn0, credentials đã xóa. [Biên bản B07](runs/b07-20261030/test-results.md), [bug](t23-cong-no/bug-report.md). Nội dung “B07 chờ duyệt” ở cập nhật trước là lịch sử trước phê duyệt. CASH native không còn bị chặn bởi B07; native keyboard vẫn chưa đủ do công cụ. Không đổi55ID lịch sử, G05 Đang làm do các nhánh nghiệm thu còn thiếu.
+
+## T20b — Nhận hàng 2 bước, đợt test23/11/2026
+
+Phần phát sinh của T20 đã được duyệt kế hoạch; đợt test được duyệt riêng. Migration 043 chạy trên DB test riêng schema001–043, tồn trước/sau không đổi, DB đã dọn0/còn0. **SQL35/35 PASS**, **unit25/25 PASS**, **probe in2/2 và UI component13/13 PASS**; build Debug/Release0 lỗi. Chưa chạy GUI thật end-to-end, preview WebView2/máy in, hai session song song, fault injection và DPI/hình thức — chuyển người dùng kiểm, không suy PASS. Không phát hiện bug mới; T20b vẫn Đang làm. Chi tiết: [biên bản T20b](nhan-hang/t20b-nhan-hang/test-results.md), [bằng chứng](nhan-hang/runs/acceptance_20261123_220006_d9d1cf50/).

@@ -161,7 +161,7 @@ public sealed class OrbitDataGridView : DataGridView
                 col.DefaultCellStyle.Alignment = col.HeaderCell.Style.Alignment = property == "Amount" ? DataGridViewContentAlignment.MiddleRight : DataGridViewContentAlignment.MiddleLeft;
                 continue;
             }
-            if (profile is OrbitGridProfile.Finance or OrbitGridProfile.SupplierDebts)
+            if (profile is OrbitGridProfile.Finance or OrbitGridProfile.SupplierDebts or OrbitGridProfile.Purchases or OrbitGridProfile.StockIssues or OrbitGridProfile.Stocktakes)
             {
                 ApplyLedgerColumn(col, property);
                 continue;
@@ -212,7 +212,7 @@ public sealed class OrbitDataGridView : DataGridView
         column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         column.MinimumWidth = Math.Max(OrbitManagementTheme.Px(this, 56), needed);
         column.FillWeight = column.MinimumWidth;
-        if (property is "Amount" or "Original" or "Paid" or "Remaining")
+        if (property is "Amount" or "Original" or "Paid" or "Remaining" or "Total" or "Immediate" or "Debt")
             column.DefaultCellStyle.Alignment = column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
     }
     private void ApplyInvoiceColumn(DataGridViewColumn column, string property)
@@ -491,5 +491,5 @@ public sealed class OrbitDataGridView : DataGridView
     }
 }
 
-public enum OrbitGridProfile { Inventory, Menu, Tables, Areas, Customers, Promotions, Ranks, Points, Catalogs, Payment, OpenOrders, InvoiceHistory, Delivery, OrderLines, Finance, SupplierDebts }
+public enum OrbitGridProfile { Inventory, Menu, Tables, Areas, Customers, Promotions, Ranks, Points, Catalogs, Payment, OpenOrders, InvoiceHistory, Delivery, OrderLines, Finance, SupplierDebts, Purchases, StockIssues, Stocktakes }
 

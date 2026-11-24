@@ -75,7 +75,7 @@ Thanh đầu cửa sổ: tên quán, tiêu đề màn hình, tên người đăn
 | UX08 | Khách/hạng/điểm/KM | Hồ sơ và chính sách, lịch sử điều chỉnh | T12, T13 |
 | UX09 | Menu/công thức/bàn/danh mục | Grid và editor theo nhóm | T08–T11 |
 | UX10 | Tồn/nguyên liệu | Đơn vị, tồn mở sổ và tồn hiện tại | T09, T20–T22 |
-| UX11 | Nhập hàng | Nháp, trả ngay/nợ, chốt | T20 |
+| UX11 | Nhập hàng | Lập Chờ nhận → kiểm thực nhận → chốt kho, in phiếu | T20, T20b |
 | UX12 | Xuất hàng | Hủy hỏng/trả hàng, chốt | T21 |
 | UX13 | Kiểm kê | Snapshot, nhập số đếm, xử lý lệch | T22 |
 | UX14 | Công nợ/trả nợ | NCC/phiếu, số dư, lịch sử | T23 |
@@ -391,13 +391,16 @@ Danh sách tồn hiển thị NVL, đơn vị chuẩn, tồn hiện tại, lần
 
 ### 11.2. Nhập hàng
 
-1. Danh sách → Lập phiếu; nháp trong bộ nhớ, nhãn **Chưa ghi kho**.
-2. Chọn NCC, ngày, thêm NVL/lượng/giá theo đơn vị. Mỗi NVL một dòng; chọn trùng đưa focus dòng cũ để sửa, không gửi PK trùng.
-3. Tổng tiền theo preview SQL/công thức chuẩn đã chốt. ADMIN nhập trả ngay [0,tổng], còn nợ hiển thị; STORE trả ngay khóa 0 và ghi “Thanh toán do quản lý xử lý”.
-4. Xem lại → **Chốt nhập kho**; nêu lượng/tổng/trả ngay/nợ.
-5. Commit thành công → chi tiết chỉ đọc, xem phiếu chi/nợ nguồn khi có quyền. Lỗi giữ nháp; không tăng tồn giả trên grid.
+Luồng 2 bước theo yêu cầu người dùng23/11/2026: **quản lý lập phiếu → nhân viên kiểm thực nhận → quản lý chốt kho**. Phiếu nhập là chứng từ nội bộ, không phải hoá đơn GTGT; hoá đơn giấy của NCC không lưu trong app.
 
-Không có Lưu nháp DB nếu chưa bổ sung hợp đồng; nút Hủy bỏ nháp hỏi xác nhận. Chốt không cho sửa NCC/ngày/chi tiết. Timeout đối chiếu mã/yêu cầu theo contract T20; không tạo phiếu mới ngay. Cần mã yêu cầu hoặc cấp mã ổn định trước gửi để tra cứu chắc chắn; không dùng NCC+tổng tiền như khóa nhận dạng.
+1. Danh sách có lọc **trạng thái**: Chờ nhận, Đã kiểm, Đã chốt, Đã huỷ. ADMIN bấm **Lập phiếu nhập**; phiếu lưu DB ngay ở trạng thái **Chờ nhận**, chưa cộng kho, chưa tạo phiếu chi/công nợ.
+2. Chọn NCC, ngày nhập (không ở tương lai), thêm NVL/số lượng/đơn giá. Số lượng và đơn giá là **số nguyên**; mỗi NVL một dòng; tồn hiện tại và giá nhập gần nhất hiển thị khi chọn dòng. Tổng tiền, trả ngay và nợ cập nhật realtime; trả ngay ≤ tổng; hạn trả dự kiến chỉ bật khi còn nợ.
+3. Sau khi lưu, ADMIN có thể **In phiếu** (bản Chờ nhận có cột Thực nhận để trống) để giao nhân viên đối chiếu khi NCC giao hàng.
+4. NCC giao hàng; STORE (hoặc ADMIN) mở **Nhận hàng**, đếm **thực nhận** từng dòng. Thực nhận là số nguyên không âm, không vượt số đặt; lệch so với số đặt bắt buộc ghi lý do (≤200 ký tự). **Lưu số kiểm** chuyển phiếu sang **Đã kiểm**, vẫn chưa cộng kho. Giao bổ sung lập phiếu mới, không sửa số đặt.
+5. ADMIN xác nhận **Chốt nhập kho** (có hộp xác nhận nêu tổng thực nhận/trả ngay/nợ): tồn cộng theo **thực nhận**, tổng tiền theo thực nhận; tạo phiếu chi *PurchaseImmediate* cho phần trả ngay và công nợ NCC cho phần còn lại; phiếu thành **Đã chốt**, chỉ đọc.
+6. ADMIN được **Huỷ phiếu** khi chưa chốt, lý do bắt buộc; huỷ không đụng tồn/tiền. In phiếu từ cả bản Chờ nhận/Đã kiểm và bản đã chốt.
+
+Kiểm kê (§11.4) giữ vai trò đối soát định kỳ, không thay bước nhận hàng. Mỗi thao tác tạo/kiểm/chốt/huỷ có mã yêu cầu và tệp chờ riêng; timeout hiển thị **Kiểm tra kết quả** và chỉ gửi lại đúng yêu cầu đang lưu, không tạo phiếu mới. Lỗi giữ dữ liệu đang nhập; không tăng tồn giả trên grid.
 
 ### 11.3. Xuất hàng
 

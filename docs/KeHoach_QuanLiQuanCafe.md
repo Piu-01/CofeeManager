@@ -1044,7 +1044,12 @@ tạo checkout UI T15. Đây là yêu cầu cần thiết kế, chưa có select
 
 **Điều kiện hoàn tất:** Có đủ đầu ra; các ca kiểm thử trong phạm vi đã chạy và PASS, có dữ liệu thử và kết quả đối chiếu; không còn lỗi trọng yếu của task. Lưu commit cùng biên bản kiểm thử. Nếu thay SQL, migration phải chạy được trên phiên bản trước và bảo toàn dữ liệu cũ ngoài thay đổi đã mô tả.
 
-### T21 — Xuất hủy và xuất trả nguyên liệu
+**Phát sinh T20b — nhận hàng 2 bước (23/11/2026):** theo yêu cầu người dùng, `sp_LapPhieuNhap` được thay bằng luồng
+**lập phiếu Chờ nhận → STORE kiểm thực nhận → ADMIN chốt kho**; tồn/chi/nợ chỉ phát sinh khi ADMIN chốt và tính theo
+**thực nhận**. Hồ sơ, quyết định và tiêu chí tại
+[`docs/tasks/g05-kho-nguon-chi-cong-no/nhan-hang/`](tasks/g05-kho-nguon-chi-cong-no/nhan-hang/requirements.md).
+Giữ nguyên mã T20/T20-Kxx và lịch sử PASS cũ; các ca liên quan hành vi lập/chốt được chạy lại trong đợt test của T20b
+sau khi người dùng duyệt.
 
 | Thuộc tính | Nội dung |
 |---|---|
