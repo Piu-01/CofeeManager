@@ -26,7 +26,7 @@ màn hình cần đọc danh sách bàn (Bán hàng / Bàn – Khu vực) thì V
 
 Code trong repo đã gồm T33–T35 (schema 032→035) nhưng DB Development chưa áp các
 migration này. Repo chủ trương **không tự migrate DB development** khi chạy app
-(AGENTS.md mục 4/6; `Program.cs` chỉ đọc connection, không chạy migration), nên
+(AGENTS.md mục 4/7; `Program.cs` chỉ đọc connection, không chạy migration), nên
 DB cũ và DAL mới lệch nhau. Đây là drift môi trường, tái hiện được 100% trên máy hiện tại.
 
 Phạm vi ảnh hưởng dự kiến nếu để nguyên: mọi màn dùng contract mới của T33–T35

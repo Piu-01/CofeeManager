@@ -13,6 +13,7 @@ Các đường dẫn dưới đây tính từ gốc CoffeeManager, không phụ 
 | Trước code bất kỳ module/use case | Đọc lại phần nghiệp vụ và task tương ứng trong kế hoạch; `docs/UX_QuanLiQuanCafe.md` phần luồng, trạng thái, contract và ca UX liên quan |
 | Trước thiết kế, code hoặc sửa giao diện (Form/UserControl/dialog/theme) | Đọc `docs/ui/README.md` trước, rồi đọc style guide UI chung trong `docs/ui/` theo thứ tự được chỉ dẫn: `HuongDan_UI_Orbit_Cafe.md`, `reference.html`, `design-tokens.json`, `references/README.md`, `WINFORMS_IMPLEMENTATION.md`, `assets/README.md` |
 | Trước thay SQL hoặc gọi contract dữ liệu | `database/DB_Schema.sql`, `database/Insert_Data.sql` và migrations đã có của task |
+| Trước thiết kế màn hình/luồng mới hoặc khi cân nhắc cách làm chuẩn ngành | Mục 6 của file này (thiết kế sát vận hành thực tế) |
 
 **Style guide UI chung:** dùng bộ tài liệu tại `docs/ui/`; không dùng đường dẫn bộ guide cũ.
 Kế hoạch quy định nghiệp vụ/task; UX quy định luồng; style guide quy định hình thức.
@@ -153,6 +154,30 @@ chứng bằng engine. Mở rộng bằng migration có version theo task.
 
 ## 5. UI dùng chung và UX bắt buộc
 
+**Nguyên tắc gốc, ưu tiên cao nhất — thiết kế dưới góc nhìn người dùng.** Mọi quy tắc
+khác trong mục này, style guide và sở thích kỹ thuật đều phục vụ nguyên tắc này; nếu
+xung đột thì chọn phương án tốt hơn cho người dùng, miễn không vi phạm nghiệp vụ/quyền
+đã chốt.
+
+- Bắt đầu từ **mục tiêu của người dùng** ("bán xong đơn này", "biết hôm nay bán được bao
+  nhiêu"), không từ bảng, cột hay contract dữ liệu. Mỗi màn hình phải trả lời: người dùng
+  vào đây để làm gì, làm xong thì biết đã xong.
+- Dùng **ngôn ngữ của người làm quán**: nhãn nút, tiêu đề, thông báo là từ họ nói hằng
+  ngày. Không lộ thuật ngữ kỹ thuật ra UI (tên bảng/cột, mã enum, "DBNull", mã lỗi SQL,
+  "MaDon"); không bắt người dùng hiểu trạng thái nội bộ của hệ thống.
+- Sắp xếp màn hình theo **trình tự công việc thật** (chọn bàn → chọn món → giảm giá →
+  thanh toán → in), không theo thứ tự cột CSDL hay thứ tự code.
+- Người dùng không phải nhớ trạng thái: màn hình cho biết đang ở đâu, còn gì chưa làm,
+  bước tiếp theo là gì; không đưa lựa chọn kỹ thuật cho họ quyết.
+- Đừng bắt người dùng đi qua nhiều màn hình cho một việc thường ngày, cũng đừng thêm bước
+  hay thông tin chỉ để "trông chuyên nghiệp" mà họ không cần.
+- Thông báo lỗi phải nói **chuyện gì xảy ra và làm gì tiếp**, giữ dữ liệu đã nhập, chỉ
+  đúng chỗ cần sửa; không đổ một câu lỗi chung chung hoặc lỗi kỹ thuật.
+- Kiểm tra bằng cách đi lại luồng như từng vai trò thật — thu ngân lúc đông khách, thủ kho
+  đếm hàng, quản lý xem báo cáo — với dữ liệu thật và dữ liệu mép (rỗng, rất dài, lỗi).
+
+Các quy tắc chi tiết bên dưới không thay thế nguyên tắc trên; chúng chỉ cụ thể hoá nó.
+
 - Trước khi code giao diện, bắt buộc đọc style guide UI chung tại `docs/ui/`
   theo mục 1. Hành vi theo `HuongDan_UI_Orbit_Cafe.md`, hình thức theo
   `reference.html` và ảnh/video trong `references/`, giá trị theo `design-tokens.json`;
@@ -196,7 +221,76 @@ chứng bằng engine. Mở rộng bằng migration có version theo task.
   tính chất demo, chỉ copy asset cần dùng. Không nhúng đường dẫn tuyệt đối hoặc
   phụ thuộc tải Internet để app hoạt động. Guide vẫn cần nghiệm thu trên WinForms thật.
 
-## 6. Git và báo cáo bàn giao
+## 6. Thiết kế sát vận hành thực tế — tham chiếu hệ thống doanh nghiệp lớn
+
+Mục tiêu: app phải đọc và chạy như một hệ thống quản trị chuyên nghiệp lẫn như cách một quán
+cafe thật vận hành. Hình mẫu tham chiếu: ERP cho doanh nghiệp vừa/lớn (SAP Business One,
+Oracle NetSuite, Microsoft Dynamics 365 Business Central) và POS thương mại (Toast, Square,
+Lightspeed; hệ thống chuỗi tại Việt Nam như iPOS, KiotViet, Sapo). Tham chiếu để **đánh giá
+chất lượng thiết kế** — cách tổ chức công việc, thứ tự ưu tiên, chuẩn chứng từ — không phải
+để sao chép giao diện hay mở rộng phạm vi.
+
+### 6.1 Nghiệp vụ
+
+- Thiết kế theo **công việc của vai trò** (thu ngân, thủ kho, quản lý), không theo bảng CSDL.
+  Mỗi màn hình trả lời được: ai dùng, làm việc gì, bắt đầu từ đâu, kết thúc khi nào.
+- **Chứng từ là trung tâm** (đơn, phiếu nhập/xuất/hủy, phiếu thu/chi, bảng lương): có mã, ngày,
+  người lập, trạng thái, người chốt và lịch sử. Báo cáo/tổng hợp phải drill-down được về
+  chứng từ gốc, không chỉ ra một con số không truy vết.
+- Vòng đời trạng thái rõ ràng: nháp → đang xử lý/chờ → đã chốt → hủy/điều chỉnh. Đã chốt là
+  khóa tài chính; sai sót xử lý bằng chứng từ điều chỉnh mới, không sửa/xóa lịch sử.
+- Tách nhiệm vụ cho nghiệp vụ tiền/kho/nợ/lương: người lập khác người duyệt/chi khi contract
+  cho phép; quyền kiểm ở BLL và procedure, không chỉ ẩn nút trên màn hình.
+- **Đối soát thay vì tự cân:** cuối ca/ngày so tiền mặt thực tế với hệ thống, tồn thực tế với
+  sổ; chênh lệch được ghi nhận và giải trình, không tự điều chỉnh cho khớp.
+- Mọi thao tác có hệ quả tài chính/kho phải truy vết được: ai, khi nào, chứng từ nào, giá trị
+  trước/sau (dùng nhật ký thao tác hiện có; không thêm log ngoài phạm vi task).
+
+### 6.2 Trải nghiệm theo nhịp vận hành
+
+- POS tối ưu cho ca cao điểm: thao tác bàn phím, ít bước, tìm món nhanh, tổng tiền và tiền
+  thừa rõ ràng, không bị chặn bởi hộp thoại phụ. In sau commit; lỗi in chỉ in lại.
+- Màn quản trị theo mô hình **tổng → danh sách → chứng từ**: lọc/sắp xếp/tổng ở trên, mở chi
+  tiết một dòng ở dưới; không đổ toàn bộ dữ liệu thô lên màn hình chính.
+- Một hành động chính mỗi bước. Hành động phá hủy/không hoàn tác phải xác nhận và nêu hệ quả;
+  thao tác thường ngày không hỏi xác nhận quá mức (không làm chậm quầy).
+- Luôn nói rõ phạm vi và thời điểm số liệu ("đến 14:30", "kỳ 01/11–24/11"), kèm trạng thái
+  rỗng, đang tải, lỗi và kết quả chưa xác định; không hiển thị 0 giả khi lỗi.
+- Đầu ra chuẩn: in/xuất phải tái tạo đúng dữ liệu đã chốt, có mã chứng từ và thời điểm.
+
+### 6.3 Độ tin cậy
+
+- Chống gửi lặp/timeout bằng khóa chứng từ hoặc idempotency ở procedure; đối chiếu DB trước khi
+  retry. Không tin cache UI cho tiền/kho/điểm/nợ.
+- Số liệu chính thức tính ở SQL; UI không cộng lại thành con số khác. Xung đột đồng thời xử lý
+  theo dữ liệu DB (khóa/phiên bản), không theo trạng thái màn hình.
+- Không giữ transaction khi chờ người dùng nhập, đếm kho hoặc in; thao tác dài có tiến trình
+  và chặn gửi lặp.
+- Giá/định mức/cấu hình có hiệu lực theo thời gian; chứng từ đã chốt giữ snapshot và không đổi
+  theo cấu hình mới (nhất quán mục 4). Màn hình không được hứa điều ngược lại.
+
+### 6.4 Giới hạn khi tham chiếu
+
+- Không thêm tính năng, bảng, trường hoặc module chỉ vì "hệ thống lớn có": đa chi nhánh,
+  workflow engine, phân quyền theo từng trường, offline sync, tích hợp ngân hàng… vẫn ngoài
+  phạm vi đã chốt.
+- Không sao chép giao diện, icon hay asset có bản quyền của sản phẩm khác; chỉ học cách tổ chức
+  công việc và thứ tự ưu tiên.
+- Khác biệt có chủ đích (một quán, một kho, desktop WinForms, quy mô nhỏ) phải ghi rõ lý do
+  trong plan/báo cáo thay vì cố mô phỏng hệ thống lớn.
+- Đề xuất vượt phạm vi ghi thành mục "Đề xuất" trong plan/báo cáo và chờ duyệt; không tự làm.
+
+### 6.5 Checklist trước khi chốt một màn hình/luồng
+
+1. Vai trò nào dùng, công việc gì, tần suất nào (ca cao điểm hay cuối kỳ)?
+2. Đường ngắn nhất để xong việc là bao nhiêu bước; đã có luồng bàn phím/phím tắt chưa?
+3. Dữ liệu nào đã chốt, dữ liệu nào còn sửa; ai được sửa và sửa bằng cách nào?
+4. Có chứng từ/mã, lịch sử và drill-down về nguồn không?
+5. In/xuất gì, có tái tạo đúng số đã chốt không?
+6. Lỗi DB, timeout, gửi lặp, mất kết nối, dữ liệu bị người khác đổi: màn hình hiển thị gì?
+7. Chỗ nào cố ý khác thực tế doanh nghiệp lớn, và lý do đã ghi rõ chưa?
+
+## 7. Git và báo cáo bàn giao
 
 - Điều kiện bắt buộc chốt G08 (cuối T32): gỡ hoàn toàn tiện ích “Bỏ qua đăng nhập — TEST”
   khỏi source, hooks, launcher và cấu hình bàn giao; không chỉ ẩn nút hoặc loại khỏi Release.
