@@ -37,7 +37,7 @@ public sealed class LoyaltyRepository(ConnectionFactory factory)
             r.GetString(5),r.GetString(6),r.GetString(7),r.GetInt32(8),(byte[])r[9],
             r.GetString(10),r.GetInt32(11),r.GetInt32(12));
     }
-    public Task<List<PromotionRow>> PromotionsAsync(AccountIdentity a,string q,int skip,DateOnly? onDate,CancellationToken t)=>executor.ReadAsync("sp_PromotionList",[..CatalogRepository.Actor(a),P("@Search",SqlDbType.NVarChar,q,-1),P("@Skip",SqlDbType.Int,skip),P("@OnDate",SqlDbType.Date,Day(onDate))],Promotion,t);
+    public Task<List<PromotionRow>> PromotionsAsync(AccountIdentity a,string q,int skip,DateOnly? onDate,string? status,CancellationToken t)=>executor.ReadAsync("sp_PromotionList",[..CatalogRepository.Actor(a),P("@Search",SqlDbType.NVarChar,q,-1),P("@Skip",SqlDbType.Int,skip),P("@OnDate",SqlDbType.Date,Day(onDate)),P("@Status",SqlDbType.VarChar,status,10)],Promotion,t);
     public Task<string> AllocateCodeAsync(CancellationToken t)=>CatalogRepository.AllocateAsync(executor,"KHUYENMAI",t);
     public async Task<OperationResult> SavePromotionAsync(AccountIdentity a,PromotionRequest r,byte[]? revision,Guid id,bool delete,CancellationToken t)
     {

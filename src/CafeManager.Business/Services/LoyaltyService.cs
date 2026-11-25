@@ -57,7 +57,14 @@ public sealed class LoyaltyService(LoyaltyRepository repository,PermissionServic
         using var linked=CancellationTokenSource.CreateLinkedTokenSource(s.Token,t);await permissions.DemandAsync(s,admin?AppPermission.CatalogAdmin:AppPermission.Sales,linked.Token);
         try{var result=await f(linked.Token);s.EnsureCurrent();return result;}catch(DataAccessException e){if(e.Error.Number==51505)s.Revoke();throw new UserOperationException(e.Error);}
     }
-    public Task<List<PromotionRow>> PromotionsAsync(SessionContext s,string q,int skip,DateOnly? onDate=null,CancellationToken t=default)=>Run(s,false,ct=>repository.PromotionsAsync(s.Identity,q,skip,onDate,ct),t);
+    // Lọc trạng thái hiệu lực (047): NULL/rỗng = tất cả; mã do SQL tính theo ngày server.
+    public Task<List<PromotionRow>> PromotionsAsync(SessionContext s,string q,int skip,DateOnly? onDate=null,string? status=null,CancellationToken t=default)
+    {
+        var filter=string.IsNullOrWhiteSpace(status)?null:status.Trim();
+        if(filter is not null&&filter is not ("DangChay" or "TamDung" or "ChuaToiKy" or "HetHan"))
+            throw new ArgumentException(L.T("Trạng thái lọc không hợp lệ."));
+        return Run(s,false,ct=>repository.PromotionsAsync(s.Identity,q,skip,onDate,filter,ct),t);
+    }
     public Task<OperationResult> SavePromotionAsync(SessionContext s,PromotionRequest r,byte[]? revision,Guid id,CancellationToken t=default)
     {
         var normalized=Normalize(r,revision is null);

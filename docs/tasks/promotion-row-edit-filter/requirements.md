@@ -17,7 +17,7 @@ theo trạng thái (listbox)".
   `AddRowDeleteColumn` + `CreateInlineEditor` (`Edit`, `Delete`, `Reconcile`, `Reload`,
   `RowKey`, `CanWrite` theo ADMIN), thêm combobox lọc trạng thái vào hàng bộ lọc.
 - Lọc chạy ở SQL để đúng với phân trang: `sp_PromotionList` nhận thêm `@Status`
-  (migration `045`) và tự tính trạng thái hiệu lực theo ngày hôm nay của server.
+  (migration `047`, đánh số lại do 045/046 song song) và tự tính trạng thái hiệu lực theo ngày hôm nay của server.
 - Cột Trạng thái hiển thị theo đúng mã SQL trả về (`DangChay`/`TamDung`/`ChuaToiKy`/
   `HetHan`) để hiển thị và lọc luôn khớp nhau; giữ màu chữ như hiện tại.
 - DAL/BLL truyền và kiểm tra giá trị lọc; CASH (chỉ thấy KM đang áp dụng hôm nay)

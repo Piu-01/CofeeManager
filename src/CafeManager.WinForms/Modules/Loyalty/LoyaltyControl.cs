@@ -23,10 +23,11 @@ public sealed class LoyaltyControl : UserControl
 internal sealed class PromotionList : OrbitRecordListControl
 {
     private readonly LoyaltyService service;private readonly ProductService products;private readonly SessionContext session;
+    private OrbitRowEditor inline=null!;private ComboBox? statusBox;
     public PromotionList(LoyaltyService service,ProductService products,SessionContext session)
     {
         this.service=service;this.products=products;this.session=session;
-        Configure("Khuyến mãi",session,async(q,skip,t)=>await service.PromotionsAsync(session,q,skip,null,t),("Code",L.T("Mã")),("Name",L.T("Chương trình")),("Discount",L.T("Ưu đãi")),("StartDate",L.T("Thời gian")),("Audience",L.T("Đối tượng")),("Status",L.T("Trạng thái")));
+        Configure("Khuyến mãi",session,async(q,skip,t)=>await service.PromotionsAsync(session,q,skip,null,Status(),t),("Code",L.T("Mã")),("Name",L.T("Chương trình")),("Discount",L.T("Ưu đãi")),("StartDate",L.T("Thời gian")),("Audience",L.T("Đối tượng")),("Status",L.T("Trạng thái")));
         Grid.Columns["StartDate"]!.ToolTipText=L.T("Lặp hằng năm theo ngày/tháng.");
         Grid.CellFormatting+=(_,e)=>
         {
@@ -45,27 +46,57 @@ internal sealed class PromotionList : OrbitRecordListControl
             e.FormattingApplied=true;
         };
         var admin=session.Identity.Role=="ADMIN";
-        AddAction("Thêm",()=>Edit(true),admin);AddAction("Sửa",()=>Edit(false),admin);AddAction("Xóa",Delete,admin);
+        AddAction("Thêm",()=>Edit(null),admin);
+        if(admin)
+        {
+            // Lọc trạng thái hiệu lực do SQL tính theo ngày server (047), khớp nhãn trên lưới.
+            // Nạp item bằng Items.AddRange như các bộ lọc khác; DataSource cần BindingContext nên chưa có item khi đang khởi tạo.
+            var choices=new (string Code,string Label)[]
+            {
+                ("",L.T("Tất cả")),("DangChay",L.T("Áp dụng")),("TamDung",L.T("Tạm ngưng")),
+                ("ChuaToiKy",L.T("Chưa tới kỳ")),("HetHan",L.T("Hết hạn"))
+            };
+            statusCodes=choices.Select(c=>c.Code).ToArray();
+            statusBox=new ComboBox{DropDownStyle=ComboBoxStyle.DropDownList,AccessibleName=L.T("Lọc theo trạng thái")};
+            statusBox.Items.AddRange(choices.Select(c=>c.Label).ToArray());
+            statusBox.SelectedIndex=0;AddFilter(statusBox,170);
+            statusBox.SelectedIndexChanged+=async(_,_)=>await ResetAndReload();
+        }
+        AddRowDeleteColumn();Workspace.ShowMeta=false;
+        inline=CreateInlineEditor();inline.CanWrite=_=>admin;inline.RowKey=item=>((PromotionRow)item).Code;
+        inline.ColumnFor=(item,cell)=>cell.OwningColumn?.Name switch
+        {
+            "Name"=>new("Name",InlineCellKind.Text),
+            "Status"=>new("Status",InlineCellKind.Text),
+            _=>null
+        };
+        inline.Edit=item=>Edit((PromotionRow)item);inline.Delete=DeleteInline;
+        inline.Reconcile=async(_,id,t)=>await service.ReconcileAsync(session,id,t) is not null;inline.Reload=()=>Reload();
+    }
+    // Nhãn lọc trạng thái; statusCodes giữ mã theo đúng thứ tự item của combo (item 0 = Tất cả).
+    private string[] statusCodes=[];
+    private string? Status()
+    {
+        if(statusBox is null||statusBox.SelectedIndex<0||statusBox.SelectedIndex>=statusCodes.Length)return null;
+        return statusCodes[statusBox.SelectedIndex] is {Length:>0} code?code:null;
     }
     private static string Period(PromotionRow row)
     {
         var start=row.StartDate.ToString("dd/MM",CultureInfo.InvariantCulture);
         return row.EndDate is DateOnly end?L.F("{0} – {1}",start,end.ToString("dd/MM",CultureInfo.InvariantCulture)):L.F("{0} – hết năm",start);
     }
-    // Trạng thái lưu chỉ Áp dụng/Tạm ngưng; ngoài khung ngày hiển thị suy ra cho người xem.
-    private static (string Text,global::System.Drawing.Color Color) StatusLabel(PromotionRow row)
+    // Trạng thái hiệu lực do SQL tính theo ngày server (047); UI chỉ dịch nhãn và tô màu.
+    private static (string Text,global::System.Drawing.Color Color) StatusLabel(PromotionRow row)=>row.Status switch
     {
-        if(row.Status=="TamDung")return (L.T("Tạm ngưng"),OrbitManagementTheme.Muted);
-        var md=DateTime.Today.Month*100+DateTime.Today.Day;
-        var start=row.StartDate.Month*100+row.StartDate.Day;
-        var end=row.EndDate is DateOnly last?last.Month*100+last.Day:int.MaxValue;
-        var inside=end>=start?md>=start&&md<=end:md>=start||md<=end;
-        if(inside)return (L.T("Áp dụng"),OrbitManagementTheme.Caramel);
-        return md<start&&end>=start?(L.T("Chưa tới kỳ"),OrbitManagementTheme.Muted):(L.T("Hết hạn"),global::System.Drawing.Color.FromArgb(255,180,180));
-    }
-    private async Task Edit(bool create)
+        "TamDung"=>(L.T("Tạm ngưng"),OrbitManagementTheme.Muted),
+        "DangChay"=>(L.T("Áp dụng"),OrbitManagementTheme.Caramel),
+        "ChuaToiKy"=>(L.T("Chưa tới kỳ"),OrbitManagementTheme.Muted),
+        "HetHan"=>(L.T("Hết hạn"),global::System.Drawing.Color.FromArgb(255,180,180)),
+        _=>(row.Status,OrbitManagementTheme.Muted)
+    };
+    private async Task Edit(PromotionRow? row)
     {
-        if(!create&&Selected is not PromotionRow)return;var row=create?null:(PromotionRow)Selected!;
+        var create=row is null;
         var detail=row is null?null:await service.PromotionDetailAsync(session,row.Code);
         var current=detail?.Promotion??row;
         var tiers=await service.PolicyAsync(session);
@@ -73,9 +104,12 @@ internal sealed class PromotionList : OrbitRecordListControl
         using var dialog=new OperationEditorDialog(create?L.T("Thêm khuyến mãi"):L.F("Sửa khuyến mãi · {0}",row!.Code),id=>service.ReconcileAsync(session,id));
         dialog.AddNote(L.T("THÔNG TIN CHUNG"));
         var name=dialog.AddText(L.T("Tên chương trình"),current?.Name??"");
-        var statusChoices=new[]{(Code:"DangChay",Label:L.T("Áp dụng")),(Code:"TamDung",Label:L.T("Tạm ngưng"))};
-        var status=new ComboBox{DropDownStyle=ComboBoxStyle.DropDownList,DataSource=statusChoices.ToList(),DisplayMember="Label",ValueMember="Code"};
-        status.SelectedValue=current?.Status=="TamDung"?"TamDung":"DangChay";dialog.AddField(L.T("Trạng thái"),status);
+        // Combo dựng bằng Items.AddRange và đọc theo chỉ số, không phụ thuộc binding của DataSource.
+        var statuses=new[]{("DangChay",L.T("Áp dụng")),("TamDung",L.T("Tạm ngưng"))};
+        var status=new ComboBox{DropDownStyle=ComboBoxStyle.DropDownList};
+        foreach(var choice in statuses)status.Items.Add(choice.Item2);
+        status.SelectedIndex=current?.Status=="TamDung"?1:0;
+        dialog.AddField(L.T("Trạng thái"),status);
         dialog.AddNote(L.T("THỜI GIAN ÁP DỤNG · LẶP HẰNG NĂM"));
         var start=new MaskedTextBox{Mask="00/00",Text=(current?.StartDate??DateOnly.FromDateTime(DateTime.Today)).ToString("dd/MM",CultureInfo.InvariantCulture)};
         var end=new MaskedTextBox{Mask="00/00",Text=(current?.EndDate??DateOnly.FromDateTime(DateTime.Today.AddMonths(1))).ToString("dd/MM",CultureInfo.InvariantCulture)};
@@ -140,7 +174,7 @@ internal sealed class PromotionList : OrbitRecordListControl
             var selectedGifts=gift?giftsPicker.ReadGifts():global::System.Array.Empty<PromotionGift>();
             var selectedTiers=account=="TIER"&&!allTiers.Checked?tierList.CheckedItems.Cast<string>().ToArray():[];
             var request=LoyaltyService.Normalize(new PromotionRequest(current?.Code??"",name.Text,startDay,endDay,percent,
-                status.SelectedValue as string??"DangChay",account,selectedTiers,selectedItems,gift?"Tang":"Giam",selectedGifts),create);
+                status.SelectedIndex==1?"TamDung":"DangChay",account,selectedTiers,selectedItems,gift?"Tang":"Giam",selectedGifts),create);
             return id=>service.SavePromotionAsync(session,request,current?.Revision,id);
         };
         if(await OrbitDialogHost.ShowAsync(dialog,this)==DialogResult.OK)await Reload();
@@ -151,7 +185,15 @@ internal sealed class PromotionList : OrbitRecordListControl
             throw new ArgumentException(L.F("{0} không hợp lệ; nhập ngày/tháng dd/MM.",label));
         return new DateOnly(2000,value.Month,value.Day);
     }
-    private async Task Delete(){if(Selected is not PromotionRow row)return;using var dialog=new OperationEditorDialog(L.T("Xóa khuyến mãi"),id=>service.ReconcileAsync(session,id));dialog.AddNote(L.F("{0} · {1}; có hóa đơn tham chiếu thì không xóa được.", row.Code, row.Name));dialog.Confirmation=L.F("Xóa {0}?", row.Code);dialog.CaptureWrite=()=>id=>service.DeletePromotionAsync(session,row,id);if(await CafeManager.WinForms.UI.OrbitDialogHost.ShowAsync(dialog, this)==DialogResult.OK)await Reload();}
+    private async Task<bool> DeleteInline(object item,Guid id,CancellationToken token)
+    {
+        var row=(PromotionRow)item;
+        using var dialog=new OperationEditorDialog(L.T("Xóa khuyến mãi"),x=>service.ReconcileAsync(session,x));
+        dialog.AddNote(L.F("{0} · {1}; có hóa đơn tham chiếu thì không xóa được.", row.Code, row.Name));
+        dialog.Confirmation=L.F("Xóa {0}?", row.Code);
+        dialog.CaptureWrite=()=>requestId=>service.DeletePromotionAsync(session,row,requestId);
+        return await OrbitDialogHost.ShowAsync(dialog,this)==DialogResult.OK;
+    }
 }
 // Chọn món cho ưu đãi: chế độ giảm tick nhiều món, chế độ tặng tick kèm số lượng.
 internal sealed class PromotionItemPicker : UserControl

@@ -2,9 +2,9 @@
 
 Thứ tự SQL → DAL → BLL → UI. Mỗi bước nêu file và cách kiểm chứng.
 
-## Bước 1 — Migration 045: lọc trạng thái ở `sp_PromotionList`
+## Bước 1 — Migration 047: lọc trạng thái ở `sp_PromotionList`
 
-- File: `database/migrations/045_promotion_list_status.sql`
+- File: `database/migrations/047_promotion_list_status.sql`
   - `ALTER PROCEDURE dbo.sp_PromotionList` thêm `@Status varchar(10)=NULL` cuối tham số.
   - Chuẩn hóa/validate: `NULL` hoặc `''` = tất cả; hợp lệ `DangChay`, `TamDung`,
     `ChuaToiKy`, `HetHan`; khác → `THROW 52001`.
@@ -61,6 +61,22 @@ Thứ tự SQL → DAL → BLL → UI. Mỗi bước nêu file và cách kiểm 
   thái + Tất cả + kết hợp tìm kiếm, sửa/xóa tại dòng, quyền CASH, build. Không sửa
   source trong lượt test.
 
+## Phát sinh đã duyệt — sửa BUG-02 (25/11/2026)
+
+- File mới: `database/migrations/048_promotion_legacy_code_edit.sql` — `ALTER
+  PROCEDURE dbo.sp_PromotionWrite` chỉ siết định dạng `KM+8 số` khi `@Action='Create'`
+  (như 009); `Update`/`Delete`/`Pause`/`Resume` giữ mã cũ. Không đổi DAL/BLL/UI.
+- Áp dụng trên DB test và `CoffeeManager_Development` bằng
+  `tools/database/Apply-Migration.ps1 -Version 48`.
+- Kiểm chứng: SQL V01–V06 và UI sửa/trả trạng thái KM24NEL (P-23…P-28 trong
+  `test-results.md`).
+- Bổ sung UI (yêu cầu người dùng 25/11/2026): `Workspace.ShowMeta=false` cho danh sách
+  Khuyến mãi để bỏ dải trống 49px mà hai nút Sửa/Xóa cũ để lại; giống các màn master
+  data đã chuyển (`TablesControl`, `MaterialsControl`). Build Debug 0 lỗi.
+
 ## Đề xuất ngoài phạm vi
 
 - Thêm cột "Đang áp dụng" cho CASH nếu sau này CASH cần xem lịch sử KM; chưa làm.
+- Tách thông điệp lỗi 52001 thành câu cụ thể hơn theo từng điều kiện SQL; chưa làm.
+- Đổi nhãn nút chốt của `OperationEditorDialog` khi xóa từ "Lưu" thành "Xóa" (áp chung
+  mọi màn master data); chưa làm, cần quyết định UI chung.
