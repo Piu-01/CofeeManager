@@ -97,3 +97,40 @@ SQL/BLL/in):
 
 Chưa làm: nút icon in độc lập trên thanh công cụ "Lịch sử hóa đơn" (đề xuất 1 ở trên)
 và cho in đơn chưa trả từ lịch sử (đề xuất 2) — vẫn chờ duyệt.
+
+### 25/11/2026 — Dựng mock 2 phương án, người dùng chọn B, triển khai lại hộp chi tiết
+
+Người dùng xác nhận bố cục vừa sửa vẫn khó nhìn (thông tin quan trọng nhỏ) và yêu cầu
+mock trước khi sửa. Đã dựng `mockups/invoice-detail-redesign.html` (A · Phiếu gọn, B ·
+Tổng bên phải, có công tắc 100/125%). Người dùng chọn **B**.
+
+Đã sửa `InvoiceDetailDialog.cs` theo B (chỉ UI, không đổi SQL/BLL/in):
+- Đầu mục thay khối summary: eyebrow "Hóa đơn bán", mã hóa đơn cỡ Title, dòng meta
+  `dd/MM/yyyy HH:mm · Kênh · Bàn · Khách` (chỉ hiện khi có), nhãn trạng thái bên phải.
+- Bảng món trong card, tiêu đề "Món trong hóa đơn" + số món; ẩn cột Ghi chú/Quà khi
+  không có dữ liệu; cột Thành tiền in đậm.
+- Cột phải: "Phải trả" 27pt caramel, Tiền món/Giảm/Phí giao hàng, mục Thanh toán theo
+  từng phương thức + "Đã thu đủ · giờ ngày" khi đã trả; ghi chú nguồn giảm/ưu đãi/điểm/
+  tặng kèm chỉ hiện khi có; cuộn dọc nếu dài.
+- Footer: nút chính "In hóa đơn" (icon printer) ngoài cùng bên phải, "Đóng" kế bên,
+  "Quay lại POS" chỉ với đơn còn mở; ghi chú trạng thái chốt bên trái footer.
+- Sửa luôn cột "Mã món" trước đây bind `Code` không tồn tại trên `SalesLine` (cột trống)
+  thành `Product`. Thêm 6 khóa dịch trong `en.json` (1898 khóa, JSON hợp lệ).
+
+Build tạm `OutDir` PASS (0 lỗi; bin chính đang bị app/VS khóa). Đã chạy probe chức
+năng sau khi người dùng duyệt đợt test: T17-UI-01..04 PASS tại DPI 125% (xem
+`test-results.md` mục 25/11). Một lỗi phát hiện khi test — `OrbitDialogLayout` xóa
+icon `printer` khi nhận nút vào footer — đã sửa bằng cách gắn lại icon sau khi tạo
+layout, không đổi nghiệp vụ. In thật/preview PDF, DB thật và hình thức vẫn do người
+dùng kiểm, chưa ghi PASS.
+
+### 25/11/2026 — Bỏ nút "Chi tiết / In", mở chi tiết bằng bấm đúp dòng
+
+Theo yêu cầu người dùng, sửa `InvoicesControl`: bỏ hẳn nút hành động "Chi tiết / In"
+khỏi hàng thao tác của lịch sử hóa đơn (hàng giờ trống); **bấm một lần** vào một dòng
+mở `InvoiceDetailDialog` (nơi có "In hóa đơn") — chờ cú bấm xử lý xong mới mở, chống
+mở lặp, bỏ qua khi danh sách bận; Enter khi đang chọn dòng dùng chung một hàm có bắt
+lỗi và báo ở dòng trạng thái như nút cũ. Dòng mô tả workspace thêm "Bấm vào hóa đơn để
+xem chi tiết và in lại." (1 khóa dịch mới trong `en.json`). Không đổi SQL/BLL/in;
+quyền in vẫn kiểm ở BLL trước khi mở preview. Probe T17-UI-05..07 PASS; bấm chuột thật
+trên DB chưa chạy — để người dùng kiểm.

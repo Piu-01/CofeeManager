@@ -24,3 +24,56 @@ Policy/recipe đồngthời haichiều vàtimeout trướccommit,legacy-invalid 
 GUI chức năng vẫnchưađủ bằngchứng vì côngcụ click/focus;hìnhthứcSKIPPED;DPI100/150%NOT RUN.
 Không suyPASS GUI từSQL hoặcfixture in-memory;khôngtick checklist gốc T01–T32.
 
+
+## 25/11/2026 — Kiểm chức năng hộp chi tiết hóa đơn dựng lại (phương án B)
+
+Môi trường: Windows 10.0.26200, .NET SDK 10.0.401, build tạm cách ly
+(`OutDir` riêng vì bin chính bị app PID 25272 và VS khóa), probe reflection
+`T17Probe` mở `InvoiceDetailDialog` với DTO dựng sẵn (không gọi DB/không in thật).
+DPI thực tế của màn hình khi chạy: **120 (125%)**. Log:
+[ui-detail-probe-20261125.log](runs/ui-detail-probe-20261125.log). Lệnh:
+`dotnet build T17Probe.csproj -p:OutDir=...\out` rồi chạy `T17Probe.exe`.
+
+| ID | Nội dung | Expected | Actual | Trạng thái |
+|---|---|---|---|---|
+| T17-UI-01 | Đơn đã trả có giảm/ưu đãi/điểm/tặng kèm | Có "In hóa đơn" (primary, icon printer, ngoài cùng phải), "Đóng", không "Quay lại POS"; món bind `Product`; cột Ghi chú/Quà hiện; tổng 65.000 ₫ cỡ 27pt; "Đã thu đủ · giờ ngày"; 4 ghi chú | Đúng toàn bộ; hộp 1057×724 px tại DPI120, nằm trong WorkingArea | PASS |
+| T17-UI-02 | Đơn chưa trả mang đi | Có "Quay lại POS", "Đóng"; **không** nút in (giữ T17-K05); ẩn cột Ghi chú/Quà; footer "Đơn chưa thanh toán…"; không "Đã thu đủ" | Đúng toàn bộ | PASS |
+| T17-UI-03 | Đơn đã hủy, không món | Chỉ nút "Đóng"; nhãn "Đã hủy"; tiêu đề "0 món" | Đúng | PASS |
+| T17-UI-04 | Bố cục | Không nhãn bị cắt, không control tràn cha, nút nằm trong hộp, cao ≥36px, hộp trong màn hình | Tất cả đạt (3 ca) | PASS |
+
+Lượt chạy đầu FAIL "nút in có icon printer" do `OrbitDialogLayout` style lại nút khi
+nhận vào footer (xóa `ManagementIcon`); đã gắn lại icon sau khi tạo layout và chạy lại
+đạt — không đổi nghiệp vụ.
+
+NOT RUN (ngoài phạm vi quyền tự kiểm): bấm "In hóa đơn" mở preview PDF/WebView2 và in
+thật; mở hộp từ lịch sử hóa đơn với DB thật; lỗi máy in/hủy in; hình thức trực quan
+(người dùng tự kiểm); DPI 100%/150% (chỉ chạy 125%). Không ghi PASS hình thức.
+
+### 25/11/2026 — Lịch sử hóa đơn: bỏ nút "Chi tiết / In", mở bằng bấm đúp/Enter
+
+Cùng môi trường probe, bổ sung ca dựng `InvoicesControl` (không gọi DB, không mở
+hộp). Log: [invoice-history-activation-20261125.log](runs/invoice-history-activation-20261125.log).
+
+| ID | Nội dung | Expected | Actual | Trạng thái |
+|---|---|---|---|---|
+| T17-UI-05 | Hàng thao tác lịch sử hóa đơn | Không còn nút "Chi tiết / In", hàng thao tác trống, bố cục không lỗi | 0 nút, không lỗi khởi tạo | PASS |
+| T17-UI-06 | Mở chi tiết | `RowActivated` gắn cho bấm đúp dòng; Enter khi chọn dòng mở cùng hộp | Đã gắn handler; nhánh Enter dùng `ShowDetail` như bấm đúp (kiểm bằng source, chưa bấm thật) | PASS (một phần) |
+| T17-UI-07 | Hướng dẫn | Dòng mô tả workspace nhắc "Bấm đúp vào hóa đơn để xem chi tiết và in lại." | Đúng | PASS |
+
+NOT RUN: bấm đúp/Enter thật trên DB thật để mở hộp, in lại; chọn dòng rỗng rồi Enter
+(không có hóa đơn) — để người dùng kiểm cùng lúc xem giao diện.
+
+### 25/11/2026 — Đổi sang mở chi tiết bằng MỘT lần bấm (theo yêu cầu)
+
+Thay `RowActivated` (bấm đúp) bằng `Grid.CellClick`: bấm một lần vào dòng mở thẳng
+`InvoiceDetailDialog`; chờ cú bấm xử lý xong rồi mới mở (BeginInvoke), có cờ
+`openingDetail` chống mở lặp, bỏ qua khi danh sách đang bận. Enter khi đang chọn dòng
+dùng chung `OpenDetailAsync` — hàm này bắt `UserOperationException`/
+`UnauthorizedAccessException`/`ArgumentException` và ghi vào dòng trạng thái như nút
+hành động cũ, tránh lỗi async void. Dòng mô tả đổi thành "Bấm vào hóa đơn để xem chi
+tiết và in lại." (khóa dịch cũ đổi nội dung).
+
+Log: [invoice-history-single-click-20261125.log](runs/invoice-history-single-click-20261125.log).
+Probe T17-UI-05..07 chạy lại PASS (0 nút hành tác, RowActivated null, mô tả đúng);
+T17-UI-01..04 của hộp chi tiết vẫn PASS. NOT RUN: bấm chuột thật trên lưới có dữ liệu
+DB (mở hộp, đóng hộp, in lại), bấm khi lưới đang tải và hình thức — để người dùng kiểm.

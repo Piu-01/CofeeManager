@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Mockup — Chi tiết hóa đơn (2 phương án)</title>
+<style>
+  :root{
+    --canvas:#100E15; --header:#141118; --surface:#211B28; --surface-hover:#282030;
+    --field:#2A2231; --text:#FFF4E7; --muted:#D0C2D7; --faint:#A895B2;
+    --caramel:#FFD09A; --on-caramel:#28180E; --lilac:#D0BEFF;
+    --line:#514357; --card-border:#594760; --input-border:#776180;
+    --selected:#3D2D22; --selected-border:#B28A62;
+    --ok:#9ACD96; --ok-bg:rgba(154,205,150,.10); --ok-border:rgba(154,205,150,.35);
+    --r-dialog:12px; --r-card:12px; --r-btn:9px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; padding:24px 20px 48px; min-height:100vh;
+    background:
+      radial-gradient(1100px 560px at 72% -10%, rgba(255,208,154,.05), transparent 60%),
+      radial-gradient(900px 480px at 0% 100%, rgba(208,190,255,.045), transparent 60%),
+      var(--canvas);
+    color:var(--text); font:14px/1.45 "Segoe UI",system-ui,-apple-system,sans-serif;
+  }
+  .stage{max-width:1360px;margin:0 auto}
+  .demo-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:0 0 14px;color:var(--faint);font-size:12px}
+  .demo-bar b{color:var(--muted);font-weight:600;letter-spacing:.05em;text-transform:uppercase;font-size:10.5px}
+  .demo-bar .hint{opacity:.9}
+  .switcher{margin-left:auto;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+  .switcher button{
+    background:var(--surface);color:var(--muted);border:1px solid var(--line);
+    border-radius:999px;padding:6px 14px;font:inherit;font-size:12px;cursor:pointer;
+  }
+  .switcher button.on{background:var(--selected);border-color:var(--selected-border);color:var(--caramel)}
+  .zoomer{display:flex;gap:4px;margin-left:8px}
+  .zoomer button{border-radius:7px;padding:5px 9px;font-size:11px}
+  .zoomer button.on{background:var(--selected);border-color:var(--selected-border);color:var(--caramel)}
+  .scale{zoom:1.25}
+
+  .window{
+    background:var(--header);border:1px solid var(--card-border);border-radius:var(--r-dialog);
+    box-shadow:0 40px 90px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.02) inset;
+    overflow:hidden;margin:0 auto;display:none;
+  }
+  .window.show{display:block}
+  .titlebar{
+    height:44px;display:flex;align-items:center;gap:10px;padding:0 16px;
+    background:linear-gradient(180deg,#17131C,#141118);border-bottom:1px solid #2B2233;
+    font-size:13px;color:var(--muted);
+  }
+  .titlebar .appicon{width:18px;height:18px;border-radius:5px;background:linear-gradient(135deg,var(--caramel),#B9764A);opacity:.9}
+  .titlebar .close{margin-left:auto;width:34px;height:30px;display:grid;place-items:center;border-radius:6px;color:var(--faint)}
+  .content{background:var(--surface);padding:22px 24px 18px;display:flex;flex-direction:column;gap:18px}
+
+  /* ---------- header ---------- */
+  .head{display:flex;align-items:flex-start;gap:18px}
+  .eyebrow{font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--caramel);font-weight:600;margin-bottom:5px}
+  .head h1{margin:0;font-size:27px;line-height:1.15;font-weight:600;letter-spacing:.01em;font-variant-numeric:tabular-nums}
+  .sub{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:8px;color:var(--muted);font-size:14px}
+  .sub .sep{width:1px;height:13px;background:var(--line)}
+  .sub .strong{color:var(--text);font-weight:600}
+  .status-pill{
+    margin-left:auto;display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;
+    border:1px solid var(--ok-border);background:var(--ok-bg);color:var(--ok);
+    font-size:13.5px;font-weight:600;white-space:nowrap;
+  }
+  .status-pill .dot{width:7px;height:7px;border-radius:50%;background:currentColor}
+
+  /* ---------- hero ---------- */
+  .hero{display:grid;grid-template-columns:1.15fr 1fr;gap:14px}
+  .card{background:#1B1621;border:1px solid #3B2F44;border-radius:var(--r-card);padding:16px 18px}
+  .k{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);font-weight:600}
+  .k2{font-size:12.5px;color:var(--faint);margin-top:6px}
+  .amount-card{background:linear-gradient(150deg,#2A2119,#1D1720 70%);border-color:#5A4633}
+  .amount{font-size:40px;line-height:1.1;font-weight:600;color:var(--caramel);margin-top:8px;font-variant-numeric:tabular-nums;letter-spacing:.01em}
+  .payline{display:flex;align-items:baseline;gap:10px;margin-top:10px}
+  .payline .method{font-size:16px;font-weight:600;color:var(--text)}
+  .payline .money{margin-left:auto;font-size:19px;font-weight:600;color:var(--text);font-variant-numeric:tabular-nums}
+  .paymeta{display:flex;justify-content:space-between;gap:10px;margin-top:10px;font-size:12.5px;color:var(--faint)}
+
+  /* ---------- items ---------- */
+  .items{background:#1B1621;border:1px solid #3B2F44;border-radius:var(--r-card);overflow:hidden;display:flex;flex-direction:column}
+  .items-head{display:flex;align-items:center;gap:10px;padding:14px 18px 12px;border-bottom:1px solid #33283C}
+  .items-head h2{margin:0;font-size:14.5px;font-weight:600}
+  .count{font-size:11.5px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:2px 9px}
+  .items-head .note{margin-left:auto;font-size:12px;color:var(--faint)}
+  table{width:100%;border-collapse:collapse}
+  th{
+    text-align:left;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);font-weight:600;
+    padding:11px 18px;background:#241D2C;border-bottom:1px solid #3B2F44;
+  }
+  th.num,td.num{text-align:right;font-variant-numeric:tabular-nums}
+  td{padding:13px 18px;border-bottom:1px solid #2E2436;font-size:14.5px;vertical-align:middle}
+  tbody tr:last-child td{border-bottom:0}
+  tbody tr:nth-child(2n){background:rgba(255,255,255,.012)}
+  .item-name{font-weight:500}
+  .item-code{display:block;font-size:11.5px;color:var(--faint);margin-top:2px;letter-spacing:.03em}
+  td.num.price{color:var(--muted)}
+  td.num.total{font-weight:600;font-size:15px}
+  .empty-note{padding:18px;color:var(--faint);font-size:12px}
+
+  /* ---------- rail (variant B) ---------- */
+  .split{display:grid;grid-template-columns:1fr 330px;gap:16px;align-items:start}
+  .rail{padding:20px;display:flex;flex-direction:column;gap:12px;position:sticky;top:0}
+  .rail .amount{font-size:42px;margin:2px 0 4px}
+  .railrows{display:flex;flex-direction:column;gap:9px;font-size:13.5px;color:var(--muted)}
+  .railrows div{display:flex;justify-content:space-between;gap:12px}
+  .railrows b{color:var(--text);font-weight:600;font-variant-numeric:tabular-nums}
+  .divider{height:1px;background:#3B2F44;margin:6px 0}
+  .rail .status-pill{margin:4px 0 0;justify-content:center}
+  .rail-note{font-size:12px;color:var(--faint);line-height:1.5}
+
+  /* ---------- footer ---------- */
+  .foot{display:flex;align-items:center;gap:16px;padding-top:2px}
+  .foot-note{font-size:12.5px;color:var(--faint)}
+  .actions{margin-left:auto;display:flex;gap:10px;align-items:center}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    height:42px;padding:0 18px;border-radius:var(--r-btn);border:1px solid var(--input-border);
+    background:#2B2233;color:var(--text);font:inherit;font-size:14px;font-weight:500;cursor:pointer;
+  }
+  .btn:hover{background:#332940}
+  .btn.primary{
+    height:46px;padding:0 22px;background:var(--caramel);border-color:var(--caramel);color:var(--on-caramel);
+    font-size:14.5px;font-weight:600;box-shadow:0 6px 18px rgba(255,208,154,.14);
+  }
+  .btn.primary:hover{background:#FFDDB4}
+  .btn svg{width:17px;height:17px;display:block}
+
+  /* variant B footer */
+  .view-b .foot-note{max-width:420px}
+
+  /* rationale strip */
+  .why{margin:22px auto 0;max-width:1040px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;font-size:12.5px;color:var(--faint)}
+  .why div{background:#1A151F;border:1px solid #362B40;border-radius:10px;padding:12px 14px}
+  .why b{display:block;color:var(--muted);font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+  @media (max-width:1200px){.why{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="demo-bar">
+    <b>Mock trước khi sửa · Chi tiết hóa đơn</b>
+    <span class="hint">Hai phương án bố cục. Chưa đổi code — chọn giúp mình A hay B.</span>
+    <div class="switcher">
+      <button data-view="a" class="on">A · Phiếu gọn</button>
+      <button data-view="b">B · Tổng bên phải</button>
+      <span class="zoomer">
+        <button data-zoom="1">100%</button>
+        <button data-zoom="1.25" class="on">125%</button>
+      </span>
+    </div>
+  </div>
+
+  <div class="scale" id="scaleWrap">
+
+    <!-- ================= A ================= -->
+    <div class="window view-a show" data-view="a" style="width:980px">
+      <div class="titlebar">
+        <span class="appicon"></span><span>Chi tiết hóa đơn · HD20250411</span>
+        <span class="close">✕</span>
+      </div>
+      <div class="content">
+        <header class="head">
+          <div>
+            <div class="eyebrow">Hóa đơn bán</div>
+            <h1>HD20250411</h1>
+            <div class="sub">
+              <span>09/11/2026 23:14</span><i class="sep"></i>
+              <span>Tại quán</span><i class="sep"></i>
+              <span>Bàn <span class="strong">B0001</span></span>
+            </div>
+          </div>
+          <span class="status-pill"><span class="dot"></span>Đã thanh toán</span>
+        </header>
+
+        <section class="hero">
+          <div class="card amount-card">
+            <div class="k">Phải trả</div>
+            <div class="amount">70.000 ₫</div>
+            <div class="k2">Tiền món 70.000 ₫ · không giảm giá</div>
+          </div>
+          <div class="card">
+            <div class="k">Thanh toán</div>
+            <div class="payline"><span class="method">Tiền mặt</span><span class="money">70.000 ₫</span></div>
+            <div class="paymeta"><span>Đã thu đủ</span><span>23:14 · 09/11/2026</span></div>
+          </div>
+        </section>
+
+        <section class="items">
+          <div class="items-head">
+            <h2>Món trong hóa đơn</h2><span class="count">2 món</span>
+            <span class="note">Giá theo dữ liệu đã lưu khi thanh toán</span>
+          </div>
+          <table>
+            <thead><tr><th>Món</th><th class="num" style="width:70px">SL</th><th class="num" style="width:130px">Đơn giá</th><th class="num" style="width:150px">Thành tiền</th></tr></thead>
+            <tbody>
+              <tr><td class="item-name">Cà phê sữa<span class="item-code">SP002</span></td><td class="num">1</td><td class="num price">30.000 ₫</td><td class="num total">30.000 ₫</td></tr>
+              <tr><td class="item-name">Trà sen<span class="item-code">SP018</span></td><td class="num">1</td><td class="num price">40.000 ₫</td><td class="num total">40.000 ₫</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <footer class="foot">
+          <div class="foot-note">Hóa đơn đã chốt — chỉ xem và in lại, không sửa tiền hoặc món.</div>
+          <div class="actions">
+            <button class="btn">Đóng</button>
+            <button class="btn primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 8V4h10v4M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"/><path d="M7 14h10v6H7z"/></svg>
+              In hóa đơn
+            </button>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <!-- ================= B ================= -->
+    <div class="window view-b" data-view="b" style="width:1040px">
+      <div class="titlebar">
+        <span class="appicon"></span><span>Chi tiết hóa đơn · HD20250411</span>
+        <span class="close">✕</span>
+      </div>
+      <div class="content">
+        <header class="head">
+          <div>
+            <div class="eyebrow">Hóa đơn bán</div>
+            <h1>HD20250411</h1>
+            <div class="sub">
+              <span>09/11/2026 23:14</span><i class="sep"></i>
+              <span>Tại quán</span><i class="sep"></i>
+              <span>Bàn <span class="strong">B0001</span></span>
+            </div>
+          </div>
+          <span class="status-pill"><span class="dot"></span>Đã thanh toán</span>
+        </header>
+
+        <div class="split">
+          <section class="items">
+            <div class="items-head">
+              <h2>Món trong hóa đơn</h2><span class="count">2 món</span>
+            </div>
+            <table>
+              <thead><tr><th>Món</th><th class="num" style="width:64px">SL</th><th class="num" style="width:120px">Đơn giá</th><th class="num" style="width:140px">Thành tiền</th></tr></thead>
+              <tbody>
+                <tr><td class="item-name">Cà phê sữa<span class="item-code">SP002</span></td><td class="num">1</td><td class="num price">30.000 ₫</td><td class="num total">30.000 ₫</td></tr>
+                <tr><td class="item-name">Trà sen<span class="item-code">SP018</span></td><td class="num">1</td><td class="num price">40.000 ₫</td><td class="num total">40.000 ₫</td></tr>
+              </tbody>
+            </table>
+            <div class="empty-note">Danh sách dài sẽ cuộn trong khung; phần tổng bên phải luôn đứng yên.</div>
+          </section>
+
+          <aside class="card rail">
+            <div class="k">Phải trả</div>
+            <div class="amount">70.000 ₫</div>
+            <div class="railrows">
+              <div><span>Tiền món</span><b>70.000 ₫</b></div>
+              <div><span>Giảm giá</span><b>0 ₫</b></div>
+            </div>
+            <div class="divider"></div>
+            <div class="k">Thanh toán</div>
+            <div class="railrows">
+              <div><span>Tiền mặt</span><b>70.000 ₫</b></div>
+            </div>
+            <div class="rail-note">Đã thu đủ lúc 23:14 · 09/11/2026</div>
+            <span class="status-pill"><span class="dot"></span>Đã thanh toán</span>
+          </aside>
+        </div>
+
+        <footer class="foot">
+          <div class="foot-note">Hóa đơn đã chốt — chỉ xem và in lại, không sửa tiền hoặc món.</div>
+          <div class="actions">
+            <button class="btn">Đóng</button>
+            <button class="btn primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 8V4h10v4M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"/><path d="M7 14h10v6H7z"/></svg>
+              In hóa đơn
+            </button>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="why">
+    <div><b>Điểm chính to hơn</b>Mã hóa đơn 27px, số phải trả 40–42px, trạng thái thành nhãn riêng — nhìn 1 giây là thấy.</div>
+    <div><b>Bảng dễ đọc</b>Chữ món 14,5px, dòng cao 44px, tiền căn phải đậm; bỏ cột trống (quà, ghi chú) khi không có.</div>
+    <div><b>Nút đúng chỗ</b>Nút chính “In hóa đơn” 46px, nằm cuối nhóm bên phải; “Đóng” là nút phụ. Không còn nút xám vô dụng.</div>
+  </div>
+</div>
+
+<script>
+  const scale = document.getElementById('scaleWrap');
+  document.querySelectorAll('.switcher [data-view]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.switcher [data-view]').forEach(b => b.classList.toggle('on', b === btn));
+      document.querySelectorAll('.window').forEach(w => w.classList.toggle('show', w.dataset.view === btn.dataset.view));
+    });
+  });
+  document.querySelectorAll('[data-zoom]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-zoom]').forEach(b => b.classList.toggle('on', b === btn));
+      scale.style.zoom = btn.dataset.zoom;
+    });
+  });
+</script>
+</body>
+</html>
